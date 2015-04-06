@@ -1,0 +1,35 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<script src="../BasicResizeHelpers.js"></script>
+
+<polymer-element name="resize-test-element">
+<template>
+  <style>
+  :host {
+    display: block;
+  }
+  </style>
+</template>
+<script>
+Polymer(Platform.mixin({
+
+  attached: function() {
+    this.listenForResize();
+  },
+
+  detached: function() {
+    this.listenForResize(false);
+  },
+
+  resized: function() {
+    this.resizeCallCount++;
+    if (this.resizeCallHook) {
+      this.resizeCallHook();
+    }
+  },
+
+  resizeCallCount: 0
+
+}, BasicResizeHelpers));
+</script>
+</polymer-element>

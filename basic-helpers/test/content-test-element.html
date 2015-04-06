@@ -1,0 +1,38 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<script src="../BasicContentHelpers.js"></script>
+
+<dom-module id="content-test-element">
+</dom-module>
+<script>
+  Polymer({
+
+    is: "content-test-element",
+
+    hostAttributes: {
+      sampleAttribute: null
+    },
+
+    attached: function() {
+      this.observeContentChanges();
+    },
+
+    contentChanged: function() {
+      if (this.contentChangedHook) {
+        this.contentChangedHook();
+      }
+    },
+
+    detached: function() {
+      this.observeContentChanges(false);
+      if (this.detachedHook) {
+        this.detachedHook();
+      }
+    },
+
+    mixins: [
+      BasicContentHelpers
+    ]
+
+  });
+</script>
