@@ -2,34 +2,38 @@
 
 <script src="../BasicResizeHelpers.js"></script>
 
-<polymer-element name="resize-test-element">
+<dom-module id="resize-test-element">
 <template>
   <style>
-  :host {
-    display: block;
-  }
+    :host {
+      display: block;
+    }
   </style>
 </template>
+</dom-module>
 <script>
-Polymer(Platform.mixin({
+  Polymer({
 
-  attached: function() {
-    this.listenForResize();
-  },
+    is: 'resize-test-element',
 
-  detached: function() {
-    this.listenForResize(false);
-  },
+    attached: function() {
+      this.listenForResize();
+    },
 
-  resized: function() {
-    this.resizeCallCount++;
-    if (this.resizeCallHook) {
-      this.resizeCallHook();
-    }
-  },
+    detached: function() {
+      this.listenForResize(false);
+    },
 
-  resizeCallCount: 0
+    resized: function() {
+      this.resizeCallCount++;
+      if (this.resizeCallHook) {
+        this.resizeCallHook();
+      }
+    },
 
-}, BasicResizeHelpers));
+    resizeCallCount: 0,
+
+    mixins: [BasicResizeHelpers]
+
+  });
 </script>
-</polymer-element>

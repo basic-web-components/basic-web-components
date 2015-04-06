@@ -82,7 +82,7 @@ suite('BasicContentHelpers', function() {
     button.setAttribute('disabled', '');
   });
 
-  test("ignore changes in element's own attributes", function(done) {
+  test('ignore changes in element\'s own attributes', function(done) {
     var fixture = document.createElement('content-test-element');
     fixture.contentChangedHook = function() {
       // Shouldn't get invoked.

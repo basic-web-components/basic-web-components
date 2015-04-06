@@ -14,7 +14,7 @@ suite('BasicResizeHelpers', function() {
     container.innerHTML = '';
   });
 
-  test.skip('listenForResize should trigger initial call to resized handler', function(done) {
+  test('listenForResize should trigger initial call to resized handler', function(done) {
     var fixture = document.createElement('resize-test-element');
     container.appendChild(fixture);
     flush(function() {
