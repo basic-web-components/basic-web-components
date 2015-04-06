@@ -1,0 +1,14 @@
+{
+  "name": "basic-web-components",
+  "version": "0.0.4",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.8.0-rc.2"
+  },
+  "devDependencies": {
+    "globalize": "0.x",
+    "web-component-tester": "*"
+  },
+  "resolutions": {
+    "polymer": "^0.8.0"
+  }
+}
