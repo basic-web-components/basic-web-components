@@ -24,7 +24,7 @@ var BasicResizeHelpers = {
    * @param list True (the default) to start listening, false to stop
    */
   listenForResize: function(listen) {
-    if ( listen || listen == null ) {
+    if (listen || listen == null) {
 
       // Listen
       this._resizeHandler = this._onResize.bind(this);
@@ -33,7 +33,8 @@ var BasicResizeHelpers = {
       // Trigger resized handler so that element can do initial setup.
       this._onResize();
 
-    } else {
+    }
+    else {
 
       // Stop listening
       window.removeEventListener('resize', this._resizeHandler);
@@ -46,9 +47,9 @@ var BasicResizeHelpers = {
     var previousSize = this._previousSize;
     var width = this.offsetWidth;
     var height = this.offsetHeight;
-    var sizeChanged = ( previousSize == null || 
+    var sizeChanged = (previousSize == null ||
         width !== previousSize.width ||
-        height !== previousSize.height );
+        height !== previousSize.height);
     if (sizeChanged) {
       this._previousSize = {
         height: height,

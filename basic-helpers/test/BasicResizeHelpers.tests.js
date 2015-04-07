@@ -28,11 +28,12 @@ suite('BasicResizeHelpers', function() {
     container.appendChild(fixture);
     flush(function() {
       assert.equal(fixture.resizeCallCount, 1);
-      fixture.style.width = "50%";  // Force element to have a different size.
+      // BUGBUG - with Polymer 0.8, the following no longer results in the element having a different size
+      fixture.style.width = '50%';  // Force element to have a different size.
       fixture.resizeCallHook = function() {
         assert.equal(fixture.resizeCallCount, 2);
         done();
-      }
+      };
       simulateResize(); // Should trigger resize
       simulateResize(); // Shouldn't trigger resize, since size won't have changed
     });
