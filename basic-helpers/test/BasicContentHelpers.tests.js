@@ -61,6 +61,7 @@ suite('BasicContentHelpers', function() {
 
   test.skip('redistributed content triggers contentChanged', function(done) {
     var fixture = document.createElement('reproject-test');
+    // BUGBUG - with Polymer 0.8, fixture.$ is undefined.
     var nestedTestElement = fixture.$.nestedTestElement;
     container.appendChild(fixture);
     nestedTestElement.contentChangedHook = function() {
