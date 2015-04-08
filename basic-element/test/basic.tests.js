@@ -1,10 +1,10 @@
 suite('basic', function() {
 
-  this.timeout(200000);
+  this.timeout(2000);
 
   var container = document.getElementById('container');
 
-  teardown(function () {
+  teardown(function() {
     container.innerHTML = '';
   });
 
