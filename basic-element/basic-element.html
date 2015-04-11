@@ -28,42 +28,37 @@ Right now, this includes:
 
 <dom-module id="basic=element"></dom-module>
 <script>
-/*
- * Basic element base class.
- */
-Polymer({
 
-  is: 'basic-element',
+var BasicElement = {
 
-  attached: function() {
+  BasicElement_attached: function() {
     this.observeContentChanges();
   },
 
-  detached: function() {
+  BasicElement_detached: function() {
     this.observeContentChanges(false);
   },
 
   // Log output to the console prefixed by the element's tag. This makes it
   // easier to see which element is logging the output.
-  log: function(s) {
+  BasicElement_log: function(s) {
     if (console) {
       console.log(this.localName + ': ' + s);
     }
   },
 
-  ready: function() {
-    this.setup();
+  BasicElement_ready: function() {
+    this.BasicElement_setup();
   },
 
-  properties: {
-    generic: {
-      type: Boolean,
-      value: null,
-      reflectToAttribute: true
-    }
+  // Non-functions are referenced by clients as MixinName.property
+  generic: {
+    type: Boolean,
+    value: null,
+    reflectToAttribute: true
   },
 
-  setup: function() {
+  BasicElement_setup: function() {
     // We explicitly set the generic attribute to true, rather than providing
     // that as a default value. A default value won't appear on an element
     // instance as an attribute, but an attribute we set explicitly will. We
@@ -77,9 +72,34 @@ Polymer({
     if (this.getAttribute('generic') == null) {
       this.generic = true;
     }
+  }
+
+};
+
+/*
+ * Basic element base class.
+ */
+Polymer({
+
+  is: 'basic-element',
+
+  attached: function() {
+    this.BasicElement_attached();
   },
 
-  mixins: [BasicContentHelpers]
+  detached: function() {
+    this.BasicElement_detached();
+  },
+
+  ready: function() {
+    this.BasicElement_ready();
+  },
+
+  properties: {
+    generic: BasicElement.generic
+  },
+
+  mixins: [BasicContentHelpers, BasicElement]
 
 });
 </script>
