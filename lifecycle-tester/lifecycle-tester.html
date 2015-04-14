@@ -1,0 +1,78 @@
+<!--
+Creates a stack of Polymer/Web Component lifecycle events
+
+@element lifecycle-tester
+@demo http://basic-web-components.github.io/components/lifecycle-tester/
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="lifecycle-tester">
+  <template>
+    <content></content>
+  </template>
+</dom-module>
+<script>
+Polymer({
+
+  is: 'lifecycle-tester',
+
+  created: function() {
+    console.log('lifecycle-tester: created');
+    this.eventStack.push('created');
+    if (this.onCreated) {
+      this.onCreated();
+    }
+  },
+
+  attached: function() {
+    console.log('lifecycle-tester: attached');
+    this.eventStack.push('attached');
+    if (this.onAttached) {
+      this.onAttached();
+    }
+  },
+
+  detached: function() {
+    console.log('lifecycle-tester: detached');
+    this.eventStack.push('detached');
+    if (this.onDetached) {
+      this.onDetached();
+    }
+  },
+
+  ready: function() {
+    console.log('lifecycle-tester: ready');
+    this.eventStack.push('ready');
+    if (this.onReady) {
+      this.onReady();
+    }
+  },
+
+  attributeChanged: function() {
+    console.log('lifecycle-tester: attributeChanged');
+    this.eventStack.push('attributeChanged');
+    if (this.onAttributeChanged) {
+      this.onAttributeChanged();
+    }
+  },
+
+  properties: {
+
+    /**
+     * @attribute fooAttribute
+     * @type number
+     * @default 1
+     */
+    fooAttribute: {
+      type: Number,
+      reflectToAttribute: true,
+      value: 1
+    }
+
+  },
+
+  eventStack: []
+
+});
+</script>
