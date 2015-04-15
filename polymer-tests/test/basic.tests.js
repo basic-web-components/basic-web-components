@@ -1,6 +1,6 @@
 suite('basic', function() {
 
-  this.timeout(20000);
+  this.timeout(2000);
 
   var container = document.getElementById('container');
 
