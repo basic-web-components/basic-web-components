@@ -13,9 +13,18 @@ Creates a stack of Polymer/Web Component lifecycle events
   </template>
 </dom-module>
 <script>
-Polymer({
+var LifecycleTester = Polymer({
 
   is: 'lifecycle-tester',
+
+  constructor: function(onCreated, onReady, onAttached, onAttributeChanged, onDetached) {
+    this.eventStack = [];
+    this.onCreated = onCreated;
+    this.onReady = onReady;
+    this.onAttached = onAttached;
+    this.onAttributeChanged = onAttributeChanged;
+    this.onDetached = onDetached;
+  },
 
   created: function() {
     console.log('lifecycle-tester: created');
