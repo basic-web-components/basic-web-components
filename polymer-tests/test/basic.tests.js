@@ -6,6 +6,11 @@ suite('basic', function() {
 
   teardown(function() {
     container.innerHTML = '';
+    window.createdHook = null;
+    window.readyHook = null;
+    window.attachedHook = null;
+    window.attributeChangedHook = null;
+    window.detachedHook = null;
   });
 
   test('instantiation', function(done) {
@@ -82,6 +87,33 @@ suite('basic', function() {
       flush(function() {
         assert.equal(eventStack.length, 2);
         assert.equal(eventStack[1], 'onDetached');
+        done();
+      });
+    });
+  });
+
+  test('availability of $', function(done) {
+    window.createdHook = function(element) {
+      console.log('createdHook');
+      assert(!element.$);
+    };
+    window.readyHook = function(element) {
+      console.log('readyHook');
+      assert(element.$);
+    };
+    window.attachedHook = function(element) {
+      console.log('attachedHook');
+      assert(element.$);
+    };
+    window.attributeChangedHook = function(element) {
+      console.log('attributeChangedHook');
+      assert(element.$);
+    };
+    var fixture = document.createElement('lifecycle-tester');
+    container.appendChild(fixture);
+    flush(function() {
+      container.innerHTML = '';
+      flush(function() {
         done();
       });
     });

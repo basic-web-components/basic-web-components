@@ -32,6 +32,9 @@ var LifecycleTester = Polymer({
     if (this.onCreated) {
       this.onCreated();
     }
+    if (window.createdHook) {
+      window.createdHook(this);
+    }
   },
 
   attached: function() {
@@ -39,6 +42,9 @@ var LifecycleTester = Polymer({
     this.eventStack.push('attached');
     if (this.onAttached) {
       this.onAttached();
+    }
+    if (window.attachedHook) {
+      window.attachedHook(this);
     }
   },
 
@@ -48,6 +54,9 @@ var LifecycleTester = Polymer({
     if (this.onDetached) {
       this.onDetached();
     }
+    if (window.detachedHook) {
+      window.detachedHook(this);
+    }
   },
 
   ready: function() {
@@ -56,6 +65,9 @@ var LifecycleTester = Polymer({
     if (this.onReady) {
       this.onReady();
     }
+    if (window.readyHook) {
+      window.readyHook(this);
+    }
   },
 
   attributeChanged: function() {
@@ -63,6 +75,9 @@ var LifecycleTester = Polymer({
     this.eventStack.push('attributeChanged');
     if (this.onAttributeChanged) {
       this.onAttributeChanged();
+    }
+    if (window.attributeChangedHook) {
+      window.attributeChangedHook(this);
     }
   },
 
