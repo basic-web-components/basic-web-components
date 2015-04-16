@@ -4,8 +4,7 @@ Shows the selected item as a string.
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
-<polymer-element name="basic-selected-item-string" extends="basic-aspect">
-<template>
+<dom-module id="basic-selected-item-string">
   <style>
   :host(.empty) #text {
     display: none;
@@ -14,11 +13,14 @@ Shows the selected item as a string.
     display: none;
   }
   </style>
-  <div id="text"></div>
-  <div id="default">
-    <content></content>
-  </div>
-</template>
+  <template>
+    <div id="text"></div>
+    <div id="default">
+      <content></content>
+    </div>
+  </template>
+</dom-module>
+
 <script>
 Polymer({
 
@@ -30,8 +32,9 @@ Polymer({
       this.classList.toggle('empty', (text.length === 0));
     }
 
-  }
+  },
+
+  is: 'basic-selected-item-string'
 
 });
 </script>
-</polymer-element>

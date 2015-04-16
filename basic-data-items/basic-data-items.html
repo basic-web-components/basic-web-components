@@ -4,9 +4,8 @@ Aspect for treating an array of data as list items.
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
-<polymer-element name="basic-data-items" extends="basic-aspect" attributes="data">
 <script>
-Polymer({
+Polymer(mixin(BasicAspectMixin, {
 
   attached: function() {
     // HACK: Need to wait for aspect stack to be created before invoking
@@ -33,9 +32,16 @@ Polymer({
 
   },
 
-  // Default implementation will be ovewritten by collective method.
-  itemsChanged: function() {}
+  is: 'basic-data-items',
 
-});
+  // Default implementation will be ovewritten by collective method.
+  itemsChanged: function() {},
+
+  properties: {
+    data: {
+      value: null
+    }
+  }
+
+}));
 </script>
-</polymer-element>
