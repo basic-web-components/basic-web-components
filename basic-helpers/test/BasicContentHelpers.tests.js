@@ -65,9 +65,11 @@ suite('BasicContentHelpers', function() {
     container.appendChild(fixture);
     nestedTestElement.contentChangedHook = function() {
       assert.equal(fixture.textContent, 'Hello');
-      done();
     };
     fixture.textContent = 'Hello';
+    flush(function() {
+      done();
+    });
   });
 
   test.skip('observe changes in child attribute', function(done) {

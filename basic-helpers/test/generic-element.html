@@ -4,8 +4,12 @@
 
 <dom-module id="generic-element">
   <style>
+  :host {
+    display: inline-block;
+  }
+  
   :host([generic=""]) {
-    font-weight: bold;
+    display: block;
   }
   </style>
   <template>

@@ -13,8 +13,8 @@ suite('basic', function() {
     container.appendChild(fixture);
     flush(function() {
       assert(fixture.generic);
-      var fontWeight = getComputedStyle(fixture).fontWeight;
-      assert.equal(fontWeight, 'bold');
+      var display = getComputedStyle(fixture).display;
+      assert.equal(display, 'block');
       done();
     });
   });
@@ -24,8 +24,8 @@ suite('basic', function() {
     fixture.generic = false;
     container.appendChild(fixture);
     flush(function() {
-      var fontWeight = getComputedStyle(fixture).fontWeight;
-      assert.equal(fontWeight, 'normal');
+      var display = getComputedStyle(fixture).display;
+      assert.equal(display, 'inline-block');
       done();
     });
   });
