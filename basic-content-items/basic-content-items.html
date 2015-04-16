@@ -1,0 +1,45 @@
+<!--
+Aspect for treating DOM content as list items.
+-->
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    applySelection: function(item, selected) {
+      item.classList.toggle('selected', selected);
+    },
+
+    contentChanged: function() {
+      if (this.itemsChanged) {
+        this.itemsChanged();
+      }
+    },
+
+    /*
+     * Return the index of the indicated item.
+     */
+    indexOfItem: function(item) {
+      return this.items.indexOf(item);
+    },
+
+    get items() {
+      // TODO: Memoize
+      // TODO: Filter out auxiliary content.
+      // TODO: property notifications so elements can bind to this property
+      return this.content;
+    }
+
+  },
+
+  is: 'basic-content-items',
+
+  // Default implementation does nothing. This will usually be overwritten by
+  // a collective method.
+  itemsChanged: function() {}
+
+}));
+</script>

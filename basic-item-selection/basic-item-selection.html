@@ -1,0 +1,117 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  // Default implementation will be ovwritten with collective method.
+  applySelection: function(item, selected) {},
+
+  contribute: {
+
+    itemsChanged: function() {
+      var selectedItem = this.selectedItem;
+      var selectedItemFound = false;
+      this.items.forEach(function(item) {
+        var itemIsSelectedItem = (item === selectedItem);
+        this.applySelection(item, itemIsSelectedItem);
+        selectedItemFound = selectedItemFound || itemIsSelectedItem;
+      }.bind(this));
+      if (!selectedItemFound) {
+        // Selected item is no longer in the current set of items.
+        this.selectedItem = null;
+      }
+    },
+
+    get selectedItem() {
+      return this._selectedItem;
+    },
+
+    // TODO: Confirm item is in items before selecting.
+    set selectedItem(item) {
+      var previousItem = this._selectedItem;
+      if (previousItem) {
+        // Remove previous selection.
+        this.applySelection(previousItem, false);
+      }
+      this._selectedItem = item;
+      if (item) {
+        this.applySelection(item, true);
+      }
+
+      // var event = new CustomEvent('selected-item-changed', {
+      //   bubbles: true,
+      //   detail: {
+      //     selectedItem: item,
+      //     previousItem: previousItem
+      //   }
+      // });
+      // this.dispatchEvent(event);
+    },
+
+    /**
+     * Return the index of the selected item, or -1 if there is no selection.
+     */
+    get selectedIndex() {
+      var selectedItem = this.selectedItem;
+
+      if (selectedItem == null) {
+        return -1;
+      }
+
+      // TODO: Memoize
+      var index = this.indexOfItem(selectedItem);
+
+      // If index = -1, selection wasn't found. Most likely cause is that the
+      // DOM was manipulated from underneath us.
+      // TODO: Once we track content changes, turn this into an exception.
+      return index;
+    },
+
+    set selectedIndex(index) {
+      var items = this.items;
+      var item;
+      if (index < 0 || items.length === 0) {
+        item = null;
+      } else {
+        item = items[index];
+      }
+      this.selectedItem = item;
+    },
+
+    selectFirst: function() {
+      return this._selectIndex(0);
+    },
+
+    selectLast: function() {
+      return this._selectIndex(this.items.length - 1);
+    },
+
+    selectNext: function() {
+      return this._selectIndex(this.selectedIndex + 1);
+    },
+
+    selectPrevious: function() {
+      return this._selectIndex(this.selectedIndex - 1);
+    }
+
+  },
+
+  is: 'basic-item-selection',
+
+  // Ensure the given index is within bounds, and select it if it's not already
+  // selected.
+  _selectIndex: function(index) {
+    var boundedIndex = Math.max(Math.min(index, this.items.length - 1), 0);
+    var previousIndex = this.selectedIndex;
+    if (previousIndex !== boundedIndex) {
+      this.selectedIndex = boundedIndex;
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  _selectedItem: null
+
+}));
+</script>

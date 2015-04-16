@@ -1,0 +1,63 @@
+<link rel="import" href="../basic-aspect.html">
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    method: function(arg) {
+      results.push(arg + ' one');
+    }
+
+  },
+
+  is: 'aspect-one'
+
+}));
+</script>
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    method: function(arg) {
+      results.push(arg + ' two');
+    }
+
+  },
+
+  is: 'aspect-two'
+
+}));
+</script>
+
+<dom-module id="aspect-one-wrapper">
+  <template>
+    <aspect-one id="inner"></aspect-one>
+  </template>
+</dom-module>
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  hostAttributes: {
+    target: 'shadow'
+  },
+
+  is: 'aspect-one-wrapper'
+
+}));
+</script>
+
+<dom-module id="two-aspects">
+  <template>
+    <aspect-one id="outer" target="child">
+      <aspect-two id="inner"></aspect-two>
+    </aspect-one>
+  </template>
+</dom-module>
+<script>
+Polymer(mixin(BasicAspectMixin, {
+  is: 'two-aspects'
+}));
+</script>

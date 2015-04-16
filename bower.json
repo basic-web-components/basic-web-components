@@ -2,10 +2,14 @@
   "name": "basic-web-components",
   "version": "0.0.4",
   "dependencies": {
+    "core-icons": "Polymer/core-icons#0.8-preview",
     "polymer": "Polymer/polymer#^0.8.0-rc.4"
   },
   "devDependencies": {
     "globalize": "0.x",
     "web-component-tester": "*"
+  },
+  "resolutions": {
+    "polymer": "^0.8.0-rc.4"
   }
 }

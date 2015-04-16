@@ -1,0 +1,159 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<dom-module id="basic-page-dots">
+  <style>
+  :host {
+    display: inline-block;
+    position: relative;
+  }
+
+  #dots {
+    bottom: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .dot {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 7px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    height: 8px;
+    margin: 7px 5px;
+    padding: 0;
+    transition: background 0.2s box-shadow 0.2s;
+    width: 8px;
+  }
+
+  .dot:hover {
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 1px 3px rgba(255, 255, 255, 0.5);
+  }
+
+  .dot.selected {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  @media (min-width: 768px) {
+    .dot {
+      height: 12px;
+      width: 12px;
+    }
+  }
+  </style>
+  <template>
+    <!--
+    REVIEW: These dots aren't buttons, because they're never meant to be used
+    on their own. There should always be some other, more accessible, way to
+    navigate the content.
+    -->
+    <!--
+    <template id="dotTemplate">
+      <div class="dot" on-click="dotClick"></div>
+    </template>
+    -->
+    <!-- TODO: Replace with something that's basically a list box -->
+    <div id="dots"></div>
+    <content></content>
+  </template>
+</dom-module>
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    applySelection: function(item, selected) {
+      var dots = this.dots;
+      if (dots && dots.length > 0) {
+        var index = this.indexOfItem(item);
+        var dot = this.dots[index];
+        if (dot) {
+          dot.classList.toggle('selected', selected);
+        }
+      } else {
+        // HACK: Dots haven't been created yet, because binding hasn't updated.
+        // Wait a tick and try again.
+        var callee = arguments.callee;
+        setTimeout(function() {
+          callee.call(this, item, selected);
+        }.bind(this));
+      }
+    },
+
+    // TODO: Move the requirement for a selction to basic-item-selection. This
+    // should ideally pick the nearest item to the previously-selected item.
+    collectiveChanged: function() {
+      if (this.selectedItem === null && this.items != null && this.selectFirst) {
+        this.selectFirst();
+      }
+    },
+
+    // TODO: Seems like this ultimately belongs in Collective.
+    itemsChanged: function() {
+      // Raise a property change notification so binding can update.
+      // if (Object.getNotifier) {
+      //   Object.getNotifier(this).notify({
+      //     type: "update",
+      //     name: "items"
+      //   });
+      // }
+
+      // TODO: This reports an incorrect number of items if an item is removed.
+      this._createDots(this.items.length);
+    }
+
+  },
+
+  dotClick: function(event) {
+    var dot = event.target;
+    var dotIndex = this.dots.indexOf(dot);
+    if (dotIndex >= 0) {
+      this.selectedIndex = dotIndex;
+    }
+  },
+
+  get dots() {
+    return [].slice.call(this.$.dots.querySelectorAll('.dot'));
+  },
+
+  is: 'basic-page-dots',
+
+  ready: function() {
+    this.$.dots.addEventListener('click', function(event) {
+      this.dotClick(event);
+    }.bind(this));
+  },
+
+  _createDots: function(count) {
+    var dotContainer = this.$.dots;
+    var existingDots = dotContainer.children;
+    var existingDotCount = existingDots.length;
+    if (count == existingDots.length) {
+      return;
+    } else if (existingDots.length > count) {
+      // Remove extra dots.
+      for (var i = count; i < existingDotCount; i++) {
+        var existingDot = existingDots[i];
+        Polymer.dom(dotContainer).removeChild(existingDot);
+      }
+    } else {
+      // Create needed dots.
+      // var dotTemplate = this.$.dotTemplate;
+      for (var i = existingDotCount; i < count; i++) {
+        // var newDot = document.importNode(dotTemplate.content, true);
+        var newDot = document.createElement('div');
+        newDot.classList.add('dot');
+        newDot.setAttribute('style-scope', 'basic-page-dots');
+        dotContainer.appendChild(newDot);
+      }
+    }
+  }
+
+}));
+</script>

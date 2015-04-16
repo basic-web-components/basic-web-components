@@ -1,0 +1,125 @@
+<link rel="import" href="../polymer/polymer.html">
+<script src="../collectives/Collective.js"></script>
+
+<script>
+
+/*
+ * Polymer 0.8 broke support for class inheritance. For now, we define an aspect
+ * as a mixin.
+ */
+
+function mixin() {
+  var result = {};
+  for (var i in arguments) {
+    var obj = arguments[i];
+    Object.getOwnPropertyNames(obj).forEach(function(propertyName) {
+      var descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
+
+      if (typeof descriptor.get === 'function') {
+        // Getter.
+        Object.defineProperty(result, propertyName, {
+          configurable: true,
+          get: descriptor.get
+        });
+      }
+
+      if (typeof descriptor.set === 'function') {
+        // Setter.
+        Object.defineProperty(result, propertyName, {
+          configurable: true,
+          set: descriptor.set
+        });
+      }
+
+      if (descriptor.value) {
+        if (propertyName === 'properties' && result[propertyName]) {
+          result[propertyName] = mixin(result[propertyName], obj[propertyName]);
+        } else {
+          result[propertyName] = obj[propertyName];
+        }
+      }
+    });
+  }
+  return result;
+}
+
+
+BasicAspectMixin = {
+
+  assimilate: function() {
+    this.collective.assimilate.apply(this.collective, arguments);
+  },
+
+  contribute: {
+    // The basic-aspect basic class contributes no members itself, but defines
+    // a contribute property so that it (and any subclass) is recognizable as an
+    // aspect. This will be overwritten by subclasses.
+  },
+
+  created: function() {
+    new Collective(this);
+  },
+
+  properties: {
+    target: {
+      value: null,
+      observer: 'targetChanged'
+    }
+  },
+
+  targetChanged: function(target) {
+    // TODO: Rename "child" -> "firstChild"?
+    if (target === 'child') {
+      var childAspect = this._firstChildAspect();
+      if (childAspect) {
+        this.assimilate(childAspect);
+      } else {
+        // Chances are, the element does have a child aspect, but it hasn't been
+        // upgraded yet, so it's contribute key wasn't found.
+        // HACK: Wait a tick and try again.
+        // TODO: Figure out whether a better way to do this.
+        setTimeout(function() {
+          childAspect = this._firstChildAspect();
+          if (childAspect) {
+            this.assimilate(childAspect);
+          }
+        }.bind(this));
+      }
+    } else if (target === 'nextSibling') {
+      var nextSibling = this.nextSibling;
+      var aspectSiblings = this._filterAspects([nextSibling]);
+      if (aspeccSiblings[0]) {
+        this.assimilate(aspectSiblings[0]);
+      }
+    } else if (target === 'shadow') {
+      var shadowChildren = Polymer.dom(this.root).children;
+      var aspectsInShadow = this._filterAspects(shadowChildren);
+      this.assimilate.apply(this, aspectsInShadow);
+    } else if (target){
+      this.assimilate(target);
+    }
+  },
+
+  // Return the first child with a "contribute" property.
+  _firstChildAspect: function() {
+    var children = Polymer.dom(this).children;
+    var aspectChildren = this._filterAspects(children);
+    return aspectChildren[0];
+  },
+
+  // Return the members of the given elements array which are aspects;
+  // i.e., define a "contribute" property.
+  _filterAspects: function(elements) {
+    return elements.filter(function(element) {
+      return element.contribute != null;
+    });
+  }
+
+}
+
+Polymer(mixin({
+
+  is: 'basic-aspect'
+
+}, BasicAspectMixin));
+</script>

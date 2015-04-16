@@ -1,0 +1,19 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    // TODO: apply aria-role="listbox" to innermost aspect?
+
+    applySelection: function(item, selected) {
+      item.setAttribute('aria-selected', selected);
+    }
+
+  },
+
+  is: 'basic-accessible-list'
+
+}));
+</script>

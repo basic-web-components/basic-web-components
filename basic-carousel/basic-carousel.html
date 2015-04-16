@@ -1,0 +1,54 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
+<link rel="import" href="../basic-swipe-direction/basic-swipe-direction.html">
+<link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
+<link rel="import" href="../basic-item-selection/basic-item-selection.html">
+<link rel="import" href="../basic-accessible-list/basic-accessible-list.html">
+<link rel="import" href="../basic-content-items/basic-content-items.html">
+<link rel="import" href="../basic-children-content/basic-children-content.html">
+<link rel="import" href="../basic-spread-items/basic-spread-items.html">
+
+<dom-module id="basic-carousel">
+  <style>
+  :host {
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  basic-keyboard-direction,
+  basic-swipe-direction,
+  basic-spread-items {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  </style>
+  <template>
+    <basic-direction-selection></basic-direction-selection>
+    <basic-accessible-list></basic-accessible-list>
+    <basic-content-items></basic-content-items>
+    <basic-item-selection></basic-item-selection>
+    <basic-children-content></basic-children-content>
+    <basic-keyboard-direction id="target" tabIndex="0" target="child">
+      <basic-swipe-direction target="child">
+        <basic-spread-items>
+          <content id="content"></content>
+        </basic-spread-items>
+      </basic-swipe-direction>
+    </basic-keyboard-direction>
+  </template>
+</dom-module>
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  hostAttributes: {
+    target: 'shadow'
+  },
+
+  is: 'basic-carousel'
+
+}));
+</script>

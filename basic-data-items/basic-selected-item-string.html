@@ -1,0 +1,37 @@
+<!--
+Shows the selected item as a string.
+-->
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<polymer-element name="basic-selected-item-string" extends="basic-aspect">
+<template>
+  <style>
+  :host(.empty) #text {
+    display: none;
+  }
+  :host(:not(.empty)) #default {
+    display: none;
+  }
+  </style>
+  <div id="text"></div>
+  <div id="default">
+    <content></content>
+  </div>
+</template>
+<script>
+Polymer({
+
+  contribute: {
+
+    set selectedItem(item) {
+      var text = item ? item.toString() : "";
+      this.$.text.textContent = text;
+      this.classList.toggle('empty', (text.length === 0));
+    }
+
+  }
+
+});
+</script>
+</polymer-element>

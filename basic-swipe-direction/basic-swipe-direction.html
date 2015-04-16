@@ -1,0 +1,104 @@
+<!--
+Aspect for treating an array of data as list items.
+-->
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    collectiveChanged: function() {
+      this.position = 0;
+    },
+
+    get position() {
+      return this._position;
+    },
+
+    set position(value) {
+      this._position = value;
+    },
+
+    touchStart: function(event) {
+      var x = event.changedTouches[0].clientX;
+      this._startX = x;
+      this._previousX = x;
+      this._delta = 0;
+    },
+
+    touchMove: function(x) {
+      var x = event.changedTouches[0].clientX;
+      this._trackTo(x);
+    },
+
+    touchEnd: function(x) {
+      var x = event.changedTouches[0].clientX;
+      if (this._delta >= 20) {
+        // Finished going right at high speed.
+        // console.log("flick right " + this._delta);
+        this.goLeft();
+      } else if (this._delta <= -20) {
+        // Finished going left at high speed.
+        // console.log("flick left " + this._delta);
+        this.goRight();
+      } else {
+        // Finished at low speed.
+        // console.log("slow drag " + this._delta);
+        this._trackTo(x);
+        var position = this.position;
+        if (position >= 0.5) {
+          this.goRight();
+        } else if (position <= -0.5) {
+          this.goLeft();
+        }
+      }
+      this.position = 0;
+      this._delta = null;
+    },
+
+  },
+
+  // Default implementations will be ovewritten with collective methods.
+  goLeft: function() {},
+  goRight: function() {},
+
+  is: 'basic-swipe-direction',
+
+  // Default implementations will be ovewritten with collective methods.
+  get position() {},
+  set position(position) {},
+
+  ready: function() {
+    // TODO: touch events could be factored out into their own aspect.
+    this.addEventListener('touchstart', function(event) {
+      this.touchStart(event);
+      event.preventDefault();
+    }.bind(this));
+    this.addEventListener('touchmove', function(event) {
+      this.touchMove(event);
+      event.preventDefault();
+    }.bind(this));
+    this.addEventListener('touchend', function(event) {
+      this.touchEnd(event);
+      event.preventDefault();
+    }.bind(this));
+  },
+
+  _trackTo: function(x) {
+    var width = this.offsetWidth;
+    var dragDistance = this._startX - x;
+    var fraction = width > 0 ?
+      dragDistance / width :
+      0;
+    // var index = this._startIndex + fraction;
+    // this.selectedIndex = index;
+    // this._setSelectedIndex(index);
+    this.position = fraction;
+    this._delta = x - this._previousX;
+    this._previousX = x;
+  },
+
+}));
+</script>

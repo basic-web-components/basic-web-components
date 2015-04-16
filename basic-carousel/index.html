@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>basic-carousel</title>
+  <script src="../components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../basic-arrow-direction/basic-arrow-direction.html">
+  <link rel="import" href="../basic-timer-selection/basic-timer-selection.html">
+  <link rel="import" href="../basic-page-dots/basic-page-dots.html">
+  <link rel="import" href="basic-carousel.html">
+
+  <style>
+  html {
+    height: 100%;
+  }
+
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  body {
+    background: black;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    margin: 0;
+  }
+
+  basic-timer-selection,
+  basic-arrow-direction,
+  basic-page-dots {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  basic-carousel {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  </style>
+
+  <script>
+  document.addEventListener('WebComponentsReady', function() {
+    document.body.removeAttribute('unresolved');
+  });
+  </script>
+</head>
+
+<body unresolved>
+  <basic-arrow-direction target="child">
+    <basic-page-dots target="child">
+      <basic-carousel>
+        <img src="../resources/images/image1.jpg">
+        <img src="../resources/images/image2.jpg">
+        <img src="../resources/images/image6.jpg">
+        <img src="../resources/images/image3.jpg">
+        <img src="../resources/images/image7.jpg">
+      </basic-carousel>
+    </basic-page-dots>
+  </basic-arrow-direction>
+</body>
+
+</html>

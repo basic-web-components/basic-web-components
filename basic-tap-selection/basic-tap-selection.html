@@ -1,0 +1,32 @@
+<link rel="../basic-aspect/basic-aspect.html">
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  is: 'basic-tap-selection',
+
+  ready: function() {
+    this.addEventListener('click', function(event) {
+      this._selectElement(event.target);
+      // event.stopPropagation();
+      // return false;
+    }.bind(this));
+  },
+
+  // Default implementation will be overwritten by collective property.
+  get selectedIndex() {},
+  set selectedIndex(index) {},
+
+  // TODO: Handle the case where a list item has subelements. Walk up the DOM
+  // hierarchy until we find an item in the list, or come back to this element,
+  // in which case the element that was tapped isn't an item (and should be
+  // ignored).
+  _selectElement: function(element) {
+    var index = this.indexOfItem(element);
+    if (index >= 0) {
+      this.selectedIndex = index;
+    }
+  }
+
+}));
+</script>

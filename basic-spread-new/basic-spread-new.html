@@ -1,0 +1,58 @@
+<!--
+Aspect for treating an array of data as list items.
+-->
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+<link rel="import" href="../basic-stack/basic-stack.html">
+
+<dom-module id="basic-spread-new">
+  <style>
+  :host {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+  }
+
+  basic-stack {
+    display: inline-block;
+  }
+  </style>
+  <template>
+    <basic-stack id="stack">
+      <content></content>
+    </basic-stack>
+  </template>
+</dom-module>
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    contentChanged: function() {
+      setTimeout(function() {
+        this.recalc();
+      }.bind(this));
+    }
+
+  },
+
+  hostAttributes: {
+    target: 'shadow'
+  },
+
+  is: 'basic-spread-new',
+
+  recalc: function() {
+    var count = this.content.length;
+    // HACK
+    var stackWidth = this.$.stack.$.stackContainer.clientWidth;
+    this.style.width = (count * stackWidth) + 'px';
+    this.content.forEach(function(element, index) {
+      var offset = index * stackWidth;
+      element.style.transform = 'translateX(' + offset + 'px)';
+    });
+  }
+
+}));
+</script>

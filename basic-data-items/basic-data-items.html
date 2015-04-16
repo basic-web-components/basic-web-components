@@ -1,0 +1,41 @@
+<!--
+Aspect for treating an array of data as list items.
+-->
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<polymer-element name="basic-data-items" extends="basic-aspect" attributes="data">
+<script>
+Polymer({
+
+  attached: function() {
+    // HACK: Need to wait for aspect stack to be created before invoking
+    // initial itemsChanged call.
+    setTimeout(function() {
+      if (this.itemsChanged) {
+        this.itemsChanged();
+      }
+    }.bind(this));
+  },
+
+  contribute: {
+
+    /*
+     * Return the index of the indicated item.
+     */
+    indexOfItem: function(item) {
+      return this.data.indexOf(item);
+    },
+
+    get items() {
+      return this.data;
+    }
+
+  },
+
+  // Default implementation will be ovewritten by collective method.
+  itemsChanged: function() {}
+
+});
+</script>
+</polymer-element>
