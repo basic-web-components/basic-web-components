@@ -10,9 +10,53 @@ stretch the text area.
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../basic-element/basic-element.html">
+
+<script src="../basic-helpers/BasicContentHelpers.js"></script>
+<script src="../basic-helpers/BasicGenericHelpers.js"></script>
 
 <dom-module id="basic-autosize-textarea">
+
+  <style>
+  :host {
+    display: block;
+  }
+
+  #autoSizeContainer {
+    position: relative;
+  }
+
+  /*
+   * Ensure both the text area and copy end up with the element's own font
+   * metrics, so that text will lay out the same in both of them.
+   */
+  #textBox,
+  #copyContainer {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  #textBox {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    resize: none;
+    top: 0;
+    width: 100%;
+  }
+
+  #copyContainer {
+    visibility: hidden;
+    white-space: pre-wrap; /* So lines wrap */
+    word-wrap: break-word; /* So we break at word boundaries when possible */
+  }
+  </style>
+
   <!--
   The invisible div contains an extraSpace element that ensures that, even if the
   last line of the textarea is blank, there will be something in the line that
@@ -23,57 +67,14 @@ stretch the text area.
   fact that, if the user presses the Enter key down, the textarea's content will
   move before the complete text is available. See notes at _keypress.
   -->
-
   <template>
-
-    <style>
-      :host {
-        display: block;
-      }
-
-      #autoSizeContainer {
-        position: relative;
-      }
-
-      /*
-       * Ensure both the text area and copy end up with the element's own font
-       * metrics, so that text will lay out the same in both of them.
-       */
-      #textBox,
-      #copyContainer {
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        font-family: inherit;
-        font-size: inherit;
-        font-style: inherit;
-        font-weight: inherit;
-        line-height: inherit;
-        margin: 0;
-      }
-
-      #textBox {
-        height: 100%;
-        overflow: hidden;
-        position: absolute;
-        resize: none;
-        top: 0;
-        width: 100%;
-      }
-
-      #copyContainer {
-        visibility: hidden;
-        white-space: pre-wrap; /* So lines wrap */
-        word-wrap: break-word; /* So we break at word boundaries when possible */
-      }
-    </style>
-
     <div id="autoSizeContainer">
       <textarea id="textBox" on-keypress="{{_keypress}}" placeholder="{{placeholder}}" value="{{value}}"></textarea>
       <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
     </div>
-
   </template>
 </dom-module>
+
 <script>
 Polymer({
 
@@ -100,12 +101,12 @@ Polymer({
   },
 
   attached: function() {
-    this.BasicElement_attached();
+    BasicContentHelpers.observeContentChanges(this);
     this._initializeWhenRendered();
   },
 
   detached: function() {
-    this.BasicElement_detached();
+    BasicContentHelpers.observeContentChanges(this, false);
   },
 
   // Normally the value of the element is set and read through its value
@@ -130,7 +131,7 @@ Polymer({
     // want to be able to place the opening and closing tags on their own lines.
     // So it seems more helpful to trim whitespace on either side.
     text = text.trim();
-    
+
     this.value = this._unescapeHtml(text);
   },
 
@@ -142,7 +143,7 @@ Polymer({
 
   properties: {
 
-    generic: BasicElement.generic,
+    generic: BasicGenericHelpers.generic,
 
     /**
      * Determines the minimum number of rows shown. This is similar to the rows
@@ -187,7 +188,7 @@ Polymer({
   },
 
   ready: function() {
-    this.BasicElement_ready();
+    BasicGenericHelpers.setGenericDefault(this);
     this.$.textBox.addEventListener('change', function() {
       // Raise our own change event (since change events aren't automatically
       // retargetted).
@@ -303,11 +304,7 @@ Polymer({
       .replace(/&gt;/g, ">")
       .replace(/&quot;/g, '\"')
       .replace(/&#039;/g, '\'');
-  },
+  }
 
-  mixins: [
-    BasicElement,
-    BasicContentHelpers
-  ]
 });
 </script>

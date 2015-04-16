@@ -163,7 +163,7 @@ window.BasicContentHelpers = {
   },
 
   /**
-   * Wwire up a MutationObserver that will invoke an element's contentChanged
+   * Wire up a MutationObserver that will invoke an element's contentChanged
    * handler whenever the element's content changes.
    *
    * In many cases, a component performs processing of its own children: it
