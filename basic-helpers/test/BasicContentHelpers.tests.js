@@ -59,9 +59,8 @@ suite('BasicContentHelpers', function() {
     fixture.textContent = 'Hello';
   });
 
-  test.skip('redistributed content triggers contentChanged', function(done) {
+  test('redistributed content triggers contentChanged', function(done) {
     var fixture = document.createElement('reproject-test');
-    // BUGBUG - with Polymer 0.8, fixture.$ is undefined.
     var nestedTestElement = fixture.$.nestedTestElement;
     container.appendChild(fixture);
     nestedTestElement.contentChangedHook = function() {
@@ -71,7 +70,7 @@ suite('BasicContentHelpers', function() {
     fixture.textContent = 'Hello';
   });
 
-  test('observe changes in child attribute', function(done) {
+  test.skip('observe changes in child attribute', function(done) {
     var fixture = document.createElement('content-test-element');
     var button = document.createElement('button');
     fixture.appendChild(button);
@@ -83,7 +82,7 @@ suite('BasicContentHelpers', function() {
     button.setAttribute('disabled', '');
   });
 
-  test('ignore changes in element\'s own attributes', function(done) {
+  test.skip('ignore changes in element\'s own attributes', function(done) {
     var fixture = document.createElement('content-test-element');
     fixture.contentChangedHook = function() {
       // Shouldn't get invoked.

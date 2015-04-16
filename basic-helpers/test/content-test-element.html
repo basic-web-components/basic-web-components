@@ -2,37 +2,31 @@
 
 <script src="../BasicContentHelpers.js"></script>
 
-<dom-module id="content-test-element">
-</dom-module>
 <script>
-  Polymer({
+Polymer({
 
-    is: 'content-test-element',
+  attached: function() {
+    BasicContentHelpers.observeContentChanges(this);
+  },
 
-    hostAttributes: {
-      sampleAttribute: null
-    },
+  contentChanged: function() {
+    if (this.contentChangedHook) {
+      this.contentChangedHook();
+    }
+  },
 
-    attached: function() {
-      this.observeContentChanges();
-    },
+  detached: function() {
+    BasicContentHelpers.observeContentChanges(this, false);
+    if (this.detachedHook) {
+      this.detachedHook();
+    }
+  },
 
-    contentChanged: function() {
-      if (this.contentChangedHook) {
-        this.contentChangedHook();
-      }
-    },
+  is: 'content-test-element',
 
-    detached: function() {
-      this.observeContentChanges(false);
-      if (this.detachedHook) {
-        this.detachedHook();
-      }
-    },
+  hostAttributes: {
+    sampleAttribute: null
+  }
 
-    mixins: [
-      BasicContentHelpers
-    ]
-
-  });
+});
 </script>
