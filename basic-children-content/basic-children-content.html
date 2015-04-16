@@ -1,5 +1,5 @@
 <link rel="import" href="../basic-aspect/basic-aspect.html">
-<script src="BasicContentHelpers.js"></script>
+<script src="../basic-helpers/BasicContentHelpers.js"></script>
 
 <!--
 TODO: Don't respond to changes in attributes, or at least offer that as an
@@ -66,7 +66,6 @@ Polymer(mixin(BasicAspectMixin, {
   is: 'basic-children-content',
 
   ready: function() {
-    console.log(this.localName + " ready");
     // HACK: Ensure targetChanged (also) happens after ready.
     this.targetChanged(this.target);
   },
