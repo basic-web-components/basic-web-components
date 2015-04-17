@@ -25,22 +25,32 @@ Collective.prototype = {
    * Assimilate any entities specified as arguments, from first to last.
    */
   assimilate: function() {
+
+    var didCollectiveChange = false;
+    var assimilated;
+
     for (var i in arguments) {
+
       var entity = arguments[i];
       if (entity instanceof Collective) {
-        this._assimilateCollective(entity);
+        assimilated = this._assimilateCollective(entity);
       } else if (entity.collective) {
         // Entity is already part of another collective; assimilate that.
-        this._assimilateCollective(entity.collective);
+        assimilated = this._assimilateCollective(entity.collective);
       } else if (typeof entity === 'function') {
         // Assume entity is an aspect class; assimilate an instance.
-        this._assimilateAspect(new entity());
+        assimilated = this._assimilateAspect(new entity());
       }
       else {
-        this._assimilateAspect(entity);
+        assimilated = this._assimilateAspect(entity);
       }
+
+      didCollectiveChange = didCollectiveChange || assimilated;
     }
-    this.invokeMethod('collectiveChanged');
+
+    if (didCollectiveChange) {
+      this.invokeMethod('collectiveChanged');
+    }
   },
 
   innerAspect: function(aspect) {
@@ -153,7 +163,13 @@ Collective.prototype = {
   },
 
   // Assimilate the indicated aspect.
+  // Return true if the aspect was assimilated, false otherwise.
   _assimilateAspect: function(newAspect) {
+
+    if (newAspect.collective === this) {
+      // Already part of this collective.
+      return false;
+    }
 
     // Extract the methods, getters, and setters contributed by the new aspect.
     var newMembers = this._getContributedMembers(newAspect);
@@ -180,10 +196,18 @@ Collective.prototype = {
     };
     this._applyMembersToAspect(collectiveMembers, newAspect);
 
+    return true;
   },
 
   // Assimilate the indicated collective.
+  // Return true if the collective was assimilated, false otherwise.
   _assimilateCollective: function(target) {
+
+    if (target === this) {
+      // Attempting to assimilate the same collective has no effect.
+      return false;
+    }
+
     target.aspects.forEach(function(aspect) {
       this._assimilateAspect(aspect);
     }.bind(this));
@@ -193,6 +217,8 @@ Collective.prototype = {
     // REVIEW: An alternative would be for the assimilated collective to forward
     // all method calls to the assimlating collective.
     target.aspects = [];
+
+    return true;
   },
 
   _invokeImplementations: function(implementations, args) {

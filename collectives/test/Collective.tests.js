@@ -61,7 +61,13 @@ suite('Collective', function() {
     assert.equal(collective2.aspects.length, 0);
   });
 
-  test("assimilating aspect that's already in the same collective has no effect");
+  test("assimilating aspect that's already in the same collective has no effect", function() {
+    var aspect = {};
+    var collective = new Collective(aspect);
+    assert.equal(collective.aspects.length, 1);
+    collective.assimilate(aspect);
+    assert.equal(collective.aspects.length, 1);
+  });
 
   test("collective methods are union of assimilated aspect methods", function() {
     var aspect1 = {
