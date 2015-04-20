@@ -100,6 +100,11 @@ Polymer({
     this.$.textCopy.textContent = this.value;
   },
 
+  created: function() {
+    // BUGBUG - remove. Look at this.textContent and compare in attached callback.
+    var foo = this;
+  },
+
   attached: function() {
     BasicContentHelpers.observeContentChanges(this);
     this._initializeWhenRendered();
@@ -158,7 +163,7 @@ Polymer({
       type: Number,
       reflectToAttribute: true,
       value: 1,
-      observer: this.minimumRowsChanged
+      observer: 'minimumRowsChanged'
     },
 
     /**
@@ -182,7 +187,7 @@ Polymer({
     value: {
       type: String,
       reflectToAttribute: true,
-      observer: this.valueChanged
+      observer: 'valueChanged'
     }
 
   },
