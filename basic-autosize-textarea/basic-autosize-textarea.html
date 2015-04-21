@@ -128,7 +128,7 @@ Polymer({
   // indent the markup so that it looks pretty. We should detect the indentation
   // level and remove any indentation whitespace.
   contentChanged: function() {
-    var text = this.textContent;
+    var text = BasicContentHelpers.flattenTextContent(this);
 
     // Trim the text.
     // This is non-standard textarea behavior. A standard textarea will trim the
@@ -217,6 +217,7 @@ Polymer({
 
   valueChanged: function() {
     this.autoSize();
+    this.dispatchEvent(new CustomEvent('value-changed'));
   },
 
   // Set up once this component has been rendered.

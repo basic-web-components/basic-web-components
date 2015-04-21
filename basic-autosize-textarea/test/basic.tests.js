@@ -17,14 +17,20 @@ suite('basic', function() {
     });
   });
 
-  test('instantiate via innerHTML', function(done) {
+  test('innerHTML becomes value', function(done) {
     container.innerHTML = '<basic-autosize-textarea>Hello</basic-autosize-textarea>';
-    flush(function() {
-      var fixture = container.querySelector('basic-autosize-textarea');
-      var textNode = Polymer.dom(fixture).childNodes[0];
-      assert.equal(textNode.textContent, 'Hello');
+    var fixture = container.querySelector('basic-autosize-textarea');
+    if (fixture.value) {
+      // Native Shadow DOM
+      assert.equal(fixture.value, 'Hello');
       done();
-    });
+    } else {
+      // Shady DOM -- need to wait for value to be set.
+      fixture.addEventListener('value-changed', function() {
+        assert.equal(fixture.value, 'Hello');
+        done();
+      })
+    }
   });
 
   test.skip('default minimumRows', function(done) {
