@@ -16,11 +16,13 @@ suite('basic', function() {
       done();
     });
   });
-  
+
   test('instantiate via innerHTML', function(done) {
-    container.innerHTML = '<basic-autosize-textarea>Type whatever you want here</basic-autosize-textarea>';
+    container.innerHTML = '<basic-autosize-textarea>Hello</basic-autosize-textarea>';
     flush(function() {
-      assert(true);
+      var fixture = container.querySelector('basic-autosize-textarea');
+      var textNode = Polymer.dom(fixture).childNodes[0];
+      assert.equal(textNode.textContent, 'Hello');
       done();
     });
   });
@@ -144,4 +146,3 @@ suite('basic', function() {
   });
 
 });
-
