@@ -16,6 +16,10 @@ Aspect for treating an array of data as list items.
   basic-stack {
     display: inline-block;
   }
+
+  #stack ::content > * {
+    transform: translate(-50%, -50%);
+  }
   </style>
   <template>
     <basic-stack id="stack">
@@ -27,30 +31,30 @@ Aspect for treating an array of data as list items.
 <script>
 Polymer(mixin(BasicAspectMixin, {
 
-  contribute: {
-
-    contentChanged: function() {
-      setTimeout(function() {
-        this.recalc();
-      }.bind(this));
-    }
-
-  },
-
   hostAttributes: {
     target: 'shadow'
   },
 
   is: 'basic-spread-new',
 
+  ready: function() {
+    this.$.stack.addEventListener('basic-layout', function(event) {
+      this._layout(event.detail.width, event.detail.height);
+    }.bind(this));
+  },
+
   recalc: function() {
+    this.$.stack.recalc();
+  },
+
+  _layout: function(width, height) {
     var count = this.content.length;
-    // HACK
-    var stackWidth = this.$.stack.$.stackContainer.clientWidth;
-    this.style.width = (count * stackWidth) + 'px';
+    this.style.width = (count * width) + 'px';
+    this.style.height = height + 'px';
     this.content.forEach(function(element, index) {
-      var offset = index * stackWidth;
-      element.style.transform = 'translateX(' + offset + 'px)';
+      var offset = (index + 0.5) * width;
+      element.style.left = offset + 'px';
+      element.style.top = '50%';
     });
   }
 
