@@ -32,14 +32,17 @@ suite('BasicContentHelpers', function() {
       done();
     };
     container.appendChild(fixture);
-    fixture.innerHTML = '<div>Hello</div';
+    fixture.innerHTML = '<div>Hello</div>';
   });
 
   test('specifying initial content triggers initial contentChanged', function(done) {
     var fixture = document.createElement('content-test-element');
-    fixture.textContent = 'Hello';
+    var textNode = new Text();
+    textNode.textContent = 'Hello'
+    Polymer.dom(fixture).appendChild(textNode);
     fixture.contentChangedHook = function() {
-      assert.equal(fixture.textContent, 'Hello');
+      var textNode = Polymer.dom(fixture).childNodes[0];
+      assert.equal(textNode.textContent, 'Hello');
       done();
     };
     container.appendChild(fixture);
