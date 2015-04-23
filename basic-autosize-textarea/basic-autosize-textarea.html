@@ -69,7 +69,7 @@ stretch the text area.
   -->
   <template>
     <div id="autoSizeContainer">
-      <textarea id="textBox" on-keypress="{{_keypress}}" placeholder="{{placeholder}}" value="{{value}}"></textarea>
+      <textarea id="textBox" on-keypress="_keypress" placeholder="{{placeholder}}" value="{{value}}"></textarea>
       <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
     </div>
   </template>
