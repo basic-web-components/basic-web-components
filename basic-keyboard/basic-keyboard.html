@@ -25,10 +25,16 @@ Polymer(mixin(BasicAspectMixin, {
       }
 
       if (this._previousOutermostAspect) {
+        // Clean up the previous aspect that was handling the keyboard.
+
         if (this._previousTabIndex) {
           // Restore previous tab index.
           this._previousOutermostAspect.setAttribute('tabIndex', this._previousTabIndex);
+        } else {
+          // Aspect didn't have a tab index before, so remove it.
+          this._previousOutermostAspect.removeAttribute('tabIndex');
         }
+
         // Stop listening to events the previous outermost aspect.
         this._previousOutermostAspect.removeEventListener('keydown', this._keydownHandler);
       }
