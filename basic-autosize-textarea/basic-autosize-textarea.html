@@ -103,10 +103,6 @@ Polymer({
   attached: function() {
     BasicContentHelpers.observeContentChanges(this);
     this._initializeWhenRendered();
-
-    if (this.attachedHook) {
-      this.attachedHook();
-    }
   },
 
   detached: function() {

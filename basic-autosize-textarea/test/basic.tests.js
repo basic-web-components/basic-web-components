@@ -81,12 +81,9 @@ suite('basic', function() {
   test('minimumRows can make element taller than required to fit content', function(done) {
     var fixture = document.createElement('basic-autosize-textarea');
     var fixtureComp = document.createElement('basic-autosize-textarea');
-    // BUGBUG - We have to wait for the element's attached callback to be invoked, since
-    // we rely on _initializeWhenRendered to be called prior to our setting the minimumRows
-    // property. Otherwise, the minimumRowsChanged handler does nothing and the tests fail.
-    // Note that on Chrome, attached is called seemingly synchronously after ready, and we could set minimumRows
-    // synchronously after calling container.appendChild. But this will fail on Firefox/Safari.
-    fixture.attachedHook = function() {
+    container.appendChild(fixture);
+    container.appendChild(fixtureComp);
+    flush(function() {
       fixture.minimumRows = 10;
       setInnerHTML(fixture, 'Hello, world');
       flush(function() {
@@ -96,9 +93,7 @@ suite('basic', function() {
         assert(fixture.$.textBox.clientHeight > 2 * fixtureComp.$.textBox.clientHeight);
         done();
       });
-    };
-    container.appendChild(fixture);
-    container.appendChild(fixtureComp);
+    });
   });
 
   test('value changes', function(done) {
