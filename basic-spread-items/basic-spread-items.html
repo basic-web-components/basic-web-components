@@ -6,6 +6,10 @@ Aspect for treating an array of data as list items.
 
 <dom-module id="basic-spread-items">
   <style>
+  :host {
+    display: block;
+  }
+
   #spreadContainer {
     display: -webkit-flex;
     display: flex;
@@ -16,6 +20,7 @@ Aspect for treating an array of data as list items.
   #spreadContainer ::content > * {
     object-fit: contain;
     touch-action: none;
+    height: 100%;
     -webkit-user-drag: none;
     -moz-user-select: none;
     user-select: none;

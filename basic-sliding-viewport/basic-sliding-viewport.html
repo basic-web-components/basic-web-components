@@ -112,7 +112,7 @@ Polymer(mixin(BasicAspectMixin, {
     var fractionalIndex = index + dampenedPosition;
     // Use a percentage so the transform will still work if screen size changes
     // (e.g., if device orientation changes).
-    var left = -(fractionalIndex / count) * 100;
+    var left = -fractionalIndex * 100;
     var transform = 'translateX(' + left + '%)';
     this.$.slidingContainer.style.webkitTransform = transform;
     this.$.slidingContainer.style.transform = transform;
