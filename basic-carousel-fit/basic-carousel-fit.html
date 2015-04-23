@@ -7,10 +7,10 @@
 <link rel="import" href="../basic-accessible-list/basic-accessible-list.html">
 <link rel="import" href="../basic-content-items/basic-content-items.html">
 <link rel="import" href="../basic-children-content/basic-children-content.html">
-<link rel="import" href="../basic-sliding-viewport-new/basic-sliding-viewport-new.html">
-<link rel="import" href="../basic-spread-new/basic-spread-new.html">
+<link rel="import" href="../basic-sliding-viewport-fit/basic-sliding-viewport-fit.html">
+<link rel="import" href="../basic-spread-fit/basic-spread-fit.html">
 
-<dom-module id="basic-carousel-new">
+<dom-module id="basic-carousel-fit">
   <style>
   :host {
     display: inline-block;
@@ -18,14 +18,14 @@
 
   basic-keyboard-direction,
   basic-swipe-direction,
-  basic-sliding-viewport-new {
+  basic-sliding-viewport-fit {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
     flex: 1;
   }
 
-  basic-spread-new {
+  basic-spread-fit {
     height: 100%;
   }
   </style>
@@ -37,11 +37,11 @@
     <basic-children-content></basic-children-content>
     <basic-keyboard-direction id="target" tabIndex="0" target="child">
       <basic-swipe-direction target="child">
-        <basic-sliding-viewport-new id="viewport" target="child">
-          <basic-spread-new id="spread">
+        <basic-sliding-viewport-fit id="viewport" target="child">
+          <basic-spread-fit id="spread">
             <content id="content"></content>
-          </basic-spread-new>
-        </basic-sliding-viewport-new>
+          </basic-spread-fit>
+        </basic-sliding-viewport-fit>
       </basic-swipe-direction>
     </basic-keyboard-direction>
   </template>
@@ -54,7 +54,7 @@ Polymer(mixin(BasicAspectMixin, {
     target: 'shadow'
   },
 
-  is: 'basic-carousel-new',
+  is: 'basic-carousel-fit',
 
   ready: function() {
     this.$.spread.addEventListener('basic-layout', function(event) {

@@ -303,7 +303,7 @@ var JsDiff = (function() {
               var contextSize = Math.min(lines.length, 4);
               ret.push(
                   '@@ -' + oldRangeStart + ',' + (oldLine-oldRangeStart+contextSize)
-                  + ' +' + newRangeStart + ',' + (newLine-newRangeStart+contextSize)
+                  + ' +' + newRangeStart + ',' + (newLine-fitRangeStart+contextSize)
                   + ' @@');
               ret.push.apply(ret, curRange);
               ret.push.apply(ret, contextLines(lines.slice(0, contextSize)));

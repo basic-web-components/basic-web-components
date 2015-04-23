@@ -5,7 +5,7 @@ Aspect for treating an array of data as list items.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 <link rel="import" href="../basic-stack/basic-stack.html">
 
-<dom-module id="basic-spread-new">
+<dom-module id="basic-spread-fit">
   <style>
   :host {
     display: inline-block;
@@ -35,7 +35,7 @@ Polymer(mixin(BasicAspectMixin, {
     target: 'shadow'
   },
 
-  is: 'basic-spread-new',
+  is: 'basic-spread-fit',
 
   ready: function() {
     this.$.stack.addEventListener('basic-layout', function(event) {
