@@ -1,0 +1,64 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    collectiveChanged: function() {
+
+      var outermost = this.collective.outermost;
+      if (outermost === this._previousOutermostAspect) {
+        // Should already be listening to events on the outermost aspect.
+        return;
+      }
+
+      console.log(this.localName + "#" + this.getAttribute('id') + ": new outermost: " + outermost.localName + "#" + outermost.getAttribute('id'));
+      if (this._previousOutermostAspect) {
+        if (this._previousTabIndex) {
+          // Restore previous tab index.
+          this._previousOutermostAspect.setAttribute('tabIndex', this._previousTabIndex);
+        }
+        // Stop listening to events the previous outermost aspect.
+        this._previousOutermostAspect.removeEventListener('keydown', this._keydownListener);
+      }
+
+      if (outermost.getAttribute('tabIndex')) {
+        // Leave existing tab index in place.
+        this._previousTabIndex = null;
+      } else {
+        // Make new outermost aspect focusable.
+        this._previousTabIndex = outermost.getAttribute('tabIndex');
+        outermost.setAttribute('tabIndex', 0);
+      }
+
+      // Start listening to events on the new outermost aspect.
+      if (!this._keydownHandler) {
+        this._keydownHandler = this._keydown.bind(this);
+      }
+      outermost.addEventListener('keydown', this._keydownHandler);
+
+      this._previousOutermostAspect = outermost;
+    }
+
+  },
+
+  is: 'basic-keyboard-input',
+
+  // Default keydown handler will be overwritten by collective method.
+  keydown: function(event) {
+    console.log("keydown: " + event.which);
+  },
+
+  _keydown: function(event) {
+    return this.keydown(event);
+  },
+
+  _keydownHandler: null,
+
+  _previousOutermostAspect: null,
+
+  _previousTabIndex: null
+
+}));
+</script>
