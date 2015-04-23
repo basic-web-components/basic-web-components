@@ -16,6 +16,8 @@ Polymer(mixin(BasicAspectMixin, {
      */
     // TODO: Do we need to start/stop listening when attached/detached, or is
     // that handled automatically?
+    // TODO: Need to listen to events on the outermost aspect that's actually
+    // attached -- ignore aspects that are abstract or not attached.
     collectiveChanged: function() {
 
       var outermost = this.collective.outermost;

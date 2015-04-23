@@ -4,14 +4,41 @@
 // TODO: When we can inherit from basic-aspect again, see note in ready().
 Polymer(mixin(BasicAspectMixin, {
 
-  attached: function() {
-    // TODO: Do we need to stop listening when detached?
-    this.addEventListener('keydown', function(event) {
-      return this._keydown(event);
-    }.bind(this));
-  },
+  contribute: {
 
-  is: 'basic-keyboard-direction',
+    keydown: function(event) {
+
+      var handled = false;
+
+      switch (event.keyCode) {
+        case 35: // End
+          handled = this.goEnd();
+          break;
+        case 36: // Home
+          handled = this.goStart();
+          break;
+        case 37: // Left
+          handled = this.goLeft();
+          break;
+        case 38: // Up
+          handled = event.altKey ? this.goStart() : this.goUp();
+          break;
+        case 39: // Right
+          handled = this.goRight();
+          break;
+        case 40: // Down
+          handled = event.altKey ? this.goEnd() : this.goDown();
+          break;
+      }
+
+      if (handled) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      }
+    }
+
+  },
 
   // Default implementations will be ovewritten with collective methods.
   goDown: function() {},
@@ -21,52 +48,7 @@ Polymer(mixin(BasicAspectMixin, {
   goStart: function() {},
   goUp: function() {},
 
-  ready: function() {
-    // TODO: Uncomment this when we inherit again.
-    // this.super();
-    this.addEventListener('click', function() {
-      this.focus();
-    });
-    this.addEventListener('focus', function() {
-      console.log("basic-keyboard-direction: focus");
-    });
-
-    // this.addFocusIndicatorStyles();
-    // this.makeFocusable();
-  },
-
-  _keydown: function(event) {
-
-    var handled = false;
-    var previousIndex = this.selectedIndex; // HACK: see below.
-
-    switch (event.keyCode) {
-      case 35: // End
-        handled = this.goEnd();
-        break;
-      case 36: // Home
-        handled = this.goStart();
-        break;
-      case 37: // Left
-        handled = this.goLeft();
-        break;
-      case 38: // Up
-        handled = event.altKey ? this.goStart() : this.goUp();
-        break;
-      case 39: // Right
-        handled = this.goRight();
-        break;
-      case 40: // Down
-        handled = event.altKey ? this.goEnd() : this.goDown();
-        break;
-    }
-
-    if (handled) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
-    }
-  }
+  is: 'basic-keyboard-direction'
 
 }));
 </script>
