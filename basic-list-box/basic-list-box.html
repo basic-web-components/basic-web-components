@@ -1,5 +1,6 @@
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
+<link rel="import" href="../basic-keyboard/basic-keyboard.html">
 <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
 <link rel="import" href="../basic-children-content/basic-children-content.html">
 <link rel="import" href="../basic-content-items/basic-content-items.html">
@@ -32,18 +33,19 @@
   }
   </style>
   <template>
+    <basic-keyboard-direction></basic-keyboard-direction>
     <basic-direction-selection></basic-direction-selection>
     <basic-selection-highlight></basic-selection-highlight>
     <basic-accessible-list></basic-accessible-list>
     <basic-content-items></basic-content-items>
     <basic-item-selection></basic-item-selection>
-    <basic-keyboard-direction tabindex="0" target="child">
+    <basic-keyboard target="child">
       <basic-tap-selection target="child">
         <basic-children-content id="itemsContainer">
           <content></content>
         </basic-children-content>
       </basic-tap-selection>
-    </basic-keyboard-direction>
+    </basic-keyboard>
   </template>
 </dom-module>
 

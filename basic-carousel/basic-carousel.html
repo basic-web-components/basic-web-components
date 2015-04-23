@@ -1,5 +1,6 @@
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
+<link rel="import" href="../basic-keyboard/basic-keyboard.html">
 <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
 <link rel="import" href="../basic-swipe-direction/basic-swipe-direction.html">
 <link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
@@ -17,7 +18,7 @@
     display: flex;
   }
 
-  basic-keyboard-direction,
+  basic-keyboard,
   basic-swipe-direction,
   basic-sliding-viewport {
     display: -webkit-flex;
@@ -31,12 +32,13 @@
   }
   </style>
   <template>
+    <basic-keyboard-direction></basic-keyboard-direction>
     <basic-direction-selection></basic-direction-selection>
     <basic-accessible-list></basic-accessible-list>
     <basic-content-items></basic-content-items>
     <basic-item-selection></basic-item-selection>
     <basic-children-content></basic-children-content>
-    <basic-keyboard-direction id="target" tabIndex="0" target="child">
+    <basic-keyboard target="child">
       <basic-swipe-direction target="child">
         <basic-sliding-viewport target="child">
           <basic-spread-items>
@@ -44,7 +46,7 @@
           </basic-spread-items>
         </basic-sliding-viewport>
       </basic-swipe-direction>
-    </basic-keyboard-direction>
+    </basic-keyboard>
   </template>
 </dom-module>
 
