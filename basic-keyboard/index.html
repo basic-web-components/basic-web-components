@@ -22,8 +22,21 @@
     margin: 0;
     padding: 2em; /* Until we use basic-framed-content again */
   }
-
   </style>
+
+  <script>
+  var keyboardLogAspect = {
+    contribute: {
+      keydown: function(event) {
+        console.log("keydown " + event.which);
+      }
+    }
+  };
+
+  document.addEventListener('WebComponentsReady', function() {
+    new Collective(document.querySelector('basic-aspect'), keyboardLogAspect);
+  });
+  </script>
 
 </head>
 

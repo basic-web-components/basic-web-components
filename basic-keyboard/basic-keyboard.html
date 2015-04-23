@@ -58,6 +58,14 @@ Polymer(mixin(BasicAspectMixin, {
   // Default keydown handler will be overwritten by collective method.
   keydown: function(event) {},
 
+  // ready: function() {
+  //   // TODO: Uncomment this when we inherit again.
+  //   // this.super();
+  //   this.addEventListener('click', function() {
+  //     this.focus();
+  //   });
+  // },
+
   _keydown: function(event) {
     return this.keydown(event);
   },
