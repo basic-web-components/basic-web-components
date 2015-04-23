@@ -4,6 +4,7 @@
 <dom-module id="basic-arrow-direction">
   <style>
   :host {
+    display: inline-block;
     position: relative;
   }
 
@@ -30,11 +31,11 @@
     z-index: 1;
   }
   .navigationButton:hover:not(:disabled) {
-    background: rgba( 0, 0, 0, 0.1 );
+    background: rgba( 0, 0, 0, 0.5 );
     fill: rgba( 0, 0, 0, 0.7 );
   }
   .navigationButton:active:not(:disabled) {
-    background: rgba( 0, 0, 0, 0.2 );
+    background: rgba( 0, 0, 0, 0.7 );
     fill: rgba( 0, 0, 0, 0.9 );
   }
   .navigationButton:disabled {

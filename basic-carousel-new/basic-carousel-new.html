@@ -1,0 +1,68 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
+<link rel="import" href="../basic-swipe-direction/basic-swipe-direction.html">
+<link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
+<link rel="import" href="../basic-item-selection/basic-item-selection.html">
+<link rel="import" href="../basic-accessible-list/basic-accessible-list.html">
+<link rel="import" href="../basic-content-items/basic-content-items.html">
+<link rel="import" href="../basic-children-content/basic-children-content.html">
+<link rel="import" href="../basic-sliding-viewport/basic-sliding-viewport.html">
+<link rel="import" href="../basic-spread-new/basic-spread-new.html">
+
+<dom-module id="basic-carousel-new">
+  <style>
+  :host {
+    display: inline-block;
+  }
+
+  basic-keyboard-direction,
+  basic-swipe-direction,
+  basic-sliding-viewport {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  basic-spread-new {
+    height: 100%;
+  }
+  </style>
+  <template>
+    <basic-direction-selection></basic-direction-selection>
+    <basic-accessible-list></basic-accessible-list>
+    <basic-content-items></basic-content-items>
+    <basic-item-selection></basic-item-selection>
+    <basic-children-content></basic-children-content>
+    <basic-keyboard-direction id="target" tabIndex="0" target="child">
+      <basic-swipe-direction target="child">
+        <basic-sliding-viewport id="viewport" target="child">
+          <basic-spread-new id="spread">
+            <content id="content"></content>
+          </basic-spread-new>
+        </basic-sliding-viewport>
+      </basic-swipe-direction>
+    </basic-keyboard-direction>
+  </template>
+</dom-module>
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  hostAttributes: {
+    target: 'shadow'
+  },
+
+  is: 'basic-carousel-new',
+
+  ready: function() {
+    this.$.spread.addEventListener('basic-layout', function(event) {
+      var viewport = this.$.viewport;
+      viewport.style.width = event.detail.width + 'px';
+      viewport.style.height = event.detail.height + 'px';
+    }.bind(this));
+  }
+
+}));
+</script>
