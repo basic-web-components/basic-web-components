@@ -4,8 +4,8 @@
 <dom-module id="basic-arrow-direction">
   <style>
   :host {
-    display: inline-block;
-    position: relative;
+    display: -webkit-inline-flex;
+    display: inline-flex;
   }
 
   #arrowNavigationContainer {
@@ -18,18 +18,16 @@
   .navigationButton {
     background: transparent;
     border: 1px solid transparent;
-    bottom: 0;
     box-sizing: border-box;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.5);
     margin: 0;
     opacity: 1;
     outline: none; /* REVIEW: Accessibility should be provided by other aspects. */
     padding: 0;
-    position: absolute;
-    top: 0;
     transition: opacity 1s;
     z-index: 1;
   }
+
   .navigationButton:hover:not(:disabled) {
     background: rgba( 0, 0, 0, 0.5 );
     fill: rgba( 0, 0, 0, 0.7 );
@@ -48,19 +46,29 @@
     visibility: hidden;
   }
 
-  #buttonLeft {
-    left: 0;
-  }
-  #buttonRight {
-    right: 0;
-  }
-
   .navigationButton core-icon {
     /* TODO: Remove once core-icon properly defines the -webkit display value. */
     display: -webkit-inline-flex;
     display: inline-flex;
     height: 48px;
     width: 48px;
+  }
+
+  /* Overlay variant */
+  :host(.overlay) {
+    position: relative;
+  }
+  :host(.overlay) .navigationButton {
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+  }
+  :host(.overlay) #buttonLeft {
+    left: 0;
+  }
+  :host(.overlay) #buttonRight {
+    right: 0;
   }
   </style>
   <template>
