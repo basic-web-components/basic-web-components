@@ -100,14 +100,13 @@ Polymer({
     this.$.textCopy.textContent = this.value;
   },
 
-  created: function() {
-    // BUGBUG - remove. Look at this.textContent and compare in attached callback.
-    var foo = this;
-  },
-
   attached: function() {
     BasicContentHelpers.observeContentChanges(this);
     this._initializeWhenRendered();
+
+    if (this.attachedHook) {
+      this.attachedHook();
+    }
   },
 
   detached: function() {
