@@ -4,10 +4,11 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>basic-keyboard-input</title>
+  <title>basic-keyboard</title>
 
   <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="basic-keyboard-input.html">
+  <link rel="import" href="../basic-aspect/basic-aspect.html">
+  <link rel="import" href="basic-keyboard.html">
 
   <style>
   body,
@@ -27,11 +28,11 @@
 </head>
 
 <body>
-  <basic-keyboard-input id="outer" target="child">
-    <basic-keyboard-input id="inner">
+  <basic-aspect id="outer" target="child">
+    <basic-keyboard id="inner">
       This element handles keyboard events.
-    </basic-keyboard-input>
-  </basic-keyboard-input>
+    </basic-keyboard>
+  </basic-aspect>
 </body>
 
 </html>

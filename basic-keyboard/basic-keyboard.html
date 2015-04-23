@@ -1,3 +1,7 @@
+<!--
+Manage keyboard focus indication and keydown handling for a collective.
+-->
+
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
@@ -5,6 +9,13 @@ Polymer(mixin(BasicAspectMixin, {
 
   contribute: {
 
+    /*
+     * When the collective changes, stop listening for keyboard events on
+     * whichever aspect was previously the outermost aspect, and start listening
+     * to keyboard events on whichever aspect is now the new outermost aspect.
+     */
+    // TODO: Do we need to start/stop listening when attached/detached, or is
+    // that handled automatically?
     collectiveChanged: function() {
 
       var outermost = this.collective.outermost;
@@ -13,14 +24,13 @@ Polymer(mixin(BasicAspectMixin, {
         return;
       }
 
-      console.log(this.localName + "#" + this.getAttribute('id') + ": new outermost: " + outermost.localName + "#" + outermost.getAttribute('id'));
       if (this._previousOutermostAspect) {
         if (this._previousTabIndex) {
           // Restore previous tab index.
           this._previousOutermostAspect.setAttribute('tabIndex', this._previousTabIndex);
         }
         // Stop listening to events the previous outermost aspect.
-        this._previousOutermostAspect.removeEventListener('keydown', this._keydownListener);
+        this._previousOutermostAspect.removeEventListener('keydown', this._keydownHandler);
       }
 
       if (outermost.getAttribute('tabIndex')) {
@@ -43,12 +53,10 @@ Polymer(mixin(BasicAspectMixin, {
 
   },
 
-  is: 'basic-keyboard-input',
+  is: 'basic-keyboard',
 
   // Default keydown handler will be overwritten by collective method.
-  keydown: function(event) {
-    console.log("keydown: " + event.which);
-  },
+  keydown: function(event) {},
 
   _keydown: function(event) {
     return this.keydown(event);
