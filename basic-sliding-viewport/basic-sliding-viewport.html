@@ -7,36 +7,24 @@ Aspect for treating an array of data as list items.
 <dom-module id="basic-sliding-viewport">
   <style>
   :host {
-    display: -webkit-flex;
-    display: flex;
+    display: block;
     overflow: hidden;
     position: relative;
   }
 
-  #spreadContainer {
-    display: -webkit-flex;
-    display: flex;
+  #slidingContainer {
     height: 100%;
     position: absolute;
     will-change: transform;
   }
 
-  :host(.snapTransition) #spreadContainer {
+  :host(.snapTransition) #slidingContainer {
     -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
   }
-
-  #spreadContainer ::content > * {
-    object-fit: contain;
-    touch-action: none;
-    -webkit-user-drag: none;
-    -moz-user-select: none;
-    user-select: none;
-    width: 100%;
-  }
   </style>
   <template>
-    <div id="spreadContainer">
+    <div id="slidingContainer">
       <content></content>
     </div>
   </template>
@@ -50,7 +38,6 @@ Polymer(mixin(BasicAspectMixin, {
     itemsChanged: function() {
       var items = this.items;
       this.count = items.length;
-      this.$.spreadContainer.style.width = (this.count * 100) + '%';
       if (!this.selectedItem) {
         this.selectedItem = items[0];
       } else {
@@ -127,8 +114,8 @@ Polymer(mixin(BasicAspectMixin, {
     // (e.g., if device orientation changes).
     var left = -(fractionalIndex / count) * 100;
     var transform = 'translateX(' + left + '%)';
-    this.$.spreadContainer.style.webkitTransform = transform;
-    this.$.spreadContainer.style.transform = transform;
+    this.$.slidingContainer.style.webkitTransform = transform;
+    this.$.slidingContainer.style.transform = transform;
   },
 
   /*

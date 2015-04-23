@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>basic-spread-items</title>
   <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../basic-aspect/basic-aspect.html">
   <link rel="import" href="../basic-content-items/basic-content-items.html">
+  <link rel="import" href="../basic-children-content/basic-children-content.html">
   <link rel="import" href="basic-spread-items.html">
 
   <style>
@@ -23,18 +23,23 @@
   }
 
   body {
-    display: -webkit-flex;
-    display: flex;
+    align-items: center;
     height: 100%;
     margin: 0;
   }
 
+  body,
   basic-content-items,
-  basic-spread-items {
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-flex: 1;
-    flex: 1;
+  basic-children-content {
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  basic-content-items,
+  basic-children-content,
+  basic-spread-items,
+  img {
+    height: 100%;
   }
   </style>
 
@@ -42,13 +47,15 @@
 
 <body>
   <basic-content-items target="child">
-    <basic-spread-items>
-      <img src="../resources/images/image1.jpg">
-      <img src="../resources/images/image2.jpg">
-      <img src="../resources/images/image6.jpg">
-      <img src="../resources/images/image3.jpg">
-      <img src="../resources/images/image7.jpg">
-    </basic-spread-items>
+    <basic-children-content target="child">
+      <basic-spread-items>
+        <img src="../resources/images/image1.jpg">
+        <img src="../resources/images/image2.jpg">
+        <img src="../resources/images/image6.jpg">
+        <img src="../resources/images/image3.jpg">
+        <img src="../resources/images/image7.jpg">
+      </basic-spread-items>
+    </basic-children-content>
   </basic-content-items>
 </body>
 
