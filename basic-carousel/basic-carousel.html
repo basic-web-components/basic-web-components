@@ -7,7 +7,7 @@
 <link rel="import" href="../basic-accessible-list/basic-accessible-list.html">
 <link rel="import" href="../basic-content-items/basic-content-items.html">
 <link rel="import" href="../basic-children-content/basic-children-content.html">
-<link rel="import" href="../basic-spread-items/basic-spread-items.html">
+<link rel="import" href="../basic-sliding-viewport/basic-sliding-viewport.html">
 
 <dom-module id="basic-carousel">
   <style>
@@ -18,7 +18,7 @@
 
   basic-keyboard-direction,
   basic-swipe-direction,
-  basic-spread-items {
+  basic-sliding-viewport {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
@@ -33,9 +33,9 @@
     <basic-children-content></basic-children-content>
     <basic-keyboard-direction id="target" tabIndex="0" target="child">
       <basic-swipe-direction target="child">
-        <basic-spread-items>
+        <basic-sliding-viewport>
           <content id="content"></content>
-        </basic-spread-items>
+        </basic-sliding-viewport>
       </basic-swipe-direction>
     </basic-keyboard-direction>
   </template>
