@@ -4,7 +4,7 @@ Aspect for treating an array of data as list items.
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
-<dom-module id="basic-sliding-viewport">
+<dom-module id="basic-sliding-viewport-new">
   <style>
   :host {
     display: block;
@@ -68,7 +68,7 @@ Polymer(mixin(BasicAspectMixin, {
 
   },
 
-  is: 'basic-sliding-viewport',
+  is: 'basic-sliding-viewport-new',
 
   ready: function() {
     this.classList.add('snapTransition');
@@ -112,8 +112,8 @@ Polymer(mixin(BasicAspectMixin, {
     var fractionalIndex = index + dampenedPosition;
     // Use a percentage so the transform will still work if screen size changes
     // (e.g., if device orientation changes).
-    var left = -fractionalIndex * 100;
-    // var left = -(fractionalIndex / count) * 100;
+    // var left = -fractionalIndex * 100;
+    var left = -(fractionalIndex / count) * 100;
     var transform = 'translateX(' + left + '%)';
     this.$.slidingContainer.style.webkitTransform = transform;
     this.$.slidingContainer.style.transform = transform;
