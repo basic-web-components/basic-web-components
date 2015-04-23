@@ -34,7 +34,7 @@
   };
 
   document.addEventListener('WebComponentsReady', function() {
-    new Collective(document.querySelector('basic-aspect'), keyboardLogAspect);
+    new Collective(keyboardLogAspect, document.querySelector('basic-aspect'));
   });
   </script>
 

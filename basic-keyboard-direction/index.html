@@ -40,7 +40,7 @@
       goLeft: function() {
         console.log("Left");
       },
-      
+
       goRight: function() {
         console.log("Right");
       },
@@ -57,7 +57,7 @@
   };
 
   document.addEventListener('WebComponentsReady', function() {
-    new Collective(document.querySelector('basic-keyboard'), directionLogAspect);
+    new Collective(directionLogAspect, document.querySelector('basic-keyboard'));
   });
   </script>
 

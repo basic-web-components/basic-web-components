@@ -98,6 +98,17 @@ Collective.prototype = {
     return this.aspects[0];
   },
 
+  /* Return the outermost aspect which is actaully attached. */
+  get outermostAttached() {
+    var aspects = this.aspects;
+    for (i = 0, length = aspects.length; i < length; i++) {
+      if (aspects[i].parentNode) {
+        return aspects[i];
+      }
+    }
+    return null;
+  },
+
   _addCollectiveGetterToAspect: function(aspect, getterName) {
     // Because a collective getter only ever invokes the outermost
     // implementation, we can just apply that (bound) implementation to the
