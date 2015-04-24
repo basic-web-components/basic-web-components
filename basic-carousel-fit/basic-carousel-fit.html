@@ -2,6 +2,7 @@
 
 <link rel="import" href="../basic-keyboard/basic-keyboard.html">
 <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
+<link rel="import" href="../basic-trackpad-direction/basic-trackpad-direction.html">
 <link rel="import" href="../basic-swipe-direction/basic-swipe-direction.html">
 <link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
 <link rel="import" href="../basic-item-selection/basic-item-selection.html">
@@ -18,6 +19,7 @@
   }
 
   basic-keyboard,
+  basic-trackpad-direction,
   basic-swipe-direction,
   basic-sliding-viewport-fit {
     display: -webkit-flex;
@@ -38,13 +40,15 @@
     <basic-item-selection></basic-item-selection>
     <basic-children-content></basic-children-content>
     <basic-keyboard target="child">
-      <basic-swipe-direction target="child">
-        <basic-sliding-viewport-fit id="viewport" target="child">
-          <basic-spread-fit id="spread">
-            <content id="content"></content>
-          </basic-spread-fit>
-        </basic-sliding-viewport-fit>
-      </basic-swipe-direction>
+      <basic-trackpad-direction target="child">
+        <basic-swipe-direction target="child">
+          <basic-sliding-viewport-fit id="viewport" target="child">
+            <basic-spread-fit id="spread">
+              <content id="content"></content>
+            </basic-spread-fit>
+          </basic-sliding-viewport-fit>
+        </basic-swipe-direction>
+      </basic-trackpad-direction>
     </basic-keyboard>
   </template>
 </dom-module>

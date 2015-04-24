@@ -1,0 +1,40 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<script>
+// TODO: When we can inherit from basic-aspect again, see note in ready().
+Polymer(mixin(BasicAspectMixin, {
+
+  // Default implementations will be ovewritten with collective methods.
+  goLeft: function() {},
+  goRight: function() {},
+
+  is: 'basic-trackpad-direction',
+
+  ready: function() {
+    this.addEventListener('wheel', function(event) {
+      this._wheel(event.deltaX);
+      event.preventDefault();
+    }.bind(this));
+
+    this._wheelDistance = 0;
+  },
+
+  // TODO: Set a timeout of .5 or 1 second. If user doesn't wheel again in that
+  // time, reset _wheelDistance to 0.
+  _wheel: function(deltaX) {
+    this._wheelDistance += deltaX;
+    if (Math.abs(this._wheelDistance) >= this.wheelThreshold) {
+      var goLeft = this._wheelDistance < 0;
+      this._wheelDistance = 0;
+      if (goLeft) {
+        this.goLeft();
+      } else {
+        this.goRight();
+      }
+    }
+  },
+
+  wheelThreshold: 300
+
+}));
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-trackpad-direction</title>
+  <link rel="import" href="../basic-aspect/basic-aspect.html">
+  <link rel="import" href="basic-trackpad-direction.html">
+
+  <style>
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+  }
+  </style>
+
+  <dom-module id="counter-aspect">
+    <style>
+    :host {
+      font-size: 72px;
+    }
+    </style>
+    <template>
+      <div id="count">{{count}}</div>
+    </template>
+  </dom-module>
+  <script>
+  Polymer({
+
+    contribute: {
+      goLeft: function() {
+        this.count--;
+      },
+      goRight: function() {
+        this.count++;
+      }
+    },
+
+    is: 'counter-aspect',
+
+    properties: {
+      count: {
+        value: 0
+      }
+    }
+
+  })
+  </script>
+
+</head>
+
+<body>
+  <basic-trackpad-direction target="child">
+    <counter-aspect></counter-aspect>
+  </basic-trackpad-direction>
+</body>
+
+</html>
