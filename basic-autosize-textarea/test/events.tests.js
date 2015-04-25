@@ -4,15 +4,6 @@ suite('events', function() {
 
   var container = document.getElementById('container');
 
-  function setInnerHTML(elem, text) {
-    var textNode = document.createTextNode(text);
-    var children = Polymer.dom(elem).childNodes;
-    for (var i = 0; i < children.length; i++) {
-      Polymer.dom(elem).removeChild(children[i]);
-    }
-    Polymer.dom(elem).appendChild(textNode);
-  }
-
   teardown(function () {
     container.innerHTML = '';
   });
@@ -47,7 +38,7 @@ suite('events', function() {
       });
 
       // Set the new text and flush the browser
-      setInnerHTML(fixture, newText);
+      fixture.value = newText;
       flush(function() {
         fixture.dispatchEvent(new CustomEvent('change'));
       });

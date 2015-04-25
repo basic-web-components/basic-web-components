@@ -69,7 +69,7 @@ stretch the text area.
   -->
   <template>
     <div id="autoSizeContainer">
-      <textarea id="textBox" on-keypress="_keypress" placeholder="{{placeholder}}" value="{{value}}"></textarea>
+      <textarea id="textBox" on-keypress="_keypress" placeholder="{{placeholder}}" value="{{value::input}}"></textarea>
       <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
     </div>
   </template>
@@ -100,6 +100,12 @@ Polymer({
     this.$.textCopy.textContent = this.value;
   },
 
+  created: function() {
+    // Store the initial text content of the element so we can set the initial value
+    // property in the contentChanged handler.
+    this._initialTextContent = this.textContent;
+  },
+
   attached: function() {
     BasicContentHelpers.observeContentChanges(this);
     this._initializeWhenRendered();
@@ -114,25 +120,26 @@ Polymer({
   // it is possible to set the content of the textarea by including text between
   // the opening and closing tag. This works only in one direction: setting
   // the tag content updates the textarea, but user edits in the textarea are
-  // not reflected in the tag content. A standard textarea will only use this
-  // tag content as the initial content; updates to tag content do not get
-  // reflected in the textarea. This element, however, allows later changes to
-  // tag content to update the textarea. (There doesn't seem to be a downside to
-  // doing so.
+  // not reflected in the tag content. A standard textarea will use this
+  // tag content only as the initial content; updates to tag content do not get
+  // reflected in the textarea. We capture the value of the initial text content
+  // in order to set the value property during the create event, and we set
+  // the value property here in the initial content changed event.
   // TODO: Normalize indentation in the text content. Users will often want to
   // indent the markup so that it looks pretty. We should detect the indentation
   // level and remove any indentation whitespace.
   contentChanged: function() {
-    var text = BasicContentHelpers.flattenTextContent(this);
+    if (this._initialTextContent) {
+      // Trim the text.
+      // This is non-standard textarea behavior. A standard textarea will trim the
+      // first character if it's a newline, but that's it. However,  authors will
+      // want to be able to place the opening and closing tags on their own lines.
+      // So it seems more helpful to trim whitespace on either side.
+      var text = this._initialTextContent.trim();
 
-    // Trim the text.
-    // This is non-standard textarea behavior. A standard textarea will trim the
-    // first character if it's a newline, but that's it. However,  authors will
-    // want to be able to place the opening and closing tags on their own lines.
-    // So it seems more helpful to trim whitespace on either side.
-    text = text.trim();
-
-    this.value = this._unescapeHtml(text);
+      this.value = this._unescapeHtml(text);
+      this._initialTextContent = null;
+    }
   },
 
   minimumRowsChanged: function() {
@@ -182,6 +189,7 @@ Polymer({
     value: {
       type: String,
       reflectToAttribute: true,
+      notify: true,
       observer: 'valueChanged'
     }
 
