@@ -8,15 +8,13 @@ Polymer(mixin(BasicAspectMixin, {
 
   contribute: {
 
+    itemAdded: function(item) {
+      this.applySelection(item, false);
+    },
+
     itemsChanged: function() {
-      var selectedItem = this.selectedItem;
-      var selectedItemFound = false;
-      this.items.forEach(function(item) {
-        var itemIsSelectedItem = (item === selectedItem);
-        this.applySelection(item, itemIsSelectedItem);
-        selectedItemFound = selectedItemFound || itemIsSelectedItem;
-      }.bind(this));
-      if (!selectedItemFound) {
+      var index = this.items.indexOf(this.selectedItem);
+      if (index < 0) {
         // Selected item is no longer in the current set of items.
         this.selectedItem = null;
       }

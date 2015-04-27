@@ -26,6 +26,16 @@ Polymer(mixin(BasicAspectMixin, {
       return this.items.indexOf(item);
     },
 
+    itemsChanged: function() {
+      // Perform per-item initialization.
+      this.items.forEach(function(item) {
+        if (!item._itemInitialized) {
+          this.itemAdded(item);
+          item._itemInitialized = true;
+        }
+      }.bind(this));
+    },
+
     get items() {
       // TODO: Memoize
       // TODO: Filter out auxiliary content.
@@ -37,8 +47,9 @@ Polymer(mixin(BasicAspectMixin, {
 
   is: 'basic-content-items',
 
-  // Default implementation does nothing. This will usually be overwritten by
-  // a collective method.
+  // Default implementations do nothing. These will usually be overwritten by
+  // collective methods.
+  itemAdded: function() {},
   itemsChanged: function() {}
 
 }));

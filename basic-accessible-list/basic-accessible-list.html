@@ -9,7 +9,6 @@ Polymer(mixin(BasicAspectMixin, {
 
     applySelection: function(item, selected) {
       item.setAttribute('aria-selected', selected);
-      item.setAttribute('role', 'option');
     },
 
     // Ensure the outermost aspect has role="listbox".
@@ -29,6 +28,10 @@ Polymer(mixin(BasicAspectMixin, {
       outermost.setAttribute('role', 'listbox');
 
       this._previousOutermostAspect = outermost;
+    },
+
+    itemAdded: function(item) {
+      item.setAttribute('role', 'option');
     }
 
   },
