@@ -72,6 +72,7 @@ stretch the text area.
       <textarea id="textBox" on-keypress="_keypress" placeholder="{{placeholder}}" value="{{value::input}}"></textarea>
       <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
     </div>
+    <content></content>
   </template>
 </dom-module>
 
@@ -100,21 +101,6 @@ Polymer({
     this.$.textCopy.textContent = this.value;
   },
 
-  created: function() {
-    // Store the initial text content of the element so we can set the initial value
-    // property in the contentChanged handler.
-    this._initialTextContent = this.textContent;
-  },
-
-  attached: function() {
-    BasicContentHelpers.observeContentChanges(this);
-    this._initializeWhenRendered();
-  },
-
-  detached: function() {
-    BasicContentHelpers.observeContentChanges(this, false);
-  },
-
   // Normally the value of the element is set and read through its value
   // attribute. As a convenience, and to mirror standard textarea behavior,
   // it is possible to set the content of the textarea by including text between
@@ -127,19 +113,30 @@ Polymer({
   // the value property here in the initial content changed event.
   // TODO: Normalize indentation in the text content. Users will often want to
   // indent the markup so that it looks pretty. We should detect the indentation
-  // level and remove any indentation whitespace.
-  contentChanged: function() {
-    if (this._initialTextContent) {
-      // Trim the text.
-      // This is non-standard textarea behavior. A standard textarea will trim the
-      // first character if it's a newline, but that's it. However,  authors will
-      // want to be able to place the opening and closing tags on their own lines.
-      // So it seems more helpful to trim whitespace on either side.
-      var text = this._initialTextContent.trim();
+  // level and remove any indentation whitespace
+  // TODO: Consider using content innerHTML rather than plain text. The native
+  // textarea element will include HTML, not just the stripped text, as initial
+  // value property text.
+  attached: function() {
+    var text = BasicContentHelpers.flattenTextContent(this);
+    BasicContentHelpers.removeLightDomNodes(this);
 
+    // Trim the text.
+    // This is non-standard textarea behavior. A standard textarea will trim the
+    // first character if it's a newline, but that's it. However,  authors will
+    // want to be able to place the opening and closing tags on their own lines.
+    // So it seems more helpful to trim whitespace on either side.
+    text = text.trim();
+
+    // If a value is provided as part of initialization, we will not overwrite
+    // it with content. The value property takes precedence. Do not set the value
+    // here unless necessary as it will establish a lineheight of zero if set
+    // to the empty string.
+    if (!this.value && text.length) {
       this.value = this._unescapeHtml(text);
-      this._initialTextContent = null;
     }
+
+    this._initializeWhenRendered();
   },
 
   minimumRowsChanged: function() {

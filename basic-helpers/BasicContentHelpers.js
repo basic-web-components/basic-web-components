@@ -131,6 +131,20 @@ window.BasicContentHelpers = {
   },
 
   /*
+   * Removes nodes distributed to <content></content>
+   */
+  removeLightDomNodes: function(node) {
+    var content = Polymer.dom(node.root).querySelector('content');
+    var distributedNodes = Polymer.dom(content).getDistributedNodes();
+    if (!distributedNodes) {
+      return;
+    }
+    for (var i = 0; i < distributedNodes.length; i++) {
+      Polymer.dom(node).removeChild(distributedNodes[i]);
+    }
+  },
+
+  /*
    * Returns the concatenated text content of all child nodes, expanding any
    * content nodes.
    */
