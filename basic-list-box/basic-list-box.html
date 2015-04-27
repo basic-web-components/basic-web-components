@@ -41,7 +41,7 @@
     <basic-item-selection></basic-item-selection>
     <basic-keyboard target="child">
       <basic-tap-selection target="child">
-        <basic-children-content id="itemsContainer" aria-role="listbox">
+        <basic-children-content id="itemsContainer">
           <content></content>
         </basic-children-content>
       </basic-tap-selection>
@@ -71,18 +71,16 @@ Polymer({
 
 Polymer(mixin(BasicAspectMixin, {
 
-  // ariaRole: 'listbox',
-
   hostAttributes: {
+    // REVIEW: What is the relationship between role and Shadow DOM? Will this
+    // role get picked up correctly in a component that wraps a list box?
+    role: 'listbox',
     target: 'shadow'
   },
 
   is: 'basic-list-box',
 
   ready: function() {
-
-    // this.aspect.outermost.setAttribute('aria-role', this.ariaRole);
-
     if (this.getAttribute('generic') == null) {
       this.generic = true;
     }
