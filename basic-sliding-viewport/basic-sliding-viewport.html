@@ -35,16 +35,6 @@ Polymer(mixin(BasicAspectMixin, {
 
   contribute: {
 
-    itemsChanged: function() {
-      var items = this.items;
-      this.count = items.length;
-      if (!this.selectedItem) {
-        this.selectedItem = items[0];
-      } else {
-        this.render();
-      }
-    },
-
     get position() {
       return this._position;
     },
@@ -80,16 +70,12 @@ Polymer(mixin(BasicAspectMixin, {
 
   _renderSelection: function() {
 
-    var count = this.count;
+    var count = this.items && this.items.length;
     if (!count) {
       // Null or zero means we don't have items to render yet.
       return;
     }
 
-    // var renderIndex = this._renderIndex;
-    // if (renderIndex == null) {
-    //   return;
-    // }
     var index = this.selectedIndex;
     if (index < 0) {
       // No selection

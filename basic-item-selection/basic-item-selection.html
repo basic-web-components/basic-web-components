@@ -9,7 +9,7 @@ Polymer(mixin(BasicAspectMixin, {
   contribute: {
 
     itemAdded: function(item) {
-      this.applySelection(item, false);
+      this.applySelection(item, item === this.selectedItem);
     },
 
     itemsChanged: function() {
@@ -17,6 +17,13 @@ Polymer(mixin(BasicAspectMixin, {
       if (index < 0) {
         // Selected item is no longer in the current set of items.
         this.selectedItem = null;
+        if (this.selectionRequired) {
+          // Ensure selection, but do this in the next tick to give other
+          // aspects a chance to do their own itemsChanged work.
+          setTimeout(function() {
+            this._ensureSelection();
+          }.bind(this));
+        }
       }
     },
 
@@ -95,6 +102,29 @@ Polymer(mixin(BasicAspectMixin, {
   },
 
   is: 'basic-item-selection',
+
+  properties: {
+    selectionRequired: {
+      type: Boolean,
+      observer: 'selectionRequiredChanged',
+      value: false
+    }
+  },
+
+  selectionRequiredChanged: function(selectionRequired, oldSelectionRequired) {
+    if (selectionRequired && !oldSelectionRequired) {
+      this._ensureSelection();
+    }
+  },
+
+  // If no item is selected, select a default item.
+  // TODO: If the previously-selected item has been deleted, try to select an
+  // item adjacent to the position it held.
+  _ensureSelection: function() {
+    if (!this.selectedItem && this.items && this.items.length > 0) {
+      this.selectedIndex = 0;
+    }
+  },
 
   // Ensure the given index is within bounds, and select it if it's not already
   // selected.

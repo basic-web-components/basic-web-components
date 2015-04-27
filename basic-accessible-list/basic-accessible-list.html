@@ -50,6 +50,13 @@ Polymer(mixin(BasicAspectMixin, {
       if (!item.getAttribute('id')) {
         item.setAttribute('id', this.itemBaseId + idCount++);
       }
+    },
+
+    // Catch the case where the selection is removed.
+    set selectedItem(selectedItem) {
+      if (selectedItem == null) {
+        this.collective.outermostAttached.removeAttribute('aria-activedescendant');
+      }
     }
 
   },
