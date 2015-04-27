@@ -5,15 +5,37 @@ Polymer(mixin(BasicAspectMixin, {
 
   contribute: {
 
-    // TODO: apply aria-role="listbox" to innermost aspect?
+    // TODO: apply aria-role="listbox" to outermost aspect?
 
     applySelection: function(item, selected) {
       item.setAttribute('aria-selected', selected);
+      item.setAttribute('role', 'option');
+    },
+
+    // Ensure the outermost aspect has role="listbox".
+    collectiveChanged: function() {
+
+      var outermost = this.collective.outermostAttached;
+      if (this._previousOutermostAspect === outermost) {
+        // Already configured.
+        return;
+      }
+
+      if (this._previousOutermostAspect) {
+        // Remove role from previous outermost aspect.
+        this._previousOutermostAspect.removeAttribute('role');
+      }
+
+      outermost.setAttribute('role', 'listbox');
+
+      this._previousOutermostAspect = outermost;
     }
 
   },
 
-  is: 'basic-accessible-list'
+  is: 'basic-accessible-list',
+
+  _previousOutermostAspect: null
 
 }));
 </script>
