@@ -87,8 +87,8 @@ Polymer(mixin(BasicAspectMixin, {
     this.$.stackContainer.style.height = height;
 
     var event = new CustomEvent('basic-layout', {
+      bubbles: true,
       detail: {
-        bubbles: true,
         count: contentNodes.length,
         height: parseInt(height),
         width: parseInt(width)
