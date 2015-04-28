@@ -7,29 +7,34 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<link rel="import" href="src/polymer.html">
-
-<link rel="import" href="src/features/micro/mixins.html">
-<link rel="import" href="src/features/micro/extends.html">
-<link rel="import" href="src/features/micro/constructor.html">
-<link rel="import" href="src/features/micro/properties.html">
-<link rel="import" href="src/features/micro/attributes.html">
-
 <script>
+
+  /**
+   * Automatically extend using objects referenced in `mixins` array. 
+   * 
+   *     Polymer({
+   *     
+   *       mixins: [
+   *         someMixinObject
+   *       ]
+   *     
+   *       ...
+   *     
+   *     });
+   * 
+   * @class base feature: mixins
+   */
 
   Polymer.Base.addFeature({
 
-    registerFeatures: function() {
-      this._prepMixins();
-      this._prepExtends();
-      this._prepConstructor();
-    },
-
-    initFeatures: function() {
-      this._marshalAttributes();
+    _prepMixins: function() {
+      if (this.mixins) {
+        this.mixins.forEach(function(m) {
+          Polymer.Base.extend(this, m);
+        }, this);
+      }
     }
 
   });
 
 </script>
-

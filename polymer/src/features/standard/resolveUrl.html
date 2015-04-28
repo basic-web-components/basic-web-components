@@ -7,29 +7,21 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<link rel="import" href="src/polymer.html">
-
-<link rel="import" href="src/features/micro/mixins.html">
-<link rel="import" href="src/features/micro/extends.html">
-<link rel="import" href="src/features/micro/constructor.html">
-<link rel="import" href="src/features/micro/properties.html">
-<link rel="import" href="src/features/micro/attributes.html">
-
 <script>
 
   Polymer.Base.addFeature({
 
-    registerFeatures: function() {
-      this._prepMixins();
-      this._prepExtends();
-      this._prepConstructor();
-    },
-
-    initFeatures: function() {
-      this._marshalAttributes();
+    resolveUrl: function(url) {
+      // TODO(sorvell): do we want to put the module reference on the prototype?
+      var module = Polymer.DomModule.import(this.is);
+      var root = '';
+      if (module) {
+        var assetPath = module.getAttribute('assetpath') || '';
+        root = Polymer.ResolveUrl.resolveUrl(assetPath, module.ownerDocument.baseURI);
+      }
+      return Polymer.ResolveUrl.resolveUrl(url, root);
     }
 
   });
 
 </script>
-
