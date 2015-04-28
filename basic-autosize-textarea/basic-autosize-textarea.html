@@ -90,7 +90,7 @@ Polymer({
   autoSize: function() {
     // If we had speculatively added an extra line because of an Enter keypress,
     // we can now hide the extra line.
-    this.$.extraLine.style.display = 'none' ;
+    this.$.extraLine.style.display = 'none';
 
     // We resize by copying the textarea contents to the element itself; the
     // text will then appear (via <content>) inside the invisible div. If
@@ -185,7 +185,6 @@ Polymer({
      */
     value: {
       type: String,
-      reflectToAttribute: true,
       notify: true,
       observer: 'valueChanged'
     }
@@ -261,6 +260,7 @@ Polymer({
     // Use the extraLine member to gauge the expected height of a single line of
     // text. We can't use lineHeight, because that can be reported as "normal",
     // and we want to know the actual pixel height.
+    this.$.extraLine.style.display = 'inherit';
     this._lineHeight = this.$.extraLine.clientHeight;
 
     // Now that we know the line height, we can hide the extra line.

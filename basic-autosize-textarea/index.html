@@ -27,11 +27,16 @@
   }
   </style>
 
+  <script>
+    document.addEventListener('WebComponentsReady', function() {
+      document.body.removeAttribute('unresolved');
+    });
+  </script>
 </head>
 
 <body unresolved>
   <!-- <basic-framed-content> -->
-  <basic-autosize-textarea minimumRows="2">
+  <basic-autosize-textarea minimum-rows="2">
     Type all you want here!
   </basic-autosize-textarea>
   <!-- </basic-framed-content> -->

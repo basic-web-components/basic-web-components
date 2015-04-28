@@ -44,6 +44,18 @@ suite('basic', function() {
     });
   });
 
+  test('set minimumRows declaratively', function(done) {
+    container.innerHTML = '<basic-autosize-textarea minimum-rows="10">Hello</basic-autosize-textarea>';
+    var fixture = container.querySelector('basic-autosize-textarea');
+    var fixtureComp = document.createElement('basic-autosize-textarea');
+    container.appendChild(fixtureComp);
+    flush(function() {
+      assert.equal(fixture.minimumRows, 10);
+      assert(fixture.$.textBox.clientHeight > 2 * fixtureComp.$.textBox.clientHeight);
+      done();
+    });
+  });
+
   test('value', function(done) {
     var fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
