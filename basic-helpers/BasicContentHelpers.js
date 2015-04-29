@@ -25,8 +25,17 @@ function expandContentElements(nodes, includeTextNodes) {
     // we do a simplistic check to see if the tag name is "content".
     if (node.localName && node.localName === "content") {
       // content element; use its distributed nodes instead.
-      var distributedNodes = Polymer.dom(node).getDistributedNodes();
-      return expandContentElements(distributedNodes, includeTextNodes);
+
+      // HACK: In Polymer 0.8 rc 7, a call to getDistributedNodes() can fail if
+      // made too early. Until that can be fixed, do a pre-check to make sure
+      // the call will succeed.
+      if (node._distributedNodes || node.getDistributedNodes) {
+        var distributedNodes = Polymer.dom(node).getDistributedNodes();
+        return expandContentElements(distributedNodes, includeTextNodes);
+      } else {
+        return [];
+      }
+
     } else if (node instanceof HTMLElement) {
       // Plain element; use as is.
       return [node];
