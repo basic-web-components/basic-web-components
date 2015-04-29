@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-data-items</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../basic-item-selection/basic-item-selection.html">
+  <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
+  <link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
+  <link rel="import" href="basic-data-items.html">
+  <link rel="import" href="basic-selected-item-string.html">
+
+  <style>
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+    padding: 2em;
+  }
+
+  /* So focus ring appears */
+  basic-keyboard-direction {
+    margin: 5px;
+  }
+  </style>
+
+  <script>
+  document.addEventListener('WebComponentsReady', function() {
+    var itemsAspect = document.querySelector('#itemsAspect');
+    itemsAspect.data = [
+      'Acai',
+      'Acerola',
+      'Apple',
+      'Apricot',
+      'Banana',
+      'Blackberry',
+      'Blueberry',
+      'Cantaloupe',
+      'Cherry',
+      'Cranberry',
+      'Currant',
+      'Date',
+      'Durian',
+      'Fig',
+      'Goji berry',
+      'Gooseberry',
+      'Grape',
+      'Grapefruit',
+      'Honeydew',
+      'Jackfruit',
+      'Kiwi',
+      'Kumquat',
+      'Lemon',
+      'Lime',
+      'Lychee ',
+      'Mango',
+      'Mangosteen',
+      'Mulberry',
+      'Nectarine',
+      'Orange',
+      'Papaya',
+      'Passion Fruit',
+      'Peach',
+      'Pear',
+      'Pineapple',
+      'Plum',
+      'Pomegranate',
+      'Pomelo',
+      'Prickly Pear',
+      'Raspberry',
+      'Strawberry',
+      'Tangerine',
+      'Watermelon'
+    ];
+  })
+  </script>
+
+</head>
+
+<body>
+  <basic-keyboard-direction tabIndex="0" target="child">
+    <basic-direction-selection target="child">
+      <basic-item-selection target="child">
+        <basic-data-items id="itemsAspect" target="child">
+          <basic-selected-item-string>(None)</basic-selected-item-string>
+        </basic-data-items>
+      </basic-item-selection>
+    </basic-direction-selection>
+  </basic-keyboard-direction>
+</body>
+
+</html>

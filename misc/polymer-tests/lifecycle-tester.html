@@ -1,0 +1,102 @@
+<!--
+Creates a stack of Polymer/Web Component lifecycle events
+
+@element lifecycle-tester
+@demo http://basic-web-components.github.io/components/lifecycle-tester/
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="lifecycle-tester">
+  <template>
+    <content></content>
+  </template>
+</dom-module>
+<script>
+var LifecycleTester = Polymer({
+
+  is: 'lifecycle-tester',
+
+  constructor: function(onCreated, onReady, onAttached, onAttributeChanged, onDetached) {
+    this.eventStack = [];
+    this.onCreated = onCreated;
+    this.onReady = onReady;
+    this.onAttached = onAttached;
+    this.onAttributeChanged = onAttributeChanged;
+    this.onDetached = onDetached;
+  },
+
+  created: function() {
+    console.log('lifecycle-tester: created');
+    this.eventStack.push('created');
+    if (this.onCreated) {
+      this.onCreated();
+    }
+    if (window.createdHook) {
+      window.createdHook(this);
+    }
+  },
+
+  attached: function() {
+    console.log('lifecycle-tester: attached');
+    this.eventStack.push('attached');
+    if (this.onAttached) {
+      this.onAttached();
+    }
+    if (window.attachedHook) {
+      window.attachedHook(this);
+    }
+  },
+
+  detached: function() {
+    console.log('lifecycle-tester: detached');
+    this.eventStack.push('detached');
+    if (this.onDetached) {
+      this.onDetached();
+    }
+    if (window.detachedHook) {
+      window.detachedHook(this);
+    }
+  },
+
+  ready: function() {
+    console.log('lifecycle-tester: ready');
+    this.eventStack.push('ready');
+    if (this.onReady) {
+      this.onReady();
+    }
+    if (window.readyHook) {
+      window.readyHook(this);
+    }
+  },
+
+  attributeChanged: function() {
+    console.log('lifecycle-tester: attributeChanged');
+    this.eventStack.push('attributeChanged');
+    if (this.onAttributeChanged) {
+      this.onAttributeChanged();
+    }
+    if (window.attributeChangedHook) {
+      window.attributeChangedHook(this);
+    }
+  },
+
+  properties: {
+
+    /**
+     * @attribute fooAttribute
+     * @type number
+     * @default 1
+     */
+    fooAttribute: {
+      type: Number,
+      reflectToAttribute: true,
+      value: 1
+    }
+
+  },
+
+  eventStack: []
+
+});
+</script>

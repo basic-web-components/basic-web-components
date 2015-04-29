@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>basic-page-dots</title>
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../basic-content-items-aspect/basic-content-items-aspect.html">
+<link rel="import" href="../basic-selection-aspect/basic-selection-aspect.html">
+<link rel="import" href="basic-page-dots.html">
+
+<style>
+body,
+button,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 2em; /* Until we use basic-framed-content again */
+}
+
+img {
+  display: none;
+}
+
+img.selected {
+  display: block
+}
+</style>
+
+</head>
+
+<body>
+  <basic-page-dots>
+    <basic-selection-aspect>
+      <basic-content-items-aspect>
+        <img src="../shared/resources/images/image1.jpg">
+        <img src="../shared/resources/images/image2.jpg">
+        <img src="../shared/resources/images/image3.jpg">
+        <img src="../shared/resources/images/image4.jpg">
+        <img src="../shared/resources/images/image5.jpg">
+      </basic-content-items-aspect>
+    </basic-selection-aspect>
+  </basic-page-dots>
+</body>
+
+</html>
