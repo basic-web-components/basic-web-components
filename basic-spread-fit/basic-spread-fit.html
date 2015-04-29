@@ -1,5 +1,5 @@
 <!--
-Aspect for treating an array of data as list items.
+Spread out a set of items so they take equal space.
 -->
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
@@ -17,7 +17,7 @@ Aspect for treating an array of data as list items.
     display: inline-block;
   }
 
-  #stack ::content > * {
+  #stack ::content .item {
     transform: translate(-50%, -50%);
   }
   </style>
@@ -30,6 +30,20 @@ Aspect for treating an array of data as list items.
 
 <script>
 Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    itemAdded: function(item) {
+      /*
+       * We want to be able to style children that might be reprojected. This
+       * is easy to accomplish in native Shadow DOM, but hard in Shady DOM.
+       * To simplify this, we apply a class to all children, then define a rule
+       * to style everything with that class.
+       */
+      item.classList.add('item');
+    }
+
+  },
 
   hostAttributes: {
     target: 'shadow'
