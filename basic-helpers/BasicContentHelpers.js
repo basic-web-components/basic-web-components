@@ -134,17 +134,33 @@ window.BasicContentHelpers = {
    * Returns an in-order collection of child nodes, expanding any content nodes.
    * Like the standard childNodes property, this includes text nodes.
    */
-  get flattenChildNodes() {
-    return this.expandContentElements(this.childNodes, true);
+  flattenChildNodes: function(node) {
+    var childNodes = Polymer.dom(node).childNodes;
+    return expandContentElements(childNodes, true);
+  },
+
+  /*
+   * Removes nodes distributed to <content></content>
+   */
+  removeLightDomNodes: function(node) {
+    var content = Polymer.dom(node.root).querySelector('content');
+    var distributedNodes = Polymer.dom(content).getDistributedNodes();
+    if (!distributedNodes) {
+      return;
+    }
+    for (var i = 0; i < distributedNodes.length; i++) {
+      Polymer.dom(node).removeChild(distributedNodes[i]);
+    }
   },
 
   /*
    * Returns the concatenated text content of all child nodes, expanding any
    * content nodes.
    */
-  get flattenTextContent() {
-    var strings = this.flattenChildNodes.map(function(node) {
-      return node.textContent;
+  flattenTextContent: function(node) {
+    var flattenedChildNodes = BasicContentHelpers.flattenChildNodes(node);
+    var strings = flattenedChildNodes.map(function(child) {
+      return child.textContent;
     });
     return strings.join('');
   },

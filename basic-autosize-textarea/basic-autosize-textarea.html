@@ -69,9 +69,10 @@ stretch the text area.
   -->
   <template>
     <div id="autoSizeContainer">
-      <textarea id="textBox" on-keypress="{{_keypress}}" placeholder="{{placeholder}}" value="{{value}}"></textarea>
+      <textarea id="textBox" on-keypress="_keypress" placeholder="{{placeholder}}" value="{{value::input}}"></textarea>
       <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
     </div>
+    <content></content>
   </template>
 </dom-module>
 
@@ -89,7 +90,7 @@ Polymer({
   autoSize: function() {
     // If we had speculatively added an extra line because of an Enter keypress,
     // we can now hide the extra line.
-    this.$.extraLine.style.display = 'none' ;
+    this.$.extraLine.style.display = 'none';
 
     // We resize by copying the textarea contents to the element itself; the
     // text will then appear (via <content>) inside the invisible div. If
@@ -100,30 +101,25 @@ Polymer({
     this.$.textCopy.textContent = this.value;
   },
 
-  attached: function() {
-    BasicContentHelpers.observeContentChanges(this);
-    this._initializeWhenRendered();
-  },
-
-  detached: function() {
-    BasicContentHelpers.observeContentChanges(this, false);
-  },
-
   // Normally the value of the element is set and read through its value
   // attribute. As a convenience, and to mirror standard textarea behavior,
   // it is possible to set the content of the textarea by including text between
   // the opening and closing tag. This works only in one direction: setting
   // the tag content updates the textarea, but user edits in the textarea are
-  // not reflected in the tag content. A standard textarea will only use this
-  // tag content as the initial content; updates to tag content do not get
-  // reflected in the textarea. This element, however, allows later changes to
-  // tag content to update the textarea. (There doesn't seem to be a downside to
-  // doing so.
+  // not reflected in the tag content. A standard textarea will use this
+  // tag content only as the initial content; updates to tag content do not get
+  // reflected in the textarea. We capture the value of the initial text content
+  // in order to set the value property during the create event, and we set
+  // the value property here in the initial content changed event.
   // TODO: Normalize indentation in the text content. Users will often want to
   // indent the markup so that it looks pretty. We should detect the indentation
-  // level and remove any indentation whitespace.
-  contentChanged: function() {
-    var text = this.textContent;
+  // level and remove any indentation whitespace
+  // TODO: Consider using content innerHTML rather than plain text. The native
+  // textarea element will include HTML, not just the stripped text, as initial
+  // value property text.
+  attached: function() {
+    var text = BasicContentHelpers.flattenTextContent(this);
+    BasicContentHelpers.removeLightDomNodes(this);
 
     // Trim the text.
     // This is non-standard textarea behavior. A standard textarea will trim the
@@ -132,7 +128,15 @@ Polymer({
     // So it seems more helpful to trim whitespace on either side.
     text = text.trim();
 
-    this.value = this._unescapeHtml(text);
+    // If a value is provided as part of initialization, we will not overwrite
+    // it with content. The value property takes precedence. Do not set the value
+    // here unless necessary as it will establish a lineheight of zero if set
+    // to the empty string.
+    if (!this.value && text.length) {
+      this.value = this._unescapeHtml(text);
+    }
+
+    this._initializeWhenRendered();
   },
 
   minimumRowsChanged: function() {
@@ -158,7 +162,7 @@ Polymer({
       type: Number,
       reflectToAttribute: true,
       value: 1,
-      observer: this.minimumRowsChanged
+      observer: 'minimumRowsChanged'
     },
 
     /**
@@ -181,8 +185,8 @@ Polymer({
      */
     value: {
       type: String,
-      reflectToAttribute: true,
-      observer: this.valueChanged
+      notify: true,
+      observer: 'valueChanged'
     }
 
   },
@@ -212,6 +216,7 @@ Polymer({
 
   valueChanged: function() {
     this.autoSize();
+    this.dispatchEvent(new CustomEvent('value-changed'));
   },
 
   // Set up once this component has been rendered.
@@ -255,6 +260,7 @@ Polymer({
     // Use the extraLine member to gauge the expected height of a single line of
     // text. We can't use lineHeight, because that can be reported as "normal",
     // and we want to know the actual pixel height.
+    this.$.extraLine.style.display = 'inherit';
     this._lineHeight = this.$.extraLine.clientHeight;
 
     // Now that we know the line height, we can hide the extra line.

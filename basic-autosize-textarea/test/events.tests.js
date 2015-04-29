@@ -8,7 +8,7 @@ suite('events', function() {
     container.innerHTML = '';
   });
 
-  test.skip('change', function (done) {
+  test('change', function (done) {
     var fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
     flush(function () {

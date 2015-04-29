@@ -75,6 +75,23 @@ suite('BasicContentHelpers', function() {
     });
   });
 
+  test('removing light dom nodes', function(done) {
+    container.innerHTML = '<reproject-test><div>Div text</div>Plain text<button type=\'button\'>Button text</button></reproject-test>';
+    var fixture = container.querySelector('reproject-test');
+    flush(function() {
+      var button = Polymer.dom(fixture).querySelector('button');
+      assert(button);
+      var div = Polymer.dom(fixture).querySelector('div');
+      assert(div);
+      BasicContentHelpers.removeLightDomNodes(fixture);
+      button = Polymer.dom(fixture).querySelector('button');
+      assert(!button);
+      div = Polymer.dom(fixture).querySelector('div');
+      assert(!div);
+      done();
+    });
+  });
+
   test.skip('observe changes in child attribute', function(done) {
     var fixture = document.createElement('content-test-element');
     var button = document.createElement('button');

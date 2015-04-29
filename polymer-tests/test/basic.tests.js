@@ -119,9 +119,5 @@ suite('basic', function() {
     });
   });
 
-  test.skip('hold for web viewing', function(done) {
-    assert(true);
-  });
-
 });
 
