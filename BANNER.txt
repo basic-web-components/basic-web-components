@@ -1,0 +1,2 @@
+* @license
+* Copyright (c) 2015 Component Kitchen, Inc. All rights reserved.
