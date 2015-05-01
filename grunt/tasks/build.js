@@ -14,21 +14,20 @@ module.exports = function(grunt) {
 
     clean: {
       build: '<%= build_dir %>',
-      dist: '<%= dist_dir %>',
-      src: ['src/basic-*/*.+(css|min.js)']
+      dist: '<%= dist_dir %>'
     },
 
     copy: {
       build: {
         expand: true,
         cwd: SRC_DIR,
-        src: ['basic-*/+(index|basic-*).+(html|js)', 'shared/collectives/*.js', 'basic-helpers/*.js', '!test/**'],
+        src: ['basic-*/+(basic-*).+(html|js)', 'shared/collectives/*.js', 'basic-helpers/*.js', '!test/**'],
         dest: '<%= build_dir %>'
       },
       dist: {
         expand: true,
         cwd: '<%= build_dir %>',
-        src: ['**/*.html', '!basic-*/index.html'],
+        src: ['**/*.html', '**/*.js'],
         dest: '<%= dist_dir %>'
       }
     },
@@ -71,7 +70,7 @@ module.exports = function(grunt) {
           dest: '<%= build_dir %>'
         }]
       },
-      dist:{
+      dist: {
         options:{
           excludes: {
             imports: ['polymer.html']
@@ -120,7 +119,7 @@ module.exports = function(grunt) {
         files: {
           src: [ 'build/basic-web-components.html' ]
         }
-      },
+      }
     },
 
     bump: {
@@ -183,5 +182,10 @@ module.exports = function(grunt) {
   grunt.registerTask('release', function(version){
     version = version || 'patch';
     grunt.task.run( 'bump-only:' + version, 'clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'build:docs', 'stage-release', 'bump-commit');
+  });
+
+  grunt.registerTask('test', function(version) {
+    version = version || 'patch';
+    grunt.task.run('bump-only:' + version, 'clean:dist', 'build:dist', 'copy:dist', 'replace:bower');
   });
 };
