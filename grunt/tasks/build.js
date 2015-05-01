@@ -1,4 +1,5 @@
 var SRC_DIR = 'src';
+var TEMPLATE_DIR = 'grunt/templates';
 
 var exec = require("child_process").exec;
 
@@ -39,6 +40,21 @@ module.exports = function(grunt) {
           cwd: '<%= build_dir %>',
           src: ['basic-*/*.js', 'shared/collectives/*.js'],
           dest: '<%= build_dir %>'
+        }]
+      }
+    },
+
+    hogan_static: {
+      lib: {
+        options:{
+          data: {
+            modules: modules,
+            shared: grunt.file.expand({ cwd: SRC_DIR })
+          }
+        },
+        files: [{
+          src: TEMPLATE_DIR + '/lib_template.html',
+          dest: '<%= build_dir %>/<%= pkg.name %>.html'
         }]
       }
     },
@@ -150,6 +166,7 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:build',
       'copy:build',
+      'hogan_static:lib',
       'vulcanize:shared',
       'vulcanize:modules',
       'vulcanize:dist',
@@ -160,7 +177,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build:dev', function() {
     grunt.task.run([
       'clean:build',
-      'copy:build'
+      'copy:build',
+      'hogan_static:lib'
     ]);
   });
 
