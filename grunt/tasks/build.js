@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       build: {
         expand: true,
         cwd: SRC_DIR,
-        src: ['basic-*/+(basic-*).+(html|js)', 'shared/collectives/*.js', 'basic-helpers/*.js', '!test/**'],
+        src: ['basic-*/+(basic-*).+(html|js)', 'shared/collectives/*.js', 'shared/basic-helpers/*.js', '!test/**'],
         dest: '<%= build_dir %>'
       },
       dist: {
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= build_dir %>',
-          src: ['basic-*/*.js', 'shared/collectives/*.js'],
+          src: ['basic-*/*.js', 'shared/collectives/*.js', 'shared/basic-helpers/*.js'],
           dest: '<%= build_dir %>'
         }]
       }
@@ -62,6 +62,8 @@ module.exports = function(grunt) {
     vulcanize: {
       options: {
         inline:true,
+
+        // Comment out the following two lines for verbose output files
         strip:true,
         'strip-excludes':false
       },
@@ -150,14 +152,18 @@ module.exports = function(grunt) {
 
   });
 
-  // Create HTML imports for Collectives library
+  // Create HTML imports for shared folders
   grunt.registerTask('jslib:imports', function() {
-    var files = grunt.file.expand({cwd: SRC_DIR + '/shared/collectives/' }, '*.js');
+    var dirs = ['collectives', 'basic-helpers'];
 
-    files.forEach(function(file) {
-      var fileName = file.substr(0, file.lastIndexOf('.')) || file;
-      grunt.file.write(grunt.config('build_dir') + '/shared/collectives/' + fileName.toLowerCase() + '.html', '<script src=\"' + file + '\"></script>');
-    });
+    for (var i = 0; i < dirs.length; i++) {
+      var files = grunt.file.expand({cwd: SRC_DIR + '/shared/' + dirs[i] + '/' }, '*.js');
+
+      files.forEach(function(file) {
+        var fileName = file.substr(0, file.lastIndexOf('.')) || file;
+        grunt.file.write(grunt.config('build_dir') + '/shared/' + dirs[i] + '/' + fileName.toLowerCase() + '.html', '<script src=\"' + file + '\"></script>');
+      });
+    }
 
     grunt.log.ok();
   });
@@ -202,8 +208,8 @@ module.exports = function(grunt) {
     grunt.task.run( 'bump-only:' + version, 'clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'build:docs', 'stage-release', 'bump-commit');
   });
 
-  grunt.registerTask('test', function(version) {
+  grunt.registerTask('build:test', function(version) {
     version = version || 'patch';
-    grunt.task.run('bump-only:' + version, 'clean:dist', 'build:dist', 'copy:dist', 'replace:bower');
+    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower');
   });
 };
