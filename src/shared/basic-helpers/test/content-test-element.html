@@ -1,0 +1,39 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+
+<script src="../BasicContentHelpers.js"></script>
+
+<dom-module id="content-test-element">
+  <template>
+    <div id="static">This is static content</div>
+    <content></content>
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  attached: function() {
+    BasicContentHelpers.observeContentChanges(this);
+  },
+
+  contentChanged: function() {
+    if (this.contentChangedHook) {
+      this.contentChangedHook();
+    }
+  },
+
+  detached: function() {
+    BasicContentHelpers.observeContentChanges(this, false);
+    if (this.detachedHook) {
+      this.detachedHook();
+    }
+  },
+
+  is: 'content-test-element',
+
+  hostAttributes: {
+    sampleAttribute: null
+  }
+
+});
+</script>

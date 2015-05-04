@@ -1,0 +1,34 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+
+<script src="../BasicGenericHelpers.js"></script>
+
+<dom-module id="generic-element">
+  <style>
+  :host {
+    display: inline-block;
+  }
+  
+  :host([generic=""]) {
+    display: block;
+  }
+  </style>
+  <template>
+    <content></content>
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  is: 'generic-element',
+
+  ready: function() {
+    BasicGenericHelpers.setGenericDefault(this);
+  },
+
+  properties: {
+    generic: BasicGenericHelpers.generic
+  }
+
+});
+</script>

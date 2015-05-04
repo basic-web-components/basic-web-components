@@ -1,0 +1,111 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+
+<dom-module id="basic-arrow-direction">
+  <style>
+  :host {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
+
+  #arrowNavigationContainer {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  .navigationButton {
+    background: transparent;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    opacity: 1;
+    outline: none; /* REVIEW: Accessibility should be provided by other aspects. */
+    padding: 0;
+    transition: opacity 1s;
+    z-index: 1;
+  }
+
+  .navigationButton:hover:not(:disabled) {
+    background: rgba( 0, 0, 0, 0.5 );
+    fill: rgba( 0, 0, 0, 0.7 );
+  }
+  .navigationButton:active:not(:disabled) {
+    background: rgba( 0, 0, 0, 0.7 );
+    fill: rgba( 0, 0, 0, 0.9 );
+  }
+  .navigationButton:disabled {
+    color: rgba(255, 255, 255, 0.2);
+    fill: rgba( 0, 0, 0, 0.2 );
+  }
+
+  :host(:not(.mouseDetected)) .navigationButton {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navigationButton core-icon {
+    /* TODO: Remove once core-icon properly defines the -webkit display value. */
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    height: 48px;
+    width: 48px;
+  }
+
+  /* Overlay variant */
+  :host(.overlay) {
+    position: relative;
+  }
+  :host(.overlay) .navigationButton {
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+  }
+  :host(.overlay) #buttonLeft {
+    left: 0;
+  }
+  :host(.overlay) #buttonRight {
+    right: 0;
+  }
+  </style>
+  <template>
+    <button id="buttonLeft" class="navigationButton" on-click="goLeft">
+      <core-icon icon="chevron-left"></core-icon>
+    </button>
+    <div id="arrowNavigationContainer">
+      <content></content>
+    </div>
+    <button id="buttonRight" class="navigationButton" on-click="goRight">
+      <core-icon icon="chevron-right"></core-icon>
+    </button>
+  </template>
+</dom-module>
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  // TODO: Disable buttons when it's not possible to go in that direction.
+
+  // Default implementations will be overwritten by collective methods.
+  goLeft: function() {},
+  goRight: function() {},
+
+  is: 'basic-arrow-direction',
+
+  ready: function() {
+    // this.super();
+    window.addEventListener('mousedown', function() {
+      // console.log('mousedown');
+    }.bind(this));
+    window.addEventListener('mousemove', function(event) {
+      // console.log('mousemove');
+      // console.log(event);
+      this.classList.add('mouseDetected');
+    }.bind(this));
+  }
+
+}));
+</script>

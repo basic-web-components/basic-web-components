@@ -1,6 +1,6 @@
 {
   "name": "basic-web-components",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "dependencies": {
     "core-icons": "Polymer/core-icons#0.8-preview",
     "polymer": "Polymer/polymer#^0.8.0-rc.7"

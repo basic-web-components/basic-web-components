@@ -1,0 +1,109 @@
+<!--
+Stacks its child elements on top of each other, taking on the maximum height
+and width of the child elements.
+-->
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+<link rel="import" href="../basic-children-content/basic-children-content.html">
+<script src="../shared/basic-helpers/BasicResizeHelpers.js"></script>
+
+<dom-module id="basic-stack">
+  <style>
+  :host {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+  }
+
+  #stackContainer {
+    display: block;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  #stackContainer ::content > * {
+    position: absolute;
+  }
+  </style>
+  <template>
+    <basic-children-content id="stackContainer">
+      <content id="content"></content>
+    </basic-children-content>
+  </template>
+</dom-module>
+
+<script>
+Polymer(mixin(BasicAspectMixin, {
+
+  attached: function() {
+    // this.super();
+    this.listenForResize();
+  },
+
+  contribute: {
+
+    contentChanged: function() {
+      setTimeout(function() {
+        this.recalc();
+      }.bind(this));
+    }
+
+  },
+
+  detached: function() {
+    // this.super();
+    this.listenForResize(false);
+  },
+
+  hostAttributes: {
+    target: 'shadow'
+  },
+
+  is: 'basic-stack',
+
+  recalc: function() {
+    var contentNodes = this.content;
+    if (!contentNodes) {
+      return;
+    }
+    var maxWidth = 0;
+    var maxHeight = 0;
+    Array.prototype.forEach.call(contentNodes, function(node) {
+      // We use getBoundingClientRect so we can get fractional sizes.
+      var rect = node.getBoundingClientRect();
+      maxWidth = Math.max(maxWidth, rect.width);
+      maxHeight = Math.max(maxHeight, rect.height);
+    });
+    maxWidth = Math.ceil(maxWidth); // Round up when hard-coding width.
+    var width = maxWidth ?
+      maxWidth + 'px' :
+      null;
+    var height = maxHeight ?
+      maxHeight + 'px' :
+      null;
+    this.$.stackContainer.style.width = width;
+    this.$.stackContainer.style.height = height;
+
+    var event = new CustomEvent('basic-layout', {
+      bubbles: true,
+      detail: {
+        count: contentNodes.length,
+        height: parseInt(height),
+        width: parseInt(width)
+      }
+    });
+    this.dispatchEvent(event);
+  },
+
+  resized: function(event) {
+    if (this.$ && this.$.stackContainer) {
+      var foo = this.$.stackContainer.style;
+      this.$.stackContainer.style.width = '100%';
+      this.recalc();
+    }
+  }
+
+}, BasicResizeHelpers));
+</script>

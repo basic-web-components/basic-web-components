@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-keyboard</title>
+
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../basic-aspect/basic-aspect.html">
+  <link rel="import" href="basic-keyboard.html">
+
+  <style>
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+    padding: 2em; /* Until we use basic-framed-content again */
+  }
+  </style>
+
+  <script>
+  var keyboardLogAspect = {
+    contribute: {
+      keydown: function(event) {
+        console.log("keydown " + event.which);
+      }
+    }
+  };
+
+  document.addEventListener('WebComponentsReady', function() {
+    new Collective(keyboardLogAspect, document.querySelector('basic-aspect'));
+  });
+  </script>
+
+</head>
+
+<body>
+  <basic-aspect id="outer" target="child">
+    <basic-keyboard id="inner">
+      This element handles keyboard events.
+    </basic-keyboard>
+  </basic-aspect>
+</body>
+
+</html>

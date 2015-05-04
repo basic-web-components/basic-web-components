@@ -1,0 +1,94 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+<script src="../shared/basic-helpers/BasicContentHelpers.js"></script>
+
+<script>
+(function() {
+
+// Used to assign unique IDs to item elements without IDs.
+idCount = 0;
+
+Polymer(mixin(BasicAspectMixin, {
+
+  contribute: {
+
+    // TODO: apply aria-role="listbox" to outermost aspect?
+
+    applySelection: function(item, selected) {
+      item.setAttribute('aria-selected', selected);
+
+      var itemId = item.getAttribute('id');
+      if (itemId) {
+        this.collective.outermostAttached.setAttribute('aria-activedescendant', itemId);
+      }
+    },
+
+    // Ensure the outermost aspect has role="listbox".
+    collectiveChanged: function() {
+
+      var outermost = this.collective.outermostAttached;
+      if (this._previousOutermostAspect === outermost) {
+        // Already configured.
+        return;
+      }
+
+      if (this._previousOutermostAspect) {
+        // Remove ARIA attributes from previous outermost aspect.
+        this._previousOutermostAspect.removeAttribute('role');
+        this._previousOutermostAspect.removeAttribute('aria-activedescendant');
+      }
+
+      outermost.setAttribute('role', 'listbox');
+
+      this._previousOutermostAspect = outermost;
+    },
+
+    itemAdded: function(item) {
+      item.setAttribute('role', 'option');
+
+      // Ensure each item has an ID so we can set aria-activedescendant on the
+      // overall list whenever the selection changes.
+      if (!item.getAttribute('id')) {
+        item.setAttribute('id', this.itemBaseId + idCount++);
+      }
+    },
+
+    // Catch the case where the selection is removed.
+    set selectedItem(selectedItem) {
+      if (selectedItem == null) {
+        this.collective.outermostAttached.removeAttribute('aria-activedescendant');
+      }
+    }
+
+  },
+
+  is: 'basic-accessible-list',
+
+  properties: {
+    itemBaseId: {
+      value: '_option'
+    }
+  },
+
+  ready: function() {
+    // Determine a base item ID based on this component's host's own ID. This
+    // will be combined with a unique integer to assign IDs to items that don't
+    // have an explicit ID. If the basic-list-box has ID "foo", then its items
+    // will have IDs that look like "_fooOption1". If the list has no ID itself,
+    // its items will get IDs that look like "_option1". Item IDs are prefixed
+    // with an underscore to differentiate them from manually-assigned IDs, and
+    // to minimize the potential for ID conflicts.
+    var host = BasicContentHelpers.getHost(this);
+    if (host) {
+      var hostId = host.getAttribute( "id" );
+      if (hostId) {
+        this.itemBaseId = "_" + hostId + "Option";
+      }
+    }
+  },
+
+  _previousOutermostAspect: null
+
+}));
+
+})();
+</script>

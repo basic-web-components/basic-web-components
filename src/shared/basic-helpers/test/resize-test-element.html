@@ -1,0 +1,39 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+
+<script src="../BasicResizeHelpers.js"></script>
+
+<dom-module id="resize-test-element">
+<template>
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+</template>
+</dom-module>
+<script>
+  Polymer({
+
+    is: 'resize-test-element',
+
+    attached: function() {
+      this.listenForResize();
+    },
+
+    detached: function() {
+      this.listenForResize(false);
+    },
+
+    resized: function() {
+      this.resizeCallCount++;
+      if (this.resizeCallHook) {
+        this.resizeCallHook();
+      }
+    },
+
+    resizeCallCount: 0,
+
+    mixins: [BasicResizeHelpers]
+
+  });
+</script>
