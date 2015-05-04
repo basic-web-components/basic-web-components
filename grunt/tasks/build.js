@@ -1,4 +1,6 @@
 var SRC_DIR = 'src';
+var GRUNT_TEST_DIR = 'grunt/test';
+var ROOT_DIR = './';
 var TEMPLATE_DIR = 'grunt/templates';
 
 var exec = require("child_process").exec;
@@ -29,6 +31,18 @@ module.exports = function(grunt) {
         expand: true,
         cwd: '<%= build_dir %>',
         src: ['**/*.html', '**/*.js'],
+        dest: '<%= dist_dir %>'
+      },
+      test: {
+        expand: true,
+        cwd: GRUNT_TEST_DIR,
+        src: ['index.html'],
+        dest: '<%= dist_dir %>'
+      },
+      bower_test: {
+        expand: true,
+        cwd: ROOT_DIR,
+        src: ['bower_components/**'],
         dest: '<%= dist_dir %>'
       }
     },
@@ -62,10 +76,10 @@ module.exports = function(grunt) {
     vulcanize: {
       options: {
         inline:true,
+        'strip-excludes':true,
 
-        // Comment out the following two lines for verbose output files
-        strip:true,
-        'strip-excludes':false
+        // Comment out the following line for verbose output files
+        //strip:true
       },
       shared: {
         files: [{
@@ -210,6 +224,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build:test', function(version) {
     version = version || 'patch';
-    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower');
+    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'copy:bower_test');
   });
 };
