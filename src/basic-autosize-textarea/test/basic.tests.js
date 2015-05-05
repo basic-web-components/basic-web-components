@@ -4,6 +4,15 @@ suite('basic', function() {
 
   var container = document.getElementById('container');
 
+  function setInnerHTML(elem, text) {
+    var textNode = document.createTextNode(text);
+    var children = Polymer.dom(elem).childNodes;
+    for (var i = 0; i < children.length; i++) {
+      Polymer.dom(elem).removeChild(children[i]);
+    }
+    Polymer.dom(elem).appendChild(textNode);
+  }
+
   test('instantiation', function(done) {
     var fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
@@ -19,6 +28,27 @@ suite('basic', function() {
     flush(function() {
       assert.equal(fixture.value, 'Hello');
       done();
+    });
+  });
+
+  test('set innerHTML', function(done) {
+    var fixture = document.createElement('basic-autosize-textarea');
+    container.appendChild(fixture);
+    var content = 'Initial value';
+    fixture.value = content;
+    flush(function() {
+      assert.equal(fixture.value, content);
+      var newContent = 'New value';
+      if (fixture.shadowRoot) {
+        fixture.innerHTML = newContent;
+      }
+      else {
+        setInnerHTML(fixture, newContent);
+      }
+      flush(function() {
+        assert.equal(fixture.value, newContent);
+        done();
+      });
     });
   });
 
