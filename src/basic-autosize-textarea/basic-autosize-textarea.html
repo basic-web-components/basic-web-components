@@ -81,70 +81,6 @@ Polymer({
 
   is: 'basic-autosize-textarea',
 
-  /**
-   * Resize the element such that the textarea can exactly contain its content.
-   * By default, this method is invoked whenever the text content changes.
-   *
-   * @method autoSize
-   */
-  autoSize: function() {
-    // If we had speculatively added an extra line because of an Enter keypress,
-    // we can now hide the extra line.
-    this.$.extraLine.style.display = 'none';
-
-    // We resize by copying the textarea contents to the element itself; the
-    // text will then appear (via <content>) inside the invisible div. If
-    // we've set things up correctly, this new content should take up the same
-    // amount of room as the same text in the textarea. Updating the element's
-    // content adjusts the element's size, which in turn will make the textarea
-    // the correct height.
-    this.$.textCopy.textContent = this.value;
-  },
-
-  // Normally the value of the element is set and read through its value
-  // attribute. As a convenience, and to mirror standard textarea behavior,
-  // it is possible to set the content of the textarea by including text between
-  // the opening and closing tag. This works only in one direction: setting
-  // the tag content updates the textarea, but user edits in the textarea are
-  // not reflected in the tag content. A standard textarea will use this
-  // tag content only as the initial content; updates to tag content do not get
-  // reflected in the textarea. We capture the value of the initial text content
-  // in order to set the value property during the create event, and we set
-  // the value property here in the initial content changed event.
-  // TODO: Normalize indentation in the text content. Users will often want to
-  // indent the markup so that it looks pretty. We should detect the indentation
-  // level and remove any indentation whitespace
-  // TODO: Consider using content innerHTML rather than plain text. The native
-  // textarea element will include HTML, not just the stripped text, as initial
-  // value property text.
-  attached: function() {
-    var text = BasicContentHelpers.flattenTextContent(this);
-    BasicContentHelpers.removeLightDomNodes(this);
-
-    // Trim the text.
-    // This is non-standard textarea behavior. A standard textarea will trim the
-    // first character if it's a newline, but that's it. However,  authors will
-    // want to be able to place the opening and closing tags on their own lines.
-    // So it seems more helpful to trim whitespace on either side.
-    text = text.trim();
-
-    // If a value is provided as part of initialization, we will not overwrite
-    // it with content. The value property takes precedence. Do not set the value
-    // here unless necessary as it will establish a lineheight of zero if set
-    // to the empty string.
-    if (!this.value && text.length) {
-      this.value = this._unescapeHtml(text);
-    }
-
-    this._initializeWhenRendered();
-  },
-
-  minimumRowsChanged: function() {
-    if (this._lineHeight) {
-      this._setMinimumHeight();
-    }
-  },
-
   properties: {
 
     generic: BasicGenericHelpers.generic,
@@ -191,6 +127,88 @@ Polymer({
 
   },
 
+  /**
+   * Resize the element such that the textarea can exactly contain its content.
+   * By default, this method is invoked whenever the text content changes.
+   *
+   * @method autoSize
+   */
+  autoSize: function() {
+    // If we had speculatively added an extra line because of an Enter keypress,
+    // we can now hide the extra line.
+    this.$.extraLine.style.display = 'none';
+
+    // We resize by copying the textarea contents to the element itself; the
+    // text will then appear (via <content>) inside the invisible div. If
+    // we've set things up correctly, this new content should take up the same
+    // amount of room as the same text in the textarea. Updating the element's
+    // content adjusts the element's size, which in turn will make the textarea
+    // the correct height.
+    this.$.textCopy.textContent = this.value;
+  },
+
+  // Normally the value of the element is set and read through its value
+  // attribute. As a convenience, and to mirror standard textarea behavior,
+  // it is possible to set the content of the textarea by including text between
+  // the opening and closing tag. This works only in one direction: setting
+  // the tag content updates the textarea, but user edits in the textarea are
+  // not reflected in the tag content. We capture the value of the initial text content
+  // in order to set the value property during the create event.
+  // TODO: Normalize indentation in the text content. Users will often want to
+  // indent the markup so that it looks pretty. We should detect the indentation
+  // level and remove any indentation whitespace
+  // TODO: Consider using content innerHTML rather than plain text. The native
+  // textarea element will include HTML, not just the stripped text, as initial
+  // value property text.
+  attached: function() {
+    var text = this._flattenTextAndRemoveLightDom();
+
+    // If a value is provided as part of initialization, we will not overwrite
+    // it with content. The value property takes precedence. Do not set the value
+    // here unless necessary as it will establish a lineheight of zero if set
+    // to the empty string.
+    if (!this.value && text.length) {
+      this.value = this._unescapeHtml(text);
+    }
+
+    this._initializeWhenRendered();
+
+    BasicContentHelpers.observeContentChanges(this);
+  },
+
+  detached: function() {
+    BasicContentHelpers.observeContentChanges(this, false);
+  },
+
+  valueChanged: function() {
+    this.autoSize();
+    this.dispatchEvent(new CustomEvent('value-changed'));
+  },
+
+  contentChanged: function() {
+    this.value = this._flattenTextAndRemoveLightDom();
+  },
+
+  _flattenTextAndRemoveLightDom: function() {
+    var text = BasicContentHelpers.flattenTextContent(this);
+    BasicContentHelpers.removeLightDomNodes(this);
+
+    // Trim the text.
+    // This is non-standard textarea behavior. A standard textarea will trim the
+    // first character if it's a newline, but that's it. However,  authors will
+    // want to be able to place the opening and closing tags on their own lines.
+    // So it seems more helpful to trim whitespace on either side.
+    text = text.trim();
+
+    return text;
+  },
+
+  minimumRowsChanged: function() {
+    if (this._lineHeight) {
+      this._setMinimumHeight();
+    }
+  },
+
   ready: function() {
     BasicGenericHelpers.setGenericDefault(this);
     this.$.textBox.addEventListener('change', function() {
@@ -212,11 +230,6 @@ Polymer({
   },
   set selectionStart(value) {
     this.$.textBox.selectionStart = value;
-  },
-
-  valueChanged: function() {
-    this.autoSize();
-    this.dispatchEvent(new CustomEvent('value-changed'));
   },
 
   // Set up once this component has been rendered.
