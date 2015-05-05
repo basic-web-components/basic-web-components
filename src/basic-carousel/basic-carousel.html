@@ -1,5 +1,12 @@
-<link rel="import" href="../basic-aspect/basic-aspect.html">
+<!--
+Lets the user navigate through a sequence of child elements using next/previous
+buttons and arrow keys.
 
+@element basic-carousel
+@demo http://basic-web-components.github.io/components/basic-carousel/
+-->
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
 <link rel="import" href="../basic-keyboard/basic-keyboard.html">
 <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
 <link rel="import" href="../basic-trackpad-direction/basic-trackpad-direction.html">
@@ -75,14 +82,12 @@ Polymer(mixin(BasicAspectMixin, {
  * Invoked when the selected state of the given item has been updated.
  *
  * @method applySelection
- * @param item The item whose selected state has updated.
+ * @param {Object} item The item whose selected state has updated.
  * @param {Boolean} selected True if the item is now selected, false if not.
  */
 
 /**
  * Invoked when the component's collective changes.
- *
- * TODO: Provide link to collective documentation.
  *
  * @method collectiveChanged
  */
@@ -91,7 +96,7 @@ Polymer(mixin(BasicAspectMixin, {
  * Returns the positional index for the indicated item.
  *
  * @method indexOfItem
- * @param item The item whose index is requested.
+ * @param {Object} item The item whose index is requested.
  * @returns {Number} The index of the item, or -1 if not found.
  */
 
@@ -100,13 +105,14 @@ Polymer(mixin(BasicAspectMixin, {
  * to perform per-item initialization.
  *
  * @method itemAdded
- * @param item The item which has been added.
+ * @param {Object} item The item which has been added.
  */
 
 /**
  * The current set of items in the list.
  *
  * @property items
+ * @type [Object]
  */
 
 /**
@@ -124,20 +130,23 @@ Polymer(mixin(BasicAspectMixin, {
  * being moved to the right. E.g., a value of 0.5 indicates the surface has
  * moved half the element's width to the left.
  *
- * @property {Number} position
+ * @property position
+ * @type Number
  */
 
 /**
  * The index of the item which is currently selected, or -1 if there is no
  * selection.
  *
- * @property {Number} selectedIndex
+ * @property selectedIndex
+ * @type Number
  */
 
 /**
  * The currently selected item, or null if there is no selection.
  *
  * @property selectedItem
+ * @type Object
  */
 
 /**
