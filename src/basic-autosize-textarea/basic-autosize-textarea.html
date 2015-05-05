@@ -152,11 +152,8 @@ Polymer({
   // it is possible to set the content of the textarea by including text between
   // the opening and closing tag. This works only in one direction: setting
   // the tag content updates the textarea, but user edits in the textarea are
-  // not reflected in the tag content. A standard textarea will use this
-  // tag content only as the initial content; updates to tag content do not get
-  // reflected in the textarea. We capture the value of the initial text content
-  // in order to set the value property during the create event, and we set
-  // the value property here in the initial content changed event.
+  // not reflected in the tag content. We capture the value of the initial text content
+  // in order to set the value property during the create event.
   // TODO: Normalize indentation in the text content. Users will often want to
   // indent the markup so that it looks pretty. We should detect the indentation
   // level and remove any indentation whitespace
