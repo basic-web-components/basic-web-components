@@ -9,7 +9,7 @@
   "ignore": [
     "*",
     "!/browser.js",
-    "!/environment.js"
+    "!/browser.js.map"
   ],
   "keywords": [
     "browser",
@@ -22,16 +22,22 @@
     "web component",
     "web"
   ],
-  "devDependencies": {
-    "webcomponentsjs": "Polymer/webcomponentsjs#^0.5.0"
+  "dependencies": {
+    "mocha": "^2.2.4",
+    "stacky": "PolymerLabs/stacky#^1.2.2",
+    "async": "^0.9.2",
+    "chai": "^2.3.0",
+    "lodash": "^3.7.0",
+    "sinon-chai": "^2.7.0",
+    "sinonjs": "^1.14.1"
   },
   "homepage": "https://github.com/Polymer/web-component-tester",
-  "version": "2.2.6",
-  "_release": "2.2.6",
+  "version": "3.0.7",
+  "_release": "3.0.7",
   "_resolution": {
     "type": "version",
-    "tag": "v2.2.6",
-    "commit": "92574c7b4126d948b6e7ba3f7c1a7ed439f02a26"
+    "tag": "v3.0.7",
+    "commit": "0dd9381da5936ad91f971b3c5a16a9a4d178a8a9"
   },
   "_source": "git://github.com/Polymer/web-component-tester.git",
   "_target": "*",

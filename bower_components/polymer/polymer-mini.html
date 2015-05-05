@@ -10,33 +10,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="polymer-micro.html">
 
-<link rel="import" href="src/lib/dom-module.html">
-<link rel="import" href="src/features/mini/template.html">
-<link rel="import" href="src/features/mini/ready.html">
-<link rel="import" href="src/features/mini/shady.html">
-<link rel="import" href="src/features/mini/shadow.html">
+<link rel="import" href="src/mini/template.html">
+<link rel="import" href="src/mini/ready.html">
+<link rel="import" href="src/mini/shady.html">
+<link rel="import" href="src/mini/shadow.html">
 
 <script>
 
   Polymer.DomModule = document.createElement('dom-module');
 
-  Polymer.Base.addFeature({
+  Polymer.Base._addFeature({
 
-    registerFeatures: function() {
-      this._prepMixins();
+    _registerFeatures: function() {
+      // identity
+      this._prepIs();
+      // shared behaviors
+      this._prepBehaviors();
+      // inheritance
       this._prepExtends();
+     // factory
       this._prepConstructor();
+      // template
       this._prepTemplate();
-      this._prepContent();
+      // dom encapsulation
+      this._prepShady();
     },
 
-    initFeatures: function() {
+    _prepBehavior: function() {},
+
+    _initFeatures: function() {
+      // manage local dom
       this._poolContent();
+      // host stack
       this._pushHost();
+      // instantiate template
       this._stampTemplate();
+      // host stack
       this._popHost();
-      this._marshalAttributes();
-      this._readyContent();
+      // setup debouncers
+      this._setupDebouncers();
+      // instance shared behaviors
+      this._marshalBehaviors();
+      // top-down initial distribution, configuration, & ready callback
+      this._tryReady();
+    },
+
+    _marshalBehavior: function(b) {
+      // publish attributes to instance
+      this._installHostAttributes(b.hostAttributes);
     }
 
   });

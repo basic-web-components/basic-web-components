@@ -1,5 +1,5 @@
 <link rel="import" href="../basic-aspect/basic-aspect.html">
-<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 
 <dom-module id="basic-arrow-direction">
   <style>
@@ -46,10 +46,7 @@
     visibility: hidden;
   }
 
-  .navigationButton core-icon {
-    /* TODO: Remove once core-icon properly defines the -webkit display value. */
-    display: -webkit-inline-flex;
-    display: inline-flex;
+  .navigationButton iron-icon {
     height: 48px;
     width: 48px;
   }
@@ -73,13 +70,13 @@
   </style>
   <template>
     <button id="buttonLeft" class="navigationButton" on-click="goLeft">
-      <core-icon icon="chevron-left"></core-icon>
+      <iron-icon icon="chevron-left"></iron-icon>
     </button>
     <div id="arrowNavigationContainer">
       <content></content>
     </div>
     <button id="buttonRight" class="navigationButton" on-click="goRight">
-      <core-icon icon="chevron-right"></core-icon>
+      <iron-icon icon="chevron-right"></iron-icon>
     </button>
   </template>
 </dom-module>
