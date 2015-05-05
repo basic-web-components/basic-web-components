@@ -71,10 +71,39 @@ function handleContentChanged(mutations) {
   //   }
   // }
 
+  // Filter out mutations which occurred in Shady DOM.
+  if (mutations) {
+    var lightDomMutations = mutations.filter(function(mutation) {
+      return isLightDOMDescendant(mutation.target, this);
+    }.bind(this));
+    if (lightDomMutations.length === 0) {
+      // All mutations were only modifications in Shady DOM.
+      return;
+    }
+  }
+
   observeHostIfContentElementPresent(this);
 
   // Invoke the element's own handler.
   this.contentChanged();
+}
+
+
+// Return true if the node is a light DOM child of the indicated component.
+function isLightDOMDescendant(node, component) {
+  var parent = Polymer.dom(node).parentNode;
+  if (parent == null) {
+    return false;
+  }
+  if (parent === component) {
+    // The parent itself is in the component's light DOM.
+    return true;
+  } else if (parent instanceof HTMLElement) {
+    // Walk up to see if the parent is in component's light DOM.
+    return isLightDOMDescendant(parent, component);
+  } else {
+    return false;
+  }
 }
 
 

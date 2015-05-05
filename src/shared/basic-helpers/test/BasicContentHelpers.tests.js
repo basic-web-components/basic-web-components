@@ -92,6 +92,31 @@ suite('BasicContentHelpers', function() {
     });
   });
 
+  test('modifying shadow does not trigger contentChanged', function(done) {
+    var fixture = document.createElement('content-test-element');
+    fixture.contentChangedHook = function() {
+      console.log("contentChanged");
+      var childNodes = Polymer.dom(fixture).childNodes;
+      assert.equal(childNodes.length, 1);
+      done();
+    };
+    container.appendChild(fixture);
+    // Modify an element in the shadow, which shouldn't trigger contentChanged.
+    // Since contentChanged uses MutationObservers, and those only monitor
+    // light DOM content, this is not an issue on Shadow DOM. But on Shady DOM,
+    // the BasicContentHelpers' mutation handler will need to filter out
+    // mutations that occur in Shady DOM elements.
+    fixture.$.static.textContent = "This should be ignored";
+    flush(function() {
+      // Now add an element to the light DOM, which we do expect to trigger
+      // contentChanged.
+      console.log("flushed");
+      var textNode = new Text();
+      textNode.textContent = 'Hello'
+      Polymer.dom(fixture).appendChild(textNode);
+    });
+  });
+
   test.skip('observe changes in child attribute', function(done) {
     var fixture = document.createElement('content-test-element');
     var button = document.createElement('button');
