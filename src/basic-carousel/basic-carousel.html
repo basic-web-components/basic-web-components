@@ -64,4 +64,103 @@ Polymer(mixin(BasicAspectMixin, {
   is: 'basic-carousel'
 
 }));
+
+/*
+ * The following comments document API members provided by mixins. Ideally these
+ * docs will eventually be pulled from the mixin source files, but for now are
+ * copied here by hand.
+ */
+
+/**
+ * Invoked when the selected state of the given item has been updated.
+ *
+ * @method applySelection
+ * @param item The item whose selected state has updated.
+ * @param {Boolean} selected True if the item is now selected, false if not.
+ */
+
+/**
+ * Invoked when the component's collective changes.
+ *
+ * TODO: Provide link to collective documentation.
+ *
+ * @method collectiveChanged
+ */
+
+/**
+ * Returns the positional index for the indicated item.
+ *
+ * @method indexOfItem
+ * @param item The item whose index is requested.
+ * @returns {Number} The index of the item, or -1 if not found.
+ */
+
+/**
+ * Invoked on each new item when the item is added to the list. This can be used
+ * to perform per-item initialization.
+ *
+ * @method itemAdded
+ * @param item The item which has been added.
+ */
+
+/**
+ * The current set of items in the list.
+ *
+ * @property items
+ */
+
+/**
+ * Invoked when the set of items in the list has changed.
+ *
+ * @method itemsChanged
+ */
+
+/**
+ * The fractional position of the element's moving surface while it is being
+ * moved (dragged/scrolled/etc.).
+ *
+ * This is expressed as a fraction of the element's width. If the value is
+ * positive, the surface is being moved to the left; if negative, the surface is
+ * being moved to the right. E.g., a value of 0.5 indicates the surface has
+ * moved half the element's width to the left.
+ *
+ * @property {Number} position
+ */
+
+/**
+ * The index of the item which is currently selected, or -1 if there is no
+ * selection.
+ *
+ * @property {Number} selectedIndex
+ */
+
+/**
+ * The currently selected item, or null if there is no selection.
+ *
+ * @property selectedItem
+ */
+
+/**
+ * Select the first item in the list.
+ *
+ * @method selectFirst
+ */
+
+/**
+ * Select the last item in the list.
+ *
+ * @method selectLast
+ */
+
+/**
+ * Select the next item in the list.
+ *
+ * @method selectNext
+ */
+
+/**
+ * Select the previous item in the list.
+ *
+ * @method selectPrevious
+ */
 </script>
