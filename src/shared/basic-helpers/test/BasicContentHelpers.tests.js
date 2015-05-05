@@ -104,7 +104,7 @@ suite('BasicContentHelpers', function() {
     });
   });
 
-  test.skip('modifying shadow does not trigger contentChanged', function(done) {
+  test('modifying shadow does not trigger contentChanged', function(done) {
     var fixture = document.createElement('content-test-element');
     fixture.contentChangedHook = function() {
       console.log("contentChanged");

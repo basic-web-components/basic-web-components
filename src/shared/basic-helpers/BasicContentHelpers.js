@@ -72,15 +72,15 @@ function handleContentChanged(mutations) {
   // }
 
   // Filter out mutations which occurred in Shady DOM.
-  // if (mutations) {
-  //   var lightDomMutations = mutations.filter(function(mutation) {
-  //     return isLightDomDescendant(mutation.target, this);
-  //   }.bind(this));
-  //   if (lightDomMutations.length === 0) {
-  //     // All mutations were only modifications in Shady DOM.
-  //     return;
-  //   }
-  // }
+  if (mutations) {
+    var mutationsInLightDom = mutations.filter(function(mutation) {
+      return isLightDomMutation(mutation, this);
+    }.bind(this));
+    if (mutationsInLightDom.length === 0) {
+      // All mutations were only modifications in Shady DOM.
+      return;
+    }
+  }
 
   observeHostIfContentElementPresent(this);
 
@@ -101,6 +101,16 @@ function isLightDomDescendant(node, component) {
   } else {
     return false;
   }
+}
+
+
+// Return true if the given mutation only affects the component's light DOM
+// (and not Shady DOM).
+function isLightDomMutation(mutation, component) {
+  // See if at least one added node was in light DOM.
+  return Array.prototype.some.call(mutation.addedNodes, function(addedNode) {
+    return isLightDomDescendant(addedNode, component);
+  });
 }
 
 
