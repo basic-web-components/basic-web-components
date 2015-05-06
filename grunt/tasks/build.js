@@ -24,7 +24,12 @@ module.exports = function(grunt) {
       build: {
         expand: true,
         cwd: SRC_DIR,
-        src: ['basic-*/+(basic-*).+(html|js)', 'shared/collectives/*.js', 'shared/basic-helpers/*.js', '!test/**'],
+        src: [
+          'basic-*/+(basic-*).+(html|js)',
+          'basic-shared/collectives/*.js',
+          'basic-shared/basic-helpers/*.js',
+          'basic-shared/resources/**',
+          '!test/**'],
         dest: '<%= build_dir %>'
       },
       dist: {
@@ -52,7 +57,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= build_dir %>',
-          src: ['basic-*/*.js', 'shared/collectives/*.js', 'shared/basic-helpers/*.js'],
+          src: ['basic-*/*.js', 'basic-shared/collectives/*.js', 'basic-shared/basic-helpers/*.js'],
           dest: '<%= build_dir %>'
         }]
       }
@@ -63,7 +68,7 @@ module.exports = function(grunt) {
         options:{
           data: {
             modules: modules,
-            shared: grunt.file.expand({ cwd: SRC_DIR })
+            'basic-shared': grunt.file.expand({cwd: SRC_DIR})
           }
         },
         files: [{
@@ -81,11 +86,11 @@ module.exports = function(grunt) {
         // Comment out the following line for verbose output files
         //strip:true
       },
-      shared: {
+      'basic-shared': {
         files: [{
           expand: true,
           cwd: '<%= build_dir %>',
-          src: ['shared/**/*.html'],
+          src: ['basic-shared/**/*.html'],
           dest: '<%= build_dir %>'
         }]
       },
@@ -166,16 +171,16 @@ module.exports = function(grunt) {
 
   });
 
-  // Create HTML imports for shared folders
-  grunt.registerTask('jslib:imports', function() {
+  // Create HTML imports for basic-shared folders
+  grunt.registerTask('basic-shared:imports', function() {
     var dirs = ['collectives', 'basic-helpers'];
 
     for (var i = 0; i < dirs.length; i++) {
-      var files = grunt.file.expand({cwd: SRC_DIR + '/shared/' + dirs[i] + '/' }, '*.js');
+      var files = grunt.file.expand({cwd: SRC_DIR + '/basic-shared/' + dirs[i] + '/' }, '*.js');
 
       files.forEach(function(file) {
         var fileName = file.substr(0, file.lastIndexOf('.')) || file;
-        grunt.file.write(grunt.config('build_dir') + '/shared/' + dirs[i] + '/' + fileName.toLowerCase() + '.html', '<script src=\"' + file + '\"></script>');
+        grunt.file.write(grunt.config('build_dir') + '/basic-shared/' + dirs[i] + '/' + fileName.toLowerCase() + '.html', '<script src=\"' + file + '\"></script>');
       });
     }
 
@@ -187,7 +192,7 @@ module.exports = function(grunt) {
       'clean:build',
       'copy:build',
       'hogan_static:lib',
-      'vulcanize:shared',
+      'vulcanize:basic-shared',
       'vulcanize:modules',
       'vulcanize:dist',
       'usebanner:dist'
