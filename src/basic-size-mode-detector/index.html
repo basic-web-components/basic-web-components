@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>basic-size-mode-detector</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="basic-size-mode-detector.html">
+  <link rel="import" href="sample-element.html">
+
+  <style>
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  body {
+    display: flex;
+    margin: 0;
+  }
+
+  #explicitWidth {
+    width: 100%;
+  }
+
+  #explicitHeight {
+    height: 10px;
+  }
+
+  #explicitWidthAndHeight {
+    width: 100%;
+    height: 10px;
+  }
+
+  sample-element {
+    /*height: 100px;*/
+    /*width: 100%;*/
+    flex: 1;
+  }
+  </style>
+
+  <script>
+  document.addEventListener('WebComponentsReady', function() {
+    document.body.removeAttribute('unresolved');
+  });
+  </script>
+</head>
+
+<body unresolved>
+  <!--
+  <basic-size-mode-detector id="default"></basic-size-mode-detector>
+  <basic-size-mode-detector id="explicitWidth"></basic-size-mode-detector>
+  <basic-size-mode-detector id="explicitHeight"></basic-size-mode-detector>
+  <basic-size-mode-detector id="explicitWidthAndHeight"></basic-size-mode-detector>
+  -->
+  <sample-element>
+    Here's some content.
+  </sample-element>
+</body>
+
+</html>

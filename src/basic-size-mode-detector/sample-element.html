@@ -1,0 +1,25 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="basic-size-mode-detector.html">
+
+<dom-module id="sample-element">
+  <template>
+    <style>
+    :host {
+      border: 1px solid orange;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+    </style>
+    <basic-size-mode-detector>
+      <content></content>
+    </basic-size-mode-detector>
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  is: 'sample-element'
+
+});
+</script>

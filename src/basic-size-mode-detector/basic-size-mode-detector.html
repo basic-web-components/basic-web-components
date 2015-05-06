@@ -1,0 +1,65 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="basic-size-mode-detector">
+  <template>
+    <style>
+    :host {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+
+    #sizeTest {
+      display: block;
+      height: 100%;
+      min-height: 1px;
+      min-width: 1px;
+      width: 100%;
+    }
+
+    #container {
+      display: none;
+    }
+    </style>
+    <div id="sizeTest">
+      <div id="container">
+        <content></content>
+      </div>
+    </div>
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  attached: function() {
+    this.checkSizeMode();
+  },
+
+  checkSizeMode: function() {
+    var sizeTest = this.$.sizeTest;
+    var style = getComputedStyle(sizeTest);
+    var height = parseInt(style.height);
+    var width = parseInt(style.width);
+    this.fitHeight = (height === 1);
+    this.fitWidth = (width === 1);
+    // this.$.container.style.display = 'inherit';
+  },
+
+  is: 'basic-size-mode-detector',
+
+  properties: {
+    fitHeight: {
+      reflectToAttribute: true,
+      type: Boolean,
+      value: false
+    },
+    fitWidth: {
+      reflectToAttribute: true,
+      type: Boolean,
+      value: false
+    }
+  }
+
+});
+</script>
