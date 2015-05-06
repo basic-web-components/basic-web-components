@@ -1,0 +1,32 @@
+{
+  "name": "basic-carousel",
+  "description": "Lets user navigate laterally through a sequence of child elements",
+  "version": "0.6",
+  "license": "MIT",
+  "main": "basic-carousel.html",
+  "dependencies": {
+    "basic-accessible-list": "basic-web-components/basic-accessible-list#0.6",
+    "basic-aspect": "basic-web-components/basic-aspect#0.6",
+    "basic-children-content": "basic-web-components/basic-children-content#0.6",
+    "basic-content-items": "basic-web-components/basic-content-items#0.6",
+    "basic-direction-selection": "basic-web-components/basic-direction-selection#0.6",
+    "basic-item-selection": "basic-web-components/basic-item-selection#0.6",
+    "basic-keyboard": "basic-web-components/basic-keyboard#0.6",
+    "basic-keyboard-direction": "basic-web-components/basic-keyboard-direction#0.6",
+    "basic-sliding-viewport": "basic-web-components/basic-sliding-viewport#0.6",
+    "basic-spread-items": "basic-web-components/basic-spread-items#0.6",
+    "basic-swipe-direction": "basic-web-components/basic-swipe-direction#0.6",
+    "basic-trackpad-direction": "basic-web-components/basic-trackpad-direction#0.6",
+    "polymer": "Polymer/polymer#^0.8.0-rc.7"
+  },
+  "devDependencies": {
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ]
+}
