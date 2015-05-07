@@ -1,5 +1,37 @@
-<link rel="import" href="../basic-aspect/basic-aspect.html">
+<!--
+Lets the user navigate laterally through a sequence of child elements, without
+requiring that an explicit height and width be applied to the carousel.
 
+basic-carousel-fit is a variant of the
+[basic-carousel](http://github.com/basic-web-components/basic-carousel)
+component. That component requires that you use styling to explicitly set a
+height and width on the carousel. In contrast, basic-carousel-fit automatically
+examines its child elements, determines their maximum height and width, and then
+sets its own size accordingly.
+
+Example: if a basic-carousel-fit contains three child images of different sizes:
+
+    <basic-carousel-fit>
+      <img src="small.jpg">
+      <img src="medium.jpg">
+      <img src="large.jpg">
+    </basic-carousel-fit>
+
+it will size itself to the largest image.
+
+In all other respects, basic-carousel-fit works identically to basic-carousel;
+see that component for complete details on behavior and other notes.
+
+The fact that basic-carousel and basic-carousel-fit are distinct is an interim
+strategy. It is hoped that, at some point, they can be unified to create a
+single carousel that adapts its layout behavior to its applied styling.
+
+@element basic-carousel-fit
+@demo http://basic-web-components.github.io/components/basic-carousel-fit/
+-->
+
+
+<link rel="import" href="../basic-aspect/basic-aspect.html">
 <link rel="import" href="../basic-keyboard/basic-keyboard.html">
 <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
 <link rel="import" href="../basic-trackpad-direction/basic-trackpad-direction.html">
@@ -68,4 +100,91 @@ Polymer(mixin(BasicAspectMixin, {
   }
 
 }));
+
+/*
+ * The following comments document API members provided by mixins. Ideally these
+ * docs will eventually be pulled from the mixin source files, but for now are
+ * copied here by hand.
+ */
+
+/**
+ * Returns the positional index for the indicated item.
+ *
+ * @method indexOfItem
+ * @param {Object} item The item whose index is requested.
+ * @returns {Number} The index of the item, or -1 if not found.
+ */
+
+/**
+ * The current set of items in the list.
+ *
+ * @property items
+ * @type [Object]
+ */
+
+/**
+ * Fires when the items in the list change.
+ *
+ * @event items-changed
+ */
+
+/**
+ * Fires when a new item has been selected.
+ *
+ * @event selected-item-changed
+ * @param detail.selectedItem The new selected item.
+ * @param detail.previousItem The previously selected item.
+ */
+
+/**
+ * The fractional position of the element's moving surface while it is being
+ * moved (dragged/scrolled/etc.).
+ *
+ * This is expressed as a fraction of the element's width. If the value is
+ * positive, the surface is being moved to the left; if negative, the surface is
+ * being moved to the right. E.g., a value of 0.5 indicates the surface has
+ * moved half the element's width to the left.
+ *
+ * @property position
+ * @type Number
+ */
+
+/**
+ * The index of the item which is currently selected, or -1 if there is no
+ * selection.
+ *
+ * @property selectedIndex
+ * @type Number
+ */
+
+/**
+ * The currently selected item, or null if there is no selection.
+ *
+ * @property selectedItem
+ * @type Object
+ */
+
+/**
+ * Select the first item in the list.
+ *
+ * @method selectFirst
+ */
+
+/**
+ * Select the last item in the list.
+ *
+ * @method selectLast
+ */
+
+/**
+ * Select the next item in the list.
+ *
+ * @method selectNext
+ */
+
+/**
+ * Select the previous item in the list.
+ *
+ * @method selectPrevious
+ */
 </script>

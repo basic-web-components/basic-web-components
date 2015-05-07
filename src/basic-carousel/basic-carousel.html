@@ -21,14 +21,16 @@ The child elements can be of any type — they are not restricted to images.
 
 This component attempts to meet the [Gold Standard for web components]
 (https://github.com/webcomponents/gold-standard/wiki) so that it is generally
-as flexible and robust as standard HTML elements. Currently, this component
-does not meet the Gold Standard criteria "Size to Content" and "Default Size".
+as flexible and robust as standard HTML elements. For example, it meets the
+"Content Changes" criteria: the carousel will adapt to new child elements added
+or removed at runtime.
 
-As a result, for the time being, **you must manually set a size on this
-component**. Two approaches are to: 1) stretch the component across whatever
-surface it is contained within, or 2) set it to be larger than the largest child
-element you want to display. The former approach is more common, and can be
-achieved with CSS styling such as:
+Currently, this component does not meet the Gold Standard criteria "Size to
+Content". As a result, for the time being, **you must manually set a size on
+this component**. Two approaches are to: 1) stretch the component across
+whatever surface it is contained within, or 2) set it to be larger than the
+largest child element you want to display. The former approach is more common,
+and can be achieved with CSS styling such as:
 
     html {
       height: 100%;
@@ -80,6 +82,11 @@ carousel with both arrow buttons and dots like so:
         </basic-carousel>
       </basic-page-dots>
     </basic-arrow-direction>
+
+For universal access, basic-carousel automatically adds a variety of
+[ARIA](http://www.w3.org/WAI/intro/aria) properties to itself and to child
+elements. This helps users navigate the sequence of elements in the carousel
+using assistive technologies.
 
 @element basic-carousel
 @demo http://basic-web-components.github.io/components/basic-carousel/
