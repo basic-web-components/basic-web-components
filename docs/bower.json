@@ -1,0 +1,7 @@
+{
+  "name": "basic-web-component-docs",
+  "version": "0.6",
+  "dependencies": {
+    "core-doc-viewer": "Polymer/core-doc-viewer"
+  }
+}
