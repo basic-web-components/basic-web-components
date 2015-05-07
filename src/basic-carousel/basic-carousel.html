@@ -1,5 +1,19 @@
 <!--
-Lets user navigate laterally through a sequence of child elements.
+Lets the user navigate laterally through a sequence of child elements.
+
+basic-carousel is an implementation of the carousel user interface pattern. This
+patterns presents a sequence of child elements in which a single child elements
+is visible at a time. The user can move to the previous/next element with a
+variety of input methods, including touch and keyboard.
+
+In a typical use, a basic-carousel can be used to navigate between a sequence of
+images:
+
+    <basic-carousel>
+      <img src="image1.jpg">
+      <img src="image2.jpg">
+      <img src="image3.jpg">
+    </basic-carousel>
 
 @element basic-carousel
 @demo http://basic-web-components.github.io/components/basic-carousel/
@@ -90,6 +104,12 @@ Polymer(mixin(BasicAspectMixin, {
  *
  * @property items
  * @type [Object]
+ */
+
+/**
+ * Fires when the items in the list change.
+ *
+ * @event items-changed
  */
 
 /**
