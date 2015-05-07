@@ -159,7 +159,8 @@ Polymer(mixin(BasicAspectMixin, {
         // var newDot = document.importNode(dotTemplate.content, true);
         var newDot = document.createElement('div');
         newDot.classList.add('dot');
-        newDot.setAttribute('style-scope', 'basic-page-dots');
+        newDot.classList.add('style-scope');
+        newDot.classList.add('basic-page-dots');
         dotContainer.appendChild(newDot);
       }
     }
