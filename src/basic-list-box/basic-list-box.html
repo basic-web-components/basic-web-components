@@ -100,25 +100,6 @@ the item into view.
 </dom-module>
 
 <script>
-/*
-
-Polymer({
-
-  aspects: new Collective(
-    AspectAccessibleList,
-    AspectContentItems,
-    AspectCursorNavigation,
-    AspectPageNavigation,
-    AspectSelection,
-    AspectSelectionHighlight,
-    AspectSelectionScrolledInView,
-    AspectSelecctionNavigation
-  )
-
-});
-
-*/
-
 Polymer(mixin(BasicAspectMixin, {
 
   hostAttributes: {
@@ -136,4 +117,78 @@ Polymer(mixin(BasicAspectMixin, {
   }
 
 }));
+
+/*
+ * The following comments document API members provided by mixins. Ideally these
+ * docs will eventually be pulled from the mixin source files, but for now are
+ * copied here by hand.
+ */
+
+/**
+ * Returns the positional index for the indicated item.
+ *
+ * @method indexOfItem
+ * @param {Object} item The item whose index is requested.
+ * @returns {Number} The index of the item, or -1 if not found.
+ */
+
+/**
+ * The current set of items in the list.
+ *
+ * @property items
+ * @type [Object]
+ */
+
+/**
+ * Fires when the items in the list change.
+ *
+ * @event items-changed
+ */
+
+/**
+ * Fires when a new item has been selected.
+ *
+ * @event selected-item-changed
+ * @param detail.selectedItem The new selected item.
+ * @param detail.previousItem The previously selected item.
+ */
+
+/**
+ * The index of the item which is currently selected, or -1 if there is no
+ * selection.
+ *
+ * @property selectedIndex
+ * @type Number
+ */
+
+/**
+ * The currently selected item, or null if there is no selection.
+ *
+ * @property selectedItem
+ * @type Object
+ */
+
+/**
+ * Select the first item in the list.
+ *
+ * @method selectFirst
+ */
+
+/**
+ * Select the last item in the list.
+ *
+ * @method selectLast
+ */
+
+/**
+ * Select the next item in the list.
+ *
+ * @method selectNext
+ */
+
+/**
+ * Select the previous item in the list.
+ *
+ * @method selectPrevious
+ */
 </script>

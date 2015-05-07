@@ -7,6 +7,15 @@ Aspect which manages selection semantics for items in a list.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
+/**
+ * Fires when a new item has been selected.
+ *
+ * @event selected-item-changed
+ * @param detail.selectedItem The new selected item.
+ * @param detail.previousItem The previously selected item.
+ */
+
+
 Polymer(mixin(BasicAspectMixin, {
 
   // Default implementation will be overwritten with collective method.
@@ -37,6 +46,12 @@ Polymer(mixin(BasicAspectMixin, {
       return this._selectedItem;
     },
 
+    /**
+     * The currently selected item, or null if there is no selection.
+     *
+     * @property selectedItem
+     * @type Object
+     */
     // TODO: Confirm item is in items before selecting.
     set selectedItem(item) {
       var previousItem = this._selectedItem;
@@ -60,7 +75,11 @@ Polymer(mixin(BasicAspectMixin, {
     },
 
     /**
-     * Return the index of the selected item, or -1 if there is no selection.
+     * The index of the item which is currently selected, or -1 if there is no
+     * selection.
+     *
+     * @property selectedIndex
+     * @type Number
      */
     get selectedIndex() {
       var selectedItem = this.selectedItem;
@@ -89,18 +108,38 @@ Polymer(mixin(BasicAspectMixin, {
       this.selectedItem = item;
     },
 
+    /**
+     * Select the first item in the list.
+     *
+     * @method selectFirst
+     */
     selectFirst: function() {
       return this._selectIndex(0);
     },
 
+    /**
+     * Select the last item in the list.
+     *
+     * @method selectLast
+     */
     selectLast: function() {
       return this._selectIndex(this.items.length - 1);
     },
 
+    /**
+     * Select the next item in the list.
+     *
+     * @method selectNext
+     */
     selectNext: function() {
       return this._selectIndex(this.selectedIndex + 1);
     },
 
+    /**
+     * Select the previous item in the list.
+     *
+     * @method selectPrevious
+     */
     selectPrevious: function() {
       return this._selectIndex(this.selectedIndex - 1);
     }

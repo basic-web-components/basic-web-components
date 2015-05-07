@@ -7,6 +7,13 @@ Aspect that lets a component collective DOM content as list items.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
+
+/**
+ * Fires when the items in the list change.
+ *
+ * @event items-changed
+ */
+
 Polymer(mixin(BasicAspectMixin, {
 
   contribute: {
@@ -21,8 +28,12 @@ Polymer(mixin(BasicAspectMixin, {
       }
     },
 
-    /*
-     * Return the index of the indicated item.
+    /**
+     * Returns the positional index for the indicated item.
+     *
+     * @method indexOfItem
+     * @param {Object} item The item whose index is requested.
+     * @returns {Number} The index of the item, or -1 if not found.
      */
     indexOfItem: function(item) {
       return this.items.indexOf(item);
@@ -43,6 +54,12 @@ Polymer(mixin(BasicAspectMixin, {
       this.dispatchEvent(event);
     },
 
+    /**
+     * The current set of items in the list.
+     *
+     * @property items
+     * @type [Object]
+     */
     get items() {
       // TODO: Memoize
       // TODO: Filter out auxiliary content.

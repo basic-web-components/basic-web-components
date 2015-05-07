@@ -63,6 +63,11 @@ Polymer(mixin(BasicAspectMixin, {
     }.bind(this));
   },
 
+  /**
+   * Force the component to recalculate its size.
+   *
+   * @method recalc
+   */
   recalc: function() {
     this.$.stack.recalc();
   },

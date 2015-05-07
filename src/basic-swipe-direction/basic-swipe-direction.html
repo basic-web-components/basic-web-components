@@ -16,6 +16,13 @@ Polymer(mixin(BasicAspectMixin, {
       this.position = 0;
     },
 
+    /**
+     * The distance the user has moved the first touchpoint since the beginning
+     * of a drag, expressed as a fraction of the element's width.
+     *
+     * @property position
+     * @type Number
+     */
     get position() {
       return this._position;
     },

@@ -53,6 +53,12 @@ function mixin() {
 
 BasicAspectMixin = {
 
+  /**
+   * Assimilate the objects indicated by the method's arguments into this
+   * element's collective.
+   *
+   * @method assimilate
+   */
   assimilate: function() {
     this.collective.assimilate.apply(this.collective, arguments);
   },
@@ -68,6 +74,20 @@ BasicAspectMixin = {
   },
 
   properties: {
+    /**
+     * Designates an object that should be assimilated into the collective.
+     *
+     * This property can be used to declare assimilation in markup. Valid values
+     * for this can be:
+     *
+     * * target="child". Assimilates the first child element which is an aspect.
+     * * target="nextSibling". Assimilates the next sibling of this element.
+     * * target="shadow". Assimilates all aspects which are direct children of
+     *   the element's shadow subtree.
+     *
+     * @property target
+     * @type String
+     */
     target: {
       value: null,
       observer: 'targetChanged'

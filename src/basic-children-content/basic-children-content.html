@@ -64,6 +64,16 @@ Polymer(mixin(BasicAspectMixin, {
       this.dispatchEvent(event);
     },
 
+    /**
+     * The flattened content of this collective.
+     *
+     * The content is the collective of nodes which are children of the
+     * collective's innermost aspect. If any of those nodes are `<content>`
+     * elements, those are recursively expanded.
+     *
+     * @property content
+     * @type [Object]
+     */
     get content() {
       if (!this._content) {
         this._content = BasicContentHelpers.flattenChildren(this.collective.innermost);

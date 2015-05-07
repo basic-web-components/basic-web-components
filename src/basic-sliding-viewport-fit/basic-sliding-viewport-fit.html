@@ -38,6 +38,18 @@ Polymer(mixin(BasicAspectMixin, {
 
   contribute: {
 
+    /**
+     * The fractional position of the element's moving surface while it is being
+     * moved (dragged/scrolled/etc.).
+     *
+     * This is expressed as a fraction of the element's width. If the value is
+     * positive, the surface is being moved to the left; if negative, the surface is
+     * being moved to the right. E.g., a value of 0.5 indicates the surface has
+     * moved half the element's width to the left.
+     *
+     * @property position
+     * @type Number
+     */
     get position() {
       return this._position;
     },

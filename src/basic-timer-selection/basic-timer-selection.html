@@ -16,6 +16,11 @@ Polymer(mixin(BasicAspectMixin, {
       this.play();
     },
 
+    /**
+     * Begin automatic progression of the selection.
+     *
+     * @method play
+     */
     play: function() {
       if (this._interval) {
         clearInterval(this._interval);
