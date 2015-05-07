@@ -43,14 +43,14 @@ Polymer(mixin(BasicAspectMixin, {
         this.applySelection(item, true);
       }
 
-      // var event = new CustomEvent('selected-item-changed', {
-      //   bubbles: true,
-      //   detail: {
-      //     selectedItem: item,
-      //     previousItem: previousItem
-      //   }
-      // });
-      // this.dispatchEvent(event);
+      var event = new CustomEvent('selected-item-changed', {
+        bubbles: true,
+        detail: {
+          selectedItem: item,
+          previousItem: previousItem
+        }
+      });
+      this.dispatchEvent(event);
     },
 
     /**

@@ -45,7 +45,7 @@
   "Required Properties":        "N/A",
   "Exposed Methods":            true,
   "Exposed Events":             true,
-  "Documented API":             false,
+  "Documented API":             true,
   "Computational Performance":  true,
   "Network Performance":        "N/A",
   "Render Performance":         true,
@@ -62,5 +62,5 @@
   "Purpose Statement":          true,
   "Code Style Guide":           true,
   "Open License":               true,
-  "Clean Console":              false
+  "Clean Console":              true
 }
