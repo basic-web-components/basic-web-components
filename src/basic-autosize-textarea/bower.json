@@ -1,7 +1,7 @@
 {
   "name": "basic-autosize-textarea",
   "description": "A text area that makes itself big enough to show its content",
-  "version": "0.6.0",
+  "version": "0.6.0-preview",
   "license": "MIT",
   "main": "basic-autosize-textarea.html",
   "dependencies": {
