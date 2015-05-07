@@ -48,10 +48,13 @@ Polymer(mixin(BasicAspectMixin, {
     },
 
     contentChanged: function() {
-      // TODO: Raise event?
-
       // Reset memoized content.
       this._content = null;
+
+      var event = new CustomEvent('content-changed', {
+        bubbles: true
+      });
+      this.dispatchEvent(event);
     },
 
     get content() {
