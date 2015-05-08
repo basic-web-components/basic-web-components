@@ -1,4 +1,4 @@
-suite('BasicResizeHelpers', function() {
+suite('Resized', function() {
 
   this.timeout(2000);
 

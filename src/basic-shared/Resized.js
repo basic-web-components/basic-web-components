@@ -64,8 +64,9 @@ function handleResize() {
   }
 }
 
+window.Basic = window.Basic || {};
 
-window.BasicResizeBehavior = {
+window.Basic.Resized = {
 
   attached: function() {
     listenForResize(this);

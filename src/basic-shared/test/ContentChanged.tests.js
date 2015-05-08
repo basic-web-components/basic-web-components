@@ -1,4 +1,4 @@
-suite('BasicContentHelpers', function() {
+suite('ContentHelpers and ContentChanged', function() {
 
   this.timeout(2000);
 

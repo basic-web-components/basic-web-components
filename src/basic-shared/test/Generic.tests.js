@@ -1,4 +1,4 @@
-suite('basic', function() {
+suite('Generic', function() {
 
   this.timeout(2000);
 
