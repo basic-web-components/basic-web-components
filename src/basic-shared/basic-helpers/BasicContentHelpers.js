@@ -151,6 +151,9 @@ function observeHostIfContentElementPresent(node) {
 }
 
 
+/*
+ * A collection of content helpers that can be used by any element.
+ */
 window.BasicContentHelpers = {
 
   /*
@@ -258,6 +261,34 @@ window.BasicContentHelpers = {
       node._contentChangeObserver.disconnect();
       node._contentChangeObserver = null;
     }
+  }
+
+};
+
+/*
+ * A Polymer element behavior that automatically wires up content observation,
+ * and simplifies access to the various content-flattening helper functions.
+ */
+window.BasicContentBehavior = {
+
+  attached: function() {
+    BasicContentHelpers.observeContentChanges(this);
+  },
+
+  detached: function() {
+    BasicContentHelpers.observeContentChanges(this, false);
+  },
+
+  get flattenChildren() {
+    return BasicContentHelpers.flattenChildren(this);
+  },
+
+  get flattenChildNodes() {
+    return BasicContentHelpers.flattenChildNodes(this);
+  },
+
+  get flattenTextContent() {
+    return BasicContentHelpers.flattenTextContent(this);
   }
 
 };

@@ -12,9 +12,9 @@
 <script>
 Polymer({
 
-  attached: function() {
-    BasicContentHelpers.observeContentChanges(this);
-  },
+  behaviors: [
+    BasicContentBehavior
+  ],
 
   contentChanged: function() {
     if (this.contentChangedHook) {
@@ -23,7 +23,6 @@ Polymer({
   },
 
   detached: function() {
-    BasicContentHelpers.observeContentChanges(this, false);
     if (this.detachedHook) {
       this.detachedHook();
     }

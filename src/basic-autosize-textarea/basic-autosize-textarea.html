@@ -178,35 +178,19 @@ Polymer({
     }
 
     this._initializeWhenRendered();
-
-    BasicContentHelpers.observeContentChanges(this);
   },
 
-  detached: function() {
-    BasicContentHelpers.observeContentChanges(this, false);
-  },
-
-  valueChanged: function() {
-    this.autoSize();
-    this.dispatchEvent(new CustomEvent('value-changed'));
-  },
+  behaviors: [
+    BasicContentBehavior
+  ],
 
   contentChanged: function() {
     this.value = this._flattenTextAndRemoveLightDom();
   },
 
-  _flattenTextAndRemoveLightDom: function() {
-    var text = BasicContentHelpers.flattenTextContent(this);
-    BasicContentHelpers.removeLightDomNodes(this);
-
-    // Trim the text.
-    // This is non-standard textarea behavior. A standard textarea will trim the
-    // first character if it's a newline, but that's it. However,  authors will
-    // want to be able to place the opening and closing tags on their own lines.
-    // So it seems more helpful to trim whitespace on either side.
-    text = text.trim();
-
-    return text;
+  valueChanged: function() {
+    this.autoSize();
+    this.dispatchEvent(new CustomEvent('value-changed'));
   },
 
   minimumRowsChanged: function() {
@@ -236,6 +220,20 @@ Polymer({
   },
   set selectionStart(value) {
     this.$.textBox.selectionStart = value;
+  },
+
+  _flattenTextAndRemoveLightDom: function() {
+    var text = this.flattenTextContent;
+    BasicContentHelpers.removeLightDomNodes(this);
+
+    // Trim the text.
+    // This is non-standard textarea behavior. A standard textarea will trim the
+    // first character if it's a newline, but that's it. However,  authors will
+    // want to be able to place the opening and closing tags on their own lines.
+    // So it seems more helpful to trim whitespace on either side.
+    text = text.trim();
+
+    return text;
   },
 
   // Set up once this component has been rendered.
