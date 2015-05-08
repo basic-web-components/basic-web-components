@@ -14,7 +14,9 @@ Aspect that lets a component collective DOM content as list items.
  * @event items-changed
  */
 
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -76,5 +78,5 @@ Polymer(mixin(BasicAspectMixin, {
   itemAdded: function() {},
   itemsChanged: function() {}
 
-}));
+});
 </script>

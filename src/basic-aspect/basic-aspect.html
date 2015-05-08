@@ -63,13 +63,13 @@ BasicAspectMixin = {
     this.collective.assimilate.apply(this.collective, arguments);
   },
 
-  contribute: {
-    // The basic-aspect basic class contributes no members itself, but defines
-    // a contribute property so that it (and any subclass) is recognizable as an
-    // aspect. This will be overwritten by subclasses.
-  },
-
   created: function() {
+    if (typeof this.contribute === 'undefined') {
+      // The basic-aspect class contributes no members itself, but defines a
+      // default, empty contribute property so that it (and any subclass) is
+      // recognizable as an aspect.
+      this.contribute = {};
+    }
     new Collective(this);
   },
 

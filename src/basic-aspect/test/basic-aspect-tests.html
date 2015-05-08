@@ -1,7 +1,9 @@
 <link rel="import" href="../basic-aspect.html">
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -13,11 +15,13 @@ Polymer(mixin(BasicAspectMixin, {
 
   is: 'aspect-one'
 
-}));
+});
 </script>
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -29,7 +33,7 @@ Polymer(mixin(BasicAspectMixin, {
 
   is: 'aspect-two'
 
-}));
+});
 </script>
 
 <dom-module id="aspect-one-wrapper">
@@ -38,7 +42,9 @@ Polymer(mixin(BasicAspectMixin, {
   </template>
 </dom-module>
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   hostAttributes: {
     target: 'shadow'
@@ -46,7 +52,7 @@ Polymer(mixin(BasicAspectMixin, {
 
   is: 'aspect-one-wrapper'
 
-}));
+});
 </script>
 
 <dom-module id="two-aspects">
@@ -57,7 +63,11 @@ Polymer(mixin(BasicAspectMixin, {
   </template>
 </dom-module>
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
+
   is: 'two-aspects'
-}));
+  
+});
 </script>

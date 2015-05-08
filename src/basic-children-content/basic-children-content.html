@@ -14,7 +14,9 @@ option.
 -->
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -91,5 +93,5 @@ Polymer(mixin(BasicAspectMixin, {
 
   _previousInnermostAspect: null
 
-}));
+});
 </script>
