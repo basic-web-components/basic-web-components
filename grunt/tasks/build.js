@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         src: [
           'basic-*/+(basic-*).+(html|js)',
           'basic-shared/collectives/*.js',
-          'basic-shared/basic-helpers/*.js',
+          'basic-shared/*.js',
           'basic-shared/resources/**',
           '!test/**'],
         dest: '<%= build_dir %>'
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= build_dir %>',
-          src: ['basic-*/*.js', 'basic-shared/collectives/*.js', 'basic-shared/basic-helpers/*.js'],
+          src: ['basic-*/*.js', 'basic-shared/collectives/*.js', 'basic-shared/*.js'],
           dest: '<%= build_dir %>'
         }]
       }
@@ -173,7 +173,7 @@ module.exports = function(grunt) {
 
   // Create HTML imports for basic-shared folders
   grunt.registerTask('basic-shared:imports', function() {
-    var dirs = ['collectives', 'basic-helpers'];
+    var dirs = ['collectives', '.'];
 
     for (var i = 0; i < dirs.length; i++) {
       var files = grunt.file.expand({cwd: SRC_DIR + '/basic-shared/' + dirs[i] + '/' }, '*.js');
