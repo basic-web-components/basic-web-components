@@ -115,7 +115,7 @@ suite('ContentHelpers and ContentChanged', function() {
     // Modify an element in the shadow, which shouldn't trigger contentChanged.
     // Since contentChanged uses MutationObservers, and those only monitor
     // light DOM content, this is not an issue on Shadow DOM. But on Shady DOM,
-    // the BasicContentHelpers' mutation handler will need to filter out
+    // the Basic.ContentHelpers' mutation handler will need to filter out
     // mutations that occur in Shady DOM elements.
     fixture.$.static.textContent = "This should be ignored";
     flush(function() {

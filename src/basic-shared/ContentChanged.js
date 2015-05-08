@@ -196,7 +196,7 @@ window.Basic.ContentHelpers = {
    * content nodes.
    */
   flattenTextContent: function(node) {
-    var flattenedChildNodes = BasicContentHelpers.flattenChildNodes(node);
+    var flattenedChildNodes = Basic.ContentHelpers.flattenChildNodes(node);
     var strings = flattenedChildNodes.map(function(child) {
       return child.textContent;
     });
@@ -208,7 +208,7 @@ window.Basic.ContentHelpers = {
    * another element (it's not attached to anything, or is hosted by the
    * top-level document), this returns null.
    *
-   * This getter is used by BasicContentHelpers itself, but is also useful
+   * This getter is used by Basic.ContentHelpers itself, but is also useful
    * generally.
    */
   getHost: function(node) {

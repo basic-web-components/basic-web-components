@@ -11,8 +11,8 @@ stretch the text area.
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<script src="../basic-shared/basic-helpers/BasicContentHelpers.js"></script>
-<script src="../basic-shared/basic-helpers/BasicGenericHelpers.js"></script>
+<script src="../basic-shared/ContentChanged.js"></script>
+<script src="../basic-shared/Generic.js"></script>
 
 <dom-module id="basic-autosize-textarea">
 
@@ -222,7 +222,7 @@ Polymer({
 
   _flattenTextAndRemoveLightDom: function() {
     var text = this.flattenTextContent;
-    BasicContentHelpers.removeLightDomNodes(this);
+    Basic.ContentHelpers.removeLightDomNodes(this);
 
     // Trim the text.
     // This is non-standard textarea behavior. A standard textarea will trim the

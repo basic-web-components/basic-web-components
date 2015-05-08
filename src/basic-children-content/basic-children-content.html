@@ -6,7 +6,7 @@ aspect.
 -->
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
-<script src="../basic-shared/basic-helpers/BasicContentHelpers.js"></script>
+<script src="../basic-shared/ContentChanged.js"></script>
 
 <!--
 TODO: Don't respond to changes in attributes, or at least offer that as an
@@ -42,13 +42,13 @@ Polymer({
       if (this._previousInnermostAspect && this._previousInnermostAspect._contentChangeObserver) {
         // Stop observing changes on the old innermost aspect.
         // console.log("stopping observation of changes on old innermost aspect");
-        BasicContentHelpers.observeContentChanges(this._previousInnermostAspect, false);
+        Basic.ContentHelpers.observeContentChanges(this._previousInnermostAspect, false);
       }
       // Start observing changes on the new innermost aspect.
       if (innermost._contentChangeObserver) {
         // console.log("already being observed");
       }
-      BasicContentHelpers.observeContentChanges(innermost);
+      Basic.ContentHelpers.observeContentChanges(innermost);
       this._previousInnermostAspect = innermost;
     },
 
@@ -74,7 +74,7 @@ Polymer({
      */
     get content() {
       if (!this._content) {
-        this._content = BasicContentHelpers.flattenChildren(this.collective.innermost);
+        this._content = Basic.ContentHelpers.flattenChildren(this.collective.innermost);
       }
       return this._content;
     },

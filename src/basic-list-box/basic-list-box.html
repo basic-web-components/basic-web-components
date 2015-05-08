@@ -57,9 +57,8 @@ the item into view.
 <link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
 <link rel="import" href="../basic-accessible-list/basic-accessible-list.html">
 <link rel="import" href="../basic-selection-highlight/basic-selection-highlight.html">
-<!-- <link rel="import" href="../basic-paged-list-aspect/basic-paged-list-aspect.html"> -->
 
-<script src="../basic-shared/basic-helpers/BasicGenericHelpers.js"></script>
+<script src="../basic-shared/Generic.js"></script>
 
 <dom-module id="basic-list-box">
   <style>
@@ -104,7 +103,7 @@ Polymer({
 
   behaviors: [
     BasicAspectMixin,
-    BasicGenericBehavior
+    Basic.Generic
   ],
 
   hostAttributes: {
@@ -120,7 +119,7 @@ Polymer({
  * docs will eventually be pulled from the mixin source files, but for now are
  * copied here by hand.
  */
- 
+
 /**
  * True if the component would like to receive generic styling.
  *

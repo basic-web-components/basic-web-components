@@ -7,7 +7,7 @@ and width of the child elements.
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 <link rel="import" href="../basic-children-content/basic-children-content.html">
-<script src="../basic-shared/basic-helpers/BasicResizeHelpers.js"></script>
+<script src="../basic-shared/Resized.js"></script>
 
 <dom-module id="basic-stack">
   <style>
@@ -41,7 +41,7 @@ Polymer({
 
   behaviors: [
     BasicAspectMixin,
-    BasicResizeBehavior
+    Basic.Resized
   ],
 
   contribute: {
@@ -100,7 +100,6 @@ Polymer({
   },
 
   resized: function(event) {
-    console.log("resized");
     if (this.$ && this.$.stackContainer) {
       var foo = this.$.stackContainer.style;
       this.$.stackContainer.style.width = '100%';
