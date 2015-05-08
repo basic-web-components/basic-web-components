@@ -3,6 +3,8 @@
  * properties and methods to the group.
  */
 
+(function() {
+
 
 function Collective() {
   this.aspects = [];
@@ -302,3 +304,9 @@ Collective.prototype = {
   }
 
 };
+
+
+window.Basic = window.Basic || {};
+window.Basic.Collective = Collective;
+
+})();

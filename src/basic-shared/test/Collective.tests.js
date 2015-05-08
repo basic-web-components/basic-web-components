@@ -1,12 +1,12 @@
 suite('Collective', function() {
 
-  test("new collective has no aspects or member functions", function() {
-    var collective = new Collective();
+  test("new Basic.Collective has no aspects or member functions", function() {
+    var collective = new Basic.Collective();
     assert.equal(collective.aspects.length, 0);
   });
 
   test("assimilate aspect that doesn't yet belong to a collective", function() {
-    var collective = new Collective();
+    var collective = new Basic.Collective();
     var aspect = {
       contribute: {
         method: function() {}
@@ -25,7 +25,7 @@ suite('Collective', function() {
   test("Collective constructor accepts a set of entities to assimilate", function() {
     var aspect1 = {};
     var aspect2 = {};
-    var collective = new Collective(aspect1, aspect2);
+    var collective = new Basic.Collective(aspect1, aspect2);
     assert.equal(collective.aspects.length, 2);
     assert.equal(collective.aspects[0], aspect1);
     assert.equal(collective.aspects[1], aspect2);
@@ -35,9 +35,9 @@ suite('Collective', function() {
 
   test("assimilate collective", function() {
     var aspect1 = {};
-    var collective1 = new Collective(aspect1);
+    var collective1 = new Basic.Collective(aspect1);
     var aspect2 = {};
-    var collective2 = new Collective(aspect2);
+    var collective2 = new Basic.Collective(aspect2);
     collective1.assimilate(collective2);
     assert.equal(collective1.aspects.length, 2);
     assert.equal(collective1.aspects[0], aspect1);
@@ -49,9 +49,9 @@ suite('Collective', function() {
 
   test("assimilate aspect that already belongs to a collective", function() {
     var aspect1 = {};
-    var collective1 = new Collective(aspect1);
+    var collective1 = new Basic.Collective(aspect1);
     var aspect2 = {};
-    var collective2 = new Collective(aspect2);
+    var collective2 = new Basic.Collective(aspect2);
     collective1.assimilate(aspect2);
     assert.equal(collective1.aspects.length, 2);
     assert.equal(collective1.aspects[0], aspect1);
@@ -63,7 +63,7 @@ suite('Collective', function() {
 
   test("assimilating aspect that's already in the same collective has no effect", function() {
     var aspect = {};
-    var collective = new Collective(aspect);
+    var collective = new Basic.Collective(aspect);
     assert.equal(collective.aspects.length, 1);
     collective.assimilate(aspect);
     assert.equal(collective.aspects.length, 1);
@@ -84,7 +84,7 @@ suite('Collective', function() {
         bletch: function() {}
       }
     };
-    var collective = new Collective(aspect1, aspect2);
+    var collective = new Basic.Collective(aspect1, aspect2);
     var methods = collective.methods;
     assert.equal(methods.foo.length, 1);
     assert.equal(methods.bar.length, 1);
@@ -112,7 +112,7 @@ suite('Collective', function() {
         }
       }
     };
-    var collective = new Collective(aspect1, aspect2, aspect3);
+    var collective = new Basic.Collective(aspect1, aspect2, aspect3);
     assert.equal(collective.methods.method.length, 2);
 
     collective.invokeMethod('method', ['foo']);
@@ -130,9 +130,9 @@ suite('Collective', function() {
         }
       }
     };
-    var collective1 = new Collective(aspect);
+    var collective1 = new Basic.Collective(aspect);
     assert.equal(count, 1);
-    var collective2 = new Collective(collective1);
+    var collective2 = new Basic.Collective(collective1);
     assert.equal(count, 2);
   });
 
@@ -151,7 +151,7 @@ suite('Collective', function() {
       },
       name: 'aspect2'
     };
-    var collective = new Collective(aspect1, aspect2);
+    var collective = new Basic.Collective(aspect1, aspect2);
     assert.equal(aspect1.getName('foo'), 'aspect1 foo');
     // The return value comes from the outermost component, so it's the same
     // regardless of which component we use to invoke the method.
@@ -173,7 +173,7 @@ suite('Collective', function() {
         }
       }
     };
-    var collective = new Collective(aspect1, aspect2);
+    var collective = new Basic.Collective(aspect1, aspect2);
 
     var getters = collective.getters;
     assert.equal(getters.value.length, 2);
@@ -197,7 +197,7 @@ suite('Collective', function() {
         }
       }
     };
-    var collective = new Collective(aspect1, aspect2);
+    var collective = new Basic.Collective(aspect1, aspect2);
 
     var setters = collective.setters;
     assert.equal(setters.value.length, 2);
@@ -216,7 +216,7 @@ suite('Collective', function() {
 
   test("assimilating a class assimilates an instance of that class", function() {
     var aspectClass = function() {};
-    var collective = new Collective(aspectClass);
+    var collective = new Basic.Collective(aspectClass);
     assert.isUndefined(aspectClass.collective);
     var aspect = collective.aspects[0];
     assert.instanceOf(aspect, aspectClass);

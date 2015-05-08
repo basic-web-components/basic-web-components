@@ -6,52 +6,16 @@ that can be combined at runtime to produce an aggregate user experience.
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<script src="../basic-shared/collectives/Collective.js"></script>
+<script src="../basic-shared/Collective.js"></script>
 
 <script>
+window.Basic = window.Basic || {};
 
 /*
  * Polymer 0.8 broke support for class inheritance. For now, we define an aspect
- * as a mixin.
+ * as a behavior.
  */
-
-function mixin() {
-  var result = {};
-  for (var i in arguments) {
-    var obj = arguments[i];
-    Object.getOwnPropertyNames(obj).forEach(function(propertyName) {
-      var descriptor = Object.getOwnPropertyDescriptor(obj, propertyName);
-
-      if (typeof descriptor.get === 'function') {
-        // Getter.
-        Object.defineProperty(result, propertyName, {
-          configurable: true,
-          get: descriptor.get
-        });
-      }
-
-      if (typeof descriptor.set === 'function') {
-        // Setter.
-        Object.defineProperty(result, propertyName, {
-          configurable: true,
-          set: descriptor.set
-        });
-      }
-
-      if (descriptor.value) {
-        if (propertyName === 'properties' && result[propertyName]) {
-          result[propertyName] = mixin(result[propertyName], obj[propertyName]);
-        } else {
-          result[propertyName] = obj[propertyName];
-        }
-      }
-    });
-  }
-  return result;
-}
-
-
-BasicAspectMixin = {
+window.Basic.Aspect = {
 
   /**
    * Assimilate the objects indicated by the method's arguments into this
@@ -70,7 +34,7 @@ BasicAspectMixin = {
       // recognizable as an aspect.
       this.contribute = {};
     }
-    new Collective(this);
+    new Basic.Collective(this);
   },
 
   properties: {
@@ -146,7 +110,7 @@ BasicAspectMixin = {
 
 Polymer({
 
-  behaviors: [BasicAspectMixin],
+  behaviors: [Basic.Aspect],
 
   is: 'basic-aspect'
 

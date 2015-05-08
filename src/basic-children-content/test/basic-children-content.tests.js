@@ -44,7 +44,7 @@ suite('basic-children-content', function() {
     Polymer.dom(container).appendChild(basicContent);
     flush(function() {
       assert.equal(basicContent.content.length, 0);
-      var collective = new Collective(aspect);
+      var collective = new Basic.Collective(aspect);
       collective.assimilate(basicContent);
       Polymer.dom(basicContent).appendChild(div);
     });
@@ -65,7 +65,7 @@ suite('basic-children-content', function() {
     var inner = document.createElement('basic-aspect');
     Polymer.dom(outer).appendChild(inner);
     flush(function() {
-      var collective = new Collective(changeDetectorAspect, outer, inner);
+      var collective = new Basic.Collective(changeDetectorAspect, outer, inner);
       assert.equal(outer.content.length, 0);
       Polymer.dom(inner).appendChild(div);
     });
