@@ -23,7 +23,9 @@
  *
  */
 
-BasicGenericBehavior = {
+window.Basic = window.Basic || {};
+
+Basic.Generic = {
 
   properties: {
     /**
