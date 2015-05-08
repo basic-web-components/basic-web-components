@@ -37,12 +37,12 @@ and width of the child elements.
 </dom-module>
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
 
-  attached: function() {
-    // this.super();
-    this.listenForResize();
-  },
+  behaviors: [
+    BasicAspectMixin,
+    BasicResizeBehavior
+  ],
 
   contribute: {
 
@@ -52,11 +52,6 @@ Polymer(mixin(BasicAspectMixin, {
       }.bind(this));
     }
 
-  },
-
-  detached: function() {
-    // this.super();
-    this.listenForResize(false);
   },
 
   hostAttributes: {
@@ -105,6 +100,7 @@ Polymer(mixin(BasicAspectMixin, {
   },
 
   resized: function(event) {
+    console.log("resized");
     if (this.$ && this.$.stackContainer) {
       var foo = this.$.stackContainer.style;
       this.$.stackContainer.style.width = '100%';
@@ -112,5 +108,5 @@ Polymer(mixin(BasicAspectMixin, {
     }
   }
 
-}, BasicResizeHelpers));
+});
 </script>

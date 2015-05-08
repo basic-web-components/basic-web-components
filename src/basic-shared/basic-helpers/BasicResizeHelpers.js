@@ -10,55 +10,71 @@
  * the element's size.
  */
 
-var BasicResizeHelpers = {
+(function() {
 
-  /**
-   * Ask to start (or stop) listening to changes in the element's size that
-   * occur in response to a window resize. If the element's size has changed,
-   * an method called resized() will be invoked on the element.
-   *
-   * The resized() method will not be invoked if a window resize didn't actually
-   * affect the size of the element in question.
-   *
-   * @method listenForResize
-   * @param list True (the default) to start listening, false to stop
-   */
-  listenForResize: function(listen) {
-    if (listen || listen == null) {
+/**
+ * Ask to start (or stop) listening to changes in the element's size that
+ * occur in response to a window resize. If the element's size has changed,
+ * an method called resized() will be invoked on the element.
+ *
+ * The resized() method will not be invoked if a window resize didn't actually
+ * affect the size of the element in question.
+ *
+ * @method listenForResize
+ * @param list True (the default) to start listening, false to stop
+ */
+function listenForResize(node, listen) {
+  if (listen || listen == null) {
 
-      // Listen
-      this._resizeHandler = this._onResize.bind(this);
-      window.addEventListener('resize', this._resizeHandler);
+    // Listen
+    node._resizeHandler = handleResize.bind(node);
+    window.addEventListener('resize', node._resizeHandler);
 
-      // Trigger resized handler so that element can do initial setup.
-      this._onResize();
+    // Trigger resized handler so that element can do initial setup.
+    node.resized();
 
+  }
+  else {
+
+    // Stop listening
+    window.removeEventListener('resize', node._resizeHandler);
+    node._resizeHandler = null;
+
+  }
+}
+
+/*
+ * The element represented by "this" has been resized.
+ */
+function handleResize() {
+  var previousSize = this._previousSize;
+  var width = this.offsetWidth;
+  var height = this.offsetHeight;
+  var sizeChanged = (previousSize == null ||
+      width !== previousSize.width ||
+      height !== previousSize.height);
+  if (sizeChanged) {
+    this._previousSize = {
+      height: height,
+      width: width
+    };
+    if (this.resized) {
+      this.resized();
     }
-    else {
+  }
+}
 
-      // Stop listening
-      window.removeEventListener('resize', this._resizeHandler);
-      this._resizeHandler = null;
 
-    }
+window.BasicResizeBehavior = {
+
+  attached: function() {
+    listenForResize(this);
   },
 
-  _onResize: function() {
-    var previousSize = this._previousSize;
-    var width = this.offsetWidth;
-    var height = this.offsetHeight;
-    var sizeChanged = (previousSize == null ||
-        width !== previousSize.width ||
-        height !== previousSize.height);
-    if (sizeChanged) {
-      this._previousSize = {
-        height: height,
-        width: width
-      };
-      if (this.resized) {
-        this.resized();
-      }
-    }
+  detached: function() {
+    listenForResize(this, false);
   }
 
 };
+
+})();

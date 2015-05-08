@@ -12,28 +12,20 @@
 </template>
 </dom-module>
 <script>
-  Polymer({
+Polymer({
 
-    is: 'resize-test-element',
+  behaviors: [BasicResizeBehavior],
 
-    attached: function() {
-      this.listenForResize();
-    },
+  is: 'resize-test-element',
 
-    detached: function() {
-      this.listenForResize(false);
-    },
+  resized: function() {
+    this.resizeCallCount++;
+    if (this.resizeCallHook) {
+      this.resizeCallHook();
+    }
+  },
 
-    resized: function() {
-      this.resizeCallCount++;
-      if (this.resizeCallHook) {
-        this.resizeCallHook();
-      }
-    },
+  resizeCallCount: 0,
 
-    resizeCallCount: 0,
-
-    behaviors: [BasicResizeHelpers]
-
-  });
+});
 </script>
