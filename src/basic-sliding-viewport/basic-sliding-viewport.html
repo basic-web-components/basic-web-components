@@ -26,7 +26,7 @@ basic-sliding-viewport-fit.
     will-change: transform;
   }
 
-  :host(.snapTransition) #slidingContainer {
+  :host(.showTransition) #slidingContainer {
     -webkit-transition: -webkit-transform 0.2s ease-out;
     transition: transform 0.2s ease-out;
   }
@@ -70,12 +70,8 @@ Polymer({
       this.render();
     },
 
-    touchEnd: function() {
-      this.classList.add('snapTransition');
-    },
-
-    touchStart: function() {
-      this.classList.remove('snapTransition');
+    showTransition: function(show) {
+      this.classList.toggle('showTransition', show);
     }
 
   },
@@ -83,7 +79,7 @@ Polymer({
   is: 'basic-sliding-viewport',
 
   ready: function() {
-    this.classList.add('snapTransition');
+    this.classList.add('showTransition');
   },
 
   render: function() {

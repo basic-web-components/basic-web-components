@@ -34,6 +34,7 @@ Polymer({
     },
 
     touchStart: function(event) {
+      this.showTransition(false);
       var x = event.changedTouches[0].clientX;
       this._startX = x;
       this._previousX = x;
@@ -46,6 +47,7 @@ Polymer({
     },
 
     touchEnd: function(x) {
+      this.showTransition(true);
       var x = event.changedTouches[0].clientX;
       if (this._delta >= 20) {
         // Finished going right at high speed.
@@ -81,6 +83,7 @@ Polymer({
   // Default implementations will be ovewritten with collective methods.
   get position() {},
   set position(position) {},
+  showTransition: function() {},
 
   ready: function() {
     // TODO: touch events could be factored out into their own aspect.
