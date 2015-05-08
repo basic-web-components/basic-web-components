@@ -179,8 +179,8 @@ Polymer({
   },
 
   behaviors: [
-    BasicContentBehavior,
-    BasicGenericBehavior
+    Basic.ContentChanged,
+    Basic.Generic
   ],
 
   contentChanged: function() {
@@ -334,7 +334,7 @@ Polymer({
  * docs will eventually be pulled from the mixin source files, but for now are
  * copied here by hand.
  */
- 
+
 /**
  * True if the component would like to receive generic styling.
  *

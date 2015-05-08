@@ -1,8 +1,6 @@
 /**
- * Basic helpers related to managing component content.
- *
- * These helpers generally deal with the tracking of changes in content, and
- * flattening a content tree (including distributed content).
+ * Basic helpers related the tracking of changes in content, and flattening a
+ * content tree (including distributed content).
  */
 
 (function() {
@@ -140,7 +138,7 @@ function observeHostIfContentElementPresent(node) {
     // also need to observe our host element, too.
     // TODO: If this element's content changes again, disconnect any
     // outstanding observers of that old content.
-    var host = BasicContentHelpers.getHost(node);
+    var host = Basic.ContentHelpers.getHost(node);
     if (host) {
       observeContentMutations(host, function() {
         node.contentChanged();
@@ -150,11 +148,12 @@ function observeHostIfContentElementPresent(node) {
   }
 }
 
+window.Basic = window.Basic || {};
 
 /*
  * A collection of content helpers that can be used by any element.
  */
-window.BasicContentHelpers = {
+window.Basic.ContentHelpers = {
 
   /*
    * Returns an in-order collection of children, expanding any content nodes.
@@ -269,26 +268,26 @@ window.BasicContentHelpers = {
  * A Polymer element behavior that automatically wires up content observation,
  * and simplifies access to the various content-flattening helper functions.
  */
-window.BasicContentBehavior = {
+window.Basic.ContentChanged = {
 
   attached: function() {
-    BasicContentHelpers.observeContentChanges(this);
+    Basic.ContentHelpers.observeContentChanges(this);
   },
 
   detached: function() {
-    BasicContentHelpers.observeContentChanges(this, false);
+    Basic.ContentHelpers.observeContentChanges(this, false);
   },
 
   get flattenChildren() {
-    return BasicContentHelpers.flattenChildren(this);
+    return Basic.ContentHelpers.flattenChildren(this);
   },
 
   get flattenChildNodes() {
-    return BasicContentHelpers.flattenChildNodes(this);
+    return Basic.ContentHelpers.flattenChildNodes(this);
   },
 
   get flattenTextContent() {
-    return BasicContentHelpers.flattenTextContent(this);
+    return Basic.ContentHelpers.flattenTextContent(this);
   }
 
 };

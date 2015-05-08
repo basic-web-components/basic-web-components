@@ -95,7 +95,7 @@ suite('BasicContentHelpers', function() {
       assert(button);
       var div = Polymer.dom(fixture).querySelector('div');
       assert(div);
-      BasicContentHelpers.removeLightDomNodes(fixture);
+      Basic.ContentHelpers.removeLightDomNodes(fixture);
       button = Polymer.dom(fixture).querySelector('button');
       assert(!button);
       div = Polymer.dom(fixture).querySelector('div');

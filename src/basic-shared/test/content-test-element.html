@@ -1,6 +1,6 @@
-<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
 
-<script src="../BasicContentHelpers.js"></script>
+<script src="../ContentChanged.js"></script>
 
 <dom-module id="content-test-element">
   <template>
@@ -13,7 +13,7 @@
 Polymer({
 
   behaviors: [
-    BasicContentBehavior
+    Basic.ContentChanged
   ],
 
   contentChanged: function() {
