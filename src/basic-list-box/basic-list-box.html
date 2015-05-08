@@ -102,7 +102,10 @@ the item into view.
 <script>
 Polymer({
 
-  behaviors: [BasicAspectMixin],
+  behaviors: [
+    BasicAspectMixin,
+    BasicGenericBehavior
+  ],
 
   hostAttributes: {
     target: 'shadow'
@@ -110,20 +113,24 @@ Polymer({
 
   is: 'basic-list-box',
 
-  properties: {
-    generic: BasicGenericHelpers.generic
-  },
-
-  ready: function() {
-    BasicGenericHelpers.setGenericDefault(this);
-  }
-
 });
 
 /*
  * The following comments document API members provided by mixins. Ideally these
  * docs will eventually be pulled from the mixin source files, but for now are
  * copied here by hand.
+ */
+ 
+/**
+ * True if the component would like to receive generic styling.
+ *
+ * This property is true by default — set it to false to turn off all
+ * generic styles. This makes it easier to apply custom styling; you won't
+ * have to explicitly override styling you don't want.
+ *
+ * @property generic
+ * @type Boolean
+ * @default true
  */
 
 /**

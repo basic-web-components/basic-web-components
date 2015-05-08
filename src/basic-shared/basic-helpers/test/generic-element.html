@@ -7,7 +7,7 @@
   :host {
     display: inline-block;
   }
-  
+
   :host([generic=""]) {
     display: block;
   }
@@ -20,15 +20,9 @@
 <script>
 Polymer({
 
-  is: 'generic-element',
+  behaviors: [BasicGenericBehavior],
 
-  ready: function() {
-    BasicGenericHelpers.setGenericDefault(this);
-  },
-
-  properties: {
-    generic: BasicGenericHelpers.generic
-  }
+  is: 'generic-element'
 
 });
 </script>

@@ -89,8 +89,6 @@ Polymer({
 
   properties: {
 
-    generic: BasicGenericHelpers.generic,
-
     /**
      * Determines the minimum number of rows shown. This is similar to the rows
      * attribute on a standard textarea, but because this element can grow, is
@@ -181,7 +179,8 @@ Polymer({
   },
 
   behaviors: [
-    BasicContentBehavior
+    BasicContentBehavior,
+    BasicGenericBehavior
   ],
 
   contentChanged: function() {
@@ -200,7 +199,6 @@ Polymer({
   },
 
   ready: function() {
-    BasicGenericHelpers.setGenericDefault(this);
     this.$.textBox.addEventListener('change', function() {
       // Raise our own change event (since change events aren't automatically
       // retargetted).
@@ -330,4 +328,22 @@ Polymer({
   }
 
 });
+
+/*
+ * The following comments document API members provided by mixins. Ideally these
+ * docs will eventually be pulled from the mixin source files, but for now are
+ * copied here by hand.
+ */
+ 
+/**
+ * True if the component would like to receive generic styling.
+ *
+ * This property is true by default — set it to false to turn off all
+ * generic styles. This makes it easier to apply custom styling; you won't
+ * have to explicitly override styling you don't want.
+ *
+ * @property generic
+ * @type Boolean
+ * @default true
+ */
 </script>
