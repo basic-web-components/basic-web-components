@@ -1,11 +1,11 @@
 {
-  "name": "basic-arrow-direction",
-  "description": "Aspect used to add prominent left and right arrow buttons to a wrapped child. Clicking the left/right button maps to the corresponding left/right direction.",
+  "name": "basic-aspect",
+  "description": "An aspect of a component: a separable piece of component appearance or behavior that can be combined at runtime to produce an aggregate user experience.",
   "version": "0.6.0-preview",
   "license": "MIT",
-  "main": "basic-arrow-direction.html",
+  "main": "basic-aspect.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#master",
+    "basic-shared": "basic-web-components/basic-shared#master",
     "iron-icons": "PolymerElements/iron-icons",
     "polymer": "Polymer/polymer#^0.8.0-rc.7"
   },
