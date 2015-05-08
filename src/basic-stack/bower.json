@@ -1,0 +1,26 @@
+{
+  "name": "basic-stack",
+  "description": "Stacks its child elements on top of each other, taking on the maximum height and width of the child elements.",
+  "version": "0.6.0-preview",
+  "license": "MIT",
+  "main": "basic-stack.html",
+  "dependencies": {
+    "basic-aspect": "basic-web-components/basic-aspect#master",
+    "basic-children-content": "basic-web-components/basic-children-content#master",
+    "basic-shared": "basic-web-components/basic-shared#master",
+    "iron-icons": "PolymerElements/iron-icons",
+    "polymer": "Polymer/polymer#^0.8.0-rc.7"
+  },
+  "devDependencies": {
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "globalize": "0.x",
+    "web-component-tester": "*"
+  },
+  "keywords": [
+    "basic-web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "/test/"
+  ]
+}
