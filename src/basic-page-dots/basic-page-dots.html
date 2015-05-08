@@ -74,7 +74,9 @@ Clicking a dot will select the corresponding list item.
 </dom-module>
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -166,5 +168,5 @@ Polymer(mixin(BasicAspectMixin, {
     }
   }
 
-}));
+});
 </script>

@@ -100,7 +100,9 @@ the item into view.
 </dom-module>
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   hostAttributes: {
     target: 'shadow'
@@ -116,7 +118,7 @@ Polymer(mixin(BasicAspectMixin, {
     BasicGenericHelpers.setGenericDefault(this);
   }
 
-}));
+});
 
 /*
  * The following comments document API members provided by mixins. Ideally these

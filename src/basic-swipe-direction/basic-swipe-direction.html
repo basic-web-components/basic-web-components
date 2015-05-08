@@ -8,7 +8,9 @@ semantics (goRight, goLeft).
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -110,5 +112,5 @@ Polymer(mixin(BasicAspectMixin, {
     this._previousX = x;
   },
 
-}));
+});
 </script>

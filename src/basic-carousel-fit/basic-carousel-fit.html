@@ -83,7 +83,9 @@ single carousel that adapts its layout behavior to its applied styling.
 </dom-module>
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   hostAttributes: {
     target: 'shadow'
@@ -99,7 +101,7 @@ Polymer(mixin(BasicAspectMixin, {
     }.bind(this));
   }
 
-}));
+});
 
 /*
  * The following comments document API members provided by mixins. Ideally these

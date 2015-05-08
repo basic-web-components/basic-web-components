@@ -89,7 +89,9 @@ Clicking the left/right button maps to the corresponding left/right direction.
 </dom-module>
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   // TODO: Disable buttons when it's not possible to go in that direction.
 
@@ -111,5 +113,5 @@ Polymer(mixin(BasicAspectMixin, {
     }.bind(this));
   }
 
-}));
+});
 </script>

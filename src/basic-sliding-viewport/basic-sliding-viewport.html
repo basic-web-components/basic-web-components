@@ -39,7 +39,9 @@ basic-sliding-viewport-fit.
 </dom-module>
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -147,5 +149,5 @@ Polymer(mixin(BasicAspectMixin, {
 
   _position: 0
 
-}));
+});
 </script>

@@ -5,7 +5,9 @@ Aspect for treating an array of data as list items.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   attached: function() {
     // HACK: Need to wait for aspect stack to be created before invoking
@@ -43,5 +45,5 @@ Polymer(mixin(BasicAspectMixin, {
     }
   }
 
-}));
+});
 </script>

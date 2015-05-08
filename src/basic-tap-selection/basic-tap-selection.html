@@ -7,7 +7,9 @@ Aspect which maps the tap gesture to item selection.
 <link rel="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   is: 'basic-tap-selection',
 
@@ -34,5 +36,5 @@ Polymer(mixin(BasicAspectMixin, {
     }
   }
 
-}));
+});
 </script>

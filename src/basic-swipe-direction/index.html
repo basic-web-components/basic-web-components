@@ -60,7 +60,9 @@
     </template>
   </dom-module>
   <script>
-  Polymer(mixin(BasicAspectMixin, {
+  Polymer({
+
+    behaviors: [BasicAspectMixin],
 
     contribute: {
       set position(value) {
@@ -70,7 +72,7 @@
 
     is: 'position-aspect'
 
-  }));
+  });
   </script>
 
 </head>

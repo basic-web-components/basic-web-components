@@ -16,7 +16,9 @@ Aspect which manages selection semantics for items in a list.
  */
 
 
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   // Default implementation will be overwritten with collective method.
   applySelection: function(item, selected) {},
@@ -186,5 +188,5 @@ Polymer(mixin(BasicAspectMixin, {
 
   _selectedItem: null
 
-}));
+});
 </script>

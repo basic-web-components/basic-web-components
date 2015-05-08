@@ -13,7 +13,9 @@ Aspect which adds ARIA roles for lists and list items.
 // Used to assign unique IDs to item elements without IDs.
 idCount = 0;
 
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -94,7 +96,7 @@ Polymer(mixin(BasicAspectMixin, {
 
   _previousOutermostAspect: null
 
-}));
+});
 
 })();
 </script>

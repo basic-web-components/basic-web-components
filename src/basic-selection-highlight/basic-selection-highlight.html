@@ -24,7 +24,9 @@ through content, not shadow trees.
 -->
 
 <script>
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   contribute: {
 
@@ -37,5 +39,5 @@ Polymer(mixin(BasicAspectMixin, {
 
   is: 'basic-selection-highlight'
 
-}));
+});
 </script>

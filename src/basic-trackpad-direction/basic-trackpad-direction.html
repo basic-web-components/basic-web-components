@@ -8,8 +8,9 @@ action) to direction semantics.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-// TODO: When we can inherit from basic-aspect again, see note in ready().
-Polymer(mixin(BasicAspectMixin, {
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   // Default implementations will be ovewritten with collective methods.
   goLeft: function() {},
@@ -43,5 +44,5 @@ Polymer(mixin(BasicAspectMixin, {
 
   wheelThreshold: 300
 
-}));
+});
 </script>

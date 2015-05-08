@@ -144,9 +144,11 @@ BasicAspectMixin = {
 
 }
 
-Polymer(mixin({
+Polymer({
+
+  behaviors: [BasicAspectMixin],
 
   is: 'basic-aspect'
 
-}, BasicAspectMixin));
+});
 </script>
