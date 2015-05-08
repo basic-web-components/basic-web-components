@@ -48,31 +48,31 @@ suite('basic', function() {
   test.skip('constructor - called after ready, before attached', function(done) {
     var eventStack = [];
     var onCreated = function() {
-      console.log('onCreated');
+      // console.log('onCreated');
       eventStack.push('onCreated');
       // Shouldn't ever be called
       assert(false);
     };
     var onReady = function() {
-      console.log('onReady');
+      // console.log('onReady');
       eventStack.push('onReady');
       // Shouldn't ever be called
       assert(false);
     };
     var onAttached = function() {
-      console.log('onAttached');
+      // console.log('onAttached');
       eventStack.push('onAttached');
       assert.equal(eventStack.length, 1);
       assert.equal(eventStack[0], 'onAttached');
     };
     var onAttributeChanged = function() {
-      console.log('onAttributeChanged');
+      // console.log('onAttributeChanged');
       eventStack.push('onAttributeChanged');
       // Shouldn't ever be called
       assert(false);
     };
     var onDetached = function() {
-      console.log('onDetached');
+      // console.log('onDetached');
       eventStack.push('onDetached');
       assert.equal(eventStack.length, 2);
       assert.equal(eventStack[1], 'onDetached');
@@ -98,19 +98,19 @@ suite('basic', function() {
 
   test('availability of $', function(done) {
     window.createdHook = function(element) {
-      console.log('createdHook');
+      // console.log('createdHook');
       assert(!element.$);
     };
     window.readyHook = function(element) {
-      console.log('readyHook');
+      // console.log('readyHook');
       assert(element.$);
     };
     window.attachedHook = function(element) {
-      console.log('attachedHook');
+      // console.log('attachedHook');
       assert(element.$);
     };
     window.attributeChangedHook = function(element) {
-      console.log('attributeChangedHook');
+      // console.log('attributeChangedHook');
       assert(element.$);
     };
     var fixture = document.createElement('lifecycle-tester');
@@ -124,4 +124,3 @@ suite('basic', function() {
   });
 
 });
-

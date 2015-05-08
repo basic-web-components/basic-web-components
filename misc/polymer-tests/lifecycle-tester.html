@@ -27,7 +27,7 @@ var LifecycleTester = Polymer({
   },
 
   created: function() {
-    console.log('lifecycle-tester: created');
+    // console.log('lifecycle-tester: created');
     this.eventStack.push('created');
     if (this.onCreated) {
       this.onCreated();
@@ -38,7 +38,7 @@ var LifecycleTester = Polymer({
   },
 
   attached: function() {
-    console.log('lifecycle-tester: attached');
+    // console.log('lifecycle-tester: attached');
     this.eventStack.push('attached');
     if (this.onAttached) {
       this.onAttached();
@@ -49,7 +49,7 @@ var LifecycleTester = Polymer({
   },
 
   detached: function() {
-    console.log('lifecycle-tester: detached');
+    // console.log('lifecycle-tester: detached');
     this.eventStack.push('detached');
     if (this.onDetached) {
       this.onDetached();
@@ -60,7 +60,7 @@ var LifecycleTester = Polymer({
   },
 
   ready: function() {
-    console.log('lifecycle-tester: ready');
+    // console.log('lifecycle-tester: ready');
     this.eventStack.push('ready');
     if (this.onReady) {
       this.onReady();
@@ -71,7 +71,7 @@ var LifecycleTester = Polymer({
   },
 
   attributeChanged: function() {
-    console.log('lifecycle-tester: attributeChanged');
+    // console.log('lifecycle-tester: attributeChanged');
     this.eventStack.push('attributeChanged');
     if (this.onAttributeChanged) {
       this.onAttributeChanged();
