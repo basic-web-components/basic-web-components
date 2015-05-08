@@ -107,7 +107,6 @@ suite('BasicContentHelpers', function() {
   test('modifying shadow does not trigger contentChanged', function(done) {
     var fixture = document.createElement('content-test-element');
     fixture.contentChangedHook = function() {
-      console.log("contentChanged");
       var childNodes = Polymer.dom(fixture).childNodes;
       assert.equal(childNodes.length, 1);
       done();
@@ -122,7 +121,6 @@ suite('BasicContentHelpers', function() {
     flush(function() {
       // Now add an element to the light DOM, which we do expect to trigger
       // contentChanged.
-      console.log("flushed");
       var text = new Text();
       text.textContent = 'Hello'
       Polymer.dom(fixture).appendChild(text);
