@@ -142,14 +142,14 @@ Polymer({
     // complete a navigation to that item.
     if (this.position === 1) {
       // console.log("goRight");
-      if (this.goRight()) {
-        this._postNavigate();
-      }
+      this.showTransition(true);
+      this.goRight();
+      this._postNavigate();
     } else if (this.position === -1) {
       // console.log("goLeft");
-      if (this.goLeft()) {
-        this._postNavigate();
-      }
+      this.showTransition(true);
+      this.goLeft();
+      this._postNavigate();
     }
   },
 
