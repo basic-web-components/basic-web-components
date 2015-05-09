@@ -106,7 +106,7 @@ Polymer({
     if (index === 0 && position < 0) {
       // Apply tension from the left edge.
       dampenedPosition = -this._damping(-position);
-    } else if (index === this.count - 1 && position > 0) {
+    } else if (index === count - 1 && position > 0) {
       // Apply tension from the right edge.
       dampenedPosition = this._damping(position);
     } else {
