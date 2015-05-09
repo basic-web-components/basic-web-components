@@ -32,7 +32,11 @@ Polymer({
   _partialResetAfterNavigation: function() {
     this.position = 0;
     this._wheelDistance = 0;
+    this._postNavigateDelay = true;
     this._absorbDeceleration = true;
+    setTimeout(function() {
+      this._postNavigateDelay = false;
+    }.bind(this), 250);
   },
 
   _reset: function() {
@@ -40,6 +44,7 @@ Polymer({
     this._wheelDistance = 0;
     this._lastDeltaX = 0;
     this._absorbDeceleration = false;
+    this._postNavigateDelay = false;
     if (this._timeout) {
       clearTimeout(this._timeout);
       this._timeout = null;
@@ -47,6 +52,11 @@ Polymer({
   },
 
   // TODO: Damping, or some other treatment for going past the ends.
+
+  // TODO:
+  // After a navigate, ignore everything for ~250msec, and absorb deceleration.
+  // Absorb deceleration until some acceleration occurs.
+  // If absored decleration drops below threshold (5, perhaps), snap.
   _wheel: function(deltaX) {
 
     if (this._timeout) {
@@ -56,7 +66,11 @@ Polymer({
 
     var acceleration = Math.sign(deltaX) * (deltaX - this._lastDeltaX);
     this._lastDeltaX = deltaX;
-    console.log(deltaX + " " + acceleration + " " + this._absorbDeceleration);
+    // console.log(deltaX + " " + acceleration + " " + this._absorbDeceleration + " " + this._postNavigateDelay);
+
+    if (this._postNavigateDelay) {
+      return;
+    }
 
     if (acceleration > 0) {
       // Aren't (or are no longer) decelerating.
@@ -67,33 +81,34 @@ Polymer({
     }
 
     this._wheelDistance += deltaX;
+
     var width = this.offsetWidth;
     var position = width > 0 ?
       this._wheelDistance / width :
       0;
-
     this.showTransition(false);
     this.position = Math.sign(position) * Math.min(Math.abs(position), 1);
+
     if (this.position === 1) {
-      console.log("goRight");
+      // console.log("goRight");
       this.goRight();
       this._partialResetAfterNavigation();
     } else if (this.position === -1) {
-      console.log("goLeft");
+      // console.log("goLeft");
       this.goLeft();
       this._partialResetAfterNavigation();
     }
   },
 
   _wheelTimedOut: function() {
-    console.log("timeout");
+    // console.log("timeout");
     this.showTransition(true);
     var position = this.position;
     if (position >= 0.5) {
-      console.log("snap");
+      // console.log("snap");
       this.goRight();
     } else if (position <= -0.5) {
-      console.log("snap");
+      // console.log("snap");
       this.goLeft();
     }
     this._reset();
