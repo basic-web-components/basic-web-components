@@ -52,6 +52,7 @@ The user can also select an item by typing the beginning of an item's text.
 <link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
 <link rel="import" href="../basic-accessible-list/basic-accessible-list.html">
 <link rel="import" href="../basic-selection-highlight/basic-selection-highlight.html">
+<link rel="import" href="../basic-selection-scroll/basic-selection-scroll.html">
 
 <script src="../basic-shared/Generic.js"></script>
 
@@ -94,6 +95,7 @@ The user can also select an item by typing the beginning of an item's text.
     <basic-keyboard-prefix-selection></basic-keyboard-prefix-selection>
     <basic-direction-selection></basic-direction-selection>
     <basic-selection-highlight></basic-selection-highlight>
+    <basic-selection-scroll></basic-selection-scroll>
     <basic-accessible-list></basic-accessible-list>
     <basic-content-items></basic-content-items>
     <basic-item-selection></basic-item-selection>
@@ -115,51 +117,11 @@ Polymer({
     Basic.Generic
   ],
 
-  contribute: {
-    // Keep the selected item in view.
-    // TODO: This behavior seems useful in more places than just list boxes.
-    // Consider moving it into its own aspect.
-    set selectedItem(item) {
-      if (item) {
-        this._scrollItemIntoView(item);
-      }
-    }
-  },
-
   hostAttributes: {
     target: 'shadow'
   },
 
-  is: 'basic-list-box',
-
-  // Scroll the given element completely into view, minimizing the degree of
-  // scrolling performed.
-  //
-  // Blink has a scrollIntoViewIfNeeded() function that almost does what we
-  // want, but unfortunately it's non-standard, and in any event often ends up
-  // scrolling more than is absolutely necessary.
-  _scrollItemIntoView: function(item) {
-    // Get the relative position of the item with respect to the top of the
-    // list's scrollable canvas. An item at the top of the list will have a
-    // elementTop of 0.
-    var innermost = this.collective.innermostAttached;
-    if (!innermost) {
-      return;
-    }
-
-    var elementTop = item.offsetTop - innermost.offsetTop - innermost.clientTop;
-    var elementBottom = elementTop + item.offsetHeight;
-    // Determine the bottom of the scrollable canvas.
-    var scrollBottom = innermost.scrollTop + innermost.clientHeight;
-    if (elementBottom > scrollBottom) {
-      // Scroll up until item is entirely visible.
-      innermost.scrollTop += elementBottom - scrollBottom;
-    }
-    else if (elementTop < innermost.scrollTop) {
-      // Scroll down until item is entirely visible.
-      innermost.scrollTop = elementTop;
-    }
-  }
+  is: 'basic-list-box'
 
 });
 
