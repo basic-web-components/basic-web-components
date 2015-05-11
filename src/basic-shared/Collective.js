@@ -67,6 +67,17 @@ Collective.prototype = {
     return this.aspects[this.aspects.length - 1];
   },
 
+  /* Return the innermost aspect which is actually attached. */
+  get innermostAttached() {
+    var aspects = this.aspects;
+    for (i = aspects.length - 1; i >= 0; i--) {
+      if (aspects[i].parentNode) {
+        return aspects[i];
+      }
+    }
+    return null;
+  },
+
   invokeGetter: function(getterName) {
     var implementations = this.getters[getterName];
     if (implementations == null || implementations.length < 1) {
@@ -100,7 +111,7 @@ Collective.prototype = {
     return this.aspects[0];
   },
 
-  /* Return the outermost aspect which is actaully attached. */
+  /* Return the outermost aspect which is actually attached. */
   get outermostAttached() {
     var aspects = this.aspects;
     for (i = 0, length = aspects.length; i < length; i++) {

@@ -19,17 +19,6 @@ will be reflected in an "aria-activedescendant" attribute applied to the list.
 To support this feature, all items in the list need unique IDs. If an item does
 not have an ID, basic-list-box will automatically assign a default ID.
 
-@element basic-list-box
-@demo http://basic-web-components.github.io/components/basic-list-box/
--->
-
-<!--
-TODO: Restore the following features, currently lost in the transition from
-Polymer 0.5 to Polymer 0.8.
-
-The user can also select an item by typing the beginning of
-an item's text.
-
 The keyboard interaction model generally follows that of Microsoft Windows'
 list boxes instead of those in OS X:
 
@@ -45,11 +34,23 @@ list boxes instead of those in OS X:
 Programmatically selecting an item (by setting the selected property) scrolls
 the item into view.
 
+@element basic-list-box
+@demo http://basic-web-components.github.io/components/basic-list-box/
+-->
+
+<!--
+TODO: Restore the following features, currently lost in the transition from
+Polymer 0.5 to Polymer 0.8:
+
+The user can also select an item by typing the beginning of
+an item's text.
+
 -->
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 <link rel="import" href="../basic-keyboard/basic-keyboard.html">
 <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
+<link rel="import" href="../basic-keyboard-paging/basic-keyboard-paging.html">
 <link rel="import" href="../basic-children-content/basic-children-content.html">
 <link rel="import" href="../basic-content-items/basic-content-items.html">
 <link rel="import" href="../basic-item-selection/basic-item-selection.html">
@@ -63,11 +64,23 @@ the item into view.
 <dom-module id="basic-list-box">
   <style>
   :host {
-    display: block;
-    /*outline: none;*/
+    display: -webkit-flex;
+    display: flex;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  [target="child"] {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  #itemsContainer {
+    -webkit-flex: 1;
+    flex: 1;
     -webkit-overflow-scrolling: touch;
     overflow-y: scroll; /* for momentum scrolling */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   /* Generic appearance */
@@ -83,6 +96,7 @@ the item into view.
   </style>
   <template>
     <basic-keyboard-direction></basic-keyboard-direction>
+    <basic-keyboard-paging></basic-keyboard-paging>
     <basic-direction-selection></basic-direction-selection>
     <basic-selection-highlight></basic-selection-highlight>
     <basic-accessible-list></basic-accessible-list>
@@ -106,11 +120,51 @@ Polymer({
     Basic.Generic
   ],
 
+  contribute: {
+    // Keep the selected item in view.
+    // TODO: This behavior seems useful in more places than just list boxes.
+    // Consider moving it into its own aspect.
+    set selectedItem(item) {
+      if (item) {
+        this._scrollItemIntoView(item);
+      }
+    }
+  },
+
   hostAttributes: {
     target: 'shadow'
   },
 
   is: 'basic-list-box',
+
+  // Scroll the given element completely into view, minimizing the degree of
+  // scrolling performed.
+  //
+  // Blink has a scrollIntoViewIfNeeded() function that almost does what we
+  // want, but unfortunately it's non-standard, and in any event often ends up
+  // scrolling more than is absolutely necessary.
+  _scrollItemIntoView: function(item) {
+    // Get the relative position of the item with respect to the top of the
+    // list's scrollable canvas. An item at the top of the list will have a
+    // elementTop of 0.
+    var innermost = this.collective.innermostAttached;
+    if (!innermost) {
+      return;
+    }
+
+    var elementTop = item.offsetTop - innermost.offsetTop - innermost.clientTop;
+    var elementBottom = elementTop + item.offsetHeight;
+    // Determine the bottom of the scrollable canvas.
+    var scrollBottom = innermost.scrollTop + innermost.clientHeight;
+    if (elementBottom > scrollBottom) {
+      // Scroll up until item is entirely visible.
+      innermost.scrollTop += elementBottom - scrollBottom;
+    }
+    else if (elementTop < innermost.scrollTop) {
+      // Scroll down until item is entirely visible.
+      innermost.scrollTop = elementTop;
+    }
+  }
 
 });
 
