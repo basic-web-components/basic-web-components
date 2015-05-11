@@ -14,7 +14,7 @@
     "basic-keyboard": "basic-web-components/basic-keyboard#master",
     "basic-keyboard-direction": "basic-web-components/basic-keyboard-direction#master",
     "basic-sliding-viewport-fit": "basic-web-components/basic-sliding-viewport-fit#master",
-    "basic-spread-items": "basic-web-components/basic-spread-fit#master",
+    "basic-spread-fit": "basic-web-components/basic-spread-fit#master",
     "basic-swipe-direction": "basic-web-components/basic-swipe-direction#master",
     "basic-trackpad-direction": "basic-web-components/basic-trackpad-direction#master",
     "iron-icons": "PolymerElements/iron-icons",
