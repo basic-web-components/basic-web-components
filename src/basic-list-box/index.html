@@ -28,7 +28,8 @@
 
   basic-list-box {
     height: 200px;
-    max-width: 300px;
+    max-width: 400px;
+    width: 100%
   }
   </style>
 
@@ -54,12 +55,13 @@
 
   document.addEventListener('WebComponentsReady', function() {
     new Basic.Collective(changeDetectorAspect, document.querySelector('basic-list-box'));
+    document.body.removeAttribute('unresolved');
   });
   </script>
 
 </head>
 
-<body>
+<body unresolved>
 <basic-list-box aria-label="Fruits">
   <div>Acai</div>
   <div>Acerola</div>
