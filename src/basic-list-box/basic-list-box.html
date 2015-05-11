@@ -34,23 +34,17 @@ list boxes instead of those in OS X:
 Programmatically selecting an item (by setting the selected property) scrolls
 the item into view.
 
+The user can also select an item by typing the beginning of an item's text.
+
 @element basic-list-box
 @demo http://basic-web-components.github.io/components/basic-list-box/
--->
-
-<!--
-TODO: Restore the following features, currently lost in the transition from
-Polymer 0.5 to Polymer 0.8:
-
-The user can also select an item by typing the beginning of
-an item's text.
-
 -->
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 <link rel="import" href="../basic-keyboard/basic-keyboard.html">
 <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
 <link rel="import" href="../basic-keyboard-paging/basic-keyboard-paging.html">
+<link rel="import" href="../basic-keyboard-prefix-selection/basic-keyboard-prefix-selection.html">
 <link rel="import" href="../basic-children-content/basic-children-content.html">
 <link rel="import" href="../basic-content-items/basic-content-items.html">
 <link rel="import" href="../basic-item-selection/basic-item-selection.html">
@@ -97,6 +91,7 @@ an item's text.
   <template>
     <basic-keyboard-direction></basic-keyboard-direction>
     <basic-keyboard-paging></basic-keyboard-paging>
+    <basic-keyboard-prefix-selection></basic-keyboard-prefix-selection>
     <basic-direction-selection></basic-direction-selection>
     <basic-selection-highlight></basic-selection-highlight>
     <basic-accessible-list></basic-accessible-list>
