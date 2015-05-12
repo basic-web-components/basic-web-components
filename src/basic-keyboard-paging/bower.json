@@ -14,8 +14,7 @@
     "web-component-tester": "*"
   },
   "keywords": [
-    "basic-web-components",
-    "web-components"
+    "basic-web-components"
   ],
   "ignore": [
     "**/.*",

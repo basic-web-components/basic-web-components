@@ -28,6 +28,7 @@
     "web-component-tester": "*"
   },
   "keywords": [
+    "web-components",
     "basic-web-components"
   ],
   "ignore": [
