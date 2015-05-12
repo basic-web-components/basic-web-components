@@ -1,6 +1,7 @@
 /**
  * Basic helpers related the tracking of changes in content, and flattening a
  * content tree (including distributed content).
+ *
  */
 
 (function() {
@@ -244,6 +245,12 @@ window.Basic.ContentHelpers = {
    *
    * This method is typically invoked by a component's attached handler, and
    * the invoked with observeChanges = false in the detached handler.
+   *
+   * NOTE: This content observation system currently works with native Shadow
+   * DOM, but only partially supports Polymer's Shady DOM. Specifically, when
+   * using Shady DOM, a component will detect nodes *added* to it (including
+   * when a node is replacing another node), but the component will not
+   * correctly detect when nodes are only *removed* from it.
    *
    * @method observeContentChanges
    */
