@@ -66,9 +66,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         // `style-scope` elements
         if (scope) {
           if (shouldRemoveScope) {
-            element.classList.remove(SCOPE_NAME, scope);
+            element.classList.remove(SCOPE_NAME);
+            element.classList.remove(scope);
           } else {
-            element.classList.add(SCOPE_NAME, scope);
+            element.classList.add(SCOPE_NAME);
+            element.classList.add(scope);
           }
         }
       }
@@ -85,7 +87,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       var hostScope = calcHostScope(scope, ext);
       scope = calcElementScope(scope, useAttr);
       return Polymer.StyleUtil.toCssText(rules, function(rule) {
-        transformRule(rule, scope, hostScope);
+        if (!rule.isScoped) {
+          transformRule(rule, scope, hostScope);
+          rule.isScoped = true;
+        }
         if (callback) {
           callback(rule, scope, hostScope);
         }

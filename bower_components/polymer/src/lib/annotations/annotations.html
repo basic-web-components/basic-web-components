@@ -7,13 +7,12 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<link rel="import" href="../module.html">
-<link rel="import" href="../case-map.html"> 
+<link rel="import" href="../case-map.html">
 
 <script>
 /**
  * Scans a template to produce an annotation list that that associates
- * metadata culled from markup with tree locations 
+ * metadata culled from markup with tree locations
  * metadata and information to associate the metadata with nodes in an instance.
  *
  * Supported expressions include:
@@ -35,7 +34,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  * associated with these expressions, it only captures the data.
  *
  * Generated data-structure:
- * 
+ *
  *     [
  *       {
  *         id: '<id>',
@@ -59,7 +58,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  *       },
  *       ...
  *     ]
- * 
+ *
  * @class Template feature
  */
 
@@ -75,7 +74,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //
     parseAnnotations: function(template) {
       var list = [];
-      var content = template._content || template.content; 
+      var content = template._content || template.content;
       this._parseNodeAnnotations(content, list);
       return list;
     },
@@ -89,10 +88,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this._parseElementAnnotations(node, list);
     },
 
+    _testEscape: function(value) {
+      var escape = value.slice(0, 2);
+      if (escape === '{{' || escape === '[[') {
+        return escape;
+      }
+    },
+
     // add annotations gleaned from TextNode `node` to `list`
     _parseTextNodeAnnotation: function(node, list) {
-      var v = node.textContent, escape = v.slice(0, 2);
-      if (escape === '{{' || escape === '[[') {
+      var v = node.textContent;
+      var escape = this._testEscape(v);
+      if (escape) {
         // NOTE: use a space here so the textNode remains; some browsers
         // (IE) evacipate an empty textNode.
         node.textContent = ' ';
@@ -121,7 +128,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this._parseNodeAttributeAnnotations(element, annote, list);
         // TODO(sorvell): ad hoc callback for doing work on elements while
         // leveraging annotator's tree walk.
-        // Consider adding an node callback registry and moving specific 
+        // Consider adding an node callback registry and moving specific
         // processing out of this module.
         if (this.prepElement) {
           this.prepElement(element);
@@ -134,7 +141,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     // add annotations gleaned from children of `root` to `list`, `root`'s
-    // `annote` is supplied as it is the annote.parent of added annotations 
+    // `annote` is supplied as it is the annote.parent of added annotations
     _parseChildNodesAnnotations: function(root, annote, list, callback) {
       if (root.firstChild) {
         for (var i=0, node=root.firstChild; node; node=node.nextSibling, i++){
@@ -186,7 +193,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         });
       }
       // TODO(sjmiles): using `nar` to avoid unnecessary allocation;
-      // in general the handling of these arrays needs some cleanup 
+      // in general the handling of these arrays needs some cleanup
       // in this module
       list.push({
         bindings: bindings,
@@ -197,44 +204,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       });
     },
 
-    // Finds all parent.* properties in template content and stores
-    // the path members in content._parentPropChain, which is an array
-    // of maps listing the properties of parent templates required at
-    // each level. Each outer template merges inner _parentPropChains to
-    // propagate inner parent property needs to outer templates.
-    // The top-level parent props from the chain (corresponding to this 
-    // template) are stored in content._parentProps.
+    // Finds all bindings in template content and stores the path roots in
+    // the path members in content._parentProps. Each outer template merges
+    // inner _parentProps to propagate inner parent property needs to outer
+    // templates.
     _discoverTemplateParentProps: function(content) {
-      var chain = content._parentPropChain = [];
+      var pp = content._parentProps = {};
       content._notes.forEach(function(n) {
         // Find all bindings to parent.* and spread them into _parentPropChain
         n.bindings.forEach(function(b) {
-          var m;
-          if (m = b.value.match(/parent\.((parent\.)*[^.]*)/)) {
-            var parts = m[1].split('.');
-            for (var i=0; i<parts.length; i++) {
-              var pp = chain[i] || (chain[i] = {});
-              pp[parts[i]] = true;
-            }
-          }
+          var prop = b.value;
+          var dot = prop.indexOf('.');
+          prop = (dot < 0) ? prop : prop.slice(0, dot);
+          pp[prop] = true;
         });
-        // Merge child _parentPropChain[n+1] into this _parentPropChain[n]
+        // Merge child _parentProps into this _parentProps
         if (n.templateContent) {
-          var tpp = n.templateContent._parentPropChain;
-          for (var i=1; i<tpp.length; i++) {
-            if (tpp[i]) {
-              var pp = chain[i-1] || (chain[i-1] = {});
-              Polymer.Base.simpleMixin(pp, tpp[i]);              
-            }
-          }
+          var tpp = n.templateContent._parentProps;
+          Polymer.Base.mixin(pp, tpp);
         }
       });
-      // Store this template's parentProps map
-      content._parentProps = chain[0];
     },
 
     // add annotation data from attributes to the `annotation` for node `node`
-    // TODO(sjmiles): the distinction between an `annotation` and 
+    // TODO(sjmiles): the distinction between an `annotation` and
     // `annotation data` is not as clear as it could be
     // Walk attributes backwards, since removeAttribute can be vetoed by
     // IE in certain cases (e.g. <input value="foo">), resulting in the
@@ -242,8 +235,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     _parseNodeAttributeAnnotations: function(node, annotation) {
       for (var i=node.attributes.length-1, a; (a=node.attributes[i]); i--) {
         var n = a.name, v = a.value;
-        // id
-        if (n === 'id') {
+        // id (unless actually an escaped binding annotation)
+        if (n === 'id' && !this._testEscape(v)) {
           annotation.id = v;
         }
         // events (on-*)
@@ -266,10 +259,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     // construct annotation data from a generic attribute, or undefined
     _parseNodeAttributeAnnotation: function(node, n, v) {
-      var mode = '', escape = v.slice(0, 2), name = n;
-      if (escape === '{{' || escape === '[[') {
+      var escape = this._testEscape(v);
+      if (escape) {
+        var customEvent;
+        // Cache name (`n` will be mangled)
+        var name = n;
         // Mode (one-way or two)
-        mode = escape[0];
+        var mode = escape[0];
         v = v.slice(2, -2);
         // Negate
         var not = false;
@@ -288,11 +284,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         if (mode == '{' && (colon = v.indexOf('::')) > 0) {
           notifyEvent = v.substring(colon + 2);
           v = v.substring(0, colon);
+          customEvent = true;
         }
         // Remove annotation
         node.removeAttribute(n);
-        // Case hackery: attributes are lower-case, but bind targets 
-        // (properties) are case sensitive. Gambit is to map dash-case to 
+        // Case hackery: attributes are lower-case, but bind targets
+        // (properties) are case sensitive. Gambit is to map dash-case to
         // camel-case: `foo-bar` becomes `fooBar`.
         // Attribute bindings are excepted.
         if (kind === 'property') {
@@ -304,7 +301,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           name: name,
           value: v,
           negate: not,
-          event: notifyEvent
+          event: notifyEvent,
+          customEvent: customEvent
         };
       }
     },
@@ -318,14 +316,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     findAnnotatedNode: function(root, annote) {
       // recursively ascend tree until we hit root
-      var parent = annote.parent && 
+      var parent = annote.parent &&
         Polymer.Annotations.findAnnotatedNode(root, annote.parent);
       // unwind the stack, returning the indexed node at each level
-      return !parent ? root : 
+      return !parent ? root :
         Polymer.Annotations._localSubTree(parent, root)[annote.index];
     }
 
   };
-
 
 </script>

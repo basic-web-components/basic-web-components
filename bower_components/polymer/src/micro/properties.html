@@ -78,23 +78,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           type: p
         };
       }
+      // Let users determine whether property was defined without null check
+      if (p) {
+        p.defined = true;
+      }
       return p;
-    },
-
-    getPropertyType: function(property) {
-      return this.getPropertyInfo(property).type;
-    },
-
-    isReadOnlyProperty: function(property) {
-      return this.getPropertyInfo(property).readOnly;
-    },
-
-    isNotifyProperty: function(property) {
-      return this.getPropertyInfo(property).notify;
-    },
-
-    isReflectedProperty: function(property) {
-      return this.getPropertyInfo(property).reflectToAttribute;
     }
 
   });

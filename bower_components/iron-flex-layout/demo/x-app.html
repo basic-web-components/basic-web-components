@@ -1,3 +1,13 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE
+The complete set of authors may be found at http://polymer.github.io/AUTHORS
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS
+-->
+
 <link rel="import" href="../iron-flex-layout.html">
 
 <dom-module id="x-app">
@@ -5,44 +15,44 @@
   <style>
 
     :host {
-      mixin(--layout-horizontal);
+      @apply(--layout-horizontal);
     }
 
     [nav] {
       width: 300px;
-      mixin(--layout-vertical);
+      @apply(--layout-vertical);
       background-color: #ddd;
     }
 
     [item] {
       height: 60px;
       padding-left: 16px;
-      mixin(--layout-horizontal --layout-center);
+      @apply(--layout-horizontal --layout-center);
       border-bottom: 1px solid #bbb;
     }
 
     [main] {
-      mixin(--layout-flex);
-      mixin(--layout-vertical);
+      @apply(--layout-flex);
+      @apply(--layout-vertical);
     }
 
     [header] {
       height: 60px;
       background-color: #ccc;
       padding: 0 16px;
-      mixin(--layout-horizontal --layout-center);
+      @apply(--layout-horizontal --layout-center);
     }
 
     [tool] {
-      mixin(--layout-inline);
+      @apply(--layout-inline);
     }
 
     [flex] {
-      mixin(--layout-flex);
+      @apply(--layout-flex);
     }
 
     [content] {
-      mixin(--layout-flex);
+      @apply(--layout-flex);
       overflow: auto;
     }
 
@@ -51,7 +61,7 @@
       width: 300px;
       margin: 16px auto;
       background-color: #eee;
-      mixin(--layout-vertical --layout-center-center);
+      @apply(--layout-vertical --layout-center-center);
     }
 
   </style>
@@ -85,14 +95,12 @@
 
   </template>
 
-  <script>
-
-    Polymer({
-
-      enableCustomStyleProperties: true
-
-    });
-
-  </script>
-
 </dom-module>
+<script>
+
+  Polymer({
+    is: 'x-app'
+  });
+
+</script>
+
