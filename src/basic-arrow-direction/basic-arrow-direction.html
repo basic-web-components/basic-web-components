@@ -76,13 +76,18 @@ Clicking the left/right button maps to the corresponding left/right direction.
   }
   </style>
   <template>
-    <button id="buttonLeft" class="navigationButton" on-click="goLeft">
+    <!--
+    Accessibility note: since the navigation offered by the arrow buttons should
+    be redundant (that is, there should be other ways of navigating the list),
+    we mark the button as aria-hidden so that assistive devices ignore them.
+    -->
+    <button id="buttonLeft" class="navigationButton" on-click="goLeft" aria-hidden="true">
       <iron-icon icon="chevron-left"></iron-icon>
     </button>
     <div id="arrowNavigationContainer">
       <content></content>
     </div>
-    <button id="buttonRight" class="navigationButton" on-click="goRight">
+    <button id="buttonRight" class="navigationButton" on-click="goRight" aria-hidden="true">
       <iron-icon icon="chevron-right"></iron-icon>
     </button>
   </template>
