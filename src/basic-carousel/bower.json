@@ -20,7 +20,7 @@
     "basic-swipe-direction": "basic-web-components/basic-swipe-direction#master",
     "basic-timer-selection": "basic-web-components/basic-timer-selection#master",
     "basic-trackpad-direction": "basic-web-components/basic-trackpad-direction#master",
-    "polymer": "Polymer/polymer#0.8.0-rc.7"
+    "polymer": "Polymer/polymer#0.9.0-rc.1"
   },
   "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master",

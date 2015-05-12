@@ -1,6 +1,6 @@
 {
   "name": "iron-icons",
-  "version": "0.9.1",
+  "version": "0.9.0",
   "authors": [
     "The Polymer Authors"
   ],
@@ -23,7 +23,7 @@
     "iron-iconset-svg": "polymerelements/iron-iconset-svg#^0.9.0"
   },
   "devDependencies": {
-    "iron-flex-layout": "polymerelements/iron-flex-layout#^0.9.0",
+    "paper-styles": "polymerelements/paper-styles#^0.9.0",
     "iron-meta": "polymerelements/iron-meta#^0.9.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.6.0"
   },
@@ -31,13 +31,13 @@
     "util",
     "update-icons.sh"
   ],
-  "_release": "0.9.1",
+  "_release": "0.9.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.9.1",
-    "commit": "492503184d8dafcc6f29e397d92a4cf99c4a5c94"
+    "tag": "v0.9.0",
+    "commit": "b6dde5710db944f20e6dfaa27374ddb2193c56f2"
   },
   "_source": "git://github.com/PolymerElements/iron-icons.git",
-  "_target": "^0.9.0",
+  "_target": "0.9.0",
   "_originalSource": "PolymerElements/iron-icons"
 }
