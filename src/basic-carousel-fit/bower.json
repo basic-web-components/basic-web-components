@@ -18,13 +18,11 @@
     "basic-spread-fit": "basic-web-components/basic-spread-fit#master",
     "basic-swipe-direction": "basic-web-components/basic-swipe-direction#master",
     "basic-trackpad-direction": "basic-web-components/basic-trackpad-direction#master",
-    "iron-icons": "PolymerElements/iron-icons",
     "polymer": "Polymer/polymer#0.8.0-rc.7"
   },
   "devDependencies": {
     "basic-arrow-direction": "basic-web-components/basic-arrow-direction#master",
     "basic-framed-content": "basic-web-components/basic-framed-content#master",
-    "globalize": "0.x",
     "web-component-tester": "*"
   },
   "keywords": [

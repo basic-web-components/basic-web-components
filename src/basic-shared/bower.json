@@ -5,11 +5,9 @@
   "license": "MIT",
   "main": "basic-shared.html",
   "dependencies": {
-    "iron-icons": "PolymerElements/iron-icons",
     "polymer": "Polymer/polymer#0.8.0-rc.7"
   },
   "devDependencies": {
-    "globalize": "0.x",
     "web-component-tester": "*"
   },
   "keywords": [

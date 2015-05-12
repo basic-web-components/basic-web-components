@@ -6,7 +6,6 @@
   "main": "basic-selection-scroll.html",
   "dependencies": {
     "basic-aspect": "basic-web-components/basic-aspect#master",
-    "iron-icons": "PolymerElements/iron-icons",
     "polymer": "Polymer/polymer#0.8.0-rc.7"
   },
   "devDependencies": {
