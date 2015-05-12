@@ -26,17 +26,20 @@ Polymer({
       // console.log(this.localName + " collectiveChanged: " + this.collective.aspects.length);
       var innermost = this.collective.innermost;
 
-      // TODO: Optimize for the cast where the innermost item didn't change.
-      // The code below handles this, but then if the call comes too early, we
-      // never correctly begin observing changes on the component host.
+      // Optimize for the case where the innermost item didn't change.
+      // REVIEW: In Polymer 0.8, the call to collectiveChanged could come too
+      // early, and we would never correctly begin observing changes on the
+      // component host. In 0.8rc7, this appears(?) to no longer be the case.
+      // Need to apply more rigor to convince ourselves that this code is now
+      // correct.
 
-      // if (innermost === this._previousInnermostAspect) {
-      //   // We should already be observing changes on the innermost aspect.
-      //   // Even though the content hasn't actually changed, we want to give the
-      //   // new aspects a chance to respond to contentChanged.
-      //   this.contentChanged();
-      //   return;
-      // }
+      if (innermost === this._previousInnermostAspect) {
+        // We should already be observing changes on the innermost aspect.
+        // Even though the content hasn't actually changed, we want to give the
+        // new aspects a chance to respond to contentChanged.
+        this.contentChanged();
+        return;
+      }
 
       // A new aspect is now innermost.
       if (this._previousInnermostAspect && this._previousInnermostAspect._contentChangeObserver) {

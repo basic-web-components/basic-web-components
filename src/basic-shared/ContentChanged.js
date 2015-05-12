@@ -142,6 +142,7 @@ function observeHostIfContentElementPresent(node) {
     var host = Basic.ContentHelpers.getHost(node);
     if (host) {
       observeContentMutations(host, function() {
+        var foo = host;
         node.contentChanged();
       });
       observeHostIfContentElementPresent(host);
