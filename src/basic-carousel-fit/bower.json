@@ -6,6 +6,7 @@
   "main": "basic-carousel-fit.html",
   "dependencies": {
     "basic-accessible-list": "basic-web-components/basic-accessible-list#master",
+    "basic-arrow-direction": "basic-web-components/basic-arrow-direction#master",
     "basic-aspect": "basic-web-components/basic-aspect#master",
     "basic-children-content": "basic-web-components/basic-children-content#master",
     "basic-content-items": "basic-web-components/basic-content-items#master",
@@ -18,7 +19,7 @@
     "basic-swipe-direction": "basic-web-components/basic-swipe-direction#master",
     "basic-trackpad-direction": "basic-web-components/basic-trackpad-direction#master",
     "iron-icons": "PolymerElements/iron-icons",
-    "polymer": "Polymer/polymer#^0.8.0-rc.7"
+    "polymer": "Polymer/polymer#0.8.0-rc.7"
   },
   "devDependencies": {
     "basic-arrow-direction": "basic-web-components/basic-arrow-direction#master",

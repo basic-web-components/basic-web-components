@@ -20,7 +20,7 @@
     "basic-tap-selection": "basic-web-components/basic-tap-selection#master",
     "basic-shared": "basic-web-components/basic-shared#master",
     "iron-icons": "PolymerElements/iron-icons",
-    "polymer": "Polymer/polymer#^0.8.0-rc.7"
+    "polymer": "Polymer/polymer#0.8.0-rc.7"
   },
   "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master",
