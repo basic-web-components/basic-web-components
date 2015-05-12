@@ -58,20 +58,6 @@ Polymer({
       }
     },
 
-    // TODO: It'd be very helpful if we could use aria-setsize (see
-    // http://www.w3.org/TR/wai-aria/states_and_properties#aria-setsize) and
-    // aria-posinset, but (as of 11 May 2015), Chrome and Safari either don't
-    // support them, or at least don't give them as much precedence as the
-    // apparent list size and position in the DOM.
-    itemsChanged: function() {
-      var items = this.items;
-      var count = items.length;
-      items.forEach(function(item, index) {
-        item.setAttribute('aria-setsize', count);
-        item.setAttribute('aria-posinset', index + 1);
-      });
-    },
-
     // Catch the case where the selection is removed.
     set selectedItem(selectedItem) {
       if (selectedItem == null) {
