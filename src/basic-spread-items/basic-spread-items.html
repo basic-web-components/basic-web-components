@@ -30,7 +30,6 @@ component basic-spread-fit.
     -webkit-user-drag: none;
     -moz-user-select: none;
     user-select: none;
-    width: 100%;
   }
   </style>
   <template>
@@ -49,6 +48,10 @@ Polymer({
       var items = this.items;
       this.count = items.length;
       this.$.spreadContainer.style.width = (this.count * 100) + '%';
+      var itemWidth = (100 / this.count) + "%";
+      items.forEach(function(item) {
+        item.style.width = itemWidth;
+      });
     }
 
   },
