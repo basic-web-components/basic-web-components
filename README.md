@@ -1,5 +1,13 @@
 This is the consolidated repository holding the source for all components in the Basic Web Components project. This repo is intended for component development, and for running component demos locally.
 
+# Introduction
+
+The Basic Web Components project seeks to provide a comprehensive set of solid, well-designed web components that implement very common user interface patterns. Each component can be used as is, or as the foundation for new components.
+
+These components are not intended to be flashy or exciting. They are meant to serve as solid building blocks for your applications and user experiences. Careful factoring of user interface concerns attempts to give you components, helpers, base classes, mixins, etc., that you can readily combine (or recombine) to create solid custom components to meet your own needs.
+
+These components try to measure up to the [Gold Standard for web components](https://github.com/webcomponents/gold-standard/wiki). That standard sets a very high bar for component quality, attempting to make web components as flexible and reliable as the standard build-in HTML elements.
+
 # Repository organization
 
 All the interesting work on Basic Web Components happens in this repository, known as the "consolidated" repository. This contains the source for all the basic- components in a single place, which makes it simple to clone and develop in. The source for each component is in a separate subfolder under the /src folder. E.g., the source for basic-autosize-textarea is found in /src/basic-autosize-textarea.
@@ -36,4 +44,4 @@ The Basic Web Components project is open source under the MIT license. The proje
 * We'd prefer to have issues filed against this consolidate repository, rather than the individual deployment repositories for individual components.
 * Please submit PRs against this repository, not the invididual component repositories. Those individual component repos are for deployment only.
 * Code should follow the [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
-* To the extent possible, components should try to measure up to the [Gold Standard for web components](https://github.com/webcomponents/gold-standard/wiki). This sets a very high bar for component quality, attempting to make web components as flexible and reliable as the standard build-in HTML elements.
+* To the extent possible, components should try to measure up to the [Gold Standard for web components](https://github.com/webcomponents/gold-standard/wiki).
