@@ -45,6 +45,8 @@ For more information on each component's purpose and API, see the formatted [doc
 The Basic Web Components 0.6 release is designed for use with the latest release of [Polymer](https://www.polymer-project.org).
 
 * [basic-autosize-textarea](http://component.kitchen/components/basic-autosize-textarea). A text area that expands to contain its text.
+* [basic-carousel](http://component.kitchen/components/basic-carousel). Lets the user navigate laterally through a sequence of child elements.
+* [basic-carousel-fit](http://component.kitchen/components/basic-carousel-fit). Lets the user navigate through a sequence of child elements, without requiring that an explicit height and width be applied to the carousel.
 * [basic-framed-content](http://component.kitchen/components/basic-framed-content). Allows communication outside of a framed page.
 * [basic-list-box](http://component.kitchen/components/basic-list-box). A single-selection list box that supports selection highlighting (using the system highlight color) and keyboard navigation.
 
@@ -56,7 +58,6 @@ The earlier Basic Web Components 0.5 release contains the following. These compo
 * [basic-calendar-month-days](http://component.kitchen/components/basic-calendar-month-days). Shows a single month's worth of days as a seven-column table. No headings.
 * [basic-calendar-month](http://component.kitchen/components/basic-calendar-month). Shows a single month from a calendar as a standard seven-column table, taking care to reflect a given culture’s preference for the first day of the week. Includes headings for month name, year, and days of week.
 * [basic-calendar-week](http://component.kitchen/components/basic-calendar-week). Shows a single week from a calendar as seven days in a row, taking care to reflect a given culture’s preference for the first day of the week.
-* [basic-carousel](http://component.kitchen/components/basic-carousel). Lets the user navigate through a sequence of child elements with next/previous buttons.
 * [basic-culture-selector](http://component.kitchen/components/basic-culture-selector). Lets the user select a preferred language/culture from a list of supported languages/cultures. Can also be used behind the scenes to load language/culture settings.
 * [basic-days-of-week](http://component.kitchen/components/basic-days-of-week). Shows the names of the seven days of the week using a given culture’s day names in short/abbreviated/full format.
 * [basic-modes](http://component.kitchen/components/basic-modes). Shows a single child element at a time.
@@ -153,7 +154,6 @@ If you're interested in creating a web component that others can use, why not ta
 * Radio button list. A list box showing a radio button next to each item; an alternative way to represent selection in a single-selection list.
 * Ribbon. A space-sensitive presentation of a set of commands.
 * Rich text editor. Supports the basics: bold, italic, insert link, etc.
-* Rotating panels with dots. Rotates (once or indefinitely) through a sequence of horizontally-arranged pages, usually to add visual interest to a home page.
 * Scroll-up bar. Appears only when user scrolls down, then up. See http://usabilitypost.com/2014/05/24/the-scroll-up-bar/. Combine with persistent navigation bar?
 * Search box. A text box with standard decorations (magnifying class, customizable “Search” hint) to suggest a search field.
 * Sequence with dots. Sliding panels which add a series of dots (or labels?) to navigate its contents. Should support touch swiping.
