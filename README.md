@@ -10,7 +10,7 @@ This compromise arrangement greatly simplifies component development (in this co
 
 # Contributing
 
-If you'd like to contribute to Basic Web Components, we'd love the help! As a result of the repository organization described above:
+The Basic Web Components project is open source under the MIT license. The project is led by [Component Kitchen](http://component.kitchen) and sponsored by Google. The Basic Web Components project encourages you to join in and contribute general-purpose components to this effort! We'd love the help.
 
 * We'd prefer to have issues filed against this consolidate repository, rather than the individual deployment repositories for individual components.
 * Please submit PRs against this repository, not the invididual component repositories. Those individual component repos are for deployment only.
