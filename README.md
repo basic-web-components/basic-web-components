@@ -36,3 +36,4 @@ The Basic Web Components project is open source under the MIT license. The proje
 * We'd prefer to have issues filed against this consolidate repository, rather than the individual deployment repositories for individual components.
 * Please submit PRs against this repository, not the invididual component repositories. Those individual component repos are for deployment only.
 * Code should follow the [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+* To the extent possible, components should try to measure up to the [Gold Standard for web components](https://github.com/webcomponents/gold-standard/wiki). This sets a very high bar for component quality, attempting to make web components as flexible and reliable as the standard build-in HTML elements.
