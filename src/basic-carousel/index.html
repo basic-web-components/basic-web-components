@@ -8,6 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>basic-carousel</title>
   <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../basic-framed-content/basic-framed-content.html">
   <link rel="import" href="../basic-arrow-direction/basic-arrow-direction.html">
   <link rel="import" href="../basic-timer-selection/basic-timer-selection.html">
   <link rel="import" href="../basic-page-dots/basic-page-dots.html">
@@ -33,13 +34,17 @@
     margin: 0;
   }
 
-  basic-timer-selection,
+  basic-framed-content,
   basic-arrow-direction,
   basic-page-dots {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
     flex: 1;
+  }
+
+  basic-framed-content {
+    min-height: 400px;
   }
 
   basic-carousel {
@@ -56,17 +61,19 @@
 </head>
 
 <body unresolved>
-  <basic-arrow-direction target="child" class="overlay" aria-label="Nature scenes" role="listbox">
-    <basic-page-dots target="child">
-      <basic-carousel>
-        <img src="../basic-shared/resources/images/image1.jpg" alt="Lake">
-        <img src="../basic-shared/resources/images/image2.jpg" alt="Horses">
-        <img src="../basic-shared/resources/images/image6.jpg" alt="Wheat">
-        <img src="../basic-shared/resources/images/image3.jpg" alt="Mountain">
-        <img src="../basic-shared/resources/images/image7.jpg" alt="Palm tree">
-      </basic-carousel>
-    </basic-page-dots>
-  </basic-arrow-direction>
+  <basic-framed-content>
+    <basic-arrow-direction target="child" class="overlay" aria-label="Nature scenes" role="listbox">
+      <basic-page-dots target="child">
+        <basic-carousel>
+          <img src="../basic-shared/resources/images/image1.jpg" alt="Lake">
+          <img src="../basic-shared/resources/images/image2.jpg" alt="Horses">
+          <img src="../basic-shared/resources/images/image6.jpg" alt="Wheat">
+          <img src="../basic-shared/resources/images/image3.jpg" alt="Mountain">
+          <img src="../basic-shared/resources/images/image7.jpg" alt="Palm tree">
+        </basic-carousel>
+      </basic-page-dots>
+    </basic-arrow-direction>
+  </basic-framed-content>
 </body>
 
 </html>
