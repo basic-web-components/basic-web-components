@@ -14,3 +14,4 @@ If you'd like to contribute to Basic Web Components, we'd love the help! As a re
 
 * We'd prefer to have issues filed against this consolidate repository, rather than the individual deployment repositories for individual components.
 * Please submit PRs against this repository, not the invididual component repositories. Those individual component repos are for deployment only.
+* Code should follow the [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
