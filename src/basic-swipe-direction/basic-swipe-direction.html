@@ -36,30 +36,52 @@ Polymer({
     touchStart: function(event) {
       this.showTransition(false);
       var x = event.changedTouches[0].clientX;
+      var y = event.changedTouches[0].clientY;
       this._startX = x;
       this._previousX = x;
-      this._delta = 0;
+      this._previousY = y;
+      this._deltaX = 0;
+      this._deltaY = 0;
     },
 
-    touchMove: function(x) {
+    touchMove: function(event) {
       var x = event.changedTouches[0].clientX;
-      this._trackTo(x);
+      var y = event.changedTouches[0].clientY;
+      this._deltaX = x - this._previousX;
+      this._deltaY = y - this._previousY;
+      this._previousX = x;
+      this._previousY = y;
+      if (Math.abs(this._deltaX) > Math.abs(this._deltaY)) {
+        // Move was mostly horizontal.
+        this._trackTo(x);
+        // Indicate that the event was handled. It'd be nicer if we didn't have
+        // to do this so that, e.g., a user could be swiping left and right
+        // while simultaneously scrolling up and down. (Native touch apps can do
+        // that.) However, Mobile Safari wants to handle swipe events near the
+        // page and interpret them as navigations. To avoid having a horiziontal
+        // swipe misintepreted as a navigation, we indicate that we've handled
+        // the event, and prevent default behavior.
+        return true;
+      } else {
+        // Move was mostly vertical.
+        return false; // Not handled
+      }
     },
 
-    touchEnd: function(x) {
+    touchEnd: function(event) {
       this.showTransition(true);
       var x = event.changedTouches[0].clientX;
-      if (this._delta >= 20) {
+      if (this._deltaX >= 20) {
         // Finished going right at high speed.
-        // console.log("flick right " + this._delta);
+        // console.log("flick right " + this._deltaX);
         this.goLeft();
-      } else if (this._delta <= -20) {
+      } else if (this._deltaX <= -20) {
         // Finished going left at high speed.
-        // console.log("flick left " + this._delta);
+        // console.log("flick left " + this._deltaX);
         this.goRight();
       } else {
         // Finished at low speed.
-        // console.log("slow drag " + this._delta);
+        // console.log("slow drag " + this._deltaX);
         this._trackTo(x);
         var position = this.position;
         if (position >= 0.5) {
@@ -69,7 +91,8 @@ Polymer({
         }
       }
       this.position = 0;
-      this._delta = null;
+      this._deltaX = null;
+      this._deltaY = null;
     },
 
   },
@@ -89,15 +112,15 @@ Polymer({
     // TODO: touch events could be factored out into their own aspect.
     this.addEventListener('touchstart', function(event) {
       this.touchStart(event);
-      event.preventDefault();
     }.bind(this));
     this.addEventListener('touchmove', function(event) {
-      this.touchMove(event);
-      event.preventDefault();
+      var handled = this.touchMove(event);
+      if (handled) {
+        event.preventDefault();
+      }
     }.bind(this));
     this.addEventListener('touchend', function(event) {
       this.touchEnd(event);
-      event.preventDefault();
     }.bind(this));
   },
 
@@ -107,12 +130,7 @@ Polymer({
     var fraction = width > 0 ?
       dragDistance / width :
       0;
-    // var index = this._startIndex + fraction;
-    // this.selectedIndex = index;
-    // this._setSelectedIndex(index);
     this.position = fraction;
-    this._delta = x - this._previousX;
-    this._previousX = x;
   },
 
 });
