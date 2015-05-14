@@ -33,8 +33,9 @@ suite('basic-children-content', function() {
       contribute: {
         contentChanged: function() {
           // Wait until we actaully have content.
-          if (this.content.length > 0) {
-            assert.equal(this.content[0], div);
+          var content = this.collective.content;
+          if (content.length > 0) {
+            assert.equal(content[0], div);
             done();
           }
         }
@@ -55,8 +56,8 @@ suite('basic-children-content', function() {
     var changeDetectorAspect = {
       contribute: {
         contentChanged: function() {
-          assert.equal(this.content.length, 1);
-          assert.equal(this.content[0], div);
+          assert.equal(this.collective.content.length, 1);
+          assert.equal(this.collective.content[0], div);
           done();
         }
       }
