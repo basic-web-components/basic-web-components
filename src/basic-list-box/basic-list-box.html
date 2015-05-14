@@ -121,7 +121,85 @@ Polymer({
     target: 'shadow'
   },
 
-  is: 'basic-list-box'
+  is: 'basic-list-box',
+
+  /**
+   * Returns the positional index for the indicated item.
+   *
+   * @method indexOfItem
+   * @param {Object} item The item whose index is requested.
+   * @returns {Number} The index of the item, or -1 if not found.
+   */
+  indexOfItem: function(item) {
+    return this.collective.indexOfItem(item);
+  },
+
+  /**
+   * The current set of items in the list.
+   *
+   * @property items
+   * @type [Object]
+   */
+  get items() {
+    return this.collective.items;
+  },
+
+  /**
+   * The index of the item which is currently selected, or -1 if there is no
+   * selection.
+   *
+   * @property selectedIndex
+   * @type Number
+   */
+  get selectedIndex() {
+    return this.collective.selectedIndex;
+  },
+
+  /**
+   * The currently selected item, or null if there is no selection.
+   *
+   * @property selectedItem
+   * @type Object
+   */
+  get selectedItem() {
+    return this.collective.selectedItem;
+  },
+
+  /**
+   * Select the first item in the list.
+   *
+   * @method selectFirst
+   */
+  selectFirst: function() {
+    return this.collective.selectFirst();
+  },
+
+  /**
+   * Select the last item in the list.
+   *
+   * @method selectLast
+   */
+  selectLast: function() {
+    return this.collective.selectLast();
+  },
+
+  /**
+   * Select the next item in the list.
+   *
+   * @method selectNext
+   */
+  selectNext: function() {
+    return this.collective.selectNext();
+  },
+
+  /**
+   * Select the previous item in the list.
+   *
+   * @method selectPrevious
+   */
+  selectPrevious: function() {
+    return this.collective.selectPrevious();
+  }
 
 });
 
@@ -144,21 +222,6 @@ Polymer({
  */
 
 /**
- * Returns the positional index for the indicated item.
- *
- * @method indexOfItem
- * @param {Object} item The item whose index is requested.
- * @returns {Number} The index of the item, or -1 if not found.
- */
-
-/**
- * The current set of items in the list.
- *
- * @property items
- * @type [Object]
- */
-
-/**
  * Fires when the items in the list change.
  *
  * @event items-changed
@@ -172,42 +235,4 @@ Polymer({
  * @param detail.previousItem The previously selected item.
  */
 
-/**
- * The index of the item which is currently selected, or -1 if there is no
- * selection.
- *
- * @property selectedIndex
- * @type Number
- */
-
-/**
- * The currently selected item, or null if there is no selection.
- *
- * @property selectedItem
- * @type Object
- */
-
-/**
- * Select the first item in the list.
- *
- * @method selectFirst
- */
-
-/**
- * Select the last item in the list.
- *
- * @method selectLast
- */
-
-/**
- * Select the next item in the list.
- *
- * @method selectNext
- */
-
-/**
- * Select the previous item in the list.
- *
- * @method selectPrevious
- */
 </script>

@@ -32,10 +32,10 @@ Polymer({
 
       switch (event.keyCode) {
         case 33: // Page Up
-          handled = this.pageUp();
+          handled = this.collective.pageUp();
           break;
         case 34: // Page Down
-          handled = this.pageDown();
+          handled = this.collective.pageDown();
           break;
       }
 
@@ -44,29 +44,37 @@ Polymer({
         event.stopPropagation();
         return false;
       }
+    },
+
+    /**
+     * Scroll down one page.
+     *
+     * @method pageDown
+     */
+    pageDown: function() {
+      return this._scrollOnePage(true);
+    },
+
+    /**
+     * Scroll up one page.
+     *
+     * @method pageUp
+     */
+    pageUp: function() {
+      return this._scrollOnePage(false);
     }
 
   },
 
-  /**
-   * Scroll down one page.
-   *
-   * @method pageDown
-   */
-  pageDown: function() {
-    return this._scrollOnePage(true);
-  },
-
-  /**
-   * Scroll up one page.
-   *
-   * @method pageUp
-   */
-  pageUp: function() {
-    return this._scrollOnePage(false);
-  },
-
   is: 'basic-keyboard-paging',
+
+  pageDown: function() {
+    this.collective.pageDown();
+  },
+
+  pageUp: function() {
+    this.collective.pageUp();
+  },
 
   // Return the item whose content spans the given y position (relative to the
   // top of the list's scrolling client area), or null if not found.
@@ -75,7 +83,7 @@ Polymer({
   // found at the given y position; if downward is false, move up the list of
   // items to find the last item at that position.
   _getIndexOfItemAtY: function(y, downward) {
-    var items = this.items;
+    var items = this.collective.items;
     var start = downward ? 0 : items.length - 1;
     var end = downward ? items.length : 0;
     var step = downward ? 1 : -1;
@@ -136,7 +144,7 @@ Polymer({
     var edge = innermost.scrollTop + (downward ? innermost.clientHeight : 0);
     var indexOfItemAtEdge = this._getIndexOfItemAtY(edge, downward);
 
-    var selectedIndex = this.selectedIndex;
+    var selectedIndex = this.collective.selectedIndex;
     var newIndex;
     if (indexOfItemAtEdge && selectedIndex === indexOfItemAtEdge) {
       // The item at the edge was already selected, so scroll in the indicated
@@ -154,11 +162,11 @@ Polymer({
     if (!newIndex) {
       // We can't find an item in the direction we want to travel. Select the
       // last item (if moving downward) or first item (if moving upward).
-      newIndex = (downward ? this.items.length - 1 : 0);
+      newIndex = (downward ? this.collective.items.length - 1 : 0);
     }
 
     if (newIndex !== selectedIndex) {
-      this.selectedIndex = newIndex;
+      this.collective.selectedIndex = newIndex;
       return true; // We handled the page up/down ourselves.
     }
     else {

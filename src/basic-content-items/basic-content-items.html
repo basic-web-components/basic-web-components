@@ -25,9 +25,7 @@ Polymer({
     },
 
     contentChanged: function() {
-      if (this.itemsChanged) {
-        this.itemsChanged();
-      }
+      this.collective.itemsChanged();
     },
 
     /**
@@ -38,14 +36,18 @@ Polymer({
      * @returns {Number} The index of the item, or -1 if not found.
      */
     indexOfItem: function(item) {
-      return this.items.indexOf(item);
+      return this.collective.items.indexOf(item);
     },
+
+    // Default implementation does nothing. This will typically be handled by
+    // other aspects in the collective.
+    itemAdded: function() {},
 
     itemsChanged: function() {
       // Perform per-item initialization.
-      this.items.forEach(function(item) {
+      this.collective.items.forEach(function(item) {
         if (!item._itemInitialized) {
-          this.itemAdded(item);
+          this.collective.itemAdded(item);
           item._itemInitialized = true;
         }
       }.bind(this));
@@ -66,17 +68,20 @@ Polymer({
       // TODO: Memoize
       // TODO: Filter out auxiliary content.
       // TODO: property notifications so elements can bind to this property
-      return this.content;
+      return this.collective.content;
     }
 
   },
 
+  indexOfItem: function(item) {
+    return this.collective.indexOfItem(item);
+  },
+
   is: 'basic-content-items',
 
-  // Default implementations do nothing. These will usually be overwritten by
-  // collective methods.
-  itemAdded: function() {},
-  itemsChanged: function() {}
+  get items() {
+    return this.collective.items;
+  }
 
 });
 </script>

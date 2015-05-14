@@ -68,7 +68,7 @@ Polymer({
     }
     var index = this._getIndexOfItemWithTextPrefix(prefix);
     if (index >= 0) {
-      this.selectedIndex = index;
+      this.collective.selectedIndex = index;
     }
   },
 
@@ -89,7 +89,7 @@ Polymer({
   // Cache these results.
   _getItemTextContents: function() {
     if (!this._itemTextContents) {
-      this._itemTextContents = this.items.map(function(child) {
+      this._itemTextContents = this.collective.items.map(function(child) {
         return child.textContent.toLowerCase();
       });
     }

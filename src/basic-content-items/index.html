@@ -31,7 +31,7 @@ basic-framed-content {
 var changeDetectorAspect = {
   contribute: {
     itemsChanged: function() {
-      console.log("itemsChanged: now " + this.content.length + " items");
+      console.log("itemsChanged: now " + this.collective.items.length + " items");
     }
   }
 };

@@ -26,14 +26,14 @@ Polymer({
   contribute: {
 
     itemAdded: function(item) {
-      this.applySelection(item, item === this.selectedItem);
+      this.collective.applySelection(item, item === this.collective.selectedItem);
     },
 
     itemsChanged: function() {
-      var index = this.items.indexOf(this.selectedItem);
+      var index = this.collective.items.indexOf(this.collective.selectedItem);
       if (index < 0) {
         // Selected item is no longer in the current set of items.
-        this.selectedItem = null;
+        this.collective.selectedItem = null;
         if (this.selectionRequired) {
           // Ensure selection, but do this in the next tick to give other
           // aspects a chance to do their own itemsChanged work.
@@ -59,11 +59,11 @@ Polymer({
       var previousItem = this._selectedItem;
       if (previousItem) {
         // Remove previous selection.
-        this.applySelection(previousItem, false);
+        this.collective.applySelection(previousItem, false);
       }
       this._selectedItem = item;
       if (item) {
-        this.applySelection(item, true);
+        this.collective.applySelection(item, true);
       }
 
       var event = new CustomEvent('selected-item-changed', {
@@ -84,14 +84,14 @@ Polymer({
      * @type Number
      */
     get selectedIndex() {
-      var selectedItem = this.selectedItem;
+      var selectedItem = this.collective.selectedItem;
 
       if (selectedItem == null) {
         return -1;
       }
 
       // TODO: Memoize
-      var index = this.indexOfItem(selectedItem);
+      var index = this.collective.indexOfItem(selectedItem);
 
       // If index = -1, selection wasn't found. Most likely cause is that the
       // DOM was manipulated from underneath us.
@@ -100,14 +100,14 @@ Polymer({
     },
 
     set selectedIndex(index) {
-      var items = this.items;
+      var items = this.collective.items;
       var item;
       if (index < 0 || items.length === 0) {
         item = null;
       } else {
         item = items[index];
       }
-      this.selectedItem = item;
+      this.collective.selectedItem = item;
     },
 
     /**
@@ -125,7 +125,7 @@ Polymer({
      * @method selectLast
      */
     selectLast: function() {
-      return this._selectIndex(this.items.length - 1);
+      return this._selectIndex(this.collective.items.length - 1);
     },
 
     /**
@@ -134,7 +134,7 @@ Polymer({
      * @method selectNext
      */
     selectNext: function() {
-      return this._selectIndex(this.selectedIndex + 1);
+      return this._selectIndex(this.collective.selectedIndex + 1);
     },
 
     /**
@@ -143,7 +143,7 @@ Polymer({
      * @method selectPrevious
      */
     selectPrevious: function() {
-      return this._selectIndex(this.selectedIndex - 1);
+      return this._selectIndex(this.collective.selectedIndex - 1);
     }
 
   },
@@ -158,6 +158,30 @@ Polymer({
     }
   },
 
+  selectFirst: function() {
+    this.collective.selectFirst();
+  },
+
+  selectLast: function() {
+    this.collective.selectLast();
+  },
+
+  selectNext: function() {
+    this.collective.selectNext();
+  },
+
+  selectPrevious: function() {
+    this.collective.selectPrevious();
+  },
+
+  get selectedIndex() {
+    return this.collective.selectedIndex;
+  },
+
+  get selectedItem() {
+    return this.collective.selectedItem;
+  },
+
   selectionRequiredChanged: function(selectionRequired, oldSelectionRequired) {
     if (selectionRequired && !oldSelectionRequired) {
       this._ensureSelection();
@@ -168,18 +192,18 @@ Polymer({
   // TODO: If the previously-selected item has been deleted, try to select an
   // item adjacent to the position it held.
   _ensureSelection: function() {
-    if (!this.selectedItem && this.items && this.items.length > 0) {
-      this.selectedIndex = 0;
+    if (!this.collective.selectedItem && this.collective.items && this.collective.items.length > 0) {
+      this.collective.selectedIndex = 0;
     }
   },
 
   // Ensure the given index is within bounds, and select it if it's not already
   // selected.
   _selectIndex: function(index) {
-    var boundedIndex = Math.max(Math.min(index, this.items.length - 1), 0);
-    var previousIndex = this.selectedIndex;
+    var boundedIndex = Math.max(Math.min(index, this.collective.items.length - 1), 0);
+    var previousIndex = this.collective.selectedIndex;
     if (previousIndex !== boundedIndex) {
-      this.selectedIndex = boundedIndex;
+      this.collective.selectedIndex = boundedIndex;
       return true;
     } else {
       return false;

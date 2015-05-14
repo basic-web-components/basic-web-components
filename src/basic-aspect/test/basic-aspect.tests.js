@@ -31,12 +31,8 @@ suite('basic-aspect', function() {
     aspect1.assimilate(aspect2);
 
     results = [];
-    aspect1.method('foo');
-    assert.deepEqual(results, ['foo two', 'foo one']);
-
-    // Results should be same calling method on either aspect.
-    results = [];
-    aspect2.method('foo');
+    var collective = aspect1.collective;
+    collective.method('foo');
     assert.deepEqual(results, ['foo two', 'foo one']);
   });
 

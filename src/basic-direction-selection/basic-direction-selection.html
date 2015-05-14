@@ -14,78 +14,55 @@ Polymer({
 
   contribute: {
 
-    /*
-    TODO: How to declare occlusion of lower-level semantics?
-
-    occlude: [
-      'goDown',
-      'goEnd',
-      'goLeft',
-      'goRight',
-      'goStart',
-      'goUp'
-    ],
-    expose: [
-      'selectFirst',
-      'selectLast',
-      'selectNext',
-      'selectPrevious'
-    ]
-
-    or
-
-    occlude: ['direction']    where "direction" is the name of an aspect or
-                              part of an aspect
-
-    */
-
     goDown: function() {
-      return this.selectNext();
+      return this.collective.selectNext();
     },
 
     goEnd: function() {
-      return this.selectLast();
+      return this.collective.selectLast();
     },
 
     goLeft: function() {
-      return this.selectPrevious();
+      return this.collective.selectPrevious();
     },
 
     goRight: function() {
-      return this.selectNext();
+      return this.collective.selectNext();
     },
 
     goStart: function() {
-      return this.selectFirst();
+      return this.collective.selectFirst();
     },
 
     goUp: function() {
-      return this.selectPrevious();
-    }
+      return this.collective.selectPrevious();
+    },
+
+    // Default implementations. These will typically be handled by other aspects
+    // in the collective.
+    selectFirst: function() {},
+    selectLast: function() {},
+    selectNext: function() {},
+    selectPrevious: function() {}
 
   },
 
-  is: 'basic-direction-selection',
-
-  // Default implementations will be ovewritten with collective methods.
-  selectFirst: function() {},
-  selectLast: function() {},
-  selectNext: function() {},
-  selectPrevious: function() {},
+  is: 'basic-direction-selection'
 
   // TODO: Need to find home for this DOM-specific navigation code.
-
+  // This handles moving in lists where items arranged horizontally.
+  //
   // Return true if the selected control is displayed inline.
-  _selectedItemIsInline: function() {
-    var selectedItem = this.selectedItem;
-    if (!selectedItem) {
-      return false;
-    }
-    var style = getComputedStyle(selectedItem);
-    var inlineDisplayValues = ['inline', 'inline-block', 'inline-table'];
-    var itemIsInline = (inlineDisplayValues.indexOf(style.display) >= 0);
-    return itemIsInline;
-  }
+  // _selectedItemIsInline: function() {
+  //   var selectedItem = this.collective.selectedItem;
+  //   if (!selectedItem) {
+  //     return false;
+  //   }
+  //   var style = getComputedStyle(selectedItem);
+  //   var inlineDisplayValues = ['inline', 'inline-block', 'inline-table'];
+  //   var itemIsInline = (inlineDisplayValues.indexOf(style.display) >= 0);
+  //   return itemIsInline;
+  // }
 
 });
 </script>
