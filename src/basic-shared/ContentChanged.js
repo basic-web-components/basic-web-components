@@ -51,10 +51,10 @@ function expandContentElements(nodes, includeTextNodes) {
 }
 
 
-// Invoke an element's contentChanged handler -- but first, see if the elements'
-// new content includes a content element, in which case we'll need to monitor
-// the component's host for changes, too.
-function invokeContentChanged(mutations) {
+//
+// Respond to a mutation on an observed element.
+//
+function mutationObserved(mutations) {
 
   // TODO: Decide whether we want to treat attribute changes as content changes.
   // Special case: attribute mutations on the element itself aren't considered
@@ -70,21 +70,43 @@ function invokeContentChanged(mutations) {
   //   }
   // }
 
-  // Filter out mutations which occurred in Shady DOM.
-  if (mutations) {
-    var mutationsInLightDom = mutations.filter(function(mutation) {
-      return isLightDomMutation(mutation, this);
-    }.bind(this));
-    if (mutationsInLightDom.length === 0) {
-      // All mutations were only modifications in Shady DOM.
-      return;
-    }
+  // See if the mutation actually occurred in light DOM.
+  // If we're using native Shadow DOM, the mutations must have occurred in light
+  // DOM; we wouldn't hear about mutations in shadow DOM. For Shady DOM, we need
+  // to apply our own heuristics to determine whether mutations were in the
+  // simulated light DOM.
+  var mutationsInLightDom = Polymer.Settings.useNativeShadow ||
+    includesLightDomMutations(mutations, this);
+
+  if (!mutationsInLightDom) {
+    // Nothing to handle as a change in content.
+    return;
   }
 
+  // See if the elements' new content includes a content element, in which case
+  // we'll need to monitor the component's host for changes, too.
   observeHostIfContentElementPresent(this);
 
   // Invoke the element's own handler.
   this._contentChangeHandler();
+}
+
+
+//
+// Return true if the given mutations include at least one mutation in the
+// component's light DOM.
+//
+function includesLightDomMutations(mutations, component) {
+
+  if (!mutations) {
+    // Assume there was a light DOM mutation.
+    return true;
+  }
+
+  // Look for at least one light DOM mutation DOM.
+  return mutations.some(function(mutation) {
+    return isLightDomMutation(mutation, component);
+  });
 }
 
 
@@ -258,11 +280,11 @@ window.Basic.ContentHelpers = {
    * @param {Function} handler The function to invoke when content changes.
    */
   observeContentChanges: function(node, handler) {
-    if (handler || handler == null) {
+    if (handler || typeof handler === 'undefined') {
       // Start observing
       handler = (handler || node.contentChanged).bind(node);
       node._contentChangeHandler = handler;
-      observeContentMutations(node, invokeContentChanged.bind(node));
+      observeContentMutations(node, mutationObserved.bind(node));
       if (Polymer.dom(node).childNodes.length > 0) {
         // Consider any initial content of a new element to be "changed" content.
         handler();
@@ -271,6 +293,7 @@ window.Basic.ContentHelpers = {
       // Stop observing
       node._contentChangeObserver.disconnect();
       node._contentChangeObserver = null;
+      node._contentChangeHandler = null;
     }
   }
 
