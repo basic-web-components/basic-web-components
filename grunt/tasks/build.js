@@ -85,14 +85,6 @@ module.exports = function(grunt) {
         // Comment out the following line for verbose output files
         //strip:true
       },
-      'basic-shared': {
-        files: [{
-          expand: true,
-          cwd: '<%= build_dir %>',
-          src: ['basic-shared/**/*.html'],
-          dest: '<%= build_dir %>'
-        }]
-      },
       modules: {
         options:{
           excludes: {
@@ -170,28 +162,11 @@ module.exports = function(grunt) {
 
   });
 
-  // Create HTML imports for basic-shared folders
-  grunt.registerTask('basic-shared:imports', function() {
-    var dirs = ['.'];
-
-    for (var i = 0; i < dirs.length; i++) {
-      var files = grunt.file.expand({cwd: SRC_DIR + '/basic-shared/' + dirs[i] + '/' }, '*.js');
-
-      files.forEach(function(file) {
-        var fileName = file.substr(0, file.lastIndexOf('.')) || file;
-        grunt.file.write(grunt.config('build_dir') + '/basic-shared/' + dirs[i] + '/' + fileName.toLowerCase() + '.html', '<script src=\"' + file + '\"></script>');
-      });
-    }
-
-    grunt.log.ok();
-  });
-
   grunt.registerTask('build:dist', function(arg){
     grunt.task.run([
       'clean:build',
       'copy:build',
       'hogan_static:lib',
-      'vulcanize:basic-shared',
       'vulcanize:modules',
       'vulcanize:dist',
       'usebanner:dist'
