@@ -122,35 +122,35 @@ Collective.prototype = {
     return null;
   },
 
-  _addCollectiveGetterToAspect: function(aspect, getterName) {
+  _addCollectiveGetter: function(getterName) {
     // Because a collective getter only ever invokes the outermost
     // implementation, we can just apply that (bound) implementation to the
     // aspect we're modifying.
     var implementations = this.getters[getterName];
     var getter = implementations[0];
-    Object.defineProperty(aspect, getterName, {
+    Object.defineProperty(this, getterName, {
       configurable: true,
       get: getter
     });
   },
 
-  _addCollectiveMethodToAspect: function(aspect, methodName) {
+  _addCollectiveMethod: function(methodName) {
     var implementations = this.methods[methodName];
-    aspect[methodName] = (implementations.length === 1) ?
+    this[methodName] = (implementations.length === 1) ?
       // Only one method implementation; use it directly.
       implementations[0] :
       // Multiple implementations; have collective broadcast method invocation.
       this.invokeMethod.bind(this, methodName);
   },
 
-  _addCollectiveSetterToAspect: function(aspect, setterName) {
+  _addCollectiveSetter: function(setterName) {
     var implementations = this.setters[setterName];
     var fn = (implementations.length === 1) ?
       // Only one setter implementation; use it directly.
       implementations[0] :
       // Multiple implementations; have collective broadcast setter invocation.
       this.invokeSetter.bind(this, setterName);
-    Object.defineProperty(aspect, setterName, {
+    Object.defineProperty(this, setterName, {
       configurable: true,
       set: fn
     });
@@ -161,28 +161,6 @@ Collective.prototype = {
     for (var key in object2) {
       var array = object1[key] || [];
       object1[key] = array.concat(object2[key]);
-    }
-  },
-
-  _applyMembersToAspect: function(members, aspect) {
-
-    // TODO: Optimize for case in which the set of methods/getters/setters
-    // contains only one function. That function can directly be applied to
-    // the aspect, instead of having to be wrapped.
-
-    // Add collective methods
-    for (var methodName in members.methods) {
-      this._addCollectiveMethodToAspect(aspect, methodName);
-    }
-
-    // Add collective getters
-    for (var getterName in members.getters) {
-      this._addCollectiveGetterToAspect(aspect, getterName);
-    }
-
-    // Add collective setters
-    for (var setterName in members.setters) {
-      this._addCollectiveSetterToAspect(aspect, setterName);
     }
   },
 
@@ -198,27 +176,17 @@ Collective.prototype = {
     // Extract the methods, getters, and setters contributed by the new aspect.
     var newMembers = this._getContributedMembers(newAspect);
 
-    // Add the newAspect's members to the collective.
+    // Add the new aspect's members to the collectives internal sets.
     this._addMembers(this.methods, newMembers.methods);
     this._addMembers(this.getters, newMembers.getters);
     this._addMembers(this.setters, newMembers.setters);
 
-    // Apply the new members to the existing aspects in the collective.
-    for (var i = 0, length = this.aspects.length; i < length; i++) {
-      this._applyMembersToAspect(newMembers, this.aspects[i]);
-    }
+    // Expose the new members on the collective itself.
+    this._exposeCollectiveMembers(newMembers);
 
     // Add the new aspect to this collective.
     this.aspects.push(newAspect);
     newAspect.collective = this;
-
-    // Add all the collective's members to the new aspect.
-    var collectiveMembers = {
-      methods: this.methods,
-      getters: this.getters,
-      setters: this.setters
-    };
-    this._applyMembersToAspect(collectiveMembers, newAspect);
 
     return true;
   },
@@ -243,6 +211,25 @@ Collective.prototype = {
     target.aspects = [];
 
     return true;
+  },
+
+  // Expose the indicated members directly on this collective.
+  _exposeCollectiveMembers: function(members) {
+
+    // Add collective methods
+    for (var methodName in members.methods) {
+      this._addCollectiveMethod(methodName);
+    }
+
+    // Add collective getters
+    for (var getterName in members.getters) {
+      this._addCollectiveGetter(getterName);
+    }
+
+    // Add collective setters
+    for (var setterName in members.setters) {
+      this._addCollectiveSetter(setterName);
+    }
   },
 
   _invokeImplementations: function(implementations, args) {

@@ -136,7 +136,7 @@ suite('Collective', function() {
     assert.equal(count, 2);
   });
 
-  test("collective decorates its aspects with all the collective's methods", function() {
+  test("collective decorates itself with all the collective's methods", function() {
     var aspect1 = {
       contribute: {
         getName: function(arg) {
@@ -152,10 +152,7 @@ suite('Collective', function() {
       name: 'aspect2'
     };
     var collective = new Basic.Collective(aspect1, aspect2);
-    assert.equal(aspect1.getName('foo'), 'aspect1 foo');
-    // The return value comes from the outermost component, so it's the same
-    // regardless of which component we use to invoke the method.
-    assert.equal(aspect2.getName('foo'), 'aspect1 foo');
+    assert.equal(collective.getName('foo'), 'aspect1 foo');
   });
 
   test("collective getter invokes outermost aspect with that getter", function() {
@@ -175,11 +172,10 @@ suite('Collective', function() {
     };
     var collective = new Basic.Collective(aspect1, aspect2);
 
-    var getters = collective.getters;
-    assert.equal(getters.value.length, 2);
+    assert.equal(collective.getters.value.length, 2);
 
-    assert.equal(aspect1.value, 1);
-    assert.equal(aspect2.value, 1); // Outermost getter is invoked
+    // Only outermost getter is invoked, so we get 1 instead of 2.
+    assert.equal(collective.value, 1);
   });
 
   test("collective setter invoke setters on all aspects that have it", function() {
@@ -201,16 +197,9 @@ suite('Collective', function() {
 
     var setters = collective.setters;
     assert.equal(setters.value.length, 2);
-    // assert.equal(setters.value[0], aspect1);
-    // assert.equal(setters.value[1], aspect2);
 
     var results = [];
-    aspect1.value = 'foo';
-    assert.deepEqual(results, ['inner foo', 'outer foo']);
-
-    // Should get same results when invoking setter on inner aspect.
-    results = []
-    aspect2.value = 'foo';
+    collective.value = 'foo';
     assert.deepEqual(results, ['inner foo', 'outer foo']);
   });
 
