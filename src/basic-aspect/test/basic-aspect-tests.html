@@ -90,10 +90,9 @@ var MessageAspect = {
 
 Polymer({
 
-  behaviors: [
-    Basic.Aspect,
-    MessageAspect
-  ],
+  aspects: [MessageAspect],
+
+  behaviors: [Basic.Aspect],
 
   is: 'component-with-behavior-aspect'
 

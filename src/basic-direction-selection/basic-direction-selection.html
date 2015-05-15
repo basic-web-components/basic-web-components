@@ -8,9 +8,9 @@ semantics (selectPrevious, selectNext, etc.).
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.DirectionSelection = {
 
   contribute: {
 
@@ -45,9 +45,7 @@ Polymer({
     selectNext: function() {},
     selectPrevious: function() {}
 
-  },
-
-  is: 'basic-direction-selection'
+  }
 
   // TODO: Need to find home for this DOM-specific navigation code.
   // This handles moving in lists where items arranged horizontally.
@@ -64,5 +62,5 @@ Polymer({
   //   return itemIsInline;
   // }
 
-});
+};
 </script>

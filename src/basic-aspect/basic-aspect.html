@@ -38,12 +38,17 @@ window.Basic.Aspect = {
 
     new Basic.Collective(this);
 
-    // Assimilate any behaviors which are aspects (and not Basic.Aspect).
-    this.behaviors.forEach(function(aspect) {
-      if (aspect !== Basic.Aspect) {
-        this.assimilate(aspect);
-      }
-    }.bind(this));
+    // Assimilate any declared aspects.
+    if (this.aspects) {
+      this.aspects.forEach(function(aspect) {
+        // Assimilate a copy of the aspect, rather than the aspect itself,
+        // so that the aspect can be added to many components.
+        var clone = {
+          contribute: aspect.contribute
+        };
+        this.assimilate(clone);
+      }.bind(this));
+    }
   },
 
   properties: {
