@@ -93,8 +93,6 @@ The user can also select an item by typing the beginning of an item's text.
     <basic-keyboard-direction></basic-keyboard-direction>
     <basic-keyboard-paging></basic-keyboard-paging>
     <basic-keyboard-prefix-selection></basic-keyboard-prefix-selection>
-    <!-- <basic-direction-selection></basic-direction-selection> -->
-    <basic-selection-highlight></basic-selection-highlight>
     <basic-selection-scroll></basic-selection-scroll>
     <basic-accessible-list></basic-accessible-list>
     <basic-content-items></basic-content-items>
@@ -113,7 +111,8 @@ The user can also select an item by typing the beginning of an item's text.
 Polymer({
 
   aspects: [
-    Basic.DirectionSelection
+    Basic.DirectionSelection,
+    Basic.SelectionHighlight
   ],
 
   behaviors: [

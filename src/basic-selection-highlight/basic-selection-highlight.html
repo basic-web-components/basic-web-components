@@ -6,27 +6,10 @@ Aspect which applies standard highlight colors to a selected item.
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
-<!--
-This is an attempt to apply a highlight with styling.
-Unfortunately, it appears too hard to try to figure out how many levels of
-::content are required. And /deep/ can't help us, because we want to search
-through content, not shadow trees.
-
-<template>
-  <style>
-  :host /deep/ .selected {
-    background-color: highlight;
-    color: highlighttext;
-  }
-  </style>
-  <content></content>
-</template>
--->
-
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.SelectionHighlight = {
 
   contribute: {
 
@@ -35,7 +18,15 @@ Polymer({
       item.style.color = selected ? 'highlighttext' : '';
     }
 
-  },
+  }
+
+};
+
+Polymer({
+
+  aspects: [Basic.SelectionHighlight],
+
+  behaviors: [Basic.Aspect],
 
   is: 'basic-selection-highlight'
 
