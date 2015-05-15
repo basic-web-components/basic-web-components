@@ -55,24 +55,36 @@ stretch the text area.
     white-space: pre-wrap; /* So lines wrap */
     word-wrap: break-word; /* So we break at word boundaries when possible */
   }
+
+  #contentContainer {
+    display: none;
+  }
   </style>
 
   <!--
-  The invisible div contains an extraSpace element that ensures that, even if the
-  last line of the textarea is blank, there will be something in the line that
-  forces the text copy to grow by a line. This extra space is a thin space, to
-  reduce the amount by which the text copy will prematurely grow.
+  The invisible copyContainer contains an extraSpace element that ensures that,
+  even if the last line of the textarea is blank, there will be something in the
+  line that forces the text copy to grow by a line. This extra space is a thin
+  space, to reduce the amount by which the text copy will prematurely grow.
 
-  The invisible div also contains an extraLine element exists to deal with the
+  The copyContainer also contains an extraLine element exists to deal with the
   fact that, if the user presses the Enter key down, the textarea's content will
   move before the complete text is available. See notes at _keypress.
+
+  Lastly, we put the HTML content element into a separate container so we can
+  hide it. We need to have a content element somewhere in the template to
+  convince Polymer that we care about the content in the Shady DOM case --
+  without that content element, Shady DOM will conclude the element doesn't
+  need its light DOM content, and will throw it away.
   -->
   <template>
     <div id="autoSizeContainer">
       <textarea id="textBox" on-keypress="_keypress" placeholder="{{placeholder}}" value="{{value::input}}"></textarea>
       <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
     </div>
-    <content></content>
+    <div id="contentContainer">
+      <content></content>
+    </div>
   </template>
 </dom-module>
 
@@ -179,7 +191,7 @@ Polymer({
   // textarea element will include HTML, not just the stripped text, as initial
   // value property text.
   attached: function() {
-    var text = this._flattenTextAndRemoveLightDom();
+    var text = this._getTextContent();
 
     // If a value is provided as part of initialization, we will not overwrite
     // it with content. The value property takes precedence. Do not set the value
@@ -198,7 +210,7 @@ Polymer({
   ],
 
   contentChanged: function() {
-    this.value = this._flattenTextAndRemoveLightDom();
+    this.value = this._getTextContent();
   },
 
   valueChanged: function() {
@@ -234,9 +246,8 @@ Polymer({
     this.$.textBox.selectionStart = value;
   },
 
-  _flattenTextAndRemoveLightDom: function() {
+  _getTextContent: function() {
     var text = this.flattenTextContent;
-    Basic.ContentHelpers.removeLightDomNodes(this);
 
     // Trim the text.
     // This is non-standard textarea behavior. A standard textarea will trim the

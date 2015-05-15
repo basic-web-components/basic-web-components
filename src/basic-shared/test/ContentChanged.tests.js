@@ -87,23 +87,6 @@ suite('ContentHelpers and ContentChanged', function() {
     });
   });
 
-  test('removing light dom nodes', function(done) {
-    container.innerHTML = '<reproject-test><div>Div text</div>Plain text<button type=\'button\'>Button text</button></reproject-test>';
-    var fixture = container.querySelector('reproject-test');
-    flush(function() {
-      var button = Polymer.dom(fixture).querySelector('button');
-      assert(button);
-      var div = Polymer.dom(fixture).querySelector('div');
-      assert(div);
-      Basic.ContentHelpers.removeLightDomNodes(fixture);
-      button = Polymer.dom(fixture).querySelector('button');
-      assert(!button);
-      div = Polymer.dom(fixture).querySelector('div');
-      assert(!div);
-      done();
-    });
-  });
-
   test('modifying shadow does not trigger contentChanged', function(done) {
     var fixture = document.createElement('content-test-element');
     fixture.contentChangedHook = function() {
