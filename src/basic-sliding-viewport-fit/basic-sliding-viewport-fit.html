@@ -88,20 +88,20 @@ Polymer({
 
   _renderSelection: function() {
 
-    var count = this.items && this.items.length;
+    var count = this.collective.items && this.collective.items.length;
     if (!count) {
       // Null or zero means we don't have items to render yet.
       return;
     }
 
-    var index = this.selectedIndex;
+    var index = this.collective.selectedIndex;
     if (index < 0) {
       // No selection
       // return;
       index = 0;
     }
 
-    var position = this.position || 0;
+    var position = this.collective.position || 0;
     var dampenedPosition;
     if (index === 0 && position < 0) {
       // Apply tension from the left edge.

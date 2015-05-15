@@ -75,10 +75,10 @@ Polymer({
   },
 
   _layout: function(width, height) {
-    var count = this.content.length;
+    var count = this.collective.content.length;
     this.style.width = (count * width) + 'px';
     this.style.height = height + 'px';
-    this.content.forEach(function(element, index) {
+    this.collective.content.forEach(function(element, index) {
       var offset = (index + 0.5) * width;
       element.style.left = offset + 'px';
       element.style.top = '50%';
