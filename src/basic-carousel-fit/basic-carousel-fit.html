@@ -62,28 +62,35 @@ single carousel that adapts its layout behavior to its applied styling.
   }
   </style>
   <template>
-    <basic-keyboard-direction></basic-keyboard-direction>
-    <basic-direction-selection></basic-direction-selection>
-    <basic-accessible-list></basic-accessible-list>
     <basic-content-items></basic-content-items>
     <basic-item-selection selection-required="true"></basic-item-selection>
-    <basic-children-content></basic-children-content>
-    <basic-keyboard target="child">
-      <basic-trackpad-direction target="child">
-        <basic-swipe-direction target="child">
-          <basic-sliding-viewport-fit id="viewport" target="child">
-            <basic-spread-fit id="spread" role="presentation">
-              <content id="content"></content>
-            </basic-spread-fit>
-          </basic-sliding-viewport-fit>
-        </basic-swipe-direction>
-      </basic-trackpad-direction>
-    </basic-keyboard>
+    <basic-trackpad-direction target="child">
+      <basic-swipe-direction target="child">
+        <basic-sliding-viewport-fit id="viewport" target="child">
+          <basic-spread-fit id="spread" role="presentation">
+            <content id="content"></content>
+          </basic-spread-fit>
+        </basic-sliding-viewport-fit>
+      </basic-swipe-direction>
+    </basic-trackpad-direction>
   </template>
 </dom-module>
 
 <script>
 Polymer({
+
+  // TODO: Add Basic.ContentItems here instead of in the template. The issue
+  // with doing that is that basic-spread-fit will be assimilated after
+  // Basic.ContentItems, and basic-spread-fit's itemAdded() handler won't get
+  // called on the new items. This likely needs to be fixed in
+  // basic-content-items.
+  aspects: [
+    Basic.AccessibleList,
+    Basic.ChildrenContent,
+    Basic.DirectionSelection,
+    Basic.Keyboard,
+    Basic.KeyboardDirection
+  ],
 
   behaviors: [Basic.Aspect],
 
