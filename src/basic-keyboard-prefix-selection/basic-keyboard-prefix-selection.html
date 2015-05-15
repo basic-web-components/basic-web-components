@@ -9,9 +9,9 @@ Aspect which maps direction keys (Left, Right, etc.) to direction semantics
 <script src="../basic-shared/ContentChanged.js"></script>
 
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.KeyboardPrefixSelection = {
 
   contribute: {
 
@@ -50,25 +50,22 @@ Polymer({
         event.preventDefault();
         return false;
       }
-    }
+    },
 
-  },
-
-  is: 'basic-keyboard-prefix-selection',
-
-  /**
-   * Select the first item whose text content begins with the given prefix.
-   *
-   * @method selectItemWithTextPrefix
-   * @param prefix [String] The string to search for
-   */
-  selectItemWithTextPrefix: function(prefix) {
-    if (prefix == null || prefix.length === 0) {
-      return;
-    }
-    var index = this._getIndexOfItemWithTextPrefix(prefix);
-    if (index >= 0) {
-      this.collective.selectedIndex = index;
+    /**
+     * Select the first item whose text content begins with the given prefix.
+     *
+     * @method selectItemWithTextPrefix
+     * @param prefix [String] The string to search for
+     */
+    selectItemWithTextPrefix: function(prefix) {
+      if (prefix == null || prefix.length === 0) {
+        return;
+      }
+      var index = this._getIndexOfItemWithTextPrefix(prefix);
+      if (index >= 0) {
+        this.collective.selectedIndex = index;
+      }
     }
   },
 
@@ -89,7 +86,8 @@ Polymer({
   // Cache these results.
   _getItemTextContents: function() {
     if (!this._itemTextContents) {
-      this._itemTextContents = this.collective.items.map(function(child) {
+      var items = this.collective.items;
+      this._itemTextContents = items.map(function(child) {
         return child.textContent.toLowerCase();
       });
     }
@@ -101,13 +99,13 @@ Polymer({
     if (length > 0) {
       this._typedPrefix = this._typedPrefix.substr(0, length - 1);
     }
-    this.selectItemWithTextPrefix(this._typedPrefix);
+    this.collective.selectItemWithTextPrefix(this._typedPrefix);
     this._setPrefixTimeout();
   },
 
   _handlePlainCharacter: function(char) {
     this._typedPrefix += char.toLowerCase();
-    this.selectItemWithTextPrefix(this._typedPrefix);
+    this.collective.selectItemWithTextPrefix(this._typedPrefix);
     this._setPrefixTimeout();
   },
 
@@ -143,6 +141,21 @@ Polymer({
 
   // The string the user has typed to navigate by prefix.
   _typedPrefix: ''
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.KeyboardPrefixSelection],
+
+  behaviors: [Basic.Aspect],
+
+  is: 'basic-keyboard-prefix-selection',
+
+  selectItemWithTextPrefix: function(prefix) {
+    this.collective.selectItemWithTextPrefix(prefix);
+  }
 
 });
 </script>

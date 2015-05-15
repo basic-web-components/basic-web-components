@@ -7,16 +7,9 @@ Aspect that lets a component collective DOM content as list items.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
+window.Basic = window.Basic || {};
 
-/**
- * Fires when the items in the list change.
- *
- * @event items-changed
- */
-
-Polymer({
-
-  behaviors: [Basic.Aspect],
+window.Basic.ContentItems = {
 
   contribute: {
 
@@ -52,10 +45,13 @@ Polymer({
         }
       }.bind(this));
 
-      var event = new CustomEvent('items-changed', {
-        bubbles: true
-      });
-      this.dispatchEvent(event);
+      var outermost = this.collective.outermostAttached;
+      if (outermost) {
+        var event = new CustomEvent('items-changed', {
+          bubbles: true
+        });
+        outermost.dispatchEvent(event);
+      }
     },
 
     /**
@@ -71,7 +67,22 @@ Polymer({
       return this.collective.content;
     }
 
-  },
+  }
+
+};
+
+
+/**
+ * Fires when the items in the list change.
+ *
+ * @event items-changed
+ */
+
+Polymer({
+
+  aspects: [Basic.ContentItems],
+
+  behaviors: [Basic.Aspect],
 
   indexOfItem: function(item) {
     return this.collective.indexOfItem(item);

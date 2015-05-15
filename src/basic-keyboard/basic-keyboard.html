@@ -11,9 +11,9 @@ listening for keyboard events.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.Keyboard = {
 
   contribute: {
 
@@ -71,8 +71,6 @@ Polymer({
 
   },
 
-  is: 'basic-keyboard',
-
   _keydown: function(event) {
     return this.collective.keydown(event);
   },
@@ -82,6 +80,17 @@ Polymer({
   _previousOutermostAspect: null,
 
   _previousTabIndex: null
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.Keyboard],
+
+  behaviors: [Basic.Aspect],
+
+  is: 'basic-keyboard'
 
 });
 </script>

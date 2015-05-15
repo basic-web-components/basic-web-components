@@ -20,9 +20,9 @@ list boxes instead of those in OS X:
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.KeyboardPaging = {
 
   contribute: {
 
@@ -64,16 +64,6 @@ Polymer({
       return this._scrollOnePage(false);
     }
 
-  },
-
-  is: 'basic-keyboard-paging',
-
-  pageDown: function() {
-    this.collective.pageDown();
-  },
-
-  pageUp: function() {
-    this.collective.pageUp();
   },
 
   // Return the item whose content spans the given y position (relative to the
@@ -173,6 +163,25 @@ Polymer({
       return false; // We didn't do anything.
     }
   }
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.KeyboardPaging],
+
+  behaviors: [Basic.Aspect],
+
+  is: 'basic-keyboard-paging',
+
+  pageDown: function() {
+    this.collective.pageDown();
+  },
+
+  pageUp: function() {
+    this.collective.pageUp();
+  },
 
 });
 </script>

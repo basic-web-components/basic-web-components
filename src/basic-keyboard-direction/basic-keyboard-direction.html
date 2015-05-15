@@ -8,9 +8,9 @@ Aspect which maps direction keys (Left, Right, etc.) to direction semantics
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.KeyboardDirection = {
 
   contribute: {
 
@@ -55,7 +55,16 @@ Polymer({
       }
     }
 
-  },
+  }
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.KeyboardDirection],
+
+  behaviors: [Basic.Aspect],
 
   is: 'basic-keyboard-direction',
 

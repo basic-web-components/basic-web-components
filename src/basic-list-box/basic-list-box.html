@@ -90,19 +90,11 @@ The user can also select an item by typing the beginning of an item's text.
   }
   </style>
   <template>
-    <basic-keyboard-direction></basic-keyboard-direction>
-    <basic-keyboard-paging></basic-keyboard-paging>
-    <basic-keyboard-prefix-selection></basic-keyboard-prefix-selection>
-    <basic-selection-scroll></basic-selection-scroll>
-    <basic-accessible-list></basic-accessible-list>
-    <basic-content-items></basic-content-items>
-    <basic-keyboard target="child">
-      <basic-tap-selection target="child">
-        <basic-children-content id="itemsContainer">
-          <content></content>
-        </basic-children-content>
-      </basic-tap-selection>
-    </basic-keyboard>
+    <basic-tap-selection target="child">
+      <basic-children-content id="itemsContainer">
+        <content></content>
+      </basic-children-content>
+    </basic-tap-selection>
   </template>
 </dom-module>
 
@@ -110,9 +102,16 @@ The user can also select an item by typing the beginning of an item's text.
 Polymer({
 
   aspects: [
+    Basic.AccessibleList,
+    Basic.ContentItems,
     Basic.DirectionSelection,
+    Basic.Keyboard,
+    Basic.KeyboardDirection,
+    Basic.KeyboardPaging,
+    Basic.KeyboardPrefixSelection,
     Basic.ItemSelection,
-    Basic.SelectionHighlight
+    Basic.SelectionHighlight,
+    Basic.SelectionScroll
   ],
 
   behaviors: [

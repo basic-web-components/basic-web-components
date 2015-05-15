@@ -13,9 +13,10 @@ Aspect which adds ARIA roles for lists and list items.
 // Used to assign unique IDs to item elements without IDs.
 idCount = 0;
 
-Polymer({
 
-  behaviors: [Basic.Aspect],
+window.Basic = window.Basic || {};
+
+window.Basic.AccessibleList = {
 
   contribute: {
 
@@ -45,6 +46,23 @@ Polymer({
 
       outermost.setAttribute('role', 'listbox');
 
+      // Determine a base item ID based on this component's host's own ID. This
+      // will be combined with a unique integer to assign IDs to items that don't
+      // have an explicit ID. If the basic-list-box has ID "foo", then its items
+      // will have IDs that look like "_fooOption1". If the list has no ID itself,
+      // its items will get IDs that look like "_option1". Item IDs are prefixed
+      // with an underscore to differentiate them from manually-assigned IDs, and
+      // to minimize the potential for ID conflicts.
+
+      // TODO: This check now comes too late for components like basic-list-box.
+      // We may need to dynamically update the item IDs whenever the collection
+      // changes, although that requires keeping track of whether we've changed
+      // an item's ID or whether it's always had that ID.
+      var elementId = outermost.getAttribute( "id" );
+      this.itemBaseId = elementId ?
+          "_" + elementId + "Option" :
+          "_option";
+
       this._previousOutermostAspect = outermost;
     },
 
@@ -67,32 +85,18 @@ Polymer({
 
   },
 
-  is: 'basic-accessible-list',
-
-  properties: {
-    itemBaseId: {
-      value: '_option'
-    }
-  },
-
-  ready: function() {
-    // Determine a base item ID based on this component's host's own ID. This
-    // will be combined with a unique integer to assign IDs to items that don't
-    // have an explicit ID. If the basic-list-box has ID "foo", then its items
-    // will have IDs that look like "_fooOption1". If the list has no ID itself,
-    // its items will get IDs that look like "_option1". Item IDs are prefixed
-    // with an underscore to differentiate them from manually-assigned IDs, and
-    // to minimize the potential for ID conflicts.
-    var host = Basic.ContentHelpers.getHost(this);
-    if (host) {
-      var hostId = host.getAttribute( "id" );
-      if (hostId) {
-        this.itemBaseId = "_" + hostId + "Option";
-      }
-    }
-  },
-
   _previousOutermostAspect: null
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.AccessibleList],
+
+  behaviors: [Basic.Aspect],
+
+  is: 'basic-accessible-list'
 
 });
 
