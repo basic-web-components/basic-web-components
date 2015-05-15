@@ -9,17 +9,14 @@ Polymer({
 
   behaviors: [Basic.Aspect],
 
-  attached: function() {
-    // HACK: Need to wait for aspect stack to be created before invoking
-    // initial itemsChanged call.
-    setTimeout(function() {
-      if (this.itemsChanged) {
-        this.itemsChanged();
-      }
-    }.bind(this));
-  },
-
   contribute: {
+
+    applySelection: function(item, selected) {},
+
+    collectiveChanged: function() {
+      // Let new aspects in the collective know about the items.
+      this.collective.itemsChanged();
+    },
 
     /*
      * Return the index of the indicated item.
@@ -30,18 +27,28 @@ Polymer({
 
     get items() {
       return this.data;
-    }
+    },
 
+    // Default implementation. This will typically be handled by other aspects
+    // in the collection.
+    itemsChanged: function() {}
+
+  },
+
+  dataChanged: function() {
+    this.collective.itemsChanged();
   },
 
   is: 'basic-data-items',
 
-  // Default implementation will be ovewritten by collective method.
-  itemsChanged: function() {},
+  get items() {
+    return this.collective.items;
+  },
 
   properties: {
     data: {
-      value: null
+      value: null,
+      observer: 'dataChanged'
     }
   }
 

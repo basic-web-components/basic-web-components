@@ -7,6 +7,7 @@
   <title>basic-data-items</title>
   <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="../basic-item-selection/basic-item-selection.html">
+  <link rel="import" href="../basic-keyboard/basic-keyboard.html">
   <link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
   <link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
   <link rel="import" href="basic-data-items.html">
@@ -85,15 +86,17 @@
 </head>
 
 <body>
-  <basic-keyboard-direction tabIndex="0" target="child">
-    <basic-direction-selection target="child">
-      <basic-item-selection target="child">
-        <basic-data-items id="itemsAspect" target="child">
-          <basic-selected-item-string>(None)</basic-selected-item-string>
-        </basic-data-items>
-      </basic-item-selection>
-    </basic-direction-selection>
-  </basic-keyboard-direction>
+  <basic-keyboard target="child">
+    <basic-keyboard-direction tabIndex="0" target="child">
+      <basic-direction-selection target="child">
+        <basic-item-selection target="child" selection-required="true">
+          <basic-data-items id="itemsAspect" target="child">
+            <basic-selected-item-string>(None)</basic-selected-item-string>
+          </basic-data-items>
+        </basic-item-selection>
+      </basic-direction-selection>
+    </basic-keyboard-direction>
+  </basic-keyboard>
 </body>
 
 </html>

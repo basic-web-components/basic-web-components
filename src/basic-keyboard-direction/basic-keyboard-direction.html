@@ -57,7 +57,31 @@ Polymer({
 
   },
 
-  is: 'basic-keyboard-direction'
+  is: 'basic-keyboard-direction',
+
+  goDown: function() {
+    this.collective.goDown();
+  },
+
+  goEnd: function() {
+    this.collective.goEnd();
+  },
+
+  goLeft: function() {
+    this.collective.goLeft();
+  },
+
+  goRight: function() {
+    this.collective.goRight();
+  },
+
+  goStart: function() {
+    this.collective.goStart();
+  },
+
+  goUp: function() {
+    this.collective.goUp();
+  }
 
 });
 </script>
