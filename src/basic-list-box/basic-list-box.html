@@ -96,7 +96,6 @@ The user can also select an item by typing the beginning of an item's text.
     <basic-selection-scroll></basic-selection-scroll>
     <basic-accessible-list></basic-accessible-list>
     <basic-content-items></basic-content-items>
-    <basic-item-selection></basic-item-selection>
     <basic-keyboard target="child">
       <basic-tap-selection target="child">
         <basic-children-content id="itemsContainer">
@@ -112,6 +111,7 @@ Polymer({
 
   aspects: [
     Basic.DirectionSelection,
+    Basic.ItemSelection,
     Basic.SelectionHighlight
   ],
 
@@ -157,6 +157,9 @@ Polymer({
   get selectedIndex() {
     return this.collective.selectedIndex;
   },
+  set selectedIndex(index) {
+    this.collective.selectedIndex = index;
+  },
 
   /**
    * The currently selected item, or null if there is no selection.
@@ -166,6 +169,9 @@ Polymer({
    */
   get selectedItem() {
     return this.collective.selectedItem;
+  },
+  set selectedItem(item) {
+    this.collective.selectedItem = item;
   },
 
   /**

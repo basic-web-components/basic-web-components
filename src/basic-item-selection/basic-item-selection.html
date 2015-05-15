@@ -15,15 +15,15 @@ Aspect which manages selection semantics for items in a list.
  * @param detail.previousItem The previously selected item.
  */
 
+window.Basic = window.Basic || {};
 
-Polymer({
-
-  behaviors: [Basic.Aspect],
-
-  // Default implementation will be overwritten with collective method.
-  applySelection: function(item, selected) {},
+window.Basic.ItemSelection = {
 
   contribute: {
+
+    // Default implementation. This will typically be handled by other aspects
+    // in the collective.
+    applySelection: function(item, selected) {},
 
     itemAdded: function(item) {
       this.collective.applySelection(item, item === this.collective.selectedItem);
@@ -66,14 +66,18 @@ Polymer({
         this.collective.applySelection(item, true);
       }
 
-      var event = new CustomEvent('selected-item-changed', {
-        bubbles: true,
-        detail: {
-          selectedItem: item,
-          previousItem: previousItem
-        }
-      });
-      this.dispatchEvent(event);
+      var outermost = this.collective.outermostAttached;
+      if (outermost) {
+        var event = new CustomEvent('selected-item-changed', {
+          bubbles: true,
+          detail: {
+            selectedItem: item,
+            previousItem: previousItem
+          }
+        });
+
+        outermost.dispatchEvent(event);
+      }
     },
 
     /**
@@ -120,6 +124,20 @@ Polymer({
     },
 
     /**
+     * True if the list should always have a selection (if it has items).
+     *
+     * @property selectionRequired
+     * @type Boolean
+     */
+    get selectionRequired() {
+      return this._selectionRequired;
+    },
+    set selectionRequired(selectionRequired) {
+      this._selectionRequired = selectionRequired;
+      this._ensureSelection();
+    },
+
+    /**
      * Select the last item in the list.
      *
      * @method selectLast
@@ -146,7 +164,43 @@ Polymer({
       return this._selectIndex(this.collective.selectedIndex - 1);
     }
 
+
   },
+
+  // If no item is selected, select a default item.
+  // TODO: If the previously-selected item has been deleted, try to select an
+  // item adjacent to the position it held.
+  _ensureSelection: function() {
+    if (!this.collective.selectedItem && this.collective.items && this.collective.items.length > 0) {
+      this.collective.selectedIndex = 0;
+    }
+  },
+
+  name: 'ItemSelection',
+
+  // Ensure the given index is within bounds, and select it if it's not already
+  // selected.
+  _selectIndex: function(index) {
+    var boundedIndex = Math.max(Math.min(index, this.collective.items.length - 1), 0);
+    var previousIndex = this.collective.selectedIndex;
+    if (previousIndex !== boundedIndex) {
+      this.collective.selectedIndex = boundedIndex;
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  _selectedItem: null
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.ItemSelection],
+
+  behaviors: [Basic.Aspect],
 
   is: 'basic-item-selection',
 
@@ -160,6 +214,10 @@ Polymer({
 
   selectFirst: function() {
     this.collective.selectFirst();
+  },
+
+  selectionRequiredChanged: function(selectionRequired) {
+    this.collective.selectionRequired = selectionRequired;
   },
 
   selectLast: function() {
@@ -180,37 +238,7 @@ Polymer({
 
   get selectedItem() {
     return this.collective.selectedItem;
-  },
-
-  selectionRequiredChanged: function(selectionRequired, oldSelectionRequired) {
-    if (selectionRequired && !oldSelectionRequired) {
-      this._ensureSelection();
-    }
-  },
-
-  // If no item is selected, select a default item.
-  // TODO: If the previously-selected item has been deleted, try to select an
-  // item adjacent to the position it held.
-  _ensureSelection: function() {
-    if (!this.collective.selectedItem && this.collective.items && this.collective.items.length > 0) {
-      this.collective.selectedIndex = 0;
-    }
-  },
-
-  // Ensure the given index is within bounds, and select it if it's not already
-  // selected.
-  _selectIndex: function(index) {
-    var boundedIndex = Math.max(Math.min(index, this.collective.items.length - 1), 0);
-    var previousIndex = this.collective.selectedIndex;
-    if (previousIndex !== boundedIndex) {
-      this.collective.selectedIndex = boundedIndex;
-      return true;
-    } else {
-      return false;
-    }
-  },
-
-  _selectedItem: null
+  }
 
 });
 </script>
