@@ -13,10 +13,6 @@
   <link rel="import" href="basic-web-components.html">
 
   <style>
-    html {
-      height: 100%;
-    }
-
     body,
     button,
     input {
@@ -24,15 +20,7 @@
       font-size: 15px;
     }
 
-    body {
-      background: white;
-      display: -webkit-flex;
-      display: flex;
-      height: 100%;
-      margin: 0;
-    }
-
-    basic-framed-content,
+    basic-framed-content#carousel-frame,
     basic-arrow-direction,
     basic-page-dots {
       display: -webkit-flex;
@@ -87,7 +75,7 @@
   </basic-framed-content>
 
   <h2>basic-carousel</h2>
-  <basic-framed-content>
+  <basic-framed-content id="carousel-frame">
     <basic-arrow-direction target="child" class="overlay" aria-label="Nature scenes" role="listbox">
       <basic-page-dots target="child">
         <basic-carousel>
