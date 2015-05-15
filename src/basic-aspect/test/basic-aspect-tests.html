@@ -1,5 +1,6 @@
 <link rel="import" href="../basic-aspect.html">
 
+
 <script>
 Polymer({
 
@@ -18,6 +19,7 @@ Polymer({
 });
 </script>
 
+
 <script>
 Polymer({
 
@@ -35,6 +37,7 @@ Polymer({
 
 });
 </script>
+
 
 <dom-module id="aspect-one-wrapper">
   <template>
@@ -55,6 +58,7 @@ Polymer({
 });
 </script>
 
+
 <dom-module id="two-aspects">
   <template>
     <aspect-one id="outer" target="child">
@@ -68,6 +72,30 @@ Polymer({
   behaviors: [Basic.Aspect],
 
   is: 'two-aspects'
-  
+
+});
+</script>
+
+
+<script>
+var MessageAspect = {
+
+  contribute: {
+    get message() {
+      return "Hello"
+    }
+  }
+
+};
+
+Polymer({
+
+  behaviors: [
+    Basic.Aspect,
+    MessageAspect
+  ],
+
+  is: 'component-with-behavior-aspect'
+
 });
 </script>

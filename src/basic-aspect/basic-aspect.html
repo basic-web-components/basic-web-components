@@ -28,13 +28,22 @@ window.Basic.Aspect = {
   },
 
   created: function() {
+
     if (typeof this.contribute === 'undefined') {
       // The basic-aspect class contributes no members itself, but defines a
       // default, empty contribute property so that it (and any subclass) is
       // recognizable as an aspect.
       this.contribute = {};
     }
+
     new Basic.Collective(this);
+
+    // Assimilate any behaviors which are aspects (and not Basic.Aspect).
+    this.behaviors.forEach(function(aspect) {
+      if (aspect !== Basic.Aspect) {
+        this.assimilate(aspect);
+      }
+    }.bind(this));
   },
 
   properties: {

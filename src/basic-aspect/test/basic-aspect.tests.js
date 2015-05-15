@@ -57,7 +57,7 @@ suite('basic-aspect', function() {
     assert.equal(collective.aspects[1], inner);
   });
 
-  test("aspect assimilates its aspect children by default", function() {
+  test("aspect with target='child' assimilates its aspect children", function() {
     var twoAspects = document.createElement('two-aspects');
     var outer = twoAspects.$.outer;
     var inner = twoAspects.$.inner;
@@ -65,5 +65,11 @@ suite('basic-aspect', function() {
     assert.equal(collective.aspects.length, 2);
     assert.equal(collective.aspects[0], outer);
     assert.equal(collective.aspects[1], inner);
+  });
+
+  test("aspect assimilates any behaviors which are aspects", function() {
+    var component = document.createElement('component-with-behavior-aspect');
+    assert.equal(component.collective.aspects.length, 2);
+    assert.equal(component.collective.message, 'Hello');
   });
 });
