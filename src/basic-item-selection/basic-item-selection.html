@@ -34,7 +34,7 @@ window.Basic.ItemSelection = {
       if (index < 0) {
         // Selected item is no longer in the current set of items.
         this.collective.selectedItem = null;
-        if (this.selectionRequired) {
+        if (this.collective.selectionRequired) {
           // Ensure selection, but do this in the next tick to give other
           // aspects a chance to do their own itemsChanged work.
           setTimeout(function() {

@@ -78,6 +78,17 @@ Collective.prototype = {
     return null;
   },
 
+  /* Return the innermost aspect which is an element (attached or detached). */
+  get innermostElement() {
+    var aspects = this.aspects;
+    for (i = aspects.length - 1; i >= 0; i--) {
+      if (aspects[i] instanceof HTMLElement) {
+        return aspects[i];
+      }
+    }
+    return null;
+  },
+
   invokeGetter: function(getterName) {
     var implementations = this.getters[getterName];
     if (implementations == null || implementations.length < 1) {
@@ -116,6 +127,17 @@ Collective.prototype = {
     var aspects = this.aspects;
     for (i = 0, length = aspects.length; i < length; i++) {
       if (aspects[i].parentNode) {
+        return aspects[i];
+      }
+    }
+    return null;
+  },
+
+  /* Return the outermost aspect which is an element (attached or detached). */
+  get outermostAttached() {
+    var aspects = this.aspects;
+    for (i = 0, length = aspects.length; i < length; i++) {
+      if (aspects[i] instanceof HTMLElement) {
         return aspects[i];
       }
     }

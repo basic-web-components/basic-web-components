@@ -14,17 +14,19 @@ option.
 -->
 
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.ChildrenContent = {
 
   contribute: {
 
     // TODO: Wait to observe changes until we have a shadow DOM host. Right
     // now, the initial collectiveChanged call can happen too early.
+    // TODO: Handle case where component is instantiated out of DOM, then
+    // attached.
     collectiveChanged: function() {
       // console.log(this.localName + " collectiveChanged: " + this.collective.aspects.length);
-      var innermost = this.collective.innermost;
+      var innermost = this.collective.innermostElement;
 
       // Optimize for the case where the innermost item didn't change.
       // REVIEW: In Polymer 0.8, the call to collectiveChanged could come too
@@ -58,13 +60,17 @@ Polymer({
     },
 
     contentChanged: function() {
+
       // Reset memoized content.
       this._content = null;
 
-      var event = new CustomEvent('content-changed', {
-        bubbles: true
-      });
-      this.dispatchEvent(event);
+      var outermost = this.collective.outermostAttached;
+      if (outermost) {
+        var event = new CustomEvent('content-changed', {
+          bubbles: true
+        });
+        outermost.dispatchEvent(event);
+      }
     },
 
     /**
@@ -79,12 +85,29 @@ Polymer({
      */
     get content() {
       if (!this._content) {
-        this._content = Basic.ContentHelpers.flattenChildren(this.collective.innermost);
+        var innermost = this.collective.innermostElement;
+        if (innermost) {
+          this._content = Basic.ContentHelpers.flattenChildren(innermost);
+        }
       }
       return this._content;
     },
 
   },
+
+  // Memoized content
+  _content: null,
+
+  _previousInnermostAspect: null
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.ChildrenContent],
+
+  behaviors: [Basic.Aspect],
 
   get content() {
     return this.collective.content;
@@ -95,12 +118,7 @@ Polymer({
   ready: function() {
     // HACK: Ensure targetChanged (also) happens after ready.
     this.targetChanged(this.target);
-  },
-
-  // Memoized content
-  _content: null,
-
-  _previousInnermostAspect: null
+  }
 
 });
 </script>

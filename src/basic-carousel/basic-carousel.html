@@ -124,28 +124,30 @@ using assistive technologies.
   }
   </style>
   <template>
-    <basic-keyboard-direction></basic-keyboard-direction>
-    <basic-direction-selection></basic-direction-selection>
-    <basic-accessible-list></basic-accessible-list>
-    <basic-content-items></basic-content-items>
     <basic-item-selection selection-required="true"></basic-item-selection>
     <basic-children-content></basic-children-content>
-    <basic-keyboard target="child">
-      <basic-trackpad-direction target="child">
-        <basic-swipe-direction target="child">
-          <basic-sliding-viewport target="child">
-            <basic-spread-items>
-              <content id="content"></content>
-            </basic-spread-items>
-          </basic-sliding-viewport>
-        </basic-swipe-direction>
-      </basic-trackpad-direction>
-    </basic-keyboard>
+    <basic-trackpad-direction target="child">
+      <basic-swipe-direction target="child">
+        <basic-sliding-viewport target="child">
+          <basic-spread-items>
+            <content id="content"></content>
+          </basic-spread-items>
+        </basic-sliding-viewport>
+      </basic-swipe-direction>
+    </basic-trackpad-direction>
   </template>
 </dom-module>
 
 <script>
 Polymer({
+
+  aspects: [
+    Basic.AccessibleList,
+    Basic.ContentItems,
+    Basic.DirectionSelection,
+    Basic.Keyboard,
+    Basic.KeyboardDirection
+  ],
 
   behaviors: [Basic.Aspect],
 
