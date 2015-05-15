@@ -31,9 +31,27 @@
 </head>
 
 <body unresolved>
-  <basic-autosize-textarea minimum-rows="2">
-    Type all you want here!
-  </basic-autosize-textarea>
+  <h2>basic-autosize-textarea</h2>
+  <basic-framed-content>
+    <basic-autosize-textarea minimum-rows="2">
+      Type all you want here!
+    </basic-autosize-textarea>
+  </basic-framed-content>
+
+  <h2>basic-carousel</h2>
+  <basic-framed-content>
+    <basic-arrow-direction target="child" class="overlay" aria-label="Nature scenes" role="listbox">
+      <basic-page-dots target="child">
+        <basic-carousel>
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image1.jpg" alt="Lake">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image2.jpg" alt="Horses">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image6.jpg" alt="Wheat">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image3.jpg" alt="Mountain">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image7.jpg" alt="Palm tree">
+        </basic-carousel>
+      </basic-page-dots>
+    </basic-arrow-direction>
+  </basic-framed-content>
 </body>
 
 </html>

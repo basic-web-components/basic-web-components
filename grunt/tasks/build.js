@@ -85,19 +85,6 @@ module.exports = function(grunt) {
         // Comment out the following line for verbose output files
         //strip:true
       },
-      modules: {
-        options:{
-          excludes: {
-            imports: ['.*\.html']
-          }
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= build_dir %>',
-          src: ['basic-*/basic-*.html'],
-          dest: '<%= build_dir %>'
-        }]
-      },
       dist: {
         options:{
           excludes: {
@@ -167,7 +154,6 @@ module.exports = function(grunt) {
       'clean:build',
       'copy:build',
       'hogan_static:lib',
-      'vulcanize:modules',
       'vulcanize:dist',
       'usebanner:dist'
     ]);
