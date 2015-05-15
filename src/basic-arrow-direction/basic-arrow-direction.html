@@ -98,22 +98,27 @@ Polymer({
 
   behaviors: [Basic.Aspect],
 
-  // TODO: Disable buttons when it's not possible to go in that direction.
+  contribute: {
+    // Default implementations. These will typically be handled by other aspects
+    // in the collective.
+    goLeft: function() {},
+    goRight: function() {},
+  },
 
-  // Default implementations will be overwritten by collective methods.
-  goLeft: function() {},
-  goRight: function() {},
+  // TODO: Disable buttons when it's not possible to go in that direction.
+  goLeft: function() {
+    this.collective.goLeft();
+  },
+
+  goRight: function() {
+    this.collective.goRight();
+  },
 
   is: 'basic-arrow-direction',
 
   ready: function() {
-    // this.super();
-    window.addEventListener('mousedown', function() {
-      // console.log('mousedown');
-    }.bind(this));
     window.addEventListener('mousemove', function(event) {
       // console.log('mousemove');
-      // console.log(event);
       this.classList.add('mouseDetected');
     }.bind(this));
   }

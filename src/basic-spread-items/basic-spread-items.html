@@ -45,10 +45,10 @@ Polymer({
   contribute: {
 
     itemsChanged: function() {
-      var items = this.items;
-      this.count = items.length;
-      this.$.spreadContainer.style.width = (this.count * 100) + '%';
-      var itemWidth = (100 / this.count) + "%";
+      var items = this.collective.items;
+      var count = items.length;
+      this.$.spreadContainer.style.width = (count * 100) + '%';
+      var itemWidth = (100 / count) + "%";
       items.forEach(function(item) {
         item.style.width = itemWidth;
       });

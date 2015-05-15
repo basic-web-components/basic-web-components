@@ -83,7 +83,7 @@ Polymer({
     applySelection: function(item, selected) {
       var dots = this.dots;
       if (dots && dots.length > 0) {
-        var index = this.indexOfItem(item);
+        var index = this.collective.indexOfItem(item);
         var dot = this.dots[index];
         if (dot) {
           dot.classList.toggle('selected', selected);
@@ -100,11 +100,11 @@ Polymer({
 
     // TODO: Move the requirement for a selction to basic-item-selection. This
     // should ideally pick the nearest item to the previously-selected item.
-    collectiveChanged: function() {
-      if (this.selectedItem === null && this.items != null && this.selectFirst) {
-        this.selectFirst();
-      }
-    },
+    // collectiveChanged: function() {
+    //   if (this.collective.selectedItem === null && this.collective.items != null && this.collective.selectFirst) {
+    //     this.collective.selectFirst();
+    //   }
+    // },
 
     // TODO: Seems like this ultimately belongs in Collective.
     itemsChanged: function() {
@@ -117,7 +117,7 @@ Polymer({
       // }
 
       // TODO: This reports an incorrect number of items if an item is removed.
-      this._createDots(this.items.length);
+      this._createDots(this.collective.items.length);
     }
 
   },
@@ -126,7 +126,7 @@ Polymer({
     var dot = event.target;
     var dotIndex = this.dots.indexOf(dot);
     if (dotIndex >= 0) {
-      this.selectedIndex = dotIndex;
+      this.collective.selectedIndex = dotIndex;
     }
   },
 

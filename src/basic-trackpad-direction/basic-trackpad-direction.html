@@ -27,9 +27,15 @@ Polymer({
 
   behaviors: [Basic.Aspect],
 
-  // Default implementations will be ovewritten with collective methods.
-  goLeft: function() {},
-  goRight: function() {},
+  contribute: {
+
+    // Default implementations. These will typically be handled by other aspects
+    // in the collective.
+    goLeft: function() {},
+    goRight: function() {},
+    showTransition: function() {}
+
+  },
 
   is: 'basic-trackpad-direction',
 
@@ -41,12 +47,9 @@ Polymer({
     this._resetWheelTracking();
   },
 
-  // Default implementation will be overwritten with collective method.
-  showTransition: function() {},
-
   // Following a navigation, partially reset our wheel tracking.
   _postNavigate: function() {
-    this.position = 0;
+    this.collective.position = 0;
     this._wheelDistance = 0;
     this._postNavigateDelayComplete = true;
     this._absorbDeceleration = true;
@@ -61,7 +64,7 @@ Polymer({
 
   // Reset all state related to the tracking of the wheel.
   _resetWheelTracking: function() {
-    this.position = 0;
+    this.collective.position = 0;
     this._wheelDistance = 0;
     this._lastDeltaX = 0;
     this._absorbDeceleration = false;
@@ -135,20 +138,21 @@ Polymer({
     var position = width > 0 ?
       this._wheelDistance / width :
       0;
-    this.showTransition(false);
-    this.position = this._sign(position) * Math.min(Math.abs(position), 1);
+    this.collective.showTransition(false);
+    position = this._sign(position) * Math.min(Math.abs(position), 1);
+    this.collective.position = position;
 
     // If the user has dragged enough to reach the previous/next item, then
     // complete a navigation to that item.
-    if (this.position === 1) {
+    if (position === 1) {
       // console.log("goRight");
-      this.showTransition(true);
-      this.goRight();
+      this.collective.showTransition(true);
+      this.collective.goRight();
       this._postNavigate();
-    } else if (this.position === -1) {
+    } else if (position === -1) {
       // console.log("goLeft");
-      this.showTransition(true);
-      this.goLeft();
+      this.collective.showTransition(true);
+      this.collective.goLeft();
       this._postNavigate();
     }
   },
@@ -162,14 +166,14 @@ Polymer({
     // console.log("timeout");
 
     // Snap to the closest item.
-    this.showTransition(true);
-    var position = this.position;
+    this.collective.showTransition(true);
+    var position = this.collective.position;
     if (position >= 0.5) {
       // console.log("snap");
-      this.goRight();
+      this.collective.goRight();
     } else if (position <= -0.5) {
       // console.log("snap");
-      this.goLeft();
+      this.collective.goLeft();
     }
 
     this._resetWheelTracking();
