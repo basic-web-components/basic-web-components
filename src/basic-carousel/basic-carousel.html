@@ -125,7 +125,6 @@ using assistive technologies.
   </style>
   <template>
     <basic-item-selection selection-required="true"></basic-item-selection>
-    <basic-children-content></basic-children-content>
     <basic-trackpad-direction target="child">
       <basic-swipe-direction target="child">
         <basic-sliding-viewport target="child">
@@ -143,6 +142,7 @@ Polymer({
 
   aspects: [
     Basic.AccessibleList,
+    Basic.ChildrenContent,
     Basic.ContentItems,
     Basic.DirectionSelection,
     Basic.Keyboard,

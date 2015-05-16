@@ -40,6 +40,9 @@ window.Basic.ContentItems = {
       // Perform per-item initialization.
       this.collective.items.forEach(function(item) {
         if (!item._itemInitialized) {
+          // BUG: If an aspect is assimilated after ContentItems, then all the
+          // items are already initialized, and the new aspect won't have an
+          // opportunity to do its own per-item initialization in itemAdded.
           this.collective.itemAdded(item);
           item._itemInitialized = true;
         }
