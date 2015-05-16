@@ -134,7 +134,7 @@ Collective.prototype = {
   },
 
   /* Return the outermost aspect which is an element (attached or detached). */
-  get outermostAttached() {
+  get outermostElement() {
     var aspects = this.aspects;
     for (i = 0, length = aspects.length; i < length; i++) {
       if (aspects[i] instanceof HTMLElement) {
