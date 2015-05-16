@@ -43,10 +43,6 @@ Clicking the left/right button maps to the corresponding left/right direction.
     background: rgba( 0, 0, 0, 0.7 );
     fill: rgba( 0, 0, 0, 0.9 );
   }
-  .navigationButton:disabled {
-    color: rgba(255, 255, 255, 0.2);
-    fill: rgba( 0, 0, 0, 0.2 );
-  }
 
   :host(:not(.mouseDetected)) .navigationButton {
     opacity: 0;
@@ -74,6 +70,11 @@ Clicking the left/right button maps to the corresponding left/right direction.
   :host(.overlay) #buttonRight {
     right: 0;
   }
+
+  .navigationButton:disabled {
+    color: rgba(255, 255, 255, 0.3);
+    fill: rgba( 0, 0, 0, 0.2 );
+  }
   </style>
   <template>
     <!--
@@ -99,10 +100,19 @@ Polymer({
   behaviors: [Basic.Aspect],
 
   contribute: {
+
     // Default implementations. These will typically be handled by other aspects
     // in the collective.
     goLeft: function() {},
     goRight: function() {},
+
+    set canSelectNext(canSelectNext) {
+      this.$.buttonRight.disabled = !canSelectNext;
+    },
+    set canSelectPrevious(canSelectPrevious) {
+      this.$.buttonLeft.disabled = !canSelectPrevious;
+    }
+
   },
 
   // TODO: Disable buttons when it's not possible to go in that direction.

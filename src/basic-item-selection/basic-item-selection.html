@@ -21,9 +21,23 @@ window.Basic.ItemSelection = {
 
   contribute: {
 
-    // Default implementation. This will typically be handled by other aspects
+    // Default implementations. These will typically be handled by other aspects
     // in the collective.
     applySelection: function(item, selected) {},
+
+    get canSelectNext() {
+      return this._canSelectNext;
+    },
+    set canSelectNext(canSelectNext) {
+      this._canSelectNext = canSelectNext;
+    },
+
+    get canSelectPrevious() {
+      return this._canSelectPrevious;
+    },
+    set canSelectPrevious(canSelectPrevious) {
+      this._canSelectPrevious = canSelectPrevious;
+    },
 
     itemAdded: function(item) {
       this.collective.applySelection(item, item === this.collective.selectedItem);
@@ -65,6 +79,11 @@ window.Basic.ItemSelection = {
       if (item) {
         this.collective.applySelection(item, true);
       }
+
+      // TODO: Rationalize with selectedIndex so we're not recalculating item
+      // or index in each setter.
+      var index = this.collective.indexOfItem(item);
+      this._updatePossibleNavigations(index);
 
       var outermost = this.collective.outermostAttached;
       if (outermost) {
@@ -189,6 +208,29 @@ window.Basic.ItemSelection = {
     } else {
       return false;
     }
+  },
+
+  // Following a change in selection, report whether it's now possible to
+  // go next/previous from the given index.
+  _updatePossibleNavigations: function(index) {
+    var canSelectNext;
+    var canSelectPrevious;
+    var items = this.collective.items;
+    if (items == null || items.length === 0) {
+      canSelectNext = false;
+      canSelectPrevious = false;
+    } else if (items.length === 1) {
+      // Special case. If there's no selection, we declare that it's always
+      // possible to go next/previous to create a selection.
+      canSelectNext = true;
+      canSelectPrevious = true;
+    } else {
+      // Normal case: we have an index in a list that has items.
+      canSelectPrevious = (index > 0);
+      canSelectNext = (index < items.length - 1);
+    }
+    this.collective.canSelectNext = canSelectNext;
+    this.collective.canSelectPrevious = canSelectPrevious;
   },
 
   _selectedItem: null
