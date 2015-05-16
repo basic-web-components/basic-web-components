@@ -5,6 +5,7 @@
   "license": "MIT",
   "main": "basic-accessible-list.html",
   "dependencies": {
+    "basic-aspect": "basic-web-components/basic-aspect#master",
     "basic-shared": "basic-web-components/basic-shared#master",
     "polymer": "Polymer/polymer#0.9.0-rc.1"
   },

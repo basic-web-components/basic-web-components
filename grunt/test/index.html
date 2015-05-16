@@ -4,6 +4,8 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>basic-web-components vulcanize test</title>
 
   <link rel="import" href="bower_components/polymer/polymer.html">
@@ -18,22 +20,123 @@
       font-size: 15px;
     }
 
-    body {
-      margin: 0;
+    basic-framed-content#carousel-frame,
+    basic-arrow-direction,
+    basic-page-dots {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    basic-framed-content {
+      min-height: 400px;
+    }
+
+    basic-carousel {
+      -webkit-flex: 1;
+      flex: 1;
     }
   </style>
 
   <script>
+    var changeDetectorAspect = {
+      contribute: {
+
+        set selectedItem(selectedItem) {
+          var text = selectedItem ? selectedItem.textContent : selectedItem;
+          console.log("selectedItem: " + text);
+        },
+
+        // TODO: On WebKit, if you delete an item at runtime, the number of items
+        // reported by the function below will be incorrect; it will include the
+        // just-deleted item in its count. It appears that, during the mutation
+        // handler, the old item is still somehow half in, half out of the
+        // collection of children/content/items.
+        itemsChanged: function() {
+          console.log("itemsChanged: now " + this.items.length + " items");
+        }
+      }
+    };
+
     document.addEventListener('WebComponentsReady', function() {
+      new Basic.Collective(changeDetectorAspect, document.querySelector('basic-list-box'));
       document.body.removeAttribute('unresolved');
     });
   </script>
 </head>
 
 <body unresolved>
-  <basic-autosize-textarea minimum-rows="2">
-    Type all you want here!
-  </basic-autosize-textarea>
+  <h2>basic-autosize-textarea</h2>
+  <basic-framed-content>
+    <basic-autosize-textarea minimum-rows="2">
+      Type all you want here!
+    </basic-autosize-textarea>
+  </basic-framed-content>
+
+  <h2>basic-carousel</h2>
+  <basic-framed-content id="carousel-frame">
+    <basic-arrow-direction target="child" class="overlay" aria-label="Nature scenes" role="listbox">
+      <basic-page-dots target="child">
+        <basic-carousel>
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image1.jpg" alt="Lake">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image2.jpg" alt="Horses">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image6.jpg" alt="Wheat">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image3.jpg" alt="Mountain">
+          <img src="http://basic-web-components.github.io/basic-web-components/src/basic-shared/resources/images/image7.jpg" alt="Palm tree">
+        </basic-carousel>
+      </basic-page-dots>
+    </basic-arrow-direction>
+  </basic-framed-content>
+
+  <h2>basic-list-box</h2>
+  <basic-framed-content>
+    <basic-list-box aria-label="Fruits">
+      <div>Acai</div>
+      <div>Acerola</div>
+      <div>Apple</div>
+      <div>Apricot</div>
+      <div>Banana</div>
+      <div>Blackberry</div>
+      <div>Blueberry</div>
+      <div>Cantaloupe</div>
+      <div>Cherry</div>
+      <div>Cranberry</div>
+      <div>Currant</div>
+      <div>Date</div>
+      <div>Durian</div>
+      <div>Fig</div>
+      <div>Goji berry</div>
+      <div>Gooseberry</div>
+      <div>Grape</div>
+      <div>Grapefruit</div>
+      <div>Honeydew</div>
+      <div>Jackfruit</div>
+      <div>Kiwi</div>
+      <div>Kumquat</div>
+      <div>Lemon</div>
+      <div>Lime</div>
+      <div>Lychee </div>
+      <div>Mango</div>
+      <div>Mangosteen</div>
+      <div>Mulberry</div>
+      <div>Nectarine</div>
+      <div>Orange</div>
+      <div>Papaya</div>
+      <div>Passion Fruit</div>
+      <div>Peach</div>
+      <div>Pear</div>
+      <div>Pineapple</div>
+      <div>Plum</div>
+      <div>Pomegranate</div>
+      <div>Pomelo</div>
+      <div>Prickly Pear</div>
+      <div>Raspberry</div>
+      <div>Strawberry</div>
+      <div>Tangerine</div>
+      <div>Watermelon</div>
+    </basic-list-box>
+  </basic-framed-content>
 </body>
 
 </html>
