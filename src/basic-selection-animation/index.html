@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>basic-selection-animation</title>
+<script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<!-- <script src="../../bower_components/components/web-animations/web-animations.min.js"></script> -->
+<!-- <link rel="import" href="../basic-framed-content/basic-framed-content.html"> -->
+<link rel="import" href="../basic-keyboard/basic-keyboard.html">
+<link rel="import" href="../basic-keyboard-direction/basic-keyboard-direction.html">
+<link rel="import" href="../basic-direction-selection/basic-direction-selection.html">
+<link rel="import" href="../basic-item-selection/basic-item-selection.html">
+<link rel="import" href="../basic-content-items/basic-content-items.html">
+<link rel="import" href="../basic-children-content/basic-children-content.html">
+<link rel="import" href="basic-selection-animation.html">
+
+<link rel="import" href="basic-selection-animation.html">
+
+<style>
+body,
+button,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 2em; /* Until we use basic-framed-content again */
+}
+
+basic-framed-content {
+  padding: 2em;
+}
+
+.box {
+  background: gray;
+  display: inline-block;
+  height: 100px;
+  opacity: 0.5;
+  width: 100px;
+}
+
+.box.selected {
+  background: lightblue;
+}
+</style>
+
+</head>
+
+<body>
+<!-- <basic-framed-content> -->
+  <basic-keyboard target="child">
+  <basic-keyboard-direction target="child">
+  <basic-direction-selection target="child">
+  <basic-item-selection target="child">
+  <basic-content-items target="child">
+  <basic-children-content>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </basic-children-content>
+  </basic-content-items>
+  </basic-item-selection>
+  </basic-direction-selection>
+  </basic-keyboard-direction>
+  </basic-keyboard>
+    <!-- <basic-selection-animation target="nextSibling"></basic-selection-animation> -->
+<!-- </basic-framed-content> -->
+</body>
+
+</html>

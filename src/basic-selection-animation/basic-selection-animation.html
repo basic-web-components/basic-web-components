@@ -1,0 +1,91 @@
+<link rel="import" href="../basic-aspect/basic-aspect.html">
+
+<script>
+window.Basic = window.Basic || {};
+
+window.Basic.SelectionAnimation = {
+
+  animationDuration: 200,
+
+  contribute: {
+
+    itemsChanged: function() {
+      var items = this.collective.items;
+      // this._cancelPlayers();
+      this.players = new Array(items.length);
+    },
+
+    set position(position) {
+      this._refresh(position);
+    }
+
+  },
+
+  // deselectAnimation: [
+  //   { opacity: 0.5, transform: 'scale(1)' , background: 'gray' }
+  // ],
+
+  // getAnimationProperties: function(item ) {
+  //   var style = getComputedStyle(item);
+  //   return {
+  //     opacity: style.opacity,
+  //     transform: style.transform,
+  //     background: style.background
+  //   };
+  // },
+
+  selectAnimation: [
+    { opacity: 0.5, transform: 'scale(1)' , background: 'gray' },
+    { opacity: 1.0, transform: 'scale(1.1)', background: 'aqua' }
+  ],
+
+  _refresh: function(position) {
+    var selectedIndex = this.collective.selectedIndex;
+    var previousSelectedIndex = this._previousSelectedIndex;
+    var forward = (selectedIndex >= previousSelectedIndex);
+    var player = this.players[index];
+    player.playbackRate = forward ? 1 : -1;
+    this._previousSelectedIndex = selectedIndex;
+    setTimeout(function() {
+      player.play();
+    }.bind(this));
+  },
+
+  _cancelPlayers: function() {
+    if (this.players) {
+      this.players.forEach(function(player) {
+        player.cancel();
+      });
+    }
+  },
+
+  _playerForIndex: function(index) {
+    var player = this.players[index];
+    if (!player) {
+      var item = this.collective.items[index];
+      var animation = this.selectAnimation;
+      var animationOptions = {
+        duration: this.animationDuration,
+        easing: 'ease-in-out',
+        fill: 'both'
+      };
+      player = item.animate(animation, animationOptions);
+      player.pause();
+      this.players[index] = player;
+    };
+    return player;
+  },
+
+  _previousSelectedIndex: null,
+
+  _track: function(x) {
+    var fraction = x / this.clientWidth;
+    var player = this.player;
+    var duration = this.animationDuration;
+    // var duration = player.source.timing.duration;
+    var time = fraction * duration;
+    this.player.currentTime = time;
+  }
+
+};
+</script>
