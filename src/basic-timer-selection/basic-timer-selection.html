@@ -8,14 +8,14 @@ automated slideshow.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <script>
-Polymer({
+window.Basic = window.Basic || {};
 
-  behaviors: [Basic.Aspect],
+window.Basic.TimerSelection = {
 
   contribute: {
 
     contentChanged: function() {
-      this.play();
+      this.collective.play();
     },
 
     /**
@@ -24,29 +24,109 @@ Polymer({
      * @method play
      */
     play: function() {
-      if (this._interval) {
-        clearInterval(this._interval);
-      }
-      this._interval = setInterval(function() {
-        // TODO: Wrap
-        if (this.selectedIndex == null || this.selectedIndex === this.items.length - 1) {
-          this.selectFirst();
-        } else {
-          this.selectNext();
+      this._playing = true;
+      this._setTimeout();
+    },
+
+    /**
+     * Pause automatic progression of the selection.
+     *
+     * @method pause
+     */
+    pause: function() {
+      this._clearTimeout();
+      this._playing = false;
+    },
+
+    /**
+     * True if the selection is being automatically advanced.
+     *
+     * @property playing
+     * @type Boolean
+     */
+    get playing() {
+      return this._playing;
+    },
+    set playing(playing) {
+      if (playing) {
+        if (!this._playing) {
+          this.collective.play();
         }
-      }.bind(this), 2000);
+      } else {
+        if (this._playing) {
+          this.collective.pause();
+        }
+      }
+    },
+
+    // Default implementations. These will be typically be handled by other
+    // aspects in the collective.
+    selectFirst: function() {},
+    selectNext: function() {},
+
+    // Whether the user has selected an item manually, or we've automatically
+    // advanced the selection, we wait for a bit before advancing again.
+    set selectedItem(item) {
+      this._clearTimeout();
+      if (this.collective.playing) {
+        this._setTimeout();
+      }
     }
 
   },
 
-  is: 'basic-timer-selection',
-
-  ready: function() {
-    this.play();
+  _clearTimeout: function() {
+    if (this._timeout) {
+      clearTimeout(this._timeout);
+      this._timeout = null;
+    }
   },
 
-  selectFirst: function() {},
-  selectNext: function() {}
+  _playing: false,
+
+  _setTimeout: function() {
+    this._timeout = setTimeout(this._selectNextWithWrap.bind(this), 2000);
+  },
+
+  // Select the next item, wrapping to first item if necessary.
+  _selectNextWithWrap: function() {
+    var items = this.collective.items;
+    if (items) {
+      if (this.collective.selectedIndex == null || this.collective.selectedIndex === items.length - 1) {
+        this.collective.selectFirst();
+      } else {
+        this.collective.selectNext();
+      }
+    }
+  },
+
+  _timeout: null
+
+};
+
+
+Polymer({
+
+  aspects: [Basic.TimerSelection],
+
+  behaviors: [Basic.Aspect],
+
+  is: 'basic-timer-selection',
+
+  play: function() {
+    this.collective.play();
+  },
+
+  get playing() {
+    return this.collective.playing;
+  },
+  set playing(playing) {
+    this.collective.playing = playing;
+  },
+
+  pause: function() {
+    this.collective.pause();
+  }
 
 });
 </script>
