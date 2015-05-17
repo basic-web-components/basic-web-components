@@ -88,7 +88,8 @@ window.Basic.KeyboardPrefixSelection = {
     if (!this._itemTextContents) {
       var items = this.collective.items;
       this._itemTextContents = items.map(function(child) {
-        return child.textContent.toLowerCase();
+        var text = child.textContent || child.alt;
+        return text.toLowerCase();
       });
     }
     return this._itemTextContents;
