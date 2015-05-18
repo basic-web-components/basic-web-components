@@ -118,17 +118,37 @@ Polymer({
 
   ready: function() {
     // TODO: touch events could be factored out into their own aspect.
+
+    // In all touch events, only handle single touches. We don't want to
+    // inadvertently do work when the user's trying to pinch-zoom for example.
+    // TODO: Even better approach than below would be to ignore touches after
+    // the first if the user has already begun a swipe.
     this.addEventListener('touchstart', function(event) {
-      this.collective.touchStart(event);
+      if (this._multiTouch) {
+        return;
+      } else if (event.touches.length === 1) {
+        this.collective.touchStart(event);
+      } else {
+        this._multiTouch = true;
+      }
     }.bind(this));
     this.addEventListener('touchmove', function(event) {
-      var handled = this.collective.touchMove(event);
-      if (handled) {
-        event.preventDefault();
+      if (!this._multiTouch && event.touches.length === 1) {
+        var handled = this.collective.touchMove(event);
+        if (handled) {
+          event.preventDefault();
+        }
       }
     }.bind(this));
     this.addEventListener('touchend', function(event) {
-      this.collective.touchEnd(event);
+      if (event.touches.length === 0) {
+        // All touches removed; gesture is complete.
+        if (!this._multiTouch) {
+          // Single-touch swipe has finished.
+          this.collective.touchEnd(event);
+        }
+        this._multiTouch = false;
+      }
     }.bind(this));
   },
 
@@ -140,6 +160,8 @@ Polymer({
       0;
     this.collective.position = fraction;
   },
+
+  _multiTouch: false
 
 });
 </script>
