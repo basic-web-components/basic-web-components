@@ -42,19 +42,8 @@
   <script>
     var changeDetectorAspect = {
       contribute: {
-
-        set selectedItem(selectedItem) {
-          var text = selectedItem ? selectedItem.textContent : selectedItem;
-          console.log("selectedItem: " + text);
-        },
-
-        // TODO: On WebKit, if you delete an item at runtime, the number of items
-        // reported by the function below will be incorrect; it will include the
-        // just-deleted item in its count. It appears that, during the mutation
-        // handler, the old item is still somehow half in, half out of the
-        // collection of children/content/items.
-        itemsChanged: function() {
-          console.log("itemsChanged: now " + this.items.length + " items");
+        contentChanged: function() {
+          console.log("contentChanged: now " + this.collective.content.length + " children");
         }
       }
     };
