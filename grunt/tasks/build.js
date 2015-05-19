@@ -43,6 +43,15 @@ module.exports = function(grunt) {
         src: ['index.html'],
         dest: '<%= dist_dir %>'
       },
+      remote_test: {
+        expand: true,
+        cwd: GRUNT_TEST_DIR,
+        src: ['index.html'],
+        dest: '<%= dist_dir %>',
+        rename: function(dest, src) {
+          return dest + '/remote-test.html';
+        }
+      },
       bower_test: {
         expand: true,
         cwd: ROOT_DIR,
@@ -104,6 +113,14 @@ module.exports = function(grunt) {
         replacements: [{
           from: 'bower_components',
           to: '..'
+        }]
+      },
+      remote_test: {
+        src: ['dist/remote-test.html'],
+        overwrite: true,
+        replacements: [{
+          from: 'basic-web-components.html',
+          to: 'http://hosting.component.kitchen/bwc/v0.6.0-preview/basic-web-components.html'
         }]
       }
     },
@@ -187,8 +204,12 @@ module.exports = function(grunt) {
     grunt.task.run( 'bump-only:' + version, 'clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'build:docs', 'stage-release', 'bump-commit');
   });
 
+  grunt.registerTask('mod_test_for_remote', function() {
+    grunt.task.run('copy:remote_test', 'replace:remote_test');
+  });
+
   grunt.registerTask('build:test', function(version) {
     version = version || 'patch';
-    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'copy:bower_test');
+    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_test');
   });
 };
