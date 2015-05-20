@@ -3,8 +3,6 @@ var GRUNT_TEST_DIR = 'grunt/test';
 var ROOT_DIR = './';
 var TEMPLATE_DIR = 'grunt/templates';
 
-var exec = require("child_process").exec;
-
 module.exports = function(grunt) {
 
   var modules = grunt.file.expand({cwd: SRC_DIR}, 'basic-*');
@@ -52,22 +50,11 @@ module.exports = function(grunt) {
           return dest + '/remote-test.html';
         }
       },
-      bower_test: {
+      bower_dist: {
         expand: true,
         cwd: ROOT_DIR,
         src: ['bower_components/**'],
         dest: '<%= dist_dir %>'
-      }
-    },
-
-    uglify: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= build_dir %>',
-          src: ['basic-*/*.js', 'basic-shared/*.js'],
-          dest: '<%= build_dir %>'
-        }]
       }
     },
 
@@ -128,22 +115,6 @@ module.exports = function(grunt) {
     banner: grunt.file.read('BANNER.txt'),
 
     usebanner: {
-      jscss: {
-        options: {
-          banner: '/**\n<%= banner %>\n*/'
-        },
-        files: {
-          src: [ 'src/**/*.js', 'src/**/*.scss' ]
-        }
-      },
-      html: {
-        options: {
-          banner: '<!--\n<%= banner %>\n-->'
-        },
-        files: {
-          src: [ 'src/basic-*/basic-*.html' ]
-        }
-      },
       dist: {
         options: {
           banner: '<!--\n<%= banner %>\n-->'
@@ -156,8 +127,8 @@ module.exports = function(grunt) {
 
     bump: {
       options: {
-        files: [ 'package.json', 'bower.json' ],
-        commitFiles: [ 'package.json', 'bower.json', 'dist/*' ],
+        files: ['package.json', 'bower.json'],
+        commitFiles: ['package.json', 'bower.json', 'dist/*'],
         updateConfigs: ['pkg'],
         push: true,
         pushTo: 'origin'
@@ -184,32 +155,14 @@ module.exports = function(grunt) {
     ]);
   });
 
-  function execCmd(cmd, onExecuted) {
-    exec( cmd, function(error, stdout, stderr) {
-      error && console.error(error);
-      stderr && console.error(stderr);
-      stdout && console.log(stdout);
-      onExecuted();
-    });
-  }
-
-  grunt.registerTask('stage-release', 'Stage release files.', function() {
-    execCmd('git add ' + grunt.config('dist_dir') + '/*', this.async() );
-  });
-
-  grunt.registerTask('default', ['build:dev']);
-
-  grunt.registerTask('release', function(version){
-    version = version || 'patch';
-    grunt.task.run( 'bump-only:' + version, 'clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'build:docs', 'stage-release', 'bump-commit');
-  });
+  grunt.registerTask('default', ['build:release']);
 
   grunt.registerTask('mod_test_for_remote', function() {
     grunt.task.run('copy:remote_test', 'replace:remote_test');
   });
 
-  grunt.registerTask('build:test', function(version) {
+  grunt.registerTask('build:release', function(version) {
     version = version || 'patch';
-    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_test');
+    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_dist');
   });
 };
