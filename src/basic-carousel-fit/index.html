@@ -9,6 +9,7 @@
   <title>basic-carousel-fit</title>
   <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="../basic-arrow-direction/basic-arrow-direction.html">
+  <link rel="import" href="../basic-framed-content/basic-framed-content.html">
   <link rel="import" href="basic-carousel-fit.html">
 
   <style>
@@ -45,17 +46,19 @@
     carousel onto a page without having to apply explicit styling to the
     carousel or the images.
   </p>
-  <basic-arrow-direction target="child" aria-label="Flags">
-    <basic-carousel-fit>
-      <img src="../basic-shared/resources/flags/Brazil.png" alt="Brazil flag">
-      <img src="../basic-shared/resources/flags/Cameroon.png" alt="Cameroon flag">
-      <img src="../basic-shared/resources/flags/Gabon.png" alt="Gabon flag">
-      <img src="../basic-shared/resources/flags/Nepal.png" alt="Nepal flag">
-      <img src="../basic-shared/resources/flags/South_Korea.png" alt="South Korea flag">
-      <img src="../basic-shared/resources/flags/Switzerland.png" alt="Switzerland flag">
-      <img src="../basic-shared/resources/flags/United_States.png" alt="United States flag">
-    </basic-carousel-fit>
-  </basic-arrow-direction>
+  <basic-framed-content>
+    <basic-arrow-direction target="child" aria-label="Flags">
+      <basic-carousel-fit>
+        <img src="../basic-shared/resources/flags/Brazil.png" alt="Brazil flag">
+        <img src="../basic-shared/resources/flags/Cameroon.png" alt="Cameroon flag">
+        <img src="../basic-shared/resources/flags/Gabon.png" alt="Gabon flag">
+        <img src="../basic-shared/resources/flags/Nepal.png" alt="Nepal flag">
+        <img src="../basic-shared/resources/flags/South_Korea.png" alt="South Korea flag">
+        <img src="../basic-shared/resources/flags/Switzerland.png" alt="Switzerland flag">
+        <img src="../basic-shared/resources/flags/United_States.png" alt="United States flag">
+      </basic-carousel-fit>
+    </basic-arrow-direction>
+  </basic-framed-content>
 </body>
 
 </html>
