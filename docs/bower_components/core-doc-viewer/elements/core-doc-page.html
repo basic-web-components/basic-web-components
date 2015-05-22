@@ -15,7 +15,7 @@
 <link rel="import" href="../../prettify-element/prettify-import.html">
 <link rel="import" href="../../context-free-parser/context-free-parser.html">
 
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto:400,300,500,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
 
 <!--
 
@@ -166,6 +166,13 @@ Displays formatted source documentation scraped from input urls.
                         <p><code>&lt;<em>{{param.type}}</em>&gt; {{param.name}}</code></p>
                         <p><span>{{param.description}}</span></p>
                       </template>
+                    </div>
+                  </template>
+                  <template if="{{method.return}}">
+                    <div class="params">
+                      <p>Returns:</p>
+                      <p><code>&lt;<em>{{method.return.type}}</em>&gt;</code></p>
+                      <p><span>{{method.return.description}}</span></p>
                     </div>
                   </template>
                 </div>

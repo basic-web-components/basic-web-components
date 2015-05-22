@@ -37,6 +37,8 @@ Element wrapper for the `marked` (http://marked.org/) library.
     textChanged: function (oldVal, newVal) {
       if (newVal) {
         this.innerHTML = marked(this.text);
+      } else {
+        this.innerHTML = "";
       }
     },
 

@@ -2,6 +2,7 @@
   "name": "basic-web-component-docs",
   "version": "0.6",
   "dependencies": {
+    "basic-seamless-iframe": "basic-web-components/basic-seamless-iframe#^0.5",
     "core-doc-viewer": "Polymer/core-doc-viewer"
   }
 }

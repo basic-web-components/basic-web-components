@@ -6,13 +6,13 @@
     "core-meta": "Polymer/core-meta#^0.5",
     "core-icon": "Polymer/core-icon#^0.5"
   },
-  "version": "0.5.5",
+  "version": "0.5.6",
   "homepage": "https://github.com/Polymer/core-iconset",
-  "_release": "0.5.5",
+  "_release": "0.5.6",
   "_resolution": {
     "type": "version",
-    "tag": "0.5.5",
-    "commit": "cbb2b8c90debf31dbfbadf1b821a937b6ca548fc"
+    "tag": "0.5.6",
+    "commit": "5c8cbad328080ebbc296b6cebea3816fd6045b7d"
   },
   "_source": "git://github.com/Polymer/core-iconset.git",
   "_target": "^0.5",

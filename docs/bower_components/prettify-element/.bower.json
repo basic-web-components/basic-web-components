@@ -5,13 +5,13 @@
     "polymer": "Polymer/polymer#^0.5",
     "google-code-prettify": "*"
   },
-  "version": "0.5.5",
+  "version": "0.5.6",
   "homepage": "https://github.com/Polymer/prettify-element",
-  "_release": "0.5.5",
+  "_release": "0.5.6",
   "_resolution": {
     "type": "version",
-    "tag": "0.5.5",
-    "commit": "a595c83688c2a563bd9a4ba4f3f0c8ebf047ed4f"
+    "tag": "0.5.6",
+    "commit": "d9827d3b051886a472cd90bd63880a4f060554dc"
   },
   "_source": "git://github.com/Polymer/prettify-element.git",
   "_target": "^0.5",

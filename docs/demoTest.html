@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <title>Demo test</title>
+
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="bower_components/basic-seamless-iframe/basic-seamless-iframe.html">
+
+  <style>
+  body {
+    margin: 50px;
+  }
+
+  basic-seamless-iframe {
+    border: 1px dotted gray;
+  }
+  </style>
+
+</head>
+
+<body>
+  <p>
+    This page can be used to test the framing of demos that use
+    basic-framed-content.
+  </p>
+  <basic-seamless-iframe src="../src/basic-carousel-fit/index.html"></basic-seamless-iframe>
+  <p>
+    This text below the frame should get pushed down when the demo resizes.
+  </p>
+</body>
+
+</html>

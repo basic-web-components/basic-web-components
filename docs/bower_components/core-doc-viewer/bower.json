@@ -13,5 +13,5 @@
     "marked-element": "PolymerLabs/marked-element#^0.5",
     "prettify-element": "Polymer/prettify-element#^0.5"
   },
-  "version": "0.5.5"
+  "version": "0.5.6"
 }

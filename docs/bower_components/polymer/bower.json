@@ -13,11 +13,11 @@
   "private": true,
   "dependencies": {
     "core-component-page": "Polymer/core-component-page#^0.5",
-    "webcomponentsjs": "Polymer/webcomponentsjs#^0.5"
+    "webcomponentsjs": "^0.6.0"
   },
   "devDependencies": {
     "tools": "Polymer/tools#master",
-    "web-component-tester": "Polymer/web-component-tester#^1.4.2"
+    "web-component-tester": "*"
   },
-  "version": "0.5.5"
+  "version": "0.5.6"
 }

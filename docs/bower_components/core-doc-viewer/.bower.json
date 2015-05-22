@@ -13,13 +13,13 @@
     "marked-element": "PolymerLabs/marked-element#^0.5",
     "prettify-element": "Polymer/prettify-element#^0.5"
   },
-  "version": "0.5.5",
+  "version": "0.5.6",
   "homepage": "https://github.com/Polymer/core-doc-viewer",
-  "_release": "0.5.5",
+  "_release": "0.5.6",
   "_resolution": {
     "type": "version",
-    "tag": "0.5.5",
-    "commit": "df193932746ebe540d09f420a631f1fa84e93e91"
+    "tag": "0.5.6",
+    "commit": "ccbf9a5d514b4dcb398ce3ae0e4d6bc27a0199f0"
   },
   "_source": "git://github.com/Polymer/core-doc-viewer.git",
   "_target": "*",
