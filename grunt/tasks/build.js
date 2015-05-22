@@ -66,10 +66,16 @@ module.exports = function(grunt) {
             'basic-shared': grunt.file.expand({cwd: SRC_DIR})
           }
         },
-        files: [{
-          src: TEMPLATE_DIR + '/lib_template.html',
-          dest: '<%= build_dir %>/<%= pkg.name %>.html'
-        }]
+        files: [
+          {
+            src: TEMPLATE_DIR + '/lib_template.html',
+            dest: '<%= build_dir %>/<%= pkg.name %>.html'
+          },
+          {
+            src: TEMPLATE_DIR + '/lib_template.html',
+            dest: '<%= build_dir %>/<%= pkg.name %>-polymer.html'
+          }
+        ]
       }
     },
 
@@ -89,6 +95,13 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= build_dir %>/<%= pkg.name %>.html' : '<%= build_dir %>/<%= pkg.name %>.html'
+        }
+      },
+      dist_include_polymer: {
+        options:{
+        },
+        files: {
+          '<%= build_dir %>/<%= pkg.name %>-polymer.html' : '<%= build_dir %>/<%= pkg.name %>-polymer.html'
         }
       }
     },
@@ -122,6 +135,14 @@ module.exports = function(grunt) {
         files: {
           src: [ 'build/basic-web-components.html' ]
         }
+      },
+      dist_include_polymer: {
+        options: {
+          banner: '<!--\n<%= banner %>\n-->'
+        },
+        files: {
+          src: [ 'build/basic-web-components-polymer.html' ]
+        }
       }
     },
 
@@ -137,13 +158,15 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build:dist', function(arg){
+  grunt.registerTask('build:dist', function(arg) {
     grunt.task.run([
       'clean:build',
       'copy:build',
       'hogan_static:lib',
       'vulcanize:dist',
-      'usebanner:dist'
+      'vulcanize:dist_include_polymer',
+      'usebanner:dist',
+      'usebanner:dist_include_polymer'
     ]);
   });
 
