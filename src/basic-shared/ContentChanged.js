@@ -136,7 +136,9 @@ function lightDomContentChanged(node) {
 
   // Invoke the element's own handler.
   if (!node._contentChangeHandler) {
-    debugger;
+    // TODO: Investigate how this condition can come about.
+    // It shouldn't happen, but does.
+    // debugger;
   } else {
     node._contentChangeHandler();
   }
