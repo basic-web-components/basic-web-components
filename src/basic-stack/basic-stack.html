@@ -112,13 +112,15 @@ Polymer({
   // Listen for load events on children of the specified tag type.
   // TODO: Share this with basic-framed-content.
   _listenForLoadEvents: function(tag) {
-    var elements = Polymer.dom(this).querySelectorAll(tag);
-    Array.prototype.forEach.call(elements, function(element) {
-      element.addEventListener('load', function() {
-        this.recalc();
-      }.bind(this));
+    var childNodes = Basic.ContentHelpers.flattenChildNodes(this);
+    Array.prototype.forEach.call(childNodes, function(child) {
+      if (child.localName === tag) {
+        child.addEventListener('load', function() {
+          this.recalc();
+        }.bind(this));
+      }
     }.bind(this));
-  },
+  }
 
 });
 </script>

@@ -135,7 +135,11 @@ function lightDomContentChanged(node) {
   observeHostIfContentElementPresent(node);
 
   // Invoke the element's own handler.
-  node._contentChangeHandler();
+  if (!node._contentChangeHandler) {
+    debugger;
+  } else {
+    node._contentChangeHandler();
+  }
 
 }
 
