@@ -17,14 +17,13 @@ suite('ContentHelpers and ContentChanged', function() {
   test('observe changes in textContent', function(done) {
     var fixture = document.createElement('content-test-element');
     fixture.contentChangedHook = function() {
-      var firstChild = Polymer.dom(fixture).childNodes[0]
-      assert.equal(firstChild.textContent, 'Hello');
+      assert.equal(Polymer.dom(fixture).textContent, 'Hello');
       done();
     };
     container.appendChild(fixture);
-    var text = new Text();
-    text.textContent = 'Hello';
-    Polymer.dom(fixture).appendChild(text);
+    flush(function() {
+      Polymer.dom(fixture).textContent = 'Hello';
+    });
   });
 
   test('observe changes in children', function(done) {
@@ -36,22 +35,23 @@ suite('ContentHelpers and ContentChanged', function() {
       done();
     };
     container.appendChild(fixture);
-    var div = document.createElement('div');
-    div.textContent = 'Hello';
-    Polymer.dom(fixture).appendChild(div);
+    flush(function() {
+      var div = document.createElement('div');
+      div.textContent = 'Hello';
+      Polymer.dom(fixture).appendChild(div);
+    });
   });
 
   test('specifying initial content triggers initial contentChanged', function(done) {
     var fixture = document.createElement('content-test-element');
-    var text = new Text();
-    text.textContent = 'Hello';
-    Polymer.dom(fixture).appendChild(text);
+    Polymer.dom(fixture).textContent = 'Hello';
     fixture.contentChangedHook = function() {
-      var text = Polymer.dom(fixture).childNodes[0];
-      assert.equal(text.textContent, 'Hello');
+      assert.equal(Polymer.dom(fixture).textContent, 'Hello');
       done();
     };
-    container.appendChild(fixture);
+    flush(function() {
+      container.appendChild(fixture);
+    });
   });
 
   test('detaching an element stops it observing future content changes', function(done) {
@@ -66,9 +66,7 @@ suite('ContentHelpers and ContentChanged', function() {
       fixture.textContent = 'Goodbye';
     };
     container.appendChild(fixture);
-    var text = new Text();
-    text.textContent = 'Hello';
-    Polymer.dom(fixture).appendChild(text);
+    Polymer.dom(fixture).textContent = 'Hello';
   });
 
   test('redistributed content triggers contentChanged', function(done) {
@@ -79,9 +77,7 @@ suite('ContentHelpers and ContentChanged', function() {
       var childNodes = Polymer.dom(fixture).childNodes;
       assert.equal(childNodes[0].textContent, 'Hello');
     };
-    var text = new Text();
-    text.textContent = 'Hello';
-    Polymer.dom(fixture).appendChild(text);
+    Polymer.dom(fixture).textContent = 'Hello';
     flush(function() {
       done();
     });
@@ -104,9 +100,7 @@ suite('ContentHelpers and ContentChanged', function() {
     flush(function() {
       // Now add an element to the light DOM, which we do expect to trigger
       // contentChanged.
-      var text = new Text();
-      text.textContent = 'Hello'
-      Polymer.dom(fixture).appendChild(text);
+      Polymer.dom(fixture).textContent = 'Hello';
     });
   });
 
