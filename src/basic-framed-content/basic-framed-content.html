@@ -145,6 +145,7 @@ Polymer({
   _lastHeight: null,
 
   // Listen for load events on children of the specified tag type.
+  // TODO: Share this with basic-stack.
   _listenForLoadEvents: function(tag) {
     var elements = Polymer.dom(this).querySelectorAll(tag);
     Array.prototype.forEach.call(elements, function(element) {

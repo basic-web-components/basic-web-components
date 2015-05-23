@@ -47,6 +47,8 @@ Polymer({
   contribute: {
 
     contentChanged: function() {
+      this._listenForLoadEvents('img');
+      this._listenForLoadEvents('iframe');
       setTimeout(function() {
         this.recalc();
       }.bind(this));
@@ -105,7 +107,18 @@ Polymer({
       this.$.stackContainer.style.width = '100%';
       this.recalc();
     }
-  }
+  },
+
+  // Listen for load events on children of the specified tag type.
+  // TODO: Share this with basic-framed-content.
+  _listenForLoadEvents: function(tag) {
+    var elements = Polymer.dom(this).querySelectorAll(tag);
+    Array.prototype.forEach.call(elements, function(element) {
+      element.addEventListener('load', function() {
+        this.recalc();
+      }.bind(this));
+    }.bind(this));
+  },
 
 });
 </script>
