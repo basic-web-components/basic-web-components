@@ -78,17 +78,10 @@ function mutationObserved(mutations) {
   var mutationsInLightDom = Polymer.Settings.useNativeShadow ||
     includesLightDomMutations(mutations, this);
 
-  if (!mutationsInLightDom) {
-    // Nothing to handle as a change in content.
-    return;
+  if (mutationsInLightDom) {
+    lightDomContentChanged(this);
   }
 
-  // See if the elements' new content includes a content element, in which case
-  // we'll need to monitor the component's host for changes, too.
-  observeHostIfContentElementPresent(this);
-
-  // Invoke the element's own handler.
-  this._contentChangeHandler();
 }
 
 
@@ -135,6 +128,18 @@ function isLightDomMutation(mutation, component) {
 }
 
 
+function lightDomContentChanged(node) {
+
+  // See if the elements' new content includes a content element, in which case
+  // we'll need to monitor the component's host for changes, too.
+  observeHostIfContentElementPresent(node);
+
+  // Invoke the element's own handler.
+  node._contentChangeHandler();
+
+}
+
+
 // Wire up an observer for (light DOM) content change events on the given
 // node.
 function observeContentMutations(node, handler) {
@@ -164,7 +169,7 @@ function observeHostIfContentElementPresent(node) {
     var host = Basic.ContentHelpers.getHost(node);
     if (host) {
       observeContentMutations(host, function() {
-        node._contentChangeHandler();
+        lightDomContentChanged(node);
       });
       observeHostIfContentElementPresent(host);
     }
@@ -273,7 +278,7 @@ window.Basic.ContentHelpers = {
       observeContentMutations(node, mutationObserved.bind(node));
       if (Polymer.dom(node).childNodes.length > 0) {
         // Consider any initial content of a new element to be "changed" content.
-        handler();
+        lightDomContentChanged(node);
       }
     } else if (node._contentChangeObserver) {
       // Stop observing

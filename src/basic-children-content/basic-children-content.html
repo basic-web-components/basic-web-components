@@ -27,15 +27,15 @@ window.Basic.ChildrenContent = {
     collectiveChanged: function() {
       // console.log(this.localName + " collectiveChanged: " + this.collective.aspects.length);
       var innermost = this.collective.innermostElement;
+      var innermostHost = Basic.ContentHelpers.getHost(innermost);
 
-      // Optimize for the case where the innermost item didn't change.
-      // REVIEW: In Polymer 0.8, the call to collectiveChanged could come too
-      // early, and we would never correctly begin observing changes on the
-      // component host. In 0.8rc7, this appears(?) to no longer be the case.
-      // Need to apply more rigor to convince ourselves that this code is now
-      // correct.
-
-      if (innermost === this._previousInnermostAspect) {
+      // Optimize for the case where the collective's changed, but its
+      // innermost aspect is still the same. In that case, we don't want to
+      // bother tearing down and then recreating our contentChanged handler.
+      // TODO: This currently only tracks one level of host. For robustness,
+      // this should track the chain of hosts.
+      if (innermost === this._previousInnermostAspect
+          && innermostHost === this._previousInnermostHost) {
         // We should already be observing changes on the innermost aspect.
         // Even though the content hasn't actually changed, we want to give the
         // new aspects a chance to respond to contentChanged.
@@ -49,14 +49,13 @@ window.Basic.ChildrenContent = {
         // console.log("stopping observation of changes on old innermost aspect");
         Basic.ContentHelpers.observeContentChanges(this._previousInnermostAspect, null);
       }
-      // Start observing changes on the new innermost aspect.
-      if (innermost._contentChangeObserver) {
-        // console.log("already being observed");
-      }
+
       Basic.ContentHelpers.observeContentChanges(innermost, function() {
         this.collective.contentChanged();
       }.bind(this));
+
       this._previousInnermostAspect = innermost;
+      this._previousInnermostHost = innermostHost;
     },
 
     contentChanged: function() {
@@ -99,6 +98,8 @@ window.Basic.ChildrenContent = {
 
   // Memoized content
   _content: null,
+
+  _previousInnermostHost: null,
 
   _previousInnermostAspect: null
 
