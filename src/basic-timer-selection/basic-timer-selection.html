@@ -61,8 +61,8 @@ window.Basic.TimerSelection = {
 
     // Default implementations. These will be typically be handled by other
     // aspects in the collective.
-    selectFirst: function() {},
-    selectNext: function() {},
+    selectFirst: Basic.Collective.defaultMethod,
+    selectNext: Basic.Collective.defaultMethod,
 
     // Whether the user has selected an item manually, or we've automatically
     // advanced the selection, we wait for a bit before advancing again.

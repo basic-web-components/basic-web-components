@@ -20,8 +20,8 @@ Polymer({
 
     // Default implementations. These will typically be handled by other aspects
     // in the collective.
-    goLeft: function() {},
-    goRight: function() {},
+    goLeft: Basic.Collective.defaultMethod,
+    goRight: Basic.Collective.defaultMethod,
 
     /**
      * The distance the user has moved the first touchpoint since the beginning
@@ -40,7 +40,7 @@ Polymer({
 
     // Default implementation. This will typically be handled by other aspects
     // in the collective.
-    showTransition: function() {},
+    showTransition: Basic.Collective.defaultMethod,
 
     touchStart: function(event) {
       this.collective.showTransition(false);

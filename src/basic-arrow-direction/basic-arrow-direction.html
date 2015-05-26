@@ -103,8 +103,8 @@ Polymer({
 
     // Default implementations. These will typically be handled by other aspects
     // in the collective.
-    goLeft: function() {},
-    goRight: function() {},
+    goLeft: Basic.Collective.defaultMethod,
+    goRight: Basic.Collective.defaultMethod,
 
     set canSelectNext(canSelectNext) {
       this.$.buttonRight.disabled = !canSelectNext;

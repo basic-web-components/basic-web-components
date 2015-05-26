@@ -34,7 +34,7 @@ window.Basic.ContentItems = {
 
     // Default implementation does nothing. This will typically be handled by
     // other aspects in the collective.
-    itemAdded: function() {},
+    itemAdded: Basic.Collective.defaultMethod,
 
     itemsChanged: function() {
       // Perform per-item initialization.
