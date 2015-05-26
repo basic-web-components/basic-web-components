@@ -62,7 +62,6 @@ single carousel that adapts its layout behavior to its applied styling.
   }
   </style>
   <template>
-    <basic-content-items></basic-content-items>
     <basic-item-selection selection-required="true"></basic-item-selection>
     <basic-trackpad-direction target="child">
       <basic-swipe-direction target="child">
@@ -79,20 +78,9 @@ single carousel that adapts its layout behavior to its applied styling.
 <script>
 Polymer({
 
-  // TODO: Add Basic.ContentItems here instead of in the template. The issue
-  // with doing that is that basic-spread-fit will be assimilated after
-  // Basic.ContentItems, and basic-spread-fit's itemAdded() handler won't get
-  // called on the new items. This likely needs to be fixed in
-  // basic-content-items.
-
-  // TODO: This component assimilates two copies of Basic.ChildrenContent. It's
-  // assimilating basic-spread-fit, which assimilates basic-stack, which already
-  // assimilates ChildrenContent. So we don't need to do that here. Which is
-  // weird. Better if we ignore attempts to load a standard aspect twice.
-
   aspects: [
     Basic.AccessibleList,
-    Basic.ChildrenContent,
+    Basic.ContentItems,
     Basic.DirectionSelection,
     Basic.Keyboard,
     Basic.KeyboardDirection
