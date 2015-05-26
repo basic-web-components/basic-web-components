@@ -84,6 +84,12 @@ Polymer({
   // Basic.ContentItems, and basic-spread-fit's itemAdded() handler won't get
   // called on the new items. This likely needs to be fixed in
   // basic-content-items.
+
+  // TODO: This component assimilates two copies of Basic.ChildrenContent. It's
+  // assimilating basic-spread-fit, which assimilates basic-stack, which already
+  // assimilates ChildrenContent. So we don't need to do that here. Which is
+  // weird. Better if we ignore attempts to load a standard aspect twice.
+
   aspects: [
     Basic.AccessibleList,
     Basic.ChildrenContent,

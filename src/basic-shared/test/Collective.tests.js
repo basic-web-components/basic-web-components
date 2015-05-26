@@ -211,4 +211,15 @@ suite('Collective', function() {
     assert.instanceOf(aspect, aspectClass);
   });
 
+  test("don't assimilate an aspect if one with the same 'name' key has already been assimilated", function() {
+    var aspect1 = {
+      name: 'Sample'
+    };
+    var aspect2 = {
+      name: 'Sample' // Same as above
+    };
+    var collective = new Basic.Collective(aspect1, aspect2);
+    assert.equal(collective.aspects.length, 1);
+  });
+
 });

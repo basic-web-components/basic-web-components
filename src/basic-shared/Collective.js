@@ -186,12 +186,30 @@ Collective.prototype = {
     }
   },
 
+  // Return the aspect with the given name key.
+  _aspectWithName: function(name) {
+    var aspects = this.aspects;
+    for (i = 0, length = aspects.length; i < length; i++) {
+      if (aspects[i].name === name) {
+        return aspects[i];
+      }
+    }
+    return null;
+  },
+
   // Assimilate the indicated aspect.
   // Return true if the aspect was assimilated, false otherwise.
   _assimilateAspect: function(newAspect) {
 
     if (newAspect.collective === this) {
       // Already part of this collective.
+      return false;
+    }
+
+    if (newAspect.name && this._aspectWithName(newAspect.name)) {
+      // An aspect with the same name key is already in the collective.
+      // The new aspect being passed in is likely a copy of the existing aspect,
+      // so we ignore the attempt to assimilate it.
       return false;
     }
 
