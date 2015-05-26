@@ -222,4 +222,26 @@ suite('Collective', function() {
     assert.equal(collective.aspects.length, 1);
   });
 
+  test("aspect can define a default function for a collective method", function() {
+    var aspect1 = {
+      contribute: {
+        foo: Basic.Collective.defaultMethod
+      }
+    };
+    var collective = new Basic.Collective(aspect1);
+    assert.equal(collective.foo(), undefined);
+    var aspect2 = {
+      contribute: {
+        foo: function() {
+          return 'Hello';
+        }
+      }
+    };
+    collective.assimilate(aspect2);
+    // aspect2 defines a non-default implementation of foo, so it's the one
+    // whose value should be returned, even though it's implementation is not
+    // the outermost.
+    assert.equal(collective.foo(), 'Hello');
+  });
+
 });

@@ -157,7 +157,10 @@ Collective.prototype = {
   },
 
   _addCollectiveMethod: function(methodName) {
-    var implementations = this.methods[methodName];
+    // Gather all non-default implementations of the indicated method.
+    var implementations = this.methods[methodName].filter(function(fn) {
+      return !this._isDefaultMethod(fn);
+    }.bind(this));
     this[methodName] = (implementations.length === 1) ?
       // Only one method implementation; use it directly.
       implementations[0] :
@@ -317,7 +320,9 @@ Collective.prototype = {
       var fn;
       if (typeof descriptor.value === 'function') {
         // Method
-        fn = descriptor.value.bind(aspect);
+        fn = this._isDefaultMethod(descriptor.value) ?
+          descriptor.value : // Return default method as is
+          descriptor.value.bind(aspect);
         methods[key] = methods[key] || [];
         methods[key].push(fn);
       }
@@ -339,9 +344,24 @@ Collective.prototype = {
       getters: getters,
       setters: setters
     };
+  },
+
+  _isDefaultMethod: function(fn) {
+    return !!fn._isDefaultMethod;
   }
 
 };
+
+
+// Aspects can use the following member to declare a function that will become
+// a default implementation on the collective. This default implementation will
+// be invoked if no other aspect in the collective defines that function.
+// However, if another aspect in the collective *does* define that function,
+// this default implementation (which does nothing) will not be invoked.
+Collective.defaultMethod = function() {};
+// We mark the default method so that we can identify it even if we're looking
+// at a copy of it.
+Collective.defaultMethod._isDefaultMethod = true;
 
 
 window.Basic = window.Basic || {};
