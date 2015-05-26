@@ -26,10 +26,8 @@
     padding: 2em;
   }
 
-  basic-list-box {
-    height: 200px;
-    max-width: 400px;
-    width: 100%
+  p {
+    max-width: 800px;
   }
   </style>
 
@@ -63,7 +61,11 @@
 
 <body unresolved>
 <basic-framed-content>
-<basic-list-box aria-label="Fruits">
+<p>
+  You can navigate this list with the standard keys — Up/Down, Page Up/Down,
+  Home/End — or by typing the beginning of a list item.
+</p>
+<basic-list-box aria-label="Fruits" style="height: 200px; max-width: 400px;">
   <div>Acai</div>
   <div>Acerola</div>
   <div>Apple</div>
