@@ -58,14 +58,27 @@ how to create a custom iconset.
 
 See [iron-icons](http://www.polymer-project.org/components/iron-icons/demo.html) for the default set of icons.
 
-@group Polymer Core Elements
+
+### Styling
+
+The following custom properties are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--iron-icon-width` | Width of the icon | `24px`
+`--iron-icon-height` | Height of the icon | `24px`
+
+@group Iron Elements
 @element iron-icon
+@demo demo/index.html
+@hero hero.svg
 @homepage polymer.github.io
 -->
 
 <style is="custom-style">
-  * {
-    --iron-icon-size: 24px;
+  :root {
+    --iron-icon-width: 24px;
+    --iron-icon-height: 24px;
   }
 </style>
 
@@ -73,15 +86,16 @@ See [iron-icons](http://www.polymer-project.org/components/iron-icons/demo.html)
 
   <style>
     :host {
-      @apply(--layout-inline --layout-center-center);
+      @apply(--layout-inline);
+      @apply(--layout-center-center);
       position: relative;
 
       vertical-align: middle;
 
       fill: currentcolor;
 
-      width: var(--iron-icon-size);
-      height: var(--iron-icon-size);
+      width: var(--iron-icon-width);
+      height: var(--iron-icon-height);
     }
   </style>
 
