@@ -1,7 +1,7 @@
 {
   "name": "basic-swipe-direction",
   "description": "Aspect which translates touch gestures (swipe left, swipe right) to direction semantics (goRight, goLeft).",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-swipe-direction.html",
   "dependencies": {

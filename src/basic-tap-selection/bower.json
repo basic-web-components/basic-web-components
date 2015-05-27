@@ -1,7 +1,7 @@
 {
   "name": "basic-tap-selection",
   "description": "Aspect which maps the tap gesture to item selection.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-tap-selection.html",
   "dependencies": {

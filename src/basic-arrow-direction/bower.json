@@ -1,7 +1,7 @@
 {
   "name": "basic-arrow-direction",
   "description": "Aspect used to add prominent left and right arrow buttons to a wrapped child. Clicking the left/right button maps to the corresponding left/right direction.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-arrow-direction.html",
   "dependencies": {

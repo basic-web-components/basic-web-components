@@ -1,7 +1,7 @@
 {
   "name": "basic-selection-scroll",
   "description": "Aspect which scrolls a container to keep the selected item visible.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-selection-scroll.html",
   "dependencies": {

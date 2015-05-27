@@ -1,7 +1,7 @@
 {
   "name": "basic-content-items",
   "description": "Aspect that lets a component collective DOM content as list items.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-content-items.html",
   "dependencies": {

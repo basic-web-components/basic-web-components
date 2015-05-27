@@ -1,7 +1,7 @@
 {
   "name": "basic-aspect",
   "description": "An aspect of a component: a separable piece of component appearance or behavior that can be combined at runtime to produce an aggregate user experience.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-aspect.html",
   "dependencies": {

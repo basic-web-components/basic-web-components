@@ -1,7 +1,7 @@
 {
   "name": "basic-keyboard",
   "description": "Aspect which manages the keyboard focus and keydown handling for a component collective. This aspect ensures that its only the outermost aspect in a collective that is listening for keyboard events.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-keyboard.html",
   "dependencies": {

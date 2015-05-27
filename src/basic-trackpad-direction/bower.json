@@ -1,7 +1,7 @@
 {
   "name": "basic-trackpad-direction",
   "description": "Aspect which maps a horizontal trackpad swipe gesture (or horizontal mouse wheel action) to direction semantics.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-trackpad-direction.html",
   "dependencies": {

@@ -1,7 +1,7 @@
 {
   "name": "basic-page-dots",
   "description": "Aspect which adds a set of small dots to a collective tracking a list of items.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-page-dots.html",
   "dependencies": {

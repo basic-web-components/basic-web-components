@@ -1,7 +1,7 @@
 {
   "name": "basic-carousel",
   "description": "Lets user navigate laterally through a sequence of child elements",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-carousel.html",
   "dependencies": {

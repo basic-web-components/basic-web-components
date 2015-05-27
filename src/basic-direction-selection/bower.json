@@ -1,7 +1,7 @@
 {
   "name": "basic-direction-selection",
   "description": "Aspect which maps direction semantics (goLeft, goRight, etc.) to selection semantics (selectPrevious, selectNext, etc.).",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-direction-selection.html",
   "dependencies": {

@@ -1,7 +1,7 @@
 {
   "name": "basic-framed-content",
   "description": "Communicates across a frame boundary to an outer element",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-framed-content.html",
   "dependencies": {

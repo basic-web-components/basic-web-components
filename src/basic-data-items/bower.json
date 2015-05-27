@@ -1,7 +1,7 @@
 {
   "name": "basic-data-items",
   "description": "Aspects for treating an array of data as list items, and showing the selected item as a string.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-data-items.html",
   "dependencies": {

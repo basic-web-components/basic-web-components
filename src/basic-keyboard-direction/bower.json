@@ -1,7 +1,7 @@
 {
   "name": "basic-keyboard-direction",
   "description": "Aspect which maps direction keys (Left, Right, etc.) to direction semantics (goLeft, goRight, etc.).",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-keyboard-direction.html",
   "dependencies": {

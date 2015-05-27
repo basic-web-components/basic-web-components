@@ -1,7 +1,7 @@
 {
   "name": "basic-selection-highlight",
   "description": "Aspect which applies standard highlight colors to a selected item.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-selection-highlight.html",
   "dependencies": {

@@ -1,7 +1,7 @@
 {
   "name": "basic-list-box",
   "description": "A single-selection list box that supports selection highlighting (using the system highlight color) and keyboard navigation.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-list-box.html",
   "dependencies": {

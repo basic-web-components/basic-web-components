@@ -1,7 +1,7 @@
 {
   "name": "basic-keyboard-paging",
   "description": "Aspect which maps page keys (Page Up, Page Down) into operations that scroll the component.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-keyboard-paging.html",
   "dependencies": {

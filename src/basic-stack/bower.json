@@ -1,7 +1,7 @@
 {
   "name": "basic-stack",
   "description": "Stacks its child elements on top of each other, taking on the maximum height and width of the child elements.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-stack.html",
   "dependencies": {

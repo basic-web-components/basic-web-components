@@ -1,7 +1,7 @@
 {
   "name": "basic-children-content",
   "description": "Lets a component collective takes as its content the children of the innermost aspect.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-children-content.html",
   "dependencies": {

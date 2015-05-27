@@ -1,7 +1,7 @@
 {
   "name": "basic-accessible-list",
   "description": "Aspect which adds ARIA roles for lists and list items.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-accessible-list.html",
   "dependencies": {

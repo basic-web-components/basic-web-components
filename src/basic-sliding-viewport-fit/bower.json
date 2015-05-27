@@ -1,7 +1,7 @@
 {
   "name": "basic-sliding-viewport-fit",
   "description": "A variant of basic-sliding-viewport which automatically sizes itself to accommodate the tallest/widest items in a list.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-sliding-viewport-fit.html",
   "dependencies": {

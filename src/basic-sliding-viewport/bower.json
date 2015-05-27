@@ -1,7 +1,7 @@
 {
   "name": "basic-sliding-viewport",
   "description": "Presents list items in a viewport such that only a single item is visible at a time.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-sliding-viewport.html",
   "dependencies": {

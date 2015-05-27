@@ -120,7 +120,7 @@ module.exports = function(grunt) {
         overwrite: true,
         replacements: [{
           from: 'basic-web-components.html',
-          to: 'http://hosting.component.kitchen/bwc/v0.6.0-preview/basic-web-components.html'
+          to: 'http://hosting.component.kitchen/bwc/v0.6.0/basic-web-components.html'
         }]
       }
     },

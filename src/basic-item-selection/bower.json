@@ -1,7 +1,7 @@
 {
   "name": "basic-item-selection",
   "description": "Aspect which manages selection semantics for items in a list.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-item-selection.html",
   "dependencies": {

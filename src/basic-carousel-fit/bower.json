@@ -1,7 +1,7 @@
 {
   "name": "basic-carousel-fit",
   "description": "Lets the user navigate laterally through a sequence of child elements, without requiring that an explicit height and width be applied to the carousel.",
-  "version": "0.6.0-preview",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "basic-carousel-fit.html",
   "dependencies": {
