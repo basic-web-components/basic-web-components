@@ -41,8 +41,8 @@
     flex: 1;
   }
 
-  basic-framed-content {
-    min-height: 400px;
+  body.framed {
+    min-height: 300px;
   }
 
   basic-carousel {
@@ -53,6 +53,10 @@
 
   <script>
   document.addEventListener('WebComponentsReady', function() {
+    if (window.parent !== window) {
+      // Viewing demo in a frame.
+      document.body.classList.add('framed');
+    }
     document.body.removeAttribute('unresolved');
   });
   </script>
