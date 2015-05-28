@@ -6,8 +6,8 @@
   "main": "basic-arrow-direction.html",
   "dependencies": {
     "basic-aspect": "basic-web-components/basic-aspect#master",
-    "iron-icons": "PolymerElements/iron-icons#0.9.0",
-    "polymer": "Polymer/polymer#0.9.0"
+    "iron-icons": "PolymerElements/iron-icons#1.0.1",
+    "polymer": "Polymer/polymer#1.0.0"
   },
   "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master",
