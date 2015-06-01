@@ -53,11 +53,13 @@ Polymer({
 
   },
 
-  hostAttributes: {
-    target: 'shadow'
-  },
-
   is: 'basic-spread-fit',
+
+  properties: {
+    target: {
+      value: 'shadow'
+    }
+  },
 
   ready: function() {
     this.$.stack.addEventListener('basic-layout', function(event) {

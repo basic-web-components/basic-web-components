@@ -88,10 +88,6 @@ Polymer({
 
   behaviors: [Basic.Aspect],
 
-  hostAttributes: {
-    target: 'shadow'
-  },
-
   /**
    * Returns the positional index for the indicated item.
    *
@@ -113,6 +109,12 @@ Polymer({
    */
   get items() {
     return this.collective.items;
+  },
+  
+  properties: {
+    target: {
+      value: 'shadow'
+    }
   },
 
   ready: function() {

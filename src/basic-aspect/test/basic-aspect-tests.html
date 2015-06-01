@@ -49,8 +49,10 @@ Polymer({
 
   behaviors: [Basic.Aspect],
 
-  hostAttributes: {
-    target: 'shadow'
+  properties: {
+    target: {
+      value: 'shadow'
+    }
   },
 
   is: 'aspect-one-wrapper'

@@ -56,11 +56,13 @@ Polymer({
 
   },
 
-  hostAttributes: {
-    target: 'shadow'
-  },
-
   is: 'basic-stack',
+
+  properties: {
+    target: {
+      value: 'shadow'
+    }
+  },
 
   /**
    * Force the component to recalculate its size.

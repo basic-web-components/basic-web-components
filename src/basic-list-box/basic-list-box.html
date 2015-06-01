@@ -118,10 +118,6 @@ Polymer({
     Basic.Generic
   ],
 
-  hostAttributes: {
-    target: 'shadow'
-  },
-
   is: 'basic-list-box',
 
   /**
@@ -143,6 +139,12 @@ Polymer({
    */
   get items() {
     return this.collective.items;
+  },
+
+  properties: {
+    target: {
+      value: 'shadow'
+    }
   },
 
   /**
