@@ -113,6 +113,11 @@ function isLightDomDescendant(node, component) {
     // Walk up to see if the parent is in component's light DOM.
     return isLightDomDescendant(parent, component);
   } else {
+    // We've done one of the following:
+    // * walked up in to a shadow root
+    // * walked up out of the document
+    // In either case, the original node wasn't a light DOM child of the
+    // component.
     return false;
   }
 }
