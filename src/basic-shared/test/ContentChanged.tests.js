@@ -83,7 +83,7 @@ suite('ContentHelpers and ContentChanged', function() {
     });
   });
 
-  test('modifying shadow does not trigger contentChanged', function(done) {
+  test('adding node to shadow does not trigger contentChanged', function(done) {
     var fixture = document.createElement('content-test-element');
     fixture.contentChangedHook = function() {
       var childNodes = Polymer.dom(fixture).childNodes;
@@ -101,6 +101,42 @@ suite('ContentHelpers and ContentChanged', function() {
       // Now add an element to the light DOM, which we do expect to trigger
       // contentChanged.
       Polymer.dom(fixture).textContent = 'Hello';
+    });
+  });
+
+  test('removing node from shadow does not trigger contentChanged', function(done) {
+    var fixture = document.createElement('content-test-element');
+    fixture.contentChangedHook = function() {
+      var childNodes = Polymer.dom(fixture).childNodes;
+      assert.equal(childNodes.length, 1);
+      done();
+    };
+    container.appendChild(fixture);
+    flush(function() {
+      // Remove an element from the shadow, which shouldn't trigger contentChanged.
+      fixture.$.static.remove();
+      flush(function() {
+        // Now add an element to the light DOM, which we do expect to trigger
+        // contentChanged.
+        Polymer.dom(fixture).textContent = 'Hello';
+      });
+    });
+  });
+
+  test('removing node from light DOM *does* trigger contentChanged', function(done) {
+    var fixture = document.createElement('content-test-element');
+    var div = document.createElement('div');
+    div.textContent = 'div';
+    Polymer.dom(fixture).appendChild(div);
+    container.appendChild(fixture);
+    flush(function() {
+      fixture.contentChangedHook = function() {
+        var childNodes = Polymer.dom(fixture).childNodes;
+        assert.equal(childNodes.length, 0);
+        done();
+      };
+      // Remove a light DOM child, which should trigger contentChanged.
+      div.remove();
     });
   });
 

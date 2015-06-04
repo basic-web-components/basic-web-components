@@ -122,9 +122,16 @@ function isLightDomDescendant(node, component) {
 // (and not Shady DOM).
 function isLightDomMutation(mutation, component) {
   // See if at least one added node was in light DOM.
-  return Array.prototype.some.call(mutation.addedNodes, function(addedNode) {
+  var lightDomAddition = Array.prototype.some.call(mutation.addedNodes, function(addedNode) {
     return isLightDomDescendant(addedNode, component);
   });
+  if (lightDomAddition) {
+    return true;
+  }
+  var lightDomRemoval = Array.prototype.some.call(mutation.removedNodes, function(removedNode) {
+    return !wasShadowChildOfComponent(removedNode, component);
+  });
+  return lightDomRemoval;
 }
 
 
@@ -202,6 +209,20 @@ function stopObservingContentMutations(node) {
     stopObservingContentMutations(node._contentHost);
     node._contentHost = null;
   }
+}
+
+
+// Return true if the given node *was* a child in the component's Shady DOM.
+// HACK: This is currently just a heuristic that relies entirely on the fact
+// that Shady DOM stamps class attributes onto nodes in a component's simulated
+// shadow subtree.
+function wasShadowChildOfComponent(node, component) {
+  var tag = component.localName;
+  if (!node.classList) {
+    // Something like a text node, in which case we can't tell.
+    return false;
+  }
+  return node.classList.contains('style-scope');
 }
 
 
