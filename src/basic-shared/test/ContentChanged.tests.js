@@ -136,7 +136,7 @@ suite('ContentHelpers and ContentChanged', function() {
         done();
       };
       // Remove a light DOM child, which should trigger contentChanged.
-      div.remove();
+      Polymer.dom(fixture).removeChild(div);
     });
   });
 

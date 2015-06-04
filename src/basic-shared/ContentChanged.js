@@ -129,7 +129,7 @@ function isLightDomMutation(mutation, component) {
     return true;
   }
   var lightDomRemoval = Array.prototype.some.call(mutation.removedNodes, function(removedNode) {
-    return !wasShadowChildOfComponent(removedNode, component);
+    return wasLightDomDescendant(removedNode, mutation.target, component);
   });
   return lightDomRemoval;
 }
@@ -213,16 +213,31 @@ function stopObservingContentMutations(node) {
 
 
 // Return true if the given node *was* a child in the component's Shady DOM.
-// HACK: This is currently just a heuristic that relies entirely on the fact
-// that Shady DOM stamps class attributes onto nodes in a component's simulated
-// shadow subtree.
-function wasShadowChildOfComponent(node, component) {
-  var tag = component.localName;
-  if (!node.classList) {
-    // Something like a text node, in which case we can't tell.
-    return false;
+function wasLightDomDescendant(removedNode, removedFromTarget, component) {
+  if (removedFromTarget === component) {
+    // The node was a direct child of the component.
+    // This is an important but ambiguous case. In Shady DOM, we can't tell for
+    // sure after a removal whether the node was removed from the component's
+    // light DOM or simulated shadow DOM. As an approximation, we capitalize on
+    // the fact that Shady DOM stamps a "style-scope" attribute onto elements in
+    // the simulated shadow. So if the removed node still has the style-scope
+    // attribute, and was stamped a class matching the component's tag name,
+    // then the node was probably in the shadow.
+    if (!removedNode.classList) {
+      // Something like a text node, in which case we can't tell. We punt and
+      // assume the node was in the light DOM.
+      return true;
+    }
+    var tag = component.localName;
+    return !(removedNode.classList.contains('style-scope') && removedNode.classList.contains(tag));
+  } else {
+    // The node was deeper in either the light or simulated shadow subtree.
+    // Walk up the hierarchy from the point where the node was removed to see
+    // where it used to be.
+    // NOTE: This probably fails if the target of the removal has itself been
+    // removed.
+    return isLightDomDescendant(removedFromTarget, component);
   }
-  return node.classList.contains('style-scope');
 }
 
 
