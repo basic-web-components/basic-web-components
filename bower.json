@@ -1,9 +1,9 @@
 {
   "name": "basic-web-components",
-  "version": "0.6.0",
+  "version": "0.6.1-pre",
   "dependencies": {
-    "iron-icons": "PolymerElements/iron-icons#1.0.1",
-    "polymer": "Polymer/polymer#1.0.0"
+    "iron-icons": "PolymerElements/iron-icons#^1.0.1",
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
     "globalize": "0.x",
