@@ -1,0 +1,43 @@
+<!--
+This sample element wants to convert text *contained* by element instances into
+a text value that can be rendered as, e.g., the value attribute of an input
+element. A normal use of <content> won't work, because there's no syntax for
+directly binding an attribute (on an input element, say) to text distributed to
+a <content> node. The basic-text-extractor component performs that conversion.
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="basic-text-extractor.html">
+
+<dom-module id="text-extractor-demo">
+
+  <style>
+  input {
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+  }
+  </style>
+
+  <template>
+    <basic-text-extractor value="{{extractedText}}">
+      <content></content>
+    </basic-text-extractor>
+    <input type="text" value="{{extractedText}}">
+  </template>
+
+</dom-module>
+
+<script>
+Polymer({
+
+  is: 'text-extractor-demo',
+
+  properites: {
+    value: {
+      type: String
+    }
+  }
+
+});
+</script>
