@@ -5,11 +5,11 @@
   "license": "MIT",
   "main": "basic-timer-selection.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#0.6.2-pre",
+    "basic-aspect": "basic-web-components/basic-aspect#master",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.2-pre",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "web-component-tester": "*"
   },
   "keywords": [

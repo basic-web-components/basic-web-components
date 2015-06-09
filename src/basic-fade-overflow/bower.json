@@ -8,7 +8,7 @@
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.2-pre",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "web-component-tester": "*"
   },
   "keywords": [
