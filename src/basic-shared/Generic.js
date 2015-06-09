@@ -41,8 +41,24 @@ Basic.Generic = {
      */
     generic: {
       type: Boolean,
-      value: true,
-      reflectToAttribute: true
+      reflectToAttribute: true,
+      value: undefined
+    }
+  },
+
+  ready: function() {
+    // We explicitly set the generic attribute to true, rather than providing
+    // that as a default value. A default value won't appear on an element
+    // instance as an attribute, but an attribute we set explicitly will. We
+    // need the attribute there so that generic styling can be set simply by
+    // defining rules like
+    //
+    //   :host([generic=""]) {
+    //     ...
+    //   }
+    //
+    if (this.getAttribute('generic') == null) {
+      // this.generic = true;
     }
   }
 

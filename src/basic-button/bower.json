@@ -1,0 +1,21 @@
+{
+  "name": "basic-button",
+  "description": "A button with a tasteful, minimalist generic style",
+  "version": "0.6.2-pre",
+  "license": "MIT",
+  "main": "basic-button.html",
+  "dependencies": {
+    "basic-shared": "basic-web-components/basic-shared#0.6.2-pre",
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "keywords": [
+    "basic-web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "/test/"
+  ]
+}
