@@ -29,4 +29,17 @@ suite('Generic', function() {
       done();
     });
   });
+
+  test('set generic to false via attribute', function(done) {
+    var div = document.createElement('div');
+    Polymer.dom(div).innerHTML = '<generic-element generic="false"></generic-element>';
+    container.appendChild(div);
+    flush(function() {
+      var fixture = Polymer.dom(div).children[0];
+      var display = getComputedStyle(fixture).display;
+      assert.equal(display, 'inline-block');
+      done();
+    });
+  });
+
 });
