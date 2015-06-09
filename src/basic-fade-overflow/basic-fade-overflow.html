@@ -13,17 +13,15 @@ The component currently always displays the fade, even if the component's
 content is short enough to fit completely in view.
 
 @element basic-fade-overflow
-@demo http://basic-web-components.github.io/components/basic-fade-overflow/
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-fade-overflow/?dom=shadow
 -->
 <!--
-TODO: Hide the fade if all the content can be seen.
+TODO: Automatically hide the fade if all the content can be seen.
 -->
 
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="basic-fade-overflow" attributes="fadeColor">
-
-<template>  
+<dom-module id="basic-fade-overflow">
 
   <style>
   :host {
@@ -42,10 +40,12 @@ TODO: Hide the fade if all the content can be seen.
   }
   </style>
 
-  <div id="fade" _style="background: linear-gradient(to bottom, {{fadeColorTransparent}} 0%, {{fadeColor}} 100%);"></div>
-  <content></content>
+  <template>
+    <div id="fade"></div>
+    <content></content>
+  </template>
 
-</template>
+</dom-module>
 
 <script>
 Polymer({
@@ -56,26 +56,23 @@ Polymer({
     }
   },
 
-  /**
-   * The color of the fade.
-   *
-   * The fade color should match the background color. The component does its
-   * best to infer the background color, but in some situations, that may not
-   * work. In those cases, you can manually identify the background color.
-   * This should be a solid color.
-   *
-   * @attribute fadeColor
-   * @default white
-   */
-  // TODO: Infer fade color from background when added (attached) to document.
-  fadeColor: null,
+  is: 'basic-fade-overflow',
 
-  fadeColorChanged: function() {
-    if (this.fadeColor) {
-      var rgb = this._extractRgbValues(this.fadeColor);
-      if (rgb) {
-        this.fadeColorTransparent = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',0)';
-      }
+  properties: {
+    /**
+     * The color of the fade.
+     *
+     * The fade color should match the background color. The component does its
+     * best to infer the background color, but in some situations, that may not
+     * work. In those cases, you can manually identify the background color.
+     * This should be a solid color.
+     *
+     * @attribute fadeColor
+     * @default white
+     */
+    fadeColor: {
+      observer: '_fadeColorChanged',
+      type: String
     }
   },
 
@@ -87,8 +84,20 @@ Polymer({
    * @method refresh
    */
   refresh: function() {
-    var backgroundColor = this._findBackgroundColor(this);
-    this.fadeColor = backgroundColor;
+    this.fadeColor = this._findBackgroundColor(this);
+  },
+
+  _fadeColorChanged: function() {
+    var fadeColor = this.fadeColor;
+    if (fadeColor) {
+      var rgb = this._extractRgbValues(fadeColor);
+      if (rgb) {
+        var fadeColorTransparent = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',0)';
+      }
+      var background = 'linear-gradient(to bottom, ' + fadeColorTransparent + ' 0%, '
+          + fadeColor + ' 100%);';
+      this.$.fade.style.background = background;
+    }
   },
 
   // Return the background color of the given element. If the color is
@@ -102,7 +111,8 @@ Polymer({
     }
     var backgroundColor = getComputedStyle(element).backgroundColor;
     if (backgroundColor === 'transparent' || backgroundColor === 'rgba(0, 0, 0, 0)') {
-      return this._findBackgroundColor(element.parentNode)
+      var parent = Polymer.dom(element).parentNode;
+      return this._findBackgroundColor(parent);
     }
     else {
       return backgroundColor;
@@ -126,5 +136,3 @@ Polymer({
 
 });
 </script>
-
-</polymer-element>
