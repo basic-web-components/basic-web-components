@@ -7,6 +7,7 @@ suite('basic', function() {
 
   teardown(function () {
     container.innerHTML = '';
+    document.body.style.background = '';
   });
 
   test('fadeColor attribute is defined', function(done) {
