@@ -94,9 +94,9 @@ Polymer({
       if (rgb) {
         var fadeColorTransparent = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',0)';
       }
-      var background = 'linear-gradient(to bottom, ' + fadeColorTransparent + ' 0%, '
-          + fadeColor + ' 100%);';
-      this.$.fade.style.background = background;
+      var gradient = 'linear-gradient(' + fadeColorTransparent + ' 0%, '
+          + fadeColor + ' 100%)';
+      this.$.fade.style.backgroundImage = gradient;
     }
   },
 
