@@ -1,16 +1,16 @@
 {
   "name": "basic-children-content",
   "description": "Lets a component collective takes as its content the children of the innermost aspect.",
-  "version": "0.6.1-pre",
+  "version": "0.6.1",
   "license": "MIT",
   "main": "basic-children-content.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#0.6.1-pre",
-    "basic-shared": "basic-web-components/basic-shared#0.6.1-pre",
+    "basic-aspect": "basic-web-components/basic-aspect#0.6.1",
+    "basic-shared": "basic-web-components/basic-shared#0.6.1",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.1-pre",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.1",
     "web-component-tester": "*"
   },
   "keywords": [

@@ -1,15 +1,15 @@
 {
   "name": "basic-timer-selection",
   "description": "An aspect which provides for automatic timed changes in selection, as in an automated slideshow.",
-  "version": "0.6.1-pre",
+  "version": "0.6.1",
   "license": "MIT",
   "main": "basic-timer-selection.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#0.6.1-pre",
+    "basic-aspect": "basic-web-components/basic-aspect#0.6.1",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.1-pre",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.1",
     "web-component-tester": "*"
   },
   "keywords": [
