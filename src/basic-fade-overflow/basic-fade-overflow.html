@@ -1,0 +1,130 @@
+<!--
+Fade out content that overflows so the user knows there's more.
+
+This component doesn't handle interactivity. If you want the user to be able to,
+for example, expand the component to see the overflowing content, you'll need to
+combine this with a component like Polymer's core-collapse.
+
+The component needs to know the color it should fade to, which it tries to infer
+from the background color. In some situations, this may not work, in which case
+you can explicitly set the fadeColor attribute.
+
+The component currently always displays the fade, even if the component's
+content is short enough to fit completely in view.
+
+@element basic-fade-overflow
+@demo http://basic-web-components.github.io/components/basic-fade-overflow/
+-->
+<!--
+TODO: Hide the fade if all the content can be seen.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="basic-fade-overflow" attributes="fadeColor">
+
+<template>  
+
+  <style>
+  :host {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #fade {
+    bottom: 0;
+    height: 3em;
+    max-height: 50%;
+    pointer-events: none; /* Lets user interact with content through the fade. */
+    position: absolute;
+    width: 100%;
+  }
+  </style>
+
+  <div id="fade" _style="background: linear-gradient(to bottom, {{fadeColorTransparent}} 0%, {{fadeColor}} 100%);"></div>
+  <content></content>
+
+</template>
+
+<script>
+Polymer({
+
+  attached: function() {
+    if (this.fadeColor == null) {
+      this.refresh();
+    }
+  },
+
+  /**
+   * The color of the fade.
+   *
+   * The fade color should match the background color. The component does its
+   * best to infer the background color, but in some situations, that may not
+   * work. In those cases, you can manually identify the background color.
+   * This should be a solid color.
+   *
+   * @attribute fadeColor
+   * @default white
+   */
+  // TODO: Infer fade color from background when added (attached) to document.
+  fadeColor: null,
+
+  fadeColorChanged: function() {
+    if (this.fadeColor) {
+      var rgb = this._extractRgbValues(this.fadeColor);
+      if (rgb) {
+        this.fadeColorTransparent = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',0)';
+      }
+    }
+  },
+
+  /**
+   * Infer the fade color from background color. If you have programmatically
+   * changed the color behind the component, you can invoke this method to have
+   * the component try to pick up the new background color.
+   *
+   * @method refresh
+   */
+  refresh: function() {
+    var backgroundColor = this._findBackgroundColor(this);
+    this.fadeColor = backgroundColor;
+  },
+
+  // Return the background color of the given element. If the color is
+  // "transparent" (the default in Mozilla and IE) or "rgba(0, 0, 0, 0)" (the
+  // default transparent value in Blink and Webkit), walk up the parent chain
+  // until a non-transparent color is found.
+  _findBackgroundColor: function(element) {
+    if (element == null || typeof element.style === 'undefined') {
+      // This element has no background, assume white.
+      return 'rgb(255,255,255)';
+    }
+    var backgroundColor = getComputedStyle(element).backgroundColor;
+    if (backgroundColor === 'transparent' || backgroundColor === 'rgba(0, 0, 0, 0)') {
+      return this._findBackgroundColor(element.parentNode)
+    }
+    else {
+      return backgroundColor;
+    }
+  },
+
+  _extractRgbValues: function(rgbString) {
+    rgbRegex = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*[\d\.]+\s*)?\)/;
+    var match = rgbRegex.exec(rgbString);
+    if (match) {
+      return {
+        r: parseInt(match[1]),
+        g: parseInt(match[2]),
+        b: parseInt(match[3])
+      };
+    }
+    else {
+      return null;
+    }
+  }
+
+});
+</script>
+
+</polymer-element>
