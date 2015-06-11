@@ -14,7 +14,7 @@
     "basic-keyboard": "basic-web-components/basic-keyboard#master",
     "basic-keyboard-direction": "basic-web-components/basic-keyboard-direction#master",
     "basic-keyboard-paging": "basic-web-components/basic-keyboard-paging#master",
-    "basic-keyboard-prefix-selection": "basic-web-components/basic-keyboard-prefix-selection",
+    "basic-keyboard-prefix-selection": "basic-web-components/basic-keyboard-prefix-selection#master",
     "basic-selection-highlight": "basic-web-components/basic-selection-highlight#master",
     "basic-selection-scroll": "basic-web-components/basic-selection-scroll#master",
     "basic-tap-selection": "basic-web-components/basic-tap-selection#master",
