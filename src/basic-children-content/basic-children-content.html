@@ -51,6 +51,10 @@ window.Basic.ChildrenContent = {
       }
 
       Basic.ContentHelpers.observeContentChanges(innermost, function() {
+        // Reset memoized content.
+        this._content = null;
+
+        // Let collective know content has changed.
         this.collective.contentChanged();
       }.bind(this));
 
@@ -59,10 +63,6 @@ window.Basic.ChildrenContent = {
     },
 
     contentChanged: function() {
-
-      // Reset memoized content.
-      this._content = null;
-
       var outermost = this.collective.outermostAttached;
       if (outermost) {
         var event = new CustomEvent('content-changed', {
