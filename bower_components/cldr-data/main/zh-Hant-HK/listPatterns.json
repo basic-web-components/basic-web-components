@@ -1,0 +1,44 @@
+{
+  "main": {
+    "zh-Hant-HK": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11323 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "zh",
+        "script": "Hant",
+        "territory": "HK"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}、{1}",
+          "middle": "{0}、{1}",
+          "end": "{0}和{1}",
+          "2": "{0}和{1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} {1}",
+          "2": "{0} {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0}{1}",
+          "middle": "{0}{1}",
+          "end": "{0}{1}",
+          "2": "{0}{1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} {1}",
+          "2": "{0} {1}"
+        }
+      }
+    }
+  }
+}

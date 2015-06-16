@@ -1,0 +1,31 @@
+{
+  "main": {
+    "es-UY": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11186 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-12 16:51:01 -0600 (Thu, 12 Feb 2015) $"
+        },
+        "language": "es",
+        "territory": "419"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "Numérico",
+          "Tone": "Tono",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "Acentos",
+          "x-Fullwidth": "Ancho completo",
+          "x-Halfwidth": "Ancho medio",
+          "x-Jamo": "Jamo",
+          "x-Pinyin": "Pinyin",
+          "x-Publishing": "Publicación"
+        }
+      }
+    }
+  }
+}

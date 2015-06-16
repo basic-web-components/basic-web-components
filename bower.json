@@ -3,10 +3,10 @@
   "version": "0.6.2-pre",
   "dependencies": {
     "iron-icons": "PolymerElements/iron-icons#^1.0.1",
+    "globalize": "^1.0.0",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "globalize": "0.x",
     "web-component-tester": "*"
   }
 }

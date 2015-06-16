@@ -1,0 +1,43 @@
+{
+  "main": {
+    "bn-IN": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11169 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-09 16:11:16 -0600 (Mon, 09 Feb 2015) $"
+        },
+        "language": "bn",
+        "territory": "IN"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, এবং {1}",
+          "2": "{0} এবং {1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0} এবং {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0} এবং {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0} এবং {1}"
+        }
+      }
+    }
+  }
+}

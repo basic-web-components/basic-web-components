@@ -1,0 +1,133 @@
+{
+  "main": {
+    "my": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11321 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 14:20:05 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "my"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}၊{1}",
+          "localeKeyTypePattern": "{0} ၊ {1}"
+        },
+        "keys": {
+          "calendar": "ပြက္ခဒိန်",
+          "collation": "စနစ်တကျစီသော",
+          "currency": "ငွေကြေး",
+          "numbers": "ဂဏန်းနံပါတ်"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "ဗုဒ္ဓ ပြက္ခဒိန်",
+            "chinese": "တရုတ် ပြက္ခဒိန်",
+            "coptic": "coptic",
+            "dangi": "ဒန်းဂိ ပြက္ခဒိန်",
+            "ethiopic": "အီသီယိုးပီးယား ပြက္ခဒိန်",
+            "ethiopic-amete-alem": "ethiopic-amete-alem",
+            "gregorian": "နိုင်ငံတကာသုံး ပြက္ခဒိန်",
+            "hebrew": "ဟီဗရူး ပြက္ခဒိန်",
+            "indian": "အိန္ဒြိယ အမျိုးသား ပြက္ခဒိန်",
+            "islamic": "အစ္စလာမ် ပြက္ခဒိန်",
+            "islamic-civil": "islamic-civil",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "iso8601",
+            "japanese": "ဂျပန် ပြက္ခဒိန်",
+            "persian": "ပါရှား ပြက္ခဒိန်",
+            "roc": "မင်ဂုအို ပြက္ခဒိန်"
+          },
+          "collation": {
+            "big5han": "big5han",
+            "dictionary": "dictionary",
+            "ducet": "ယူနီကုတ်အစဉ်လိုက်စီထားသော",
+            "eor": "eor",
+            "gb2312han": "gb2312han",
+            "phonebook": "ဖုန်းစာအုပ် အစီအစဉ်",
+            "pinyin": "pinyin",
+            "reformed": "reformed",
+            "search": "ယေဘုယျရှာခြင်း",
+            "searchjl": "searchjl",
+            "standard": "ပုံမှန်စီသော",
+            "stroke": "stroke",
+            "traditional": "traditional",
+            "unihan": "unihan",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "အာရပ်ဂဏန်းခြေ",
+            "arabext": "တိုးချဲ့အာရပ်ဂဏန်းခြေ",
+            "armn": "အာမေနီယန်ဂဏန်းခြေ",
+            "armnlow": "အာမေနီယန်ဂဏန်းခြေအသေး",
+            "bali": "bali",
+            "beng": "ဘန်ဂါလီဂဏန်းခြေ",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "ဒီပါနာဂါရီဂဏန်းခြေ",
+            "ethi": "အီသီအိုပီးယားဂဏန်းခြေ",
+            "fullwide": "အနံအပြည့်နှင့်ဂဏန်းခြေ",
+            "geor": "နိုင်ငံတကာသုံးဂဏန်းခြေ",
+            "grek": "ဂရိဂဏန်းခြေ",
+            "greklow": "ဂရိဂဏန်းခြေအသေး",
+            "gujr": "ဂုဂျာရာတီဂဏန်းခြေ",
+            "guru": "ဂူမူခီဂဏန်းခြေ",
+            "hanidec": "တရုတ်ဆယ်လီစနစ်ဂဏန်းခြေ",
+            "hans": "ရိုးရှင်းသောတရုတ်ဂဏန်းခြေ",
+            "hansfin": "ရိုးရှင်းသောတရုတ်ဘဏ္ဏာရေးသုံးဂဏန်းခြေ",
+            "hant": "ရိုးရာတရုတ်ဂဏန်းခြေ",
+            "hantfin": "ရိုးရာတရုတ်ဘဏ္ဏာရေးသုံးဂဏန်းခြေ",
+            "hebr": "ဟေဗြဲဂဏန်းခြေ",
+            "java": "java",
+            "jpan": "ဂျပန်ဂဏန်းခြေ",
+            "jpanfin": "ဂျပန်ဘဏ္ဏာရေးသုံးဂဏန်းခြေ",
+            "kali": "kali",
+            "khmr": "ခမာဂဏန်းခြေ",
+            "knda": "ခန္နဒါဂဏန်းခြေ",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "လာအိုဂဏန်းခြေ",
+            "latn": "အနောက်တိုင်းဂဏန်းခြေ",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "မလာရာလမ်ဂဏန်းခြေ",
+            "mong": "mong",
+            "mtei": "mtei",
+            "mymr": "မြန်မာဂဏန်းခြေ",
+            "mymrshan": "ရှမ်းဂဏန်းခြေ",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "ဩရီရာဂဏန်းခြေ",
+            "osma": "osma",
+            "roman": "ရောမဂဏန်းခြေ",
+            "romanlow": "ရောမဂဏန်းခြေအသေး",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "ရိုးရာတမီးလ်ဂဏန်းခြေ",
+            "tamldec": "တမီးလ်ဂဏန်းခြေ",
+            "telu": "တီရီဂုဂဏန်းခြေ",
+            "thai": "ထိုင်းဂဏန်းခြေ",
+            "tibt": "တိဘက်ဂဏန်းခြေ",
+            "vaii": "vaii"
+          }
+        },
+        "codePatterns": {
+          "language": "ဘာသာစကား - {0}",
+          "script": "စာ - {0}",
+          "territory": "နယ်ပယ်ဒေသ - {0}"
+        }
+      }
+    }
+  }
+}

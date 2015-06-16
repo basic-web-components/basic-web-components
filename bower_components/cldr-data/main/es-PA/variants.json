@@ -1,0 +1,91 @@
+{
+  "main": {
+    "es-PA": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11323 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "es",
+        "territory": "419"
+      },
+      "localeDisplayNames": {
+        "variants": {
+          "1606NICT": "1606NICT",
+          "1694ACAD": "1694ACAD",
+          "1901": "Ortografía alemana tradicional",
+          "1959ACAD": "1959ACAD",
+          "1994": "1994",
+          "1996": "Ortografía alemana de 1996",
+          "ALALC97": "ALALC97",
+          "ALUKU": "ALUKU",
+          "AREVELA": "Armenio oriental",
+          "AREVMDA": "AREVMDA",
+          "BAKU1926": "BAKU1926",
+          "BALANKA": "BALANKA",
+          "BARLA": "BARLA",
+          "BAUDDHA": "BAUDDHA",
+          "BISCAYAN": "BISCAYAN",
+          "BISKE": "BISKE",
+          "BOHORIC": "BOHORIC",
+          "BOONT": "BOONT",
+          "DAJNKO": "DAJNKO",
+          "EKAVSK": "EKAVSK",
+          "EMODENG": "EMODENG",
+          "FONIPA": "Alfabeto fonético internacional IPA",
+          "FONUPA": "FONUPA",
+          "FONXSAMP": "FONXSAMP",
+          "HEPBURN": "HEPBURN",
+          "HOGNORSK": "HOGNORSK",
+          "IJEKAVSK": "IJEKAVSK",
+          "ITIHASA": "ITIHASA",
+          "JAUER": "JAUER",
+          "JYUTPING": "JYUTPING",
+          "KKCOR": "KKCOR",
+          "KOCIEWIE": "KOCIEWIE",
+          "KSCOR": "KSCOR",
+          "LAUKIKA": "LAUKIKA",
+          "LIPAW": "LIPAW",
+          "LUNA1918": "LUNA1918",
+          "METELKO": "METELKO",
+          "MONOTON": "Monotónico",
+          "NDYUKA": "NDYUKA",
+          "NEDIS": "NEDIS",
+          "NJIVA": "NJIVA",
+          "NULIK": "NULIK",
+          "OSOJS": "OSOJS",
+          "PAMAKA": "PAMAKA",
+          "PETR1708": "PETR1708",
+          "PINYIN": "Romanización pinyin",
+          "POLYTON": "Politónico",
+          "POSIX": "Ordenador",
+          "PUTER": "PUTER",
+          "REVISED": "Ortografía revisada",
+          "RIGIK": "RIGIK",
+          "ROZAJ": "ROZAJ",
+          "RUMGR": "RUMGR",
+          "SAAHO": "SAAHO",
+          "SCOTLAND": "Inglés escocés estándar",
+          "SCOUSE": "SCOUSE",
+          "SOLBA": "SOLBA",
+          "SOTAV": "SOTAV",
+          "SURMIRAN": "SURMIRAN",
+          "SURSILV": "SURSILV",
+          "SUTSILV": "SUTSILV",
+          "TARASK": "TARASK",
+          "UCCOR": "UCCOR",
+          "UCRCOR": "UCRCOR",
+          "ULSTER": "ULSTER",
+          "UNIFON": "UNIFON",
+          "VAIDIKA": "VAIDIKA",
+          "VALENCIA": "Valenciano",
+          "VALLADER": "VALLADER",
+          "WADEGILE": "Romanización Wade-Giles"
+        }
+      }
+    }
+  }
+}

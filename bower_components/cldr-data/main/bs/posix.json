@@ -1,0 +1,22 @@
+{
+  "main": {
+    "bs": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11346 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+        },
+        "language": "bs"
+      },
+      "posix": {
+        "messages": {
+          "yesstr": "da:d",
+          "nostr": "ne:n"
+        }
+      }
+    }
+  }
+}

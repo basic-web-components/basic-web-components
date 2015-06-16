@@ -1,0 +1,133 @@
+{
+  "main": {
+    "to": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "to"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "tohi māhina",
+          "collation": "tohi hokohoko",
+          "currency": "paʻanga",
+          "numbers": "fika"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "fakaputa",
+            "chinese": "fakasiaina",
+            "coptic": "coptic",
+            "dangi": "fakataniki",
+            "ethiopic": "fakaʻītiōpia",
+            "ethiopic-amete-alem": "ethiopic-amete-alem",
+            "gregorian": "fakakelekolia",
+            "hebrew": "fakahepelū",
+            "indian": "fakaʻinitia",
+            "islamic": "fakamohameti",
+            "islamic-civil": "fakamohameti-sivile",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "faka-iso8601",
+            "japanese": "fakasiapani",
+            "persian": "fakapēsia",
+            "roc": "fakalēpupelika siaina"
+          },
+          "collation": {
+            "big5han": "big5han",
+            "dictionary": "dictionary",
+            "ducet": "ʻunikōti",
+            "eor": "eor",
+            "gb2312han": "gb2312han",
+            "phonebook": "fika telefoni",
+            "pinyin": "pinyin",
+            "reformed": "reformed",
+            "search": "fakakumi ʻi hono anga lahi",
+            "searchjl": "searchjl",
+            "standard": "fakasīpinga",
+            "stroke": "stroke",
+            "traditional": "tukufakaholo",
+            "unihan": "unihan",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "fika fakaʻalepea",
+            "arabext": "fika fakaʻalepea fakalahi",
+            "armn": "fika fakaʻāmenia",
+            "armnlow": "fika fakaʻāmenia fakalalo",
+            "bali": "bali",
+            "beng": "fika fakapengikali",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "fika fakatevanākalī",
+            "ethi": "fika fakaʻītiōpia",
+            "fullwide": "fika laulahi",
+            "geor": "fika fakaseōsia",
+            "grek": "fika fakakalisi",
+            "greklow": "fika fakakalisi fakalalo",
+            "gujr": "fika fakakutalati",
+            "guru": "fika fakakūmuki",
+            "hanidec": "fika fakasiaina",
+            "hans": "fika fakasiaina fakafaingofua",
+            "hansfin": "fika fakasiaina fakafaingofua fakapaʻanga",
+            "hant": "fika fakasiaina tukufakaholo",
+            "hantfin": "fika fakasiaina tukufakaholo fakapaʻanga",
+            "hebr": "fika fakahepelū",
+            "java": "java",
+            "jpan": "fika fakasiapani",
+            "jpanfin": "fika fakasiapani fakapaʻanga",
+            "kali": "kali",
+            "khmr": "fika fakakamipōtia",
+            "knda": "fika fakakanata",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "fika fakalau",
+            "latn": "fika fakalatina",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "fika fakamalāialami",
+            "mong": "mong",
+            "mtei": "mtei",
+            "mymr": "fika fakapema",
+            "mymrshan": "mymrshan",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "fika fakaʻolia",
+            "osma": "osma",
+            "roman": "fika fakaloma",
+            "romanlow": "fika fakaloma fakalalo",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "fika fakatamili tukufakaholo",
+            "tamldec": "fika fakatamili",
+            "telu": "fika fakateluku",
+            "thai": "fika fakatailani",
+            "tibt": "fika fakatipeti",
+            "vaii": "vaii"
+          }
+        },
+        "codePatterns": {
+          "language": "Lea: {0}",
+          "script": "Tohinima: {0}",
+          "territory": "Feituʻu: {0}"
+        }
+      }
+    }
+  }
+}

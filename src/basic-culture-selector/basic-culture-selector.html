@@ -1,0 +1,479 @@
+<!--
+Select a culture from the Globalize culture list.
+
+This can be used as a UI component, or an invisible component to load
+language/culture settings. In that scenario, set the "name" attribute to the
+desired language/culture, wait for the "basic-culture-changed" event to fire,
+then read the "culture" attribute to get its settings.
+
+@element basic-culture-selector
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-culture-selector/?dom=shadow
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<script src="../../bower_components/globalize/lib/globalize.js"></script>
+
+
+<dom-module id="basic-culture-selector">
+  <style>
+    :host {
+      display: inline-block;
+    }
+
+    select {
+      max-width: 100%;
+    }
+  </style>
+
+  <template>
+    <content></content>
+    <select id="culturePicker" value="{{name}}">
+      <!-- <option value="af">Afrikaans</option> -->
+      <option value="af-ZA">Afrikaans (Suid Afrika)</option>
+      <!-- <option value="az">Azərbaycan\xadılı</option> -->
+      <!-- <option value="az-Latn">Azərbaycan\xadılı</option> -->
+      <option value="az-Latn-AZ">Azərbaycan\xadılı (Azərbaycan)</option>
+      <!-- <option value="id">Bahasa Indonesia</option> -->
+      <option value="id-ID">Bahasa Indonesia (Indonesia)</option>
+      <!-- <option value="ms">Bahasa Melayu</option> -->
+      <option value="ms-BN">Bahasa Melayu (Brunei Darussalam)</option>
+      <option value="ms-MY">Bahasa Melayu (Malaysia)</option>
+      <!-- <option value="bs">bosanski</option> -->
+      <!-- <option value="bs-Latn">bosanski</option> -->
+      <option value="bs-Latn-BA">bosanski (Bosna i Hercegovina)</option>
+      <!-- <option value="br">brezhoneg</option> -->
+      <option value="br-FR">brezhoneg (Frañs)</option>
+      <!-- <option value="ca">català</option> -->
+      <option value="ca-ES">català (català)</option>
+      <!-- <option value="co">Corsu</option> -->
+      <option value="co-FR">Corsu (France)</option>
+      <!-- <option value="cy">Cymraeg</option> -->
+      <option value="cy-GB">Cymraeg (y Deyrnas Unedig)</option>
+      <!-- <option value="da">dansk</option> -->
+      <option value="da-DK">dansk (Danmark)</option>
+      <!-- <option value="se">davvisámegiella</option> -->
+      <option value="se-NO">davvisámegiella (Norga)</option>
+      <option value="se-SE">davvisámegiella (Ruoŧŧa)</option>
+      <option value="se-FI">davvisámegiella (Suopma)</option>
+      <!-- <option value="de">Deutsch</option> -->
+      <option value="de-DE">Deutsch (Deutschland)</option>
+      <option value="de-LI">Deutsch (Liechtenstein)</option>
+      <option value="de-LU">Deutsch (Luxemburg)</option>
+      <option value="de-CH">Deutsch (Schweiz)</option>
+      <option value="de-AT">Deutsch (Österreich)</option>
+      <!-- <option value="dsb">dolnoserbšćina</option> -->
+      <option value="dsb-DE">dolnoserbšćina (Nimska)</option>
+      <!-- <option value="et">eesti</option> -->
+      <option value="et-EE">eesti (Eesti)</option>
+      <!-- <option value="gsw">Elsässisch</option> -->
+      <option value="gsw-FR">Elsässisch (Frànkrisch)</option>
+      <option value="en-AU">English (Australia)</option>
+      <option value="en-BZ">English (Belize)</option>
+      <option value="en-CA">English (Canada)</option>
+      <option value="en-029">English (Caribbean)</option>
+      <option value="en-IN">English (India)</option>
+      <option value="en-IE">English (Ireland)</option>
+      <option value="en-JM">English (Jamaica)</option>
+      <option value="en-MY">English (Malaysia)</option>
+      <option value="en-NZ">English (New Zealand)</option>
+      <option value="en-PH">English (Philippines)</option>
+      <option value="en-SG">English (Singapore)</option>
+      <option value="en-ZA">English (South Africa)</option>
+      <option value="en-TT">English (Trinidad y Tobago)</option>
+      <option value="en-GB">English (United Kingdom)</option>
+      <option value="en">English (United States)</option> <!-- Globalize default value -->
+      <!-- <option value="es">español</option> -->
+      <option value="en-ZW">English (Zimbabwe)</option>
+      <option value="es-AR">Español (Argentina)</option>
+      <option value="es-BO">Español (Bolivia)</option>
+      <option value="es-CL">Español (Chile)</option>
+      <option value="es-CO">Español (Colombia)</option>
+      <option value="es-CR">Español (Costa Rica)</option>
+      <option value="es-EC">Español (Ecuador)</option>
+      <option value="es-SV">Español (El Salvador)</option>
+      <option value="es-ES">Español (España, alfabetización internacional)</option>
+      <option value="es-US">Español (Estados Unidos)</option>
+      <option value="es-GT">Español (Guatemala)</option>
+      <option value="es-HN">Español (Honduras)</option>
+      <option value="es-MX">Español (México)</option>
+      <option value="es-NI">Español (Nicaragua)</option>
+      <option value="es-PA">Español (Panamá)</option>
+      <option value="es-PY">Español (Paraguay)</option>
+      <option value="es-PE">Español (Perú)</option>
+      <option value="es-PR">Español (Puerto Rico)</option>
+      <option value="es-VE">Español (Republica Bolivariana de Venezuela)</option>
+      <option value="es-DO">Español (República Dominicana)</option>
+      <option value="es-UY">Español (Uruguay)</option>
+      <!-- <option value="eu">euskara</option> -->
+      <option value="eu-ES">euskara (euskara)</option>
+      <!-- <option value="fil">Filipino</option> -->
+      <option value="fil-PH">Filipino (Pilipinas)</option>
+      <!-- <option value="fr">français</option> -->
+      <option value="fr-BE">français (Belgique)</option>
+      <option value="fr-CA">français (Canada)</option>
+      <option value="fr-FR">français (France)</option>
+      <option value="fr-LU">français (Luxembourg)</option>
+      <option value="fr-MC">français (Principauté de Monaco)</option>
+      <option value="fr-CH">français (Suisse)</option>
+      <!-- <option value="fy">Frysk</option> -->
+      <option value="fy-NL">Frysk (Nederlân)</option>
+      <!-- <option value="fo">føroyskt</option> -->
+      <option value="fo-FO">føroyskt (Føroyar)</option>
+      <!-- <option value="ga">Gaeilge</option> -->
+      <option value="ga-IE">Gaeilge (Éire)</option>
+      <!-- <option value="gl">galego</option> -->
+      <option value="gl-ES">galego (galego)</option>
+      <!-- <option value="gd">Gàidhlig</option> -->
+      <option value="gd-GB">Gàidhlig (An Rìoghachd Aonaichte)</option>
+      <!-- <option value="ha">Hausa</option> -->
+      <!-- <option value="ha-Latn">Hausa</option> -->
+      <option value="ha-Latn-NG">Hausa (Nigeria)</option>
+      <!-- <option value="hsb">hornjoserbšćina</option> -->
+      <option value="hsb-DE">hornjoserbšćina (Němska)</option>
+      <!-- <option value="hr">hrvatski</option> -->
+      <option value="hr-BA">hrvatski (Bosna i Hercegovina)</option>
+      <option value="hr-HR">hrvatski (Hrvatska)</option>
+      <!-- <option value="ig">Igbo</option> -->
+      <option value="ig-NG">Igbo (Nigeria)</option>
+      <!-- <option value="iu">Inuktitut</option> -->
+      <!-- <option value="iu-Latn">Inuktitut</option> -->
+      <option value="iu-Latn-CA">Inuktitut (Kanatami)</option>
+      <!-- <option value="xh">isiXhosa</option> -->
+      <option value="xh-ZA">isiXhosa (uMzantsi Afrika)</option>
+      <!-- <option value="zu">isiZulu</option> -->
+      <option value="zu-ZA">isiZulu (iNingizimu Afrika)</option>
+      <!-- <option value="it">italiano</option> -->
+      <option value="it-IT">italiano (Italia)</option>
+      <option value="it-CH">italiano (Svizzera)</option>
+      <!-- <option value="smj">julevusámegiella</option> -->
+      <option value="smj-SE">julevusámegiella (Svierik)</option>
+      <option value="smj-NO">julevusámegiella (Vuodna)</option>
+      <!-- <option value="qut">K'iche</option> -->
+      <option value="qut-GT">K'iche (Guatemala)</option>
+      <!-- <option value="kl">kalaallisut</option> -->
+      <option value="kl-GL">kalaallisut (Kalaallit Nunaat)</option>
+      <!-- <option value="moh">Kanien'kéha</option> -->
+      <option value="moh-CA">Kanien'kéha</option>
+      <!-- <option value="rw">Kinyarwanda</option> -->
+      <option value="rw-RW">Kinyarwanda (Rwanda)</option>
+      <!-- <option value="sw">Kiswahili</option> -->
+      <option value="sw-KE">Kiswahili (Kenya)</option>
+      <!-- <option value="lv">latviešu</option> -->
+      <option value="lv-LV">latviešu (Latvija)</option>
+      <!-- <option value="lt">lietuvių</option> -->
+      <option value="lt-LT">lietuvių (Lietuva)</option>
+      <!-- <option value="lb">Lëtzebuergesch</option> -->
+      <option value="lb-LU">Lëtzebuergesch (Luxembourg)</option>
+      <!-- <option value="hu">magyar</option> -->
+      <option value="hu-HU">magyar (Magyarország)</option>
+      <!-- <option value="mt">Malti</option> -->
+      <option value="mt-MT">Malti (Malta)</option>
+      <!-- <option value="arn">Mapudungun</option> -->
+      <option value="arn-CL">Mapudungun (Chile)</option>
+      <!-- <option value="nl">Nederlands</option> -->
+      <option value="nl-BE">Nederlands (België)</option>
+      <option value="nl-NL">Nederlands (Nederland)</option>
+      <!-- <option value="nb">norsk (bokmål)</option> -->
+      <option value="nb-NO">norsk, bokmål (Norge)</option>
+      <!-- <option value="no">norsk</option> -->
+      <!-- <option value="nn">norsk (nynorsk)</option> -->
+      <option value="nn-NO">norsk, nynorsk (Noreg)</option>
+      <!-- <option value="oc">Occitan</option> -->
+      <option value="oc-FR">Occitan (França)</option>
+      <!-- <option value="pl">polski</option> -->
+      <option value="pl-PL">polski (Polska)</option>
+      <!-- <option value="pt">Português</option> -->
+      <option value="pt-BR">Português (Brasil)</option>
+      <option value="pt-PT">português (Portugal)</option>
+      <!-- <option value="mi">Reo Māori</option> -->
+      <option value="mi-NZ">Reo Māori (Aotearoa)</option>
+      <!-- <option value="ro">română</option> -->
+      <option value="ro-RO">română (România)</option>
+      <!-- <option value="rm">Rumantsch</option> -->
+      <option value="rm-CH">Rumantsch (Svizra)</option>
+      <!-- <option value="quz">runasimi</option> -->
+      <option value="quz-EC">runasimi (Ecuador)</option>
+      <option value="quz-PE">runasimi (Piruw)</option>
+      <option value="quz-BO">runasimi (Qullasuyu)</option>
+      <!-- <option value="nso">Sesotho sa Leboa</option> -->
+      <option value="nso-ZA">Sesotho sa Leboa (Afrika Borwa)</option>
+      <!-- <option value="tn">Setswana</option> -->
+      <option value="tn-ZA">Setswana (Aforika Borwa)</option>
+      <!-- <option value="sq">shqipe</option> -->
+      <option value="sq-AL">shqipe (Shqipëria)</option>
+      <!-- <option value="sl">slovenski</option> -->
+      <option value="sl-SI">slovenski (Slovenija)</option>
+      <!-- <option value="sk">slovenčina</option> -->
+      <option value="sk-SK">slovenčina (Slovenská republika)</option>
+      <!-- <option value="sr">srpski</option> -->
+      <!-- <option value="sr-Latn">srpski</option> -->
+      <option value="sr-Latn-BA">srpski (Bosna i Hercegovina)</option>
+      <option value="sr-Latn-ME">srpski (Crna Gora)</option>
+      <option value="sr-Latn-CS">srpski (Srbija i Crna Gora (Prethodno))</option>
+      <option value="sr-Latn-RS">srpski (Srbija)</option>
+      <!-- <option value="fi">suomi</option> -->
+      <option value="fi-FI">suomi (Suomi)</option>
+      <!-- <option value="sv">svenska</option> -->
+      <option value="sv-FI">svenska (Finland)</option>
+      <option value="sv-SE">svenska (Sverige)</option>
+      <!-- <option value="smn">sämikielâ</option> -->
+      <option value="smn-FI">sämikielâ (Suomâ)</option>
+      <!-- <option value="sms">sääm´ǩiõll</option> -->
+      <option value="sms-FI">sääm´ǩiõll (Lää´ddjânnam)</option>
+      <!-- <option value="tzm">Tamazight</option> -->
+      <!-- <option value="tzm-Latn">Tamazight</option> -->
+      <option value="tzm-Latn-DZ">Tamazight (Djazaïr)</option>
+      <!-- <option value="vi">Tiếng Việt</option> -->
+      <option value="vi-VN">Tiếng Việt (Việt Nam)</option>
+      <!-- <option value="tk">türkmençe</option> -->
+      <option value="tk-TM">türkmençe (Türkmenistan)</option>
+      <!-- <option value="tr">Türkçe</option> -->
+      <option value="tr-TR">Türkçe (Türkiye)</option>
+      <!-- <option value="uz">U'zbek</option> -->
+      <!-- <option value="uz-Latn">U'zbek</option> -->
+      <option value="uz-Latn-UZ">U'zbek (U'zbekiston Respublikasi)</option>
+      <!-- <option value="wo">Wolof</option> -->
+      <option value="wo-SN">Wolof (Sénégal)</option>
+      <!-- <option value="yo">Yoruba</option> -->
+      <option value="yo-NG">Yoruba (Nigeria)</option>
+      <!-- <option value="sma">åarjelsaemiengiele</option> -->
+      <option value="sma-NO">åarjelsaemiengiele (Nöörje)</option>
+      <option value="sma-SE">åarjelsaemiengiele (Sveerje)</option>
+      <!-- <option value="is">íslenska</option> -->
+      <option value="is-IS">íslenska (Ísland)</option>
+      <!-- <option value="cs">čeština</option> -->
+      <option value="cs-CZ">čeština (Česká republika)</option>
+      <!-- <option value="el">Ελληνικά</option> -->
+      <option value="el-GR">Ελληνικά (Ελλάδα)</option>
+      <!-- <option value="az-Cyrl">Азәрбајҹан дили</option> -->
+      <option value="az-Cyrl-AZ">Азәрбајҹан (Азәрбајҹан)</option>
+      <!-- <option value="ba">Башҡорт</option> -->
+      <option value="ba-RU">Башҡорт (Россия)</option>
+      <!-- <option value="be">Беларускі</option> -->
+      <option value="be-BY">Беларускі (Беларусь)</option>
+      <!-- <option value="bs-Cyrl">босански</option> -->
+      <option value="bs-Cyrl-BA">босански (Босна и Херцеговина)</option>
+      <!-- <option value="bg">български</option> -->
+      <option value="bg-BG">български (България)</option>
+      <!-- <option value="ky">Кыргыз</option> -->
+      <option value="ky-KG">Кыргыз (Кыргызстан)</option>
+      <!-- <option value="mk">македонски јазик</option> -->
+      <option value="mk-MK">македонски јазик (Македонија)</option>
+      <!-- <option value="mn">Монгол хэл</option> -->
+      <option value="mn-MN">Монгол хэл (Монгол улс)</option>
+      <option value="mn-Cyrl">Монгол хэл</option>
+      <!-- <option value="ru">русский</option> -->
+      <option value="ru-RU">русский (Россия)</option>
+      <!-- <option value="sah">саха</option> -->
+      <option value="sah-RU">саха (Россия)</option>
+      <!-- <option value="sr-Cyrl">српски</option> -->
+      <option value="sr-Cyrl-BA">српски (Босна и Херцеговина)</option>
+      <option value="sr-Cyrl-CS">српски (Србија и Црна Гора (Претходно))</option>
+      <option value="sr-Cyrl-RS">српски (Србија)</option>
+      <option value="sr-Cyrl-ME">српски (Црна Гора)</option>
+      <!-- <option value="tt">Татар</option> -->
+      <option value="tt-RU">Татар (Россия)</option>
+      <!-- <option value="tg">Тоҷикӣ</option> -->
+      <!-- <option value="tg-Cyrl">Тоҷикӣ</option> -->
+      <option value="tg-Cyrl-TJ">Тоҷикӣ (Тоҷикистон)</option>
+      <!-- <option value="uk">українська</option> -->
+      <option value="uk-UA">українська (Україна)</option>
+      <!-- <option value="uz-Cyrl">Ўзбек</option> -->
+      <option value="uz-Cyrl-UZ">Ўзбек (Ўзбекистон)</option>
+      <!-- <option value="kk">Қазақ</option> -->
+      <option value="kk-KZ">Қазақ (Қазақстан)</option>
+      <!-- <option value="hy">Հայերեն</option> -->
+      <option value="hy-AM">Հայերեն (Հայաստան)</option>
+      <!-- <option value="he">עברית</option> -->
+      <option value="he-IL">עברית (ישראל)</option>
+      <!-- <option value="ug">ئۇيغۇرچە</option> -->
+      <option value="ug-CN">ئۇيغۇرچە (جۇڭخۇا خەلق جۇمھۇرىيىتى)</option>
+      <!-- <option value="ar">العربية</option> -->
+      <option value="ar-JO">العربية (الأردن)</option>
+      <option value="ar-AE">العربية (الإمارات العربية المتحدة)</option>
+      <option value="ar-BH">العربية (البحرين)</option>
+      <option value="ar-DZ">العربية (الجزائر)</option>
+      <option value="ar-IQ">العربية (العراق)</option>
+      <option value="ar-KW">العربية (الكويت)</option>
+      <option value="ar-SA">العربية (المملكة العربية السعودية)</option>
+      <option value="ar-MA">العربية (المملكة المغربية)</option>
+      <option value="ar-YE">العربية (اليمن)</option>
+      <option value="ar-TN">العربية (تونس)</option>
+      <option value="ar-SY">العربية (سوريا)</option>
+      <option value="ar-OM">العربية (عمان)</option>
+      <option value="ar-QA">العربية (قطر)</option>
+      <option value="ar-LB">العربية (لبنان)</option>
+      <option value="ar-LY">العربية (ليبيا)</option>
+      <option value="ar-EG">العربية (مصر)</option>
+      <!-- <option value="ur">اُردو</option> -->
+      <option value="ur-PK">اُردو (پاکستان)</option>
+      <!-- <option value="prs">درى</option> -->
+      <option value="prs-AF">درى (افغانستان)</option>
+      <!-- <option value="fa">فارسى</option> -->
+      <option value="fa-IR">فارسى (ایران)</option>
+      <!-- <option value="ps">پښتو</option> -->
+      <option value="ps-AF">پښتو (افغانستان)</option>
+      <!-- <option value="syr">ܣܘܪܝܝܐ</option> -->
+      <option value="syr-SY">ܣܘܪܝܝܐ (سوريا)</option>
+      <!-- <option value="dv">ދިވެހިބަސް</option> -->
+      <option value="dv-MV">ދިވެހިބަސް (ދިވެހި ރާއްޖެ)</option>
+      <!-- <option value="kok">कोंकणी</option> -->
+      <option value="kok-IN">कोंकणी (भारत)</option>
+      <!-- <option value="ne">नेपाली</option> -->
+      <option value="ne-NP">नेपाली (नेपाल)</option>
+      <!-- <option value="mr">मराठी</option> -->
+      <option value="mr-IN">मराठी (भारत)</option>
+      <!-- <option value="sa">संस्कृत</option> -->
+      <option value="sa-IN">संस्कृत (भारतम्)</option>
+      <!-- <option value="hi">हिंदी</option> -->
+      <option value="hi-IN">हिंदी (भारत)</option>
+      <!-- <option value="as">অসমীয়া</option> -->
+      <option value="as-IN">অসমীয়া (ভাৰত)</option>
+      <!-- <option value="bn">বাংলা</option> -->
+      <option value="bn-BD">বাংলা (বাংলাদেশ)</option>
+      <option value="bn-IN">বাংলা (ভারত)</option>
+      <!-- <option value="pa">ਪੰਜਾਬੀ</option> -->
+      <option value="pa-IN">ਪੰਜਾਬੀ (ਭਾਰਤ)</option>
+      <!-- <option value="gu">ગુજરાતી</option> -->
+      <option value="gu-IN">ગુજરાતી (ભારત)</option>
+      <!-- <option value="or">ଓଡ଼ିଆ</option> -->
+      <option value="or-IN">ଓଡ଼ିଆ (ଭାରତ)</option>
+      <!-- <option value="ta">தமிழ்</option> -->
+      <option value="ta-IN">தமிழ் (இந்தியா)</option>
+      <!-- <option value="te">తెలుగు</option> -->
+      <option value="te-IN">తెలుగు (భారత దేశం)</option>
+      <!-- <option value="kn">ಕನ್ನಡ</option> -->
+      <option value="kn-IN">ಕನ್ನಡ (ಭಾರತ)</option>
+      <!-- <option value="ml">മലയാളം</option> -->
+      <option value="ml-IN">മലയാളം (ഭാരതം)</option>
+      <!-- <option value="si">සිංහල</option> -->
+      <option value="si-LK">සිංහල (ශ්\u200dරී ලංකා)</option>
+      <!-- <option value="th">ไทย</option> -->
+      <option value="th-TH">ไทย (ไทย)</option>
+      <!-- <option value="lo">ລາວ</option> -->
+      <option value="lo-LA">ລາວ (ສ.ປ.ປ. ລາວ)</option>
+      <!-- <option value="bo">བོད་ཡིག</option> -->
+      <option value="bo-CN">བོད་ཡིག (ཀྲུང་ཧྭ་མི་དམངས་སྤྱི་མཐུན་རྒྱལ་ཁབ།)</option>
+      <!-- <option value="ka">ქართული</option> -->
+      <option value="ka-GE">ქართული (საქართველო)</option>
+      <!-- <option value="am">አማርኛ</option> -->
+      <option value="am-ET">አማርኛ (ኢትዮጵያ)</option>
+      <!-- <option value="iu-Cans">ᐃᓄᒃᑎᑐᑦ</option> -->
+      <option value="iu-Cans-CA">ᐃᓄᒃᑎᑐᑦ (ᑲᓇᑕᒥ)</option>
+      <!-- <option value="km">ខ្មែរ</option> -->
+      <option value="km-KH">ខ្មែរ (កម្ពុជា)</option>
+      <!-- <option value="mn-Mong">ᠮᠤᠨᠭᠭᠤᠯ ᠬᠡᠯᠡ</option> -->
+      <option value="mn-Mong-CN">ᠮᠤᠨᠭᠭᠤᠯ ᠬᠡᠯᠡ (ᠪᠦᠭᠦᠳᠡ ᠨᠠᠢᠷᠠᠮᠳᠠᠬᠤ ᠳᠤᠮᠳᠠᠳᠤ ᠠᠷᠠᠳ ᠣᠯᠣᠰ)</option>
+      <!-- <option value="zh">中文</option> -->
+      <option value="zh-CN">中文(中华人民共和国)</option>
+      <option value="zh-TW">中文(台灣)</option>
+      <option value="zh-SG">中文(新加坡)</option>
+      <option value="zh-MO">中文(澳門特別行政區)</option>
+      <option value="zh-CHS">中文(简体) 旧版</option>
+      <option value="zh-Hans">中文(简体)</option>
+      <option value="zh-CHT">中文(繁體) 舊版</option>
+      <option value="zh-Hant">中文(繁體)</option>
+      <option value="zh-HK">中文(香港特別行政區)</option>
+      <!-- <option value="ja">日本語</option> -->
+      <option value="ja-JP">日本語 (日本)</option>
+      <!-- <option value="ii">ꆈꌠꁱꂷ</option> -->
+      <option value="ii-CN">ꆈꌠꁱꂷ (ꍏꉸꏓꂱꇭꉼꇩ)</option>
+      <!-- <option value="ko">한국어</option> -->
+      <option value="ko-KR">한국어 (대한민국)</option>
+    </select>
+  </template>
+</dom-module>
+
+
+<polymer-element name="basic-culture-selector" attributes="culture name">
+
+
+<script>
+// Stash the current file location so later we can load culture files relative
+// to this path.
+GlobalizeCulture = {
+  _scriptPath: document._currentScript.ownerDocument.href
+};
+
+Polymer({
+
+  is: 'basic-culture-selector',
+
+  ready: function() {
+    // Force retrieval of default culture.
+    this.nameChanged();
+  },
+
+  /**
+   * Fired when the culture attribute has been changed.
+   *
+   * @event basic-culture-changed
+   * @param Object detail Event details; the "culture" property contains a
+   *                      reference to the new Globalize culture.
+   */
+  cultureChanged: function() {
+    this.dispatchEvent(new CustomEvent('basic-culture-changed', {
+      detail: {
+        culture: this.culture
+      }
+    }));
+  },
+
+  nameChanged: function() {
+    var cultureIdentifier = this.name;
+    this._loadCulture(cultureIdentifier, function() {
+      this.culture = Globalize.cultures[cultureIdentifier];
+    }.bind(this));
+  },
+
+  properties: {
+    /**
+     * The name of the Globalize culture/language assigned to this element.
+     *
+     * @attribute name
+     * @type string
+     * @default "en-US"
+     */    
+    name: {
+      value: Globalize.cultures.default.name,
+      reflectToAttribute: true,
+      observer: 'nameChanged'
+    },
+
+    /**
+     * The Globalize culture/language settings loaded by this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    }
+  },
+
+  // Ensure the culture info for the given culture is loaded.
+  _loadCulture: function(cultureIdentifier, callback) {
+    if (Globalize.cultures[cultureIdentifier]) {
+      // Already loaded.
+      callback();
+    }
+    else {
+      // Dynamically load the culture file from the sibling Globalize component.
+      var cultureSettingsUrl = '../globalize/lib/cultures/globalize.culture.' + cultureIdentifier + '.js';
+      // Find the culture file relative to this file.
+      var url = this.resolvePath(cultureSettingsUrl);
+      var script = document.createElement('script');
+      script.addEventListener('load', function() {
+        callback();
+      }.bind(this));
+      script.src = url;
+      document.head.appendChild(script);
+    }
+  }
+
+});
+</script>
+
+</polymer-element>

@@ -1,0 +1,25 @@
+{
+  "segments": {
+    "identity": {
+      "version": {
+        "_cldrVersion": "27.0.1",
+        "_number": "$Revision: 8242 $"
+      },
+      "generation": {
+        "_date": "$Date: 2013-02-24 21:06:02 -0600 (Sun, 24 Feb 2013) $"
+      },
+      "language": "en",
+      "territory": "US",
+      "variant": "POSIX"
+    },
+    "segmentations": {
+      "WordBreak": {
+        "variables": [
+          { "$MidLetter": "[[$MidLetter]-[\\:]]"},
+          { "$MidNumLet": "[[$MidNumLet]-[.]]"},
+          { "$MidNum": "[[$MidNum] [.]]"}
+        ]
+      }
+    }
+  }
+}

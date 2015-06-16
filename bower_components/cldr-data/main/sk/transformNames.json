@@ -1,0 +1,30 @@
+{
+  "main": {
+    "sk": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "sk"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "Číslice",
+          "Tone": "Tón",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "Diakritika",
+          "x-Fullwidth": "Celá šírka",
+          "x-Halfwidth": "Polovičná šírka",
+          "x-Jamo": "Jamo",
+          "x-Pinyin": "Pinyin",
+          "x-Publishing": "Uverejnenie"
+        }
+      }
+    }
+  }
+}

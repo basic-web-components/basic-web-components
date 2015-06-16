@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="../webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="../basic-framed-content/basic-framed-content.html">
+<link rel="import" href="basic-culture-selector.html">
+
+<style>
+body,
+button,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+}
+
+basic-framed-content {
+  padding: 2em;
+}
+</style>
+
+<script>
+var model = {};
+
+window.addEventListener( "WebComponentsReady", function() {
+  document.querySelector( "template" ).model = model;
+  document.querySelector( "basic-culture-selector" ).addEventListener( "basic-culture-changed", function( event ) {
+    var culture = event.detail.culture;
+     model.details = {
+      nativeName: culture.nativeName,
+      englishName: culture.englishName,
+      dateExample: Globalize.format( new Date(), "D", culture ),
+      numberExample: Globalize.format( 1234567.89, "n", culture ),
+      currencyExample: Globalize.format( 1234.56, "c", culture )
+    };
+  });
+});
+</script>
+
+</head>
+
+<body unresolved>
+<basic-framed-content>
+  <p>
+    <basic-culture-selector>Pick your preferred language/location settings:</basic-culture-selector>
+  </p>
+  <template bind="{{details}}">
+    <div>Culture name: {{nativeName}}</div>
+    <div>English name: {{englishName}}</div>
+    <div>Today's date: {{dateExample}}</div>
+    <div>Number example: {{numberExample}}</div>
+    <div>Currency example: {{currencyExample}}</div>
+  </template>
+</basic-framed-content>
+</body>
+
+</html>

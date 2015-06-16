@@ -1,0 +1,185 @@
+{
+  "main": {
+    "zu": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11093 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-01-02 21:36:02 -0600 (Fri, 02 Jan 2015) $"
+        },
+        "language": "zu"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "Ikhalenda",
+          "colAlternate": "Ziba Ukuhlelwa Kwezimpawu",
+          "colBackwards": "Ukuhlelwa Kwendlela Yokubiza Okuhlehlisiwe",
+          "colCaseFirst": "Ukuhlelwa Ngokwezinhlamvu Ezinkulu/Ezincane",
+          "colCaseLevel": "Ukuhlelwa Okuncike Ezinkinobhweni",
+          "colHiraganaQuaternary": "Ukuhlela ngokwe-Kana",
+          "colNormalization": "Ukuhlelwa Okulinganisiwe",
+          "colNumeric": "Ukuhlelwa Ngezinombolo",
+          "colStrength": "Amandla Okuhlelwa",
+          "collation": "Uhlelo lokuhlunga",
+          "currency": "Ikharensi",
+          "numbers": "Izinombolo",
+          "timezone": "Izoni yesikhathi:",
+          "va": "Okokwehlukanisa Kwasendaweni",
+          "variableTop": "Hlela Njengezimpawu",
+          "x": "i-Private-Use"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "i-Buddhist Calender",
+            "chinese": "i-Chinese Calender",
+            "coptic": "i-Coptic Calender",
+            "dangi": "i-Dangi Calendar",
+            "ethiopic": "i-Ethipic Calender",
+            "ethiopic-amete-alem": "i-Ethiopic Amete Alem Calender",
+            "gregorian": "i-Gregorian Calender",
+            "hebrew": "i-Hebrew Calender",
+            "indian": "i-Indian National Calender",
+            "islamic": "i-Islamic Calender",
+            "islamic-civil": "i-Islamic-Civil Calendar",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "I-ISO-8601 Khalenda",
+            "japanese": "i-Japanese Calendar",
+            "persian": "i-Persian Calendar",
+            "roc": "i-Minguo Calender"
+          },
+          "colAlternate": {
+            "non-ignorable": "Hlela Izimpawu",
+            "shifted": "Hlela Ukuziba Izimpawu"
+          },
+          "colBackwards": {
+            "no": "Hlela Izindlela Zokuphimisela Ngokujwayelekile",
+            "yes": "Ukuhlelwa Kokuphimisela Kuhlehlisiwe"
+          },
+          "colCaseFirst": {
+            "lower": "Hlela Okwezinhlamvu Eziphansi Kuqala",
+            "no": "Hlela Ngokwenhlamvu Ezejwayelekile",
+            "upper": "Hlela Izinhlamvu Ezinkulu Kuqala"
+          },
+          "colCaseLevel": {
+            "no": "Hlela Okungancikile Ezinkinobhweni",
+            "yes": "Hlela Okuncike Ekumeni Kwezinkinobho"
+          },
+          "colHiraganaQuaternary": {
+            "no": "Hlela i-Kana Eceleni",
+            "yes": "Hlela i-Kana Ngendlela Ehlukile"
+          },
+          "colNormalization": {
+            "no": "Hlela Ngaphandle Kokulinganisa",
+            "yes": "Ukuhlelwa Khekhodi Enye Kulinganisiwe"
+          },
+          "colNumeric": {
+            "no": "Hlela Izinhlamvu Zenombolo Ngazinye",
+            "yes": "Hlela Izinhlamvu Ngokwezinombolo"
+          },
+          "colStrength": {
+            "identical": "Hlela konke",
+            "primary": "Hlela Izinhlamvu Zaphansi Kuphela",
+            "quaternary": "Hlola Ukuphimisela/Ukuma kwezinhlamvu/Ububanzi/i-Kana",
+            "secondary": "Hlela Ukuphimisela",
+            "tertiary": "Hlela Ukuphimisela/Ukuma kwezinhlamvu/Ububanzi"
+          },
+          "collation": {
+            "big5han": "Ukuhlunga kwe-Traditional Chinese - Big5",
+            "dictionary": "Ukuhlunga kwesichazimazwi",
+            "ducet": "Ukuhlunga okuzenzakalelayo kwe-Unicode",
+            "eor": "eor",
+            "gb2312han": "Ukuhlunga kwe-Simplified Chinese - GB2312",
+            "phonebook": "Ukuhlunga kwebhuku lefoni",
+            "phonetic": "Hlela Ngokwefonetiki",
+            "pinyin": "Ukuhlunga nge-Pinyin",
+            "reformed": "Ukuhlunga okwenziwe kabusha",
+            "search": "Usesho olujwayelekile",
+            "searchjl": "Sesha nge-Hangul Ongwaqa Basekuqaleni",
+            "standard": "I-oda yokuhlunga ejwayelekile",
+            "stroke": "Ukuhlunga kwe-Stroke",
+            "traditional": "Ukuhlunga ngokisiko",
+            "unihan": "Ukuhlunga kwe-Radical-Stroke",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "i-Arabic-Indic Digits",
+            "arabext": "i-Extended Arabic-Indic Digits",
+            "armn": "i-Armenian Numerals",
+            "armnlow": "i-Armenian Lowercase Numerals",
+            "bali": "bali",
+            "beng": "i-Bengali Digits",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "i-Devanagari Digits",
+            "ethi": "i-Ethiopic Numerals",
+            "finance": "Izinombolo Zezomnotho",
+            "fullwide": "i-Full Width Digits",
+            "geor": "i-Georgian Numerals",
+            "grek": "i-Greek Numerals",
+            "greklow": "i-Greek Lowercase Numerals",
+            "gujr": "i-Gujarati Digits",
+            "guru": "i-Gurmukhi Digits",
+            "hanidec": "i-Chinese Decimal Numerals",
+            "hans": "i-Simplified Chinese Numerals",
+            "hansfin": "i-Simplified Chinese Financial Numerals",
+            "hant": "i-Traditional Chinese Numerals",
+            "hantfin": "i-Traditional Chinese Financial Numerals",
+            "hebr": "i-Hebrew Numerals",
+            "java": "java",
+            "jpan": "i-Japanese Numerals",
+            "jpanfin": "i-Japanese Financial Numerals",
+            "kali": "kali",
+            "khmr": "i-Khmer Digits",
+            "knda": "i-Kannada Digits",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "i-Lao Digits",
+            "latn": "i-Western Digits",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "i-Malayalam Digits",
+            "mong": "i-Mongolian Digits",
+            "mtei": "mtei",
+            "mymr": "i-Myanmar Digits",
+            "mymrshan": "mymrshan",
+            "native": "Izinkinobho Zasendaweni",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "i-Oriya Digits",
+            "osma": "osma",
+            "roman": "i-Roman Numerals",
+            "romanlow": "i-Roman Lowercase Numerals",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "i-Tamil Numerals",
+            "tamldec": "i-Tamil Digits",
+            "telu": "i-Telegu Digits",
+            "thai": "i-Thai Digits",
+            "tibt": "i-Tibetan Digits",
+            "traditional": "Izinombolo Ezijwayelekile",
+            "vaii": "Izinhlazu Zezinombolo ze-Vai"
+          }
+        },
+        "codePatterns": {
+          "language": "{0}",
+          "script": "{0}",
+          "territory": "{0}"
+        }
+      }
+    }
+  }
+}

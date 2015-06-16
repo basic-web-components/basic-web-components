@@ -1,0 +1,24 @@
+{
+  "main": {
+    "sr-Latn-ME": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11324 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 16:53:17 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "sr",
+        "script": "Latn",
+        "territory": "ME"
+      },
+      "posix": {
+        "messages": {
+          "yesstr": "da:d",
+          "nostr": "ne:n"
+        }
+      }
+    }
+  }
+}

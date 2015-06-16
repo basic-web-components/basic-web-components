@@ -1,0 +1,185 @@
+{
+  "main": {
+    "et": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "et"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "kalender",
+          "colAlternate": "Sortimine sümboleid eirates",
+          "colBackwards": "Vastupidine sortimine rõhumärkide alusel",
+          "colCaseFirst": "Suur-/väiketähtede järjestus",
+          "colCaseLevel": "Tõstutundlik sortimine",
+          "colHiraganaQuaternary": "Sortimine kana kirjasüsteemi alusel",
+          "colNormalization": "Normeeritud sortimine",
+          "colNumeric": "Sortimine numbrite alusel",
+          "colStrength": "Sortimisalus",
+          "collation": "Sortimisjärjestus",
+          "currency": "vääring",
+          "numbers": "Numbrid",
+          "timezone": "Ajavöönd",
+          "va": "Lokaadi variant",
+          "variableTop": "Sümbolite alusel sortimine",
+          "x": "Erakasutus"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "budistlik kalender",
+            "chinese": "Hiina kalender",
+            "coptic": "Kopti kalender",
+            "dangi": "dangi kalender",
+            "ethiopic": "Etioopia kalender",
+            "ethiopic-amete-alem": "Etioopia amete alemi kalender",
+            "gregorian": "Gregoriuse kalender",
+            "hebrew": "juudi kalender",
+            "indian": "India rahvuslik",
+            "islamic": "islamikalender",
+            "islamic-civil": "islami ilmalik kalender",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "ISO-8601 kalender",
+            "japanese": "Jaapani kalender",
+            "persian": "Pärsia kalender",
+            "roc": "Hiina Vabariigi kalender"
+          },
+          "colAlternate": {
+            "non-ignorable": "Sümbolite sortimine",
+            "shifted": "Sordi sümboleid eirates"
+          },
+          "colBackwards": {
+            "no": "Tavajärjestuses rõhumärkide alusel",
+            "yes": "Vastupidine sortimine rõhumärkide alusel"
+          },
+          "colCaseFirst": {
+            "lower": "Järjestus alates väiketähtedest",
+            "no": "Tõstutundlikkuse alusel sortimine",
+            "upper": "Järjestus alates suurtähtedest"
+          },
+          "colCaseLevel": {
+            "no": "Tõstutundlikkuseta sortimine",
+            "yes": "Tõstutundlikkuse alusel sortimine"
+          },
+          "colHiraganaQuaternary": {
+            "no": "Kana-kirjasüsteemi eraldi sortimine",
+            "yes": "Kana-kirjasüsteemi sortimine eraldi"
+          },
+          "colNormalization": {
+            "no": "Normeerimata sortimine",
+            "yes": "Normeeritud Unicode’i alusel sortimine"
+          },
+          "colNumeric": {
+            "no": "Numbrite eraldi sortimine",
+            "yes": "Numbrite alusel sortimine"
+          },
+          "colStrength": {
+            "identical": "Sordi kõik",
+            "primary": "Ainult põhitähestiku alusel sortimine",
+            "quaternary": "Rõhumärkide/algustähe/laiuse/kana-süsteemi alusel sortimine",
+            "secondary": "Rõhumärkide sortimine",
+            "tertiary": "Rõhumärkide/algustähe/laiuse alusel sortimine"
+          },
+          "collation": {
+            "big5han": "hiina traditsiooniline - big5",
+            "dictionary": "Sõnastiku sortimisjärjestus",
+            "ducet": "Unicode’i sortimise vaikejärjestus",
+            "eor": "eor",
+            "gb2312han": "hiina lihtsustatud - GB2312",
+            "phonebook": "telefoniraamat",
+            "phonetic": "Foneetiline sortimisjärjestus",
+            "pinyin": "hiina lihtsustatud - pinyin järjekorras",
+            "reformed": "Reformitud sortimisjärjestus",
+            "search": "Üldeesmärgiline otsing",
+            "searchjl": "Otsing hanguli alguskonsonandi alusel",
+            "standard": "Standardne sortimisjärjestus",
+            "stroke": "elementide kirjutamise järjekorras",
+            "traditional": "traditsiooniline",
+            "unihan": "Radikaal-kriipsude sortimisjärjestus",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "Araabia-indic numbrid",
+            "arabext": "Laiendatud araabia-indic numbrid",
+            "armn": "Armeenia numbrid",
+            "armnlow": "Armeenia numbrid väikeste tähtedega",
+            "bali": "bali",
+            "beng": "Bengali numbrid",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "Devanagari numbrid",
+            "ethi": "Etioopia numbrid",
+            "finance": "Finantsarvud",
+            "fullwide": "Täislaiusega numbrid",
+            "geor": "Gruusia numbrid",
+            "grek": "Kreeka numbrid",
+            "greklow": "Kreeka väiketähelised numbrid",
+            "gujr": "Gudžarati numbrid",
+            "guru": "Gurmukhi numbrid",
+            "hanidec": "Hiina kümnendnumbrid",
+            "hans": "Lihtsustatud hiina keele numbrid",
+            "hansfin": "Lihtsustatud hiina keele finantsnumbrid",
+            "hant": "Traditsioonilise hiina keele numbrid",
+            "hantfin": "Traditsioonilise hiina keele finantsnumbrid",
+            "hebr": "Heebrea numbrid",
+            "java": "java",
+            "jpan": "Jaapani numbrid",
+            "jpanfin": "Jaapani rahandusnumeraalid",
+            "kali": "kali",
+            "khmr": "Khmeri numbrid",
+            "knda": "Kannada numbrid",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "Lao numbrid",
+            "latn": "Ladina numbrid",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "Malayalami numbrid",
+            "mong": "Mongoolia numbrid",
+            "mtei": "mtei",
+            "mymr": "Myanmari numbrid",
+            "mymrshan": "mymrshan",
+            "native": "Kohalik numbrisüsteem",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "Oria numbrid",
+            "osma": "osma",
+            "roman": "Rooma numbrid",
+            "romanlow": "Rooma numbrid väikeste tähtedega",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "Tamili numbrid",
+            "tamldec": "Tamili numbrid",
+            "telu": "Telugu numbrid",
+            "thai": "Tai numbrid",
+            "tibt": "Tiibeti numbrid",
+            "traditional": "Traditsiooniline numbrisüsteem",
+            "vaii": "Vai numbrisüsteem"
+          }
+        },
+        "codePatterns": {
+          "language": "Keel: {0}",
+          "script": "Skript: {0}",
+          "territory": "Regioon: {0}"
+        }
+      }
+    }
+  }
+}

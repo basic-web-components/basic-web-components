@@ -1,0 +1,31 @@
+{
+  "main": {
+    "pt-CV": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10708 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-31 16:08:50 -0500 (Thu, 31 Jul 2014) $"
+        },
+        "language": "pt",
+        "territory": "CV"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "Numérico",
+          "Tone": "Tom",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "Acentos",
+          "x-Fullwidth": "Largura completa",
+          "x-Halfwidth": "Meia largura",
+          "x-Jamo": "Jamo",
+          "x-Pinyin": "Pinyin",
+          "x-Publishing": "Publicação"
+        }
+      }
+    }
+  }
+}

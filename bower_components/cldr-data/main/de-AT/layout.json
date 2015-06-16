@@ -1,0 +1,23 @@
+{
+  "main": {
+    "de-AT": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11250 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-18 17:24:51 -0600 (Wed, 18 Feb 2015) $"
+        },
+        "language": "de",
+        "territory": "AT"
+      },
+      "layout": {
+        "orientation": {
+          "characterOrder": "left-to-right",
+          "lineOrder": "top-to-bottom"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "main": {
+    "pt-CV": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10708 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-31 16:08:50 -0500 (Thu, 31 Jul 2014) $"
+        },
+        "language": "pt",
+        "territory": "CV"
+      },
+      "contextTransforms": {
+        "day-format-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "day-standalone-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "languages": {
+          "uiListOrMenu": "no-change",
+          "stand-alone": "titlecase-firstword"
+        },
+        "relative": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        }
+      }
+    }
+  }
+}

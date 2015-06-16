@@ -1,0 +1,44 @@
+{
+  "main": {
+    "ca-ES-VALENCIA": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10741 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-08-07 13:24:47 -0500 (Thu, 07 Aug 2014) $"
+        },
+        "language": "ca",
+        "territory": "ES",
+        "variant": "VALENCIA"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} i {1}",
+          "2": "{0} i {1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} i {1}",
+          "2": "{0} i {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} i {1}",
+          "2": "{0} i {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} i {1}",
+          "2": "{0} i {1}"
+        }
+      }
+    }
+  }
+}

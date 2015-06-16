@@ -1,0 +1,133 @@
+{
+  "main": {
+    "hy": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "hy"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}. {1}"
+        },
+        "keys": {
+          "calendar": "Տոմար",
+          "collation": "Տեսակավորման կարգ",
+          "currency": "արժույթ",
+          "numbers": "թվեր"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "Բուդդայական տոմար",
+            "chinese": "Չինական տոմար",
+            "coptic": "coptic",
+            "dangi": "Դանգիական տոմար",
+            "ethiopic": "Եթովպիական տոմար",
+            "ethiopic-amete-alem": "ethiopic-amete-alem",
+            "gregorian": "Գրիգորյան տոմար",
+            "hebrew": "Հրեական տոմար",
+            "indian": "indian",
+            "islamic": "Իսլամական տոմար",
+            "islamic-civil": "islamic-civil",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "ISO-8601 տոմար",
+            "japanese": "Ճապոնական տոմար",
+            "persian": "Պարսկական տոմար",
+            "roc": "Մինգուո տոմար"
+          },
+          "collation": {
+            "big5han": "big5han",
+            "dictionary": "dictionary",
+            "ducet": "Սկզբնադիր տեսակավորման կարգ Unicode-ի համար",
+            "eor": "eor",
+            "gb2312han": "gb2312han",
+            "phonebook": "phonebook",
+            "pinyin": "pinyin",
+            "reformed": "reformed",
+            "search": "Ընդհանուր որոնում",
+            "searchjl": "searchjl",
+            "standard": "Տեսակավորման ստանդարտ կարգ",
+            "stroke": "stroke",
+            "traditional": "traditional",
+            "unihan": "unihan",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "արաբա-հնդկական թվեր",
+            "arabext": "արաբա-հնդկական թվերի ընդլայնված համակարգ",
+            "armn": "հայկական թվեր",
+            "armnlow": "հայկական թվեր (փոքրատառ)",
+            "bali": "bali",
+            "beng": "բենգալական թվեր",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "դեվանագարի թվեր",
+            "ethi": "եթովպական թվեր",
+            "fullwide": "թվերի լայն ձևաչափ",
+            "geor": "վրացական թվեր",
+            "grek": "հունական թվեր",
+            "greklow": "հունական թվեր (փոքրատառ)",
+            "gujr": "գուջարաթի թվեր",
+            "guru": "գուրմուխի թվեր",
+            "hanidec": "չինական տասնորդական թվեր",
+            "hans": "չինական պարզեցված թվեր",
+            "hansfin": "չինական պարզեցված ֆինանսական թվեր",
+            "hant": "չինական ավանդական թվեր",
+            "hantfin": "չինական ավանդական ֆինանսական թվեր",
+            "hebr": "եբրայերեն թվեր",
+            "java": "java",
+            "jpan": "ճապոնական թվեր",
+            "jpanfin": "ճապոնական ֆինանսական թվեր",
+            "kali": "kali",
+            "khmr": "քմերական թվեր",
+            "knda": "կաննադա թվեր",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "լաոսական թվեր",
+            "latn": "արևմտյան թվեր",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "մալայալամ թվեր",
+            "mong": "mong",
+            "mtei": "mtei",
+            "mymr": "բիրմական թվեր",
+            "mymrshan": "mymrshan",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "օրիյա թվեր",
+            "osma": "osma",
+            "roman": "հռոմեական թվեր",
+            "romanlow": "հռոմեական թվեր (փոքրատառ)",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "թամիլական ավանդական թվեր",
+            "tamldec": "թամիլական թվեր",
+            "telu": "թելուգու թվեր",
+            "thai": "թայական թվեր",
+            "tibt": "տիբեթական թվեր",
+            "vaii": "vaii"
+          }
+        },
+        "codePatterns": {
+          "language": "Լեզու. {0}",
+          "script": "Գիր. {0}",
+          "territory": "Շրջան. {0}"
+        }
+      }
+    }
+  }
+}

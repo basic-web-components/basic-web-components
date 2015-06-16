@@ -1,0 +1,90 @@
+{
+  "main": {
+    "et": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "et"
+      },
+      "localeDisplayNames": {
+        "variants": {
+          "1606NICT": "hiline kesk-prantsuse kuni 1606",
+          "1694ACAD": "varajane moodne prantsuse",
+          "1901": "saksa traditsiooniline kirjaviis",
+          "1959ACAD": "akadeemiline",
+          "1994": "standardiseeritud Resia ortograafia",
+          "1996": "saksa reformitud kirjaviis",
+          "ALALC97": "ALALC97",
+          "ALUKU": "ALUKU",
+          "AREVELA": "ida-armeenia",
+          "AREVMDA": "lääne-armeenia",
+          "BAKU1926": "ühtlustatud türgi-ladina tähestik",
+          "BALANKA": "BALANKA",
+          "BARLA": "BARLA",
+          "BAUDDHA": "BAUDDHA",
+          "BISCAYAN": "BISCAYAN",
+          "BISKE": "San Giorgio/Bila murre",
+          "BOHORIC": "BOHORIC",
+          "BOONT": "boontlingi",
+          "DAJNKO": "DAJNKO",
+          "EKAVSK": "EKAVSK",
+          "EMODENG": "EMODENG",
+          "FONIPA": "IPA foneetika",
+          "FONUPA": "UPA foneetika",
+          "FONXSAMP": "FONXSAMP",
+          "HEPBURN": "HEPBURN",
+          "HOGNORSK": "HOGNORSK",
+          "IJEKAVSK": "IJEKAVSK",
+          "ITIHASA": "ITIHASA",
+          "JAUER": "JAUER",
+          "JYUTPING": "JYUTPING",
+          "KKCOR": "üldlevinud ortograafia",
+          "KOCIEWIE": "KOCIEWIE",
+          "KSCOR": "KSCOR",
+          "LAUKIKA": "LAUKIKA",
+          "LIPAW": "Resia Lipovaz’i murre",
+          "LUNA1918": "LUNA1918",
+          "METELKO": "METELKO",
+          "MONOTON": "monotoonne",
+          "NDYUKA": "NDYUKA",
+          "NEDIS": "Natisone murre",
+          "NJIVA": "Gniva/Njiva murre",
+          "NULIK": "NULIK",
+          "OSOJS": "Oseacco/Osojane murre",
+          "PAMAKA": "PAMAKA",
+          "PETR1708": "PETR1708",
+          "PINYIN": "pinyin",
+          "POLYTON": "polütooniline",
+          "POSIX": "arvuti",
+          "PUTER": "PUTER",
+          "REVISED": "uus kirjaviis",
+          "RIGIK": "RIGIK",
+          "ROZAJ": "Resia murre",
+          "RUMGR": "RUMGR",
+          "SAAHO": "saho murre",
+          "SCOTLAND": "šoti tavainglise",
+          "SCOUSE": "scouse",
+          "SOLBA": "Stolvizza/Solbica murre",
+          "SOTAV": "SOTAV",
+          "SURMIRAN": "SURMIRAN",
+          "SURSILV": "SURSILV",
+          "SUTSILV": "SUTSILV",
+          "TARASK": "Taraskievica ortograafia",
+          "UCCOR": "ühtlustatud ortograafia",
+          "UCRCOR": "ühtlustatud redigeeritud ortograafia",
+          "ULSTER": "ULSTER",
+          "UNIFON": "UNIFON",
+          "VAIDIKA": "VAIDIKA",
+          "VALENCIA": "valentsia",
+          "VALLADER": "VALLADER",
+          "WADEGILE": "Wade-Giles"
+        }
+      }
+    }
+  }
+}

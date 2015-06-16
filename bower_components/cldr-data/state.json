@@ -1,0 +1,22 @@
+{
+  "url": [
+    "https://github.com/unicode-cldr/cldr-core/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-dates-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-buddhist-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-chinese-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-coptic-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-dangi-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-ethiopic-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-hebrew-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-indian-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-islamic-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-japanese-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-persian-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-cal-roc-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-localenames-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-misc-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-numbers-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-segments-modern/archive/27.0.3.zip",
+    "https://github.com/unicode-cldr/cldr-units-modern/archive/27.0.3.zip"
+  ]
+}

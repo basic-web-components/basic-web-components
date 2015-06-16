@@ -1,0 +1,33 @@
+{
+  "main": {
+    "fr": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11346 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+        },
+        "language": "fr"
+      },
+      "contextTransforms": {
+        "day-format-except-narrow": {
+          "stand-alone": "titlecase-firstword"
+        },
+        "day-standalone-except-narrow": {
+          "stand-alone": "titlecase-firstword"
+        },
+        "languages": {
+          "uiListOrMenu": "titlecase-firstword"
+        },
+        "month-format-except-narrow": {
+          "stand-alone": "titlecase-firstword"
+        },
+        "month-standalone-except-narrow": {
+          "stand-alone": "titlecase-firstword"
+        }
+      }
+    }
+  }
+}
