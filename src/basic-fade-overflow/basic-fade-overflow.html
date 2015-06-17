@@ -19,7 +19,7 @@ content is short enough to fit completely in view.
 TODO: Automatically hide the fade if all the content can be seen.
 -->
 
-<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 
 <dom-module id="basic-fade-overflow">
 
@@ -32,7 +32,7 @@ TODO: Automatically hide the fade if all the content can be seen.
 
   #fade {
     bottom: 0;
-    height: 3em;
+    height: var(--fade-height, 3em);
     max-height: 50%;
     pointer-events: none; /* Lets user interact with content through the fade. */
     position: absolute;
