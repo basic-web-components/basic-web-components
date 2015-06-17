@@ -8,7 +8,7 @@ suite('events', function() {
     container.innerHTML = '';
   });
 
-  test('basic-culture-changed', function (done) {
+  test.skip('basic-culture-changed', function (done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
     assert.equal(fixture.name, 'en');

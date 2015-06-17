@@ -7,6 +7,7 @@
   "dependencies": {
     "basic-shared": "basic-web-components/basic-shared#master",
     "globalize": "^1.0.0",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.0.2",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@
   "version": "0.6.2-pre",
   "dependencies": {
     "iron-icons": "PolymerElements/iron-icons#^1.0.1",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.0.2",
     "globalize": "^1.0.0",
     "polymer": "Polymer/polymer#^1.0.0"
   },

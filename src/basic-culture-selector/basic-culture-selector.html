@@ -11,9 +11,32 @@ then read the "culture" attribute to get its settings.
 -->
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 
-<script src="../../bower_components/globalize/lib/globalize.js"></script>
+<!--
+First, we load Globalize's dependencies (`cldrjs` and its supplemental
+module).
+-->
+<script src="../../bower_components/cldrjs/dist/cldr.js"></script>
+<script src="../../bower_components/cldrjs/dist/cldr/event.js"></script>
+<script src="../../bower_components/cldrjs/dist/cldr/supplemental.js"></script>
 
+<!--
+Next, we load Globalize and its modules. Note they are already available on
+this repository. If it's not, read Usage on Getting Started on the root's
+README.md.
+-->
+<script src="../../bower_components/globalize/dist/globalize.js"></script>
+<script src="../../bower_components/globalize/dist/globalize/message.js"></script>
+<script src="../../bower_components/globalize/dist/globalize/number.js"></script>
+<script src="../../bower_components/globalize/dist/globalize/plural.js"></script>
+
+<!-- Load after globalize/number.js -->
+<script src="../../bower_components/globalize/dist/globalize/date.js"></script>
+<script src="../../bower_components/globalize/dist/globalize/currency.js"></script>
+
+<!-- Load after globalize/number.js and globalize/plural.js-->
+<script src="../../bower_components/globalize/dist/globalize/relative-time.js"></script>
 
 <dom-module id="basic-culture-selector">
   <style>
@@ -28,7 +51,12 @@ then read the "culture" attribute to get its settings.
 
   <template>
     <content></content>
-    <select id="culturePicker" value="{{name}}">
+    <iron-ajax id="ajax"
+               auto
+               handle-as="json"
+               on-response="handleAvailableLocales"></iron-ajax>
+    <select id="culturePicker" value="{{name}}"></select>
+    <select id="culturePickerXXX" value="{{name}}">
       <!-- <option value="af">Afrikaans</option> -->
       <option value="af-ZA">Afrikaans (Suid Afrika)</option>
       <!-- <option value="az">Azərbaycan\xadılı</option> -->
@@ -385,15 +413,15 @@ then read the "culture" attribute to get its settings.
   </template>
 </dom-module>
 
-
-<polymer-element name="basic-culture-selector" attributes="culture name">
-
-
 <script>
+function handleAvailableLocales(response) {
+  console.dir(response);
+}
+
 // Stash the current file location so later we can load culture files relative
 // to this path.
 GlobalizeCulture = {
-  _scriptPath: document._currentScript.ownerDocument.href
+  _scriptPath: document.currentScript.baseURI
 };
 
 Polymer({
@@ -402,7 +430,20 @@ Polymer({
 
   ready: function() {
     // Force retrieval of default culture.
-    this.nameChanged();
+    var basePath = GlobalizeCulture._scriptPath;
+    basePath = basePath.substring(0, basePath.lastIndexOf("/"));
+    this.$.ajax.url = new URL('../../bower_components/cldr-data/availableLocales.json', basePath);
+    //this.nameChanged();
+  },
+
+  handleAvailableLocales: function(e) {
+    var availableLocales = e.detail.response.availableLocales;
+    for (var i = 0; i < availableLocales.length; i++) {
+      var elem = document.createElement('option');
+      elem.value = availableLocales[i];
+      elem.innerHTML = availableLocales[i];
+      this.$.culturePicker.appendChild(elem);
+    }
   },
 
   /**
@@ -421,6 +462,7 @@ Polymer({
   },
 
   nameChanged: function() {
+    return;
     var cultureIdentifier = this.name;
     this._loadCulture(cultureIdentifier, function() {
       this.culture = Globalize.cultures[cultureIdentifier];
@@ -436,7 +478,7 @@ Polymer({
      * @default "en-US"
      */    
     name: {
-      value: Globalize.cultures.default.name,
+      value: 'en-US',
       reflectToAttribute: true,
       observer: 'nameChanged'
     },
@@ -455,6 +497,7 @@ Polymer({
 
   // Ensure the culture info for the given culture is loaded.
   _loadCulture: function(cultureIdentifier, callback) {
+    return;
     if (Globalize.cultures[cultureIdentifier]) {
       // Already loaded.
       callback();
@@ -475,5 +518,3 @@ Polymer({
 
 });
 </script>
-
-</polymer-element>
