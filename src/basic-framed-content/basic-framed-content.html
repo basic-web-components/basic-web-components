@@ -62,7 +62,8 @@ Polymer({
    * @method broadcastContent
    */
   broadcastContent: function() {
-    this._postMessageToParent('framedContentResponse', this.innerHTML);
+    var content = Polymer.dom(this).innerHTML;
+    this._postMessageToParent('framedContentResponse', content);
   },
 
   /**
