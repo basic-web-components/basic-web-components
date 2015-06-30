@@ -380,8 +380,9 @@ window.Basic.ContentHelpers = {
    * handler will be invoked instead. If the handler parameter is null, this
    * function will disconnect any existing observer.
    *
-   * This method is typically invoked by a component's attached handler, and
-   * the invoked with observeChanges = false in the detached handler.
+   * This method is typically invoked by a component's attached() method, and
+   * again in the detached() method with the handler param to false to stop
+   * observing.
    *
    * NOTE: This content observation system currently works with native Shadow
    * DOM, but only partially supports Polymer's Shady DOM. Specifically, when

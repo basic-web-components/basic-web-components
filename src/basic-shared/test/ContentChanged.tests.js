@@ -168,6 +168,29 @@ suite('ContentHelpers and ContentChanged', function() {
     });
   });
 
+  test("opt into observing changes in subtree", function(done) {
+    var fixture = document.createElement('content-test-element');
+    fixture.contentChangedOptions = {
+      characterData: true,
+      childList: true,
+      subtree: true // Default is false
+    };
+    var child = document.createElement('div');
+    Polymer.dom(fixture).appendChild(child);
+    container.appendChild(fixture);
+    flush(function() {
+      fixture.contentChangedHook = function() {
+        var children = Polymer.dom(fixture).children;
+        var grandchildren = Polymer.dom(children[0]).children;
+        assert.equal(grandchildren.length, 1);
+        done();
+      };
+      // Adding grandchild should be detected.
+      var grandchild = document.createElement('span');
+      Polymer.dom(child).appendChild(grandchild);
+    });
+  });
+
   test.skip('observe changes in child attribute', function(done) {
     var fixture = document.createElement('content-test-element');
     var button = document.createElement('button');
