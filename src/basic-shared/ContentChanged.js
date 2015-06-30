@@ -165,7 +165,6 @@ function observeContentMutations(node, handler, options) {
   options = options || {
     characterData: true,
     childList: true
-    // subtree: true
   };
   node._contentChangeObserver.observe(node, options);
 }
@@ -396,7 +395,7 @@ window.Basic.ContentHelpers = {
    * @param {Object} options The options to pass to the MutationObserver.
    */
   observeContentChanges: function(node, handler, options) {
-    if (handler || typeof handler === 'undefined') {
+    if (handler !== false) {
       // Start observing
       handler = (handler || node.contentChanged).bind(node);
       node._contentChangeHandler = handler;
@@ -419,11 +418,11 @@ window.Basic.ContentHelpers = {
 window.Basic.ContentChanged = {
 
   attached: function() {
-    Basic.ContentHelpers.observeContentChanges(this, this.contentChangedOptions);
+    Basic.ContentHelpers.observeContentChanges(this, null, this.contentChangedOptions);
   },
 
   detached: function() {
-    Basic.ContentHelpers.observeContentChanges(this, null, false);
+    Basic.ContentHelpers.observeContentChanges(this, false);
   },
 
   get flattenChildren() {
@@ -437,7 +436,7 @@ window.Basic.ContentChanged = {
   get flattenTextContent() {
     return Basic.ContentHelpers.flattenTextContent(this);
   },
-  
+
   properties: {
     contentChangedOptions: {
       value: null

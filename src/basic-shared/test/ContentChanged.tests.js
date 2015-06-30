@@ -149,7 +149,9 @@ suite('ContentHelpers and ContentChanged', function() {
       // This handler should only get invoked when the first child is added,
       // and then again when the sibling child is added.
       assert.isTrue(state === 1 || state === 3);
-      done();
+      if (state === 3) {
+        done();
+      }
     };
     container.appendChild(fixture);
     flush(function() {
