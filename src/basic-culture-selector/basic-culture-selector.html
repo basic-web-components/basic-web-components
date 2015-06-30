@@ -13,6 +13,8 @@ then read the "culture" attribute to get its settings.
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 
+<script src="../../bower_components/deepmerge/index.js"></script>
+
 <!--
 First, we load Globalize's dependencies (`cldrjs` and its supplemental
 module).
@@ -54,8 +56,11 @@ README.md.
     <iron-ajax id="ajax"
                auto
                handle-as="json"
-               on-response="handleAvailableLocales"></iron-ajax>
-    <select id="culturePicker" value="{{name}}"></select>
+               on-response="_onAjaxComplete"></iron-ajax>
+    <select id="culturePicker" value="{{name}}">
+      <option value="af">Afrikaans</option>
+      <option value="en-US">English (American)</option>
+    </select>
     <select id="culturePickerXXX" value="{{name}}">
       <!-- <option value="af">Afrikaans</option> -->
       <option value="af-ZA">Afrikaans (Suid Afrika)</option>
@@ -414,10 +419,6 @@ README.md.
 </dom-module>
 
 <script>
-function handleAvailableLocales(response) {
-  console.dir(response);
-}
-
 // Stash the current file location so later we can load culture files relative
 // to this path.
 GlobalizeCulture = {
@@ -428,21 +429,41 @@ Polymer({
 
   is: 'basic-culture-selector',
 
+  _localeJson: {},
+  _localeFiles: [
+    '../../bower_components/cldr-data/main/en/ca-gregorian.json',
+    '../../bower_components/cldr-data/supplemental/likelySubtags.json',
+    '../../bower_components/cldr-data/supplemental/timeData.json',
+    '../../bower_components/cldr-data/supplemental/weekData.json'
+  ],
+  _localeFilesLoadCount: 0,
+
   ready: function() {
-    // Force retrieval of default culture.
+    // Perform initial fetches for initialization of Globalize
     var basePath = GlobalizeCulture._scriptPath;
     basePath = basePath.substring(0, basePath.lastIndexOf("/"));
-    this.$.ajax.url = new URL('../../bower_components/cldr-data/availableLocales.json', basePath);
+    for (var i = 0; i < this._localeFiles.length; i++) {
+      this.$.ajax.url = new URL(this._localeFiles[i], basePath);
+
+      if (i < this._localeFiles.length - 1) {
+        this.$.ajax.generateRequest();
+      }
+    }
+
     //this.nameChanged();
   },
 
-  handleAvailableLocales: function(e) {
-    var availableLocales = e.detail.response.availableLocales;
-    for (var i = 0; i < availableLocales.length; i++) {
-      var elem = document.createElement('option');
-      elem.value = availableLocales[i];
-      elem.innerHTML = availableLocales[i];
-      this.$.culturePicker.appendChild(elem);
+  _initializeGlobalize: function() {
+    console.log('Ready to initialize Globalize with:');
+    console.dir(this._localeJson);
+  },
+
+  _onAjaxComplete: function(request) {
+    this._localeJson = deepmerge(this._localeJson, request.detail.response);
+    this._localeFilesLoadCount++;
+
+    if (this._localeFilesLoadCount == this._localeFiles.length) {
+      this._initializeGlobalize();
     }
   },
 
