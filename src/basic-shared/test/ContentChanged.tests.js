@@ -140,6 +140,32 @@ suite('ContentHelpers and ContentChanged', function() {
     });
   });
 
+  test("by default, don't observe changes in subtree", function(done) {
+    var fixture = document.createElement('content-test-element');
+    var state = 1;
+    var child = document.createElement('div');
+    Polymer.dom(fixture).appendChild(child);
+    fixture.contentChangedHook = function() {
+      // This handler should only get invoked when the first child is added,
+      // and then again when the sibling child is added.
+      assert.isTrue(state === 1 || state === 3);
+      done();
+    };
+    container.appendChild(fixture);
+    flush(function() {
+      // Adding grandchild should have no effect.
+      state = 2;
+      var grandchild = document.createElement('span');
+      Polymer.dom(child).appendChild(grandchild);
+      flush(function() {
+        // Adding a sibling child should have an effect.
+        state = 3;
+        var sibling = document.createElement('p');
+        Polymer.dom(fixture).appendChild(sibling);
+      });
+    });
+  });
+
   test.skip('observe changes in child attribute', function(done) {
     var fixture = document.createElement('content-test-element');
     var button = document.createElement('button');

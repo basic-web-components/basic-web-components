@@ -160,14 +160,14 @@ function lightDomContentChanged(node) {
 
 // Wire up an observer for (light DOM) content change events on the given
 // node.
-function observeContentMutations(node, handler) {
+function observeContentMutations(node, handler, options) {
   node._contentChangeObserver = new MutationObserver(handler);
-  node._contentChangeObserver.observe(node, {
-    // attributes: true,
+  options = options || {
     characterData: true,
-    childList: true,
-    subtree: true
-  });
+    childList: true
+    // subtree: true
+  };
+  node._contentChangeObserver.observe(node, options);
 }
 
 
@@ -193,9 +193,11 @@ function observeHostIfContentElementPresent(component, node) {
     var host = Basic.ContentHelpers.getHost(node);
     if (host) {
       node._contentHost = host;
-      observeContentMutations(host, function() {
+      var handler = function() {
         lightDomContentChanged(component);
-      });
+      };
+      var options = component.contentChangeOptions;
+      observeContentMutations(host, handler, options);
       observeHostIfContentElementPresent(component, host);
     }
   }
@@ -389,14 +391,16 @@ window.Basic.ContentHelpers = {
    * correctly detect when nodes are only *removed* from it.
    *
    * @method observeContentChanges
+   * @param {Object} node The node to observe
    * @param {Function} handler The function to invoke when content changes.
+   * @param {Object} options The options to pass to the MutationObserver.
    */
-  observeContentChanges: function(node, handler) {
+  observeContentChanges: function(node, handler, options) {
     if (handler || typeof handler === 'undefined') {
       // Start observing
       handler = (handler || node.contentChanged).bind(node);
       node._contentChangeHandler = handler;
-      observeContentMutations(node, mutationObserved.bind(node));
+      observeContentMutations(node, mutationObserved.bind(node), options);
       if (Polymer.dom(node).childNodes.length > 0) {
         // Consider any initial content of a new element to be "changed" content.
         lightDomContentChanged(node);
@@ -415,11 +419,11 @@ window.Basic.ContentHelpers = {
 window.Basic.ContentChanged = {
 
   attached: function() {
-    Basic.ContentHelpers.observeContentChanges(this);
+    Basic.ContentHelpers.observeContentChanges(this, this.contentChangedOptions);
   },
 
   detached: function() {
-    Basic.ContentHelpers.observeContentChanges(this, false);
+    Basic.ContentHelpers.observeContentChanges(this, null, false);
   },
 
   get flattenChildren() {
@@ -432,6 +436,12 @@ window.Basic.ContentChanged = {
 
   get flattenTextContent() {
     return Basic.ContentHelpers.flattenTextContent(this);
+  },
+  
+  properties: {
+    contentChangedOptions: {
+      value: null
+    }
   }
 
 };
