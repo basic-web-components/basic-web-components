@@ -47,7 +47,7 @@ window.Basic.ChildrenContent = {
       if (this._previousInnermostAspect && this._previousInnermostAspect._contentChangeObserver) {
         // Stop observing changes on the old innermost aspect.
         // console.log("stopping observation of changes on old innermost aspect");
-        Basic.ContentHelpers.observeContentChanges(this._previousInnermostAspect, null);
+        Basic.ContentHelpers.observeContentChanges(this._previousInnermostAspect, false);
       }
 
       Basic.ContentHelpers.observeContentChanges(innermost, function() {
