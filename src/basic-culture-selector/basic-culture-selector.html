@@ -54,7 +54,6 @@ README.md.
   <template>
     <content></content>
     <iron-ajax id="ajax"
-               auto
                handle-as="json"
                on-response="_onAjaxComplete"></iron-ajax>
     <select id="culturePicker" value="{{name::input}}">
@@ -426,46 +425,62 @@ Polymer({
   is: 'basic-culture-selector',
 
   _localeJson: {},
-  // BUGBUG - anything under the main directory needs to be dynamically specified
-  _localeFiles: [
-    '../../bower_components/cldr-data/main/en/ca-gregorian.json',
-    '../../bower_components/cldr-data/main/en/numbers.json',
-    '../../bower_components/cldr-data/main/en/currencies.json',
+  _expectedAjaxFileCount: 0,
+  _cldrFiles: [
     '../../bower_components/cldr-data/supplemental/numberingSystems.json',
     '../../bower_components/cldr-data/supplemental/currencyData.json',
     '../../bower_components/cldr-data/supplemental/likelySubtags.json',
     '../../bower_components/cldr-data/supplemental/timeData.json',
     '../../bower_components/cldr-data/supplemental/weekData.json'
   ],
+  _localeFilesTemplate: [
+    '../../bower_components/cldr-data/main/{{cultureString}}/ca-gregorian.json',
+    '../../bower_components/cldr-data/main/{{cultureString}}/numbers.json',
+    '../../bower_components/cldr-data/main/{{cultureString}}/currencies.json'
+  ],
   _localeFilesLoadCount: 0,
   _globalizeInitialized: false,
 
   ready: function() {
     // Perform initial fetches for initialization of Globalize
+    this._expectedAjaxFileCount = this._cldrFiles.length + this._localeFilesTemplate.length;
     var basePath = GlobalizeCulture._scriptPath;
     basePath = basePath.substring(0, basePath.lastIndexOf("/"));
-    for (var i = 0; i < this._localeFiles.length; i++) {
-      this.$.ajax.url = new URL(this._localeFiles[i], basePath);
+    for (var i = 0; i < this._cldrFiles.length; i++) {
+      this.$.ajax.url = new URL(this._cldrFiles[i], basePath);
+      this.$.ajax.generateRequest();
+    }
 
-      if (i < this._localeFiles.length - 1) {
-        this.$.ajax.generateRequest();
-      }
+    this._loadLocaleFiles();
+  },
+
+  _loadLocaleFiles: function() {
+    var basePath = GlobalizeCulture._scriptPath;
+    basePath = basePath.substring(0, basePath.lastIndexOf("/"));
+
+    for (var i = 0; i < this._localeFilesTemplate.length; i++) {
+      var url = this._localeFilesTemplate[i].replace('{{cultureString}}', this.name);
+      this.$.ajax.url = new URL(url, basePath);
+      this.$.ajax.generateRequest();
     }
   },
 
-  _initializeGlobalize: function() {
+  _updateGlobalize: function() {
     Globalize.load(this._localeJson);
     this._globalizeInitialized = true;
 
-    this.nameChanged();
+    //this.nameChanged();
+    if (this._globalizeInitialized) {
+      this.culture = Globalize(this.name);
+    }
   },
 
   _onAjaxComplete: function(request) {
     this._localeJson = deepmerge(this._localeJson, request.detail.response);
     this._localeFilesLoadCount++;
 
-    if (this._localeFilesLoadCount == this._localeFiles.length) {
-      this._initializeGlobalize();
+    if (this._localeFilesLoadCount == this._expectedAjaxFileCount) {
+      this._updateGlobalize();
     }
   },
 
@@ -488,7 +503,10 @@ Polymer({
 
   nameChanged: function() {
     if (this._globalizeInitialized) {
-      this.culture = Globalize(this.name);
+      //this.culture = Globalize(this.name);
+      this._expectedAjaxFileCount = this._localeFilesTemplate.length;
+      this._localeFilesLoadCount = 0;
+      this._loadLocaleFiles();
     }
   },
 
