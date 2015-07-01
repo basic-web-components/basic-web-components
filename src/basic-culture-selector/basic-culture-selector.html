@@ -57,11 +57,7 @@ README.md.
                auto
                handle-as="json"
                on-response="_onAjaxComplete"></iron-ajax>
-    <select id="culturePicker" value="{{name}}">
-      <option value="af">Afrikaans</option>
-      <option value="en-US">English (American)</option>
-    </select>
-    <select id="culturePickerXXX" value="{{name}}">
+    <select id="culturePicker" value="{{name::input}}">
       <!-- <option value="af">Afrikaans</option> -->
       <option value="af-ZA">Afrikaans (Suid Afrika)</option>
       <!-- <option value="az">Azərbaycan\xadılı</option> -->
@@ -430,13 +426,19 @@ Polymer({
   is: 'basic-culture-selector',
 
   _localeJson: {},
+  // BUGBUG - anything under the main directory needs to be dynamically specified
   _localeFiles: [
     '../../bower_components/cldr-data/main/en/ca-gregorian.json',
+    '../../bower_components/cldr-data/main/en/numbers.json',
+    '../../bower_components/cldr-data/main/en/currencies.json',
+    '../../bower_components/cldr-data/supplemental/numberingSystems.json',
+    '../../bower_components/cldr-data/supplemental/currencyData.json',
     '../../bower_components/cldr-data/supplemental/likelySubtags.json',
     '../../bower_components/cldr-data/supplemental/timeData.json',
     '../../bower_components/cldr-data/supplemental/weekData.json'
   ],
   _localeFilesLoadCount: 0,
+  _globalizeInitialized: false,
 
   ready: function() {
     // Perform initial fetches for initialization of Globalize
@@ -449,13 +451,13 @@ Polymer({
         this.$.ajax.generateRequest();
       }
     }
-
-    //this.nameChanged();
   },
 
   _initializeGlobalize: function() {
-    console.log('Ready to initialize Globalize with:');
-    console.dir(this._localeJson);
+    Globalize.load(this._localeJson);
+    this._globalizeInitialized = true;
+
+    this.nameChanged();
   },
 
   _onAjaxComplete: function(request) {
@@ -475,19 +477,19 @@ Polymer({
    *                      reference to the new Globalize culture.
    */
   cultureChanged: function() {
-    this.dispatchEvent(new CustomEvent('basic-culture-changed', {
-      detail: {
-        culture: this.culture
-      }
-    }));
+    if (this._globalizeInitialized) {
+      this.dispatchEvent(new CustomEvent('basic-culture-changed', {
+        detail: {
+          culture: this.culture
+        }
+      }));
+    }
   },
 
   nameChanged: function() {
-    return;
-    var cultureIdentifier = this.name;
-    this._loadCulture(cultureIdentifier, function() {
-      this.culture = Globalize.cultures[cultureIdentifier];
-    }.bind(this));
+    if (this._globalizeInitialized) {
+      this.culture = Globalize(this.name);
+    }
   },
 
   properties: {
@@ -496,10 +498,10 @@ Polymer({
      *
      * @attribute name
      * @type string
-     * @default "en-US"
+     * @default "en"
      */    
     name: {
-      value: 'en-US',
+      value: 'en',
       reflectToAttribute: true,
       observer: 'nameChanged'
     },
@@ -513,27 +515,6 @@ Polymer({
       value: null,
       reflectToAttribute: true,
       observer: 'cultureChanged'
-    }
-  },
-
-  // Ensure the culture info for the given culture is loaded.
-  _loadCulture: function(cultureIdentifier, callback) {
-    return;
-    if (Globalize.cultures[cultureIdentifier]) {
-      // Already loaded.
-      callback();
-    }
-    else {
-      // Dynamically load the culture file from the sibling Globalize component.
-      var cultureSettingsUrl = '../globalize/lib/cultures/globalize.culture.' + cultureIdentifier + '.js';
-      // Find the culture file relative to this file.
-      var url = this.resolvePath(cultureSettingsUrl);
-      var script = document.createElement('script');
-      script.addEventListener('load', function() {
-        callback();
-      }.bind(this));
-      script.src = url;
-      document.head.appendChild(script);
     }
   }
 

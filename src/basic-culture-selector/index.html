@@ -28,20 +28,35 @@
   </style>
 
   <script>
-  var model = {};
+
+  function handleCultureChanged(bcsElement, culture) {
+    var locale = culture.cldr.locale;
+    var numberFormatter = Globalize(locale).numberFormatter();
+    var dateFormatter = Globalize(locale).dateFormatter();
+    var currencyFormatter = Globalize(locale).currencyFormatter('USD'); // BUGBUG
+
+    document.querySelector('template').model = {
+      cultureName: bcsElement.name,
+      englishName: culture.englishName,
+      dateExample: dateFormatter(new Date()),
+      numberExample: numberFormatter(1234567.89),
+      currencyExample: currencyFormatter(1234.56),
+      test: 'Hello, world'
+    };
+  }
 
   window.addEventListener("WebComponentsReady", function() {
-    document.querySelector("template").model = model;
-    document.querySelector("basic-culture-selector").addEventListener("basic-culture-changed", function(event) {
-      var culture = event.detail.culture;
-       model.details = {
-        nativeName: culture.nativeName,
-        englishName: culture.englishName,
-        dateExample: Globalize.format(new Date(), "D", culture),
-        numberExample: Globalize.format(1234567.89, "n", culture),
-        currencyExample: Globalize.format(1234.56, "c", culture)
-      };
+    document.querySelector("template").model = {};
+    var bcsElement = document.querySelector('basic-culture-selector');
+    bcsElement.addEventListener("basic-culture-changed", function(event) {
+      handleCultureChanged(bcsElement, event.detail.culture);
     });
+
+    // If the newly constructed element has the culture property set, use it.
+    // Otherwise, we'll pick it up in the basic-culture-changed event.
+    if (bcsElement.culture) {
+      handleCultureChanged(bcsElement, bcsElement.culture);
+    }
   });
   </script>
 
@@ -52,12 +67,11 @@
   <p>
     <basic-culture-selector>Pick your preferred language/location settings:</basic-culture-selector>
   </p>
-  <template bind="{{details}}">
-    <div>Culture name: {{nativeName}}</div>
-    <div>English name: {{englishName}}</div>
-    <div>Today's date: {{dateExample}}</div>
-    <div>Number example: {{numberExample}}</div>
-    <div>Currency example: {{currencyExample}}</div>
+  <template is="dom-bind">
+    <div>Culture name: <span>{{model.cultureName}}</span></div>
+    <div>Today's date: <span>{{model.dateExample}}</span></div>
+    <div>Number example: <span>{{model.numberExample}}</span></div>
+    <div>Currency example: <span>{{model.currencyExample}}</span></div>
   </template>
 </basic-framed-content>
 </body>
