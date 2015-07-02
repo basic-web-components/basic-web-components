@@ -55,7 +55,8 @@ README.md.
     <content></content>
     <iron-ajax id="ajax"
                handle-as="json"
-               on-response="_onAjaxComplete"></iron-ajax>
+               on-response="_onAjaxComplete"
+               on-error="_onAjaxError"></iron-ajax>
     <select id="culturePicker" value="{{name::input}}"></select>
   </template>
 </dom-module>
@@ -81,6 +82,9 @@ Polymer({
   // Expected and actual number of ajax responses
   _expectedResponseCount: 0,
   _actualResponseCount: 0,
+
+  // Was there an error during ajax operations?
+  _ajaxError: false,
 
   // Array of CLDR files to be loaded as part of initialization
   _cldrFiles: [
@@ -157,6 +161,16 @@ Polymer({
     }
   },
 
+  _onAjaxError: function(request, error) {
+    this._actualResponseCount++;
+    this._ajaxError = true;
+
+    // Attempt to set the locale as best we can with what we have
+    if (this._actualResponseCount >= this._expectedResponseCount) {
+      this._setGlobalizeLocale();
+    }
+  },
+
   /**
    * Fired when the culture attribute has been changed.
    *
@@ -178,6 +192,7 @@ Polymer({
       // call to _loadLocaleFiles
       this._expectedResponseCount = this._localeFiles.length;
       this._actualResponseCount = 0;
+      this._ajaxError = false;
       this._loadLocaleFiles();
     }
   },
