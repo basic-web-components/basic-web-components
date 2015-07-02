@@ -67,12 +67,22 @@ GlobalizeCulture = {
   _scriptPath: document.currentScript.baseURI
 };
 
+var BASE_PATH = GlobalizeCulture._scriptPath.substring(0, GlobalizeCulture._scriptPath.lastIndexOf('/'));
+
+var DEFAULT_LOCALE = 'en';
+
 Polymer({
 
   is: 'basic-culture-selector',
 
+  // JSON to hand off to Globalize intializer
   _localeJson: {},
-  _expectedAjaxFileCount: 0,
+
+  // Expected and actual number of ajax responses
+  _expectedResponseCount: 0,
+  _actualResponseCount: 0,
+
+  // Array of CLDR files to be loaded as part of initialization
   _cldrFiles: [
     '../../bower_components/cldr-data/supplemental/numberingSystems.json',
     '../../bower_components/cldr-data/supplemental/currencyData.json',
@@ -80,23 +90,24 @@ Polymer({
     '../../bower_components/cldr-data/supplemental/timeData.json',
     '../../bower_components/cldr-data/supplemental/weekData.json'
   ],
-  _localeFilesTemplate: [
+
+  // Array of files to be loaded per locale
+  _localeFiles: [
     '../../bower_components/cldr-data/main/{{cultureString}}/ca-gregorian.json',
     '../../bower_components/cldr-data/main/{{cultureString}}/numbers.json',
     '../../bower_components/cldr-data/main/{{cultureString}}/currencies.json'
   ],
-  _localeFilesLoadCount: 0,
+
+  // Have we initialized Globalize
   _globalizeInitialized: false,
 
   ready: function() {
     this._populatePicker();
 
     // Perform initial fetches for initialization of Globalize
-    this._expectedAjaxFileCount = this._cldrFiles.length + this._localeFilesTemplate.length;
-    var basePath = GlobalizeCulture._scriptPath;
-    basePath = basePath.substring(0, basePath.lastIndexOf("/"));
+    this._expectedResponseCount = this._cldrFiles.length + this._localeFiles.length;
     for (var i = 0; i < this._cldrFiles.length; i++) {
-      this.$.ajax.url = new URL(this._cldrFiles[i], basePath);
+      this.$.ajax.url = new URL(this._cldrFiles[i], BASE_PATH);
       this.$.ajax.generateRequest();
     }
 
@@ -106,7 +117,7 @@ Polymer({
   _populatePicker: function() {
     for (var key in LANGUAGE_BY_LOCALE) {
       var index = AVAILABLE_LOCALES.indexOf(key);
-      if (LANGUAGE_BY_LOCALE.hasOwnProperty(key) && (key == 'en-US' || index >= 0)) {
+      if (LANGUAGE_BY_LOCALE.hasOwnProperty(key) && (key == DEFAULT_LOCALE || index >= 0)) {
         var elem = document.createElement('option');
         elem.value = key =='en-US' ? 'en-US-POSIX' : key;
         elem.innerHTML = LANGUAGE_BY_LOCALE[key];
@@ -114,9 +125,9 @@ Polymer({
       }
     }
 
-    // Set the default
+    // Set the default selection option
     for (var i = 0; i < this.$.culturePicker.options.length; i++) {
-      if (this.$.culturePicker.options[i].value === 'en') {
+      if (this.$.culturePicker.options[i].value === DEFAULT_LOCALE) {
         this.$.culturePicker.selectedIndex = i;
         break;
       }
@@ -124,31 +135,25 @@ Polymer({
   },
 
   _loadLocaleFiles: function() {
-    var basePath = GlobalizeCulture._scriptPath;
-    basePath = basePath.substring(0, basePath.lastIndexOf("/"));
-
-    for (var i = 0; i < this._localeFilesTemplate.length; i++) {
-      var url = this._localeFilesTemplate[i].replace('{{cultureString}}', this.name);
-      this.$.ajax.url = new URL(url, basePath);
+    for (var i = 0; i < this._localeFiles.length; i++) {
+      var url = this._localeFiles[i].replace('{{cultureString}}', this.name);
+      this.$.ajax.url = new URL(url, BASE_PATH);
       this.$.ajax.generateRequest();
     }
   },
 
-  _updateGlobalize: function() {
+  _setGlobalizeLocale: function() {
     Globalize.load(this._localeJson);
     this._globalizeInitialized = true;
-
-    if (this._globalizeInitialized) {
-      this.culture = Globalize(this.name);
-    }
+    this.culture = Globalize(this.name);
   },
 
   _onAjaxComplete: function(request) {
     this._localeJson = deepmerge(this._localeJson, request.detail.response);
-    this._localeFilesLoadCount++;
+    this._actualResponseCount++;
 
-    if (this._localeFilesLoadCount == this._expectedAjaxFileCount) {
-      this._updateGlobalize();
+    if (this._actualResponseCount >= this._expectedResponseCount) {
+      this._setGlobalizeLocale();
     }
   },
 
@@ -160,19 +165,19 @@ Polymer({
    *                      reference to the new Globalize culture.
    */
   cultureChanged: function() {
-    if (this._globalizeInitialized) {
-      this.dispatchEvent(new CustomEvent('basic-culture-changed', {
-        detail: {
-          culture: this.culture
-        }
-      }));
-    }
+    this.dispatchEvent(new CustomEvent('basic-culture-changed', {
+      detail: {
+        culture: this.culture
+      }
+    }));
   },
 
   nameChanged: function() {
     if (this._globalizeInitialized) {
-      this._expectedAjaxFileCount = this._localeFilesTemplate.length;
-      this._localeFilesLoadCount = 0;
+      // Need to reset _expectedResponseCount and _actualResponseCount prior to the
+      // call to _loadLocaleFiles
+      this._expectedResponseCount = this._localeFiles.length;
+      this._actualResponseCount = 0;
       this._loadLocaleFiles();
     }
   },
@@ -186,7 +191,7 @@ Polymer({
      * @default "en"
      */    
     name: {
-      value: 'en',
+      value: DEFAULT_LOCALE,
       reflectToAttribute: true,
       observer: 'nameChanged'
     },
