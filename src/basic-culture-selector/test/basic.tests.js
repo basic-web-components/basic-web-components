@@ -11,7 +11,7 @@ suite('basic', function() {
   test('instantiation', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    flush(function() {
+    fixture.addEventListener('basic-culture-changed', function(event) {
       assert(fixture);
       done();
     });
@@ -20,14 +20,16 @@ suite('basic', function() {
   test('default name', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    assert.equal(fixture.name, 'en');
-    done();
+    fixture.addEventListener('basic-culture-changed', function(event) {
+      assert.equal(fixture.name, 'en');
+      done();
+    });
   });
 
   test('set name', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener("basic-culture-changed", function(event) {
+    fixture.addEventListener('basic-culture-changed', function(event) {
       var culture = event.detail.culture;
 
       // Skip the default setting notification
