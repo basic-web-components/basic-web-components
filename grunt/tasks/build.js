@@ -89,6 +89,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options:{
+          inlineScripts: true,
           excludes: {
             imports: ['polymer.html']
           }
@@ -99,6 +100,7 @@ module.exports = function(grunt) {
       },
       dist_include_polymer: {
         options:{
+          inlineScripts: true
         },
         files: {
           '<%= build_dir %>/<%= pkg.name %>-polymer.html' : '<%= build_dir %>/<%= pkg.name %>-polymer.html'
@@ -113,6 +115,14 @@ module.exports = function(grunt) {
         replacements: [{
           from: 'bower_components',
           to: '..'
+        }]
+      },
+      cldr: {
+        src: ['dist/basic-web-components.html'],
+        overwrite: true,
+        replacements: [{
+          from: '../../../cldr-data/',
+          to: '../bower_components/cldr-data/'
         }]
       },
       remote_test: {
@@ -186,6 +196,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build:release', function(version) {
     version = version || 'patch';
-    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_dist');
+    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_dist', 'replace:cldr');
   });
 };
