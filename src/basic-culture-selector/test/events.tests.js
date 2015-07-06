@@ -8,16 +8,19 @@ suite('events', function() {
     container.innerHTML = '';
   });
 
-  test.skip('basic-culture-changed', function (done) {
+  test('basic-culture-changed', function (done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
     assert.equal(fixture.name, 'en');
-    fixture.addEventListener('basic-culture-changed', function(e) {
-      assert.equal(fixture.name, 'fr-FR');
+    fixture.addEventListener('basic-culture-changed', function(event) {
+      if (fixture.name == 'en') {
+        fixture.name = 'fr';
+        return;
+      }
+
+      assert.equal(fixture.name, 'fr');
       done();
     });
-
-    fixture.name = 'fr-FR';
   });
 
 });

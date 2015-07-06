@@ -33,15 +33,13 @@
     var locale = culture.cldr.locale;
     var numberFormatter = Globalize(locale).numberFormatter();
     var dateFormatter = Globalize(locale).dateFormatter();
-    var currencyFormatter = Globalize(locale).currencyFormatter('USD'); // BUGBUG
+    var currencyFormatter = Globalize(locale).currencyFormatter('USD');
 
     document.querySelector('template').model = {
       cultureName: bcsElement.name,
-      englishName: culture.englishName,
       dateExample: dateFormatter(new Date()),
       numberExample: numberFormatter(1234567.89),
       currencyExample: currencyFormatter(1234.56),
-      test: 'Hello, world'
     };
   }
 
