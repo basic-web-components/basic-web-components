@@ -141,6 +141,33 @@ Polymer({
       this.dotClick(event);
     }.bind(this));
   },
+  
+  /**
+   * The index of the item which is currently selected, or -1 if there is no
+   * selection.
+   *
+   * @property selectedIndex
+   * @type Number
+   */
+  get selectedIndex() {
+    return this.collective.selectedIndex;
+  },
+  set selectedIndex(index) {
+    this.collective.selectedIndex = index;
+  },
+
+  /**
+   * The currently selected item, or null if there is no selection.
+   *
+   * @property selectedItem
+   * @type Object
+   */
+  get selectedItem() {
+    return this.collective.selectedItem;
+  },
+  set selectedItem(item) {
+    this.collective.selectedItem = item;
+  },
 
   _createDots: function(count) {
     var dotContainer = this.$.dots;
