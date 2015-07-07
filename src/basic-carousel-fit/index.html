@@ -36,6 +36,7 @@
   <script>
   document.addEventListener('WebComponentsReady', function() {
     document.body.removeAttribute('unresolved');
+    document.querySelector('template').index = 1;
   });
   </script>
 </head>
@@ -48,8 +49,9 @@
   carousel onto a page without having to apply explicit styling to the
   carousel or the images.
 </p>
+<template is="dom-bind">
 <basic-arrow-direction target="child" aria-label="Flags">
-  <basic-carousel-fit>
+  <basic-carousel-fit selected-index="{{index}}">
     <img src="http://hosting.component.kitchen/resources/flags/Brazil.png" alt="Brazil flag">
     <img src="http://hosting.component.kitchen/resources/flags/Cameroon.png" alt="Cameroon flag">
     <img src="http://hosting.component.kitchen/resources/flags/Gabon.png" alt="Gabon flag">
@@ -59,6 +61,8 @@
     <img src="http://hosting.component.kitchen/resources/flags/United_States.png" alt="United States flag">
   </basic-carousel-fit>
 </basic-arrow-direction>
+<div>{{index}}</div>
+</template>
 </basic-framed-content>
 </body>
 
