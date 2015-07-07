@@ -91,10 +91,10 @@ window.Basic.ItemSelection = {
           bubbles: true,
           detail: {
             selectedItem: item,
-            previousItem: previousItem
+            previousItem: previousItem,
+            value: item // for Polymer binding
           }
         });
-
         outermost.dispatchEvent(event);
       }
     },
@@ -131,6 +131,18 @@ window.Basic.ItemSelection = {
         item = items[index];
       }
       this.collective.selectedItem = item;
+
+      var outermost = this.collective.outermostAttached;
+      if (outermost) {
+        var event = new CustomEvent('selected-index-changed', {
+          bubbles: true,
+          detail: {
+            selectedIndex: index,
+            value: index // for Polymer binding
+          }
+        });
+        outermost.dispatchEvent(event);
+      }
     },
 
     /**

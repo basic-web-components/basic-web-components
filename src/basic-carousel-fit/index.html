@@ -50,8 +50,8 @@
   carousel or the images.
 </p>
 <template is="dom-bind">
-<basic-arrow-direction target="child" aria-label="Flags">
-  <basic-carousel-fit selected-index="{{index}}">
+<basic-arrow-direction target="child" aria-label="Flags" selected-index="{{index}}" selected-item="{{item}}">
+  <basic-carousel-fit>
     <img src="http://hosting.component.kitchen/resources/flags/Brazil.png" alt="Brazil flag">
     <img src="http://hosting.component.kitchen/resources/flags/Cameroon.png" alt="Cameroon flag">
     <img src="http://hosting.component.kitchen/resources/flags/Gabon.png" alt="Gabon flag">
@@ -62,6 +62,7 @@
   </basic-carousel-fit>
 </basic-arrow-direction>
 <div>{{index}}</div>
+<div>{{item.src}}</div>
 </template>
 </basic-framed-content>
 </body>

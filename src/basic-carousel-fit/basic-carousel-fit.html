@@ -88,19 +88,6 @@ Polymer({
 
   behaviors: [Basic.Aspect],
 
-  contribute: {
-
-    set selectedIndex(index) {
-      var event = new CustomEvent('selected-index-changed', {
-        detail: {
-          value: index
-        }
-      });
-      this.dispatchEvent(event);
-    }
-
-  },
-
   /**
    * Returns the positional index for the indicated item.
    *
@@ -125,12 +112,6 @@ Polymer({
   },
 
   properties: {
-    // selectedIndex: {
-    //   type: Number,
-    //   notify: true,
-    //   observer: '_selectedIndexChanged',
-    //   reflectToAttribute: true
-    // },
     target: {
       value: 'shadow'
     }
@@ -157,10 +138,6 @@ Polymer({
   set selectedIndex(index) {
     this.collective.selectedIndex = index;
   },
-
-  // _selectedIndexChanged: function(index) {
-  //   console.log("changed: " + index);
-  // },
 
   /**
    * The currently selected item, or null if there is no selection.
