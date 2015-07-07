@@ -65,7 +65,7 @@ README.md.
 // Stash the current file location so later we can load culture files relative
 // to this path.
 GlobalizeCulture = {
-  _scriptPath: document.currentScript.baseURI
+  _scriptPath: document.baseURI
 };
 
 var BASE_PATH = GlobalizeCulture._scriptPath.substring(0, GlobalizeCulture._scriptPath.lastIndexOf('/'));
