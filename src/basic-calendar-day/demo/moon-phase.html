@@ -1,0 +1,111 @@
+<!--
+Shows an icon for the moon phase for a given date.
+
+The phases are calculated for UTC (Universal Coordinated Time). Local moon
+phases will vary.
+
+Moon phase icons modified from icons from flaticon.com by Freepik under CC-BY.
+-->
+
+<link rel="import" href="../../polymer/polymer.html">
+
+<polymer-element name="moon-phase" attributes="date">
+
+<template>
+  <style>
+    :host {
+      display: block;
+      position: relative;
+    }
+    #phaseIcon {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <img id="phaseIcon">
+</template>
+
+<script>
+Polymer({
+  
+  dateChanged: function() {
+
+    // To determine quarter, we compare the moon's angle at midnight on the
+    // given date with the angle at midnight on the following date.
+    var date = this.date;
+    var angle = this.moonAngle( date );
+    var dateNext = new Date( date.getTime() );
+    dateNext.setDate( dateNext.getDate() + 1 ); // Increment date.
+    var angleNext = this.moonAngle( dateNext );
+
+    // See if the moon's angle crosses a threshold during the given date.
+    var quarter;
+    if ( angle >= 0 && angleNext > angle ) {
+      quarter = "full"; // Full moon
+    } else if ( angle >= 90 && angleNext < 90 ) {
+      quarter = "firstQuarter"; // First quarter
+    } else if ( angle >= 180 && angleNext < 180 ) {
+      quarter = "new"; // New moon
+    } else if ( angle >= 270 && angleNext < 270 ) {
+      quarter = "lastQuarter"; // Last quarter
+    } else {
+      quarter = ""; // Nothing special
+    }
+
+    // Show or hide an icon as appropriate.
+    var showIcon = ( quarter.length > 0 );
+    this.$.phaseIcon.style.display = showIcon ? "block" : "none";
+    if ( showIcon ) {
+      this.$.phaseIcon.src = this.resolvePath( "icons/" + quarter + ".svg" );
+    } else {
+      this.$.phaseIcon.src = "";
+    }
+  },
+
+  // Return the phase angle of the moon.
+  // This is lifted from the JavaScript Ephemeris page by Peter Hayes at
+  // http://www2.arnes.si/~gljsentvid10/jspodatkinanebu.html. That work in turn
+  // is based on Meeus chapter 45 and the illuminated percentage from Meeus
+  // equations 46.4 and 46.1.
+  moonAngle: function( date ) {
+    var jd = this._jd0( date.getFullYear(), date.getMonth() + 1, date.getDate() );
+    var T=(jd-2451545.0)/36525;
+    var T2=T*T;
+    var T3=T2*T;
+    var T4=T3*T;
+    // Moons mean longitude L'
+    var LP=218.3164477+481267.88123421*T-0.0015786*T2+T3/538841.0-T4/65194000.0;
+    // Moons mean elongation
+    var D=297.8501921+445267.1114034*T-0.0018819*T2+T3/545868.0-T4/113065000.0;
+    // Suns mean anomaly
+    var M=357.5291092+35999.0502909*T-0.0001536*T2+T3/24490000.0;
+    // Moons mean anomaly M'
+    var MP=134.9633964+477198.8675055*T+0.0087414*T2+T3/69699.0-T4/14712000.0;
+    // phase angle
+    var pa=180.0-D-6.289*this._sind(MP)+2.1*this._sind(M)-1.274*this._sind(2*D-MP)
+           -0.658*this._sind(2*D)-0.214*this._sind(2*MP)-0.11*this._sind(D);
+    return this._rev(pa);
+  },
+
+  // The Julian date at 0 hours UT at Greenwich
+  _jd0: function(year,month,day) {
+    var y  = year;
+    var m = month;
+    if (m < 3) {m += 12; y -= 1};
+    var a = Math.floor(y/100);
+    var b = 2-a+Math.floor(a/4);
+    var j = Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+day+b-1524.5;
+    return j;
+  },
+
+  // Extensions to the Math routines - Trig routines in degrees
+  _rev: function( angle ) {
+    return angle-Math.floor(angle/360.0)*360.0;
+  },
+  _sind: function( angle ) {
+    return Math.sin((angle*Math.PI)/180.0);
+  }
+
+});
+</script>
+</polymer-element>

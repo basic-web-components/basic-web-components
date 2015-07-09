@@ -1,0 +1,21 @@
+<!--
+A calendar day that includes the moon phase.
+-->
+
+<link rel="import" href="../basic-calendar-day.html">
+<link rel="import" href="moon-phase.html">
+
+<polymer-element name="calendar-day-moon-phase" extends="basic-calendar-day" noscript>
+
+<template>
+  <style>
+  moon-phase {
+    height: 1.5em;
+    width: 1.5em;
+  }
+  </style>
+  <div id="day"></div>
+  <moon-phase date="{{date}}"></moon-phase>
+</template>
+
+</polymer-element>
