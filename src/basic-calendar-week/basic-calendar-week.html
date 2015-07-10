@@ -1,0 +1,205 @@
+<!--
+Shows a single calendar week.
+
+To the degree possible, all language/culture-specific aspects of this component
+are localizable with the Globalize library (https://github.com/jquery/globalize).
+(This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.)
+
+Currently, this puts the first day of the week on the left, and the last day of
+the week on the right. There appear to be examples of calendars in Arabic (a
+right-to-left language) that show the opposite, with the first day of the week
+on the right, and the day numbers increasing to the right. However, there appear
+to be plenty of examples of Arabic calendars that show the first day of the week
+on the left. So even for a right-to-left language like Arabic, it appears that
+having the time axis ordered left-to-right may be acceptable. The Globalize
+library doesn’t seem to include information on the preferred direction of time,
+so for now this component assumes that left-to-right works for most users.
+
+@element basic-calendar-week
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-calendar-week/?dom=shadow
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
+<link rel="import" href="../basic-calendar-day/basic-calendar-day.html">
+
+<dom-module id="basic-calendar-week">
+  <style>
+    :host {
+      display: table-row;
+    }
+
+    :host > :not(style) {
+      display: table-cell;
+      width: 14.285%; /* One seventh */
+    }
+  </style>
+
+  <template>
+    <basic-calendar-day class="day firstDayOfWeek"></basic-calendar-day>
+    <basic-calendar-day class="day"></basic-calendar-day>
+    <basic-calendar-day class="day"></basic-calendar-day>
+    <basic-calendar-day class="day"></basic-calendar-day>
+    <basic-calendar-day class="day"></basic-calendar-day>
+    <basic-calendar-day class="day"></basic-calendar-day>
+    <basic-calendar-day class="day lastDayOfWeek"></basic-calendar-day>
+  </template>
+</dom-module>
+
+<script>
+// Static members
+// TODO: Once Polymer supports constructor access here, use that instead.
+BasicCalendarWeek = {
+
+  daysSinceFirstDayOfWeek: function(date, culture) {
+    var firstDayOfWeek = BasicCalendarWeek.firstDayOfWeek(culture);
+    return (date.getDay() - firstDayOfWeek + 7) % 7;
+  },
+
+  // Return the index of the "first" day of the week in the indicated culture.
+  // In the U.S., this is 0 (Sunday), but in many places it's 1 (Monday).
+  // If no culture is supplied, the default culture is used.
+  firstDayOfWeek: function(culture) {
+    return culture ? culture.calendar.firstDay : 0;
+  },
+
+  // Return the date of the first day of the week that contains the given date.
+  firstDateOfWeek: function(date, culture) {
+    var daysSinceFirstDayOfWeek = this.daysSinceFirstDayOfWeek(date, culture);
+    var d = BasicCalendarDay.offsetDateByDays(date, -daysSinceFirstDayOfWeek);
+    return BasicCalendarDay.midnightOnDate(d);
+  }
+
+};
+
+Polymer({
+
+  is: 'basic-calendar-week',
+
+  /**
+   * The Globalize culture/language assigned to this element.
+   *
+   * @attribute culture
+   */
+  culture: {
+    type: String,
+    reflectToAttribute: true,
+    value: 'en',
+    observer: 'cultureChanged'
+  },
+
+  /**
+   * The name for the element type which should be used to render the individual
+   * days in the week.
+   *
+   * @attribute dayElement
+   * @default "basic-calendar-day"
+   */
+  dayElement: {
+    type: String,
+    reflectToAttribute: true,
+    value: 'basic-calendar-day',
+    observer: 'dayElementChanged'
+  },
+
+  cultureChanged: function() {
+    this._refresh();
+  },
+
+  dateChanged: function() {
+    this._refresh();
+  },
+
+  dayElementChanged: function() {
+    var dayTemplate = document.createElement(this.dayElement);
+    // BUGBUG
+    var shadowRoot = this.shadowRoot;
+    this.days.forEach(function(day, i) {
+      var newDay = dayTemplate.cloneNode();
+      newDay.classList.add('day');
+      newDay.classList.toggle('firstDayOfWeek', i === 0);
+      newDay.classList.toggle('lastDayOfWeek', i === 6);
+      // BUGBUG
+      shadowRoot.replaceChild(newDay, day);
+    }.bind(this));
+    this._refresh();
+  },
+
+  /**
+   * Returns the day element corresponding to the given date.
+   *
+   * @method dayElementForDate
+   * @param date
+   */
+  dayElementForDate: function(date) {
+    var midnightOnDate = BasicCalendarDay.midnightOnDate(date);
+    if (midnightOnDate >= this.firstDate && midnightOnDate <= this.lastDate) {
+      var dayIndex = BasicCalendarWeek.daysSinceFirstDayOfWeek(date, this.culture);
+      return this.days[dayIndex];
+    } else {
+      // Date falls outside week.
+      return null;
+    }
+  },
+
+  /**
+   * Returns the array of day elements for the days in the month.
+   *
+   * @property days
+   */
+  get days() {
+    // Return all children but the style node.
+    // BUGBUG
+    return this.shadowRoot.querySelectorAll(':not(style)').array();
+  },
+
+  /**
+   * The date of the first day in the week.
+   *
+   *
+   * @property firstDate
+   */
+  get firstDate() {
+    return BasicCalendarDay.midnightOnDate(this.days[0].date);
+  },
+
+  /**
+   * The date of the last day in the week.
+   *
+   * @property lastDate
+   */
+  get lastDate() {
+    return BasicCalendarDay.midnightOnDate(this.days[6].date);
+  },
+
+  ready: function() {
+    this.super();
+    if (!this.date && typeof BasicCalendarDay.today !== 'undefined') {
+      // If no date is supplied, default to the current week.
+      // REVIEW: This default behavior can cause unnecessary recalcs if a week
+      // is created and then shortly thereafter a different date is set.
+      this.date = BasicCalendarDay.today();
+    }
+  },
+
+  // Set the dates on all controls in the week.
+  _refresh: function() {
+    var referenceDate = this.date;
+    var referenceYear = referenceDate.getFullYear();
+    var referenceMonth = referenceDate.getMonth();
+    var dateStart = BasicCalendarWeek.firstDateOfWeek(referenceDate, this.culture);
+    this.days.forEach(function(day, i) {
+      var date = BasicCalendarDay.offsetDateByDays(dateStart, i);
+      day.date = date;
+      // Apply inside/outside month styles to days that fall outside of the
+      // month of the reference date for this week.
+      var insideMonth = (date.getFullYear() === referenceYear && date.getMonth() === referenceMonth);
+      day.classList.toggle('insideMonth', insideMonth);
+      day.classList.toggle('outsideMonth', !insideMonth);
+    });
+  }
+
+});
+</script>
