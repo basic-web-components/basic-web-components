@@ -13,10 +13,12 @@ suite('basic', function() {
     var fixture = document.createElement('basic-calendar-week');
     container.appendChild(fixture);
     var now = new Date();
-    assert.equal(now.getDay(), fixture.date.getDay());
-    assert.equal(now.getMonth(), fixture.date.getMonth());
-    assert.equal(now.getFullYear(), fixture.date.getFullYear());
-    done();
+    flush(function() {
+      assert.equal(now.getDay(), fixture.date.getDay());
+      assert.equal(now.getMonth(), fixture.date.getMonth());
+      assert.equal(now.getFullYear(), fixture.date.getFullYear());
+      done();
+    });
   });
 
   test('set date attribute', function (done) {

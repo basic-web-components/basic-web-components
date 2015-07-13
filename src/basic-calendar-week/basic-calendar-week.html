@@ -78,30 +78,37 @@ Polymer({
 
   is: 'basic-calendar-week',
 
-  /**
-   * The Globalize culture/language assigned to this element.
-   *
-   * @attribute culture
-   */
-  culture: {
-    type: String,
-    reflectToAttribute: true,
-    value: 'en',
-    observer: 'cultureChanged'
-  },
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    },
 
-  /**
-   * The name for the element type which should be used to render the individual
-   * days in the week.
-   *
-   * @attribute dayElement
-   * @default "basic-calendar-day"
-   */
-  dayElement: {
-    type: String,
-    reflectToAttribute: true,
-    value: 'basic-calendar-day',
-    observer: 'dayElementChanged'
+    /**
+     * The name for the element type which should be used to render the individual
+     * days in the week.
+     *
+     * @attribute dayElement
+     * @default "basic-calendar-day"
+     */
+    dayElement: {
+      type: String,
+      value: 'basic-calendar-day',
+      reflectToAttribute: true,
+      observer: 'dayElementChanged'
+    },
+
+    date: {
+      type: Date,
+      value: null,
+      observer: 'dateChanged'
+    }
   },
 
   cultureChanged: function() {
@@ -114,14 +121,12 @@ Polymer({
 
   dayElementChanged: function() {
     var dayTemplate = document.createElement(this.dayElement);
-    // BUGBUG
-    var shadowRoot = this.shadowRoot;
+    var shadowRoot = Polymer.dom(this.root);
     this.days.forEach(function(day, i) {
       var newDay = dayTemplate.cloneNode();
       newDay.classList.add('day');
       newDay.classList.toggle('firstDayOfWeek', i === 0);
       newDay.classList.toggle('lastDayOfWeek', i === 6);
-      // BUGBUG
       shadowRoot.replaceChild(newDay, day);
     }.bind(this));
     this._refresh();
@@ -151,8 +156,7 @@ Polymer({
    */
   get days() {
     // Return all children but the style node.
-    // BUGBUG
-    return this.shadowRoot.querySelectorAll(':not(style)').array();
+    return Polymer.dom(this.root).querySelectorAll(':not(style)');
   },
 
   /**
@@ -175,7 +179,6 @@ Polymer({
   },
 
   ready: function() {
-    this.super();
     if (!this.date && typeof BasicCalendarDay.today !== 'undefined') {
       // If no date is supplied, default to the current week.
       // REVIEW: This default behavior can cause unnecessary recalcs if a week
@@ -186,6 +189,10 @@ Polymer({
 
   // Set the dates on all controls in the week.
   _refresh: function() {
+    if (!this.date) {
+      return;
+    }
+
     var referenceDate = this.date;
     var referenceYear = referenceDate.getFullYear();
     var referenceMonth = referenceDate.getMonth();
