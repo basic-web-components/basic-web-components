@@ -135,7 +135,7 @@ suite('basic', function() {
     container.appendChild(fixture);
     fixture.date = new Date('14 March 2015');
     flush(function() {
-      var today = BasicCalendarDay.today();
+      var today = fixture.today();
       var altMonth = Math.abs(fixture.date.getMonth() - today.getMonth()) % 2 === 1;
       assert.equal(fixture.classList.contains('alternateMonth'), altMonth);
       done();

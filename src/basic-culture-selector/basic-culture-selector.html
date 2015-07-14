@@ -12,6 +12,7 @@ then read the "culture" attribute to get its settings.
 
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
 
 <script src="../../bower_components/deepmerge/index.js"></script>
 
@@ -75,6 +76,8 @@ var DEFAULT_LOCALE = 'en';
 Polymer({
 
   is: 'basic-culture-selector',
+
+  behaviors: [Basic.CalendarHelpers],
 
   // JSON to hand off to Globalize intializer
   _localeJson: {},

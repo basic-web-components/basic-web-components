@@ -55,4 +55,24 @@ suite('basic', function() {
     });
   });
 
+  test('first day of week', function(done) {
+    var fixture = document.createElement('basic-culture-selector');
+    container.appendChild(fixture);
+    fixture.addEventListener('basic-culture-changed', function (event) {
+      var culture = event.detail.culture;
+      assert(culture);
+      assert(culture.cldr);
+
+      var day = fixture.firstDayOfWeek(culture);
+      if (fixture.name == 'en') {
+        assert.equal(day, 0);
+        fixture.name = 'fr';
+        return;
+      }
+
+      assert.equal(day, 1);
+      done();
+    });
+  });
+
 });
