@@ -183,6 +183,10 @@ Polymer({
 
   // Fill in the weeks.
   _refresh: function() {
+    if (!this.date) {
+      return;
+    }
+
     var firstDateOfMonth = this.firstDateOfMonth;
     var month = firstDateOfMonth.getMonth();
     this.weeks.forEach(function(week, i) {
