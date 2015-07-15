@@ -1,0 +1,73 @@
+<!--
+Shows a culture's name for the current month and the year.
+
+To the degree possible, all language/culture-specific aspects of this component
+are localizable with the Globalize library (https://github.com/jquery/globalize).
+(This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.)
+
+@element basic-month-and-year
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-month-and-year/?dom=shadow
+-->
+
+<link rel="import" href="../basic-element/basic-element.html">
+<link rel="import" href="../basic-month-name/basic-month-name.html">
+
+<polymer-element name="basic-month-and-year" extends="basic-element" attributes="culture date">
+
+<template>
+  <style>
+  :host(.rtl) {
+    direction: rtl;
+  }
+  </style>
+  <basic-month-name id="monthName"></basic-month-name>
+  <span id="year"></span>
+</template>
+
+<script>
+Polymer({
+
+  /**
+   * The Globalize culture/language assigned to this element.
+   *
+   * @attribute culture
+   */
+  culture: null,
+
+  cultureChanged: function() {
+    this.$.monthName.culture = this.culture;
+
+    // Ensure the month-year order matches the direction of the text.
+    var rtl = this.culture ? this.culture.isRTL : false;
+    this.classList.toggle('rtl', rtl);
+  },
+
+  /**
+   * The date controlling which month and year are shown in this element.
+   *
+   * @attribute date
+   * @type Date
+   * @default today
+   */
+  date: null,
+
+  dateChanged: function() {
+    var date = this.date;
+    this.$.monthName.month = date.getMonth();
+    this.$.year.textContent = date.getFullYear();
+  },
+
+  ready: function() {
+    this.super();
+    if (!this.date) {
+      // By default show the current month and year.
+      this.date = new Date();
+    }
+  }
+
+});
+</script>
+
+</polymer-element>

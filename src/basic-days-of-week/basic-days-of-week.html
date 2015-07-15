@@ -1,0 +1,135 @@
+<!--
+Shows the names of the days of the week, e.g., for use as a calendar header.
+
+To the degree possible, all language/culture-specific aspects of this component
+are localizable with the Globalize library (https://github.com/jquery/globalize).
+(This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.)
+
+@element basic-days-of-week
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-days-of-week/?dom=shadow
+-->
+
+<link rel="import" href="../basic-element/basic-element.html">
+
+<polymer-element name="basic-days-of-week" extends="basic-element" attributes="culture format">
+
+<template>
+
+  <style>
+  :host {
+    display: table-row;
+  }
+
+  .dayOfWeek {
+    display: table-cell;
+    width: 14.285%; /* One seventh */
+  }
+
+  :host([generic]) .dayOfWeek {
+    padding: 4px;
+    text-align: center;
+  }
+  </style>
+
+  <div class="dayOfWeek"></div>
+  <div class="dayOfWeek"></div>
+  <div class="dayOfWeek"></div>
+  <div class="dayOfWeek"></div>
+  <div class="dayOfWeek"></div>
+  <div class="dayOfWeek"></div>
+  <div class="dayOfWeek"></div>
+
+</template>
+
+<script>
+// Static members
+// TODO: Once Polymer supports constructor access here, use that instead.
+BasicDaysOfWeek = {
+
+  // Defaults used if Globalize is not loaded.
+  days: {
+    names: [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ],
+    namesAbbr: [
+      'Sun',
+      'Mon',
+      'Tue',
+      'Wed',
+      'Thu',
+      'Fri',
+      'Sat'
+    ],
+    namesShort: [
+      'Su',
+      'Mo',
+      'Tu',
+      'We',
+      'Th',
+      'Fr',
+      'Sa'
+    ]
+  }
+
+};
+
+Polymer({
+
+  /**
+   * The Globalize culture/language assigned to this element.
+   *
+   * @attribute culture
+   */
+  culture: null,
+
+  cultureChanged: function() {
+    this._refresh();
+  },
+
+  /**
+   * The format used to render the names of the days of the week.
+   * Valid values are: "namesAbbr" (the default), "namesFull", "namesShort".
+   *
+   * @attribute format
+   * @type string
+   * @default "namesAbbr"
+   */
+  format: 'namesAbbr',
+
+  formatChanged: function() {
+    this._refresh();
+  },
+
+  ready: function() {
+    this.super();
+    this._refresh();
+  },
+
+  _refresh: function() {
+    var culture = this.culture;
+    var dayNameEnum = culture ? culture.calendar.days : BasicDaysOfWeek.days;
+    var dayNames = dayNameEnum[this.format];
+    var firstDayOfWeek = culture ? culture.calendar.firstDay : 0;
+    var daysOfWeek = this.shadowRoot.querySelectorAll('.dayOfWeek').array();
+    daysOfWeek.forEach(function(day, i) {
+      var dayOfWeek = (firstDayOfWeek + i) % 7;
+      var weekend = (dayOfWeek === 0 || dayOfWeek === 6);
+      var dayName = dayNames[dayOfWeek];
+      day.textContent = dayName;
+      day.classList.toggle('weekend', weekend);
+      day.classList.toggle('weekday', !weekend);
+    });
+  }
+
+});
+</script>
+
+</polymer-element>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>Basic tests for basic-days-of-week</title>
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../basic-days-of-week.html">
+</head>
+<body>
+
+  <!-- You use the document as a place to set up your fixtures. -->
+  <basic-days-of-week id="bdow1"></basic-days-of-week>
+
+  <script>
+  var bdow1 = document.querySelector('#bdow1');
+  console.dir(bdow1);
+  console.dir(bdow1.days);
+
+  function testShadowRoot() {
+    var culture = bdow1.culture;
+    var dayNameEnum = culture ? culture.calendar.days : BasicDaysOfWeek.days;
+    var dayNames = dayNameEnum[bdow1.format];
+    var firstDayOfWeek = culture ? culture.calendar.firstDay : 0;
+    var daysOfWeek = bdow1.shadowRoot.querySelectorAll('.dayOfWeek').array();
+    daysOfWeek.forEach(function(day, i) {
+      var dayOfWeek = (firstDayOfWeek + i) % 7;
+      var weekend = (dayOfWeek === 0 || dayOfWeek === 6);
+      var dayName = dayNames[dayOfWeek];
+
+      assert.equal(day.textContent, dayName);
+      assert.equal(day.classList.contains('weekend'), weekend);
+      assert.equal(day.classList.contains('weekday'), !weekend);
+    });
+  }
+
+  suite('basic', function() {
+
+    test('default format', function(done) {
+      assert.equal(bdow1.format, 'namesAbbr');
+      testShadowRoot();
+      done();
+    });
+
+    test('names format', function(done) {
+      bdow1.format = 'names';
+      flush(function() {
+        assert.equal(bdow1.format, 'names');
+        testShadowRoot();
+        done();
+      });
+    });
+
+    test('namesShort format', function(done) {
+      bdow1.format = 'namesShort';
+      flush(function() {
+        assert.equal(bdow1.format, 'namesShort');
+        testShadowRoot();
+        done();
+      });
+    });
+
+  });
+  </script>
+
+</body>
+</html>
