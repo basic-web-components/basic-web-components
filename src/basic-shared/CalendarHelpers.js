@@ -15,6 +15,44 @@ window.Basic.CalendarHelpers = {
 
   MILLISECONDS_IN_DAY: 24 * 60 * 60 * 1000,
 
+  days: {
+    names: [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ],
+    namesAbbr: [
+      'Sun',
+      'Mon',
+      'Tue',
+      'Wed',
+      'Thu',
+      'Fri',
+      'Sat'
+    ],
+    namesShort: [
+      'Su',
+      'Mo',
+      'Tu',
+      'We',
+      'Th',
+      'Fr',
+      'Sa'
+    ]
+  },
+
+  daysOfWeek: function(culture) {
+    if (!culture || !culture.cldr) {
+      return this.days;
+    }
+
+    return culture.cldr.main(['dates/calendars/gregorian/days']);
+  },
+
   // Return the index of the "first" day of the week in the indicated culture.
   // In the U.S., this is 0 (Sunday), but in many places it's 1 (Monday).
   // If no culture is supplied, the default culture is used.
