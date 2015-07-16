@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<script src="../webcomponentsjs/webcomponents.js"></script>
-<link rel="import" href="../basic-framed-content/basic-framed-content.html">
-<link rel="import" href="basic-days-of-week.html">
 
-<style>
-body,
-button,
-input {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-days-of-week</title>
 
-body {
-  margin: 0;
-}
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../basic-framed-content/basic-framed-content.html">
+  <link rel="import" href="basic-days-of-week.html">
 
-basic-framed-content {
-  padding: 2em;
-}
-</style>
+  <style>
+    body,
+    button,
+    input {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+    }
 
+    body {
+      margin: 0;
+    }
+
+    basic-framed-content {
+      padding: 2em;
+  }
+  </style>
+
+  <script>
+    document.addEventListener('WebComponentsReady', function() {
+      document.body.removeAttribute('unresolved');
+    });
+  </script>
 </head>
 
 <body unresolved>

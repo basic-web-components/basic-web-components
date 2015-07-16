@@ -9,48 +9,59 @@
 
 window.Basic = window.Basic || {};
 
-var dateWeekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-
 window.Basic.CalendarHelpers = {
 
   MILLISECONDS_IN_DAY: 24 * 60 * 60 * 1000,
 
+  dateWeekDays: ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'],
+
   days: {
-    names: [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday'
-    ],
-    namesAbbr: [
-      'Sun',
-      'Mon',
-      'Tue',
-      'Wed',
-      'Thu',
-      'Fri',
-      'Sat'
-    ],
-    namesShort: [
-      'Su',
-      'Mo',
-      'Tu',
-      'We',
-      'Th',
-      'Fr',
-      'Sa'
-    ]
+    format: {
+      "abbreviated": {
+        "sun": "Sun",
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat"
+      },
+      "narrow": {
+        "sun": "S",
+        "mon": "M",
+        "tue": "T",
+        "wed": "W",
+        "thu": "T",
+        "fri": "F",
+        "sat": "S"
+      },
+      "short": {
+        "sun": "Su",
+        "mon": "Mo",
+        "tue": "Tu",
+        "wed": "We",
+        "thu": "Th",
+        "fri": "Fr",
+        "sat": "Sa"
+      },
+      "wide": {
+        "sun": "Sunday",
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday",
+        "sat": "Saturday"
+      }
+    }
   },
 
   daysOfWeek: function(culture) {
     if (!culture || !culture.cldr) {
-      return this.days;
+      return this.days.format;
     }
 
-    return culture.cldr.main(['dates/calendars/gregorian/days']);
+    return culture.cldr.main('dates/calendars/gregorian/days/format');
   },
 
   // Return the index of the "first" day of the week in the indicated culture.
@@ -61,7 +72,7 @@ window.Basic.CalendarHelpers = {
       return 0;
     }
 
-    return dateWeekDays.indexOf(culture.cldr.supplemental.weekData.firstDay());
+    return this.dateWeekDays.indexOf(culture.cldr.supplemental.weekData.firstDay());
   },
 
   daysSinceFirstDayOfWeek: function(date, culture) {

@@ -58,7 +58,7 @@ suite('basic', function() {
   test('first day of week', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function (event) {
+    fixture.addEventListener('basic-culture-changed', function(event) {
       var culture = event.detail.culture;
       assert(culture);
       assert(culture.cldr);
@@ -71,6 +71,22 @@ suite('basic', function() {
       }
 
       assert.equal(day, 1);
+      done();
+    });
+  });
+
+  test('days of week', function(done) {
+    var fixture = document.createElement('basic-culture-selector');
+    container.appendChild(fixture);
+    fixture.addEventListener('basic-culture-changed', function(event) {
+      var culture = event.detail.culture;
+      assert(culture);
+      assert(culture.cldr);
+
+      var dayNameEnum = fixture.daysOfWeek(culture);
+      assert(dayNameEnum);
+      assert.equal(dayNameEnum['wide'][fixture.dateWeekDays[0]], 'Sunday');
+      assert.equal(dayNameEnum['abbreviated'][fixture.dateWeekDays[1], 'Mon'])
       done();
     });
   });

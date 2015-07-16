@@ -64,14 +64,14 @@ Polymer({
 
     /**
      * The format used to render the names of the days of the week.
-     * Valid values are: "namesAbbr" (the default), "namesFull", "namesShort".
+     * Valid values are: "abbreviated" (the default), "narrow", "short", "wide".
      *
      * @attribute format
      * @type string
-     * @default "namesAbbr"
+     * @default "abbreviated"
      */
     format: {
-      value: 'namesAbbr',
+      value: 'abbreviated',
       reflectToAttribute: true,
       observer: 'formatChanged'
     }
@@ -102,11 +102,11 @@ Polymer({
     daysOfWeek.forEach(function(day, i) {
       var dayOfWeek = (firstDayOfWeek + i) % 7;
       var weekend = (dayOfWeek === 0 || dayOfWeek === 6);
-      var dayName = dayNames[dayOfWeek];
+      var dayName = dayNames[this.dateWeekDays[dayOfWeek]];
       day.textContent = dayName;
       day.classList.toggle('weekend', weekend);
       day.classList.toggle('weekday', !weekend);
-    });
+    }.bind(this));
   }
 
 });
