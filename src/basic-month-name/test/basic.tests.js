@@ -12,9 +12,11 @@ suite('basic', function() {
     var fixture = document.createElement('basic-month-name');
     container.appendChild(fixture);
     var now = new Date();
-    var currentMonth = now.getMonth();
-    assert.equal(fixture.month, currentMonth);
-    done();
+    flush(function() {
+      var currentMonth = now.getMonth();
+      assert.equal(fixture.month, currentMonth);
+      done();
+    });
   });
 
   test('set month attribute', function(done) {
@@ -23,10 +25,37 @@ suite('basic', function() {
     fixture.month = 5;
     flush(function() {
       assert.equal(fixture.month, 5);
-      var monthNameEnum = fixture.culture ? fixture.culture.months.names : BasicMonthName.names;
-      var monthName = monthNameEnum[5];
+      var monthNameEnum = fixture.monthsOfYear(culture);
+      var monthName = monthNameEnum['wide'][fixture.month + 1];
       assert.equal(fixture.$.name.textContent, monthName);
       done();
+    });
+  });
+
+  test('French', function(done) {
+    var fixture = document.createElement('basic-month-name');
+    container.appendChild(fixture);
+    fixture.month = 5;
+    var bcs = document.createElement('basic-culture-selector');
+    container.appendChild(bcs);
+    bcs.addEventListener('basic-culture-changed', function(event) {
+      var culture = event.detail.culture;
+
+      if (culture.cldr.locale == 'en') {
+        bcs.name = 'fr';
+        return;
+      }
+
+      fixture.culture = culture;
+      flush(function() {
+        assert.equal(fixture.month, 5);
+        var monthNameEnum = fixture.monthsOfYear(culture);
+        var monthName = monthNameEnum['wide'][fixture.month + 1];
+        assert.equal(monthName, 'juin');
+        assert.equal(fixture.$.name.textContent, monthName);
+
+        done();
+      });
     });
   });
 

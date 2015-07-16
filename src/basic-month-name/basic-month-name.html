@@ -11,74 +11,69 @@ leaves alpha status.)
 @demo http://basic-web-components.github.io/basic-web-components/src/basic-month-name/?dom=shadow
 -->
 
-<link rel="import" href="../basic-element/basic-element.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
 
-<polymer-element name="basic-month-name" extends="basic-element" attributes="culture month">
-
-<template>
+<dom-module id="basic-month-name">
   <style>
-  :host {
-    display: inline-block;
-  }
+    :host {
+      display: inline-block;
+    }
   </style>
-  <span id="name"></span>
-</template>
+
+  <template>
+    <span id="name"></span>
+  </template>
+</dom-module>
 
 <script>
-// Static members
-// TODO: Once Polymer supports constructor access here, use that instead.
-BasicMonthName = {
-
-  // Default names, used if Globalize is not avaialble.
-  names: [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ]
-
-};
 
 Polymer({
-  
-  /**
-   * The Globalize culture/language assigned to this element.
-   *
-   * @property culture
-   */
-  culture: null,
+
+  is: 'basic-month-name',
+
+  behaviors: [Basic.CalendarHelpers],
+
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    },
+
+    /**
+     * The index of the month to show: 0 = January, 1 = February, etc.
+     *
+     * @attribute month
+     * @type integer
+     * @default The index of the current month
+     */
+    month: {
+      value: null,
+      type: Number,
+      reflectToAttribute: true,
+      observer: 'monthChanged'
+    }
+  },
 
   cultureChanged: function() {
     // Force update of month name.
     this.monthChanged();
   },
 
-  /**
-   * The index of the month to show: 0 = January, 1 = February, etc.
-   *
-   * @attribute month
-   * @type integer
-   * @default The index of the current month
-   */
-  month: null,
-
   monthChanged: function() {
     culture = this.culture;
-    monthNameEnum = culture ? culture.calendar.months.names : BasicMonthName.names;
-    monthName = monthNameEnum[this.month];
+    monthNameEnum = this.monthsOfYear(culture);
+    monthName = monthNameEnum['wide'][this.month + 1];
     this.$.name.textContent = monthName;
   },
 
   ready: function() {
-    this.super();
     if (!this.month) {
       // If no month is supplied, default to the current month.
       this.month = (new Date()).getMonth();

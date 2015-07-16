@@ -86,7 +86,23 @@ suite('basic', function() {
       var dayNameEnum = fixture.daysOfWeek(culture);
       assert(dayNameEnum);
       assert.equal(dayNameEnum['wide'][fixture.dateWeekDays[0]], 'Sunday');
-      assert.equal(dayNameEnum['abbreviated'][fixture.dateWeekDays[1], 'Mon'])
+      assert.equal(dayNameEnum['abbreviated'][fixture.dateWeekDays[1]], 'Mon');
+      done();
+    });
+  });
+
+  test('months of year', function(done) {
+    var fixture = document.createElement('basic-culture-selector');
+    container.appendChild(fixture);
+    fixture.addEventListener('basic-culture-changed', function(event) {
+      var culture = event.detail.culture;
+      assert(culture);
+      assert(culture.cldr);
+
+      var monthNameEnum = fixture.monthsOfYear(culture);
+      assert(monthNameEnum);
+      assert.equal(monthNameEnum['wide']['1'], 'January');
+      assert.equal(monthNameEnum['abbreviated']['2'], 'Feb');
       done();
     });
   });
