@@ -17,67 +17,100 @@ leaves alpha status.)
 @demo http://basic-web-components.github.io/basic-web-components/src/basic-calendar-month/?dom=shadow
 -->
 
-<link rel="import" href="../basic-element/basic-element.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
 <link rel="import" href="../basic-month-and-year/basic-month-and-year.html">
 <link rel="import" href="../basic-days-of-week/basic-days-of-week.html">
 <link rel="import" href="../basic-calendar-month-days/basic-calendar-month-days.html">
 
 <polymer-element name="basic-calendar-month" extends="basic-element" attributes="culture date dayElement daysOfWeekFormat">
-
-<template>
-
+<dom-module id="basic-calendar-month">
   <style>
-  :host {
-    display: inline-block;
-  }
+    :host {
+      display: inline-block;
+    }
 
-  #monthAndYear {
-    display: block;
-  }
+    #monthAndYear {
+      display: block;
+    }
 
-  #monthTable {
-    border-collapse: collapse;
-    display: table;
-    width: 100%;
-  }
+    #monthTable {
+      border-collapse: collapse;
+      display: table;
+      width: 100%;
+    }
 
-  #daysOfWeek {
-    display: table-header-group;
-  }
+    #daysOfWeek {
+      display: table-header-group;
+    }
 
-  /* Generic styling */
-  :host([generic]) #monthAndYear {
-    font-weight: bold;
-    padding: 4px;
-    text-align: center;
-  }
+    /* Generic styling */
+    :host([generic]) #monthAndYear {
+      font-weight: bold;
+      padding: 4px;
+      text-align: center;
+    }
 
-  :host([generic]) #daysOfWeek {
-    font-size: smaller;
-  }
+    :host([generic]) #daysOfWeek {
+      font-size: smaller;
+    }
 
-  :host([generic]) .dayOfWeek {
-    padding: 4px;
-  }
+    :host([generic]) .dayOfWeek {
+      padding: 4px;
+    }
   </style>
 
-  <basic-month-and-year id="monthAndYear"></basic-month-and-year>
-  <div id="monthTable">
-    <basic-days-of-week id="daysOfWeek" format="{{daysOfWeekFormat}}"></basic-days-of-week>
-    <basic-calendar-month-days id="calendar" dayElement="{{dayElement}}"></basic-calendar-month-days>
-  </div>
-
-</template>
+  <template>
+    <basic-month-and-year id="monthAndYear"></basic-month-and-year>
+    <div id="monthTable">
+      <basic-days-of-week id="daysOfWeek" format="{{daysOfWeekFormat}}"></basic-days-of-week>
+      <basic-calendar-month-days id="calendar" dayElement="{{dayElement}}"></basic-calendar-month-days>
+    </div>
+  </template>
 
 <script>
 Polymer({
 
-  /**
-   * The Globalize culture/language assigned to this element.
-   *
-   * @attribute culture
-   */
-  culture: null,
+  is: 'basic-calendar-month',
+
+  behaviors: [Basic.CalendarHelpers],
+
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    },
+
+    /**
+     * The date govering which month is shown by the element. This can be any
+     * date within the month.
+     *
+     * @attribute date
+     * @type Date
+     * @default today
+     */
+    date: {
+      type: Date,
+      value: null,
+      observer: 'dateChanged'
+    },
+
+    /*
+     * The format used for the days of week header.
+     *
+     * Valid values: "abbreviated" (the default), "narrow", "short", "wide".
+     */
+    daysOfWeekFormat: {
+      value: 'abbreviated',
+      reflectToAttribute: true
+    }
+  },
 
   cultureChanged: function() {
     var culture = this.culture;
@@ -87,16 +120,6 @@ Polymer({
       this.$.calendar.culture = culture;
     }
   },
-
-  /**
-   * The date govering which month is shown by the element. This can be any
-   * date within the month.
-   *
-   * @attribute date
-   * @type Date
-   * @default today
-   */
-  date: null,
 
   dateChanged: function() {
     var date = this.date;
@@ -122,21 +145,6 @@ Polymer({
   get days() {
     return this.$.calendar.days;
   },
-
-  /*
-   * The format used for the days of week header.
-   *
-   * Valid values: "namesAbbr" (the default), "namesFull", "namesShort".
-   */
-  daysOfWeekFormat: 'namesAbbr',
-
-  /**
-   * The name for the element type which should be used to render the individual
-   * days in the week.
-   *
-   * @attribute dayElement
-   * @default "basic-calendar-day"
-   */
 
   /**
    * The date of the first day in the month.
@@ -173,7 +181,6 @@ Polymer({
   },
 
   ready: function() {
-    this.super();
     if (!this.date) {
       // By default, show the current month.
       this.date = new Date();
@@ -201,5 +208,3 @@ Polymer({
 
 });
 </script>
-
-</polymer-element>

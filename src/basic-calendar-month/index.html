@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
 <link rel="import" href="../basic-framed-content/basic-framed-content.html">
-<link rel="import" href="basic-calendar-month-days.html">
+<link rel="import" href="../basic-culture-selector/basic-culture-selector.html">
+<link rel="import" href="basic-calendar-month.html">
 
 <style>
 body,
@@ -22,13 +24,28 @@ body {
 basic-framed-content {
   padding: 2em;
 }
+
+/* For polyfill */
+basic-calendar-month basic-days-of-week .dayOfWeek.weekend,
+basic-calendar-month basic-calendar-day.weekend.insideMonth {
+  color: gray;
+}
+basic-calendar-month::shadow basic-days-of-week::shadow .dayOfWeek.weekend,
+basic-calendar-month /deep/ basic-calendar-day.weekend.insideMonth {
+  color: gray;
+}
 </style>
 
 </head>
 
 <body unresolved>
 <basic-framed-content>
-  <basic-calendar-month-days></basic-calendar-month-days>
+  <template is="dom-bind">
+    <p>
+      Preferred language/culture: <basic-culture-selector culture="{{culture}}"></basic-culture-selector>
+    </p>
+    <basic-calendar-month culture="{{culture}}"></basic-calendar-month>
+  </template>
 </basic-framed-content>
 </body>
 
