@@ -169,6 +169,15 @@ window.Basic.CalendarHelpers = {
   // Returns midnight today.
   today: function() {
     return this.midnightOnDate(new Date());
+  },
+
+  // Is language printed right-to-left?
+  isRTL: function(culture) {
+    if (!culture || !culture.cldr) {
+      return false;
+    }
+
+    return culture.cldr.main('layout/orientation/characterOrder') == 'right-to-left';
   }
 };
 

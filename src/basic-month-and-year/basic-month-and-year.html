@@ -11,56 +11,80 @@ leaves alpha status.)
 @demo http://basic-web-components.github.io/basic-web-components/src/basic-month-and-year/?dom=shadow
 -->
 
-<link rel="import" href="../basic-element/basic-element.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
 <link rel="import" href="../basic-month-name/basic-month-name.html">
 
-<polymer-element name="basic-month-and-year" extends="basic-element" attributes="culture date">
-
-<template>
+<dom-module id="basic-month-and-year">
   <style>
-  :host(.rtl) {
-    direction: rtl;
-  }
+    :host(.rtl) {
+      direction: rtl;
+    }
   </style>
-  <basic-month-name id="monthName"></basic-month-name>
-  <span id="year"></span>
-</template>
+
+  <template>
+    <basic-month-name id="monthName"></basic-month-name>
+    <span id="year"></span>
+  </template>
+</dom-module>
 
 <script>
 Polymer({
 
-  /**
-   * The Globalize culture/language assigned to this element.
-   *
-   * @attribute culture
-   */
-  culture: null,
+  is: 'basic-month-and-year',
+
+  behaviors: [Basic.CalendarHelpers],
+
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    },
+
+    /**
+     * The date controlling which month and year are shown in this element.
+     *
+     * @attribute date
+     * @type Date
+     * @default today
+     */
+    date: {
+      type: Date,
+      value: null,
+      reflectToAttribute: true,
+      observer: 'dateChanged'
+    }
+  },
 
   cultureChanged: function() {
+    if (!this.date) {
+      return;
+    }
+
     this.$.monthName.culture = this.culture;
 
     // Ensure the month-year order matches the direction of the text.
-    var rtl = this.culture ? this.culture.isRTL : false;
+    var rtl = this.isRTL(culture);
     this.classList.toggle('rtl', rtl);
   },
 
-  /**
-   * The date controlling which month and year are shown in this element.
-   *
-   * @attribute date
-   * @type Date
-   * @default today
-   */
-  date: null,
-
   dateChanged: function() {
+    if (!this.date) {
+      return;
+    }
+
     var date = this.date;
     this.$.monthName.month = date.getMonth();
     this.$.year.textContent = date.getFullYear();
   },
 
   ready: function() {
-    this.super();
     if (!this.date) {
       // By default show the current month and year.
       this.date = new Date();
@@ -69,5 +93,3 @@ Polymer({
 
 });
 </script>
-
-</polymer-element>

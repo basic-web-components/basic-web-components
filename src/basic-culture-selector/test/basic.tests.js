@@ -107,4 +107,24 @@ suite('basic', function() {
     });
   });
 
+  test('en isRTL', function(done) {
+    var fixture = document.createElement('basic-culture-selector');
+    container.appendChild(fixture);
+    fixture.addEventListener('basic-culture-changed', function(event) {
+      var culture = event.detail.culture;
+      assert(culture);
+      assert(culture.cldr);
+
+      var isRTL = fixture.isRTL(culture);
+      if (fixture.name == 'en') {
+        assert.equal(isRTL, false);
+        fixture.name = 'ar';
+        return;
+      }
+
+      assert.equal(isRTL, true);
+      done();
+    });
+  });
+
 });

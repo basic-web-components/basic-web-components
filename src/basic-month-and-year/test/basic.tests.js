@@ -13,9 +13,11 @@ suite('basic', function() {
     var fixture = document.createElement('basic-month-and-year');
     container.appendChild(fixture);
     var now = new Date();
-    assert(fixture.date instanceof Date);
-    assert(now >= fixture.date);
-    done();
+    flush(function() {
+      assert(fixture.date instanceof Date);
+      assert(now >= fixture.date);
+      done();
+    });
   });
 
   test('set date attribute', function (done) {
