@@ -42,7 +42,7 @@ basic-calendar-month /deep/ basic-calendar-day.weekend.insideMonth {
 <basic-framed-content>
   <template is="dom-bind">
     <p>
-      Preferred language/culture: <basic-culture-selector culture="{{culture}}"></basic-culture-selector>
+      Preferred language/culture: <basic-culture-selector culture="{{culture::basic-culture-changed}}"></basic-culture-selector>
     </p>
     <basic-calendar-month culture="{{culture}}"></basic-calendar-month>
   </template>
