@@ -23,7 +23,6 @@ leaves alpha status.)
 <link rel="import" href="../basic-days-of-week/basic-days-of-week.html">
 <link rel="import" href="../basic-calendar-month-days/basic-calendar-month-days.html">
 
-<polymer-element name="basic-calendar-month" extends="basic-element" attributes="culture date dayElement daysOfWeekFormat">
 <dom-module id="basic-calendar-month">
   <style>
     :host {
@@ -67,6 +66,7 @@ leaves alpha status.)
       <basic-calendar-month-days id="calendar" dayElement="{{dayElement}}"></basic-calendar-month-days>
     </div>
   </template>
+</dom-module>
 
 <script>
 Polymer({

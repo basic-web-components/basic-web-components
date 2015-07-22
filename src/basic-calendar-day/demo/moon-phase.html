@@ -7,11 +7,9 @@ phases will vary.
 Moon phase icons modified from icons from flaticon.com by Freepik under CC-BY.
 -->
 
-<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
 
-<polymer-element name="moon-phase" attributes="date">
-
-<template>
+<dom-module id="moon-phase">
   <style>
     :host {
       display: block;
@@ -22,12 +20,34 @@ Moon phase icons modified from icons from flaticon.com by Freepik under CC-BY.
       width: 100%;
     }
   </style>
-  <img id="phaseIcon">
-</template>
+
+  <template>
+    <img id="phaseIcon">
+  </template>
+</dom-module>
 
 <script>
+var BASE_PATH = document.baseURI.substring(0, document.baseURI.lastIndexOf('/'));
+
 Polymer({
-  
+
+  is: 'moon-phase',
+
+  properties: {
+    /**
+     * The date shown in this element.
+     *
+     * @attribute date
+     * @type Date
+     * @default today
+     */
+    date: {
+      type: Date,
+      reflectToAttribute: true,
+      observer: 'dateChanged'
+    }
+  },
+
   dateChanged: function() {
 
     // To determine quarter, we compare the moon's angle at midnight on the
@@ -56,9 +76,9 @@ Polymer({
     var showIcon = ( quarter.length > 0 );
     this.$.phaseIcon.style.display = showIcon ? "block" : "none";
     if ( showIcon ) {
-      this.$.phaseIcon.src = this.resolvePath( "icons/" + quarter + ".svg" );
+      this.$.phaseIcon.src = new URL('icons/' + quarter + '.svg', BASE_PATH);
     } else {
-      this.$.phaseIcon.src = "";
+      this.$.phaseIcon.src = '';
     }
   },
 
@@ -104,8 +124,15 @@ Polymer({
   },
   _sind: function( angle ) {
     return Math.sin((angle*Math.PI)/180.0);
-  }
+  },
 
+  ready: function() {
+    if (!this.date) {
+      // By default, show today.
+      if (typeof this.today !== 'undefined') {
+        this.date = this.today();
+      }
+    }
+  }
 });
 </script>
-</polymer-element>
