@@ -27,7 +27,6 @@ Moon phase icons modified from icons from flaticon.com by Freepik under CC-BY.
 </dom-module>
 
 <script>
-var BASE_PATH = document.baseURI.substring(0, document.baseURI.lastIndexOf('/'));
 
 Polymer({
 
@@ -76,7 +75,7 @@ Polymer({
     var showIcon = ( quarter.length > 0 );
     this.$.phaseIcon.style.display = showIcon ? "block" : "none";
     if ( showIcon ) {
-      this.$.phaseIcon.src = new URL('icons/' + quarter + '.svg', BASE_PATH);
+      this.$.phaseIcon.src = this.resolveUrl('icons/' + quarter + '.svg');
     } else {
       this.$.phaseIcon.src = '';
     }

@@ -69,8 +69,6 @@ GlobalizeCulture = {
   _scriptPath: document.baseURI
 };
 
-var BASE_PATH = GlobalizeCulture._scriptPath.substring(0, GlobalizeCulture._scriptPath.lastIndexOf('/'));
-
 var DEFAULT_LOCALE = 'en';
 
 Polymer({
@@ -116,7 +114,7 @@ Polymer({
     // Perform initial fetches for initialization of Globalize
     this._expectedResponseCount = this._cldrFiles.length + this._localeFiles.length;
     for (var i = 0; i < this._cldrFiles.length; i++) {
-      this.$.ajax.url = new URL(this._cldrFiles[i], BASE_PATH);
+      this.$.ajax.url = this.resolveUrl(this._cldrFiles[i]);
       this.$.ajax.generateRequest();
     }
 
@@ -146,7 +144,7 @@ Polymer({
   _loadLocaleFiles: function() {
     for (var i = 0; i < this._localeFiles.length; i++) {
       var url = this._localeFiles[i].replace('{{cultureString}}', this.name);
-      this.$.ajax.url = new URL(url, BASE_PATH);
+      this.$.ajax.url = this.resolveUrl(url);
       this.$.ajax.generateRequest();
     }
   },
