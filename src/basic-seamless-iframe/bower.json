@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "basic-seamless-iframe.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master",

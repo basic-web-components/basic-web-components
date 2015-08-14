@@ -7,7 +7,7 @@
   "dependencies": {
     "basic-aspect": "basic-web-components/basic-aspect#master",
     "iron-icons": "PolymerElements/iron-icons#^1.0.1",
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master",

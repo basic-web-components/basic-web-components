@@ -18,7 +18,7 @@
     "basic-spread-fit": "basic-web-components/basic-spread-fit#master",
     "basic-swipe-direction": "basic-web-components/basic-swipe-direction#master",
     "basic-trackpad-direction": "basic-web-components/basic-trackpad-direction#master",
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
     "basic-arrow-direction": "basic-web-components/basic-arrow-direction#master",

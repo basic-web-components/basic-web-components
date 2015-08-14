@@ -19,7 +19,7 @@
     "basic-selection-scroll": "basic-web-components/basic-selection-scroll#master",
     "basic-tap-selection": "basic-web-components/basic-tap-selection#master",
     "basic-shared": "basic-web-components/basic-shared#master",
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master",
