@@ -24,7 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
    *
    * Example:
    *
-   *     <iron-iconset-svg id="my-svg-icons" iconSize="24">
+   *     <iron-iconset-svg name="my-svg-icons" size="24">
    *       <svg>
    *         <defs>
    *           <g id="shape">
@@ -44,6 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
    *     iconset.applyIcon(iconNode, 'car');
    *
    * @element iron-iconset-svg
+   * @demo demo/index.html
    */
   Polymer({
 
@@ -140,7 +141,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /**
      * Create a map of child SVG elements by id.
      *
-     * @return {Object} Map of id's to SVG elements.
+     * @return {!Object} Map of id's to SVG elements.
      */
     _createIconMap: function() {
       // Objects chained to Object.prototype (`{}`) have members. Specifically,

@@ -1,33 +1,33 @@
 BUILD LOG
 ---------
-Build Time: 2015-06-03T16:30:51-0700
+Build Time: 2015-08-13T12:57:18-0700
 
 NODEJS INFORMATION
 ==================
-nodejs: v2.0.2
+nodejs: v0.12.7
 gulp: 3.9.0
 gulp-audit: 1.0.0
-gulp-concat: 2.5.2
+gulp-concat: 2.6.0
 gulp-header: 1.2.2
 gulp-uglify: 1.2.0
-run-sequence: 1.1.0
-web-component-tester: 3.1.4
+run-sequence: 1.1.2
+web-component-tester: 3.3.10
 
 REPO REVISIONS
 ==============
-webcomponentsjs: da802598acc91d10d0205cf6130d15bd75fa12d1
+webcomponentsjs: 0fc12104ac6f39421c5105a3694aa740ed3835df
 
 BUILD HASHES
 ============
-CustomElements.js: 89978a89cdf96d509b8e399bf8e6aff4431c41ea
-CustomElements.min.js: e8d9ac81e56720cccef8e1ba01400d4f403531b1
-HTMLImports.js: 5a393509ce18b7ee605cd4474750e783a6afa5a5
-HTMLImports.min.js: 6ce4c8c1340b3ceea4a2c05942cf4e8ef685fae3
-MutationObserver.js: 60074504bbdf487e192215647375bffb70888997
-MutationObserver.min.js: 76658a548e3785ee931d45fad4a0bd2b81594aa3
-ShadowDOM.js: 35dceaf9eca85b593764a05b5324173e84f07608
-ShadowDOM.min.js: 80ab65804971765c3450864b24f108efd8bd6086
-webcomponents-lite.js: 94a081e93a4b2c65e645787b6e69c2a0aac204ff
-webcomponents-lite.min.js: 80158c463eb7fda32995d908b9fbabcf95595c0e
-webcomponents.js: de93a7fee51ce01dd61546598f12e481755c44ca
-webcomponents.min.js: 0a70cae0a9589e463aa36d1ec9c1fbc87c1b1c5c
+CustomElements.js: 174a3a08af4a551dbd436f5dc527e29c4b989919
+CustomElements.min.js: 5d7f8991d0ce8a10307114de07d7ce0d1481f3a5
+HTMLImports.js: 6bb55981141fcf206496c34dad811e176f0d13f8
+HTMLImports.min.js: f956c8f8751b4e87fd93f5d4a3d053e6e8654d52
+MutationObserver.js: e0fce524fed93243c80971b72be846775bb74d53
+MutationObserver.min.js: 25c795fa01bd9d9feb3a52cf60ab2b6749b78c75
+ShadowDOM.js: 1874e157c0462484bbb34b812d6ec7a97cf63995
+ShadowDOM.min.js: 9a7fca60240b59961eba22b941ab0f890124e96b
+webcomponents-lite.js: 406c7a34b1ab536e7bdf943c22d4293fbbe464e9
+webcomponents-lite.min.js: 97f3d2215d0390bc2e246bd1c1f363b257050f70
+webcomponents.js: 8aa2b2a294e917ec792f6b52f27cfbf9b00f519f
+webcomponents.min.js: 4df2e85a7b0cd173494a9e8ab71660943734fcf9

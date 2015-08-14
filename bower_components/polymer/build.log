@@ -1,26 +1,26 @@
 BUILD LOG
 ---------
-Build Time: 2015-05-27T14:54:42-0700
+Build Time: 2015-08-13T16:56:33-0700
 
 NODEJS INFORMATION
 ==================
-nodejs: v2.0.2
-gulp: 3.8.11
-gulp-audit: 1.0.0
+nodejs: v0.12.7
 del: 1.2.0
+gulp: 3.9.0
+gulp-audit: 1.0.0
 gulp-rename: 1.2.2
 gulp-replace: 0.5.3
-gulp-vulcanize: 6.0.0
-lazypipe: 0.2.3
-polyclean: 1.1.0
-run-sequence: 1.1.0
+gulp-vulcanize: 6.0.1
+lazypipe: 0.2.4
+polyclean: 1.2.0
+run-sequence: 1.1.1
 
 REPO REVISIONS
 ==============
-polymer: eccaf25115c32e27da9bf4581879ed882fb06d05
+polymer: a42ca09c3b99749b1407d5fa68cd957c2eaf5ca6
 
 BUILD HASHES
 ============
-polymer-mini.html: 6643b7ca3675fd7247fb1894a51435e0e1256e32
-polymer-micro.html: 555887281397132abc31e55b665d0011427750b4
-polymer.html: c6f614355fa488c8ef3010b41c8c9e24b43718a8
+polymer-mini.html: b40016f458e85bb815c898378b7bcd5c8abe5661
+polymer-micro.html: ef8ebb2dc40697c845c2b8ec64ee69838d0d7bfc
+polymer.html: 2f874995a3a3ada9e87da48a01d10c6d3ee297bb
