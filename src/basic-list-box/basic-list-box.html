@@ -56,44 +56,47 @@ The user can also select an item by typing the beginning of an item's text.
 <link rel="import" href="../basic-shared/basic-shared.html">
 
 <dom-module id="basic-list-box">
-  <style>
-  :host {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-
-  [target="child"] {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex: 1;
-    flex: 1;
-  }
-
-  #itemsContainer {
-    -webkit-flex: 1;
-    flex: 1;
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll; /* for momentum scrolling */
-  }
-
-  /* Generic appearance */
-  :host([generic=""]) {
-    border: 1px solid gray;
-    box-sizing: border-box;
-    cursor: default;
-  }
-
-  :host([generic=""]) #itemsContainer ::content > * {
-    padding: 0.25em;
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    [target="child"] {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    #itemsContainer {
+      -webkit-flex: 1;
+      flex: 1;
+      -webkit-overflow-scrolling: touch;
+      overflow-y: scroll; /* for momentum scrolling */
+    }
+
+    /* Generic appearance */
+    :host([generic=""]) {
+      border: 1px solid gray;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    :host([generic=""]) #itemsContainer ::content > * {
+      padding: 0.25em;
+    }
+    </style>
+
     <basic-tap-selection target="child">
       <basic-children-content id="itemsContainer">
         <content></content>
       </basic-children-content>
     </basic-tap-selection>
+
   </template>
 </dom-module>
 

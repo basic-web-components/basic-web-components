@@ -11,52 +11,54 @@ Clicking a dot will select the corresponding list item.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <dom-module id="basic-page-dots">
-  <style>
-  :host {
-    display: inline-block;
-    position: relative;
-  }
-
-  #dots {
-    bottom: 0;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-  }
-
-  .dot {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 7px;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    height: 8px;
-    margin: 7px 5px;
-    padding: 0;
-    transition: background 0.2s box-shadow 0.2s;
-    width: 8px;
-  }
-
-  .dot:hover {
-    background: rgba(0, 0, 0, 0.75);
-    box-shadow: 0 0 1px 3px rgba(255, 255, 255, 0.5);
-  }
-
-  .dot.selected {
-    background: rgba(255, 255, 255, 0.95);
-  }
-
-  @media (min-width: 768px) {
-    .dot {
-      height: 12px;
-      width: 12px;
-    }
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: inline-block;
+      position: relative;
+    }
+
+    #dots {
+      bottom: 0;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .dot {
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 7px;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+      height: 8px;
+      margin: 7px 5px;
+      padding: 0;
+      transition: background 0.2s box-shadow 0.2s;
+      width: 8px;
+    }
+
+    .dot:hover {
+      background: rgba(0, 0, 0, 0.75);
+      box-shadow: 0 0 1px 3px rgba(255, 255, 255, 0.5);
+    }
+
+    .dot.selected {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    @media (min-width: 768px) {
+      .dot {
+        height: 12px;
+        width: 12px;
+      }
+    }
+    </style>
+
     <!--
     REVIEW: These dots aren't buttons, because they're never meant to be used
     on their own. There should always be some other, more accessible, way to
@@ -70,6 +72,7 @@ Clicking a dot will select the corresponding list item.
     <!-- TODO: Replace with something that's basically a list box -->
     <div id="dots"></div>
     <content></content>
+
   </template>
 </dom-module>
 
@@ -141,7 +144,7 @@ Polymer({
       this.dotClick(event);
     }.bind(this));
   },
-  
+
   /**
    * The index of the item which is currently selected, or -1 if there is no
    * selection.

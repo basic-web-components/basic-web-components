@@ -10,29 +10,32 @@ and width of the child elements.
 <link rel="import" href="../basic-shared/basic-shared.html">
 
 <dom-module id="basic-stack">
-  <style>
-  :host {
-    box-sizing: border-box;
-    display: inline-block;
-    position: relative;
-  }
-
-  #stackContainer {
-    display: block;
-    left: 0;
-    position: relative;
-    top: 0;
-    width: 100%;
-  }
-
-  #stackContainer ::content > * {
-    position: absolute;
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      box-sizing: border-box;
+      display: inline-block;
+      position: relative;
+    }
+
+    #stackContainer {
+      display: block;
+      left: 0;
+      position: relative;
+      top: 0;
+      width: 100%;
+    }
+
+    #stackContainer ::content > * {
+      position: absolute;
+    }
+    </style>
+
     <basic-children-content id="stackContainer">
       <content id="content"></content>
     </basic-children-content>
+
   </template>
 </dom-module>
 

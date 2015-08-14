@@ -11,26 +11,29 @@ contain the tallest/widest items in a list.
 <link rel="import" href="../basic-stack/basic-stack.html">
 
 <dom-module id="basic-spread-fit">
-  <style>
-  :host {
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-  }
-
-  basic-stack {
-    display: inline-block;
-  }
-
-  #stack ::content .item {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+
+    basic-stack {
+      display: inline-block;
+    }
+
+    #stack ::content .item {
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    </style>
+
     <basic-stack id="stack">
       <content></content>
     </basic-stack>
+
   </template>
 </dom-module>
 

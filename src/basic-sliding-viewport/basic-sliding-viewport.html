@@ -13,28 +13,31 @@ basic-sliding-viewport-fit.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <dom-module id="basic-sliding-viewport">
-  <style>
-  :host {
-    display: block;
-    overflow: hidden;
-    position: relative;
-  }
-
-  #slidingContainer {
-    height: 100%;
-    position: absolute;
-    will-change: transform;
-  }
-
-  :host(.showTransition) #slidingContainer {
-    -webkit-transition: -webkit-transform 0.2s ease-out;
-    transition: transform 0.2s ease-out;
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #slidingContainer {
+      height: 100%;
+      position: absolute;
+      will-change: transform;
+    }
+
+    :host(.showTransition) #slidingContainer {
+      -webkit-transition: -webkit-transform 0.2s ease-out;
+      transition: transform 0.2s ease-out;
+    }
+    </style>
+
     <div id="slidingContainer">
       <content></content>
     </div>
+
   </template>
 </dom-module>
 

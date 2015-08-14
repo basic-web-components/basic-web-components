@@ -11,31 +11,34 @@ component basic-spread-fit.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <dom-module id="basic-spread-items">
-  <style>
-  :host {
-    display: block;
-  }
-
-  #spreadContainer {
-    display: -webkit-flex;
-    display: flex;
-    height: 100%;
-    position: relative;
-  }
-
-  #spreadContainer ::content > * {
-    object-fit: contain;
-    touch-action: none;
-    height: 100%;
-    -webkit-user-drag: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: block;
+    }
+
+    #spreadContainer {
+      display: -webkit-flex;
+      display: flex;
+      height: 100%;
+      position: relative;
+    }
+
+    #spreadContainer ::content > * {
+      object-fit: contain;
+      touch-action: none;
+      height: 100%;
+      -webkit-user-drag: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+    </style>
+
     <div id="spreadContainer">
       <content></content>
     </div>
+
   </template>
 </dom-module>
 

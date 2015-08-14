@@ -106,24 +106,26 @@ using assistive technologies.
 <link rel="import" href="../basic-spread-items/basic-spread-items.html">
 
 <dom-module id="basic-carousel">
-  <style>
-  :host {
-    display: -webkit-flex;
-    display: flex;
-  }
-
-  [target="child"] {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex: 1;
-    flex: 1;
-  }
-
-  basic-spread-items {
-    height: 100%;
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: -webkit-flex;
+      display: flex;
+    }
+
+    [target="child"] {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    basic-spread-items {
+      height: 100%;
+    }
+    </style>
+
     <basic-item-selection selection-required="true"></basic-item-selection>
     <basic-trackpad-direction target="child">
       <basic-swipe-direction target="child">
@@ -134,6 +136,7 @@ using assistive technologies.
         </basic-sliding-viewport>
       </basic-swipe-direction>
     </basic-trackpad-direction>
+
   </template>
 </dom-module>
 

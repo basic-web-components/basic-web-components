@@ -13,70 +13,70 @@ stretch the text area.
 <link rel="import" href="../basic-shared/basic-shared.html">
 
 <dom-module id="basic-autosize-textarea">
-
-  <style>
-  :host {
-    display: block;
-  }
-
-  #autoSizeContainer {
-    position: relative;
-  }
-
-  /*
-   * Ensure both the text area and copy end up with the element's own font
-   * metrics, so that text will lay out the same in both of them.
-   */
-  #textBox,
-  #copyContainer {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    margin: 0;
-  }
-
-  #textBox {
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    resize: none;
-    top: 0;
-    width: 100%;
-    @apply(--textarea);
-  }
-
-  #copyContainer {
-    visibility: hidden;
-    white-space: pre-wrap; /* So lines wrap */
-    word-wrap: break-word; /* So we break at word boundaries when possible */
-  }
-
-  #contentContainer {
-    display: none;
-  }
-  </style>
-
-  <!--
-  The invisible copyContainer contains an extraSpace element that ensures that,
-  even if the last line of the textarea is blank, there will be something in the
-  line that forces the text copy to grow by a line. This extra space is a thin
-  space, to reduce the amount by which the text copy will prematurely grow.
-
-  The copyContainer also contains an extraLine element exists to deal with the
-  fact that, if the user presses the Enter key down, the textarea's content will
-  move before the complete text is available. See notes at _keypress.
-
-  Lastly, we put the HTML content element into a separate container so we can
-  hide it. We need to have a content element somewhere in the template to
-  convince Polymer that we care about the content in the Shady DOM case --
-  without that content element, Shady DOM will conclude the element doesn't
-  need its light DOM content, and will throw it away.
-  -->
   <template>
+
+    <style>
+    :host {
+      display: block;
+    }
+
+    #autoSizeContainer {
+      position: relative;
+    }
+
+    /*
+     * Ensure both the text area and copy end up with the element's own font
+     * metrics, so that text will lay out the same in both of them.
+     */
+    #textBox,
+    #copyContainer {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: inherit;
+      font-style: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      margin: 0;
+    }
+
+    #textBox {
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      resize: none;
+      top: 0;
+      width: 100%;
+      @apply(--textarea);
+    }
+
+    #copyContainer {
+      visibility: hidden;
+      white-space: pre-wrap; /* So lines wrap */
+      word-wrap: break-word; /* So we break at word boundaries when possible */
+    }
+
+    #contentContainer {
+      display: none;
+    }
+    </style>
+
+    <!--
+    The invisible copyContainer contains an extraSpace element that ensures that,
+    even if the last line of the textarea is blank, there will be something in the
+    line that forces the text copy to grow by a line. This extra space is a thin
+    space, to reduce the amount by which the text copy will prematurely grow.
+
+    The copyContainer also contains an extraLine element exists to deal with the
+    fact that, if the user presses the Enter key down, the textarea's content will
+    move before the complete text is available. See notes at _keypress.
+
+    Lastly, we put the HTML content element into a separate container so we can
+    hide it. We need to have a content element somewhere in the template to
+    convince Polymer that we care about the content in the Shady DOM case --
+    without that content element, Shady DOM will conclude the element doesn't
+    need its light DOM content, and will throw it away.
+    -->
     <div id="autoSizeContainer">
       <textarea id="textBox" on-keypress="_keypress" placeholder="{{placeholder}}" value="{{value::input}}"></textarea>
       <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
@@ -84,6 +84,7 @@ stretch the text area.
     <div id="contentContainer">
       <content></content>
     </div>
+
   </template>
 </dom-module>
 

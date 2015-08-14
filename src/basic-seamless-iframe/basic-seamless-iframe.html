@@ -42,26 +42,26 @@ are showing the same page.
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="basic-seamless-iframe">
-
-  <style>
-  :host {
-    display: block;
-    position: relative;
-  }
-
-  #iframe {
-    border: none;
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-  }
-  </style>
-
   <template>
-    <iframe id="iframe" src="{{src}}" scrollbars="no"></iframe>
-  </template>
 
+    <style>
+    :host {
+      display: block;
+      position: relative;
+    }
+
+    #iframe {
+      border: none;
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+    </style>
+
+    <iframe id="iframe" src="{{src}}" scrollbars="no"></iframe>
+
+  </template>
 </dom-module>
 
 <script>

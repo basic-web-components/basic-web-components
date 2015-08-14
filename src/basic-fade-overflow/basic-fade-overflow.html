@@ -22,29 +22,29 @@ TODO: Automatically hide the fade if all the content can be seen.
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="basic-fade-overflow">
-
-  <style>
-  :host {
-    display: block;
-    position: relative;
-    overflow: hidden;
-  }
-
-  #fade {
-    bottom: 0;
-    height: var(--fade-height, 3em);
-    max-height: 50%;
-    pointer-events: none; /* Lets user interact with content through the fade. */
-    position: absolute;
-    width: 100%;
-  }
-  </style>
-
   <template>
+
+    <style>
+    :host {
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #fade {
+      bottom: 0;
+      height: var(--fade-height, 3em);
+      max-height: 50%;
+      pointer-events: none; /* Lets user interact with content through the fade. */
+      position: absolute;
+      width: 100%;
+    }
+    </style>
+
     <div id="fade"></div>
     <content></content>
-  </template>
 
+  </template>
 </dom-module>
 
 <script>

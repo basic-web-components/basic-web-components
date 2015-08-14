@@ -9,74 +9,76 @@ Clicking the left/right button maps to the corresponding left/right direction.
 <link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
 
 <dom-module id="basic-arrow-direction">
-  <style>
-  :host {
-    display: -webkit-inline-flex;
-    display: inline-flex;
-  }
-
-  #arrowNavigationContainer {
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-flex: 1;
-    flex: 1;
-  }
-
-  .navigationButton {
-    background: transparent;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    color: rgba(0, 0, 0, 0.5);
-    margin: 0;
-    opacity: 1;
-    outline: none; /* REVIEW: Accessibility should be provided by other aspects. */
-    padding: 0;
-    transition: opacity 1s;
-    z-index: 1;
-  }
-
-  .navigationButton:hover:not(:disabled) {
-    background: rgba( 0, 0, 0, 0.5 );
-    fill: rgba( 0, 0, 0, 0.7 );
-  }
-  .navigationButton:active:not(:disabled) {
-    background: rgba( 0, 0, 0, 0.7 );
-    fill: rgba( 0, 0, 0, 0.9 );
-  }
-
-  :host(:not(.mouseDetected)) .navigationButton {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .navigationButton iron-icon {
-    height: 48px;
-    width: 48px;
-  }
-
-  /* Overlay variant */
-  :host(.overlay) {
-    position: relative;
-  }
-  :host(.overlay) .navigationButton {
-    bottom: 0;
-    color: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    top: 0;
-  }
-  :host(.overlay) #buttonLeft {
-    left: 0;
-  }
-  :host(.overlay) #buttonRight {
-    right: 0;
-  }
-
-  .navigationButton:disabled {
-    color: rgba(255, 255, 255, 0.3);
-    fill: rgba( 0, 0, 0, 0.2 );
-  }
-  </style>
   <template>
+    
+    <style>
+    :host {
+      display: -webkit-inline-flex;
+      display: inline-flex;
+    }
+
+    #arrowNavigationContainer {
+      display: -webkit-inline-flex;
+      display: inline-flex;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    .navigationButton {
+      background: transparent;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0.5);
+      margin: 0;
+      opacity: 1;
+      outline: none; /* REVIEW: Accessibility should be provided by other aspects. */
+      padding: 0;
+      transition: opacity 1s;
+      z-index: 1;
+    }
+
+    .navigationButton:hover:not(:disabled) {
+      background: rgba( 0, 0, 0, 0.5 );
+      fill: rgba( 0, 0, 0, 0.7 );
+    }
+    .navigationButton:active:not(:disabled) {
+      background: rgba( 0, 0, 0, 0.7 );
+      fill: rgba( 0, 0, 0, 0.9 );
+    }
+
+    :host(:not(.mouseDetected)) .navigationButton {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .navigationButton iron-icon {
+      height: 48px;
+      width: 48px;
+    }
+
+    /* Overlay variant */
+    :host(.overlay) {
+      position: relative;
+    }
+    :host(.overlay) .navigationButton {
+      bottom: 0;
+      color: rgba(255, 255, 255, 0.7);
+      position: absolute;
+      top: 0;
+    }
+    :host(.overlay) #buttonLeft {
+      left: 0;
+    }
+    :host(.overlay) #buttonRight {
+      right: 0;
+    }
+
+    .navigationButton:disabled {
+      color: rgba(255, 255, 255, 0.3);
+      fill: rgba( 0, 0, 0, 0.2 );
+    }
+    </style>
+
     <!--
     Accessibility note: since the navigation offered by the arrow buttons should
     be redundant (that is, there should be other ways of navigating the list),
@@ -91,6 +93,7 @@ Clicking the left/right button maps to the corresponding left/right direction.
     <button id="buttonRight" class="navigationButton" on-click="goRight" aria-hidden="true">
       <iron-icon icon="chevron-right"></iron-icon>
     </button>
+
   </template>
 </dom-module>
 
@@ -132,7 +135,7 @@ Polymer({
       this.classList.add('mouseDetected');
     }.bind(this));
   },
-  
+
   /**
    * The index of the item which is currently selected, or -1 if there is no
    * selection.

@@ -9,28 +9,31 @@ accommodate the tallest/widest items in a list.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <dom-module id="basic-sliding-viewport-fit">
-  <style>
-  :host {
-    display: block;
-    overflow: hidden;
-    position: relative;
-  }
-
-  #slidingContainer {
-    height: 100%;
-    position: absolute;
-    will-change: transform;
-  }
-
-  :host(.snapTransition) #slidingContainer {
-    -webkit-transition: -webkit-transform 0.2s ease-out;
-    transition: transform 0.2s ease-out;
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #slidingContainer {
+      height: 100%;
+      position: absolute;
+      will-change: transform;
+    }
+
+    :host(.snapTransition) #slidingContainer {
+      -webkit-transition: -webkit-transform 0.2s ease-out;
+      transition: transform 0.2s ease-out;
+    }
+    </style>
+
     <div id="slidingContainer" role="presentation">
       <content></content>
     </div>
+
   </template>
 </dom-module>
 

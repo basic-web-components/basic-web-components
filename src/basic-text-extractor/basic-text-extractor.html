@@ -27,18 +27,18 @@ traversed in document order.
 <link rel="import" href="../basic-shared/basic-shared.html">
 
 <dom-module id="basic-text-extractor">
-
-  <style>
-  /* Hide this element unless the .show class is applied. */
-  :host(:not(.show)) {
-    display: none;
-  }
-  </style>
-
   <template>
-    <content id="content"></content>
-  </template>
 
+    <style>
+    /* Hide this element unless the .show class is applied. */
+    :host(:not(.show)) {
+      display: none;
+    }
+    </style>
+
+    <content id="content"></content>
+
+  </template>
 </dom-module>
 
 <script>

@@ -5,19 +5,22 @@ Shows the selected item as a string.
 <link rel="import" href="../basic-aspect/basic-aspect.html">
 
 <dom-module id="basic-selected-item-string">
-  <style>
-  :host(.empty) #text {
-    display: none;
-  }
-  :host(:not(.empty)) #default {
-    display: none;
-  }
-  </style>
   <template>
+
+    <style>
+    :host(.empty) #text {
+      display: none;
+    }
+    :host(:not(.empty)) #default {
+      display: none;
+    }
+    </style>
+
     <div id="text"></div>
     <div id="default">
       <content></content>
     </div>
+
   </template>
 </dom-module>
 

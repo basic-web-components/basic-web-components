@@ -45,23 +45,25 @@ single carousel that adapts its layout behavior to its applied styling.
 <link rel="import" href="../basic-spread-fit/basic-spread-fit.html">
 
 <dom-module id="basic-carousel-fit">
-  <style>
-  :host {
-    display: inline-block;
-  }
-
-  [target="child"] {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex: 1;
-    flex: 1;
-  }
-
-  basic-spread-fit {
-    height: 100%;
-  }
-  </style>
   <template>
+
+    <style>
+    :host {
+      display: inline-block;
+    }
+
+    [target="child"] {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
+    basic-spread-fit {
+      height: 100%;
+    }
+    </style>
+
     <basic-item-selection selection-required="true"></basic-item-selection>
     <basic-trackpad-direction target="child">
       <basic-swipe-direction target="child">
@@ -72,6 +74,7 @@ single carousel that adapts its layout behavior to its applied styling.
         </basic-sliding-viewport-fit>
       </basic-swipe-direction>
     </basic-trackpad-direction>
+
   </template>
 </dom-module>
 
