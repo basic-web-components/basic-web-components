@@ -34,12 +34,12 @@ leaves alpha status.)
     }
     </style>
 
-    <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
-    <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
-    <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
-    <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
-    <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
-    <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
+    <basic-calendar-week day-element="{{dayElement}}"></basic-calendar-week>
+    <basic-calendar-week day-element="{{dayElement}}"></basic-calendar-week>
+    <basic-calendar-week day-element="{{dayElement}}"></basic-calendar-week>
+    <basic-calendar-week day-element="{{dayElement}}"></basic-calendar-week>
+    <basic-calendar-week day-element="{{dayElement}}"></basic-calendar-week>
+    <basic-calendar-week day-element="{{dayElement}}"></basic-calendar-week>
 
   </template>
 </dom-module>
@@ -131,7 +131,20 @@ Polymer({
       type: Date,
       value: null,
       observer: '_dateChanged'
+    },
+
+    /**
+     * The name of the element type that should be used to represent each day
+     * in the month.
+     *
+     * @attribute dayElement
+     * @type String
+     * @default basic-calendar-day
+     */
+    dayElement: {
+      type: String
     }
+
   },
 
   ready: function() {

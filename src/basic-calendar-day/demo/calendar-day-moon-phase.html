@@ -3,6 +3,7 @@ A calendar day that includes the moon phase.
 -->
 
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
 <link rel="import" href="moon-phase.html">
 
 <!-- TODO: based on basic-calendar-day. For now, simply copy relevent code
@@ -39,6 +40,11 @@ A calendar day that includes the moon phase.
 
 <script>
 Polymer({
+
+  behaviors: [
+    Basic.CalendarHelpers,
+    Basic.Generic
+  ],
 
   is: 'calendar-day-moon-phase',
 

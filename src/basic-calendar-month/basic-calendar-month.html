@@ -64,7 +64,7 @@ leaves alpha status.)
     <basic-month-and-year id="monthAndYear"></basic-month-and-year>
     <div id="monthTable">
       <basic-days-of-week id="daysOfWeek" format="{{daysOfWeekFormat}}"></basic-days-of-week>
-      <basic-calendar-month-days id="calendar" dayElement="{{dayElement}}"></basic-calendar-month-days>
+      <basic-calendar-month-days id="calendar" day-element="{{dayElement}}"></basic-calendar-month-days>
     </div>
 
   </template>
@@ -156,6 +156,18 @@ Polymer({
       type: Date,
       value: null,
       observer: '_dateChanged'
+    },
+
+    /**
+     * The name of the element type that should be used to represent each day
+     * in the month.
+     *
+     * @attribute dayElement
+     * @type String
+     * @default basic-calendar-day
+     */
+    dayElement: {
+      type: String
     },
 
     /*
