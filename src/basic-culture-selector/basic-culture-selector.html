@@ -42,7 +42,9 @@ README.md.
 <script src="../../bower_components/globalize/dist/globalize/relative-time.js"></script>
 
 <dom-module id="basic-culture-selector">
-  <style>
+  <template>
+    
+    <style>
     :host {
       display: inline-block;
     }
@@ -50,15 +52,15 @@ README.md.
     select {
       max-width: 100%;
     }
-  </style>
+    </style>
 
-  <template>
     <content></content>
     <iron-ajax id="ajax"
                handle-as="json"
                on-response="_onAjaxComplete"
                on-error="_onAjaxError"></iron-ajax>
     <select id="culturePicker" value="{{name::input}}"></select>
+
   </template>
 </dom-module>
 
@@ -202,7 +204,7 @@ Polymer({
      * @attribute name
      * @type string
      * @default "en"
-     */    
+     */
     name: {
       value: DEFAULT_LOCALE,
       reflectToAttribute: true,

@@ -17,7 +17,9 @@ leaves alpha status.)
 <link rel="import" href="../basic-calendar-week/basic-calendar-week.html">
 
 <dom-module id="basic-calendar-month-days">
-  <style>
+  <template>
+
+    <style>
     :host {
       display: table-row-group;
     }
@@ -32,15 +34,15 @@ leaves alpha status.)
     basic-calendar-week::shadow .day.outsideMonth {
       visibility: hidden;
     }
-  </style>
+    </style>
 
-  <template>
     <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
     <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
     <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
     <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
     <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
     <basic-calendar-week dayElement="{{dayElement}}"></basic-calendar-week>
+
   </template>
 </dom-module>
 
@@ -193,7 +195,7 @@ Polymer({
 
       var date = this.offsetDateByDays(firstDateOfMonth, 7 * i);
       var firstDateOfWeek = this.firstDateOfWeek(date, this.culture);
-      
+
       // For the first week of the month, use the first of the month as the
       // reference date of that week. For subsequent weeks, use the first of
       // the given week.

@@ -26,7 +26,9 @@ so for now this component assumes that left-to-right works for most users.
 <link rel="import" href="../basic-shared/basic-shared.html">
 
 <dom-module id="basic-calendar-week">
-  <style>
+  <template>
+
+    <style>
     :host {
       display: table-row;
     }
@@ -35,9 +37,8 @@ so for now this component assumes that left-to-right works for most users.
       display: table-cell;
       width: 14.285%; /* One seventh */
     }
-  </style>
+    </style>
 
-  <template>
     <basic-calendar-day class="day firstDayOfWeek"></basic-calendar-day>
     <basic-calendar-day class="day"></basic-calendar-day>
     <basic-calendar-day class="day"></basic-calendar-day>
@@ -45,6 +46,7 @@ so for now this component assumes that left-to-right works for most users.
     <basic-calendar-day class="day"></basic-calendar-day>
     <basic-calendar-day class="day"></basic-calendar-day>
     <basic-calendar-day class="day lastDayOfWeek"></basic-calendar-day>
+
   </template>
 </dom-module>
 

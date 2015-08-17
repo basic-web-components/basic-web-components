@@ -24,7 +24,9 @@ leaves alpha status.)
 <link rel="import" href="../basic-calendar-month-days/basic-calendar-month-days.html">
 
 <dom-module id="basic-calendar-month">
-  <style>
+  <template>
+
+    <style>
     :host {
       display: inline-block;
     }
@@ -57,14 +59,14 @@ leaves alpha status.)
     :host([generic='']) .dayOfWeek {
       padding: 4px;
     }
-  </style>
+    </style>
 
-  <template>
     <basic-month-and-year id="monthAndYear"></basic-month-and-year>
     <div id="monthTable">
       <basic-days-of-week id="daysOfWeek" format="{{daysOfWeekFormat}}"></basic-days-of-week>
       <basic-calendar-month-days id="calendar" dayElement="{{dayElement}}"></basic-calendar-month-days>
     </div>
+
   </template>
 </dom-module>
 
