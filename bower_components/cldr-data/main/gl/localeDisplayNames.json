@@ -1,0 +1,185 @@
+{
+  "main": {
+    "gl": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "gl"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "Calendario",
+          "colAlternate": "Ignorar clasificación de símbolos",
+          "colBackwards": "Clasificación de acentos invertida",
+          "colCaseFirst": "Orde de maiúsculas/minúsculas",
+          "colCaseLevel": "Clasificación que distingue entre maiúsculas e minúsculas",
+          "colHiraganaQuaternary": "Clasificación Kana",
+          "colNormalization": "Clasificación normalizada",
+          "colNumeric": "Clasificación numérica",
+          "colStrength": "Forza de clasificación",
+          "collation": "Orde de clasificación",
+          "currency": "Moeda",
+          "numbers": "Números",
+          "timezone": "Fuso horario",
+          "va": "Variante local",
+          "variableTop": "Clasificar como símbolos",
+          "x": "Uso privado"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "Calendario budista",
+            "chinese": "Calendario chinés",
+            "coptic": "Calendario cóptico",
+            "dangi": "Calendario dangi",
+            "ethiopic": "Calendario etíope",
+            "ethiopic-amete-alem": "Calendario Amete Alem etíope",
+            "gregorian": "Calendario gregoriano",
+            "hebrew": "Calendario hebreo",
+            "indian": "Calendario nacional indio",
+            "islamic": "Calendario islámico",
+            "islamic-civil": "Calendario islámico (civil, tabular)",
+            "islamic-rgsa": "Calendario islámico (Arabia Saudita,",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "Calendario ISO-8601",
+            "japanese": "Calendario xaponés",
+            "persian": "Calendario persa",
+            "roc": "Calendario Minguo"
+          },
+          "colAlternate": {
+            "non-ignorable": "Clasificar símbolos",
+            "shifted": "Clasificar ignorando símbolos"
+          },
+          "colBackwards": {
+            "no": "Clasificar acentos con normalidade",
+            "yes": "Clasificar acentos invertidos"
+          },
+          "colCaseFirst": {
+            "lower": "Clasificar primeiro as minúsculas",
+            "no": "Clasificar orde de maiúsculas e minúsculas normal",
+            "upper": "Clasificar primeiro as maiúsculas"
+          },
+          "colCaseLevel": {
+            "no": "Clasificar sen distinguir entre maiúsculas e minúsculas",
+            "yes": "Clasificar distinguindo entre maiúsculas e minúsculas"
+          },
+          "colHiraganaQuaternary": {
+            "no": "Clasificar Kana por separado",
+            "yes": "Clasificar Kana de modo diferente"
+          },
+          "colNormalization": {
+            "no": "Clasificar sen normalización",
+            "yes": "Clasificar Unicode normalizado"
+          },
+          "colNumeric": {
+            "no": "Clasificar díxitos individualmente",
+            "yes": "Clasificar díxitos numericamente"
+          },
+          "colStrength": {
+            "identical": "Clasificar todo",
+            "primary": "Clasificar só letras de base",
+            "quaternary": "Clasificar acentos/maiúsculas e minúsculas/ancho/kana",
+            "secondary": "Clasificar acentos",
+            "tertiary": "Clasificar acentos/maiúsculas e minúsculas/ancho"
+          },
+          "collation": {
+            "big5han": "Orde de clasificación chinesa tradicional - Big5",
+            "dictionary": "Criterio de ordenación do dicionario",
+            "ducet": "Criterio de ordenación Unicode predeterminado",
+            "eor": "eor",
+            "gb2312han": "orde de clasifcación chinesa simplificada - GB2312",
+            "phonebook": "orde de clasificación da guía telefónica",
+            "phonetic": "Orde de clasificación fonética",
+            "pinyin": "Orde de clasificación pinyin",
+            "reformed": "Criterio de ordenación reformado",
+            "search": "Busca de uso xeral",
+            "searchjl": "Clasificar por consonante inicial hangul",
+            "standard": "Criterio de ordenación estándar",
+            "stroke": "Orde de clasificación polo número de trazos",
+            "traditional": "Orde de clasificación tradicional",
+            "unihan": "Criterio de ordenación radical-trazo",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "Díxitos do árabe oriental",
+            "arabext": "Díxitos arábicos orientais",
+            "armn": "Números armenios",
+            "armnlow": "Números armenios en minúscula",
+            "bali": "bali",
+            "beng": "Díxitos bengalís",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "Díxitos devanagari",
+            "ethi": "Números etíopes",
+            "finance": "Números financeiros",
+            "fullwide": "Díxitos de ancho completo",
+            "geor": "Números xeorxianos",
+            "grek": "Números gregos",
+            "greklow": "Números gregos en minúscula",
+            "gujr": "Díxitos guxarati",
+            "guru": "Díxitos do gurmukhi",
+            "hanidec": "Números decimais chineses",
+            "hans": "Números chineses simplificados",
+            "hansfin": "Números financeiros chineses simplificados",
+            "hant": "Números do chinés tradicional",
+            "hantfin": "Números financeiros do chinés tradicional",
+            "hebr": "Números hebreos",
+            "java": "java",
+            "jpan": "Números xaponeses",
+            "jpanfin": "Números financeiros xaponeses",
+            "kali": "kali",
+            "khmr": "Díxitos do camboxano",
+            "knda": "Díxitos do kannadés",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "Díxitos laosianos",
+            "latn": "Díxitos occidentais",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "Díxitos malabares",
+            "mong": "Díxitos mongoles",
+            "mtei": "mtei",
+            "mymr": "Díxitos birmanos",
+            "mymrshan": "mymrshan",
+            "native": "Díxitos orixinais",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "Díxitos oriya",
+            "osma": "osma",
+            "roman": "Números romanos",
+            "romanlow": "Números romanos en minúsculas",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "Números támil",
+            "tamldec": "Díxitos do támil",
+            "telu": "Díxitos do telugú",
+            "thai": "Díxitos tailandeses",
+            "tibt": "Díxitos tibetanos",
+            "traditional": "Numeros tradicionais",
+            "vaii": "Díxitos Vai"
+          }
+        },
+        "codePatterns": {
+          "language": "Idioma: {0}",
+          "script": "Alfabeto: {0}",
+          "territory": "Rexión: {0}"
+        }
+      }
+    }
+  }
+}

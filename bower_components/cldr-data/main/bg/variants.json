@@ -1,0 +1,90 @@
+{
+  "main": {
+    "bg": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "bg"
+      },
+      "localeDisplayNames": {
+        "variants": {
+          "1606NICT": "Късен средновековен френски до 1606",
+          "1694ACAD": "Ранен съвременен френски",
+          "1901": "Традиционен немски правопис",
+          "1959ACAD": "1959ACAD",
+          "1994": "Стандартен резиански правопис",
+          "1996": "Немски правопис от 1996",
+          "ALALC97": "ALALC97",
+          "ALUKU": "ALUKU",
+          "AREVELA": "Източно арменски",
+          "AREVMDA": "Западно арменски",
+          "BAKU1926": "Унифицирана тюркска азбука",
+          "BALANKA": "BALANKA",
+          "BARLA": "BARLA",
+          "BAUDDHA": "BAUDDHA",
+          "BISCAYAN": "BISCAYAN",
+          "BISKE": "Диалект Сан Джорджио/Била",
+          "BOHORIC": "BOHORIC",
+          "BOONT": "Бунтлинг",
+          "DAJNKO": "DAJNKO",
+          "EKAVSK": "EKAVSK",
+          "EMODENG": "EMODENG",
+          "FONIPA": "Международна фонетична азбука",
+          "FONUPA": "Уралска фонетична азбука",
+          "FONXSAMP": "FONXSAMP",
+          "HEPBURN": "HEPBURN",
+          "HOGNORSK": "HOGNORSK",
+          "IJEKAVSK": "IJEKAVSK",
+          "ITIHASA": "ITIHASA",
+          "JAUER": "JAUER",
+          "JYUTPING": "JYUTPING",
+          "KKCOR": "KKCOR",
+          "KOCIEWIE": "KOCIEWIE",
+          "KSCOR": "KSCOR",
+          "LAUKIKA": "LAUKIKA",
+          "LIPAW": "Диалект Липовац",
+          "LUNA1918": "LUNA1918",
+          "METELKO": "METELKO",
+          "MONOTON": "Монотонично",
+          "NDYUKA": "NDYUKA",
+          "NEDIS": "Диалект Натисоне",
+          "NJIVA": "Диалект Нджива",
+          "NULIK": "NULIK",
+          "OSOJS": "Диалект Осеако/Осояне",
+          "PAMAKA": "PAMAKA",
+          "PETR1708": "PETR1708",
+          "PINYIN": "Пинин романизация",
+          "POLYTON": "Политонично",
+          "POSIX": "Компютърен",
+          "PUTER": "PUTER",
+          "REVISED": "Променен правопис",
+          "RIGIK": "RIGIK",
+          "ROZAJ": "Резиански",
+          "RUMGR": "RUMGR",
+          "SAAHO": "Сахо",
+          "SCOTLAND": "Шотландски английски",
+          "SCOUSE": "Ливърпулски диалект",
+          "SOLBA": "Диалект Столвиза",
+          "SOTAV": "SOTAV",
+          "SURMIRAN": "SURMIRAN",
+          "SURSILV": "SURSILV",
+          "SUTSILV": "SUTSILV",
+          "TARASK": "Тарашкевица",
+          "UCCOR": "UCCOR",
+          "UCRCOR": "UCRCOR",
+          "ULSTER": "ULSTER",
+          "UNIFON": "UNIFON",
+          "VAIDIKA": "VAIDIKA",
+          "VALENCIA": "Валенсиански",
+          "VALLADER": "VALLADER",
+          "WADEGILE": "Уейд-Джайлс романизация"
+        }
+      }
+    }
+  }
+}

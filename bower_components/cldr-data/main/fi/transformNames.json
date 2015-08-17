@@ -1,0 +1,30 @@
+{
+  "main": {
+    "fi": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11333 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-01 16:07:08 -0600 (Sun, 01 Mar 2015) $"
+        },
+        "language": "fi"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN-latinaistus",
+          "Numeric": "numeerinen muunnos",
+          "Tone": "tooni",
+          "UNGEGN": "UNGEGN-latinaistus",
+          "x-Accents": "aksenttimerkit",
+          "x-Fullwidth": "ideogrammin levyinen",
+          "x-Halfwidth": "ideogrammin puolikkaan levyinen",
+          "x-Jamo": "jamo",
+          "x-Pinyin": "pinyin-latinaistus",
+          "x-Publishing": "julkaisuvalinta"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "main": {
+    "ne-IN": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11172 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-10 17:22:07 -0600 (Tue, 10 Feb 2015) $"
+        },
+        "language": "ne",
+        "territory": "IN"
+      },
+      "posix": {
+        "messages": {
+          "yesstr": "हो",
+          "nostr": "होइन"
+        }
+      }
+    }
+  }
+}

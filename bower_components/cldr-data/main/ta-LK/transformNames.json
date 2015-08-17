@@ -1,0 +1,31 @@
+{
+  "main": {
+    "ta-LK": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10819 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-08-14 22:53:08 -0500 (Thu, 14 Aug 2014) $"
+        },
+        "language": "ta",
+        "territory": "LK"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "எண்",
+          "Tone": "டோன்",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "ஒலிப்புகள்",
+          "x-Fullwidth": "முழு அகலம்",
+          "x-Halfwidth": "அரை அகலம்",
+          "x-Jamo": "ஜமோ",
+          "x-Pinyin": "பின்யின்",
+          "x-Publishing": "வெளியிடுகிறது"
+        }
+      }
+    }
+  }
+}

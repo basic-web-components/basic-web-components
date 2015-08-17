@@ -1,0 +1,185 @@
+{
+  "main": {
+    "id": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "id"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "Kalender",
+          "colAlternate": "Penyortiran Abaikan Simbol",
+          "colBackwards": "Penyortiran Aksen Terbalik",
+          "colCaseFirst": "Pengurutan Huruf Besar/Huruf Kecil",
+          "colCaseLevel": "Penyortiran Peka Huruf Besar",
+          "colHiraganaQuaternary": "Penyortiran Kana",
+          "colNormalization": "Penyortiran Dinormalisasi",
+          "colNumeric": "Penyortiran Numerik",
+          "colStrength": "Kekuatan Penyortiran",
+          "collation": "Urutan Sortir",
+          "currency": "Mata Uang",
+          "numbers": "Angka",
+          "timezone": "Zona Waktu",
+          "va": "Varian Lokal",
+          "variableTop": "Sortir Sebagai Simbol",
+          "x": "Penggunaan Pribadi"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "Kalender Buddha",
+            "chinese": "Kalender China",
+            "coptic": "Kalender Koptik",
+            "dangi": "Kalender Dangi",
+            "ethiopic": "Kalender Etiopia",
+            "ethiopic-amete-alem": "Kalender Amete Alem Etiopia",
+            "gregorian": "Kalender Gregorian",
+            "hebrew": "Kalender Ibrani",
+            "indian": "Kalender Nasional India",
+            "islamic": "Kalender Islam",
+            "islamic-civil": "Kalender Sipil Islam",
+            "islamic-rgsa": "Kalender Islam (Arab Saudi, penglihatan)",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "Kalender ISO-8601",
+            "japanese": "Kalender Jepang",
+            "persian": "Kalender Persia",
+            "roc": "Kalendar Minguo"
+          },
+          "colAlternate": {
+            "non-ignorable": "Sortir Simbol",
+            "shifted": "Sortir Abaikan Simbol"
+          },
+          "colBackwards": {
+            "no": "Sortir Aksen Secara Normal",
+            "yes": "Sortir Aksen Terbalik"
+          },
+          "colCaseFirst": {
+            "lower": "Sortir Huruf Kecil Dahulu",
+            "no": "Sortir Urutan Ukuran Huruf Normal",
+            "upper": "Sortir Huruf Besar Dahulu"
+          },
+          "colCaseLevel": {
+            "no": "Sortir Tidak Peka Huruf Besar",
+            "yes": "Sortir Peka Huruf Besar"
+          },
+          "colHiraganaQuaternary": {
+            "no": "Sortir Kana Secara Terpisah",
+            "yes": "Sortir Kana Secara Berbeda"
+          },
+          "colNormalization": {
+            "no": "Sortir Tanpa Normalisasi",
+            "yes": "Sortir Unicode Dinormalisasi"
+          },
+          "colNumeric": {
+            "no": "Sortir Digit Satu Per Satu",
+            "yes": "Sortir Digit Secara Numerik"
+          },
+          "colStrength": {
+            "identical": "Sortir Semua",
+            "primary": "Sortir Huruf Dasar Saja",
+            "quaternary": "Sortir Aksen/Ukuran Huruf/Lebar/Kana",
+            "secondary": "Sortir Aksen",
+            "tertiary": "Sortir Aksen/Ukuran Huruf/Lebar"
+          },
+          "collation": {
+            "big5han": "Urutan Sortir China Tradisional - Big5",
+            "dictionary": "Urutan Sortir Kamus",
+            "ducet": "Urutan Sortir Unicode Default",
+            "eor": "Aturan Pengurutan Eropa",
+            "gb2312han": "Urutan Sortir China Aks. Sederhana - GB2312",
+            "phonebook": "Urutan Sortir Buku Telepon",
+            "phonetic": "Urutan Sortir Fonetik",
+            "pinyin": "Urutan Sortir Pinyin",
+            "reformed": "Urutan Sortir yang Diubah Bentuknya",
+            "search": "Pencarian Tujuan Umum",
+            "searchjl": "Pencarian Menurut Konsonan Awal Hangul",
+            "standard": "Urutan Sortir Standar",
+            "stroke": "Urutan Sortir Guratan",
+            "traditional": "Urutan Sortir Tradisional",
+            "unihan": "Urutan Sortir Guratan Radikal",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "Angka Arab Timur",
+            "arabext": "Angka Arab Timur Diperluas",
+            "armn": "Angka Armenia",
+            "armnlow": "Angka Huruf Kecil Armenia",
+            "bali": "Angka Bali",
+            "beng": "Angka Bengali",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "Angka Cham",
+            "deva": "Angka Devanagari",
+            "ethi": "Angka Etiopia",
+            "finance": "Angka Finansial",
+            "fullwide": "Angka Lebar Penuh",
+            "geor": "Angka Georgia",
+            "grek": "Angka Yunani",
+            "greklow": "Angka Yunani Huruf Kecil",
+            "gujr": "Angka Gujarati",
+            "guru": "Angka Gurmukhi",
+            "hanidec": "Angka Desimal China",
+            "hans": "Angka China Sederhana",
+            "hansfin": "Angka Keuangan China Sederhana",
+            "hant": "Angka China Tradisional",
+            "hantfin": "Angka Keuangan China Tradisional",
+            "hebr": "Angka Ibrani",
+            "java": "Angka Jawa",
+            "jpan": "Angka Jepang",
+            "jpanfin": "Angka Keuangan Jepang",
+            "kali": "Angka Kayah Li",
+            "khmr": "Angka Khmer",
+            "knda": "Angka Kannada",
+            "lana": "Angka Tai Tham Hora",
+            "lanatham": "Angka Tai Tham Tham",
+            "laoo": "Angka Laos",
+            "latn": "Angka Latin",
+            "lepc": "Angka Lepcha",
+            "limb": "Angka Limbu",
+            "mlym": "Angka Malayalam",
+            "mong": "Angka Mongolia",
+            "mtei": "Angka Meetei Mayek",
+            "mymr": "Angka Myanmar",
+            "mymrshan": "Angka Myanmar Shan",
+            "native": "Digit Asli",
+            "nkoo": "Angka N’Ko",
+            "olck": "Angka Ol Chiki",
+            "orya": "Angka Oriya",
+            "osma": "osma",
+            "roman": "Angka Romawi",
+            "romanlow": "Angka Huruf Kecil Romawi",
+            "saur": "Angka Saurashtra",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "Angka Sunda",
+            "takr": "takr",
+            "talu": "Angka Tai Lue Baru",
+            "taml": "Angka Tamil Tradisional",
+            "tamldec": "Angka Tamil",
+            "telu": "Angka Telugu",
+            "thai": "Angka Thai",
+            "tibt": "Angka Tibet",
+            "traditional": "Angka Tradisional",
+            "vaii": "Angka Vai"
+          }
+        },
+        "codePatterns": {
+          "language": "Bahasa: {0}",
+          "script": "Skrip: {0}",
+          "territory": "Wilayah: {0}"
+        }
+      }
+    }
+  }
+}

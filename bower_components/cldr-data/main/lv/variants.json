@@ -1,0 +1,90 @@
+{
+  "main": {
+    "lv": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "lv"
+      },
+      "localeDisplayNames": {
+        "variants": {
+          "1606NICT": "1606NICT",
+          "1694ACAD": "1694ACAD",
+          "1901": "tradicionālā vācu ortogrāfija",
+          "1959ACAD": "akadēmiskā",
+          "1994": "1994",
+          "1996": "vācu ortogrāfija no 1996. gada",
+          "ALALC97": "ALALC97",
+          "ALUKU": "ALUKU",
+          "AREVELA": "austrumarmēņu",
+          "AREVMDA": "rietumarmēņu",
+          "BAKU1926": "BAKU1926",
+          "BALANKA": "BALANKA",
+          "BARLA": "BARLA",
+          "BAUDDHA": "BAUDDHA",
+          "BISCAYAN": "BISCAYAN",
+          "BISKE": "BISKE",
+          "BOHORIC": "BOHORIC",
+          "BOONT": "BOONT",
+          "DAJNKO": "DAJNKO",
+          "EKAVSK": "EKAVSK",
+          "EMODENG": "EMODENG",
+          "FONIPA": "Starptautiskais fonētiskais alfabēts",
+          "FONUPA": "UPA fonētika",
+          "FONXSAMP": "FONXSAMP",
+          "HEPBURN": "HEPBURN",
+          "HOGNORSK": "HOGNORSK",
+          "IJEKAVSK": "IJEKAVSK",
+          "ITIHASA": "ITIHASA",
+          "JAUER": "JAUER",
+          "JYUTPING": "JYUTPING",
+          "KKCOR": "tradicionālā ortogrāfija",
+          "KOCIEWIE": "KOCIEWIE",
+          "KSCOR": "KSCOR",
+          "LAUKIKA": "LAUKIKA",
+          "LIPAW": "LIPAW",
+          "LUNA1918": "LUNA1918",
+          "METELKO": "METELKO",
+          "MONOTON": "monotons",
+          "NDYUKA": "NDYUKA",
+          "NEDIS": "Natisona dialekts",
+          "NJIVA": "NJIVA",
+          "NULIK": "NULIK",
+          "OSOJS": "OSOJS",
+          "PAMAKA": "PAMAKA",
+          "PETR1708": "PETR1708",
+          "PINYIN": "piņjiņa romanizācija",
+          "POLYTON": "politons",
+          "POSIX": "datoru",
+          "PUTER": "PUTER",
+          "REVISED": "REVISED",
+          "RIGIK": "RIGIK",
+          "ROZAJ": "ROZAJ",
+          "RUMGR": "RUMGR",
+          "SAAHO": "saho",
+          "SCOTLAND": "Skotijas angļu",
+          "SCOUSE": "SCOUSE",
+          "SOLBA": "SOLBA",
+          "SOTAV": "SOTAV",
+          "SURMIRAN": "SURMIRAN",
+          "SURSILV": "SURSILV",
+          "SUTSILV": "SUTSILV",
+          "TARASK": "Taraškeviča ortogrāfija",
+          "UCCOR": "vienotā ortogrāfija",
+          "UCRCOR": "UCRCOR",
+          "ULSTER": "ULSTER",
+          "UNIFON": "UNIFON",
+          "VAIDIKA": "VAIDIKA",
+          "VALENCIA": "valensiešu",
+          "VALLADER": "VALLADER",
+          "WADEGILE": "Veida-Džailza romanizācija"
+        }
+      }
+    }
+  }
+}

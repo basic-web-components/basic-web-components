@@ -1,0 +1,43 @@
+{
+  "main": {
+    "ta-MY": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11174 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-10 21:20:32 -0600 (Tue, 10 Feb 2015) $"
+        },
+        "language": "ta",
+        "territory": "MY"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} மற்றும் {1}",
+          "2": "{0} மற்றும் {1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0}, {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} {1}",
+          "2": "{0} {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0}, {1}"
+        }
+      }
+    }
+  }
+}

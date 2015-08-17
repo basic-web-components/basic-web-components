@@ -1,0 +1,31 @@
+{
+  "main": {
+    "ro-MD": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "ro",
+        "territory": "MD"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "Numeric",
+          "Tone": "Ton",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "Accente",
+          "x-Fullwidth": "Cu lățime întreagă",
+          "x-Halfwidth": "Cu jumătate de lățime",
+          "x-Jamo": "Jamo",
+          "x-Pinyin": "Pinyin",
+          "x-Publishing": "Publicare"
+        }
+      }
+    }
+  }
+}

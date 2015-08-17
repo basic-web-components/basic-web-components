@@ -1,0 +1,30 @@
+{
+  "main": {
+    "is": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "is"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "Tölulegur",
+          "Tone": "Tónn",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "Áherslur",
+          "x-Fullwidth": "Full breidd",
+          "x-Halfwidth": "Hálf breidd",
+          "x-Jamo": "Jamo",
+          "x-Pinyin": "Pinyin",
+          "x-Publishing": "Birting"
+        }
+      }
+    }
+  }
+}

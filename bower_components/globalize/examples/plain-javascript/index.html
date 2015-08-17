@@ -1,0 +1,251 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Globalize Hello World (plain javascript)</title>
+</head>
+<body>
+    <h1>Globalize Hello World (plain javascript)</h1>
+
+    <div id="requirements">
+        <h2>Requirements</h2>
+        <ul>
+            <li>You need to download the `cldrjs` dependency yourself. Read README.md for instructions.
+            </li>
+        </ul>
+    </div>
+
+    <div id="demo" style="display: none">
+        <h2>Demo output</h2>
+        <p>Now: <span id="date"></span></p>
+        <p>A number: <span id="number"></span></p>
+        <p>A currency: <span id="currency"></span></p>
+        <p>Plural form of <span id="plural-number"></span> is <span id="plural-form"></span></p>
+        <p>Messages:</p>
+        <ul>
+            <li><span id="message-0"></span></li>
+            <li><span id="message-1"></span></li>
+            <li><span id="message-2"></span></li>
+            <li><span id="message-3"></span></li>
+        </ul>
+        <p>Something happened: <span id="relative-time"></span></p>
+    </div>
+
+    <!--
+    First, we load Globalize's dependencies (`cldrjs` and its supplemental
+    module).
+    -->
+    <script src="cldrjs/cldr.js"></script>
+    <script src="cldrjs/cldr/event.js"></script>
+    <script src="cldrjs/cldr/supplemental.js"></script>
+
+    <!--
+    Next, we load Globalize and its modules. Note they are already available on
+    this repository. If it's not, read Usage on Getting Started on the root's
+    README.md.
+    -->
+    <script src="../../dist/globalize.js"></script>
+    <script src="../../dist/globalize/message.js"></script>
+    <script src="../../dist/globalize/number.js"></script>
+    <script src="../../dist/globalize/plural.js"></script>
+
+    <!-- Load after globalize/number.js -->
+    <script src="../../dist/globalize/date.js"></script>
+    <script src="../../dist/globalize/currency.js"></script>
+
+    <!-- Load after globalize/number.js and globalize/plural.js-->
+    <script src="../../dist/globalize/relative-time.js"></script>
+
+    <script>
+
+    // At this point, we have Globalize loaded. But, before we can use it, we
+    // need to feed it on the appropriate I18n content (Unicode CLDR). In order
+    // to do so, we use `Globalize.load()` and pass the content. On this demo,
+    // we made the things a little easier for you: we've embedded static JSON
+    // into the demo. So, you don't need to actually fetch it elsewhere.
+    Globalize.load({
+      "main": {
+        "en": {
+          "identity": {
+            "version": {
+              "_cldrVersion": "25",
+              "_number": "$Revision: 91 $"
+            },
+            "generation": {
+              "_date": "$Date: 2014-03-13 22:27:12 -0500 (Thu, 13 Mar 2014) $"
+            },
+            "language": "en"
+          },
+          "dates": {
+            "calendars": {
+              "gregorian": {
+                "months": {
+                  "format": {
+                    "abbreviated": {
+                      "1": "Jan",
+                      "2": "Feb",
+                      "3": "Mar",
+                      "4": "Apr",
+                      "5": "May",
+                      "6": "Jun",
+                      "7": "Jul",
+                      "8": "Aug",
+                      "9": "Sep",
+                      "10": "Oct",
+                      "11": "Nov",
+                      "12": "Dec"
+                    }
+                  }
+                },
+                "dayPeriods": {
+                  "format": {
+                    "wide": {
+                      "am": "AM",
+                      "am-alt-variant": "am",
+                      "noon": "noon",
+                      "pm": "PM",
+                      "pm-alt-variant": "pm"
+                    }
+                  }
+                },
+                "dateFormats": {
+                  "medium": "MMM d, y"
+                },
+                "timeFormats": {
+                  "medium": "h:mm:ss a",
+                },
+                "dateTimeFormats": {
+                  "medium": "{1}, {0}"
+                }
+              }
+            },
+            "fields": {
+              "second": {
+                "displayName": "Second",
+                "relative-type-0": "now",
+                "relativeTime-type-future": {
+                  "relativeTimePattern-count-one": "in {0} second",
+                  "relativeTimePattern-count-other": "in {0} seconds"
+                },
+                "relativeTime-type-past": {
+                  "relativeTimePattern-count-one": "{0} second ago",
+                  "relativeTimePattern-count-other": "{0} seconds ago"
+                }
+              }
+            }
+          },
+          "numbers": {
+            "currencies": {
+              "USD": {
+                "symbol": "$"
+              }
+            },
+            "defaultNumberingSystem": "latn",
+            "symbols-numberSystem-latn": {
+              "decimal": ".",
+              "exponential": "E",
+              "group": ",",
+              "infinity": "∞",
+              "minusSign": "-",
+              "nan": "NaN",
+              "percentSign": "%",
+              "perMille": "‰",
+              "plusSign": "+",
+              "timeSeparator": ":"
+            },
+            "decimalFormats-numberSystem-latn": {
+              "standard": "#,##0.###"
+            },
+            "currencyFormats-numberSystem-latn": {
+              "currencySpacing": {
+                "beforeCurrency": {
+                  "currencyMatch": "[:^S:]",
+                  "surroundingMatch": "[:digit:]",
+                  "insertBetween": " "
+                },
+                "afterCurrency": {
+                  "currencyMatch": "[:^S:]",
+                  "surroundingMatch": "[:digit:]",
+                  "insertBetween": " "
+                }
+              },
+              "standard": "¤#,##0.00"
+            }
+          }
+        }
+      },
+      "supplemental": {
+        "version": {
+          "_cldrVersion": "25",
+          "_number": "$Revision: 91 $"
+        },
+        "currencyData": {
+          "fractions": {
+            "DEFAULT": {
+              "_rounding": "0",
+              "_digits": "2"
+            }
+          }
+        },
+        "likelySubtags": {
+          "en": "en-Latn-US",
+        },
+        "plurals-type-cardinal": {
+          "en": {
+            "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+            "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+          }
+        }
+      }
+    });
+    Globalize.loadMessages({
+      "en": {
+        "like": [
+          "{0, plural, offset:1",
+          "     =0 {Be the first to like this}",
+          "     =1 {You liked this}",
+          "    one {You and someone else liked this}",
+          "  other {You and # others liked this}",
+          "}"
+        ]
+      }
+    });
+
+    var en, like, number;
+
+    // Instantiate "en".
+    en = Globalize( "en" );
+
+    // Use Globalize to format dates.
+    document.getElementById( "date" ).innerHTML = en.formatDate( new Date(), {
+      datetime: "medium"
+    });
+
+    // Use Globalize to format numbers.
+    number = en.numberFormatter();
+    document.getElementById( "number" ).innerHTML = number( 12345.6789 );
+
+    // Use Globalize to format currencies.
+    document.getElementById( "currency" ).innerHTML = en.formatCurrency( 69900, "USD" );
+
+    // Use Globalize to get the plural form of a numeric value.
+    document.getElementById( "plural-number" ).innerHTML = number( 12345.6789 );
+    document.getElementById( "plural-form" ).innerHTML = en.plural( 12345.6789 );
+
+    // Use Globalize to format a message with plural inflection.
+    like = en.messageFormatter( "like" );
+    document.getElementById( "message-0" ).innerHTML = like( 0 );
+    document.getElementById( "message-1" ).innerHTML = like( 1 );
+    document.getElementById( "message-2" ).innerHTML = like( 2 );
+    document.getElementById( "message-3" ).innerHTML = like( 3 );
+
+    // Use Globalize to format a relative time.
+    document.getElementById( "relative-time" ).innerText = en.formatRelativeTime( -35, "second" );
+
+    document.getElementById( "requirements" ).style.display = "none";
+    document.getElementById( "demo" ).style.display = "block";
+
+    </script>
+
+</body>
+</html>

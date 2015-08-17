@@ -1,0 +1,31 @@
+{
+  "main": {
+    "zh-Hans": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "zh",
+        "script": "Hans"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "美国地名委员会 (BGN)",
+          "Numeric": "数字",
+          "Tone": "音调",
+          "UNGEGN": "联合国地名专家组 (UNGEGN)",
+          "x-Accents": "重音符号",
+          "x-Fullwidth": "全角",
+          "x-Halfwidth": "半角",
+          "x-Jamo": "韩文字母",
+          "x-Pinyin": "拼音",
+          "x-Publishing": "印刷体"
+        }
+      }
+    }
+  }
+}

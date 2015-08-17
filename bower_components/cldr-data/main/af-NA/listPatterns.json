@@ -1,0 +1,43 @@
+{
+  "main": {
+    "af-NA": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11168 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-06 17:46:28 -0600 (Fri, 06 Feb 2015) $"
+        },
+        "language": "af",
+        "territory": "NA"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} en {1}",
+          "2": "{0} en {1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} en {1}",
+          "2": "{0} en {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} en {1}",
+          "2": "{0} en {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} en {1}",
+          "2": "{0} en {1}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1318 @@
+{
+  "main": {
+    "fa-AF": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11217 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-17 23:51:09 -0600 (Tue, 17 Feb 2015) $"
+        },
+        "language": "fa",
+        "territory": "AF"
+      },
+      "numbers": {
+        "currencies": {
+          "ADP": {
+            "displayName": "پزتای آندورا",
+            "symbol": "ADP"
+          },
+          "AED": {
+            "displayName": "درهم امارات متحدهٔ عربی",
+            "symbol": "AED"
+          },
+          "AFA": {
+            "displayName": "افغانی افغانستان (۱۹۲۷ تا ۲۰۰۲)",
+            "symbol": "AFA"
+          },
+          "AFN": {
+            "displayName": "افغانی افغانستان",
+            "displayName-count-one": "افغانی افغانستان",
+            "displayName-count-other": "افغانی افغانستان",
+            "symbol": "؋"
+          },
+          "ALL": {
+            "displayName": "لک آلبانی",
+            "symbol": "ALL"
+          },
+          "AMD": {
+            "displayName": "درم ارمنستان",
+            "symbol": "AMD"
+          },
+          "ANG": {
+            "displayName": "گیلدر آنتیل هلند",
+            "symbol": "ANG"
+          },
+          "AOA": {
+            "displayName": "کوانزای آنگولا",
+            "symbol": "AOA",
+            "symbol-alt-narrow": "Kz"
+          },
+          "AOK": {
+            "displayName": "AOK",
+            "symbol": "AOK"
+          },
+          "AON": {
+            "displayName": "AON",
+            "symbol": "AON"
+          },
+          "AOR": {
+            "displayName": "AOR",
+            "symbol": "AOR"
+          },
+          "ARA": {
+            "displayName": "ARA",
+            "symbol": "ARA"
+          },
+          "ARL": {
+            "displayName": "ARL",
+            "symbol": "ARL"
+          },
+          "ARM": {
+            "displayName": "ARM",
+            "symbol": "ARM"
+          },
+          "ARP": {
+            "displayName": "پزوی آرژانتین (۱۹۸۳ تا ۱۹۸۵)‏",
+            "symbol": "ARP"
+          },
+          "ARS": {
+            "displayName": "پزوی آرژانتین",
+            "symbol": "ARS",
+            "symbol-alt-narrow": "$"
+          },
+          "ATS": {
+            "displayName": "شیلینگ اتریش",
+            "symbol": "ATS"
+          },
+          "AUD": {
+            "displayName": "دالر آسترالیا",
+            "symbol": "A$",
+            "symbol-alt-narrow": "$"
+          },
+          "AWG": {
+            "displayName": "فلورین آروبا",
+            "symbol": "AWG"
+          },
+          "AZM": {
+            "displayName": "منات جمهوری آذربایجان (۱۹۹۳ تا ۲۰۰۶)",
+            "symbol": "AZM"
+          },
+          "AZN": {
+            "displayName": "منات جمهوری آذربایجان",
+            "symbol": "AZN"
+          },
+          "BAD": {
+            "displayName": "دینار بوسنی و هرزگوین (۱۹۹۲ تا ۱۹۹۴)",
+            "symbol": "BAD"
+          },
+          "BAM": {
+            "displayName": "مارک تبدیل‌پذیر بوسنی و هرزگوین",
+            "symbol": "BAM",
+            "symbol-alt-narrow": "KM"
+          },
+          "BAN": {
+            "displayName": "BAN",
+            "symbol": "BAN"
+          },
+          "BBD": {
+            "displayName": "دلار باربادوس",
+            "symbol": "BBD",
+            "symbol-alt-narrow": "$"
+          },
+          "BDT": {
+            "displayName": "تاکای بنگلادش",
+            "symbol": "BDT",
+            "symbol-alt-narrow": "৳"
+          },
+          "BEC": {
+            "displayName": "BEC",
+            "symbol": "BEC"
+          },
+          "BEF": {
+            "displayName": "فرانک بلژیک",
+            "symbol": "BEF"
+          },
+          "BEL": {
+            "displayName": "فرانک بلژیک (مالی)",
+            "symbol": "BEL"
+          },
+          "BGL": {
+            "displayName": "BGL",
+            "symbol": "BGL"
+          },
+          "BGM": {
+            "displayName": "BGM",
+            "symbol": "BGM"
+          },
+          "BGN": {
+            "displayName": "لف بلغارستان",
+            "symbol": "BGN"
+          },
+          "BGO": {
+            "displayName": "BGO",
+            "symbol": "BGO"
+          },
+          "BHD": {
+            "displayName": "دینار بحرین",
+            "symbol": "BHD"
+          },
+          "BIF": {
+            "displayName": "فرانک بوروندی",
+            "symbol": "BIF"
+          },
+          "BMD": {
+            "displayName": "دلار برمودا",
+            "displayName-count-one": "دلار برمودا",
+            "displayName-count-other": "دلار برمودا",
+            "symbol": "BMD",
+            "symbol-alt-narrow": "$"
+          },
+          "BND": {
+            "displayName": "دالر برونی",
+            "symbol": "BND",
+            "symbol-alt-narrow": "$"
+          },
+          "BOB": {
+            "displayName": "بولیویانوی بولیوی",
+            "symbol": "BOB",
+            "symbol-alt-narrow": "Bs"
+          },
+          "BOL": {
+            "displayName": "BOL",
+            "symbol": "BOL"
+          },
+          "BOP": {
+            "displayName": "پزوی بولیوی",
+            "symbol": "BOP"
+          },
+          "BOV": {
+            "displayName": "BOV",
+            "symbol": "BOV"
+          },
+          "BRB": {
+            "displayName": "BRB",
+            "symbol": "BRB"
+          },
+          "BRC": {
+            "displayName": "BRC",
+            "symbol": "BRC"
+          },
+          "BRE": {
+            "displayName": "BRE",
+            "symbol": "BRE"
+          },
+          "BRL": {
+            "displayName": "رئال برزیل",
+            "displayName-count-one": "رئال برزیل",
+            "displayName-count-other": "رئال برزیل",
+            "symbol": "R$",
+            "symbol-alt-narrow": "R$"
+          },
+          "BRN": {
+            "displayName": "BRN",
+            "symbol": "BRN"
+          },
+          "BRR": {
+            "displayName": "BRR",
+            "symbol": "BRR"
+          },
+          "BRZ": {
+            "displayName": "BRZ",
+            "symbol": "BRZ"
+          },
+          "BSD": {
+            "displayName": "دلار باهاما",
+            "symbol": "BSD",
+            "symbol-alt-narrow": "$"
+          },
+          "BTN": {
+            "displayName": "انگولتروم بوتان",
+            "symbol": "BTN"
+          },
+          "BUK": {
+            "displayName": "BUK",
+            "symbol": "BUK"
+          },
+          "BWP": {
+            "displayName": "پولای بوتسوانا",
+            "symbol": "BWP",
+            "symbol-alt-narrow": "P"
+          },
+          "BYB": {
+            "displayName": "روبل جدید بیلوروسی (۱۹۹۴ تا ۱۹۹۹)",
+            "symbol": "BYB"
+          },
+          "BYR": {
+            "displayName": "روبل روسیهٔ سفید",
+            "symbol": "BYR",
+            "symbol-alt-narrow": "р."
+          },
+          "BZD": {
+            "displayName": "دلار بلیز",
+            "symbol": "BZD",
+            "symbol-alt-narrow": "$"
+          },
+          "CAD": {
+            "displayName": "دالر کانادا",
+            "displayName-count-one": "دلار کانادا",
+            "displayName-count-other": "دلار کانادا",
+            "symbol": "$CA",
+            "symbol-alt-narrow": "$"
+          },
+          "CDF": {
+            "displayName": "فرانک کنگو",
+            "symbol": "CDF"
+          },
+          "CHE": {
+            "displayName": "CHE",
+            "symbol": "CHE"
+          },
+          "CHF": {
+            "displayName": "فرانک سویس",
+            "symbol": "CHF"
+          },
+          "CHW": {
+            "displayName": "CHW",
+            "symbol": "CHW"
+          },
+          "CLE": {
+            "displayName": "CLE",
+            "symbol": "CLE"
+          },
+          "CLF": {
+            "displayName": "CLF",
+            "symbol": "CLF"
+          },
+          "CLP": {
+            "displayName": "پزوی شیلی",
+            "symbol": "CLP",
+            "symbol-alt-narrow": "$"
+          },
+          "CNY": {
+            "displayName": "یوآن چین",
+            "displayName-count-one": "یوآن چین",
+            "displayName-count-other": "یوآن چین",
+            "symbol": "¥CN",
+            "symbol-alt-narrow": "¥"
+          },
+          "COP": {
+            "displayName": "پزوی کلمبیا",
+            "symbol": "COP",
+            "symbol-alt-narrow": "$"
+          },
+          "COU": {
+            "displayName": "COU",
+            "symbol": "COU"
+          },
+          "CRC": {
+            "displayName": "کولون کاستاریکا",
+            "symbol": "CRC",
+            "symbol-alt-narrow": "₡"
+          },
+          "CSD": {
+            "displayName": "دینار صربستان (۲۰۰۲ تا ۲۰۰۶)",
+            "symbol": "CSD"
+          },
+          "CSK": {
+            "displayName": "CSK",
+            "symbol": "CSK"
+          },
+          "CUC": {
+            "displayName": "پزوی تبدیل‌پذیر کوبا",
+            "symbol": "CUC",
+            "symbol-alt-narrow": "$"
+          },
+          "CUP": {
+            "displayName": "پزوی کوبا",
+            "symbol": "CUP",
+            "symbol-alt-narrow": "$"
+          },
+          "CVE": {
+            "displayName": "اسکودوی کیپ‌ورد",
+            "symbol": "CVE"
+          },
+          "CYP": {
+            "displayName": "پوند قبرس",
+            "symbol": "CYP"
+          },
+          "CZK": {
+            "displayName": "کورونای جمهوری چک",
+            "symbol": "CZK",
+            "symbol-alt-narrow": "Kč"
+          },
+          "DDM": {
+            "displayName": "مارک آلمان شرقی",
+            "symbol": "DDM"
+          },
+          "DEM": {
+            "displayName": "مارک آلمان",
+            "symbol": "DEM"
+          },
+          "DJF": {
+            "displayName": "فرانک جیبوتی",
+            "symbol": "DJF"
+          },
+          "DKK": {
+            "displayName": "کرون دنمارک",
+            "symbol": "DKK",
+            "symbol-alt-narrow": "kr"
+          },
+          "DOP": {
+            "displayName": "پزوی جمهوری دومینیکن",
+            "symbol": "DOP",
+            "symbol-alt-narrow": "$"
+          },
+          "DZD": {
+            "displayName": "دینار الجزایر",
+            "symbol": "DZD"
+          },
+          "ECS": {
+            "displayName": "ECS",
+            "symbol": "ECS"
+          },
+          "ECV": {
+            "displayName": "ECV",
+            "symbol": "ECV"
+          },
+          "EEK": {
+            "displayName": "EEK",
+            "symbol": "EEK"
+          },
+          "EGP": {
+            "displayName": "لیرهٔ مصر",
+            "symbol": "EGP",
+            "symbol-alt-narrow": "E£"
+          },
+          "ERN": {
+            "displayName": "ناکفای اریتره",
+            "symbol": "ERN"
+          },
+          "ESA": {
+            "displayName": "ESA",
+            "symbol": "ESA"
+          },
+          "ESB": {
+            "displayName": "ESB",
+            "symbol": "ESB"
+          },
+          "ESP": {
+            "displayName": "ESP",
+            "symbol": "ESP",
+            "symbol-alt-narrow": "₧"
+          },
+          "ETB": {
+            "displayName": "بیر اتیوپی",
+            "symbol": "ETB"
+          },
+          "EUR": {
+            "displayName": "یورو",
+            "displayName-count-one": "یورو",
+            "displayName-count-other": "یورو",
+            "symbol": "€",
+            "symbol-alt-narrow": "€"
+          },
+          "FIM": {
+            "displayName": "FIM",
+            "symbol": "FIM"
+          },
+          "FJD": {
+            "displayName": "دلار فیجی",
+            "symbol": "FJD",
+            "symbol-alt-narrow": "$"
+          },
+          "FKP": {
+            "displayName": "پوند جزایر فالکلند",
+            "symbol": "FKP",
+            "symbol-alt-narrow": "£"
+          },
+          "FRF": {
+            "displayName": "فرانک فرانسه",
+            "symbol": "FRF"
+          },
+          "GBP": {
+            "displayName": "پوند بریتانیا",
+            "displayName-count-one": "پوند بریتانیا",
+            "displayName-count-other": "پوند بریتانیا",
+            "symbol": "£",
+            "symbol-alt-narrow": "£"
+          },
+          "GEK": {
+            "displayName": "GEK",
+            "symbol": "GEK"
+          },
+          "GEL": {
+            "displayName": "لاری گرجستان",
+            "symbol": "GEL"
+          },
+          "GHC": {
+            "displayName": "GHC",
+            "symbol": "GHC"
+          },
+          "GHS": {
+            "displayName": "سدی غنا",
+            "symbol": "GHS"
+          },
+          "GIP": {
+            "displayName": "پوند جبل‌الطارق",
+            "symbol": "GIP",
+            "symbol-alt-narrow": "£"
+          },
+          "GMD": {
+            "displayName": "دالاسی گامبیا",
+            "symbol": "GMD"
+          },
+          "GNF": {
+            "displayName": "فرانک گینه",
+            "symbol": "GNF",
+            "symbol-alt-narrow": "FG"
+          },
+          "GNS": {
+            "displayName": "GNS",
+            "symbol": "GNS"
+          },
+          "GQE": {
+            "displayName": "GQE",
+            "symbol": "GQE"
+          },
+          "GRD": {
+            "displayName": "دراخمای یونان",
+            "symbol": "GRD"
+          },
+          "GTQ": {
+            "displayName": "کتزال گواتمالا",
+            "symbol": "GTQ",
+            "symbol-alt-narrow": "Q"
+          },
+          "GWE": {
+            "displayName": "GWE",
+            "symbol": "GWE"
+          },
+          "GWP": {
+            "displayName": "پزوی گینهٔ بیسائو",
+            "symbol": "GWP"
+          },
+          "GYD": {
+            "displayName": "دلار گویان",
+            "symbol": "GYD",
+            "symbol-alt-narrow": "$"
+          },
+          "HKD": {
+            "displayName": "دلار هنگ‌کنگ",
+            "symbol": "$HK",
+            "symbol-alt-narrow": "$"
+          },
+          "HNL": {
+            "displayName": "لمپیرای هندوراس",
+            "symbol": "HNL",
+            "symbol-alt-narrow": "L"
+          },
+          "HRD": {
+            "displayName": "دینار کرواسی",
+            "symbol": "HRD"
+          },
+          "HRK": {
+            "displayName": "کونای کرواسی",
+            "symbol": "HRK",
+            "symbol-alt-narrow": "kn"
+          },
+          "HTG": {
+            "displayName": "گورد هائیتی",
+            "symbol": "HTG"
+          },
+          "HUF": {
+            "displayName": "فورینت مجارستان",
+            "symbol": "HUF",
+            "symbol-alt-narrow": "Ft"
+          },
+          "IDR": {
+            "displayName": "روپیهٔ اندونزی",
+            "symbol": "IDR",
+            "symbol-alt-narrow": "Rp"
+          },
+          "IEP": {
+            "displayName": "پوند ایرلند",
+            "symbol": "IEP"
+          },
+          "ILP": {
+            "displayName": "ILP",
+            "symbol": "ILP"
+          },
+          "ILS": {
+            "displayName": "شقل جدید اسرائیل",
+            "symbol": "₪",
+            "symbol-alt-narrow": "₪"
+          },
+          "INR": {
+            "displayName": "روپیهٔ هند",
+            "displayName-count-one": "روپیهٔ هند",
+            "displayName-count-other": "روپیهٔ هند",
+            "symbol": "₹",
+            "symbol-alt-narrow": "₹"
+          },
+          "IQD": {
+            "displayName": "دینار عراق",
+            "symbol": "IQD"
+          },
+          "IRR": {
+            "displayName": "ریال ایران",
+            "displayName-count-one": "ریال ایران",
+            "displayName-count-other": "ریال ایران",
+            "symbol": "ریال"
+          },
+          "ISK": {
+            "displayName": "کرونای ایسلند",
+            "symbol": "ISK",
+            "symbol-alt-narrow": "kr"
+          },
+          "ITL": {
+            "displayName": "لیرهٔ ایتالیا",
+            "symbol": "ITL"
+          },
+          "JMD": {
+            "displayName": "دلار جامائیکا",
+            "symbol": "JMD",
+            "symbol-alt-narrow": "$"
+          },
+          "JOD": {
+            "displayName": "دینار اردن",
+            "symbol": "JOD"
+          },
+          "JPY": {
+            "displayName": "ین جاپان",
+            "displayName-count-one": "ین ژاپن",
+            "displayName-count-other": "ین ژاپن",
+            "symbol": "¥",
+            "symbol-alt-narrow": "¥"
+          },
+          "KES": {
+            "displayName": "شیلینگ کنیا",
+            "symbol": "KES"
+          },
+          "KGS": {
+            "displayName": "سوم قرقیزستان",
+            "symbol": "KGS"
+          },
+          "KHR": {
+            "displayName": "ری‌یل کامبوج",
+            "symbol": "KHR",
+            "symbol-alt-narrow": "៛"
+          },
+          "KMF": {
+            "displayName": "فرانک کومورو",
+            "symbol": "KMF",
+            "symbol-alt-narrow": "CF"
+          },
+          "KPW": {
+            "displayName": "وون کرهٔ شمالی",
+            "symbol": "KPW",
+            "symbol-alt-narrow": "₩"
+          },
+          "KRH": {
+            "displayName": "KRH",
+            "symbol": "KRH"
+          },
+          "KRO": {
+            "displayName": "KRO",
+            "symbol": "KRO"
+          },
+          "KRW": {
+            "displayName": "وون کرهٔ جنوبی",
+            "symbol": "₩",
+            "symbol-alt-narrow": "₩"
+          },
+          "KWD": {
+            "displayName": "دینار کویت",
+            "symbol": "KWD"
+          },
+          "KYD": {
+            "displayName": "دلار جزایر کِیمن",
+            "symbol": "KYD",
+            "symbol-alt-narrow": "$"
+          },
+          "KZT": {
+            "displayName": "تنگهٔ قزاقستان",
+            "symbol": "KZT",
+            "symbol-alt-narrow": "₸"
+          },
+          "LAK": {
+            "displayName": "کیپ لائوس",
+            "symbol": "LAK",
+            "symbol-alt-narrow": "₭"
+          },
+          "LBP": {
+            "displayName": "لیرهٔ لبنان",
+            "symbol": "LBP",
+            "symbol-alt-narrow": "L£"
+          },
+          "LKR": {
+            "displayName": "روپیهٔ سری‌لانکا",
+            "symbol": "LKR",
+            "symbol-alt-narrow": "Rs"
+          },
+          "LRD": {
+            "displayName": "دلار لیبریا",
+            "symbol": "LRD",
+            "symbol-alt-narrow": "$"
+          },
+          "LSL": {
+            "displayName": "لوتی لسوتو",
+            "symbol": "LSL"
+          },
+          "LTL": {
+            "displayName": "لیتاس لیتوانی",
+            "symbol": "LTL",
+            "symbol-alt-narrow": "Lt"
+          },
+          "LTT": {
+            "displayName": "LTT",
+            "symbol": "LTT"
+          },
+          "LUC": {
+            "displayName": "LUC",
+            "symbol": "LUC"
+          },
+          "LUF": {
+            "displayName": "فرانک لوکزامبورگ",
+            "symbol": "LUF"
+          },
+          "LUL": {
+            "displayName": "فرانک مالی لوگزامبورگ",
+            "symbol": "LUL"
+          },
+          "LVL": {
+            "displayName": "لاتس لتونی",
+            "symbol": "LVL",
+            "symbol-alt-narrow": "Ls"
+          },
+          "LVR": {
+            "displayName": "روبل لتونی",
+            "symbol": "LVR"
+          },
+          "LYD": {
+            "displayName": "دینار لیبی",
+            "symbol": "LYD"
+          },
+          "MAD": {
+            "displayName": "درهم مراکش",
+            "symbol": "MAD"
+          },
+          "MAF": {
+            "displayName": "فرانک مراکش",
+            "symbol": "MAF"
+          },
+          "MCF": {
+            "displayName": "MCF",
+            "symbol": "MCF"
+          },
+          "MDC": {
+            "displayName": "MDC",
+            "symbol": "MDC"
+          },
+          "MDL": {
+            "displayName": "لئوی مولداوی",
+            "symbol": "MDL"
+          },
+          "MGA": {
+            "displayName": "آریاری مالاگاسی",
+            "symbol": "MGA",
+            "symbol-alt-narrow": "Ar"
+          },
+          "MGF": {
+            "displayName": "فرانک ماداگاسکار",
+            "symbol": "MGF"
+          },
+          "MKD": {
+            "displayName": "دینار مقدونیه",
+            "symbol": "MKD"
+          },
+          "MKN": {
+            "displayName": "MKN",
+            "symbol": "MKN"
+          },
+          "MLF": {
+            "displayName": "فرانک مالی",
+            "symbol": "MLF"
+          },
+          "MMK": {
+            "displayName": "کیات میانمار",
+            "symbol": "MMK",
+            "symbol-alt-narrow": "K"
+          },
+          "MNT": {
+            "displayName": "توگریک مغولستان",
+            "symbol": "MNT",
+            "symbol-alt-narrow": "₮"
+          },
+          "MOP": {
+            "displayName": "پاتاکای ماکائو",
+            "symbol": "MOP"
+          },
+          "MRO": {
+            "displayName": "اوگوئیای موریتانی",
+            "symbol": "MRO"
+          },
+          "MTL": {
+            "displayName": "لیرهٔ مالت",
+            "symbol": "MTL"
+          },
+          "MTP": {
+            "displayName": "پوند مالت",
+            "symbol": "MTP"
+          },
+          "MUR": {
+            "displayName": "روپیهٔ موریس",
+            "symbol": "MUR",
+            "symbol-alt-narrow": "Rs"
+          },
+          "MVR": {
+            "displayName": "روپیهٔ مالدیو",
+            "symbol": "MVR"
+          },
+          "MWK": {
+            "displayName": "کواچای مالاوی",
+            "symbol": "MWK"
+          },
+          "MXN": {
+            "displayName": "پزوی مکسیکو",
+            "symbol": "$MX",
+            "symbol-alt-narrow": "$"
+          },
+          "MXP": {
+            "displayName": "پزوی نقرهٔ مکزیک (۱۸۶۱ تا ۱۹۹۲)",
+            "symbol": "MXP"
+          },
+          "MXV": {
+            "displayName": "MXV",
+            "symbol": "MXV"
+          },
+          "MYR": {
+            "displayName": "رینگیت مالزی",
+            "symbol": "MYR",
+            "symbol-alt-narrow": "RM"
+          },
+          "MZE": {
+            "displayName": "اسکودوی موزامبیک",
+            "symbol": "MZE"
+          },
+          "MZM": {
+            "displayName": "MZM",
+            "symbol": "MZM"
+          },
+          "MZN": {
+            "displayName": "متیکال موزامبیک",
+            "symbol": "MZN"
+          },
+          "NAD": {
+            "displayName": "دلار نامیبیا",
+            "symbol": "NAD",
+            "symbol-alt-narrow": "$"
+          },
+          "NGN": {
+            "displayName": "نایرای نیجریه",
+            "symbol": "NGN",
+            "symbol-alt-narrow": "₦"
+          },
+          "NIC": {
+            "displayName": "NIC",
+            "symbol": "NIC"
+          },
+          "NIO": {
+            "displayName": "کوردوبای نیکاراگوئه",
+            "symbol": "NIO",
+            "symbol-alt-narrow": "C$"
+          },
+          "NLG": {
+            "displayName": "گیلدر هالند",
+            "symbol": "NLG"
+          },
+          "NOK": {
+            "displayName": "کرون ناروی",
+            "symbol": "NOK",
+            "symbol-alt-narrow": "kr"
+          },
+          "NPR": {
+            "displayName": "روپیهٔ نپال",
+            "symbol": "NPR",
+            "symbol-alt-narrow": "Rs"
+          },
+          "NZD": {
+            "displayName": "دلار زلاند نو",
+            "symbol": "$NZ",
+            "symbol-alt-narrow": "$"
+          },
+          "OMR": {
+            "displayName": "ریال عمان",
+            "symbol": "OMR"
+          },
+          "PAB": {
+            "displayName": "بالبوای پاناما",
+            "symbol": "PAB"
+          },
+          "PEI": {
+            "displayName": "PEI",
+            "symbol": "PEI"
+          },
+          "PEN": {
+            "displayName": "نوئووسول پرو",
+            "symbol": "PEN"
+          },
+          "PES": {
+            "displayName": "PES",
+            "symbol": "PES"
+          },
+          "PGK": {
+            "displayName": "کینای پاپوا گینهٔ نو",
+            "symbol": "PGK"
+          },
+          "PHP": {
+            "displayName": "پزوی فیلیپین",
+            "symbol": "PHP",
+            "symbol-alt-narrow": "₱"
+          },
+          "PKR": {
+            "displayName": "روپیهٔ پاکستان",
+            "symbol": "PKR",
+            "symbol-alt-narrow": "Rs"
+          },
+          "PLN": {
+            "displayName": "زواتی لهستان",
+            "symbol": "PLN",
+            "symbol-alt-narrow": "zł"
+          },
+          "PLZ": {
+            "displayName": "PLZ",
+            "symbol": "PLZ"
+          },
+          "PTE": {
+            "displayName": "اسکودوی پرتغال",
+            "symbol": "PTE"
+          },
+          "PYG": {
+            "displayName": "گوارانی پاراگوئه",
+            "symbol": "PYG",
+            "symbol-alt-narrow": "₲"
+          },
+          "QAR": {
+            "displayName": "ریال قطر",
+            "symbol": "QAR"
+          },
+          "RHD": {
+            "displayName": "دلار رودزیا",
+            "symbol": "RHD"
+          },
+          "ROL": {
+            "displayName": "ROL",
+            "symbol": "ROL"
+          },
+          "RON": {
+            "displayName": "لئوی رومانی",
+            "symbol": "RON"
+          },
+          "RSD": {
+            "displayName": "دینار صربستان",
+            "symbol": "RSD"
+          },
+          "RUB": {
+            "displayName": "روبل روسیه",
+            "displayName-count-one": "روبل روسیه",
+            "displayName-count-other": "روبل روسیه",
+            "symbol": "RUB",
+            "symbol-alt-variant": "₽"
+          },
+          "RUR": {
+            "displayName": "روبل روسیه (۱۹۹۱ تا ۱۹۹۸)",
+            "symbol": "RUR",
+            "symbol-alt-narrow": "р."
+          },
+          "RWF": {
+            "displayName": "فرانک رواندا",
+            "symbol": "RWF",
+            "symbol-alt-narrow": "RF"
+          },
+          "SAR": {
+            "displayName": "ریال سعودی",
+            "symbol": "SAR"
+          },
+          "SBD": {
+            "displayName": "دلار جزایر سلیمان",
+            "symbol": "SBD",
+            "symbol-alt-narrow": "$"
+          },
+          "SCR": {
+            "displayName": "روپیهٔ سیشل",
+            "symbol": "SCR"
+          },
+          "SDD": {
+            "displayName": "دینار سودان (۱۹۹۲ تا ۲۰۰۷)",
+            "symbol": "SDD"
+          },
+          "SDG": {
+            "displayName": "لیرهٔ سودان",
+            "symbol": "SDG"
+          },
+          "SDP": {
+            "displayName": "SDP",
+            "symbol": "SDP"
+          },
+          "SEK": {
+            "displayName": "کرون سویدن",
+            "symbol": "SEK",
+            "symbol-alt-narrow": "kr"
+          },
+          "SGD": {
+            "displayName": "دالر سینگاپور",
+            "symbol": "SGD",
+            "symbol-alt-narrow": "$"
+          },
+          "SHP": {
+            "displayName": "پوند سنت هلن",
+            "symbol": "SHP",
+            "symbol-alt-narrow": "£"
+          },
+          "SIT": {
+            "displayName": "SIT",
+            "symbol": "SIT"
+          },
+          "SKK": {
+            "displayName": "SKK",
+            "symbol": "SKK"
+          },
+          "SLL": {
+            "displayName": "لئون سیرالئون",
+            "symbol": "SLL"
+          },
+          "SOS": {
+            "displayName": "شیلینگ سومالی",
+            "symbol": "SOS"
+          },
+          "SRD": {
+            "displayName": "دلار سورینام",
+            "symbol": "SRD",
+            "symbol-alt-narrow": "$"
+          },
+          "SRG": {
+            "displayName": "گیلدر سورینام",
+            "symbol": "SRG"
+          },
+          "SSP": {
+            "displayName": "پوند سودان جنوبی",
+            "symbol": "SSP",
+            "symbol-alt-narrow": "£"
+          },
+          "STD": {
+            "displayName": "دوبرای سائوتومه و پرنسیپ",
+            "symbol": "STD",
+            "symbol-alt-narrow": "Db"
+          },
+          "SUR": {
+            "displayName": "روبل شوروی",
+            "symbol": "SUR"
+          },
+          "SVC": {
+            "displayName": "SVC",
+            "symbol": "SVC"
+          },
+          "SYP": {
+            "displayName": "لیرهٔ سوریه",
+            "symbol": "SYP",
+            "symbol-alt-narrow": "£"
+          },
+          "SZL": {
+            "displayName": "لیلانگنی سوازیلند",
+            "symbol": "SZL"
+          },
+          "THB": {
+            "displayName": "بات تایلند",
+            "symbol": "฿",
+            "symbol-alt-narrow": "฿"
+          },
+          "TJR": {
+            "displayName": "روبل تاجیکستان",
+            "symbol": "TJR"
+          },
+          "TJS": {
+            "displayName": "سامانی تاجکستان",
+            "symbol": "TJS"
+          },
+          "TMM": {
+            "displayName": "منات ترکمنستان (۱۹۹۳ تا ۲۰۰۹)",
+            "symbol": "TMM"
+          },
+          "TMT": {
+            "displayName": "منات ترکمنستان",
+            "symbol": "TMT"
+          },
+          "TND": {
+            "displayName": "دینار تونس",
+            "symbol": "TND"
+          },
+          "TOP": {
+            "displayName": "پاآنگای تونگا",
+            "symbol": "TOP",
+            "symbol-alt-narrow": "T$"
+          },
+          "TPE": {
+            "displayName": "اسکودوی تیمور",
+            "symbol": "TPE"
+          },
+          "TRL": {
+            "displayName": "لیرهٔ ترکیه (۱۹۲۲ تا ۲۰۰۵)",
+            "symbol": "TRL"
+          },
+          "TRY": {
+            "displayName": "لیرهٔ ترکیه",
+            "symbol": "TRY",
+            "symbol-alt-narrow": "₺",
+            "symbol-alt-variant": "TL"
+          },
+          "TTD": {
+            "displayName": "دلار ترینیداد و توباگو",
+            "symbol": "TTD",
+            "symbol-alt-narrow": "$"
+          },
+          "TWD": {
+            "displayName": "دلار جدید تایوان",
+            "symbol": "NT$",
+            "symbol-alt-narrow": "NT$"
+          },
+          "TZS": {
+            "displayName": "شیلینگ تانزانیا",
+            "symbol": "TZS"
+          },
+          "UAH": {
+            "displayName": "هریونیای اوکراین",
+            "symbol": "UAH",
+            "symbol-alt-narrow": "₴"
+          },
+          "UAK": {
+            "displayName": "UAK",
+            "symbol": "UAK"
+          },
+          "UGS": {
+            "displayName": "شیلینگ اوگاندا (۱۹۶۶ تا ۱۹۸۷)",
+            "symbol": "UGS"
+          },
+          "UGX": {
+            "displayName": "شیلینگ اوگاندا",
+            "symbol": "UGX"
+          },
+          "USD": {
+            "displayName": "دالر امریکا",
+            "displayName-count-one": "دلار امریکا",
+            "displayName-count-other": "دلار امریکا",
+            "symbol": "$",
+            "symbol-alt-narrow": "$"
+          },
+          "USN": {
+            "displayName": "دلار امریکا (روز بعد)",
+            "symbol": "USN"
+          },
+          "USS": {
+            "displayName": "دلار امریکا (همان روز)",
+            "symbol": "USS"
+          },
+          "UYI": {
+            "displayName": "UYI",
+            "symbol": "UYI"
+          },
+          "UYP": {
+            "displayName": "پزوی اوروگوئه (۱۹۷۵ تا ۱۹۹۳)",
+            "symbol": "UYP"
+          },
+          "UYU": {
+            "displayName": "پزوی اوروگوئه",
+            "symbol": "UYU",
+            "symbol-alt-narrow": "$"
+          },
+          "UZS": {
+            "displayName": "سوم ازبکستان",
+            "symbol": "UZS"
+          },
+          "VEB": {
+            "displayName": "VEB",
+            "symbol": "VEB"
+          },
+          "VEF": {
+            "displayName": "بولیوار ونزوئلا",
+            "symbol": "VEF",
+            "symbol-alt-narrow": "Bs"
+          },
+          "VND": {
+            "displayName": "دانگ ویتنام",
+            "symbol": "₫",
+            "symbol-alt-narrow": "₫"
+          },
+          "VNN": {
+            "displayName": "VNN",
+            "symbol": "VNN"
+          },
+          "VUV": {
+            "displayName": "واتوی وانوواتو",
+            "symbol": "VUV"
+          },
+          "WST": {
+            "displayName": "تالای ساموا",
+            "symbol": "WST"
+          },
+          "XAF": {
+            "displayName": "فرانک CFA مرکز افریقا",
+            "displayName-count-one": "فرانک CFA مرکز افریقا",
+            "displayName-count-other": "فرانک CFA مرکز افریقا",
+            "symbol": "FCFA"
+          },
+          "XAG": {
+            "displayName": "نقره",
+            "symbol": "XAG"
+          },
+          "XAU": {
+            "displayName": "طلا",
+            "symbol": "XAU"
+          },
+          "XBA": {
+            "displayName": "XBA",
+            "symbol": "XBA"
+          },
+          "XBB": {
+            "displayName": "XBB",
+            "symbol": "XBB"
+          },
+          "XBC": {
+            "displayName": "XBC",
+            "symbol": "XBC"
+          },
+          "XBD": {
+            "displayName": "XBD",
+            "symbol": "XBD"
+          },
+          "XCD": {
+            "displayName": "دلار شرق کارائیب",
+            "symbol": "$EC",
+            "symbol-alt-narrow": "$"
+          },
+          "XDR": {
+            "displayName": "XDR",
+            "symbol": "XDR"
+          },
+          "XEU": {
+            "displayName": "XEU",
+            "symbol": "XEU"
+          },
+          "XFO": {
+            "displayName": "فرانک طلای فرانسه",
+            "symbol": "XFO"
+          },
+          "XFU": {
+            "displayName": "XFU",
+            "symbol": "XFU"
+          },
+          "XOF": {
+            "displayName": "فرانک CFA غرب افریقا",
+            "displayName-count-one": "فرانک CFA غرب افریقا",
+            "displayName-count-other": "فرانک CFA غرب افریقا",
+            "symbol": "CFA"
+          },
+          "XPD": {
+            "displayName": "پالادیم",
+            "symbol": "XPD"
+          },
+          "XPF": {
+            "displayName": "فرانک CFP",
+            "displayName-count-one": "فرانک CFP",
+            "displayName-count-other": "فرانک CFP",
+            "symbol": "CFPF"
+          },
+          "XPT": {
+            "displayName": "پلاتین",
+            "symbol": "XPT"
+          },
+          "XRE": {
+            "displayName": "XRE",
+            "symbol": "XRE"
+          },
+          "XSU": {
+            "displayName": "XSU",
+            "symbol": "XSU"
+          },
+          "XTS": {
+            "displayName": "XTS",
+            "symbol": "XTS"
+          },
+          "XUA": {
+            "displayName": "XUA",
+            "symbol": "XUA"
+          },
+          "XXX": {
+            "displayName": "ارز نامشخص",
+            "displayName-count-one": "(ارز نامشخص)",
+            "displayName-count-other": "(ارز نامشخص)",
+            "symbol": "XXX"
+          },
+          "YDD": {
+            "displayName": "دینار یمن",
+            "symbol": "YDD"
+          },
+          "YER": {
+            "displayName": "ریال یمن",
+            "symbol": "YER"
+          },
+          "YUD": {
+            "displayName": "YUD",
+            "symbol": "YUD"
+          },
+          "YUM": {
+            "displayName": "YUM",
+            "symbol": "YUM"
+          },
+          "YUN": {
+            "displayName": "YUN",
+            "symbol": "YUN"
+          },
+          "YUR": {
+            "displayName": "YUR",
+            "symbol": "YUR"
+          },
+          "ZAL": {
+            "displayName": "ZAL",
+            "symbol": "ZAL"
+          },
+          "ZAR": {
+            "displayName": "راند افریقای جنوبی",
+            "symbol": "ZAR",
+            "symbol-alt-narrow": "R"
+          },
+          "ZMK": {
+            "displayName": "کواچای زامبیا (۱۹۶۸ تا ۲۰۱۲)",
+            "symbol": "ZMK"
+          },
+          "ZMW": {
+            "displayName": "کواچای زامبیا",
+            "symbol": "ZMW",
+            "symbol-alt-narrow": "ZK"
+          },
+          "ZRN": {
+            "displayName": "ZRN",
+            "symbol": "ZRN"
+          },
+          "ZRZ": {
+            "displayName": "ZRZ",
+            "symbol": "ZRZ"
+          },
+          "ZWD": {
+            "displayName": "دلار زیمبابوه (۱۹۸۰ تا ۲۰۰۸)",
+            "symbol": "ZWD"
+          },
+          "ZWL": {
+            "displayName": "دلار زیمبابوه (۲۰۰۹)",
+            "symbol": "ZWL"
+          },
+          "ZWR": {
+            "displayName": "دلار زیمبابوه (۲۰۰۸)",
+            "symbol": "ZWR"
+          }
+        }
+      }
+    }
+  }
+}

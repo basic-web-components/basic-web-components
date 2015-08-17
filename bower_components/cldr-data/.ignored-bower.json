@@ -1,0 +1,12 @@
+{
+  "name": "cldr-units-modern",
+  "version": "27.0.3",
+  "dependencies": {
+    "cldr-core": "27.0.3"
+  },
+  "main": "main/**/*.json",
+  "ignore": [
+    ".gitattributes",
+    "README.md"
+  ]
+}

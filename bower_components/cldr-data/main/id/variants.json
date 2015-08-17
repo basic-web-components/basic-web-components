@@ -1,0 +1,90 @@
+{
+  "main": {
+    "id": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "id"
+      },
+      "localeDisplayNames": {
+        "variants": {
+          "1606NICT": "Prancis Pertengahan Akhir sampai 1606",
+          "1694ACAD": "Prancis Modern Awal",
+          "1901": "Ortografi Jerman Tradisional",
+          "1959ACAD": "Akademik",
+          "1994": "Ortografi Resia Standar",
+          "1996": "Ortografi Jerman 1996",
+          "ALALC97": "ALA-LC Latin, edisi 1997",
+          "ALUKU": "Dialek Aluku",
+          "AREVELA": "Armenia Timur",
+          "AREVMDA": "Armenia Barat",
+          "BAKU1926": "Alfabet Latin Turki Terpadu",
+          "BALANKA": "BALANKA",
+          "BARLA": "BARLA",
+          "BAUDDHA": "BAUDDHA",
+          "BISCAYAN": "BISKAY",
+          "BISKE": "Dialek San Giorgio/Bila",
+          "BOHORIC": "BOHORIC",
+          "BOONT": "Boontling",
+          "DAJNKO": "DAJNKO",
+          "EKAVSK": "EKAVSK",
+          "EMODENG": "EMODENG",
+          "FONIPA": "Fonetik IPA",
+          "FONUPA": "Fonetik UPA",
+          "FONXSAMP": "FONXSAMP",
+          "HEPBURN": "Hepburn Latin",
+          "HOGNORSK": "NORWEDIA TINGGI",
+          "IJEKAVSK": "IJEKAVSK",
+          "ITIHASA": "ITIHASA",
+          "JAUER": "JAUER",
+          "JYUTPING": "JYUTPING",
+          "KKCOR": "Ortografi Umum",
+          "KOCIEWIE": "KOCIEWIE",
+          "KSCOR": "KSCOR",
+          "LAUKIKA": "LAUKIKA",
+          "LIPAW": "Dialek Lipovaz Resia",
+          "LUNA1918": "LUNA1918",
+          "METELKO": "METELKO",
+          "MONOTON": "Monoton",
+          "NDYUKA": "Dialek Ndyuka",
+          "NEDIS": "Dialek Natiso",
+          "NJIVA": "Dialek Gniva/Njiva",
+          "NULIK": "NULIK",
+          "OSOJS": "Dialek Oseacco/Osojane",
+          "PAMAKA": "Dialek Pamaka",
+          "PETR1708": "PETR1708",
+          "PINYIN": "Pinyin Latin",
+          "POLYTON": "Politon",
+          "POSIX": "Komputer",
+          "PUTER": "PUTER",
+          "REVISED": "Ortografi Revisi",
+          "RIGIK": "RIGIK",
+          "ROZAJ": "Resia",
+          "RUMGR": "RUMGR",
+          "SAAHO": "Saho",
+          "SCOTLAND": "Inggris Standar Skotlandia",
+          "SCOUSE": "Skaus",
+          "SOLBA": "Dialek Stolvizza/Solbica",
+          "SOTAV": "SOTAV",
+          "SURMIRAN": "SURMIRAN",
+          "SURSILV": "SURSILV",
+          "SUTSILV": "SUTSILV",
+          "TARASK": "Ortografi Taraskievica",
+          "UCCOR": "Ortografi Terpadu",
+          "UCRCOR": "Ortografi Revisi Terpadu",
+          "ULSTER": "ULSTER",
+          "UNIFON": "UNIFON",
+          "VAIDIKA": "VAIDIKA",
+          "VALENCIA": "Valencia",
+          "VALLADER": "VALLADER",
+          "WADEGILE": "Wade-Giles Latin"
+        }
+      }
+    }
+  }
+}

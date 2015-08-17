@@ -1,0 +1,43 @@
+{
+  "main": {
+    "fr-GQ": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "fr",
+        "territory": "GQ"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} et {1}",
+          "2": "{0} et {1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} et {1}",
+          "2": "{0} et {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} {1}",
+          "2": "{0} {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} et {1}",
+          "2": "{0} et {1}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "main": {
+    "lt": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11346 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+        },
+        "language": "lt"
+      },
+      "dates": {
+        "calendars": {
+          "gregorian": {
+            "months": {
+              "format": {
+                "abbreviated": {
+                  "1": "saus.",
+                  "2": "vas.",
+                  "3": "kov.",
+                  "4": "bal.",
+                  "5": "geg.",
+                  "6": "birž.",
+                  "7": "liep.",
+                  "8": "rugp.",
+                  "9": "rugs.",
+                  "10": "spal.",
+                  "11": "lapkr.",
+                  "12": "gruod."
+                },
+                "narrow": {
+                  "1": "S",
+                  "2": "V",
+                  "3": "K",
+                  "4": "B",
+                  "5": "G",
+                  "6": "B",
+                  "7": "L",
+                  "8": "R",
+                  "9": "R",
+                  "10": "S",
+                  "11": "L",
+                  "12": "G"
+                },
+                "wide": {
+                  "1": "sausio",
+                  "2": "vasario",
+                  "3": "kovo",
+                  "4": "balandžio",
+                  "5": "gegužės",
+                  "6": "birželio",
+                  "7": "liepos",
+                  "8": "rugpjūčio",
+                  "9": "rugsėjo",
+                  "10": "spalio",
+                  "11": "lapkričio",
+                  "12": "gruodžio"
+                }
+              },
+              "stand-alone": {
+                "abbreviated": {
+                  "1": "saus.",
+                  "2": "vas.",
+                  "3": "kov.",
+                  "4": "bal.",
+                  "5": "geg.",
+                  "6": "birž.",
+                  "7": "liep.",
+                  "8": "rugp.",
+                  "9": "rugs.",
+                  "10": "spal.",
+                  "11": "lapkr.",
+                  "12": "gruod."
+                },
+                "narrow": {
+                  "1": "S",
+                  "2": "V",
+                  "3": "K",
+                  "4": "B",
+                  "5": "G",
+                  "6": "B",
+                  "7": "L",
+                  "8": "R",
+                  "9": "R",
+                  "10": "S",
+                  "11": "L",
+                  "12": "G"
+                },
+                "wide": {
+                  "1": "sausis",
+                  "2": "vasaris",
+                  "3": "kovas",
+                  "4": "balandis",
+                  "5": "gegužė",
+                  "6": "birželis",
+                  "7": "liepa",
+                  "8": "rugpjūtis",
+                  "9": "rugsėjis",
+                  "10": "spalis",
+                  "11": "lapkritis",
+                  "12": "gruodis"
+                }
+              }
+            },
+            "days": {
+              "format": {
+                "abbreviated": {
+                  "sun": "sk",
+                  "mon": "pr",
+                  "tue": "an",
+                  "wed": "tr",
+                  "thu": "kt",
+                  "fri": "pn",
+                  "sat": "št"
+                },
+                "narrow": {
+                  "sun": "S",
+                  "mon": "P",
+                  "tue": "A",
+                  "wed": "T",
+                  "thu": "K",
+                  "fri": "P",
+                  "sat": "Š"
+                },
+                "short": {
+                  "sun": "Sk",
+                  "mon": "Pr",
+                  "tue": "An",
+                  "wed": "Tr",
+                  "thu": "Kt",
+                  "fri": "Pn",
+                  "sat": "Št"
+                },
+                "wide": {
+                  "sun": "sekmadienis",
+                  "mon": "pirmadienis",
+                  "tue": "antradienis",
+                  "wed": "trečiadienis",
+                  "thu": "ketvirtadienis",
+                  "fri": "penktadienis",
+                  "sat": "šeštadienis"
+                }
+              },
+              "stand-alone": {
+                "abbreviated": {
+                  "sun": "sk",
+                  "mon": "pr",
+                  "tue": "an",
+                  "wed": "tr",
+                  "thu": "kt",
+                  "fri": "pn",
+                  "sat": "št"
+                },
+                "narrow": {
+                  "sun": "S",
+                  "mon": "P",
+                  "tue": "A",
+                  "wed": "T",
+                  "thu": "K",
+                  "fri": "P",
+                  "sat": "Š"
+                },
+                "short": {
+                  "sun": "Sk",
+                  "mon": "Pr",
+                  "tue": "An",
+                  "wed": "Tr",
+                  "thu": "Kt",
+                  "fri": "Pn",
+                  "sat": "Št"
+                },
+                "wide": {
+                  "sun": "sekmadienis",
+                  "mon": "pirmadienis",
+                  "tue": "antradienis",
+                  "wed": "trečiadienis",
+                  "thu": "ketvirtadienis",
+                  "fri": "penktadienis",
+                  "sat": "šeštadienis"
+                }
+              }
+            },
+            "quarters": {
+              "format": {
+                "abbreviated": {
+                  "1": "I k.",
+                  "2": "II k.",
+                  "3": "III k.",
+                  "4": "IV k."
+                },
+                "narrow": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
+                },
+                "wide": {
+                  "1": "I ketvirtis",
+                  "2": "II ketvirtis",
+                  "3": "III ketvirtis",
+                  "4": "IV ketvirtis"
+                }
+              },
+              "stand-alone": {
+                "abbreviated": {
+                  "1": "I ketv.",
+                  "2": "II ketv.",
+                  "3": "III ketv.",
+                  "4": "IV ketv."
+                },
+                "narrow": {
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
+                },
+                "wide": {
+                  "1": "I ketvirtis",
+                  "2": "II ketvirtis",
+                  "3": "III ketvirtis",
+                  "4": "IV ketvirtis"
+                }
+              }
+            },
+            "dayPeriods": {
+              "format": {
+                "abbreviated": {
+                  "am": "pr.p.",
+                  "noon": "perpiet",
+                  "pm": "pop."
+                },
+                "narrow": {
+                  "am": "pr.p.",
+                  "noon": "perpiet",
+                  "pm": "pop."
+                },
+                "wide": {
+                  "am": "priešpiet",
+                  "noon": "perpiet",
+                  "pm": "popiet"
+                }
+              },
+              "stand-alone": {
+                "abbreviated": {
+                  "am": "pr.p.",
+                  "noon": "perpiet",
+                  "pm": "pop."
+                },
+                "narrow": {
+                  "am": "pr.p.",
+                  "noon": "perpiet",
+                  "pm": "pop."
+                },
+                "wide": {
+                  "am": "priešpiet",
+                  "noon": "perpiet",
+                  "pm": "popiet"
+                }
+              }
+            },
+            "eras": {
+              "eraNames": {
+                "0": "prieš Kristų",
+                "0-alt-variant": "prieš mūsų erą",
+                "1": "po Kristaus",
+                "1-alt-variant": "mūsų eroje"
+              },
+              "eraAbbr": {
+                "0": "pr. Kr.",
+                "0-alt-variant": "pr. m. e.",
+                "1": "po Kr.",
+                "1-alt-variant": "mūsų eroje"
+              },
+              "eraNarrow": {
+                "0": "pr. Kr.",
+                "0-alt-variant": "pr. m. e.",
+                "1": "po Kr.",
+                "1-alt-variant": "mūsų eroje"
+              }
+            },
+            "dateFormats": {
+              "full": "y 'm'. MMMM d 'd'., EEEE",
+              "long": "y 'm'. MMMM d 'd'.",
+              "medium": "y-MM-dd",
+              "short": "y-MM-dd"
+            },
+            "timeFormats": {
+              "full": "HH:mm:ss zzzz",
+              "long": "HH:mm:ss z",
+              "medium": "HH:mm:ss",
+              "short": "HH:mm"
+            },
+            "dateTimeFormats": {
+              "full": "{1} {0}",
+              "long": "{1} {0}",
+              "medium": "{1} {0}",
+              "short": "{1} {0}",
+              "availableFormats": {
+                "E": "ccc",
+                "EHm": "HH:mm, E",
+                "EHms": "HH:mm:ss, E",
+                "Ed": "d, E",
+                "Ehm": "hh:mm a, E",
+                "Ehms": "hh:mm:ss a, E",
+                "Gy": "y G",
+                "GyMMM": "y-MM G",
+                "GyMMMEd": "y-MM-dd G, E",
+                "GyMMMM": "y G LLLL",
+                "GyMMMMEd": "y G MMMM d, E",
+                "GyMMMMd": "y G MMMM d",
+                "GyMMMd": "y-MM-dd G",
+                "H": "HH",
+                "Hm": "HH:mm",
+                "Hms": "HH:mm:ss",
+                "Hmsv": "HH:mm:ss v",
+                "Hmv": "HH:mm v",
+                "M": "MM",
+                "MEd": "MM-dd, E",
+                "MMM": "MM",
+                "MMMEd": "MM-dd, E",
+                "MMMM": "LLLL",
+                "MMMMEd": "MMMM d, E",
+                "MMMMd": "MMMM d",
+                "MMMd": "MM-dd",
+                "MMdd": "MM-dd",
+                "Md": "MM-d",
+                "d": "dd",
+                "h": "hh a",
+                "hm": "hh:mm a",
+                "hms": "hh:mm:ss a",
+                "hmsv": "h:mm:ss a v",
+                "hmv": "h:mm a v",
+                "ms": "mm:ss",
+                "y": "y",
+                "yM": "y-MM",
+                "yMEd": "y-MM-dd, E",
+                "yMMM": "y-MM",
+                "yMMMEd": "y-MM-dd, E",
+                "yMMMM": "y LLLL",
+                "yMMMMEd": "y MMMM d, E",
+                "yMMMMd": "y MMMM d",
+                "yMMMd": "y-MM-dd",
+                "yMd": "y-MM-dd",
+                "yQQQ": "y QQQ",
+                "yQQQQ": "y QQQQ"
+              },
+              "appendItems": {
+                "Day": "{0} ({2}: {1})",
+                "Day-Of-Week": "{0} {1}",
+                "Era": "{1} {0}",
+                "Hour": "{0} ({2}: {1})",
+                "Minute": "{0} ({2}: {1})",
+                "Month": "{0} ({2}: {1})",
+                "Quarter": "{0} ({2}: {1})",
+                "Second": "{0} ({2}: {1})",
+                "Timezone": "{0} {1}",
+                "Week": "{0} ({2}: {1})",
+                "Year": "{1} {0}"
+              },
+              "intervalFormats": {
+                "intervalFormatFallback": "{0} – {1}",
+                "H": {
+                  "H": "HH–HH"
+                },
+                "Hm": {
+                  "H": "HH:mm–HH:mm",
+                  "m": "HH:mm–HH:mm"
+                },
+                "Hmv": {
+                  "H": "HH:mm–HH:mm v",
+                  "m": "HH:mm–HH:mm v"
+                },
+                "Hv": {
+                  "H": "HH–HH v"
+                },
+                "M": {
+                  "M": "MM–MM"
+                },
+                "MEd": {
+                  "M": "MM-dd, E – MM-dd, E",
+                  "d": "MM-dd, E – MM-dd, E"
+                },
+                "MMM": {
+                  "M": "MM–MM"
+                },
+                "MMMEd": {
+                  "M": "MM-dd, E – MM-dd, E",
+                  "d": "MM-dd, E – MM-dd, E"
+                },
+                "MMMM": {
+                  "M": "LLLL–LLLL"
+                },
+                "MMMMEd": {
+                  "M": "MMMM d, E – MMMM d, E",
+                  "d": "MMMM d, E – MMMM d, E"
+                },
+                "MMMMd": {
+                  "M": "MMMM d – MMMM d",
+                  "d": "MMMM d–d"
+                },
+                "MMMd": {
+                  "M": "MM-dd – MM-dd",
+                  "d": "MM-dd – MM-dd"
+                },
+                "Md": {
+                  "M": "MM-dd – MM-dd",
+                  "d": "MM-dd – MM-dd"
+                },
+                "d": {
+                  "d": "dd–dd"
+                },
+                "h": {
+                  "a": "h a – h a",
+                  "h": "hh–hh a"
+                },
+                "hm": {
+                  "a": "hh:mm a–hh:mm a",
+                  "h": "hh:mm–hh:mm a",
+                  "m": "hh:mm–hh:mm a"
+                },
+                "hmv": {
+                  "a": "hh:mm a–hh:mm a v",
+                  "h": "hh:mm–hh:mm a v",
+                  "m": "h:mm–h:mm a v"
+                },
+                "hv": {
+                  "a": "h a – h a v",
+                  "h": "hh–hh a v"
+                },
+                "y": {
+                  "y": "y–y"
+                },
+                "yM": {
+                  "M": "y-MM – y-MM",
+                  "y": "y-MM – y-MM"
+                },
+                "yMEd": {
+                  "M": "y-MM-dd, E – y-MM-dd, E",
+                  "d": "y-MM-dd, E – y-MM-dd, E",
+                  "y": "y-MM-dd, E – y-MM-dd, E"
+                },
+                "yMMM": {
+                  "M": "y-MM – y-MM",
+                  "y": "y-MM – y-MM"
+                },
+                "yMMMEd": {
+                  "M": "y-MM-dd, E – y-MM-dd, E",
+                  "d": "y-MM-dd, E – y-MM-dd, E",
+                  "y": "y-MM-dd, E – y-MM-dd, E"
+                },
+                "yMMMM": {
+                  "M": "y LLLL–LLLL",
+                  "y": "y LLLL – LLLL"
+                },
+                "yMMMMEd": {
+                  "M": "y MMMM d, E. – MMMM d, E.",
+                  "d": "y MMMM d, E – MMMM d, E",
+                  "y": "y MMMM d, E. – y MMMM d, E."
+                },
+                "yMMMMd": {
+                  "M": "y MMMM d – MMMM d",
+                  "d": "y MMMM d–d",
+                  "y": "y MMMM d – y MMMM d"
+                },
+                "yMMMd": {
+                  "M": "y-MM-dd – y-MM-dd",
+                  "d": "y-MM-dd – y-MM-dd",
+                  "y": "y-MM-dd – y-MM-dd"
+                },
+                "yMd": {
+                  "M": "y-MM-dd – y-MM-dd",
+                  "d": "y-MM-dd – y-MM-dd",
+                  "y": "y-MM-dd – y-MM-dd"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

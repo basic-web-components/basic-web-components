@@ -1,0 +1,91 @@
+{
+  "main": {
+    "sv-AX": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10819 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-08-14 22:53:08 -0500 (Thu, 14 Aug 2014) $"
+        },
+        "language": "sv",
+        "territory": "AX"
+      },
+      "localeDisplayNames": {
+        "variants": {
+          "1606NICT": "1606 års stavning",
+          "1694ACAD": "1694 års stavning",
+          "1901": "traditionell tysk stavning",
+          "1959ACAD": "1959 års stavning",
+          "1994": "1994 års resisk stavning",
+          "1996": "1996 års reformerad tysk stavning",
+          "ALALC97": "1997 års ALA-LC",
+          "ALUKU": "Aluku-dialekt",
+          "AREVELA": "östarmeniska",
+          "AREVMDA": "västarmeniska",
+          "BAKU1926": "1926 års stavning",
+          "BALANKA": "balanka-dialekt",
+          "BARLA": "barlavento-dialekt",
+          "BAUDDHA": "bauddha-dialekt",
+          "BISCAYAN": "Biscaya-dialekt",
+          "BISKE": "Bila-dialekt",
+          "BOHORIC": "Bohorič-alfabetet",
+          "BOONT": "boontling",
+          "DAJNKO": "Dajnko-alfabetet",
+          "EKAVSK": "ekavisk dialekt",
+          "EMODENG": "tidig modern engelska",
+          "FONIPA": "internationell fonetisk notation - IPA",
+          "FONUPA": "uralisk fonetisk notation",
+          "FONXSAMP": "X-SAMPA fonetisk notation",
+          "HEPBURN": "Hepburn",
+          "HOGNORSK": "högnorsk dialekt",
+          "IJEKAVSK": "ijekavisk dialekt",
+          "ITIHASA": "itihasa-dialekt",
+          "JAUER": "jauer-dialekt",
+          "JYUTPING": "jyutping",
+          "KKCOR": "vanlig stavning",
+          "KOCIEWIE": "KOCIEWIE",
+          "KSCOR": "standardstavning",
+          "LAUKIKA": "laukika-dialekt",
+          "LIPAW": "Lipovaz-dialekt",
+          "LUNA1918": "1918 års stavning",
+          "METELKO": "Metelko-alfabetet",
+          "MONOTON": "monotonisk stavning",
+          "NDYUKA": "Ndyuka-dialekt",
+          "NEDIS": "natisonsk dialekt",
+          "NJIVA": "Njiva-dialekt",
+          "NULIK": "nulik-stavning",
+          "OSOJS": "Osojane-dialekt",
+          "PAMAKA": "Pamaka-dialekt",
+          "PETR1708": "1708 års stavning",
+          "PINYIN": "pinyin",
+          "POLYTON": "polytonisk stavning",
+          "POSIX": "Posix",
+          "PUTER": "puter-dialekt",
+          "REVISED": "reformerad stavning",
+          "RIGIK": "rigik-stavning",
+          "ROZAJ": "resisk dialekt",
+          "RUMGR": "grischun-dialekt",
+          "SAAHO": "saho-dialekt",
+          "SCOTLAND": "skotska",
+          "SCOUSE": "scouse",
+          "SOLBA": "Solbica-dialekt",
+          "SOTAV": "sotavento-dialekt",
+          "SURMIRAN": "surmiran-dialekt",
+          "SURSILV": "sursilvan-dialekt",
+          "SUTSILV": "sutsilvan-dialekt",
+          "TARASK": "Taraskievika-stavning",
+          "UCCOR": "unifierad stavning",
+          "UCRCOR": "reviderad unifierad stavning",
+          "ULSTER": "Ulster-dialekt",
+          "UNIFON": "unifon-skrift",
+          "VAIDIKA": "vedisk dialekt",
+          "VALENCIA": "valensisk dialekt",
+          "VALLADER": "vallader-dialekt",
+          "WADEGILE": "Wade-Giles"
+        }
+      }
+    }
+  }
+}

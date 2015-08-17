@@ -1,0 +1,33 @@
+{
+  "name": "deepmerge",
+  "main": "index.js",
+  "version": "0.2.10",
+  "homepage": "https://github.com/nrf110/deepmerge",
+  "authors": [
+    "Nicholas Fisher <nfisher110@gmail.com>"
+  ],
+  "description": "Merge the enumerable attributes of two objects.",
+  "keywords": [
+    "merge",
+    "extend",
+    "assign"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.2.10",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.10",
+    "commit": "c221b6c0d007da44c18fdfee0abb8e1ebffc5075"
+  },
+  "_source": "git://github.com/nrf110/deepmerge.git",
+  "_target": "^0.2.10",
+  "_originalSource": "deepmerge"
+}

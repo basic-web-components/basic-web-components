@@ -1,0 +1,31 @@
+{
+  "main": {
+    "sw-UG": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "sw",
+        "territory": "UG"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "Ya Nambari",
+          "Tone": "Sauti",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "Rangi za Kuangaza",
+          "x-Fullwidth": "Upana kamili",
+          "x-Halfwidth": "Nusu upana",
+          "x-Jamo": "Kijamo",
+          "x-Pinyin": "Kipinyin",
+          "x-Publishing": "Inachapishwa"
+        }
+      }
+    }
+  }
+}

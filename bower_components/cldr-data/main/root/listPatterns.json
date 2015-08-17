@@ -1,0 +1,42 @@
+{
+  "main": {
+    "root": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11290 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-22 04:15:45 -0600 (Sun, 22 Feb 2015) $"
+        },
+        "language": "root"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0}, {1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0}, {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0}, {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0}, {1}",
+          "2": "{0}, {1}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+<!--
+Shows a culture's name for the current month and the year.
+
+To the degree possible, all language/culture-specific aspects of this component
+are localizable with the Globalize library (https://github.com/jquery/globalize).
+(This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.)
+
+@element basic-month-and-year
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-month-and-year/?dom=shadow
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
+<link rel="import" href="../basic-month-name/basic-month-name.html">
+
+<dom-module id="basic-month-and-year">
+  <template>
+
+    <style>
+    :host(.rtl) {
+      direction: rtl;
+    }
+    </style>
+
+    <basic-month-name id="monthName"></basic-month-name>
+    <span id="year"></span>
+
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  is: 'basic-month-and-year',
+
+  behaviors: [
+    Basic.CalendarHelpers,
+    Basic.Generic
+  ],
+
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    },
+
+    /**
+     * The date controlling which month and year are shown in this element.
+     *
+     * @attribute date
+     * @type Date
+     * @default today
+     */
+    date: {
+      type: Date,
+      value: null,
+      reflectToAttribute: true,
+      observer: 'dateChanged'
+    }
+  },
+
+  cultureChanged: function() {
+    if (!this.date) {
+      return;
+    }
+
+    this.$.monthName.culture = this.culture;
+
+    // Ensure the month-year order matches the direction of the text.
+    var rtl = this.isRTL(culture);
+    this.classList.toggle('rtl', rtl);
+  },
+
+  dateChanged: function() {
+    if (!this.date) {
+      return;
+    }
+
+    var date = this.date;
+    this.$.monthName.month = date.getMonth();
+    this.$.year.textContent = date.getFullYear();
+  },
+
+  ready: function() {
+    if (!this.date) {
+      // By default show the current month and year.
+      this.date = new Date();
+    }
+  }
+
+});
+</script>

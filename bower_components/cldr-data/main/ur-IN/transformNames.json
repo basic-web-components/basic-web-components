@@ -1,0 +1,31 @@
+{
+  "main": {
+    "ur-IN": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11323 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "ur",
+        "territory": "IN"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "عددی",
+          "Tone": "ٹون",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "لہجے",
+          "x-Fullwidth": "پورا عرض",
+          "x-Halfwidth": "نصف عرض",
+          "x-Jamo": "جامو",
+          "x-Pinyin": "پن یِن",
+          "x-Publishing": "اشاعت"
+        }
+      }
+    }
+  }
+}

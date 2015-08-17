@@ -1,0 +1,23 @@
+{
+  "main": {
+    "ru-UA": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11248 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-18 16:47:15 -0600 (Wed, 18 Feb 2015) $"
+        },
+        "language": "ru",
+        "territory": "UA"
+      },
+      "delimiters": {
+        "quotationStart": "«",
+        "quotationEnd": "»",
+        "alternateQuotationStart": "„",
+        "alternateQuotationEnd": "“"
+      }
+    }
+  }
+}

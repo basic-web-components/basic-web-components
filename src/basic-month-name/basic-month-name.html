@@ -1,0 +1,86 @@
+<!--
+Shows a culture's name for a given month.
+
+To the degree possible, all language/culture-specific aspects of this component
+are localizable with the Globalize library (https://github.com/jquery/globalize).
+(This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.)
+
+@element basic-month-name
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-month-name/?dom=shadow
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
+
+<dom-module id="basic-month-name">
+  <style>
+    :host {
+      display: inline-block;
+    }
+  </style>
+
+  <template>
+    <span id="name"></span>
+  </template>
+</dom-module>
+
+<script>
+
+Polymer({
+
+  is: 'basic-month-name',
+
+  behaviors: [Basic.CalendarHelpers],
+
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    },
+
+    /**
+     * The index of the month to show: 0 = January, 1 = February, etc.
+     *
+     * @attribute month
+     * @type integer
+     * @default The index of the current month
+     */
+    month: {
+      value: null,
+      type: Number,
+      reflectToAttribute: true,
+      observer: 'monthChanged'
+    }
+  },
+
+  cultureChanged: function() {
+    // Force update of month name.
+    this.monthChanged();
+  },
+
+  monthChanged: function() {
+    culture = this.culture;
+    monthNameEnum = this.monthsOfYear(culture);
+    monthName = monthNameEnum['wide'][this.month + 1];
+    this.$.name.textContent = monthName;
+  },
+
+  ready: function() {
+    if (!this.month) {
+      // If no month is supplied, default to the current month.
+      this.month = (new Date()).getMonth();
+    }
+  }
+
+});
+</script>
+
+</polymer-element>

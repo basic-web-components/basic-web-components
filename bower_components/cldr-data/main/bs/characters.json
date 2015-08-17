@@ -1,0 +1,30 @@
+{
+  "main": {
+    "bs": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11346 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+        },
+        "language": "bs"
+      },
+      "characters": {
+        "exemplarCharacters": "[a b c ć č d đ {dž} e f g h i j k l {lj} m n {nj} o p r s š t u v z ž]",
+        "auxiliary": "[q w x y]",
+        "punctuation": "[\\- , ; \\: ! ? . ( ) \\[ \\] \\{ \\}]",
+        "ellipsis": {
+          "initial": "… {0}",
+          "medial": "{0}… {1}",
+          "final": "{0}…",
+          "word-initial": "… {0}",
+          "word-medial": "{0}… {1}",
+          "word-final": "{0}…"
+        },
+        "moreInformation": "?"
+      }
+    }
+  }
+}

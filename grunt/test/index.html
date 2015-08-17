@@ -48,9 +48,35 @@
       }
     };
 
+    function handleCultureChanged(bcsElement, culture) {
+      var locale = culture.cldr.locale;
+      var numberFormatter = Globalize(locale).numberFormatter();
+      var dateFormatter = Globalize(locale).dateFormatter();
+      var currencyFormatter = Globalize(locale).currencyFormatter('USD');
+
+      document.querySelector('template').model = {
+        cultureName: bcsElement.name,
+        dateExample: dateFormatter(new Date()),
+        numberExample: numberFormatter(1234567.89),
+        currencyExample: currencyFormatter(1234.56)
+      };
+    }
+
     document.addEventListener('WebComponentsReady', function() {
       new Basic.Collective(changeDetectorAspect, document.querySelector('basic-list-box'));
       document.body.removeAttribute('unresolved');
+
+      document.querySelector("#basic-culture-selector-template").model = {};
+      var bcsElement = document.querySelector('basic-culture-selector');
+      bcsElement.addEventListener("basic-culture-changed", function(event) {
+        handleCultureChanged(bcsElement, event.detail.culture);
+      });
+
+      // If the newly constructed element has the culture property set, use it.
+      // Otherwise, we'll pick it up in the basic-culture-changed event.
+      if (bcsElement.culture) {
+        handleCultureChanged(bcsElement, bcsElement.culture);
+      }
     });
   </script>
 </head>
@@ -141,6 +167,20 @@
       <div>Watermelon</div>
     </basic-list-box>
   </basic-framed-content>
+
+  <h2>basic-culture-selector</h2>
+  <basic-framed-content>
+    <p>
+      <basic-culture-selector>Pick your preferred language/location settings:</basic-culture-selector>
+    </p>
+    <template id="basic-culture-selector-template" is="dom-bind">
+      <div>Culture name: <span>{{model.cultureName}}</span></div>
+      <div>Today's date: <span>{{model.dateExample}}</span></div>
+      <div>Number example: <span>{{model.numberExample}}</span></div>
+      <div>Currency example: <span>{{model.currencyExample}}</span></div>
+    </template>
+  </basic-framed-content>
+
 </body>
 
 </html>

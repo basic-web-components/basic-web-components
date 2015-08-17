@@ -1,0 +1,32 @@
+{
+  "main": {
+    "da-GL": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "da",
+        "territory": "GL"
+      },
+      "characters": {
+        "exemplarCharacters": "[a b c d e f g h i j k l m n o p q r s t u v w x y z æ ø å]",
+        "auxiliary": "[á à â ç é è ê ë í î ï ñ ó ô ú ù û ÿ ü ä ǿ ö œ]",
+        "punctuation": "[\\- ‐ – , ; \\: ! ? . … ' ‘ ’ \" “ ” ( ) \\[ \\] § @ * / \\& # † ′ ″]",
+        "index": "[A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Æ Ø Å]",
+        "ellipsis": {
+          "initial": "…{0}",
+          "medial": "{0}…{1}",
+          "final": "{0}…",
+          "word-initial": "… {0}",
+          "word-medial": "{0} … {1}",
+          "word-final": "{0} …"
+        },
+        "moreInformation": "?"
+      }
+    }
+  }
+}

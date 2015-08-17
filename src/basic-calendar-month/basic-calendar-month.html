@@ -1,0 +1,215 @@
+<!--
+A month calendar with headings for month name, year, and days of week.
+
+To the degree possible, all language/culture-specific aspects of this component
+are localizable with the Globalize library (https://github.com/jquery/globalize).
+These localized aspects include:
+
+* The name of the month.
+* The names of the days of the week.
+* The day of the week which will appear first (e.g., leftmost).
+
+(This currently works with Globalize 0.x. This component will be updated to work
+with Globalize 1.x-alpha, which is substantially different, when that edition
+leaves alpha status.)
+
+@element basic-calendar-month
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-calendar-month/?dom=shadow
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
+<link rel="import" href="../basic-month-and-year/basic-month-and-year.html">
+<link rel="import" href="../basic-days-of-week/basic-days-of-week.html">
+<link rel="import" href="../basic-calendar-month-days/basic-calendar-month-days.html">
+
+<dom-module id="basic-calendar-month">
+  <template>
+
+    <style>
+    :host {
+      display: inline-block;
+    }
+
+    #monthAndYear {
+      display: block;
+    }
+
+    #monthTable {
+      border-collapse: collapse;
+      display: table;
+      width: 100%;
+    }
+
+    #daysOfWeek {
+      display: table-header-group;
+    }
+
+    /* Generic styling */
+    :host([generic='']) #monthAndYear {
+      font-weight: bold;
+      padding: 4px;
+      text-align: center;
+    }
+
+    :host([generic='']) #daysOfWeek {
+      font-size: smaller;
+    }
+
+    :host([generic='']) .dayOfWeek {
+      padding: 4px;
+    }
+    </style>
+
+    <basic-month-and-year id="monthAndYear"></basic-month-and-year>
+    <div id="monthTable">
+      <basic-days-of-week id="daysOfWeek" format="{{daysOfWeekFormat}}"></basic-days-of-week>
+      <basic-calendar-month-days id="calendar" dayElement="{{dayElement}}"></basic-calendar-month-days>
+    </div>
+
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  is: 'basic-calendar-month',
+
+  behaviors: [
+    Basic.CalendarHelpers,
+    Basic.Generic
+  ],
+
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      reflectToAttribute: true,
+      observer: 'cultureChanged'
+    },
+
+    /**
+     * The date govering which month is shown by the element. This can be any
+     * date within the month.
+     *
+     * @attribute date
+     * @type Date
+     * @default today
+     */
+    date: {
+      type: Date,
+      value: null,
+      observer: 'dateChanged'
+    },
+
+    /*
+     * The format used for the days of week header.
+     *
+     * Valid values: "abbreviated" (the default), "narrow", "short", "wide".
+     */
+    daysOfWeekFormat: {
+      value: 'abbreviated',
+      reflectToAttribute: true
+    }
+  },
+
+  cultureChanged: function() {
+    var culture = this.culture;
+    if (culture) {
+      this.$.monthAndYear.culture = culture;
+      this.$.daysOfWeek.culture = culture;
+      this.$.calendar.culture = culture;
+    }
+  },
+
+  dateChanged: function() {
+    var date = this.date;
+    this.$.monthAndYear.date = date;
+    this.$.calendar.date = date;
+  },
+
+  /**
+   * Returns the day element corresponding to the given date.
+   *
+   * @method dayElementForDate
+   * @param date
+   */
+  dayElementForDate: function(date) {
+    return this.$.calendar.dayElementForDate(date);
+  },
+
+  /**
+   * Returns the array of day elements for the days in the month.
+   *
+   * @property days
+   */
+  get days() {
+    return this.$.calendar.days;
+  },
+
+  /**
+   * The date of the first day in the month.
+   *
+   * Note that there may be days from the previous month that appear (or are
+   * hidden) before this first day of the month.
+   *
+   * @property firstDateOfMonth
+   */
+  get firstDateOfMonth() {
+    return this.$.calendar.firstDateOfMonth;
+  },
+
+  /**
+   * Returns true if the given date is in the month shown.
+   *
+   * @method isDateInMonth
+   * @param date
+   */
+  isDateInMonth: function(date) {
+    return this.$.calendar.isDateInMonth(date);
+  },
+
+  /**
+   * The date of the last day in the month.
+   *
+   * Note that there may be days from the next month that appear (or are hidden)
+   * after this last day of the month.
+   *
+   * @property lastDateOfMonth
+   */
+  get lastDateOfMonth() {
+    return this.$.calendar.lastDateOfMonth;
+  },
+
+  ready: function() {
+    if (!this.date) {
+      // By default, show the current month.
+      this.date = new Date();
+    }
+  },
+
+  /**
+   * Returns the week element for the week containing the given date.
+   *
+   * @method weekElementForDate
+   * @param date
+   */
+  weekElementForDate: function(date) {
+    return this.$.calendar.weekElementForDate(date);
+  },
+
+  /**
+   * Returns the array of week elements for the weeks in the month.
+   *
+   * @property weeks
+   */
+  get weeks() {
+    return this.$.calendar.weeks;
+  }
+
+});
+</script>

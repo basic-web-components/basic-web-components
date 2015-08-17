@@ -1,0 +1,42 @@
+{
+  "main": {
+    "to": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "to"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0} mo {1}",
+          "middle": "{0} mo {1}",
+          "end": "{0} mo {1}",
+          "2": "{0} mo {1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} mo e {1}",
+          "2": "{0} mo e {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} mo e {1}",
+          "2": "{0} mo e {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} mo e {1}",
+          "2": "{0} mo e {1}"
+        }
+      }
+    }
+  }
+}

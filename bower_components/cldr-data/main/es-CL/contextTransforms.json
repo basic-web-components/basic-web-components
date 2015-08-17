@@ -1,0 +1,39 @@
+{
+  "main": {
+    "es-CL": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11323 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "es",
+        "territory": "419"
+      },
+      "contextTransforms": {
+        "day-format-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "day-standalone-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "languages": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "month-format-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "month-standalone-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-culture-selector</title>
+
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../basic-framed-content/basic-framed-content.html">
+  <link rel="import" href="basic-culture-selector.html">
+
+  <style>
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  basic-framed-content {
+    padding: 2em;
+  }
+  </style>
+
+  <script>
+
+  function handleCultureChanged(bcsElement, culture) {
+    var locale = culture.cldr.locale;
+    var numberFormatter = Globalize(locale).numberFormatter();
+    var dateFormatter = Globalize(locale).dateFormatter();
+
+    document.querySelector('template').model = {
+      cultureName: bcsElement.name,
+      dateExample: dateFormatter(new Date()),
+      numberExample: numberFormatter(1234567.89),
+    };
+  }
+
+  window.addEventListener("WebComponentsReady", function() {
+    document.querySelector("template").model = {};
+    var bcsElement = document.querySelector('basic-culture-selector');
+    bcsElement.addEventListener("basic-culture-changed", function(event) {
+      handleCultureChanged(bcsElement, event.detail.culture);
+    });
+
+    // If the newly constructed element has the culture property set, use it.
+    // Otherwise, we'll pick it up in the basic-culture-changed event.
+    if (bcsElement.culture) {
+      handleCultureChanged(bcsElement, bcsElement.culture);
+    }
+  });
+  </script>
+
+</head>
+
+<body unresolved>
+<basic-framed-content>
+  <p>
+    <basic-culture-selector>Pick your preferred language/location settings:</basic-culture-selector>
+  </p>
+  <template is="dom-bind">
+    <div>Culture name: <span>{{model.cultureName}}</span></div>
+    <div>Today's date: <span>{{model.dateExample}}</span></div>
+    <div>Number example: <span>{{model.numberExample}}</span></div>
+  </template>
+</basic-framed-content>
+</body>
+
+</html>

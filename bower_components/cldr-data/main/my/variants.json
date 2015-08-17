@@ -1,0 +1,90 @@
+{
+  "main": {
+    "my": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11321 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 14:20:05 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "my"
+      },
+      "localeDisplayNames": {
+        "variants": {
+          "1606NICT": "အလယ်ပိုင်းနောက်ကျသောပြင်သစ်မှ ၁၆၀၆",
+          "1694ACAD": "၁၆၉၄ACAD",
+          "1901": "ရှေးရိုးစဉ်လာ ဂျာမန် ရေးထုံး",
+          "1959ACAD": "1959ACAD",
+          "1994": "1994",
+          "1996": "၁၉၉၆ ဂျာမန် ရေးထုံး",
+          "ALALC97": "ALALC97",
+          "ALUKU": "ALUKU",
+          "AREVELA": "အရှေ့ပိုင်းအာမေးနီးယန်း",
+          "AREVMDA": "AREVMDA",
+          "BAKU1926": "ပေါင်းစပ်ထားသော တူရကီ လက်တင်စကားလုံး",
+          "BALANKA": "BALANKA",
+          "BARLA": "BARLA",
+          "BAUDDHA": "BAUDDHA",
+          "BISCAYAN": "BISCAYAN",
+          "BISKE": "BISKE",
+          "BOHORIC": "BOHORIC",
+          "BOONT": "BOONT",
+          "DAJNKO": "DAJNKO",
+          "EKAVSK": "EKAVSK",
+          "EMODENG": "EMODENG",
+          "FONIPA": "IPA အသံထွက်",
+          "FONUPA": "UPA အသံထွက်",
+          "FONXSAMP": "FONXSAMP",
+          "HEPBURN": "HEPBURN",
+          "HOGNORSK": "HOGNORSK",
+          "IJEKAVSK": "IJEKAVSK",
+          "ITIHASA": "ITIHASA",
+          "JAUER": "JAUER",
+          "JYUTPING": "JYUTPING",
+          "KKCOR": "KKCOR",
+          "KOCIEWIE": "KOCIEWIE",
+          "KSCOR": "KSCOR",
+          "LAUKIKA": "LAUKIKA",
+          "LIPAW": "LIPAW",
+          "LUNA1918": "LUNA1918",
+          "METELKO": "METELKO",
+          "MONOTON": "MONOTON",
+          "NDYUKA": "NDYUKA",
+          "NEDIS": "NEDIS",
+          "NJIVA": "NJIVA",
+          "NULIK": "NULIK",
+          "OSOJS": "OSOJS",
+          "PAMAKA": "PAMAKA",
+          "PETR1708": "PETR1708",
+          "PINYIN": "PINYIN",
+          "POLYTON": "POLYTON",
+          "POSIX": "ကွန်ပျူတာ",
+          "PUTER": "PUTER",
+          "REVISED": "ပြန်လည်စီစစ်ထားသော ရေးထုံး",
+          "RIGIK": "RIGIK",
+          "ROZAJ": "ROZAJ",
+          "RUMGR": "RUMGR",
+          "SAAHO": "SAAHO",
+          "SCOTLAND": "စကော့ စံ အင်္ဂလိပ်",
+          "SCOUSE": "SCOUSE",
+          "SOLBA": "SOLBA",
+          "SOTAV": "SOTAV",
+          "SURMIRAN": "SURMIRAN",
+          "SURSILV": "SURSILV",
+          "SUTSILV": "SUTSILV",
+          "TARASK": "TARASK",
+          "UCCOR": "UCCOR",
+          "UCRCOR": "UCRCOR",
+          "ULSTER": "ULSTER",
+          "UNIFON": "UNIFON",
+          "VAIDIKA": "VAIDIKA",
+          "VALENCIA": "VALENCIA",
+          "VALLADER": "VALLADER",
+          "WADEGILE": "WADEGILE"
+        }
+      }
+    }
+  }
+}

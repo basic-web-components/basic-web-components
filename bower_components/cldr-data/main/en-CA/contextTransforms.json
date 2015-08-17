@@ -1,0 +1,35 @@
+{
+  "main": {
+    "en-CA": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11416 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-16 12:30:30 -0500 (Mon, 16 Mar 2015) $"
+        },
+        "language": "en",
+        "territory": "001"
+      },
+      "contextTransforms": {
+        "calendar-field": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "keyValue": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "number-spellout": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "relative": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        }
+      }
+    }
+  }
+}

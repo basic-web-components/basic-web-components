@@ -1,0 +1,93 @@
+<!--
+A calendar day that includes the moon phase.
+-->
+
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="moon-phase.html">
+
+<!-- TODO: based on basic-calendar-day. For now, simply copy relevent code
+<polymer-element name="calendar-day-moon-phase" extends="basic-calendar-day" noscript>
+-->
+
+<dom-module> id="calendar-day-moon-phase">
+  <style>
+    moon-phase {
+      height: 1.5em;
+      width: 1.5em;
+    }
+
+    :host([generic]) {
+      padding: 4px;
+    }
+    :host([generic])::shadow #day {
+      text-align: right;
+    }
+
+    :host([generic].today) {
+      color: darkred;
+      font-weight: bold;
+    }
+  </style>
+
+  <template>
+    <content>
+      <div id="day"></div>
+      <moon-phase date="{{date}}"></moon-phase>
+    </content>
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  is: 'calendar-day-moon-phase',
+
+  properties: {
+    /**
+     * The date shown in this element.
+     *
+     * @attribute date
+     * @type Date
+     * @default today
+     */
+    date: {
+      type: Date,
+      reflectToAttribute: true,
+      observer: 'dateChanged'
+    }
+  },
+
+  // TODO: accept both Date objects and date strings.
+  dateChanged: function() {
+    var date = this.date;
+    this.$.day.textContent = date.getDate();
+    var today = this.today();
+    var dayOfWeek = date.getDay();
+    var dayOfMonth = date.getDate();
+    var nextDate = this.offsetDateByDays(date, 1);
+    var daysFromToday = Math.round(date.getTime() - today.getTime()) / this.MILLISECONDS_IN_DAY;
+    var weekend = (dayOfWeek === 0 || dayOfWeek === 6);
+    var classList = this.classList;
+    classList.toggle('past', date < today);
+    classList.toggle('today', daysFromToday == 0);
+    classList.toggle('future', date > today);
+    classList.toggle('firstDayOfMonth', dayOfMonth === 1);
+    classList.toggle('lastDayOfMonth', date.getMonth() !== nextDate.getMonth());
+    classList.toggle('firstWeek', dayOfMonth <= 7);
+    classList.toggle('sunday', dayOfWeek === 0);
+    classList.toggle('saturday', dayOfWeek === 6);
+    classList.toggle('weekend', weekend);
+    classList.toggle('weekday', !weekend);
+    classList.toggle('alternateMonth', Math.abs(date.getMonth() - today.getMonth()) % 2 === 1);
+  },
+
+  ready: function() {
+    if (!this.date) {
+      // By default, show today.
+      if (typeof this.today !== 'undefined') {
+        this.date = this.today();
+      }
+    }
+  }
+});
+</script>

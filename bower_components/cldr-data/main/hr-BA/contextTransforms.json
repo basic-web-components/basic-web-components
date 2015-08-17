@@ -1,0 +1,39 @@
+{
+  "main": {
+    "hr-BA": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "hr",
+        "territory": "BA"
+      },
+      "contextTransforms": {
+        "day-format-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword"
+        },
+        "day-standalone-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword"
+        },
+        "languages": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        },
+        "month-format-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword"
+        },
+        "month-standalone-except-narrow": {
+          "uiListOrMenu": "titlecase-firstword"
+        },
+        "relative": {
+          "uiListOrMenu": "titlecase-firstword",
+          "stand-alone": "titlecase-firstword"
+        }
+      }
+    }
+  }
+}

@@ -1,35 +1,46 @@
 # Globalize
 
-A JavaScript library for globalization and localization. Enables complex
-culture-aware number and date parsing and formatting, including the raw
-culture information for hundreds of different languages and countries, as well
-as an extensible system for localization.
+[![Build Status](https://secure.travis-ci.org/jquery/globalize.svg?branch=master)](http://travis-ci.org/jquery/globalize)
+[![devDependency Status](https://david-dm.org/jquery/globalize/status.svg)](https://david-dm.org/jquery/globalize#info=dependencies)
+[![devDependency Status](https://david-dm.org/jquery/globalize/dev-status.svg)](https://david-dm.org/jquery/globalize#info=devDependencies)
 
-<hr>
-<ul>
-<li><a href="#why">Why Globalization</a></li>
-<li><a href="#what">What is a Culture?</a></li>
-<li><a href="#addCultureInfo">Globalize.addCultureInfo</a></li>
-<li><a href="#cultures">Globalize.cultures</a></li>
-<li><a href="#culture">Globalize.culture</a></li>
-<li><a href="#find">Globalize.findClosestCulture</a></li>
-<li><a href="#format">Globalize.format</a></li>
-<li><a href="#localize">Globalize.localize</a></li>
-<li><a href="#parseInt">Globalize.parseInt</a></li>
-<li><a href="#parseFloat">Globalize.parseFloat</a></li>
-<li><a href="#parseDate">Globalize.parseDate</a></li>
-<li><a href="#extend">Utilizing and Extending Cultures</a></li>
-<li><a href="#defining">Defining Culture Information</a></li>
-<li><a href="#numbers">Number Formatting</a></li>
-<li><a href="#currency">Currency Formatting</a></li>
-<li><a href="#dates">Date Formatting</a></li>
-<li><a href="#generating">Generating Culture Files</a></li>
-<li><a href="#building">Building Globalize</a></li>
-</ul>
+A JavaScript library for internationalization and localization that leverage the
+official [Unicode CLDR](http://cldr.unicode.org/) JSON data. The library works both for the browser and as a
+Node.js module.
 
-<a name="why"></a>
-<h2 id="why">Why Globalization?</h2>
-<p>
+- [About Globalize](#about-globalize)
+  - [Why globalization?](#why-globalization)
+  - [Why Globalize?](#why-globalize)
+  - [Migrating from Globalize 0.x](#migrating-from-globalize-0x)
+  - [Where to use it?](#where-to-use-it)
+  - [Where does the data come from?](#where-does-the-data-come-from)
+  - [Only load and use what you need](#pick-the-modules-you-need)
+  - [Browser support](#browser-support)
+- [Getting started](#getting-started)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [API](#api)
+  - [Core](#core-module)
+  - [Date module](#date-module)
+  - [Message module](#message-module)
+  - [Number module](#number-module)
+    - [Currency module](#currency-module)
+  - [Plural module](#plural-module)
+  - [Relative time module](#relative-time-module)
+  - more to come...
+- [Error reference](#error-reference)
+- [Development](#development)
+  - [File structure](#file-structure)
+  - [Source files](#source-files)
+  - [Tests](#tests)
+  - [Build](#build)
+
+
+## About Globalize
+
+### Why globalization?
+
 Each language, and the countries that speak that language, have different
 expectations when it comes to how numbers (including currency and percentages)
 and dates should appear. Obviously, each language has different names for the
@@ -38,828 +49,608 @@ expectations for the structure of dates, such as what order the day, month and
 year are in. In number formatting, not only does the character used to
 delineate number groupings and the decimal portion differ, but the placement of
 those characters differ as well.
-</p>
-<p>
+
 A user using an application should be able to read and write dates and numbers
 in the format they are accustomed to. This library makes this possible,
 providing an API to convert user-entered number and date strings - in their
 own format - into actual numbers and dates, and conversely, to format numbers
 and dates into that string format.
-</p>
 
-<a name="what"></a>
-<h2 id="what">What is a Culture?</h2>
-<p>
-Globalize defines roughly 350 cultures. Part of the reason for this large
-number, besides there being a lot of cultures in the world, is because for
-some languages, expectations differ among the countries that speak it.
-English, for example, is an official language in dozens of countries. Despite
-the language being English, the expected date formatting still greatly differs
-between them.
-</p>
-<p>
-So, it does not seem useful to define cultures by their language alone. Nor
-is it useful to define a culture by its country alone, as many countries have
-several official languages, spoken by sizable populations. Therefore, cultures
-are defined as a combination of the language and the country speaking it. Each
-culture is given a unique code that is a combination of an ISO 639 two-letter
-lowercase culture code for the language, and a two-letter uppercase code for
-the country or region. For example, "en-US" is the culture code for English in
-the United States.
-</p>
-<p>
-Yet, it is perhaps unreasonable to expect application developers to cater to
-every possible language/country combination perfectly. It is important then to
-define so-called "neutral" cultures based on each language. These cultures
-define the most likely accepted set of rules by anyone speaking that language,
-whatever the country. Neutral cultures are defined only by their language code.
-For example, "es" is the neutral culture for Spanish.
-</p>
+Even if the application deals only with the English locale, it may still need
+globalization to format programming language bytes into human-understandable
+language and vice-versa in an effective and reasonable way. For example, to
+display something better than "Edited 1 minutes ago".
 
-<a name="addCultureInfo"></a>
-<h2 id="addCultureInfo">Globalize.addCultureInfo( cultureName, extendCultureName, info )</h2>
-<p>
-This method allows you to create a new culture based on an existing culture or
-add to existing culture info. If the optional argument <pre>extendCultureName</pre>
-is not supplied, it will extend the existing culture if it exists or create a new
-culture based on the default culture if it doesn't exist. If cultureName is not
-supplied, it will add the supplied info to the current culture. See .culture().
-</p>
+### Why Globalize?
 
+Globalize provides number formatting and parsing, date and time formatting and
+parsing, currency formatting, message formatting (ICU message format pattern),
+and plural support.
 
-<a name="cultures"></a>
-<h2 id="cultures">Globalize.cultures</h2>
-<p>
-A mapping of culture codes to culture objects. For example,
-Globalize.cultures.fr is an object representing the complete culture
-definition for the neutral French culture. Note that the main globalize.js file
-alone only includes a neutral English culture. To get additional cultures, you
-must include one or more of the culture scripts that come with it. You
-can see in the section <a href="#defining">Defining Culture Information</a>
-below which fields are defined in each culture.
-</p>
+Design Goals.
 
-<a name="culture"></a>
-<h2 id="culture">Globalize.culture( selector )</h2>
-<p>
-An application that supports globalization and/or localization will need to
-have a way to determine the user's preference. Attempting to automatically
-determine the appropriate culture is useful, but it is good practice to always
-offer the user a choice, by whatever means.
-</p>
-<p>
-Whatever your mechanism, it is likely that you will have to correlate the
-user's preferences with the list of cultures supported in the app. This
-method allows you to select the best match given the culture scripts that you
-have included and to set the Globalize culture to the culture which the user
-prefers.
-</p>
-<p>
-If you pass an array of names instead of a single name string, the first
-culture for which there is a match (that culture's script has been referenced)
-will be used. If none match, the search restarts using the corresponding
-neutral cultures. For example, if the application has included only the neutral
-"fr" culture, any of these would select it:
-<pre>
-Globalize.culture( "fr" );
-console.log( Globalize.culture().name ) // "fr"
+- Leverages the Unicode CLDR data and follows its UTS#35 specification.
+- Keeps code separate from i18n content. Doesn't host or embed any locale data
+  in the library. Empowers developers to control the loading mechanism of their
+  choice.
+- Allows developers to load as much or as little data as they need. Avoids
+  duplicating data if using multiple i18n libraries that leverage CLDR.
+- Keeps code modular. Allows developers to load the i18n functionalities they
+  need.
+- Runs in browsers and Node.js, consistently across all of them.
+- Makes globalization as easy to use as jQuery.
 
-Globalize.culture( "fr-FR" );
-console.log( Globalize.culture().name ) // "fr-FR"
+Globalize is based on the Unicode Consortium's Common Locale Data Repository
+(CLDR), the largest and most extensive standard repository of locale data
+available. CLDR is constantly updated and is used by many large applications and
+operating systems, so you'll always have access to the most accurate and
+up-to-date locale data.
 
-Globalize.culture([ "es-MX", "fr-FR" ]);
-console.log( Globalize.culture().name ) // "es-MX"
-</pre>
+Globalize needs CLDR content to function properly, although it doesn't embed,
+hard-code, or host such content. Instead, Globalize empowers developers to load
+CLDR data the way they want. Vanilla CLDR in its official JSON format (no
+pre-processing) is expected to be provided. As a consequence, (a) Globalize
+avoids bugs caused by outdated i18n content. Developers can use up-to-date CLDR
+data directly from Unicode as soon as it's released, without having to wait for
+any pipeline on our side. (b) Developers have full control over which locale
+coverage they want to provide on their applications. (c) Developers are able to
+share the same i18n dataset between Globalize and other libraries that leverage
+CLDR. There's no need for duplicating data.
 
-In any case, if no match is found, the neutral English culture "en" is selected
-by default.
+Globalize is systematically tested against desktop and mobile browsers and
+Node.js. So, using it you'll get consistent results across different browsers
+and across browsers and the server.
 
-If you don't pass a selector, .culture() will return the current Globalize
-culture.
-</p>
-<p>
-Each culture string may also follow the pattern defined in
-<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4"
->RFC2616 sec 14.4</a>. That is, a culture name may include a "quality" value
-that indicates an estimate of the user's preference for the language.
+Globalize doesn't use native Ecma-402 yet, which could potentially improve date
+and number formatting performance. Although Ecma-402 support is improving among
+modern browsers and even Node.js, the functionality and locale coverage level
+varies between different environments (see Comparing JavaScript Libraries [slide
+25][]). Globalize needs to do more research and testings to use it reliably.
 
-<pre>
-Globalize.culture( "fr;q=0.4, es;q=0.5, he" );
-</pre>
-In this example, the neutral Hebrew culture "he" is given top priority (an
-unspecified quality is equal to 1). If that language is not an exact match for
-any of the cultures available in Globalize.cultures, then "es" is the next
-highest priority with 0.5, etc. If none of these match, just like with the array
-syntax, the search starts over and the same rules are applied to the
-corresponding neutral language culture for each. If still none match, the
-neutral English culture "en" is used.
-</p>
+For alternative libraries and more, check out this [JavaScript globalization
+overview][].
 
-<a name="find"></a>
-<h2 id="find">Globalize.findClosestCulture( selector )</h2>
-<p>
-Just like .culture( selector ), but it just returns the matching culture, if
-any, without setting it to the current Globalize culture, returned by
-.culture().
-</p>
+[slide 25]: http://jsi18n.com/jsi18n.pdf
+[JavaScript globalization overview]: http://rxaviers.github.io/javascript-globalization/
 
-<a name="format"></a>
-<h2 id="format">Globalize.format( value, format, culture )</h2>
-<p>
-Formats a date or number according to the given format string and the given
-culture (or the current culture if not specified). See the sections
-<a href="#numbers">Number Formatting</a> and
-<a href="#dates">Date Formatting</a> below for details on the available
-formats.
-<pre>
-// assuming a culture with number grouping of 3 digits,
-// using "," separator and "." decimal symbol.
-Globalize.format( 1234.567, "n" ); // "1,234.57"
-Globalize.format( 1234.567, "n1" ); // "1,234.6"
-Globalize.format( 1234.567, "n0" ); // "1,235"
+### Migrating from Globalize 0.x
 
-// assuming a culture with "/" as the date separator symbol
-Globalize.format( new Date(1955,10,5), "yyyy/MM/dd" ); // "1955/11/05"
-Globalize.format( new Date(1955,10,5), "dddd MMMM d, yyyy" ); // "Saturday November 5, 1955"
-</pre>
-</p>
+Are you coming from Globalize 0.x? Read our [migration guide][] to learn what
+have changed and how to migrate older 0.x code to up-to-date 1.x.
 
-<a name="localize"></a>
-<h2 id="localize">Globalize.localize( key, culture )</h2>
-<p>
-Gets or sets a localized value. This method allows you to extend the
-information available to a particular culture, and to easily retrieve it
-without worrying about finding the most appropriate culture. For example, to
-define the word "translate" in French:
-<pre>
-Globalize.addCultureInfo( "fr", {
-	messages: {
-		"translate": "traduire"
-	}
-});
-console.log( Globalize.localize( "translate", "fr" ) ); // "traduire"
-</pre>
-Note that localize() will find the closest match available per the same
-semantics as the Globalize.findClosestCulture() method. If there is no
-match, the translation given is for the neutral English culture "en" by
-default.
-</p>
+[migration guide]: doc/migrating-from-0.x.md
+
+### Where to use it?
+
+Globalize is designed to work both in the [browser](#browser-support), or in
+[Node.js](#usage). It supports both [AMD](#usage) and [CommonJS](#usage).
+
+### Where does the data come from?
+
+Globalize uses the [Unicode CLDR](http://cldr.unicode.org/), the largest and
+most extensive standard repository of locale data.
+
+We do NOT embed any i18n data within our library. However, we make it really
+easy to use. Read [How to get and load CLDR JSON data](#2-cldr-content) for more
+information on its usage.
+
+### Pick the modules you need
+
+| File | Minified + gzipped size | Summary |
+|---|--:|---|
+| globalize.js | 1.3KB | [Core library](#core-module) |
+| globalize/currency.js | +2.6KB | [Currency module](#currency-module) provides currency formatting and parsing |
+| globalize/date.js | +4.9KB | [Date module](#date-module) provides date formatting and parsing |
+| globalize/message.js | +5.4KB | [Message module](#message-module) provides ICU message format support |
+| globalize/number.js | +2.9KB | [Number module](#number-module) provides number formatting and parsing |
+| globalize/plural.js | +1.7KB | [Plural module](#plural-module) provides pluralization support |
+| globalize/relative-time.js | +0.7KB | [Relative time module](#relative-time-module) provides relative time formatting support |
+
+### Browser Support
+
+Globalize 1.x supports the following browsers:
+
+- Chrome: (Current - 1) or Current
+- Firefox: (Current - 1) or Current
+- Safari: 5.1+
+- Opera: 12.1x, (Current - 1) or Current
+- IE 8 (needs ES5 polyfill), IE9+
+
+*(Current - 1)* or *Current* denotes that we support the current stable version
+of the browser and the version that preceded it. For example, if the current
+version of a browser is 24.x, we support the 24.x and 23.x versions.
+
+*IE 8* is supported, but it depends on the polyfill of the ES5
+methods below, for which we suggest using
+[es5-shim](https://github.com/es-shims/es5-shim). Alternatives or more
+information can be found at
+[Modernizr's polyfills list](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills#ecmascript-5).
+
+- Array.isArray()
+- Array.prototype.every()
+- Array.prototype.forEach()
+- Array.prototype.indexOf()
+- Array.prototype.isArray()
+- Array.prototype.map()
+- Array.prototype.some()
+- Object.keys()
 
 
-<a name="parseInt"></a>
-<h2 id="parseInt">Globalize.parseInt( value, radix, culture )</h2>
-<p>
-Parses a string representing a whole number in the given radix (10 by default),
-taking into account any formatting rules followed by the given culture (or the
-current culture, if not specified).
+## Getting Started
 
-If a percentage is passed into parseInt, the percent sign will be removed and the number parsed as is.
-Example: 12.34% would be returned as 12.
-<pre>
-// assuming a culture where "," is the group separator
-// and "." is the decimal separator
-Globalize.parseInt( "1,234.56" ); // 1234
-// assuming a culture where "." is the group separator
-// and "," is the decimal separator
-Globalize.parseInt( "1.234,56" ); // 1234
-</pre>
-</p>
+### Requirements
 
-<a name="parseFloat"></a>
-<h2 id="parseFloat">Globalize.parseFloat( value, radix, culture )</h2>
-<p>
-Parses a string representing a floating point number in the given radix (10 by
-default), taking into account any formatting rules followed by the given
-culture (or the current culture, if not specified).
+#### 1. Dependencies
 
-If a percentage is passed into parseFloat, the percent sign will be removed and the number parsed as is.
-Example: 12.34% would be returned as 12.34
-<pre>
-// assuming a culture where "," is the group separator
-// and "." is the decimal separator
-Globalize.parseFloat( "1,234.56" ); // 1234.56
-// assuming a culture where "." is the group separator
-// and "," is the decimal separator
-Globalize.parseFloat( "1.234,56" ); // 1234.56
-</pre>
-</p>
+You need to satisfy Globalize dependencies prior to using it. The good news
+is, there is only one. It's the [cldr.js](https://github.com/rxaviers/cldrjs),
+which is a CLDR low level manipulation tool.
 
-<a name="parseDate"></a>
-<h2 id="parseDate">Globalize.parseDate( value, formats, culture )</h2>
-<p>
-Parses a string representing a date into a JavaScript Date object, taking into
-account the given possible formats (or the given culture's set of default
-formats if not given). As before, the current culture is used if one is not
-specified.
-<pre>
-Globalize.culture( "en" );
-Globalize.parseDate( "1/2/2003" ); // Thu Jan 02 2003
-Globalize.culture( "fr" );
-Globalize.parseDate( "1/2/2003" ); // Sat Feb 01 2003
-</pre>
-</p>
+If you use a package manager like bower or npm, you don't need to worry about
+it. If this isn't the case, then you need to manually download cldr.js
+yourself. Check the [Hello World examples](#usage) for more information.
 
-<a name="extend"></a>
-<h2 id="extend">Utilizing and Extending Cultures</h2>
-<p>
-The culture information included with each culture is mostly necessary for the
-parsing and formatting methods, but not all of it. For example, the Native and
-English names for each culture is given, as well as a boolean indicating
-whether the language is right-to-left. This may be useful information for your
-own purposes. You may also add to the culture information directly if so
-desired.
-</p>
-<p>
-As an example, in the U.S., the word "billion" means the number 1,000,000,000
-(9 zeros). But in other countries, that number is "1000 million" or a
-"milliard", and a billion is 1,000,000,000,000 (12 zeros). If you needed to
-provide functionality to your app or custom plugin that needed to know how many
-zeros are in a "billion", you could extend the culture information as follows:
-<pre>
-// define additional culture information for a possibly existing culture
-Globalize.addCultureInfo( "fr", {
-	numberFormat: {
-		billionZeroes: 12
-	}
-});
-</pre>
-Using this mechanism, the "fr" culture will be created if it does not exist.
-And if it does, the given values will be added to it.
-</p>
+#### 2. CLDR content
 
-<a name="defining"></a>
-<h2 id="defining">Defining Culture Information</h2>
-<p>
-Each culture is defined in its own script with the naming scheme
-globalize.culture.&lt;name&gt;.js. You may include any number of these scripts,
-making them available in the Globalize.cultures mapping. Including one of
-these scripts does NOT automatically make it the current culture selected in the
-Globalize.culture property.
-</p>
-<p>
-The neutral English culture is defined directly in globalize.js, and set
-both to the properties "en" and "default" of the Globalize.cultures mapping.
-Extensive comments describe the purpose of each of the fields defined.
-</p>
-<p>
-Looking at the source code of the scripts for each culture, you will notice
-that each script uses Globalize.addCultureInfo() to have the "default" neutral
-English culture "en", as a common basis, and defines only the properties that
-differ from neutral English.
-</p>
-<p>
-The neutral English culture is listed here along with the comments:
-<pre>
-Globalize.cultures[ "default" ] = {
-	// A unique name for the culture in the form
-	// &lt;language code&gt;-&lt;country/region code&gt;
-	name: "English",
-	// the name of the culture in the English language
-	englishName: "English",
-	// the name of the culture in its own language
-	nativeName: "English",
-	// whether the culture uses right-to-left text
-	isRTL: false,
-	// "language" is used for so-called "specific" cultures.
-	// For example, the culture "es-CL" means Spanish in Chili.
-	// It represents the Spanish-speaking culture as it is in Chili,
-	// which might have different formatting rules or even translations
-	// than Spanish in Spain. A "neutral" culture is one that is not
-	// specific to a region. For example, the culture "es" is the generic
-	// Spanish culture, which may be a more generalized version of the language
-	// that may or may not be what a specific culture expects.
-	// For a specific culture like "es-CL", the "language" field refers to the
-	// neutral, generic culture information for the language it is using.
-	// This is not always a simple matter of the string before the dash.
-	// For example, the "zh-Hans" culture is neutral (Simplified Chinese).
-	// And the "zh-SG" culture is Simplified Chinese in Singapore, whose
-	// language field is "zh-CHS", not "zh".
-	// This field should be used to navigate from a specific culture to its
-	// more general, neutral culture. If a culture is already as general as it
-	// can get, the language may refer to itself.
-	language: "en",
-	// "numberFormat" defines general number formatting rules, like the digits
-	// in each grouping, the group separator, and how negative numbers are
-	// displayed.
-	numberFormat: {
-		// [negativePattern]
-		// Note, numberFormat.pattern has no "positivePattern" unlike percent
-		// and currency, but is still defined as an array for consistency with
-		// them.
-		//	  negativePattern: one of "(n)|-n|- n|n-|n -"
-		pattern: [ "-n" ],
-		// number of decimal places normally shown
-		decimals: 2,
-		// string that separates number groups, as in 1,000,000
-		",": ",",
-		// string that separates a number from the fractional portion,
-		// as in 1.99
-		".": ".",
-		// array of numbers indicating the size of each number group.
-		groupSizes: [ 3 ],
-		// symbol used for positive numbers
-		"+": "+",
-		// symbol used for negative numbers
-		"-": "-",
-		percent: {
-			// [negativePattern, positivePattern]
-			//	   negativePattern: one of "-n %|-n%|-%n|%-n|%n-|n-%|n%-|-% n|n %-|% n-|% -n|n- %"
-			//	   positivePattern: one of "n %|n%|%n|% n"
-			pattern: [ "-n %", "n %" ],
-			// number of decimal places normally shown
-			decimals: 2,
-			// array of numbers indicating the size of each number group.
-			groupSizes: [ 3 ],
-			// string that separates number groups, as in 1,000,000
-			",": ",",
-			// string that separates a number from the fractional portion, as in 1.99
-			".": ".",
-			// symbol used to represent a percentage
-			symbol: "%"
-		},
-		currency: {
-			// [negativePattern, positivePattern]
-			//	   negativePattern: one of "($n)|-$n|$-n|$n-|(n$)|-n$|n-$|n$-|-n $|-$ n|n $-|$ n-|$ -n|n- $|($ n)|(n $)"
-			//	   positivePattern: one of "$n|n$|$ n|n $"
-			pattern: [ "($n)", "$n" ],
-			// number of decimal places normally shown
-			decimals: 2,
-			// array of numbers indicating the size of each number group.
-			groupSizes: [ 3 ],
-			// string that separates number groups, as in 1,000,000
-			",": ",",
-			// string that separates a number from the fractional portion, as in 1.99
-			".": ".",
-			// symbol used to represent currency
-			symbol: "$"
-		}
-	},
-	// "calendars" property defines all the possible calendars used by this
-	// culture. There should be at least one defined with name "standard" which
-	// is the default calendar used by the culture.
-	// A calendar contains information about how dates are formatted,
-	// information about the calendar's eras, a standard set of the date
-	// formats, translations for day and month names, and if the calendar is
-	// not based on the Gregorian calendar, conversion functions to and from
-	// the Gregorian calendar.
-	calendars: {
-		standard: {
-			// name that identifies the type of calendar this is
-			name: "Gregorian_USEnglish",
-			// separator of parts of a date (e.g. "/" in 11/05/1955)
-			"/": "/",
-			// separator of parts of a time (e.g. ":" in 05:44 PM)
-			":": ":",
-			// the first day of the week (0 = Sunday, 1 = Monday, etc)
-			firstDay: 0,
-			days: {
-				// full day names
-				names: [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
-				// abbreviated day names
-				namesAbbr: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
-				// shortest day names
-				namesShort: [ "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" ]
-			},
-			months: [
-				// full month names (13 months for lunar calendars -- 13th month should be "" if not lunar)
-				names: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "" ],
-				// abbreviated month names
-				namesAbbr: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "" ]
-			],
-			// AM and PM designators in one of these forms:
-			// The usual view, and the upper and lower case versions
-			//		[standard,lowercase,uppercase]
-			// The culture does not use AM or PM (likely all standard date
-			// formats use 24 hour time)
-			//		null
-			AM: [ "AM", "am", "AM" ],
-			PM: [ "PM", "pm", "PM" ],
-			eras: [
-				// eras in reverse chronological order.
-				// name: the name of the era in this culture (e.g. A.D., C.E.)
-				// start: when the era starts in ticks, null if it is the
-				//		  earliest supported era.
-				// offset: offset in years from gregorian calendar
-				{"name":"A.D.","start":null,"offset":0}
-			],
-			// when a two digit year is given, it will never be parsed as a
-			// four digit year greater than this year (in the appropriate era
-			// for the culture)
-			// Set it as a full year (e.g. 2029) or use an offset format
-			// starting from the current year: "+19" would correspond to 2029
-			// if the current year is 2010.
-			twoDigitYearMax: 2029,
-			// set of predefined date and time patterns used by the culture.
-			// These represent the format someone in this culture would expect
-			// to see given the portions of the date that are shown.
-			patterns: {
-				// short date pattern
-				d: "M/d/yyyy",
-				// long date pattern
-				D: "dddd, MMMM dd, yyyy",
-				// short time pattern
-				t: "h:mm tt",
-				// long time pattern
-				T: "h:mm:ss tt",
-				// long date, short time pattern
-				f: "dddd, MMMM dd, yyyy h:mm tt",
-				// long date, long time pattern
-				F: "dddd, MMMM dd, yyyy h:mm:ss tt",
-				// month/day pattern
-				M: "MMMM dd",
-				// month/year pattern
-				Y: "yyyy MMMM",
-				// S is a sortable format that does not vary by culture
-				S: "yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss"
-			}
-			// optional fields for each calendar:
-			/*
-			monthsGenitive:
-				Same as months but used when the day preceeds the month.
-				Omit if the culture has no genitive distinction in month names.
-				For an explanation of genitive months, see
-				http://blogs.msdn.com/michkap/archive/2004/12/25/332259.aspx
-			convert:
-				Allows for the support of non-gregorian based calendars. This
-				"convert" object defines two functions to convert a date to and
-				from a gregorian calendar date:
-					fromGregorian( date )
-						Given the date as a parameter, return an array with
-						parts [ year, month, day ] corresponding to the
-						non-gregorian based year, month, and day for the
-						calendar.
-					toGregorian( year, month, day )
-						Given the non-gregorian year, month, and day, return a
-						new Date() object set to the corresponding date in the
-						gregorian calendar.
-			*/
-		}
-	},
-	// Map of messages used by .localize()
-	messages: {}
-}
-</pre>
-</p>
-<p>
-Each culture can have several possible calendars. The calendar named "standard"
-is the default calendar used by that culture. You may change the calendar in
-use by setting the "calendar" field. Take a look at the calendars defined by
-each culture by looking at the script or enumerating its calendars collection.
-<pre>
-// switch to a non-standard calendar
-Globalize.culture().calendar = Globalize.culture().calendars.SomeOtherCalendar;
-// back to the standard calendar
-Globalize.culture().calendar = Globalize.culture().calendars.standard;
-</pre>
+Globalize is the i18n software (the engine). Unicode CLDR is the i18n content
+(the fuel). You need to feed Globalize on the appropriate portions of CLDR prior
+to using it.
 
-</p>
+*(a) How do I figure out which CLDR portions are appropriate for my needs?*
 
-<a name="numbers"></a>
-<h2 id="numbers">Number Formatting</h2>
-<p>
-When formatting a number with format(), the main purpose is to convert the
-number into a human readable string using the culture's standard grouping and
-decimal rules. The rules between cultures can vary a lot. For example, in some
-cultures, the grouping of numbers is done unevenly. In the "te-IN" culture
-(Telugu in India), groups have 3 digits and then 2 digits. The number 1000000
-(one million) is written as "10,00,000". Some cultures do not group numbers at
-all.
-</p>
-<p>
-There are four main types of number formatting:
-<ul>
-<li><strong>n</strong> for number</li>
-<li><strong>d</strong> for decimal digits</li>
-<li><strong>p</strong> for percentage</li>
-<li><strong>c</strong> for currency</li>
-</ul>
-Even within the same culture, the formatting rules can vary between these four
-types of numbers. For example, the expected number of decimal places may differ
-from the number format to the currency format. Each format token may also be
-followed by a number. The number determines how many decimal places to display
-for all the format types except decimal, for which it means the minimum number
-of digits to display, zero padding it if necessary. Also note that the way
-negative numbers are represented in each culture can vary, such as what the
-negative sign is, and whether the negative sign appears before or after the
-number. This is especially apparent with currency formatting, where many
-cultures use parentheses instead of a negative sign.
-<pre>
-// just for example - will vary by culture
-Globalize.format( 123.45, "n" ); // 123.45
-Globalize.format( 123.45, "n0" ); // 123
-Globalize.format( 123.45, "n1" ); // 123.5
+Each Globalize function requires a special set of CLDR portions. Once you know
+which Globalize functionalities you need, you can deduce its respective CLDR
+requirements. See table below.
 
-Globalize.format( 123.45, "d" ); // 123
-Globalize.format( 12, "d3" ); // 012
+| Module | Required CLDR JSON files |
+|---|---|
+| Core module | cldr/supplemental/likelySubtags.json |
+| Currency module | cldr/main/`locale`/currencies.json<br>cldr/supplemental/currencyData.json<br>+CLDR JSON files from number module<br>+CLDR JSON files from plural module for name style support |
+| Date module | cldr/main/`locale`/ca-gregorian.json<br>cldr/main/`locale`/timeZoneNames.json<br>cldr/supplemental/timeData.json<br>cldr/supplemental/weekData.json<br>+CLDR JSON files from number module |
+| Number module | cldr/main/`locale`/numbers.json<br>cldr/supplemental/numberingSystems.json |
+| Plural module | cldr/supplemental/plurals.json (for cardinals)<br>cldr/supplemental/ordinals.json (for ordinals) |
+| Relative time module | cldr/main/`locale`/dateFields.json<br>+CLDR JSON files from number and plural modules |
 
-Globalize.format( 123.45, "c" ); // $123.45
-Globalize.format( 123.45, "c0" ); // $123
-Globalize.format( 123.45, "c1" ); // $123.5
-Globalize.format( -123.45, "c" ); // ($123.45)
+*(b) How am I supposed to get and load CLDR content?*
 
-Globalize.format( 0.12345, "p" ); // 12.35 %
-Globalize.format( 0.12345, "p0" ); // 12 %
-Globalize.format( 0.12345, "p4" ); // 12.3450 %
-</pre>
-Parsing with parseInt and parseFloat also accepts any of these formats.
-</p>
+Learn [how to get and load CLDR content...](doc/cldr.md).
 
-<a name="currency"></a>
-<h2 id="currency">Currency Formatting</h2>
-<p>
-Globalize has a default currency symbol for each locale. This is used when
-formatting a currency value such as
-<pre>
-Globalize.format( 1234.56, "c" ); // $1,234.56
-</pre>
-You can change the currency symbol for a locale by modifying the culture's
-<code>numberFormat.currency.symbol</code> property:
-<pre>
-Globalize.culture( "en-US" ).numberFormat.currency.symbol = '\u20ac'; // euro sign U+20AC
-</pre>
-If you need to switch between currency symbols, you could write a function
-to do that, such as
-<pre>
-function setCurrency( currSym ) {
-  Globalize.culture().numberFormat.currency.symbol = currSym;
-}
-</pre>
+### Installation
 
-<a name="dates"></a>
-<h2 id="dates">Date Formatting</h2>
-<p>
-Date formatting varies wildly by culture, not just in the spelling of month and
-day names, and the date separator, but by the expected order of the various
-date components, whether to use a 12 or 24 hour clock, and how months and days
-are abbreviated. Many cultures even include "genitive" month names, which are
-different from the typical names and are used only in certain cases.
-</p>
-<p>
-Also, each culture has a set of "standard" or "typical" formats. For example,
-in "en-US", when displaying a date in its fullest form, it looks like
-"Saturday, November 05, 1955". Note the non-abbreviated day and month name, the
-zero padded date, and four digit year. So, Globalize expects a certain set
-of "standard" formatting strings for dates in the "patterns" property of the
-"standard" calendar of each culture, that describe specific formats for the
-culture. The third column shows example values in the neutral English culture
-"en-US"; see the second table for the meaning tokens used in date formats.
+*By downloading a ZIP or a TAR.GZ...*
 
-<pre>
-// just for example - will vary by culture
-Globalize.format( new Date(2012, 1, 20), 'd' ); // 2/20/2012
-Globalize.format( new Date(2012, 1, 20), 'D' ); // Monday, February 20, 2012
-</pre>
-<p>
+Click the github [releases tab](https://github.com/jquery/globalize/releases)
+and download the latest available Globalize package.
 
-</p>
-<table>
-<tr>
-  <th>Format</th>
-  <th>Meaning</th>
-  <th>"en-US"</th>
-</tr>
-<tr>
-   <td>f</td>
-   <td>Long Date, Short Time</td>
-   <td>dddd, MMMM dd, yyyy h:mm tt</td>
-</tr>
-<tr>
-   <td>F</td>
-   <td>Long Date, Long Time</td>
-   <td>dddd, MMMM dd, yyyy h:mm:ss tt</td>
-</tr>
-<tr>
-   <td>t</td>
-   <td>Short Time</td>
-   <td>h:mm tt</td>
-</tr>
-<tr>
-   <td>T</td>
-   <td>Long Time</td>
-   <td>h:mm:ss tt</td>
-</tr>
-<tr>
-   <td>d</td>
-   <td>Short Date</td>
-   <td>M/d/yyyy</td>
-</tr>
-<tr>
-   <td>D</td>
-   <td>Long Date</td>
-   <td>dddd, MMMM dd, yyyy</td>
-</tr>
-<tr>
-   <td>Y</td>
-   <td>Month/Year</td>
-   <td>MMMM, yyyy</td>
-</tr>
-<tr>
-   <td>M</td>
-   <td>Month/Day</td>
-   <td>MMMM dd</td>
-</tr>
-</table>
-</p>
-<p>
-In addition to these standard formats, there is the "S" format. This is a
-sortable format that is identical in every culture:
-"<strong>yyyy'-'MM'-'dd'T'HH':'mm':'ss</strong>".
-</p>
-<p>
-When more specific control is needed over the formatting, you may use any
-format you wish by specifying the following custom tokens:
-<table>
-<tr>
-   <th>Token</th>
-   <th>Meaning</th>
-   <th>Example</th>
-</tr>
-<tr>
-   <td>d</td>
-   <td>Day of month (no leading zero)</td>
-   <td>5</td>
-</tr>
-<tr>
-   <td>dd</td>
-   <td>Day of month (leading zero)</td>
-   <td>05</td>
-</tr>
-<tr>
-   <td>ddd</td>
-   <td>Day name (abbreviated)</td>
-   <td>Sat</td>
-</tr>
-<tr>
-   <td>dddd</td>
-   <td>Day name (full)</td>
-   <td>Saturday</td>
-</tr>
-<tr>
-   <td>M</td>
-   <td>Month of year (no leading zero)</td>
-   <td>9</td>
-</tr>
-<tr>
-   <td>MM</td>
-   <td>Month of year (leading zero)</td>
-   <td>09</td>
-</tr>
-<tr>
-   <td>MMM</td>
-   <td>Month name (abbreviated)</td>
-   <td>Sep</td>
-</tr>
-<tr>
-   <td>MMMM</td>
-   <td>Month name (full)</td>
-   <td>September</td>
-</tr>
-<tr>
-   <td>yy</td>
-   <td>Year (two digits)</td>
-   <td>55</td>
-</tr>
-<tr>
-   <td>yyyy</td>
-   <td>Year (four digits)</td>
-   <td>1955</td>
-</tr>
-<tr>
-   <td>'literal'</td>
-   <td>Literal Text</td>
-   <td>'of the clock'</td>
-</tr>
-<tr>
-   <td>\'</td>
-   <td>Single Quote</td>
-   <td>'o'\''clock'</td><!-- o'clock -->
-</tr>
-<tr>
-   <td>m</td>
-   <td>Minutes (no leading zero)</td>
-   <td>9</td>
-</tr>
-<tr>
-   <td>mm</td>
-   <td>Minutes (leading zero)</td>
-   <td>09</td>
-</tr>
-<tr>
-   <td>h</td>
-   <td>Hours (12 hour time, no leading zero)</td>
-   <td>6</td>
-</tr>
-<tr>
-   <td>hh</td>
-   <td>Hours (12 hour time, leading zero)</td>
-   <td>06</td>
-</tr>
-<tr>
-   <td>H</td>
-   <td>Hours (24 hour time, no leading zero)</td>
-   <td>5 (5am) 15 (3pm)</td>
-</tr>
-<tr>
-   <td>HH</td>
-   <td>Hours (24 hour time, leading zero)</td>
-   <td>05 (5am) 15 (3pm)</td>
-</tr>
-<tr>
-   <td>s</td>
-   <td>Seconds (no leading zero)</td>
-   <td>9</td>
-</tr>
-<tr>
-   <td>ss</td>
-   <td>Seconds (leading zero)</td>
-   <td>09</td>
-</tr>
-<tr>
-   <td>f</td>
-   <td>Deciseconds</td>
-   <td>1</td>
-</tr>
-<tr>
-   <td>ff</td>
-   <td>Centiseconds</td>
-   <td>11</td>
-</tr>
-<tr>
-   <td>fff</td>
-   <td>Milliseconds</td>
-   <td>111</td>
-</tr>
-<tr>
-   <td>t</td>
-   <td>AM/PM indicator (first letter)</td>
-   <td>A or P</td>
-</tr>
-<tr>
-   <td>tt</td>
-   <td>AM/PM indicator (full)</td>
-   <td>AM or PM</td>
-</tr>
-<tr>
-   <td>z</td>
-   <td>Timezone offset (hours only, no leading zero)</td>
-   <td>-8</td>
-</tr>
-<tr>
-   <td>zz</td>
-   <td>Timezone offset (hours only, leading zero)</td>
-   <td>-08</td>
-</tr>
-<tr>
-   <td>zzz</td>
-   <td>Timezone offset (full hours/minutes)</td>
-   <td>-08:00</td>
-</tr>
-<tr>
-   <td>g or gg</td>
-   <td>Era name</td>
-   <td>A.D.</td>
-</tr>
-</table>
-</p>
+*By using a package manager...*
 
-<a name="generating"></a>
-<h1 id="generating">Generating Culture Files</h1>
+Use bower `bower install globalize`, or npm `npm install globalize cldr-data`.
 
-The Globalize culture files are generated JavaScript containing metadata and
-functions based on culture info in the Microsoft .Net Framework 4.
+*By using source files...*
 
-<h2>Requirements</h2>
+1. `git clone https://github.com/jquery/globalize.git`.
+1. [Build the distribution files](#build).
 
-<ul>
-	<li>Windows</li>
-	<li>Microsoft .Net Framework 4 (Full, not just Client Profile) <a href="http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&FamilyID=0a391abd-25c1-4fc0-919f-b21f31ab88b7">download dotNetFx40_Full_x86_x64.exe</a></li>
-</ul>
+### Usage
 
-<h2>Building the generator</h2>
+Globalize's consumable-files are located in the `./dist` directory. If you
+don't find it, it's because you are using a development branch. You should
+either use a tagged version or [build the distribution files yourself](#build).
+Read [installation](#installation) above if you need more information on how to
+download.
 
-1. Open a Windows Command Prompt ( Start -> Run... -> cmd )
-1. Change directory to root of Globalize project (where README.md file is located)
-1. >"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild" generator\generator.csproj
+Globalize can be used for a variety of different i18n tasks, eg. formatting or
+parsing dates, formatting or parsing numbers, formatting messages, etc. You may
+NOT need Globalize in its entirety. For that reason, we made it modular. So, you
+can cherry-pick the pieces you need, eg. load `dist/globalize.js` to get
+Globalize core, load `dist/globalize/date.js` to extend Globalize with Date
+functionalities, etc.
 
-<h2>Running the generator</h2>
+An example is worth a thousand words. Check out our Hello World demo (available
+to you in different flavors):
+- [Hello World (AMD + bower)](examples/amd-bower/).
+- [Hello World (Node.js + npm)](examples/node-npm/).
+- [Hello World (plain JavaScript)](examples/plain-javascript/).
 
-1. Open a Windows Command Prompt
-1. Change directory to root of Globalize project (where README.md file is located)
-1. >"generator\bin\Debug\generator.exe"
 
-<a name="building"></a>
-<h1 id="building">Building Globalize</h1>
+## API
 
-Globalize is built using <a href="https://github.com/cowboy/grunt">grunt</a>, a
-node-based build utility. First, make sure grunt is installed globally:
+### Core module
 
-<pre>
-> npm install -g grunt
-</pre>
+- **`Globalize.load( cldrJSONData, ... )`**
 
-then you can lint and test by simply running grunt in the globalize folder
+  This method allows you to load CLDR JSON locale data. `Globalize.load()` is a
+  proxy to `Cldr.load()`.
 
-<pre>
-> cd globalize
-> grunt
-</pre>
+  [Read more...](doc/api/core/load.md)
+
+- **`Globalize.locale( [locale|cldr] )`**
+
+  Set default locale, or get it if locale argument is omitted.
+
+  [Read more...](doc/api/core/locale.md)
+
+- **`[new] Globalize( locale|cldr )`**
+
+  Create a Globalize instance.
+
+  [Read more...](doc/api/core/constructor.md)
+
+### Date module
+
+- **`.dateFormatter( [options] )`**
+
+  Return a function that formats a date according to the given `options`. The default formatting is
+  numeric year, month, and day (i.e., `{ skeleton: "yMd" }`.
+
+  ```javascript
+  .dateFormatter()( new Date() )
+  // > "11/30/2010"
+
+  .dateFormatter({ skeleton: "GyMMMd" })( new Date() )
+  // > "Nov 30, 2010 AD"
+
+  .dateFormatter({ date: "medium" })( new Date() )
+  // > "Nov 1, 2010"
+
+  .dateFormatter({ time: "medium" })( new Date() )
+  // > "5:55:00 PM"
+
+  .dateFormatter({ datetime: "medium" })( new Date() )
+  // > "Nov 1, 2010, 5:55:00 PM"
+  ```
+
+  [Read more...](doc/api/date/date-formatter.md)
+
+- **`.dateParser( [options] )`**
+
+  Return a function that parses a string representing a date into a JavaScript Date object according
+  to the given `options`. The default parsing assumes numeric year, month, and day (i.e., `{
+  skeleton: "yMd" }`).
+
+  ```javascript
+  .dateParser()( "11/30/2010" )
+  // > new Date( 2010, 10, 30, 0, 0, 0 )
+
+  .dateParser({ skeleton: "GyMMMd" })( "Nov 30, 2010 AD" )
+  // > new Date( 2010, 10, 30, 0, 0, 0 )
+
+  .dateParser({ date: "medium" })( "Nov 1, 2010" )
+  // > new Date( 2010, 10, 30, 0, 0, 0 )
+
+  .dateParser({ time: "medium" })( "5:55:00 PM" )
+  // > new Date( 2015, 3, 22, 17, 55, 0 ) // i.e., today @ 5:55PM
+
+  .dateParser({ datetime: "medium" })( "Nov 1, 2010, 5:55:00 PM" )
+  // > new Date( 2010, 10, 30, 17, 55, 0 )
+  ```
+
+  [Read more...](doc/api/date/date-parser.md)
+
+- **`.formatDate( value [, options] )`**
+
+  Alias for `.dateFormatter( [options] )( value )`.
+
+- **`.parseDate( value [, options] )`**
+
+  Alias for `.dateParser( [options] )( value )`.
+
+### Message module
+
+- **`Globalize.loadMessages( json )`**
+
+  Load messages data.
+
+  [Read more...](doc/api/message/load-messages.md)
+
+- **`.messageFormatter( path ) ➡ function( [variables] )`**
+
+  Return a function that formats a message (using ICU message format pattern)
+  given its path and a set of variables into a user-readable string. It supports
+  pluralization and gender inflections.
+
+  ```javascript
+  .messageFormatter( "task" )( 1000 )
+  // > "You have 1,000 tasks remaining"
+
+  .messageFormatter( "like" )( 3 )
+  // > "You and 2 others liked this"
+  ```
+
+  [Read more...](doc/api/message/message-formatter.md)
+
+- **`.formatMessage( path [, variables ] )`**
+
+  Alias for `.messageFormatter( path )([ variables ])`.
+
+### Number module
+
+- **`.numberFormatter( [options] )`**
+
+  Return a function that formats a number according to the given options or locale's defaults.
+
+  ```javascript
+  .numberFormatter()( pi )
+  // > "3.142"
+
+  .numberFormatter({ maximumFractionDigits: 5 })( pi )
+  // > "3.14159"
+
+  .numberFormatter({ round: "floor" })( pi )
+  // > "3.141"
+
+  .numberFormatter({ minimumFractionDigits: 2 })( 10000 )
+  // > "10,000.00"
+
+  .numberFormatter({ style: "percent" })( 0.5 )
+  // > "50%"
+  ```
+
+  [Read more...](doc/api/number/number-formatter.md)
+
+- **`.numberParser( [options] )`**
+
+  Return a function that parses a string representing a number according to the given options or
+  locale's defaults.
+
+  ```javascript
+  .numberParser()( "3.14159" )
+  // > 3.14159
+
+  .numberParser()( "10,000.00" )
+  // > 10000
+
+  .numberParser({ style: "percent" })( "50%" )
+  // > 0.5
+  ```
+
+  [Read more...](doc/api/number/number-parser.md)
+
+- **`.formatNumber( value [, options] )`**
+
+  Alias for `.numberFormatter( [options] )( value )`.
+
+- **`.parseNumber( value [, options] )`**
+
+  Alias for `.numberParser( [options] )( value )`.
+
+#### Currency module
+
+- **`.currencyFormatter( currency [, options] )`**
+
+  Return a function that formats a currency according to the given options or
+  locale's defaults.
+
+  ```javascript
+  .currencyFormatter( "USD" )( 1 )
+  // > "$1.00"
+
+  .currencyFormatter( "USD", { style: "accounting" })( -1 )
+  // > "($1.00)"
+
+  .currencyFormatter( "USD", { style: "name" })( 69900 )
+  // > "69,900.00 US dollars"
+
+  .currencyFormatter( "USD", { style: "code" })( 69900 )
+  // > "69,900.00 USD"
+
+  .currencyFormatter( "USD", { round: "ceil" })( 1.491 )
+  // > "$1.50"
+  ```
+
+  [Read more...](doc/api/currency/currency-formatter.md)
+
+- **`.formatCurrency( value, currency [, options] )`**
+
+  Alias for `.currencyFormatter( currency [, options] )( value )`.
+
+### Plural module
+
+- **`.pluralGenerator( [options] )`**
+
+  Return a function that returns the value's corresponding plural group: `zero`,
+  `one`, `two`, `few`, `many`, or `other`.
+
+  The function may be used for cardinals or ordinals.
+
+  ```javascript
+  .pluralGenerator()( 0 )
+  // > "other"
+
+  .pluralGenerator()( 1 )
+  // > "one"
+
+  .pluralGenerator({ type: "ordinal" })( 1 )
+  // > "one"
+
+  .pluralGenerator({ type: "ordinal" })( 2 )
+  // > "two"
+  ```
+
+  [Read more...](doc/api/plural/plural-generator.md)
+
+- **`.plural( value[, options ] )`**
+
+  Alias for `.pluralGenerator( [options] )( value )`.
+
+### Relative time module
+
+- **`.relativeTimeFormatter( unit [, options] )`**
+
+ Returns a function that formats a relative time according to the given unit, options, and the
+ default/instance locale.
+
+  ```javascript
+  .relativeTimeFormatter( "day" )( 1 )
+  // > "tomorrow"
+
+  .relativeTimeFormatter( "month" )( -1 )
+  // > "last month"
+
+  .relativeTimeFormatter( "month" )( 3 )
+  // > "in 3 months"
+  ```
+
+  [Read more...](doc/api/relative-time/relative-time-formatter.md)
+
+- **`.formatRelativeTime( value, unit [, options] )`**
+
+  Alias for `.relativeTimeFormatter( unit, options )( value )`.
+
+
+## Error reference
+
+### CLDR Errors
+
+- **`E_INVALID_CLDR`**
+
+  Thrown when a CLDR item has an invalid or unexpected value.
+
+ [Read more...](doc/error/e-invalid-cldr.md)
+
+- **`E_MISSING_CLDR`**
+
+  Thrown when any required CLDR item is NOT found.
+
+  [Read more...](doc/error/e-missing-cldr.md)
+
+### Parameter Errors
+
+- **`E_INVALID_PAR_TYPE`**
+
+  Thrown when a parameter has an invalid type on any static or instance methods.
+
+  [Read more...](doc/error/e-invalid-par-type.md)
+
+- **`E_INVALID_PAR_VALUE`**
+
+  Thrown for certain parameters when the type is correct, but the value is
+  invalid.
+
+  [Read more...](doc/error/e-invalid-par-value.md)
+
+- **`E_MISSING_PARAMETER`**
+
+  Thrown when a required parameter is missing on any static or instance methods.
+
+  [Read more...](doc/error/e-missing-parameter.md)
+
+- **`E_PAR_OUT_OF_RANGE`**
+
+  Thrown when a parameter is not within a valid range of values.
+
+  [Read more...](doc/error/e-par-out-of-range.md)
+
+### Other Errors
+
+- **`E_DEFAULT_LOCALE_NOT_DEFINED`**
+
+  Thrown when any static method, eg. `Globalize.formatNumber()` is used prior to
+  setting the Global locale with `Globalize.locale( <locale> )`.
+
+  [Read more...](doc/error/e-default-locale-not-defined.md)
+
+- **`E_MISSING_PLURAL_MODULE`**
+
+  Thrown when plural module is needed, but not loaded, eg. to format currencies
+  using the named form.
+
+  [Read more...](doc/error/e-missing-plural-module.md)
+
+- **`E_UNSUPPORTED`**
+
+  Thrown for unsupported features, eg. to format unsupported date patterns.
+
+  [Read more...](doc/error/e-unsupported.md)
+
+
+## Development
+
+### File structure
+```
+├── bower.json (metadata file)
+├── CONTRIBUTING.md (doc file)
+├── dist/ (consumable files, the built files)
+├── external/ (external dependencies, eg. cldr.js, QUnit, RequireJS)
+├── Gruntfile.js (Grunt tasks)
+├── LICENSE.txt (license file)
+├── package.json (metadata file)
+├── README.md (doc file)
+├── src/ (source code)
+│   ├── build/ (build helpers, eg. intro, and outro)
+│   ├── common/ (common function helpers across modules)
+│   ├── core.js (core module)
+│   ├── date/ (date source code)
+│   ├── date.js (date module)
+│   ├── message.js (message module)
+│   ├── number.js (number module)
+│   ├── number/ (number source code)
+│   ├── plural.js (plural module)
+│   ├── plural/ (plural source code)
+│   ├── relative-time.js (relative time module)
+│   ├── relative-time/ (relative time source code)
+│   └── util/ (basic JavaScript helpers polyfills, eg array.map)
+└── test/ (unit and functional test files)
+    ├── fixtures/ (CLDR fixture data)
+    ├── functional/ (functional tests)
+    ├── functional.html
+    ├── functional.js
+    ├── unit/ (unit tests)
+    ├── unit.html
+    └── unit.js
+```
+
+### Source files
+
+The source files are as granular as possible. When combined to generate the
+build file, all the excessive/overhead wrappers are cut off. It's following
+the same build model of jQuery and Modernizr.
+
+Core, and all modules' public APIs are located in the `src/` directory, ie.
+`core.js`, `date.js`, `message.js`, `number.js`, and `plural.js`.
+
+### Install development external dependencies
+
+Install Grunt and external dependencies. First, install the
+[grunt-cli](http://gruntjs.com/getting-started#installing-the-cli) and
+[bower](http://bower.io/) packages if you haven't before. These should be
+installed globally (like this: `npm install -g grunt-cli bower`). Then:
+
+```bash
+npm install && bower install
+```
+
+### Tests
+
+Tests can be run either in the browser or using Node.js (via Grunt) after having
+installed the external development dependencies (for more details, see above).
+
+***Unit tests***
+
+To run the unit tests, run `grunt test:unit`, or run `grunt connect:keepalive`
+and open `http://localhost:9001/test/unit.html` in a browser (or
+`http://localhost:9001/test/unit-es5-shim.html` for IE8). It tests the very
+specific functionality of each function (sometimes internal/private).
+
+The goal of the unit tests is to make it easy to spot bugs, easy to debug.
+
+***Functional tests***
+
+To run the functional tests, create the dist files by running `grunt`. Then, run
+`grunt test:functional`, or open `http://localhost:9001/test/functional.html` in
+a browser (or `http://localhost:9001/test/functional-es5-shim.html` for IE8).
+Note that `grunt` will automatically run unit and functional tests for you to
+ensure the built files are safe.
+
+The goal of the functional tests is to ensure that everything works as expected
+when it is combined.
+
+### Build
+
+Build the distribution files after having installed the external development
+dependencies (for more details, see above).
+
+```bash
+grunt
+```
+

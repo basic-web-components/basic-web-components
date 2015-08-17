@@ -1,0 +1,133 @@
+{
+  "main": {
+    "km": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11351 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+        },
+        "language": "km"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "ប្រតិទិន",
+          "collation": "លំដាប់​តម្រៀប",
+          "currency": "រូបិយប័ណ្ណ",
+          "numbers": "លេខ"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "ប្រតិទិន​ពុទ្ធសាសនិក",
+            "chinese": "ប្រតិទិន​ចិន",
+            "coptic": "coptic",
+            "dangi": "ប្រតិទិន​ dangi",
+            "ethiopic": "ប្រតិទិន​អេត្យូពី",
+            "ethiopic-amete-alem": "ethiopic-amete-alem",
+            "gregorian": "ប្រតិទិន​ហ្សកហ្ស៊ី",
+            "hebrew": "ប្រតិទិន​ហេប្រិ",
+            "indian": "indian",
+            "islamic": "ប្រតិទិន​អ៊ិស្លាម",
+            "islamic-civil": "islamic-civil",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "ប្រតិទិន ISO-8601",
+            "japanese": "ប្រតិទិន​ជប៉ុន",
+            "persian": "ប្រតិទិន Persian",
+            "roc": "ប្រតិទិន Minguo"
+          },
+          "collation": {
+            "big5han": "big5han",
+            "dictionary": "dictionary",
+            "ducet": "លំដាប់​តម្រៀប​យូនីកូដ​លំនាំដើម",
+            "eor": "eor",
+            "gb2312han": "gb2312han",
+            "phonebook": "phonebook",
+            "pinyin": "pinyin",
+            "reformed": "reformed",
+            "search": "ស្វែងរក​ទូទៅ",
+            "searchjl": "searchjl",
+            "standard": "លំដាប់​តម្រៀប​ស្តង់ដារ",
+            "stroke": "stroke",
+            "traditional": "traditional",
+            "unihan": "unihan",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "លេខ​ឥណ្ឌា-អារ៉ាប់",
+            "arabext": "លេខ​ឥណ្ឌា-អារ៉ាប់​ពង្រីក",
+            "armn": "លេខ​អាមេនី",
+            "armnlow": "លេខ​តូច​អាមេនី",
+            "bali": "bali",
+            "beng": "លេខ​បង់ក្លាដែស",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "លេខ​ឌីវ៉ាណាការី",
+            "ethi": "លេខ​អេត្យូពី",
+            "fullwide": "លេខ​ទទឹង​ពេញ",
+            "geor": "លេខ​ហ្សកហ្សី",
+            "grek": "លេខ​ក្រិក",
+            "greklow": "លេខ​តូច​ក្រិក",
+            "gujr": "លេខ​ហ្កុយ៉ារាទី",
+            "guru": "លេខ​កុមុឃី",
+            "hanidec": "លេខ​ទសភាគ​ចិន",
+            "hans": "លេខ​ចិន​អក្សរ​កាត់",
+            "hansfin": "លេខ​ហិរញ្ញវត្ថុ​ចិន​អក្សរ​កាត់",
+            "hant": "លេខ​ចិន​អក្សរ​ពេញ",
+            "hantfin": "លេខ​ហិរញ្ញវត្ថុ​ចិន​អក្សរ​ពេញ",
+            "hebr": "លេខ​អ៊ីស្រាអែល",
+            "java": "java",
+            "jpan": "លេខ​ជប៉ុន",
+            "jpanfin": "លេខ​ហិរញ្ញវត្ថុ​ជប៉ុន",
+            "kali": "kali",
+            "khmr": "លេខ​ខ្មែរ",
+            "knda": "លេខ Kannada",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "លេខ​ឡាវ",
+            "latn": "លេខ​បច្ចឹម​ប្រទេស",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "លេខ​មលយាល័ម",
+            "mong": "mong",
+            "mtei": "mtei",
+            "mymr": "លេខ​ភូមា",
+            "mymrshan": "mymrshan",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "លេខ​អូរីយ៉ា",
+            "osma": "osma",
+            "roman": "លេខ​រ៉ូមាំង",
+            "romanlow": "លេខ​តូច​រ៉ូមាំង",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "លេខ​តាមីល",
+            "tamldec": "លេខ​តាមីល",
+            "telu": "លេខ​តេលុគុ",
+            "thai": "លេខ​ថៃ",
+            "tibt": "លេខ​តៃប៉ិ",
+            "vaii": "vaii"
+          }
+        },
+        "codePatterns": {
+          "language": "ភាសា៖ {0}",
+          "script": "អក្សរ៖ {0}",
+          "territory": "តំបន់៖ {0}"
+        }
+      }
+    }
+  }
+}

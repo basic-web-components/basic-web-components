@@ -1,0 +1,31 @@
+{
+  "main": {
+    "ru": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11353 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-06 15:54:42 -0600 (Fri, 06 Mar 2015) $"
+        },
+        "language": "ru"
+      },
+      "characters": {
+        "exemplarCharacters": "[а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я]",
+        "auxiliary": "[{а\u0301} {е\u0301} {и\u0301} {о\u0301} {у\u0301} {ы\u0301} {э\u0301} {ю\u0301} {я\u0301}]",
+        "punctuation": "[\\- ‐ – — , ; \\: ! ? . … ' ‘ ‚ \" “ „ « » ( ) \\[ \\] \\{ \\} § @ * / \\& #]",
+        "index": "[А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ы Э Ю Я]",
+        "ellipsis": {
+          "initial": "…{0}",
+          "medial": "{0}…{1}",
+          "final": "{0}…",
+          "word-initial": "… {0}",
+          "word-medial": "{0} … {1}",
+          "word-final": "{0} …"
+        },
+        "moreInformation": "?"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "main": {
+    "de-LU": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "de",
+        "territory": "LU"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "BGN",
+          "Numeric": "Numerisch",
+          "Tone": "Tonsprache",
+          "UNGEGN": "UNGEGN",
+          "x-Accents": "Akzente",
+          "x-Fullwidth": "Breit",
+          "x-Halfwidth": "Halbe Breite",
+          "x-Jamo": "Jamo",
+          "x-Pinyin": "Pinyin",
+          "x-Publishing": "Veröffentlichung"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "main": {
+    "ar-PS": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11323 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+        },
+        "language": "ar",
+        "territory": "PS"
+      },
+      "localeDisplayNames": {
+        "transformNames": {
+          "BGN": "بي جي إن",
+          "Numeric": "رقمي",
+          "Tone": "أسلوب",
+          "UNGEGN": "يو إن جي إي جي إن",
+          "x-Accents": "اللكنات",
+          "x-Fullwidth": "عرض كامل",
+          "x-Halfwidth": "نصف العرض",
+          "x-Jamo": "جامو",
+          "x-Pinyin": "بن يين",
+          "x-Publishing": "نشر"
+        }
+      }
+    }
+  }
+}

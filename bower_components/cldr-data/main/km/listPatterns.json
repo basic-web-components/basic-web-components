@@ -1,0 +1,42 @@
+{
+  "main": {
+    "km": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11351 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+        },
+        "language": "km"
+      },
+      "listPatterns": {
+        "listPattern-type-standard": {
+          "start": "{0}, {1}",
+          "middle": "{0}, {1}",
+          "end": "{0} {1}",
+          "2": "{0} និង​{1}"
+        },
+        "listPattern-type-unit": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} និង {1}",
+          "2": "{0} និង {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} {1}",
+          "2": "{0} {1}"
+        },
+        "listPattern-type-unit-short": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} {1}",
+          "2": "{0} {1}"
+        }
+      }
+    }
+  }
+}

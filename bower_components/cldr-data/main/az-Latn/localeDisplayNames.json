@@ -1,0 +1,134 @@
+{
+  "main": {
+    "az-Latn": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 10669 $"
+        },
+        "generation": {
+          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+        },
+        "language": "az",
+        "script": "Latn"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "Təqvim",
+          "collation": "Çeşidləmə",
+          "currency": "Valyuta",
+          "numbers": "Rəqəmlər"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "Buddist Təqvimi",
+            "chinese": "Çin Təqvimi",
+            "coptic": "coptic",
+            "dangi": "Dangi Təqvimi",
+            "ethiopic": "Efiop Təqvimi",
+            "ethiopic-amete-alem": "ethiopic-amete-alem",
+            "gregorian": "Qreqorian Təqvimi",
+            "hebrew": "Yəhudi Təqvimi",
+            "indian": "Hindi təqvimi",
+            "islamic": "İslam Təqvimi",
+            "islamic-civil": "Ivrit təqvimi",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "ISO-8601 Təqvimi",
+            "japanese": "Yapon Təqvimi",
+            "persian": "İran Təqvimi",
+            "roc": "Minquo Təqvimi"
+          },
+          "collation": {
+            "big5han": "big5han",
+            "dictionary": "dictionary",
+            "ducet": "Defolt Unicode Çeşidləmə",
+            "eor": "eor",
+            "gb2312han": "gb2312han",
+            "phonebook": "phonebook",
+            "pinyin": "Pinyin təqvimi",
+            "reformed": "reformed",
+            "search": "Ümumi Məqsədli Axtarış",
+            "searchjl": "searchjl",
+            "standard": "Standart Çeşidləmə",
+            "stroke": "stroke",
+            "traditional": "traditional",
+            "unihan": "unihan",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "Ərəb-Hind Rəqəmləri",
+            "arabext": "Genişlənmiş Ərəb-Hind Rəqəmləri",
+            "armn": "Erməni Rəqəmləri",
+            "armnlow": "Kiçik Erməni Rəqəmləri",
+            "bali": "bali",
+            "beng": "Benqal Rəqəmləri",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "Devanaqari Rəqəmləri",
+            "ethi": "Efiop Rəqəmləri",
+            "fullwide": "Tam Geniş Rəqəmlər",
+            "geor": "Gürcü Rəqəmləri",
+            "grek": "Yunan Rəqəmləri",
+            "greklow": "Kiçik Yunan Rəqəmləri",
+            "gujr": "Qucarat Rəqəmləri",
+            "guru": "Qurmuxi Rəqəmləri",
+            "hanidec": "Onluq Çin Rəqəmləri",
+            "hans": "Sadələşmiş Çin Rəqəmləri",
+            "hansfin": "Sadələşmiş Çin Maliyyə Rəqəmləri",
+            "hant": "Ənənəvi Çin Rəqəmləri",
+            "hantfin": "Ənənəvi Çin Maliyyə Rəqəmləri",
+            "hebr": "İvrit Rəqəmləri",
+            "java": "java",
+            "jpan": "Yapon Rəqəmləri",
+            "jpanfin": "Yapon Maliyyə Rəqəmləri",
+            "kali": "kali",
+            "khmr": "Kxmer Rəqəmləri",
+            "knda": "Kannada Rəqəmləri",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "Lao Rəqəmləri",
+            "latn": "Qərb Rəqəmləri",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "Malayalam Rəqəmləri",
+            "mong": "mong",
+            "mtei": "mtei",
+            "mymr": "Myanma Rəqəmləri",
+            "mymrshan": "mymrshan",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "Oriya Rəqəmləri",
+            "osma": "osma",
+            "roman": "Rum Rəqəmləri",
+            "romanlow": "Kiçik Rum Rəqəmləri",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "Ənənəvi Tamil Rəqəmləri",
+            "tamldec": "Tamil Rəqəmləri",
+            "telu": "Teluqu Rəqəmləri",
+            "thai": "Tay Rəqəmləri",
+            "tibt": "Tibet Rəqəmləri",
+            "vaii": "vaii"
+          }
+        },
+        "codePatterns": {
+          "language": "Dil: {0}",
+          "script": "Skript: {0}",
+          "territory": "Region: {0}"
+        }
+      }
+    }
+  }
+}

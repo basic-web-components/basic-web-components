@@ -1,0 +1,133 @@
+{
+  "main": {
+    "uz": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "27.0.1",
+          "_number": "$Revision: 11294 $"
+        },
+        "generation": {
+          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+        },
+        "language": "uz"
+      },
+      "localeDisplayNames": {
+        "localeDisplayPattern": {
+          "localePattern": "{0} ({1})",
+          "localeSeparator": "{0}, {1}",
+          "localeKeyTypePattern": "{0}: {1}"
+        },
+        "keys": {
+          "calendar": "Taqvim",
+          "collation": "Saralash tartibi",
+          "currency": "Valyuta",
+          "numbers": "Raqamlar"
+        },
+        "types": {
+          "calendar": {
+            "buddhist": "buddistcha taqvim",
+            "chinese": "xitoycha taqvim",
+            "coptic": "coptic",
+            "dangi": "dangiycha taqvim",
+            "ethiopic": "efiopcha taqvim",
+            "ethiopic-amete-alem": "ethiopic-amete-alem",
+            "gregorian": "grigoriancha taqvim",
+            "hebrew": "ibroniy taqvim",
+            "indian": "indian",
+            "islamic": "islomiy taqvim",
+            "islamic-civil": "islamic-civil",
+            "islamic-rgsa": "islamic-rgsa",
+            "islamic-tbla": "islamic-tbla",
+            "islamic-umalqura": "islamic-umalqura",
+            "iso8601": "iso8601 taqvimi",
+            "japanese": "yaponcha taqvim",
+            "persian": "forscha taqvim",
+            "roc": "xitoy respublikasi taqvimi"
+          },
+          "collation": {
+            "big5han": "big5han",
+            "dictionary": "dictionary",
+            "ducet": "standart yunikod saralash tartibi",
+            "eor": "eor",
+            "gb2312han": "gb2312han",
+            "phonebook": "phonebook",
+            "pinyin": "pinyin",
+            "reformed": "reformed",
+            "search": "umumiy qidiruv",
+            "searchjl": "searchjl",
+            "standard": "Standart tariblash",
+            "stroke": "stroke",
+            "traditional": "traditional",
+            "unihan": "unihan",
+            "zhuyin": "zhuyin"
+          },
+          "numbers": {
+            "arab": "Arab-hind raqamlari",
+            "arabext": "Kengaytirilgan arab-hind raqamlari",
+            "armn": "Arman sonlari",
+            "armnlow": "Arman kichik sonlari",
+            "bali": "bali",
+            "beng": "Bengali raqamlari",
+            "brah": "brah",
+            "cakm": "cakm",
+            "cham": "cham",
+            "deva": "Devanagari raqamlari",
+            "ethi": "Habash sonlari",
+            "fullwide": "Toʻliq kenglikdagi raqamlar",
+            "geor": "Gruzin sonlari",
+            "grek": "Yunon sonlari",
+            "greklow": "Yunon kichik raqamlari",
+            "gujr": "Gujarati raqamlari",
+            "guru": "Gurmuxi raqamlari",
+            "hanidec": "Xitoy oʻnlik sonlari",
+            "hans": "Soddalashtirilgan Xitoy sonlari",
+            "hansfin": "Soddalashtirilgan Xitoy moliya sonlari",
+            "hant": "Anʼanaviy Xitoy sonlari",
+            "hantfin": "Anʼanaviy Xitoy moliya sonlari",
+            "hebr": "Ibroniy sonlari",
+            "java": "java",
+            "jpan": "Yaponiya sonlari",
+            "jpanfin": "Yaponiya moliya sonlari",
+            "kali": "kali",
+            "khmr": "Xmer raqamlari",
+            "knda": "Kannada raqamlari",
+            "lana": "lana",
+            "lanatham": "lanatham",
+            "laoo": "Lao raqamlari",
+            "latn": "Gʻarb raqamlari",
+            "lepc": "lepc",
+            "limb": "limb",
+            "mlym": "Malayalam raqamlari",
+            "mong": "mong",
+            "mtei": "mtei",
+            "mymr": "Myanma raqamlari",
+            "mymrshan": "mymrshan",
+            "nkoo": "nkoo",
+            "olck": "olck",
+            "orya": "Oriya raqamlari",
+            "osma": "osma",
+            "roman": "Rim sonlari",
+            "romanlow": "Rim kichik sonlari",
+            "saur": "saur",
+            "shrd": "shrd",
+            "sora": "sora",
+            "sund": "sund",
+            "takr": "takr",
+            "talu": "talu",
+            "taml": "Anʼanaviy Tamil sonlari",
+            "tamldec": "Tamil raqamlari",
+            "telu": "Telugu raqamlari",
+            "thai": "Tay raqamlari",
+            "tibt": "Tibet raqamlari",
+            "vaii": "vaii"
+          }
+        },
+        "codePatterns": {
+          "language": "Til: {0}",
+          "script": "Skript: {0}",
+          "territory": "Mintaqa: {0}"
+        }
+      }
+    }
+  }
+}
