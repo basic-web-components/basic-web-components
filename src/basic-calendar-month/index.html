@@ -30,6 +30,8 @@ basic-calendar-month basic-days-of-week .dayOfWeek.weekend,
 basic-calendar-month basic-calendar-day.weekend.insideMonth {
   color: gray;
 }
+
+/* TODO: Replace use of deprecated ::shadow and /deep/ */
 basic-calendar-month::shadow basic-days-of-week::shadow .dayOfWeek.weekend,
 basic-calendar-month /deep/ basic-calendar-day.weekend.insideMonth {
   color: gray;
