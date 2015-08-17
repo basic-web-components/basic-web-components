@@ -61,18 +61,17 @@ Polymer({
      */
     culture: {
       value: null,
-      reflectToAttribute: true,
-      observer: 'cultureChanged'
+      observer: '_cultureChanged'
     },
 
     date: {
       type: Date,
       value: null,
-      observer: 'dateChanged'
+      observer: '_dateChanged'
     }
   },
 
-  cultureChanged: function() {
+  _cultureChanged: function() {
     var culture = this.culture;
     this.weeks.forEach(function(week) {
       week.culture = culture;
@@ -93,7 +92,7 @@ Polymer({
     return days;
   },
 
-  dateChanged: function() {
+  _dateChanged: function() {
     this._refresh();
   },
 

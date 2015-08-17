@@ -43,11 +43,11 @@ Polymer({
     date: {
       type: Date,
       reflectToAttribute: true,
-      observer: 'dateChanged'
+      observer: '_dateChanged'
     }
   },
 
-  dateChanged: function() {
+  _dateChanged: function() {
 
     // To determine quarter, we compare the moon's angle at midnight on the
     // given date with the angle at midnight on the following date.

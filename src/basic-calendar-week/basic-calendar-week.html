@@ -66,8 +66,7 @@ Polymer({
      */
     culture: {
       value: null,
-      reflectToAttribute: true,
-      observer: 'cultureChanged'
+      observer: '_cultureChanged'
     },
 
     /**
@@ -81,25 +80,25 @@ Polymer({
       type: String,
       value: 'basic-calendar-day',
       reflectToAttribute: true,
-      observer: 'dayElementChanged'
+      observer: '_dayElementChanged'
     },
 
     date: {
       type: Date,
       value: null,
-      observer: 'dateChanged'
+      observer: '_dateChanged'
     }
   },
 
-  cultureChanged: function() {
+  _cultureChanged: function() {
     this._refresh();
   },
 
-  dateChanged: function() {
+  _dateChanged: function() {
     this._refresh();
   },
 
-  dayElementChanged: function() {
+  _dayElementChanged: function() {
     var dayTemplate = document.createElement(this.dayElement);
     var shadowRoot = Polymer.dom(this.root);
     this.days.forEach(function(day, i) {

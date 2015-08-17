@@ -42,8 +42,7 @@ Polymer({
      */
     culture: {
       value: null,
-      reflectToAttribute: true,
-      observer: 'cultureChanged'
+      observer: '_cultureChanged'
     },
 
     /**
@@ -57,16 +56,16 @@ Polymer({
       value: null,
       type: Number,
       reflectToAttribute: true,
-      observer: 'monthChanged'
+      observer: '_monthChanged'
     }
   },
 
-  cultureChanged: function() {
+  _cultureChanged: function() {
     // Force update of month name.
-    this.monthChanged();
+    this._monthChanged();
   },
 
-  monthChanged: function() {
+  _monthChanged: function() {
     culture = this.culture;
     monthNameEnum = this.monthsOfYear(culture);
     monthName = monthNameEnum['wide'][this.month + 1];

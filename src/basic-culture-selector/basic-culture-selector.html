@@ -43,7 +43,7 @@ README.md.
 
 <dom-module id="basic-culture-selector">
   <template>
-    
+
     <style>
     :host {
       display: inline-block;
@@ -178,7 +178,7 @@ Polymer({
    * @param Object detail Event details; the "culture" property contains a
    *                      reference to the new Globalize culture.
    */
-  cultureChanged: function() {
+  _cultureChanged: function() {
     this.dispatchEvent(new CustomEvent('basic-culture-changed', {
       detail: {
         culture: this.culture
@@ -186,7 +186,7 @@ Polymer({
     }));
   },
 
-  nameChanged: function() {
+  _nameChanged: function() {
     if (this._globalizeInitialized) {
       // Need to reset _expectedResponseCount and _actualResponseCount prior to the
       // call to _loadLocaleFiles
@@ -208,7 +208,7 @@ Polymer({
     name: {
       value: DEFAULT_LOCALE,
       reflectToAttribute: true,
-      observer: 'nameChanged'
+      observer: '_nameChanged'
     },
 
     /**
@@ -218,8 +218,7 @@ Polymer({
      */
     culture: {
       value: null,
-      reflectToAttribute: true,
-      observer: 'cultureChanged'
+      observer: '_cultureChanged'
     }
   }
 

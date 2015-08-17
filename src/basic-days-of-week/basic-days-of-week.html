@@ -63,8 +63,7 @@ Polymer({
      */
     culture: {
       value: null,
-      reflectToAttribute: true,
-      observer: 'cultureChanged'
+      observer: '_cultureChanged'
     },
 
     /**
@@ -78,15 +77,15 @@ Polymer({
     format: {
       value: 'abbreviated',
       reflectToAttribute: true,
-      observer: 'formatChanged'
+      observer: '_formatChanged'
     }
   },
 
-  cultureChanged: function() {
+  _cultureChanged: function() {
     this._refresh();
   },
 
-  formatChanged: function() {
+  _formatChanged: function() {
     this._refresh();
   },
 

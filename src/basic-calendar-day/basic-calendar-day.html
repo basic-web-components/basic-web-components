@@ -63,12 +63,12 @@ Polymer({
     date: {
       type: Date,
       reflectToAttribute: true,
-      observer: 'dateChanged'
+      observer: '_dateChanged'
     }
   },
 
   // TODO: accept both Date objects and date strings.
-  dateChanged: function() {
+  _dateChanged: function() {
     var date = this.date;
     this.$.day.textContent = date.getDate();
     var today = this.today();

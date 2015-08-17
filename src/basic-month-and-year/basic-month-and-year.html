@@ -48,8 +48,7 @@ Polymer({
      */
     culture: {
       value: null,
-      reflectToAttribute: true,
-      observer: 'cultureChanged'
+      observer: '_cultureChanged'
     },
 
     /**
@@ -63,11 +62,11 @@ Polymer({
       type: Date,
       value: null,
       reflectToAttribute: true,
-      observer: 'dateChanged'
+      observer: '_dateChanged'
     }
   },
 
-  cultureChanged: function() {
+  _cultureChanged: function() {
     if (!this.date) {
       return;
     }
@@ -79,7 +78,7 @@ Polymer({
     this.classList.toggle('rtl', rtl);
   },
 
-  dateChanged: function() {
+  _dateChanged: function() {
     if (!this.date) {
       return;
     }

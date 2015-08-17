@@ -88,8 +88,7 @@ Polymer({
      */
     culture: {
       value: null,
-      reflectToAttribute: true,
-      observer: 'cultureChanged'
+      observer: '_cultureChanged'
     },
 
     /**
@@ -103,7 +102,7 @@ Polymer({
     date: {
       type: Date,
       value: null,
-      observer: 'dateChanged'
+      observer: '_dateChanged'
     },
 
     /*
@@ -117,7 +116,7 @@ Polymer({
     }
   },
 
-  cultureChanged: function() {
+  _cultureChanged: function() {
     var culture = this.culture;
     if (culture) {
       this.$.monthAndYear.culture = culture;
@@ -126,7 +125,7 @@ Polymer({
     }
   },
 
-  dateChanged: function() {
+  _dateChanged: function() {
     var date = this.date;
     this.$.monthAndYear.date = date;
     this.$.calendar.date = date;
