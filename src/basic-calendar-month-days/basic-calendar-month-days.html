@@ -28,9 +28,7 @@ leaves alpha status.)
       display: none;
     }
 
-    polyfill-next-selector {
-      content: 'basic-calendar-week .day.outsideMonth';
-    }
+    /* TODO: How to replace deprecated use of ::shadow? */
     basic-calendar-week::shadow .day.outsideMonth {
       visibility: hidden;
     }

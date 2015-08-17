@@ -21,14 +21,14 @@ leaves alpha status.)
   <template>
 
     <style>
-    :host([generic]) {
+    :host([generic='']) {
       padding: 4px;
     }
-    :host([generic])::shadow #day {
+    :host([generic='']) #day {
       text-align: right;
     }
 
-    :host([generic].today) {
+    :host([generic=''].today) {
       color: darkred;
       font-weight: bold;
     }

@@ -16,14 +16,14 @@ A calendar day that includes the moon phase.
       width: 1.5em;
     }
 
-    :host([generic]) {
+    :host([generic='']) {
       padding: 4px;
     }
-    :host([generic])::shadow #day {
+    :host([generic='']) #day {
       text-align: right;
     }
 
-    :host([generic].today) {
+    :host([generic=''].today) {
       color: darkred;
       font-weight: bold;
     }
