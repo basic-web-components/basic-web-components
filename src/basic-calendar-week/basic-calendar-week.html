@@ -54,62 +54,9 @@ so for now this component assumes that left-to-right works for most users.
 
 Polymer({
 
-  is: 'basic-calendar-week',
-
   behaviors: [Basic.CalendarHelpers],
 
-  properties: {
-    /**
-     * The Globalize culture/language assigned to this element.
-     *
-     * @attribute culture
-     */
-    culture: {
-      value: null,
-      observer: '_cultureChanged'
-    },
-
-    /**
-     * The name for the element type which should be used to render the individual
-     * days in the week.
-     *
-     * @attribute dayElement
-     * @default "basic-calendar-day"
-     */
-    dayElement: {
-      type: String,
-      value: 'basic-calendar-day',
-      reflectToAttribute: true,
-      observer: '_dayElementChanged'
-    },
-
-    date: {
-      type: Date,
-      value: null,
-      observer: '_dateChanged'
-    }
-  },
-
-  _cultureChanged: function() {
-    this._refresh();
-  },
-
-  _dateChanged: function() {
-    this._refresh();
-  },
-
-  _dayElementChanged: function() {
-    var dayTemplate = document.createElement(this.dayElement);
-    var shadowRoot = Polymer.dom(this.root);
-    this.days.forEach(function(day, i) {
-      var newDay = dayTemplate.cloneNode();
-      newDay.classList.add('day');
-      newDay.classList.toggle('firstDayOfWeek', i === 0);
-      newDay.classList.toggle('lastDayOfWeek', i === 6);
-      shadowRoot.replaceChild(newDay, day);
-    }.bind(this));
-    this._refresh();
-  },
+  is: 'basic-calendar-week',
 
   /**
    * Returns the day element corresponding to the given date.
@@ -157,6 +104,38 @@ Polymer({
     return this.midnightOnDate(this.days[6].date);
   },
 
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      observer: '_cultureChanged'
+    },
+
+    /**
+     * The name for the element type which should be used to render the individual
+     * days in the week.
+     *
+     * @attribute dayElement
+     * @default "basic-calendar-day"
+     */
+    dayElement: {
+      type: String,
+      value: 'basic-calendar-day',
+      reflectToAttribute: true,
+      observer: '_dayElementChanged'
+    },
+
+    date: {
+      type: Date,
+      value: null,
+      observer: '_dateChanged'
+    }
+  },
+
   ready: function() {
     if (!this.date && typeof this.today !== 'undefined') {
       // If no date is supplied, default to the current week.
@@ -164,6 +143,27 @@ Polymer({
       // is created and then shortly thereafter a different date is set.
       this.date = this.today();
     }
+  },
+
+  _cultureChanged: function() {
+    this._refresh();
+  },
+
+  _dateChanged: function() {
+    this._refresh();
+  },
+
+  _dayElementChanged: function() {
+    var dayTemplate = document.createElement(this.dayElement);
+    var shadowRoot = Polymer.dom(this.root);
+    this.days.forEach(function(day, i) {
+      var newDay = dayTemplate.cloneNode();
+      newDay.classList.add('day');
+      newDay.classList.toggle('firstDayOfWeek', i === 0);
+      newDay.classList.toggle('lastDayOfWeek', i === 6);
+      shadowRoot.replaceChild(newDay, day);
+    }.bind(this));
+    this._refresh();
   },
 
   // Set the dates on all controls in the week.

@@ -45,12 +45,12 @@ leaves alpha status.)
 
 Polymer({
 
-  is: 'basic-calendar-day',
-
   behaviors: [
     Basic.CalendarHelpers,
     Basic.Generic
   ],
+
+  is: 'basic-calendar-day',
 
   properties: {
     /**
@@ -64,6 +64,15 @@ Polymer({
       type: Date,
       reflectToAttribute: true,
       observer: '_dateChanged'
+    }
+  },
+
+  ready: function() {
+    if (!this.date) {
+      // By default, show today.
+      if (typeof this.today !== 'undefined') {
+        this.date = this.today();
+      }
     }
   },
 
@@ -89,15 +98,6 @@ Polymer({
     classList.toggle('weekend', weekend);
     classList.toggle('weekday', !weekend);
     classList.toggle('alternateMonth', Math.abs(date.getMonth() - today.getMonth()) % 2 === 1);
-  },
-
-  ready: function() {
-    if (!this.date) {
-      // By default, show today.
-      if (typeof this.today !== 'undefined') {
-        this.date = this.today();
-      }
-    }
   }
 
 });

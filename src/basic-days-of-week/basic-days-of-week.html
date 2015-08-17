@@ -48,12 +48,12 @@ leaves alpha status.)
 
 Polymer({
 
-  is: 'basic-days-of-week',
-
   behaviors: [
     Basic.CalendarHelpers,
     Basic.Generic
   ],
+
+  is: 'basic-days-of-week',
 
   properties: {
     /**
@@ -81,15 +81,15 @@ Polymer({
     }
   },
 
+  ready: function() {
+    this._refresh();
+  },
+
   _cultureChanged: function() {
     this._refresh();
   },
 
   _formatChanged: function() {
-    this._refresh();
-  },
-
-  ready: function() {
     this._refresh();
   },
 

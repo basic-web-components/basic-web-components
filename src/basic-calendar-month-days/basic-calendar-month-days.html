@@ -49,35 +49,7 @@ leaves alpha status.)
 <script>
 Polymer({
 
-  is: 'basic-calendar-month-days',
-
   behaviors: [Basic.CalendarHelpers],
-
-  properties: {
-    /**
-     * The Globalize culture/language assigned to this element.
-     *
-     * @attribute culture
-     */
-    culture: {
-      value: null,
-      observer: '_cultureChanged'
-    },
-
-    date: {
-      type: Date,
-      value: null,
-      observer: '_dateChanged'
-    }
-  },
-
-  _cultureChanged: function() {
-    var culture = this.culture;
-    this.weeks.forEach(function(week) {
-      week.culture = culture;
-    });
-    this._refresh();
-  },
 
   /**
    * Returns the array of day elements for the days in the month.
@@ -90,10 +62,6 @@ Polymer({
       days = days.concat(week.days);
     });
     return days;
-  },
-
-  _dateChanged: function() {
-    this._refresh();
   },
 
   /**
@@ -121,6 +89,8 @@ Polymer({
     return date;
   },
 
+  is: 'basic-calendar-month-days',
+
   /**
    * Returns true if the given date is in the month shown.
    *
@@ -146,6 +116,24 @@ Polymer({
     date.setMonth(date.getMonth() + 1);
     date.setDate(date.getDate() - 1);
     return date;
+  },
+
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      observer: '_cultureChanged'
+    },
+
+    date: {
+      type: Date,
+      value: null,
+      observer: '_dateChanged'
+    }
   },
 
   ready: function() {
@@ -180,6 +168,18 @@ Polymer({
    */
   get weeks() {
     return Polymer.dom(this.root).querySelectorAll('basic-calendar-week');
+  },
+
+  _cultureChanged: function() {
+    var culture = this.culture;
+    this.weeks.forEach(function(week) {
+      week.culture = culture;
+    });
+    this._refresh();
+  },
+
+  _dateChanged: function() {
+    this._refresh();
   },
 
   // Fill in the weeks.

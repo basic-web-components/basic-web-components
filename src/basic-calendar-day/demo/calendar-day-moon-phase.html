@@ -57,6 +57,15 @@ Polymer({
     }
   },
 
+  ready: function() {
+    if (!this.date) {
+      // By default, show today.
+      if (typeof this.today !== 'undefined') {
+        this.date = this.today();
+      }
+    }
+  },
+
   // TODO: accept both Date objects and date strings.
   _dateChanged: function() {
     var date = this.date;
@@ -79,15 +88,7 @@ Polymer({
     classList.toggle('weekend', weekend);
     classList.toggle('weekday', !weekend);
     classList.toggle('alternateMonth', Math.abs(date.getMonth() - today.getMonth()) % 2 === 1);
-  },
-
-  ready: function() {
-    if (!this.date) {
-      // By default, show today.
-      if (typeof this.today !== 'undefined') {
-        this.date = this.today();
-      }
-    }
   }
+
 });
 </script>

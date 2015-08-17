@@ -80,57 +80,6 @@ Polymer({
     Basic.Generic
   ],
 
-  properties: {
-    /**
-     * The Globalize culture/language assigned to this element.
-     *
-     * @attribute culture
-     */
-    culture: {
-      value: null,
-      observer: '_cultureChanged'
-    },
-
-    /**
-     * The date govering which month is shown by the element. This can be any
-     * date within the month.
-     *
-     * @attribute date
-     * @type Date
-     * @default today
-     */
-    date: {
-      type: Date,
-      value: null,
-      observer: '_dateChanged'
-    },
-
-    /*
-     * The format used for the days of week header.
-     *
-     * Valid values: "abbreviated" (the default), "narrow", "short", "wide".
-     */
-    daysOfWeekFormat: {
-      value: 'abbreviated',
-      reflectToAttribute: true
-    }
-  },
-
-  _cultureChanged: function() {
-    var culture = this.culture;
-    if (culture) {
-      this.$.monthAndYear.culture = culture;
-      this.$.daysOfWeek.culture = culture;
-      this.$.calendar.culture = culture;
-    }
-  },
-
-  _dateChanged: function() {
-    var date = this.date;
-    this.$.monthAndYear.date = date;
-    this.$.calendar.date = date;
-  },
-
   /**
    * Returns the day element corresponding to the given date.
    *
@@ -184,6 +133,42 @@ Polymer({
     return this.$.calendar.lastDateOfMonth;
   },
 
+  properties: {
+    /**
+     * The Globalize culture/language assigned to this element.
+     *
+     * @attribute culture
+     */
+    culture: {
+      value: null,
+      observer: '_cultureChanged'
+    },
+
+    /**
+     * The date govering which month is shown by the element. This can be any
+     * date within the month.
+     *
+     * @attribute date
+     * @type Date
+     * @default today
+     */
+    date: {
+      type: Date,
+      value: null,
+      observer: '_dateChanged'
+    },
+
+    /*
+     * The format used for the days of week header.
+     *
+     * Valid values: "abbreviated" (the default), "narrow", "short", "wide".
+     */
+    daysOfWeekFormat: {
+      value: 'abbreviated',
+      reflectToAttribute: true
+    }
+  },
+
   ready: function() {
     if (!this.date) {
       // By default, show the current month.
@@ -208,6 +193,21 @@ Polymer({
    */
   get weeks() {
     return this.$.calendar.weeks;
+  },
+
+  _cultureChanged: function() {
+    var culture = this.culture;
+    if (culture) {
+      this.$.monthAndYear.culture = culture;
+      this.$.daysOfWeek.culture = culture;
+      this.$.calendar.culture = culture;
+    }
+  },
+
+  _dateChanged: function() {
+    var date = this.date;
+    this.$.monthAndYear.date = date;
+    this.$.calendar.date = date;
   }
 
 });

@@ -30,9 +30,9 @@ leaves alpha status.)
 
 Polymer({
 
-  is: 'basic-month-name',
-
   behaviors: [Basic.CalendarHelpers],
+
+  is: 'basic-month-name',
 
   properties: {
     /**
@@ -58,6 +58,14 @@ Polymer({
       reflectToAttribute: true,
       observer: '_monthChanged'
     }
+    
+  },
+
+  ready: function() {
+    if (!this.month) {
+      // If no month is supplied, default to the current month.
+      this.month = (new Date()).getMonth();
+    }
   },
 
   _cultureChanged: function() {
@@ -70,13 +78,6 @@ Polymer({
     monthNameEnum = this.monthsOfYear(culture);
     monthName = monthNameEnum['wide'][this.month + 1];
     this.$.name.textContent = monthName;
-  },
-
-  ready: function() {
-    if (!this.month) {
-      // If no month is supplied, default to the current month.
-      this.month = (new Date()).getMonth();
-    }
   }
 
 });

@@ -33,12 +33,12 @@ leaves alpha status.)
 <script>
 Polymer({
 
-  is: 'basic-month-and-year',
-
   behaviors: [
     Basic.CalendarHelpers,
     Basic.Generic
   ],
+
+  is: 'basic-month-and-year',
 
   properties: {
     /**
@@ -64,6 +64,14 @@ Polymer({
       reflectToAttribute: true,
       observer: '_dateChanged'
     }
+    
+  },
+
+  ready: function() {
+    if (!this.date) {
+      // By default show the current month and year.
+      this.date = new Date();
+    }
   },
 
   _cultureChanged: function() {
@@ -86,13 +94,6 @@ Polymer({
     var date = this.date;
     this.$.monthName.month = date.getMonth();
     this.$.year.textContent = date.getFullYear();
-  },
-
-  ready: function() {
-    if (!this.date) {
-      // By default show the current month and year.
-      this.date = new Date();
-    }
   }
 
 });
