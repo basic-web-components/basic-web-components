@@ -25,7 +25,7 @@ leaves alpha status.)
       width: 14.285%; /* One seventh */
     }
 
-    :host([generic]) .dayOfWeek {
+    :host([generic='']) .dayOfWeek {
       padding: 4px;
       text-align: center;
     }
@@ -48,7 +48,10 @@ Polymer({
 
   is: 'basic-days-of-week',
 
-  behaviors: [Basic.CalendarHelpers],
+  behaviors: [
+    Basic.CalendarHelpers,
+    Basic.Generic
+  ],
 
   properties: {
     /**

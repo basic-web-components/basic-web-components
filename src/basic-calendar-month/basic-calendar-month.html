@@ -44,17 +44,17 @@ leaves alpha status.)
     }
 
     /* Generic styling */
-    :host([generic]) #monthAndYear {
+    :host([generic='']) #monthAndYear {
       font-weight: bold;
       padding: 4px;
       text-align: center;
     }
 
-    :host([generic]) #daysOfWeek {
+    :host([generic='']) #daysOfWeek {
       font-size: smaller;
     }
 
-    :host([generic]) .dayOfWeek {
+    :host([generic='']) .dayOfWeek {
       padding: 4px;
     }
   </style>
@@ -73,7 +73,10 @@ Polymer({
 
   is: 'basic-calendar-month',
 
-  behaviors: [Basic.CalendarHelpers],
+  behaviors: [
+    Basic.CalendarHelpers,
+    Basic.Generic
+  ],
 
   properties: {
     /**
