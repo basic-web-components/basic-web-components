@@ -88,7 +88,7 @@ Polymer({
   },
 
   properties: {
-    
+
     /**
      * The name of the Globalize culture/language assigned to this element.
      *
@@ -108,25 +108,10 @@ Polymer({
      * @attribute culture
      */
     culture: {
-      value: null,
-      observer: '_cultureChanged'
+      notify: true,
+      value: null
     }
 
-  },
-
-  /**
-   * Fired when the culture attribute has been changed.
-   *
-   * @event basic-culture-changed
-   * @param Object detail Event details; the "culture" property contains a
-   *                      reference to the new Globalize culture.
-   */
-  _cultureChanged: function() {
-    this.dispatchEvent(new CustomEvent('basic-culture-changed', {
-      detail: {
-        culture: this.culture
-      }
-    }));
   },
 
   // Actual number of ajax responses
