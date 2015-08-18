@@ -22,6 +22,14 @@ This compromise arrangement greatly simplifies component development (in this co
 2. Find the component you are interested in the /src folder.
 3. Open the index.html page for that component to view its demo.
 
+# Localization with Globalize.js
+
+The culture-dependent components (e.g., basic-calendar-month) use [Globalize.js]
+(https://github.com/jquery/globalize) for localization. For testing and
+demonstration purposes, this repository currently pulls in a *huge* set of
+culture data files under bower_components/cldr-data. This is obviously not
+ideal — we hope to find a better way to organize things in the future.
+
 # Installing these components via Bower
 
 Each of these components is separately installable via [Bower](https://bower.io), so you can use just the components you want in your project. To install a component (e.g., basic-autosize-textarea) in your project, add a line to the `dependencies` key in your project's bower.json file:
@@ -162,7 +170,7 @@ If you're interested in creating a web component that others can use, why not ta
 * Splitter. A movable line sitting between two panels which can be dragged to change their relative sizes. (Does Polymer offer a core-splitter?)
 * Sprite. Shows a single image at a time from a strip or grid of images.
 * Stacked navigation pages. As the user navigates deeper in an app, a small residual portion of the previous page remains visible (typically on the left); the user can swipe away the top page to navigate back to an earlier point.
-* Star rating. Lets the user rate something (a restaurant, product, etc.) using the conventional star system. An attribute allows the glyph 
+* Star rating. Lets the user rate something (a restaurant, product, etc.) using the conventional star system. An attribute allows the glyph
 * Tab strip. A set of tab buttons, typically used to navigate among tabbed pages presenting different content, but which can also be used, for example, to apply one of a set of filters to a results list.
 * Tab. A tabbed page which can be hosted in a set of tabs.
 * Tabs. A set of pages which can be navigated by a set of tab buttons across the top. Uses basic-modes to actually handle determining which child element is shown.
