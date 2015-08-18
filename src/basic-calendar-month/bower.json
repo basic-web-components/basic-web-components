@@ -1,20 +1,20 @@
 {
   "name": "basic-calendar-month",
   "description": "A single month in a calendar, with headings",
-  "version": "0.6.2-pre",
+  "version": "0.6.2",
   "license": "MIT",
   "main": "basic-calendar-month.html",
   "dependencies": {
-    "basic-calendar-month-days": "basic-web-components/basic-calendar-month-days#master",
-    "basic-days-of-week": "basic-web-components/basic-days-of-week#master",
-    "basic-calendar-week": "basic-web-components/basic-calendar-week#master",
-    "basic-month-and-year": "basic-web-components/basic-month-and-year#master",
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-calendar-month-days": "basic-web-components/basic-calendar-month-days#0.6.2",
+    "basic-days-of-week": "basic-web-components/basic-days-of-week#0.6.2",
+    "basic-calendar-week": "basic-web-components/basic-calendar-week#0.6.2",
+    "basic-month-and-year": "basic-web-components/basic-month-and-year#0.6.2",
+    "basic-shared": "basic-web-components/basic-shared#0.6.2",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-culture-selector": "basic-web-components/basic-culture-selector#master",
-    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-culture-selector": "basic-web-components/basic-culture-selector#0.6.2",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.2",
     "web-component-tester": "*"
   },
   "keywords": [

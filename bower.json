@@ -1,6 +1,6 @@
 {
   "name": "basic-web-components",
-  "version": "0.6.2-pre",
+  "version": "0.6.2",
   "dependencies": {
     "deepmerge": "^0.2.10",
     "globalize": "^1.0.0",

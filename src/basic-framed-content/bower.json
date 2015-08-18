@@ -1,11 +1,11 @@
 {
   "name": "basic-framed-content",
   "description": "Communicates across a frame boundary to an outer element",
-  "version": "0.6.2-pre",
+  "version": "0.6.2",
   "license": "MIT",
   "main": "basic-framed-content.html",
   "dependencies": {
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-shared": "basic-web-components/basic-shared#0.6.2",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
