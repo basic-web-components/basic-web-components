@@ -20,7 +20,7 @@
       font-size: 15px;
     }
 
-    basic-framed-content#carousel-frame,
+    #carousel-frame,
     basic-arrow-direction,
     basic-page-dots {
       display: -webkit-flex;
@@ -29,7 +29,8 @@
       flex: 1;
     }
 
-    basic-framed-content {
+    .demo {
+      margin-bottom: 100px;
       min-height: 400px;
     }
 
@@ -39,58 +40,18 @@
     }
   </style>
 
-  <script>
-    var changeDetectorAspect = {
-      contribute: {
-        contentChanged: function() {
-          console.log("contentChanged: now " + this.collective.content.length + " children");
-        }
-      }
-    };
-
-    function handleCultureChanged(bcsElement, culture) {
-      var locale = culture.cldr.locale;
-      var numberFormatter = Globalize(locale).numberFormatter();
-      var dateFormatter = Globalize(locale).dateFormatter();
-      var currencyFormatter = Globalize(locale).currencyFormatter('USD');
-
-      document.querySelector('template').model = {
-        cultureName: bcsElement.name,
-        dateExample: dateFormatter(new Date()),
-        numberExample: numberFormatter(1234567.89),
-        currencyExample: currencyFormatter(1234.56)
-      };
-    }
-
-    document.addEventListener('WebComponentsReady', function() {
-      new Basic.Collective(changeDetectorAspect, document.querySelector('basic-list-box'));
-      document.body.removeAttribute('unresolved');
-
-      document.querySelector("#basic-culture-selector-template").model = {};
-      var bcsElement = document.querySelector('basic-culture-selector');
-      bcsElement.addEventListener("basic-culture-changed", function(event) {
-        handleCultureChanged(bcsElement, event.detail.culture);
-      });
-
-      // If the newly constructed element has the culture property set, use it.
-      // Otherwise, we'll pick it up in the basic-culture-changed event.
-      if (bcsElement.culture) {
-        handleCultureChanged(bcsElement, bcsElement.culture);
-      }
-    });
-  </script>
 </head>
 
 <body unresolved>
   <h2>basic-autosize-textarea</h2>
-  <basic-framed-content>
+  <div class="demo">
     <basic-autosize-textarea minimum-rows="2">
       Type all you want here!
     </basic-autosize-textarea>
-  </basic-framed-content>
+  </div>
 
   <h2>basic-carousel</h2>
-  <basic-framed-content id="carousel-frame">
+  <div id="carousel-frame" class="demo">
     <basic-arrow-direction target="child" class="overlay" aria-label="Nature scenes" role="listbox">
       <basic-page-dots target="child">
         <basic-carousel>
@@ -102,10 +63,10 @@
         </basic-carousel>
       </basic-page-dots>
     </basic-arrow-direction>
-  </basic-framed-content>
+  </div>
 
   <h2>basic-carousel-fit</h2>
-  <basic-framed-content>
+  <div class="demo">
     <basic-arrow-direction target="child" aria-label="Flags">
       <basic-carousel-fit>
         <img src="http://hosting.component.kitchen/resources/flags/Brazil.png" alt="Brazil flag">
@@ -117,11 +78,11 @@
         <img src="http://hosting.component.kitchen/resources/flags/United_States.png" alt="United States flag">
       </basic-carousel-fit>
     </basic-arrow-direction>
-  </basic-framed-content>
+  </div>
 
   <h2>basic-list-box</h2>
-  <basic-framed-content>
-    <basic-list-box aria-label="Fruits">
+  <div class="demo">
+    <basic-list-box  aria-label="Fruits" style="height: 200px; max-width: 400px;">
       <div>Acai</div>
       <div>Acerola</div>
       <div>Apple</div>
@@ -166,20 +127,17 @@
       <div>Tangerine</div>
       <div>Watermelon</div>
     </basic-list-box>
-  </basic-framed-content>
+  </div>
 
   <h2>basic-culture-selector</h2>
-  <basic-framed-content>
-    <p>
-      <basic-culture-selector>Pick your preferred language/location settings:</basic-culture-selector>
-    </p>
-    <template id="basic-culture-selector-template" is="dom-bind">
-      <div>Culture name: <span>{{model.cultureName}}</span></div>
-      <div>Today's date: <span>{{model.dateExample}}</span></div>
-      <div>Number example: <span>{{model.numberExample}}</span></div>
-      <div>Currency example: <span>{{model.currencyExample}}</span></div>
+  <div class="demo">
+    <template is="dom-bind">
+      <p>
+        Preferred language/culture: <basic-culture-selector culture="{{culture}}"></basic-culture-selector>
+      </p>
+      <basic-calendar-month culture="{{culture}}"></basic-calendar-month>
     </template>
-  </basic-framed-content>
+  </div>
 
 </body>
 
