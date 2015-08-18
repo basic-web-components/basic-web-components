@@ -38,8 +38,8 @@ suite('basic', function() {
     fixture.month = 5;
     var bcs = document.createElement('basic-culture-selector');
     container.appendChild(bcs);
-    bcs.addEventListener('basic-culture-changed', function(event) {
-      var culture = event.detail.culture;
+    bcs.addEventListener('culture-changed', function(event) {
+      var culture = bcs.culture;
 
       if (culture.cldr.locale == 'en') {
         bcs.name = 'fr';

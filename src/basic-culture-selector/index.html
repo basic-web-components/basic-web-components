@@ -44,8 +44,8 @@
   window.addEventListener("WebComponentsReady", function() {
     document.querySelector("template").model = {};
     var bcsElement = document.querySelector('basic-culture-selector');
-    bcsElement.addEventListener("basic-culture-changed", function(event) {
-      handle_cultureChanged(bcsElement, event.detail.culture);
+    bcsElement.addEventListener("culture-changed", function(event) {
+      handle_cultureChanged(bcsElement, bcsElement.culture);
     });
 
     // If the newly constructed element has the culture property set, use it.

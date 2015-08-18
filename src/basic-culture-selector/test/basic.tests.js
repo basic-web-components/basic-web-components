@@ -11,7 +11,7 @@ suite('basic', function() {
   test('instantiation', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function(event) {
+    fixture.addEventListener('culture-changed', function(event) {
       assert(fixture);
       done();
     });
@@ -20,7 +20,7 @@ suite('basic', function() {
   test('default name', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function(event) {
+    fixture.addEventListener('culture-changed', function(event) {
       assert.equal(fixture.name, 'en');
       done();
     });
@@ -29,8 +29,8 @@ suite('basic', function() {
   test('set name', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function(event) {
-      var culture = event.detail.culture;
+    fixture.addEventListener('culture-changed', function(event) {
+      var culture = fixture.culture;
 
       // Skip the default setting notification
       if (fixture.name == 'en') {
@@ -58,8 +58,8 @@ suite('basic', function() {
   test('first day of week', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function(event) {
-      var culture = event.detail.culture;
+    fixture.addEventListener('culture-changed', function(event) {
+      var culture = fixture.culture;
       assert(culture);
       assert(culture.cldr);
 
@@ -78,8 +78,8 @@ suite('basic', function() {
   test('days of week', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function(event) {
-      var culture = event.detail.culture;
+    fixture.addEventListener('culture-changed', function(event) {
+      var culture = fixture.culture;
       assert(culture);
       assert(culture.cldr);
 
@@ -94,8 +94,8 @@ suite('basic', function() {
   test('months of year', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function(event) {
-      var culture = event.detail.culture;
+    fixture.addEventListener('culture-changed', function(event) {
+      var culture = fixture.culture;
       assert(culture);
       assert(culture.cldr);
 
@@ -110,8 +110,8 @@ suite('basic', function() {
   test('en isRTL', function(done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
-    fixture.addEventListener('basic-culture-changed', function(event) {
-      var culture = event.detail.culture;
+    fixture.addEventListener('culture-changed', function(event) {
+      var culture = fixture.culture;
       assert(culture);
       assert(culture.cldr);
 

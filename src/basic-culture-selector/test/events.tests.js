@@ -8,11 +8,11 @@ suite('events', function() {
     container.innerHTML = '';
   });
 
-  test('basic-culture-changed', function (done) {
+  test('culture-changed', function (done) {
     var fixture = document.createElement('basic-culture-selector');
     container.appendChild(fixture);
     assert.equal(fixture.name, 'en');
-    fixture.addEventListener('basic-culture-changed', function(event) {
+    fixture.addEventListener('culture-changed', function(event) {
       if (fixture.name == 'en') {
         fixture.name = 'fr';
         return;
