@@ -1,16 +1,16 @@
 {
   "name": "basic-spread-fit",
   "description": "Spreads out a set of items horizontally so they take equal space.",
-  "version": "0.6.2",
+  "version": "0.6.3-pre",
   "license": "MIT",
   "main": "basic-spread-fit.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#0.6.2",
-    "basic-stack": "basic-web-components/basic-stack#0.6.2",
+    "basic-aspect": "basic-web-components/basic-aspect#master",
+    "basic-stack": "basic-web-components/basic-stack#master",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.2",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "web-component-tester": "*"
   },
   "keywords": [

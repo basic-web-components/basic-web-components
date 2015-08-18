@@ -1,7 +1,7 @@
 {
   "name": "basic-text-extractor",
   "description": "Flattens the text of its own content and exposes it an bindable attribute",
-  "version": "0.6.2",
+  "version": "0.6.3-pre",
   "license": "MIT",
   "main": "basic-text-extractor.html",
   "dependencies": {
