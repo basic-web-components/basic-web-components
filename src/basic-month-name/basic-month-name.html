@@ -3,9 +3,6 @@ Shows a culture's name for a given month.
 
 To the degree possible, all language/culture-specific aspects of this component
 are localizable with the Globalize library (https://github.com/jquery/globalize).
-(This currently works with Globalize 0.x. This component will be updated to work
-with Globalize 1.x-alpha, which is substantially different, when that edition
-leaves alpha status.)
 
 @element basic-month-name
 @demo http://basic-web-components.github.io/basic-web-components/src/basic-month-name/?dom=shadow
@@ -58,7 +55,7 @@ Polymer({
       reflectToAttribute: true,
       observer: '_monthChanged'
     }
-    
+
   },
 
   ready: function() {
