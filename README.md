@@ -102,7 +102,6 @@ If you're interested in creating a web component that others can use, why not ta
 * Combed text box. A text box sporting tick marks or vertical lines to visually indicate how many characters should be entered. (Combine with masked input?)
 * Content with banner(s), such as toolbar (on top) or status bar (on the bottom).
 * Content with sidebar(s) on the left and/or right side.
-* Credit card. Asks the user to supply a credit card and performs initial validation.
 * Date combo box. Lets the user type a date or choose one from a dropdown calendar.
 * Date range calendar. Lets the user select a date range, typically in the near future.
 * Date text box. Lets the user type a date in several culture-specific formats.
@@ -139,14 +138,10 @@ If you're interested in creating a web component that others can use, why not ta
 * Persistent header. A scrolling list in which the header for the group of items currently at the top of the visible list remains visible until the user scrolls the next group to the top. At this point, the new group header pushes the previous group header out of sight.
 * Persistent navigation bar. When user scrolls page, the navigation bar shrinks to a smaller, but persistent size
 * Persistent panel. A panel whose contents will bump up against the top or bottom of a scrolling parent so as to remain always visible.
-* Person name. A set of input elements for obtaining all or part of a person’s name. This is tough: globally speaking, there’s no one name format that works for all cultures. But perhaps the best approach(es) could be implemented as web components to at least minimize the number of times web sites mess this up.
-* Phone number. Allows entry of a phone number for a single locale or a range of global locales.
 * Popout. An item that can expand (e.g., on hover) without affecting the visual position of surrounding items.
 * Popup button. A button that produces a popup when clicked.
 * Popup source. An element which invokes a popup.
 * Popup. An element which temporarily pops up over other things. Can be modal or modeless.
-* Postal address. Allows entry of a postal address for a single locale or a range of global locales.
-* Postal code. Allows entry of a postal code for a single locale or a range of global locales.
 * Process steps. Shows a numbered list of steps in a task, disabling steps which are not yet available.
 * Progress bar. Indicates the fraction of an operation which has been completed.
 * Progress indicator. Platform-sensitive representation of an ongoing operation whose expected duration is unknown.
@@ -159,7 +154,7 @@ If you're interested in creating a web component that others can use, why not ta
 * Sequence with dots. Sliding panels which add a series of dots (or labels?) to navigate its contents. Should support touch swiping.
 * Slider. Accepts a discrete number in a constrained range.
 * Spin box. Accepts a discrete number, potentially in a constrained range.
-* Splitter. A movable line sitting between two panels which can be dragged to change their relative sizes. (Does Polymer offer a core-splitter?)
+* Splitter. A movable line sitting between two panels which can be dragged to change their relative sizes. (Will Polymer upgrade core-splitter to an iron- element?)
 * Sprite. Shows a single image at a time from a strip or grid of images.
 * Stacked navigation pages. As the user navigates deeper in an app, a small residual portion of the previous page remains visible (typically on the left); the user can swipe away the top page to navigate back to an earlier point.
 * Star rating. Lets the user rate something (a restaurant, product, etc.) using the conventional star system. An attribute allows the glyph
