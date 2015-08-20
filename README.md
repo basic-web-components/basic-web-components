@@ -68,7 +68,10 @@ following web components:
 * [basic-month-and-year](http://component.kitchen/components/basic-web-components/basic-month-and-year). Shows the month and year of a given date in a format appropriate for a given culture.
 * [basic-month-name](http://component.kitchen/components/basic-web-components/basic-month-name). Shows a given culture’s name for the month of a given date.
 * [basic-seamless-iframe](http://component.kitchen/components/basic-web-components/basic-seamless-iframe). Allows communication with a framed page. Can automatically size to the framed content.
-* [basic-text-extractor](https://github.com/basic-web-components/basic-text-extractor). Extracts the text of its content elements and exposes this as an attribute which can be bound to.
+* basic-spread. Spreads out a set of items horizontally so they take equal space.
+* basic-sliding-viewport. Presents list items in a viewport such that only a single item is visible at a time.
+* basic-stack. Stacks its child elements on top of each other, taking on the maximum height and width of the child elements.
+* basic-text-extractor. Extracts the text of its content elements and exposes this as an attribute which can be bound to.
 
 # Contributing
 
