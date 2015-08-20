@@ -151,7 +151,6 @@ If you're interested in creating a web component that others can use, why not ta
 * Rich text editor. Supports the basics: bold, italic, insert link, etc.
 * Scroll-up bar. Appears only when user scrolls down, then up. See http://usabilitypost.com/2014/05/24/the-scroll-up-bar/. Combine with persistent navigation bar?
 * Search box. A text box with standard decorations (magnifying class, customizable “Search” hint) to suggest a search field.
-* Sequence with dots. Sliding panels which add a series of dots (or labels?) to navigate its contents. Should support touch swiping.
 * Slider. Accepts a discrete number in a constrained range.
 * Spin box. Accepts a discrete number, potentially in a constrained range.
 * Splitter. A movable line sitting between two panels which can be dragged to change their relative sizes. (Will Polymer upgrade core-splitter to an iron- element?)
