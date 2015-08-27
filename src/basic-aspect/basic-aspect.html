@@ -84,7 +84,7 @@ window.Basic.Aspect = {
         // upgraded yet, so it's contribute key wasn't found.
         // HACK: Wait a tick and try again.
         // TODO: Figure out whether a better way to do this.
-        setTimeout(function() {
+        this.async(function() {
           childAspect = this._firstChildAspect();
           if (childAspect) {
             this.assimilate(childAspect);
