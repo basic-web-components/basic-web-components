@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-button/basic-button.html">
+<link rel="import" href="../basic-list-box/basic-list-box.html">
+
+<dom-module id="test-element">
+  <template>
+
+    <style>
+    :host {
+      display: block;
+    }
+
+    input {
+      margin-bottom: 1em;
+    }
+    </style>
+
+    <input type="text">
+
+    <button is="basic-button">Button</button>
+
+    <basic-list-box>
+      <content></content>
+    </basic-list-box>
+
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  is: 'test-element'
+
+});
+</script>

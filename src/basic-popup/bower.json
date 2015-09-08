@@ -1,0 +1,22 @@
+{
+  "name": "basic-popup",
+  "description": "A popup that can be positioned with respect to another element",
+  "version": "0.6.3-pre",
+  "license": "MIT",
+  "main": "basic-popup.html",
+  "dependencies": {
+    "basic-shared": "basic-web-components/basic-shared#master",
+    "iron-overlay-behavior": "PolymerElements/iron-overlay-behavior#^1.0.6",
+    "polymer": "Polymer/polymer#^1.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "keywords": [
+    "basic-web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "/test/"
+  ]
+}

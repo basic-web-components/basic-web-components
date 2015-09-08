@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-list-combo-box</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="test-element.html">
+
+  <style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+  </style>
+
+  <style is="custom-style">
+  :root {
+    --iron-overlay-backdrop-opacity: 0.1;
+  }
+  </style>
+</head>
+
+<body unresolved>
+  <test-element tabindex="0">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+  </test-element>
+</body>
+
+</html>

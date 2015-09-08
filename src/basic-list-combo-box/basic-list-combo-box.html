@@ -1,0 +1,64 @@
+<!--
+A combo box which presents its choices as a dropdown list.
+
+@element basic-list-combo-box
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-list-combo-box/?dom=shadow
+-->
+
+<link rel="import" href="../basic-combo-box/basic-combo-box.html">
+<link rel="import" href="../basic-list-box/basic-list-box.html">
+
+<dom-module id="basic-list-combo-box">
+  <template>
+    <basic-combo-box id="comboBox">
+      <basic-list-box id="listBox" class="popup" on-focus="_listBoxFocus" selected-item="{{selectedItem}}">
+        <content></content>
+      </basic-list-box>
+    </basic-combo-box>
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  behaviors: [
+    Basic.Aspect
+  ],
+
+  contribute: {
+
+    // Show the text of the selected item in the input element.
+    set selectedItem(item) {
+    }
+
+  },
+
+  is: 'basic-list-combo-box',
+
+  get items() {
+    return this.$.listBox.items;
+  },
+
+  properties: {
+    selectedItem: {
+      notify: true,
+      observer: '_selectedItemChanged',
+      type: Object
+    }
+  },
+
+  _listBoxFocus: function() {
+    console.log("list box focus");
+  },
+
+  _selectedItemChanged: function() {
+    var selectedItem = this.selectedItem;
+    var inputElement = this.$.comboBox.inputElement;
+    if (inputElement) {
+      var value = selectedItem instanceof HTMLElement ? selectedItem.textContent : selectedItem;
+      inputElement.value = value;
+    }
+  }
+
+});
+</script>

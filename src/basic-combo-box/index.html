@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-combo-box</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="basic-combo-box.html">
+
+  <style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+  </style>
+
+  <style is="custom-style">
+  :root {
+    --iron-overlay-backdrop-opacity: 0;
+  }
+  </style>
+</head>
+
+<body unresolved>
+  <basic-combo-box value="Hello">
+    <div class="popup">
+      You can populate a popup like this with choices for the user to pick.
+    </div>
+  </basic-combo-box>
+</body>
+
+</html>

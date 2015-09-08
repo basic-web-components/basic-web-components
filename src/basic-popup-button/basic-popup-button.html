@@ -1,0 +1,29 @@
+<!--
+A button that produces a popup when clicked.
+
+@element basic-popup-button
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-popup-button/?dom=shadow
+-->
+
+<link rel="import" href="../basic-popup-source/basic-popup-source.html">
+<link rel="import" href="../basic-button/basic-button.html">
+
+<dom-module id="basic-popup-button">
+  <template>
+    <basic-popup-source>
+      <basic-button>
+        <content select=":not(.popupIndicator):not(.popup)"></content>
+        <span id="indicator">
+          <content select=".popupIndicator">▼</content>
+        </span>
+      </basic-button>
+      <content select=".popup"></content>
+    </basic-popup-source>
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+  is: 'basic-popup-button'
+});
+</script>

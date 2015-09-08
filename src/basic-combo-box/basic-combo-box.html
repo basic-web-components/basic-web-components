@@ -1,0 +1,248 @@
+<!--
+A text input area with a popup presenting a list of common input choices.
+
+@element basic-combo-box
+@demo http://basic-web-components.github.io/basic-web-components/src/basic-combo-box/?dom=shadow
+-->
+
+<link rel="import" href="../basic-popup-source/basic-popup-source.html">
+<link rel="import" href="../basic-button/basic-button.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
+
+<dom-module id="basic-combo-box">
+  <template>
+
+    <style>
+    :host {
+      box-sizing: border-box;
+      display: inline-flex;
+    }
+
+    #popupSource {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    #layoutContainer {
+      align-items: stretch;
+      display: flex;
+      flex: 1;
+    }
+
+    :host(.focused) {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+
+    #inputContainer {
+      display: flex;
+      flex: 1;
+    }
+
+    .comboBoxInput[type='text'] {
+      border: none;
+      box-sizing: border-box;
+      flex: 1;
+      font-family: inherit; /* Override browser input styling */
+      font-size: inherit;
+      outline: none;
+      padding: 2px;
+    }
+
+    #buttonContainer {
+      align-items: stretch;
+      display: flex;
+    }
+
+    /* Generic styling */
+    :host([generic='']) {
+      border: 1px solid lightgray;
+    }
+
+    /*
+     * TODO: Add generic qualifier to styling below.
+     * Polymer doesn't handle it yet, though.
+     * :host([generic='']) #dropdownButton
+     */
+    #dropdownButton {
+      --basic-button: {
+        border: none;
+        border-left: 1px solid transparent;
+        border-radius: 0;
+        outline: none;
+        padding: 0 0.25em; /* Tighter padding than normal */
+      };
+    }
+
+    /* Make the dropdown button more prominent on hover. */
+    /* TODO: This doesn't work yet. */
+    :host(:hover) {
+      --basic-button: {
+        border-left-color: lightgray;
+      };
+    }
+    </style>
+
+    <basic-popup-source id="popupSource" dont-open-on-click>
+      <div id="layoutContainer">
+        <div id="inputContainer">
+          <content id="inputContent" select=".comboBoxInput">
+            <input id="defaultInput" class="comboBoxInput" type="text" value="{{value}}">
+          </content>
+        </div>
+        <!--
+        We shouldn't need to put the button in a container, but flexbox doesn't
+        do the right thing if we don't.
+        -->
+        <div id="buttonContainer">
+          <button is="basic-button-new" id="dropdownButton" class="quiet" on-click="open" tabindex="-1">
+            <span id="indicator">
+              <content select=".popupIndicator">▼</content>
+            </span>
+          </button>
+        </div>
+      </div>
+      <content id="contentPopup" select=".popup"></content>
+    </basic-popup-source>
+
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  behaviors: [Basic.Generic],
+
+  cancel: function() {
+    this.$.popupSource.cancel();
+  },
+
+  close: function() {
+    this.$.popupSource.close();
+  },
+
+  // Return the current input element.
+  // This the first HTMLElement distributed using the .comboBoxInput CSS class.
+  get inputElement() {
+    var nodes = this.$.inputContent.getDistributedNodes();
+    for (var i = 0, length = nodes.length; i < length; i++) {
+      if (nodes[i] instanceof HTMLElement) {
+        return nodes[i];
+      }
+    }
+    return null;
+  },
+
+  is: 'basic-combo-box',
+
+  open: function() {
+    if (this.generic) {
+      // Make popup at least as wide as input portion.
+      var popup = this.$.popupSource.popup;
+      var width = this.offsetWidth;
+      popup.style.minWidth = width + "px";
+    }
+
+    this.$.popupSource.open();
+
+    var node = this.$.contentPopup.getDistributedNodes()[0];
+    setTimeout(function() {
+      node.focus();
+    });
+  },
+
+  get opened() {
+    return this.$.popupSource.opened;
+  },
+
+  ready: function() {
+
+    // If any element inside the component has focus, show the focused state.
+    // We'd like to use focusin/focusout, but (as of 8/26/15) Mozilla doesn't
+    // support them. We approximate those events with addEventListener's
+    // useCapture parameter.
+    // See https://developer.mozilla.org/en-US/docs/Web/Events/focusin
+    // this.addEventListener('focus', function(event) {
+    //   this._focusin();
+    // }.bind(this), true);
+    // this.addEventListener('blur', function(event) {
+    //   this._focusout();
+    // }.bind(this), true);
+
+    this.$.inputContainer.addEventListener('keydown', function(event) {
+      var handled = false;
+
+      // Pressing Down when list is closed will open the list.
+      switch (event.keyCode) {
+        case 40:  /* Down */
+          if (!this.opened) {
+            this.open();
+            handled = true;
+          }
+          break;
+      }
+
+      if (handled) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      }
+    }.bind(this));
+
+  },
+
+  properties: {
+
+    /**
+     * Set to true to disable the automatic opening of the popup when the source
+     * gets the keyboard focus.
+     */
+    dontOpenOnFocus: {
+      type: Boolean
+    },
+
+    value: {
+      notify: true,
+      type: String
+    }
+
+  },
+
+  // An element somewhere within the component has obtained the focus.
+  _focusin: function() {
+    console.log("basic-popup-source: focusin");
+    this.classList.add('focused');
+    if (!this.dontOpenOnFocus && !this.opened) {
+      this.open();
+    }
+  },
+
+  // An element somewhere within the component has lost the focus.
+  //
+  // We want to close the popup if the focus moves completely outside the
+  // combo box; i.e., is not within the input box or the popup.
+  //
+  _focusout: function() {
+    // If the user clicks in the popup, the input will blur before we've had a
+    // chance to even register the click. And at the point the blur handler here
+    // is invoked, the new activeElement is not yet known, so we can't test
+    // that.
+    //
+    // Our solution is to set a timeout which will defer testing of
+    // activeElement until after the normal focusout sequence has completed and
+    // focus has been placed in the new control.
+    console.log("basic-popup-source: focusout");
+    setTimeout(function() {
+      console.log(document.activeElement);
+      this.classList.remove('focused');
+      if (this.opened) {
+        // Tabbing away implicitly closes popup.
+        // this.cancel();
+      }
+    }.bind(this));
+  }
+
+});
+</script>
