@@ -29,7 +29,7 @@ A combo box which presents its choices as a dropdown list.
     }
     </style>
 
-    <basic-combo-box id="comboBox" dont-open-on-focus="{{dontOpenOnFocus}}">
+    <basic-combo-box id="comboBox" dont-open-on-focus="{{dontOpenOnFocus}}" value="{{value}}">
       <basic-list-box id="listBox" class="popup" selected-item="{{selectedItem}}" tabindex="-1">
         <content></content>
       </basic-list-box>
@@ -61,6 +61,12 @@ Polymer({
       38, // Up
       40  // Down
     ];
+
+    // HACK: Force value attribute specified on tag to be displayed.
+    // TODO: Investigate to see whether this is a Polymer bug.
+    if (this.inputElement.value !== this.value) {
+      this.inputElement.value = this.value;
+    }
   },
 
   get popupElement() {
@@ -79,6 +85,11 @@ Polymer({
       notify: true,
       observer: '_selectedItemChanged',
       type: Object
+    },
+
+    value: {
+      notify: true,
+      type: String
     }
 
   },
