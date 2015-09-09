@@ -12,6 +12,16 @@ A combo box which presents its choices as a dropdown list.
   <template>
 
     <style>
+    :host {
+      display: -webkit-inline-flex;
+      display: inline-flex;
+    }
+
+    #comboBox {
+      -webkit-flex: 1;
+      flex: 1;
+    }
+
     #listBox {
       --basic-list-box: {
         border: none;
@@ -20,7 +30,7 @@ A combo box which presents its choices as a dropdown list.
     </style>
 
     <basic-combo-box id="comboBox" dont-open-on-focus="{{dontOpenOnFocus}}">
-      <basic-list-box id="listBox" class="popup" on-focus="_listBoxFocus" selected-item="{{selectedItem}}" tabindex="-1">
+      <basic-list-box id="listBox" class="popup" selected-item="{{selectedItem}}" tabindex="-1">
         <content></content>
       </basic-list-box>
     </basic-combo-box>
@@ -48,9 +58,7 @@ Polymer({
       34, // Page Down
       35, // End
       36, // Home
-      37, // Left
       38, // Up
-      39, // Right
       40  // Down
     ];
   },
@@ -73,10 +81,6 @@ Polymer({
       type: Object
     }
 
-  },
-
-  _listBoxFocus: function() {
-    console.log("list box focus");
   },
 
   _selectedItemChanged: function() {

@@ -142,6 +142,14 @@ Polymer({
     }
 
     this.$.popupSource.open();
+
+    // If the input element doesn't already have focus (e.g., the dropdown
+    // button was clicked), give it the focus now.
+    // Note: we need to examine the *shadow root* to see what its internal
+    // active element is. See http://www.w3.org/TR/shadow-dom/#active-element.
+    if (this.root.activeElement !== this.inputElement) {
+      this.inputElement.focus();
+    }
   },
 
   get opened() {
@@ -162,7 +170,7 @@ Polymer({
       this._focusout();
     }.bind(this), true);
 
-    this.$.inputContainer.addEventListener('keydown', function(event) {
+    this.addEventListener('keydown', function(event) {
       this._keydown(event);
     }.bind(this));
 
@@ -263,7 +271,7 @@ Polymer({
     // focus has been placed in the new control.
     console.log("basic-popup-source: focusout");
     setTimeout(function() {
-      console.log(document.activeElement);
+      // console.log(document.activeElement);
       this.classList.remove('focused');
       if (this.opened) {
         // Tabbing away implicitly closes popup.
