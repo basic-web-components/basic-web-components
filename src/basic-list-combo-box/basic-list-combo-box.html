@@ -33,8 +33,30 @@ Polymer({
 
   is: 'basic-list-combo-box',
 
+  get inputElement() {
+    return this.$.comboBox.inputElement;
+  },
+
   get items() {
     return this.$.listBox.items;
+  },
+
+  ready: function() {
+    // Indicate which navigation keys we want to handle.
+    this.$.comboBox.popupKeys = [
+      33, // Page Up
+      34, // Page Down
+      35, // End
+      36, // Home
+      37, // Left
+      38, // Up
+      39, // Right
+      40  // Down
+    ];
+  },
+
+  get popupElement() {
+    return this.$.comboBox.popupElement;
   },
 
   properties: {
@@ -51,7 +73,7 @@ Polymer({
 
   _selectedItemChanged: function() {
     var selectedItem = this.selectedItem;
-    var inputElement = this.$.comboBox.inputElement;
+    var inputElement = this.inputElement;
     if (inputElement) {
       var value = selectedItem instanceof HTMLElement ? selectedItem.textContent : selectedItem;
       inputElement.value = value;

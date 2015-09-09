@@ -88,7 +88,7 @@ A text input area with a popup presenting a list of common input choices.
     <basic-popup-source id="popupSource" dont-open-on-click>
       <div id="layoutContainer">
         <div id="inputContainer">
-          <content id="inputContent" select=".comboBoxInput">
+          <content id="contentInput" select=".comboBoxInput">
             <input id="defaultInput" class="comboBoxInput" type="text" value="{{value}}">
           </content>
         </div>
@@ -123,16 +123,12 @@ Polymer({
     this.$.popupSource.close();
   },
 
-  // Return the current input element.
-  // This the first HTMLElement distributed using the .comboBoxInput CSS class.
+  /*
+   * Return the current input element.
+   * This the first HTMLElement distributed using the .comboBoxInput CSS class.
+   */
   get inputElement() {
-    var nodes = Polymer.dom(this.$.inputContent).getDistributedNodes();
-    for (var i = 0, length = nodes.length; i < length; i++) {
-      if (nodes[i] instanceof HTMLElement) {
-        return nodes[i];
-      }
-    }
-    return null;
+    return this._firstElementDistributedTo(this.$.contentInput);
   },
 
   is: 'basic-combo-box',
@@ -147,10 +143,11 @@ Polymer({
 
     this.$.popupSource.open();
 
-    var node = Polymer.dom(this.$.contentPopup).getDistributedNodes()[0];
-    setTimeout(function() {
-      node.focus();
-    });
+    // // Move focus to popup.
+    // var node = Polymer.dom(this.$.contentPopup).getDistributedNodes()[0];
+    // setTimeout(function() {
+    //   node.focus();
+    // });
   },
 
   get opened() {
@@ -172,25 +169,17 @@ Polymer({
     // }.bind(this), true);
 
     this.$.inputContainer.addEventListener('keydown', function(event) {
-      var handled = false;
-
-      // Pressing Down when list is closed will open the list.
-      switch (event.keyCode) {
-        case 40:  /* Down */
-          if (!this.opened) {
-            this.open();
-            handled = true;
-          }
-          break;
-      }
-
-      if (handled) {
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
-      }
+      this._keydown(event);
     }.bind(this));
 
+  },
+
+  /*
+   * Return the current popup element.
+   * This the first HTMLElement distributed using the .popup CSS class.
+   */
+  get popupElement() {
+    return this._firstElementDistributedTo(this.$.contentPopup);
   },
 
   properties: {
@@ -203,11 +192,53 @@ Polymer({
       type: Boolean
     },
 
+    /*
+     * The keys which should be forwarded to the popup element for handling.
+     */
+    popupKeys: {
+      type: Array,
+      value: []
+    },
+
     value: {
       notify: true,
       type: String
     }
 
+  },
+
+  // Forward the indicated keydown event to the popup element.
+  _dispatchKeydownEventToPopup: function(event) {
+
+    // Duplicate the keyboard event.
+    var newEvent = new KeyboardEvent("keydown", {
+      key: event.key,
+      code: event.code,
+      ctrlKey: event.ctrlKey,
+      shiftKey: event.shiftKey,
+      altKey: event.altKey,
+      metaKey: event.metaKey,
+      repeat: event.repeat,
+      isComposing: event.isComposing,
+      charCode: event.charCode,
+      which: event.which
+    });
+    // keyCode property handled separately -- see
+    // http://stackoverflow.com/questions/961532/firing-a-keyboard-event-in-javascript/11885974#11885974
+    delete newEvent.keyCode;
+    Object.defineProperty(newEvent, 'keyCode', { value: event.keyCode });
+
+    this.popupElement.dispatchEvent(newEvent);
+  },
+
+  _firstElementDistributedTo: function(contentElement) {
+    var nodes = Polymer.dom(contentElement).getDistributedNodes();
+    for (var i = 0, length = nodes.length; i < length; i++) {
+      if (nodes[i] instanceof HTMLElement) {
+        return nodes[i];
+      }
+    }
+    return null;
   },
 
   // An element somewhere within the component has obtained the focus.
@@ -242,6 +273,34 @@ Polymer({
         // this.cancel();
       }
     }.bind(this));
+  },
+
+  _keydown: function() {
+
+    var handled = false;
+
+    if (this.opened && this.popupKeys.indexOf(event.keyCode) >= 0) {
+      // The popup wants to handle this key.
+      this._dispatchKeydownEventToPopup(event);
+      handled = true;
+    } else {
+      switch (event.keyCode) {
+        case 40:  /* Down */
+          // Pressing Down when list is closed will open the list.
+          if (!this.opened) {
+            this.open();
+            handled = true;
+          }
+          break;
+      }
+    }
+
+    if (handled) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    }
+
   }
 
 });
