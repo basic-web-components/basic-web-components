@@ -10,11 +10,21 @@ A combo box which presents its choices as a dropdown list.
 
 <dom-module id="basic-list-combo-box">
   <template>
+
+    <style>
+    #listBox {
+      --basic-list-box: {
+        border: none;
+      };
+    }
+    </style>
+
     <basic-combo-box id="comboBox">
       <basic-list-box id="listBox" class="popup" on-focus="_listBoxFocus" selected-item="{{selectedItem}}">
         <content></content>
       </basic-list-box>
     </basic-combo-box>
+
   </template>
 </dom-module>
 

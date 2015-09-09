@@ -65,6 +65,14 @@ The user can also select an item by typing the beginning of an item's text.
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
+    :host {
+      --basic-list-box: {
+        border: 1px solid gray;
+        box-sizing: border-box;
+        cursor: default;
+      };
+    }
+
     [target="child"] {
       display: -webkit-flex;
       display: flex;
@@ -81,9 +89,7 @@ The user can also select an item by typing the beginning of an item's text.
 
     /* Generic appearance */
     :host([generic=""]) {
-      border: 1px solid gray;
-      box-sizing: border-box;
-      cursor: default;
+      @apply(--basic-list-box);
     }
 
     :host([generic=""]) #itemsContainer ::content > * {
