@@ -36,28 +36,42 @@
       callback();
     };
 
-    function importsReady() {
-      window.removeEventListener('WebComponentsReady', importsReady);
-      debug('WebComponentsReady');
-
+    function componentsReady() {
+      // handle Polymer 0.5 readiness
       if (window.Polymer && Polymer.whenReady) {
-        Polymer.whenReady(function() {
-          debug('polymer-ready');
-          done();
-        });
+        Polymer.whenReady(done);
       } else {
         done();
       }
     }
 
     // All our supported framework configurations depend on imports.
-    if (!window.HTMLImports) {
-      done();
-    } else if (HTMLImports.ready) {
-      importsReady();
+    if (window.WebComponents) {
+      if (WebComponents.whenReady) {
+        WebComponents.whenReady(function() {
+          debug('WebComponents Ready');
+          componentsReady();
+        });
+      } else {
+        whenWebComponentsReady(componentsReady);
+      }
+    } else if (window.HTMLImports) {
+      HTMLImports.whenReady(function() {
+        debug('HTMLImports Ready');
+        componentsReady();
+      });
     } else {
-      window.addEventListener('WebComponentsReady', importsReady);
+      done();
     }
+  }
+
+  function whenWebComponentsReady(cb) {
+    var after = function after() {
+      window.removeEventListener('WebComponentsReady', after);
+      debug('WebComponentsReady');
+      cb();
+    };
+    window.addEventListener('WebComponentsReady', after);
   }
 
   /**
@@ -496,6 +510,11 @@
     /** By default, we wait for any web component frameworks to load. */
     waitForFrameworks: true,
 
+    /** Alternate callback for waiting for tests.
+     * `this` for the callback will be the window currently running tests.
+     */
+    waitFor: null,
+
     /** How many `.html` suites that can be concurrently loaded & run. */
     numConcurrentSuites: 1,
 
@@ -677,7 +696,8 @@
    */
   function _runMocha(reporter, done, waited) {
     if (config_js.get('waitForFrameworks') && !waited) {
-      util_js.whenFrameworksReady(_runMocha.bind(null, reporter, done, true));
+      var waitFor = (config_js.get('waitFor') || util_js.whenFrameworksReady).bind(window);
+      waitFor(_runMocha.bind(null, reporter, done, true));
       return;
     }
     util_js.debug('_runMocha');
@@ -931,6 +951,7 @@
     'pass',
     'fail',
     'pending',
+    'childRunner end'
   ];
 
   // Until a suite has loaded, we assume this many tests in it.
@@ -1325,7 +1346,13 @@
    */
   function loadSync() {
     util_js.debug('Loading environment scripts:');
-    config_js.get('environmentScripts').forEach(function(path) {
+    var scripts = config_js.get('environmentScripts');
+    var a11ySuiteWillBeLoaded = window.__generatedByWct;
+    if (!a11ySuiteWillBeLoaded) {
+      // wct is running as a bower dependency, load a11ySuite from data/
+      scripts.push('web-component-tester/data/a11ySuite.js');
+    }
+    scripts.forEach(function(path) {
       var url = util_js.expandUrl(path, config_js.get('root'));
       util_js.debug('Loading environment script:', url);
       // Synchronous load.
@@ -1794,59 +1821,6 @@
       }
     }
     next();
-  };
-
-  /**
-   * Runs the Chrome Accessibility Developer Tools Audit against a test-fixture
-   *
-   * @param {String} fixtureId ID of the fixture element in the document to use
-   */
-  window.a11ySuite = function a11ySuite(fixtureId) {
-
-    // capture a reference to the fixture element early
-    var fixtureElement = document.getElementById(fixtureId);
-
-    // build a mocha suite
-    suite('A11y Audit', function() {
-
-      // keep an easy reference to the a11y audit results
-      var auditResults;
-      function getResult(index) {
-        return auditResults[index];
-      }
-
-      // build an audit config to disable certain ignorable tests
-      var axsConfig = new axs.AuditConfiguration();
-      axsConfig.scope = document.body;
-      axsConfig.showUnsupportedRulesWarning = false;
-
-      // filter out rules that only run in the extension
-      var rules = axs.AuditRules.getRules().filter(function(rule) {
-        return !rule.requiresConsoleAPI;
-      });
-
-      rules.forEach(function(rule, index) {
-        test(rule.heading, function() {
-          var result = getResult(index);
-          if (result.result === 'FAIL') {
-            var message = axs.Audit.accessibilityErrorMessage(result);
-            assert.fail(null, null, message);
-          }
-        });
-      });
-
-      // setup fixture and run audit
-      suiteSetup(function() {
-        assert.ok(fixtureElement, 'fixtureElement should be defined');
-        fixtureElement.create();
-        auditResults = axs.Audit.run(axsConfig);
-      });
-
-      // teardown fixture
-      suiteTeardown(function() {
-        fixtureElement.restore();
-      });
-    });
   };
 
   /**
