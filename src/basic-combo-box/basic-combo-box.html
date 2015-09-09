@@ -142,12 +142,6 @@ Polymer({
     }
 
     this.$.popupSource.open();
-
-    // // Move focus to popup.
-    // var node = Polymer.dom(this.$.contentPopup).getDistributedNodes()[0];
-    // setTimeout(function() {
-    //   node.focus();
-    // });
   },
 
   get opened() {
@@ -161,12 +155,12 @@ Polymer({
     // support them. We approximate those events with addEventListener's
     // useCapture parameter.
     // See https://developer.mozilla.org/en-US/docs/Web/Events/focusin
-    // this.addEventListener('focus', function(event) {
-    //   this._focusin();
-    // }.bind(this), true);
-    // this.addEventListener('blur', function(event) {
-    //   this._focusout();
-    // }.bind(this), true);
+    this.addEventListener('focus', function(event) {
+      this._focusin();
+    }.bind(this), true);
+    this.addEventListener('blur', function(event) {
+      this._focusout();
+    }.bind(this), true);
 
     this.$.inputContainer.addEventListener('keydown', function(event) {
       this._keydown(event);
@@ -189,7 +183,9 @@ Polymer({
      * gets the keyboard focus.
      */
     dontOpenOnFocus: {
-      type: Boolean
+      notify: true,
+      type: Boolean,
+      value: false
     },
 
     /*

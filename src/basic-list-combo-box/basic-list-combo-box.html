@@ -19,7 +19,7 @@ A combo box which presents its choices as a dropdown list.
     }
     </style>
 
-    <basic-combo-box id="comboBox">
+    <basic-combo-box id="comboBox" dont-open-on-focus="{{dontOpenOnFocus}}">
       <basic-list-box id="listBox" class="popup" on-focus="_listBoxFocus" selected-item="{{selectedItem}}">
         <content></content>
       </basic-list-box>
@@ -60,11 +60,19 @@ Polymer({
   },
 
   properties: {
+
+    dontOpenOnFocus: {
+      notify: true,
+      type: Boolean,
+      value: false
+    },
+
     selectedItem: {
       notify: true,
       observer: '_selectedItemChanged',
       type: Object
     }
+
   },
 
   _listBoxFocus: function() {
