@@ -20,7 +20,7 @@ A combo box which presents its choices as a dropdown list.
     </style>
 
     <basic-combo-box id="comboBox" dont-open-on-focus="{{dontOpenOnFocus}}">
-      <basic-list-box id="listBox" class="popup" on-focus="_listBoxFocus" selected-item="{{selectedItem}}">
+      <basic-list-box id="listBox" class="popup" on-focus="_listBoxFocus" selected-item="{{selectedItem}}" tabindex="-1">
         <content></content>
       </basic-list-box>
     </basic-combo-box>

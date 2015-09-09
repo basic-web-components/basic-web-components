@@ -156,7 +156,7 @@ Polymer({
     // useCapture parameter.
     // See https://developer.mozilla.org/en-US/docs/Web/Events/focusin
     this.addEventListener('focus', function(event) {
-      this._focusin();
+      this._focusin(event);
     }.bind(this), true);
     this.addEventListener('blur', function(event) {
       this._focusout();
@@ -238,8 +238,9 @@ Polymer({
   },
 
   // An element somewhere within the component has obtained the focus.
-  _focusin: function() {
+  _focusin: function(event) {
     console.log("basic-popup-source: focusin");
+    console.log(event.target);
     this.classList.add('focused');
     if (!this.dontOpenOnFocus && !this.opened) {
       this.open();
@@ -266,7 +267,7 @@ Polymer({
       this.classList.remove('focused');
       if (this.opened) {
         // Tabbing away implicitly closes popup.
-        // this.cancel();
+        this.cancel();
       }
     }.bind(this));
   },
