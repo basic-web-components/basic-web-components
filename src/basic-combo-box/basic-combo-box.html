@@ -126,7 +126,7 @@ Polymer({
   // Return the current input element.
   // This the first HTMLElement distributed using the .comboBoxInput CSS class.
   get inputElement() {
-    var nodes = this.$.inputContent.getDistributedNodes();
+    var nodes = Polymer.dom(this.$.inputContent).getDistributedNodes();
     for (var i = 0, length = nodes.length; i < length; i++) {
       if (nodes[i] instanceof HTMLElement) {
         return nodes[i];
@@ -147,7 +147,7 @@ Polymer({
 
     this.$.popupSource.open();
 
-    var node = this.$.contentPopup.getDistributedNodes()[0];
+    var node = Polymer.dom(this.$.contentPopup).getDistributedNodes()[0];
     setTimeout(function() {
       node.focus();
     });
