@@ -25,10 +25,17 @@ Polymer({
   is: 'basic-tap-selection',
 
   ready: function() {
-    this.addEventListener('click', function(event) {
+    /*
+     * REVIEW: Which event should we listen to here?
+     *
+     * The standard use for this aspect is in list boxes. List boxes don't
+     * appear to be consistent with regard to whether they select on mousedown
+     * or click/mouseup.
+     */
+    this.addEventListener('mousedown', function(event) {
       this._selectElement(event.target);
-      // event.stopPropagation();
-      // return false;
+      event.stopPropagation();
+      return false;
     }.bind(this));
   },
 
