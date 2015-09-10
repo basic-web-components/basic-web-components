@@ -89,7 +89,7 @@ A text input area with a popup presenting a list of common input choices.
       <div id="layoutContainer">
         <div id="inputContainer">
           <content id="contentInput" select=".comboBoxInput">
-            <input id="defaultInput" class="comboBoxInput" type="text" value="{{value}}">
+            <input id="defaultInput" class="comboBoxInput" type="text">
           </content>
         </div>
         <!--
@@ -179,6 +179,13 @@ Polymer({
       this._keydown(event);
     }.bind(this));
 
+    // Show default value.
+    // TODO: Shouldn't this happen automatically? If so, file a Polymer bug.
+    var defaultValue = this.getAttribute('value');
+    if (this.value !== defaultValue) {
+      this.value = defaultValue;
+    }
+
   },
 
   /*
@@ -209,12 +216,25 @@ Polymer({
       value: []
     },
 
-    value: {
-      notify: true,
-      type: String,
-      value: ""
-    }
+    // value: {
+    //   notify: true,
+    //   type: String,
+    //   value: ""
+    // }
 
+  },
+
+  get value() {
+    var inputElement = this.inputElement;
+    return inputElement && inputElement.value;
+  },
+  set value(text) {
+    var inputElement = this.inputElement;
+    if (inputElement) {
+      inputElement.value = text;
+      var event = new CustomEvent('value-changed');
+      this.dispatchEvent(event);
+    }
   },
 
   // Forward the indicated keydown event to the popup element.

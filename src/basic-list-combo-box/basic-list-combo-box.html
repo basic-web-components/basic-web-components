@@ -29,7 +29,7 @@ A combo box which presents its choices as a dropdown list.
     }
     </style>
 
-    <basic-combo-box id="comboBox" dont-open-on-focus="{{dontOpenOnFocus}}" value="{{value}}">
+    <basic-combo-box id="comboBox" dont-open-on-focus="{{dontOpenOnFocus}}">
       <basic-list-box id="listBox" class="popup" selected-item="{{selectedItem}}" tabindex="-1">
         <content></content>
       </basic-list-box>
@@ -66,11 +66,13 @@ Polymer({
       40  // Down
     ];
 
-    // HACK: Force value attribute specified on tag to be displayed.
-    // TODO: Investigate to see whether this is a Polymer bug.
-    if (this.inputElement.value !== this.value) {
-      this.inputElement.value = this.value;
+    // Show default value.
+    // See note at value getter/setter.
+    var defaultValue = this.getAttribute('value');
+    if (this.value !== defaultValue) {
+      this.value = defaultValue;
     }
+
   },
 
   get popupElement() {
@@ -91,11 +93,23 @@ Polymer({
       type: Object
     },
 
-    value: {
-      notify: true,
-      type: String
-    }
+  },
 
+  /**
+   * The text value in the combo box.
+   *
+   * @property value
+   * @type String
+   */
+  // We'd prefer to define this as a normal property and bind it to the combo
+  // box's value property, but of 9/10/15, that didn't work.
+  get value() {
+    return this.$.comboBox.value;
+  },
+  set value(text) {
+    this.$.comboBox.value = text;
+    var event = new CustomEvent('value-changed');
+    this.dispatchEvent(event);
   },
 
   _open: function() {
