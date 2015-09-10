@@ -7,6 +7,7 @@ A combo box which presents its choices as a dropdown list.
 
 <link rel="import" href="../basic-combo-box/basic-combo-box.html">
 <link rel="import" href="../basic-list-box/basic-list-box.html">
+<link rel="import" href="basic-item-text-search.html">
 
 <dom-module id="basic-list-combo-box">
   <template>
@@ -41,6 +42,14 @@ A combo box which presents its choices as a dropdown list.
 <script>
 Polymer({
 
+  // Try to auto-complete the current text against the item contents.
+  autoComplete: function() {
+    var item = this.$.listBox.collective.findItemWithTextPrefix(this.value);
+    if (this.opened && item) {
+      this.$.listBox.selectedItem = item;
+    }
+  },
+
   is: 'basic-list-combo-box',
 
   get inputElement() {
@@ -51,7 +60,26 @@ Polymer({
     return this.$.listBox.items;
   },
 
+  get opened() {
+    return this.$.comboBox.opened;
+  },
+
   ready: function() {
+
+    // Extend standard list box behavior with text searching.
+    // Assimilate a copy of the aspect, rather than the aspect itself,
+    // so that the aspect can be added to many components.
+    // TODO: Refactor -- this should be in Collective.
+    var aspect = Basic.ItemTextSearch;
+    var clone = {};
+    for (var key in aspect) {
+      clone[key] = aspect[key];
+    }
+    this.$.listBox.assimilate(clone);
+
+    this.addEventListener('keydown', function(event) {
+      this._keydown(event);
+    }.bind(this));
 
     // HACK: Ask to do work when the combo box opens.
     this.$.comboBox._openHook = this._open.bind(this);
@@ -110,6 +138,22 @@ Polymer({
     this.$.comboBox.value = text;
     var event = new CustomEvent('value-changed');
     this.dispatchEvent(event);
+  },
+
+  _keydown: function(event) {
+    // Do AutoComplete on Space, or characters from zero (0) and up, ignoring
+    // any combinations that involve Alt or Ctrl.
+    if ((event.keyCode === 32 || event.keyCode >= 48)
+        && !(event.altKey || event.ctrlKey || event.metaKey)) {
+      // We want AutoComplete to happen as soon as the user begins typing, but
+      // using keydown creates a problem: the input control's content won't
+      // reflect the latest keypress yet. So we wait to give the keydown event a
+      // chance to bubble up and do its work, then do our AutoComplete work
+      // against the resulting text.
+      setTimeout(function() {
+        this.autoComplete();
+      }.bind(this));
+    }
   },
 
   _open: function() {
