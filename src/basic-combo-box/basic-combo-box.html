@@ -141,6 +141,11 @@ Polymer({
       popup.style.minWidth = width + "px";
     }
 
+    // HACK: Do our hacky stopgap for subclass method override.
+    if (this._openHook) {
+      this._openHook();
+    }
+
     this.$.popupSource.open();
 
     // If the input element doesn't already have focus (e.g., the dropdown
@@ -307,7 +312,11 @@ Polymer({
       return false;
     }
 
-  }
+  },
+
+  // HACK: Since we can't subclass this class yet, and are forced to rely on
+  // composition, give a wrapping element a chance to do work during open().
+  _openHook: null
 
 });
 </script>

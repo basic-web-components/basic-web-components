@@ -52,6 +52,10 @@ Polymer({
   },
 
   ready: function() {
+
+    // HACK: Ask to do work when the combo box opens.
+    this.$.comboBox._openHook = this._open.bind(this);
+
     // Indicate which navigation keys we want to handle.
     this.$.comboBox.popupKeys = [
       33, // Page Up
@@ -92,6 +96,12 @@ Polymer({
       type: String
     }
 
+  },
+
+  _open: function() {
+    // Try to select the list item whose text matches the current text.
+    console.log("Trying to select " + this.value);
+    this.$.listBox.value = this.value;
   },
 
   _selectedItemChanged: function() {
