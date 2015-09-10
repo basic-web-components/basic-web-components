@@ -131,6 +131,17 @@ Polymer({
     Basic.Generic
   ],
 
+  contribute: {
+
+    set selectedItem(item) {
+      // var text = item.textContent;
+      // if (text != null && this.value !== text) {
+      //   this.value = text;
+      // }
+    }
+
+  },
+
   is: 'basic-list-box',
 
   /**
@@ -155,9 +166,11 @@ Polymer({
   },
 
   properties: {
+
     target: {
       value: 'shadow'
     }
+
   },
 
   /**
@@ -221,6 +234,13 @@ Polymer({
    */
   selectPrevious: function() {
     return this.collective.selectPrevious();
+  },
+
+  get value() {
+
+  },
+  set value(o) {
+
   }
 
 });
