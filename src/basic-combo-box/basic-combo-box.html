@@ -178,6 +178,9 @@ Polymer({
     this.addEventListener('keydown', function(event) {
       this._keydown(event);
     }.bind(this));
+    this.addEventListener('iron-overlay-closed', function(event) {
+      this._popupClosed();
+    }.bind(this));
 
     // Show default value.
     // TODO: Shouldn't this happen automatically? If so, file a Polymer bug.
@@ -214,13 +217,7 @@ Polymer({
     popupKeys: {
       type: Array,
       value: []
-    },
-
-    // value: {
-    //   notify: true,
-    //   type: String,
-    //   value: ""
-    // }
+    }
 
   },
 
@@ -297,7 +294,6 @@ Polymer({
     // focus has been placed in the new control.
     console.log("basic-popup-source: focusout");
     setTimeout(function() {
-      // console.log(document.activeElement);
       this.classList.remove('focused');
       if (this.opened) {
         // Tabbing away implicitly closes popup.
@@ -336,7 +332,22 @@ Polymer({
 
   // HACK: Since we can't subclass this class yet, and are forced to rely on
   // composition, give a wrapping element a chance to do work during open().
-  _openHook: null
+  _openHook: null,
+
+  _popupClosed: function() {
+    if (this.root.activeElement) {
+      // The popup has been closed, but the focus is still in the component.
+      // Leave the complete text selected.
+      this._selectText(0, this.value.length);
+    }
+  },
+
+  _selectText: function(start, end) {
+    var inputElement = this.inputElement;
+    if (inputElement) {
+      inputElement.setSelectionRange(start, end);
+    }
+  }
 
 });
 </script>
