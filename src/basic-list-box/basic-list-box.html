@@ -236,11 +236,39 @@ Polymer({
     return this.collective.selectPrevious();
   },
 
+  /**
+   * The text content of the selected item.
+   *
+   * Setting this to text not found in any list item will set selectedItem to
+   * null.
+   *
+   * @property value
+   * @type String
+   */
   get value() {
-
+    return this.selectedItem == null || this.selectedItem.textContent == null ?
+      '' :
+      this.selectedItem.textContent;
   },
-  set value(o) {
+  set value(text) {
 
+    var currentIndex = this.selectedIndex;
+    var newIndex = -1; // Assume we won't find the text.
+
+    // Find the item with the indicated text.
+    var items = this.items;
+    for (i = 0, length = items.length; i < length; i++) {
+      if (items[i].textContent === text) {
+        newIndex = i;
+        break;
+      }
+    }
+
+    if (newIndex !== currentIndex) {
+      this.selectedIndex = newIndex;
+      var event = new CustomEvent('value-changed');
+      this.dispatchEvent(event);
+    }
   }
 
 });

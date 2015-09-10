@@ -22,7 +22,7 @@ suite('basic-list-box', function() {
     });
   });
 
-  test("selectedItem tracks selectedIndex", function(done) {
+  test("setting selectingIndex also updates selectedItem", function(done) {
     var listBox = createSampleListBox();
     container.appendChild(listBox);
     flush(function() {
@@ -32,7 +32,7 @@ suite('basic-list-box', function() {
     });
   });
 
-  test("selectedIndex tracks selectedItem", function(done) {
+  test("setting selectedItem also updates selectedIndex", function(done) {
     var listBox = createSampleListBox();
     container.appendChild(listBox);
     flush(function() {
@@ -42,11 +42,32 @@ suite('basic-list-box', function() {
     });
   });
 
+  test("setting selectedItem also updates value", function(done) {
+    var listBox = createSampleListBox();
+    container.appendChild(listBox);
+    flush(function() {
+      assert.equal(listBox.value, '');
+      listBox.selectedIndex = 2;
+      assert.equal(listBox.value, 'Two');
+      done();
+    });
+  });
+
+  test("setting value updates selectedItem", function(done) {
+    var listBox = createSampleListBox();
+    container.appendChild(listBox);
+    flush(function() {
+      listBox.value = 'Two';
+      assert.equal(listBox.selectedIndex, 2);
+      done();
+    });
+  });
+
 });
 
 function createSampleListBox() {
   var listBox = document.createElement('basic-list-box');
-  var texts = ['One', 'Two', 'Three'];
+  var texts = ['Zero', 'One', 'Two'];
   texts.forEach(function(text) {
     var div = document.createElement('div');
     div.textContent = text;
