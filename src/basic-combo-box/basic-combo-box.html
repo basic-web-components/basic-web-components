@@ -175,8 +175,12 @@ Polymer({
       this._focusout();
     }.bind(this), true);
 
+    this.inputElement.addEventListener('keydown', function(event) {
+      console.log("input: " + event.keyCode);
+      // event.preventDefault();
+    });
     this.addEventListener('keydown', function(event) {
-      this._keydown(event);
+      return this._keydown(event);
     }.bind(this));
     this.addEventListener('iron-overlay-closed', function(event) {
       this._popupClosed();
@@ -219,6 +223,14 @@ Polymer({
       value: []
     }
 
+  },
+
+  // Select the text from the given start and end positions, inclusive.
+  setSelectionRange: function(start, end) {
+    var inputElement = this.inputElement;
+    if (inputElement) {
+      inputElement.setSelectionRange(start, end, 'forward');
+    }
   },
 
   get value() {
@@ -270,8 +282,7 @@ Polymer({
 
   // An element somewhere within the component has obtained the focus.
   _focusin: function(event) {
-    console.log("basic-popup-source: focusin");
-    console.log(event.target);
+    // console.log("basic-popup-source: focusin");
     this.classList.add('focused');
     if (!this.dontOpenOnFocus && !this.opened) {
       this.open();
@@ -292,7 +303,7 @@ Polymer({
     // Our solution is to set a timeout which will defer testing of
     // activeElement until after the normal focusout sequence has completed and
     // focus has been placed in the new control.
-    console.log("basic-popup-source: focusout");
+    // console.log("basic-popup-source: focusout");
     setTimeout(function() {
       this.classList.remove('focused');
       if (this.opened) {
@@ -323,9 +334,12 @@ Polymer({
     }
 
     if (handled) {
+      console.log("basic-combo-box: handled " + event.keyCode);
       event.preventDefault();
       event.stopPropagation();
       return false;
+    } else {
+      console.log("basic-combo-box: NOT handled " + event.keyCode);
     }
 
   },
@@ -338,14 +352,7 @@ Polymer({
     if (this.root.activeElement) {
       // The popup has been closed, but the focus is still in the component.
       // Leave the complete text selected.
-      this._selectText(0, this.value.length);
-    }
-  },
-
-  _selectText: function(start, end) {
-    var inputElement = this.inputElement;
-    if (inputElement) {
-      inputElement.setSelectionRange(start, end);
+      this.setSelectionRange(0, this.value.length);
     }
   }
 

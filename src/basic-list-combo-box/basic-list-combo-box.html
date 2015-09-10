@@ -44,10 +44,23 @@ Polymer({
 
   // Try to auto-complete the current text against the item contents.
   autoComplete: function() {
-    var item = this.$.listBox.collective.findItemWithTextPrefix(this.value);
-    if (this.opened && item) {
-      this.$.listBox.selectedItem = item;
-    }
+    // var prefix = this.value;
+    // var item = this.$.listBox.collective.findItemWithTextPrefix(prefix);
+    // if (item) {
+    //   // Found
+    //   this.$.listBox.selectedItem = item;
+    //   var fullText = item.textContent;
+    //
+    //   if (this.value !== fullText) {
+    //     this.value = fullText;
+    //   }
+    //
+    //   // Refine the implicit selection to just the auto-completed text.
+    //   this.$.comboBox.setSelectionRange(prefix.length, fullText.length);
+    // } else {
+    //   // Not found
+    //   this.$.listBox.selectedItem = null;
+    // }
   },
 
   is: 'basic-list-combo-box',
@@ -141,6 +154,7 @@ Polymer({
   },
 
   _keydown: function(event) {
+    console.log("basic-list-combo-box: " + event.keyCode);
     // Do AutoComplete on Space, or characters from zero (0) and up, ignoring
     // any combinations that involve Alt or Ctrl.
     if ((event.keyCode === 32 || event.keyCode >= 48)
@@ -164,9 +178,13 @@ Polymer({
   _selectedItemChanged: function() {
     var selectedItem = this.selectedItem;
     var inputElement = this.inputElement;
-    if (inputElement) {
+    if (selectedItem && inputElement) {
       var value = selectedItem instanceof HTMLElement ? selectedItem.textContent : selectedItem;
       inputElement.value = value;
+
+      // By default, select the complete item text.
+      // AutoComplete may refine this selection.
+      this.$.comboBox.setSelectionRange(0, value.length);
     }
   }
 
