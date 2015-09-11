@@ -43,12 +43,16 @@ Polymer({
   // Use "fit" to override IronFitBehavior, which is currently hard-wired into
   // IronOverlayBehavior.
   fit: function() {
-    this.positionWithRespectTo(this.fitInto);
+    this.positionAdjacentTo(this.fitInto);
   },
 
   is: 'basic-popup',
 
-  positionWithRespectTo: function(target) {
+  /*
+   * Position the popup so that it touches the indicated target.
+   * Show the popup below the target and left-aligned if there's room.
+   */
+  positionAdjacentTo: function(target) {
 
     var targetRect = target.getBoundingClientRect();
 
