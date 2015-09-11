@@ -172,13 +172,9 @@ Polymer({
       this._focusin(event);
     }.bind(this), true);
     this.addEventListener('blur', function(event) {
-      this._focusout();
+      this._focusout(event);
     }.bind(this), true);
 
-    this.inputElement.addEventListener('keydown', function(event) {
-      console.log("input: " + event.keyCode);
-      // event.preventDefault();
-    });
     this.addEventListener('keydown', function(event) {
       return this._keydown(event);
     }.bind(this));
@@ -294,7 +290,7 @@ Polymer({
   // We want to close the popup if the focus moves completely outside the
   // combo box; i.e., is not within the input box or the popup.
   //
-  _focusout: function() {
+  _focusout: function(event) {
     // If the user clicks in the popup, the input will blur before we've had a
     // chance to even register the click. And at the point the blur handler here
     // is invoked, the new activeElement is not yet known, so we can't test
@@ -313,13 +309,19 @@ Polymer({
     }.bind(this));
   },
 
-  _keydown: function() {
+  _keydown: function(event) {
 
     var handled = false;
 
     if (this.opened && this.popupKeys.indexOf(event.keyCode) >= 0) {
-      // The popup wants to handle this key.
-      this._dispatchKeydownEventToPopup(event);
+      // The popup wants to handle this key. Dispatch the key to the popup, but
+      // do this in a timeout so as to let the current keyboard event completely
+      // finish. Dispatching before that happens seems to confuse things --
+      // among other things, marking the real event with preventDefault()
+      // doesn't seem to actually suppress the default behavior.
+      setTimeout(function() {
+        this._dispatchKeydownEventToPopup(event);
+      }.bind(this));
       handled = true;
     } else {
       switch (event.keyCode) {
@@ -334,12 +336,9 @@ Polymer({
     }
 
     if (handled) {
-      console.log("basic-combo-box: handled " + event.keyCode);
       event.preventDefault();
       event.stopPropagation();
       return false;
-    } else {
-      console.log("basic-combo-box: NOT handled " + event.keyCode);
     }
 
   },

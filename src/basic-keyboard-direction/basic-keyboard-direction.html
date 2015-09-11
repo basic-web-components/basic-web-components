@@ -49,12 +49,9 @@ window.Basic.KeyboardDirection = {
       }
 
       if (handled) {
-        console.log("KeyboardDirection: handled " + event.keyCode);
         event.preventDefault();
         event.stopPropagation();
         return false;
-      } else {
-        console.log("KeyboardDirection: NOT handled " + event.keyCode);
       }
     }
 
