@@ -49,15 +49,17 @@ Polymer({
     var item = this.$.listBox.collective.findItemWithTextPrefix(prefix);
     if (item) {
       // Found
+      this._updateTextWhenSelectedItemChanges = false;
       this.$.listBox.selectedItem = item;
+      
       var fullText = item.textContent;
-
       if (this.value !== fullText) {
         this.value = fullText;
       }
 
-      // Refine the implicit selection to just the auto-completed text.
+      // Select just the auto-completed portion of the text.
       this.$.comboBox.setSelectionRange(prefix.length, fullText.length);
+      this._updateTextWhenSelectedItemChanges = true;
     } else {
       // Not found
       this.$.listBox.selectedItem = null;
@@ -155,10 +157,10 @@ Polymer({
   },
 
   _keydown: function(event) {
-    // Do AutoComplete on Space, or characters from zero (0) and up, ignoring
-    // any combinations that involve Alt or Ctrl.
     if ((event.keyCode === 32 || event.keyCode >= 48)
         && !(event.altKey || event.ctrlKey || event.metaKey)) {
+      // Do AutoComplete on Space, or characters from zero (0) and up, ignoring
+      // any combinations that involve Alt or Ctrl.
       // We want AutoComplete to happen as soon as the user begins typing, but
       // using keydown creates a problem: the input control's content won't
       // reflect the latest keypress yet. So we wait to give the keydown event a
@@ -166,6 +168,13 @@ Polymer({
       // against the resulting text.
       setTimeout(function() {
         this.autoComplete();
+      }.bind(this));
+    } else if (event.keyCode === 8 || event.keyCode === 46) {
+      // After Backspace or Delete key, see if the resulting text is an exact
+      // match for an existing list item.
+      // Set a timeout, for same reason as with AutoComplete.
+      setTimeout(function() {
+        this._selectExactMatch();
       }.bind(this));
     }
   },
@@ -176,17 +185,30 @@ Polymer({
   },
 
   _selectedItemChanged: function() {
-    var selectedItem = this.selectedItem;
-    var inputElement = this.inputElement;
-    if (selectedItem && inputElement) {
-      var value = selectedItem instanceof HTMLElement ? selectedItem.textContent : selectedItem;
-      inputElement.value = value;
+    if (this._updateTextWhenSelectedItemChanges) {
+      var selectedItem = this.selectedItem;
+      var inputElement = this.inputElement;
+      if (selectedItem && inputElement) {
+        var value = selectedItem instanceof HTMLElement ? selectedItem.textContent : selectedItem;
+        inputElement.value = value;
 
-      // By default, select the complete item text.
-      // AutoComplete may refine this selection.
-      this.$.comboBox.setSelectionRange(0, value.length);
+        // Select the complete item text.
+        this.$.comboBox.setSelectionRange(0, value.length);
+      }
     }
-  }
+  },
+
+  _selectExactMatch: function() {
+    var text = this.value;
+    var item = this.$.listBox.collective.findItemWithText(text);
+    this._updateTextWhenSelectedItemChanges = false;
+    this.$.listBox.selectedItem = item;
+    this._updateTextWhenSelectedItemChanges = true;
+  },
+  
+  // If true, when the selected item changes, show the corresponding text
+  // in the input element.
+  _updateTextWhenSelectedItemChanges: true
 
 });
 </script>

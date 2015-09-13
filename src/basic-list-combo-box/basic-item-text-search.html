@@ -6,8 +6,18 @@ window.Basic = window.Basic || {};
 window.Basic.ItemTextSearch = {
 
   contribute: {
+    
+    // Return the item whose text matches exactly (ignoring case), else null.
+    findItemWithText: function(text) {
+      var itemTextContents = this.collective.itemTextContents;
+      var searchText = text.toLowerCase();
+      var index = itemTextContents.indexOf(searchText);
+      return (index >= 0) ?
+        this.collective.items[index] :
+        null;
+    },
 
-    // Return the item with the given prefix, else null.
+    // Return the item with the given prefix, else null. Ignore case.
     findItemWithTextPrefix: function(prefix) {
       var itemTextContents = this.collective.itemTextContents;
       var prefixLength = prefix.length;
