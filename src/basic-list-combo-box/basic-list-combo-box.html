@@ -198,7 +198,6 @@ Polymer({
       setTimeout(function() {
         this.autoComplete();
       }.bind(this));
-      handled = true;
     } else if (event.keyCode === 8 || event.keyCode === 46) {
       // After Backspace or Delete key, see if the resulting text is an exact
       // match for an existing list item.
@@ -206,7 +205,6 @@ Polymer({
       setTimeout(function() {
         this._selectExactMatch();
       }.bind(this));
-      handled = true;
     }
 
     if (handled) {
