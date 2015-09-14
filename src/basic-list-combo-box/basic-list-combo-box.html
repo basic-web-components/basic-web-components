@@ -65,6 +65,14 @@ Polymer({
       this.$.listBox.selectedItem = null;
     }
   },
+  
+  cancel: function() {
+    this.$.comboBox.cancel();
+  },
+
+  close: function() {
+    this.$.comboBox.close();
+  },
 
   is: 'basic-list-combo-box',
 
@@ -74,6 +82,10 @@ Polymer({
 
   get items() {
     return this.$.listBox.items;
+  },
+  
+  open: function() {
+    this.$.comboBox.open();
   },
 
   get opened() {
@@ -95,6 +107,15 @@ Polymer({
 
     this.addEventListener('keydown', function(event) {
       this._keydown(event);
+    }.bind(this));
+    this.$.listBox.addEventListener('click', function(event) {
+      console.log('click');
+      // Clicking an item in the list box should dismiss the popup.
+      // (It will also cause the list selection to change, and thereby update
+      // the input element, but that's handled separately.)
+      if (this.opened) {
+        this.close();
+      }
     }.bind(this));
 
     // HACK: Ask to do work when the combo box opens.
