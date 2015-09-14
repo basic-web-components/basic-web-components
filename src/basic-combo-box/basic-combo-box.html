@@ -186,6 +186,13 @@ Polymer({
       this._focusout(event);
     }.bind(this), true);
 
+    // Click within the input area should open the popup if it's not already
+    // open,.
+    this.$.inputContainer.addEventListener('click', function(event) {
+      if (!this.opened) {
+        this.open();
+      }
+    }.bind(this));
     this.addEventListener('keydown', function(event) {
       return this._keydown(event);
     }.bind(this));
