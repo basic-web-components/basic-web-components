@@ -29,9 +29,9 @@ A text input area with a popup presenting a list of common input choices.
     }
 
     #layoutContainer {
-      align-items: center;
-      display: -webkit-inline-flex;
-      display: inline-flex;
+      align-items: stretch;
+      display: -webkit-flex;
+      display: flex;
       -webkit-flex: 1;
       flex: 1;
     }
@@ -42,14 +42,19 @@ A text input area with a popup presenting a list of common input choices.
       outline-offset: -2px;
     }
 
-    #testContainer,
     #inputContainer {
-      display: -webkit-inline-flex;
-      display: inline-flex;
       -webkit-flex: 1;
       flex: 1;
     }
 
+    /*
+     * Note: We want the input to be as wide as its container. A nice way to
+     * achieve this would be to use flexbox. However, Chrome has a bug (as of
+     * 9/14/15) that won't align things along the baseline when flexbox is used.
+     * See https://code.google.com/p/chromium/issues/detail?id=401185. The
+     * simplest way to avoid this is to just set the width of the text input to
+     * 100% of its parent.
+     */
     .comboBoxInput[type='text'] {
       border: none;
       box-sizing: border-box;
@@ -57,32 +62,16 @@ A text input area with a popup presenting a list of common input choices.
       flex: 1;
       font-family: inherit; /* Override browser input styling */
       font-size: inherit;
-      font-size: 24px;
       outline: none;
       padding: 2px;
+      width: 100%;
     }
     
-    /*
-     * HACK: If the text input is empty, Chrome doesn't seem to want input along
-     * the baseline. This causes text in the same line to not be precisely
-     * aligned with the combo box. As a workaround, we include a hidden text
-     * input with non-empty content soley to force Chrome to align the combo
-     * box along the text baseline. This is lame -- other suggestions for a fix,
-     * or even a cleaner hack, would be greatly appreciated.
-     */
-    #layoutHackInput {
-      flex: 0 0 0px;
-      padding: 0px;
-      visibility: hidden;
-      width: 0px;
-    }
-
     #buttonContainer {
       -webkit-align-items: stretch;
       align-items: stretch;
       display: -webkit-flex;
       display: flex;
-      font-size: 32px;
     }
 
     /* Generic styling */
@@ -116,7 +105,6 @@ A text input area with a popup presenting a list of common input choices.
 
     <basic-popup-source id="popupSource" dont-open-on-click>
       <div id="layoutContainer">
-        <input id="layoutHackInput" class="comboBoxInput" type="text" value=" " tabindex="-1"></input>
         <div id="inputContainer">
           <content id="contentInput" select=".comboBoxInput">
             <input id="defaultInput" class="comboBoxInput" type="text">
