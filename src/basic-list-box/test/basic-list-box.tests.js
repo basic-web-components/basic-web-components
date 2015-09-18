@@ -74,6 +74,17 @@ suite('basic-list-box', function() {
     });
   });
 
+  test("changing selection raises the selected-item-changed event", function(done) {
+    var listBox = createSampleListBox();
+    Polymer.dom(container).appendChild(listBox);
+    flush(function() {
+      listBox.addEventListener('selected-item-changed', function() {
+        done();
+      });
+      listBox.selectedIndex = 1;
+    });
+  });
+
 });
 
 function createSampleListBox() {
