@@ -178,9 +178,19 @@ Polymer({
   },
 
   properties: {
+
+    selectedIndex: {
+      type: Number
+    },
+
+    selectedItem: {
+      type: Object
+    },
+
     target: {
       value: 'shadow'
     }
+
   },
 
   /**
@@ -191,7 +201,10 @@ Polymer({
    * @type Number
    */
   get selectedIndex() {
-    return this.collective.selectedIndex;
+    // See note at basic-item-selection's selectedIndex getter.
+    if (this._readied) {
+      return this.collective.selectedIndex;
+    }
   },
   set selectedIndex(index) {
     this.collective.selectedIndex = index;

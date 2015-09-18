@@ -164,6 +164,10 @@ Polymer({
       type: Number
     },
 
+    selectedItem: {
+      type: Object
+    },
+
     target: {
       value: 'shadow'
     }
@@ -178,12 +182,7 @@ Polymer({
    * @type Number
    */
   get selectedIndex() {
-    // HACK: Proxied getter/setter properties like this one can't be set via
-    // attributes. See https://github.com/Polymer/polymer/issues/2454.
-    // We currently hack around this by only returning a value for this
-    // property if the element is ready. A negative side effect is that
-    // inspecting this // property before the element is ready will always
-    // return undefined.
+    // See note at basic-item-selection's selectedIndex getter.
     if (this._readied) {
       return this.collective.selectedIndex;
     }

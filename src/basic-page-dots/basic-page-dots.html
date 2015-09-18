@@ -101,13 +101,20 @@ Polymer({
       }
     },
 
-    // TODO: Move the requirement for a selction to basic-item-selection. This
-    // should ideally pick the nearest item to the previously-selected item.
-    // collectiveChanged: function() {
-    //   if (this.collective.selectedItem === null && this.collective.items != null && this.collective.selectFirst) {
-    //     this.collective.selectFirst();
-    //   }
-    // },
+    collectiveChanged: function() {
+      // Apply any selection made before assimilation.
+      if (this._prematureSelectedIndex
+          && 'selectedIndex' in this.collective
+          && this.collective.selectedIndex === -1) {
+        this.collective.selectedIndex = this._prematureSelectedIndex;
+        this._prematureSelectedIndex = null;
+      }
+      // TODO: Move the requirement for a selction to basic-item-selection. This
+      // should ideally pick the nearest item to the previously-selected item.
+      //   if (this.collective.selectedItem === null && this.collective.items != null && this.collective.selectFirst) {
+      //     this.collective.selectFirst();
+      //   }
+    },
 
     // TODO: Seems like this ultimately belongs in Collective.
     itemsChanged: function() {
@@ -139,6 +146,18 @@ Polymer({
 
   is: 'basic-page-dots',
 
+  properties: {
+
+    selectedIndex: {
+      type: Number
+    },
+
+    selectedItem: {
+      type: Object
+    }
+
+  },
+
   ready: function() {
     this.$.dots.addEventListener('click', function(event) {
       this.dotClick(event);
@@ -153,10 +172,18 @@ Polymer({
    * @type Number
    */
   get selectedIndex() {
-    return this.collective.selectedIndex;
+    // See note at basic-item-selection's selectedIndex getter.
+    if (this._readied) {
+      return this.collective.selectedIndex;
+    }
   },
   set selectedIndex(index) {
-    this.collective.selectedIndex = index;
+    if ('selectedIndex' in this.collective) {
+      this.collective.selectedIndex = index;
+    } else {
+      // Selection is being made before the collective supports it.
+      this._prematureSelectedIndex = index;
+    }
   },
 
   /**
@@ -196,7 +223,10 @@ Polymer({
         dotContainer.appendChild(newDot);
       }
     }
-  }
+  },
+
+  // Tracks selection before the collective supports it.
+  _prematureSelectedIndex: null
 
 });
 </script>

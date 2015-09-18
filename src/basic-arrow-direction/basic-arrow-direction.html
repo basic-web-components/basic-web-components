@@ -10,7 +10,7 @@ Clicking the left/right button maps to the corresponding left/right direction.
 
 <dom-module id="basic-arrow-direction">
   <template>
-    
+
     <style>
     :host {
       display: -webkit-inline-flex;
@@ -104,6 +104,16 @@ Polymer({
 
   contribute: {
 
+    collectiveChanged: function() {
+      // Apply any selection made before assimilation.
+      if (this._prematureSelectedIndex
+          && 'selectedIndex' in this.collective
+          && this.collective.selectedIndex === -1) {
+        this.collective.selectedIndex = this._prematureSelectedIndex;
+        this._prematureSelectedIndex = null;
+      }
+    },
+
     // Default implementations. These will typically be handled by other aspects
     // in the collective.
     goLeft: Basic.Collective.defaultMethod,
@@ -129,6 +139,18 @@ Polymer({
 
   is: 'basic-arrow-direction',
 
+  properties: {
+
+    selectedIndex: {
+      type: Number
+    },
+
+    selectedItem: {
+      type: Object
+    }
+
+  },
+
   ready: function() {
     window.addEventListener('mousemove', function(event) {
       // console.log('mousemove');
@@ -144,10 +166,18 @@ Polymer({
    * @type Number
    */
   get selectedIndex() {
-    return this.collective.selectedIndex;
+    // See note at basic-item-selection's selectedIndex getter.
+    if (this._readied) {
+      return this.collective.selectedIndex;
+    }
   },
   set selectedIndex(index) {
-    this.collective.selectedIndex = index;
+    if ('selectedIndex' in this.collective) {
+      this.collective.selectedIndex = index;
+    } else {
+      // Selection is being made before the collective supports it.
+      this._prematureSelectedIndex = index;
+    }
   },
 
   /**
@@ -161,7 +191,10 @@ Polymer({
   },
   set selectedItem(item) {
     this.collective.selectedItem = item;
-  }
+  },
+
+  // Tracks selection before the collective supports it.
+  _prematureSelectedIndex: null
 
 });
 </script>
