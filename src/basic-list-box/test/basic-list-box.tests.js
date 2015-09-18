@@ -63,6 +63,17 @@ suite('basic-list-box', function() {
     });
   });
 
+  test("can set selectedIndex in markup", function(done) {
+    var html = '<basic-list-box selected-index="0"><span></span></basic-list-box>';
+    Polymer.dom(container).innerHTML = html;
+    flush(function() {
+      var list = Polymer.dom(container).children[0];
+      var span = Polymer.dom(list).children[0];
+      assert.equal(list.selectedItem, span);
+      done();
+    });
+  });
+
 });
 
 function createSampleListBox() {
