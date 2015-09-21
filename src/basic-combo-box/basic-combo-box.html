@@ -159,11 +159,6 @@ Polymer({
       popup.style.minWidth = width + "px";
     }
 
-    // HACK: Do our hacky stopgap for subclass method override.
-    if (this._openHook) {
-      this._openHook();
-    }
-
     this.$.popupSource.open();
 
     // If the input element doesn't already have focus (e.g., the dropdown
@@ -173,6 +168,9 @@ Polymer({
     if (this.root.activeElement !== this.inputElement) {
       this.inputElement.focus();
     }
+
+    var event = new CustomEvent('basic-combo-box-opened');
+    this.dispatchEvent(event);
   },
 
   get opened() {

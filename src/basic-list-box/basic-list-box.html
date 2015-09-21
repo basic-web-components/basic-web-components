@@ -175,6 +175,21 @@ Polymer({
   },
 
   /**
+   * Ensures the selected item is visible. This normally happens by default.
+   * However, if the list box is hidden when the selection is changed, the
+   * auto-scrolling feature won't apply. In that situation, call this method
+   * after the list box becomes visible.
+   *
+   * @method scrollSelectedItemIntoView
+   */
+  scrollSelectedItemIntoView: function() {
+    var item = this.collective.selectedItem;
+    if (item) {
+      this.collective.scrollItemIntoView(item);
+    }
+  },
+
+  /**
    * The index of the item which is currently selected, or -1 if there is no
    * selection.
    *

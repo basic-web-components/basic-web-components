@@ -51,7 +51,7 @@ Polymer({
       // Found
       this._updateTextWhenSelectedItemChanges = false;
       this.$.listBox.selectedItem = item;
-      
+
       var fullText = item.textContent;
       if (this.value !== fullText) {
         this.value = fullText;
@@ -65,7 +65,7 @@ Polymer({
       this.$.listBox.selectedItem = null;
     }
   },
-  
+
   cancel: function() {
     this.$.comboBox.cancel();
   },
@@ -83,7 +83,7 @@ Polymer({
   get items() {
     return this.$.listBox.items;
   },
-  
+
   open: function() {
     this.$.comboBox.open();
   },
@@ -117,8 +117,10 @@ Polymer({
       }
     }.bind(this));
 
-    // HACK: Ask to do work when the combo box opens.
-    this.$.comboBox._openHook = this._open.bind(this);
+    // Do work after the combo box opens.
+    this.$.comboBox.addEventListener('basic-combo-box-opened', function(event) {
+      this._opened();
+    }.bind(this));
 
     // Indicate which navigation keys we want to handle.
     this.$.comboBox.popupKeys = [
@@ -177,9 +179,9 @@ Polymer({
   },
 
   _keydown: function(event) {
-    
+
     var handled = false;
-    
+
     if (event.keyCode === 13) {
       // Pressing Return with the popup open closes the popup.
       if (this.opened) {
@@ -214,9 +216,14 @@ Polymer({
     }
   },
 
-  _open: function() {
+  _opened: function() {
     // Try to select the list item whose text matches the current text.
-    this.$.listBox.value = this.value;
+    // Wait a tick so the list box is actually be visible, so that the list
+    // box's auto-scroll feature can work.
+    setTimeout(function() {
+      this.$.listBox.value = this.value;
+      this.$.listBox.scrollSelectedItemIntoView();
+    }.bind(this));
   },
 
   _selectedItemChanged: function() {
@@ -240,7 +247,7 @@ Polymer({
     this.$.listBox.selectedItem = item;
     this._updateTextWhenSelectedItemChanges = true;
   },
-  
+
   // If true, when the selected item changes, show the corresponding text
   // in the input element.
   _updateTextWhenSelectedItemChanges: true
