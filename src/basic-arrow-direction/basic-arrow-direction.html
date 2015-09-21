@@ -152,9 +152,26 @@ Polymer({
   },
 
   ready: function() {
+    // We try to detect the presence of a mouse by listening for mousemove
+    // events which are *not* the result of a mousedown. On a touch device,
+    // a tap on the page will generate a fake mousemove, followed by a
+    // mousedown. We don't want to respond to those fake mousemove events.
+    // To discriminate between fake and real mousemove events, when we get a
+    // mousemove event, we wait for a tick to see if the same location is
+    // reported as the location of a subsequent mousedown.
+    window.addEventListener('mousedown', function(event) {
+      this._lastMouseDownPageX = event.pageX;
+      this._lastMouseDownPageY = event.pageY;
+    }.bind(this));
     window.addEventListener('mousemove', function(event) {
-      // console.log('mousemove');
-      this.classList.add('mouseDetected');
+      setTimeout(function() {
+        if (event.pageX !== this._lastMouseDownPageX ||
+            event.pageY !== this._lastMouseDownPageY) {
+          // mousemove event was at a location other than the last mousedown,
+          // and hence most likely a real mousemove event.
+          this._mouseDetected();
+        }
+      }.bind(this));
     }.bind(this));
   },
 
@@ -191,6 +208,10 @@ Polymer({
   },
   set selectedItem(item) {
     this.collective.selectedItem = item;
+  },
+
+  _mouseDetected: function() {
+    this.classList.add('mouseDetected');
   },
 
   // Tracks selection before the collective supports it.
