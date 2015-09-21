@@ -152,27 +152,7 @@ Polymer({
   },
 
   ready: function() {
-    // We try to detect the presence of a mouse by listening for mousemove
-    // events which are *not* the result of a mousedown. On a touch device,
-    // a tap on the page will generate a fake mousemove, followed by a
-    // mousedown. We don't want to respond to those fake mousemove events.
-    // To discriminate between fake and real mousemove events, when we get a
-    // mousemove event, we wait for a tick to see if the same location is
-    // reported as the location of a subsequent mousedown.
-    window.addEventListener('mousedown', function(event) {
-      this._lastMouseDownPageX = event.pageX;
-      this._lastMouseDownPageY = event.pageY;
-    }.bind(this));
-    window.addEventListener('mousemove', function(event) {
-      setTimeout(function() {
-        if (event.pageX !== this._lastMouseDownPageX ||
-            event.pageY !== this._lastMouseDownPageY) {
-          // mousemove event was at a location other than the last mousedown,
-          // and hence most likely a real mousemove event.
-          this._mouseDetected();
-        }
-      }.bind(this));
-    }.bind(this));
+    this._listenForMouse();
   },
 
   /**
@@ -210,8 +190,44 @@ Polymer({
     this.collective.selectedItem = item;
   },
 
+  // We try to detect the presence of a mouse by listening for mousemove events
+  // which are *not* the result of a mousedown. On a touch device, a tap on the
+  // page will generate a fake mousemove, followed by a mousedown. We don't want
+  // to respond to those fake mousemove events. To discriminate between fake and
+  // real mousemove events, when we get a mousemove event, we wait for a tick to
+  // see if the same location is reported as the location of a subsequent
+  // mousedown.
+  _listenForMouse: function() {
+    this._mousedownListener = function(event) {
+      // console.log("mousedown");
+      this._lastMouseDownPageX = event.pageX;
+      this._lastMouseDownPageY = event.pageY;
+    }.bind(this);
+    window.addEventListener('mousedown', this._mousedownListener);
+
+    this._mousemoveListener = function(event) {
+      // console.log("mousemove");
+      setTimeout(function() {
+        if (event.pageX !== this._lastMouseDownPageX ||
+            event.pageY !== this._lastMouseDownPageY) {
+          // mousemove event was at a location other than the last mousedown,
+          // and hence most likely a real mousemove event.
+          this._mouseDetected();
+        }
+      }.bind(this));
+    }.bind(this);
+    window.addEventListener('mousemove', this._mousemoveListener);
+  },
+
   _mouseDetected: function() {
+    // console.log("mouse detected");
     this.classList.add('mouseDetected');
+
+    // We can stop listening for mouse events now.
+    window.removeEventListener('mousedown', this._mousedownListener);
+    window.removeEventListener('mousemove', this._mousemoveListener);
+    this._mousedownListener = null;
+    this._mousemoveListener = null;
   },
 
   // Tracks selection before the collective supports it.
