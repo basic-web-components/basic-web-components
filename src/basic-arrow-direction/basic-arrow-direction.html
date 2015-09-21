@@ -2,6 +2,11 @@
 Aspect used to add prominent left and right arrow buttons to a wrapped child.
 Clicking the left/right button maps to the corresponding left/right direction.
 
+By default, the arrow buttons are shown on devices with a mouse or mouse-like
+point device; they are not shown on a touch-capable device unless mouse movement
+is detected. To cause the buttons to always appear, apply the 'showArrows' CSS
+class.
+
 @element basic-arrow-direction
 -->
 
@@ -46,7 +51,7 @@ Clicking the left/right button maps to the corresponding left/right direction.
       fill: rgba( 0, 0, 0, 0.9 );
     }
 
-    :host(:not(.mouseDetected)) .navigationButton {
+    :host(:not(.showArrows)) .navigationButton {
       opacity: 0;
       visibility: hidden;
     }
@@ -152,7 +157,17 @@ Polymer({
   },
 
   ready: function() {
-    this._listenForMouse();
+    if (!this.classList.contains('showArrows')) {
+      // Determine whether we should show arrow buttons or not.
+      if (this._deviceSupportsTouch()) {
+        // A touch device might also support a mouse, but we can't know whether
+        // there's actually a mouse until we hear from it.
+        this._listenForMouse();
+      } else {
+        // The device doesn't support touch, so assume it has a mouse.
+        this._showArrows();
+      }
+    }
   },
 
   /**
@@ -190,6 +205,11 @@ Polymer({
     this.collective.selectedItem = item;
   },
 
+  _deviceSupportsTouch: function() {
+    return 'ontouchstart' in window ||
+        (window.DocumentTouch && document instanceof DocumentTouch);
+  },
+
   // We try to detect the presence of a mouse by listening for mousemove events
   // which are *not* the result of a mousedown. On a touch device, a tap on the
   // page will generate a fake mousemove, followed by a mousedown. We don't want
@@ -221,7 +241,7 @@ Polymer({
 
   _mouseDetected: function() {
     // console.log("mouse detected");
-    this.classList.add('mouseDetected');
+    this._showArrows();
 
     // We can stop listening for mouse events now.
     window.removeEventListener('mousedown', this._mousedownListener);
@@ -231,7 +251,11 @@ Polymer({
   },
 
   // Tracks selection before the collective supports it.
-  _prematureSelectedIndex: null
+  _prematureSelectedIndex: null,
+
+  _showArrows: function() {
+    this.classList.add('showArrows');
+  }
 
 });
 </script>
