@@ -207,6 +207,15 @@ Polymer({
       this._popupClosed();
     }.bind(this));
 
+    // Suppress default mousedown behavior within the popup. The default
+    // behavior will try to move the focus away from the input element, so we
+    // want to suppress that.
+    this.addEventListener('mousedown', function(event) {
+      if (this.opened && this._distributedInto(event.target, this.popupElement)) {
+        event.preventDefault();
+      }
+    }.bind(this), true);
+
     // Show default value.
     // TODO: Shouldn't this happen automatically? If so, file a Polymer bug.
     var defaultValue = this.getAttribute('value');
@@ -289,6 +298,23 @@ Polymer({
     Object.defineProperty(newEvent, 'keyCode', { value: event.keyCode });
 
     this.popupElement.dispatchEvent(newEvent);
+  },
+
+  // Return true if the given element is inside the indicated container: either
+  // in the container's DOM directly, or distributed to a content element in the
+  // container's DOM.
+  _distributedInto: function(element, container) {
+    if (container.contains(element)) {
+      return true;
+    } else {
+      var insertionPoints = Polymer.dom(element).getDestinationInsertionPoints();
+      for (var i in insertionPoints) {
+        if (container.contains(insertionPoints[i])) {
+          return true;
+        }
+      }
+    }
+    return false;
   },
 
   _firstElementDistributedTo: function(contentElement) {
