@@ -48,9 +48,15 @@ Polymer({
 
   is: 'basic-popup',
 
-  /*
+  /**
    * Position the popup so that it touches the indicated target.
    * Show the popup below the target and left-aligned if there's room.
+   *
+   * @method positionAdjacentTo
+   */
+  /*
+   * REVIEW: This is more specific than the name "basic-popup" implies. Perhaps
+   * This should be moved to basic-popup-source.
    */
   positionAdjacentTo: function(target) {
 

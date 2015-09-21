@@ -11,12 +11,12 @@ A button that produces a popup when clicked.
 <dom-module id="basic-popup-button">
   <template>
     <basic-popup-source>
-      <basic-button>
+      <button is="basic-button">
         <content select=":not(.popupIndicator):not(.popup)"></content>
         <span id="indicator">
           <content select=".popupIndicator">▼</content>
         </span>
-      </basic-button>
+      </button>
       <content select=".popup"></content>
     </basic-popup-source>
   </template>
