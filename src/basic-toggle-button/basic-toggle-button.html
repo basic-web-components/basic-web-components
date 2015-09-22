@@ -1,0 +1,88 @@
+<!--
+A button that can be toggled between an active (pressed) and inactive state.
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-shared/basic-shared.html">
+<link rel="import" href="../basic-button/basic-button-styles.html">
+
+<dom-module id="basic-toggle-button">
+  <template>
+
+    <style include="basic-button-styles"></style>
+
+    <style>
+    :host([generic=''][active]) {
+      color: #333;
+      /*background: #e6e6e6;*/
+      background: #d4d4d4;
+      border-color: #adadad;
+      -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    }
+
+    :host([generic=''][active]:active) {
+      background: #c2c2c2;
+      border-color: #8c8c8c;
+    }
+    </style>
+
+    <content></content>
+
+  </template>
+</dom-module>
+
+<script>
+Polymer({
+
+  behaviors: [Basic.Generic],
+
+  extends: 'button',
+
+  is: 'basic-toggle-button',
+
+  listeners: {
+    click: '_click',
+    keydown: '_keydown'
+  },
+
+  properties: {
+
+    active: {
+      type: Boolean,
+      notify: true,
+      reflectToAttribute: true
+    }
+
+  },
+
+  toggle: function() {
+    this.active = !this.active;
+    this.setAttribute('aria-pressed', this.active);
+  },
+
+  _click: function() {
+    this.toggle();
+  },
+
+  _keydown: function(event) {
+
+    var handled = false;
+
+    switch (event.keyCode) {
+      case 32: // Space
+        this.toggle();
+        handled = true;
+        break;
+    }
+
+    if (handled) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+
+    return handled;
+  }
+
+});
+</script>
