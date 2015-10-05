@@ -18,6 +18,7 @@ window.Basic.ContentItems = {
     },
 
     contentChanged: function() {
+      this._items = null;
       this.collective.itemsChanged();
     },
 
@@ -63,12 +64,19 @@ window.Basic.ContentItems = {
      * @property items
      * @type [Object]
      */
+    // TODO: property notifications so elements can bind to this property
     get items() {
-      // TODO: Memoize
-      // TODO: Filter out auxiliary content.
-      // TODO: property notifications so elements can bind to this property
-      return this.collective.content;
-    }
+      if (this._items == null) {
+        var items = this.collective.content;
+        this._items = [].filter.call(items, function(item) {
+          return true;
+        });
+      }
+      return this._items;
+    },
+
+    // Memoized array of items
+    _items: null
 
   },
 
