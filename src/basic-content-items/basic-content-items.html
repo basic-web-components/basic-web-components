@@ -1,6 +1,9 @@
 <!--
 Aspect that lets a component collective DOM content as list items.
 
+Auxiliary elements which are not normally visible are filtered out. For now,
+For now, these are: link, script, style, and template.
+
 @element basic-content-items
 -->
 
@@ -67,10 +70,7 @@ window.Basic.ContentItems = {
     // TODO: property notifications so elements can bind to this property
     get items() {
       if (this._items == null) {
-        var items = this.collective.content;
-        this._items = [].filter.call(items, function(item) {
-          return true;
-        });
+        this._items = this._filterAuxiliaryElements(this.collective.content);
       }
       return this._items;
     },
@@ -80,7 +80,21 @@ window.Basic.ContentItems = {
 
   },
 
-  name: 'ContentItems'
+  name: 'ContentItems',
+
+  // Return the given elements, filtering out auxiliary elements that aren't
+  // typically visible. Items which are not elements are returned as is.
+  _filterAuxiliaryElements: function(items) {
+    var auxiliaryTags = [
+      'link',
+      'script',
+      'style',
+      'template'
+    ];
+    return [].filter.call(items, function(item) {
+      return !item.localName || auxiliaryTags.indexOf(item.localName) < 0;
+    });
+  }
 
 };
 
