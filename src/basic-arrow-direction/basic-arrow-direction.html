@@ -89,13 +89,13 @@ class.
     be redundant (that is, there should be other ways of navigating the list),
     we mark the button as aria-hidden so that assistive devices ignore them.
     -->
-    <button id="buttonLeft" class="navigationButton" on-click="goLeft" aria-hidden="true">
+    <button id="buttonLeft" class="navigationButton" aria-hidden="true">
       <iron-icon icon="chevron-left"></iron-icon>
     </button>
     <div id="arrowNavigationContainer">
       <content></content>
     </div>
-    <button id="buttonRight" class="navigationButton" on-click="goRight" aria-hidden="true">
+    <button id="buttonRight" class="navigationButton" aria-hidden="true">
       <iron-icon icon="chevron-right"></iron-icon>
     </button>
 
@@ -157,6 +157,16 @@ Polymer({
   },
 
   ready: function() {
+
+    this.$.buttonLeft.addEventListener('click', function(event) {
+      this.goLeft();
+      event.stopPropagation();
+    }.bind(this));
+    this.$.buttonRight.addEventListener('click', function(event) {
+      this.goRight();
+      event.stopPropagation();
+    }.bind(this));
+
     if (!this.classList.contains('showArrows')) {
       // Determine whether we should show arrow buttons or not.
       if (this._deviceSupportsTouch()) {
