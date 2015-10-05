@@ -77,8 +77,8 @@ Polymer({
     }
 
     if (handled) {
-      event.stopPropagation();
       event.preventDefault();
+      event.stopPropagation();
     }
 
     return handled;

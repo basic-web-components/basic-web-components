@@ -1,8 +1,12 @@
 <!--
-Aspect which maps direction keys (Left, Right, etc.) to direction semantics
-(goLeft, goRight, etc.).
+Handle list box-style prefix typing, in which the user can type a string to
+select the first item that begins with that string.
 
 @element basic-keyboard-prefix-selection
+-->
+<!--
+TODO: If the selection is changed by some other means (e.g., arrow keys) other
+than prefix typing, then that act should reset the prefix.
 -->
 
 <link rel="import" href="../basic-aspect/basic-aspect.html">
@@ -48,7 +52,7 @@ window.Basic.KeyboardPrefixSelection = {
 
       if (handled) {
         event.preventDefault();
-        return false;
+        event.stopPropagation();
       }
     },
 

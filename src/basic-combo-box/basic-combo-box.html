@@ -199,7 +199,7 @@ Polymer({
       }
     }.bind(this));
     this.addEventListener('keydown', function(event) {
-      return this._keydown(event);
+      this._keydown(event);
     }.bind(this));
     this.addEventListener('iron-overlay-closed', function(event) {
       this._popupClosed();
@@ -379,7 +379,6 @@ Polymer({
     if (handled) {
       event.preventDefault();
       event.stopPropagation();
-      return false;
     }
 
   },

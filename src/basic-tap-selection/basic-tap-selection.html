@@ -34,11 +34,10 @@ Polymer({
      */
     this.addEventListener('mousedown', function(event) {
       this._selectElement(event.target);
-      event.stopPropagation();
       // Note: We don't call preventDefault here. The default behavior for
       // mousedown includes setting keyboard focus if the element doesn't
       // already have the focus, and we want to preserve that behavior.
-      return false;
+      event.stopPropagation();
     }.bind(this));
   },
 
