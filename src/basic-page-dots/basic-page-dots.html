@@ -201,21 +201,17 @@ Polymer({
 
   _createDots: function(count) {
     var dotContainer = this.$.dots;
-    var existingDots = dotContainer.children;
-    var existingDotCount = existingDots.length;
-    if (count == existingDots.length) {
+    var existingDotCount = dotContainer.children.length;
+    if (count === existingDotCount) {
       return;
-    } else if (existingDots.length > count) {
+    } else if (existingDotCount > count) {
       // Remove extra dots.
-      for (var i = count; i < existingDotCount; i++) {
-        var existingDot = existingDots[i];
-        Polymer.dom(dotContainer).removeChild(existingDot);
+      while (dotContainer.children.length > count) {
+        Polymer.dom(dotContainer).removeChild(dotContainer.children[0]);
       }
     } else {
       // Create needed dots.
-      // var dotTemplate = this.$.dotTemplate;
       for (var i = existingDotCount; i < count; i++) {
-        // var newDot = document.importNode(dotTemplate.content, true);
         var newDot = document.createElement('div');
         newDot.classList.add('dot');
         newDot.classList.add('style-scope');
