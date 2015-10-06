@@ -84,20 +84,15 @@ Polymer({
   contribute: {
 
     applySelection: function(item, selected) {
+      var index = this.collective.indexOfItem(item);
+      // See if the corresponding dot has already been created.
+      // If not, the correct dot will be selected when it gets created.
       var dots = this.dots;
-      if (dots && dots.length > 0) {
-        var index = this.collective.indexOfItem(item);
+      if (dots && dots.length > index) {
         var dot = this.dots[index];
         if (dot) {
           dot.classList.toggle('selected', selected);
         }
-      } else {
-        // HACK: Dots haven't been created yet, because binding hasn't updated.
-        // Wait a tick and try again.
-        var callee = arguments.callee;
-        setTimeout(function() {
-          callee.call(this, item, selected);
-        }.bind(this));
       }
     },
 
@@ -200,6 +195,7 @@ Polymer({
   },
 
   _createDots: function(count) {
+    var selectedIndex = this.selectedIndex;
     var dotContainer = this.$.dots;
     var existingDotCount = dotContainer.children.length;
     if (count === existingDotCount) {
@@ -216,6 +212,7 @@ Polymer({
         newDot.classList.add('dot');
         newDot.classList.add('style-scope');
         newDot.classList.add('basic-page-dots');
+        newDot.classList.toggle('selected', i === selectedIndex);
         dotContainer.appendChild(newDot);
       }
     }
