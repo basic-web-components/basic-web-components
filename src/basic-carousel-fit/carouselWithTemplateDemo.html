@@ -1,0 +1,94 @@
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Carousel with template</title>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../basic-arrow-direction/basic-arrow-direction.html">
+  <link rel="import" href="../basic-framed-content/basic-framed-content.html">
+  <link rel="import" href="basic-carousel-fit.html">
+
+  <style>
+  body,
+  button,
+  input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .emojiSlide {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .emoji {
+    /*
+     * NOTE: Mobile Safari will not scale emoji above 16px.
+     * http://stackoverflow.com/questions/19702013/emojis-wont-scale-beyond-16px-font-size-on-ios-7
+     */
+    font-size: 72px;
+  }
+
+  .description {
+    text-align: center;
+    width: 200px;
+  }
+  </style>
+
+  <script>
+  var emojis = [
+    {emoji: "😁", description: "Grinning face with smiling eyes" },
+    {emoji: "😂", description: "Face with tears of joy" },
+    {emoji: "😃", description: "Smiling face with open mouth" },
+    {emoji: "😄", description: "Smiling face with open mouth and smiling eyes" },
+    {emoji: "😅", description: "Smiling face with open mouth and cold sweat" },
+    {emoji: "😆", description: "Smiling face with open mouth and tightly-closed eyes" },
+    {emoji: "😉", description: "Winking face" },
+    {emoji: "😊", description: "Smiling face with smiling eyes" },
+    {emoji: "😋", description: "Face savouring delicious food" },
+    {emoji: "😌", description: "Relieved face" },
+    {emoji: "😍", description: "Smiling face with heart-shaped eyes" },
+    {emoji: "😏", description: "Smirking face" },
+    {emoji: "😒", description: "Unamused face" },
+    {emoji: "😓", description: "Face with cold sweat" },
+    {emoji: "😔", description: "Pensive face" },
+    {emoji: "😖", description: "Confounded face" },
+    {emoji: "😘", description: "Face throwing a kiss" },
+    {emoji: "😚", description: "Kissing face with closed eyes" }
+  ];
+
+  document.addEventListener('WebComponentsReady', function() {
+    document.querySelector("#emojiRepeater").items = emojis;
+    document.body.removeAttribute('unresolved');
+  });
+  </script>
+</head>
+
+<body unresolved>
+<basic-framed-content>
+<basic-arrow-direction target="child" aria-label="Emoji">
+  <basic-carousel-fit id="emojiCarousel">
+    <template is="dom-repeat" id="emojiRepeater">
+      <div class="emojiSlide">
+        <div class="emoji">{{item.emoji}}</div>
+        <div class="description">{{item.description}}</div>
+      </div>
+    </template>
+  </basic-carousel-fit>
+</basic-arrow-direction>
+</basic-framed-content>
+</body>
+
+</html>
