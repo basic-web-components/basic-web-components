@@ -1,15 +1,15 @@
 {
   "name": "basic-days-of-week",
   "description": "The names of the days of the week, e.g., for use as a calendar header",
-  "version": "0.6.3",
+  "version": "0.6.4-pre",
   "license": "MIT",
   "main": "basic-days-of-week.html",
   "dependencies": {
-    "basic-shared": "basic-web-components/basic-shared#0.6.3",
+    "basic-shared": "basic-web-components/basic-shared#master",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.3",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "web-component-tester": "*"
   },
   "keywords": [

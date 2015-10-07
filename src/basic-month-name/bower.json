@@ -1,15 +1,15 @@
 {
   "name": "basic-month-name",
   "description": "A culture's name for a given month",
-  "version": "0.6.3",
+  "version": "0.6.4-pre",
   "license": "MIT",
   "main": "basic-month-name.html",
   "dependencies": {
-    "basic-shared": "basic-web-components/basic-shared#0.6.3",
+    "basic-shared": "basic-web-components/basic-shared#master",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.3",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "web-component-tester": "*"
   },
   "keywords": [

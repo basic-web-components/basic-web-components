@@ -1,16 +1,16 @@
 {
   "name": "basic-arrow-direction",
   "description": "Aspect used to add prominent left and right arrow buttons to a wrapped child. Clicking the left/right button maps to the corresponding left/right direction.",
-  "version": "0.6.3",
+  "version": "0.6.4-pre",
   "license": "MIT",
   "main": "basic-arrow-direction.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#0.6.3",
+    "basic-aspect": "basic-web-components/basic-aspect#master",
     "iron-icons": "PolymerElements/iron-icons#^1.0.1",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.3",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "web-component-tester": "*"
   },
   "keywords": [

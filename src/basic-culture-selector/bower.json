@@ -1,17 +1,17 @@
 {
   "name": "basic-culture-selector",
   "description": "Select a culture from the Globalize culture list",
-  "version": "0.6.3",
+  "version": "0.6.4-pre",
   "license": "MIT",
   "main": "basic-culture-selector.html",
   "dependencies": {
-    "basic-shared": "basic-web-components/basic-shared#0.6.3",
+    "basic-shared": "basic-web-components/basic-shared#master",
     "globalize": "^1.0.0",
     "iron-ajax": "PolymerElements/iron-ajax#^1.0.2",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.3",
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
     "web-component-tester": "*"
   },
   "keywords": [
