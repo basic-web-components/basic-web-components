@@ -1,13 +1,13 @@
 {
   "name": "basic-combo-box",
   "description": "A text input area with a popup presenting a list of common input choices",
-  "version": "0.6.3-pre",
+  "version": "0.6.3",
   "license": "MIT",
   "main": "basic-combo-box.html",
   "dependencies": {
-    "basic-button": "basic-web-components/basic-button#master",
-    "basic-popup-source": "basic-web-components/basic-popup-source#master",
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-button": "basic-web-components/basic-button#0.6.3",
+    "basic-popup-source": "basic-web-components/basic-popup-source#0.6.3",
+    "basic-shared": "basic-web-components/basic-shared#0.6.3",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {

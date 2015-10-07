@@ -1,16 +1,16 @@
 {
   "name": "basic-accessible-list",
   "description": "Aspect which adds ARIA roles for lists and list items.",
-  "version": "0.6.3-pre",
+  "version": "0.6.3",
   "license": "MIT",
   "main": "basic-accessible-list.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#master",
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-aspect": "basic-web-components/basic-aspect#0.6.3",
+    "basic-shared": "basic-web-components/basic-shared#0.6.3",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.3",
     "web-component-tester": "*"
   },
   "keywords": [

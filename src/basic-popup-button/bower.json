@@ -1,11 +1,11 @@
 {
   "name": "basic-popup-button",
   "description": "A button that produces a popup when clicked",
-  "version": "0.6.3-pre",
+  "version": "0.6.3",
   "license": "MIT",
   "main": "basic-popup-button.html",
   "dependencies": {
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-shared": "basic-web-components/basic-shared#0.6.3",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {

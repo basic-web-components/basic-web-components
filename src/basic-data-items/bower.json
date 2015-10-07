@@ -1,15 +1,15 @@
 {
   "name": "basic-data-items",
   "description": "Aspects for treating an array of data as list items, and showing the selected item as a string.",
-  "version": "0.6.3-pre",
+  "version": "0.6.3",
   "license": "MIT",
   "main": "basic-data-items.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#master",
+    "basic-aspect": "basic-web-components/basic-aspect#0.6.3",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.3",
     "web-component-tester": "*"
   },
   "keywords": [
