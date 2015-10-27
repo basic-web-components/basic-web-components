@@ -27,27 +27,25 @@
 
   body {
     background: black;
-    display: -webkit-flex;
-    display: flex;
     height: 100%;
     margin: 0;
   }
 
-  basic-framed-content,
-  [target="child"] {
+  body,
+  basic-framed-content {
     display: -webkit-flex;
     display: flex;
+  }
+
+  basic-framed-content,
+  [target="child"],
+  basic-carousel {
     -webkit-flex: 1;
     flex: 1;
   }
 
   body.framed {
     height: 400px;
-  }
-
-  basic-carousel {
-    -webkit-flex: 1;
-    flex: 1;
   }
   </style>
 
