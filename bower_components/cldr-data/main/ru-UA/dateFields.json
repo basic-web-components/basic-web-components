@@ -3,11 +3,8 @@
     "ru-UA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11248 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-18 16:47:15 -0600 (Wed, 18 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ru",
         "territory": "UA"
@@ -15,12 +12,12 @@
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Эра"
+            "displayName": "эра"
           },
           "year": {
-            "displayName": "Год",
+            "displayName": "год",
             "relative-type--1": "в прошлом году",
-            "relative-type-0": "в этому году",
+            "relative-type-0": "в этом году",
             "relative-type-1": "в следующем году",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} год",
@@ -38,7 +35,7 @@
           "year-short": {
             "displayName": "г.",
             "relative-type--1": "в прошлом году",
-            "relative-type-0": "в этому году",
+            "relative-type-0": "в этом году",
             "relative-type-1": "в следующем году",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} г.",
@@ -56,7 +53,7 @@
           "year-narrow": {
             "displayName": "г.",
             "relative-type--1": "в прошлом году",
-            "relative-type-0": "в этому году",
+            "relative-type-0": "в этом году",
             "relative-type-1": "в следующем году",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} г.",
@@ -72,10 +69,10 @@
             }
           },
           "quarter": {
-            "displayName": "Квартал",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "квартал",
+            "relative-type--1": "последний квартал",
+            "relative-type-0": "текущий квартал",
+            "relative-type-1": "следующий квартал",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} квартал",
               "relativeTimePattern-count-few": "через {0} квартала",
@@ -91,9 +88,9 @@
           },
           "quarter-short": {
             "displayName": "кв.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "последний кв.",
+            "relative-type-0": "текущий кв.",
+            "relative-type-1": "следующий кв.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} кв.",
               "relativeTimePattern-count-few": "через {0} кв.",
@@ -109,9 +106,9 @@
           },
           "quarter-narrow": {
             "displayName": "кв.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "посл. кв.",
+            "relative-type-0": "тек. кв.",
+            "relative-type-1": "след. кв.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} кв.",
               "relativeTimePattern-count-few": "+{0} кв.",
@@ -126,7 +123,7 @@
             }
           },
           "month": {
-            "displayName": "Месяц",
+            "displayName": "месяц",
             "relative-type--1": "в прошлом месяце",
             "relative-type-0": "в этом месяце",
             "relative-type-1": "в следующем месяце",
@@ -180,7 +177,7 @@
             }
           },
           "week": {
-            "displayName": "Неделя",
+            "displayName": "неделя",
             "relative-type--1": "на прошлой неделе",
             "relative-type-0": "на этой неделе",
             "relative-type-1": "на следующей неделе",
@@ -234,9 +231,9 @@
             }
           },
           "day": {
-            "displayName": "День",
-            "relative-type--1": "вчера",
+            "displayName": "день",
             "relative-type--2": "позавчера",
+            "relative-type--1": "вчера",
             "relative-type-0": "сегодня",
             "relative-type-1": "завтра",
             "relative-type-2": "послезавтра",
@@ -255,8 +252,8 @@
           },
           "day-short": {
             "displayName": "дн.",
-            "relative-type--1": "вчера",
             "relative-type--2": "позавчера",
+            "relative-type--1": "вчера",
             "relative-type-0": "сегодня",
             "relative-type-1": "завтра",
             "relative-type-2": "послезавтра",
@@ -275,8 +272,8 @@
           },
           "day-narrow": {
             "displayName": "дн.",
-            "relative-type--1": "вчера",
             "relative-type--2": "позавчера",
+            "relative-type--1": "вчера",
             "relative-type-0": "сегодня",
             "relative-type-1": "завтра",
             "relative-type-2": "послезавтра",
@@ -294,7 +291,7 @@
             }
           },
           "weekday": {
-            "displayName": "День недели"
+            "displayName": "день недели"
           },
           "sun": {
             "relative-type--1": "в прошлое воскресенье",
@@ -405,7 +402,7 @@
             "displayName": "ДП/ПП"
           },
           "hour": {
-            "displayName": "Час",
+            "displayName": "час",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} час",
               "relativeTimePattern-count-few": "через {0} часа",
@@ -450,7 +447,7 @@
             }
           },
           "minute": {
-            "displayName": "Минута",
+            "displayName": "минута",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} минуту",
               "relativeTimePattern-count-few": "через {0} минуты",
@@ -495,7 +492,7 @@
             }
           },
           "second": {
-            "displayName": "Секунда",
+            "displayName": "секунда",
             "relative-type-0": "сейчас",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} секунду",
@@ -543,7 +540,7 @@
             }
           },
           "zone": {
-            "displayName": "Часовой пояс"
+            "displayName": "часовой пояс"
           }
         }
       }

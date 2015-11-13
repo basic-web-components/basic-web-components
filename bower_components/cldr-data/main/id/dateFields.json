@@ -3,11 +3,8 @@
     "id": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "id"
       },
@@ -46,10 +43,10 @@
             "relative-type-0": "tahun ini",
             "relative-type-1": "tahun depan",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-other": "+{0} thn."
+              "relativeTimePattern-count-other": "Dalam {0} tahun"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-other": "-{0} thn."
+              "relativeTimePattern-count-other": "{0} tahun yang lalu"
             }
           },
           "quarter": {
@@ -128,7 +125,7 @@
             "displayName": "Minggu",
             "relative-type--1": "minggu lalu",
             "relative-type-0": "minggu ini",
-            "relative-type-1": "minggu berikutnya",
+            "relative-type-1": "minggu depan",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "Dalam {0} minggu"
             },
@@ -140,7 +137,7 @@
             "displayName": "mgg.",
             "relative-type--1": "minggu lalu",
             "relative-type-0": "minggu ini",
-            "relative-type-1": "minggu berikutnya",
+            "relative-type-1": "minggu depan",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "Dalam {0} minggu"
             },
@@ -152,7 +149,7 @@
             "displayName": "mgg.",
             "relative-type--1": "minggu lalu",
             "relative-type-0": "minggu ini",
-            "relative-type-1": "minggu berikutnya",
+            "relative-type-1": "minggu depan",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "+{0} mgg."
             },
@@ -162,8 +159,8 @@
           },
           "day": {
             "displayName": "Hari",
-            "relative-type--1": "kemarin",
             "relative-type--2": "kemarin lusa",
+            "relative-type--1": "kemarin",
             "relative-type-0": "hari ini",
             "relative-type-1": "besok",
             "relative-type-2": "lusa",
@@ -176,8 +173,8 @@
           },
           "day-short": {
             "displayName": "h",
-            "relative-type--1": "kemarin",
             "relative-type--2": "kemarin lusa",
+            "relative-type--1": "kemarin",
             "relative-type-0": "hari ini",
             "relative-type-1": "besok",
             "relative-type-2": "lusa",
@@ -190,8 +187,8 @@
           },
           "day-narrow": {
             "displayName": "h",
-            "relative-type--1": "kemarin",
             "relative-type--2": "kemarin lusa",
+            "relative-type--1": "kemarin",
             "relative-type-0": "hari ini",
             "relative-type-1": "besok",
             "relative-type-2": "lusa",

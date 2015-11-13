@@ -3,11 +3,8 @@
     "de": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11304 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-24 11:35:18 -0600 (Tue, 24 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11972 $"
         },
         "language": "de"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} Zeit",
-          "regionFormat-type-standard": "{0} Normalzeit",
           "regionFormat-type-daylight": "{0} Sommerzeit",
+          "regionFormat-type-standard": "{0} Normalzeit",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, North Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, North Dakota"
                 }
               },
               "Ojinaga": {
@@ -659,7 +656,7 @@
                 "exemplarCity": "Wien"
               },
               "Vilnius": {
-                "exemplarCity": "Wilna"
+                "exemplarCity": "Vilnius"
               },
               "Volgograd": {
                 "exemplarCity": "Wolgograd"
@@ -882,7 +879,7 @@
                 "exemplarCity": "Kalkutta"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Tschita"
               },
               "Choibalsan": {
                 "exemplarCity": "Tschoibalsan"
@@ -1483,9 +1480,9 @@
             },
             "Apia": {
               "long": {
-                "generic": "Zeit in Apia",
-                "standard": "Normalzeit in Apia",
-                "daylight": "Sommerzeit in Apia"
+                "generic": "Apia-Zeit",
+                "standard": "Apia-Normalzeit",
+                "daylight": "Apia-Sommerzeit"
               }
             },
             "Aqtau": {
@@ -1776,11 +1773,6 @@
                 "standard": "Französische Süd- und Antarktisgebiete-Zeit"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Mittlere Greenwich-Zeit"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapagos-Zeit"
@@ -1801,6 +1793,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilbert-Inseln-Zeit"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Mittlere Greenwich-Zeit"
               }
             },
             "Greenland_Eastern": {

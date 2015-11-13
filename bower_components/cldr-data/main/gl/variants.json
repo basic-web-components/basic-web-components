@@ -3,24 +3,23 @@
     "gl": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "gl"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "1606NICT",
-          "1694ACAD": "1694ACAD",
           "1901": "1901",
-          "1959ACAD": "1959ACAD",
           "1994": "1994",
           "1996": "1996",
+          "1606NICT": "1606NICT",
+          "1694ACAD": "1694ACAD",
+          "1959ACAD": "1959ACAD",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALALC97",
           "ALUKU": "ALUKU",
+          "AO1990": "AO1990",
           "AREVELA": "AREVELA",
           "AREVMDA": "AREVMDA",
           "BAKU1926": "BAKU1926",
@@ -31,6 +30,7 @@
           "BISKE": "BISKE",
           "BOHORIC": "BOHORIC",
           "BOONT": "BOONT",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -56,6 +56,7 @@
           "NJIVA": "NJIVA",
           "NULIK": "NULIK",
           "OSOJS": "OSOJS",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "PAMAKA",
           "PETR1708": "PETR1708",
           "PINYIN": "PINYIN",

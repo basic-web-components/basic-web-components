@@ -3,11 +3,8 @@
     "ru": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11353 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 15:54:42 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11974 $"
         },
         "language": "ru"
       },
@@ -157,13 +154,13 @@
               },
               "stand-alone": {
                 "abbreviated": {
-                  "sun": "Вс",
-                  "mon": "Пн",
-                  "tue": "Вт",
-                  "wed": "Ср",
-                  "thu": "Чт",
-                  "fri": "Пт",
-                  "sat": "Сб"
+                  "sun": "вс",
+                  "mon": "пн",
+                  "tue": "вт",
+                  "wed": "ср",
+                  "thu": "чт",
+                  "fri": "пт",
+                  "sat": "сб"
                 },
                 "narrow": {
                   "sun": "В",
@@ -184,13 +181,13 @@
                   "sat": "сб"
                 },
                 "wide": {
-                  "sun": "Воскресенье",
-                  "mon": "Понедельник",
-                  "tue": "Вторник",
-                  "wed": "Среда",
-                  "thu": "Четверг",
-                  "fri": "Пятница",
-                  "sat": "Суббота"
+                  "sun": "воскресенье",
+                  "mon": "понедельник",
+                  "tue": "вторник",
+                  "wed": "среда",
+                  "thu": "четверг",
+                  "fri": "пятница",
+                  "sat": "суббота"
                 }
               }
             },
@@ -239,36 +236,66 @@
             "dayPeriods": {
               "format": {
                 "abbreviated": {
-                  "am": "AM",
+                  "midnight": "полночь",
+                  "am": "ДП",
                   "noon": "полдень",
-                  "pm": "PM"
+                  "pm": "ПП",
+                  "morning1": "утра",
+                  "afternoon1": "дня",
+                  "evening1": "вечера",
+                  "night1": "ночи"
                 },
                 "narrow": {
-                  "am": "AM",
+                  "midnight": "полночь",
+                  "am": "ДП",
                   "noon": "полдень",
-                  "pm": "PM"
+                  "pm": "ПП",
+                  "morning1": "утра",
+                  "afternoon1": "дня",
+                  "evening1": "вечера",
+                  "night1": "ночи"
                 },
                 "wide": {
-                  "am": "AM",
+                  "midnight": "полночь",
+                  "am": "ДП",
                   "noon": "полдень",
-                  "pm": "PM"
+                  "pm": "ПП",
+                  "morning1": "утра",
+                  "afternoon1": "дня",
+                  "evening1": "вечера",
+                  "night1": "ночи"
                 }
               },
               "stand-alone": {
                 "abbreviated": {
-                  "am": "AM",
-                  "noon": "полдень",
-                  "pm": "PM"
+                  "midnight": "полн.",
+                  "am": "ДП",
+                  "noon": "полд.",
+                  "pm": "ПП",
+                  "morning1": "утро",
+                  "afternoon1": "день",
+                  "evening1": "веч.",
+                  "night1": "ночь"
                 },
                 "narrow": {
-                  "am": "AM",
-                  "noon": "полдень",
-                  "pm": "PM"
+                  "midnight": "полн.",
+                  "am": "ДП",
+                  "noon": "полд.",
+                  "pm": "ПП",
+                  "morning1": "утро",
+                  "afternoon1": "день",
+                  "evening1": "веч.",
+                  "night1": "ночь"
                 },
                 "wide": {
-                  "am": "AM",
+                  "midnight": "полночь",
+                  "am": "ДП",
                   "noon": "полдень",
-                  "pm": "PM"
+                  "pm": "ПП",
+                  "morning1": "утро",
+                  "afternoon1": "день",
+                  "evening1": "вечер",
+                  "night1": "ночь"
                 }
               }
             },
@@ -301,39 +328,40 @@
               "medium": "{1}, {0}",
               "short": "{1}, {0}",
               "availableFormats": {
+                "d": "d",
                 "E": "ccc",
-                "EHm": "E HH:mm",
-                "EHms": "E HH:mm:ss",
                 "Ed": "E, d",
                 "Ehm": "E h:mm a",
+                "EHm": "E HH:mm",
                 "Ehms": "E h:mm:ss a",
+                "EHms": "E HH:mm:ss",
                 "Gy": "y G",
                 "GyMMM": "LLL y G",
-                "GyMMMEd": "E, d MMM y G",
-                "GyMMMd": "d MMM y G",
+                "GyMMMd": "d MMM y 'г'. G",
+                "GyMMMEd": "E, d MMM y 'г'. G",
+                "h": "h a",
                 "H": "H",
+                "hm": "h:mm a",
                 "Hm": "H:mm",
+                "hms": "h:mm:ss a",
                 "Hms": "H:mm:ss",
                 "M": "L",
+                "Md": "dd.MM",
                 "MEd": "E, dd.MM",
                 "MMM": "LLL",
-                "MMMEd": "ccc, d MMM",
                 "MMMd": "d MMM",
-                "Md": "dd.MM",
-                "d": "d",
-                "h": "h a",
-                "hm": "h:mm a",
-                "hms": "h:mm:ss a",
+                "MMMEd": "ccc, d MMM",
+                "MMMMd": "d MMMM",
                 "ms": "mm:ss",
                 "y": "y G",
                 "yyyy": "y G",
                 "yyyyM": "MM.y G",
+                "yyyyMd": "dd.MM.y G",
                 "yyyyMEd": "E, dd.MM.y G",
                 "yyyyMMM": "LLL y G",
-                "yyyyMMMEd": "E, d MMM y G",
+                "yyyyMMMd": "d MMM y 'г'. G",
+                "yyyyMMMEd": "E, d MMM y 'г'. G",
                 "yyyyMMMM": "LLLL y G",
-                "yyyyMMMd": "d MMM y G",
-                "yyyyMd": "dd.MM.y G",
                 "yyyyQQQ": "QQQ y G",
                 "yyyyQQQQ": "QQQQ y 'г'. G"
               },
@@ -352,45 +380,6 @@
               },
               "intervalFormats": {
                 "intervalFormatFallback": "{0} - {1}",
-                "H": {
-                  "H": "H–H"
-                },
-                "Hm": {
-                  "H": "H:mm–H:mm",
-                  "m": "H:mm–H:mm"
-                },
-                "Hmv": {
-                  "H": "H:mm–H:mm v",
-                  "m": "H:mm–H:mm v"
-                },
-                "Hv": {
-                  "H": "H–H v"
-                },
-                "M": {
-                  "M": "M–M"
-                },
-                "MEd": {
-                  "M": "E, dd.MM – E, dd.MM",
-                  "d": "E, dd.MM – E, dd.MM"
-                },
-                "MMM": {
-                  "M": "LLL-LLL"
-                },
-                "MMMEd": {
-                  "M": "ccc, d MMM – ccc, d MMM",
-                  "d": "ccc, d - E, d MMM"
-                },
-                "MMMM": {
-                  "M": "LLLL–LLLL"
-                },
-                "MMMd": {
-                  "M": "d MMM – d MMM",
-                  "d": "d–d MMM"
-                },
-                "Md": {
-                  "M": "dd.MM – dd.MM",
-                  "d": "dd.MM – dd.MM"
-                },
                 "d": {
                   "d": "d–d"
                 },
@@ -398,19 +387,58 @@
                   "a": "h a – h a",
                   "h": "h–h a"
                 },
+                "H": {
+                  "H": "H–H"
+                },
                 "hm": {
                   "a": "h:mm a – h:mm a",
                   "h": "h:mm–h:mm a",
                   "m": "h:mm–h:mm a"
+                },
+                "Hm": {
+                  "H": "H:mm–H:mm",
+                  "m": "H:mm–H:mm"
                 },
                 "hmv": {
                   "a": "h:mm a – h:mm a v",
                   "h": "h:mm–h:mm a v",
                   "m": "h:mm–h:mm a v"
                 },
+                "Hmv": {
+                  "H": "H:mm–H:mm v",
+                  "m": "H:mm–H:mm v"
+                },
                 "hv": {
                   "a": "h a – h a v",
                   "h": "h–h a v"
+                },
+                "Hv": {
+                  "H": "H–H v"
+                },
+                "M": {
+                  "M": "M–M"
+                },
+                "Md": {
+                  "d": "dd.MM – dd.MM",
+                  "M": "dd.MM – dd.MM"
+                },
+                "MEd": {
+                  "d": "E, dd.MM – E, dd.MM",
+                  "M": "E, dd.MM – E, dd.MM"
+                },
+                "MMM": {
+                  "M": "LLL–LLL"
+                },
+                "MMMd": {
+                  "d": "d–d MMM",
+                  "M": "d MMM – d MMM"
+                },
+                "MMMEd": {
+                  "d": "ccc, d - E, d MMM",
+                  "M": "ccc, d MMM – ccc, d MMM"
+                },
+                "MMMM": {
+                  "M": "LLLL–LLLL"
                 },
                 "y": {
                   "y": "y–y G"
@@ -419,33 +447,33 @@
                   "M": "MM.y – MM.y G",
                   "y": "MM.y – MM.y G"
                 },
+                "yMd": {
+                  "d": "dd.MM.y – dd.MM.y G",
+                  "M": "dd.MM.y – dd.MM.y G",
+                  "y": "dd.MM.y – dd.MM.y G"
+                },
                 "yMEd": {
-                  "M": "ccc, dd.MM.y – ccc, dd.MM.y G",
                   "d": "ccc, dd.MM.y – ccc, dd.MM.y G",
+                  "M": "ccc, dd.MM.y – ccc, dd.MM.y G",
                   "y": "ccc, dd.MM.y – ccc, dd.MM.y G"
                 },
                 "yMMM": {
                   "M": "LLL–LLL y 'г'. G",
                   "y": "LLL y – LLL y 'г'. G"
                 },
+                "yMMMd": {
+                  "d": "d–d MMM y 'г'. G",
+                  "M": "d MMM – d MMM y 'г'. G",
+                  "y": "d MMM y – d MMM y 'г'. G"
+                },
                 "yMMMEd": {
-                  "M": "ccc, d MMM – ccc, d MMM y 'г'. G",
                   "d": "ccc, d – ccc, d MMM y 'г'. G",
+                  "M": "ccc, d MMM – ccc, d MMM y 'г'. G",
                   "y": "ccc, d MMM y – ccc, d MMM y 'г'. G"
                 },
                 "yMMMM": {
                   "M": "LLLL–LLLL y 'г'. G",
                   "y": "LLLL y – LLLL y 'г'. G"
-                },
-                "yMMMd": {
-                  "M": "d MMM – d MMM y 'г'. G",
-                  "d": "d–d MMM y 'г'. G",
-                  "y": "d MMM y – d MMM y 'г'. G"
-                },
-                "yMd": {
-                  "M": "dd.MM.y – dd.MM.y G",
-                  "d": "dd.MM.y – dd.MM.y G",
-                  "y": "dd.MM.y – dd.MM.y G"
                 }
               }
             }

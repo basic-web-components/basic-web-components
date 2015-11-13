@@ -3,11 +3,8 @@
     "gl": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "gl"
       },
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "Trimestre",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "trimestre pasado",
+            "relative-type-0": "este trimestre",
+            "relative-type-1": "seguinte trimestre",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "En {0} trimestre",
               "relativeTimePattern-count-other": "En {0} trimestres"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "trim.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "trim. pasado",
+            "relative-type-0": "este trim.",
+            "relative-type-1": "trim. seguinte",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "En {0} trim.",
               "relativeTimePattern-count-other": "En {0} trim."
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "trim.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "trim. pasado",
+            "relative-type-0": "este trim.",
+            "relative-type-1": "trim. seguinte",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "En {0} trim.",
               "relativeTimePattern-count-other": "En {0} trim."
@@ -116,9 +113,9 @@
           },
           "month-short": {
             "displayName": "Mes",
-            "relative-type--1": "mes pasado",
-            "relative-type-0": "este mes",
-            "relative-type-1": "mes seguinte",
+            "relative-type--1": "m. pasado",
+            "relative-type-0": "este m.",
+            "relative-type-1": "m. seguinte",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "En {0} m.",
               "relativeTimePattern-count-other": "En {0} m."
@@ -130,9 +127,9 @@
           },
           "month-narrow": {
             "displayName": "Mes",
-            "relative-type--1": "mes pasado",
-            "relative-type-0": "este mes",
-            "relative-type-1": "mes seguinte",
+            "relative-type--1": "m. pasado",
+            "relative-type-0": "este m.",
+            "relative-type-1": "m. seguinte",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "En {0} m.",
               "relativeTimePattern-count-other": "En {0} m."
@@ -158,9 +155,9 @@
           },
           "week-short": {
             "displayName": "sem.",
-            "relative-type--1": "semana pasada",
-            "relative-type-0": "esta semana",
-            "relative-type-1": "semana seguinte",
+            "relative-type--1": "sem. pasada",
+            "relative-type-0": "esta sem.",
+            "relative-type-1": "sem. seguinte",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "En {0} sem.",
               "relativeTimePattern-count-other": "En {0} sem."
@@ -172,9 +169,9 @@
           },
           "week-narrow": {
             "displayName": "sem.",
-            "relative-type--1": "semana pasada",
-            "relative-type-0": "esta semana",
-            "relative-type-1": "semana seguinte",
+            "relative-type--1": "sem. pasada",
+            "relative-type-0": "esta sem.",
+            "relative-type-1": "sem. seguinte",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "En {0} sem.",
               "relativeTimePattern-count-other": "En {0} sem."
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "Día",
-            "relative-type--1": "onte",
             "relative-type--2": "antonte",
+            "relative-type--1": "onte",
             "relative-type-0": "hoxe",
             "relative-type-1": "mañá",
             "relative-type-2": "pasadomañá",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "Día",
-            "relative-type--1": "onte",
             "relative-type--2": "antonte",
+            "relative-type--1": "onte",
             "relative-type-0": "hoxe",
             "relative-type-1": "mañá",
             "relative-type-2": "pasadomañá",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "Día",
-            "relative-type--1": "onte",
             "relative-type--2": "antonte",
+            "relative-type--1": "onte",
             "relative-type-0": "hoxe",
             "relative-type-1": "mañá",
             "relative-type-2": "pasadomañá",
@@ -302,7 +299,7 @@
           },
           "thu-short": {
             "relative-type--1": "xov. pasado",
-            "relative-type-0": "este xoves",
+            "relative-type-0": "este xov.",
             "relative-type-1": "próximo xov."
           },
           "thu-narrow": {

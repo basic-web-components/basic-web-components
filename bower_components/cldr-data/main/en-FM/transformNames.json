@@ -3,14 +3,11 @@
     "en-FM": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "FM"
       },
       "localeDisplayNames": {
         "transformNames": {

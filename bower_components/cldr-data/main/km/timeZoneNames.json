@@ -3,22 +3,19 @@
     "km": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "km"
       },
       "dates": {
         "timeZoneNames": {
           "hourFormat": "+HH:mm;-HH:mm",
-          "gmtFormat": "ម៉ោង​សកល{0}",
+          "gmtFormat": "ម៉ោង​សកល {0}",
           "gmtZeroFormat": "ម៉ោង​សកល",
           "regionFormat": "ម៉ោង​នៅ​ {0}",
-          "regionFormat-type-standard": "ម៉ោង​ស្តង់ដារ​នៅ​{0}",
-          "regionFormat-type-daylight": "ម៉ោង​ពេល​ថ្ងៃ​នៅ​{0}",
+          "regionFormat-type-daylight": "ម៉ោង​ពេល​ថ្ងៃ​នៅ​ {0}",
+          "regionFormat-type-standard": "ម៉ោង​ស្តង់ដារ​នៅ ​{0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "អារ៉ាហ្គុយណា"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ឡារ៉យ៉ា"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "រ៉យហ្គាឡេហ្គូស"
-                },
-                "Salta": {
-                  "exemplarCity": "សាល់តា"
                 },
                 "San_Juan": {
                   "exemplarCity": "សាំងហ្សង់"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "អ៊ុយសូអៃ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ឡារ៉យ៉ា"
+                },
                 "San_Luis": {
                   "exemplarCity": "សានលូអ៊ីស"
                 },
+                "Salta": {
+                  "exemplarCity": "សាល់តា"
+                },
                 "Tucuman": {
                   "exemplarCity": "ទូគូម៉ង់"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "អ៊ុយសូអៃ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ហ៊ែម៉ូស៊ីឡូ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "ណុក ឥណ្ឌា"
-                },
-                "Marengo": {
-                  "exemplarCity": "ម៉ារេនកូ ឥណ្ឌា"
+                "Vincennes": {
+                  "exemplarCity": "វិនសេណេស ឥណ្ឌា"
                 },
                 "Petersburg": {
                   "exemplarCity": "ភីធើ​ប៊ឹក ឥណ្ឌា"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "ថែល​ស៊ីធី ឥណ្ឌា"
                 },
-                "Vevay": {
-                  "exemplarCity": "វេវ៉ៃ ឥណ្ឌា"
-                },
-                "Vincennes": {
-                  "exemplarCity": "វិនសេណេស ឥណ្ឌា"
+                "Knox": {
+                  "exemplarCity": "ណុក ឥណ្ឌា"
                 },
                 "Winamac": {
                   "exemplarCity": "វីណាម៉ាក់ ឥណ្ឌា"
+                },
+                "Marengo": {
+                  "exemplarCity": "ម៉ារេនកូ ឥណ្ឌា"
+                },
+                "Vevay": {
+                  "exemplarCity": "វេវ៉ៃ ឥណ្ឌា"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ប៊ឺឡា ដាកូតា​ខាង​ត្បូង"
                 },
-                "Center": {
-                  "exemplarCity": "សីនធឺ ដាកូតា​ខាង​ជើង"
-                },
                 "New_Salem": {
                   "exemplarCity": "ញូ​សាឡឹម ដាកូតា​ខាង​ជើង"
+                },
+                "Center": {
+                  "exemplarCity": "សីនធឺ ដាកូតា​ខាង​ជើង"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "កុលកាតា"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ឈីតា"
               },
               "Choibalsan": {
                 "exemplarCity": "ឈូបាល់សាន"
@@ -915,7 +912,7 @@
                 "exemplarCity": "ហុងកុង"
               },
               "Hovd": {
-                "exemplarCity": "ហ"
+                "exemplarCity": "ហូវ"
               },
               "Irkutsk": {
                 "exemplarCity": "អ៊ីឃឺត"
@@ -924,7 +921,7 @@
                 "exemplarCity": "ហ្សាការតា"
               },
               "Jayapura": {
-                "exemplarCity": "យ៉ាវ៉ាភូរ៉ា"
+                "exemplarCity": "ចាយ៉ាភូរ៉ា"
               },
               "Jerusalem": {
                 "exemplarCity": "ហ្ស៊េរុយសាឡិម"
@@ -939,7 +936,7 @@
                 "exemplarCity": "ការ៉ាជី"
               },
               "Katmandu": {
-                "exemplarCity": "កដ្ឋមណ្ឌូ"
+                "exemplarCity": "កាត់ម៉ាន់ឌូ"
               },
               "Khandyga": {
                 "exemplarCity": "ខាន់ឌីហ្គា"
@@ -948,7 +945,7 @@
                 "exemplarCity": "ក្រាសនុយ៉ាក"
               },
               "Kuala_Lumpur": {
-                "exemplarCity": "គូឡាឡាំពួ"
+                "exemplarCity": "កូឡាឡាំពួរ"
               },
               "Kuching": {
                 "exemplarCity": "ឃឺតចីង"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "សិង្ហបូរី"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "ស្រីតនីកូលីម"
               },
               "Taipei": {
                 "exemplarCity": "តៃប៉ិ"
@@ -1038,7 +1035,7 @@
                 "exemplarCity": "ប៊ីលីស៊ី"
               },
               "Tehran": {
-                "exemplarCity": "តេហេរ៉ង់"
+                "exemplarCity": "តេអេរ៉ង់"
               },
               "Thimphu": {
                 "exemplarCity": "ធីមភូ"
@@ -1111,7 +1108,7 @@
                 "exemplarCity": "អាឌីឡៃ"
               },
               "Brisbane": {
-                "exemplarCity": "ប្រីសបាណេ"
+                "exemplarCity": "ប្រីសប៊ែន"
               },
               "Broken_Hill": {
                 "exemplarCity": "ប្រូកខិនហីល"
@@ -1135,13 +1132,13 @@
                 "exemplarCity": "ឡតហូវ៉េ"
               },
               "Melbourne": {
-                "exemplarCity": "ម៉ែលប៊ើន"
+                "exemplarCity": "ម៉េលប៊ន"
               },
               "Perth": {
                 "exemplarCity": "ភឺធ"
               },
               "Sydney": {
-                "exemplarCity": "ស៊ីតនី"
+                "exemplarCity": "ស៊ីដនី"
               }
             },
             "Pacific": {
@@ -1149,10 +1146,10 @@
                 "exemplarCity": "អាពី"
               },
               "Auckland": {
-                "exemplarCity": "អាអ៊ុកឡែន"
+                "exemplarCity": "អកលែន"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "បូហ្គែនវីល"
               },
               "Chatham": {
                 "exemplarCity": "ចាថាំ"
@@ -1297,7 +1294,7 @@
                 "exemplarCity": "ស៊ីយ៉ូវ៉ា"
               },
               "Troll": {
-                "exemplarCity": "Troll"
+                "exemplarCity": "ត្រូល"
               },
               "Vostok": {
                 "exemplarCity": "វ៉ូស្តុក"
@@ -1553,7 +1550,7 @@
             },
             "Bhutan": {
               "long": {
-                "standard": "ម៉ោង​នៅ​ប៊ូតង់"
+                "standard": "ម៉ោងនៅប៊ូតាន"
               }
             },
             "Bolivia": {
@@ -1570,7 +1567,7 @@
             },
             "Brunei": {
               "long": {
-                "standard": "ម៉ោង​នៅ​ដារូសាឡឹម​ប្រុយណេ"
+                "standard": "ម៉ោងនៅប្រ៊ុយណេដារូសាឡឹម"
               }
             },
             "Cape_Verde": {
@@ -1594,9 +1591,9 @@
             },
             "Chile": {
               "long": {
-                "generic": "ម៉ោង​នៅ​ស៊ីលី",
-                "standard": "ម៉ោង​ស្តង់ដារ​នៅ​ស៊ីលី",
-                "daylight": "ម៉ោង​រដូវ​ក្ដៅ​នៅ​ស៊ីលី"
+                "generic": "ម៉ោងនៅឈីលី",
+                "standard": "ម៉ោងស្តង់ដារនៅឈីលី",
+                "daylight": "ម៉ោងរដូវក្តៅនៅឈីលី"
               }
             },
             "China": {
@@ -1687,7 +1684,7 @@
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "ម៉ោង​នៅ​អឺរ៉ុប​ភាគ​ខាង​កើត​ឆ្ងាយ"
+                "standard": "ម៉ោង​នៅ​ចុងភាគ​ខាង​កើត​អឺរ៉ុប​"
               }
             },
             "Europe_Western": {
@@ -1721,11 +1718,6 @@
                 "standard": "ម៉ោង​នៅ​អែតាឃីត និង​បារាំង​ខាង​ត្បូង"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ម៉ោងនៅគ្រីនវិច"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ម៉ោង​នៅ​កាឡាប៉ាកូស"
@@ -1748,18 +1740,23 @@
                 "standard": "ម៉ោង​នៅ​កោះ​កីប៊ឺត"
               }
             },
+            "GMT": {
+              "long": {
+                "standard": "ម៉ោងនៅគ្រីនវិច"
+              }
+            },
             "Greenland_Eastern": {
               "long": {
-                "generic": "ម៉ោង​​នៅ​ហ្គ្រោអង់ឡង់​ខាង​កើត",
-                "standard": "ម៉ោង​​​ស្តង់ដារ​នៅ​ហ្គ្រោអង់ឡង់​​​ខាង​កើត",
-                "daylight": "ម៉ោង​រដូវ​ក្ដៅ​នៅ​ហ្គ្រោអង់ឡង់​​ខាង​កើត"
+                "generic": "ម៉ោង​​នៅ​ហ្គ្រីនលែន​ខាង​កើត",
+                "standard": "ម៉ោង​​​ស្តង់ដារ​នៅ​​ហ្គ្រីនលែន​ខាង​កើត",
+                "daylight": "ម៉ោង​រដូវ​ក្ដៅ​នៅ​ហ្គ្រីនលែនខាង​កើត"
               }
             },
             "Greenland_Western": {
               "long": {
-                "generic": "ម៉ោង​​នៅ​ហ្គ្រោអង់ឡង់​​ខាងលិច",
-                "standard": "ម៉ោង​​​ស្តង់ដារ​នៅ​ហ្គ្រោអង់ឡង់​​ខាង​លិច",
-                "daylight": "ម៉ោង​រដូវ​ក្ដៅ​​នៅ​ហ្គ្រោអង់ឡង់​ខាង​​លិច"
+                "generic": "ម៉ោងនៅហ្គ្រីនលែនខាងលិច",
+                "standard": "ម៉ោងស្តង់ដារនៅហ្គ្រីនលែនខាងលិច",
+                "daylight": "ម៉ោងរដូវក្តៅនៅហ្គ្រីនលែនខាងលិច"
               }
             },
             "Gulf": {
@@ -1882,7 +1879,7 @@
             },
             "Kyrgystan": {
               "long": {
-                "standard": "ម៉ោង​នៅ​ឃឺកីស្តង់"
+                "standard": "ម៉ោងនៅគៀរហ្គីស្តង់"
               }
             },
             "Line_Islands": {
@@ -1981,7 +1978,7 @@
             },
             "Nepal": {
               "long": {
-                "standard": "ម៉ោង​នៅ​ណេប៉ាល់"
+                "standard": "ម៉ោងនៅនេប៉ាល់"
               }
             },
             "New_Caledonia": {
@@ -2098,7 +2095,7 @@
             },
             "Reunion": {
               "long": {
-                "standard": "ម៉ោង​នៅ​អ៊ុយនៀន"
+                "standard": "ម៉ោងនៅរេអ៊ុយ៉ុង"
               }
             },
             "Rothera": {
@@ -2164,7 +2161,7 @@
             },
             "Tajikistan": {
               "long": {
-                "standard": "ម៉ោង​នៅ​តាស៊ីគីស្តង់"
+                "standard": "ម៉ោងនៅតាជីគីស្តង់"
               }
             },
             "Tokelau": {

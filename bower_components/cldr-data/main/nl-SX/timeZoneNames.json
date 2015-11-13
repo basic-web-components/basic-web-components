@@ -3,11 +3,8 @@
     "nl-SX": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "nl",
         "territory": "SX"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}-tijd",
-          "regionFormat-type-standard": "standaardtijd {0}",
           "regionFormat-type-daylight": "zomertijd {0}",
+          "regionFormat-type-standard": "standaardtijd {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Río Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucumán"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Noord-Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Noord-Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Noord-Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Noord-Dakota"
                 }
               },
               "Ojinaga": {
@@ -1628,9 +1625,9 @@
             },
             "Chatham": {
               "long": {
-                "generic": "Chatham tijd",
-                "standard": "Chatham standaardtijd",
-                "daylight": "Chatham zomertijd"
+                "generic": "Chatham-tijd",
+                "standard": "Chatham-standaardtijd",
+                "daylight": "Chatham-zomertijd"
               }
             },
             "Chile": {
@@ -1649,9 +1646,9 @@
             },
             "Choibalsan": {
               "long": {
-                "generic": "Tsjojbalsan tijd",
-                "standard": "Tsjojbalsan standaardtijd",
-                "daylight": "Tsjojbalsan zomertijd"
+                "generic": "Tsjojbalsan-tijd",
+                "standard": "Tsjojbalsan-standaardtijd",
+                "daylight": "Tsjojbalsan-zomertijd"
               }
             },
             "Christmas": {
@@ -1687,12 +1684,12 @@
             },
             "Davis": {
               "long": {
-                "standard": "Davis tijd"
+                "standard": "Davis-tijd"
               }
             },
             "DumontDUrville": {
               "long": {
-                "standard": "Dumont-d’Urville tijd"
+                "standard": "Dumont-d’Urville-tijd"
               }
             },
             "East_Timor": {
@@ -1777,11 +1774,6 @@
                 "standard": "Franse zuidelijke en Antarctische tijd"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Greenwich Mean Time"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapagoseilandse tijd"
@@ -1802,6 +1794,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilberteilandse tijd"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwich Mean Time"
               }
             },
             "Greenland_Eastern": {
@@ -1825,7 +1822,7 @@
             },
             "Gulf": {
               "long": {
-                "standard": "Golf standaardtijd"
+                "standard": "Golf-standaardtijd"
               }
             },
             "Guyana": {
@@ -1849,9 +1846,9 @@
             },
             "Hovd": {
               "long": {
-                "generic": "Hovd tijd",
-                "standard": "Hovd standaardtijd",
-                "daylight": "Hovd zomertijd"
+                "generic": "Hovd-tijd",
+                "standard": "Hovd-standaardtijd",
+                "daylight": "Hovd-zomertijd"
               }
             },
             "India": {
@@ -2018,7 +2015,7 @@
             },
             "Mawson": {
               "long": {
-                "standard": "Mawson tijd"
+                "standard": "Mawson-tijd"
               }
             },
             "Mexico_Northwest": {
@@ -2037,9 +2034,9 @@
             },
             "Mongolia": {
               "long": {
-                "generic": "Ulaanbaatar tijd",
-                "standard": "Ulaanbaatar standaardtijd",
-                "daylight": "Ulaanbaatar zomertijd"
+                "generic": "Ulaanbaatar-tijd",
+                "standard": "Ulaanbaatar-standaardtijd",
+                "daylight": "Ulaanbaatar-zomertijd"
               }
             },
             "Moscow": {
@@ -2178,7 +2175,7 @@
             },
             "Ponape": {
               "long": {
-                "standard": "Pohnpei tijd"
+                "standard": "Pohnpei-tijd"
               }
             },
             "Qyzylorda": {
@@ -2195,7 +2192,7 @@
             },
             "Rothera": {
               "long": {
-                "standard": "Rothera tijd"
+                "standard": "Rothera-tijd"
               }
             },
             "Sakhalin": {
@@ -2246,7 +2243,7 @@
             },
             "Syowa": {
               "long": {
-                "standard": "Syowa tijd"
+                "standard": "Syowa-tijd"
               }
             },
             "Tahiti": {
@@ -2256,9 +2253,9 @@
             },
             "Taipei": {
               "long": {
-                "generic": "Taipei tijd",
-                "standard": "Taipei standaardtijd",
-                "daylight": "Taipei zomertijd"
+                "generic": "Taipei-tijd",
+                "standard": "Taipei-standaardtijd",
+                "daylight": "Taipei-zomertijd"
               }
             },
             "Tajikistan": {
@@ -2337,7 +2334,7 @@
             },
             "Vostok": {
               "long": {
-                "standard": "Vostok tijd"
+                "standard": "Vostok-tijd"
               }
             },
             "Wake": {

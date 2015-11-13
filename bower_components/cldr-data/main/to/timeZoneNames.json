@@ -3,11 +3,8 @@
     "to": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "to"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Taimi {0}",
-          "regionFormat-type-standard": "{0} Taimi totonu",
           "regionFormat-type-daylight": "{0} Taimi Liliu",
+          "regionFormat-type-standard": "{0} Taimi totonu",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,33 +35,33 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
                 "exemplarCity": "Aruba"
               },
               "Asuncion": {
-                "exemplarCity": "Asuncion"
+                "exemplarCity": "Asunción"
               },
               "Bahia": {
                 "exemplarCity": "Bahia"
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, North Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, North Dakota"
                 }
               },
               "Ojinaga": {
@@ -415,7 +412,7 @@
                 "exemplarCity": "Sitka"
               },
               "St_Barthelemy": {
-                "exemplarCity": "St. Barthelemy"
+                "exemplarCity": "St. Barthélemy"
               },
               "St_Johns": {
                 "exemplarCity": "St. John’s"
@@ -647,7 +644,7 @@
                 "exemplarCity": "Tirane"
               },
               "Uzhgorod": {
-                "exemplarCity": "Uzhgorod"
+                "exemplarCity": "Uzhhorod"
               },
               "Vaduz": {
                 "exemplarCity": "Vaduz"
@@ -823,7 +820,7 @@
                 "exemplarCity": "Porto-Novo"
               },
               "Sao_Tome": {
-                "exemplarCity": "Sao Tome"
+                "exemplarCity": "São Tomé"
               },
               "Tripoli": {
                 "exemplarCity": "Tripoli"
@@ -1103,7 +1100,7 @@
                 "exemplarCity": "Mayotte"
               },
               "Reunion": {
-                "exemplarCity": "Reunion"
+                "exemplarCity": "Réunion"
               }
             },
             "Australia": {
@@ -1761,11 +1758,6 @@
                 "standard": "houa fakaʻanetātikafalanisē"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "houa fakakiliniuisi mālie"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "houa fakakalapakosi"
@@ -1786,6 +1778,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "houa fakakilipasi"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "houa fakakiliniuisi mālie"
               }
             },
             "Greenland_Eastern": {

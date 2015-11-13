@@ -3,11 +3,8 @@
     "mn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "mn"
       },
@@ -19,8 +16,12 @@
         },
         "keys": {
           "calendar": "хуанли",
+          "cf": "cf",
           "collation": "Захиалга ялгах",
           "currency": "мөнгөн тэмдэгт",
+          "hc": "hc",
+          "lb": "lb",
+          "ms": "ms",
           "numbers": "Тоо"
         },
         "types": {
@@ -44,10 +45,16 @@
             "persian": "перс хуанли",
             "roc": "минго хуанли"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "юникодын үндсэн эрэмбэлэх дараалал",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
@@ -61,7 +68,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "h11",
+            "h12": "h12",
+            "h23": "h23",
+            "h24": "h24"
+          },
+          "lb": {
+            "loose": "loose",
+            "normal": "normal",
+            "strict": "strict"
+          },
+          "ms": {
+            "metric": "metric",
+            "uksystem": "uksystem",
+            "ussystem": "ussystem"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "араб-энэтхэг тоо",
             "arabext": "өргөтгөсөн араб-энэтхэг тоо",
             "armn": "армен тоо",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "деванагари тоо",
             "ethi": "этиоп тоо",
             "fullwide": "бүрэн хэмжээтэй тоо",
@@ -85,6 +110,7 @@
             "hant": "уламжлалт хятад тоо",
             "hantfin": "уламжлалт хятад санхүүгийн тоо",
             "hebr": "еврей тоо",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "япон тоо",
             "jpanfin": "япон санхүүгийн тоо",
@@ -97,11 +123,19 @@
             "latn": "араб тоо",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "малаялам тоо",
+            "modi": "modi",
             "mong": "монгол тоо",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "мьянмар тоо",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "ория тоо",
@@ -110,6 +144,8 @@
             "romanlow": "жижиг ром тоо",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,7 +155,9 @@
             "telu": "телүгү тоо",
             "thai": "тай тоо",
             "tibt": "тибет тоо",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

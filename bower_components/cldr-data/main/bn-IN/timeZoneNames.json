@@ -3,11 +3,8 @@
     "bn-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11169 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-09 16:11:16 -0600 (Mon, 09 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "bn",
         "territory": "IN"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT {0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} সময়",
-          "regionFormat-type-standard": "{0} প্রমাণ সময়",
           "regionFormat-type-daylight": "{0} দিবালোক সময়",
+          "regionFormat-type-standard": "{0} প্রমাণ সময়",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "আরাগুয়াইনা"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "লা রিওহা"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "রিও গায়েগোস"
-                },
-                "Salta": {
-                  "exemplarCity": "স্যালটা"
                 },
                 "San_Juan": {
                   "exemplarCity": "সান হুয়ান"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "উশুয়াইয়া"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "লা রিওহা"
+                },
                 "San_Luis": {
                   "exemplarCity": "সান লুইস"
                 },
+                "Salta": {
+                  "exemplarCity": "স্যালটা"
+                },
                 "Tucuman": {
                   "exemplarCity": "টুকুমান"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "উশুয়াইয়া"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "হারমোসিল্লো"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "নক্স, ইন্ডিয়ানা"
-                },
-                "Marengo": {
-                  "exemplarCity": "মারেঙ্গো, ইন্ডিয়ানা"
+                "Vincennes": {
+                  "exemplarCity": "ভিনসেন্নেস, ইন্ডিয়ানা"
                 },
                 "Petersburg": {
                   "exemplarCity": "পিটারর্সবার্গ, ইন্ডিয়ানা"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "টেলসিটি, ইন্ডিয়ানা"
                 },
-                "Vevay": {
-                  "exemplarCity": "ভেভেয়, ইন্ডিয়ানা"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ভিনসেন্নেস, ইন্ডিয়ানা"
+                "Knox": {
+                  "exemplarCity": "নক্স, ইন্ডিয়ানা"
                 },
                 "Winamac": {
                   "exemplarCity": "উইনাম্যাক, ইন্ডিয়ানা"
+                },
+                "Marengo": {
+                  "exemplarCity": "মারেঙ্গো, ইন্ডিয়ানা"
+                },
+                "Vevay": {
+                  "exemplarCity": "ভেভেয়, ইন্ডিয়ানা"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "বেউলা, উত্তর ডাকোটা"
                 },
-                "Center": {
-                  "exemplarCity": "মধ্য, উত্তর ডাকোটা"
-                },
                 "New_Salem": {
                   "exemplarCity": "নিউ সালেম, উত্তর ডাকোটা"
+                },
+                "Center": {
+                  "exemplarCity": "মধ্য, উত্তর ডাকোটা"
                 }
               },
               "Ojinaga": {
@@ -698,7 +695,7 @@
                 "exemplarCity": "বাম্যাকো"
               },
               "Bangui": {
-                "exemplarCity": "বাঙ্গুল"
+                "exemplarCity": "বাঙ্গুই"
               },
               "Banjul": {
                 "exemplarCity": "বাঞ্জুল"
@@ -776,7 +773,7 @@
                 "exemplarCity": "লিব্রুভিল"
               },
               "Lome": {
-                "exemplarCity": "লোমায়"
+                "exemplarCity": "লোমে"
               },
               "Luanda": {
                 "exemplarCity": "লোয়ান্ডা"
@@ -883,7 +880,7 @@
                 "exemplarCity": "কলকাতা"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "চিতা"
               },
               "Choibalsan": {
                 "exemplarCity": "চোইবাল্‌স্যান"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "সিঙ্গাপুর"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "স্রেদনেকোলয়মস্ক"
               },
               "Taipei": {
                 "exemplarCity": "তাইপেই"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "অকল্যান্ড"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "বুগেনভিলে"
               },
               "Chatham": {
                 "exemplarCity": "চ্যাঠাম"
@@ -1435,30 +1432,30 @@
             },
             "America_Central": {
               "long": {
-                "generic": "উত্তর আমিরিকা মধ্যবর্তী অঞ্চলের কেন্দ্রীয় সময়",
-                "standard": "উত্তর আমিরিকা মধ্যবর্তী অঞ্চলের কেন্দ্রীয় মানক সময়",
-                "daylight": "উত্তর আমেরিকা মধ্যবর্তী অঞ্চলের দিবালোক সময়"
+                "generic": "কেন্দ্রীয় সময়",
+                "standard": "কেন্দ্রীয় মানক সময়",
+                "daylight": "কেন্দ্রীয় দিবালোক সময়"
               }
             },
             "America_Eastern": {
               "long": {
-                "generic": "উত্তর আমেরিকার পূর্বাঞ্চলীয় সময়",
-                "standard": "উত্তর আমেরিকার পূর্বাঞ্চলের প্রমাণ সময়",
-                "daylight": "উত্তর আমেরিকার পূর্বাঞ্চলের দিনের সময়"
+                "generic": "পূর্বাঞ্চলীয় সময়",
+                "standard": "পূর্বাঞ্চলের প্রমাণ সময়",
+                "daylight": "পূর্বাঞ্চলের দিবালোক সময়"
               }
             },
             "America_Mountain": {
               "long": {
-                "generic": "উত্তর আমেরিকার পার্বত্য অঞ্চলের সময়",
-                "standard": "উত্তর আমেরিকার পার্বত্য অঞ্চলের প্রমাণ সময়",
-                "daylight": "উত্তর আমেরিকার পার্বত্য অঞ্চলের দিনের সময়"
+                "generic": "পার্বত্য অঞ্চলের সময়",
+                "standard": "পার্বত্য অঞ্চলের প্রমাণ সময়",
+                "daylight": "পার্বত্য অঞ্চলের দিনের সময়"
               }
             },
             "America_Pacific": {
               "long": {
-                "generic": "উত্তর আমেরিকার প্রশান্ত মহাসাগরীয় অঞ্চলের সময়",
-                "standard": "উত্তর আমেরিকার প্রশান্ত মহাসাগরীয় অঞ্চলের প্রমাণ সময়",
-                "daylight": "উত্তর আমেরিকার প্রশান্ত মহাসাগরীয় অঞ্চলের দিনের সময়"
+                "generic": "প্রশান্ত মহাসাগরীয় অঞ্চলের সময়",
+                "standard": "প্রশান্ত মহাসাগরীয় অঞ্চলের প্রমাণ সময়",
+                "daylight": "প্রশান্ত মহাসাগরীয় অঞ্চলের দিনের সময়"
               }
             },
             "Anadyr": {
@@ -1491,7 +1488,7 @@
             },
             "Argentina_Western": {
               "long": {
-                "generic": "আর্জেনটিনা পশ্চিমি সময়",
+                "generic": "পশ্চিমি আর্জেন্টিনা সময়",
                 "standard": "পশ্চিমি আর্জেনটিনার প্রমাণ সময়",
                 "daylight": "পশ্চিমি আর্জেনটিনা গৃষ্মকালীন সময়"
               }
@@ -1729,11 +1726,6 @@
                 "standard": "ফরাসি দক্ষিণ এবং আন্টার্কটিক সময়"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "গ্রীনিচ মিন টাইম"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "গালাপাগোস সময়"
@@ -1754,6 +1746,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "গিলবার্ট দ্বীপপুঞ্জ সময়"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "গ্রীনিচ মিন টাইম"
               }
             },
             "Greenland_Eastern": {
@@ -1845,7 +1842,7 @@
               "long": {
                 "generic": "য়াকুটস্ক সময়",
                 "standard": "য়াকুটস্ক মানক সময়",
-                "daylight": "য়াকুটস্ক গৃষ্মকালীন সময়"
+                "daylight": "য়াকুটস্ক গ্রীষ্মকালীন সময়"
               }
             },
             "Israel": {
@@ -1984,7 +1981,7 @@
               "long": {
                 "generic": "মস্কো সময়",
                 "standard": "মস্কো মানক সময়",
-                "daylight": "মস্কো গৃষ্মকালীন সময়"
+                "daylight": "মস্কো গ্রীষ্মকালীন সময়"
               }
             },
             "Myanmar": {
@@ -2051,7 +2048,7 @@
               "long": {
                 "generic": "ওমস্ক সময়",
                 "standard": "ওমস্ক মানক সময়",
-                "daylight": "ওমস্ক গৃষ্মকালীন সময়"
+                "daylight": "ওমস্ক গ্রীষ্মকালীন সময়"
               }
             },
             "Pakistan": {
@@ -2068,7 +2065,7 @@
             },
             "Papua_New_Guinea": {
               "long": {
-                "standard": "পাপুয়া নিউগিনি সময়"
+                "standard": "পাপুয়া নিউ গিনি সময়"
               }
             },
             "Paraguay": {
@@ -2106,12 +2103,12 @@
             },
             "Pitcairn": {
               "long": {
-                "standard": "পিটকাইর্ন সময়"
+                "standard": "পিটকেয়ার্ন সময়"
               }
             },
             "Ponape": {
               "long": {
-                "standard": "পোনাপ সময়"
+                "standard": "পোনাপে সময়"
               }
             },
             "Reunion": {
@@ -2194,7 +2191,7 @@
             },
             "Tokelau": {
               "long": {
-                "standard": "টোকেলু সময়"
+                "standard": "টোকেলাউ সময়"
               }
             },
             "Tonga": {

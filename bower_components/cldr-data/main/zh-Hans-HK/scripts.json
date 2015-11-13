@@ -3,11 +3,8 @@
     "zh-Hans-HK": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11979 $"
         },
         "language": "zh",
         "script": "Hans",
@@ -17,6 +14,7 @@
         "scripts": {
           "Afak": "阿法卡文",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "阿拉伯文",
           "Arab-alt-variant": "波斯阿拉伯文",
           "Armi": "皇室亚拉姆文",
@@ -66,6 +64,7 @@
           "Hans-alt-stand-alone": "简体中文",
           "Hant": "繁体",
           "Hant-alt-stand-alone": "繁体中文",
+          "Hatr": "Hatr",
           "Hebr": "希伯来文",
           "Hira": "平假名",
           "Hluw": "安那托利亚象形文字",
@@ -112,6 +111,7 @@
           "Moon": "韩文语系",
           "Mroo": "谬文",
           "Mtei": "曼尼普尔文",
+          "Mult": "Mult",
           "Mymr": "缅甸文",
           "Narb": "古北方阿拉伯文",
           "Nbat": "纳巴泰文",

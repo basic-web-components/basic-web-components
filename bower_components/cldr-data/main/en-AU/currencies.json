@@ -3,14 +3,11 @@
     "en-AU": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11159 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-30 13:45:39 -0600 (Fri, 30 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "AU"
       },
       "numbers": {
         "currencies": {
@@ -131,9 +128,9 @@
             "symbol-alt-narrow": "$"
           },
           "AWG": {
-            "displayName": "Aruban Florin",
-            "displayName-count-one": "Aruban florin",
-            "displayName-count-other": "Aruban florin",
+            "displayName": "Aruba Guilder",
+            "displayName-count-one": "Aruba guilder",
+            "displayName-count-other": "Aruba guilders",
             "symbol": "AWG"
           },
           "AZM": {
@@ -155,8 +152,8 @@
             "symbol": "BAD"
           },
           "BAM": {
-            "displayName": "Bosnia-Herzegovina Convertible Mark",
-            "displayName-count-one": "Bosnia-Herzegovina convertible mark",
+            "displayName": "Bosnia-Herzegovina Convertible Marka",
+            "displayName-count-one": "Bosnia-Herzegovina convertible marka",
             "displayName-count-other": "Bosnia-Herzegovina convertible marks",
             "symbol": "BAM",
             "symbol-alt-narrow": "KM"
@@ -168,9 +165,9 @@
             "symbol": "BAN"
           },
           "BBD": {
-            "displayName": "Barbadian Dollar",
-            "displayName-count-one": "Barbadian dollar",
-            "displayName-count-other": "Barbadian dollars",
+            "displayName": "Barbados Dollar",
+            "displayName-count-one": "Barbados dollar",
+            "displayName-count-other": "Barbados dollars",
             "symbol": "BBD",
             "symbol-alt-narrow": "$"
           },
@@ -179,7 +176,7 @@
             "displayName-count-one": "Bangladeshi taka",
             "displayName-count-other": "Bangladeshi takas",
             "symbol": "BDT",
-            "symbol-alt-narrow": "৳"
+            "symbol-alt-narrow": "Tk"
           },
           "BEC": {
             "displayName": "Belgian Franc (convertible)",
@@ -236,9 +233,9 @@
             "symbol": "BIF"
           },
           "BMD": {
-            "displayName": "Bermudan Dollar",
-            "displayName-count-one": "Bermudan dollar",
-            "displayName-count-other": "Bermudan dollars",
+            "displayName": "Bermuda Dollar",
+            "displayName-count-one": "Bermuda dollar",
+            "displayName-count-other": "Bermuda dollars",
             "symbol": "BMD",
             "symbol-alt-narrow": "$"
           },
@@ -250,11 +247,11 @@
             "symbol-alt-narrow": "$"
           },
           "BOB": {
-            "displayName": "Bolivian Boliviano",
-            "displayName-count-one": "Bolivian boliviano",
-            "displayName-count-other": "Bolivian bolivianos",
+            "displayName": "Boliviano",
+            "displayName-count-one": "boliviano",
+            "displayName-count-other": "bolivianos",
             "symbol": "BOB",
-            "symbol-alt-narrow": "Bs"
+            "symbol-alt-narrow": "$b"
           },
           "BOL": {
             "displayName": "Bolivian Boliviano (1863–1963)",
@@ -296,7 +293,7 @@
             "displayName": "Brazilian Real",
             "displayName-count-one": "Brazilian real",
             "displayName-count-other": "Brazilian reals",
-            "symbol": "R$",
+            "symbol": "BRL",
             "symbol-alt-narrow": "R$"
           },
           "BRN": {
@@ -367,7 +364,7 @@
             "displayName": "Canadian Dollar",
             "displayName-count-one": "Canadian dollar",
             "displayName-count-other": "Canadian dollars",
-            "symbol": "CA$",
+            "symbol": "CAD",
             "symbol-alt-narrow": "$"
           },
           "CDF": {
@@ -422,7 +419,7 @@
             "displayName": "Chinese Yuan",
             "displayName-count-one": "Chinese yuan",
             "displayName-count-other": "Chinese yuan",
-            "symbol": "CN¥",
+            "symbol": "CNY",
             "symbol-alt-narrow": "¥"
           },
           "COP": {
@@ -469,7 +466,7 @@
             "displayName-count-one": "Cuban peso",
             "displayName-count-other": "Cuban pesos",
             "symbol": "CUP",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "₱"
           },
           "CVE": {
             "displayName": "Cape Verdean Escudo",
@@ -551,7 +548,7 @@
             "displayName-count-one": "Egyptian pound",
             "displayName-count-other": "Egyptian pounds",
             "symbol": "EGP",
-            "symbol-alt-narrow": "E£"
+            "symbol-alt-narrow": "£"
           },
           "ERN": {
             "displayName": "Eritrean Nakfa",
@@ -588,7 +585,7 @@
             "displayName": "Euro",
             "displayName-count-one": "euro",
             "displayName-count-other": "euro",
-            "symbol": "€",
+            "symbol": "EUR",
             "symbol-alt-narrow": "€"
           },
           "FIM": {
@@ -621,7 +618,7 @@
             "displayName": "British Pound",
             "displayName-count-one": "British pound",
             "displayName-count-other": "British pounds",
-            "symbol": "£",
+            "symbol": "GBP",
             "symbol-alt-narrow": "£"
           },
           "GEK": {
@@ -633,8 +630,9 @@
           "GEL": {
             "displayName": "Georgian Lari",
             "displayName-count-one": "Georgian lari",
-            "displayName-count-other": "Georgian laris",
-            "symbol": "GEL"
+            "displayName-count-other": "Georgian lari",
+            "symbol": "GEL",
+            "symbol-alt-variant": "GEL"
           },
           "GHC": {
             "displayName": "Ghanaian Cedi (1979–2007)",
@@ -716,7 +714,7 @@
             "displayName": "Hong Kong Dollar",
             "displayName-count-one": "Hong Kong dollar",
             "displayName-count-other": "Hong Kong dollars",
-            "symbol": "HK$",
+            "symbol": "HKD",
             "symbol-alt-narrow": "$"
           },
           "HNL": {
@@ -777,17 +775,17 @@
             "displayName-count-other": "Israeli sheqels (1980–1985)"
           },
           "ILS": {
-            "displayName": "Israeli New Sheqel",
-            "displayName-count-one": "Israeli new sheqel",
-            "displayName-count-other": "Israeli new sheqels",
-            "symbol": "₪",
+            "displayName": "Israeli Shekel",
+            "displayName-count-one": "Israeli shekel",
+            "displayName-count-other": "Israeli sheckles",
+            "symbol": "ILS",
             "symbol-alt-narrow": "₪"
           },
           "INR": {
             "displayName": "Indian Rupee",
             "displayName-count-one": "Indian rupee",
             "displayName-count-other": "Indian rupees",
-            "symbol": "₹",
+            "symbol": "INR",
             "symbol-alt-narrow": "₹"
           },
           "IQD": {
@@ -812,7 +810,7 @@
             "displayName-count-one": "Icelandic króna",
             "displayName-count-other": "Icelandic krónur",
             "symbol": "ISK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "Kr"
           },
           "ITL": {
             "displayName": "Italian Lira",
@@ -837,7 +835,7 @@
             "displayName": "Japanese Yen",
             "displayName-count-one": "Japanese yen",
             "displayName-count-other": "Japanese yen",
-            "symbol": "JP¥",
+            "symbol": "JPY",
             "symbol-alt-narrow": "¥"
           },
           "KES": {
@@ -889,7 +887,7 @@
             "displayName": "South Korean Won",
             "displayName-count-one": "South Korean won",
             "displayName-count-other": "South Korean won",
-            "symbol": "₩",
+            "symbol": "KRW",
             "symbol-alt-narrow": "₩"
           },
           "KWD": {
@@ -908,14 +906,14 @@
           "KZT": {
             "displayName": "Kazakhstani Tenge",
             "displayName-count-one": "Kazakhstani tenge",
-            "displayName-count-other": "Kazakhstani tenges",
+            "displayName-count-other": "Kazakhstani tenge",
             "symbol": "KZT",
             "symbol-alt-narrow": "₸"
           },
           "LAK": {
             "displayName": "Laotian Kip",
             "displayName-count-one": "Laotian kip",
-            "displayName-count-other": "Laotian kips",
+            "displayName-count-other": "Laotian kip",
             "symbol": "LAK",
             "symbol-alt-narrow": "₭"
           },
@@ -924,7 +922,7 @@
             "displayName-count-one": "Lebanese pound",
             "displayName-count-other": "Lebanese pounds",
             "symbol": "LBP",
-            "symbol-alt-narrow": "L£"
+            "symbol-alt-narrow": "ل.ل"
           },
           "LKR": {
             "displayName": "Sri Lankan Rupee",
@@ -1029,7 +1027,7 @@
           "MGA": {
             "displayName": "Malagasy Ariary",
             "displayName-count-one": "Malagasy ariary",
-            "displayName-count-other": "Malagasy ariarys",
+            "displayName-count-other": "Malagasy ariaries",
             "symbol": "MGA",
             "symbol-alt-narrow": "Ar"
           },
@@ -1042,7 +1040,7 @@
           "MKD": {
             "displayName": "Macedonian Denar",
             "displayName-count-one": "Macedonian denar",
-            "displayName-count-other": "Macedonian denari",
+            "displayName-count-other": "Macedonian denar",
             "symbol": "MKD"
           },
           "MKN": {
@@ -1123,7 +1121,7 @@
             "displayName": "Mexican Peso",
             "displayName-count-one": "Mexican peso",
             "displayName-count-other": "Mexican pesos",
-            "symbol": "MX$",
+            "symbol": "MXN",
             "symbol-alt-narrow": "$"
           },
           "MXP": {
@@ -1214,7 +1212,7 @@
             "displayName": "New Zealand Dollar",
             "displayName-count-one": "New Zealand dollar",
             "displayName-count-other": "New Zealand dollars",
-            "symbol": "NZ$",
+            "symbol": "NZD",
             "symbol-alt-narrow": "$"
           },
           "OMR": {
@@ -1250,7 +1248,7 @@
           "PGK": {
             "displayName": "Papua New Guinean Kina",
             "displayName-count-one": "Papua New Guinean kina",
-            "displayName-count-other": "Papua New Guinean kina",
+            "displayName-count-other": "Papua New Guinean kinas",
             "symbol": "PGK"
           },
           "PHP": {
@@ -1291,12 +1289,12 @@
             "displayName-count-one": "Paraguayan guarani",
             "displayName-count-other": "Paraguayan guaranis",
             "symbol": "PYG",
-            "symbol-alt-narrow": "₲"
+            "symbol-alt-narrow": "Gs"
           },
           "QAR": {
-            "displayName": "Qatari Rial",
-            "displayName-count-one": "Qatari rial",
-            "displayName-count-other": "Qatari rials",
+            "displayName": "Qatari Riyal",
+            "displayName-count-one": "Qatari riyal",
+            "displayName-count-other": "Quatari riyals",
             "symbol": "QAR"
           },
           "RHD": {
@@ -1328,7 +1326,7 @@
             "displayName-count-one": "Russian rouble",
             "displayName-count-other": "Russian roubles",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Russian Rouble (1991–1998)",
@@ -1358,10 +1356,10 @@
             "symbol-alt-narrow": "$"
           },
           "SCR": {
-            "displayName": "Seychelles Rupee",
+            "displayName": "Seychellois Rupee",
             "displayName-count-one": "Seychellois rupee",
             "displayName-count-other": "Seychellois rupees",
-            "symbol": "SCR"
+            "symbol": "Rs"
           },
           "SDD": {
             "displayName": "Sudanese Dinar (1992–2007)",
@@ -1386,7 +1384,7 @@
             "displayName-count-one": "Swedish krona",
             "displayName-count-other": "Swedish kronor",
             "symbol": "SEK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "Kr"
           },
           "SGD": {
             "displayName": "Singapore Dollar",
@@ -1427,9 +1425,9 @@
             "symbol": "SOS"
           },
           "SRD": {
-            "displayName": "Surinamese Dollar",
-            "displayName-count-one": "Surinamese dollar",
-            "displayName-count-other": "Surinamese dollars",
+            "displayName": "Suriname Dollar",
+            "displayName-count-one": "Suriname dollar",
+            "displayName-count-other": "Suriname dollars",
             "symbol": "SRD",
             "symbol-alt-narrow": "$"
           },
@@ -1537,10 +1535,10 @@
           "TRY": {
             "displayName": "Turkish Lira",
             "displayName-count-one": "Turkish lira",
-            "displayName-count-other": "Turkish Lira",
+            "displayName-count-other": "Turkish lire",
             "symbol": "TRY",
             "symbol-alt-narrow": "₺",
-            "symbol-alt-variant": "TL"
+            "symbol-alt-variant": "TRY"
           },
           "TTD": {
             "displayName": "Trinidad & Tobago Dollar",
@@ -1553,8 +1551,8 @@
             "displayName": "New Taiwan Dollar",
             "displayName-count-one": "New Taiwan dollar",
             "displayName-count-other": "New Taiwan dollars",
-            "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol": "TWD",
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "Tanzanian Shilling",
@@ -1591,7 +1589,7 @@
             "displayName": "US Dollar",
             "displayName-count-one": "US dollar",
             "displayName-count-other": "US dollars",
-            "symbol": "US$",
+            "symbol": "USD",
             "symbol-alt-narrow": "$"
           },
           "USN": {
@@ -1619,16 +1617,16 @@
             "symbol": "UYP"
           },
           "UYU": {
-            "displayName": "Uruguayan Peso",
+            "displayName": "Peso Uruguayo",
             "displayName-count-one": "Uruguayan peso",
             "displayName-count-other": "Uruguayan pesos",
             "symbol": "UYU",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "$U"
           },
           "UZS": {
             "displayName": "Uzbekistani Som",
             "displayName-count-one": "Uzbekistani som",
-            "displayName-count-other": "Uzbekistani som",
+            "displayName-count-other": "Uzbekistani soms",
             "symbol": "UZS"
           },
           "VEB": {
@@ -1647,8 +1645,8 @@
           "VND": {
             "displayName": "Vietnamese Dong",
             "displayName-count-one": "Vietnamese dong",
-            "displayName-count-other": "Vietnamese dong",
-            "symbol": "₫",
+            "displayName-count-other": "Vietnamese dongs",
+            "symbol": "VND",
             "symbol-alt-narrow": "₫"
           },
           "VNN": {
@@ -1666,14 +1664,14 @@
           "WST": {
             "displayName": "Samoan Tala",
             "displayName-count-one": "Samoan tala",
-            "displayName-count-other": "Samoan tala",
+            "displayName-count-other": "Samoan talas",
             "symbol": "WST"
           },
           "XAF": {
             "displayName": "Central African CFA Franc",
             "displayName-count-one": "Central African CFA franc",
             "displayName-count-other": "Central African CFA francs",
-            "symbol": "FCFA"
+            "symbol": "XAF"
           },
           "XAG": {
             "displayName": "Silver",
@@ -1715,7 +1713,7 @@
             "displayName": "East Caribbean Dollar",
             "displayName-count-one": "East Caribbean dollar",
             "displayName-count-other": "East Caribbean dollars",
-            "symbol": "EC$",
+            "symbol": "XCD",
             "symbol-alt-narrow": "$"
           },
           "XDR": {
@@ -1746,7 +1744,7 @@
             "displayName": "West African CFA Franc",
             "displayName-count-one": "West African CFA franc",
             "displayName-count-other": "West African CFA francs",
-            "symbol": "CFA"
+            "symbol": "XOF"
           },
           "XPD": {
             "displayName": "Palladium",
@@ -1758,7 +1756,7 @@
             "displayName": "CFP Franc",
             "displayName-count-one": "CFP franc",
             "displayName-count-other": "CFP francs",
-            "symbol": "CFPF"
+            "symbol": "CFP"
           },
           "XPT": {
             "displayName": "Platinum",

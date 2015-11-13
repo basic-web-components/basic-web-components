@@ -3,11 +3,8 @@
     "nl-SR": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "nl",
         "territory": "SR"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "kalender",
+          "cf": "cf",
           "colAlternate": "Sorteren van symbolen negeren",
           "colBackwards": "Omgekeerd sorteren op accenten",
           "colCaseFirst": "Indelen op hoofdletters/kleine letters",
           "colCaseLevel": "Hoofdlettergevoelig sorteren",
           "colHiraganaQuaternary": "Kana sorteren",
+          "collation": "sorteervolgorde",
           "colNormalization": "Genormaliseerd sorteren",
           "colNumeric": "Numeriek sorteren",
           "colStrength": "Sorteervoorrang",
-          "collation": "sorteervolgorde",
           "currency": "valuta",
+          "hc": "uursysteem (12 of 24)",
+          "lb": "stijl regelafbreking",
+          "ms": "maatsysteem",
           "numbers": "cijfers",
           "timezone": "Tijdzone",
           "va": "Landvariant",
@@ -57,6 +58,10 @@
             "persian": "Perzische kalender",
             "roc": "Kalender van de Chinese Republiek"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Symbolen sorteren",
             "shifted": "Sorteren zonder symbolen"
@@ -78,6 +83,26 @@
             "no": "Kana afzonderlijk sorteren",
             "yes": "Kana anders sorteren"
           },
+          "collation": {
+            "big5han": "Traditioneel-Chinese sorteervolgorde - Big5",
+            "compat": "vorige sorteervolgorde, voor compatibiliteit",
+            "dictionary": "Woordenboeksorteervolgorde",
+            "ducet": "standaard Unicode-sorteervolgorde",
+            "emoji": "emojisorteervolgorde",
+            "eor": "Europese sorteerregels",
+            "gb2312han": "Vereenvoudigd-Chinese sorteervolgorde - GB2312",
+            "phonebook": "Telefoonboeksorteervolgorde",
+            "phonetic": "Fonetische sorteervolgorde",
+            "pinyin": "Pinyinvolgorde",
+            "reformed": "Herziene sorteervolgorde",
+            "search": "algemeen zoeken",
+            "searchjl": "Zoeken op eerste Hangul-medeklinker",
+            "standard": "standaard sorteervolgorde",
+            "stroke": "Streeksorteervolgorde",
+            "traditional": "Traditionele sorteervolgorde",
+            "unihan": "Sorteervolgorde radicalen/strepen",
+            "zhuyin": "Zhuyinvolgorde"
+          },
           "colNormalization": {
             "no": "Zonder normalisatie sorteren",
             "yes": "Unicode genormaliseerd sorteren"
@@ -93,25 +118,24 @@
             "secondary": "Sorteren op accenten",
             "tertiary": "Sorteren op accenten/hoofdlettergebruik/breedte"
           },
-          "collation": {
-            "big5han": "Traditioneel-Chinese sorteervolgorde - Big5",
-            "dictionary": "Woordenboeksorteervolgorde",
-            "ducet": "standaard Unicode-sorteervolgorde",
-            "eor": "Europese sorteerregels",
-            "gb2312han": "Vereenvoudigd-Chinese sorteervolgorde - GB2312",
-            "phonebook": "Telefoonboeksorteervolgorde",
-            "phonetic": "Fonetische sorteervolgorde",
-            "pinyin": "Pinyinvolgorde",
-            "reformed": "Herziene sorteervolgorde",
-            "search": "algemeen zoeken",
-            "searchjl": "Zoeken op eerste Hangul-medeklinker",
-            "standard": "standaard sorteervolgorde",
-            "stroke": "Streeksorteervolgorde",
-            "traditional": "Traditionele sorteervolgorde",
-            "unihan": "Sorteervolgorde radicalen/strepen",
-            "zhuyin": "Zhuyinvolgorde"
+          "hc": {
+            "h11": "12-uursysteem (0-11)",
+            "h12": "12-uursysteem (1-12)",
+            "h23": "24-uursysteem (0-23)",
+            "h24": "24-uursysteem (1-24)"
+          },
+          "lb": {
+            "loose": "losse stijl regelafbreking",
+            "normal": "normale stijl regelafbreking",
+            "strict": "strikte stijl regelafbreking"
+          },
+          "ms": {
+            "metric": "metriek stelsel",
+            "uksystem": "Brits imperiaal stelsel",
+            "ussystem": "Amerikaans imperiaal stelsel"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Arabisch-Indische cijfers",
             "arabext": "uitgebreide Arabisch-Indische cijfers",
             "armn": "Armeense cijfers",
@@ -121,6 +145,7 @@
             "brah": "Brahmi cijfers",
             "cakm": "Chakma cijfers",
             "cham": "Cham cijfers",
+            "cyrl": "cyrl",
             "deva": "Devanagari cijfers",
             "ethi": "Ethiopische cijfers",
             "finance": "Financiële cijfers",
@@ -136,6 +161,7 @@
             "hant": "traditioneel Chinese cijfers",
             "hantfin": "traditioneel Chinese financiële cijfers",
             "hebr": "Hebreeuwse cijfers",
+            "hmng": "hmng",
             "java": "Javaanse cijfers",
             "jpan": "Japanse cijfers",
             "jpanfin": "Japanse financiële cijfers",
@@ -148,11 +174,19 @@
             "latn": "Westerse cijfers",
             "lepc": "Lepcha cijfers",
             "limb": "Limbu cijfers",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malayalam cijfers",
+            "modi": "modi",
             "mong": "Mongoolse cijfers",
+            "mroo": "mroo",
             "mtei": "Meetei Mayek cijfers",
             "mymr": "Myanmarese cijfers",
             "mymrshan": "Myanmarese Shan cijfers",
+            "mymrtlng": "mymrtlng",
             "native": "Binnenlandse cijfers",
             "nkoo": "N’Ko cijfers",
             "olck": "Ol Chiki cijfers",
@@ -162,6 +196,8 @@
             "romanlow": "kleine Romeinse cijfers",
             "saur": "Saurashtra cijfers",
             "shrd": "Sharada cijfers",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "Sora Sompeng cijfers",
             "sund": "Sundanese cijfers",
             "takr": "Takri cijfers",
@@ -171,8 +207,10 @@
             "telu": "Telugu cijfers",
             "thai": "Thaise cijfers",
             "tibt": "Tibetaanse cijfers",
+            "tirh": "tirh",
             "traditional": "Traditionele cijfers",
-            "vaii": "Vai-cijfers"
+            "vaii": "Vai-cijfers",
+            "wara": "wara"
           }
         },
         "codePatterns": {

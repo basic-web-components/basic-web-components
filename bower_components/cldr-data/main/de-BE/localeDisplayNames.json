@@ -3,11 +3,8 @@
     "de-BE": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "de",
         "territory": "BE"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "Kalender",
+          "cf": "cf",
           "colAlternate": "Sortierung ohne Symbole",
           "colBackwards": "Umgekehrte Sortierung von Akzenten",
           "colCaseFirst": "Sortierung nach Groß- bzw. Kleinbuchstaben",
           "colCaseLevel": "Sortierung nach Groß- oder Kleinschreibung",
           "colHiraganaQuaternary": "Kana-Sortierung",
+          "collation": "Sortierung",
           "colNormalization": "Normierte Sortierung",
           "colNumeric": "Sortierung nach Zahlen",
           "colStrength": "Sortierstärke",
-          "collation": "Sortierung",
           "currency": "Währung",
+          "hc": "Stundenzählung (12 vs. 24)",
+          "lb": "Zeilenumbruchstil",
+          "ms": "Maßsystem",
           "numbers": "Zahlen",
           "timezone": "Zeitzone",
           "va": "Lokale Variante",
@@ -43,7 +44,7 @@
             "coptic": "Koptischer Kalender",
             "dangi": "Dangi Kalender",
             "ethiopic": "Äthiopischer Kalender",
-            "ethiopic-amete-alem": "Äthiopischer Kalender \"Amete Alem\"",
+            "ethiopic-amete-alem": "Äthiopischer Kalender \\\"Amete Alem\\\"",
             "gregorian": "Gregorianischer Kalender",
             "hebrew": "Hebräischer Kalender",
             "indian": "Indischer Nationalkalender",
@@ -56,6 +57,10 @@
             "japanese": "Japanischer Kalender",
             "persian": "Persischer Kalender",
             "roc": "Kalender der Republik China"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "colAlternate": {
             "non-ignorable": "Symbole sortieren",
@@ -78,6 +83,26 @@
             "no": "Kana separat sortieren",
             "yes": "Kana anders sortieren"
           },
+          "collation": {
+            "big5han": "Traditionelles Chinesisch - Big5",
+            "compat": "compat",
+            "dictionary": "Lexikographische Sortierreihenfolge",
+            "ducet": "Unicode-Sortierung",
+            "emoji": "emoji",
+            "eor": "Europäische Sortierregeln",
+            "gb2312han": "Vereinfachtes Chinesisch - GB2312",
+            "phonebook": "Telefonbuch-Sortierung",
+            "phonetic": "Sortierung nach Phonetik",
+            "pinyin": "Pinyin-Sortierregeln",
+            "reformed": "Reformierte Sortierreihenfolge",
+            "search": "Allgemeine Suche",
+            "searchjl": "Suche nach Anfangsbuchstaben des koreanischen Alphabets",
+            "standard": "Standard-Sortierung",
+            "stroke": "Strichfolge",
+            "traditional": "Traditionelle Sortierregeln",
+            "unihan": "Radikal-Strich-Sortierregeln",
+            "zhuyin": "Zhuyin-Sortierregeln"
+          },
           "colNormalization": {
             "no": "Ohne Normierung sortieren",
             "yes": "Nach Unicode sortieren"
@@ -93,25 +118,24 @@
             "secondary": "Akzente sortieren",
             "tertiary": "Akzente/Fall/Breite sortieren"
           },
-          "collation": {
-            "big5han": "Traditionelles Chinesisch - Big5",
-            "dictionary": "Lexikographische Sortierreihenfolge",
-            "ducet": "Unicode-Sortierung",
-            "eor": "Europäische Sortierregeln",
-            "gb2312han": "Vereinfachtes Chinesisch - GB2312",
-            "phonebook": "Telefonbuch-Sortierung",
-            "phonetic": "Sortierung nach Phonetik",
-            "pinyin": "Pinyin-Sortierregeln",
-            "reformed": "Reformierte Sortierreihenfolge",
-            "search": "Allgemeine Suche",
-            "searchjl": "Suche nach Anfangsbuchstaben des koreanischen Alphabets",
-            "standard": "Standard-Sortierung",
-            "stroke": "Strichfolge",
-            "traditional": "Traditionelle Sortierregeln",
-            "unihan": "Radikal-Strich-Sortierregeln",
-            "zhuyin": "Zhuyin-Sortierregeln"
+          "hc": {
+            "h11": "12-Stunden-Zählung (0-11)",
+            "h12": "12-Stunden-Zählung (1-12)",
+            "h23": "24-Stunden-Zählung (0-23)",
+            "h24": "24-Stunden-System (1-24)"
+          },
+          "lb": {
+            "loose": "lockerer Zeilenumbruch",
+            "normal": "normaler Zeilenumbruch",
+            "strict": "fester Zeilenumbruch"
+          },
+          "ms": {
+            "metric": "metrisches System",
+            "uksystem": "britisches Maßsystem",
+            "ussystem": "US-Maßsystem"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Arabisch-indische Ziffern",
             "arabext": "Erweiterte arabisch-indische Ziffern",
             "armn": "Armenische Ziffern",
@@ -121,6 +145,7 @@
             "brah": "Brahmi-Ziffern",
             "cakm": "Chakma-Ziffern",
             "cham": "Cham-Ziffern",
+            "cyrl": "cyrl",
             "deva": "Devanagari-Ziffern",
             "ethi": "Äthiopische Ziffern",
             "finance": "Finanzzahlen",
@@ -136,6 +161,7 @@
             "hant": "Traditionell-chinesische Ziffern",
             "hantfin": "Traditionell-chinesische Finanzziffern",
             "hebr": "Hebräische Ziffern",
+            "hmng": "hmng",
             "java": "Javanesische Ziffern",
             "jpan": "Japanische Ziffern",
             "jpanfin": "Japanische Finanzziffern",
@@ -148,11 +174,19 @@
             "latn": "Westliche Ziffern",
             "lepc": "Lepcha-Ziffern",
             "limb": "Limbu-Ziffern",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malayalam-Ziffern",
+            "modi": "modi",
             "mong": "Mongolische Ziffern",
+            "mroo": "mroo",
             "mtei": "Meitei-Mayek-Ziffern",
             "mymr": "Myanmar-Ziffern",
             "mymrshan": "Myanmarische Shan-Ziffern",
+            "mymrtlng": "mymrtlng",
             "native": "Native Ziffern",
             "nkoo": "N’Ko-Ziffern",
             "olck": "Ol-Chiki-Ziffern",
@@ -162,6 +196,8 @@
             "romanlow": "Römische Ziffern in Kleinschrift",
             "saur": "Saurashtra-Ziffern",
             "shrd": "Sharada-Ziffern",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "Sora-Sompeng-Ziffern",
             "sund": "Sundanesische Ziffern",
             "takr": "Takri-Ziffern",
@@ -171,8 +207,10 @@
             "telu": "Telugu-Ziffern",
             "thai": "Thai-Ziffern",
             "tibt": "Tibetische Ziffern",
+            "tirh": "tirh",
             "traditional": "Traditionelle Zahlen",
-            "vaii": "Vai-Ziffern"
+            "vaii": "Vai-Ziffern",
+            "wara": "wara"
           }
         },
         "codePatterns": {

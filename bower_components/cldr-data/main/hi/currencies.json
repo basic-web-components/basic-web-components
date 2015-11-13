@@ -3,11 +3,8 @@
     "hi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11947 $"
         },
         "language": "hi"
       },
@@ -525,7 +522,8 @@
             "displayName": "जॉर्जियन लारी",
             "displayName-count-one": "जॉर्जियन लारी",
             "displayName-count-other": "जॉर्जियन लारी",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "ლ"
           },
           "GHC": {
             "displayName": "GHC",
@@ -929,7 +927,7 @@
             "displayName-count-one": "मॉरिशियन रुपया",
             "displayName-count-other": "मॉरिशियन रुपया",
             "symbol": "MUR",
-            "symbol-alt-narrow": "Rs"
+            "symbol-alt-narrow": "₨"
           },
           "MVR": {
             "displayName": "मालदीवी रुफ़िया",
@@ -1073,7 +1071,7 @@
             "displayName-count-one": "पाकिस्तानी रुपया",
             "displayName-count-other": "पाकिस्तानी रुपए",
             "symbol": "PKR",
-            "symbol-alt-narrow": "Rs"
+            "symbol-alt-narrow": "₨"
           },
           "PLN": {
             "displayName": "पोलिश ज़्लॉटी",
@@ -1128,7 +1126,7 @@
             "displayName-count-one": "रूसी रूबल",
             "displayName-count-other": "रूसी रूबल",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1483,7 +1481,7 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "[CFA] फ़्रैंक [BCEAO]",
+            "displayName": "पश्चिमी अफ़्रीकी CFA फ्रैंक",
             "displayName-count-one": "[CFA] फ़्रैंक [BCEAO]",
             "displayName-count-other": "[CFA] फ़्रैंक [BCEAO]",
             "symbol": "CFA"

@@ -3,11 +3,8 @@
     "el-CY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11171 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-10 11:03:58 -0600 (Tue, 10 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "el",
         "territory": "CY"
@@ -586,9 +583,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "Λίρα Βρετανίας",
-            "displayName-count-one": "λίρα Βρετανίας",
-            "displayName-count-other": "λίρες Βρετανίας",
+            "displayName": "Λίρα Στερλίνα Βρετανίας",
+            "displayName-count-one": "λίρα στερλίνα Βρετανίας",
+            "displayName-count-other": "λίρες στερλίνες Βρετανίας",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -602,7 +599,8 @@
             "displayName": "Λάρι Γεωργίας",
             "displayName-count-one": "λάρι Γεωργίας",
             "displayName-count-other": "λάρι Γεωργίας",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Σέντι Γκάνας (1979–2007)",
@@ -999,9 +997,9 @@
             "symbol": "MGF"
           },
           "MKD": {
-            "displayName": "Δηνάριο Π.Γ.Δ.Μ.",
-            "displayName-count-one": "δηνάριο Π.Γ.Δ.Μ.",
-            "displayName-count-other": "δηνάρια Π.Γ.Δ.Μ.",
+            "displayName": "Δηνάριο ΠΓΔΜ",
+            "displayName-count-one": "δηνάριο ΠΓΔΜ",
+            "displayName-count-other": "δηνάρια ΠΓΔΜ",
             "symbol": "MKD"
           },
           "MKN": {
@@ -1278,7 +1276,7 @@
             "displayName-count-one": "ρούβλι Ρωσίας",
             "displayName-count-other": "ρούβλια Ρωσίας",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Ρούβλι Ρωσίας (1991–1998)",
@@ -1504,7 +1502,7 @@
             "displayName-count-one": "νέο δολάριο Ταϊβάν",
             "displayName-count-other": "νέα δολάρια Ταϊβάν",
             "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "Σελίνι Τανζανίας",

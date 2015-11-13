@@ -3,11 +3,8 @@
     "nl-SR": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "nl",
         "territory": "SR"
@@ -421,9 +418,9 @@
             "symbol": "CNX"
           },
           "CNY": {
-            "displayName": "Chinese yuan renminbi",
-            "displayName-count-one": "Chinese renminbi",
-            "displayName-count-other": "Chinese renminbi",
+            "displayName": "Chinese renminbi",
+            "displayName-count-one": "Chinese yuan",
+            "displayName-count-other": "Chinese yuan",
             "symbol": "CN¥",
             "symbol-alt-narrow": "¥"
           },
@@ -636,7 +633,8 @@
             "displayName": "Georgische lari",
             "displayName-count-one": "Georgische lari",
             "displayName-count-other": "Georgische lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "ლ"
           },
           "GHC": {
             "displayName": "Ghanese cedi (1979–2007)",
@@ -664,9 +662,9 @@
             "symbol": "GMD"
           },
           "GNF": {
-            "displayName": "Guinese franc",
-            "displayName-count-one": "Guinese franc",
-            "displayName-count-other": "Guinese franc",
+            "displayName": "Guinese frank",
+            "displayName-count-one": "Guinese frank",
+            "displayName-count-other": "Guinese frank",
             "symbol": "GNF",
             "symbol-alt-narrow": "FG"
           },
@@ -1333,7 +1331,7 @@
             "displayName-count-one": "Russische roebel",
             "displayName-count-other": "Russische roebel",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Russische roebel (1991–1998)",
@@ -1657,9 +1655,9 @@
             "symbol-alt-narrow": "₫"
           },
           "VNN": {
-            "displayName": "Oude Vietnamese dong (1978–1985)",
-            "displayName-count-one": "oude Vietnamese dong (1978–1985)",
-            "displayName-count-other": "oude Vietnamese dong (1978–1985)",
+            "displayName": "Vietnamese dong (1978–1985)",
+            "displayName-count-one": "Vietnamese dong (1978–1985)",
+            "displayName-count-other": "Vietnamese dong (1978–1985)",
             "symbol": "VNN"
           },
           "VUV": {
@@ -1760,8 +1758,8 @@
             "symbol": "XPD"
           },
           "XPF": {
-            "displayName": "CFP-franc",
-            "displayName-count-one": "CFP-franc",
+            "displayName": "CFP-frank",
+            "displayName-count-one": "CFP-frank",
             "displayName-count-other": "CFP-frank",
             "symbol": "XPF"
           },

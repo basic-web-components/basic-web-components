@@ -3,11 +3,8 @@
     "bn-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11169 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-09 16:11:16 -0600 (Mon, 09 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "bn",
         "territory": "IN"
@@ -187,8 +184,8 @@
           },
           "day": {
             "displayName": "দিন",
-            "relative-type--1": "গতকাল",
             "relative-type--2": "গত পরশু",
+            "relative-type--1": "গতকাল",
             "relative-type-0": "আজ",
             "relative-type-1": "আগামীকাল",
             "relative-type-2": "আগামী পরশু",
@@ -203,8 +200,8 @@
           },
           "day-short": {
             "displayName": "দিন",
-            "relative-type--1": "গতকাল",
             "relative-type--2": "গত পরশু",
+            "relative-type--1": "গতকাল",
             "relative-type-0": "আজ",
             "relative-type-1": "আগামীকাল",
             "relative-type-2": "আগামী পরশু",
@@ -219,8 +216,8 @@
           },
           "day-narrow": {
             "displayName": "দিন",
-            "relative-type--1": "গতকাল",
             "relative-type--2": "গত পরশু",
+            "relative-type--1": "গতকাল",
             "relative-type-0": "আজ",
             "relative-type-1": "আগামীকাল",
             "relative-type-2": "আগামী পরশু",

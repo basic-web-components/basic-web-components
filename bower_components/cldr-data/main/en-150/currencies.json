@@ -3,14 +3,11 @@
     "en-150": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11150 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-23 16:43:31 -0600 (Fri, 23 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11976 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "150"
       },
       "numbers": {
         "currencies": {
@@ -585,6 +582,7 @@
             "symbol": "ETB"
           },
           "EUR": {
+            "pattern": "¤#,##0.00",
             "displayName": "Euro",
             "displayName-count-one": "euro",
             "displayName-count-other": "euros",
@@ -634,7 +632,8 @@
             "displayName": "Georgian Lari",
             "displayName-count-one": "Georgian lari",
             "displayName-count-other": "Georgian laris",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ghanaian Cedi (1979–2007)",
@@ -1328,7 +1327,7 @@
             "displayName-count-one": "Russian rouble",
             "displayName-count-other": "Russian roubles",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Russian Rouble (1991–1998)",
@@ -1554,7 +1553,7 @@
             "displayName-count-one": "New Taiwan dollar",
             "displayName-count-other": "New Taiwan dollars",
             "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "Tanzanian Shilling",

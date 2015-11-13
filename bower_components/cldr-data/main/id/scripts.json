@@ -3,11 +3,8 @@
     "id": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "id"
       },
@@ -15,6 +12,7 @@
         "scripts": {
           "Afak": "Afaka",
           "Aghb": "Albania Kaukasia",
+          "Ahom": "Ahom",
           "Arab": "Arab",
           "Arab-alt-variant": "Arab Persia",
           "Armi": "Aram Imperial",
@@ -64,6 +62,7 @@
           "Hans-alt-stand-alone": "Han Sederhana",
           "Hant": "Tradisional",
           "Hant-alt-stand-alone": "Han Tradisional",
+          "Hatr": "Hatr",
           "Hebr": "Ibrani",
           "Hira": "Hiragana",
           "Hluw": "Hieroglif Anatolia",
@@ -110,6 +109,7 @@
           "Moon": "Moon",
           "Mroo": "Mro",
           "Mtei": "Meitei Mayek",
+          "Mult": "Mult",
           "Mymr": "Myanmar",
           "Narb": "Arab Utara Kuno",
           "Nbat": "Nabataea",

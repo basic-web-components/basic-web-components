@@ -3,21 +3,18 @@
     "uk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "uk"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Ера"
+            "displayName": "ера"
           },
           "year": {
-            "displayName": "Рік",
+            "displayName": "рік",
             "relative-type--1": "торік",
             "relative-type-0": "цього року",
             "relative-type-1": "наступного року",
@@ -71,10 +68,10 @@
             }
           },
           "quarter": {
-            "displayName": "Квартал",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "квартал",
+            "relative-type--1": "минулого кварталу",
+            "relative-type-0": "цього кварталу",
+            "relative-type-1": "наступного кварталу",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} квартал",
               "relativeTimePattern-count-few": "через {0} квартали",
@@ -90,9 +87,9 @@
           },
           "quarter-short": {
             "displayName": "кв.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "минулого кв.",
+            "relative-type-0": "цього кв.",
+            "relative-type-1": "наступного кв.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} кв.",
               "relativeTimePattern-count-few": "через {0} кв.",
@@ -108,9 +105,9 @@
           },
           "quarter-narrow": {
             "displayName": "кв.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "минулого кв.",
+            "relative-type-0": "цього кв.",
+            "relative-type-1": "наступного кв.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} кв.",
               "relativeTimePattern-count-few": "+{0} кв.",
@@ -125,7 +122,7 @@
             }
           },
           "month": {
-            "displayName": "Місяць",
+            "displayName": "місяць",
             "relative-type--1": "минулого місяця",
             "relative-type-0": "цього місяця",
             "relative-type-1": "наступного місяця",
@@ -179,7 +176,7 @@
             }
           },
           "week": {
-            "displayName": "Тиждень",
+            "displayName": "тиждень",
             "relative-type--1": "минулого тижня",
             "relative-type-0": "цього тижня",
             "relative-type-1": "наступного тижня",
@@ -233,9 +230,9 @@
             }
           },
           "day": {
-            "displayName": "День",
-            "relative-type--1": "учора",
+            "displayName": "день",
             "relative-type--2": "позавчора",
+            "relative-type--1": "учора",
             "relative-type-0": "сьогодні",
             "relative-type-1": "завтра",
             "relative-type-2": "післязавтра",
@@ -254,8 +251,8 @@
           },
           "day-short": {
             "displayName": "д.",
-            "relative-type--1": "учора",
             "relative-type--2": "позавчора",
+            "relative-type--1": "учора",
             "relative-type-0": "сьогодні",
             "relative-type-1": "завтра",
             "relative-type-2": "післязавтра",
@@ -274,8 +271,8 @@
           },
           "day-narrow": {
             "displayName": "д.",
-            "relative-type--1": "учора",
             "relative-type--2": "позавчора",
+            "relative-type--1": "учора",
             "relative-type-0": "сьогодні",
             "relative-type-1": "завтра",
             "relative-type-2": "післязавтра",
@@ -293,7 +290,7 @@
             }
           },
           "weekday": {
-            "displayName": "День тижня"
+            "displayName": "день тижня"
           },
           "sun": {
             "relative-type--1": "минулої неділі",
@@ -401,10 +398,10 @@
             "relative-type-1": "наст. сб"
           },
           "dayperiod": {
-            "displayName": "Частина доби"
+            "displayName": "частина доби"
           },
           "hour": {
-            "displayName": "Година",
+            "displayName": "година",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} годину",
               "relativeTimePattern-count-few": "через {0} години",
@@ -449,7 +446,7 @@
             }
           },
           "minute": {
-            "displayName": "Хвилина",
+            "displayName": "хвилина",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} хвилину",
               "relativeTimePattern-count-few": "через {0} хвилини",
@@ -494,7 +491,7 @@
             }
           },
           "second": {
-            "displayName": "Секунда",
+            "displayName": "секунда",
             "relative-type-0": "зараз",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "через {0} секунду",
@@ -542,7 +539,7 @@
             }
           },
           "zone": {
-            "displayName": "Часовий пояс"
+            "displayName": "часовий пояс"
           }
         }
       }

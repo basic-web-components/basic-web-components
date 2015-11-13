@@ -3,11 +3,8 @@
     "uk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "uk"
       },
@@ -364,7 +361,7 @@
             "displayName-count-many": "білоруських рублів",
             "displayName-count-other": "білоруського рубля",
             "symbol": "BYR",
-            "symbol-alt-narrow": "руб."
+            "symbol-alt-narrow": "р."
           },
           "BZD": {
             "displayName": "белізький долар",
@@ -579,7 +576,7 @@
             "symbol": "ERN"
           },
           "ESA": {
-            "displayName": "іспанська песета (\"А\" рахунок)",
+            "displayName": "іспанська песета (\\\"А\\\" рахунок)",
             "symbol": "ESA"
           },
           "ESB": {
@@ -657,7 +654,8 @@
             "displayName-count-few": "грузинські ларі",
             "displayName-count-many": "грузинських ларі",
             "displayName-count-other": "грузинського ларі",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "ганський седі (1979–2007)",
@@ -1230,15 +1228,19 @@
             "symbol-alt-narrow": "₦"
           },
           "NIC": {
-            "displayName": "нікарагуанська кордоба",
+            "displayName": "нікарагуанська кордоба (1988–1991)",
+            "displayName-count-one": "нікарагуанська кордоба (1988–1991)",
+            "displayName-count-few": "нікарагуанські кордоби (1988–1991)",
+            "displayName-count-many": "нікарагуанських кордоб (1988–1991)",
+            "displayName-count-other": "нікарагуанської кордоби (1988–1991)",
             "symbol": "NIC"
           },
           "NIO": {
-            "displayName": "нікарагуанська кордоба оро",
-            "displayName-count-one": "нікарагуанська кордоба оро",
-            "displayName-count-few": "нікарагуанські кордоби оро",
-            "displayName-count-many": "нікарагуанських кордоб оро",
-            "displayName-count-other": "нікарагуанської кордоби оро",
+            "displayName": "нікарагуанська кордоба",
+            "displayName-count-one": "нікарагуанська кордоба",
+            "displayName-count-few": "нікарагуанські кордоби",
+            "displayName-count-many": "нікарагуанських кордоб",
+            "displayName-count-other": "нікарагуанської кордоби",
             "symbol": "NIO",
             "symbol-alt-narrow": "C$"
           },
@@ -1396,7 +1398,7 @@
             "displayName-count-many": "російських рублів",
             "displayName-count-other": "російського рубля",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "російський рубль (1991–1998)",
@@ -1677,7 +1679,8 @@
             "displayName-count-many": "гривень",
             "displayName-count-other": "гривні",
             "symbol": "₴",
-            "symbol-alt-narrow": "₴"
+            "symbol-alt-narrow": "₴",
+            "symbol-alt-variant": "грн."
           },
           "UAK": {
             "displayName": "український карбованець",
@@ -1841,7 +1844,7 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "західноафриканський франк BCEAO",
+            "displayName": "західноафриканський франк",
             "displayName-count-one": "західноафриканський франк",
             "displayName-count-few": "західноафриканські франки",
             "displayName-count-many": "західноафриканських франків",

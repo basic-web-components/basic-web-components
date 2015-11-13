@@ -3,14 +3,11 @@
     "en-BZ": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11150 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-23 16:43:31 -0600 (Fri, 23 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "BZ"
       },
       "localeDisplayNames": {
         "transformNames": {

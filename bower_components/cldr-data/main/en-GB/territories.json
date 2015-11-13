@@ -3,14 +3,11 @@
     "en-GB": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11159 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-30 13:45:39 -0600 (Fri, 30 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11979 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "GB"
       },
       "localeDisplayNames": {
         "territories": {

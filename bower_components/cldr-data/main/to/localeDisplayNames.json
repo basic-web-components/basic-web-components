@@ -3,11 +3,8 @@
     "to": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "to"
       },
@@ -19,8 +16,12 @@
         },
         "keys": {
           "calendar": "tohi māhina",
+          "cf": "cf",
           "collation": "tohi hokohoko",
           "currency": "paʻanga",
+          "hc": "takai houa",
+          "lb": "fesiʻilaine",
+          "ms": "founga fakafuofua",
           "numbers": "fika"
         },
         "types": {
@@ -44,10 +45,16 @@
             "persian": "fakapēsia",
             "roc": "fakalēpupelika siaina"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "ʻunikōti",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "fika telefoni",
@@ -61,7 +68,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "takai houa 0–11",
+            "h12": "takai houa 1–12",
+            "h23": "takai houa 0–23",
+            "h24": "taki houa 1–24"
+          },
+          "lb": {
+            "loose": "fesiʻilaine ngaloku",
+            "normal": "fesiʻilaine faʻafai",
+            "strict": "fesiʻilaine mafao"
+          },
+          "ms": {
+            "metric": "founga fakamita",
+            "uksystem": "founga fakapilitānia",
+            "ussystem": "founga fakaʻamelika"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "fika fakaʻalepea",
             "arabext": "fika fakaʻalepea fakalahi",
             "armn": "fika fakaʻāmenia",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "fika fakatevanākalī",
             "ethi": "fika fakaʻītiōpia",
             "fullwide": "fika laulahi",
@@ -85,6 +110,7 @@
             "hant": "fika fakasiaina tukufakaholo",
             "hantfin": "fika fakasiaina tukufakaholo fakapaʻanga",
             "hebr": "fika fakahepelū",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "fika fakasiapani",
             "jpanfin": "fika fakasiapani fakapaʻanga",
@@ -97,11 +123,19 @@
             "latn": "fika fakalatina",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "fika fakamalāialami",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "fika fakapema",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "fika fakaʻolia",
@@ -110,6 +144,8 @@
             "romanlow": "fika fakaloma fakalalo",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,7 +155,9 @@
             "telu": "fika fakateluku",
             "thai": "fika fakatailani",
             "tibt": "fika fakatipeti",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

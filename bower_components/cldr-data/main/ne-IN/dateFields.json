@@ -3,11 +3,8 @@
     "ne-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11172 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-10 17:22:07 -0600 (Tue, 10 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ne",
         "territory": "IN"
@@ -187,10 +184,10 @@
           },
           "day": {
             "displayName": "बार",
-            "relative-type--1": "हिजो",
             "relative-type--2": "अस्ति",
+            "relative-type--1": "हिजो",
             "relative-type-0": "आज",
-            "relative-type-1": "भोली",
+            "relative-type-1": "भोलि",
             "relative-type-2": "पर्सि",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} दिनमा",
@@ -203,10 +200,10 @@
           },
           "day-short": {
             "displayName": "बार",
-            "relative-type--1": "हिजो",
             "relative-type--2": "अस्ति",
+            "relative-type--1": "हिजो",
             "relative-type-0": "आज",
-            "relative-type-1": "भोली",
+            "relative-type-1": "भोलि",
             "relative-type-2": "पर्सि",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} दिनमा",
@@ -219,10 +216,10 @@
           },
           "day-narrow": {
             "displayName": "बार",
-            "relative-type--1": "हिजो",
             "relative-type--2": "अस्ति",
+            "relative-type--1": "हिजो",
             "relative-type-0": "आज",
-            "relative-type-1": "भोली",
+            "relative-type-1": "भोलि",
             "relative-type-2": "पर्सि",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} दिनमा",
@@ -237,19 +234,19 @@
             "displayName": "हप्ताको बार"
           },
           "sun": {
-            "relative-type--1": "गत आईतबार",
-            "relative-type-0": "यो आईतबार",
-            "relative-type-1": "अर्को आईतबार"
+            "relative-type--1": "गत आइतबार",
+            "relative-type-0": "यो आइतबार",
+            "relative-type-1": "अर्को आइतबार"
           },
           "sun-short": {
-            "relative-type--1": "गत आईतबार",
-            "relative-type-0": "यो आईतबार",
-            "relative-type-1": "अर्को आईतबार"
+            "relative-type--1": "गत आइतबार",
+            "relative-type-0": "यो आइतबार",
+            "relative-type-1": "अर्को आइतबार"
           },
           "sun-narrow": {
-            "relative-type--1": "गत आईतबार",
-            "relative-type-0": "यो आईतबार",
-            "relative-type-1": "अर्को आईतबार"
+            "relative-type--1": "गत आइतबार",
+            "relative-type-0": "यो आइतबार",
+            "relative-type-1": "अर्को आइतबार"
           },
           "mon": {
             "relative-type--1": "गत सोमबार",

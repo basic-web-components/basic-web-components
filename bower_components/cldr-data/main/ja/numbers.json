@@ -3,11 +3,8 @@
     "ja": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "ja"
       },
@@ -37,7 +34,7 @@
           "standard": "#,##0.###",
           "long": {
             "decimalFormat": {
-              "1000-count-other": "0千",
+              "1000-count-other": "0",
               "10000-count-other": "0万",
               "100000-count-other": "00万",
               "1000000-count-other": "000万",
@@ -53,7 +50,7 @@
           },
           "short": {
             "decimalFormat": {
-              "1000-count-other": "0千",
+              "1000-count-other": "0",
               "10000-count-other": "0万",
               "100000-count-other": "00万",
               "1000000-count-other": "000万",
@@ -87,8 +84,24 @@
               "insertBetween": " "
             }
           },
-          "accounting": "¤#,##0.00;(¤#,##0.00)",
           "standard": "¤#,##0.00",
+          "accounting": "¤#,##0.00;(¤#,##0.00)",
+          "short": {
+            "standard": {
+              "1000-count-other": "0",
+              "10000-count-other": "¤0万",
+              "100000-count-other": "¤00万",
+              "1000000-count-other": "¤000万",
+              "10000000-count-other": "¤0000万",
+              "100000000-count-other": "¤0億",
+              "1000000000-count-other": "¤00億",
+              "10000000000-count-other": "¤000億",
+              "100000000000-count-other": "¤0000億",
+              "1000000000000-count-other": "¤0兆",
+              "10000000000000-count-other": "¤00兆",
+              "100000000000000-count-other": "¤000兆"
+            }
+          },
           "unitPattern-count-other": "{0}{1}"
         },
         "miscPatterns-numberSystem-latn": {

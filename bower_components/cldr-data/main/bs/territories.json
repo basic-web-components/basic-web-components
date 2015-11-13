@@ -3,11 +3,8 @@
     "bs": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "bs"
       },
@@ -31,7 +28,7 @@
           "034": "Južna Azija",
           "035": "Jugoistočna Azija",
           "039": "Južna Evropa",
-          "053": "Australija i Novi Zeland",
+          "053": "Australazija",
           "054": "Melanezija",
           "057": "Mikronezijski Region",
           "061": "Polinezija",
@@ -70,7 +67,7 @@
           "BH": "Bahrein",
           "BI": "Burundi",
           "BJ": "Benin",
-          "BL": "Sv. Bartolomej",
+          "BL": "Sveti Bartolomej",
           "BM": "Bermuda",
           "BN": "Brunej",
           "BO": "Bolivija",
@@ -83,7 +80,7 @@
           "BY": "Bjelorusija",
           "BZ": "Belize",
           "CA": "Kanada",
-          "CC": "Kokos (Keling) Ostrva",
+          "CC": "Kokosova (Kilingova) ostrva",
           "CD": "Demokratska Republika Kongo",
           "CD-alt-variant": "Kongo (DRC)",
           "CF": "Centralnoafrička Republika",
@@ -124,7 +121,7 @@
           "FI": "Finska",
           "FJ": "Fidži",
           "FK": "Folklandska Ostrva",
-          "FK-alt-variant": "Folklandska ostrva (Malvinska ostrva)",
+          "FK-alt-variant": "Falklandska ostrva (Malvinska ostrva)",
           "FM": "Mikronezija",
           "FO": "Farska Ostrva",
           "FR": "Francuska",
@@ -150,7 +147,7 @@
           "GY": "Gvajana",
           "HK": "Hong Kong (S. A. R. Kina)",
           "HK-alt-short": "Hong Kong",
-          "HM": "Herd i Mekdonald Ostrva",
+          "HM": "Heard i arhipelag McDonald",
           "HN": "Honduras",
           "HR": "Hrvatska",
           "HT": "Haiti",
@@ -183,7 +180,7 @@
           "KZ": "Kazahstan",
           "LA": "Laos",
           "LB": "Liban",
-          "LC": "Sent Lucija",
+          "LC": "Sveta Lucija",
           "LI": "Lihtenštajn",
           "LK": "Šri Lanka",
           "LR": "Liberija",
@@ -237,7 +234,7 @@
           "PH": "Filipini",
           "PK": "Pakistan",
           "PL": "Poljska",
-          "PM": "Sen Pjer i Mikelon",
+          "PM": "Sveti Petar i Mikelon",
           "PN": "Pitkern",
           "PR": "Porto Riko",
           "PS": "Palestinska Teritorija",
@@ -260,7 +257,7 @@
           "SG": "Singapur",
           "SH": "Sveta Helena",
           "SI": "Slovenija",
-          "SJ": "Svalbard i Janmajen Ostrva",
+          "SJ": "Svalbard i Jan Majen",
           "SK": "Slovačka",
           "SL": "Sijera Leone",
           "SM": "San Marino",
@@ -274,7 +271,7 @@
           "SY": "Sirija",
           "SZ": "Svazilend",
           "TA": "Tristan da Kunja",
-          "TC": "Turks i Kajkos Ostrva",
+          "TC": "Ostrva Turks i Caicos",
           "TD": "Čad",
           "TF": "Francuske Južne Teritorije",
           "TG": "Togo",
@@ -293,19 +290,19 @@
           "TZ": "Tanzanija",
           "UA": "Ukrajina",
           "UG": "Uganda",
-          "UM": "Manja Udaljena Ostrva SAD",
+          "UM": "Udaljena ostrva SAD",
           "US": "Sjedinjene Američke Države",
           "US-alt-short": "SAD",
           "UY": "Urugvaj",
           "UZ": "Uzbekistan",
           "VA": "Vatikan",
-          "VC": "Sent Vinsent i Grenadini",
+          "VC": "Sveti Vincent i Grenadini",
           "VE": "Venecuela",
           "VG": "Britanska Djevičanska Ostrva",
           "VI": "Djevičanska Ostrva SAD",
           "VN": "Vijetnam",
           "VU": "Vanuatu",
-          "WF": "Valis i Futuna Ostrva",
+          "WF": "Wallis i Futuna",
           "WS": "Samoa",
           "XK": "Kosovo",
           "YE": "Jemen",
@@ -313,7 +310,7 @@
           "ZA": "Južnoafrička Republika",
           "ZM": "Zambija",
           "ZW": "Zimbabve",
-          "ZZ": "Nepoznata ili nevažeća oblast"
+          "ZZ": "Nepoznata oblast"
         }
       }
     }

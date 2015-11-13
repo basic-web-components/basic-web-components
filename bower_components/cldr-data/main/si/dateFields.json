@@ -3,11 +3,8 @@
     "si": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "si"
       },
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "කාර්තුව",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "පසුගිය කාර්තුව",
+            "relative-type-0": "මෙම කාර්තුව",
+            "relative-type-1": "ඊළඟ කාර්තුව",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "කාර්තුව {0} කින්",
               "relativeTimePattern-count-other": "කාර්තුව {0} කින්"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "කාර්.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "පසුගිය කාර්.",
+            "relative-type-0": "මෙම කාර්.",
+            "relative-type-1": "ඊළඟ කාර්.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "කාර්. {0} කින්",
               "relativeTimePattern-count-other": "කාර්. {0} කින්"
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "කාර්.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "පසුගිය කාර්.",
+            "relative-type-0": "මෙම කාර්.",
+            "relative-type-1": "ඊළඟ කාර්.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "කාර්. {0} කින්",
               "relativeTimePattern-count-other": "කාර්. {0} කින්"
@@ -116,9 +113,9 @@
           },
           "month-short": {
             "displayName": "මාස.",
-            "relative-type--1": "පසුගිය මාසය",
-            "relative-type-0": "මෙම මාසය",
-            "relative-type-1": "ඊළඟ මාසය",
+            "relative-type--1": "පසුගිය මාස.",
+            "relative-type-0": "මෙම මාස.",
+            "relative-type-1": "ඊළඟ මාස.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "මාස {0}කින්",
               "relativeTimePattern-count-other": "මාස {0}කින්"
@@ -130,9 +127,9 @@
           },
           "month-narrow": {
             "displayName": "මාස.",
-            "relative-type--1": "පසුගිය මාසය",
-            "relative-type-0": "මෙම මාසය",
-            "relative-type-1": "ඊළඟ මාසය",
+            "relative-type--1": "පසුගිය මාස.",
+            "relative-type-0": "මෙම මාස.",
+            "relative-type-1": "ඊළඟ මාස.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "මාස {0}කින්",
               "relativeTimePattern-count-other": "මාස {0}කින්"
@@ -158,9 +155,9 @@
           },
           "week-short": {
             "displayName": "සති.",
-            "relative-type--1": "පසුගිය සතිය",
-            "relative-type-0": "මෙම සතිය",
-            "relative-type-1": "ඊළඟ සතිය",
+            "relative-type--1": "පසුගිය සති.",
+            "relative-type-0": "මෙම සති.",
+            "relative-type-1": "ඊළඟ සති.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "සති {0} කින්",
               "relativeTimePattern-count-other": "සති {0} කින්"
@@ -172,9 +169,9 @@
           },
           "week-narrow": {
             "displayName": "සති.",
-            "relative-type--1": "පසුගිය සතිය",
-            "relative-type-0": "මෙම සතිය",
-            "relative-type-1": "ඊළඟ සතිය",
+            "relative-type--1": "පසුගිය සති.",
+            "relative-type-0": "මෙම සති.",
+            "relative-type-1": "ඊළඟ සති.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "සති {0} කින්",
               "relativeTimePattern-count-other": "සති {0} කින්"
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "දිනය",
-            "relative-type--1": "ඊයේ",
             "relative-type--2": "පෙරේදා",
+            "relative-type--1": "ඊයේ",
             "relative-type-0": "අද",
             "relative-type-1": "හෙට",
             "relative-type-2": "අනිද්දා",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "දිනය",
-            "relative-type--1": "ඊයේ",
             "relative-type--2": "පෙරේදා",
+            "relative-type--1": "ඊයේ",
             "relative-type-0": "අද",
             "relative-type-1": "හෙට",
             "relative-type-2": "අනිද්දා",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "දිනය",
-            "relative-type--1": "ඊයේ",
             "relative-type--2": "පෙරේදා",
+            "relative-type--1": "ඊයේ",
             "relative-type-0": "අද",
             "relative-type-1": "හෙට",
             "relative-type-2": "අනිද්දා",

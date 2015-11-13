@@ -3,11 +3,8 @@
     "hr-BA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "hr",
         "territory": "BA"
@@ -56,7 +53,7 @@
           "ay": "aymara",
           "az": "azerbajdžanski",
           "az-alt-short": "azerski",
-          "azb": "azb",
+          "az-Arab": "južnoazerbajdžanski",
           "ba": "baškirski",
           "bal": "baluchi",
           "ban": "balinezijski",
@@ -73,6 +70,7 @@
           "bfd": "bafut",
           "bfq": "bfq",
           "bg": "bugarski",
+          "bgn": "zapadnobaludžijski",
           "bho": "bhojpuri",
           "bi": "bislama",
           "bik": "bikol",
@@ -334,6 +332,7 @@
           "lo": "laoski",
           "lol": "mongo",
           "loz": "lozi",
+          "lrc": "sjevernolurski",
           "lt": "litavski",
           "ltg": "ltg",
           "lu": "luba-katanga",
@@ -355,6 +354,7 @@
           "mas": "masajski",
           "mde": "maba",
           "mdf": "moksha",
+          "mdh": "mdh",
           "mdr": "mandar",
           "men": "mende",
           "mer": "meru",
@@ -367,6 +367,7 @@
           "mi": "maorski",
           "mic": "micmac",
           "min": "minangkabau",
+          "mis": "mis",
           "mk": "makedonski",
           "ml": "malajalamski",
           "mn": "mongolski",
@@ -387,7 +388,7 @@
           "my": "burmanski",
           "mye": "myene",
           "myv": "mordvinski",
-          "mzn": "mzn",
+          "mzn": "mazanderanski",
           "na": "nauru",
           "nan": "nan",
           "nap": "napolitanski",
@@ -395,6 +396,7 @@
           "nb": "književni norveški",
           "nd": "sjeverni ndebele",
           "nds": "donjonjemački",
+          "nds-NL": "donjosaksonski",
           "ne": "nepalski",
           "new": "newari",
           "ng": "ndonga",
@@ -489,6 +491,7 @@
           "sco": "škotski",
           "sd": "sindhi",
           "sdc": "sdc",
+          "sdh": "južnokurdski",
           "se": "južni sami",
           "see": "seneca",
           "seh": "sena",
@@ -599,6 +602,7 @@
           "wal": "walamo",
           "war": "waray",
           "was": "washo",
+          "wbp": "warlpiri",
           "wo": "wolof",
           "wuu": "wuu",
           "xal": "kalmyk",

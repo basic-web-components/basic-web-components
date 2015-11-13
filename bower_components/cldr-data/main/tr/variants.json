@@ -3,24 +3,23 @@
     "tr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "tr"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "1606‘ya Dek Geç Ortaçağ Fransızcası",
-          "1694ACAD": "Erken Modern Fransızca",
           "1901": "Geleneksel Almanca Yazım Kuralları",
-          "1959ACAD": "Akademik",
           "1994": "Standart Resia Yazım Kuralları",
           "1996": "1996 Almanca Yazım Kuralları",
+          "1606NICT": "1606‘ya Dek Geç Ortaçağ Fransızcası",
+          "1694ACAD": "Erken Modern Fransızca",
+          "1959ACAD": "Akademik",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALALC97",
           "ALUKU": "ALUKU",
+          "AO1990": "AO1990",
           "AREVELA": "Doğu Ermenicesi",
           "AREVMDA": "Batı Ermenicesi",
           "BAKU1926": "Birleştirilmiş Yeni Türk Alfabesi",
@@ -31,6 +30,7 @@
           "BISKE": "San Giorgio/Bila Lehçesi",
           "BOHORIC": "BOHORIC",
           "BOONT": "Boontling",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -56,6 +56,7 @@
           "NJIVA": "Gniva/Njiva Lehçesi",
           "NULIK": "NULIK",
           "OSOJS": "Oseacco/Osojane Lehçesi",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "PAMAKA",
           "PETR1708": "PETR1708",
           "PINYIN": "Pinyin (Latin Alfabesinde Yazımı)",

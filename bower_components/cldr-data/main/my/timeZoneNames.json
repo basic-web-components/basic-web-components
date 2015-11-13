@@ -3,11 +3,8 @@
     "my": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11321 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 14:20:05 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "my"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "ဂရင်းနစ်စံတော်ချိန်{0}",
           "gmtZeroFormat": "ဂရင်းနစ်စံတော်ချိန်",
           "regionFormat": "{0}အချိန်",
-          "regionFormat-type-standard": "{0} (စံတော်ချိန်)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (စံတော်ချိန်)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "အာရာဂွာအီနာ"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "လာ ရီအိုဂျာ"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "ရီအို ဂါလီဂိုစ်"
-                },
-                "Salta": {
-                  "exemplarCity": "ဆာလ်တာ"
                 },
                 "San_Juan": {
                   "exemplarCity": "စော့တ ဂျုအန်"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ဥဆွာအီအာ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "လာ ရီအိုဂျာ"
+                },
                 "San_Luis": {
                   "exemplarCity": "စော့န် လူအီးစ်"
                 },
+                "Salta": {
+                  "exemplarCity": "ဆာလ်တာ"
+                },
                 "Tucuman": {
                   "exemplarCity": "တူကူမန်"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ဥဆွာအီအာ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ဟာမိုစ်စီလို"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "နို့ခ်စ် အင်ဒီအားနား"
-                },
-                "Marengo": {
-                  "exemplarCity": "မာရန်ဂို အင်ဒီအားနား"
+                "Vincennes": {
+                  "exemplarCity": "ဗင်ဆင့်စ် အင်ဒီအားနား"
                 },
                 "Petersburg": {
                   "exemplarCity": "ပီတာဘာဂ်စ် အင်ဒီအားနား"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "တဲလ်စီးတီး အင်ဒီအားနား"
                 },
-                "Vevay": {
-                  "exemplarCity": "ဗီဗဲ အင်ဒီအားနား"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ဗင်ဆင့်စ် အင်ဒီအားနား"
+                "Knox": {
+                  "exemplarCity": "နို့ခ်စ် အင်ဒီအားနား"
                 },
                 "Winamac": {
                   "exemplarCity": "ဝီနာမက်ခ် အင်ဒီအားနား"
+                },
+                "Marengo": {
+                  "exemplarCity": "မာရန်ဂို အင်ဒီအားနား"
+                },
+                "Vevay": {
+                  "exemplarCity": "ဗီဗဲ အင်ဒီအားနား"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ဘီဥလာ မြောက်ဒါကိုတာ"
                 },
-                "Center": {
-                  "exemplarCity": "စင်တာ မြောက်ဒါကိုတာ"
-                },
                 "New_Salem": {
                   "exemplarCity": "နယူးစီလန် မြောက်ဒါကိုတာ"
+                },
+                "Center": {
+                  "exemplarCity": "စင်တာ မြောက်ဒါကိုတာ"
                 }
               },
               "Ojinaga": {
@@ -882,13 +879,10 @@
                 "exemplarCity": "ကိုလ်ကာတာ"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ချီတာ"
               },
               "Choibalsan": {
                 "exemplarCity": "ချွဲဘောဆန်"
-              },
-              "Chongqing": {
-                "exemplarCity": "ချောင်ချင်း"
               },
               "Colombo": {
                 "exemplarCity": "ကိုလံဘို"
@@ -910,9 +904,6 @@
               },
               "Gaza": {
                 "exemplarCity": "ဂါဇာ"
-              },
-              "Harbin": {
-                "exemplarCity": "ဟာဘင်"
               },
               "Hebron": {
                 "exemplarCity": "ဟီဘရွန်"
@@ -943,9 +934,6 @@
               },
               "Karachi": {
                 "exemplarCity": "ကာရာချီ"
-              },
-              "Kashgar": {
-                "exemplarCity": "ခါရှီးဂ်"
               },
               "Katmandu": {
                 "exemplarCity": "ခတ္တမန္ဒူ"
@@ -1035,7 +1023,7 @@
                 "exemplarCity": "စင်္ဂပူ"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "ဆရီနီကိုလူ့ဇ်"
               },
               "Taipei": {
                 "exemplarCity": "ထိုင်ပေ"
@@ -1161,7 +1149,7 @@
                 "exemplarCity": "အော့ကလန်"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ဘူဂန်ဗီးလီးယား"
               },
               "Chatham": {
                 "exemplarCity": "ချားသမ်"
@@ -1730,11 +1718,6 @@
                 "standard": "ပြင်သစ်တောင်ပိုင်းနင့်အန္တတစ်အချိန်"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ဂရင်းနစ် စံတော်ချိန်"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ဂါလားပါဂိုးစ်အချိန်"
@@ -1755,6 +1738,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "ဂီလ်ဘတ်ကျွန်းစုအချိန်"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ဂရင်းနစ် စံတော်ချိန်"
               }
             },
             "Greenland_Eastern": {

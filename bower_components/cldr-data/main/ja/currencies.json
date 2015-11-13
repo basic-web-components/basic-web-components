@@ -3,11 +3,8 @@
     "ja": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "ja"
       },
@@ -20,7 +17,7 @@
           },
           "AED": {
             "displayName": "アラブ首長国連邦ディルハム",
-            "displayName-count-other": "アラブ首長国連邦ディルハム",
+            "displayName-count-other": "UAE ディルハム",
             "symbol": "AED"
           },
           "AFA": {
@@ -80,13 +77,13 @@
             "symbol": "ARA"
           },
           "ARL": {
-            "displayName": "アルゼンチン・ペソ・レイ（1970-1983）",
-            "displayName-count-other": "アルゼンチン・ペソ・レイ（1970-1983）",
+            "displayName": "アルゼンチン・ペソ・レイ（1970–1983）",
+            "displayName-count-other": "アルゼンチン・ペソ・レイ（1970–1983）",
             "symbol": "ARL"
           },
           "ARM": {
-            "displayName": "アルゼンチン・ペソ（1881-1970）",
-            "displayName-count-other": "アルゼンチン・ペソ（1881-1970）",
+            "displayName": "アルゼンチン・ペソ（1881–1970）",
+            "displayName-count-other": "アルゼンチン・ペソ（1881–1970）",
             "symbol": "ARM"
           },
           "ARP": {
@@ -138,8 +135,8 @@
             "symbol-alt-narrow": "KM"
           },
           "BAN": {
-            "displayName": "ボスニア・ヘルツェゴビナ 新ディナール（1994-1997）",
-            "displayName-count-other": "ボスニア・ヘルツェゴビナ 新ディナール（1994-1997）",
+            "displayName": "ボスニア・ヘルツェゴビナ 新ディナール（1994–1997）",
+            "displayName-count-other": "ボスニア・ヘルツェゴビナ 新ディナール（1994–1997）",
             "symbol": "BAN"
           },
           "BBD": {
@@ -185,8 +182,8 @@
             "symbol": "BGN"
           },
           "BGO": {
-            "displayName": "ブルガリア レフ（1879-1952）",
-            "displayName-count-other": "ブルガリア レフ（1879-1952）",
+            "displayName": "ブルガリア レフ（1879–1952）",
+            "displayName-count-other": "ブルガリア レフ（1879–1952）",
             "symbol": "BGO"
           },
           "BHD": {
@@ -264,8 +261,8 @@
             "symbol": "BRR"
           },
           "BRZ": {
-            "displayName": "ブラジル クルゼイロ（1942-1967）",
-            "displayName-count-other": "ブラジル クルゼイロ（1942-1967）",
+            "displayName": "ブラジル クルゼイロ（1942–1967）",
+            "displayName-count-other": "ブラジル クルゼイロ（1942–1967）",
             "symbol": "BRZ"
           },
           "BSD": {
@@ -529,14 +526,15 @@
             "symbol-alt-narrow": "£"
           },
           "GEK": {
-            "displayName": "グルジア クーポン ラリ",
-            "displayName-count-other": "グルジア クーポン ラリ",
+            "displayName": "ジョージア クーポン ラリ",
+            "displayName-count-other": "ジョージア クーポン ラリ",
             "symbol": "GEK"
           },
           "GEL": {
-            "displayName": "グルジア ラリ",
-            "displayName-count-other": "グルジア ラリ",
-            "symbol": "GEL"
+            "displayName": "ジョージア ラリ",
+            "displayName-count-other": "ジョージア ラリ",
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "ガーナ セディ (1979–2007)",
@@ -741,19 +739,19 @@
             "symbol-alt-narrow": "₩"
           },
           "KRH": {
-            "displayName": "韓国 ファン（1953-1962）",
-            "displayName-count-other": "韓国 ファン（1953-1962）",
+            "displayName": "韓国 ファン（1953–1962）",
+            "displayName-count-other": "韓国 ファン（1953–1962）",
             "symbol": "KRH"
           },
           "KRO": {
-            "displayName": "韓国 ウォン（1945-1953）",
-            "displayName-count-other": "韓国 ウォン（1945-1953）",
+            "displayName": "韓国 ウォン（1945–1953）",
+            "displayName-count-other": "韓国 ウォン（1945–1953）",
             "symbol": "KRO"
           },
           "KRW": {
             "displayName": "韓国 ウォン",
             "displayName-count-other": "韓国 ウォン",
-            "symbol": "￦",
+            "symbol": "₩",
             "symbol-alt-narrow": "₩"
           },
           "KWD": {
@@ -886,8 +884,8 @@
             "symbol": "MKD"
           },
           "MKN": {
-            "displayName": "マケドニア ディナール（1992-1993）",
-            "displayName-count-other": "マケドニア ディナール（1992-1993）",
+            "displayName": "マケドニア ディナール（1992–1993）",
+            "displayName-count-other": "マケドニア ディナール（1992–1993）",
             "symbol": "MKN"
           },
           "MLF": {
@@ -1124,7 +1122,7 @@
             "displayName": "ロシア ルーブル",
             "displayName-count-other": "ロシア ルーブル",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "ロシア ルーブル (1991–1998)",
@@ -1398,8 +1396,8 @@
             "symbol-alt-narrow": "₫"
           },
           "VNN": {
-            "displayName": "ベトナム ドン（1978-1985）",
-            "displayName-count-other": "ベトナム ドン（1978-1985）",
+            "displayName": "ベトナム ドン（1978–1985）",
+            "displayName-count-other": "ベトナム ドン（1978–1985）",
             "symbol": "VNN"
           },
           "VUV": {
@@ -1413,8 +1411,8 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "CFA フラン（BEAC）",
-            "displayName-count-other": "CFA フラン（BEAC）",
+            "displayName": "中央アフリカ CFA フラン",
+            "displayName-count-other": "中央アフリカ CFA フラン",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1474,8 +1472,8 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "CFA フラン（BCEAO）",
-            "displayName-count-other": "CFA フラン（BCEAO）",
+            "displayName": "西アフリカ CFA フラン",
+            "displayName-count-other": "西アフリカ CFA フラン",
             "symbol": "CFA"
           },
           "XPD": {
@@ -1544,8 +1542,8 @@
             "symbol": "YUN"
           },
           "YUR": {
-            "displayName": "ユーゴスラビア 改革ディナール（1992-1993）",
-            "displayName-count-other": "ユーゴスラビア 改革ディナール（1992-1993）",
+            "displayName": "ユーゴスラビア 改革ディナール（1992–1993）",
+            "displayName-count-other": "ユーゴスラビア 改革ディナール（1992–1993）",
             "symbol": "YUR"
           },
           "ZAL": {

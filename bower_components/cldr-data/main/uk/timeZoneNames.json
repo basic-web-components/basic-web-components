@@ -3,11 +3,8 @@
     "uk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "uk"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "час: {0}",
-          "regionFormat-type-standard": "час: {0}, стандартний",
           "regionFormat-type-daylight": "час: {0}, літній",
+          "regionFormat-type-standard": "час: {0}, стандартний",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Арагуайна"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "Ла-Ріоха"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Ріо-Гальєгос"
-                },
-                "Salta": {
-                  "exemplarCity": "Сальта"
                 },
                 "San_Juan": {
                   "exemplarCity": "Сан-Хуан"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ушуая"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "Ла-Ріоха"
+                },
                 "San_Luis": {
                   "exemplarCity": "Сан-Луїс"
                 },
+                "Salta": {
+                  "exemplarCity": "Сальта"
+                },
                 "Tucuman": {
                   "exemplarCity": "Тукуман"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ушуая"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Ермосільйо"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Нокс, Індіана"
-                },
-                "Marengo": {
-                  "exemplarCity": "Маренго, Індіана"
+                "Vincennes": {
+                  "exemplarCity": "Вінсенс, Індіана"
                 },
                 "Petersburg": {
                   "exemplarCity": "Пітерсберг, Індіана"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Телл Сіті, Індіана"
                 },
-                "Vevay": {
-                  "exemplarCity": "Вівей, Індіана"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Вінсенс, Індіана"
+                "Knox": {
+                  "exemplarCity": "Нокс, Індіана"
                 },
                 "Winamac": {
                   "exemplarCity": "Вінамак, Індіана"
+                },
+                "Marengo": {
+                  "exemplarCity": "Маренго, Індіана"
+                },
+                "Vevay": {
+                  "exemplarCity": "Вівей, Індіана"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Б’юла, Північна Дакота"
                 },
-                "Center": {
-                  "exemplarCity": "Центр, Північна Дакота"
-                },
                 "New_Salem": {
                   "exemplarCity": "Нью-Салем, Північна Дакота"
+                },
+                "Center": {
+                  "exemplarCity": "Центр, Північна Дакота"
                 }
               },
               "Ojinaga": {
@@ -576,7 +573,7 @@
               },
               "London": {
                 "long": {
-                  "daylight": "за літнім часом у Великобританії"
+                  "daylight": "за літнім часом у Великій Британії"
                 },
                 "exemplarCity": "Лондон"
               },
@@ -688,7 +685,7 @@
                 "exemplarCity": "Аддис-Абеба"
               },
               "Algiers": {
-                "exemplarCity": "м. Алжир"
+                "exemplarCity": "Алжир"
               },
               "Asmera": {
                 "exemplarCity": "Асмара"
@@ -823,13 +820,13 @@
                 "exemplarCity": "Порто-Ново"
               },
               "Sao_Tome": {
-                "exemplarCity": "Сан-Томе і Принсіпі"
+                "exemplarCity": "Сан-Томе"
               },
               "Tripoli": {
                 "exemplarCity": "Триполі"
               },
               "Tunis": {
-                "exemplarCity": "м. Туніс"
+                "exemplarCity": "Туніс"
               },
               "Windhoek": {
                 "exemplarCity": "Віндгук"
@@ -882,7 +879,7 @@
                 "exemplarCity": "Колката"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Чита"
               },
               "Choibalsan": {
                 "exemplarCity": "Чойбалсан"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "Сінгапур"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Середньоколимськ"
               },
               "Taipei": {
                 "exemplarCity": "Тайбей"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "Окленд"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "Бугенвіль"
               },
               "Chatham": {
                 "exemplarCity": "Чатем"
@@ -1572,7 +1569,7 @@
             },
             "Bolivia": {
               "long": {
-                "standard": "за часом у Болівії"
+                "standard": "за болівійським часом"
               }
             },
             "Brasilia": {
@@ -1735,11 +1732,6 @@
                 "standard": "за часом на Французьких Південних і Антарктичних територіях"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "за Гринвічем"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "за часом на Галапагоських островах"
@@ -1760,6 +1752,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "за часом на островах Гілберта"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "за Гринвічем"
               }
             },
             "Greenland_Eastern": {

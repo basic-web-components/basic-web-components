@@ -3,11 +3,8 @@
     "vi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "vi"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Giờ {0}",
-          "regionFormat-type-standard": "Giờ chuẩn {0}",
           "regionFormat-type-daylight": "Giờ ban ngày {0}",
+          "regionFormat-type-standard": "Giờ chuẩn {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,33 +35,33 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
                 "exemplarCity": "Aruba"
               },
               "Asuncion": {
-                "exemplarCity": "Asuncion"
+                "exemplarCity": "Asunción"
               },
               "Bahia": {
                 "exemplarCity": "Bahia"
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Bắc Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Bắc Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Bắc Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Bắc Dakota"
                 }
               },
               "Ojinaga": {
@@ -1050,7 +1047,7 @@
                 "exemplarCity": "Ulaanbaatar"
               },
               "Urumqi": {
-                "exemplarCity": "Ô Lỗ Mộc Tề"
+                "exemplarCity": "Urumqi"
               },
               "Ust-Nera": {
                 "exemplarCity": "Ust-Nera"
@@ -1756,11 +1753,6 @@
                 "standard": "Giờ Nam Cực và Nam Nước Pháp"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Giờ Trung bình Greenwich"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Giờ Galapagos"
@@ -1781,6 +1773,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Giờ Quần Đảo Gilbert"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Giờ Trung bình Greenwich"
               }
             },
             "Greenland_Eastern": {
@@ -2145,8 +2142,8 @@
             },
             "Pierre_Miquelon": {
               "long": {
-                "generic": "Giờ Saint Pierre và Miquelon",
-                "standard": "Giờ Chuẩn Saint Pierre và Miquelon",
+                "generic": "Giờ St. Pierre và Miquelon",
+                "standard": "Giờ Chuẩn St. Pierre và Miquelon",
                 "daylight": "Giờ Mùa Hè Saint Pierre và Miquelon"
               }
             },

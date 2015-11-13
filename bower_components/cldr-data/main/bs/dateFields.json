@@ -3,11 +3,8 @@
     "bs": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "bs"
       },
@@ -210,8 +207,8 @@
           },
           "day": {
             "displayName": "dan",
-            "relative-type--1": "juče",
             "relative-type--2": "prekjuče",
+            "relative-type--1": "jučer",
             "relative-type-0": "danas",
             "relative-type-1": "sutra",
             "relative-type-2": "prekosutra",
@@ -228,8 +225,8 @@
           },
           "day-short": {
             "displayName": "dan",
-            "relative-type--1": "juče",
             "relative-type--2": "prekjuče",
+            "relative-type--1": "jučer",
             "relative-type-0": "danas",
             "relative-type-1": "sutra",
             "relative-type-2": "prekosutra",
@@ -246,8 +243,8 @@
           },
           "day-narrow": {
             "displayName": "dan",
-            "relative-type--1": "juče",
             "relative-type--2": "prekjuče",
+            "relative-type--1": "jučer",
             "relative-type-0": "danas",
             "relative-type-1": "sutra",
             "relative-type-2": "prekosutra",

@@ -3,11 +3,8 @@
     "bn-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11169 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-09 16:11:16 -0600 (Mon, 09 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "bn",
         "territory": "IN"
@@ -20,17 +17,21 @@
         },
         "keys": {
           "calendar": "ক্যালেন্ডার",
+          "cf": "cf",
           "colAlternate": "প্রতীক বাছাইকরণ উপেক্ষা করুন",
           "colBackwards": "বিপরীত করা স্বরাঘাত বাছাইকরণ",
           "colCaseFirst": "বড়হাতের/ছোটহাতের অক্ষর ক্রম",
           "colCaseLevel": "কেস সংবেদী বাছাইকরণ",
           "colHiraganaQuaternary": "কানা বাছাইকরণ",
+          "collation": "বাছাই বিন্যাস",
           "colNormalization": "স্বাভাবিককৃত বাছাইকরণ",
           "colNumeric": "সংখ্যাসূচক বাছাইকরণ",
           "colStrength": "বাছাইকরণ শক্তি",
-          "collation": "বাছাই বিন্যাস",
           "currency": "মুদ্রা",
-          "numbers": "সংখ্যাসমূহ",
+          "hc": "hc",
+          "lb": "lb",
+          "ms": "ms",
+          "numbers": "সংখ্যাগুলি",
           "timezone": "সময় জোন",
           "va": "স্থানীয় ভিন্নতা",
           "variableTop": "প্রতীক হিসেবে বাছাই করুন",
@@ -57,6 +58,10 @@
             "persian": "ফারসি ক্যালেন্ডার",
             "roc": "মিঙ্গুও বর্ষপঞ্জী"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "প্রতীক বাছাই করুন",
             "shifted": "উপেক্ষা প্রতীক বাছাই করুন"
@@ -78,6 +83,26 @@
             "no": "কানা আলাদাভাবে বাছাই করুন",
             "yes": "কানা ভিন্নভাবে বাছাই করুন"
           },
+          "collation": {
+            "big5han": "প্রথাগত চীনা সজ্জাক্রম - বিগ৫",
+            "compat": "compat",
+            "dictionary": "অভিধান বাছাই বিন্যাস",
+            "ducet": "ডিফল্ট ইউনিকোড বাছাই বিন্যাস",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "সাধারণ চীনা সজ্জাক্রম - জিবি২৩১২",
+            "phonebook": "ফোনবুক সজ্জাক্রম",
+            "phonetic": "ধ্বনি নির্দেশক বাছাই ক্রম",
+            "pinyin": "পিনিন সজ্জাক্রম",
+            "reformed": "রিফর্মড বাছাই বিন্যাস",
+            "search": "সাধারণ-উদ্দেশ্যে অনুসন্ধান",
+            "searchjl": "হাঙ্গুল প্রাথমিক ব্যঞ্জনবর্ণ দ্বারা অনুসন্ধান করুন",
+            "standard": "আদর্শ বাছাই বিন্যাস",
+            "stroke": "আবর্তিত সজ্জাক্রম",
+            "traditional": "প্রথাগত সজ্জাক্রম",
+            "unihan": "রাডিকেল স্ট্রোক বাছাই বিন্যাস",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "স্বাভাবিক ছাড়া বাছাই করুন",
             "yes": "স্বাভাবিকৃত ইউনিকোড বাছাই করুন"
@@ -93,25 +118,24 @@
             "secondary": "স্বরাঘাত বাছাই করুন",
             "tertiary": "স্বরাঘাত/কেস/প্রস্থ বাছাই করুন"
           },
-          "collation": {
-            "big5han": "প্রথাগত চীনা সজ্জাক্রম - বিগ৫",
-            "dictionary": "অভিধান বাছাই বিন্যাস",
-            "ducet": "ডিফল্ট ইউনিকোড বাছাই বিন্যাস",
-            "eor": "eor",
-            "gb2312han": "সাধারণ চীনা সজ্জাক্রম - জিবি২৩১২",
-            "phonebook": "ফোনবুক সজ্জাক্রম",
-            "phonetic": "ধ্বনি নির্দেশক বাছাই ক্রম",
-            "pinyin": "পিনিন সজ্জাক্রম",
-            "reformed": "রিফর্মড বাছাই বিন্যাস",
-            "search": "সাধারণ-উদ্দেশ্যে অনুসন্ধান",
-            "searchjl": "হাঙ্গুল প্রাথমিক ব্যঞ্জনবর্ণ দ্বারা অনুসন্ধান করুন",
-            "standard": "আদর্শ বাছাই বিন্যাস",
-            "stroke": "আবর্তিত সজ্জাক্রম",
-            "traditional": "প্রথাগত সজ্জাক্রম",
-            "unihan": "রাডিকেল স্ট্রোক বাছাই বিন্যাস",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "h11",
+            "h12": "h12",
+            "h23": "h23",
+            "h24": "h24"
+          },
+          "lb": {
+            "loose": "loose",
+            "normal": "normal",
+            "strict": "strict"
+          },
+          "ms": {
+            "metric": "metric",
+            "uksystem": "uksystem",
+            "ussystem": "ussystem"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "আরবি-ভারতীয় সংখ্যা",
             "arabext": "প্রসারিত আরবি -ভারতীয় সংখ্যা",
             "armn": "আর্মেনীয় সংখ্যা",
@@ -121,6 +145,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "দেবনাগরি সংখ্যা",
             "ethi": "ইথীয়োপিক সংখ্যা",
             "finance": "অর্থনৈতিক সংখ্যাসূচক",
@@ -136,6 +161,7 @@
             "hant": "ঐতিহ্যাবাহী চৈনিক সংখ্যা",
             "hantfin": "ঐতিহ্যবাহী চৈনিক আর্থিক সংখ্যা",
             "hebr": "হিব্রু সংখ্যা",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "জাপানি সংখ্যা",
             "jpanfin": "জাপানি আর্থিক সংখ্যা",
@@ -148,11 +174,19 @@
             "latn": "ওয়েস্টার্ন ডিজিট",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "মালয়ালম শংখ্যা",
+            "modi": "modi",
             "mong": "মঙ্গোলীয় সংখ্যা",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "মায়ানমার সংখ্যা",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "স্থানীয় সংখ্যা",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "রোমান ছোটহাতের সংখ্যা",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,8 +207,10 @@
             "telu": "তেলুগু সংখ্যা",
             "thai": "থাই সংখ্যা",
             "tibt": "তিব্বতি সংখ্যা",
+            "tirh": "tirh",
             "traditional": "ঐতিহ্যগত সংখ্যাসূচক",
-            "vaii": "ভাই সংখ্যা"
+            "vaii": "ভাই সংখ্যা",
+            "wara": "wara"
           }
         },
         "codePatterns": {

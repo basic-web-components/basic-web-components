@@ -3,11 +3,8 @@
     "root": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11290 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-22 04:15:45 -0600 (Sun, 22 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11919 $"
         },
         "language": "root"
       },
@@ -429,7 +426,8 @@
           },
           "GEL": {
             "displayName": "GEL",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -896,7 +894,7 @@
           "RUB": {
             "displayName": "RUB",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1052,7 +1050,7 @@
           "TWD": {
             "displayName": "TWD",
             "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "TZS",

@@ -3,24 +3,23 @@
     "ru": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11353 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 15:54:42 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11974 $"
         },
         "language": "ru"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "Поздне-средневековый французский до 1606 г.",
-          "1694ACAD": "1694ACAD",
           "1901": "Традиционная немецкая орфография",
-          "1959ACAD": "1959ACAD",
           "1994": "Стандартизированная резьянская орфография",
           "1996": "Правила немецкой орфографии установленные с 1996 года",
+          "1606NICT": "Поздне-средневековый французский до 1606 г.",
+          "1694ACAD": "1694ACAD",
+          "1959ACAD": "1959ACAD",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALALC97",
           "ALUKU": "ALUKU",
+          "AO1990": "AO1990",
           "AREVELA": "Восточно-армянский",
           "AREVMDA": "Западно-армянский",
           "BAKU1926": "Унифицированный тюрско-латинский алфавит",
@@ -31,6 +30,7 @@
           "BISKE": "BISKE",
           "BOHORIC": "BOHORIC",
           "BOONT": "BOONT",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -56,6 +56,7 @@
           "NJIVA": "NJIVA",
           "NULIK": "NULIK",
           "OSOJS": "OSOJS",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "PAMAKA",
           "PETR1708": "PETR1708",
           "PINYIN": "Пиньинь",

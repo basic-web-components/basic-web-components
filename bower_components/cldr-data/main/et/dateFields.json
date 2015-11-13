@@ -3,11 +3,8 @@
     "et": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "et"
       },
@@ -59,10 +56,10 @@
             }
           },
           "quarter": {
-            "displayName": "Kvartal",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "kvartal",
+            "relative-type--1": "eelmine kvartal",
+            "relative-type-0": "käesolev kvartal",
+            "relative-type-1": "järgmine kvartal",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} kvartali pärast",
               "relativeTimePattern-count-other": "{0} kvartali pärast"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "kv",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "eelmine kv",
+            "relative-type-0": "käesolev kv",
+            "relative-type-1": "järgmine kv",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} kv pärast",
               "relativeTimePattern-count-other": "{0} kv pärast"
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "kv",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "eelmine kv",
+            "relative-type-0": "käesolev kv",
+            "relative-type-1": "järgmine kv",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} kv",
               "relativeTimePattern-count-other": "+{0} kv"
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "päev",
-            "relative-type--1": "eile",
             "relative-type--2": "üleeile",
+            "relative-type--1": "eile",
             "relative-type-0": "täna",
             "relative-type-1": "homme",
             "relative-type-2": "ülehomme",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "p",
-            "relative-type--1": "eile",
             "relative-type--2": "üleeile",
+            "relative-type--1": "eile",
             "relative-type-0": "täna",
             "relative-type-1": "homme",
             "relative-type-2": "ülehomme",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "p",
-            "relative-type--1": "eile",
             "relative-type--2": "üleeile",
+            "relative-type--1": "eile",
             "relative-type-0": "täna",
             "relative-type-1": "homme",
             "relative-type-2": "ülehomme",
@@ -357,23 +354,23 @@
           "hour-short": {
             "displayName": "t",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} h pärast",
-              "relativeTimePattern-count-other": "{0} h pärast"
+              "relativeTimePattern-count-one": "{0} t pärast",
+              "relativeTimePattern-count-other": "{0} t pärast"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} h tagasi",
-              "relativeTimePattern-count-other": "{0} h tagasi"
+              "relativeTimePattern-count-one": "{0} t tagasi",
+              "relativeTimePattern-count-other": "{0} t tagasi"
             }
           },
           "hour-narrow": {
             "displayName": "t",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} h pärast",
-              "relativeTimePattern-count-other": "{0} h pärast"
+              "relativeTimePattern-count-one": "{0} t pärast",
+              "relativeTimePattern-count-other": "{0} t pärast"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} h tagasi",
-              "relativeTimePattern-count-other": "{0} h tagasi"
+              "relativeTimePattern-count-one": "{0} t tagasi",
+              "relativeTimePattern-count-other": "{0} t tagasi"
             }
           },
           "minute": {
@@ -425,12 +422,12 @@
             "displayName": "sek",
             "relative-type-0": "nüüd",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} s pärast",
-              "relativeTimePattern-count-other": "{0} s pärast"
+              "relativeTimePattern-count-one": "{0} sek pärast",
+              "relativeTimePattern-count-other": "{0} sek pärast"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} s tagasi",
-              "relativeTimePattern-count-other": "{0} s tagasi"
+              "relativeTimePattern-count-one": "{0} sek tagasi",
+              "relativeTimePattern-count-other": "{0} sek tagasi"
             }
           },
           "second-narrow": {

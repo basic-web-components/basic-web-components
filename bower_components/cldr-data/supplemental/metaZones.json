@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11162 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-03 17:45:30 -0600 (Tue, 03 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11937 $"
     },
     "metaZones": {
       "metazoneInfo": {
@@ -35,12 +33,6 @@
             "Algiers": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Central",
-                  "_from": "1981-05-01 00:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1977-10-20 23:00",
                   "_mzone": "Europe_Western"
                 }
@@ -57,6 +49,12 @@
                   "_to": "1981-05-01 00:00",
                   "_mzone": "Europe_Western",
                   "_from": "1979-10-25 23:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Central",
+                  "_from": "1981-05-01 00:00"
                 }
               }
             ],
@@ -91,14 +89,14 @@
             "Bissau": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1975-01-01 01:00"
+                  "_to": "1975-01-01 01:00",
+                  "_mzone": "Africa_FarWestern"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1975-01-01 01:00",
-                  "_mzone": "Africa_FarWestern"
+                  "_mzone": "GMT",
+                  "_from": "1975-01-01 01:00"
                 }
               }
             ],
@@ -133,12 +131,6 @@
             "Casablanca": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Western",
-                  "_from": "1985-12-31 23:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1984-03-16 00:00",
                   "_mzone": "Europe_Western"
                 }
@@ -149,19 +141,25 @@
                   "_mzone": "Europe_Central",
                   "_from": "1984-03-16 00:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Western",
+                  "_from": "1985-12-31 23:00"
+                }
               }
             ],
             "Ceuta": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Central",
-                  "_from": "1984-03-16 00:00"
+                  "_to": "1984-03-16 00:00",
+                  "_mzone": "Europe_Western"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1984-03-16 00:00",
-                  "_mzone": "Europe_Western"
+                  "_mzone": "Europe_Central",
+                  "_from": "1984-03-16 00:00"
                 }
               }
             ],
@@ -203,14 +201,14 @@
             "El_Aaiun": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Western",
-                  "_from": "1976-04-14 01:00"
+                  "_to": "1976-04-14 01:00",
+                  "_mzone": "Africa_FarWestern"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1976-04-14 01:00",
-                  "_mzone": "Africa_FarWestern"
+                  "_mzone": "Europe_Western",
+                  "_from": "1976-04-14 01:00"
                 }
               }
             ],
@@ -245,14 +243,14 @@
             "Juba": [
               {
                 "usesMetazone": {
-                  "_mzone": "Africa_Eastern",
-                  "_from": "2000-01-15 10:00"
+                  "_to": "2000-01-15 10:00",
+                  "_mzone": "Africa_Central"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2000-01-15 10:00",
-                  "_mzone": "Africa_Central"
+                  "_mzone": "Africa_Eastern",
+                  "_from": "2000-01-15 10:00"
                 }
               }
             ],
@@ -266,14 +264,14 @@
             "Khartoum": [
               {
                 "usesMetazone": {
-                  "_mzone": "Africa_Eastern",
-                  "_from": "2000-01-15 10:00"
+                  "_to": "2000-01-15 10:00",
+                  "_mzone": "Africa_Central"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2000-01-15 10:00",
-                  "_mzone": "Africa_Central"
+                  "_mzone": "Africa_Eastern",
+                  "_from": "2000-01-15 10:00"
                 }
               }
             ],
@@ -371,14 +369,14 @@
             "Monrovia": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1972-05-01 00:45"
+                  "_to": "1972-05-01 00:45",
+                  "_mzone": "Liberia"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1972-05-01 00:45",
-                  "_mzone": "Liberia"
+                  "_mzone": "GMT",
+                  "_from": "1972-05-01 00:45"
                 }
               }
             ],
@@ -434,12 +432,6 @@
             "Tripoli": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "2013-10-25 00:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1981-12-31 22:00",
                   "_mzone": "Europe_Eastern"
                 }
@@ -478,6 +470,12 @@
                   "_mzone": "Europe_Central",
                   "_from": "2012-11-10 00:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Eastern",
+                  "_from": "2013-10-25 00:00"
+                }
               }
             ],
             "Tunis": [
@@ -490,12 +488,6 @@
             "Windhoek": [
               {
                 "usesMetazone": {
-                  "_mzone": "Africa_Western",
-                  "_from": "1994-04-02 22:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1990-03-20 22:00",
                   "_mzone": "Africa_Southern"
                 }
@@ -506,6 +498,12 @@
                   "_mzone": "Africa_Central",
                   "_from": "1990-03-20 22:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Africa_Western",
+                  "_from": "1994-04-02 22:00"
+                }
               }
             ]
           },
@@ -513,24 +511,18 @@
             "Adak": [
               {
                 "usesMetazone": {
-                  "_mzone": "Hawaii_Aleutian",
-                  "_from": "1983-11-30 10:00"
+                  "_to": "1983-10-30 12:00",
+                  "_mzone": "Bering"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1983-10-30 12:00",
-                  "_mzone": "Bering"
+                  "_mzone": "Hawaii_Aleutian",
+                  "_from": "1983-11-30 10:00"
                 }
               }
             ],
             "Anchorage": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Alaska",
-                  "_from": "1983-11-30 09:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1983-10-30 11:00",
@@ -542,6 +534,12 @@
                   "_to": "1983-11-30 09:00",
                   "_mzone": "Yukon",
                   "_from": "1983-10-30 11:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Alaska",
+                  "_from": "1983-11-30 09:00"
                 }
               }
             ],
@@ -570,12 +568,6 @@
               "La_Rioja": [
                 {
                   "usesMetazone": {
-                    "_mzone": "Argentina",
-                    "_from": "2004-06-20 04:00"
-                  }
-                },
-                {
-                  "usesMetazone": {
                     "_to": "1991-03-01 02:00",
                     "_mzone": "Argentina"
                   }
@@ -600,15 +592,15 @@
                     "_mzone": "Argentina_Western",
                     "_from": "2004-06-01 03:00"
                   }
-                }
-              ],
-              "Rio_Gallegos": [
+                },
                 {
                   "usesMetazone": {
                     "_mzone": "Argentina",
                     "_from": "2004-06-20 04:00"
                   }
-                },
+                }
+              ],
+              "Rio_Gallegos": [
                 {
                   "usesMetazone": {
                     "_to": "2004-06-01 03:00",
@@ -621,29 +613,29 @@
                     "_mzone": "Argentina_Western",
                     "_from": "2004-06-01 03:00"
                   }
+                },
+                {
+                  "usesMetazone": {
+                    "_mzone": "Argentina",
+                    "_from": "2004-06-20 04:00"
+                  }
                 }
               ],
               "Salta": [
                 {
                   "usesMetazone": {
-                    "_mzone": "Argentina",
-                    "_from": "1991-10-20 04:00"
+                    "_to": "1991-03-03 02:00",
+                    "_mzone": "Argentina"
                   }
                 },
                 {
                   "usesMetazone": {
-                    "_to": "1991-03-03 02:00",
-                    "_mzone": "Argentina"
+                    "_mzone": "Argentina",
+                    "_from": "1991-10-20 04:00"
                   }
                 }
               ],
               "San_Juan": [
-                {
-                  "usesMetazone": {
-                    "_mzone": "Argentina",
-                    "_from": "2004-07-25 04:00"
-                  }
-                },
                 {
                   "usesMetazone": {
                     "_to": "1991-03-01 02:00",
@@ -670,15 +662,15 @@
                     "_mzone": "Argentina_Western",
                     "_from": "2004-05-31 03:00"
                   }
+                },
+                {
+                  "usesMetazone": {
+                    "_mzone": "Argentina",
+                    "_from": "2004-07-25 04:00"
+                  }
                 }
               ],
               "San_Luis": [
-                {
-                  "usesMetazone": {
-                    "_mzone": "Argentina_Western",
-                    "_from": "2008-01-21 02:00"
-                  }
-                },
                 {
                   "usesMetazone": {
                     "_to": "1990-03-14 02:00",
@@ -726,15 +718,15 @@
                     "_mzone": "Argentina",
                     "_from": "2004-07-25 04:00"
                   }
+                },
+                {
+                  "usesMetazone": {
+                    "_mzone": "Argentina_Western",
+                    "_from": "2008-01-21 02:00"
+                  }
                 }
               ],
               "Tucuman": [
-                {
-                  "usesMetazone": {
-                    "_mzone": "Argentina",
-                    "_from": "2004-06-13 04:00"
-                  }
-                },
                 {
                   "usesMetazone": {
                     "_to": "1991-03-03 02:00",
@@ -754,19 +746,25 @@
                     "_mzone": "Argentina_Western",
                     "_from": "2004-06-01 03:00"
                   }
+                },
+                {
+                  "usesMetazone": {
+                    "_mzone": "Argentina",
+                    "_from": "2004-06-13 04:00"
+                  }
                 }
               ],
               "Ushuaia": [
                 {
                   "usesMetazone": {
-                    "_mzone": "Argentina",
-                    "_from": "2004-06-20 04:00"
+                    "_to": "2004-05-30 03:00",
+                    "_mzone": "Argentina"
                   }
                 },
                 {
                   "usesMetazone": {
-                    "_to": "2004-05-30 03:00",
-                    "_mzone": "Argentina"
+                    "_mzone": "Argentina",
+                    "_from": "2004-06-20 04:00"
                   }
                 }
               ]
@@ -795,12 +793,6 @@
             "Bahia_Banderas": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Central",
-                  "_from": "2010-04-04 09:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1970-01-01 08:00",
                   "_mzone": "America_Pacific"
                 }
@@ -810,6 +802,12 @@
                   "_to": "2010-04-04 09:00",
                   "_mzone": "America_Mountain",
                   "_from": "1970-01-01 08:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Central",
+                  "_from": "2010-04-04 09:00"
                 }
               }
             ],
@@ -872,12 +870,6 @@
             "Cambridge_Bay": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Mountain",
-                  "_from": "2001-04-01 09:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1999-10-31 08:00",
                   "_mzone": "America_Mountain"
                 }
@@ -902,6 +894,12 @@
                   "_mzone": "America_Central",
                   "_from": "2000-11-05 05:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Mountain",
+                  "_from": "2001-04-01 09:00"
+                }
               }
             ],
             "Campo_Grande": [
@@ -912,12 +910,6 @@
               }
             ],
             "Cancun": [
-              {
-                "usesMetazone": {
-                  "_mzone": "America_Eastern",
-                  "_from": "2015-02-01 08:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1981-12-23 06:00",
@@ -937,6 +929,12 @@
                   "_mzone": "America_Central",
                   "_from": "1998-08-02 06:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Eastern",
+                  "_from": "2015-02-01 08:00"
+                }
               }
             ],
             "Caracas": [
@@ -947,12 +945,6 @@
               }
             ],
             "Catamarca": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Argentina",
-                  "_from": "2004-06-20 04:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1991-03-03 02:00",
@@ -971,6 +963,12 @@
                   "_to": "2004-06-20 04:00",
                   "_mzone": "Argentina_Western",
                   "_from": "2004-06-01 03:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Argentina",
+                  "_from": "2004-06-20 04:00"
                 }
               }
             ],
@@ -998,14 +996,14 @@
             "Chihuahua": [
               {
                 "usesMetazone": {
-                  "_mzone": "Mexico_Pacific",
-                  "_from": "1998-04-05 09:00"
+                  "_to": "1998-04-05 09:00",
+                  "_mzone": "America_Central"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1998-04-05 09:00",
-                  "_mzone": "America_Central"
+                  "_mzone": "Mexico_Pacific",
+                  "_from": "1998-04-05 09:00"
                 }
               }
             ],
@@ -1019,14 +1017,14 @@
             "Cordoba": [
               {
                 "usesMetazone": {
-                  "_mzone": "Argentina",
-                  "_from": "1991-10-20 04:00"
+                  "_to": "1991-03-03 02:00",
+                  "_mzone": "Argentina"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-03-03 02:00",
-                  "_mzone": "Argentina"
+                  "_mzone": "Argentina",
+                  "_from": "1991-10-20 04:00"
                 }
               }
             ],
@@ -1061,42 +1059,42 @@
             "Danmarkshavn": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1996-01-01 03:00"
+                  "_to": "1996-01-01 03:00",
+                  "_mzone": "Greenland_Western"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1996-01-01 03:00",
-                  "_mzone": "Greenland_Western"
+                  "_mzone": "GMT",
+                  "_from": "1996-01-01 03:00"
                 }
               }
             ],
             "Dawson": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Pacific",
-                  "_from": "1973-10-28 09:00"
+                  "_to": "1973-10-28 09:00",
+                  "_mzone": "Yukon"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1973-10-28 09:00",
-                  "_mzone": "Yukon"
+                  "_mzone": "America_Pacific",
+                  "_from": "1973-10-28 09:00"
                 }
               }
             ],
             "Dawson_Creek": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Mountain",
-                  "_from": "1972-08-30 09:00"
+                  "_to": "1972-08-30 09:00",
+                  "_mzone": "America_Pacific"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1972-08-30 09:00",
-                  "_mzone": "America_Pacific"
+                  "_mzone": "America_Mountain",
+                  "_from": "1972-08-30 09:00"
                 }
               }
             ],
@@ -1131,12 +1129,6 @@
             "Eirunepe": [
               {
                 "usesMetazone": {
-                  "_mzone": "Acre",
-                  "_from": "2013-11-10 04:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "2008-06-24 05:00",
                   "_mzone": "Acre"
                 }
@@ -1146,6 +1138,12 @@
                   "_to": "2013-11-10 04:00",
                   "_mzone": "Amazon",
                   "_from": "2008-06-24 05:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Acre",
+                  "_from": "2013-11-10 04:00"
                 }
               }
             ],
@@ -1180,12 +1178,6 @@
             "Goose_Bay": [
               {
                 "usesMetazone": {
-                  "_mzone": "Atlantic",
-                  "_from": "1988-10-30 02:01"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1988-04-03 04:01",
                   "_mzone": "Atlantic"
                 }
@@ -1196,19 +1188,25 @@
                   "_mzone": "Goose_Bay",
                   "_from": "1988-04-03 04:01"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Atlantic",
+                  "_from": "1988-10-30 02:01"
+                }
               }
             ],
             "Grand_Turk": [
               {
                 "usesMetazone": {
-                  "_mzone": "Atlantic",
-                  "_from": "2015-11-01 06:00"
+                  "_to": "2015-11-01 06:00",
+                  "_mzone": "America_Eastern"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2015-11-01 06:00",
-                  "_mzone": "America_Eastern"
+                  "_mzone": "Atlantic",
+                  "_from": "2015-11-01 06:00"
                 }
               }
             ],
@@ -1264,25 +1262,19 @@
             "Hermosillo": [
               {
                 "usesMetazone": {
-                  "_mzone": "Mexico_Pacific",
-                  "_from": "1970-01-01 08:00"
+                  "_to": "1970-01-01 08:00",
+                  "_mzone": "America_Pacific"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1970-01-01 08:00",
-                  "_mzone": "America_Pacific"
+                  "_mzone": "Mexico_Pacific",
+                  "_from": "1970-01-01 08:00"
                 }
               }
             ],
             "Indiana": {
               "Knox": [
-                {
-                  "usesMetazone": {
-                    "_mzone": "America_Central",
-                    "_from": "2006-04-02 07:00"
-                  }
-                },
                 {
                   "usesMetazone": {
                     "_to": "1991-10-27 07:00",
@@ -1295,15 +1287,15 @@
                     "_mzone": "America_Eastern",
                     "_from": "1991-10-27 07:00"
                   }
+                },
+                {
+                  "usesMetazone": {
+                    "_mzone": "America_Central",
+                    "_from": "2006-04-02 07:00"
+                  }
                 }
               ],
               "Marengo": [
-                {
-                  "usesMetazone": {
-                    "_mzone": "America_Eastern",
-                    "_from": "1974-10-27 07:00"
-                  }
-                },
                 {
                   "usesMetazone": {
                     "_to": "1974-01-06 07:00",
@@ -1316,15 +1308,15 @@
                     "_mzone": "America_Central",
                     "_from": "1974-01-06 07:00"
                   }
-                }
-              ],
-              "Petersburg": [
+                },
                 {
                   "usesMetazone": {
                     "_mzone": "America_Eastern",
-                    "_from": "2007-11-04 07:00"
+                    "_from": "1974-10-27 07:00"
                   }
-                },
+                }
+              ],
+              "Petersburg": [
                 {
                   "usesMetazone": {
                     "_to": "1977-10-30 07:00",
@@ -1344,19 +1336,25 @@
                     "_mzone": "America_Central",
                     "_from": "2006-04-02 07:00"
                   }
+                },
+                {
+                  "usesMetazone": {
+                    "_mzone": "America_Eastern",
+                    "_from": "2007-11-04 07:00"
+                  }
                 }
               ],
               "Tell_City": [
                 {
                   "usesMetazone": {
-                    "_mzone": "America_Central",
-                    "_from": "2006-04-02 07:00"
+                    "_to": "2006-04-02 07:00",
+                    "_mzone": "America_Eastern"
                   }
                 },
                 {
                   "usesMetazone": {
-                    "_to": "2006-04-02 07:00",
-                    "_mzone": "America_Eastern"
+                    "_mzone": "America_Central",
+                    "_from": "2006-04-02 07:00"
                   }
                 }
               ],
@@ -1370,12 +1368,6 @@
               "Vincennes": [
                 {
                   "usesMetazone": {
-                    "_mzone": "America_Eastern",
-                    "_from": "2007-11-04 07:00"
-                  }
-                },
-                {
-                  "usesMetazone": {
                     "_to": "2006-04-02 07:00",
                     "_mzone": "America_Eastern"
                   }
@@ -1386,15 +1378,15 @@
                     "_mzone": "America_Central",
                     "_from": "2006-04-02 07:00"
                   }
-                }
-              ],
-              "Winamac": [
+                },
                 {
                   "usesMetazone": {
                     "_mzone": "America_Eastern",
-                    "_from": "2007-03-11 08:00"
+                    "_from": "2007-11-04 07:00"
                   }
-                },
+                }
+              ],
+              "Winamac": [
                 {
                   "usesMetazone": {
                     "_to": "2006-04-02 07:00",
@@ -1406,6 +1398,12 @@
                     "_to": "2007-03-11 08:00",
                     "_mzone": "America_Central",
                     "_from": "2006-04-02 07:00"
+                  }
+                },
+                {
+                  "usesMetazone": {
+                    "_mzone": "America_Eastern",
+                    "_from": "2007-03-11 08:00"
                   }
                 }
               ]
@@ -1420,24 +1418,18 @@
             "Inuvik": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Mountain",
-                  "_from": "1979-04-29 10:00"
+                  "_to": "1979-04-29 10:00",
+                  "_mzone": "America_Pacific"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1979-04-29 10:00",
-                  "_mzone": "America_Pacific"
+                  "_mzone": "America_Mountain",
+                  "_from": "1979-04-29 10:00"
                 }
               }
             ],
             "Iqaluit": [
-              {
-                "usesMetazone": {
-                  "_mzone": "America_Eastern",
-                  "_from": "2000-10-29 07:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1999-10-31 06:00",
@@ -1449,6 +1441,12 @@
                   "_to": "2000-10-29 07:00",
                   "_mzone": "America_Central",
                   "_from": "1999-10-31 06:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Eastern",
+                  "_from": "2000-10-29 07:00"
                 }
               }
             ],
@@ -1462,24 +1460,18 @@
             "Jujuy": [
               {
                 "usesMetazone": {
-                  "_mzone": "Argentina",
-                  "_from": "1991-10-06 04:00"
+                  "_to": "1990-03-04 02:00",
+                  "_mzone": "Argentina"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1990-03-04 02:00",
-                  "_mzone": "Argentina"
+                  "_mzone": "Argentina",
+                  "_from": "1991-10-06 04:00"
                 }
               }
             ],
             "Juneau": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Alaska",
-                  "_from": "1983-11-30 09:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1980-04-27 10:00",
@@ -1506,20 +1498,26 @@
                   "_mzone": "Yukon",
                   "_from": "1983-10-30 09:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Alaska",
+                  "_from": "1983-11-30 09:00"
+                }
               }
             ],
             "Kentucky": {
               "Monticello": [
                 {
                   "usesMetazone": {
-                    "_mzone": "America_Eastern",
-                    "_from": "2000-10-29 07:00"
+                    "_to": "2000-10-29 07:00",
+                    "_mzone": "America_Central"
                   }
                 },
                 {
                   "usesMetazone": {
-                    "_to": "2000-10-29 07:00",
-                    "_mzone": "America_Central"
+                    "_mzone": "America_Eastern",
+                    "_from": "2000-10-29 07:00"
                   }
                 }
               ]
@@ -1555,12 +1553,6 @@
             "Louisville": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Eastern",
-                  "_from": "1974-10-27 07:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1974-01-06 07:00",
                   "_mzone": "America_Eastern"
                 }
@@ -1570,6 +1562,12 @@
                   "_to": "1974-10-27 07:00",
                   "_mzone": "America_Central",
                   "_from": "1974-01-06 07:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Eastern",
+                  "_from": "1974-10-27 07:00"
                 }
               }
             ],
@@ -1588,12 +1586,6 @@
               }
             ],
             "Managua": [
-              {
-                "usesMetazone": {
-                  "_mzone": "America_Central",
-                  "_from": "1997-01-01 05:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1973-05-01 06:00",
@@ -1634,6 +1626,12 @@
                   "_mzone": "America_Eastern",
                   "_from": "1993-01-01 06:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Central",
+                  "_from": "1997-01-01 05:00"
+                }
               }
             ],
             "Manaus": [
@@ -1667,24 +1665,18 @@
             "Mazatlan": [
               {
                 "usesMetazone": {
-                  "_mzone": "Mexico_Pacific",
-                  "_from": "1970-01-01 08:00"
+                  "_to": "1970-01-01 08:00",
+                  "_mzone": "America_Pacific"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1970-01-01 08:00",
-                  "_mzone": "America_Pacific"
+                  "_mzone": "Mexico_Pacific",
+                  "_from": "1970-01-01 08:00"
                 }
               }
             ],
             "Mendoza": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Argentina",
-                  "_from": "2004-09-26 04:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1990-03-04 02:00",
@@ -1697,29 +1689,29 @@
                   "_mzone": "Argentina",
                   "_from": "1992-10-18 04:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Argentina",
+                  "_from": "2004-09-26 04:00"
+                }
               }
             ],
             "Menominee": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Central",
-                  "_from": "1973-04-29 07:00"
+                  "_to": "1973-04-29 07:00",
+                  "_mzone": "America_Eastern"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1973-04-29 07:00",
-                  "_mzone": "America_Eastern"
+                  "_mzone": "America_Central",
+                  "_from": "1973-04-29 07:00"
                 }
               }
             ],
             "Merida": [
-              {
-                "usesMetazone": {
-                  "_mzone": "America_Central",
-                  "_from": "1982-12-02 05:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1981-12-23 06:00",
@@ -1731,6 +1723,12 @@
                   "_to": "1982-12-02 05:00",
                   "_mzone": "America_Eastern",
                   "_from": "1981-12-23 06:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Central",
+                  "_from": "1982-12-02 05:00"
                 }
               }
             ],
@@ -1751,14 +1749,14 @@
             "Miquelon": [
               {
                 "usesMetazone": {
-                  "_mzone": "Pierre_Miquelon",
-                  "_from": "1980-05-01 04:00"
+                  "_to": "1980-05-01 04:00",
+                  "_mzone": "Atlantic"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1980-05-01 04:00",
-                  "_mzone": "Atlantic"
+                  "_mzone": "Pierre_Miquelon",
+                  "_from": "1980-05-01 04:00"
                 }
               }
             ],
@@ -1814,12 +1812,6 @@
             "Nome": [
               {
                 "usesMetazone": {
-                  "_mzone": "Alaska",
-                  "_from": "1983-11-30 09:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1983-10-30 12:00",
                   "_mzone": "Bering"
                 }
@@ -1829,6 +1821,12 @@
                   "_to": "1983-11-30 09:00",
                   "_mzone": "Yukon",
                   "_from": "1983-10-30 12:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Alaska",
+                  "_from": "1983-11-30 09:00"
                 }
               }
             ],
@@ -1843,42 +1841,42 @@
               "Beulah": [
                 {
                   "usesMetazone": {
-                    "_mzone": "America_Central",
-                    "_from": "2010-11-07 08:00"
+                    "_to": "2010-11-07 08:00",
+                    "_mzone": "America_Mountain"
                   }
                 },
                 {
                   "usesMetazone": {
-                    "_to": "2010-11-07 08:00",
-                    "_mzone": "America_Mountain"
+                    "_mzone": "America_Central",
+                    "_from": "2010-11-07 08:00"
                   }
                 }
               ],
               "Center": [
                 {
                   "usesMetazone": {
-                    "_mzone": "America_Central",
-                    "_from": "1992-10-25 08:00"
+                    "_to": "1992-10-25 08:00",
+                    "_mzone": "America_Mountain"
                   }
                 },
                 {
                   "usesMetazone": {
-                    "_to": "1992-10-25 08:00",
-                    "_mzone": "America_Mountain"
+                    "_mzone": "America_Central",
+                    "_from": "1992-10-25 08:00"
                   }
                 }
               ],
               "New_Salem": [
                 {
                   "usesMetazone": {
-                    "_mzone": "America_Central",
-                    "_from": "2003-10-26 08:00"
+                    "_to": "2003-10-26 08:00",
+                    "_mzone": "America_Mountain"
                   }
                 },
                 {
                   "usesMetazone": {
-                    "_to": "2003-10-26 08:00",
-                    "_mzone": "America_Mountain"
+                    "_mzone": "America_Central",
+                    "_from": "2003-10-26 08:00"
                   }
                 }
               ]
@@ -1886,14 +1884,14 @@
             "Ojinaga": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Mountain",
-                  "_from": "1998-04-05 09:00"
+                  "_to": "1998-04-05 09:00",
+                  "_mzone": "America_Central"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1998-04-05 09:00",
-                  "_mzone": "America_Central"
+                  "_mzone": "America_Mountain",
+                  "_from": "1998-04-05 09:00"
                 }
               }
             ],
@@ -1905,12 +1903,6 @@
               }
             ],
             "Pangnirtung": [
-              {
-                "usesMetazone": {
-                  "_mzone": "America_Eastern",
-                  "_from": "2000-10-29 07:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1995-04-02 06:00",
@@ -1930,19 +1922,25 @@
                   "_mzone": "America_Central",
                   "_from": "1999-10-31 06:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Eastern",
+                  "_from": "2000-10-29 07:00"
+                }
               }
             ],
             "Paramaribo": [
               {
                 "usesMetazone": {
-                  "_mzone": "Suriname",
-                  "_from": "1975-11-20 03:30"
+                  "_to": "1975-11-20 03:30",
+                  "_mzone": "Dutch_Guiana"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1975-11-20 03:30",
-                  "_mzone": "Dutch_Guiana"
+                  "_mzone": "Suriname",
+                  "_from": "1975-11-20 03:30"
                 }
               }
             ],
@@ -1953,17 +1951,17 @@
                 }
               }
             ],
-            "Port-au-Prince": [
-              {
-                "usesMetazone": {
-                  "_mzone": "America_Eastern"
-                }
-              }
-            ],
             "Port_of_Spain": [
               {
                 "usesMetazone": {
                   "_mzone": "Atlantic"
+                }
+              }
+            ],
+            "Port-au-Prince": [
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Eastern"
                 }
               }
             ],
@@ -1991,12 +1989,6 @@
             "Rankin_Inlet": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Central",
-                  "_from": "2001-04-01 08:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "2000-10-29 07:00",
                   "_mzone": "America_Central"
                 }
@@ -2006,6 +1998,12 @@
                   "_to": "2001-04-01 08:00",
                   "_mzone": "America_Eastern",
                   "_from": "2000-10-29 07:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Central",
+                  "_from": "2001-04-01 08:00"
                 }
               }
             ],
@@ -2024,12 +2022,6 @@
               }
             ],
             "Resolute": [
-              {
-                "usesMetazone": {
-                  "_mzone": "America_Central",
-                  "_from": "2007-03-11 08:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "2000-10-29 07:00",
@@ -2056,15 +2048,15 @@
                   "_mzone": "America_Eastern",
                   "_from": "2006-10-29 07:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "America_Central",
+                  "_from": "2007-03-11 08:00"
+                }
               }
             ],
             "Rio_Branco": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Acre",
-                  "_from": "2013-11-10 04:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "2008-06-24 05:00",
@@ -2076,6 +2068,12 @@
                   "_to": "2013-11-10 04:00",
                   "_mzone": "Amazon",
                   "_from": "2008-06-24 05:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Acre",
+                  "_from": "2013-11-10 04:00"
                 }
               }
             ],
@@ -2089,14 +2087,14 @@
             "Santarem": [
               {
                 "usesMetazone": {
-                  "_mzone": "Brasilia",
-                  "_from": "2008-06-24 04:00"
+                  "_to": "2008-06-24 04:00",
+                  "_mzone": "Amazon"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2008-06-24 04:00",
-                  "_mzone": "Amazon"
+                  "_mzone": "Brasilia",
+                  "_from": "2008-06-24 04:00"
                 }
               }
             ],
@@ -2108,12 +2106,6 @@
               }
             ],
             "Santo_Domingo": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Atlantic",
-                  "_from": "2000-12-03 06:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1974-10-27 05:00",
@@ -2133,6 +2125,12 @@
                   "_mzone": "America_Eastern",
                   "_from": "2000-10-29 06:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Atlantic",
+                  "_from": "2000-12-03 06:00"
+                }
               }
             ],
             "Sao_Paulo": [
@@ -2145,24 +2143,18 @@
             "Scoresbysund": [
               {
                 "usesMetazone": {
-                  "_mzone": "Greenland_Eastern",
-                  "_from": "1981-03-29 02:00"
+                  "_to": "1981-03-29 02:00",
+                  "_mzone": "Greenland_Central"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1981-03-29 02:00",
-                  "_mzone": "Greenland_Central"
+                  "_mzone": "Greenland_Eastern",
+                  "_from": "1981-03-29 02:00"
                 }
               }
             ],
             "Sitka": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Alaska",
-                  "_from": "1983-11-30 09:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1983-10-30 09:00",
@@ -2174,6 +2166,12 @@
                   "_to": "1983-11-30 09:00",
                   "_mzone": "Yukon",
                   "_from": "1983-10-30 09:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Alaska",
+                  "_from": "1983-11-30 09:00"
                 }
               }
             ],
@@ -2222,14 +2220,14 @@
             "Swift_Current": [
               {
                 "usesMetazone": {
-                  "_mzone": "America_Central",
-                  "_from": "1972-04-30 09:00"
+                  "_to": "1972-04-30 09:00",
+                  "_mzone": "America_Mountain"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1972-04-30 09:00",
-                  "_mzone": "America_Mountain"
+                  "_mzone": "America_Central",
+                  "_from": "1972-04-30 09:00"
                 }
               }
             ],
@@ -2299,14 +2297,14 @@
             "Yakutat": [
               {
                 "usesMetazone": {
-                  "_mzone": "Alaska",
-                  "_from": "1983-11-30 09:00"
+                  "_to": "1983-11-30 09:00",
+                  "_mzone": "Yukon"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1983-11-30 09:00",
-                  "_mzone": "Yukon"
+                  "_mzone": "Alaska",
+                  "_from": "1983-11-30 09:00"
                 }
               }
             ],
@@ -2320,12 +2318,6 @@
           },
           "Antarctica": {
             "Casey": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Australia_Western",
-                  "_from": "2012-02-21 17:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "2009-10-17 18:00",
@@ -2352,6 +2344,12 @@
                   "_mzone": "Casey",
                   "_from": "2011-10-27 18:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Australia_Western",
+                  "_from": "2012-02-21 17:00"
+                }
               }
             ],
             "Davis": [
@@ -2371,14 +2369,14 @@
             "Macquarie": [
               {
                 "usesMetazone": {
-                  "_mzone": "Macquarie",
-                  "_from": "2010-04-03 16:00"
+                  "_to": "2010-04-03 16:00",
+                  "_mzone": "Australia_Eastern"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2010-04-03 16:00",
-                  "_mzone": "Australia_Eastern"
+                  "_mzone": "Macquarie",
+                  "_from": "2010-04-03 16:00"
                 }
               }
             ],
@@ -2399,14 +2397,14 @@
             "Palmer": [
               {
                 "usesMetazone": {
-                  "_mzone": "Chile",
-                  "_from": "1982-05-01 03:00"
+                  "_to": "1982-05-01 03:00",
+                  "_mzone": "Argentina"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1982-05-01 03:00",
-                  "_mzone": "Argentina"
+                  "_mzone": "Chile",
+                  "_from": "1982-05-01 03:00"
                 }
               }
             ],
@@ -2459,14 +2457,14 @@
             "Almaty": [
               {
                 "usesMetazone": {
-                  "_mzone": "Kazakhstan_Eastern",
-                  "_from": "2005-03-14 18:00"
+                  "_to": "2005-03-14 18:00",
+                  "_mzone": "Almaty"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2005-03-14 18:00",
-                  "_mzone": "Almaty"
+                  "_mzone": "Kazakhstan_Eastern",
+                  "_from": "2005-03-14 18:00"
                 }
               }
             ],
@@ -2480,24 +2478,18 @@
             "Anadyr": [
               {
                 "usesMetazone": {
-                  "_mzone": "Magadan",
-                  "_from": "2010-03-27 14:00"
+                  "_to": "2010-03-27 14:00",
+                  "_mzone": "Anadyr"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2010-03-27 14:00",
-                  "_mzone": "Anadyr"
+                  "_mzone": "Magadan",
+                  "_from": "2010-03-27 14:00"
                 }
               }
             ],
             "Aqtau": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Kazakhstan_Western",
-                  "_from": "2005-03-14 20:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1991-12-15 19:00",
@@ -2510,15 +2502,15 @@
                   "_mzone": "Aqtau",
                   "_from": "1991-12-15 19:00"
                 }
-              }
-            ],
-            "Aqtobe": [
+              },
               {
                 "usesMetazone": {
                   "_mzone": "Kazakhstan_Western",
-                  "_from": "2005-03-14 19:00"
+                  "_from": "2005-03-14 20:00"
                 }
-              },
+              }
+            ],
+            "Aqtobe": [
               {
                 "usesMetazone": {
                   "_to": "1991-12-15 19:00",
@@ -2531,19 +2523,25 @@
                   "_mzone": "Aqtobe",
                   "_from": "1991-12-15 19:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Kazakhstan_Western",
+                  "_from": "2005-03-14 19:00"
+                }
               }
             ],
             "Ashgabat": [
               {
                 "usesMetazone": {
-                  "_mzone": "Turkmenistan",
-                  "_from": "1991-10-26 20:00"
+                  "_to": "1991-10-26 20:00",
+                  "_mzone": "Ashkhabad"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-10-26 20:00",
-                  "_mzone": "Ashkhabad"
+                  "_mzone": "Turkmenistan",
+                  "_from": "1991-10-26 20:00"
                 }
               }
             ],
@@ -2557,28 +2555,28 @@
             "Bahrain": [
               {
                 "usesMetazone": {
-                  "_mzone": "Arabian",
-                  "_from": "1972-05-31 20:00"
+                  "_to": "1972-05-31 20:00",
+                  "_mzone": "Gulf"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1972-05-31 20:00",
-                  "_mzone": "Gulf"
+                  "_mzone": "Arabian",
+                  "_from": "1972-05-31 20:00"
                 }
               }
             ],
             "Baku": [
               {
                 "usesMetazone": {
-                  "_mzone": "Azerbaijan",
-                  "_from": "1991-08-29 20:00"
+                  "_to": "1991-08-29 20:00",
+                  "_mzone": "Baku"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-08-29 20:00",
-                  "_mzone": "Baku"
+                  "_mzone": "Azerbaijan",
+                  "_from": "1991-08-29 20:00"
                 }
               }
             ],
@@ -2599,14 +2597,14 @@
             "Bishkek": [
               {
                 "usesMetazone": {
-                  "_mzone": "Kyrgystan",
-                  "_from": "1991-08-30 20:00"
+                  "_to": "1991-08-30 20:00",
+                  "_mzone": "Frunze"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-08-30 20:00",
-                  "_mzone": "Frunze"
+                  "_mzone": "Kyrgystan",
+                  "_from": "1991-08-30 20:00"
                 }
               }
             ],
@@ -2627,38 +2625,32 @@
             "Chita": [
               {
                 "usesMetazone": {
-                  "_mzone": "Irkutsk",
-                  "_from": "2014-10-25 16:00"
+                  "_to": "2014-10-25 16:00",
+                  "_mzone": "Yakutsk"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2014-10-25 16:00",
-                  "_mzone": "Yakutsk"
+                  "_mzone": "Irkutsk",
+                  "_from": "2014-10-25 16:00"
                 }
               }
             ],
             "Choibalsan": [
               {
                 "usesMetazone": {
-                  "_mzone": "Choibalsan",
-                  "_from": "1983-03-31 16:00"
+                  "_to": "1983-03-31 16:00",
+                  "_mzone": "Mongolia"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1983-03-31 16:00",
-                  "_mzone": "Mongolia"
+                  "_mzone": "Choibalsan",
+                  "_from": "1983-03-31 16:00"
                 }
               }
             ],
             "Colombo": [
-              {
-                "usesMetazone": {
-                  "_mzone": "India",
-                  "_from": "2006-04-14 18:30"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1996-05-24 18:30",
@@ -2670,6 +2662,12 @@
                   "_to": "2006-04-14 18:30",
                   "_mzone": "Lanka",
                   "_from": "1996-05-24 18:30"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "India",
+                  "_from": "2006-04-14 18:30"
                 }
               }
             ],
@@ -2683,24 +2681,18 @@
             "Dhaka": [
               {
                 "usesMetazone": {
-                  "_mzone": "Bangladesh",
-                  "_from": "1971-03-25 18:00"
+                  "_to": "1971-03-25 18:00",
+                  "_mzone": "Dacca"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1971-03-25 18:00",
-                  "_mzone": "Dacca"
+                  "_mzone": "Bangladesh",
+                  "_from": "1971-03-25 18:00"
                 }
               }
             ],
             "Dili": [
-              {
-                "usesMetazone": {
-                  "_mzone": "East_Timor",
-                  "_from": "2000-09-16 16:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1976-05-02 15:00",
@@ -2712,6 +2704,12 @@
                   "_to": "2000-09-16 16:00",
                   "_mzone": "Indonesia_Central",
                   "_from": "1976-05-02 15:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "East_Timor",
+                  "_from": "2000-09-16 16:00"
                 }
               }
             ],
@@ -2725,42 +2723,42 @@
             "Dushanbe": [
               {
                 "usesMetazone": {
-                  "_mzone": "Tajikistan",
-                  "_from": "1991-09-08 21:00"
+                  "_to": "1991-09-08 21:00",
+                  "_mzone": "Dushanbe"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-09-08 21:00",
-                  "_mzone": "Dushanbe"
+                  "_mzone": "Tajikistan",
+                  "_from": "1991-09-08 21:00"
                 }
               }
             ],
             "Gaza": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1995-12-31 22:00"
+                  "_to": "1995-12-31 22:00",
+                  "_mzone": "Israel"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1995-12-31 22:00",
-                  "_mzone": "Israel"
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1995-12-31 22:00"
                 }
               }
             ],
             "Hebron": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1995-12-31 22:00"
+                  "_to": "1995-12-31 22:00",
+                  "_mzone": "Israel"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1995-12-31 22:00",
-                  "_mzone": "Israel"
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1995-12-31 22:00"
                 }
               }
             ],
@@ -2823,14 +2821,14 @@
             "Karachi": [
               {
                 "usesMetazone": {
-                  "_mzone": "Pakistan",
-                  "_from": "1971-03-25 19:00"
+                  "_to": "1971-03-25 19:00",
+                  "_mzone": "Karachi"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1971-03-25 19:00",
-                  "_mzone": "Karachi"
+                  "_mzone": "Pakistan",
+                  "_from": "1971-03-25 19:00"
                 }
               }
             ],
@@ -2844,12 +2842,6 @@
             "Khandyga": [
               {
                 "usesMetazone": {
-                  "_mzone": "Yakutsk",
-                  "_from": "2011-09-12 13:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "2003-12-31 15:00",
                   "_mzone": "Yakutsk"
                 }
@@ -2859,6 +2851,12 @@
                   "_to": "2011-09-12 13:00",
                   "_mzone": "Vladivostok",
                   "_from": "2003-12-31 15:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Yakutsk",
+                  "_from": "2011-09-12 13:00"
                 }
               }
             ],
@@ -2872,28 +2870,28 @@
             "Kuala_Lumpur": [
               {
                 "usesMetazone": {
-                  "_mzone": "Malaysia",
-                  "_from": "1981-12-31 16:30"
+                  "_to": "1981-12-31 16:30",
+                  "_mzone": "Malaya"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1981-12-31 16:30",
-                  "_mzone": "Malaya"
+                  "_mzone": "Malaysia",
+                  "_from": "1981-12-31 16:30"
                 }
               }
             ],
             "Kuching": [
               {
                 "usesMetazone": {
-                  "_mzone": "Malaysia",
-                  "_from": "1981-12-31 16:00"
+                  "_to": "1981-12-31 16:00",
+                  "_mzone": "Borneo"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1981-12-31 16:00",
-                  "_mzone": "Borneo"
+                  "_mzone": "Malaysia",
+                  "_from": "1981-12-31 16:00"
                 }
               }
             ],
@@ -2907,14 +2905,14 @@
             "Macau": [
               {
                 "usesMetazone": {
-                  "_mzone": "China",
-                  "_from": "1999-12-19 16:00"
+                  "_to": "1999-12-19 16:00",
+                  "_mzone": "Macau"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1999-12-19 16:00",
-                  "_mzone": "Macau"
+                  "_mzone": "China",
+                  "_from": "1999-12-19 16:00"
                 }
               }
             ],
@@ -2956,12 +2954,6 @@
             "Novokuznetsk": [
               {
                 "usesMetazone": {
-                  "_mzone": "Krasnoyarsk",
-                  "_from": "2014-10-25 19:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "2010-03-27 19:00",
                   "_mzone": "Krasnoyarsk"
                 }
@@ -2971,6 +2963,12 @@
                   "_to": "2014-10-25 19:00",
                   "_mzone": "Novosibirsk",
                   "_from": "2010-03-27 19:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Krasnoyarsk",
+                  "_from": "2014-10-25 19:00"
                 }
               }
             ],
@@ -2991,12 +2989,6 @@
             "Oral": [
               {
                 "usesMetazone": {
-                  "_mzone": "Kazakhstan_Western",
-                  "_from": "2005-03-14 20:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1991-12-15 20:00",
                   "_mzone": "Uralsk"
                 }
@@ -3006,6 +2998,12 @@
                   "_to": "2005-03-14 20:00",
                   "_mzone": "Oral",
                   "_from": "1991-12-15 20:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Kazakhstan_Western",
+                  "_from": "2005-03-14 20:00"
                 }
               }
             ],
@@ -3019,20 +3017,21 @@
             "Pontianak": [
               {
                 "usesMetazone": {
-                  "_mzone": "Indonesia_Western",
-                  "_from": "1987-12-31 16:00"
+                  "_to": "1987-12-31 16:00",
+                  "_mzone": "Indonesia_Central"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1987-12-31 16:00",
-                  "_mzone": "Indonesia_Central"
+                  "_mzone": "Indonesia_Western",
+                  "_from": "1987-12-31 16:00"
                 }
               }
             ],
             "Pyongyang": [
               {
                 "usesMetazone": {
+                  "_to": "2015-08-14 15:00",
                   "_mzone": "Korea"
                 }
               }
@@ -3040,24 +3039,18 @@
             "Qatar": [
               {
                 "usesMetazone": {
-                  "_mzone": "Arabian",
-                  "_from": "1972-05-31 20:00"
+                  "_to": "1972-05-31 20:00",
+                  "_mzone": "Gulf"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1972-05-31 20:00",
-                  "_mzone": "Gulf"
+                  "_mzone": "Arabian",
+                  "_from": "1972-05-31 20:00"
                 }
               }
             ],
             "Qyzylorda": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Kazakhstan_Eastern",
-                  "_from": "2005-03-14 18:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1991-12-15 19:00",
@@ -3069,6 +3062,12 @@
                   "_to": "2005-03-14 18:00",
                   "_mzone": "Qyzylorda",
                   "_from": "1991-12-15 19:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Kazakhstan_Eastern",
+                  "_from": "2005-03-14 18:00"
                 }
               }
             ],
@@ -3104,12 +3103,6 @@
             "Samarkand": [
               {
                 "usesMetazone": {
-                  "_mzone": "Uzbekistan",
-                  "_from": "1991-08-31 18:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1981-09-30 18:00",
                   "_mzone": "Samarkand"
                 }
@@ -3126,6 +3119,12 @@
                   "_to": "1991-08-31 18:00",
                   "_mzone": "Samarkand",
                   "_from": "1982-03-31 18:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Uzbekistan",
+                  "_from": "1991-08-31 18:00"
                 }
               }
             ],
@@ -3168,28 +3167,28 @@
             "Tashkent": [
               {
                 "usesMetazone": {
-                  "_mzone": "Uzbekistan",
-                  "_from": "1991-08-31 18:00"
+                  "_to": "1991-08-31 18:00",
+                  "_mzone": "Tashkent"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-08-31 18:00",
-                  "_mzone": "Tashkent"
+                  "_mzone": "Uzbekistan",
+                  "_from": "1991-08-31 18:00"
                 }
               }
             ],
             "Tbilisi": [
               {
                 "usesMetazone": {
-                  "_mzone": "Georgia",
-                  "_from": "1991-04-08 20:00"
+                  "_to": "1991-04-08 20:00",
+                  "_mzone": "Tbilisi"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-04-08 20:00",
-                  "_mzone": "Tbilisi"
+                  "_mzone": "Georgia",
+                  "_from": "1991-04-08 20:00"
                 }
               }
             ],
@@ -3203,14 +3202,14 @@
             "Thimphu": [
               {
                 "usesMetazone": {
-                  "_mzone": "Bhutan",
-                  "_from": "1987-09-30 18:30"
+                  "_to": "1987-09-30 18:30",
+                  "_mzone": "India"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1987-09-30 18:30",
-                  "_mzone": "India"
+                  "_mzone": "Bhutan",
+                  "_from": "1987-09-30 18:30"
                 }
               }
             ],
@@ -3238,12 +3237,6 @@
             "Ust-Nera": [
               {
                 "usesMetazone": {
-                  "_mzone": "Vladivostok",
-                  "_from": "2011-09-12 12:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1981-03-31 15:00",
                   "_mzone": "Yakutsk"
                 }
@@ -3253,6 +3246,12 @@
                   "_to": "2011-09-12 12:00",
                   "_mzone": "Magadan",
                   "_from": "1981-03-31 15:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Vladivostok",
+                  "_from": "2011-09-12 12:00"
                 }
               }
             ],
@@ -3280,40 +3279,34 @@
             "Yekaterinburg": [
               {
                 "usesMetazone": {
-                  "_mzone": "Yekaterinburg",
-                  "_from": "1992-01-18 22:00"
+                  "_to": "1992-01-18 22:00",
+                  "_mzone": "Sverdlovsk"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1992-01-18 22:00",
-                  "_mzone": "Sverdlovsk"
+                  "_mzone": "Yekaterinburg",
+                  "_from": "1992-01-18 22:00"
                 }
               }
             ],
             "Yerevan": [
               {
                 "usesMetazone": {
-                  "_mzone": "Armenia",
-                  "_from": "1991-09-22 20:00"
+                  "_to": "1991-09-22 20:00",
+                  "_mzone": "Yerevan"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-09-22 20:00",
-                  "_mzone": "Yerevan"
+                  "_mzone": "Armenia",
+                  "_from": "1991-09-22 20:00"
                 }
               }
             ]
           },
           "Atlantic": {
             "Azores": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Azores",
-                  "_from": "1993-03-28 01:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1992-09-27 02:00",
@@ -3325,6 +3318,12 @@
                   "_to": "1993-03-28 01:00",
                   "_mzone": "Europe_Western",
                   "_from": "1992-09-27 02:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Azores",
+                  "_from": "1993-03-28 01:00"
                 }
               }
             ],
@@ -3452,14 +3451,14 @@
             "Lord_Howe": [
               {
                 "usesMetazone": {
-                  "_mzone": "Lord_Howe",
-                  "_from": "1981-02-28 14:00"
+                  "_to": "1981-02-28 14:00",
+                  "_mzone": "Australia_Eastern"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1981-02-28 14:00",
-                  "_mzone": "Australia_Eastern"
+                  "_mzone": "Lord_Howe",
+                  "_from": "1981-02-28 14:00"
                 }
               }
             ],
@@ -3573,14 +3572,14 @@
             "Chisinau": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1990-05-05 21:00"
+                  "_to": "1990-05-05 21:00",
+                  "_mzone": "Moscow"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1990-05-05 21:00",
-                  "_mzone": "Moscow"
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1990-05-05 21:00"
                 }
               }
             ],
@@ -3594,14 +3593,14 @@
             "Dublin": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1971-10-31 02:00"
+                  "_to": "1971-10-31 02:00",
+                  "_mzone": "Irish"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1971-10-31 02:00",
-                  "_mzone": "Irish"
+                  "_mzone": "GMT",
+                  "_from": "1971-10-31 02:00"
                 }
               }
             ],
@@ -3615,14 +3614,14 @@
             "Guernsey": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1971-10-31 02:00"
+                  "_to": "1971-10-31 02:00",
+                  "_mzone": "British"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1971-10-31 02:00",
-                  "_mzone": "British"
+                  "_mzone": "GMT",
+                  "_from": "1971-10-31 02:00"
                 }
               }
             ],
@@ -3636,24 +3635,18 @@
             "Isle_of_Man": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1971-10-31 02:00"
+                  "_to": "1971-10-31 02:00",
+                  "_mzone": "British"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1971-10-31 02:00",
-                  "_mzone": "British"
+                  "_mzone": "GMT",
+                  "_from": "1971-10-31 02:00"
                 }
               }
             ],
             "Istanbul": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1985-04-19 21:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1978-10-14 21:00",
@@ -3666,29 +3659,29 @@
                   "_mzone": "Turkey",
                   "_from": "1978-10-14 21:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1985-04-19 21:00"
+                }
               }
             ],
             "Jersey": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1971-10-31 02:00"
+                  "_to": "1971-10-31 02:00",
+                  "_mzone": "British"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1971-10-31 02:00",
-                  "_mzone": "British"
+                  "_mzone": "GMT",
+                  "_from": "1971-10-31 02:00"
                 }
               }
             ],
             "Kaliningrad": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "2014-10-25 23:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1991-03-30 23:00",
@@ -3708,29 +3701,29 @@
                   "_mzone": "Europe_Further_Eastern",
                   "_from": "2011-03-27 00:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Eastern",
+                  "_from": "2014-10-25 23:00"
+                }
               }
             ],
             "Kiev": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1990-06-30 22:00"
+                  "_to": "1990-06-30 22:00",
+                  "_mzone": "Moscow"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1990-06-30 22:00",
-                  "_mzone": "Moscow"
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1990-06-30 22:00"
                 }
               }
             ],
             "Lisbon": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Europe_Western",
-                  "_from": "1996-03-31 01:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1976-09-26 00:00",
@@ -3750,6 +3743,12 @@
                   "_mzone": "Europe_Central",
                   "_from": "1992-09-27 01:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Western",
+                  "_from": "1996-03-31 01:00"
+                }
               }
             ],
             "Ljubljana": [
@@ -3762,14 +3761,14 @@
             "London": [
               {
                 "usesMetazone": {
-                  "_mzone": "GMT",
-                  "_from": "1971-10-31 02:00"
+                  "_to": "1971-10-31 02:00",
+                  "_mzone": "British"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1971-10-31 02:00",
-                  "_mzone": "British"
+                  "_mzone": "GMT",
+                  "_from": "1971-10-31 02:00"
                 }
               }
             ],
@@ -3804,12 +3803,6 @@
             "Minsk": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Further_Eastern",
-                  "_from": "2011-03-27 00:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1991-03-30 23:00",
                   "_mzone": "Moscow"
                 }
@@ -3819,6 +3812,12 @@
                   "_to": "2011-03-27 00:00",
                   "_mzone": "Europe_Eastern",
                   "_from": "1991-03-30 23:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Further_Eastern",
+                  "_from": "2011-03-27 00:00"
                 }
               }
             ],
@@ -3832,12 +3831,6 @@
             "Moscow": [
               {
                 "usesMetazone": {
-                  "_mzone": "Moscow",
-                  "_from": "1992-01-19 00:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1991-03-30 23:00",
                   "_mzone": "Moscow"
                 }
@@ -3847,6 +3840,12 @@
                   "_to": "1992-01-19 00:00",
                   "_mzone": "Europe_Eastern",
                   "_from": "1991-03-30 23:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Moscow",
+                  "_from": "1992-01-19 00:00"
                 }
               }
             ],
@@ -3881,14 +3880,14 @@
             "Riga": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1989-03-25 23:00"
+                  "_to": "1989-03-25 23:00",
+                  "_mzone": "Moscow"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1989-03-25 23:00",
-                  "_mzone": "Moscow"
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1989-03-25 23:00"
                 }
               }
             ],
@@ -3900,12 +3899,6 @@
               }
             ],
             "Samara": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Samara",
-                  "_from": "1991-10-20 00:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1989-03-25 22:00",
@@ -3932,6 +3925,12 @@
                   "_mzone": "Kuybyshev",
                   "_from": "1991-09-29 00:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Samara",
+                  "_from": "1991-10-20 00:00"
+                }
               }
             ],
             "San_Marino": [
@@ -3949,12 +3948,6 @@
               }
             ],
             "Simferopol": [
-              {
-                "usesMetazone": {
-                  "_mzone": "Moscow",
-                  "_from": "2014-03-30 00:00"
-                }
-              },
               {
                 "usesMetazone": {
                   "_to": "1990-06-30 23:00",
@@ -3980,6 +3973,12 @@
                   "_to": "2014-03-30 00:00",
                   "_mzone": "Europe_Eastern",
                   "_from": "1997-03-30 01:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Moscow",
+                  "_from": "2014-03-30 00:00"
                 }
               }
             ],
@@ -4007,14 +4006,14 @@
             "Tallinn": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1989-03-25 23:00"
+                  "_to": "1989-03-25 23:00",
+                  "_mzone": "Moscow"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1989-03-25 23:00",
-                  "_mzone": "Moscow"
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1989-03-25 23:00"
                 }
               }
             ],
@@ -4028,12 +4027,6 @@
             "Uzhgorod": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1991-03-31 02:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1990-06-30 23:00",
                   "_mzone": "Moscow"
                 }
@@ -4043,6 +4036,12 @@
                   "_to": "1991-03-31 02:00",
                   "_mzone": "Europe_Central",
                   "_from": "1990-06-30 23:00"
+                }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1991-03-31 02:00"
                 }
               }
             ],
@@ -4070,12 +4069,6 @@
             "Vilnius": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1999-10-31 01:00"
-                }
-              },
-              {
-                "usesMetazone": {
                   "_to": "1991-03-30 23:00",
                   "_mzone": "Moscow"
                 }
@@ -4093,19 +4086,25 @@
                   "_mzone": "Europe_Central",
                   "_from": "1998-03-29 01:00"
                 }
+              },
+              {
+                "usesMetazone": {
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1999-10-31 01:00"
+                }
               }
             ],
             "Volgograd": [
               {
                 "usesMetazone": {
-                  "_mzone": "Moscow",
-                  "_from": "1992-03-28 22:00"
+                  "_to": "1992-03-28 22:00",
+                  "_mzone": "Volgograd"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1992-03-28 22:00",
-                  "_mzone": "Volgograd"
+                  "_mzone": "Moscow",
+                  "_from": "1992-03-28 22:00"
                 }
               }
             ],
@@ -4126,14 +4125,14 @@
             "Zaporozhye": [
               {
                 "usesMetazone": {
-                  "_mzone": "Europe_Eastern",
-                  "_from": "1991-03-30 23:00"
+                  "_to": "1991-03-30 23:00",
+                  "_mzone": "Moscow"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1991-03-30 23:00",
-                  "_mzone": "Moscow"
+                  "_mzone": "Europe_Eastern",
+                  "_from": "1991-03-30 23:00"
                 }
               }
             ],
@@ -4231,13 +4230,6 @@
               }
             }
           ],
-          "PST8PDT": [
-            {
-              "usesMetazone": {
-                "_mzone": "America_Pacific"
-              }
-            }
-          ],
           "Pacific": {
             "Apia": [
               {
@@ -4313,14 +4305,14 @@
             "Galapagos": [
               {
                 "usesMetazone": {
-                  "_mzone": "Galapagos",
-                  "_from": "1986-01-01 05:00"
+                  "_to": "1986-01-01 05:00",
+                  "_mzone": "Ecuador"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1986-01-01 05:00",
-                  "_mzone": "Ecuador"
+                  "_mzone": "Galapagos",
+                  "_from": "1986-01-01 05:00"
                 }
               }
             ],
@@ -4341,42 +4333,42 @@
             "Guam": [
               {
                 "usesMetazone": {
-                  "_mzone": "Chamorro",
-                  "_from": "2000-12-22 14:00"
+                  "_to": "2000-12-22 14:00",
+                  "_mzone": "Guam"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2000-12-22 14:00",
-                  "_mzone": "Guam"
+                  "_mzone": "Chamorro",
+                  "_from": "2000-12-22 14:00"
                 }
               }
             ],
             "Honolulu": [
               {
                 "usesMetazone": {
-                  "_mzone": "Hawaii_Aleutian",
-                  "_from": "1983-10-30 11:00"
+                  "_to": "1983-10-30 11:00",
+                  "_mzone": "Alaska_Hawaii"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1983-10-30 11:00",
-                  "_mzone": "Alaska_Hawaii"
+                  "_mzone": "Hawaii_Aleutian",
+                  "_from": "1983-10-30 11:00"
                 }
               }
             ],
             "Johnston": [
               {
                 "usesMetazone": {
-                  "_mzone": "Hawaii_Aleutian",
-                  "_from": "1983-10-30 11:00"
+                  "_to": "1983-10-30 11:00",
+                  "_mzone": "Alaska_Hawaii"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1983-10-30 11:00",
-                  "_mzone": "Alaska_Hawaii"
+                  "_mzone": "Hawaii_Aleutian",
+                  "_from": "1983-10-30 11:00"
                 }
               }
             ],
@@ -4397,14 +4389,14 @@
             "Kwajalein": [
               {
                 "usesMetazone": {
-                  "_mzone": "Marshall_Islands",
-                  "_from": "1993-08-20 12:00"
+                  "_to": "1993-08-20 12:00",
+                  "_mzone": "Kwajalein"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1993-08-20 12:00",
-                  "_mzone": "Kwajalein"
+                  "_mzone": "Marshall_Islands",
+                  "_from": "1993-08-20 12:00"
                 }
               }
             ],
@@ -4425,14 +4417,14 @@
             "Midway": [
               {
                 "usesMetazone": {
-                  "_mzone": "Samoa",
-                  "_from": "1983-10-30 12:00"
+                  "_to": "1983-10-30 12:00",
+                  "_mzone": "Bering"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1983-10-30 12:00",
-                  "_mzone": "Bering"
+                  "_mzone": "Samoa",
+                  "_from": "1983-10-30 12:00"
                 }
               }
             ],
@@ -4467,14 +4459,14 @@
             "Pago_Pago": [
               {
                 "usesMetazone": {
-                  "_mzone": "Samoa",
-                  "_from": "1983-10-30 12:00"
+                  "_to": "1983-10-30 12:00",
+                  "_mzone": "Bering"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "1983-10-30 12:00",
-                  "_mzone": "Bering"
+                  "_mzone": "Samoa",
+                  "_from": "1983-10-30 12:00"
                 }
               }
             ],
@@ -4516,14 +4508,14 @@
             "Saipan": [
               {
                 "usesMetazone": {
-                  "_mzone": "Chamorro",
-                  "_from": "2000-12-22 14:00"
+                  "_to": "2000-12-22 14:00",
+                  "_mzone": "North_Mariana"
                 }
               },
               {
                 "usesMetazone": {
-                  "_to": "2000-12-22 14:00",
-                  "_mzone": "North_Mariana"
+                  "_mzone": "Chamorro",
+                  "_from": "2000-12-22 14:00"
                 }
               }
             ],
@@ -4569,71 +4561,36 @@
                 }
               }
             ]
-          }
+          },
+          "PST8PDT": [
+            {
+              "usesMetazone": {
+                "_mzone": "America_Pacific"
+              }
+            }
+          ]
         }
       },
       "metazones": [
         {
           "mapZone": {
-            "_other": "GMT",
-            "_territory": "CI",
-            "_type": "Africa/Abidjan"
+            "_other": "Acre",
+            "_territory": "001",
+            "_type": "America/Rio_Branco"
           }
         },
         {
           "mapZone": {
-            "_other": "GMT",
-            "_territory": "GH",
-            "_type": "Africa/Accra"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "ET",
-            "_type": "Africa/Addis_Ababa"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "ER",
-            "_type": "Africa/Asmera"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "ML",
-            "_type": "Africa/Bamako"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "CF",
-            "_type": "Africa/Bangui"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "GM",
-            "_type": "Africa/Banjul"
+            "_other": "Afghanistan",
+            "_territory": "001",
+            "_type": "Asia/Kabul"
           }
         },
         {
           "mapZone": {
             "_other": "Africa_Central",
-            "_territory": "MW",
-            "_type": "Africa/Blantyre"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "CG",
-            "_type": "Africa/Brazzaville"
+            "_territory": "001",
+            "_type": "Africa/Maputo"
           }
         },
         {
@@ -4641,62 +4598,6 @@
             "_other": "Africa_Central",
             "_territory": "BI",
             "_type": "Africa/Bujumbura"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "EG",
-            "_type": "Africa/Cairo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "GN",
-            "_type": "Africa/Conakry"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "SN",
-            "_type": "Africa/Dakar"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "TZ",
-            "_type": "Africa/Dar_es_Salaam"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "DJ",
-            "_type": "Africa/Djibouti"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "CM",
-            "_type": "Africa/Douala"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_FarWestern",
-            "_territory": "001",
-            "_type": "Africa/El_Aaiun"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "SL",
-            "_type": "Africa/Freetown"
           }
         },
         {
@@ -4709,22 +4610,15 @@
         {
           "mapZone": {
             "_other": "Africa_Central",
-            "_territory": "ZW",
-            "_type": "Africa/Harare"
+            "_territory": "CD",
+            "_type": "Africa/Lubumbashi"
           }
         },
         {
           "mapZone": {
-            "_other": "Africa_Southern",
-            "_territory": "001",
-            "_type": "Africa/Johannesburg"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "UG",
-            "_type": "Africa/Kampala"
+            "_other": "Africa_Central",
+            "_territory": "MW",
+            "_type": "Africa/Blantyre"
           }
         },
         {
@@ -4736,48 +4630,6 @@
         },
         {
           "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "CD",
-            "_type": "Africa/Kinshasa"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "001",
-            "_type": "Africa/Lagos"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "GA",
-            "_type": "Africa/Libreville"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "TG",
-            "_type": "Africa/Lome"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "AO",
-            "_type": "Africa/Luanda"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Central",
-            "_territory": "CD",
-            "_type": "Africa/Lubumbashi"
-          }
-        },
-        {
-          "mapZone": {
             "_other": "Africa_Central",
             "_territory": "ZM",
             "_type": "Africa/Lusaka"
@@ -4785,16 +4637,93 @@
         },
         {
           "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "GQ",
-            "_type": "Africa/Malabo"
+            "_other": "Africa_Central",
+            "_territory": "ZW",
+            "_type": "Africa/Harare"
           }
         },
         {
           "mapZone": {
-            "_other": "Africa_Central",
+            "_other": "Africa_Eastern",
             "_territory": "001",
-            "_type": "Africa/Maputo"
+            "_type": "Africa/Nairobi"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "DJ",
+            "_type": "Africa/Djibouti"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "ER",
+            "_type": "Africa/Asmera"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "ET",
+            "_type": "Africa/Addis_Ababa"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "KM",
+            "_type": "Indian/Comoro"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "MG",
+            "_type": "Indian/Antananarivo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "SO",
+            "_type": "Africa/Mogadishu"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "TZ",
+            "_type": "Africa/Dar_es_Salaam"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "UG",
+            "_type": "Africa/Kampala"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Eastern",
+            "_territory": "YT",
+            "_type": "Indian/Mayotte"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_FarWestern",
+            "_territory": "001",
+            "_type": "Africa/El_Aaiun"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Southern",
+            "_territory": "001",
+            "_type": "Africa/Johannesburg"
           }
         },
         {
@@ -4813,51 +4742,16 @@
         },
         {
           "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "SO",
-            "_type": "Africa/Mogadishu"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Liberia",
+            "_other": "Africa_Western",
             "_territory": "001",
-            "_type": "Africa/Monrovia"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "001",
-            "_type": "Africa/Nairobi"
+            "_type": "Africa/Lagos"
           }
         },
         {
           "mapZone": {
             "_other": "Africa_Western",
-            "_territory": "TD",
-            "_type": "Africa/Ndjamena"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Western",
-            "_territory": "NE",
-            "_type": "Africa/Niamey"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "MR",
-            "_type": "Africa/Nouakchott"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "BF",
-            "_type": "Africa/Ouagadougou"
+            "_territory": "AO",
+            "_type": "Africa/Luanda"
           }
         },
         {
@@ -4869,23 +4763,72 @@
         },
         {
           "mapZone": {
-            "_other": "GMT",
-            "_territory": "ST",
-            "_type": "Africa/Sao_Tome"
+            "_other": "Africa_Western",
+            "_territory": "CD",
+            "_type": "Africa/Kinshasa"
           }
         },
         {
           "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "TN",
-            "_type": "Africa/Tunis"
+            "_other": "Africa_Western",
+            "_territory": "CF",
+            "_type": "Africa/Bangui"
           }
         },
         {
           "mapZone": {
-            "_other": "Bering",
+            "_other": "Africa_Western",
+            "_territory": "CG",
+            "_type": "Africa/Brazzaville"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Western",
+            "_territory": "CM",
+            "_type": "Africa/Douala"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Western",
+            "_territory": "GA",
+            "_type": "Africa/Libreville"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Western",
+            "_territory": "GQ",
+            "_type": "Africa/Malabo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Western",
+            "_territory": "NE",
+            "_type": "Africa/Niamey"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Africa_Western",
+            "_territory": "TD",
+            "_type": "Africa/Ndjamena"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Aktyubinsk",
             "_territory": "001",
-            "_type": "America/Adak"
+            "_type": "Asia/Aqtobe"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Alaska",
+            "_territory": "001",
+            "_type": "America/Juneau"
           }
         },
         {
@@ -4897,86 +4840,16 @@
         },
         {
           "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "AI",
-            "_type": "America/Anguilla"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "AG",
-            "_type": "America/Antigua"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Argentina_Western",
+            "_other": "Almaty",
             "_territory": "001",
-            "_type": "America/Argentina/San_Luis"
+            "_type": "Asia/Almaty"
           }
         },
         {
           "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "AW",
-            "_type": "America/Aruba"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Paraguay",
+            "_other": "Amazon",
             "_territory": "001",
-            "_type": "America/Asuncion"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "BB",
-            "_type": "America/Barbados"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Central",
-            "_territory": "BZ",
-            "_type": "America/Belize"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Colombia",
-            "_territory": "001",
-            "_type": "America/Bogota"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Argentina",
-            "_territory": "001",
-            "_type": "America/Buenos_Aires"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Venezuela",
-            "_territory": "001",
-            "_type": "America/Caracas"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "French_Guiana",
-            "_territory": "001",
-            "_type": "America/Cayenne"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Eastern",
-            "_territory": "KY",
-            "_type": "America/Cayman"
+            "_type": "America/Manaus"
           }
         },
         {
@@ -4989,71 +4862,22 @@
         {
           "mapZone": {
             "_other": "America_Central",
-            "_territory": "CR",
-            "_type": "America/Costa_Rica"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "AN",
-            "_type": "America/Curacao"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Mountain",
-            "_territory": "001",
-            "_type": "America/Denver"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "DM",
-            "_type": "America/Dominica"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Mountain",
-            "_territory": "CA",
-            "_type": "America/Edmonton"
+            "_territory": "BZ",
+            "_type": "America/Belize"
           }
         },
         {
           "mapZone": {
             "_other": "America_Central",
-            "_territory": "SV",
-            "_type": "America/El_Salvador"
+            "_territory": "CA",
+            "_type": "America/Winnipeg"
           }
         },
         {
           "mapZone": {
-            "_other": "Greenland_Western",
-            "_territory": "001",
-            "_type": "America/Godthab"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Goose_Bay",
-            "_territory": "001",
-            "_type": "America/Goose_Bay"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "GD",
-            "_type": "America/Grenada"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "GP",
-            "_type": "America/Guadeloupe"
+            "_other": "America_Central",
+            "_territory": "CR",
+            "_type": "America/Costa_Rica"
           }
         },
         {
@@ -5065,114 +4889,9 @@
         },
         {
           "mapZone": {
-            "_other": "Ecuador",
-            "_territory": "001",
-            "_type": "America/Guayaquil"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Guyana",
-            "_territory": "001",
-            "_type": "America/Guyana"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "001",
-            "_type": "America/Halifax"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Cuba",
-            "_territory": "001",
-            "_type": "America/Havana"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Mountain",
-            "_territory": "MX",
-            "_type": "America/Hermosillo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Eastern",
-            "_territory": "JM",
-            "_type": "America/Jamaica"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Alaska",
-            "_territory": "001",
-            "_type": "America/Juneau"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "BQ",
-            "_type": "America/Kralendijk"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Bolivia",
-            "_territory": "001",
-            "_type": "America/La_Paz"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Peru",
-            "_territory": "001",
-            "_type": "America/Lima"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Pacific",
-            "_territory": "001",
-            "_type": "America/Los_Angeles"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "SX",
-            "_type": "America/Lower_Princes"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Amazon",
-            "_territory": "001",
-            "_type": "America/Manaus"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "MF",
-            "_type": "America/Marigot"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "MQ",
-            "_type": "America/Martinique"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Mexico_Pacific",
-            "_territory": "001",
-            "_type": "America/Mazatlan"
+            "_other": "America_Central",
+            "_territory": "HN",
+            "_type": "America/Tegucigalpa"
           }
         },
         {
@@ -5184,23 +4903,16 @@
         },
         {
           "mapZone": {
-            "_other": "Pierre_Miquelon",
-            "_territory": "001",
-            "_type": "America/Miquelon"
+            "_other": "America_Central",
+            "_territory": "SV",
+            "_type": "America/El_Salvador"
           }
         },
         {
           "mapZone": {
-            "_other": "Uruguay",
+            "_other": "America_Eastern",
             "_territory": "001",
-            "_type": "America/Montevideo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "MS",
-            "_type": "America/Montserrat"
+            "_type": "America/New_York"
           }
         },
         {
@@ -5213,36 +4925,8 @@
         {
           "mapZone": {
             "_other": "America_Eastern",
-            "_territory": "001",
-            "_type": "America/New_York"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Noronha",
-            "_territory": "001",
-            "_type": "America/Noronha"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Eastern",
-            "_territory": "PA",
-            "_type": "America/Panama"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Dutch_Guiana",
-            "_territory": "001",
-            "_type": "America/Paramaribo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Suriname",
-            "_territory": "001",
-            "_type": "America/Paramaribo"
+            "_territory": "CA",
+            "_type": "America/Toronto"
           }
         },
         {
@@ -5254,72 +4938,247 @@
         },
         {
           "mapZone": {
+            "_other": "America_Eastern",
+            "_territory": "JM",
+            "_type": "America/Jamaica"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Eastern",
+            "_territory": "KY",
+            "_type": "America/Cayman"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Eastern",
+            "_territory": "PA",
+            "_type": "America/Panama"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Mountain",
+            "_territory": "001",
+            "_type": "America/Denver"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Mountain",
+            "_territory": "CA",
+            "_type": "America/Edmonton"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Mountain",
+            "_territory": "MX",
+            "_type": "America/Hermosillo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Pacific",
+            "_territory": "001",
+            "_type": "America/Los_Angeles"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Pacific",
+            "_territory": "CA",
+            "_type": "America/Vancouver"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "America_Pacific",
+            "_territory": "MX",
+            "_type": "America/Tijuana"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Anadyr",
+            "_territory": "001",
+            "_type": "Asia/Anadyr"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Apia",
+            "_territory": "001",
+            "_type": "Pacific/Apia"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Aqtau",
+            "_territory": "001",
+            "_type": "Asia/Aqtau"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Aqtobe",
+            "_territory": "001",
+            "_type": "Asia/Aqtobe"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Arabian",
+            "_territory": "001",
+            "_type": "Asia/Riyadh"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Arabian",
+            "_territory": "BH",
+            "_type": "Asia/Bahrain"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Arabian",
+            "_territory": "IQ",
+            "_type": "Asia/Baghdad"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Arabian",
+            "_territory": "KW",
+            "_type": "Asia/Kuwait"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Arabian",
+            "_territory": "QA",
+            "_type": "Asia/Qatar"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Arabian",
+            "_territory": "YE",
+            "_type": "Asia/Aden"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Argentina",
+            "_territory": "001",
+            "_type": "America/Buenos_Aires"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Argentina_Western",
+            "_territory": "001",
+            "_type": "America/Argentina/San_Luis"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Armenia",
+            "_territory": "001",
+            "_type": "Asia/Yerevan"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Ashkhabad",
+            "_territory": "001",
+            "_type": "Asia/Ashgabat"
+          }
+        },
+        {
+          "mapZone": {
             "_other": "Atlantic",
-            "_territory": "TT",
-            "_type": "America/Port_of_Spain"
+            "_territory": "001",
+            "_type": "America/Halifax"
           }
         },
         {
           "mapZone": {
             "_other": "Atlantic",
-            "_territory": "PR",
-            "_type": "America/Puerto_Rico"
+            "_territory": "AG",
+            "_type": "America/Antigua"
           }
         },
         {
           "mapZone": {
-            "_other": "Acre",
-            "_territory": "001",
-            "_type": "America/Rio_Branco"
+            "_other": "Atlantic",
+            "_territory": "AI",
+            "_type": "America/Anguilla"
           }
         },
         {
           "mapZone": {
-            "_other": "Mexico_Northwest",
-            "_territory": "001",
-            "_type": "America/Santa_Isabel"
+            "_other": "Atlantic",
+            "_territory": "AN",
+            "_type": "America/Curacao"
           }
         },
         {
           "mapZone": {
-            "_other": "Chile",
-            "_territory": "001",
-            "_type": "America/Santiago"
+            "_other": "Atlantic",
+            "_territory": "AW",
+            "_type": "America/Aruba"
           }
         },
         {
           "mapZone": {
-            "_other": "Dominican",
-            "_territory": "001",
-            "_type": "America/Santo_Domingo"
+            "_other": "Atlantic",
+            "_territory": "BB",
+            "_type": "America/Barbados"
           }
         },
         {
           "mapZone": {
-            "_other": "Brasilia",
-            "_territory": "001",
-            "_type": "America/Sao_Paulo"
+            "_other": "Atlantic",
+            "_territory": "BM",
+            "_type": "Atlantic/Bermuda"
           }
         },
         {
           "mapZone": {
-            "_other": "Greenland_Central",
-            "_territory": "001",
-            "_type": "America/Scoresbysund"
+            "_other": "Atlantic",
+            "_territory": "BQ",
+            "_type": "America/Kralendijk"
           }
         },
         {
           "mapZone": {
-            "_other": "Greenland_Eastern",
-            "_territory": "001",
-            "_type": "America/Scoresbysund"
+            "_other": "Atlantic",
+            "_territory": "DM",
+            "_type": "America/Dominica"
           }
         },
         {
           "mapZone": {
-            "_other": "Newfoundland",
-            "_territory": "001",
-            "_type": "America/St_Johns"
+            "_other": "Atlantic",
+            "_territory": "GD",
+            "_type": "America/Grenada"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Atlantic",
+            "_territory": "GL",
+            "_type": "America/Thule"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Atlantic",
+            "_territory": "GP",
+            "_type": "America/Guadeloupe"
           }
         },
         {
@@ -5339,8 +5198,43 @@
         {
           "mapZone": {
             "_other": "Atlantic",
-            "_territory": "VI",
-            "_type": "America/St_Thomas"
+            "_territory": "MF",
+            "_type": "America/Marigot"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Atlantic",
+            "_territory": "MQ",
+            "_type": "America/Martinique"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Atlantic",
+            "_territory": "MS",
+            "_type": "America/Montserrat"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Atlantic",
+            "_territory": "PR",
+            "_type": "America/Puerto_Rico"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Atlantic",
+            "_territory": "SX",
+            "_type": "America/Lower_Princes"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Atlantic",
+            "_territory": "TT",
+            "_type": "America/Port_of_Spain"
           }
         },
         {
@@ -5352,34 +5246,6 @@
         },
         {
           "mapZone": {
-            "_other": "America_Central",
-            "_territory": "HN",
-            "_type": "America/Tegucigalpa"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "GL",
-            "_type": "America/Thule"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Pacific",
-            "_territory": "MX",
-            "_type": "America/Tijuana"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "America_Eastern",
-            "_territory": "CA",
-            "_type": "America/Toronto"
-          }
-        },
-        {
-          "mapZone": {
             "_other": "Atlantic",
             "_territory": "VG",
             "_type": "America/Tortola"
@@ -5387,191 +5253,37 @@
         },
         {
           "mapZone": {
-            "_other": "America_Pacific",
-            "_territory": "CA",
-            "_type": "America/Vancouver"
+            "_other": "Atlantic",
+            "_territory": "VI",
+            "_type": "America/St_Thomas"
           }
         },
         {
           "mapZone": {
-            "_other": "America_Central",
-            "_territory": "CA",
-            "_type": "America/Winnipeg"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Yukon",
+            "_other": "Australia_Central",
             "_territory": "001",
-            "_type": "America/Yakutat"
+            "_type": "Australia/Adelaide"
           }
         },
         {
           "mapZone": {
-            "_other": "Casey",
+            "_other": "Australia_CentralWestern",
             "_territory": "001",
-            "_type": "Antarctica/Casey"
+            "_type": "Australia/Eucla"
           }
         },
         {
           "mapZone": {
-            "_other": "Davis",
+            "_other": "Australia_Eastern",
             "_territory": "001",
-            "_type": "Antarctica/Davis"
+            "_type": "Australia/Sydney"
           }
         },
         {
           "mapZone": {
-            "_other": "DumontDUrville",
+            "_other": "Australia_Western",
             "_territory": "001",
-            "_type": "Antarctica/DumontDUrville"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Macquarie",
-            "_territory": "001",
-            "_type": "Antarctica/Macquarie"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Mawson",
-            "_territory": "001",
-            "_type": "Antarctica/Mawson"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "New_Zealand",
-            "_territory": "AQ",
-            "_type": "Antarctica/McMurdo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Chile",
-            "_territory": "AQ",
-            "_type": "Antarctica/Palmer"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Rothera",
-            "_territory": "001",
-            "_type": "Antarctica/Rothera"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Syowa",
-            "_territory": "001",
-            "_type": "Antarctica/Syowa"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Vostok",
-            "_territory": "001",
-            "_type": "Antarctica/Vostok"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Arabian",
-            "_territory": "YE",
-            "_type": "Asia/Aden"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Almaty",
-            "_territory": "001",
-            "_type": "Asia/Almaty"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Kazakhstan_Eastern",
-            "_territory": "001",
-            "_type": "Asia/Almaty"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "JO",
-            "_type": "Asia/Amman"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Anadyr",
-            "_territory": "001",
-            "_type": "Asia/Anadyr"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Aqtau",
-            "_territory": "001",
-            "_type": "Asia/Aqtau"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Shevchenko",
-            "_territory": "001",
-            "_type": "Asia/Aqtau"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Aktyubinsk",
-            "_territory": "001",
-            "_type": "Asia/Aqtobe"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Aqtobe",
-            "_territory": "001",
-            "_type": "Asia/Aqtobe"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Kazakhstan_Western",
-            "_territory": "001",
-            "_type": "Asia/Aqtobe"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Ashkhabad",
-            "_territory": "001",
-            "_type": "Asia/Ashgabat"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Turkmenistan",
-            "_territory": "001",
-            "_type": "Asia/Ashgabat"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Arabian",
-            "_territory": "IQ",
-            "_type": "Asia/Baghdad"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Arabian",
-            "_territory": "BH",
-            "_type": "Asia/Bahrain"
+            "_type": "Australia/Perth"
           }
         },
         {
@@ -5583,79 +5295,16 @@
         },
         {
           "mapZone": {
+            "_other": "Azores",
+            "_territory": "001",
+            "_type": "Atlantic/Azores"
+          }
+        },
+        {
+          "mapZone": {
             "_other": "Baku",
             "_territory": "001",
             "_type": "Asia/Baku"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Indochina",
-            "_territory": "001",
-            "_type": "Asia/Bangkok"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "LB",
-            "_type": "Asia/Beirut"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Frunze",
-            "_territory": "001",
-            "_type": "Asia/Bishkek"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Kyrgystan",
-            "_territory": "001",
-            "_type": "Asia/Bishkek"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Brunei",
-            "_territory": "001",
-            "_type": "Asia/Brunei"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "India",
-            "_territory": "001",
-            "_type": "Asia/Calcutta"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Choibalsan",
-            "_territory": "001",
-            "_type": "Asia/Choibalsan"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "India",
-            "_territory": "LK",
-            "_type": "Asia/Colombo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Lanka",
-            "_territory": "001",
-            "_type": "Asia/Colombo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "SY",
-            "_type": "Asia/Damascus"
           }
         },
         {
@@ -5667,6 +5316,153 @@
         },
         {
           "mapZone": {
+            "_other": "Bering",
+            "_territory": "001",
+            "_type": "America/Adak"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Bhutan",
+            "_territory": "001",
+            "_type": "Asia/Thimphu"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Bolivia",
+            "_territory": "001",
+            "_type": "America/La_Paz"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Borneo",
+            "_territory": "001",
+            "_type": "Asia/Kuching"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Brasilia",
+            "_territory": "001",
+            "_type": "America/Sao_Paulo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "British",
+            "_territory": "001",
+            "_type": "Europe/London"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Brunei",
+            "_territory": "001",
+            "_type": "Asia/Brunei"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Cape_Verde",
+            "_territory": "001",
+            "_type": "Atlantic/Cape_Verde"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Casey",
+            "_territory": "001",
+            "_type": "Antarctica/Casey"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Chamorro",
+            "_territory": "001",
+            "_type": "Pacific/Saipan"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Chamorro",
+            "_territory": "GU",
+            "_type": "Pacific/Guam"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Chatham",
+            "_territory": "001",
+            "_type": "Pacific/Chatham"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Chile",
+            "_territory": "001",
+            "_type": "America/Santiago"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Chile",
+            "_territory": "AQ",
+            "_type": "Antarctica/Palmer"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "China",
+            "_territory": "001",
+            "_type": "Asia/Shanghai"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Choibalsan",
+            "_territory": "001",
+            "_type": "Asia/Choibalsan"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Christmas",
+            "_territory": "001",
+            "_type": "Indian/Christmas"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Cocos",
+            "_territory": "001",
+            "_type": "Indian/Cocos"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Colombia",
+            "_territory": "001",
+            "_type": "America/Bogota"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Cook",
+            "_territory": "001",
+            "_type": "Pacific/Rarotonga"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Cuba",
+            "_territory": "001",
+            "_type": "America/Havana"
+          }
+        },
+        {
+          "mapZone": {
             "_other": "Dacca",
             "_territory": "001",
             "_type": "Asia/Dhaka"
@@ -5674,16 +5470,23 @@
         },
         {
           "mapZone": {
-            "_other": "East_Timor",
+            "_other": "Davis",
             "_territory": "001",
-            "_type": "Asia/Dili"
+            "_type": "Antarctica/Davis"
           }
         },
         {
           "mapZone": {
-            "_other": "Gulf",
+            "_other": "Dominican",
             "_territory": "001",
-            "_type": "Asia/Dubai"
+            "_type": "America/Santo_Domingo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "DumontDUrville",
+            "_territory": "001",
+            "_type": "Antarctica/DumontDUrville"
           }
         },
         {
@@ -5695,9 +5498,583 @@
         },
         {
           "mapZone": {
-            "_other": "Tajikistan",
+            "_other": "Dutch_Guiana",
             "_territory": "001",
-            "_type": "Asia/Dushanbe"
+            "_type": "America/Paramaribo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "East_Timor",
+            "_territory": "001",
+            "_type": "Asia/Dili"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Easter",
+            "_territory": "001",
+            "_type": "Pacific/Easter"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Ecuador",
+            "_territory": "001",
+            "_type": "America/Guayaquil"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "001",
+            "_type": "Europe/Paris"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "AD",
+            "_type": "Europe/Andorra"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "AL",
+            "_type": "Europe/Tirane"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "AT",
+            "_type": "Europe/Vienna"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "BA",
+            "_type": "Europe/Sarajevo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "BE",
+            "_type": "Europe/Brussels"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "CH",
+            "_type": "Europe/Zurich"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "CZ",
+            "_type": "Europe/Prague"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "DE",
+            "_type": "Europe/Berlin"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "DK",
+            "_type": "Europe/Copenhagen"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "ES",
+            "_type": "Europe/Madrid"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "GI",
+            "_type": "Europe/Gibraltar"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "HR",
+            "_type": "Europe/Zagreb"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "HU",
+            "_type": "Europe/Budapest"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "IT",
+            "_type": "Europe/Rome"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "LI",
+            "_type": "Europe/Vaduz"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "LU",
+            "_type": "Europe/Luxembourg"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "MC",
+            "_type": "Europe/Monaco"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "ME",
+            "_type": "Europe/Podgorica"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "MK",
+            "_type": "Europe/Skopje"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "MT",
+            "_type": "Europe/Malta"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "NL",
+            "_type": "Europe/Amsterdam"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "NO",
+            "_type": "Europe/Oslo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "PL",
+            "_type": "Europe/Warsaw"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "RS",
+            "_type": "Europe/Belgrade"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "SE",
+            "_type": "Europe/Stockholm"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "SI",
+            "_type": "Europe/Ljubljana"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "SK",
+            "_type": "Europe/Bratislava"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "SM",
+            "_type": "Europe/San_Marino"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "TN",
+            "_type": "Africa/Tunis"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "VA",
+            "_type": "Europe/Vatican"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Central",
+            "_territory": "XK",
+            "_type": "Europe/Belgrade"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "001",
+            "_type": "Europe/Bucharest"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "AX",
+            "_type": "Europe/Mariehamn"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "BG",
+            "_type": "Europe/Sofia"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "CY",
+            "_type": "Asia/Nicosia"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "EG",
+            "_type": "Africa/Cairo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "FI",
+            "_type": "Europe/Helsinki"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "GR",
+            "_type": "Europe/Athens"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "JO",
+            "_type": "Asia/Amman"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "LB",
+            "_type": "Asia/Beirut"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Eastern",
+            "_territory": "SY",
+            "_type": "Asia/Damascus"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Further_Eastern",
+            "_territory": "001",
+            "_type": "Europe/Minsk"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Further_Eastern",
+            "_territory": "RU",
+            "_type": "Europe/Kaliningrad"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Western",
+            "_territory": "001",
+            "_type": "Atlantic/Canary"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Europe_Western",
+            "_territory": "FO",
+            "_type": "Atlantic/Faeroe"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Falkland",
+            "_territory": "001",
+            "_type": "Atlantic/Stanley"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Fiji",
+            "_territory": "001",
+            "_type": "Pacific/Fiji"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "French_Guiana",
+            "_territory": "001",
+            "_type": "America/Cayenne"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "French_Southern",
+            "_territory": "001",
+            "_type": "Indian/Kerguelen"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Frunze",
+            "_territory": "001",
+            "_type": "Asia/Bishkek"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Galapagos",
+            "_territory": "001",
+            "_type": "Pacific/Galapagos"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Gambier",
+            "_territory": "001",
+            "_type": "Pacific/Gambier"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Georgia",
+            "_territory": "001",
+            "_type": "Asia/Tbilisi"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Gilbert_Islands",
+            "_territory": "001",
+            "_type": "Pacific/Tarawa"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "001",
+            "_type": "Atlantic/Reykjavik"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "BF",
+            "_type": "Africa/Ouagadougou"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "CI",
+            "_type": "Africa/Abidjan"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "GB",
+            "_type": "Europe/London"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "GH",
+            "_type": "Africa/Accra"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "GM",
+            "_type": "Africa/Banjul"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "GN",
+            "_type": "Africa/Conakry"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "IE",
+            "_type": "Europe/Dublin"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "ML",
+            "_type": "Africa/Bamako"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "MR",
+            "_type": "Africa/Nouakchott"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "SH",
+            "_type": "Atlantic/St_Helena"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "SL",
+            "_type": "Africa/Freetown"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "SN",
+            "_type": "Africa/Dakar"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "ST",
+            "_type": "Africa/Sao_Tome"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "GMT",
+            "_territory": "TG",
+            "_type": "Africa/Lome"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Goose_Bay",
+            "_territory": "001",
+            "_type": "America/Goose_Bay"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Greenland_Central",
+            "_territory": "001",
+            "_type": "America/Scoresbysund"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Greenland_Eastern",
+            "_territory": "001",
+            "_type": "America/Scoresbysund"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Greenland_Western",
+            "_territory": "001",
+            "_type": "America/Godthab"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Guam",
+            "_territory": "001",
+            "_type": "Pacific/Guam"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Gulf",
+            "_territory": "001",
+            "_type": "Asia/Dubai"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Gulf",
+            "_territory": "OM",
+            "_type": "Asia/Muscat"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Guyana",
+            "_territory": "001",
+            "_type": "America/Guyana"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Hawaii_Aleutian",
+            "_territory": "001",
+            "_type": "Pacific/Honolulu"
           }
         },
         {
@@ -5716,16 +6093,51 @@
         },
         {
           "mapZone": {
-            "_other": "Irkutsk",
+            "_other": "India",
             "_territory": "001",
-            "_type": "Asia/Irkutsk"
+            "_type": "Asia/Calcutta"
           }
         },
         {
           "mapZone": {
-            "_other": "Indonesia_Western",
+            "_other": "India",
+            "_territory": "LK",
+            "_type": "Asia/Colombo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Indian_Ocean",
             "_territory": "001",
-            "_type": "Asia/Jakarta"
+            "_type": "Indian/Chagos"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Indochina",
+            "_territory": "001",
+            "_type": "Asia/Bangkok"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Indochina",
+            "_territory": "KH",
+            "_type": "Asia/Phnom_Penh"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Indochina",
+            "_territory": "LA",
+            "_type": "Asia/Vientiane"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Indonesia_Central",
+            "_territory": "001",
+            "_type": "Asia/Makassar"
           }
         },
         {
@@ -5737,6 +6149,34 @@
         },
         {
           "mapZone": {
+            "_other": "Indonesia_Western",
+            "_territory": "001",
+            "_type": "Asia/Jakarta"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Iran",
+            "_territory": "001",
+            "_type": "Asia/Tehran"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Irish",
+            "_territory": "001",
+            "_type": "Europe/Dublin"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Irkutsk",
+            "_territory": "001",
+            "_type": "Asia/Irkutsk"
+          }
+        },
+        {
+          "mapZone": {
             "_other": "Israel",
             "_territory": "001",
             "_type": "Asia/Jerusalem"
@@ -5744,9 +6184,9 @@
         },
         {
           "mapZone": {
-            "_other": "Afghanistan",
+            "_other": "Japan",
             "_territory": "001",
-            "_type": "Asia/Kabul"
+            "_type": "Asia/Tokyo"
           }
         },
         {
@@ -5765,16 +6205,44 @@
         },
         {
           "mapZone": {
-            "_other": "Pakistan",
+            "_other": "Kazakhstan_Eastern",
             "_territory": "001",
-            "_type": "Asia/Karachi"
+            "_type": "Asia/Almaty"
           }
         },
         {
           "mapZone": {
-            "_other": "Nepal",
+            "_other": "Kazakhstan_Western",
             "_territory": "001",
-            "_type": "Asia/Katmandu"
+            "_type": "Asia/Aqtobe"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Kizilorda",
+            "_territory": "001",
+            "_type": "Asia/Qyzylorda"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Korea",
+            "_territory": "001",
+            "_type": "Asia/Seoul"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Korea",
+            "_territory": "KP",
+            "_type": "Asia/Pyongyang"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Kosrae",
+            "_territory": "001",
+            "_type": "Pacific/Kosrae"
           }
         },
         {
@@ -5786,30 +6254,51 @@
         },
         {
           "mapZone": {
-            "_other": "Malaya",
+            "_other": "Kuybyshev",
             "_territory": "001",
-            "_type": "Asia/Kuala_Lumpur"
+            "_type": "Europe/Samara"
           }
         },
         {
           "mapZone": {
-            "_other": "Borneo",
+            "_other": "Kwajalein",
             "_territory": "001",
-            "_type": "Asia/Kuching"
+            "_type": "Pacific/Kwajalein"
           }
         },
         {
           "mapZone": {
-            "_other": "Malaysia",
+            "_other": "Kyrgystan",
             "_territory": "001",
-            "_type": "Asia/Kuching"
+            "_type": "Asia/Bishkek"
           }
         },
         {
           "mapZone": {
-            "_other": "Arabian",
-            "_territory": "KW",
-            "_type": "Asia/Kuwait"
+            "_other": "Lanka",
+            "_territory": "001",
+            "_type": "Asia/Colombo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Liberia",
+            "_territory": "001",
+            "_type": "Africa/Monrovia"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Line_Islands",
+            "_territory": "001",
+            "_type": "Pacific/Kiritimati"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Lord_Howe",
+            "_territory": "001",
+            "_type": "Australia/Lord_Howe"
           }
         },
         {
@@ -5821,6 +6310,13 @@
         },
         {
           "mapZone": {
+            "_other": "Macquarie",
+            "_territory": "001",
+            "_type": "Antarctica/Macquarie"
+          }
+        },
+        {
+          "mapZone": {
             "_other": "Magadan",
             "_territory": "001",
             "_type": "Asia/Magadan"
@@ -5828,30 +6324,156 @@
         },
         {
           "mapZone": {
-            "_other": "Indonesia_Central",
+            "_other": "Malaya",
             "_territory": "001",
-            "_type": "Asia/Makassar"
+            "_type": "Asia/Kuala_Lumpur"
           }
         },
         {
           "mapZone": {
-            "_other": "Philippines",
+            "_other": "Malaysia",
             "_territory": "001",
-            "_type": "Asia/Manila"
+            "_type": "Asia/Kuching"
           }
         },
         {
           "mapZone": {
-            "_other": "Gulf",
-            "_territory": "OM",
-            "_type": "Asia/Muscat"
+            "_other": "Maldives",
+            "_territory": "001",
+            "_type": "Indian/Maldives"
           }
         },
         {
           "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "CY",
-            "_type": "Asia/Nicosia"
+            "_other": "Marquesas",
+            "_territory": "001",
+            "_type": "Pacific/Marquesas"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Marshall_Islands",
+            "_territory": "001",
+            "_type": "Pacific/Majuro"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Mauritius",
+            "_territory": "001",
+            "_type": "Indian/Mauritius"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Mawson",
+            "_territory": "001",
+            "_type": "Antarctica/Mawson"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Mexico_Northwest",
+            "_territory": "001",
+            "_type": "America/Santa_Isabel"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Mexico_Pacific",
+            "_territory": "001",
+            "_type": "America/Mazatlan"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Mongolia",
+            "_territory": "001",
+            "_type": "Asia/Ulaanbaatar"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Moscow",
+            "_territory": "001",
+            "_type": "Europe/Moscow"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Myanmar",
+            "_territory": "001",
+            "_type": "Asia/Rangoon"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Nauru",
+            "_territory": "001",
+            "_type": "Pacific/Nauru"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Nepal",
+            "_territory": "001",
+            "_type": "Asia/Katmandu"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "New_Caledonia",
+            "_territory": "001",
+            "_type": "Pacific/Noumea"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "New_Zealand",
+            "_territory": "001",
+            "_type": "Pacific/Auckland"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "New_Zealand",
+            "_territory": "AQ",
+            "_type": "Antarctica/McMurdo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Newfoundland",
+            "_territory": "001",
+            "_type": "America/St_Johns"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Niue",
+            "_territory": "001",
+            "_type": "Pacific/Niue"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Norfolk",
+            "_territory": "001",
+            "_type": "Pacific/Norfolk"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Noronha",
+            "_territory": "001",
+            "_type": "America/Noronha"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "North_Mariana",
+            "_territory": "001",
+            "_type": "Pacific/Saipan"
           }
         },
         {
@@ -5877,751 +6499,44 @@
         },
         {
           "mapZone": {
-            "_other": "Uralsk",
+            "_other": "Pakistan",
             "_territory": "001",
-            "_type": "Asia/Oral"
+            "_type": "Asia/Karachi"
           }
         },
         {
           "mapZone": {
-            "_other": "Indochina",
-            "_territory": "KH",
-            "_type": "Asia/Phnom_Penh"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Korea",
-            "_territory": "KP",
-            "_type": "Asia/Pyongyang"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Arabian",
-            "_territory": "QA",
-            "_type": "Asia/Qatar"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Kizilorda",
+            "_other": "Palau",
             "_territory": "001",
-            "_type": "Asia/Qyzylorda"
+            "_type": "Pacific/Palau"
           }
         },
         {
           "mapZone": {
-            "_other": "Qyzylorda",
+            "_other": "Papua_New_Guinea",
             "_territory": "001",
-            "_type": "Asia/Qyzylorda"
+            "_type": "Pacific/Port_Moresby"
           }
         },
         {
           "mapZone": {
-            "_other": "Myanmar",
+            "_other": "Paraguay",
             "_territory": "001",
-            "_type": "Asia/Rangoon"
+            "_type": "America/Asuncion"
           }
         },
         {
           "mapZone": {
-            "_other": "Arabian",
+            "_other": "Peru",
             "_territory": "001",
-            "_type": "Asia/Riyadh"
+            "_type": "America/Lima"
           }
         },
         {
           "mapZone": {
-            "_other": "Sakhalin",
+            "_other": "Philippines",
             "_territory": "001",
-            "_type": "Asia/Sakhalin"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Samarkand",
-            "_territory": "001",
-            "_type": "Asia/Samarkand"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Korea",
-            "_territory": "001",
-            "_type": "Asia/Seoul"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "China",
-            "_territory": "001",
-            "_type": "Asia/Shanghai"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Singapore",
-            "_territory": "001",
-            "_type": "Asia/Singapore"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Taipei",
-            "_territory": "001",
-            "_type": "Asia/Taipei"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Tashkent",
-            "_territory": "001",
-            "_type": "Asia/Tashkent"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Uzbekistan",
-            "_territory": "001",
-            "_type": "Asia/Tashkent"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Georgia",
-            "_territory": "001",
-            "_type": "Asia/Tbilisi"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Tbilisi",
-            "_territory": "001",
-            "_type": "Asia/Tbilisi"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Iran",
-            "_territory": "001",
-            "_type": "Asia/Tehran"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Bhutan",
-            "_territory": "001",
-            "_type": "Asia/Thimphu"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Japan",
-            "_territory": "001",
-            "_type": "Asia/Tokyo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Mongolia",
-            "_territory": "001",
-            "_type": "Asia/Ulaanbaatar"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Urumqi",
-            "_territory": "001",
-            "_type": "Asia/Urumqi"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Indochina",
-            "_territory": "LA",
-            "_type": "Asia/Vientiane"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Vladivostok",
-            "_territory": "001",
-            "_type": "Asia/Vladivostok"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Yakutsk",
-            "_territory": "001",
-            "_type": "Asia/Yakutsk"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Sverdlovsk",
-            "_territory": "001",
-            "_type": "Asia/Yekaterinburg"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Yekaterinburg",
-            "_territory": "001",
-            "_type": "Asia/Yekaterinburg"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Armenia",
-            "_territory": "001",
-            "_type": "Asia/Yerevan"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Yerevan",
-            "_territory": "001",
-            "_type": "Asia/Yerevan"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Azores",
-            "_territory": "001",
-            "_type": "Atlantic/Azores"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Atlantic",
-            "_territory": "BM",
-            "_type": "Atlantic/Bermuda"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Western",
-            "_territory": "001",
-            "_type": "Atlantic/Canary"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Cape_Verde",
-            "_territory": "001",
-            "_type": "Atlantic/Cape_Verde"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Western",
-            "_territory": "FO",
-            "_type": "Atlantic/Faeroe"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "001",
-            "_type": "Atlantic/Reykjavik"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "South_Georgia",
-            "_territory": "001",
-            "_type": "Atlantic/South_Georgia"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "SH",
-            "_type": "Atlantic/St_Helena"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Falkland",
-            "_territory": "001",
-            "_type": "Atlantic/Stanley"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Australia_Central",
-            "_territory": "001",
-            "_type": "Australia/Adelaide"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Australia_CentralWestern",
-            "_territory": "001",
-            "_type": "Australia/Eucla"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Lord_Howe",
-            "_territory": "001",
-            "_type": "Australia/Lord_Howe"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Australia_Western",
-            "_territory": "001",
-            "_type": "Australia/Perth"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Australia_Eastern",
-            "_territory": "001",
-            "_type": "Australia/Sydney"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "NL",
-            "_type": "Europe/Amsterdam"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "AD",
-            "_type": "Europe/Andorra"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "GR",
-            "_type": "Europe/Athens"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "RS",
-            "_type": "Europe/Belgrade"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "XK",
-            "_type": "Europe/Belgrade"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "DE",
-            "_type": "Europe/Berlin"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "SK",
-            "_type": "Europe/Bratislava"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "BE",
-            "_type": "Europe/Brussels"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "001",
-            "_type": "Europe/Bucharest"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "HU",
-            "_type": "Europe/Budapest"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "DK",
-            "_type": "Europe/Copenhagen"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "IE",
-            "_type": "Europe/Dublin"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Irish",
-            "_territory": "001",
-            "_type": "Europe/Dublin"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "GI",
-            "_type": "Europe/Gibraltar"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "FI",
-            "_type": "Europe/Helsinki"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Turkey",
-            "_territory": "001",
-            "_type": "Europe/Istanbul"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Further_Eastern",
-            "_territory": "RU",
-            "_type": "Europe/Kaliningrad"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "SI",
-            "_type": "Europe/Ljubljana"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "British",
-            "_territory": "001",
-            "_type": "Europe/London"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "GMT",
-            "_territory": "GB",
-            "_type": "Europe/London"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "LU",
-            "_type": "Europe/Luxembourg"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "ES",
-            "_type": "Europe/Madrid"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "MT",
-            "_type": "Europe/Malta"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "AX",
-            "_type": "Europe/Mariehamn"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Further_Eastern",
-            "_territory": "001",
-            "_type": "Europe/Minsk"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "MC",
-            "_type": "Europe/Monaco"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Moscow",
-            "_territory": "001",
-            "_type": "Europe/Moscow"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "NO",
-            "_type": "Europe/Oslo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "001",
-            "_type": "Europe/Paris"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "ME",
-            "_type": "Europe/Podgorica"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "CZ",
-            "_type": "Europe/Prague"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "IT",
-            "_type": "Europe/Rome"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Kuybyshev",
-            "_territory": "001",
-            "_type": "Europe/Samara"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Samara",
-            "_territory": "001",
-            "_type": "Europe/Samara"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "SM",
-            "_type": "Europe/San_Marino"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "BA",
-            "_type": "Europe/Sarajevo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "MK",
-            "_type": "Europe/Skopje"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Eastern",
-            "_territory": "BG",
-            "_type": "Europe/Sofia"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "SE",
-            "_type": "Europe/Stockholm"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "AL",
-            "_type": "Europe/Tirane"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "LI",
-            "_type": "Europe/Vaduz"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "VA",
-            "_type": "Europe/Vatican"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "AT",
-            "_type": "Europe/Vienna"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Volgograd",
-            "_territory": "001",
-            "_type": "Europe/Volgograd"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "PL",
-            "_type": "Europe/Warsaw"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "HR",
-            "_type": "Europe/Zagreb"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Europe_Central",
-            "_territory": "CH",
-            "_type": "Europe/Zurich"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "MG",
-            "_type": "Indian/Antananarivo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Indian_Ocean",
-            "_territory": "001",
-            "_type": "Indian/Chagos"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Christmas",
-            "_territory": "001",
-            "_type": "Indian/Christmas"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Cocos",
-            "_territory": "001",
-            "_type": "Indian/Cocos"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "KM",
-            "_type": "Indian/Comoro"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "French_Southern",
-            "_territory": "001",
-            "_type": "Indian/Kerguelen"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Seychelles",
-            "_territory": "001",
-            "_type": "Indian/Mahe"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Maldives",
-            "_territory": "001",
-            "_type": "Indian/Maldives"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Mauritius",
-            "_territory": "001",
-            "_type": "Indian/Mauritius"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Africa_Eastern",
-            "_territory": "YT",
-            "_type": "Indian/Mayotte"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Reunion",
-            "_territory": "001",
-            "_type": "Indian/Reunion"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Apia",
-            "_territory": "001",
-            "_type": "Pacific/Apia"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "New_Zealand",
-            "_territory": "001",
-            "_type": "Pacific/Auckland"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Chatham",
-            "_territory": "001",
-            "_type": "Pacific/Chatham"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Easter",
-            "_territory": "001",
-            "_type": "Pacific/Easter"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Vanuatu",
-            "_territory": "001",
-            "_type": "Pacific/Efate"
+            "_type": "Asia/Manila"
           }
         },
         {
@@ -6633,142 +6548,9 @@
         },
         {
           "mapZone": {
-            "_other": "Tokelau",
+            "_other": "Pierre_Miquelon",
             "_territory": "001",
-            "_type": "Pacific/Fakaofo"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Fiji",
-            "_territory": "001",
-            "_type": "Pacific/Fiji"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Tuvalu",
-            "_territory": "001",
-            "_type": "Pacific/Funafuti"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Galapagos",
-            "_territory": "001",
-            "_type": "Pacific/Galapagos"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Gambier",
-            "_territory": "001",
-            "_type": "Pacific/Gambier"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Solomon",
-            "_territory": "001",
-            "_type": "Pacific/Guadalcanal"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Chamorro",
-            "_territory": "GU",
-            "_type": "Pacific/Guam"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Guam",
-            "_territory": "001",
-            "_type": "Pacific/Guam"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Hawaii_Aleutian",
-            "_territory": "001",
-            "_type": "Pacific/Honolulu"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Line_Islands",
-            "_territory": "001",
-            "_type": "Pacific/Kiritimati"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Kosrae",
-            "_territory": "001",
-            "_type": "Pacific/Kosrae"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Kwajalein",
-            "_territory": "001",
-            "_type": "Pacific/Kwajalein"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Marshall_Islands",
-            "_territory": "001",
-            "_type": "Pacific/Majuro"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Marquesas",
-            "_territory": "001",
-            "_type": "Pacific/Marquesas"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Nauru",
-            "_territory": "001",
-            "_type": "Pacific/Nauru"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Niue",
-            "_territory": "001",
-            "_type": "Pacific/Niue"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Norfolk",
-            "_territory": "001",
-            "_type": "Pacific/Norfolk"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "New_Caledonia",
-            "_territory": "001",
-            "_type": "Pacific/Noumea"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Samoa",
-            "_territory": "001",
-            "_type": "Pacific/Pago_Pago"
-          }
-        },
-        {
-          "mapZone": {
-            "_other": "Palau",
-            "_territory": "001",
-            "_type": "Pacific/Palau"
+            "_type": "America/Miquelon"
           }
         },
         {
@@ -6787,30 +6569,107 @@
         },
         {
           "mapZone": {
-            "_other": "Papua_New_Guinea",
+            "_other": "Qyzylorda",
             "_territory": "001",
-            "_type": "Pacific/Port_Moresby"
+            "_type": "Asia/Qyzylorda"
           }
         },
         {
           "mapZone": {
-            "_other": "Cook",
+            "_other": "Reunion",
             "_territory": "001",
-            "_type": "Pacific/Rarotonga"
+            "_type": "Indian/Reunion"
           }
         },
         {
           "mapZone": {
-            "_other": "Chamorro",
+            "_other": "Rothera",
             "_territory": "001",
-            "_type": "Pacific/Saipan"
+            "_type": "Antarctica/Rothera"
           }
         },
         {
           "mapZone": {
-            "_other": "North_Mariana",
+            "_other": "Sakhalin",
             "_territory": "001",
-            "_type": "Pacific/Saipan"
+            "_type": "Asia/Sakhalin"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Samara",
+            "_territory": "001",
+            "_type": "Europe/Samara"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Samarkand",
+            "_territory": "001",
+            "_type": "Asia/Samarkand"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Samoa",
+            "_territory": "001",
+            "_type": "Pacific/Pago_Pago"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Seychelles",
+            "_territory": "001",
+            "_type": "Indian/Mahe"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Shevchenko",
+            "_territory": "001",
+            "_type": "Asia/Aqtau"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Singapore",
+            "_territory": "001",
+            "_type": "Asia/Singapore"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Solomon",
+            "_territory": "001",
+            "_type": "Pacific/Guadalcanal"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "South_Georgia",
+            "_territory": "001",
+            "_type": "Atlantic/South_Georgia"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Suriname",
+            "_territory": "001",
+            "_type": "America/Paramaribo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Sverdlovsk",
+            "_territory": "001",
+            "_type": "Asia/Yekaterinburg"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Syowa",
+            "_territory": "001",
+            "_type": "Antarctica/Syowa"
           }
         },
         {
@@ -6822,9 +6681,37 @@
         },
         {
           "mapZone": {
-            "_other": "Gilbert_Islands",
+            "_other": "Taipei",
             "_territory": "001",
-            "_type": "Pacific/Tarawa"
+            "_type": "Asia/Taipei"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Tajikistan",
+            "_territory": "001",
+            "_type": "Asia/Dushanbe"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Tashkent",
+            "_territory": "001",
+            "_type": "Asia/Tashkent"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Tbilisi",
+            "_territory": "001",
+            "_type": "Asia/Tbilisi"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Tokelau",
+            "_territory": "001",
+            "_type": "Pacific/Fakaofo"
           }
         },
         {
@@ -6843,6 +6730,90 @@
         },
         {
           "mapZone": {
+            "_other": "Turkey",
+            "_territory": "001",
+            "_type": "Europe/Istanbul"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Turkmenistan",
+            "_territory": "001",
+            "_type": "Asia/Ashgabat"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Tuvalu",
+            "_territory": "001",
+            "_type": "Pacific/Funafuti"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Uralsk",
+            "_territory": "001",
+            "_type": "Asia/Oral"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Uruguay",
+            "_territory": "001",
+            "_type": "America/Montevideo"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Urumqi",
+            "_territory": "001",
+            "_type": "Asia/Urumqi"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Uzbekistan",
+            "_territory": "001",
+            "_type": "Asia/Tashkent"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Vanuatu",
+            "_territory": "001",
+            "_type": "Pacific/Efate"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Venezuela",
+            "_territory": "001",
+            "_type": "America/Caracas"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Vladivostok",
+            "_territory": "001",
+            "_type": "Asia/Vladivostok"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Volgograd",
+            "_territory": "001",
+            "_type": "Europe/Volgograd"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Vostok",
+            "_territory": "001",
+            "_type": "Antarctica/Vostok"
+          }
+        },
+        {
+          "mapZone": {
             "_other": "Wake",
             "_territory": "001",
             "_type": "Pacific/Wake"
@@ -6853,6 +6824,34 @@
             "_other": "Wallis",
             "_territory": "001",
             "_type": "Pacific/Wallis"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Yakutsk",
+            "_territory": "001",
+            "_type": "Asia/Yakutsk"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Yekaterinburg",
+            "_territory": "001",
+            "_type": "Asia/Yekaterinburg"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Yerevan",
+            "_territory": "001",
+            "_type": "Asia/Yerevan"
+          }
+        },
+        {
+          "mapZone": {
+            "_other": "Yukon",
+            "_territory": "001",
+            "_type": "America/Yakutat"
           }
         }
       ]

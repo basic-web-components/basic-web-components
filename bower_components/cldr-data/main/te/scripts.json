@@ -3,18 +3,15 @@
     "te": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "te"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "అరబిక్",
           "Arab-alt-variant": "పెర్‌సో-అరబిక్",
           "Armi": "ఇంపీరియల్ అరామాక్",
@@ -64,6 +61,7 @@
           "Hans-alt-stand-alone": "సరళీకృత హాన్",
           "Hant": "సాంప్రదాయక",
           "Hant-alt-stand-alone": "సాంప్రదాయక హాన్",
+          "Hatr": "Hatr",
           "Hebr": "హీబ్రు",
           "Hira": "హిరాగాన",
           "Hluw": "Hluw",
@@ -74,7 +72,6 @@
           "Ital": "ప్రాచిన ఐటాలిక్",
           "Java": "జావనీస్",
           "Jpan": "జాపనీస్",
-          "Jurc": "Jurc",
           "Kali": "కాయాహ్ లి",
           "Kana": "కాటాకాన",
           "Khar": "ఖరోషథి",
@@ -82,7 +79,6 @@
           "Khoj": "Khoj",
           "Knda": "కన్నడ",
           "Kore": "కొరియన్",
-          "Kpel": "Kpel",
           "Kthi": "కైథి",
           "Lana": "లన్నా",
           "Laoo": "లావో",
@@ -94,7 +90,6 @@
           "Lina": "లినియర్ ఎ",
           "Linb": "లినియర్ బి",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "లిసియన్",
           "Lydi": "లిడియన్",
           "Mahj": "Mahj",
@@ -110,12 +105,11 @@
           "Moon": "మూన్",
           "Mroo": "Mroo",
           "Mtei": "మీటి మయెక్",
+          "Mult": "Mult",
           "Mymr": "మయాన్మార్",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "న్కో",
-          "Nshu": "Nshu",
           "Ogam": "ఒఘమ్",
           "Olck": "ఓల్ చికి",
           "Orkh": "ఓర్ఖోన్",
@@ -205,7 +199,6 @@
           "Tale": "తై లీ",
           "Talu": "క్రొత్త టై లుఇ",
           "Taml": "తమిళము",
-          "Tang": "Tang",
           "Tavt": "టై వియట్",
           "Telu": "తెలుగు",
           "Teng": "టేంగ్వార్",
@@ -219,7 +212,6 @@
           "Vaii": "వాయి",
           "Visp": "కనిపించే భాష",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "ప్రాచీన పర్షియన్",
           "Xsux": "సుమేరో- అక్కడియన్ క్యునిఫార్మ్",
           "Yiii": "యి",

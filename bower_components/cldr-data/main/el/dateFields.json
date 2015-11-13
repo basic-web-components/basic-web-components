@@ -3,22 +3,19 @@
     "el": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "el"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Περίοδος"
+            "displayName": "περίοδος"
           },
           "year": {
-            "displayName": "Έτος",
-            "relative-type--1": "προηγούμενο έτος",
+            "displayName": "έτος",
+            "relative-type--1": "πέρσι",
             "relative-type-0": "φέτος",
             "relative-type-1": "επόμενο έτος",
             "relativeTime-type-future": {
@@ -32,7 +29,7 @@
           },
           "year-short": {
             "displayName": "έτ.",
-            "relative-type--1": "προηγούμενο έτος",
+            "relative-type--1": "πέρσι",
             "relative-type-0": "φέτος",
             "relative-type-1": "επόμενο έτος",
             "relativeTime-type-future": {
@@ -46,23 +43,23 @@
           },
           "year-narrow": {
             "displayName": "έτ.",
-            "relative-type--1": "προηγούμενο έτος",
+            "relative-type--1": "πέρσι",
             "relative-type-0": "φέτος",
             "relative-type-1": "επόμενο έτος",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} έτος",
-              "relativeTimePattern-count-other": "+{0} έτη"
+              "relativeTimePattern-count-one": "σε {0} έτος",
+              "relativeTimePattern-count-other": "σε {0} έτη"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} έτος",
-              "relativeTimePattern-count-other": "-{0} έτη"
+              "relativeTimePattern-count-one": "{0} έτος πριν",
+              "relativeTimePattern-count-other": "{0} έτη πριν"
             }
           },
           "quarter": {
-            "displayName": "Τρίμηνο",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "τρίμηνο",
+            "relative-type--1": "προηγούμενο τρίμηνο",
+            "relative-type-0": "τρέχον τρίμηνο",
+            "relative-type-1": "επόμενο τρίμηνο",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "σε {0} τρίμηνο",
               "relativeTimePattern-count-other": "σε {0} τρίμηνα"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "τρίμ.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "προηγ. τρίμ.",
+            "relative-type-0": "τρέχον τρίμ.",
+            "relative-type-1": "επόμ. τρίμ.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "σε {0} τρίμ.",
               "relativeTimePattern-count-other": "σε {0} τρίμ."
@@ -88,20 +85,20 @@
           },
           "quarter-narrow": {
             "displayName": "τρίμ.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "προηγ. τρίμ.",
+            "relative-type-0": "τρέχον τρίμ.",
+            "relative-type-1": "επόμ. τρίμ.",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} Τ",
-              "relativeTimePattern-count-other": "+{0} Τ"
+              "relativeTimePattern-count-one": "σε {0} τρίμ.",
+              "relativeTimePattern-count-other": "σε {0} τρίμ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} Τ",
-              "relativeTimePattern-count-other": "-{0} Τ"
+              "relativeTimePattern-count-one": "{0} τρίμ. πριν",
+              "relativeTimePattern-count-other": "{0} τρίμ. πριν"
             }
           },
           "month": {
-            "displayName": "Μήνας",
+            "displayName": "μήνας",
             "relative-type--1": "προηγούμενος μήνας",
             "relative-type-0": "τρέχων μήνας",
             "relative-type-1": "επόμενος μήνας",
@@ -120,12 +117,12 @@
             "relative-type-0": "τρέχων μήνας",
             "relative-type-1": "επόμενος μήνας",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "σε {0} μήν.",
-              "relativeTimePattern-count-other": "σε {0} μήν."
+              "relativeTimePattern-count-one": "σε {0} μήνα",
+              "relativeTimePattern-count-other": "σε {0} μήνες"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "πριν από {0} μήν.",
-              "relativeTimePattern-count-other": "πριν από {0} μήν."
+              "relativeTimePattern-count-one": "πριν από {0} μήνα",
+              "relativeTimePattern-count-other": "πριν από {0} μήνες"
             }
           },
           "month-narrow": {
@@ -134,16 +131,16 @@
             "relative-type-0": "τρέχων μήνας",
             "relative-type-1": "επόμενος μήνας",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} μήν.",
-              "relativeTimePattern-count-other": "+{0} μήν."
+              "relativeTimePattern-count-one": "σε {0} μ.",
+              "relativeTimePattern-count-other": "σε {0} μ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} μήν.",
-              "relativeTimePattern-count-other": "-{0} μήν."
+              "relativeTimePattern-count-one": "{0} μ. πριν",
+              "relativeTimePattern-count-other": "{0} μ. πριν"
             }
           },
           "week": {
-            "displayName": "Εβδομάδα",
+            "displayName": "εβδομάδα",
             "relative-type--1": "προηγούμενη εβδομάδα",
             "relative-type-0": "αυτήν την εβδομάδα",
             "relative-type-1": "επόμενη εβδομάδα",
@@ -176,18 +173,18 @@
             "relative-type-0": "αυτήν την εβδομάδα",
             "relative-type-1": "επόμενη εβδομάδα",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} εβδ.",
-              "relativeTimePattern-count-other": "+{0} εβδ."
+              "relativeTimePattern-count-one": "σε {0} εβδ.",
+              "relativeTimePattern-count-other": "σε {0} εβδ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} εβδ.",
-              "relativeTimePattern-count-other": "-{0} εβδ."
+              "relativeTimePattern-count-one": "{0} εβδ. πριν",
+              "relativeTimePattern-count-other": "{0} εβδ. πριν"
             }
           },
           "day": {
-            "displayName": "Ημέρα",
-            "relative-type--1": "χθες",
+            "displayName": "ημέρα",
             "relative-type--2": "προχθές",
+            "relative-type--1": "χθες",
             "relative-type-0": "σήμερα",
             "relative-type-1": "αύριο",
             "relative-type-2": "μεθαύριο",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "ημέρα",
-            "relative-type--1": "χθες",
             "relative-type--2": "προχθές",
+            "relative-type--1": "χθες",
             "relative-type-0": "σήμερα",
             "relative-type-1": "αύριο",
             "relative-type-2": "μεθαύριο",
@@ -218,22 +215,22 @@
           },
           "day-narrow": {
             "displayName": "ημέρα",
-            "relative-type--1": "χθες",
             "relative-type--2": "προχθές",
+            "relative-type--1": "χθες",
             "relative-type-0": "σήμερα",
             "relative-type-1": "αύριο",
             "relative-type-2": "μεθαύριο",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "σε {0} ημέρα",
-              "relativeTimePattern-count-other": "σε {0} ημέρες"
+              "relativeTimePattern-count-one": "σε {0} ημ.",
+              "relativeTimePattern-count-other": "σε {0} ημ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "πριν από {0} ημέρα",
-              "relativeTimePattern-count-other": "πριν από {0} ημέρες"
+              "relativeTimePattern-count-one": "{0} ημ. πριν",
+              "relativeTimePattern-count-other": "{0} ημ. πριν"
             }
           },
           "weekday": {
-            "displayName": "Ημέρα εβδομάδας"
+            "displayName": "καθημερινή"
           },
           "sun": {
             "relative-type--1": "προηγούμενη Κυριακή",
@@ -296,7 +293,7 @@
             "relative-type-1": "επόμ. Τε"
           },
           "thu": {
-            "relative-type--1": "επόμενη Πέμπτη",
+            "relative-type--1": "προηγούμενη Πέμπτη",
             "relative-type-0": "αυτήν την Πέμπτη",
             "relative-type-1": "επόμενη Πέμπτη"
           },
@@ -344,7 +341,7 @@
             "displayName": "π.μ./μ.μ."
           },
           "hour": {
-            "displayName": "Ώρα",
+            "displayName": "ώρα",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "σε {0} ώρα",
               "relativeTimePattern-count-other": "σε {0} ώρες"
@@ -368,16 +365,16 @@
           "hour-narrow": {
             "displayName": "ώ",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} ώ",
-              "relativeTimePattern-count-other": "+{0} ώ"
+              "relativeTimePattern-count-one": "σε {0} ώ.",
+              "relativeTimePattern-count-other": "σε {0} ώ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} ώ",
-              "relativeTimePattern-count-other": "-{0} ώ"
+              "relativeTimePattern-count-one": "{0} ώ. πριν",
+              "relativeTimePattern-count-other": "{0} ώ. πριν"
             }
           },
           "minute": {
-            "displayName": "Λεπτό",
+            "displayName": "λεπτό",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "σε {0} λεπτό",
               "relativeTimePattern-count-other": "σε {0} λεπτά"
@@ -401,16 +398,16 @@
           "minute-narrow": {
             "displayName": "λ",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} λ",
-              "relativeTimePattern-count-other": "+{0} λ"
+              "relativeTimePattern-count-one": "σε {0} λ.",
+              "relativeTimePattern-count-other": "σε {0} λ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} λ",
-              "relativeTimePattern-count-other": "-{0} λ"
+              "relativeTimePattern-count-one": "{0} λ. πριν",
+              "relativeTimePattern-count-other": "{0} λ. πριν"
             }
           },
           "second": {
-            "displayName": "Δευτερόλεπτο",
+            "displayName": "δευτερόλεπτο",
             "relative-type-0": "τώρα",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "σε {0} δευτερόλεπτο",
@@ -437,16 +434,16 @@
             "displayName": "δ",
             "relative-type-0": "τώρα",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} δ",
-              "relativeTimePattern-count-other": "+{0} δ"
+              "relativeTimePattern-count-one": "σε {0} δ.",
+              "relativeTimePattern-count-other": "σε {0} δ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} δ",
-              "relativeTimePattern-count-other": "-{0} δ"
+              "relativeTimePattern-count-one": "{0} δ. πριν",
+              "relativeTimePattern-count-other": "{0} δ. πριν"
             }
           },
           "zone": {
-            "displayName": "Ζώνη ώρας"
+            "displayName": "ζώνη ώρας"
           }
         }
       }

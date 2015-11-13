@@ -3,11 +3,8 @@
     "sw": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sw"
       },
@@ -28,9 +25,9 @@
             "symbol": "AFA"
           },
           "AFN": {
-            "displayName": "Afghani ya Afuganistani",
-            "displayName-count-one": "Afghani ya Afuganistani",
-            "displayName-count-other": "Afghani za Afuganistani",
+            "displayName": "Afghani ya Afghanistan",
+            "displayName-count-one": "Afghani ya Afghanistan",
+            "displayName-count-other": "Afghani za Afghanistan",
             "symbol": "AFN"
           },
           "ALL": {
@@ -180,9 +177,9 @@
             "symbol": "BGO"
           },
           "BHD": {
-            "displayName": "Dinari ya Bahareni",
-            "displayName-count-one": "dinari ya Bahareni",
-            "displayName-count-other": "dinari za Bahareni",
+            "displayName": "Dinar ya Bahareni",
+            "displayName-count-one": "Dinar ya Bahareni",
+            "displayName-count-other": "Dinar za Bahareni",
             "symbol": "BHD"
           },
           "BIF": {
@@ -387,9 +384,9 @@
             "symbol-alt-narrow": "$"
           },
           "CVE": {
-            "displayName": "Eskudo ya Kepuvede",
-            "displayName-count-one": "eskudo ya Kepuvede",
-            "displayName-count-other": "eskudo za Kepuvede",
+            "displayName": "Eskudo ya Cape Verde",
+            "displayName-count-one": "Eskudo ya Cape Verde",
+            "displayName-count-other": "Eskudo za Cape Verde",
             "symbol": "CVE"
           },
           "CYP": {
@@ -476,7 +473,7 @@
             "symbol-alt-narrow": "₧"
           },
           "ETB": {
-            "displayName": "Nirr ya Uhabeshi",
+            "displayName": "Birr ya Uhabeshi",
             "displayName-count-one": "birr ya Uhabeshi",
             "displayName-count-other": "birr za Uhabeshi",
             "symbol": "ETB"
@@ -525,7 +522,8 @@
             "displayName": "Lari ya Georgia",
             "displayName-count-one": "Lari ya Georgia",
             "displayName-count-other": "Lari za Georgia",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Sedi ya Ghana",
@@ -659,9 +657,9 @@
             "symbol-alt-narrow": "₹"
           },
           "IQD": {
-            "displayName": "Dinari ya Iraki",
-            "displayName-count-one": "Dinari ya Iraki",
-            "displayName-count-other": "Dinari za Iraki",
+            "displayName": "Dinar ya Iraki",
+            "displayName-count-one": "Dinar ya Iraki",
+            "displayName-count-other": "Dinar za Iraki",
             "symbol": "IQD"
           },
           "IRR": {
@@ -671,9 +669,9 @@
             "symbol": "IRR"
           },
           "ISK": {
-            "displayName": "Krona ya Isilandi",
-            "displayName-count-one": "Krona ya Isilandi",
-            "displayName-count-other": "Krona za Isilandi",
+            "displayName": "Krona ya Aisilandi",
+            "displayName-count-one": "Krona ya Aisilandi",
+            "displayName-count-other": "Krona za Aisilandi",
             "symbol": "ISK",
             "symbol-alt-narrow": "kr"
           },
@@ -689,9 +687,9 @@
             "symbol-alt-narrow": "$"
           },
           "JOD": {
-            "displayName": "Dinari ya Yordani",
-            "displayName-count-one": "Dinari ya Yordani",
-            "displayName-count-other": "Dinari za Yordani",
+            "displayName": "Dinar ya Yordani",
+            "displayName-count-one": "Dinar ya Yordani",
+            "displayName-count-other": "Dinar za Yordani",
             "symbol": "JOD"
           },
           "JPY": {
@@ -708,9 +706,9 @@
             "symbol": "Ksh"
           },
           "KGS": {
-            "displayName": "Som ya Kirigistani",
-            "displayName-count-one": "Som ya Kirigistani",
-            "displayName-count-other": "Som za Kirigistani",
+            "displayName": "Som ya Kyrgystani",
+            "displayName-count-one": "Som ya Kyrgystani",
+            "displayName-count-other": "Som za Kyrgystani",
             "symbol": "KGS"
           },
           "KHR": {
@@ -750,9 +748,9 @@
             "symbol-alt-narrow": "₩"
           },
           "KWD": {
-            "displayName": "Dinari ya Kuwaiti",
-            "displayName-count-one": "Dinari ya Kuwaiti",
-            "displayName-count-other": "Dinari za Kuwaiti",
+            "displayName": "Dinar ya Kuwaiti",
+            "displayName-count-one": "Dinar ya Kuwaiti",
+            "displayName-count-other": "Dinar za Kuwaiti",
             "symbol": "KWD"
           },
           "KYD": {
@@ -784,9 +782,9 @@
             "symbol-alt-narrow": "L£"
           },
           "LKR": {
-            "displayName": "Rupia ya Sirilanka",
-            "displayName-count-one": "Rupia ya Sirilanka",
-            "displayName-count-other": "Rupia za Sirilanka",
+            "displayName": "Rupia ya Sri Lanka",
+            "displayName-count-one": "Rupia ya Sri Lanka",
+            "displayName-count-other": "Rupia za Sri Lanka",
             "symbol": "LKR",
             "symbol-alt-narrow": "Rs"
           },
@@ -1100,9 +1098,9 @@
             "symbol-alt-narrow": "₲"
           },
           "QAR": {
-            "displayName": "Rial ya Katari",
-            "displayName-count-one": "Rial ya Katari",
-            "displayName-count-other": "Rial za Katari",
+            "displayName": "Rial ya Qatari",
+            "displayName-count-one": "Rial ya Qatari",
+            "displayName-count-other": "Rial za Qatari",
             "symbol": "QAR"
           },
           "RHD": {
@@ -1130,7 +1128,7 @@
             "displayName-count-one": "Ruble ya Urusi",
             "displayName-count-other": "Ruble za Urusi",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1209,9 +1207,9 @@
             "symbol": "SKK"
           },
           "SLL": {
-            "displayName": "Leoni",
-            "displayName-count-one": "leoni",
-            "displayName-count-other": "leoni",
+            "displayName": "Leone",
+            "displayName-count-one": "Leone",
+            "displayName-count-other": "Leone",
             "symbol": "SLL"
           },
           "SOS": {
@@ -1411,9 +1409,9 @@
             "symbol-alt-narrow": "Bs"
           },
           "VND": {
-            "displayName": "Dong ya Vietinamu",
-            "displayName-count-one": "Dong ya Vietinamu",
-            "displayName-count-other": "Dong za Vietinamu",
+            "displayName": "Dong ya Vietnam",
+            "displayName-count-one": "Dong ya Vietnam",
+            "displayName-count-other": "Dong za Vietnam",
             "symbol": "₫",
             "symbol-alt-narrow": "₫"
           },
@@ -1523,9 +1521,9 @@
             "symbol": "XUA"
           },
           "XXX": {
-            "displayName": "Fedha Zisizojulikana",
-            "displayName-count-one": "Fedha Zisizojulikana",
-            "displayName-count-other": "Fedha Zisizojulikana",
+            "displayName": "Sarafu isiyojulikana",
+            "displayName-count-one": "sarafu isiyojulikana",
+            "displayName-count-other": "sarafu zisizojulikana",
             "symbol": "XXX"
           },
           "YDD": {

@@ -3,32 +3,33 @@
     "am": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11996 $"
         },
         "language": "am"
       },
       "localeDisplayNames": {
         "localeDisplayPattern": {
           "localePattern": "{0} ({1})",
-          "localeSeparator": "{0},{1}",
+          "localeSeparator": "{0}፣{1}",
           "localeKeyTypePattern": "{0}: {1}"
         },
         "keys": {
           "calendar": "የቀን አቆጣጠር",
+          "cf": "cf",
           "colAlternate": "የምልክቶች ድርደራ ችላ በለው",
           "colBackwards": "የኋሊዮሽ የፊደል ጭረት ድርደራ",
           "colCaseFirst": "የአቢይ/ንዑስ ሆሄ ቅደም ተከተል",
           "colCaseLevel": "የመልከፊደል ትብ ድርደራ",
           "colHiraganaQuaternary": "የካና ድርደራ",
+          "collation": "አቀማመጥ ደርድር",
           "colNormalization": "መደበኛ ድርደራ",
           "colNumeric": "የቁጥር ድርደራ",
           "colStrength": "የድርደራ አቅም",
-          "collation": "አቀማመጥ ደርድር",
           "currency": "ገንዘብ",
+          "hc": "የሰዓት ዑደት (12 ወይም 24)",
+          "lb": "መስመር መስበሪያ ቅጥ",
+          "ms": "የመለኪያ ስርዓት",
           "numbers": "ቁጥሮች",
           "timezone": "የሰዓት ሰቅ",
           "va": "የአካባቢ አይነት",
@@ -43,7 +44,7 @@
             "dangi": "የዳንጊ የቀን አቆጣጠር",
             "ethiopic": "የኢትዮጵያ የቀን አቆጣጠር",
             "ethiopic-amete-alem": "የኢትዮፒክ አመተ አለም የቀን አቆጣጠር",
-            "gregorian": "የግሪጎሪያን ቀን አቆጣጠር",
+            "gregorian": "የግሪጎሪያን የቀን አቆጣጠር",
             "hebrew": "የእብራዊያን የቀን አቆጣጠር",
             "indian": "የህንድ ብሔራዊ የቀን አቆጣጠር",
             "islamic": "የእስላማዊ የሰዓት አቆጣጠር",
@@ -55,6 +56,10 @@
             "japanese": "የጃፓን የቀን አቆጣጠር",
             "persian": "የፐርሽያ የቀን አቆጣጠር",
             "roc": "የሚንጉ የቀን አቆጣጠር"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "colAlternate": {
             "non-ignorable": "ምልክቶችን ደርድር",
@@ -77,6 +82,26 @@
             "no": "ካና ለይተህ ደርድር",
             "yes": "ካና ለይተህ ደርድር"
           },
+          "collation": {
+            "big5han": "የባህላዊ ቻይንኛ የድርድር ቅደም ተከተል - ትልቅ5",
+            "compat": "compat",
+            "dictionary": "የመዝገበ ቃላት የድርድር ቅደም ተከተል",
+            "ducet": "የነባሪ ዩኒኮድ የድርድር ቅደም ተከተል",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "የቀለለ የቻይንኛ የድርደራ ቅደም ተከተል - GB2312",
+            "phonebook": "የስልክ ደብተር ድርድር ቅደም ተከተል",
+            "phonetic": "የፎነቲክ ድርደራ ቅደም ተከተል",
+            "pinyin": "ፒንይን የድርድር ቅደም ተከተል",
+            "reformed": "ዳግም የተፈጠረ የድርድር ቅደም ተከተል",
+            "search": "ለጠቅላላ ጉዳይ ፍለጋ",
+            "searchjl": "በሃንጉል የመጀመሪያ ተነባቢ ፈልግ",
+            "standard": "መደበኛ",
+            "stroke": "የበትር ድርድር ቅደም ተከተል",
+            "traditional": "ባህላዊ የድርድር ቅደም ተከተል",
+            "unihan": "የመሰረታዊ በትር ድርድር ቅደም ተከተል",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "ያለመደበኛ ሁኔታ ደርድር",
             "yes": "ዩኒኮድ በመደበኛ ሁኔታ ደርድር"
@@ -92,25 +117,24 @@
             "secondary": "የፊደል ጭረቶችን ደርድር",
             "tertiary": "የፊደል ጭረቶች/መልከፊደል/ስፋት ደርድር"
           },
-          "collation": {
-            "big5han": "የባህላዊ ቻይንኛ የድርድር ቅደም ተከተል - ትልቅ5",
-            "dictionary": "የመዝገበ ቃላት የድርድር ቅደም ተከተል",
-            "ducet": "የነባሪ ዩኒኮድ የድርድር ቅደም ተከተል",
-            "eor": "eor",
-            "gb2312han": "የቀለለ የቻይንኛ የድርደራ ቅደም ተከተል - GB2312",
-            "phonebook": "የስልክ ደብተር ድርድር ቅደም ተከተል",
-            "phonetic": "የፎነቲክ ድርደራ ቅደም ተከተል",
-            "pinyin": "ፒንይን የድርድር ቅደም ተከተል",
-            "reformed": "ዳግም የተፈጠረ የድርድር ቅደም ተከተል",
-            "search": "ለጠቅላላ ጉዳይ ፍለጋ",
-            "searchjl": "በሃንጉል የመጀመሪያ ተነባቢ ፈልግ",
-            "standard": "መደበኛ",
-            "stroke": "የበትር ድርድር ቅደም ተከተል",
-            "traditional": "ባህላዊ የድርድር ቅደም ተከተል",
-            "unihan": "የመሰረታዊ በትር ድርድር ቅደም ተከተል",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "የ12 ሰዓት ስርዓት (0–11)",
+            "h12": "የ12 ሰዓት ስርዓት (1–12)",
+            "h23": "የ24 ሰዓት ስርዓት (0–23)",
+            "h24": "የ24 ሰዓት ስርዓት (1–24)"
+          },
+          "lb": {
+            "loose": "ላላ ያለ መስመር መስበሪያ ቅጥ",
+            "normal": "መደበኛ መስመር መስበሪያ ቅጥ",
+            "strict": "ጠበቅ ያለ መስመር መስበሪያ ቅጥ"
+          },
+          "ms": {
+            "metric": "የልኬት ስርዓት",
+            "uksystem": "ኢምፔሪያል የመለኪያ ስርዓት",
+            "ussystem": "የአሜሪካ መለኪያ ስርዓት"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "የአረቢክ-ኢንዲክ አሃዞች",
             "arabext": "የተራዘሙ የአረቢክ-ኢንዲክ አሃዞች",
             "armn": "የአርመንኛ ቁጥሮች",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "የዴቫንጋሪ አሃዞች",
             "ethi": "የኢትዮፒክ ቁጥሮች",
             "finance": "የፋይናንስ ቁጥሮች",
@@ -135,6 +160,7 @@
             "hant": "የባህላዊ ቻይንኛ ቁጥሮች",
             "hantfin": "የባህላዊ ቻይንኛ የገንዘብ ነክ ቁጥሮች",
             "hebr": "የእብራይስጥ ቁጥሮች",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "የጃፓንኛ ቁጥሮች",
             "jpanfin": "የጃፓንኛ የገንዘብ ነክ ቁጥሮች",
@@ -147,11 +173,19 @@
             "latn": "የምስራቃዊ አሃዞች",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "የማላያላምኛ አሃዞች",
+            "modi": "modi",
             "mong": "የሞንጎልኛ አሃዞች",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "የማያንማር አሃዞች",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "ትውልድ አሃዞች",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "የሮማን ንዑስ ሆሄ ቁጥሮች",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "የተልጉ አሃዞች",
             "thai": "የታይ አሃዞች",
             "tibt": "የቲቤታን አሃዞች",
+            "tirh": "tirh",
             "traditional": "ተለምዷዊ ቁጥሮች",
-            "vaii": "የቫይ አሃዞች"
+            "vaii": "የቫይ አሃዞች",
+            "wara": "wara"
           }
         },
         "codePatterns": {

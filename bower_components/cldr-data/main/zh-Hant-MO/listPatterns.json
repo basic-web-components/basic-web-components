@@ -3,22 +3,19 @@
     "zh-Hant-MO": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11135 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-19 14:58:31 -0600 (Mon, 19 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "zh",
         "script": "Hant",
-        "territory": "HK"
+        "territory": "MO"
       },
       "listPatterns": {
         "listPattern-type-standard": {
           "start": "{0}、{1}",
           "middle": "{0}、{1}",
-          "end": "{0}和{1}",
-          "2": "{0}和{1}"
+          "end": "{0}及{1}",
+          "2": "{0}及{1}"
         },
         "listPattern-type-unit": {
           "start": "{0} {1}",

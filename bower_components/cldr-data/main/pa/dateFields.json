@@ -3,11 +3,8 @@
     "pa": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "pa"
       },
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "ਤਿਮਾਹੀ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ਪਿਛਲੀ ਤਿਮਾਹੀ",
+            "relative-type-0": "ਇਹ ਤਿਮਾਹੀ",
+            "relative-type-1": "ਅਗਲੀ ਤਿਮਾਹੀ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} ਤਿਮਾਹੀ ਵਿੱਚ",
               "relativeTimePattern-count-other": "{0} ਤਿਮਾਹੀਆਂ ਵਿੱਚ"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "ਤਿਮਾਹੀ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ਪਿਛਲੀ ਤਿਮਾਹੀ",
+            "relative-type-0": "ਇਹ ਤਿਮਾਹੀ",
+            "relative-type-1": "ਅਗਲੀ ਤਿਮਾਹੀ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} ਤਿਮਾਹੀ ਵਿੱਚ",
               "relativeTimePattern-count-other": "{0} ਤਿਮਾਹੀਆਂ ਵਿੱਚ"
@@ -88,16 +85,16 @@
           },
           "quarter-narrow": {
             "displayName": "ਤਿਮਾਹੀ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ਪਿਛਲੀ ਤਿਮਾਹੀ",
+            "relative-type-0": "ਇਹ ਤਿਮਾਹੀ",
+            "relative-type-1": "ਅਗਲੀ ਤਿਮਾਹੀ",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} ਤਿਮਾਹੀ",
-              "relativeTimePattern-count-other": "+{0} ਤਿਮਾਹੀਆਂ"
+              "relativeTimePattern-count-one": "{0} ਤਿਮਾਹੀਆਂ ਵਿੱਚ",
+              "relativeTimePattern-count-other": "{0} ਤਿਮਾਹੀਆਂ ਵਿੱਚ"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} ਤਿਮਾਹੀ",
-              "relativeTimePattern-count-other": "-{0} ਤਿਮਾਹੀਆਂ"
+              "relativeTimePattern-count-one": "{0} ਤਿਮਾਹੀਆਂ ਪਹਿਲਾਂ",
+              "relativeTimePattern-count-other": "{0} ਤਿਮਾਹੀਆਂ ਪਹਿਲਾਂ"
             }
           },
           "month": {

@@ -3,18 +3,15 @@
     "sk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sk"
       },
       "numbers": {
         "currencies": {
           "ADP": {
-            "displayName": "Andorská peseta",
+            "displayName": "andorská peseta",
             "symbol": "ADP"
           },
           "AED": {
@@ -71,7 +68,7 @@
             "symbol-alt-narrow": "Kz"
           },
           "AOK": {
-            "displayName": "Angolská kwanza (1977–1990)",
+            "displayName": "angolská kwanza (1977–1990)",
             "symbol": "AOK"
           },
           "AON": {
@@ -79,11 +76,11 @@
             "symbol": "AON"
           },
           "AOR": {
-            "displayName": "Angolská kwanza Reajustado (1995–1999)",
+            "displayName": "angolská kwanza reajustado (1995–1999)",
             "symbol": "AOR"
           },
           "ARA": {
-            "displayName": "Argentinský austral",
+            "displayName": "argentínsky austral",
             "symbol": "ARA"
           },
           "ARL": {
@@ -95,7 +92,7 @@
             "symbol": "ARM"
           },
           "ARP": {
-            "displayName": "Argentinské peso (1983–1985)",
+            "displayName": "argentínske peso (1983 – 1985)",
             "symbol": "ARP"
           },
           "ARS": {
@@ -108,7 +105,7 @@
             "symbol-alt-narrow": "$"
           },
           "ATS": {
-            "displayName": "Rakúsky šiling",
+            "displayName": "rakúsky šiling",
             "symbol": "ATS"
           },
           "AUD": {
@@ -129,7 +126,7 @@
             "symbol": "AWG"
           },
           "AZM": {
-            "displayName": "Azerbajdžanský manat (1993–2006)",
+            "displayName": "azerbajdžanský manat (1993–2006)",
             "displayName-count-one": "azerbajdžanský manat (1993–2006)",
             "displayName-count-few": "azerbajdžanské manaty (1993–2006)",
             "displayName-count-many": "azerbajdžanského manatu (1993–2006)",
@@ -145,7 +142,7 @@
             "symbol": "AZN"
           },
           "BAD": {
-            "displayName": "Bosnianský dinár",
+            "displayName": "bosniansko-hercegovinský dinár (1992–1994)",
             "symbol": "BAD"
           },
           "BAM": {
@@ -180,19 +177,19 @@
             "symbol-alt-narrow": "৳"
           },
           "BEC": {
-            "displayName": "Belgický frank (konvertibilný)",
+            "displayName": "belgický frank (konvertibilný)",
             "symbol": "BEC"
           },
           "BEF": {
-            "displayName": "Belgický frank",
+            "displayName": "belgický frank",
             "symbol": "BEF"
           },
           "BEL": {
-            "displayName": "Belgický frank (finančný)",
+            "displayName": "belgický frank (finančný)",
             "symbol": "BEL"
           },
           "BGL": {
-            "displayName": "Bulharský leva",
+            "displayName": "bulharský tvrdý lev",
             "symbol": "BGL"
           },
           "BGM": {
@@ -259,23 +256,23 @@
             "symbol": "BOL"
           },
           "BOP": {
-            "displayName": "Bolivíjske peso",
+            "displayName": "bolívijské peso",
             "symbol": "BOP"
           },
           "BOV": {
-            "displayName": "Bolivíjske mvdol",
+            "displayName": "bolívijské MVDOL",
             "symbol": "BOV"
           },
           "BRB": {
-            "displayName": "Bolivíjske Cruzeiro Novo (1967–1986)",
+            "displayName": "brazílske cruzeiro novo (1967–1986)",
             "symbol": "BRB"
           },
           "BRC": {
-            "displayName": "Bolivíjske cruzado",
+            "displayName": "brazílske cruzado (1986 – 1989)",
             "symbol": "BRC"
           },
           "BRE": {
-            "displayName": "Bolivíjske cruzeiro (1990–1993)",
+            "displayName": "brazílske cruzeiro (1990 – 1993)",
             "symbol": "BRE"
           },
           "BRL": {
@@ -633,7 +630,8 @@
             "displayName-count-few": "gruzínske lari",
             "displayName-count-many": "gruzínskeho lari",
             "displayName-count-other": "gruzínskych lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ghanský cedi (1979–2007)",
@@ -1400,6 +1398,7 @@
             "displayName-count-many": "ruského rubľa",
             "displayName-count-other": "ruských rubľov",
             "symbol": "RUB",
+            "symbol-alt-narrow": "₽",
             "symbol-alt-variant": "₽"
           },
           "RUR": {

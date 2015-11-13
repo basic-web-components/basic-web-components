@@ -3,11 +3,8 @@
     "sv": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "sv"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}tid",
-          "regionFormat-type-standard": "{0} (normaltid)",
           "regionFormat-type-daylight": "{0} (sommartid)",
+          "regionFormat-type-standard": "{0} (normaltid)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Araguaína"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Río Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucumán"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, North Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, North Dakota"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "Kolkata"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Tjita"
               },
               "Choibalsan": {
                 "exemplarCity": "Tjojbalsan"
@@ -1047,7 +1044,7 @@
                 "exemplarCity": "Tokyo"
               },
               "Ulaanbaatar": {
-                "exemplarCity": "Ulan Bator"
+                "exemplarCity": "Ulaanbaatar"
               },
               "Urumqi": {
                 "exemplarCity": "Ürümqi"
@@ -1701,9 +1698,9 @@
             },
             "Easter": {
               "long": {
-                "generic": "Påsköns tid",
-                "standard": "Påsköns normaltid",
-                "daylight": "Påsköns sommartid"
+                "generic": "Påskötid",
+                "standard": "Påskön, normaltid",
+                "daylight": "Påskön, sommartid"
               }
             },
             "Ecuador": {
@@ -1755,8 +1752,8 @@
             "Falkland": {
               "long": {
                 "generic": "Falklandsöarnas tid",
-                "standard": "Falklandsöarnas normaltid",
-                "daylight": "Falklandsöarnas sommartid"
+                "standard": "Falklandsöarna, normaltid",
+                "daylight": "Falklandsöarna, sommartid"
               }
             },
             "Fiji": {
@@ -1774,14 +1771,6 @@
             "French_Southern": {
               "long": {
                 "standard": "Franska Sydterritoriernas tid"
-              }
-            },
-            "GMT": {
-              "long": {
-                "standard": "Greenwichtid"
-              },
-              "short": {
-                "standard": "GMT"
               }
             },
             "Galapagos": {
@@ -1804,6 +1793,14 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Kiribatitid"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwichtid"
+              },
+              "short": {
+                "standard": "GMT"
               }
             },
             "Greenland_Eastern": {
@@ -2025,9 +2022,9 @@
             },
             "Mexico_Northwest": {
               "long": {
-                "generic": "nordvästra Mexiko-tid",
-                "standard": "nordvästra Mexiko, normaltid",
-                "daylight": "nordvästra Mexiko, sommartid"
+                "generic": "nordvästmexikansk tid",
+                "standard": "nordvästmexikansk normaltid",
+                "daylight": "nordvästmexikansk sommartid"
               }
             },
             "Mexico_Pacific": {

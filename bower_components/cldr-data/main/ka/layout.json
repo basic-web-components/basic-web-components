@@ -3,11 +3,8 @@
     "ka": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11322 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 14:53:52 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ka"
       },

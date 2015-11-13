@@ -3,11 +3,8 @@
     "zh-Hant-HK": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "zh",
         "script": "Hant",
@@ -15,14 +12,16 @@
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "中世紀晚期法文（至1606年）",
-          "1694ACAD": "早期現代法文",
           "1901": "傳統德國拼字法",
-          "1959ACAD": "白俄羅斯文（學術）",
           "1994": "標準雷西亞拼字",
           "1996": "1996 德國拼字法",
+          "1606NICT": "中世紀晚期法文（至1606年）",
+          "1694ACAD": "早期現代法文",
+          "1959ACAD": "白俄羅斯文（學術）",
+          "ABL1943": "ABL1943",
           "ALALC97": "美國國會圖書館標準方案羅馬化（1997年版）",
           "ALUKU": "阿魯庫方言",
+          "AO1990": "AO1990",
           "AREVELA": "亞美尼亞東部",
           "AREVMDA": "亞美尼亞西部",
           "BAKU1926": "統一土耳其拉丁字母",
@@ -33,6 +32,7 @@
           "BISKE": "聖喬治/比拉方言",
           "BOHORIC": "BOHORIC",
           "BOONT": "布恩特林方言",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "早期現代英語",
@@ -58,6 +58,7 @@
           "NJIVA": "雷西亞尼瓦方言",
           "NULIK": "NULIK",
           "OSOJS": "雷西亞歐西亞柯方言",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "蘇利南帕馬卡方言",
           "PETR1708": "俄羅斯文拼字（1708 年）",
           "PINYIN": "漢語拼音",

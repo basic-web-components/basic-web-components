@@ -3,11 +3,8 @@
     "km": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "km"
       },
@@ -15,39 +12,49 @@
         "localeDisplayPattern": {
           "localePattern": "{0} ({1})",
           "localeSeparator": "{0}, {1}",
-          "localeKeyTypePattern": "{0}: {1}"
+          "localeKeyTypePattern": "{0}៖ {1}"
         },
         "keys": {
           "calendar": "ប្រតិទិន",
+          "cf": "cf",
           "collation": "លំដាប់​តម្រៀប",
           "currency": "រូបិយប័ណ្ណ",
+          "hc": "វដ្តម៉ោង (12 vs 24)",
+          "lb": "របៀបចុះបន្ទាត់",
+          "ms": "ប្រព័ន្ធវាស់វែង",
           "numbers": "លេខ"
         },
         "types": {
           "calendar": {
-            "buddhist": "ប្រតិទិន​ពុទ្ធសាសនិក",
+            "buddhist": "ប្រតិទិកពុទ្ធសាសនា",
             "chinese": "ប្រតិទិន​ចិន",
             "coptic": "coptic",
-            "dangi": "ប្រតិទិន​ dangi",
+            "dangi": "ប្រតិទិនកូរ៉េ",
             "ethiopic": "ប្រតិទិន​អេត្យូពី",
             "ethiopic-amete-alem": "ethiopic-amete-alem",
             "gregorian": "ប្រតិទិន​ហ្សកហ្ស៊ី",
-            "hebrew": "ប្រតិទិន​ហេប្រិ",
+            "hebrew": "ប្រតិទិនហេប្រឺ",
             "indian": "indian",
-            "islamic": "ប្រតិទិន​អ៊ិស្លាម",
+            "islamic": "ប្រតិទិនអ៊ីស្លាម",
             "islamic-civil": "islamic-civil",
             "islamic-rgsa": "islamic-rgsa",
             "islamic-tbla": "islamic-tbla",
             "islamic-umalqura": "islamic-umalqura",
             "iso8601": "ប្រតិទិន ISO-8601",
             "japanese": "ប្រតិទិន​ជប៉ុន",
-            "persian": "ប្រតិទិន Persian",
-            "roc": "ប្រតិទិន Minguo"
+            "persian": "ប្រតិទិនពែក្ស",
+            "roc": "ប្រតិទិនមីងគ័រ"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "លំដាប់​តម្រៀប​យូនីកូដ​លំនាំដើម",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
@@ -61,7 +68,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "ប្រព័ន្ធ 12 ម៉ោង (0–11)",
+            "h12": "ប្រព័ន្ធ 12 ម៉ោង (1–12)",
+            "h23": "ប្រព័ន្ធ 24 ម៉ោង (0–23)",
+            "h24": "ប្រព័ន្ធ 24 ម៉ោង (1–24)"
+          },
+          "lb": {
+            "loose": "របៀបចុះបន្ទាត់ខ្លី",
+            "normal": "របៀបចុះបន្ទាត់ធម្មតា",
+            "strict": "របៀបចុះបន្ទាត់តឹងរឹង"
+          },
+          "ms": {
+            "metric": "ប្រព័ន្ធវាស់វែងម៉ាទ្រិក",
+            "uksystem": "ប្រព័ន្ធវាស់វែងចក្រព័ទ្ធ",
+            "ussystem": "ប្រព័ន្ធវាស់វែងអាមេរិក"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "លេខ​ឥណ្ឌា-អារ៉ាប់",
             "arabext": "លេខ​ឥណ្ឌា-អារ៉ាប់​ពង្រីក",
             "armn": "លេខ​អាមេនី",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "លេខ​ឌីវ៉ាណាការី",
             "ethi": "លេខ​អេត្យូពី",
             "fullwide": "លេខ​ទទឹង​ពេញ",
@@ -84,24 +109,33 @@
             "hansfin": "លេខ​ហិរញ្ញវត្ថុ​ចិន​អក្សរ​កាត់",
             "hant": "លេខ​ចិន​អក្សរ​ពេញ",
             "hantfin": "លេខ​ហិរញ្ញវត្ថុ​ចិន​អក្សរ​ពេញ",
-            "hebr": "លេខ​អ៊ីស្រាអែល",
+            "hebr": "លេខហេប្រឺ",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "លេខ​ជប៉ុន",
             "jpanfin": "លេខ​ហិរញ្ញវត្ថុ​ជប៉ុន",
             "kali": "kali",
             "khmr": "លេខ​ខ្មែរ",
-            "knda": "លេខ Kannada",
+            "knda": "លេខកន្នដ",
             "lana": "lana",
             "lanatham": "lanatham",
             "laoo": "លេខ​ឡាវ",
             "latn": "លេខ​បច្ចឹម​ប្រទេស",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "លេខ​មលយាល័ម",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "លេខ​ភូមា",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "លេខ​អូរីយ៉ា",
@@ -110,6 +144,8 @@
             "romanlow": "លេខ​តូច​រ៉ូមាំង",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -118,8 +154,10 @@
             "tamldec": "លេខ​តាមីល",
             "telu": "លេខ​តេលុគុ",
             "thai": "លេខ​ថៃ",
-            "tibt": "លេខ​តៃប៉ិ",
-            "vaii": "vaii"
+            "tibt": "លេខទីបេ",
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

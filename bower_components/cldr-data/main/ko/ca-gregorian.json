@@ -3,11 +3,8 @@
     "ko": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ko"
       },
@@ -227,36 +224,72 @@
             "dayPeriods": {
               "format": {
                 "abbreviated": {
-                  "am": "오전",
+                  "midnight": "자정",
+                  "am": "AM",
                   "noon": "정오",
-                  "pm": "오후"
+                  "pm": "PM",
+                  "morning1": "새벽",
+                  "morning2": "오전",
+                  "afternoon1": "오후",
+                  "evening1": "저녁",
+                  "night1": "밤"
                 },
                 "narrow": {
-                  "am": "오전",
+                  "midnight": "자정",
+                  "am": "AM",
                   "noon": "정오",
-                  "pm": "오후"
+                  "pm": "PM",
+                  "morning1": "새벽",
+                  "morning2": "오전",
+                  "afternoon1": "오후",
+                  "evening1": "저녁",
+                  "night1": "밤"
                 },
                 "wide": {
+                  "midnight": "자정",
                   "am": "오전",
                   "noon": "정오",
-                  "pm": "오후"
+                  "pm": "오후",
+                  "morning1": "새벽",
+                  "morning2": "오전",
+                  "afternoon1": "오후",
+                  "evening1": "저녁",
+                  "night1": "밤"
                 }
               },
               "stand-alone": {
                 "abbreviated": {
+                  "midnight": "자정",
                   "am": "오전",
                   "noon": "정오",
-                  "pm": "오후"
+                  "pm": "오후",
+                  "morning1": "새벽",
+                  "morning2": "오전",
+                  "afternoon1": "오후",
+                  "evening1": "저녁",
+                  "night1": "밤"
                 },
                 "narrow": {
-                  "am": "오전",
+                  "midnight": "자정",
+                  "am": "AM",
                   "noon": "정오",
-                  "pm": "오후"
+                  "pm": "PM",
+                  "morning1": "새벽",
+                  "morning2": "오전",
+                  "afternoon1": "오후",
+                  "evening1": "저녁",
+                  "night1": "밤"
                 },
                 "wide": {
+                  "midnight": "자정",
                   "am": "오전",
                   "noon": "정오",
-                  "pm": "오후"
+                  "pm": "오후",
+                  "morning1": "새벽",
+                  "morning2": "오전",
+                  "afternoon1": "오후",
+                  "evening1": "저녁",
+                  "night1": "밤"
                 }
               }
             },
@@ -268,15 +301,15 @@
                 "1-alt-variant": "CE"
               },
               "eraAbbr": {
-                "0": "기원전",
+                "0": "BC",
                 "0-alt-variant": "BCE",
-                "1": "서기",
+                "1": "AD",
                 "1-alt-variant": "CE"
               },
               "eraNarrow": {
-                "0": "기원전",
+                "0": "BC",
                 "0-alt-variant": "BCE",
-                "1": "서기",
+                "1": "AD",
                 "1-alt-variant": "CE"
               }
             },
@@ -298,50 +331,52 @@
               "medium": "{1} {0}",
               "short": "{1} {0}",
               "availableFormats": {
+                "d": "d일",
                 "E": "ccc",
-                "EEEEd": "d일 EEEE",
-                "EHm": "(E) HH:mm",
-                "EHms": "(E) HH:mm:ss",
                 "Ed": "d일 (E)",
+                "EEEEd": "d일 EEEE",
                 "Ehm": "(E) a h:mm",
+                "EHm": "(E) HH:mm",
                 "Ehms": "(E) a h:mm:ss",
+                "EHms": "(E) HH:mm:ss",
                 "Gy": "G y년",
                 "GyMMM": "G y년 MMM",
-                "GyMMMEEEEd": "G y년 MMM d일 EEEE",
-                "GyMMMEd": "G y년 MMM d일 (E)",
                 "GyMMMd": "G y년 MMM d일",
+                "GyMMMEd": "G y년 MMM d일 (E)",
+                "GyMMMEEEEd": "G y년 MMM d일 EEEE",
+                "h": "a h시",
                 "H": "H시",
                 "HHmmss": "HH:mm:ss",
+                "hm": "a h:mm",
                 "Hm": "HH:mm",
+                "hms": "a h:mm:ss",
                 "Hms": "H시 m분 s초",
+                "hmsv": "a h:mm:ss v",
                 "Hmsv": "H시 m분 s초 v",
+                "hmv": "a h:mm v",
                 "Hmv": "HH:mm v",
                 "M": "M월",
-                "MEEEEd": "M. d. EEEE",
-                "MEd": "M. d. (E)",
-                "MMM": "LLL",
-                "MMMEEEEd": "MMM d일 EEEE",
-                "MMMEd": "MMM d일 (E)",
-                "MMMd": "MMM d일",
                 "Md": "M. d.",
-                "d": "d일",
-                "h": "a h시",
-                "hm": "a h:mm",
-                "hms": "a h:mm:ss",
-                "hmsv": "a h:mm:ss v",
-                "hmv": "a h:mm v",
+                "MEd": "M. d. (E)",
+                "MEEEEd": "M. d. EEEE",
+                "MMM": "LLL",
+                "MMMd": "MMM d일",
+                "MMMEd": "MMM d일 (E)",
+                "MMMEEEEd": "MMM d일 EEEE",
+                "MMMMd": "MMMM d일",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y년",
                 "yM": "y. M.",
-                "yMEEEEd": "y. M. d. EEEE",
+                "yMd": "y. M. d.",
                 "yMEd": "y. M. d. (E)",
+                "yMEEEEd": "y. M. d. EEEE",
                 "yMM": "y. M.",
                 "yMMM": "y년 MMM",
-                "yMMMEEEEd": "y년 MMM d일 EEEE",
-                "yMMMEd": "y년 MMM d일 (E)",
                 "yMMMd": "y년 MMM d일",
-                "yMd": "y. M. d.",
+                "yMMMEd": "y년 MMM d일 (E)",
+                "yMMMEEEEd": "y년 MMM d일 EEEE",
+                "yMMMM": "y년 MMMM",
                 "yQQQ": "y년 QQQ",
                 "yQQQQ": "y년 QQQQ"
               },
@@ -360,45 +395,6 @@
               },
               "intervalFormats": {
                 "intervalFormatFallback": "{0} ~ {1}",
-                "H": {
-                  "H": "H ~ H시"
-                },
-                "Hm": {
-                  "H": "HH:mm ~ HH:mm",
-                  "m": "HH:mm ~ HH:mm"
-                },
-                "Hmv": {
-                  "H": "HH:mm ~ HH:mm v",
-                  "m": "HH:mm ~ HH:mm v"
-                },
-                "Hv": {
-                  "H": "HH ~ HH시 v"
-                },
-                "M": {
-                  "M": "M월~M월"
-                },
-                "MEd": {
-                  "M": "M. d (E) ~ M. d (E)",
-                  "d": "M. d (E) ~ M. d (E)"
-                },
-                "MMM": {
-                  "M": "MMM~MMM"
-                },
-                "MMMEd": {
-                  "M": "M월 d일 (E) ~ M월 d일 (E)",
-                  "d": "M월 d일 (E) ~ d일 (E)"
-                },
-                "MMMM": {
-                  "M": "LLLL–LLLL"
-                },
-                "MMMd": {
-                  "M": "M월 d일 ~ M월 d일",
-                  "d": "MMM d일~d일"
-                },
-                "Md": {
-                  "M": "M. d ~ M. d",
-                  "d": "M. d ~ M. d"
-                },
                 "d": {
                   "d": "d일~d일"
                 },
@@ -406,19 +402,58 @@
                   "a": "a h시 ~ a h시",
                   "h": "a h시 ~ h시"
                 },
+                "H": {
+                  "H": "H ~ H시"
+                },
                 "hm": {
                   "a": "a h:mm ~ a h:mm",
                   "h": "a h:mm~h:mm",
                   "m": "a h:mm~h:mm"
+                },
+                "Hm": {
+                  "H": "HH:mm ~ HH:mm",
+                  "m": "HH:mm ~ HH:mm"
                 },
                 "hmv": {
                   "a": "a h:mm ~ a h:mm v",
                   "h": "a h:mm~h:mm v",
                   "m": "a h:mm~h:mm v"
                 },
+                "Hmv": {
+                  "H": "HH:mm ~ HH:mm v",
+                  "m": "HH:mm ~ HH:mm v"
+                },
                 "hv": {
                   "a": "a h시 ~ a h시(v)",
                   "h": "a h시 ~ h시(v)"
+                },
+                "Hv": {
+                  "H": "HH ~ HH시 v"
+                },
+                "M": {
+                  "M": "M월~M월"
+                },
+                "Md": {
+                  "d": "M. d ~ M. d",
+                  "M": "M. d ~ M. d"
+                },
+                "MEd": {
+                  "d": "M. d (E) ~ M. d (E)",
+                  "M": "M. d (E) ~ M. d (E)"
+                },
+                "MMM": {
+                  "M": "MMM~MMM"
+                },
+                "MMMd": {
+                  "d": "MMM d일~d일",
+                  "M": "M월 d일 ~ M월 d일"
+                },
+                "MMMEd": {
+                  "d": "M월 d일 (E) ~ d일 (E)",
+                  "M": "M월 d일 (E) ~ M월 d일 (E)"
+                },
+                "MMMM": {
+                  "M": "LLLL–LLLL"
                 },
                 "y": {
                   "y": "y년 ~ y년"
@@ -427,38 +462,38 @@
                   "M": "y. M ~ y. M",
                   "y": "y. M ~ y. M"
                 },
+                "yMd": {
+                  "d": "y. M. d. ~ y. M. d.",
+                  "M": "y. M. d. ~ y. M. d.",
+                  "y": "y. M. d. ~ y. M. d."
+                },
                 "yMEd": {
-                  "M": "y. M. d. (E) ~ y. M. d. (E)",
                   "d": "y. M. d. (E) ~ y. M. d. (E)",
+                  "M": "y. M. d. (E) ~ y. M. d. (E)",
                   "y": "y. M. d. (E) ~ y. M. d. (E)"
                 },
                 "yMMM": {
                   "M": "y년 M월~M월",
                   "y": "y년 M월 ~ y년 M월"
                 },
-                "yMMMEEEEd": {
-                  "M": "y년 M월 d일 EEEE ~ M월 d일 EEEE",
-                  "d": "y년 M월 d일 EEEE ~ d일 EEEE",
-                  "y": "y년 M월 d일 EEEE ~ y년 M월 d일 EEEE"
+                "yMMMd": {
+                  "d": "y년 M월 d일~d일",
+                  "M": "y년 M월 d일 ~ M월 d일",
+                  "y": "y년 M월 d일 ~ y년 M월 d일"
                 },
                 "yMMMEd": {
-                  "M": "y년 M월 d일 (E) ~ M월 d일 (E)",
                   "d": "y년 M월 d일 (E) ~ d일 (E)",
+                  "M": "y년 M월 d일 (E) ~ M월 d일 (E)",
                   "y": "y년 M월 d일 (E) ~ y년 M월 d일 (E)"
+                },
+                "yMMMEEEEd": {
+                  "d": "y년 M월 d일 EEEE ~ d일 EEEE",
+                  "M": "y년 M월 d일 EEEE ~ M월 d일 EEEE",
+                  "y": "y년 M월 d일 EEEE ~ y년 M월 d일 EEEE"
                 },
                 "yMMMM": {
                   "M": "y년 MMMM ~ MMMM",
                   "y": "y년 MMMM ~ y년 MMMM"
-                },
-                "yMMMd": {
-                  "M": "y년 M월 d일 ~ M월 d일",
-                  "d": "y년 M월 d일~d일",
-                  "y": "y년 M월 d일 ~ y년 M월 d일"
-                },
-                "yMd": {
-                  "M": "y. M. d. ~ y. M. d.",
-                  "d": "y. M. d. ~ y. M. d.",
-                  "y": "y. M. d. ~ y. M. d."
                 }
               }
             }

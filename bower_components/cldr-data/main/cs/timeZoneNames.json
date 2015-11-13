@@ -3,11 +3,8 @@
     "cs": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "cs"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Časové pásmo {0}",
-          "regionFormat-type-standard": "{0} (+0)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Severní Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Severní Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Severní Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Severní Dakota"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "Kalkata"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Čita"
               },
               "Choibalsan": {
                 "exemplarCity": "Čojbalsan"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "Singapur"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Sredněkolymsk"
               },
               "Taipei": {
                 "exemplarCity": "Tchaj-pej"
@@ -1766,11 +1763,6 @@
                 "standard": "Čas Francouzských jižních a antarktických území"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Greenwichský střední čas"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapážský čas"
@@ -1791,6 +1783,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Čas Gilbertových ostrovů"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwichský střední čas"
               }
             },
             "Greenland_Eastern": {

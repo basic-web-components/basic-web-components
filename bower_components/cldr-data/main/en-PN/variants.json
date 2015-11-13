@@ -3,25 +3,24 @@
     "en-PN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "PN"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "Late Middle French to 1606",
-          "1694ACAD": "Early Modern French",
           "1901": "Traditional German orthography",
-          "1959ACAD": "Academic",
           "1994": "Standardized Resian orthography",
           "1996": "German orthography of 1996",
+          "1606NICT": "Late Middle French to 1606",
+          "1694ACAD": "Early Modern French",
+          "1959ACAD": "Academic",
+          "ABL1943": "Orthographic formulation of 1943",
           "ALALC97": "ALA-LC Romanization, 1997 edition",
           "ALUKU": "Aluku dialect",
+          "AO1990": "Portuguese Language Orthographic Agreement of 1990",
           "AREVELA": "Eastern Armenian",
           "AREVMDA": "Western Armenian",
           "BAKU1926": "Unified Turkic Latin Alphabet",
@@ -32,6 +31,7 @@
           "BISKE": "San Giorgio/Bila dialect",
           "BOHORIC": "Bohorič alphabet",
           "BOONT": "Boontling",
+          "COLB1945": "Portuguese-Brazilian Orthographic Convention of 1945",
           "DAJNKO": "Dajnko alphabet",
           "EKAVSK": "Serbian with Ekavian pronunciation",
           "EMODENG": "Early Modern English",
@@ -57,6 +57,7 @@
           "NJIVA": "Gniva/Njiva dialect",
           "NULIK": "Modern Volapük",
           "OSOJS": "Oseacco/Osojane dialect",
+          "OXENDICT": "Oxford English Dictionary spelling",
           "PAMAKA": "Pamaka dialect",
           "PETR1708": "PETR1708",
           "PINYIN": "Pinyin Romanization",

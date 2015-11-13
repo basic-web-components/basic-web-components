@@ -3,11 +3,8 @@
     "sv-FI": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11181 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-11 13:14:59 -0600 (Wed, 11 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sv",
         "territory": "FI"
@@ -149,7 +146,7 @@
           "GU": "Guam",
           "GW": "Guinea-Bissau",
           "GY": "Guyana",
-          "HK": "Hongkong (S.A.R. Kina)",
+          "HK": "Hongkong, S.A.R. Kina",
           "HK-alt-short": "Hongkong",
           "HM": "Heardön och McDonaldöarna",
           "HN": "Honduras",
@@ -205,7 +202,7 @@
           "ML": "Mali",
           "MM": "Myanmar (Burma)",
           "MN": "Mongoliet",
-          "MO": "Macao (S.A.R. Kina)",
+          "MO": "Macao, S.A.R. Kina",
           "MO-alt-short": "Macao",
           "MP": "Nordmarianerna",
           "MQ": "Martinique",

@@ -3,14 +3,11 @@
     "es-NI": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "es",
-        "territory": "419"
+        "territory": "NI"
       },
       "dates": {
         "timeZoneNames": {
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "hora de {0}",
-          "regionFormat-type-standard": "horario estándar de {0}",
-          "regionFormat-type-daylight": "horario de verano de {0}",
+          "regionFormat-type-daylight": "hora de verano de {0}",
+          "regionFormat-type-standard": "hora estándar de {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaína"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Río Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucumán"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Dakota del Norte"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Dakota del Norte"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Dakota del Norte"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Dakota del Norte"
                 }
               },
               "Ojinaga": {
@@ -883,7 +880,7 @@
                 "exemplarCity": "Calcuta"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Chitá"
               },
               "Choibalsan": {
                 "exemplarCity": "Choibalsan"
@@ -1644,12 +1641,12 @@
             },
             "Christmas": {
               "long": {
-                "standard": "hora de la isla Christmas"
+                "standard": "hora de la Isla de Navidad"
               }
             },
             "Cocos": {
               "long": {
-                "standard": "hora de las islas Cocos"
+                "standard": "hora de las Islas Cocos"
               }
             },
             "Colombia": {
@@ -1716,7 +1713,7 @@
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "hora de Europa oriental lejana"
+                "standard": "horario del lejano este de Europa"
               }
             },
             "Europe_Western": {
@@ -1750,11 +1747,6 @@
                 "standard": "hora de las Tierras Australes y Antárticas Francesas"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "hora del meridiano de Greenwich"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "hora de Galápagos"
@@ -1775,6 +1767,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "hora de las islas Gilbert"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "hora del meridiano de Greenwich"
               }
             },
             "Greenland_Eastern": {

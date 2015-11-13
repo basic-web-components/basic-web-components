@@ -3,14 +3,11 @@
     "es-UY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11186 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-12 16:51:01 -0600 (Thu, 12 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "es",
-        "territory": "419"
+        "territory": "UY"
       },
       "localeDisplayNames": {
         "transformNames": {

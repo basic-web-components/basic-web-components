@@ -3,11 +3,8 @@
     "nb-SJ": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "nb",
         "territory": "SJ"
@@ -282,7 +279,7 @@
             "symbol": "BRB"
           },
           "BRC": {
-            "displayName": "brasilianske cruzado",
+            "displayName": "brasilianske cruzados (1986–1989)",
             "displayName-count-one": "brasiliansk cruzado (1986–1989)",
             "displayName-count-other": "brasilianske cruzado (1986–1989)",
             "symbol": "BRC"
@@ -303,13 +300,13 @@
           "BRN": {
             "displayName": "brasilianske cruzado novo (1989–1990)",
             "displayName-count-one": "brasiliansk cruzado novo (1989–1990)",
-            "displayName-count-other": "brasilianske cruzado novo",
+            "displayName-count-other": "brasilianske cruzado novo (1989–1990)",
             "symbol": "BRN"
           },
           "BRR": {
-            "displayName": "brasilianske cruzeiro",
-            "displayName-count-one": "brasiliansk cruzeiro",
-            "displayName-count-other": "brasilianske cruzeiro",
+            "displayName": "brasilianske cruzeiro (1993–1994)",
+            "displayName-count-one": "brasiliansk cruzeiro (1993–1994)",
+            "displayName-count-other": "brasilianske cruzeiro (1993–1994)",
             "symbol": "BRR"
           },
           "BRZ": {
@@ -431,9 +428,9 @@
             "symbol-alt-narrow": "$"
           },
           "COU": {
-            "displayName": "unidad de valor real",
-            "displayName-count-one": "unidad de valor real",
-            "displayName-count-other": "unidad de valor real",
+            "displayName": "colombianske unidad de valor real",
+            "displayName-count-one": "colombiansk unidad de valor real",
+            "displayName-count-other": "colombianske unidad de valor real",
             "symbol": "COU"
           },
           "CRC": {
@@ -489,9 +486,9 @@
             "symbol-alt-narrow": "Kč"
           },
           "DDM": {
-            "displayName": "østtyske ostmark",
-            "displayName-count-one": "østtysk ostmark",
-            "displayName-count-other": "østtyske ostmark",
+            "displayName": "østtyske mark",
+            "displayName-count-one": "østtysk mark",
+            "displayName-count-other": "østtyske mark",
             "symbol": "DDM"
           },
           "DEM": {
@@ -632,7 +629,8 @@
             "displayName": "georgiske lari",
             "displayName-count-one": "georgisk lari",
             "displayName-count-other": "georgiske lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "ghanesisk cedi (1979–2007)",
@@ -802,9 +800,9 @@
             "symbol": "IRR"
           },
           "ISJ": {
-            "displayName": "gammel islandsk krone",
-            "displayName-count-one": "gammel islandsk krone",
-            "displayName-count-other": "gamle islandske kroner"
+            "displayName": "islandske kroner (1918–1981)",
+            "displayName-count-one": "islandsk krone (1918–1981)",
+            "displayName-count-other": "islandske kroner (1918–1981)"
           },
           "ISK": {
             "displayName": "islandske kroner",
@@ -946,7 +944,7 @@
             "symbol": "LSL"
           },
           "LTL": {
-            "displayName": "litauiske lita",
+            "displayName": "litauiske litas",
             "displayName-count-one": "litauisk lita",
             "displayName-count-other": "litauiske lita",
             "symbol": "LTL",
@@ -1328,7 +1326,7 @@
             "displayName-count-one": "russisk rubel",
             "displayName-count-other": "russiske rubler",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "russiske rubler (1991–1998)",
@@ -1614,7 +1612,7 @@
           },
           "UYP": {
             "displayName": "uruguayanske pesos (1975–1993)",
-            "displayName-count-one": "uruguayansk pesos (1975–1993)",
+            "displayName-count-one": "uruguayansk peso (1975–1993)",
             "displayName-count-other": "uruguayanske pesos (1975–1993)",
             "symbol": "UYP"
           },
@@ -1640,7 +1638,7 @@
           "VEF": {
             "displayName": "venezuelanske bolivar",
             "displayName-count-one": "venezuelansk bolivar",
-            "displayName-count-other": "venezuelanske bolivarer",
+            "displayName-count-other": "venezuelanske bolivar",
             "symbol": "VEF",
             "symbol-alt-narrow": "Bs"
           },

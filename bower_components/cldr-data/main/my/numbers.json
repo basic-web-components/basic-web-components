@@ -3,11 +3,8 @@
     "my": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11321 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 14:20:05 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "my"
       },
@@ -140,8 +137,24 @@
               "insertBetween": " "
             }
           },
-          "accounting": "¤ #,##0.00",
           "standard": "¤ #,##0.00",
+          "accounting": "¤ #,##0.00",
+          "short": {
+            "standard": {
+              "1000-count-other": "¤ 0ထောင်",
+              "10000-count-other": "¤ 0သောင်း",
+              "100000-count-other": "¤ 0သိန်း",
+              "1000000-count-other": "¤ 0သန်း",
+              "10000000-count-other": "¤ 0ကုဋေ",
+              "100000000-count-other": "¤ 00ကုဋေ",
+              "1000000000-count-other": "¤ ကုဋေ000",
+              "10000000000-count-other": "¤ ကုဋေ0000",
+              "100000000000-count-other": "¤ 0000ကုဋေ",
+              "1000000000000-count-other": "¤ ကုဋေ0သိန်း",
+              "10000000000000-count-other": "¤ ကုဋေ0သန်း",
+              "100000000000000-count-other": "¤ 0ကောဋိ"
+            }
+          },
           "unitPattern-count-other": "{0} {1}"
         },
         "currencyFormats-numberSystem-mymr": {
@@ -157,8 +170,24 @@
               "insertBetween": " "
             }
           },
-          "accounting": "¤ #,##0.00",
           "standard": "¤ #,##0.00",
+          "accounting": "¤ #,##0.00",
+          "short": {
+            "standard": {
+              "1000-count-other": "¤ 0ထောင်",
+              "10000-count-other": "¤ 0သောင်း",
+              "100000-count-other": "¤ 0သိန်း",
+              "1000000-count-other": "¤ 0သန်း",
+              "10000000-count-other": "¤ 0ကုဋေ",
+              "100000000-count-other": "¤ 00ကုဋေ",
+              "1000000000-count-other": "¤ ကုဋေ000",
+              "10000000000-count-other": "¤ ကုဋေ0000",
+              "100000000000-count-other": "¤ 0000ကုဋေ",
+              "1000000000000-count-other": "¤ ကုဋေ0သိန်း",
+              "10000000000000-count-other": "¤ ကုဋေ0သန်း",
+              "100000000000000-count-other": "¤ 0ကောဋိ"
+            }
+          },
           "unitPattern-count-other": "{0} {1}"
         },
         "miscPatterns-numberSystem-latn": {

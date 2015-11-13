@@ -3,11 +3,8 @@
     "pt": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "pt"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Calendário",
+          "cf": "cf",
           "colAlternate": "Ignorar classificação de símbolos",
           "colBackwards": "Classificação reversa de acentos",
           "colCaseFirst": "Ordem de maiúsculas/minúsculas",
           "colCaseLevel": "Ordem com diferenciação de maiúsculas e minúsculas",
           "colHiraganaQuaternary": "Classificação kana",
+          "collation": "Ordenação",
           "colNormalization": "Classificação normalizada",
           "colNumeric": "Classificação numérica",
           "colStrength": "Intensidade da classificação",
-          "collation": "Ordenação",
           "currency": "Moeda",
+          "hc": "Ciclo de horário (12 vs. 24)",
+          "lb": "Estilo de quebra de linha",
+          "ms": "Sistema de medição",
           "numbers": "Números",
           "timezone": "Fuso horário",
           "va": "Variante de localidade",
@@ -41,7 +42,7 @@
             "chinese": "Calendário Chinês",
             "coptic": "Calendário Coptic",
             "dangi": "Calendário Dangi",
-            "ethiopic": "Calendário etiópico",
+            "ethiopic": "Calendário etíope",
             "ethiopic-amete-alem": "Calendário Amete Alem da Etiópia",
             "gregorian": "Calendário Gregoriano",
             "hebrew": "Calendário Hebraico",
@@ -55,6 +56,10 @@
             "japanese": "Calendário Japonês",
             "persian": "Calendário Persa",
             "roc": "Calendário da República da China"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "colAlternate": {
             "non-ignorable": "Classificar símbolos",
@@ -77,6 +82,26 @@
             "no": "Classificar kana separadamente",
             "yes": "Classificar kana diferentemente"
           },
+          "collation": {
+            "big5han": "Ordem do Chinês Tradicional - Big5",
+            "compat": "compat",
+            "dictionary": "Ordem do dicionário",
+            "ducet": "Ordem padrão do Unicode",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Ordem do Chinês Simplificado - GB2312",
+            "phonebook": "Ordem de Lista Telefônica",
+            "phonetic": "Ordem de classificação fonética",
+            "pinyin": "Ordem Pin-yin",
+            "reformed": "Ordem reformulada",
+            "search": "Pesquisa de uso geral",
+            "searchjl": "Pesquisar por consonante inicial hangul",
+            "standard": "padrão",
+            "stroke": "Ordem dos Traços",
+            "traditional": "Ordem Tradicional",
+            "unihan": "Ordem por Radical-Traços",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Classificar sem normalização",
             "yes": "Classificar Unicode normalizado"
@@ -92,25 +117,24 @@
             "secondary": "Classificar acentos",
             "tertiary": "Classificar acentos/maiúsculas e minúsculas/largura"
           },
-          "collation": {
-            "big5han": "Ordem do Chinês Tradicional - Big5",
-            "dictionary": "Ordem do dicionário",
-            "ducet": "Ordem padrão do Unicode",
-            "eor": "eor",
-            "gb2312han": "Ordem do Chinês Simplificado - GB2312",
-            "phonebook": "Ordem de Lista Telefônica",
-            "phonetic": "Ordem de classificação fonética",
-            "pinyin": "Ordem Pin-yin",
-            "reformed": "Ordem reformulada",
-            "search": "Pesquisa de uso geral",
-            "searchjl": "Pesquisar por consonante inicial hangul",
-            "standard": "padrão",
-            "stroke": "Ordem dos Traços",
-            "traditional": "Ordem Tradicional",
-            "unihan": "Ordem por Radical-Traços",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "Sistema de 12 horas (0–11)",
+            "h12": "Sistema de 12 horas (1–12)",
+            "h23": "Sistema de 24 horas (0–23)",
+            "h24": "Sistema de 24 horas (1–24)"
+          },
+          "lb": {
+            "loose": "Quebra de linha com estilo solto",
+            "normal": "Quebra de linha com estilo normal",
+            "strict": "Quebra de linha com estilo estrito"
+          },
+          "ms": {
+            "metric": "Sistema métrico",
+            "uksystem": "Sistema de medição imperial",
+            "ussystem": "Sistema de medição americano"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Algarismos indo-arábicos",
             "arabext": "Algarismos indo-arábicos por extenso",
             "armn": "Algarismos armênios",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Algarismos Devanagari",
             "ethi": "Algarismos etiopianos",
             "finance": "Numerais financeiros",
@@ -135,6 +160,7 @@
             "hant": "Algarismos chineses tradicionais",
             "hantfin": "Algarismos financeiros chineses tradicionais",
             "hebr": "Algarismos hebraicos",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Algarismos japoneses",
             "jpanfin": "Algarismos financeiros japoneses",
@@ -147,11 +173,19 @@
             "latn": "Algarismos ocidentais",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Algarismos Malayalam",
+            "modi": "modi",
             "mong": "Algarismos mongóis",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Algarismos Myanmar",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Dígitos nativos",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "Algarismos romanos minúsculos",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "Algarismos Telugu",
             "thai": "Algarismos tailandeses",
             "tibt": "Algarismos tibetanos",
+            "tirh": "tirh",
             "traditional": "Numerais tradicionais",
-            "vaii": "Dígitos vai"
+            "vaii": "Dígitos vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {

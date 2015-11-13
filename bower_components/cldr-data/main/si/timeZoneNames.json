@@ -3,22 +3,19 @@
     "si": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "si"
       },
       "dates": {
         "timeZoneNames": {
-          "hourFormat": "+HH:mm;-HH:mm",
+          "hourFormat": "+HH.mm;-HH.mm",
           "gmtFormat": "ග්‍රිමවේ{0}",
           "gmtZeroFormat": "ග්‍රිමවේ",
           "regionFormat": "{0} වේලාව",
-          "regionFormat-type-standard": "{0} සම්මත වේලාව",
           "regionFormat-type-daylight": "{0} දිවාආලෝක වේලාව",
+          "regionFormat-type-standard": "{0} සම්මත වේලාව",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "ඇරගුඅයිනා"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ලා රිජෝලා"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "රියෝ ගලෙගොස්"
-                },
-                "Salta": {
-                  "exemplarCity": "සොල්ටා"
                 },
                 "San_Juan": {
                   "exemplarCity": "සැන් ජුවාන්"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "උෂුඅයියා"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ලා රිජෝලා"
+                },
                 "San_Luis": {
                   "exemplarCity": "සැන් ලුවිස්"
                 },
+                "Salta": {
+                  "exemplarCity": "සොල්ටා"
+                },
                 "Tucuman": {
                   "exemplarCity": "ටුකුමන්"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "උෂුඅයියා"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "හෙමොසිලෝ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "නොක්ස්, ඉන්දියානා"
-                },
-                "Marengo": {
-                  "exemplarCity": "මරෙන්ගෝ, ඉන්දියානා"
+                "Vincennes": {
+                  "exemplarCity": "වින්සනස්, ඉන්දියානා"
                 },
                 "Petersburg": {
                   "exemplarCity": "පීටර්ස්බර්ග්, ඉන්දියානා"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "ටෙල් නගරය, ඉන්දියානා"
                 },
-                "Vevay": {
-                  "exemplarCity": "වෙවේ, ඉන්දියානා"
-                },
-                "Vincennes": {
-                  "exemplarCity": "වින්සනස්, ඉන්දියානා"
+                "Knox": {
+                  "exemplarCity": "නොක්ස්, ඉන්දියානා"
                 },
                 "Winamac": {
                   "exemplarCity": "විනමැක්, ඉන්දියානා"
+                },
+                "Marengo": {
+                  "exemplarCity": "මරෙන්ගෝ, ඉන්දියානා"
+                },
+                "Vevay": {
+                  "exemplarCity": "වෙවේ, ඉන්දියානා"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "බියුලා, උතුරු ඩකෝටා"
                 },
-                "Center": {
-                  "exemplarCity": "මධ්‍යම, උතුරු ඩකෝටා"
-                },
                 "New_Salem": {
                   "exemplarCity": "නව සලෙම්ම, උතුරු ඩකෝටා"
+                },
+                "Center": {
+                  "exemplarCity": "මධ්‍යම, උතුරු ඩකෝටා"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "කල්කටා"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "චිටා"
               },
               "Choibalsan": {
                 "exemplarCity": "චොයිබල්සාන්"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "සිංගප්පූරුව"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "ශ්‍රෙඩ්නෙකෝලිම්සක්"
               },
               "Taipei": {
                 "exemplarCity": "තායිපෙ"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ඕක්ලන්ඩ්"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "බෝගන්විලා"
               },
               "Chatham": {
                 "exemplarCity": "චැතම්"
@@ -1721,11 +1718,6 @@
                 "standard": "ප්‍රංශ දකුණුදිග සහ ඇන්ටාර්ක්ටික් වේලාව"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ග්‍රිනිච් මධ්‍යම වේලාව"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ගලපගොස් වේලාව"
@@ -1746,6 +1738,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "ගිල්බර්ට් දුපත් වේලාව"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ග්‍රිනිච් මධ්‍යම වේලාව"
               }
             },
             "Greenland_Eastern": {

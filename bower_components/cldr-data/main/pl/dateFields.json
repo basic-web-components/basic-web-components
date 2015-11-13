@@ -3,11 +3,8 @@
     "pl": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "pl"
       },
@@ -72,9 +69,9 @@
           },
           "quarter": {
             "displayName": "kwartał",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "w zeszłym kwartale",
+            "relative-type-0": "w tym kwartale",
+            "relative-type-1": "w przyszłym kwartale",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} kwartał",
               "relativeTimePattern-count-few": "za {0} kwartały",
@@ -90,9 +87,9 @@
           },
           "quarter-short": {
             "displayName": "kw.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "w zeszłym kwartale",
+            "relative-type-0": "w tym kwartale",
+            "relative-type-1": "w przyszłym kwartale",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} kw.",
               "relativeTimePattern-count-few": "za {0} kw.",
@@ -108,9 +105,9 @@
           },
           "quarter-narrow": {
             "displayName": "kw.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "w zeszłym kwartale",
+            "relative-type-0": "w tym kwartale",
+            "relative-type-1": "w przyszłym kwartale",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} kw.",
               "relativeTimePattern-count-few": "+{0} kw.",
@@ -234,8 +231,8 @@
           },
           "day": {
             "displayName": "dzień",
-            "relative-type--1": "wczoraj",
             "relative-type--2": "przedwczoraj",
+            "relative-type--1": "wczoraj",
             "relative-type-0": "dzisiaj",
             "relative-type-1": "jutro",
             "relative-type-2": "pojutrze",
@@ -254,8 +251,8 @@
           },
           "day-short": {
             "displayName": "dzień",
-            "relative-type--1": "wczoraj",
             "relative-type--2": "przedwczoraj",
+            "relative-type--1": "wczoraj",
             "relative-type-0": "dzisiaj",
             "relative-type-1": "jutro",
             "relative-type-2": "pojutrze",
@@ -274,8 +271,8 @@
           },
           "day-narrow": {
             "displayName": "dzień",
-            "relative-type--1": "wczoraj",
             "relative-type--2": "przedwczoraj",
+            "relative-type--1": "wczoraj",
             "relative-type-0": "dzisiaj",
             "relative-type-1": "jutro",
             "relative-type-2": "pojutrze",

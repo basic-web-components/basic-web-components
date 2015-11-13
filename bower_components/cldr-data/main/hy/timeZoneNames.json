@@ -3,11 +3,8 @@
     "hy": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "hy"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Ժամանակ. {0}",
-          "regionFormat-type-standard": "{0}, ստանդ. ժամ.",
           "regionFormat-type-daylight": "{0}, ամառային ժամանակ",
+          "regionFormat-type-standard": "{0}, ստանդ. ժամ.",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -29,7 +26,7 @@
                 "exemplarCity": "Անքորիջ"
               },
               "Anguilla": {
-                "exemplarCity": "Անգիլիա"
+                "exemplarCity": "Անգիլյա"
               },
               "Antigua": {
                 "exemplarCity": "Անտիգուա"
@@ -38,26 +35,26 @@
                 "exemplarCity": "Արագուայնա"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "Լա-Ռիոխա"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Ռիո Գալյեգոս"
-                },
-                "Salta": {
-                  "exemplarCity": "Սալտա"
                 },
                 "San_Juan": {
                   "exemplarCity": "Սան Խուան"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ուշուայա"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "Լա-Ռիոխա"
+                },
                 "San_Luis": {
                   "exemplarCity": "Սան Լուիս"
                 },
+                "Salta": {
+                  "exemplarCity": "Սալտա"
+                },
                 "Tucuman": {
                   "exemplarCity": "Տուկուման"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ուշուայա"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Էրմոսիլյո"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Նոքս, Ինդիանա"
-                },
-                "Marengo": {
-                  "exemplarCity": "Մարենգո, Ինդիանա"
+                "Vincennes": {
+                  "exemplarCity": "Վինսենս, Ինդիանա"
                 },
                 "Petersburg": {
                   "exemplarCity": "Պետերսբուրգ, Ինդիանա"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Թել-Սիթի, Ինդիանա"
                 },
-                "Vevay": {
-                  "exemplarCity": "Վիվեյ, Ինդիանա"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Վինսենս, Ինդիանա"
+                "Knox": {
+                  "exemplarCity": "Նոքս, Ինդիանա"
                 },
                 "Winamac": {
                   "exemplarCity": "Վինամակ, Ինդիանա"
+                },
+                "Marengo": {
+                  "exemplarCity": "Մարենգո, Ինդիանա"
+                },
+                "Vevay": {
+                  "exemplarCity": "Վիվեյ, Ինդիանա"
                 }
               },
               "Indianapolis": {
@@ -240,7 +237,7 @@
                 "exemplarCity": "Իկալուիտ"
               },
               "Jamaica": {
-                "exemplarCity": "Ջամայկա"
+                "exemplarCity": "Ճամայկա"
               },
               "Jujuy": {
                 "exemplarCity": "Ժուժույ"
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Բոյլա, Հյուսիսային Դակոտա"
                 },
-                "Center": {
-                  "exemplarCity": "Հյուսիսային Դակոտա - Կենտրոն"
-                },
                 "New_Salem": {
                   "exemplarCity": "Նյու Սալեմ, Հյուսիսային Դակոտա"
+                },
+                "Center": {
+                  "exemplarCity": "Հյուսիսային Դակոտա - Կենտրոն"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "Կալկուտա"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Չիտա"
               },
               "Choibalsan": {
                 "exemplarCity": "Չոյբալսան"
@@ -984,7 +981,7 @@
                 "exemplarCity": "Օմսկ"
               },
               "Oral": {
-                "exemplarCity": "Օրալ"
+                "exemplarCity": "Ուրալսկ"
               },
               "Phnom_Penh": {
                 "exemplarCity": "Պնոմպեն"
@@ -999,7 +996,7 @@
                 "exemplarCity": "Կատար"
               },
               "Qyzylorda": {
-                "exemplarCity": "Քիզիլօրդա"
+                "exemplarCity": "Կիզիլորդա"
               },
               "Rangoon": {
                 "exemplarCity": "Ռանգուն"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "Սինգապուր"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Սրեդնեկոլիմսկ"
               },
               "Taipei": {
                 "exemplarCity": "Թայպեյ"
@@ -1434,16 +1431,16 @@
             },
             "America_Central": {
               "long": {
-                "generic": "Միջին ամերիկյան ժամանակ",
-                "standard": "Միջին ամերիկյան ստանդարտ ժամանակ",
-                "daylight": "Միջին ամերիկյան ամառային ժամանակ"
+                "generic": "Կենտրոնական Ամերիկայի ժամանակ",
+                "standard": "Կենտրոնական Ամերիկայի ստանդարտ ժամանակ",
+                "daylight": "Կենտրոնական Ամերիկայի ամառային ժամանակ"
               }
             },
             "America_Eastern": {
               "long": {
-                "generic": "Արևելաամերիկյան ժամանակ",
-                "standard": "Արևելաամերիկյան ստանդարտ ժամանակ",
-                "daylight": "Արևելաամերիկյան ամառային ժամանակ"
+                "generic": "Արևելյան Ամերիկայի ժամանակ",
+                "standard": "Արևելյան Ամերիկայի ստանդարտ ժամանակ",
+                "daylight": "Արևելյան Ամերիկայի ամառային ժամանակ"
               }
             },
             "America_Mountain": {
@@ -1673,16 +1670,16 @@
             },
             "Europe_Central": {
               "long": {
-                "generic": "Կենտրոնաեվրոպական ժամանակ",
-                "standard": "Կենտրոնաեվրոպական ստանդարտ ժամանակ",
-                "daylight": "Կենտրոնաեվրոպական ամառային ժամանակ"
+                "generic": "Կենտրոնական Եվրոպայի ժամանակ",
+                "standard": "Կենտրոնական Եվրոպայի ստանդարտ ժամանակ",
+                "daylight": "Կենտրոնական Եվրոպայի ամառային ժամանակ"
               }
             },
             "Europe_Eastern": {
               "long": {
-                "generic": "Արևելաեվրոպական ժամանակ",
-                "standard": "Արևելաեվրոպական ստանդարտ ժամանակ",
-                "daylight": "Արևելաեվրոպական ամառային ժամանակ"
+                "generic": "Արևելյան Եվրոպայի ժամանակ",
+                "standard": "Արևելյան Եվրոպայի ստանդարտ ժամանակ",
+                "daylight": "Արևելյան Եվրոպայի ամառային ժամանակ"
               }
             },
             "Europe_Further_Eastern": {
@@ -1692,9 +1689,9 @@
             },
             "Europe_Western": {
               "long": {
-                "generic": "Արևմտաեվրոպական ժամանակ",
-                "standard": "Արևմտաեվրոպական ստանդարտ ժամանակ",
-                "daylight": "Արևմտաեվրոպական ամառային ժամանակ"
+                "generic": "Արևմտյան Եվրոպայի ժամանակ",
+                "standard": "Արևմտյան Եվրոպայի ստանդարտ ժամանակ",
+                "daylight": "Արևմտյան Եվրոպայի ամառային ժամանակ"
               }
             },
             "Falkland": {
@@ -1721,11 +1718,6 @@
                 "standard": "Ֆրանսիական հարավային և անտարկտիդյան ժամանակ"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Գրինվիչի ժամանակ"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Գալապագոսյան կղզիների ժամանակ"
@@ -1748,6 +1740,11 @@
                 "standard": "Ջիլբերթի կղզիների ժամանակ"
               }
             },
+            "GMT": {
+              "long": {
+                "standard": "Գրինվիչի ժամանակ"
+              }
+            },
             "Greenland_Eastern": {
               "long": {
                 "generic": "Արևելյան Գրենլանդիայի ժամանակ",
@@ -1764,7 +1761,7 @@
             },
             "Gulf": {
               "long": {
-                "standard": "Պարսից ծոցի ժամանակ"
+                "standard": "Պարսից ծոցի ստանդարտ ժամանակ"
               }
             },
             "Guyana": {
@@ -1795,7 +1792,7 @@
             },
             "India": {
               "long": {
-                "standard": "Հնդկաստանի ժամանակ"
+                "standard": "Հնդկաստանի ստանդարտ ժամանակ"
               }
             },
             "Indian_Ocean": {

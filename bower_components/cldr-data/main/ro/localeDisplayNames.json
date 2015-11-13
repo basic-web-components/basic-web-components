@@ -3,11 +3,8 @@
     "ro": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "ro"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "calendar",
+          "cf": "cf",
           "colAlternate": "Ordonare cu simbolurile ignorate",
           "colBackwards": "Ordonare inversă după accent",
           "colCaseFirst": "Ordonare după majuscule/minuscule",
           "colCaseLevel": "Ordonare care ține seama de majuscule/minuscule",
           "colHiraganaQuaternary": "Ordonare după kana",
+          "collation": "ordine de sortare",
           "colNormalization": "Ordonare normalizată",
           "colNumeric": "Ordonare numerică",
           "colStrength": "Puterea ordonării",
-          "collation": "ordine de sortare",
           "currency": "monedă",
+          "hc": "ciclu orar (12 sau 24)",
+          "lb": "stil de întrerupere a liniei",
+          "ms": "sistem de unități de măsură",
           "numbers": "numere",
           "timezone": "Fusul orar",
           "va": "Varianta locală",
@@ -56,6 +57,10 @@
             "persian": "calendar persan",
             "roc": "calendarul Republicii Chineze"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Ordonați simbolurile",
             "shifted": "Ordonați ignorând simbolurile"
@@ -77,6 +82,26 @@
             "no": "Ordonați caracterele kana separat",
             "yes": "Ordonați kana diferențiat"
           },
+          "collation": {
+            "big5han": "sortare pentru chineza tradițională - Big5",
+            "compat": "compat",
+            "dictionary": "Ordine de sortare a dicționarului",
+            "ducet": "ordine de sortare Unicode implicită",
+            "emoji": "emoji",
+            "eor": "regulile europene de sortare",
+            "gb2312han": "sortare pentru chineza simplificată - GB2312",
+            "phonebook": "sortare după cartea de telefon",
+            "phonetic": "Tip de ordonare fonetică",
+            "pinyin": "sortare pinyin",
+            "reformed": "Ordine de sortare reformată",
+            "search": "căutare cu scop general",
+            "searchjl": "Căutați în funcție de consoana inițială hangul",
+            "standard": "ordine de sortare standard",
+            "stroke": "ordine de sortare după trasare",
+            "traditional": "sortare tradițională",
+            "unihan": "Ordine de sortare a liniilor ideogramelor",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Ordonați fără normalizare",
             "yes": "Ordonați caracterele unicode normalizat"
@@ -92,25 +117,24 @@
             "secondary": "Ordonați după accent",
             "tertiary": "Ordonați după accente/dimensiunea literei/lățime"
           },
-          "collation": {
-            "big5han": "sortare pentru chineza tradițională - Big5",
-            "dictionary": "Ordine de sortare a dicționarului",
-            "ducet": "ordine de sortare Unicode implicită",
-            "eor": "regulile europene de sortare",
-            "gb2312han": "sortare pentru chineza simplificată - GB2312",
-            "phonebook": "sortare după cartea de telefon",
-            "phonetic": "Tip de ordonare fonetică",
-            "pinyin": "sortare pinyin",
-            "reformed": "Ordine de sortare reformată",
-            "search": "căutare cu scop general",
-            "searchjl": "Căutați în funcție de consoana inițială hangul",
-            "standard": "ordine de sortare standard",
-            "stroke": "ordine de sortare după trasare",
-            "traditional": "sortare tradițională",
-            "unihan": "Ordine de sortare a liniilor ideogramelor",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "sistem cu 12 ore (0–11)",
+            "h12": "sistem cu 12 ore (0–12)",
+            "h23": "sistem cu 24 de ore (0–23)",
+            "h24": "sistem cu 24 de ore (1–24)"
+          },
+          "lb": {
+            "loose": "stil liber de întrerupere a liniei",
+            "normal": "stil normal de întrerupere a liniei",
+            "strict": "stil strict de întrerupere a liniei"
+          },
+          "ms": {
+            "metric": "sistemul metric",
+            "uksystem": "sistemul imperial de unități de măsură",
+            "ussystem": "sistemul american de unități de măsură"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "cifre indo-arabe",
             "arabext": "cifre indo-arabe extinse",
             "armn": "numerale armenești",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "cifre devanagari",
             "ethi": "numerale etiopiene",
             "finance": "Sistemul numeric financiar",
@@ -135,6 +160,7 @@
             "hant": "numerale chinezești tradiționale",
             "hantfin": "numerale financiare chinezești tradiționale",
             "hebr": "numerale ebraice",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "numerale japoneze",
             "jpanfin": "numerale financiare japoneze",
@@ -147,11 +173,19 @@
             "latn": "cifre occidentale",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "cifre malayalam",
+            "modi": "modi",
             "mong": "Cifre mongole",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "cifre birmaneze",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Cifre native",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "numerale romane cu minuscule",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "cifre telugu",
             "thai": "cifre thailandeze",
             "tibt": "cifre tibetane",
+            "tirh": "tirh",
             "traditional": "Numere tradiționale",
-            "vaii": "Cifre Vai"
+            "vaii": "Cifre Vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {

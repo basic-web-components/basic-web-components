@@ -3,11 +3,8 @@
     "fr-HT": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "fr",
         "territory": "HT"
@@ -32,7 +29,7 @@
             }
           },
           "year-short": {
-            "displayName": "a",
+            "displayName": "ann.",
             "relative-type--1": "l’année dernière",
             "relative-type-0": "cette année",
             "relative-type-1": "l’année prochaine",
@@ -130,7 +127,7 @@
             }
           },
           "month-narrow": {
-            "displayName": "m",
+            "displayName": "m.",
             "relative-type--1": "le mois dernier",
             "relative-type-0": "ce mois-ci",
             "relative-type-1": "le mois prochain",
@@ -187,8 +184,8 @@
           },
           "day": {
             "displayName": "jour",
-            "relative-type--1": "hier",
             "relative-type--2": "avant-hier",
+            "relative-type--1": "hier",
             "relative-type-0": "aujourd’hui",
             "relative-type-1": "demain",
             "relative-type-2": "après-demain",
@@ -202,9 +199,9 @@
             }
           },
           "day-short": {
-            "displayName": "j",
-            "relative-type--1": "hier",
+            "displayName": "jr.",
             "relative-type--2": "avant-hier",
+            "relative-type--1": "hier",
             "relative-type-0": "aujourd’hui",
             "relative-type-1": "demain",
             "relative-type-2": "après-demain",
@@ -218,9 +215,9 @@
             }
           },
           "day-narrow": {
-            "displayName": "j",
-            "relative-type--1": "hier",
+            "displayName": "jr.",
             "relative-type--2": "avant-hier",
+            "relative-type--1": "hier",
             "relative-type-0": "aujourd’hui",
             "relative-type-1": "demain",
             "relative-type-2": "après-demain",
@@ -356,7 +353,7 @@
             }
           },
           "hour-short": {
-            "displayName": "h",
+            "displayName": "hr",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "dans {0} h",
               "relativeTimePattern-count-other": "dans {0} h"
@@ -367,14 +364,14 @@
             }
           },
           "hour-narrow": {
-            "displayName": "h",
+            "displayName": "hr",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} h",
-              "relativeTimePattern-count-other": "+{0} h"
+              "relativeTimePattern-count-one": "+{0}h",
+              "relativeTimePattern-count-other": "+{0}h"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} h",
-              "relativeTimePattern-count-other": "-{0} h"
+              "relativeTimePattern-count-one": "−{0}h",
+              "relativeTimePattern-count-other": "−{0}h"
             }
           },
           "minute": {
@@ -389,7 +386,7 @@
             }
           },
           "minute-short": {
-            "displayName": "min",
+            "displayName": "min.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "dans {0} min",
               "relativeTimePattern-count-other": "dans {0} min"
@@ -400,7 +397,7 @@
             }
           },
           "minute-narrow": {
-            "displayName": "min",
+            "displayName": "min.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} min",
               "relativeTimePattern-count-other": "+{0} min"
@@ -435,7 +432,7 @@
             }
           },
           "second-narrow": {
-            "displayName": "s",
+            "displayName": "sec.",
             "relative-type-0": "maintenant",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} s",

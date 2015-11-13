@@ -3,11 +3,8 @@
     "is": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "is"
       },
@@ -18,7 +15,7 @@
             "symbol": "ADP"
           },
           "AED": {
-            "displayName": "Arabískt dírham",
+            "displayName": "arabískt dírham",
             "displayName-count-one": "arabískt dírham",
             "displayName-count-other": "arabísk dírhöm",
             "symbol": "AED"
@@ -28,31 +25,31 @@
             "symbol": "AFA"
           },
           "AFN": {
-            "displayName": "Afgani",
+            "displayName": "afgani",
             "displayName-count-one": "afgani",
             "displayName-count-other": "afganar",
             "symbol": "AFN"
           },
           "ALL": {
-            "displayName": "Albanskt lek",
+            "displayName": "albanskt lek",
             "displayName-count-one": "albanskt lek",
             "displayName-count-other": "albönsk lek",
             "symbol": "ALL"
           },
           "AMD": {
-            "displayName": "Armenskt dramm",
+            "displayName": "armenskt dramm",
             "displayName-count-one": "armenskt dramm",
             "displayName-count-other": "armensk drömm",
             "symbol": "AMD"
           },
           "ANG": {
-            "displayName": "Hollenskt Antillugyllini",
+            "displayName": "hollenskt Antillugyllini",
             "displayName-count-one": "hollenskt Antillugyllini",
             "displayName-count-other": "hollensk Antillugyllini",
             "symbol": "ANG"
           },
           "AOA": {
-            "displayName": "Angólsk kvansa",
+            "displayName": "angólsk kvansa",
             "displayName-count-one": "angólsk kvansa",
             "displayName-count-other": "angólskar kvönsur",
             "symbol": "AOA",
@@ -87,7 +84,7 @@
             "symbol": "ARP"
           },
           "ARS": {
-            "displayName": "Argentínskur pesi",
+            "displayName": "argentínskur pesi",
             "displayName-count-one": "argentínskur pesi",
             "displayName-count-other": "argentínskir pesar",
             "symbol": "ARS",
@@ -98,14 +95,14 @@
             "symbol": "ATS"
           },
           "AUD": {
-            "displayName": "Ástralskur dalur",
+            "displayName": "ástralskur dalur",
             "displayName-count-one": "ástralskur dalur",
             "displayName-count-other": "ástralskir dalir",
             "symbol": "AUD",
             "symbol-alt-narrow": "$"
           },
           "AWG": {
-            "displayName": "Arúbönsk flórína",
+            "displayName": "arúbönsk flórína",
             "displayName-count-one": "arúbönsk flórína",
             "displayName-count-other": "arúbanskar flórínur",
             "symbol": "AWG"
@@ -115,7 +112,7 @@
             "symbol": "AZM"
           },
           "AZN": {
-            "displayName": "Aserskt manat",
+            "displayName": "aserskt manat",
             "displayName-count-one": "aserskt manat",
             "displayName-count-other": "asersk manöt",
             "symbol": "AZN"
@@ -125,7 +122,7 @@
             "symbol": "BAD"
           },
           "BAM": {
-            "displayName": "Skiptanlegt Bosníu og Hersegóvínu-mark",
+            "displayName": "skiptanlegt Bosníu og Hersegóvínu-mark",
             "displayName-count-one": "skiptanlegt Bosníu og Hersegóvínu-mark",
             "displayName-count-other": "skiptanleg Bosníu og Hersegóvínu-mörk",
             "symbol": "BAM",
@@ -136,14 +133,14 @@
             "symbol": "BAN"
           },
           "BBD": {
-            "displayName": "Barbadoskur dalur",
+            "displayName": "barbadoskur dalur",
             "displayName-count-one": "barbadoskur dalur",
             "displayName-count-other": "barbadoskir dalir",
             "symbol": "BBD",
             "symbol-alt-narrow": "$"
           },
           "BDT": {
-            "displayName": "Bangladessk taka",
+            "displayName": "bangladessk taka",
             "displayName-count-one": "bangladessk taka",
             "displayName-count-other": "bangladesskar tökur",
             "symbol": "BDT",
@@ -170,7 +167,7 @@
             "symbol": "BGM"
           },
           "BGN": {
-            "displayName": "Búlgarskt lef",
+            "displayName": "búlgarskt lef",
             "displayName-count-one": "búlgarskt lef",
             "displayName-count-other": "búlgörsk lef",
             "symbol": "BGN"
@@ -180,13 +177,13 @@
             "symbol": "BGO"
           },
           "BHD": {
-            "displayName": "Bareinskur denari",
+            "displayName": "bareinskur denari",
             "displayName-count-one": "bareinskur denari",
             "displayName-count-other": "bareinskir denarar",
             "symbol": "BHD"
           },
           "BIF": {
-            "displayName": "Búrúndískur franki",
+            "displayName": "búrúndískur franki",
             "displayName-count-one": "búrúndískur franki",
             "displayName-count-other": "búrúndískir frankar",
             "symbol": "BIF"
@@ -199,14 +196,14 @@
             "symbol-alt-narrow": "$"
           },
           "BND": {
-            "displayName": "Brúneiskur dalur",
+            "displayName": "brúneiskur dalur",
             "displayName-count-one": "brúneiskur dalur",
             "displayName-count-other": "brúneiskir dalir",
             "symbol": "BND",
             "symbol-alt-narrow": "$"
           },
           "BOB": {
-            "displayName": "Bólivíani",
+            "displayName": "bólivíani",
             "displayName-count-one": "bólivíani",
             "displayName-count-other": "bólivíanar",
             "symbol": "BOB",
@@ -237,7 +234,7 @@
             "symbol": "BRE"
           },
           "BRL": {
-            "displayName": "Brasilískt ríal",
+            "displayName": "brasilískt ríal",
             "displayName-count-one": "brasilískt ríal",
             "displayName-count-other": "brasilísk ríöl",
             "symbol": "BRL",
@@ -263,7 +260,7 @@
             "symbol-alt-narrow": "$"
           },
           "BTN": {
-            "displayName": "Bútanskt núltrum",
+            "displayName": "bútanskt núltrum",
             "displayName-count-one": "bútanskt núltrum",
             "displayName-count-other": "bútönsk núltrum",
             "symbol": "BTN"
@@ -273,7 +270,7 @@
             "symbol": "BUK"
           },
           "BWP": {
-            "displayName": "Botsvönsk púla",
+            "displayName": "botsvönsk púla",
             "displayName-count-one": "botsvönsk púla",
             "displayName-count-other": "botsvanskar púlur",
             "symbol": "BWP",
@@ -284,28 +281,28 @@
             "symbol": "BYB"
           },
           "BYR": {
-            "displayName": "Hvítrússnesk rúbla",
+            "displayName": "hvítrússnesk rúbla",
             "displayName-count-one": "hvítrússnesk rúbla",
             "displayName-count-other": "hvítrússneskar rúblur",
             "symbol": "BYR",
             "symbol-alt-narrow": "р."
           },
           "BZD": {
-            "displayName": "Belískur dalur",
+            "displayName": "belískur dalur",
             "displayName-count-one": "belískur dalur",
             "displayName-count-other": "belískir dalir",
             "symbol": "BZD",
             "symbol-alt-narrow": "$"
           },
           "CAD": {
-            "displayName": "Kanadískur dalur",
-            "displayName-count-one": "kanadískur dalur",
-            "displayName-count-other": "kanadískir dalir",
+            "displayName": "Kanadadalur",
+            "displayName-count-one": "Kanadadalur",
+            "displayName-count-other": "Kanadadalir",
             "symbol": "CAD",
             "symbol-alt-narrow": "$"
           },
           "CDF": {
-            "displayName": "Kongóskur franki",
+            "displayName": "kongóskur franki",
             "displayName-count-one": "kongóskur franki",
             "displayName-count-other": "kongóskir frankar",
             "symbol": "CDF"
@@ -315,7 +312,7 @@
             "symbol": "CHE"
           },
           "CHF": {
-            "displayName": "Svissneskur franki",
+            "displayName": "svissneskur franki",
             "displayName-count-one": "svissneskur franki",
             "displayName-count-other": "svissneskir frankar",
             "symbol": "CHF"
@@ -333,21 +330,21 @@
             "symbol": "CLF"
           },
           "CLP": {
-            "displayName": "Síleskur pesi",
+            "displayName": "síleskur pesi",
             "displayName-count-one": "síleskur pesi",
             "displayName-count-other": "síleskir pesar",
             "symbol": "CLP",
             "symbol-alt-narrow": "$"
           },
           "CNY": {
-            "displayName": "Kínverskt júan",
+            "displayName": "kínverskt júan",
             "displayName-count-one": "kínverskt júan",
             "displayName-count-other": "kínversk júön",
             "symbol": "CN¥",
             "symbol-alt-narrow": "¥"
           },
           "COP": {
-            "displayName": "Kólumbískur pesi",
+            "displayName": "kólumbískur pesi",
             "displayName-count-one": "kólumbískur pesi",
             "displayName-count-other": "kólumbískir pesar",
             "symbol": "COP",
@@ -358,7 +355,7 @@
             "symbol": "COU"
           },
           "CRC": {
-            "displayName": "Kostarískt kólon",
+            "displayName": "kostarískt kólon",
             "displayName-count-one": "kostarískt kólon",
             "displayName-count-other": "kostarísk kólon",
             "symbol": "CRC",
@@ -373,21 +370,21 @@
             "symbol": "CSK"
           },
           "CUC": {
-            "displayName": "Kúbverskur skiptanlegur pesi",
-            "displayName-count-one": "kúbverskur skiptanlegur pesi",
-            "displayName-count-other": "kúbverskir skiptanlegir pesar",
+            "displayName": "kúbverskur skiptanlegur pesi",
+            "displayName-count-one": "kúbverskur skiptanlegur pesói",
+            "displayName-count-other": "kúbverskir skiptanlegir pesóar",
             "symbol": "CUC",
             "symbol-alt-narrow": "$"
           },
           "CUP": {
-            "displayName": "Kúbverskur pesi",
+            "displayName": "kúbverskur pesi",
             "displayName-count-one": "kúbverskur pesi",
             "displayName-count-other": "kúbverskir pesar",
             "symbol": "CUP",
             "symbol-alt-narrow": "$"
           },
           "CVE": {
-            "displayName": "Grænhöfðeyskur skúti",
+            "displayName": "grænhöfðeyskur skúti",
             "displayName-count-one": "grænhöfðeyskur skúti",
             "displayName-count-other": "grænhöfðeyskir skútar",
             "symbol": "CVE"
@@ -397,7 +394,7 @@
             "symbol": "CYP"
           },
           "CZK": {
-            "displayName": "Tékknesk króna",
+            "displayName": "tékknesk króna",
             "displayName-count-one": "tékknesk króna",
             "displayName-count-other": "tékkneskar krónur",
             "symbol": "CZK",
@@ -412,27 +409,27 @@
             "symbol": "DEM"
           },
           "DJF": {
-            "displayName": "Djíbútískur franki",
+            "displayName": "djíbútískur franki",
             "displayName-count-one": "djíbútískur franki",
             "displayName-count-other": "djíbútískir frankar",
             "symbol": "DJF"
           },
           "DKK": {
-            "displayName": "Dönsk króna",
+            "displayName": "dönsk króna",
             "displayName-count-one": "dönsk króna",
             "displayName-count-other": "danskar krónur",
             "symbol": "DKK",
             "symbol-alt-narrow": "kr"
           },
           "DOP": {
-            "displayName": "Dóminískur pesi",
+            "displayName": "dóminískur pesi",
             "displayName-count-one": "dóminískur pesi",
             "displayName-count-other": "dóminískir pesar",
             "symbol": "DOP",
             "symbol-alt-narrow": "$"
           },
           "DZD": {
-            "displayName": "Alsírskur denari",
+            "displayName": "alsírskur denari",
             "displayName-count-one": "alsírskur denari",
             "displayName-count-other": "alsírskir denarar",
             "symbol": "DZD"
@@ -450,14 +447,14 @@
             "symbol": "EEK"
           },
           "EGP": {
-            "displayName": "Egypskt pund",
+            "displayName": "egypskt pund",
             "displayName-count-one": "egypskt pund",
             "displayName-count-other": "egypsk pund",
             "symbol": "EGP",
             "symbol-alt-narrow": "E£"
           },
           "ERN": {
-            "displayName": "Erítresk nakfa",
+            "displayName": "erítresk nakfa",
             "displayName-count-one": "erítresk nakfa",
             "displayName-count-other": "erítreskar nökfur",
             "symbol": "ERN"
@@ -476,13 +473,13 @@
             "symbol-alt-narrow": "₧"
           },
           "ETB": {
-            "displayName": "Eþíópískt birr",
+            "displayName": "eþíópískt birr",
             "displayName-count-one": "eþíópískt birr",
             "displayName-count-other": "eþíópísk birr",
             "symbol": "ETB"
           },
           "EUR": {
-            "displayName": "Evra",
+            "displayName": "evra",
             "displayName-count-one": "evra",
             "displayName-count-other": "evrur",
             "symbol": "EUR",
@@ -493,14 +490,14 @@
             "symbol": "FIM"
           },
           "FJD": {
-            "displayName": "Fídjeyskur dalur",
-            "displayName-count-one": "fídjeyskur dalur",
-            "displayName-count-other": "fídjeyskir dalir",
+            "displayName": "fidjeyskur dalur",
+            "displayName-count-one": "fidjeyskur dalur",
+            "displayName-count-other": "fidjeyskir dalir",
             "symbol": "FJD",
             "symbol-alt-narrow": "$"
           },
           "FKP": {
-            "displayName": "Falklenskt pund",
+            "displayName": "falklenskt pund",
             "displayName-count-one": "falklenskt pund",
             "displayName-count-other": "falklensk pund",
             "symbol": "FKP",
@@ -511,7 +508,7 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "Sterlingspund",
+            "displayName": "sterlingspund",
             "displayName-count-one": "sterlingspund",
             "displayName-count-other": "sterlingspund",
             "symbol": "GBP",
@@ -522,30 +519,31 @@
             "symbol": "GEK"
           },
           "GEL": {
-            "displayName": "Georgískur lari",
+            "displayName": "georgískur lari",
             "displayName-count-one": "georgískur lari",
             "displayName-count-other": "georgískir larar",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
             "symbol": "GHC"
           },
           "GHS": {
-            "displayName": "Ganverskur sedi",
+            "displayName": "ganverskur sedi",
             "displayName-count-one": "ganverskur sedi",
             "displayName-count-other": "ganverskir sedar",
             "symbol": "GHS"
           },
           "GIP": {
             "displayName": "Gíbraltarspund",
-            "displayName-count-one": "Gíbraltarspund",
+            "displayName-count-one": "Gíbraltarpund",
             "displayName-count-other": "Gíbraltarspund",
             "symbol": "GIP",
             "symbol-alt-narrow": "£"
           },
           "GMD": {
-            "displayName": "Gambískur dalasi",
+            "displayName": "gambískur dalasi",
             "displayName-count-one": "gambískur dalasi",
             "displayName-count-other": "gambískir dalasar",
             "symbol": "GMD"
@@ -570,7 +568,7 @@
             "symbol": "GRD"
           },
           "GTQ": {
-            "displayName": "Gvatemalskt kvesal",
+            "displayName": "gvatemalskt kvesal",
             "displayName-count-one": "gvatemalskt kvesal",
             "displayName-count-other": "gvatemölsk kvesöl",
             "symbol": "GTQ",
@@ -585,7 +583,7 @@
             "symbol": "GWP"
           },
           "GYD": {
-            "displayName": "Gvæjanskur dalur",
+            "displayName": "gvæjanskur dalur",
             "displayName-count-one": "gvæjanskur dalur",
             "displayName-count-other": "gvæjanskir dalir",
             "symbol": "GYD",
@@ -599,7 +597,7 @@
             "symbol-alt-narrow": "$"
           },
           "HNL": {
-            "displayName": "Hondúrsk lempíra",
+            "displayName": "hondúrsk lempíra",
             "displayName-count-one": "hondúrsk lempíra",
             "displayName-count-other": "hondúrskar lempírur",
             "symbol": "HNL",
@@ -610,27 +608,27 @@
             "symbol": "HRD"
           },
           "HRK": {
-            "displayName": "Króatísk kúna",
+            "displayName": "króatísk kúna",
             "displayName-count-one": "króatísk kúna",
             "displayName-count-other": "króatískar kúnur",
             "symbol": "HRK",
             "symbol-alt-narrow": "kn"
           },
           "HTG": {
-            "displayName": "Haítískur gúrdi",
+            "displayName": "haítískur gúrdi",
             "displayName-count-one": "haítískur gúrdi",
             "displayName-count-other": "haítískir gúrdar",
             "symbol": "HTG"
           },
           "HUF": {
-            "displayName": "Ungversk fórinta",
+            "displayName": "ungversk fórinta",
             "displayName-count-one": "ungversk fórinta",
             "displayName-count-other": "ungverskar fórintur",
             "symbol": "HUF",
             "symbol-alt-narrow": "Ft"
           },
           "IDR": {
-            "displayName": "Indónesísk rúpía",
+            "displayName": "indónesísk rúpía",
             "displayName-count-one": "indónesísk rúpía",
             "displayName-count-other": "indónesískar rúpíur",
             "symbol": "IDR",
@@ -645,33 +643,33 @@
             "symbol": "ILP"
           },
           "ILS": {
-            "displayName": "Nýr ísraelskur sikill",
+            "displayName": "nýr ísraelskur sikill",
             "displayName-count-one": "nýr ísraelskur sikill",
             "displayName-count-other": "nýir ísraelskir siklar",
             "symbol": "₪",
             "symbol-alt-narrow": "₪"
           },
           "INR": {
-            "displayName": "Indversk rúpía",
+            "displayName": "indversk rúpía",
             "displayName-count-one": "indversk rúpía",
             "displayName-count-other": "indverskar rúpíur",
             "symbol": "INR",
             "symbol-alt-narrow": "₹"
           },
           "IQD": {
-            "displayName": "Írakskur denari",
+            "displayName": "írakskur denari",
             "displayName-count-one": "írakskur denari",
             "displayName-count-other": "írakskir denarar",
             "symbol": "IQD"
           },
           "IRR": {
-            "displayName": "Íranskt ríal",
+            "displayName": "íranskt ríal",
             "displayName-count-one": "íranskt ríal",
             "displayName-count-other": "írönsk ríöl",
             "symbol": "IRR"
           },
           "ISK": {
-            "displayName": "Íslensk króna",
+            "displayName": "íslensk króna",
             "displayName-count-one": "íslensk króna",
             "displayName-count-other": "íslenskar krónur",
             "symbol": "ISK",
@@ -682,53 +680,53 @@
             "symbol": "ITL"
           },
           "JMD": {
-            "displayName": "Jamaískur dalur",
+            "displayName": "jamaískur dalur",
             "displayName-count-one": "jamaískur dalur",
             "displayName-count-other": "jamaískir dalir",
             "symbol": "JMD",
             "symbol-alt-narrow": "$"
           },
           "JOD": {
-            "displayName": "Jórdanskur denari",
+            "displayName": "jórdanskur denari",
             "displayName-count-one": "jórdanskur denari",
             "displayName-count-other": "jórdanskir denarar",
             "symbol": "JOD"
           },
           "JPY": {
-            "displayName": "Japanskt jen",
+            "displayName": "japanskt jen",
             "displayName-count-one": "japanskt jen",
             "displayName-count-other": "japönsk jen",
             "symbol": "JP¥",
             "symbol-alt-narrow": "¥"
           },
           "KES": {
-            "displayName": "Kenískur skildingur",
+            "displayName": "kenískur skildingur",
             "displayName-count-one": "kenískur skildingur",
             "displayName-count-other": "kenískir skildingar",
             "symbol": "KES"
           },
           "KGS": {
-            "displayName": "Kirgiskt som",
+            "displayName": "kirgiskt som",
             "displayName-count-one": "kirgiskt som",
             "displayName-count-other": "kirgisk som",
             "symbol": "KGS"
           },
           "KHR": {
-            "displayName": "Kambódískt ríal",
+            "displayName": "kambódískt ríal",
             "displayName-count-one": "kambódískt ríal",
             "displayName-count-other": "kambódísk ríöl",
             "symbol": "KHR",
             "symbol-alt-narrow": "៛"
           },
           "KMF": {
-            "displayName": "Kómoreyskur franki",
+            "displayName": "kómoreyskur franki",
             "displayName-count-one": "kómoreyskur franki",
             "displayName-count-other": "kómoreyskir frankar",
             "symbol": "KMF",
             "symbol-alt-narrow": "CF"
           },
           "KPW": {
-            "displayName": "Norðurkóreskt vonn",
+            "displayName": "norðurkóreskt vonn",
             "displayName-count-one": "norðurkóreskt vonn",
             "displayName-count-other": "norðurkóresk vonn",
             "symbol": "KPW",
@@ -743,55 +741,55 @@
             "symbol": "KRO"
           },
           "KRW": {
-            "displayName": "Suðurkóreskt vonn",
+            "displayName": "suðurkóreskt vonn",
             "displayName-count-one": "suðurkóreskt vonn",
             "displayName-count-other": "suðurkóresk vonn",
             "symbol": "KRW",
             "symbol-alt-narrow": "₩"
           },
           "KWD": {
-            "displayName": "Kúveiskur denari",
+            "displayName": "kúveiskur denari",
             "displayName-count-one": "kúveiskur denari",
             "displayName-count-other": "kúveiskir denarar",
             "symbol": "KWD"
           },
           "KYD": {
-            "displayName": "Caymaneyskur dalur",
+            "displayName": "caymaneyskur dalur",
             "displayName-count-one": "caymaneyskur dalur",
             "displayName-count-other": "caymaneyskir dalir",
             "symbol": "KYD",
             "symbol-alt-narrow": "$"
           },
           "KZT": {
-            "displayName": "Kasakst tengi",
+            "displayName": "kasakst tengi",
             "displayName-count-one": "kasakst tengi",
             "displayName-count-other": "kasöksk tengi",
             "symbol": "KZT",
             "symbol-alt-narrow": "₸"
           },
           "LAK": {
-            "displayName": "Laoskt kip",
+            "displayName": "laoskt kip",
             "displayName-count-one": "laoskt kip",
             "displayName-count-other": "laosk kip",
             "symbol": "LAK",
             "symbol-alt-narrow": "₭"
           },
           "LBP": {
-            "displayName": "Líbanskt pund",
+            "displayName": "líbanskt pund",
             "displayName-count-one": "líbanskt pund",
             "displayName-count-other": "líbönsk pund",
             "symbol": "LBP",
             "symbol-alt-narrow": "L£"
           },
           "LKR": {
-            "displayName": "Srílönsk rúpía",
+            "displayName": "srílönsk rúpía",
             "displayName-count-one": "srílönsk rúpía",
             "displayName-count-other": "srílanskar rúpíur",
             "symbol": "LKR",
             "symbol-alt-narrow": "Rs"
           },
           "LRD": {
-            "displayName": "Líberískur dalur",
+            "displayName": "líberískur dalur",
             "displayName-count-one": "líberískur dalur",
             "displayName-count-other": "líberískir dalir",
             "symbol": "LRD",
@@ -836,13 +834,13 @@
             "symbol": "LVR"
           },
           "LYD": {
-            "displayName": "Líbískur denari",
+            "displayName": "líbískur denari",
             "displayName-count-one": "líbískur denari",
             "displayName-count-other": "líbískir denarar",
             "symbol": "LYD"
           },
           "MAD": {
-            "displayName": "Marokkóskt dírham",
+            "displayName": "marokkóskt dírham",
             "displayName-count-one": "marokkóskt dírham",
             "displayName-count-other": "marokkósk dírhöm",
             "symbol": "MAD"
@@ -860,7 +858,7 @@
             "symbol": "MDC"
           },
           "MDL": {
-            "displayName": "Moldavískt lei",
+            "displayName": "moldavískt lei",
             "displayName-count-one": "moldavískt lei",
             "displayName-count-other": "moldavísk lei",
             "symbol": "MDL"
@@ -877,7 +875,7 @@
             "symbol": "MGF"
           },
           "MKD": {
-            "displayName": "Makedónskur denari",
+            "displayName": "makedónskur denari",
             "displayName-count-one": "makedónskur denari",
             "displayName-count-other": "makedónskir denarar",
             "symbol": "MKD"
@@ -891,27 +889,27 @@
             "symbol": "MLF"
           },
           "MMK": {
-            "displayName": "Mjanmarskt kjat",
+            "displayName": "mjanmarskt kjat",
             "displayName-count-one": "mjanmarskt kjat",
             "displayName-count-other": "mjanmörsk kjöt",
             "symbol": "MMK",
             "symbol-alt-narrow": "K"
           },
           "MNT": {
-            "displayName": "Mongólskur túríkur",
+            "displayName": "mongólskur túríkur",
             "displayName-count-one": "mongólskur túríkur",
             "displayName-count-other": "mongólskir túríkar",
             "symbol": "MNT",
             "symbol-alt-narrow": "₮"
           },
           "MOP": {
-            "displayName": "Makaópataka",
-            "displayName-count-one": "Makaópataka",
-            "displayName-count-other": "Makaópatökur",
+            "displayName": "makaósk pataka",
+            "displayName-count-one": "makaósk pataka",
+            "displayName-count-other": "makaóskar patökur",
             "symbol": "MOP"
           },
           "MRO": {
-            "displayName": "Máritönsk úgía",
+            "displayName": "márítönsk úgía",
             "displayName-count-one": "máritönsk úgía",
             "displayName-count-other": "máritanskar úgíur",
             "symbol": "MRO"
@@ -925,26 +923,26 @@
             "symbol": "MTP"
           },
           "MUR": {
-            "displayName": "Máritísk rúpía",
+            "displayName": "máritísk rúpía",
             "displayName-count-one": "máritísk rúpía",
             "displayName-count-other": "máritískar rúpíur",
             "symbol": "MUR",
             "symbol-alt-narrow": "Rs"
           },
           "MVR": {
-            "displayName": "Maldíveysk rúpía",
+            "displayName": "maldíveysk rúpía",
             "displayName-count-one": "maldíveysk rúpía",
             "displayName-count-other": "maldíveyskar rúpíur",
             "symbol": "MVR"
           },
           "MWK": {
-            "displayName": "Malavísk kvaka",
+            "displayName": "malavísk kvaka",
             "displayName-count-one": "malavísk kvaka",
             "displayName-count-other": "malavískar kvökur",
             "symbol": "MWK"
           },
           "MXN": {
-            "displayName": "Mexíkóskur pesi",
+            "displayName": "mexíkóskur pesi",
             "displayName-count-one": "mexíkóskur pesi",
             "displayName-count-other": "mexíkóskir pesar",
             "symbol": "MXN",
@@ -959,7 +957,7 @@
             "symbol": "MXV"
           },
           "MYR": {
-            "displayName": "Malasískt ringit",
+            "displayName": "malasískt ringit",
             "displayName-count-one": "malasískt ringit",
             "displayName-count-other": "malasísk ringit",
             "symbol": "MYR",
@@ -974,20 +972,20 @@
             "symbol": "MZM"
           },
           "MZN": {
-            "displayName": "Mósambískt metikal",
+            "displayName": "mósambískt metikal",
             "displayName-count-one": "mósambískt metikal",
             "displayName-count-other": "mósambísk metiköl",
             "symbol": "MZN"
           },
           "NAD": {
-            "displayName": "Namibískur dalur",
+            "displayName": "namibískur dalur",
             "displayName-count-one": "namibískur dalur",
             "displayName-count-other": "namibískir dalir",
             "symbol": "NAD",
             "symbol-alt-narrow": "$"
           },
           "NGN": {
-            "displayName": "Nígerísk næra",
+            "displayName": "nígerísk næra",
             "displayName-count-one": "nígerísk næra",
             "displayName-count-other": "nígerískar nærur",
             "symbol": "NGN",
@@ -998,7 +996,7 @@
             "symbol": "NIC"
           },
           "NIO": {
-            "displayName": "Níkarögsk kordóva",
+            "displayName": "níkaraögsk kordóva",
             "displayName-count-one": "níkarögsk kordóva",
             "displayName-count-other": "níkaragskar kordóvur",
             "symbol": "NIO",
@@ -1009,34 +1007,34 @@
             "symbol": "NLG"
           },
           "NOK": {
-            "displayName": "Norsk króna",
+            "displayName": "norsk króna",
             "displayName-count-one": "norsk króna",
             "displayName-count-other": "norskar krónur",
             "symbol": "NOK",
             "symbol-alt-narrow": "kr"
           },
           "NPR": {
-            "displayName": "Nepölsk rúpía",
+            "displayName": "nepölsk rúpía",
             "displayName-count-one": "nepölsk rúpía",
             "displayName-count-other": "nepalskar rúpíur",
             "symbol": "NPR",
             "symbol-alt-narrow": "Rs"
           },
           "NZD": {
-            "displayName": "Nýsjálenskur dalur",
+            "displayName": "nýsjálenskur dalur",
             "displayName-count-one": "nýsjálenskur dalur",
             "displayName-count-other": "nýsjálenskir dalir",
             "symbol": "NZD",
             "symbol-alt-narrow": "$"
           },
           "OMR": {
-            "displayName": "Ómanskt ríal",
+            "displayName": "ómanskt ríal",
             "displayName-count-one": "ómanskt ríal",
             "displayName-count-other": "ómönsk ríöl",
             "symbol": "OMR"
           },
           "PAB": {
-            "displayName": "Balbói",
+            "displayName": "balbói",
             "displayName-count-one": "balbói",
             "displayName-count-other": "balbóar",
             "symbol": "PAB"
@@ -1046,7 +1044,7 @@
             "symbol": "PEI"
           },
           "PEN": {
-            "displayName": "Perúskt sól",
+            "displayName": "perúskt sól",
             "displayName-count-one": "perúskt sól",
             "displayName-count-other": "perúsk sól",
             "symbol": "PEN"
@@ -1056,27 +1054,27 @@
             "symbol": "PES"
           },
           "PGK": {
-            "displayName": "Papúsk kína",
+            "displayName": "papúsk kína",
             "displayName-count-one": "papúsk kína",
             "displayName-count-other": "papúskar kínur",
             "symbol": "PGK"
           },
           "PHP": {
-            "displayName": "Filippseyskur pesi",
+            "displayName": "filippseyskur pesi",
             "displayName-count-one": "filippseyskur pesi",
             "displayName-count-other": "filippseyskir pesar",
             "symbol": "PHP",
             "symbol-alt-narrow": "₱"
           },
           "PKR": {
-            "displayName": "Pakistönsk rúpía",
+            "displayName": "pakistönsk rúpía",
             "displayName-count-one": "pakistönsk rúpía",
             "displayName-count-other": "pakistanskar rúpíur",
             "symbol": "PKR",
             "symbol-alt-narrow": "Rs"
           },
           "PLN": {
-            "displayName": "Pólskt slot",
+            "displayName": "pólskt slot",
             "displayName-count-one": "pólskt slot",
             "displayName-count-other": "pólsk slot",
             "symbol": "PLN",
@@ -1091,14 +1089,14 @@
             "symbol": "PTE"
           },
           "PYG": {
-            "displayName": "Paragvæskt gvaraní",
+            "displayName": "paragvæskt gvaraní",
             "displayName-count-one": "paragvæskt gvaraní",
             "displayName-count-other": "paragvæsk gvaraní",
             "symbol": "PYG",
             "symbol-alt-narrow": "₲"
           },
           "QAR": {
-            "displayName": "Katarskt ríal",
+            "displayName": "katarskt ríal",
             "displayName-count-one": "katarskt ríal",
             "displayName-count-other": "katörsk ríöl",
             "symbol": "QAR"
@@ -1114,23 +1112,23 @@
             "symbol": "ROL"
           },
           "RON": {
-            "displayName": "Rúmenskt lei",
+            "displayName": "rúmenskt lei",
             "displayName-count-one": "rúmenskt lei",
             "displayName-count-other": "rúmensk lei",
             "symbol": "RON"
           },
           "RSD": {
-            "displayName": "Serbneskur denari",
+            "displayName": "serbneskur denari",
             "displayName-count-one": "serbneskur denari",
             "displayName-count-other": "serbneskir denarar",
             "symbol": "RSD"
           },
           "RUB": {
-            "displayName": "Rússnesk rúbla",
+            "displayName": "rússnesk rúbla",
             "displayName-count-one": "rússnesk rúbla",
             "displayName-count-other": "rússneskar rúblur",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Rússnesk rúbla (1991–1998)",
@@ -1138,20 +1136,20 @@
             "symbol-alt-narrow": "р."
           },
           "RWF": {
-            "displayName": "Rúandskur franki",
+            "displayName": "rúandskur franki",
             "displayName-count-one": "rúandskur franki",
             "displayName-count-other": "rúandskir frankar",
             "symbol": "RWF",
             "symbol-alt-narrow": "RF"
           },
           "SAR": {
-            "displayName": "Sádiarabískt ríal",
+            "displayName": "sádíarabískt ríal",
             "displayName-count-one": "sádiarabískt ríal",
             "displayName-count-other": "sádiarabísk ríöl",
             "symbol": "SAR"
           },
           "SBD": {
-            "displayName": "Salómonseyskur dalur",
+            "displayName": "salómonseyskur dalur",
             "displayName-count-one": "salómonseyskur dalur",
             "displayName-count-other": "salómonseyskir dalir",
             "symbol": "SBD",
@@ -1168,7 +1166,7 @@
             "symbol": "SDD"
           },
           "SDG": {
-            "displayName": "Súdanskt pund",
+            "displayName": "súdanskt pund",
             "displayName-count-one": "súdanskt pund",
             "displayName-count-other": "súdönsk pund",
             "symbol": "SDG"
@@ -1178,21 +1176,21 @@
             "symbol": "SDP"
           },
           "SEK": {
-            "displayName": "Sænsk króna",
+            "displayName": "sænsk króna",
             "displayName-count-one": "sænsk króna",
             "displayName-count-other": "sænskar krónur",
             "symbol": "SEK",
             "symbol-alt-narrow": "kr"
           },
           "SGD": {
-            "displayName": "Singapúrskur dalur",
+            "displayName": "singapúrskur dalur",
             "displayName-count-one": "singapúrskur dalur",
             "displayName-count-other": "singapúrskir dalir",
             "symbol": "SGD",
             "symbol-alt-narrow": "$"
           },
           "SHP": {
-            "displayName": "Helenskt pund",
+            "displayName": "helenskt pund",
             "displayName-count-one": "helenskt pund",
             "displayName-count-other": "helensk pund",
             "symbol": "SHP",
@@ -1207,13 +1205,13 @@
             "symbol": "SKK"
           },
           "SLL": {
-            "displayName": "Síerraleónsk ljóna",
+            "displayName": "síerraleónsk ljóna",
             "displayName-count-one": "síerraleónsk ljóna",
             "displayName-count-other": "síerraleónskar ljónur",
             "symbol": "SLL"
           },
           "SOS": {
-            "displayName": "Sómalískur skildingur",
+            "displayName": "sómalískur skildingur",
             "displayName-count-one": "sómalískur skildingur",
             "displayName-count-other": "sómalískir skildingar",
             "symbol": "SOS"
@@ -1230,7 +1228,7 @@
             "symbol": "SRG"
           },
           "SSP": {
-            "displayName": "Suðursúdanskt pund",
+            "displayName": "suðursúdanskt pund",
             "displayName-count-one": "suðursúdanskt pund",
             "displayName-count-other": "suðursúdönsk pund",
             "symbol": "SSP",
@@ -1254,20 +1252,20 @@
             "symbol": "SVC"
           },
           "SYP": {
-            "displayName": "Sýrlenskt pund",
+            "displayName": "sýrlenskt pund",
             "displayName-count-one": "sýrlenskt pund",
             "displayName-count-other": "sýrlensk pund",
             "symbol": "SYP",
             "symbol-alt-narrow": "£"
           },
           "SZL": {
-            "displayName": "Svasílenskur lílangeni",
+            "displayName": "svasílenskur lílangeni",
             "displayName-count-one": "svasílenskur lílangeni",
             "displayName-count-other": "svasílenskir lílangenar",
             "symbol": "SZL"
           },
           "THB": {
-            "displayName": "Taílenskt bat",
+            "displayName": "taílenskt bat",
             "displayName-count-one": "taílenskt bat",
             "displayName-count-other": "taílensk böt",
             "symbol": "THB",
@@ -1278,7 +1276,7 @@
             "symbol": "TJR"
           },
           "TJS": {
-            "displayName": "Tadsjikskur sómóni",
+            "displayName": "tadsjikskur sómóni",
             "displayName-count-one": "tadsjikskur sómóni",
             "displayName-count-other": "tadsjikskir sómónar",
             "symbol": "TJS"
@@ -1290,13 +1288,13 @@
             "symbol": "TMM"
           },
           "TMT": {
-            "displayName": "Túrkmenskt manat",
+            "displayName": "túrkmenskt manat",
             "displayName-count-one": "túrkmenskt manat",
             "displayName-count-other": "túrkmensk manöt",
             "symbol": "TMT"
           },
           "TND": {
-            "displayName": "Túniskur denari",
+            "displayName": "túnískur denari",
             "displayName-count-one": "túniskur denari",
             "displayName-count-other": "túniskir denarar",
             "symbol": "TND"
@@ -1317,7 +1315,7 @@
             "symbol": "TRL"
           },
           "TRY": {
-            "displayName": "Tyrknesk líra",
+            "displayName": "tyrknesk líra",
             "displayName-count-one": "tyrknesk líra",
             "displayName-count-other": "tyrkneskar lírur",
             "symbol": "TRY",
@@ -1332,20 +1330,20 @@
             "symbol-alt-narrow": "$"
           },
           "TWD": {
-            "displayName": "Taívanskur dalur",
+            "displayName": "taívanskur dalur",
             "displayName-count-one": "taívanskur dalur",
             "displayName-count-other": "taívanskir dalir",
             "symbol": "TWD",
             "symbol-alt-narrow": "NT$"
           },
           "TZS": {
-            "displayName": "Tansanískur skildingur",
+            "displayName": "tansanískur skildingur",
             "displayName-count-one": "tansanískur skildingur",
             "displayName-count-other": "tansanískir skildingar",
             "symbol": "TZS"
           },
           "UAH": {
-            "displayName": "Úkraínsk hrinja",
+            "displayName": "úkraínsk hrinja",
             "displayName-count-one": "úkraínsk hrinja",
             "displayName-count-other": "úkraínskar hrinjur",
             "symbol": "UAH",
@@ -1360,9 +1358,9 @@
             "symbol": "UGS"
           },
           "UGX": {
-            "displayName": "Úgandskur skildingur",
+            "displayName": "úgandskur skildingur",
             "displayName-count-one": "úgandskur skildingur",
-            "displayName-count-other": "úgandskir skildingur",
+            "displayName-count-other": "úgandskir skildingar",
             "symbol": "UGX"
           },
           "USD": {
@@ -1389,14 +1387,14 @@
             "symbol": "UYP"
           },
           "UYU": {
-            "displayName": "Úrúgvæskur pesi",
+            "displayName": "úrúgvæskur pesi",
             "displayName-count-one": "úrúgvæskur pesi",
             "displayName-count-other": "úrúgvæskir pesar",
             "symbol": "UYU",
             "symbol-alt-narrow": "$"
           },
           "UZS": {
-            "displayName": "Úsbekskt súm",
+            "displayName": "úsbekskt súm",
             "displayName-count-one": "úsbekskt súm",
             "displayName-count-other": "úsbeksk súm",
             "symbol": "UZS"
@@ -1406,14 +1404,14 @@
             "symbol": "VEB"
           },
           "VEF": {
-            "displayName": "Venesúelskur bólívari",
+            "displayName": "venesúelskur bólívari",
             "displayName-count-one": "venesúelskur bólívari",
             "displayName-count-other": "venesúelskir bólívarar",
             "symbol": "VEF",
             "symbol-alt-narrow": "Bs"
           },
           "VND": {
-            "displayName": "Víetnamskt dong",
+            "displayName": "víetnamskt dong",
             "displayName-count-one": "víetnamskt dong",
             "displayName-count-other": "víetnömsk dong",
             "symbol": "VND",
@@ -1424,7 +1422,7 @@
             "symbol": "VNN"
           },
           "VUV": {
-            "displayName": "Vanúatúskt vatú",
+            "displayName": "vanúatúskt vatú",
             "displayName-count-one": "vanúatúskt vatú",
             "displayName-count-other": "vanúatúsk vatú",
             "symbol": "VUV"
@@ -1436,7 +1434,7 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "Miðafrískur franki",
+            "displayName": "miðafrískur franki",
             "displayName-count-one": "miðafrískur franki",
             "displayName-count-other": "miðafrískir frankar",
             "symbol": "FCFA"
@@ -1466,7 +1464,7 @@
             "symbol": "XBD"
           },
           "XCD": {
-            "displayName": "Austurkarabískur dalur",
+            "displayName": "austurkarabískur dalur",
             "displayName-count-one": "austurkarabískur dalur",
             "displayName-count-other": "austurkarabískir dalir",
             "symbol": "EC$",
@@ -1489,7 +1487,7 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "Vesturafrískur franki",
+            "displayName": "vesturafrískur franki",
             "displayName-count-one": "vesturafrískur franki",
             "displayName-count-other": "vesturafrískir frankar",
             "symbol": "CFA"
@@ -1499,7 +1497,7 @@
             "symbol": "XPD"
           },
           "XPF": {
-            "displayName": "Pólinesískur franki",
+            "displayName": "pólinesískur franki",
             "displayName-count-one": "pólinesískur franki",
             "displayName-count-other": "pólinesískir frankar",
             "symbol": "CFPF"
@@ -1525,8 +1523,8 @@
             "symbol": "XUA"
           },
           "XXX": {
-            "displayName": "Óþekktur gjaldmiðill",
-            "displayName-count-one": "(óþekktur gjaldmiðill)",
+            "displayName": "óþekktur gjaldmiðill",
+            "displayName-count-one": "(óþekkt mynteining gjaldmiðils)",
             "displayName-count-other": "(óþekktur gjaldmiðill)",
             "symbol": "XXX"
           },
@@ -1535,7 +1533,7 @@
             "symbol": "YDD"
           },
           "YER": {
-            "displayName": "Jemenskt ríal",
+            "displayName": "jemenskt ríal",
             "displayName-count-one": "jemenskt ríal",
             "displayName-count-other": "jemensk ríöl",
             "symbol": "YER"
@@ -1561,7 +1559,7 @@
             "symbol": "ZAL"
           },
           "ZAR": {
-            "displayName": "Suðurafrískt rand",
+            "displayName": "suðurafrískt rand",
             "displayName-count-one": "suðurafrískt rand",
             "displayName-count-other": "suðurafrísk rönd",
             "symbol": "ZAR",
@@ -1572,7 +1570,7 @@
             "symbol": "ZMK"
           },
           "ZMW": {
-            "displayName": "Sambísk kvaka",
+            "displayName": "sambísk kvaka",
             "displayName-count-one": "sambísk kvaka",
             "displayName-count-other": "sambískar kvökur",
             "symbol": "ZMW",

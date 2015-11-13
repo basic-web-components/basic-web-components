@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11344 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-03-05 00:02:16 -0600 (Thu, 05 Mar 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11941 $"
     },
     "metadata": {
       "alias": {
@@ -394,16 +392,16 @@
             "_replacement": "gba",
             "_reason": "macrolanguage"
           },
-          "ha-GH": {
-            "_replacement": "ha-Latn-GH",
+          "ha-Latn-GH": {
+            "_replacement": "ha-GH",
             "_reason": "legacy"
           },
-          "ha-NE": {
-            "_replacement": "ha-Latn-NE",
+          "ha-Latn-NE": {
+            "_replacement": "ha-NE",
             "_reason": "legacy"
           },
-          "ha-NG": {
-            "_replacement": "ha-Latn-NG",
+          "ha-Latn-NG": {
+            "_replacement": "ha-NG",
             "_reason": "legacy"
           },
           "hat": {
@@ -614,8 +612,8 @@
             "_replacement": "ky",
             "_reason": "overlong"
           },
-          "kk-KZ": {
-            "_replacement": "kk-Cyrl-KZ",
+          "kk-Cyrl-KZ": {
+            "_replacement": "kk-KZ",
             "_reason": "legacy"
           },
           "kmr": {
@@ -650,8 +648,8 @@
             "_replacement": "kv",
             "_reason": "macrolanguage"
           },
-          "ks-IN": {
-            "_replacement": "ks-Arab-IN",
+          "ks-Arab-IN": {
+            "_replacement": "ks-IN",
             "_reason": "legacy"
           },
           "kua": {
@@ -662,8 +660,8 @@
             "_replacement": "ku",
             "_reason": "overlong"
           },
-          "ky-KG": {
-            "_replacement": "ky-Cyrl-KG",
+          "ky-Cyrl-KG": {
+            "_replacement": "ky-KG",
             "_reason": "legacy"
           },
           "lao": {
@@ -750,8 +748,8 @@
             "_replacement": "mt",
             "_reason": "overlong"
           },
-          "mn-MN": {
-            "_replacement": "mn-Cyrl-MN",
+          "mn-Cyrl-MN": {
+            "_replacement": "mn-MN",
             "_reason": "legacy"
           },
           "mnk": {
@@ -774,16 +772,16 @@
             "_replacement": "mi",
             "_reason": "overlong"
           },
-          "ms-BN": {
-            "_replacement": "ms-Latn-BN",
+          "ms-Latn-BN": {
+            "_replacement": "ms-BN",
             "_reason": "legacy"
           },
-          "ms-MY": {
-            "_replacement": "ms-Latn-MY",
+          "ms-Latn-MY": {
+            "_replacement": "ms-MY",
             "_reason": "legacy"
           },
-          "ms-SG": {
-            "_replacement": "ms-Latn-SG",
+          "ms-Latn-SG": {
+            "_replacement": "ms-SG",
             "_reason": "legacy"
           },
           "msa": {
@@ -834,19 +832,19 @@
             "_replacement": "nb",
             "_reason": "legacy"
           },
-          "no-BOKMAL": {
-            "_replacement": "nb",
-            "_reason": "deprecated"
-          },
-          "no-NYNORSK": {
-            "_replacement": "nn",
-            "_reason": "deprecated"
-          },
           "no-bok": {
             "_replacement": "nb",
             "_reason": "deprecated"
           },
+          "no-BOKMAL": {
+            "_replacement": "nb",
+            "_reason": "deprecated"
+          },
           "no-nyn": {
+            "_replacement": "nn",
+            "_reason": "deprecated"
+          },
+          "no-NYNORSK": {
             "_replacement": "nn",
             "_reason": "deprecated"
           },
@@ -1182,12 +1180,12 @@
             "_replacement": "ak",
             "_reason": "overlong"
           },
-          "tzm-MA": {
-            "_replacement": "tzm-Latn-MA",
+          "tzm-Latn-MA": {
+            "_replacement": "tzm-MA",
             "_reason": "legacy"
           },
-          "ug-CN": {
-            "_replacement": "ug-Arab-CN",
+          "ug-Arab-CN": {
+            "_replacement": "ug-CN",
             "_reason": "legacy"
           },
           "uig": {
@@ -1282,9 +1280,21 @@
             "_replacement": "zh-Hans-CN",
             "_reason": "legacy"
           },
+          "zh-guoyu": {
+            "_replacement": "zh",
+            "_reason": "deprecated"
+          },
+          "zh-hakka": {
+            "_replacement": "hak",
+            "_reason": "deprecated"
+          },
           "zh-HK": {
             "_replacement": "zh-Hant-HK",
             "_reason": "legacy"
+          },
+          "zh-min-nan": {
+            "_replacement": "nan",
+            "_reason": "deprecated"
           },
           "zh-MO": {
             "_replacement": "zh-Hant-MO",
@@ -1297,18 +1307,6 @@
           "zh-TW": {
             "_replacement": "zh-Hant-TW",
             "_reason": "legacy"
-          },
-          "zh-guoyu": {
-            "_replacement": "zh",
-            "_reason": "deprecated"
-          },
-          "zh-hakka": {
-            "_replacement": "hak",
-            "_reason": "deprecated"
-          },
-          "zh-min-nan": {
-            "_replacement": "nan",
-            "_reason": "deprecated"
           },
           "zh-xiang": {
             "_replacement": "hsn",

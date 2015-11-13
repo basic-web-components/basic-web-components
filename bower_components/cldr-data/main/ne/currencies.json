@@ -3,11 +3,8 @@
     "ne": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ne"
       },
@@ -99,6 +96,8 @@
           },
           "AUD": {
             "displayName": "अष्ट्रेलियन डलर",
+            "displayName-count-one": "अष्ट्रेलियन डलर",
+            "displayName-count-other": "अष्ट्रेलियन डलर",
             "symbol": "A$",
             "symbol-alt-narrow": "$"
           },
@@ -523,7 +522,8 @@
             "displayName": "जर्जियाली लारी",
             "displayName-count-one": "जर्जियाली लारी",
             "displayName-count-other": "जर्जियन लारी",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -1126,7 +1126,7 @@
             "displayName-count-one": "रूसी रूबल",
             "displayName-count-other": "रूसी रूबल",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1328,7 +1328,7 @@
             "displayName-count-one": "नयाँ ताइवान डलर",
             "displayName-count-other": "नयाँ ताइवान डलर",
             "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "ताञ्जानियाली शिलिङ",

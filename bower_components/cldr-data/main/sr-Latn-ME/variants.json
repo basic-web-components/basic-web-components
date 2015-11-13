@@ -3,11 +3,8 @@
     "sr-Latn-ME": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11324 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 16:53:17 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sr",
         "script": "Latn",
@@ -15,14 +12,16 @@
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "Francuski iz kasnog srednjeg veka do 1606.",
-          "1694ACAD": "Rani moderni francuski",
           "1901": "Tradicionalna nemačka ortografija",
-          "1959ACAD": "1959ACAD",
           "1994": "Standardnizovana resijanska ortografija",
           "1996": "Nemačka ortografija iz 1996",
+          "1606NICT": "Francuski iz kasnog srednjeg veka do 1606.",
+          "1694ACAD": "Rani moderni francuski",
+          "1959ACAD": "1959ACAD",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALALC97",
           "ALUKU": "ALUKU",
+          "AO1990": "AO1990",
           "AREVELA": "Istočni armenijski",
           "AREVMDA": "Zapadno jermenska",
           "BAKU1926": "Ujedinjen turski latinični alfabet",
@@ -33,6 +32,7 @@
           "BISKE": "San Đorđio/Bila dijalekt",
           "BOHORIC": "BOHORIC",
           "BOONT": "Buntling",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -58,6 +58,7 @@
           "NJIVA": "Gnjiva/Njiva dijalkekt",
           "NULIK": "NULIK",
           "OSOJS": "Oseako/Osojane dijalekt",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "PAMAKA",
           "PETR1708": "PETR1708",
           "PINYIN": "PINYIN",

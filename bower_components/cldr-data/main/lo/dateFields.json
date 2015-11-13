@@ -3,11 +3,8 @@
     "lo": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "lo"
       },
@@ -53,7 +50,7 @@
             }
           },
           "quarter": {
-            "displayName": "ຄວດເຕີ",
+            "displayName": "ໄຕມາດ",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -65,7 +62,7 @@
             }
           },
           "quarter-short": {
-            "displayName": "ຄຕ.",
+            "displayName": "ຕມ.",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -77,7 +74,7 @@
             }
           },
           "quarter-narrow": {
-            "displayName": "ຄຕ.",
+            "displayName": "ຕມ.",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -118,10 +115,10 @@
             "relative-type-0": "ເດືອນນີ້",
             "relative-type-1": "ເດືອນໜ້າ",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-other": "+{0} ດ."
+              "relativeTimePattern-count-other": "ໃນອີກ {0} ດ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-other": "-{0} ດ."
+              "relativeTimePattern-count-other": "{0} ດ. ກ່ອນ"
             }
           },
           "week": {
@@ -157,13 +154,13 @@
               "relativeTimePattern-count-other": "+{0} ອທ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-other": "-{0} ອທ."
+              "relativeTimePattern-count-other": "{0} ອທ. ກ່ອນ"
             }
           },
           "day": {
             "displayName": "ມື້",
-            "relative-type--1": "ມື້ວານ",
             "relative-type--2": "ມື້ກ່ອນ",
+            "relative-type--1": "ມື້ວານ",
             "relative-type-0": "ມື້ນີ້",
             "relative-type-1": "ມື້ອື່ນ",
             "relative-type-2": "ມື້ຮື",
@@ -176,8 +173,8 @@
           },
           "day-short": {
             "displayName": "ມື້",
-            "relative-type--1": "ມື້ວານ",
             "relative-type--2": "ມື້ກ່ອນ",
+            "relative-type--1": "ມື້ວານ",
             "relative-type-0": "ມື້ນີ້",
             "relative-type-1": "ມື້ອື່ນ",
             "relative-type-2": "ມື້ຮື",
@@ -190,8 +187,8 @@
           },
           "day-narrow": {
             "displayName": "ມື້",
-            "relative-type--1": "ມື້ວານ",
             "relative-type--2": "ມື້ກ່ອນ",
+            "relative-type--1": "ມື້ວານ",
             "relative-type-0": "ມື້ນີ້",
             "relative-type-1": "ມື້ອື່ນ",
             "relative-type-2": "ມື້ຮື",
@@ -211,9 +208,9 @@
             "relative-type-1": "ວັນອາທິດໜ້າ"
           },
           "sun-short": {
-            "relative-type--1": "ອາທິດແລ້ວ",
-            "relative-type-0": "ອາທິດນີ້",
-            "relative-type-1": "ອາທິດໜ້າ"
+            "relative-type--1": "ວັນທິດແລ້ວ",
+            "relative-type-0": "ວັນອາທິດນີ້",
+            "relative-type-1": "ວັນອາທິດໜ້າ"
           },
           "sun-narrow": {
             "relative-type--1": "ອາ. ແລ້ວ",

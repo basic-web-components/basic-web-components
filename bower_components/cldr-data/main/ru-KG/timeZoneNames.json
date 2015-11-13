@@ -3,11 +3,8 @@
     "ru-KG": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ru",
         "territory": "KG"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}",
-          "regionFormat-type-standard": "{0} (+0)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Арагуаина"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "Ла-Риоха"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Рио-Гальегос"
-                },
-                "Salta": {
-                  "exemplarCity": "Сальта"
                 },
                 "San_Juan": {
                   "exemplarCity": "Сан-Хуан"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ушуая"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "Ла-Риоха"
+                },
                 "San_Luis": {
                   "exemplarCity": "Сан-Луис"
                 },
+                "Salta": {
+                  "exemplarCity": "Сальта"
+                },
                 "Tucuman": {
                   "exemplarCity": "Тукуман"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ушуая"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Эрмосильо"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Нокс"
-                },
-                "Marengo": {
-                  "exemplarCity": "Маренго"
+                "Vincennes": {
+                  "exemplarCity": "Винсенс"
                 },
                 "Petersburg": {
                   "exemplarCity": "Петерсбург"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Телл-Сити"
                 },
-                "Vevay": {
-                  "exemplarCity": "Вивэй"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Винсенс"
+                "Knox": {
+                  "exemplarCity": "Нокс"
                 },
                 "Winamac": {
                   "exemplarCity": "Винамак"
+                },
+                "Marengo": {
+                  "exemplarCity": "Маренго"
+                },
+                "Vevay": {
+                  "exemplarCity": "Вивэй"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Бойла, Северная Дакота"
                 },
-                "Center": {
-                  "exemplarCity": "Центр, Северная Дакота"
-                },
                 "New_Salem": {
                   "exemplarCity": "Нью-Салем"
+                },
+                "Center": {
+                  "exemplarCity": "Центр, Северная Дакота"
                 }
               },
               "Ojinaga": {
@@ -883,7 +880,7 @@
                 "exemplarCity": "Калькутта"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Чита"
               },
               "Choibalsan": {
                 "exemplarCity": "Чойбалсан"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "Сингапур"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Среднеколымск"
               },
               "Taipei": {
                 "exemplarCity": "Тайбэй"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "Окленд"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "Бугенвиль"
               },
               "Chatham": {
                 "exemplarCity": "Чатем, о-в"
@@ -1484,15 +1481,15 @@
             },
             "Apia": {
               "long": {
-                "generic": "время Апиа, Самоа",
-                "standard": "Стандартное время Апиа, Самоа",
-                "daylight": "летнее время Апиа, Самоа"
+                "generic": "Апиа",
+                "standard": "Апиа, стандартное время",
+                "daylight": "Апиа, летнее время"
               }
             },
             "Aqtau": {
               "long": {
                 "generic": "Актау время",
-                "standard": "Актау стандартное время",
+                "standard": "Актау, стандартное время",
                 "daylight": "Актау летнее время"
               }
             },
@@ -1728,7 +1725,7 @@
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "время в Калининграде и Минске"
+                "standard": "Минское время"
               }
             },
             "Europe_Western": {
@@ -1762,11 +1759,6 @@
                 "standard": "Французское южное и антарктическое время"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Среднее время по Гринвичу"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Галапагосские о-ва"
@@ -1787,6 +1779,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Гилберта, о-ва"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Среднее время по Гринвичу"
               }
             },
             "Greenland_Eastern": {

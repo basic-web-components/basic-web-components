@@ -3,11 +3,8 @@
     "ta-SG": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11174 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-10 21:20:32 -0600 (Tue, 10 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ta",
         "territory": "SG"
@@ -171,9 +168,9 @@
             "symbol": "BGM"
           },
           "BGN": {
-            "displayName": "புல்கேரியன் லெவ்",
-            "displayName-count-one": "புல்கேரியன் லெவ்",
-            "displayName-count-other": "புல்கேரியன் லெவ்",
+            "displayName": "பல்கேரியன் லேவ்",
+            "displayName-count-one": "பல்கேரியன் லேவ்",
+            "displayName-count-other": "பல்கேரியன் லேவா",
             "symbol": "BGN"
           },
           "BGO": {
@@ -264,9 +261,9 @@
             "symbol-alt-narrow": "$"
           },
           "BTN": {
-            "displayName": "பூட்டானிஷ் நிகுல்ட்ரம்",
-            "displayName-count-one": "பூட்டானிஷ் நிகுல்ட்ரம்",
-            "displayName-count-other": "பூட்டானிஷ் நிகுல்ட்ரம்கள்",
+            "displayName": "பூட்டானீஸ் குல்ட்ரம்",
+            "displayName-count-one": "பூட்டானீஸ் குல்ட்ரம்",
+            "displayName-count-other": "பூட்டானீஸ் குல்ட்ரம்கள்",
             "symbol": "BTN"
           },
           "BUK": {
@@ -292,9 +289,9 @@
             "symbol-alt-narrow": "р."
           },
           "BZD": {
-            "displayName": "பெலீஷ் டாலர்",
-            "displayName-count-one": "பெலீஷ் டாலர்",
-            "displayName-count-other": "பெலீஷ் டாலர்கள்",
+            "displayName": "பெலீஸ் டாலர்",
+            "displayName-count-one": "பெலீஸ் டாலர்",
+            "displayName-count-other": "பெலீஸ் டாலர்கள்",
             "symbol": "BZD",
             "symbol-alt-narrow": "$"
           },
@@ -526,7 +523,8 @@
             "displayName": "ஜியார்ஜியன் லாரி",
             "displayName-count-one": "ஜியார்ஜியன் லாரி",
             "displayName-count-other": "ஜியார்ஜியன் லாரிகள்",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -618,9 +616,9 @@
             "symbol-alt-narrow": "kn"
           },
           "HTG": {
-            "displayName": "ஹயேத்தியன் கோர்டே",
-            "displayName-count-one": "ஹயேத்தியன் கோர்டே",
-            "displayName-count-other": "ஹயேத்தியன் கோர்டேக்கள்",
+            "displayName": "ஹைட்டியன் கோர்டே",
+            "displayName-count-one": "ஹைட்டியன் கோர்டே",
+            "displayName-count-other": "ஹைட்டியன் கோர்டேக்கள்",
             "symbol": "HTG"
           },
           "HUF": {
@@ -666,9 +664,9 @@
             "symbol": "IQD"
           },
           "IRR": {
-            "displayName": "இரானியன் ரியால்",
-            "displayName-count-one": "இரானியன் ரியால்",
-            "displayName-count-other": "இரானியன் ரியால்கள்",
+            "displayName": "ஈரானியன் ரியால்",
+            "displayName-count-one": "ஈரானியன் ரியால்",
+            "displayName-count-other": "ஈரானியன் ரியால்கள்",
             "symbol": "IRR"
           },
           "ISK": {
@@ -690,9 +688,9 @@
             "symbol-alt-narrow": "$"
           },
           "JOD": {
-            "displayName": "ஜோர்டானியன் டைனர்",
-            "displayName-count-one": "ஜோர்டானியன் டைனர்",
-            "displayName-count-other": "ஜோர்டானியன் டைனர்கள்",
+            "displayName": "ஜோர்டானிய தினார்",
+            "displayName-count-one": "ஜோர்டானிய தினார்",
+            "displayName-count-other": "ஜோர்டானிய தினார்கள்",
             "symbol": "JOD"
           },
           "JPY": {
@@ -771,9 +769,9 @@
             "symbol-alt-narrow": "₸"
           },
           "LAK": {
-            "displayName": "லவுட்டியன் கிப்",
-            "displayName-count-one": "லவுட்டியன் கிப்",
-            "displayName-count-other": "லவுட்டியன் கிப்கள்",
+            "displayName": "லவோஷியன் கிப்",
+            "displayName-count-one": "லவோஷியன் கிப்",
+            "displayName-count-other": "லவோஷியன் கிப்கள்",
             "symbol": "LAK",
             "symbol-alt-narrow": "₭"
           },
@@ -863,7 +861,7 @@
           "MDL": {
             "displayName": "மால்டோவன் லியூ",
             "displayName-count-one": "மால்டோவன் லியூ",
-            "displayName-count-other": "மால்டோவன் லியூ",
+            "displayName-count-other": "மால்டோவன் லேய்",
             "symbol": "MDL"
           },
           "MGA": {
@@ -878,9 +876,9 @@
             "symbol": "MGF"
           },
           "MKD": {
-            "displayName": "மெசிடோனியன் தினார்",
-            "displayName-count-one": "மெசிடோனியன் தினார்",
-            "displayName-count-other": "மெசிடோனியன் தினாரி",
+            "displayName": "மாசிடோனியன் டேனார்",
+            "displayName-count-one": "மாசிடோனியன் டேனார்",
+            "displayName-count-other": "மாசிடோனியன் டேனாரி",
             "symbol": "MKD"
           },
           "MKN": {
@@ -960,9 +958,9 @@
             "symbol": "MXV"
           },
           "MYR": {
-            "displayName": "மலேஷியன் ரிங்கித்",
-            "displayName-count-one": "மலேஷியன் ரிங்கித்",
-            "displayName-count-other": "மலேஷியன் ரிங்கித்கள்",
+            "displayName": "மலேஷியன் ரிங்கிட்",
+            "displayName-count-one": "மலேஷியன் ரிங்கிட்",
+            "displayName-count-other": "மலேஷியன் ரிங்கிட்கள்",
             "symbol": "RM",
             "symbol-alt-narrow": "RM"
           },
@@ -1037,9 +1035,9 @@
             "symbol": "OMR"
           },
           "PAB": {
-            "displayName": "பனாமானியன் பால்போபா",
-            "displayName-count-one": "பனாமானியன் பால்போபா",
-            "displayName-count-other": "பனாமானியன் பால்போபாக்கள்",
+            "displayName": "பனாமானியன் பால்போவா",
+            "displayName-count-one": "பனாமானியன் பால்போவா",
+            "displayName-count-other": "பனாமானியன் பால்போவாக்கள்",
             "symbol": "PAB"
           },
           "PEI": {
@@ -1079,7 +1077,7 @@
           "PLN": {
             "displayName": "போலிஷ் ஸ்லாட்டி",
             "displayName-count-one": "போலிஷ் ஸ்லாட்டி",
-            "displayName-count-other": "போலிஷ் ஸ்லாட்டி",
+            "displayName-count-other": "போலிஷ் ஸ்லாட்டிகள்",
             "symbol": "PLN",
             "symbol-alt-narrow": "zł"
           },
@@ -1129,7 +1127,7 @@
             "displayName-count-one": "ரஷியன் ரூபிள்",
             "displayName-count-other": "ரஷியன் ரூபிள்கள்",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1177,9 +1175,9 @@
             "symbol": "SDP"
           },
           "SEK": {
-            "displayName": "ஸ்வேதிஷ் க்ரோனா",
-            "displayName-count-one": "ஸ்வேதிஷ் க்ரோனா",
-            "displayName-count-other": "ஸ்வேதிஷ் க்ரோனர்",
+            "displayName": "ஸ்வீடிஷ் க்ரோனா",
+            "displayName-count-one": "ஸ்வீடிஷ் க்ரோனா",
+            "displayName-count-other": "ஸ்வீடிஷ் க்ரோனர்",
             "symbol": "SEK",
             "symbol-alt-narrow": "kr"
           },
@@ -1320,9 +1318,9 @@
             "symbol-alt-variant": "TL"
           },
           "TTD": {
-            "displayName": "டிரினாட் மற்றும் டோபாகோ டாலர்",
-            "displayName-count-one": "டிரினாட் மற்றும் டோபாகோ டாலர்",
-            "displayName-count-other": "டிரினாட் மற்றும் டோபாகோ டாலர்கள்",
+            "displayName": "டிரினிடாட் மற்றும் டோபாகோ டாலர்",
+            "displayName-count-one": "டிரினிடாட் மற்றும் டோபாகோ டாலர்",
+            "displayName-count-other": "டிரினிடாட் மற்றும் டோபாகோ டாலர்கள்",
             "symbol": "TTD",
             "symbol-alt-narrow": "$"
           },
@@ -1391,9 +1389,9 @@
             "symbol-alt-narrow": "$"
           },
           "UZS": {
-            "displayName": "உஸ்பெக்கிஸ்தான் சோம்",
-            "displayName-count-one": "உஸ்பெக்கிஸ்தான் சோம்",
-            "displayName-count-other": "உஸ்பெக்கிஸ்தான் சோம்",
+            "displayName": "உஸ்பெக்கிஸ்தானி சோம்",
+            "displayName-count-one": "உஸ்பெக்கிஸ்தானி சோம்",
+            "displayName-count-other": "உஸ்பெக்கிஸ்தானி சோம்",
             "symbol": "UZS"
           },
           "VEB": {
@@ -1401,9 +1399,9 @@
             "symbol": "VEB"
           },
           "VEF": {
-            "displayName": "வெனிசுலியன் போலிவர்",
-            "displayName-count-one": "வெனிசுலியன் போலிவர்",
-            "displayName-count-other": "வெனிசுலியன் போலிவர்கள்",
+            "displayName": "வெனிசுலன் போலிவர்",
+            "displayName-count-one": "வெனிசுலன் போலிவர்",
+            "displayName-count-other": "வெனிசுலன் போலிவர்கள்",
             "symbol": "VEF",
             "symbol-alt-narrow": "Bs"
           },
@@ -1431,9 +1429,9 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "ஃப்ராங்க் (CFA BEAC)",
-            "displayName-count-one": "ஃப்ராங்க் (CFA BEAC)",
-            "displayName-count-other": "ஃப்ராங்குகள் (CFA BEAC)",
+            "displayName": "மத்திய ஆப்பிரிக்க CFA ஃப்ராங்க்",
+            "displayName-count-one": "மத்திய ஆப்பிரிக்க CFA ஃப்ராங்க்",
+            "displayName-count-other": "மத்திய ஆப்பிரிக்க CFA ஃப்ராங்க்குகள்",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1484,9 +1482,9 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "CFA ஃப்ராங்க் BCEAO",
-            "displayName-count-one": "CFA ஃப்ராங்க் BCEAO",
-            "displayName-count-other": "CFA ஃப்ராங்க் BCEAO",
+            "displayName": "மேற்கு ஆப்பிரிக்கன் CFA ஃப்ராங்க்",
+            "displayName-count-one": "மேற்கு ஆப்பிரிக்கன் CFA ஃப்ராங்க்",
+            "displayName-count-other": "மேற்கு ஆப்பிரிக்கன் CFA ஃப்ராங்க்குகள்",
             "symbol": "CFA"
           },
           "XPD": {

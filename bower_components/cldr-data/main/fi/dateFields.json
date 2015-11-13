@@ -3,11 +3,8 @@
     "fi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11333 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-01 16:07:08 -0600 (Sun, 01 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "fi"
       },
@@ -32,23 +29,23 @@
           },
           "year-short": {
             "displayName": "v",
-            "relative-type--1": "viime vuonna",
-            "relative-type-0": "tänä vuonna",
-            "relative-type-1": "ensi vuonna",
+            "relative-type--1": "viime v",
+            "relative-type-0": "tänä v",
+            "relative-type-1": "ensi v",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} vuoden päästä",
-              "relativeTimePattern-count-other": "{0} vuoden päästä"
+              "relativeTimePattern-count-one": "{0} v päästä",
+              "relativeTimePattern-count-other": "{0} v päästä"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} vuotta sitten",
-              "relativeTimePattern-count-other": "{0} vuotta sitten"
+              "relativeTimePattern-count-one": "{0} v sitten",
+              "relativeTimePattern-count-other": "{0} v sitten"
             }
           },
           "year-narrow": {
             "displayName": "v",
-            "relative-type--1": "viime vuonna",
-            "relative-type-0": "tänä vuonna",
-            "relative-type-1": "ensi vuonna",
+            "relative-type--1": "viime v",
+            "relative-type-0": "tänä v",
+            "relative-type-1": "ensi v",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} v päästä",
               "relativeTimePattern-count-other": "{0} v päästä"
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "neljännesvuosi",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "viime neljännesvuonna",
+            "relative-type-0": "tänä neljännesvuonna",
+            "relative-type-1": "ensi neljännesvuonna",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} neljännesvuoden päästä",
               "relativeTimePattern-count-other": "{0} neljännesvuoden päästä"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "neljännes",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "viime neljänneksenä",
+            "relative-type-0": "tänä neljänneksenä",
+            "relative-type-1": "ensi neljänneksenä",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} neljänneksen päästä",
               "relativeTimePattern-count-other": "{0} neljänneksen päästä"
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "nelj.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "viime nelj.",
+            "relative-type-0": "tänä nelj.",
+            "relative-type-1": "ensi nelj.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} nelj. päästä",
               "relativeTimePattern-count-other": "{0} nelj. päästä"
@@ -116,9 +113,9 @@
           },
           "month-short": {
             "displayName": "kk",
-            "relative-type--1": "viime kuussa",
-            "relative-type-0": "tässä kuussa",
-            "relative-type-1": "ensi kuussa",
+            "relative-type--1": "viime kk",
+            "relative-type-0": "tässä kk",
+            "relative-type-1": "ensi kk",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} kk päästä",
               "relativeTimePattern-count-other": "{0} kk päästä"
@@ -130,9 +127,9 @@
           },
           "month-narrow": {
             "displayName": "kk",
-            "relative-type--1": "viime kuussa",
-            "relative-type-0": "tässä kuussa",
-            "relative-type-1": "ensi kuussa",
+            "relative-type--1": "viime kk",
+            "relative-type-0": "tässä kk",
+            "relative-type-1": "ensi kk",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} kk päästä",
               "relativeTimePattern-count-other": "{0} kk päästä"
@@ -158,9 +155,9 @@
           },
           "week-short": {
             "displayName": "vk",
-            "relative-type--1": "viime viikolla",
-            "relative-type-0": "tällä viikolla",
-            "relative-type-1": "ensi viikolla",
+            "relative-type--1": "viime vk",
+            "relative-type-0": "tällä vk",
+            "relative-type-1": "ensi vk",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} vk päästä",
               "relativeTimePattern-count-other": "{0} vk päästä"
@@ -172,9 +169,9 @@
           },
           "week-narrow": {
             "displayName": "vk",
-            "relative-type--1": "viime viikolla",
-            "relative-type-0": "tällä viikolla",
-            "relative-type-1": "ensi viikolla",
+            "relative-type--1": "viime vk",
+            "relative-type-0": "tällä vk",
+            "relative-type-1": "ensi vk",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} vk päästä",
               "relativeTimePattern-count-other": "{0} vk päästä"
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "päivä",
-            "relative-type--1": "eilen",
             "relative-type--2": "toissa päivänä",
+            "relative-type--1": "eilen",
             "relative-type-0": "tänään",
             "relative-type-1": "huomenna",
             "relative-type-2": "ylihuomenna",
@@ -202,11 +199,11 @@
           },
           "day-short": {
             "displayName": "pv",
+            "relative-type--2": "toissap.",
             "relative-type--1": "eilen",
-            "relative-type--2": "toissa päivänä",
             "relative-type-0": "tänään",
-            "relative-type-1": "huomenna",
-            "relative-type-2": "ylihuomenna",
+            "relative-type-1": "huom.",
+            "relative-type-2": "ylihuom.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} pv päästä",
               "relativeTimePattern-count-other": "{0} pv päästä"
@@ -218,11 +215,11 @@
           },
           "day-narrow": {
             "displayName": "pv",
+            "relative-type--2": "toissap.",
             "relative-type--1": "eilen",
-            "relative-type--2": "toissa päivänä",
             "relative-type-0": "tänään",
-            "relative-type-1": "huomenna",
-            "relative-type-2": "ylihuomenna",
+            "relative-type-1": "huom.",
+            "relative-type-2": "ylihuom.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} pv päästä",
               "relativeTimePattern-count-other": "{0} pv päästä"

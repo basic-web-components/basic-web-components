@@ -3,11 +3,8 @@
     "ur-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ur",
         "territory": "IN"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} وقت",
-          "regionFormat-type-standard": "{0} معیاری وقت",
           "regionFormat-type-daylight": "{0} دن کا وقت",
+          "regionFormat-type-standard": "{0} معیاری وقت",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "اراگویانا"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "لا ریئوجا"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "ریو گالیگوس"
-                },
-                "Salta": {
-                  "exemplarCity": "سالٹا"
                 },
                 "San_Juan": {
                   "exemplarCity": "سان جوآن"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "اوشوآئیا"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "لا ریئوجا"
+                },
                 "San_Luis": {
                   "exemplarCity": "سان لوئس"
                 },
+                "Salta": {
+                  "exemplarCity": "سالٹا"
+                },
                 "Tucuman": {
                   "exemplarCity": "ٹوکومین"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "اوشوآئیا"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "ہرموسیلو"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "کنوکس، انڈیانا"
-                },
-                "Marengo": {
-                  "exemplarCity": "مرینگو، انڈیانا"
+                "Vincennes": {
+                  "exemplarCity": "ونسینیز، انڈیانا"
                 },
                 "Petersburg": {
                   "exemplarCity": "پیٹرزبرگ، انڈیانا"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "ٹیل سٹی، انڈیانا"
                 },
-                "Vevay": {
-                  "exemplarCity": "ویوے، انڈیانا"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ونسینیز، انڈیانا"
+                "Knox": {
+                  "exemplarCity": "کنوکس، انڈیانا"
                 },
                 "Winamac": {
                   "exemplarCity": "وینامیک، انڈیانا"
+                },
+                "Marengo": {
+                  "exemplarCity": "مرینگو، انڈیانا"
+                },
+                "Vevay": {
+                  "exemplarCity": "ویوے، انڈیانا"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "بیولاہ، شمالی ڈکوٹا"
                 },
-                "Center": {
-                  "exemplarCity": "وسط، شمالی ڈکوٹا"
-                },
                 "New_Salem": {
                   "exemplarCity": "نیو سلیم، شمالی ڈکوٹا"
+                },
+                "Center": {
+                  "exemplarCity": "وسط، شمالی ڈکوٹا"
                 }
               },
               "Ojinaga": {
@@ -883,7 +880,7 @@
                 "exemplarCity": "کولکاتا"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "چیتا"
               },
               "Choibalsan": {
                 "exemplarCity": "چوئبالسان"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "سنگاپور"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "سرہدنیکولیمسک"
               },
               "Taipei": {
                 "exemplarCity": "تائپے"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "آکلینڈ"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "بوگینولے"
               },
               "Chatham": {
                 "exemplarCity": "چیتھم"
@@ -1695,7 +1692,7 @@
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "مزید مشرقی یورپی وقت"
+                "standard": "بعید مشرقی یورپی وقت"
               }
             },
             "Europe_Western": {
@@ -1729,11 +1726,6 @@
                 "standard": "فرینچ جنوبی اور انٹارکٹک ٹائم"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "گرین وچ مین ٹائم"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "گالاپاگوز ٹائم"
@@ -1754,6 +1746,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "جلبرٹ آئلینڈز ٹائم"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "گرین وچ مین ٹائم"
               }
             },
             "Greenland_Eastern": {

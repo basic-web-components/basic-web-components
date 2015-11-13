@@ -3,11 +3,8 @@
     "az-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "az",
         "script": "Latn"
@@ -20,8 +17,12 @@
         },
         "keys": {
           "calendar": "Təqvim",
+          "cf": "cf",
           "collation": "Çeşidləmə",
           "currency": "Valyuta",
+          "hc": "Saat Sikli (12 / 24)",
+          "lb": "Sətirdən sətrə keçirmə üslubu",
+          "ms": "Ölçü Sistemi",
           "numbers": "Rəqəmlər"
         },
         "types": {
@@ -45,10 +46,16 @@
             "persian": "İran Təqvimi",
             "roc": "Minquo Təqvimi"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "Defolt Unicode Çeşidləmə",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
@@ -62,7 +69,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12 Saatlıq Sistem (0–11)",
+            "h12": "12 Saatlıq Sistem (0–12)",
+            "h23": "24 Saatlıq Sistem (0–23)",
+            "h24": "24 Saatlıq Sistem (0–23)"
+          },
+          "lb": {
+            "loose": "Sərbəst sətirdən sətrə keçirmə üslubu",
+            "normal": "Normal sətirdən sətrə keçirmə üslubu",
+            "strict": "Sərt sətirdən sətrə keçirmə üslubu"
+          },
+          "ms": {
+            "metric": "Metrik Sistem",
+            "uksystem": "İmperial Ölçü Sistemi",
+            "ussystem": "ABŞ Ölçü Sistemi"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Ərəb-Hind Rəqəmləri",
             "arabext": "Genişlənmiş Ərəb-Hind Rəqəmləri",
             "armn": "Erməni Rəqəmləri",
@@ -72,6 +96,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Devanaqari Rəqəmləri",
             "ethi": "Efiop Rəqəmləri",
             "fullwide": "Tam Geniş Rəqəmlər",
@@ -86,6 +111,7 @@
             "hant": "Ənənəvi Çin Rəqəmləri",
             "hantfin": "Ənənəvi Çin Maliyyə Rəqəmləri",
             "hebr": "İvrit Rəqəmləri",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Yapon Rəqəmləri",
             "jpanfin": "Yapon Maliyyə Rəqəmləri",
@@ -98,11 +124,19 @@
             "latn": "Qərb Rəqəmləri",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malayalam Rəqəmləri",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Myanma Rəqəmləri",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "Oriya Rəqəmləri",
@@ -111,6 +145,8 @@
             "romanlow": "Kiçik Rum Rəqəmləri",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -120,7 +156,9 @@
             "telu": "Teluqu Rəqəmləri",
             "thai": "Tay Rəqəmləri",
             "tibt": "Tibet Rəqəmləri",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

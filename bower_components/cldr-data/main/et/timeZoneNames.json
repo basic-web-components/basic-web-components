@@ -3,22 +3,19 @@
     "et": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "et"
       },
       "dates": {
         "timeZoneNames": {
-          "hourFormat": "+HH:mm;-HH:mm",
+          "hourFormat": "+HH:mm;−HH:mm",
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "({0})",
-          "regionFormat-type-standard": "{0} (+0)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -35,29 +32,29 @@
                 "exemplarCity": "Antigua"
               },
               "Araguaina": {
-                "exemplarCity": "Araguaina"
+                "exemplarCity": "Araguaína"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
-                  "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
+                  "exemplarCity": "Río Gallegos"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
-                "Tucuman": {
-                  "exemplarCity": "Tucuman"
+                "Salta": {
+                  "exemplarCity": "Salta"
                 },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
+                "Tucuman": {
+                  "exemplarCity": "Tucumán"
                 }
               },
               "Aruba": {
@@ -76,7 +73,7 @@
                 "exemplarCity": "Barbados"
               },
               "Belem": {
-                "exemplarCity": "Belem"
+                "exemplarCity": "Belém"
               },
               "Belize": {
                 "exemplarCity": "Belize"
@@ -88,7 +85,7 @@
                 "exemplarCity": "Boa Vista"
               },
               "Bogota": {
-                "exemplarCity": "Bogota"
+                "exemplarCity": "Bogotá"
               },
               "Boise": {
                 "exemplarCity": "Boise"
@@ -103,7 +100,7 @@
                 "exemplarCity": "Campo Grande"
               },
               "Cancun": {
-                "exemplarCity": "Cancun"
+                "exemplarCity": "Cancún"
               },
               "Caracas": {
                 "exemplarCity": "Caracas"
@@ -127,7 +124,7 @@
                 "exemplarCity": "Atikokan"
               },
               "Cordoba": {
-                "exemplarCity": "Cordoba"
+                "exemplarCity": "Córdoba"
               },
               "Costa_Rica": {
                 "exemplarCity": "Costa Rica"
@@ -136,7 +133,7 @@
                 "exemplarCity": "Creston"
               },
               "Cuiaba": {
-                "exemplarCity": "Cuiaba"
+                "exemplarCity": "Cuiabá"
               },
               "Curacao": {
                 "exemplarCity": "Curaçao"
@@ -163,7 +160,7 @@
                 "exemplarCity": "Edmonton"
               },
               "Eirunepe": {
-                "exemplarCity": "Eirunepe"
+                "exemplarCity": "Eirunepé"
               },
               "El_Salvador": {
                 "exemplarCity": "El Salvador"
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -272,7 +269,7 @@
                 "exemplarCity": "Lower Prince’s Quarter"
               },
               "Maceio": {
-                "exemplarCity": "Maceio"
+                "exemplarCity": "Maceió"
               },
               "Managua": {
                 "exemplarCity": "Managua"
@@ -290,7 +287,7 @@
                 "exemplarCity": "Matamoros"
               },
               "Mazatlan": {
-                "exemplarCity": "Mazatlan"
+                "exemplarCity": "Mazatlán"
               },
               "Mendoza": {
                 "exemplarCity": "Mendoza"
@@ -299,13 +296,13 @@
                 "exemplarCity": "Menominee"
               },
               "Merida": {
-                "exemplarCity": "Merida"
+                "exemplarCity": "Mérida"
               },
               "Metlakatla": {
                 "exemplarCity": "Metlakatla"
               },
               "Mexico_City": {
-                "exemplarCity": "Mexico City"
+                "exemplarCity": "México"
               },
               "Miquelon": {
                 "exemplarCity": "Miquelon"
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, North Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, North Dakota"
                 }
               },
               "Ojinaga": {
@@ -397,7 +394,7 @@
                 "exemplarCity": "Santa Isabel"
               },
               "Santarem": {
-                "exemplarCity": "Santarem"
+                "exemplarCity": "Santarém"
               },
               "Santiago": {
                 "exemplarCity": "Santiago"
@@ -406,7 +403,7 @@
                 "exemplarCity": "Santo Domingo"
               },
               "Sao_Paulo": {
-                "exemplarCity": "Sao Paulo"
+                "exemplarCity": "São Paulo"
               },
               "Scoresbysund": {
                 "exemplarCity": "Ittoqqortoormiit"
@@ -418,19 +415,19 @@
                 "exemplarCity": "Saint Barthélemy"
               },
               "St_Johns": {
-                "exemplarCity": "St. John’s"
+                "exemplarCity": "Saint John’s"
               },
               "St_Kitts": {
-                "exemplarCity": "St. Kitts"
+                "exemplarCity": "Saint Kitts"
               },
               "St_Lucia": {
-                "exemplarCity": "St. Lucia"
+                "exemplarCity": "Saint Lucia"
               },
               "St_Thomas": {
-                "exemplarCity": "St. Thomas"
+                "exemplarCity": "Saint Thomas"
               },
               "St_Vincent": {
-                "exemplarCity": "St. Vincent"
+                "exemplarCity": "Saint Vincent"
               },
               "Swift_Current": {
                 "exemplarCity": "Swift Current"
@@ -489,13 +486,13 @@
                 "exemplarCity": "Madeira"
               },
               "Reykjavik": {
-                "exemplarCity": "Reykjavik"
+                "exemplarCity": "Reykjavík"
               },
               "South_Georgia": {
-                "exemplarCity": "South Georgia"
+                "exemplarCity": "Lõuna-Georgia"
               },
               "St_Helena": {
-                "exemplarCity": "St. Helena"
+                "exemplarCity": "Saint Helena"
               },
               "Stanley": {
                 "exemplarCity": "Stanley"
@@ -533,7 +530,7 @@
                 "exemplarCity": "Busingen"
               },
               "Chisinau": {
-                "exemplarCity": "Chisinau"
+                "exemplarCity": "Chișinău"
               },
               "Copenhagen": {
                 "exemplarCity": "Kopenhaagen"
@@ -557,7 +554,7 @@
                 "exemplarCity": "Mani saar"
               },
               "Istanbul": {
-                "exemplarCity": "Istanbul"
+                "exemplarCity": "İstanbul"
               },
               "Jersey": {
                 "exemplarCity": "Jersey"
@@ -590,7 +587,7 @@
                 "exemplarCity": "Malta"
               },
               "Mariehamn": {
-                "exemplarCity": "Mariehamn"
+                "exemplarCity": "Maarianhamina"
               },
               "Minsk": {
                 "exemplarCity": "Minsk"
@@ -644,7 +641,7 @@
                 "exemplarCity": "Tallinn"
               },
               "Tirane": {
-                "exemplarCity": "Tirane"
+                "exemplarCity": "Tirana"
               },
               "Uzhgorod": {
                 "exemplarCity": "Užgorod"
@@ -685,7 +682,7 @@
                 "exemplarCity": "Accra"
               },
               "Addis_Ababa": {
-                "exemplarCity": "Addis Ababa"
+                "exemplarCity": "Addis Abeba"
               },
               "Algiers": {
                 "exemplarCity": "Alžiir"
@@ -852,19 +849,19 @@
                 "exemplarCity": "Aktau"
               },
               "Aqtobe": {
-                "exemplarCity": "Aqtobe"
+                "exemplarCity": "Aktöbe"
               },
               "Ashgabat": {
-                "exemplarCity": "Asgabat"
+                "exemplarCity": "Aşgabat"
               },
               "Baghdad": {
                 "exemplarCity": "Bagdad"
               },
               "Bahrain": {
-                "exemplarCity": "Bahrain"
+                "exemplarCity": "Bahrein"
               },
               "Baku": {
-                "exemplarCity": "Baku"
+                "exemplarCity": "Bakuu"
               },
               "Bangkok": {
                 "exemplarCity": "Bangkok"
@@ -882,10 +879,10 @@
                 "exemplarCity": "Kolkata"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Tšita"
               },
               "Choibalsan": {
-                "exemplarCity": "Choibalsan"
+                "exemplarCity": "Tšojbalsan"
               },
               "Colombo": {
                 "exemplarCity": "Colombo"
@@ -912,7 +909,7 @@
                 "exemplarCity": "Hebron"
               },
               "Hong_Kong": {
-                "exemplarCity": "Hong Kong"
+                "exemplarCity": "Hongkong"
               },
               "Hovd": {
                 "exemplarCity": "Hovd"
@@ -939,10 +936,10 @@
                 "exemplarCity": "Karachi"
               },
               "Katmandu": {
-                "exemplarCity": "Kathmandu"
+                "exemplarCity": "Katmandu"
               },
               "Khandyga": {
-                "exemplarCity": "Khandyga"
+                "exemplarCity": "Handõga"
               },
               "Krasnoyarsk": {
                 "exemplarCity": "Krasnojarsk"
@@ -969,10 +966,10 @@
                 "exemplarCity": "Manila"
               },
               "Muscat": {
-                "exemplarCity": "Muscat"
+                "exemplarCity": "Masqaţ"
               },
               "Nicosia": {
-                "exemplarCity": "Nicosia"
+                "exemplarCity": "Nikosia"
               },
               "Novokuznetsk": {
                 "exemplarCity": "Novokuznetsk"
@@ -1002,10 +999,10 @@
                 "exemplarCity": "Kõzõlorda"
               },
               "Rangoon": {
-                "exemplarCity": "Rangoon"
+                "exemplarCity": "Yangon"
               },
               "Riyadh": {
-                "exemplarCity": "Riyadh"
+                "exemplarCity": "Ar-Riyāḑ"
               },
               "Saigon": {
                 "exemplarCity": "Ho Chi Minh"
@@ -1017,7 +1014,7 @@
                 "exemplarCity": "Samarkand"
               },
               "Seoul": {
-                "exemplarCity": "Seoul"
+                "exemplarCity": "Soul"
               },
               "Shanghai": {
                 "exemplarCity": "Shanghai"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "Singapur"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Srednekolõmsk"
               },
               "Taipei": {
                 "exemplarCity": "Taipei"
@@ -1035,7 +1032,7 @@
                 "exemplarCity": "Taškent"
               },
               "Tbilisi": {
-                "exemplarCity": "Tbilisi"
+                "exemplarCity": "Thbilisi"
               },
               "Tehran": {
                 "exemplarCity": "Teheran"
@@ -1050,7 +1047,7 @@
                 "exemplarCity": "Ulaanbaatar"
               },
               "Urumqi": {
-                "exemplarCity": "Urumqi"
+                "exemplarCity": "Ürümqi"
               },
               "Ust-Nera": {
                 "exemplarCity": "Ust-Nera"
@@ -1176,7 +1173,7 @@
                 "exemplarCity": "Funafuti"
               },
               "Galapagos": {
-                "exemplarCity": "Galapagos"
+                "exemplarCity": "Galápagos"
               },
               "Gambier": {
                 "exemplarCity": "Gambier"
@@ -1386,7 +1383,7 @@
                 "exemplarCity": "GMT-9"
               },
               "Unknown": {
-                "exemplarCity": "määramata"
+                "exemplarCity": "määramata linn"
               }
             }
           },
@@ -1400,7 +1397,7 @@
             },
             "Afghanistan": {
               "long": {
-                "standard": "Afganistaani aeg"
+                "standard": "Afganistani aeg"
               }
             },
             "Africa_Central": {
@@ -1430,6 +1427,13 @@
                 "generic": "Alaska aeg",
                 "standard": "Alaska standardaeg",
                 "daylight": "Alaska suveaeg"
+              }
+            },
+            "Almaty": {
+              "long": {
+                "generic": "Almatõ aeg",
+                "standard": "Almatõ standardaeg",
+                "daylight": "Almatõ suveaeg"
               }
             },
             "Amazon": {
@@ -1479,6 +1483,20 @@
                 "generic": "Apia aeg",
                 "standard": "Apia standardaeg",
                 "daylight": "Apia suveaeg"
+              }
+            },
+            "Aqtau": {
+              "long": {
+                "generic": "Aktau aeg",
+                "standard": "Aktau standardaeg",
+                "daylight": "Aktau suveaeg"
+              }
+            },
+            "Aqtobe": {
+              "long": {
+                "generic": "Aktöbe aeg",
+                "standard": "Aktöbe standardaeg",
+                "daylight": "Aktöbe suveaeg"
               }
             },
             "Arabian": {
@@ -1732,12 +1750,7 @@
             },
             "French_Southern": {
               "long": {
-                "standard": "Prantsuse Lõunaalade ja Antarktika aeg"
-              }
-            },
-            "GMT": {
-              "long": {
-                "standard": "Greenwichi aeg"
+                "standard": "Prantsuse Antarktiliste ja Lõunaalade aeg"
               }
             },
             "Galapagos": {
@@ -1760,6 +1773,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilberti saarte aeg"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwichi aeg"
               }
             },
             "Greenland_Eastern": {
@@ -1872,7 +1890,7 @@
             },
             "Kamchatka": {
               "long": {
-                "generic": "Kamtšatka aeg",
+                "generic": "Petropavlovsk-Kamtšatski aeg",
                 "standard": "Kamtšatka standardaeg",
                 "daylight": "Kamtšatka suveaeg"
               }
@@ -1942,7 +1960,7 @@
             },
             "Maldives": {
               "long": {
-                "standard": "Maldiivide aeg"
+                "standard": "Maldiivi aeg"
               }
             },
             "Marquesas": {
@@ -1952,7 +1970,7 @@
             },
             "Marshall_Islands": {
               "long": {
-                "standard": "Marshalli saarte aeg"
+                "standard": "Marshalli Saarte aeg"
               }
             },
             "Mauritius": {
@@ -2095,9 +2113,9 @@
             },
             "Philippines": {
               "long": {
-                "generic": "Filipiinide aeg",
-                "standard": "Filipiinide standardaeg",
-                "daylight": "Filipiinide suveaeg"
+                "generic": "Filipiini aeg",
+                "standard": "Filipiini standardaeg",
+                "daylight": "Filipiini suveaeg"
               }
             },
             "Phoenix_Islands": {
@@ -2120,6 +2138,13 @@
             "Ponape": {
               "long": {
                 "standard": "Pohnpei aeg"
+              }
+            },
+            "Qyzylorda": {
+              "long": {
+                "generic": "Kõzõlorda aeg",
+                "standard": "Kõzõlorda standardaeg",
+                "daylight": "Kõzõlorda suveaeg"
               }
             },
             "Reunion": {
@@ -2155,7 +2180,7 @@
             },
             "Seychelles": {
               "long": {
-                "standard": "Seišellide aeg"
+                "standard": "Seišelli aeg"
               }
             },
             "Singapore": {
@@ -2165,7 +2190,7 @@
             },
             "Solomon": {
               "long": {
-                "standard": "Saalomoni saarte aeg"
+                "standard": "Saalomoni Saarte aeg"
               }
             },
             "South_Georgia": {

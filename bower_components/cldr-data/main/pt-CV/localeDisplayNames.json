@@ -3,11 +3,8 @@
     "pt-CV": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10708 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-31 16:08:50 -0500 (Thu, 31 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "pt",
         "territory": "CV"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "Calendário",
+          "cf": "cf",
           "colAlternate": "Ignorar classificação de símbolos",
           "colBackwards": "Ordenação de acentos invertida",
           "colCaseFirst": "Ordem de maiúsculas/minúsculas",
           "colCaseLevel": "Ordenação sensível a maiúsculas e minúsculas",
           "colHiraganaQuaternary": "Ordenação kana",
+          "collation": "Ordenação",
           "colNormalization": "Ordenação normalizada",
           "colNumeric": "Ordenação numérica",
           "colStrength": "Força da ordenação",
-          "collation": "Ordenação",
           "currency": "Moeda",
+          "hc": "Ciclo horário (12 vs. 24)",
+          "lb": "Estilo de quebra de linha",
+          "ms": "Sistema de medida",
           "numbers": "Números",
           "timezone": "Fuso horário",
           "va": "Variante de localidade",
@@ -57,6 +58,10 @@
             "persian": "Calendário persa",
             "roc": "Calendário da República da China"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Ordenar símbolos",
             "shifted": "Ordenar símbolos ignorados"
@@ -78,6 +83,26 @@
             "no": "Ordenar kana separadamente",
             "yes": "Ordenar kana diferentemente"
           },
+          "collation": {
+            "big5han": "Ordem do Chinês Tradicional - Big5",
+            "compat": "compat",
+            "dictionary": "Ordenação do dicionário",
+            "ducet": "Ordenação unicode predefinida",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Ordem do Chinês Simplificado - GB2312",
+            "phonebook": "Ordem da lista telefónica",
+            "phonetic": "Sequência de ordenação fonética",
+            "pinyin": "Ordem Pin-yin",
+            "reformed": "Reforma da ordenação",
+            "search": "Pesquisa de uso geral",
+            "searchjl": "Pesquisar por consonante inicial hangul",
+            "standard": "Ordenação padrão",
+            "stroke": "Ordem por traços",
+            "traditional": "Ordem tradicional",
+            "unihan": "Ordem por radical e traços",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Ordenar sem normalização",
             "yes": "Ordenar Unicode normalizado"
@@ -93,25 +118,24 @@
             "secondary": "Ordenar acentos",
             "tertiary": "Ordenar acentos/tipo de letra/largura"
           },
-          "collation": {
-            "big5han": "Ordem do Chinês Tradicional - Big5",
-            "dictionary": "Ordenação do dicionário",
-            "ducet": "Ordenação unicode predefinida",
-            "eor": "eor",
-            "gb2312han": "Ordem do Chinês Simplificado - GB2312",
-            "phonebook": "Ordem da lista telefónica",
-            "phonetic": "Sequência de ordenação fonética",
-            "pinyin": "Ordem Pin-yin",
-            "reformed": "Reforma da ordenação",
-            "search": "Pesquisa de uso geral",
-            "searchjl": "Pesquisar por consonante inicial hangul",
-            "standard": "Ordenação padrão",
-            "stroke": "Ordem por traços",
-            "traditional": "Ordem tradicional",
-            "unihan": "Ordem por radical e traços",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "Sistema de 12 horas (0–11)",
+            "h12": "Sistema de 12 horas (1–12)",
+            "h23": "Sistema de 24 horas (0–23)",
+            "h24": "Sistema de 24 horas (1–24)"
+          },
+          "lb": {
+            "loose": "Estilo solto de quebra de linha",
+            "normal": "Estilo padrão de quebra de linha",
+            "strict": "Estilo estrito de quebra de linha"
+          },
+          "ms": {
+            "metric": "Sistema métrico",
+            "uksystem": "Sistema de medida imperial",
+            "ussystem": "Sistema de medida americano"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Algarismos indo-arábicos",
             "arabext": "Algarismos indo-arábicos por extenso",
             "armn": "Numeração arménia",
@@ -121,6 +145,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Algarismos devanágaris",
             "ethi": "Numeração etíope",
             "finance": "Algarismos financeiros",
@@ -136,6 +161,7 @@
             "hant": "Numeração em chinês tradicional",
             "hantfin": "Numeração financeira em chinês tradicional",
             "hebr": "Numeração hebraica",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Numeração japonesa",
             "jpanfin": "Numeração financeira japonesa",
@@ -148,11 +174,19 @@
             "latn": "Algarismos ocidentais",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Algarismos de malaiala",
+            "modi": "modi",
             "mong": "Algarismos mongóis",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Algarismos birmaneses",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Dígitos nativos",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "Numeração romana minúscula",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,8 +207,10 @@
             "telu": "Algarismos de telugu",
             "thai": "Algarismos tailandeses",
             "tibt": "Algarismos tibetanos",
+            "tirh": "tirh",
             "traditional": "Algarismos tradicionais",
-            "vaii": "Dígitos vai"
+            "vaii": "Dígitos vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {

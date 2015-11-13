@@ -3,11 +3,8 @@
     "en-001": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11290 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-22 04:15:45 -0600 (Sun, 22 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "en",
         "territory": "001"

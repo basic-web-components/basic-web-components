@@ -3,11 +3,8 @@
     "zh-Hant-HK": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "zh",
         "script": "Hant",
@@ -108,8 +105,8 @@
             "symbol": "ATS"
           },
           "AUD": {
-            "displayName": "澳幣",
-            "displayName-count-other": "澳幣",
+            "displayName": "澳元",
+            "displayName-count-other": "澳元",
             "symbol": "AU$",
             "symbol-alt-narrow": "$"
           },
@@ -145,8 +142,8 @@
             "symbol": "BAN"
           },
           "BBD": {
-            "displayName": "巴貝多元",
-            "displayName-count-other": "巴貝多元",
+            "displayName": "巴巴多斯元",
+            "displayName-count-other": "巴巴多斯元",
             "symbol": "BBD",
             "symbol-alt-narrow": "$"
           },
@@ -197,8 +194,8 @@
             "symbol": "BHD"
           },
           "BIF": {
-            "displayName": "蒲隆地法郎",
-            "displayName-count-other": "蒲隆地法郎",
+            "displayName": "布隆迪法郎",
+            "displayName-count-other": "布隆迪法郎",
             "symbol": "BIF"
           },
           "BMD": {
@@ -287,8 +284,8 @@
             "symbol": "BUK"
           },
           "BWP": {
-            "displayName": "波札那普拉",
-            "displayName-count-other": "波札那普拉",
+            "displayName": "博茨瓦納普拉",
+            "displayName-count-other": "博茨瓦納普拉",
             "symbol": "BWP",
             "symbol-alt-narrow": "P"
           },
@@ -304,14 +301,14 @@
             "symbol-alt-narrow": "р."
           },
           "BZD": {
-            "displayName": "貝里斯元",
-            "displayName-count-other": "貝里斯元",
+            "displayName": "伯利茲元",
+            "displayName-count-other": "伯利茲元",
             "symbol": "BZD",
             "symbol-alt-narrow": "$"
           },
           "CAD": {
-            "displayName": "加幣",
-            "displayName-count-other": "加幣",
+            "displayName": "加拿大元",
+            "displayName-count-other": "加拿大元",
             "symbol": "CA$",
             "symbol-alt-narrow": "$"
           },
@@ -400,8 +397,8 @@
             "symbol-alt-narrow": "$"
           },
           "CVE": {
-            "displayName": "維德角埃斯庫多",
-            "displayName-count-other": "維德角埃斯庫多",
+            "displayName": "佛得角埃斯庫多",
+            "displayName-count-other": "佛得角埃斯庫多",
             "symbol": "CVE"
           },
           "CYP": {
@@ -426,19 +423,19 @@
             "symbol": "DEM"
           },
           "DJF": {
-            "displayName": "吉布地法郎",
-            "displayName-count-other": "吉布地法郎",
+            "displayName": "吉布提法郎",
+            "displayName-count-other": "吉布提法郎",
             "symbol": "DJF"
           },
           "DKK": {
             "displayName": "丹麥克朗",
-            "displayName-count-other": "丹麥克朗",
+            "displayName-count-other": "丹麥克羅納",
             "symbol": "DKK",
             "symbol-alt-narrow": "kr"
           },
           "DOP": {
-            "displayName": "多明尼加披索",
-            "displayName-count-other": "多明尼加披索",
+            "displayName": "多米尼加披索",
+            "displayName-count-other": "多米尼加披索",
             "symbol": "DOP",
             "symbol-alt-narrow": "$"
           },
@@ -536,7 +533,8 @@
           "GEL": {
             "displayName": "格魯吉亞拉里",
             "displayName-count-other": "格魯吉亞拉里",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "迦納賽地 (1979–2007)",
@@ -544,8 +542,8 @@
             "symbol": "GHC"
           },
           "GHS": {
-            "displayName": "迦納塞地",
-            "displayName-count-other": "迦納塞地",
+            "displayName": "加納塞地",
+            "displayName-count-other": "加納塞地",
             "symbol": "GHS"
           },
           "GIP": {
@@ -555,8 +553,8 @@
             "symbol-alt-narrow": "£"
           },
           "GMD": {
-            "displayName": "甘比亞達拉西",
-            "displayName-count-other": "甘比亞達拉西",
+            "displayName": "岡比亞達拉西",
+            "displayName-count-other": "岡比亞達拉西",
             "symbol": "GMD"
           },
           "GNF": {
@@ -581,8 +579,8 @@
             "symbol": "GRD"
           },
           "GTQ": {
-            "displayName": "瓜地馬拉格查爾",
-            "displayName-count-other": "瓜地馬拉格查爾",
+            "displayName": "危地馬拉格查爾",
+            "displayName-count-other": "危地馬拉格查爾",
             "symbol": "GTQ",
             "symbol-alt-narrow": "Q"
           },
@@ -597,8 +595,8 @@
             "symbol": "GWP"
           },
           "GYD": {
-            "displayName": "蓋亞那元",
-            "displayName-count-other": "蓋亞那元",
+            "displayName": "圭亞那元",
+            "displayName-count-other": "圭亞那元",
             "symbol": "GYD",
             "symbol-alt-narrow": "$"
           },
@@ -620,7 +618,7 @@
             "symbol": "HRD"
           },
           "HRK": {
-            "displayName": "克羅埃西亞庫納",
+            "displayName": "克羅地亞庫納",
             "displayName-count-other": "克羅地亞庫納",
             "symbol": "HRK",
             "symbol-alt-narrow": "kn"
@@ -713,8 +711,8 @@
             "symbol-alt-narrow": "¥"
           },
           "KES": {
-            "displayName": "肯尼亞先令",
-            "displayName-count-other": "肯尼亞先令",
+            "displayName": "肯雅先令",
+            "displayName-count-other": "肯雅先令",
             "symbol": "KES"
           },
           "KGS": {
@@ -723,8 +721,8 @@
             "symbol": "KGS"
           },
           "KHR": {
-            "displayName": "柬埔寨瑞爾",
-            "displayName-count-other": "柬埔寨瑞爾",
+            "displayName": "柬埔寨里爾",
+            "displayName-count-other": "柬埔寨里爾",
             "symbol": "KHR",
             "symbol-alt-narrow": "៛"
           },
@@ -735,8 +733,8 @@
             "symbol-alt-narrow": "CF"
           },
           "KPW": {
-            "displayName": "北韓圓",
-            "displayName-count-other": "北韓圓",
+            "displayName": "北韓圜",
+            "displayName-count-other": "北韓圜",
             "symbol": "KPW",
             "symbol-alt-narrow": "₩"
           },
@@ -768,14 +766,14 @@
             "symbol-alt-narrow": "$"
           },
           "KZT": {
-            "displayName": "卡扎克斯坦坦吉",
-            "displayName-count-other": "卡扎克斯坦坦吉",
+            "displayName": "哈薩克坦吉",
+            "displayName-count-other": "哈薩克坦吉",
             "symbol": "KZT",
             "symbol-alt-narrow": "₸"
           },
           "LAK": {
-            "displayName": "寮國基普",
-            "displayName-count-other": "寮國基普",
+            "displayName": "老撾基普",
+            "displayName-count-other": "老撾基普",
             "symbol": "LAK",
             "symbol-alt-narrow": "₭"
           },
@@ -804,7 +802,7 @@
           },
           "LTL": {
             "displayName": "立陶宛立特",
-            "displayName-count-other": "立陶宛立特",
+            "displayName-count-other": "立陶宛里塔",
             "symbol": "LTL",
             "symbol-alt-narrow": "Lt"
           },
@@ -865,8 +863,8 @@
             "symbol": "MDC"
           },
           "MDL": {
-            "displayName": "摩杜雲列伊",
-            "displayName-count-other": "摩杜雲列伊",
+            "displayName": "摩爾多瓦列伊",
+            "displayName-count-other": "摩爾多瓦列伊",
             "symbol": "MDL"
           },
           "MGA": {
@@ -913,8 +911,8 @@
             "symbol": "MOP"
           },
           "MRO": {
-            "displayName": "茅利塔尼亞烏吉亞",
-            "displayName-count-other": "茅利塔尼亞烏吉亞",
+            "displayName": "毛里塔尼亞烏吉亞",
+            "displayName-count-other": "毛里塔尼亞烏吉亞",
             "symbol": "MRO"
           },
           "MTL": {
@@ -939,8 +937,8 @@
             "symbol": "MVP"
           },
           "MVR": {
-            "displayName": "馬爾地夫盧非亞",
-            "displayName-count-other": "馬爾地夫盧非亞",
+            "displayName": "馬爾代夫盧非亞",
+            "displayName-count-other": "馬爾代夫盧非亞",
             "symbol": "MVR"
           },
           "MWK": {
@@ -1015,7 +1013,7 @@
           },
           "NOK": {
             "displayName": "挪威克朗",
-            "displayName-count-other": "挪威克朗",
+            "displayName-count-other": "挪威克羅納",
             "symbol": "NOK",
             "symbol-alt-narrow": "kr"
           },
@@ -1026,14 +1024,14 @@
             "symbol-alt-narrow": "Rs"
           },
           "NZD": {
-            "displayName": "紐西蘭幣",
-            "displayName-count-other": "紐西蘭幣",
+            "displayName": "紐西蘭元",
+            "displayName-count-other": "紐西蘭元",
             "symbol": "NZ$",
             "symbol-alt-narrow": "$"
           },
           "OMR": {
-            "displayName": "阿曼里亞爾",
-            "displayName-count-other": "阿曼里亞爾",
+            "displayName": "阿曼里奧",
+            "displayName-count-other": "阿曼里奧",
             "symbol": "OMR"
           },
           "PAB": {
@@ -1057,8 +1055,8 @@
             "symbol": "PES"
           },
           "PGK": {
-            "displayName": "巴布亞紐幾內亞基那",
-            "displayName-count-other": "巴布亞紐幾內亞基那",
+            "displayName": "巴布亞新幾內亞基那",
+            "displayName-count-other": "巴布亞新幾內亞基那",
             "symbol": "PGK"
           },
           "PHP": {
@@ -1096,8 +1094,8 @@
             "symbol-alt-narrow": "₲"
           },
           "QAR": {
-            "displayName": "卡達里亞爾",
-            "displayName-count-other": "卡達里亞爾",
+            "displayName": "卡塔爾里亞爾",
+            "displayName-count-other": "卡塔爾里亞爾",
             "symbol": "QAR"
           },
           "RHD": {
@@ -1116,15 +1114,15 @@
             "symbol": "RON"
           },
           "RSD": {
-            "displayName": "塞爾維亞戴納",
-            "displayName-count-other": "塞爾維亞戴納",
+            "displayName": "塞爾維亞第納爾",
+            "displayName-count-other": "塞爾維亞第納爾",
             "symbol": "RSD"
           },
           "RUB": {
             "displayName": "俄羅斯盧布",
             "displayName-count-other": "俄羅斯盧布",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "俄羅斯盧布 (1991–1998)",
@@ -1144,14 +1142,14 @@
             "symbol": "SAR"
           },
           "SBD": {
-            "displayName": "索羅門群島元",
-            "displayName-count-other": "索羅門群島元",
+            "displayName": "所羅門群島元",
+            "displayName-count-other": "所羅門群島元",
             "symbol": "SBD",
             "symbol-alt-narrow": "$"
           },
           "SCR": {
-            "displayName": "塞席爾盧比",
-            "displayName-count-other": "塞席爾盧比",
+            "displayName": "塞舌爾盧比",
+            "displayName-count-other": "塞舌爾盧比",
             "symbol": "SCR"
           },
           "SDD": {
@@ -1171,13 +1169,13 @@
           },
           "SEK": {
             "displayName": "瑞典克朗",
-            "displayName-count-other": "瑞典克朗",
+            "displayName-count-other": "瑞典克羅納",
             "symbol": "SEK",
             "symbol-alt-narrow": "kr"
           },
           "SGD": {
-            "displayName": "新加坡幣",
-            "displayName-count-other": "新加坡幣",
+            "displayName": "新加坡元",
+            "displayName-count-other": "新加坡元",
             "symbol": "SGD",
             "symbol-alt-narrow": "$"
           },
@@ -1198,18 +1196,18 @@
             "symbol": "SKK"
           },
           "SLL": {
-            "displayName": "獅子山利昂",
-            "displayName-count-other": "獅子山利昂",
+            "displayName": "塞拉利昂利昂",
+            "displayName-count-other": "塞拉利昂利昂",
             "symbol": "SLL"
           },
           "SOS": {
-            "displayName": "索馬利亞先令",
-            "displayName-count-other": "索馬利亞先令",
+            "displayName": "索馬里先令",
+            "displayName-count-other": "索馬里先令",
             "symbol": "SOS"
           },
           "SRD": {
-            "displayName": "蘇利南元",
-            "displayName-count-other": "蘇利南元",
+            "displayName": "蘇里南元",
+            "displayName-count-other": "蘇里南元",
             "symbol": "SRD",
             "symbol-alt-narrow": "$"
           },
@@ -1225,8 +1223,8 @@
             "symbol-alt-narrow": "£"
           },
           "STD": {
-            "displayName": "聖多美島和普林西比島多布拉",
-            "displayName-count-other": "聖多美島和普林西比島多布拉",
+            "displayName": "聖多美和普林西比多布拉",
+            "displayName-count-other": "聖多美和普林西比多布拉",
             "symbol": "STD",
             "symbol-alt-narrow": "Db"
           },
@@ -1247,14 +1245,14 @@
             "symbol-alt-narrow": "£"
           },
           "SZL": {
-            "displayName": "史瓦濟蘭里朗吉尼",
-            "displayName-count-other": "史瓦濟蘭里朗吉尼",
+            "displayName": "斯威士蘭里朗吉尼",
+            "displayName-count-other": "斯威士蘭里朗吉尼",
             "symbol": "SZL"
           },
           "THB": {
             "displayName": "泰銖",
             "displayName-count-other": "泰銖",
-            "symbol": "฿",
+            "symbol": "THB",
             "symbol-alt-narrow": "฿"
           },
           "TJR": {
@@ -1283,8 +1281,8 @@
             "symbol": "TND"
           },
           "TOP": {
-            "displayName": "東加潘加",
-            "displayName-count-other": "東加潘加",
+            "displayName": "湯加潘加",
+            "displayName-count-other": "湯加潘加",
             "symbol": "TOP",
             "symbol-alt-narrow": "T$"
           },
@@ -1306,20 +1304,20 @@
             "symbol-alt-variant": "TL"
           },
           "TTD": {
-            "displayName": "千里達及托巴哥元",
-            "displayName-count-other": "千里達及托巴哥元",
+            "displayName": "千里達和多巴哥元",
+            "displayName-count-other": "千里達和多巴哥元",
             "symbol": "TTD",
             "symbol-alt-narrow": "$"
           },
           "TWD": {
-            "displayName": "新臺幣",
-            "displayName-count-other": "新臺幣",
+            "displayName": "新台幣",
+            "displayName-count-other": "新台幣",
             "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
-            "displayName": "坦尚尼亞先令",
-            "displayName-count-other": "坦尚尼亞先令",
+            "displayName": "坦桑尼亞先令",
+            "displayName-count-other": "坦桑尼亞先令",
             "symbol": "TZS"
           },
           "UAH": {
@@ -1403,8 +1401,8 @@
             "symbol": "VNN"
           },
           "VUV": {
-            "displayName": "萬那杜瓦圖",
-            "displayName-count-other": "萬那杜瓦圖",
+            "displayName": "瓦努阿圖瓦圖",
+            "displayName-count-other": "瓦努阿圖瓦圖",
             "symbol": "VUV"
           },
           "WST": {
@@ -1448,8 +1446,8 @@
             "symbol": "XBD"
           },
           "XCD": {
-            "displayName": "格瑞那達元",
-            "displayName-count-other": "格瑞那達元",
+            "displayName": "東加勒比元",
+            "displayName-count-other": "東加勒比元",
             "symbol": "EC$",
             "symbol-alt-narrow": "$"
           },
@@ -1475,7 +1473,7 @@
           },
           "XOF": {
             "displayName": "多哥非洲共同體法郎",
-            "displayName-count-other": "法郎 (CFA–BCEAO)",
+            "displayName-count-other": "西非法郎",
             "symbol": "CFA"
           },
           "XPD": {
@@ -1515,7 +1513,7 @@
           },
           "XXX": {
             "displayName": "未知貨幣",
-            "displayName-count-other": "未知貨幣",
+            "displayName-count-other": "（未知貨幣）",
             "symbol": "XXX"
           },
           "YDD": {
@@ -1524,8 +1522,8 @@
             "symbol": "YDD"
           },
           "YER": {
-            "displayName": "葉門里亞爾",
-            "displayName-count-other": "葉門里亞爾",
+            "displayName": "也門里雅",
+            "displayName-count-other": "也門里雅",
             "symbol": "YER"
           },
           "YUD": {
@@ -1565,8 +1563,8 @@
             "symbol": "ZMK"
           },
           "ZMW": {
-            "displayName": "尚比亞克瓦查",
-            "displayName-count-other": "尚比亞克瓦查",
+            "displayName": "贊比亞克瓦查",
+            "displayName-count-other": "贊比亞克瓦查",
             "symbol": "ZMW",
             "symbol-alt-narrow": "ZK"
           },

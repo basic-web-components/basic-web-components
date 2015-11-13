@@ -3,21 +3,18 @@
     "da": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11944 $"
         },
         "language": "da"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Æra"
+            "displayName": "æra"
           },
           "year": {
-            "displayName": "År",
+            "displayName": "år",
             "relative-type--1": "sidste år",
             "relative-type-0": "i år",
             "relative-type-1": "næste år",
@@ -59,10 +56,10 @@
             }
           },
           "quarter": {
-            "displayName": "Kvartal",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "kvartal",
+            "relative-type--1": "sidste kvartal",
+            "relative-type-0": "dette kvartal",
+            "relative-type-1": "næste kvartal",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} kvartal",
               "relativeTimePattern-count-other": "om {0} kvartaler"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "kvt.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "sidste kvt.",
+            "relative-type-0": "dette kvt.",
+            "relative-type-1": "næste kvt.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} kvt.",
               "relativeTimePattern-count-other": "om {0} kvt."
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "kvt.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "sidste kvt.",
+            "relative-type-0": "dette kvt.",
+            "relative-type-1": "næste kvt.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} kvt.",
               "relativeTimePattern-count-other": "om {0} kvt."
@@ -101,7 +98,7 @@
             }
           },
           "month": {
-            "displayName": "Måned",
+            "displayName": "måned",
             "relative-type--1": "sidste måned",
             "relative-type-0": "denne måned",
             "relative-type-1": "næste måned",
@@ -116,9 +113,9 @@
           },
           "month-short": {
             "displayName": "md.",
-            "relative-type--1": "sidste måned",
-            "relative-type-0": "denne måned",
-            "relative-type-1": "næste måned",
+            "relative-type--1": "sidste md.",
+            "relative-type-0": "denne md.",
+            "relative-type-1": "næste md.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} md.",
               "relativeTimePattern-count-other": "om {0} md."
@@ -130,9 +127,9 @@
           },
           "month-narrow": {
             "displayName": "md.",
-            "relative-type--1": "sidste måned",
-            "relative-type-0": "denne måned",
-            "relative-type-1": "næste måned",
+            "relative-type--1": "sidste md.",
+            "relative-type-0": "denne md.",
+            "relative-type-1": "næste md.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} md.",
               "relativeTimePattern-count-other": "om {0} md."
@@ -143,7 +140,7 @@
             }
           },
           "week": {
-            "displayName": "Uge",
+            "displayName": "uge",
             "relative-type--1": "sidste uge",
             "relative-type-0": "denne uge",
             "relative-type-1": "næste uge",
@@ -185,9 +182,9 @@
             }
           },
           "day": {
-            "displayName": "Dag",
-            "relative-type--1": "i går",
+            "displayName": "dag",
             "relative-type--2": "i forgårs",
+            "relative-type--1": "i går",
             "relative-type-0": "i dag",
             "relative-type-1": "i morgen",
             "relative-type-2": "i overmorgen",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "dag",
-            "relative-type--1": "i går",
             "relative-type--2": "i forgårs",
+            "relative-type--1": "i går",
             "relative-type-0": "i dag",
             "relative-type-1": "i morgen",
             "relative-type-2": "i overmorgen",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "dag",
-            "relative-type--1": "i går",
             "relative-type--2": "i forgårs",
+            "relative-type--1": "i går",
             "relative-type-0": "i dag",
             "relative-type-1": "i morgen",
             "relative-type-2": "i overmorgen",
@@ -233,7 +230,7 @@
             }
           },
           "weekday": {
-            "displayName": "Ugedag"
+            "displayName": "ugedag"
           },
           "sun": {
             "relative-type--1": "sidste søndag",
@@ -344,7 +341,7 @@
             "displayName": "AM/PM"
           },
           "hour": {
-            "displayName": "Time",
+            "displayName": "time",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} time",
               "relativeTimePattern-count-other": "om {0} timer"
@@ -377,7 +374,7 @@
             }
           },
           "minute": {
-            "displayName": "Minut",
+            "displayName": "minut",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} minut",
               "relativeTimePattern-count-other": "om {0} minutter"
@@ -410,7 +407,7 @@
             }
           },
           "second": {
-            "displayName": "Sekund",
+            "displayName": "sekund",
             "relative-type-0": "nu",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} sekund",
@@ -446,7 +443,7 @@
             }
           },
           "zone": {
-            "displayName": "Tidszone"
+            "displayName": "tidszone"
           }
         }
       }

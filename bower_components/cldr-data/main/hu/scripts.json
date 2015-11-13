@@ -3,18 +3,15 @@
     "hu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "hu"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "Arab",
           "Arab-alt-variant": "Perzsa-arab",
           "Armi": "Birodalmi arámi",
@@ -36,7 +33,6 @@
           "Cari": "Kari",
           "Cham": "Csám",
           "Cher": "Cseroki",
-          "Cirt": "Cirt",
           "Copt": "Kopt",
           "Cprt": "Ciprusi",
           "Cyrl": "Cirill",
@@ -61,9 +57,10 @@
           "Hani": "Han",
           "Hano": "Hanunoo",
           "Hans": "Egyszerűsített",
-          "Hans-alt-stand-alone": "Egyszerűsített Han",
+          "Hans-alt-stand-alone": "Egyszerűsített kínai",
           "Hant": "Hagyományos",
           "Hant-alt-stand-alone": "Hagyományos kínai",
+          "Hatr": "Hatr",
           "Hebr": "Héber",
           "Hira": "Hiragana",
           "Hluw": "Hluw",
@@ -74,7 +71,6 @@
           "Ital": "Régi olasz",
           "Java": "Jávai",
           "Jpan": "Japán",
-          "Jurc": "Jurc",
           "Kali": "Kajah li",
           "Kana": "Katakana",
           "Khar": "Kharoshthi",
@@ -82,7 +78,6 @@
           "Khoj": "Khoj",
           "Knda": "Kannada",
           "Kore": "Koreai",
-          "Kpel": "Kpel",
           "Kthi": "Kaithi",
           "Lana": "Lanna",
           "Laoo": "Lao",
@@ -94,7 +89,6 @@
           "Lina": "Lineáris A",
           "Linb": "Lineáris B",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "Líciai",
           "Lydi": "Lídiai",
           "Mahj": "Mahj",
@@ -110,12 +104,11 @@
           "Moon": "Moon",
           "Mroo": "Mroo",
           "Mtei": "Meitei mayek",
+          "Mult": "Mult",
           "Mymr": "Burmai",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "N’ko",
-          "Nshu": "Nshu",
           "Ogam": "Ogham",
           "Olck": "Ol chiki",
           "Orkh": "Orhon",
@@ -205,7 +198,6 @@
           "Tale": "Tai Le",
           "Talu": "Új tai lue",
           "Taml": "Tamil",
-          "Tang": "Tang",
           "Tavt": "Tai viet",
           "Telu": "Telugu",
           "Teng": "Tengwar",
@@ -219,7 +211,6 @@
           "Vaii": "Vai",
           "Visp": "Látható beszéd",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "Óperzsa",
           "Xsux": "Ékírásos suméro-akkád",
           "Yiii": "Ji",

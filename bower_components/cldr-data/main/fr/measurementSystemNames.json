@@ -3,19 +3,16 @@
     "fr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "fr"
       },
       "localeDisplayNames": {
         "measurementSystemNames": {
-          "US": "américain",
           "metric": "métrique",
-          "UK": "impérial"
+          "UK": "impérial",
+          "US": "américain"
         }
       }
     }

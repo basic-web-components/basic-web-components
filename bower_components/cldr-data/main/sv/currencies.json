@@ -3,11 +3,8 @@
     "sv": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "sv"
       },
@@ -225,7 +222,7 @@
           "BHD": {
             "displayName": "bahrainsk dinar",
             "displayName-count-one": "bahrainsk dinar",
-            "displayName-count-other": "Bahrain-dinar",
+            "displayName-count-other": "bahrainska dinarer",
             "symbol": "BHD"
           },
           "BIF": {
@@ -366,7 +363,7 @@
             "displayName": "kanadensisk dollar",
             "displayName-count-one": "kanadensisk dollar",
             "displayName-count-other": "kanadensiska dollar",
-            "symbol": "CAN$",
+            "symbol": "CA$",
             "symbol-alt-narrow": "$"
           },
           "CDF": {
@@ -634,7 +631,8 @@
             "displayName": "georgisk lari",
             "displayName-count-one": "georgisk lari",
             "displayName-count-other": "georgiska lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "ghanansk cedi (1979–2007)",
@@ -1079,9 +1077,9 @@
             "symbol": "MOP"
           },
           "MRO": {
-            "displayName": "mauretansk ouquiya",
-            "displayName-count-one": "mauretansk ouquiya",
-            "displayName-count-other": "mauretanska ouquiya",
+            "displayName": "mauretansk ouguiya",
+            "displayName-count-one": "mauretansk ouguiya",
+            "displayName-count-other": "mauretanska ouguiya",
             "symbol": "MRO"
           },
           "MTL": {
@@ -1330,7 +1328,7 @@
             "displayName-count-one": "rysk rubel",
             "displayName-count-other": "ryska rubel",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "rysk rubel (1991–1998)",
@@ -1793,7 +1791,7 @@
             "symbol": "XUA"
           },
           "XXX": {
-            "displayName": "okänd eller ogiltig valuta",
+            "displayName": "okänd valuta",
             "displayName-count-one": "(okänd valutaenhet)",
             "displayName-count-other": "(okända valutaenheter)",
             "symbol": "XXX"

@@ -3,11 +3,8 @@
     "de-CH": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11170 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-09 23:12:33 -0600 (Mon, 09 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11987 $"
         },
         "language": "de",
         "territory": "CH"
@@ -131,7 +128,7 @@
           "FR": "Frankreich",
           "GA": "Gabun",
           "GB": "Grossbritannien",
-          "GB-alt-short": "UK",
+          "GB-alt-short": "GB",
           "GD": "Grenada",
           "GE": "Georgien",
           "GF": "Französisch-Guayana",
@@ -151,7 +148,7 @@
           "GY": "Guyana",
           "HK": "Sonderverwaltungszone Hongkong",
           "HK-alt-short": "Hongkong",
-          "HM": "Heard- und McDonald-Inseln",
+          "HM": "Heard und McDonaldinseln",
           "HN": "Honduras",
           "HR": "Kroatien",
           "HT": "Haiti",
@@ -294,7 +291,7 @@
           "TZ": "Tansania",
           "UA": "Ukraine",
           "UG": "Uganda",
-          "UM": "Amerikanisch-Ozeanien",
+          "UM": "Amerikanische Überseeinseln",
           "US": "Vereinigte Staaten",
           "US-alt-short": "USA",
           "UY": "Uruguay",

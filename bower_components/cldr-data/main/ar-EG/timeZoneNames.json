@@ -3,11 +3,8 @@
     "ar-EG": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11217 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-17 23:51:09 -0600 (Tue, 17 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ar",
         "territory": "EG"
@@ -18,8 +15,8 @@
           "gmtFormat": "جرينتش{0}",
           "gmtZeroFormat": "جرينتش",
           "regionFormat": "توقيت {0}",
-          "regionFormat-type-standard": "توقيت {0} الرسمي",
           "regionFormat-type-daylight": "توقيت {0} الصيفي",
+          "regionFormat-type-standard": "توقيت {0} الرسمي",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "أروجوانيا"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "لا ريوجا"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "ريو جالييوس"
-                },
-                "Salta": {
-                  "exemplarCity": "سالطا"
                 },
                 "San_Juan": {
                   "exemplarCity": "سان خوان"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "أشوا"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "لا ريوجا"
+                },
                 "San_Luis": {
                   "exemplarCity": "سان لويس"
                 },
+                "Salta": {
+                  "exemplarCity": "سالطا"
+                },
                 "Tucuman": {
                   "exemplarCity": "تاكمان"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "أشوا"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "هيرموسيلو"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "كونكس"
-                },
-                "Marengo": {
-                  "exemplarCity": "مارنجو"
+                "Vincennes": {
+                  "exemplarCity": "فينسينس"
                 },
                 "Petersburg": {
                   "exemplarCity": "بيترسبرغ"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "مدينة تل، إنديانا"
                 },
-                "Vevay": {
-                  "exemplarCity": "فيفاي"
-                },
-                "Vincennes": {
-                  "exemplarCity": "فينسينس"
+                "Knox": {
+                  "exemplarCity": "كونكس"
                 },
                 "Winamac": {
                   "exemplarCity": "ويناماك"
+                },
+                "Marengo": {
+                  "exemplarCity": "مارنجو"
+                },
+                "Vevay": {
+                  "exemplarCity": "فيفاي"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "بيولا، داكوتا الشمالية"
                 },
-                "Center": {
-                  "exemplarCity": "سنتر"
-                },
                 "New_Salem": {
                   "exemplarCity": "نيو ساليم"
+                },
+                "Center": {
+                  "exemplarCity": "سنتر"
                 }
               },
               "Ojinaga": {
@@ -883,7 +880,7 @@
                 "exemplarCity": "كالكتا"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "تشيتا"
               },
               "Choibalsan": {
                 "exemplarCity": "تشوبالسان"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "سنغافورة"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "سريدنكوليمسك"
               },
               "Taipei": {
                 "exemplarCity": "تايبيه"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "أوكلاند"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "بوغانفيل"
               },
               "Chatham": {
                 "exemplarCity": "تشاثام"
@@ -1721,17 +1718,12 @@
             },
             "French_Guiana": {
               "long": {
-                "standard": "توقيت غويانا الفرنسية"
+                "standard": "توقيت غايانا الفرنسية"
               }
             },
             "French_Southern": {
               "long": {
                 "standard": "توقيت المقاطعات الفرنسية الجنوبية والأنتارتيكية"
-              }
-            },
-            "GMT": {
-              "long": {
-                "standard": "توقيت غرينتش"
               }
             },
             "Galapagos": {
@@ -1754,6 +1746,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "توقيت جزر جيلبرت"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "توقيت غرينتش"
               }
             },
             "Greenland_Eastern": {

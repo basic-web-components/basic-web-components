@@ -3,11 +3,8 @@
     "cs": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "cs"
       },
@@ -817,7 +814,8 @@
             "displayName-count-few": "gruzínské lari",
             "displayName-count-many": "gruzínského lari",
             "displayName-count-other": "gruzínských lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "ghanský cedi (1979–2007)",
@@ -1732,7 +1730,7 @@
             "displayName-count-many": "ruského rublu",
             "displayName-count-other": "ruských rublů",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "ruský rubl (1991–1998)",
@@ -2213,11 +2211,11 @@
           },
           "XBB": {
             "displayName": "evropská peněžní jednotka",
-            "displayName-count-one": "EMU",
-            "displayName-count-few": "EMU",
-            "displayName-count-many": "EMU",
-            "displayName-count-other": "EMU",
-            "symbol": "EMU"
+            "displayName-count-one": "evropská peněžní jednotka",
+            "displayName-count-few": "evropské peněžní jednotky",
+            "displayName-count-many": "evropské peněžní jednotky",
+            "displayName-count-other": "evropských peněžních jednotek",
+            "symbol": "XBB"
           },
           "XBC": {
             "displayName": "evropská jednotka účtu 9 (XBC)",

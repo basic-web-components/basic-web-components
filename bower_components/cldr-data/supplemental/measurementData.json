@@ -1,26 +1,30 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11318 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-25 23:47:56 -0600 (Wed, 25 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11969 $"
     },
     "measurementData": {
       "measurementSystem": {
-        "001": "metric",
+        "001": "metric"
+      },
+      "temperature": {
         "LR": "metric",
-        "MM": "metric",
+        "MM": "metric"
+      },
+      "measurementSystem": {
+        "GB": "UK",
+        "LR": "US",
+        "MM": "US",
+        "US": "US"
+      },
+      "temperature": {
         "BS": "US",
         "BZ": "US",
         "KY": "US",
         "PR": "US",
-        "PW": "US",
-        "LR": "US",
-        "MM": "US",
-        "US": "US",
-        "GB": "UK"
+        "PW": "US"
       },
       "paperSize": {
         "001": "A4",

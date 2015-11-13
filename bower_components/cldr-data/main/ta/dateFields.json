@@ -3,11 +3,8 @@
     "ta": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11955 $"
         },
         "language": "ta"
       },
@@ -45,24 +42,24 @@
             }
           },
           "year-narrow": {
-            "displayName": "ஆண்டு",
+            "displayName": "ஆ.",
             "relative-type--1": "கடந்த ஆண்டு",
             "relative-type-0": "இந்த ஆண்டு",
             "relative-type-1": "அடுத்த ஆண்டு",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} ஆண்டில்",
-              "relativeTimePattern-count-other": "{0} ஆண்டுகளில்"
+              "relativeTimePattern-count-one": "{0} ஆ.",
+              "relativeTimePattern-count-other": "{0} ஆ."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} ஆண்டிற்கு முன்",
-              "relativeTimePattern-count-other": "{0} ஆண்டுகளுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} ஆ. முன்",
+              "relativeTimePattern-count-other": "{0} ஆ. முன்"
             }
           },
           "quarter": {
             "displayName": "காலாண்டு",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "இறுதி காலாண்டு",
+            "relative-type-0": "இந்த காலாண்டு",
+            "relative-type-1": "அடுத்த காலாண்டு",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} காலாண்டில்",
               "relativeTimePattern-count-other": "{0} காலாண்டுகளில்"
@@ -74,12 +71,12 @@
           },
           "quarter-short": {
             "displayName": "காலாண்டு",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "இறுதி காலாண்டு",
+            "relative-type-0": "இந்த காலாண்டு",
+            "relative-type-1": "அடுத்த காலாண்டு",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} காலா.",
-              "relativeTimePattern-count-other": "{0} காலாண்டுகளில்"
+              "relativeTimePattern-count-other": "{0} காலா."
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} காலா. முன்",
@@ -88,16 +85,16 @@
           },
           "quarter-narrow": {
             "displayName": "காலாண்டு",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "இறுதி காலாண்டு",
+            "relative-type-0": "இந்த காலாண்டு",
+            "relative-type-1": "அடுத்த காலாண்டு",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} காலாண்டில்",
-              "relativeTimePattern-count-other": "{0} காலாண்டுகளில்"
+              "relativeTimePattern-count-one": "{0} கா.",
+              "relativeTimePattern-count-other": "{0} கா."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} கா.",
-              "relativeTimePattern-count-other": "-{0} கா."
+              "relativeTimePattern-count-one": "{0} கா. முன்",
+              "relativeTimePattern-count-other": "{0} கா. முன்"
             }
           },
           "month": {
@@ -120,26 +117,26 @@
             "relative-type-0": "இந்த மாதம்",
             "relative-type-1": "அடுத்த மாதம்",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} மாதத்தில்",
-              "relativeTimePattern-count-other": "{0} மாதங்களில்"
+              "relativeTimePattern-count-one": "{0} மாத.",
+              "relativeTimePattern-count-other": "{0} மாத."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} மாதத்திற்கு முன்",
-              "relativeTimePattern-count-other": "{0} மாதங்களுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} மாத. முன்",
+              "relativeTimePattern-count-other": "{0} மாத. முன்"
             }
           },
           "month-narrow": {
-            "displayName": "மாதம்",
+            "displayName": "மா.",
             "relative-type--1": "கடந்த மாதம்",
             "relative-type-0": "இந்த மாதம்",
             "relative-type-1": "அடுத்த மாதம்",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} மாதத்தில்",
-              "relativeTimePattern-count-other": "{0} மாதங்களில்"
+              "relativeTimePattern-count-one": "{0} மா.",
+              "relativeTimePattern-count-other": "{0} மா."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} மாதத்திற்கு முன்",
-              "relativeTimePattern-count-other": "{0} மாதங்களுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} மா. முன்",
+              "relativeTimePattern-count-other": "{0} மா. முன்"
             }
           },
           "week": {
@@ -162,32 +159,32 @@
             "relative-type-0": "இந்த வாரம்",
             "relative-type-1": "அடுத்த வாரம்",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} வாரத்தில்",
-              "relativeTimePattern-count-other": "{0} வாரங்களில்"
+              "relativeTimePattern-count-one": "{0} வார.",
+              "relativeTimePattern-count-other": "{0} வார."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} வாரத்திற்கு முன்",
-              "relativeTimePattern-count-other": "{0} வாரங்களுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} வார. முன்",
+              "relativeTimePattern-count-other": "{0} வார. முன்"
             }
           },
           "week-narrow": {
-            "displayName": "வாரம்",
+            "displayName": "வா.",
             "relative-type--1": "கடந்த வாரம்",
             "relative-type-0": "இந்த வாரம்",
             "relative-type-1": "அடுத்த வாரம்",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} வாரத்தில்",
-              "relativeTimePattern-count-other": "{0} வாரங்களில்"
+              "relativeTimePattern-count-one": "{0} வா.",
+              "relativeTimePattern-count-other": "{0} வா."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} வாரத்திற்கு முன்",
-              "relativeTimePattern-count-other": "{0} வாரங்களுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} வா. முன்",
+              "relativeTimePattern-count-other": "{0} வா. முன்"
             }
           },
           "day": {
             "displayName": "நாள்",
-            "relative-type--1": "நேற்று",
             "relative-type--2": "நேற்று முன் தினம்",
+            "relative-type--1": "நேற்று",
             "relative-type-0": "இன்று",
             "relative-type-1": "நாளை",
             "relative-type-2": "நாளை மறுநாள்",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "நாள்",
-            "relative-type--1": "நேற்று",
             "relative-type--2": "நேற்று முன் தினம்",
+            "relative-type--1": "நேற்று",
             "relative-type-0": "இன்று",
             "relative-type-1": "நாளை",
             "relative-type-2": "நாளை மறுநாள்",
@@ -217,19 +214,19 @@
             }
           },
           "day-narrow": {
-            "displayName": "நாள்",
-            "relative-type--1": "நேற்று",
+            "displayName": "நா.",
             "relative-type--2": "நேற்று முன் தினம்",
+            "relative-type--1": "நேற்று",
             "relative-type-0": "இன்று",
             "relative-type-1": "நாளை",
             "relative-type-2": "நாளை மறுநாள்",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} நாளில்",
-              "relativeTimePattern-count-other": "{0} நாட்களில்"
+              "relativeTimePattern-count-one": "{0} நா.",
+              "relativeTimePattern-count-other": "{0} நா."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} நாளைக்கு முன்",
-              "relativeTimePattern-count-other": "{0} நாட்களுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} நா. முன்",
+              "relativeTimePattern-count-other": "{0} நா. முன்"
             }
           },
           "weekday": {
@@ -241,14 +238,14 @@
             "relative-type-1": "அடுத்த ஞாயிறு"
           },
           "sun-short": {
-            "relative-type--1": "கடந்த ஞாயிறு",
-            "relative-type-0": "இந்த ஞாயிறு",
-            "relative-type-1": "அடுத்த ஞாயிறு"
+            "relative-type--1": "கடந்த ஞாயி.",
+            "relative-type-0": "இந்த ஞாயி.",
+            "relative-type-1": "அடுத்த ஞாயி."
           },
           "sun-narrow": {
-            "relative-type--1": "கடந்த ஞாயிறு",
-            "relative-type-0": "இந்த ஞாயிறு",
-            "relative-type-1": "அடுத்த ஞாயிறு"
+            "relative-type--1": "கடந்த ஞா.",
+            "relative-type-0": "இந்த ஞா.",
+            "relative-type-1": "அடுத்த ஞா."
           },
           "mon": {
             "relative-type--1": "கடந்த திங்கள்",
@@ -256,14 +253,14 @@
             "relative-type-1": "அடுத்த திங்கள்"
           },
           "mon-short": {
-            "relative-type--1": "கடந்த திங்கள்",
-            "relative-type-0": "இந்த திங்கள்",
-            "relative-type-1": "அடுத்த திங்கள்"
+            "relative-type--1": "கடந்த திங்.",
+            "relative-type-0": "இந்த திங்.",
+            "relative-type-1": "அடுத்த திங்."
           },
           "mon-narrow": {
-            "relative-type--1": "கடந்த திங்கள்",
-            "relative-type-0": "இந்த திங்கள்",
-            "relative-type-1": "அடுத்த திங்கள்"
+            "relative-type--1": "கடந்த திங்.",
+            "relative-type-0": "இந்த திங்.",
+            "relative-type-1": "அடுத்த திங்."
           },
           "tue": {
             "relative-type--1": "கடந்த செவ்வாய்",
@@ -271,14 +268,14 @@
             "relative-type-1": "அடுத்த செவ்வாய்"
           },
           "tue-short": {
-            "relative-type--1": "கடந்த செவ்வாய்",
-            "relative-type-0": "இந்த செவ்வாய்",
-            "relative-type-1": "அடுத்த செவ்வாய்"
+            "relative-type--1": "கடந்த செவ்.",
+            "relative-type-0": "இந்த செவ்.",
+            "relative-type-1": "அடுத்த செவ்."
           },
           "tue-narrow": {
-            "relative-type--1": "கடந்த செவ்வாய்",
-            "relative-type-0": "இந்த செவ்வாய்",
-            "relative-type-1": "அடுத்த செவ்வாய்"
+            "relative-type--1": "கடந்த செவ்.",
+            "relative-type-0": "இந்த செவ்.",
+            "relative-type-1": "அடுத்த செவ்."
           },
           "wed": {
             "relative-type--1": "கடந்த புதன்",
@@ -286,14 +283,14 @@
             "relative-type-1": "அடுத்த புதன்"
           },
           "wed-short": {
-            "relative-type--1": "கடந்த புதன்",
-            "relative-type-0": "இந்த புதன்",
-            "relative-type-1": "அடுத்த புதன்"
+            "relative-type--1": "கடந்த புத.",
+            "relative-type-0": "இந்த புத.",
+            "relative-type-1": "அடுத்த புத."
           },
           "wed-narrow": {
-            "relative-type--1": "கடந்த புதன்",
-            "relative-type-0": "இந்த புதன்",
-            "relative-type-1": "அடுத்த புதன்"
+            "relative-type--1": "கடந்த புத.",
+            "relative-type-0": "இந்த புத.",
+            "relative-type-1": "அடுத்த புத."
           },
           "thu": {
             "relative-type--1": "கடந்த வியாழன்",
@@ -301,14 +298,14 @@
             "relative-type-1": "அடுத்த வியாழன்"
           },
           "thu-short": {
-            "relative-type--1": "கடந்த வியாழன்",
-            "relative-type-0": "இந்த வியாழன்",
-            "relative-type-1": "அடுத்த வியாழன்"
+            "relative-type--1": "கடந்த வியா.",
+            "relative-type-0": "இந்த வியா.",
+            "relative-type-1": "அடுத்த வியா."
           },
           "thu-narrow": {
-            "relative-type--1": "கடந்த வியாழன்",
-            "relative-type-0": "இந்த வியாழன்",
-            "relative-type-1": "அடுத்த வியாழன்"
+            "relative-type--1": "கடந்த வியா.",
+            "relative-type-0": "இந்த வியா.",
+            "relative-type-1": "அடுத்த வியா."
           },
           "fri": {
             "relative-type--1": "கடந்த வெள்ளி",
@@ -316,14 +313,14 @@
             "relative-type-1": "அடுத்த வெள்ளி"
           },
           "fri-short": {
-            "relative-type--1": "கடந்த வெள்ளி",
-            "relative-type-0": "இந்த வெள்ளி",
-            "relative-type-1": "அடுத்த வெள்ளி"
+            "relative-type--1": "கடந்த வெள்.",
+            "relative-type-0": "இந்த வெள்.",
+            "relative-type-1": "அடுத்த வெள்."
           },
           "fri-narrow": {
-            "relative-type--1": "கடந்த வெள்ளி",
-            "relative-type-0": "இந்த வெள்ளி",
-            "relative-type-1": "அடுத்த வெள்ளி"
+            "relative-type--1": "கடந்த வெள்.",
+            "relative-type-0": "இந்த வெள்.",
+            "relative-type-1": "அடுத்த வெள்."
           },
           "sat": {
             "relative-type--1": "கடந்த சனி",
@@ -355,25 +352,25 @@
             }
           },
           "hour-short": {
-            "displayName": "மநே.",
+            "displayName": "மணி.",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} மணிநேரத்தில்",
-              "relativeTimePattern-count-other": "{0} மணிநேரத்தில்"
+              "relativeTimePattern-count-one": "{0} மணி.",
+              "relativeTimePattern-count-other": "{0} மணி."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} மணிநேரம் முன்",
-              "relativeTimePattern-count-other": "{0} மணிநேரம் முன்"
+              "relativeTimePattern-count-one": "{0} மணி. முன்",
+              "relativeTimePattern-count-other": "{0} மணி. முன்"
             }
           },
           "hour-narrow": {
-            "displayName": "ம",
+            "displayName": "ம.",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} மணிநேரத்தில்",
-              "relativeTimePattern-count-other": "{0} மணிநேரத்தில்"
+              "relativeTimePattern-count-one": "{0} ம.",
+              "relativeTimePattern-count-other": "{0} ம."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} மணிநேரம் முன்",
-              "relativeTimePattern-count-other": "{0} மணிநேரம் முன்"
+              "relativeTimePattern-count-one": "{0} ம. முன்",
+              "relativeTimePattern-count-other": "{0} ம. முன்"
             }
           },
           "minute": {
@@ -390,23 +387,23 @@
           "minute-short": {
             "displayName": "நிமி.",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} நிமிடங்களில்",
-              "relativeTimePattern-count-other": "{0} நிமிடங்களில்"
+              "relativeTimePattern-count-one": "{0} நிமி.",
+              "relativeTimePattern-count-other": "{0} நிமி."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} நிமிடத்திற்கு முன்",
-              "relativeTimePattern-count-other": "{0} நிமிடங்களுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} நிமி. முன்",
+              "relativeTimePattern-count-other": "{0} நிமி. முன்"
             }
           },
           "minute-narrow": {
-            "displayName": "நிமி",
+            "displayName": "நிமி.",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} நிமிடங்களில்",
-              "relativeTimePattern-count-other": "{0} நிமிடங்களில்"
+              "relativeTimePattern-count-one": "{0} நி.",
+              "relativeTimePattern-count-other": "{0} நி."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} நிமிடத்திற்கு முன்",
-              "relativeTimePattern-count-other": "{0} நிமிடங்களுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} நி. முன்",
+              "relativeTimePattern-count-other": "{0} நி. முன்"
             }
           },
           "second": {
@@ -425,24 +422,24 @@
             "displayName": "விநா.",
             "relative-type-0": "இப்போது",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} விநாடியில்",
-              "relativeTimePattern-count-other": "{0} விநாடிகளில்"
+              "relativeTimePattern-count-one": "{0} விநா.",
+              "relativeTimePattern-count-other": "{0} விநா."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} விநாடிக்கு முன்",
-              "relativeTimePattern-count-other": "{0} விநாடிகளுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} விநா. முன்",
+              "relativeTimePattern-count-other": "{0} விநா. முன்"
             }
           },
           "second-narrow": {
-            "displayName": "வி",
+            "displayName": "வி.",
             "relative-type-0": "இப்போது",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} விநாடியில்",
-              "relativeTimePattern-count-other": "{0} விநாடிகளில்"
+              "relativeTimePattern-count-one": "{0} வி.",
+              "relativeTimePattern-count-other": "{0} வி."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} விநாடிக்கு முன்",
-              "relativeTimePattern-count-other": "{0} விநாடிகளுக்கு முன்"
+              "relativeTimePattern-count-one": "{0} வி. முன்",
+              "relativeTimePattern-count-other": "{0} வி. முன்"
             }
           },
           "zone": {

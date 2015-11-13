@@ -3,11 +3,8 @@
     "zh-Hant": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "zh",
         "script": "Hant"
@@ -16,6 +13,7 @@
         "scripts": {
           "Afak": "阿法卡文字",
           "Aghb": "高加索阿爾巴尼亞文",
+          "Ahom": "Ahom",
           "Arab": "阿拉伯文",
           "Arab-alt-variant": "波斯阿拉伯文字",
           "Armi": "皇室亞美尼亞文",
@@ -65,6 +63,7 @@
           "Hans-alt-stand-alone": "簡體中文",
           "Hant": "繁體",
           "Hant-alt-stand-alone": "繁體中文",
+          "Hatr": "Hatr",
           "Hebr": "希伯來文",
           "Hira": "平假名",
           "Hluw": "安那托利亞象形文字",
@@ -111,6 +110,7 @@
           "Moon": "蒙氏點字",
           "Mroo": "謬文",
           "Mtei": "曼尼普爾文",
+          "Mult": "Mult",
           "Mymr": "緬甸文",
           "Narb": "古北阿拉伯文",
           "Nbat": "納巴泰文字",

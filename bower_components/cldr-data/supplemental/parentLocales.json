@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11318 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-25 23:47:56 -0600 (Wed, 25 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11969 $"
     },
     "parentLocales": {
       "parentLocale": {
@@ -24,6 +22,7 @@
         "en-CK": "en-001",
         "en-CM": "en-001",
         "en-CX": "en-001",
+        "en-CY": "en-001",
         "en-DG": "en-001",
         "en-DM": "en-001",
         "en-ER": "en-001",
@@ -39,6 +38,7 @@
         "en-GY": "en-001",
         "en-HK": "en-001",
         "en-IE": "en-001",
+        "en-IL": "en-001",
         "en-IM": "en-001",
         "en-IN": "en-001",
         "en-IO": "en-001",
@@ -93,6 +93,14 @@
         "en-ZA": "en-001",
         "en-ZM": "en-001",
         "en-ZW": "en-001",
+        "en-AT": "en-150",
+        "en-CH": "en-150",
+        "en-DE": "en-150",
+        "en-DK": "en-150",
+        "en-FI": "en-150",
+        "en-NL": "en-150",
+        "en-SE": "en-150",
+        "en-SI": "en-150",
         "es-AR": "es-419",
         "es-BO": "es-419",
         "es-CL": "es-419",
@@ -120,6 +128,7 @@
         "pt-MZ": "pt-PT",
         "pt-ST": "pt-PT",
         "pt-TL": "pt-PT",
+        "az-Arab": "root",
         "az-Cyrl": "root",
         "bm-Nkoo": "root",
         "bs-Cyrl": "root",

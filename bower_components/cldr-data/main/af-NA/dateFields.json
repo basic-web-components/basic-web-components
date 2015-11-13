@@ -3,11 +3,8 @@
     "af-NA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11168 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-06 17:46:28 -0600 (Fri, 06 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "af",
         "territory": "NA"
@@ -15,16 +12,16 @@
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Era"
+            "displayName": "era"
           },
           "year": {
-            "displayName": "Jaar",
+            "displayName": "jaar",
             "relative-type--1": "verlede jaar",
             "relative-type-0": "hierdie jaar",
             "relative-type-1": "volgende jaar",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} jaar",
-              "relativeTimePattern-count-other": "Oor {0} jaar"
+              "relativeTimePattern-count-one": "oor {0} jaar",
+              "relativeTimePattern-count-other": "oor {0} jaar"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} jaar gelede",
@@ -37,8 +34,8 @@
             "relative-type-0": "hierdie jaar",
             "relative-type-1": "volgende jaar",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} jaar",
-              "relativeTimePattern-count-other": "Oor {0} jaar"
+              "relativeTimePattern-count-one": "oor {0} jaar",
+              "relativeTimePattern-count-other": "oor {0} jaar"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} jaar gelede",
@@ -51,8 +48,8 @@
             "relative-type-0": "hierdie jaar",
             "relative-type-1": "volgende jaar",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} jaar",
-              "relativeTimePattern-count-other": "Oor {0} jaar"
+              "relativeTimePattern-count-one": "oor {0} jaar",
+              "relativeTimePattern-count-other": "oor {0} jaar"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} jaar gelede",
@@ -60,7 +57,7 @@
             }
           },
           "quarter": {
-            "displayName": "Kwartaal",
+            "displayName": "kwartaal",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -107,8 +104,8 @@
             "relative-type-0": "vandeesmaand",
             "relative-type-1": "volgende maand",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} maand",
-              "relativeTimePattern-count-other": "Oor {0} maande"
+              "relativeTimePattern-count-one": "oor {0} minuut",
+              "relativeTimePattern-count-other": "oor {0} minuut"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} maand gelede",
@@ -149,8 +146,8 @@
             "relative-type-0": "vandeesweek",
             "relative-type-1": "volgende week",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} week",
-              "relativeTimePattern-count-other": "Oor {0} weke"
+              "relativeTimePattern-count-one": "oor {0} week",
+              "relativeTimePattern-count-other": "oor {0} weke"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} week gelede",
@@ -187,14 +184,14 @@
           },
           "day": {
             "displayName": "Dag",
-            "relative-type--1": "gister",
             "relative-type--2": "eergister",
+            "relative-type--1": "gister",
             "relative-type-0": "vandag",
             "relative-type-1": "môre",
             "relative-type-2": "oormôre",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} dag",
-              "relativeTimePattern-count-other": "Oor {0} dae"
+              "relativeTimePattern-count-one": "oor {0} minuut",
+              "relativeTimePattern-count-other": "oor {0} minuut"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} dag gelede",
@@ -203,8 +200,8 @@
           },
           "day-short": {
             "displayName": "d.",
-            "relative-type--1": "gister",
             "relative-type--2": "eergister",
+            "relative-type--1": "gister",
             "relative-type-0": "vandag",
             "relative-type-1": "môre",
             "relative-type-2": "oormôre",
@@ -219,8 +216,8 @@
           },
           "day-narrow": {
             "displayName": "d.",
-            "relative-type--1": "gister",
             "relative-type--2": "eergister",
+            "relative-type--1": "gister",
             "relative-type-0": "vandag",
             "relative-type-1": "môre",
             "relative-type-2": "oormôre",
@@ -234,7 +231,7 @@
             }
           },
           "weekday": {
-            "displayName": "Dag van die Week"
+            "displayName": "dag van die week"
           },
           "sun": {
             "relative-type--1": "verlede Sondag",
@@ -318,13 +315,13 @@
           },
           "fri-short": {
             "relative-type--1": "verlede Vr.",
-            "relative-type-0": "hierdie Vrydag",
-            "relative-type-1": "volgende Vrydag"
+            "relative-type-0": "dié Vr.",
+            "relative-type-1": "vlg. Vr."
           },
           "fri-narrow": {
             "relative-type--1": "verlede Vr.",
-            "relative-type-0": "hierdie Vrydag",
-            "relative-type-1": "volgende Vrydag"
+            "relative-type-0": "dié Vr.",
+            "relative-type-1": "vlg. Vr."
           },
           "sat": {
             "relative-type--1": "verlede Saterdag",
@@ -332,23 +329,23 @@
             "relative-type-1": "volgende Saterdag"
           },
           "sat-short": {
-            "relative-type--1": "verlede Saterdag",
-            "relative-type-0": "hierdie Saterdag",
-            "relative-type-1": "volgende Saterdag"
+            "relative-type--1": "verlede Sa.",
+            "relative-type-0": "dié Sa.",
+            "relative-type-1": "vlg. Sa."
           },
           "sat-narrow": {
-            "relative-type--1": "verlede Saterdag",
-            "relative-type-0": "hierdie Saterdag",
-            "relative-type-1": "volgende Saterdag"
+            "relative-type--1": "verlede Sa.",
+            "relative-type-0": "dié Sa.",
+            "relative-type-1": "vlg. Sa."
           },
           "dayperiod": {
             "displayName": "VM/NM"
           },
           "hour": {
-            "displayName": "Uur",
+            "displayName": "uur",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} uur",
-              "relativeTimePattern-count-other": "Oor {0} uur"
+              "relativeTimePattern-count-one": "oor {0} uur",
+              "relativeTimePattern-count-other": "oor {0} uur"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} uur gelede",
@@ -378,10 +375,10 @@
             }
           },
           "minute": {
-            "displayName": "Minuut",
+            "displayName": "minuut",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} minuut",
-              "relativeTimePattern-count-other": "Oor {0} minute"
+              "relativeTimePattern-count-one": "oor {0} minuut",
+              "relativeTimePattern-count-other": "oor {0} minuut"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} minuut gelede",
@@ -411,11 +408,11 @@
             }
           },
           "second": {
-            "displayName": "Sekonde",
+            "displayName": "sekonde",
             "relative-type-0": "nou",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "Oor {0} sekonde",
-              "relativeTimePattern-count-other": "Oor {0} sekondes"
+              "relativeTimePattern-count-one": "oor {0} sekonde",
+              "relativeTimePattern-count-other": "oor {0} sekondes"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} sekonde gelede",
@@ -447,7 +444,7 @@
             }
           },
           "zone": {
-            "displayName": "Tydsone"
+            "displayName": "tydsone"
           }
         }
       }

@@ -3,11 +3,8 @@
     "bs-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "bs",
         "script": "Latn"
@@ -410,7 +407,7 @@
           "CAD": {
             "displayName": "Kanadski dolar",
             "displayName-count-one": "kanadski dolar",
-            "displayName-count-few": "Kanadska dolara",
+            "displayName-count-few": "kanadski dolari",
             "displayName-count-other": "kanadskih dolara",
             "symbol": "CAD",
             "symbol-alt-narrow": "$"
@@ -709,7 +706,8 @@
             "displayName-count-one": "gruzijski lari",
             "displayName-count-few": "gruzijska larija",
             "displayName-count-other": "gruzijskih larija",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ganijski cedi (1979–2007)",
@@ -825,7 +823,7 @@
           "HRK": {
             "displayName": "Hrvatska kuna",
             "displayName-count-one": "hrvatska kuna",
-            "displayName-count-few": "Hrvatske kune",
+            "displayName-count-few": "hrvatske kune",
             "displayName-count-other": "hrvatskih kuna",
             "symbol": "kn",
             "symbol-alt-narrow": "kn"
@@ -1158,9 +1156,9 @@
           },
           "MGA": {
             "displayName": "Malagaski ariari",
-            "displayName-count-one": "malagaski ariari",
+            "displayName-count-one": "malgaški arijari",
             "displayName-count-few": "malagaska ariarija",
-            "displayName-count-other": "madagaskarski ariariji",
+            "displayName-count-other": "malgaški arijariji",
             "symbol": "MGA",
             "symbol-alt-narrow": "Ar"
           },
@@ -1253,7 +1251,7 @@
           },
           "MWK": {
             "displayName": "Malavska kvača",
-            "displayName-count-one": "malavska kvača",
+            "displayName-count-one": "malavijska kvača",
             "displayName-count-few": "malavske kvače",
             "displayName-count-other": "malavijskih kvača",
             "symbol": "MWK"
@@ -1349,8 +1347,8 @@
           },
           "NOK": {
             "displayName": "Norveška kruna",
-            "displayName-count-one": "Norveška kuna",
-            "displayName-count-few": "Norveške kune",
+            "displayName-count-one": "norveška kruna",
+            "displayName-count-few": "norveških kruna",
             "displayName-count-other": "norveških kruna",
             "symbol": "NOK",
             "symbol-alt-narrow": "kr"
@@ -1500,7 +1498,7 @@
             "displayName-count-few": "ruske rublje",
             "displayName-count-other": "ruskih rubalja",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Ruska rublja (1991–1998)",
@@ -1638,7 +1636,7 @@
           },
           "STD": {
             "displayName": "Dobra Sao Toma i Principa",
-            "displayName-count-one": "dobra Sao Toma i Principa",
+            "displayName-count-one": "svetotomska dobra",
             "displayName-count-few": "dobre Sao Toma i Principa",
             "displayName-count-other": "dobri Sao Toma i Principa",
             "symbol": "STD",
@@ -1751,7 +1749,7 @@
             "displayName": "Trinidadtobaški dolar",
             "displayName-count-one": "trinidadtobaški dolar",
             "displayName-count-few": "trinidadtobaška dolara",
-            "displayName-count-other": "trinidadtobaški dolar",
+            "displayName-count-other": "trinidadtobaški dolari",
             "symbol": "TTD",
             "symbol-alt-narrow": "$"
           },
@@ -1844,10 +1842,10 @@
             "symbol-alt-narrow": "$"
           },
           "UZS": {
-            "displayName": "Uzbekistanski som",
+            "displayName": "uzbekistanski som",
             "displayName-count-one": "uzbekistanski som",
             "displayName-count-few": "uzbekistanska soma",
-            "displayName-count-other": "uzbekistanskih soma",
+            "displayName-count-other": "uzbekistanski somi",
             "symbol": "UZS"
           },
           "VEB": {
@@ -1895,10 +1893,10 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "CFA franak BEAC",
-            "displayName-count-one": "CFA franak BEAC",
-            "displayName-count-few": "CFA franka BEAC",
-            "displayName-count-other": "CFA franaka BEAC",
+            "displayName": "centralnoafrički franak CFA",
+            "displayName-count-one": "centralnoafrički franak CFA",
+            "displayName-count-few": "centralnoafrička franka CFA",
+            "displayName-count-other": "centralnoafričkih franaka CFA",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1980,10 +1978,10 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "CFA franak BCEAO",
-            "displayName-count-one": "CFA franak BCEAO",
-            "displayName-count-few": "CFA franka BCEAO",
-            "displayName-count-other": "CFA franaka BCEAO",
+            "displayName": "zapadnoafrički franak CFA",
+            "displayName-count-one": "zapadnoafrički franak CFA",
+            "displayName-count-few": "zapadnoafrički franci CFA",
+            "displayName-count-other": "zapadnoafrički franci CFA",
             "symbol": "CFA"
           },
           "XPD": {

@@ -3,21 +3,18 @@
     "it": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11306 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-24 13:34:05 -0600 (Tue, 24 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "it"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Era"
+            "displayName": "era"
           },
           "year": {
-            "displayName": "Anno",
+            "displayName": "anno",
             "relative-type--1": "anno scorso",
             "relative-type-0": "quest’anno",
             "relative-type-1": "anno prossimo",
@@ -59,7 +56,7 @@
             }
           },
           "quarter": {
-            "displayName": "Trimestre",
+            "displayName": "trimestre",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -101,7 +98,7 @@
             }
           },
           "month": {
-            "displayName": "Mese",
+            "displayName": "mese",
             "relative-type--1": "mese scorso",
             "relative-type-0": "questo mese",
             "relative-type-1": "mese prossimo",
@@ -143,7 +140,7 @@
             }
           },
           "week": {
-            "displayName": "Settimana",
+            "displayName": "settimana",
             "relative-type--1": "settimana scorsa",
             "relative-type-0": "questa settimana",
             "relative-type-1": "settimana prossima",
@@ -185,9 +182,9 @@
             }
           },
           "day": {
-            "displayName": "Giorno",
-            "relative-type--1": "ieri",
+            "displayName": "giorno",
             "relative-type--2": "l’altro ieri",
+            "relative-type--1": "ieri",
             "relative-type-0": "oggi",
             "relative-type-1": "domani",
             "relative-type-2": "dopodomani",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "g",
-            "relative-type--1": "ieri",
             "relative-type--2": "l’altro ieri",
+            "relative-type--1": "ieri",
             "relative-type-0": "oggi",
             "relative-type-1": "domani",
             "relative-type-2": "dopodomani",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "g",
-            "relative-type--1": "ieri",
             "relative-type--2": "l’altro ieri",
+            "relative-type--1": "ieri",
             "relative-type-0": "oggi",
             "relative-type-1": "domani",
             "relative-type-2": "dopodomani",
@@ -233,7 +230,7 @@
             }
           },
           "weekday": {
-            "displayName": "Giorno della settimana"
+            "displayName": "giorno della settimana"
           },
           "sun": {
             "relative-type--1": "domenica scorsa",
@@ -344,7 +341,7 @@
             "displayName": "AM/PM"
           },
           "hour": {
-            "displayName": "Ora",
+            "displayName": "ora",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "tra {0} ora",
               "relativeTimePattern-count-other": "tra {0} ore"
@@ -377,7 +374,7 @@
             }
           },
           "minute": {
-            "displayName": "Minuto",
+            "displayName": "minuto",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "tra {0} minuto",
               "relativeTimePattern-count-other": "tra {0} minuti"
@@ -446,7 +443,7 @@
             }
           },
           "zone": {
-            "displayName": "Fuso orario"
+            "displayName": "fuso orario"
           }
         }
       }

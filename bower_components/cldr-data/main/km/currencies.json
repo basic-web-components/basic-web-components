@@ -3,11 +3,8 @@
     "km": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "km"
       },
@@ -18,8 +15,8 @@
             "symbol": "ADP"
           },
           "AED": {
-            "displayName": "ឌៀរហាំ​អេមីរ៉ាតអារ៉ាប់រួម",
-            "displayName-count-other": "ឌៀរហាំ អេមីរ៉ាតអារ៉ាប់រួម",
+            "displayName": "ឌៀរហាំ​អារ៉ាប់រួម",
+            "displayName-count-other": "ឌៀរហាំ​អារ៉ាប់រួម",
             "symbol": "AED"
           },
           "AFA": {
@@ -81,8 +78,8 @@
             "symbol": "ARP"
           },
           "ARS": {
-            "displayName": "ប៉ឺហ្សូ​អាហ្សង់ទីន",
-            "displayName-count-other": "ប៉ឺហ្សូ​អាហ្សង់ទីន",
+            "displayName": "ប៉េសួអាហ្សង់ទីន",
+            "displayName-count-other": "ប៉េសូអាហ្សង់ទីន",
             "symbol": "ARS",
             "symbol-alt-narrow": "$"
           },
@@ -242,8 +239,8 @@
             "symbol-alt-narrow": "$"
           },
           "BTN": {
-            "displayName": "ញូលត្រឹម​ប៊ូតង់",
-            "displayName-count-other": "ញូលត្រឹម​ប៊ូតង់",
+            "displayName": "ញូលត្រឹម​ប៊ូតាន",
+            "displayName-count-other": "ញូលត្រឹម​ប៊ូតាន",
             "symbol": "BTN"
           },
           "BUK": {
@@ -288,8 +285,8 @@
             "symbol": "CHE"
           },
           "CHF": {
-            "displayName": "ហ្វ្រង់ ស្វីស",
-            "displayName-count-other": "ហ្វ្រង់ ស្វីស",
+            "displayName": "ហ្វ្រង់ស្វីស",
+            "displayName-count-other": "ហ្វ្រង់ស្វីស",
             "symbol": "CHF"
           },
           "CHW": {
@@ -305,8 +302,8 @@
             "symbol": "CLF"
           },
           "CLP": {
-            "displayName": "ប៉ឺហ្សូ​ស៊ីលី",
-            "displayName-count-other": "ប៉ឺហ្សូ​ស៊ីលី",
+            "displayName": "ប៉េសូឈីលី",
+            "displayName-count-other": "ប៉េសូឈីលី",
             "symbol": "CLP",
             "symbol-alt-narrow": "$"
           },
@@ -317,8 +314,8 @@
             "symbol-alt-narrow": "¥"
           },
           "COP": {
-            "displayName": "ប៉ឺហ្សូ​កូឡុំប៊ី",
-            "displayName-count-other": "ប៉ឺហ្សូ​កូឡុំប៊ី",
+            "displayName": "ប៉េសូកូឡុំប៊ី",
+            "displayName-count-other": "ប៉េសូកូឡុំប៊ី",
             "symbol": "COP",
             "symbol-alt-narrow": "$"
           },
@@ -341,14 +338,14 @@
             "symbol": "CSK"
           },
           "CUC": {
-            "displayName": "ប៉ឺហ្សូ​អាច​បម្លែង​បាន​គុយបា",
-            "displayName-count-other": "ប៉ឺហ្សូ​អាច​បម្លែង​បាន​គុយបា",
+            "displayName": "ប៉េសូ​គុយបាអាច​បម្លែង​បាន",
+            "displayName-count-other": "ប៉េសូ​គុយបាអាច​បម្លែង​បាន",
             "symbol": "CUC",
             "symbol-alt-narrow": "$"
           },
           "CUP": {
-            "displayName": "ប៉ឺហ្សូ​គុយបា",
-            "displayName-count-other": "ប៉ឺហ្សូ​គុយបា",
+            "displayName": "ប៉េសូគុយបា",
+            "displayName-count-other": "ប៉េសូគុយបា",
             "symbol": "CUP",
             "symbol-alt-narrow": "$"
           },
@@ -387,8 +384,8 @@
             "symbol-alt-narrow": "kr"
           },
           "DOP": {
-            "displayName": "ប៉ឺហ្សូ​ដូមីនីក",
-            "displayName-count-other": "ប៉ឺហ្សូ​ដូមីនីក",
+            "displayName": "ប៉េសូដូមីនីក",
+            "displayName-count-other": "ប៉េសូដូមីនីក",
             "symbol": "DOP",
             "symbol-alt-narrow": "$"
           },
@@ -410,14 +407,14 @@
             "symbol": "EEK"
           },
           "EGP": {
-            "displayName": "ផោន​​អេហ្សីប",
-            "displayName-count-other": "ផោន​​អេហ្សីប",
+            "displayName": "ផោនអេហ្ស៊ីប",
+            "displayName-count-other": "ផោនអេហ្ស៊ីប",
             "symbol": "EGP",
             "symbol-alt-narrow": "E£"
           },
           "ERN": {
-            "displayName": "ណាក់ហ្វា​អេរីត្រេ",
-            "displayName-count-other": "ណាក់ហ្វា​អេរីត្រេ",
+            "displayName": "ណាក់ហ្វាអេរីទ្រា",
+            "displayName-count-other": "ណាក់ហ្វាអេរីទ្រា",
             "symbol": "ERN"
           },
           "ESA": {
@@ -465,8 +462,8 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "ផោនស្ទែរលិញ​ចក្រភព​អង់គ្លេស",
-            "displayName-count-other": "ផោនស្ទែរលិញ​ចក្រភព​អង់គ្លេស",
+            "displayName": "ផោនចក្រភពអង់គ្លេស",
+            "displayName-count-other": "ផោនចក្រភពអង់គ្លេស",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -477,7 +474,8 @@
           "GEL": {
             "displayName": "ឡារី​​ហ្សកហ្ស៊ី",
             "displayName-count-other": "ឡារី​​ហ្សកហ្ស៊ី",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -495,8 +493,8 @@
             "symbol-alt-narrow": "£"
           },
           "GMD": {
-            "displayName": "ដាឡាស៊ី​ហ្គំប៊ី",
-            "displayName-count-other": "ដាឡាស៊ី​ហ្គំប៊ី",
+            "displayName": "ដាឡាស៊ី​ហ្គាំប៊ី",
+            "displayName-count-other": "ដាឡាស៊ី​ហ្គាំប៊ី",
             "symbol": "GMD"
           },
           "GNF": {
@@ -571,8 +569,8 @@
             "symbol-alt-narrow": "Ft"
           },
           "IDR": {
-            "displayName": "រ៉ូពីឥណ្ឌូណេស៊ី",
-            "displayName-count-other": "រ៉ូពីឥណ្ឌូនេស៊ី",
+            "displayName": "រូពីឥណ្ឌូណេស៊ី",
+            "displayName-count-other": "រូពីឥណ្ឌូណេស៊ី",
             "symbol": "IDR",
             "symbol-alt-narrow": "Rp"
           },
@@ -591,8 +589,8 @@
             "symbol-alt-narrow": "₪"
           },
           "INR": {
-            "displayName": "រ៉ូពី​ឥណ្ឌា",
-            "displayName-count-other": "រ៉ូពី​ឥណ្ឌា",
+            "displayName": "រូពីឥណ្ឌា",
+            "displayName-count-other": "រូពីឥណ្ឌា",
             "symbol": "₹",
             "symbol-alt-narrow": "₹"
           },
@@ -656,8 +654,8 @@
             "symbol-alt-narrow": "CF"
           },
           "KPW": {
-            "displayName": "វូន​កូរ៉េ​ខាង​ជើង",
-            "displayName-count-other": "វូន​កូរ៉េ​ខាង​ជើង",
+            "displayName": "វ៉ុនកូរ៉េខាងជើង",
+            "displayName-count-other": "វ៉ុនកូរ៉េខាងជើង",
             "symbol": "KPW",
             "symbol-alt-narrow": "₩"
           },
@@ -670,8 +668,8 @@
             "symbol": "KRO"
           },
           "KRW": {
-            "displayName": "វូន​កូរ៉េ​ខាង​ត្បូង",
-            "displayName-count-other": "វូន​កូរ៉េ​ខាង​ត្បូង",
+            "displayName": "វ៉ុនកូរ៉េខាងត្បូង",
+            "displayName-count-other": "វ៉ុនកូរ៉េខាងត្បូង",
             "symbol": "₩",
             "symbol-alt-narrow": "₩"
           },
@@ -705,8 +703,8 @@
             "symbol-alt-narrow": "L£"
           },
           "LKR": {
-            "displayName": "រ៉ូពី​ស្រីលង្ការ",
-            "displayName-count-other": "រ៉ូពី​ស្រីលង្ការ",
+            "displayName": "រូពីស្រីលង្កា",
+            "displayName-count-other": "រូពីស្រីលង្កា",
             "symbol": "LKR",
             "symbol-alt-narrow": "Rs"
           },
@@ -790,8 +788,8 @@
             "symbol": "MGF"
           },
           "MKD": {
-            "displayName": "ឌីណា​ម៉ាសេដ្វាន",
-            "displayName-count-other": "ឌីណា​ម៉ាសេដ្វាន",
+            "displayName": "ឌីណាម៉ាសេដូនី",
+            "displayName-count-other": "ឌីណាម៉ាសេដូនី",
             "symbol": "MKD"
           },
           "MKN": {
@@ -833,8 +831,8 @@
             "symbol": "MTP"
           },
           "MUR": {
-            "displayName": "រ៉ូពី​ម៉ូរីតានី",
-            "displayName-count-other": "រ៉ូពី​ម៉ូរីតានី",
+            "displayName": "រូពីម៉ូរីតានី",
+            "displayName-count-other": "រូពីម៉ូរីតានី",
             "symbol": "MUR",
             "symbol-alt-narrow": "Rs"
           },
@@ -849,8 +847,8 @@
             "symbol": "MWK"
           },
           "MXN": {
-            "displayName": "ប៉ីហ្សូ​ម៉ិកស៉ិក",
-            "displayName-count-other": "ប៉ីហ្សូ​ម៉ិកស៉ិក",
+            "displayName": "ប៉េសូម៉ិកសិក",
+            "displayName-count-other": "ប៉េសូម៉ិកសិក",
             "symbol": "MX$",
             "symbol-alt-narrow": "$"
           },
@@ -914,8 +912,8 @@
             "symbol-alt-narrow": "kr"
           },
           "NPR": {
-            "displayName": "រ៉ូពី​នេប៉ាល់",
-            "displayName-count-other": "រ៉ូពី​នេប៉ាល់",
+            "displayName": "រូពីនេប៉ាល់",
+            "displayName-count-other": "រូពីនេប៉ាល់",
             "symbol": "NPR",
             "symbol-alt-narrow": "Rs"
           },
@@ -949,19 +947,19 @@
             "symbol": "PES"
           },
           "PGK": {
-            "displayName": "គីណា​ប៉ាពូនូហ្គីណេ",
-            "displayName-count-other": "គីណា​ប៉ាពូនូហ្គីណេ",
+            "displayName": "គីណាប៉ាពួញូហ្គីណេ",
+            "displayName-count-other": "គីណាប៉ាពួញូហ្គីណេ",
             "symbol": "PGK"
           },
           "PHP": {
-            "displayName": "ប៉ឺហ្សូ​ហ្វីលីពីន",
-            "displayName-count-other": "ប៉ឺហ្សូ​ហ្វីលីពីន",
+            "displayName": "ប៉េសូហ្វីលីពីន",
+            "displayName-count-other": "ប៉េសូហ្វីលីពីន",
             "symbol": "PHP",
             "symbol-alt-narrow": "₱"
           },
           "PKR": {
-            "displayName": "រ៉ូពី​ប៉ាគីស្ថាន",
-            "displayName-count-other": "រ៉ូពី​ប៉ាគីស្ថាន",
+            "displayName": "រូពីប៉ាគីស្ថាន",
+            "displayName-count-other": "រូពីប៉ាគីស្ថាន",
             "symbol": "PKR",
             "symbol-alt-narrow": "Rs"
           },
@@ -1004,15 +1002,15 @@
             "symbol": "RON"
           },
           "RSD": {
-            "displayName": "ឌីណា​សើប",
-            "displayName-count-other": "ឌីណា​សើប",
+            "displayName": "ឌីណាស៊ែប",
+            "displayName-count-other": "ឌីណាស៊ែប",
             "symbol": "RSD"
           },
           "RUB": {
             "displayName": "រ៉ូបល​រុស្ស៊ី",
             "displayName-count-other": "រ៉ូបល​រុស្ស៊ី",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1037,8 +1035,8 @@
             "symbol-alt-narrow": "$"
           },
           "SCR": {
-            "displayName": "រ៉ូពី​សីស្ហែល",
-            "displayName-count-other": "រ៉ូពី​សីស្ហែល",
+            "displayName": "រូពី​សីស្ហែល",
+            "displayName-count-other": "រូពី​សីស្ហែល",
             "symbol": "SCR"
           },
           "SDD": {
@@ -1156,8 +1154,8 @@
             "symbol": "TMT"
           },
           "TND": {
-            "displayName": "ឌីណា​ទុយនីស៊ី",
-            "displayName-count-other": "ឌីណា​ទុយនីស៊ី",
+            "displayName": "ឌីណាទុយនេស៊ី",
+            "displayName-count-other": "ឌីណាទុយនេស៊ី",
             "symbol": "TND"
           },
           "TOP": {
@@ -1175,8 +1173,8 @@
             "symbol": "TRL"
           },
           "TRY": {
-            "displayName": "លីរ៉ា​ទួគី",
-            "displayName-count-other": "លីរ៉ា​ទួគី",
+            "displayName": "លីរ៉ាទួរគី",
+            "displayName-count-other": "លីរ៉ាទួរគី",
             "symbol": "TRY",
             "symbol-alt-narrow": "₺",
             "symbol-alt-variant": "TL"
@@ -1240,8 +1238,8 @@
             "symbol": "UYP"
           },
           "UYU": {
-            "displayName": "ប៉ឺហ្សូអ៊ុយរូហ្គាយ",
-            "displayName-count-other": "ប៉ឺហ្សូអ៊ុយរូហ្គាយ",
+            "displayName": "ប៉េសូអ៊ុយរូហ្គាយ",
+            "displayName-count-other": "ប៉េសូអ៊ុយរូហ្គាយ",
             "symbol": "UYU",
             "symbol-alt-narrow": "$"
           },
@@ -1271,8 +1269,8 @@
             "symbol": "VNN"
           },
           "VUV": {
-            "displayName": "វ៉ាទូ​វ៉ានូទូ",
-            "displayName-count-other": "វ៉ាទូ​វ៉ានូទូ",
+            "displayName": "វ៉ាទូវ៉ានូអាទូ",
+            "displayName-count-other": "វ៉ាទូវ៉ានូអាទូ",
             "symbol": "VUV"
           },
           "WST": {
@@ -1281,8 +1279,8 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "ហ្វ្រង់ BEAC CFA",
-            "displayName-count-other": "ហ្វ្រង់ BEAC CFA",
+            "displayName": "ហ្វ្រង់ CFA អាហ្វ្រិកកណ្តាល",
+            "displayName-count-other": "ហ្វ្រង់ CFA អាហ្វ្រិកកណ្តាល",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1332,8 +1330,8 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "ហ្វ្រង់ BCEAO CFA",
-            "displayName-count-other": "ហ្វ្រង់ BCEAO CFA",
+            "displayName": "ហ្វ្រង់ CFA អាហ្វ្រិកខាងលិច",
+            "displayName-count-other": "ហ្វ្រង់ CFA អាហ្វ្រិកខាងលិច",
             "symbol": "CFA"
           },
           "XPD": {
@@ -1400,8 +1398,8 @@
             "symbol": "ZAL"
           },
           "ZAR": {
-            "displayName": "រ៉ង់​អាព្រិក​ខាង​ត្បូង",
-            "displayName-count-other": "រ៉ង់​អាព្រិក​ខាង​ត្បូង",
+            "displayName": "រ៉ង់អាហ្វ្រិកខាងត្បូង",
+            "displayName-count-other": "រ៉ង់អាហ្វ្រិកខាងត្បូង",
             "symbol": "ZAR",
             "symbol-alt-narrow": "R"
           },
@@ -1410,8 +1408,8 @@
             "symbol": "ZMK"
           },
           "ZMW": {
-            "displayName": "ក្វាចា​សំប៊ី",
-            "displayName-count-other": "ក្វាចា​សំប៊ី",
+            "displayName": "ក្វាចាហ្សំប៊ី",
+            "displayName-count-other": "ក្វាចាហ្សំប៊ី",
             "symbol": "ZMW",
             "symbol-alt-narrow": "ZK"
           },

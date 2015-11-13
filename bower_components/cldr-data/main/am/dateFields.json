@@ -3,11 +3,8 @@
     "am": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11996 $"
         },
         "language": "am"
       },
@@ -60,44 +57,44 @@
           },
           "quarter": {
             "displayName": "ሩብ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "የመጨረሻው ሩብ",
+            "relative-type-0": "ይህ ሩብ",
+            "relative-type-1": "የሚቀጥለው ሩብ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} ሩብ",
               "relativeTimePattern-count-other": "+{0} ሩብ"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} Q ሩብ",
-              "relativeTimePattern-count-other": "-{0} Q ሩብ"
+              "relativeTimePattern-count-one": "{0} ሩብ በፊት",
+              "relativeTimePattern-count-other": "{0} ሩብ በፊት"
             }
           },
           "quarter-short": {
             "displayName": "ሩብ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "የመጨረሻው ሩብ",
+            "relative-type-0": "ይህ ሩብ",
+            "relative-type-1": "የሚቀጥለው ሩብ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} ሩብ",
               "relativeTimePattern-count-other": "+{0} ሩብ"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} Q ሩብ",
-              "relativeTimePattern-count-other": "-{0} Q ሩብ"
+              "relativeTimePattern-count-one": "{0} ሩብ በፊት",
+              "relativeTimePattern-count-other": "{0} ሩብ በፊት"
             }
           },
           "quarter-narrow": {
             "displayName": "ሩብ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "የመጨረሻው ሩብ",
+            "relative-type-0": "ይህ ሩብ",
+            "relative-type-1": "የሚቀጥለው ሩብ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} ሩብ",
               "relativeTimePattern-count-other": "+{0} ሩብ"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} Q ሩብ",
-              "relativeTimePattern-count-other": "-{0} Q ሩብ"
+              "relativeTimePattern-count-one": "{0} ሩብ በፊት",
+              "relativeTimePattern-count-other": "{0} ሩብ በፊት"
             }
           },
           "month": {
@@ -144,7 +141,7 @@
           },
           "week": {
             "displayName": "ሳምንት",
-            "relative-type--1": "ባለፈው ሳምንት",
+            "relative-type--1": "ያለፈው ሳምንት",
             "relative-type-0": "በዚህ ሳምንት",
             "relative-type-1": "የሚቀጥለው ሳምንት",
             "relativeTime-type-future": {
@@ -159,7 +156,7 @@
           "week-short": {
             "displayName": "ሳምንት",
             "relative-type--1": "ባለፈው ሳምንት",
-            "relative-type-0": "በዚህ ሳምንት",
+            "relative-type-0": "በዚህ ሣምንት",
             "relative-type-1": "የሚቀጥለው ሳምንት",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "በ{0} ሳምንታት ውስጥ",
@@ -173,7 +170,7 @@
           "week-narrow": {
             "displayName": "ሳምንት",
             "relative-type--1": "ባለፈው ሳምንት",
-            "relative-type-0": "በዚህ ሳምንት",
+            "relative-type-0": "በዚህ ሣምንት",
             "relative-type-1": "የሚቀጥለው ሳምንት",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "በ{0} ሳምንታት ውስጥ",
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "ቀን",
-            "relative-type--1": "ትናንት",
             "relative-type--2": "ከትናንት ወዲያ",
+            "relative-type--1": "ትናንት",
             "relative-type-0": "ዛሬ",
             "relative-type-1": "ነገ",
             "relative-type-2": "ከነገ ወዲያ",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "ቀን",
-            "relative-type--1": "ትናንት",
             "relative-type--2": "ከትናንት ወዲያ",
+            "relative-type--1": "ትላንትና",
             "relative-type-0": "ዛሬ",
             "relative-type-1": "ነገ",
             "relative-type-2": "ከነገ ወዲያ",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "ቀን",
-            "relative-type--1": "ትናንት",
             "relative-type--2": "ከትናንት ወዲያ",
+            "relative-type--1": "ትላንትና",
             "relative-type-0": "ዛሬ",
             "relative-type-1": "ነገ",
             "relative-type-2": "ከነገ ወዲያ",

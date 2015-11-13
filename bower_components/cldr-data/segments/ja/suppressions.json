@@ -2,27 +2,36 @@
   "segments": {
     "identity": {
       "version": {
-        "_cldrVersion": "27.0.1",
-        "_number": "$Revision: 8242 $"
-      },
-      "generation": {
-        "_date": "$Date: 2013-02-24 21:06:02 -0600 (Sun, 24 Feb 2013) $"
+        "_cldrVersion": "28",
+        "_number": "$Revision: 11914 $"
       },
       "language": "ja"
     },
     "segmentations": {
       "LineBreak": {
         "variables": [
-          { "$ID": "[[\\p{Line_Break=Ideographic}] [$CJ]]"},
-          { "$NS": "\\p{Line_Break=Nonstarter}"}
+          {
+            "$ID": "[[\\\\p{Line_Break=Ideographic}] [$CJ]]"
+          },
+          {
+            "$NS": "\\\\p{Line_Break=Nonstarter}"
+          }
         ]
       },
       "WordBreak": {
         "variables": [
-          { "$Hiragana": "\\p{Hiragana}"},
-          { "$Hiragana": "($Hiragana $X)"},
-          { "$Ideographic": "[[\\p{Ideographic}] [\u3005 \u3007 \u303B]]"},
-          { "$Ideographic": "($Ideographic $X)"}
+          {
+            "$Hiragana": "\\\\p{Hiragana}"
+          },
+          {
+            "$Hiragana": "($Hiragana $X)"
+          },
+          {
+            "$Ideographic": "[[\\\\p{Ideographic}] [\\u3005 \\u3007 \\u303B]]"
+          },
+          {
+            "$Ideographic": "($Ideographic $X)"
+          }
         ],
         "segmentRules": {
           "13.05": " $Hiragana × $Hiragana ",

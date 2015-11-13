@@ -3,11 +3,8 @@
     "he": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "he"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "לוח שנה",
+          "cf": "cf",
           "colAlternate": "התעלם מסמלים במיון",
           "colBackwards": "מיון לפי הטעמות בסדר הפוך",
           "colCaseFirst": "סידור לפי אותיות רישיות/קטנות",
           "colCaseLevel": "מיון תלוי רישיות",
           "colHiraganaQuaternary": "מיון קאנה",
+          "collation": "סדר מיון",
           "colNormalization": "מיון מנורמל",
           "colNumeric": "מיון לפי מספרים",
           "colStrength": "עוצמת המיון",
-          "collation": "סדר מיון",
           "currency": "מטבע",
+          "hc": "מחזור השעות (12 או 24)",
+          "lb": "סגנון מעבר שורה",
+          "ms": "מערכת מדידה",
           "numbers": "מספרים",
           "timezone": "אזור זמן",
           "va": "משתנה אזור",
@@ -56,6 +57,10 @@
             "persian": "לוח שנה פרסי",
             "roc": "לוח השנה הסיני Minguo"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "מיין סמלים",
             "shifted": "מיין תוך התעלמות מסמלים"
@@ -77,6 +82,26 @@
             "no": "מיין קאנה בנפרד",
             "yes": "מיין קאנה אחרת"
           },
+          "collation": {
+            "big5han": "מיון סינית מסורתית",
+            "compat": "compat",
+            "dictionary": "סדר מיון במילון",
+            "ducet": "סדר מיון Unicode המוגדר כברירת מחדל",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "מיון סינית מודרנית",
+            "phonebook": "מיון ספר טלפונים",
+            "phonetic": "סדר מיון פונטי",
+            "pinyin": "מיון פיניין",
+            "reformed": "סדר מיון מתוקן",
+            "search": "חיפוש כללי",
+            "searchjl": "חפש לפי העיצור הראשון באותיות הנגול",
+            "standard": "סדר מיון רגיל",
+            "stroke": "סדר מיון לפי ספירת תווים",
+            "traditional": "מיון מסורתי",
+            "unihan": "סדר מיון לפי ספירת תווים Radical-Stroke",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "מיין ללא נורמליזציה",
             "yes": "מיין לפי Unicode מנורמל"
@@ -92,25 +117,24 @@
             "secondary": "מיין לפי הטעמות",
             "tertiary": "מיין הטעמות/רישיות/רוחב"
           },
-          "collation": {
-            "big5han": "מיון סינית מסורתית",
-            "dictionary": "סדר מיון במילון",
-            "ducet": "סדר מיון Unicode המוגדר כברירת מחדל",
-            "eor": "eor",
-            "gb2312han": "מיון סינית מודרנית",
-            "phonebook": "מיון ספר טלפונים",
-            "phonetic": "סדר מיון פונטי",
-            "pinyin": "מיון פיניין",
-            "reformed": "סדר מיון מתוקן",
-            "search": "חיפוש כללי",
-            "searchjl": "חפש לפי העיצור הראשון באותיות הנגול",
-            "standard": "סדר מיון רגיל",
-            "stroke": "סדר מיון לפי ספירת תווים",
-            "traditional": "מיון מסורתי",
-            "unihan": "סדר מיון לפי ספירת תווים Radical-Stroke",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "מערכת של 12 שעות (0–11)",
+            "h12": "מערכת של 12 שעות (1–12)",
+            "h23": "מערכת של 24 שעות (0–23)",
+            "h24": "מערכת של 24 שעות (1–24)"
+          },
+          "lb": {
+            "loose": "loose",
+            "normal": "normal",
+            "strict": "strict"
+          },
+          "ms": {
+            "metric": "מערכת מטרית",
+            "uksystem": "מערכת מדידה אימפריאלית",
+            "ussystem": "מערכת מדידה אמריקאית"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "ספרות הינדיות",
             "arabext": "ספרות הינדיות מורחבות",
             "armn": "ספרות ארמניות",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "ספרות של דוונגארי",
             "ethi": "ספרות אתיופיות",
             "finance": "ספרות פיננסיות",
@@ -135,6 +160,7 @@
             "hant": "ספרות סיניות מסורתיות",
             "hantfin": "ספרות פיננסיות סיניות מסורתיות",
             "hebr": "ספרות עבריות",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "ספרות יפניות",
             "jpanfin": "ספרות פיננסיות יפניות",
@@ -147,11 +173,19 @@
             "latn": "ספרות מערביות",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "ספרות של מליאלאם",
+            "modi": "modi",
             "mong": "ספרות מונגוליות",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "ספרות של מיאנמר",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "ספרות מקומיות",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "ספרות רומיות קטנות",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "ספרות טלוגו",
             "thai": "ספרות תאיות",
             "tibt": "ספרות טיבטיות",
+            "tirh": "tirh",
             "traditional": "ספרות מסורתיות",
-            "vaii": "ספרות ואי"
+            "vaii": "ספרות ואי",
+            "wara": "wara"
           }
         },
         "codePatterns": {

@@ -3,11 +3,8 @@
     "ko-KP": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ko",
         "territory": "KP"
@@ -163,8 +160,8 @@
           },
           "day": {
             "displayName": "일",
-            "relative-type--1": "어제",
             "relative-type--2": "그저께",
+            "relative-type--1": "어제",
             "relative-type-0": "오늘",
             "relative-type-1": "내일",
             "relative-type-2": "모레",
@@ -177,8 +174,8 @@
           },
           "day-short": {
             "displayName": "일",
-            "relative-type--1": "어제",
             "relative-type--2": "그저께",
+            "relative-type--1": "어제",
             "relative-type-0": "오늘",
             "relative-type-1": "내일",
             "relative-type-2": "모레",
@@ -191,8 +188,8 @@
           },
           "day-narrow": {
             "displayName": "일",
-            "relative-type--1": "어제",
             "relative-type--2": "그저께",
+            "relative-type--1": "어제",
             "relative-type-0": "오늘",
             "relative-type-1": "내일",
             "relative-type-2": "모레",

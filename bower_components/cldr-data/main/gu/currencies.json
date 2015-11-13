@@ -3,11 +3,8 @@
     "gu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "gu"
       },
@@ -511,9 +508,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "બ્રિટિશ પાઉન્ડ સ્ટર્લિંગ",
-            "displayName-count-one": "બ્રિટિશ પાઉન્ડ સ્ટર્લિંગ",
-            "displayName-count-other": "બ્રિટિશ પાઉન્ડ સ્ટર્લિંગ",
+            "displayName": "બ્રિટિશ પાઉન્ડ",
+            "displayName-count-one": "બ્રિટિશ પાઉન્ડ",
+            "displayName-count-other": "બ્રિટિશ પાઉન્ડ્સ",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -525,7 +522,8 @@
             "displayName": "જ્યોર્જિઅન લારી",
             "displayName-count-one": "જ્યોર્જિઅન લારી",
             "displayName-count-other": "જ્યોર્જિઅન લારી",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -929,7 +927,7 @@
             "displayName-count-one": "મોરેશીઅન રૂપી",
             "displayName-count-other": "મોરેશીઅન રૂપી",
             "symbol": "MUR",
-            "symbol-alt-narrow": "Rs"
+            "symbol-alt-narrow": "રૂ."
           },
           "MVR": {
             "displayName": "માલ્દિવિયન રુફિયા",
@@ -1124,11 +1122,11 @@
             "symbol": "RSD"
           },
           "RUB": {
-            "displayName": "રશિયન રબલ",
-            "displayName-count-one": "રશિયન રબલ",
-            "displayName-count-other": "રશિયન રબલ",
+            "displayName": "રશિયન રૂબલ",
+            "displayName-count-one": "રશિયન રૂબલ",
+            "displayName-count-other": "રશિયન રૂબલ્સ",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1430,9 +1428,9 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "[CFA] ફ્રેંક [BEAC]",
-            "displayName-count-one": "[CFA] ફ્રેંક [BEAC]",
-            "displayName-count-other": "[CFA] ફ્રેંક [BEAC]",
+            "displayName": "મધ્ય આફ્રિકન [CFA] ફ્રેંક",
+            "displayName-count-one": "મધ્ય આફ્રિકન [CFA] ફ્રેંક",
+            "displayName-count-other": "મધ્ય આફ્રિકન [CFA] ફ્રેંક્સ",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1483,9 +1481,9 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "[CFA] ફ્રેંક [BCEAO]",
-            "displayName-count-one": "[CFA] ફ્રેંક [BCEAO]",
-            "displayName-count-other": "[CFA] ફ્રેંક [BCEAO]",
+            "displayName": "પશ્ચિમી આફ્રિકન [CFA] ફ્રેંક",
+            "displayName-count-one": "પશ્ચિમી આફ્રિકન [CFA] ફ્રેંક",
+            "displayName-count-other": "પશ્ચિમી આફ્રિકન [CFA] ફ્રેંક્સ",
             "symbol": "CFA"
           },
           "XPD": {

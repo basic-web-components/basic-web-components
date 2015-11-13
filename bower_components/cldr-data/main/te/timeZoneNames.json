@@ -3,11 +3,8 @@
     "te": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "te"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} సమయం",
-          "regionFormat-type-standard": "{0} ప్రామాణిక సమయం",
           "regionFormat-type-daylight": "{0} పగటి సమయం",
+          "regionFormat-type-standard": "{0} ప్రామాణిక సమయం",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "అరాగ్వేయీనా"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "లా రియోజ"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "రియో గల్లేగోస్"
-                },
-                "Salta": {
-                  "exemplarCity": "సాల్టా"
                 },
                 "San_Juan": {
                   "exemplarCity": "శాన్ జ్యూన్"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ఉష్యూయ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "లా రియోజ"
+                },
                 "San_Luis": {
                   "exemplarCity": "శాన్ లూయిస్"
                 },
+                "Salta": {
+                  "exemplarCity": "సాల్టా"
+                },
                 "Tucuman": {
                   "exemplarCity": "టుకుమన్"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ఉష్యూయ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "హెర్మోసిల్లో"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "నోక్స్, ఇండియాన"
-                },
-                "Marengo": {
-                  "exemplarCity": "మరెంగో, ఇండియాన"
+                "Vincennes": {
+                  "exemplarCity": "విన్‌సెన్నెస్, ఇండియాన"
                 },
                 "Petersburg": {
                   "exemplarCity": "పీటర్స్‌బర్గ్, ఇండియాన"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "టెల్ నగరం, ఇండియాన"
                 },
-                "Vevay": {
-                  "exemplarCity": "వెవయ్, ఇండియాన"
-                },
-                "Vincennes": {
-                  "exemplarCity": "విన్‌సెన్నెస్, ఇండియాన"
+                "Knox": {
+                  "exemplarCity": "నోక్స్, ఇండియాన"
                 },
                 "Winamac": {
                   "exemplarCity": "వినిమాక్, ఇండియాన"
+                },
+                "Marengo": {
+                  "exemplarCity": "మరెంగో, ఇండియాన"
+                },
+                "Vevay": {
+                  "exemplarCity": "వెవయ్, ఇండియాన"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "బ్యులా, ఉత్తర డకోట"
                 },
-                "Center": {
-                  "exemplarCity": "సెంట్రల్, ఉత్తర డకోటా"
-                },
                 "New_Salem": {
                   "exemplarCity": "న్యూ సలేమ్, ఉత్తర డకోట"
+                },
+                "Center": {
+                  "exemplarCity": "సెంట్రల్, ఉత్తర డకోటా"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "కోల్‌కతా"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "చితా"
               },
               "Choibalsan": {
                 "exemplarCity": "చోయిబాల్సన్"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "సింగపూర్"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "స్రెడ్నెకొలిమ్స్క్"
               },
               "Taipei": {
                 "exemplarCity": "తైపీ"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ఆక్లాండ్"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "బొగెయిన్‌విల్లే"
               },
               "Chatham": {
                 "exemplarCity": "ఛతం"
@@ -1546,9 +1543,9 @@
             },
             "Australia_CentralWestern": {
               "long": {
-                "generic": "మధ్యమ ఆస్ట్రేలియా పశ్చిమ సమయం",
+                "generic": "మధ్యమ ఆస్ట్రేలియన్ పశ్చిమ సమయం",
                 "standard": "మధ్యమ ఆస్ట్రేలియా పశ్చిమ ప్రామాణిక సమయం",
-                "daylight": "మధ్యమ ఆస్ట్రేలియా పశ్చిమ పగటి సమయం"
+                "daylight": "మధ్యమ ఆస్ట్రేలియన్ పశ్చిమ పగటి సమయం"
               }
             },
             "Australia_Eastern": {
@@ -1561,8 +1558,8 @@
             "Australia_Western": {
               "long": {
                 "generic": "పశ్చిమ ఆస్ట్రేలియా సమయం",
-                "standard": "పశ్చిమ ఆస్ట్రేలియా ప్రామాణిక సమయం",
-                "daylight": "పశ్చిమ ఆస్ట్రేలియా పగటి సమయం"
+                "standard": "పశ్చిమ ఆస్ట్రేలియన్ ప్రామాణిక సమయం",
+                "daylight": "పశ్చిమ ఆస్ట్రేలియన్ పగటి సమయం"
               }
             },
             "Azerbaijan": {
@@ -1617,7 +1614,7 @@
             },
             "Chamorro": {
               "long": {
-                "standard": "చామర్రో సమయం"
+                "standard": "చామర్రో ప్రామాణిక సమయం"
               }
             },
             "Chatham": {
@@ -1756,11 +1753,6 @@
                 "standard": "ఫ్రెంచ్ దక్షిణ మరియు అంటార్కిటిక్ సమయం"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "గ్రీన్‌విచ్ సగటు సమయం"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "గాలాపాగోస్ సమయం"
@@ -1781,6 +1773,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "గిల్బర్ట్ దీవుల సమయం"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "గ్రీన్‌విచ్ సగటు సమయం"
               }
             },
             "Greenland_Eastern": {

@@ -3,11 +3,8 @@
     "lt": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "lt"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Laikas: {0}",
-          "regionFormat-type-standard": "Žiemos laikas: {0}",
           "regionFormat-type-daylight": "Vasaros laikas: {0}",
+          "regionFormat-type-standard": "Žiemos laikas: {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Aragvajana"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Riocha"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Galjegosas"
-                },
-                "Salta": {
-                  "exemplarCity": "Saltas"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Chuanas"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ušuaja"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Riocha"
+                },
                 "San_Luis": {
                   "exemplarCity": "Sent Luisas"
                 },
+                "Salta": {
+                  "exemplarCity": "Saltas"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tukumanas"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ušuaja"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosiljas"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Noksas, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengas, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vinsenas, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Pitersbergas, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tel Sitis, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vivis, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vinsenas, Indiana"
+                "Knox": {
+                  "exemplarCity": "Noksas, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Vinamakas, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengas, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vivis, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Bjula, Šiaurės Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Senteris, Šiaurės Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "Niu Seilemas, Šiaurės Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Senteris, Šiaurės Dakota"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "Kolkata"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Čita"
               },
               "Choibalsan": {
                 "exemplarCity": "Čoibalsanas"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "Singapūras"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Srednekolymskas"
               },
               "Taipei": {
                 "exemplarCity": "Taipėjus"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "Oklandas"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "Bugenvilis"
               },
               "Chatham": {
                 "exemplarCity": "Čatamas"
@@ -1761,11 +1758,6 @@
                 "standard": "Pietų Prancūzijos ir antarktinis laikas"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Grinvičo laikas"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapagų laikas"
@@ -1786,6 +1778,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilberto Salų laikas"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Grinvičo laikas"
               }
             },
             "Greenland_Eastern": {

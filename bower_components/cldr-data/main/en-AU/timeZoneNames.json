@@ -3,14 +3,11 @@
     "en-AU": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11159 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-30 13:45:39 -0600 (Fri, 30 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "AU"
       },
       "dates": {
         "timeZoneNames": {
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} Time",
-          "regionFormat-type-standard": "{0} Standard Time",
           "regionFormat-type-daylight": "{0} Daylight Time",
+          "regionFormat-type-standard": "{0} Standard Time",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, North Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, North Dakota"
                 }
               },
               "Ojinaga": {
@@ -1411,7 +1408,7 @@
             },
             "Africa_Eastern": {
               "long": {
-                "standard": "East Africa Time"
+                "standard": "Eastern Africa Time"
               }
             },
             "Africa_Southern": {
@@ -1505,9 +1502,9 @@
             },
             "Arabian": {
               "long": {
-                "generic": "Arabian Time",
-                "standard": "Arabian Standard Time",
-                "daylight": "Arabian Summer Time"
+                "generic": "Arabia Time",
+                "standard": "Arabia Standard Time",
+                "daylight": "Arabia Daylight Time"
               }
             },
             "Argentina": {
@@ -1540,7 +1537,7 @@
             },
             "Australia_Central": {
               "long": {
-                "generic": "Central Australia Time",
+                "generic": "Australian Central Time",
                 "standard": "Australian Central Standard Time",
                 "daylight": "Australian Central Daylight Time"
               },
@@ -1564,7 +1561,7 @@
             },
             "Australia_Eastern": {
               "long": {
-                "generic": "Eastern Australia Time",
+                "generic": "Australian Eastern Time",
                 "standard": "Australian Eastern Standard Time",
                 "daylight": "Australian Eastern Daylight Time"
               },
@@ -1576,7 +1573,7 @@
             },
             "Australia_Western": {
               "long": {
-                "generic": "Western Australia Time",
+                "generic": "Australian Western Time",
                 "standard": "Australian Western Standard Time",
                 "daylight": "Australian Western Daylight Time"
               },
@@ -1664,7 +1661,7 @@
               "long": {
                 "generic": "China Time",
                 "standard": "China Standard Time",
-                "daylight": "China Summer Time"
+                "daylight": "China Daylight Time"
               }
             },
             "Choibalsan": {
@@ -1693,9 +1690,9 @@
             },
             "Cook": {
               "long": {
-                "generic": "Cook Islands Time",
-                "standard": "Cook Islands Standard Time",
-                "daylight": "Cook Islands Half Summer Time"
+                "generic": "Cook Island Time",
+                "standard": "Cook Island Standard Time",
+                "daylight": "Cook Island Summer Time"
               }
             },
             "Cuba": {
@@ -1782,14 +1779,6 @@
                 "standard": "French Southern & Antarctic Time"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Greenwich Mean Time"
-              },
-              "short": {
-                "standard": "GMT"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapagos Time"
@@ -1810,6 +1799,14 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilbert Islands Time"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwich Mean Time"
+              },
+              "short": {
+                "standard": "GMT"
               }
             },
             "Greenland_Eastern": {
@@ -1896,7 +1893,7 @@
               "long": {
                 "generic": "Iran Time",
                 "standard": "Iran Standard Time",
-                "daylight": "Iran Summer Time"
+                "daylight": "Iran Daylight Time"
               }
             },
             "Irkutsk": {
@@ -1910,7 +1907,7 @@
               "long": {
                 "generic": "Israel Time",
                 "standard": "Israel Standard Time",
-                "daylight": "Israel Summer Time"
+                "daylight": "Israel Daylight Time"
               }
             },
             "Japan": {
@@ -1939,7 +1936,7 @@
             },
             "Korea": {
               "long": {
-                "generic": "Korean Time",
+                "generic": "Korea Time",
                 "standard": "Korean Standard Time",
                 "daylight": "Korean Summer Time"
               }
@@ -2059,7 +2056,7 @@
               "long": {
                 "generic": "Moscow Time",
                 "standard": "Moscow Standard Time",
-                "daylight": "Moscow Summer Time"
+                "daylight": "Moscow Daylight Time"
               }
             },
             "Myanmar": {
@@ -2234,7 +2231,7 @@
               "long": {
                 "generic": "Samoa Time",
                 "standard": "Samoa Standard Time",
-                "daylight": "Samoa Daylight Time"
+                "daylight": "Samoa Summer Time"
               }
             },
             "Seychelles": {

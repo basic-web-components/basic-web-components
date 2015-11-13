@@ -3,11 +3,8 @@
     "th": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "th"
       },
@@ -162,8 +159,8 @@
           },
           "day": {
             "displayName": "วัน",
-            "relative-type--1": "เมื่อวาน",
             "relative-type--2": "เมื่อวานซืน",
+            "relative-type--1": "เมื่อวาน",
             "relative-type-0": "วันนี้",
             "relative-type-1": "พรุ่งนี้",
             "relative-type-2": "มะรืนนี้",
@@ -176,8 +173,8 @@
           },
           "day-short": {
             "displayName": "วัน",
-            "relative-type--1": "เมื่อวาน",
             "relative-type--2": "เมื่อวานซืน",
+            "relative-type--1": "เมื่อวาน",
             "relative-type-0": "วันนี้",
             "relative-type-1": "พรุ่งนี้",
             "relative-type-2": "มะรืนนี้",
@@ -190,8 +187,8 @@
           },
           "day-narrow": {
             "displayName": "วัน",
-            "relative-type--1": "เมื่อวาน",
             "relative-type--2": "เมื่อวานซืน",
+            "relative-type--1": "เมื่อวาน",
             "relative-type-0": "วันนี้",
             "relative-type-1": "พรุ่งนี้",
             "relative-type-2": "มะรืนนี้",

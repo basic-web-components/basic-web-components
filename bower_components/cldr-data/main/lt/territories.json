@@ -3,11 +3,8 @@
     "lt": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "lt"
       },
@@ -91,7 +88,7 @@
           "CG-alt-variant": "Kongo Respublika",
           "CH": "Šveicarija",
           "CI": "Dramblio Kaulo Krantas",
-          "CI-alt-variant": "CI",
+          "CI-alt-variant": "Dramblio Kaulo Kranto Respublika",
           "CK": "Kuko Salos",
           "CL": "Čilė",
           "CM": "Kamerūnas",

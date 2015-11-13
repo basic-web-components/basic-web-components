@@ -3,11 +3,8 @@
     "it": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11306 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-24 13:34:05 -0600 (Tue, 24 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "it"
       },
@@ -46,9 +43,9 @@
             "symbol": "AMD"
           },
           "ANG": {
-            "displayName": "fiorino delle Antille Olandesi",
-            "displayName-count-one": "fiorino delle Antille Olandesi",
-            "displayName-count-other": "fiorini delle Antille Olandesi",
+            "displayName": "fiorino delle Antille olandesi",
+            "displayName-count-one": "fiorino delle Antille olandesi",
+            "displayName-count-other": "fiorino delle Antille olandesi",
             "symbol": "ANG"
           },
           "AOA": {
@@ -125,9 +122,9 @@
             "symbol": "BAD"
           },
           "BAM": {
-            "displayName": "marco conv. Bosnia-Erzegovina",
-            "displayName-count-one": "marco bosniaco",
-            "displayName-count-other": "marchi bosniaci",
+            "displayName": "marco convertibile della Bosnia-Herzegovina",
+            "displayName-count-one": "marco convertibile della Bosnia-Herzegovina",
+            "displayName-count-other": "marchi convertibili della Bosnia-Herzegovina",
             "symbol": "BAM",
             "symbol-alt-narrow": "KM"
           },
@@ -212,7 +209,7 @@
             "displayName-count-one": "boliviano",
             "displayName-count-other": "boliviani",
             "symbol": "BOB",
-            "symbol-alt-narrow": "Bs"
+            "symbol-alt-narrow": "$b"
           },
           "BOL": {
             "displayName": "BOL",
@@ -265,9 +262,9 @@
             "symbol-alt-narrow": "$"
           },
           "BTN": {
-            "displayName": "ngultrum butanese",
-            "displayName-count-one": "ngultrum del Bhutan",
-            "displayName-count-other": "ngultrum del Bhutan",
+            "displayName": "ngultrum bhutanese",
+            "displayName-count-one": "ngultrum bhutanese",
+            "displayName-count-other": "ngultrum bhutanesi",
             "symbol": "BTN"
           },
           "BUK": {
@@ -379,7 +376,7 @@
             "displayName-count-one": "peso cubano convertibile",
             "displayName-count-other": "pesos cubani convertibili",
             "symbol": "CUC",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "CUC$"
           },
           "CUP": {
             "displayName": "peso cubano",
@@ -389,9 +386,9 @@
             "symbol-alt-narrow": "$"
           },
           "CVE": {
-            "displayName": "escudo del Capo Verde",
-            "displayName-count-one": "escudo del Capo Verde",
-            "displayName-count-other": "escudo del Capo Verde",
+            "displayName": "escudo capoverdiano",
+            "displayName-count-one": "escudo capoverdiano",
+            "displayName-count-other": "escudos capoverdiani",
             "symbol": "CVE"
           },
           "CYP": {
@@ -414,9 +411,9 @@
             "symbol": "DEM"
           },
           "DJF": {
-            "displayName": "franco gibutiano",
-            "displayName-count-one": "franco gibutiano",
-            "displayName-count-other": "franco gibutiano",
+            "displayName": "franco di Gibuti",
+            "displayName-count-one": "franco di Gibuti",
+            "displayName-count-other": "franchi di Gibuti",
             "symbol": "DJF"
           },
           "DKK": {
@@ -456,7 +453,7 @@
             "displayName-count-one": "sterlina egiziana",
             "displayName-count-other": "sterline egiziane",
             "symbol": "EGP",
-            "symbol-alt-narrow": "E£"
+            "symbol-alt-narrow": "£E"
           },
           "ERN": {
             "displayName": "nakfa eritreo",
@@ -478,9 +475,9 @@
             "symbol-alt-narrow": "₧"
           },
           "ETB": {
-            "displayName": "birr etiopico",
-            "displayName-count-one": "birr etiopico",
-            "displayName-count-other": "birr etiopici",
+            "displayName": "birr etiope",
+            "displayName-count-one": "birr etiope",
+            "displayName-count-other": "birr etiopi",
             "symbol": "ETB"
           },
           "EUR": {
@@ -513,7 +510,7 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "sterlina inglese",
+            "displayName": "sterlina britannica",
             "displayName-count-one": "sterlina britannica",
             "displayName-count-other": "sterline britanniche",
             "symbol": "£",
@@ -527,7 +524,8 @@
             "displayName": "lari georgiano",
             "displayName-count-one": "lari georgiano",
             "displayName-count-other": "lari georgiani",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "ლ"
           },
           "GHC": {
             "displayName": "cedi del Ghana",
@@ -547,9 +545,9 @@
             "symbol-alt-narrow": "£"
           },
           "GMD": {
-            "displayName": "dalasi del Gambia",
-            "displayName-count-one": "dalasi del Gambia",
-            "displayName-count-other": "dalasi del Gambia",
+            "displayName": "dalasi gambiano",
+            "displayName-count-one": "dalasi gambiano",
+            "displayName-count-other": "dalasi gambiani",
             "symbol": "GMD"
           },
           "GNF": {
@@ -713,9 +711,9 @@
             "symbol": "KES"
           },
           "KGS": {
-            "displayName": "som Kirghiso",
-            "displayName-count-one": "som Kirghiso",
-            "displayName-count-other": "som Kirghisi",
+            "displayName": "som kirghiso",
+            "displayName-count-one": "som kirghiso",
+            "displayName-count-other": "som kirghisi",
             "symbol": "KGS"
           },
           "KHR": {
@@ -726,9 +724,9 @@
             "symbol-alt-narrow": "៛"
           },
           "KMF": {
-            "displayName": "franco Comoriano",
-            "displayName-count-one": "franco Comoriano",
-            "displayName-count-other": "franchi Comoriani",
+            "displayName": "franco comoriano",
+            "displayName-count-one": "franco comoriano",
+            "displayName-count-other": "franchi comoriani",
             "symbol": "KMF",
             "symbol-alt-narrow": "CF"
           },
@@ -790,8 +788,8 @@
           },
           "LKR": {
             "displayName": "rupia di Sri Lanka",
-            "displayName-count-one": "rupia singalese",
-            "displayName-count-other": "rupie singalesi",
+            "displayName-count-one": "rupia di Sri Lanka",
+            "displayName-count-other": "rupie di Sri Lanka",
             "symbol": "LKR",
             "symbol-alt-narrow": "Rs"
           },
@@ -882,9 +880,9 @@
             "symbol": "MGF"
           },
           "MKD": {
-            "displayName": "dinaro macedone",
-            "displayName-count-one": "denaro macedone",
-            "displayName-count-other": "denari macedoni",
+            "displayName": "denar macedone",
+            "displayName-count-one": "dinaro macedone",
+            "displayName-count-other": "dinari macedoni",
             "symbol": "MKD"
           },
           "MKN": {
@@ -964,7 +962,7 @@
             "symbol": "MXV"
           },
           "MYR": {
-            "displayName": "ringgit della Malesia",
+            "displayName": "ringgit malese",
             "displayName-count-one": "ringgit malese",
             "displayName-count-other": "ringgit malesi",
             "symbol": "MYR",
@@ -1020,7 +1018,7 @@
             "displayName-count-one": "corona norvegese",
             "displayName-count-other": "corone norvegesi",
             "symbol": "NOK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "NKr"
           },
           "NPR": {
             "displayName": "rupia nepalese",
@@ -1037,13 +1035,13 @@
             "symbol-alt-narrow": "$"
           },
           "OMR": {
-            "displayName": "rial dell’Oman",
-            "displayName-count-one": "rial dell’Oman",
-            "displayName-count-other": "rial dell’Oman",
+            "displayName": "rial omanita",
+            "displayName-count-one": "rial omanita",
+            "displayName-count-other": "rial omaniti",
             "symbol": "OMR"
           },
           "PAB": {
-            "displayName": "balboa di Panama",
+            "displayName": "balboa panamense",
             "displayName-count-one": "balboa panamense",
             "displayName-count-other": "balboa panamensi",
             "symbol": "PAB"
@@ -1053,9 +1051,9 @@
             "symbol": "PEI"
           },
           "PEN": {
-            "displayName": "sol nuevo peruviano",
-            "displayName-count-one": "nuevo sol peruviano",
-            "displayName-count-other": "nuevos soles peruviani",
+            "displayName": "nuovo sol peruviano",
+            "displayName-count-one": "nuovo sol peruviano",
+            "displayName-count-other": "nuovi sol peruviani",
             "symbol": "PEN"
           },
           "PES": {
@@ -1063,20 +1061,20 @@
             "symbol": "PES"
           },
           "PGK": {
-            "displayName": "kina della Papua Nuova Guinea",
+            "displayName": "kina papuana",
             "displayName-count-one": "kina papuana",
             "displayName-count-other": "kina papuane",
             "symbol": "PGK"
           },
           "PHP": {
-            "displayName": "peso delle Filippine",
+            "displayName": "peso filippino",
             "displayName-count-one": "peso filippino",
             "displayName-count-other": "pesos filippini",
             "symbol": "PHP",
             "symbol-alt-narrow": "₱"
           },
           "PKR": {
-            "displayName": "rupia del Pakistan",
+            "displayName": "rupia pakistana",
             "displayName-count-one": "rupia pakistana",
             "displayName-count-other": "rupie pakistane",
             "symbol": "PKR",
@@ -1100,16 +1098,16 @@
             "symbol": "PTE"
           },
           "PYG": {
-            "displayName": "guaraní del Paraguay",
-            "displayName-count-one": "guaraní paraguaiano",
-            "displayName-count-other": "guaraní paraguaiani",
+            "displayName": "guaraní paraguayano",
+            "displayName-count-one": "guaraní paraguayano",
+            "displayName-count-other": "guaraní paraguayani",
             "symbol": "PYG",
             "symbol-alt-narrow": "₲"
           },
           "QAR": {
-            "displayName": "rial del Qatar",
-            "displayName-count-one": "rial del Qatar",
-            "displayName-count-other": "rial del Qatar",
+            "displayName": "rial qatariano",
+            "displayName-count-one": "rial qatariano",
+            "displayName-count-other": "rial qatariani",
             "symbol": "QAR"
           },
           "RHD": {
@@ -1137,7 +1135,7 @@
             "displayName-count-one": "rublo russo",
             "displayName-count-other": "rubli russi",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "rublo della CSI",
@@ -1158,9 +1156,9 @@
             "symbol": "SAR"
           },
           "SBD": {
-            "displayName": "dollaro delle Isole Solomon",
-            "displayName-count-one": "dollaro delle Isole Solomon",
-            "displayName-count-other": "dollari delle Isole Solomon",
+            "displayName": "dollaro delle Isole Salomone",
+            "displayName-count-one": "dollaro delle Isole Salomone",
+            "displayName-count-other": "dollari delle Isole Salomone",
             "symbol": "SBD",
             "symbol-alt-narrow": "$"
           },
@@ -1215,7 +1213,7 @@
           },
           "SLL": {
             "displayName": "leone della Sierra Leone",
-            "displayName-count-one": "leone sierraleonese",
+            "displayName-count-one": "leone della Sierra Leone",
             "displayName-count-other": "leoni della Sierra Leone",
             "symbol": "SLL"
           },
@@ -1226,9 +1224,9 @@
             "symbol": "SOS"
           },
           "SRD": {
-            "displayName": "dollaro surinamese",
-            "displayName-count-one": "dollaro surinamese",
-            "displayName-count-other": "dollari surinamesi",
+            "displayName": "dollaro del Suriname",
+            "displayName-count-one": "dollaro del Suriname",
+            "displayName-count-other": "dollari del Suriname",
             "symbol": "SRD",
             "symbol-alt-narrow": "$"
           },
@@ -1237,9 +1235,9 @@
             "symbol": "SRG"
           },
           "SSP": {
-            "displayName": "sterlina sudsudanese",
-            "displayName-count-one": "sterlina sudsudanese",
-            "displayName-count-other": "sterline sudsudanesi",
+            "displayName": "sterlina sud-sudanese",
+            "displayName-count-one": "sterlina sud-sudanese",
+            "displayName-count-other": "sterline sud-sudanesi",
             "symbol": "SSP",
             "symbol-alt-narrow": "£"
           },
@@ -1283,9 +1281,9 @@
             "symbol": "TJR"
           },
           "TJS": {
-            "displayName": "somoni del Tajikistan",
-            "displayName-count-one": "somoni del Tajikistan",
-            "displayName-count-other": "somoni del Tajikistan",
+            "displayName": "somoni tagiko",
+            "displayName-count-one": "somoni tagiko",
+            "displayName-count-other": "somoni tagiki",
             "symbol": "TJS"
           },
           "TMM": {
@@ -1305,9 +1303,9 @@
             "symbol": "TND"
           },
           "TOP": {
-            "displayName": "paʻanga di Tonga",
-            "displayName-count-one": "paʻanga di Tonga",
-            "displayName-count-other": "paʻanga di Tonga",
+            "displayName": "paʻanga tongano",
+            "displayName-count-one": "paʻanga tongano",
+            "displayName-count-other": "paʻanga tongani",
             "symbol": "TOP",
             "symbol-alt-narrow": "T$"
           },
@@ -1394,16 +1392,16 @@
             "symbol": "UYP"
           },
           "UYU": {
-            "displayName": "peso uruguaiano",
-            "displayName-count-one": "peso uruguaiano",
-            "displayName-count-other": "pesos uruguaiani",
+            "displayName": "peso uruguayano",
+            "displayName-count-one": "peso uruguayano",
+            "displayName-count-other": "pesos uruguayani",
             "symbol": "UYU",
             "symbol-alt-narrow": "$"
           },
           "UZS": {
-            "displayName": "sum dell’Uzbekistan",
-            "displayName-count-one": "sum dell’Uzbekistan",
-            "displayName-count-other": "sum dell’Uzbekistan",
+            "displayName": "sum uzbeco",
+            "displayName-count-one": "sum uzbeco",
+            "displayName-count-other": "sum uzbechi",
             "symbol": "UZS"
           },
           "VEB": {
@@ -1437,7 +1435,7 @@
             "symbol": "VUV"
           },
           "WST": {
-            "displayName": "tala della Samoa Occidentale",
+            "displayName": "tala samoano",
             "displayName-count-one": "tala samoano",
             "displayName-count-other": "tala samoani",
             "symbol": "WST"
@@ -1473,7 +1471,7 @@
             "symbol": "XBD"
           },
           "XCD": {
-            "displayName": "dollaro dei Caraibi Orientali",
+            "displayName": "dollaro dei Caraibi orientali",
             "displayName-count-one": "dollaro dei Caraibi orientali",
             "displayName-count-other": "dollari dei Caraibi orientali",
             "symbol": "EC$",

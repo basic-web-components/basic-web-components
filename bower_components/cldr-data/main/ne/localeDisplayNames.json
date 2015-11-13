@@ -3,11 +3,8 @@
     "ne": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ne"
       },
@@ -19,8 +16,12 @@
         },
         "keys": {
           "calendar": "पात्रो",
+          "cf": "cf",
           "collation": "क्रमबद्ध सुची",
           "currency": "मुद्रा",
+          "hc": "hc",
+          "lb": "lb",
+          "ms": "मापन प्रणाली",
           "numbers": "अङ्कहरू"
         },
         "types": {
@@ -44,10 +45,16 @@
             "persian": "फारसी पात्रो",
             "roc": "चिनिँया गणतन्त्र पात्रो"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "परम्परागत चिनिँया क्रमबद्धता पद्दति - बिग फाइभ",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "पूर्वनिर्धारित युनिकोड क्रमबद्ध सूची",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "सरलिकृत चिनियाँ क्रमबद्धता पद्दति-गीबीटुथ्रीवानटु",
             "phonebook": "टेलिफोन पुस्तिका क्रमबद्धतापद्दति",
@@ -61,7 +68,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "h11",
+            "h12": "h12",
+            "h23": "h23",
+            "h24": "h24"
+          },
+          "lb": {
+            "loose": "loose",
+            "normal": "normal",
+            "strict": "strict"
+          },
+          "ms": {
+            "metric": "मेट्रिक प्रणाली",
+            "uksystem": "इम्पेरियल मापन प्रणाली",
+            "ussystem": "संयुक्त राज्य मापन प्रणाली"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "अरबी भारतीय अङ्कहरू",
             "arabext": "विस्तृत अरबी भारतीय अङ्कहरू",
             "armn": "आर्मेनियाली अङ्कहरू",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "देवनागरी अङ्कहरू",
             "ethi": "इथियोपाली अङ्कहरू",
             "fullwide": "पुरा चौडाईका अङ्कहरू",
@@ -85,6 +110,7 @@
             "hant": "परम्परागत चिनियाँ अङ्कहरू",
             "hantfin": "परम्परागत चिनियाँ वित्तीय अङ्कहरू",
             "hebr": "हिब्रु अङ्कहरू",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "जापानी अङ्कहरू",
             "jpanfin": "जापानी वित्तीय अङ्कहरू",
@@ -97,11 +123,19 @@
             "latn": "पश्चिमी अङ्कहरू",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "मलायलम अङ्कहरू",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "म्यान्मारका अङ्कहरू",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "ओरिया अङ्कहरू",
@@ -110,6 +144,8 @@
             "romanlow": "रोमन साना केसका अङ्कहरू",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,13 +155,15 @@
             "telu": "तेलेगु अङ्कहरू",
             "thai": "थाई अङ्कहरू",
             "tibt": "तिब्बती अङ्कहरू",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {
-          "language": "{0}",
-          "script": "{0}",
-          "territory": "{0}"
+          "language": "भाषा: {0}",
+          "script": "लिपि: {0}",
+          "territory": "क्षेत्र: {0}"
         }
       }
     }

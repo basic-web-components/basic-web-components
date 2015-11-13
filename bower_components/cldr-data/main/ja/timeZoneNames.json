@@ -3,11 +3,8 @@
     "ja": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "ja"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}時間",
-          "regionFormat-type-standard": "{0}標準時",
           "regionFormat-type-daylight": "{0}夏時間",
+          "regionFormat-type-standard": "{0}標準時",
           "fallbackFormat": "{1}（{0}）",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "アラグァイナ"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ラリオハ"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "リオガジェゴス"
-                },
-                "Salta": {
-                  "exemplarCity": "サルタ"
                 },
                 "San_Juan": {
                   "exemplarCity": "サンファン"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ウシュアイア"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ラリオハ"
+                },
                 "San_Luis": {
                   "exemplarCity": "サンルイス"
                 },
+                "Salta": {
+                  "exemplarCity": "サルタ"
+                },
                 "Tucuman": {
                   "exemplarCity": "トゥクマン"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ウシュアイア"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "エルモシヨ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "インディアナ州ノックス"
-                },
-                "Marengo": {
-                  "exemplarCity": "インディアナ州マレンゴ"
+                "Vincennes": {
+                  "exemplarCity": "インディアナ州ビンセンス"
                 },
                 "Petersburg": {
                   "exemplarCity": "インディアナ州ピーターズバーグ"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "インディアナ州テルシティ"
                 },
-                "Vevay": {
-                  "exemplarCity": "インディアナ州ビベー"
-                },
-                "Vincennes": {
-                  "exemplarCity": "インディアナ州ビンセンス"
+                "Knox": {
+                  "exemplarCity": "インディアナ州ノックス"
                 },
                 "Winamac": {
                   "exemplarCity": "インディアナ州ウィナマック"
+                },
+                "Marengo": {
+                  "exemplarCity": "インディアナ州マレンゴ"
+                },
+                "Vevay": {
+                  "exemplarCity": "インディアナ州ビベー"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ノースダコタ州ビューラー"
                 },
-                "Center": {
-                  "exemplarCity": "ノースダコタ州センター"
-                },
                 "New_Salem": {
                   "exemplarCity": "ノースダコタ州ニューセーラム"
+                },
+                "Center": {
+                  "exemplarCity": "ノースダコタ州センター"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "コルカタ"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "チタ"
               },
               "Choibalsan": {
                 "exemplarCity": "チョイバルサン"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "シンガポール"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "スレドネコリムスク"
               },
               "Taipei": {
                 "exemplarCity": "台北"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "オークランド"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ブーゲンビル"
               },
               "Chatham": {
                 "exemplarCity": "チャタム"
@@ -1483,9 +1480,9 @@
             },
             "Apia": {
               "long": {
-                "generic": "アピーア時間",
-                "standard": "アピーア標準時",
-                "daylight": "アピーア夏時間"
+                "generic": "アピア時間",
+                "standard": "アピア標準時",
+                "daylight": "アピア夏時間"
               }
             },
             "Aqtau": {
@@ -1761,11 +1758,6 @@
                 "standard": "仏領南方南極時間"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "グリニッジ標準時"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ガラパゴス時間"
@@ -1778,14 +1770,19 @@
             },
             "Georgia": {
               "long": {
-                "generic": "グルジア時間",
-                "standard": "グルジア標準時",
-                "daylight": "グルジア夏時間"
+                "generic": "ジョージア時間",
+                "standard": "ジョージア標準時",
+                "daylight": "ジョージア夏時間"
               }
             },
             "Gilbert_Islands": {
               "long": {
                 "standard": "ギルバート諸島時間"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "グリニッジ標準時"
               }
             },
             "Greenland_Eastern": {

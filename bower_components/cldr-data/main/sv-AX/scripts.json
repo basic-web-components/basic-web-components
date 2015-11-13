@@ -3,11 +3,8 @@
     "sv-AX": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10819 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-08-14 22:53:08 -0500 (Thu, 14 Aug 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sv",
         "territory": "AX"
@@ -16,6 +13,7 @@
         "scripts": {
           "Afak": "afakiska",
           "Aghb": "kaukasiska albanska",
+          "Ahom": "ahom",
           "Arab": "arabiska",
           "Armi": "imperisk arameiska",
           "Armn": "armeniska",
@@ -64,6 +62,7 @@
           "Hans-alt-stand-alone": "förenklade han-tecken",
           "Hant": "traditionella",
           "Hant-alt-stand-alone": "traditionella han-tecken",
+          "Hatr": "hatran",
           "Hebr": "hebreiska",
           "Hira": "hiragana",
           "Hluw": "hittitiska hieroglyfer",
@@ -110,6 +109,7 @@
           "Moon": "moon",
           "Mroo": "mru",
           "Mtei": "meitei-mayek",
+          "Mult": "multaniska",
           "Mymr": "burmesiska",
           "Narb": "fornnordarabiska",
           "Nbat": "nabatateiska",

@@ -3,19 +3,17 @@
     "en-DM": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10712 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-08-01 12:07:43 -0500 (Fri, 01 Aug 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "DM"
       },
       "localeDisplayNames": {
         "scripts": {
           "Afak": "Afaka",
           "Aghb": "Caucasian Albanian",
+          "Ahom": "Ahom",
           "Arab": "Arabic",
           "Arab-alt-variant": "Perso-Arabic",
           "Armi": "Imperial Aramaic",
@@ -66,6 +64,7 @@
           "Hans-alt-stand-alone": "Simplified Han",
           "Hant": "Traditional",
           "Hant-alt-stand-alone": "Traditional Han",
+          "Hatr": "Hatran",
           "Hebr": "Hebrew",
           "Hira": "Hiragana",
           "Hluw": "Anatolian Hieroglyphs",
@@ -112,6 +111,7 @@
           "Moon": "Moon",
           "Mroo": "Mro",
           "Mtei": "Meitei Mayek",
+          "Mult": "Multani",
           "Mymr": "Myanmar",
           "Narb": "Old North Arabian",
           "Nbat": "Nabataean",

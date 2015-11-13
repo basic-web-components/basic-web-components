@@ -3,24 +3,23 @@
     "ko": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ko"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "중세 후기 프랑스어(1606년까지)",
-          "1694ACAD": "1694ACAD",
           "1901": "전통 독일어 표기법",
-          "1959ACAD": "1959ACAD",
           "1994": "1994",
           "1996": "1996",
+          "1606NICT": "중세 후기 프랑스어(1606년까지)",
+          "1694ACAD": "1694ACAD",
+          "1959ACAD": "1959ACAD",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALA-LC 로마자 표기법(1997년 개정)",
           "ALUKU": "알루꾸 방언",
+          "AO1990": "AO1990",
           "AREVELA": "AREVELA",
           "AREVMDA": "AREVMDA",
           "BAKU1926": "BAKU1926",
@@ -31,6 +30,7 @@
           "BISKE": "BISKE",
           "BOHORIC": "BOHORIC",
           "BOONT": "BOONT",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -56,6 +56,7 @@
           "NJIVA": "NJIVA",
           "NULIK": "NULIK",
           "OSOJS": "OSOJS",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "파마카 방언",
           "PETR1708": "PETR1708",
           "PINYIN": "PINYIN",

@@ -3,21 +3,18 @@
     "lt": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "lt"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Era"
+            "displayName": "era"
           },
           "year": {
-            "displayName": "Metai",
+            "displayName": "metai",
             "relative-type--1": "praėjusiais metais",
             "relative-type-0": "šiais metais",
             "relative-type-1": "kitais metais",
@@ -71,7 +68,7 @@
             }
           },
           "quarter": {
-            "displayName": "Ketvirtis",
+            "displayName": "ketvirtis",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -125,7 +122,7 @@
             }
           },
           "month": {
-            "displayName": "Mėnuo",
+            "displayName": "mėnuo",
             "relative-type--1": "praėjusį mėnesį",
             "relative-type-0": "šį mėnesį",
             "relative-type-1": "kitą mėnesį",
@@ -179,7 +176,7 @@
             }
           },
           "week": {
-            "displayName": "Savaitė",
+            "displayName": "savaitė",
             "relative-type--1": "praėjusią savaitę",
             "relative-type-0": "šią savaitę",
             "relative-type-1": "kitą savaitę",
@@ -233,9 +230,9 @@
             }
           },
           "day": {
-            "displayName": "Diena",
-            "relative-type--1": "vakar",
+            "displayName": "diena",
             "relative-type--2": "užvakar",
+            "relative-type--1": "vakar",
             "relative-type-0": "šiandien",
             "relative-type-1": "rytoj",
             "relative-type-2": "poryt",
@@ -254,8 +251,8 @@
           },
           "day-short": {
             "displayName": "d.",
-            "relative-type--1": "vakar",
             "relative-type--2": "užvakar",
+            "relative-type--1": "vakar",
             "relative-type-0": "šiandien",
             "relative-type-1": "rytoj",
             "relative-type-2": "poryt",
@@ -274,8 +271,8 @@
           },
           "day-narrow": {
             "displayName": "d.",
-            "relative-type--1": "vakar",
             "relative-type--2": "užvakar",
+            "relative-type--1": "vakar",
             "relative-type-0": "šiandien",
             "relative-type-1": "rytoj",
             "relative-type-2": "poryt",
@@ -293,7 +290,7 @@
             }
           },
           "weekday": {
-            "displayName": "Savaitės diena"
+            "displayName": "savaitės diena"
           },
           "sun": {
             "relative-type--1": "praėjusį sekmadienį",
@@ -401,10 +398,10 @@
             "relative-type-1": "kitą šešt."
           },
           "dayperiod": {
-            "displayName": "Iki pietų / po pietų"
+            "displayName": "iki pietų / po pietų"
           },
           "hour": {
-            "displayName": "Valanda",
+            "displayName": "valanda",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "po {0} valandos",
               "relativeTimePattern-count-few": "po {0} valandų",
@@ -449,7 +446,7 @@
             }
           },
           "minute": {
-            "displayName": "Minutė",
+            "displayName": "minutė",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "po {0} minutės",
               "relativeTimePattern-count-few": "po {0} minučių",
@@ -494,7 +491,7 @@
             }
           },
           "second": {
-            "displayName": "Sekundė",
+            "displayName": "sekundė",
             "relative-type-0": "dabar",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "po {0} sekundės",
@@ -542,7 +539,7 @@
             }
           },
           "zone": {
-            "displayName": "Laiko juosta"
+            "displayName": "laiko juosta"
           }
         }
       }

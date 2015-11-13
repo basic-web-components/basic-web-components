@@ -3,11 +3,8 @@
     "az-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "az",
         "script": "Latn"
@@ -142,8 +139,7 @@
             "displayName": "Azərbaycan Manatı",
             "displayName-count-one": "Azərbaycan manatı",
             "displayName-count-other": "Azərbaycan manatı",
-            "symbol": "AZN",
-            "symbol-alt-variant": "₼"
+            "symbol": "₼"
           },
           "BAD": {
             "displayName": "Bosniya-Herseqovina Dinarı",
@@ -608,7 +604,8 @@
             "displayName": "Gürcüstan Larisi",
             "displayName-count-one": "Gürcüstan larisi",
             "displayName-count-other": "Gürcüstan larisi",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Qana Sedisi (1979–2007)",
@@ -1285,7 +1282,7 @@
             "displayName-count-one": "Rusiya rublu",
             "displayName-count-other": "Rusiya rublu",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Rusiya Rublu (1991–1998)",
@@ -1421,7 +1418,7 @@
             "displayName-count-one": "Suriya funtu",
             "displayName-count-other": "Suriya funtu",
             "symbol": "SYP",
-            "symbol-alt-narrow": "£"
+            "symbol-alt-narrow": "S£"
           },
           "SZL": {
             "displayName": "Svazilend Lilangenini",

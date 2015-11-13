@@ -3,11 +3,8 @@
     "sw": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sw"
       },
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "Siku",
-            "relative-type--1": "jana",
             "relative-type--2": "juzi",
+            "relative-type--1": "jana",
             "relative-type-0": "leo",
             "relative-type-1": "kesho",
             "relative-type-2": "kesho kutwa",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "siku",
-            "relative-type--1": "jana",
             "relative-type--2": "juzi",
+            "relative-type--1": "jana",
             "relative-type-0": "leo",
             "relative-type-1": "kesho",
             "relative-type-2": "kesho kutwa",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "siku",
-            "relative-type--1": "jana",
             "relative-type--2": "juzi",
+            "relative-type--1": "jana",
             "relative-type-0": "leo",
             "relative-type-1": "kesho",
             "relative-type-2": "kesho kutwa",

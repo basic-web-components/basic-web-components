@@ -2,35 +2,68 @@
   "segments": {
     "identity": {
       "version": {
-        "_cldrVersion": "27.0.1",
-        "_number": "$Revision: 10745 $"
-      },
-      "generation": {
-        "_date": "$Date: 2014-08-07 19:55:50 -0500 (Thu, 07 Aug 2014) $"
+        "_cldrVersion": "28",
+        "_number": "$Revision: 11914 $"
       },
       "language": "ru"
     },
     "segmentations": {
       "SentenceBreak": {
         "standard": [
-          { "suppression": "руб."},
-          { "suppression": "янв."},
-          { "suppression": "до н. э."},
-          { "suppression": "сент."},
-          { "suppression": "тел."},
-          { "suppression": "дек."},
-          { "suppression": "февр."},
-          { "suppression": "нояб."},
-          { "suppression": "апр."},
-          { "suppression": "н. э."},
-          { "suppression": "окт."},
-          { "suppression": "тыс."},
-          { "suppression": "авг."},
-          { "suppression": "проф."},
-          { "suppression": "н.э."},
-          { "suppression": "кв."},
-          { "suppression": "ул."},
-          { "suppression": "отд."}
+          {
+            "suppression": "руб."
+          },
+          {
+            "suppression": "янв."
+          },
+          {
+            "suppression": "до н. э."
+          },
+          {
+            "suppression": "сент."
+          },
+          {
+            "suppression": "тел."
+          },
+          {
+            "suppression": "дек."
+          },
+          {
+            "suppression": "февр."
+          },
+          {
+            "suppression": "нояб."
+          },
+          {
+            "suppression": "апр."
+          },
+          {
+            "suppression": "н. э."
+          },
+          {
+            "suppression": "окт."
+          },
+          {
+            "suppression": "тыс."
+          },
+          {
+            "suppression": "авг."
+          },
+          {
+            "suppression": "проф."
+          },
+          {
+            "suppression": "н.э."
+          },
+          {
+            "suppression": "кв."
+          },
+          {
+            "suppression": "ул."
+          },
+          {
+            "suppression": "отд."
+          }
         ]
       }
     }

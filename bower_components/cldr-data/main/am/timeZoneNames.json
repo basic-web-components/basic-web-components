@@ -3,11 +3,8 @@
     "am": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11996 $"
         },
         "language": "am"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "ጂ ኤም ቲ{0}",
           "gmtZeroFormat": "ጂ ኤም ቲ",
           "regionFormat": "{0} ጊዜ",
-          "regionFormat-type-standard": "{0} መደበኛ ሰዓት",
           "regionFormat-type-daylight": "{0} የቀን ብርሃን ሰዓት",
+          "regionFormat-type-standard": "{0} መደበኛ ሰዓት",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "አራጉየና"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ላ ሪኦጃ"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "ሪዮ ጋሌጎስ"
-                },
-                "Salta": {
-                  "exemplarCity": "ሳልታ"
                 },
                 "San_Juan": {
                   "exemplarCity": "ሳን ጁአን"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ኡሹአኢ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ላ ሪኦጃ"
+                },
                 "San_Luis": {
                   "exemplarCity": "ሳን ሊውስ"
                 },
+                "Salta": {
+                  "exemplarCity": "ሳልታ"
+                },
                 "Tucuman": {
                   "exemplarCity": "ቱኩማን"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ኡሹአኢ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ኸርሞዚሎ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "ኖክስ, ኢንዲያና"
-                },
-                "Marengo": {
-                  "exemplarCity": "ማሬንጎ, ኢንዲያና"
+                "Vincennes": {
+                  "exemplarCity": "ቪንቼንስ, ኢንዲያና"
                 },
                 "Petersburg": {
                   "exemplarCity": "ፒተርስበርግ, ኢንዲያና"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "ቴል ከተማ, ኢንዲያና"
                 },
-                "Vevay": {
-                  "exemplarCity": "ቪቫይ, ኢንዲያና"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ቪንቼንስ, ኢንዲያና"
+                "Knox": {
+                  "exemplarCity": "ኖክስ, ኢንዲያና"
                 },
                 "Winamac": {
                   "exemplarCity": "ዊናማክ, ኢንዲያና"
+                },
+                "Marengo": {
+                  "exemplarCity": "ማሬንጎ, ኢንዲያና"
+                },
+                "Vevay": {
+                  "exemplarCity": "ቪቫይ, ኢንዲያና"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ቤኡላህ, ሰሜን ዳኮታ"
                 },
-                "Center": {
-                  "exemplarCity": "መካከለኛ, ሰሜን ዳኮታ"
-                },
                 "New_Salem": {
                   "exemplarCity": "አዲስ ሳሌም, ሰሜን ዳኮታ"
+                },
+                "Center": {
+                  "exemplarCity": "መካከለኛ, ሰሜን ዳኮታ"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "ኮልካታ"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ቺታ"
               },
               "Choibalsan": {
                 "exemplarCity": "ቾይባልሳን"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "ሲንጋፖር"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "ስሬድኔስኮልምስክ"
               },
               "Taipei": {
                 "exemplarCity": "ታይፓይ"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ኦክላንድ"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ቦጌይንቪል"
               },
               "Chatham": {
                 "exemplarCity": "ቻታም"
@@ -1434,9 +1431,9 @@
             },
             "America_Central": {
               "long": {
-                "generic": "መካከለኛ የሰዓት አቆጣጠር",
-                "standard": "የመካከላዊ መደበኛ ሰዓት አቆጣጠር",
-                "daylight": "የመካከላዊ የቀን ሰዓት አቆጣጠር"
+                "generic": "የመካከለኛ ሰዓት አቆጣጠር",
+                "standard": "የመካከለኛ መደበኛ ሰዓት አቆጣጠር",
+                "daylight": "የመካከለኛ የቀን ሰዓት አቆጣጠር"
               }
             },
             "America_Eastern": {
@@ -1476,9 +1473,9 @@
             },
             "Arabian": {
               "long": {
-                "generic": "የአረቢያ ሰዓት",
-                "standard": "የአረቢያ መደበኛ ሰዓት",
-                "daylight": "የአረቢያ የቀን ብርሃን ሰዓት"
+                "generic": "የዓረቢያ ሰዓት",
+                "standard": "የዓረቢያ መደበኛ ሰዓት",
+                "daylight": "የዓረቢያ የቀን ብርሃን ሰዓት"
               }
             },
             "Argentina": {
@@ -1728,11 +1725,6 @@
                 "standard": "የፈረንሳይ ደቡባዊ እና አንታርክቲክ ሰዓት"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ግሪንዊች ማዕከላዊ ሰዓት"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "የጋላፓጎስ ሰዓት"
@@ -1753,6 +1745,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "የጂልበርት ደሴቶች ሰዓት"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ግሪንዊች ማዕከላዊ ሰዓት"
               }
             },
             "Greenland_Eastern": {

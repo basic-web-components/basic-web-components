@@ -3,24 +3,23 @@
     "id": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "id"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "Prancis Pertengahan Akhir sampai 1606",
-          "1694ACAD": "Prancis Modern Awal",
           "1901": "Ortografi Jerman Tradisional",
-          "1959ACAD": "Akademik",
           "1994": "Ortografi Resia Standar",
           "1996": "Ortografi Jerman 1996",
+          "1606NICT": "Prancis Pertengahan Akhir sampai 1606",
+          "1694ACAD": "Prancis Modern Awal",
+          "1959ACAD": "Akademik",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALA-LC Latin, edisi 1997",
           "ALUKU": "Dialek Aluku",
+          "AO1990": "AO1990",
           "AREVELA": "Armenia Timur",
           "AREVMDA": "Armenia Barat",
           "BAKU1926": "Alfabet Latin Turki Terpadu",
@@ -31,6 +30,7 @@
           "BISKE": "Dialek San Giorgio/Bila",
           "BOHORIC": "BOHORIC",
           "BOONT": "Boontling",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -56,6 +56,7 @@
           "NJIVA": "Dialek Gniva/Njiva",
           "NULIK": "NULIK",
           "OSOJS": "Dialek Oseacco/Osojane",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "Dialek Pamaka",
           "PETR1708": "PETR1708",
           "PINYIN": "Pinyin Latin",

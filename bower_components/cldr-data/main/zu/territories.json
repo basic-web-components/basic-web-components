@@ -3,17 +3,14 @@
     "zu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11093 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-02 21:36:02 -0600 (Fri, 02 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "zu"
       },
       "localeDisplayNames": {
         "territories": {
-          "001": "Umhlaba",
+          "001": "umhlaba",
           "002": "i-Africa",
           "003": "i-North America",
           "005": "i-South America",
@@ -24,7 +21,7 @@
           "015": "i-Northern Africa",
           "017": "i-Middle Africa",
           "018": "i-Southern Africa",
-          "019": "Americas",
+          "019": "i-Americas",
           "021": "i-Northern America",
           "029": "i-Caribbean",
           "030": "i-Eastern Asia",
@@ -79,7 +76,7 @@
           "BS": "i-Bahamas",
           "BT": "i-Bhutan",
           "BV": "i-Bouvet Island",
-          "BW": "i-Botswana",
+          "BW": "iBotswana",
           "BY": "i-Belarus",
           "BZ": "i-Belize",
           "CA": "i-Canada",
@@ -133,7 +130,7 @@
           "GB-alt-short": "i-U.K.",
           "GD": "i-Grenada",
           "GE": "i-Georgia",
-          "GF": "isi-French Guiana",
+          "GF": "i-French Guiana",
           "GG": "i-Guernsey",
           "GH": "i-Ghana",
           "GI": "i-Gibraltar",
@@ -158,7 +155,7 @@
           "IC": "i-Canary Islands",
           "ID": "i-Indonesia",
           "IE": "i-Ireland",
-          "IL": "i-Israel",
+          "IL": "kwa-Israel",
           "IM": "i-Isle of Man",
           "IN": "i-India",
           "IO": "i-British Indian Ocean Territory",
@@ -187,7 +184,7 @@
           "LI": "i-Liechtenstein",
           "LK": "i-Sri Lanka",
           "LR": "i-Liberia",
-          "LS": "i-Lesotho",
+          "LS": "iLesotho",
           "LT": "i-Lithuania",
           "LU": "i-Luxembourg",
           "LV": "i-Latvia",
@@ -201,7 +198,7 @@
           "MH": "i-Marshall Islands",
           "MK": "i-Macedonia",
           "MK-alt-variant": "i-Macedonia (FYROM)",
-          "ML": "i-Mali",
+          "ML": "iMali",
           "MM": "i-Myanmar (Burma)",
           "MN": "i-Mongolia",
           "MO": "i-Macau SAR China",
@@ -213,7 +210,7 @@
           "MT": "i-Malta",
           "MU": "i-Mauritius",
           "MV": "i-Maldives",
-          "MW": "i-Malawi",
+          "MW": "iMalawi",
           "MX": "i-Mexico",
           "MY": "i-Malaysia",
           "MZ": "i-Mozambique",
@@ -270,7 +267,7 @@
           "SS": "i-South Sudan",
           "ST": "i-São Tomé kanye ne-Príncipe",
           "SV": "i-El Salvador",
-          "SX": "I-Sint Maarten",
+          "SX": "i-Sint Maarten",
           "SY": "i-Syria",
           "SZ": "i-Swaziland",
           "TA": "i-Tristan da Cunha",
@@ -312,7 +309,7 @@
           "YT": "i-Mayotte",
           "ZA": "i-South Africa",
           "ZM": "i-Zambia",
-          "ZW": "i-Zimbabwe",
+          "ZW": "iZimbabwe",
           "ZZ": "iSifunda esingaziwa"
         }
       }

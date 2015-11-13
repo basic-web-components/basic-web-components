@@ -3,18 +3,15 @@
     "bg": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "bg"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "арабска",
           "Arab-alt-variant": "персийско-арабска",
           "Armi": "Арамейска",
@@ -40,7 +37,6 @@
           "Copt": "Коптска",
           "Cprt": "Кипърска",
           "Cyrl": "кирилица",
-          "Cyrs": "Cyrs",
           "Deva": "деванагари",
           "Dsrt": "Дезерет",
           "Dupl": "Dupl",
@@ -64,6 +60,7 @@
           "Hans-alt-stand-alone": "опростен китайски",
           "Hant": "традиционен",
           "Hant-alt-stand-alone": "традиционен китайски",
+          "Hatr": "Hatr",
           "Hebr": "иврит",
           "Hira": "хирагана",
           "Hluw": "Hluw",
@@ -74,7 +71,6 @@
           "Ital": "Древно италийска",
           "Java": "Яванска",
           "Jpan": "японска",
-          "Jurc": "Jurc",
           "Kali": "Кая Ли",
           "Kana": "катакана",
           "Khar": "Кхароштхи",
@@ -82,7 +78,6 @@
           "Khoj": "Khoj",
           "Knda": "каннада",
           "Kore": "корейска",
-          "Kpel": "Kpel",
           "Kthi": "Кайтхи",
           "Lana": "Ланна",
           "Laoo": "лаоска",
@@ -94,7 +89,6 @@
           "Lina": "Линейна А",
           "Linb": "Линейна Б",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "Лицийска",
           "Lydi": "Лидийска",
           "Mahj": "Mahj",
@@ -110,12 +104,11 @@
           "Moon": "Мун",
           "Mroo": "Mroo",
           "Mtei": "Манипури",
+          "Mult": "Mult",
           "Mymr": "бирманска",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "Н’Ко",
-          "Nshu": "Nshu",
           "Ogam": "Огамическа",
           "Olck": "Ол Чики",
           "Orkh": "Орхоно-енисейска",
@@ -205,10 +198,8 @@
           "Tale": "Тай Ле",
           "Talu": "Нова Тай Ле",
           "Taml": "тамилска",
-          "Tang": "Tang",
           "Tavt": "Tavt",
           "Telu": "телугу",
-          "Teng": "Teng",
           "Tfng": "Tfng",
           "Tglg": "Тагалог",
           "Thaa": "таана",
@@ -219,7 +210,6 @@
           "Vaii": "Вайска",
           "Visp": "Видима реч",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "Староперсийска",
           "Xsux": "Шумеро-акадски клинопис",
           "Yiii": "Йи",

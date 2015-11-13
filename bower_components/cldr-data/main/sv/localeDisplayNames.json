@@ -3,11 +3,8 @@
     "sv": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "sv"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "kalender",
+          "cf": "cf",
           "colAlternate": "Ignorera symboler vid sortering",
           "colBackwards": "Sortera accenter omvänt",
           "colCaseFirst": "Ordna efter versaler/gemener",
           "colCaseLevel": "Skiftlägeskänslig sortering",
           "colHiraganaQuaternary": "Sortering efter kana",
+          "collation": "sorteringsordning",
           "colNormalization": "Normaliserad sortering",
           "colNumeric": "Numerisk sortering",
           "colStrength": "Sorteringsstyrka",
-          "collation": "sorteringsordning",
           "currency": "valuta",
+          "hc": "12- eller 24-timmarsklocka",
+          "lb": "radbrytningstyp",
+          "ms": "enhetssystem",
           "numbers": "siffror",
           "timezone": "Tidszon",
           "va": "Språkvariant",
@@ -56,6 +57,10 @@
             "persian": "persisk kalender",
             "roc": "kinesiska republikens kalender"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "sortera symboler",
             "shifted": "Sortera oavsett symboler"
@@ -77,6 +82,26 @@
             "no": "Sortera kana separat",
             "yes": "Sortera efter kana"
           },
+          "collation": {
+            "big5han": "big5-sorteringsordning",
+            "compat": "bakåtkompatibel sortering",
+            "dictionary": "ordbokssorteringsordning",
+            "ducet": "grundläggande Unicode-sorteringsordning",
+            "emoji": "emojisortering",
+            "eor": "sorteringsordning för flerspråkliga europeiska dokument",
+            "gb2312han": "gb2312-sorteringsordning",
+            "phonebook": "telefonkatalogssorteringsordning",
+            "phonetic": "fonetisk sorteringsordning",
+            "pinyin": "pinyin-sorteringsordning",
+            "reformed": "reformerad sorteringsordning",
+            "search": "allmän sökning",
+            "searchjl": "söksorteringsordning för att söka på inledande Hangul-konsonant",
+            "standard": "normal sorteringsordning",
+            "stroke": "strecksorteringsordning",
+            "traditional": "traditionell ordning",
+            "unihan": "radikal-streck-sorteringsordning",
+            "zhuyin": "zhuyin-sorteringsordning"
+          },
           "colNormalization": {
             "no": "sortera utan normalisering",
             "yes": "sortera med Unicode-normalisering"
@@ -92,25 +117,24 @@
             "secondary": "Sortera accenter",
             "tertiary": "Sortera accenter/skiftläge/bredd"
           },
-          "collation": {
-            "big5han": "big5-sorteringsordning",
-            "dictionary": "ordbokssorteringsordning",
-            "ducet": "grundläggande Unicode-sorteringsordning",
-            "eor": "sorteringsordning för flerspråkliga europeiska dokument",
-            "gb2312han": "gb2312-sorteringsordning",
-            "phonebook": "telefonkatalogssorteringsordning",
-            "phonetic": "fonetisk sorteringsordning",
-            "pinyin": "pinyin-sorteringsordning",
-            "reformed": "reformerad sorteringsordning",
-            "search": "allmän sökning",
-            "searchjl": "söksorteringsordning för att söka på inledande Hangul-konsonant",
-            "standard": "normal sorteringsordning",
-            "stroke": "strecksorteringsordning",
-            "traditional": "traditionell ordning",
-            "unihan": "radikal-streck-sorteringsordning",
-            "zhuyin": "zhuyin-sorteringsordning"
+          "hc": {
+            "h11": "12-timmarsklocka (0–11)",
+            "h12": "12-timmarsklocka (1–12)",
+            "h23": "24-timmarsklocka (0–23)",
+            "h24": "24-timmarsklocka (1–24)"
+          },
+          "lb": {
+            "loose": "fri radbrytning",
+            "normal": "normal radbrytning",
+            "strict": "strikt radbrytning"
+          },
+          "ms": {
+            "metric": "SI-enheter",
+            "uksystem": "brittiskt måttsystem",
+            "ussystem": "USA:s måttsystem"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "indo-arabiska siffror",
             "arabext": "utökade indo-arabiska siffror",
             "armn": "armeniska taltecken",
@@ -120,6 +144,7 @@
             "brah": "brahmiska siffror",
             "cakm": "chakma-siffror",
             "cham": "chamiska siffror",
+            "cyrl": "cyrl",
             "deva": "devanagariska siffror",
             "ethi": "etiopiska taltecken",
             "finance": "Finansiella siffror",
@@ -135,6 +160,7 @@
             "hant": "traditionellt kinesiskt stavade tal",
             "hantfin": "traditionellt kinesiskt finansiellt stavade tal",
             "hebr": "hebreiska taltecken",
+            "hmng": "hmng",
             "java": "javanesiska siffror",
             "jpan": "japanskt stavade tal",
             "jpanfin": "japanskt finansiellt stavade tal",
@@ -147,11 +173,19 @@
             "latn": "västerländska siffror",
             "lepc": "lepcha-siffror",
             "limb": "limbu-siffror",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "malayalamiska siffror",
+            "modi": "modi",
             "mong": "mongoliska siffror",
+            "mroo": "mroo",
             "mtei": "meetei mayek-siffror",
             "mymr": "burmesiska siffror",
             "mymrshan": "burmesiska shan-siffror",
+            "mymrtlng": "mymrtlng",
             "native": "Språkspecifika siffror",
             "nkoo": "n-kå-siffor",
             "olck": "ol chiki-siffror",
@@ -161,6 +195,8 @@
             "romanlow": "små romerska taltecken",
             "saur": "saurashtra-siffror",
             "shrd": "sharada-siffror",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora sompeng-siffror",
             "sund": "sundanesiska siffror",
             "takr": "takri-siffror",
@@ -170,8 +206,10 @@
             "telu": "telugiska siffror",
             "thai": "thailändska siffror",
             "tibt": "tibetanska siffror",
+            "tirh": "tirh",
             "traditional": "Traditionella siffror",
-            "vaii": "vai-siffror"
+            "vaii": "vai-siffror",
+            "wara": "wara"
           }
         },
         "codePatterns": {

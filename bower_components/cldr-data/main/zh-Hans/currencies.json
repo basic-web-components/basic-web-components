@@ -3,11 +3,8 @@
     "zh-Hans": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "zh",
         "script": "Hans"
@@ -530,7 +527,8 @@
           "GEL": {
             "displayName": "格鲁吉亚拉里",
             "displayName-count-other": "格鲁吉亚拉里",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "加纳塞第",
@@ -1111,7 +1109,7 @@
             "displayName": "俄罗斯卢布",
             "displayName-count-other": "俄罗斯卢布",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "俄国卢布 (1991–1998)",
@@ -1241,7 +1239,7 @@
           "THB": {
             "displayName": "泰铢",
             "displayName-count-other": "泰铢",
-            "symbol": "฿",
+            "symbol": "THB",
             "symbol-alt-narrow": "฿"
           },
           "TJR": {

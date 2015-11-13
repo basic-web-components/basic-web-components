@@ -3,19 +3,16 @@
     "bs-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "bs",
         "script": "Latn"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "arapsko pismo",
           "Arab-alt-variant": "perzijsko-arapsko pismo",
           "Armi": "imperijsko aramejsko pismo",
@@ -61,10 +58,11 @@
           "Hang": "hangul pismo",
           "Hani": "han pismo",
           "Hano": "hanuno pismo",
-          "Hans": "pojednostavljeno kinesko pismo",
+          "Hans": "pojednostavljeno",
           "Hans-alt-stand-alone": "pojednostavljeno hansko pismo",
-          "Hant": "tradicionalno kinesko pismo",
+          "Hant": "tradicionalno",
           "Hant-alt-stand-alone": "tradicionalno hansko pismo",
+          "Hatr": "Hatr",
           "Hebr": "hebrejsko pismo",
           "Hira": "hiragana",
           "Hluw": "Hluw",
@@ -75,7 +73,6 @@
           "Ital": "staro italsko pismo",
           "Java": "javansko pismo",
           "Jpan": "japansko pismo",
-          "Jurc": "Jurc",
           "Kali": "kajah li pismo",
           "Kana": "katakana",
           "Khar": "karošti pismo",
@@ -83,7 +80,6 @@
           "Khoj": "Khoj",
           "Knda": "kanada pismo",
           "Kore": "korejsko pismo",
-          "Kpel": "Kpel",
           "Kthi": "kaićansko pismo",
           "Lana": "lanna pismo",
           "Laoo": "laosko pismo",
@@ -95,7 +91,6 @@
           "Lina": "linearno A pismo",
           "Linb": "linearno B pismo",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "lisijsko pismo",
           "Lydi": "lidijsko pismo",
           "Mahj": "Mahj",
@@ -111,12 +106,11 @@
           "Moon": "mesečevo pismo",
           "Mroo": "Mroo",
           "Mtei": "meitei majek pismo",
+          "Mult": "Mult",
           "Mymr": "mijanmarsko pismo",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "n’ko pismo",
-          "Nshu": "Nshu",
           "Ogam": "ogham pismo",
           "Olck": "ol čiki pismo",
           "Orkh": "orkhon pismo",
@@ -195,7 +189,7 @@
           "Sind": "Sind",
           "Sinh": "sinhala pismo",
           "Sora": "Sora",
-          "Sund": "sudansko pismo",
+          "Sund": "Sund",
           "Sylo": "siloti nagri pismo",
           "Syrc": "sirijsko pismo",
           "Syre": "sirijsko estrangelo pismo",
@@ -206,7 +200,6 @@
           "Tale": "tai le pismo",
           "Talu": "novo tai lue pismo",
           "Taml": "tamilsko pismo",
-          "Tang": "Tang",
           "Tavt": "tai viet pismo",
           "Telu": "telugu pismo",
           "Teng": "tengvar pismo",
@@ -220,7 +213,6 @@
           "Vaii": "vai pismo",
           "Visp": "vidljivi govor",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "staropersijsko pismo",
           "Xsux": "sumersko-akadsko kuneiform pismo",
           "Yiii": "ji pismo",
@@ -229,7 +221,7 @@
           "Zsym": "simboli",
           "Zxxx": "nepisani jezik",
           "Zyyy": "zajedničko pismo",
-          "Zzzz": "nepoznato ili nevažeće pismo"
+          "Zzzz": "nepoznato pismo"
         }
       }
     }

@@ -3,21 +3,18 @@
     "es-SV": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "es",
-        "territory": "419"
+        "territory": "SV"
       },
       "localeDisplayNames": {
         "territories": {
           "001": "Mundo",
           "002": "África",
           "003": "América del Norte",
-          "005": "Suramérica",
+          "005": "Sudamérica",
           "009": "Oceanía",
           "011": "África occidental",
           "013": "Centroamérica",
@@ -103,7 +100,7 @@
           "CU": "Cuba",
           "CV": "Cabo Verde",
           "CW": "Curazao",
-          "CX": "Isla de Navidad (Christmas)",
+          "CX": "Isla de Navidad",
           "CY": "Chipre",
           "CZ": "República Checa",
           "DE": "Alemania",
@@ -156,7 +153,7 @@
           "HR": "Croacia",
           "HT": "Haití",
           "HU": "Hungría",
-          "IC": "islas Canarias",
+          "IC": "Canarias",
           "ID": "Indonesia",
           "IE": "Irlanda",
           "IL": "Israel",
@@ -244,7 +241,7 @@
           "PS": "Territorios Palestinos",
           "PS-alt-short": "Palestina",
           "PT": "Portugal",
-          "PW": "Palau",
+          "PW": "Palaos",
           "PY": "Paraguay",
           "QA": "Catar",
           "QO": "Territorios alejados de Oceanía",

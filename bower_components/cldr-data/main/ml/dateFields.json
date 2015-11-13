@@ -3,11 +3,8 @@
     "ml": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "ml"
       },
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "ദിവസം",
-            "relative-type--1": "ഇന്നലെ",
             "relative-type--2": "മിനിഞ്ഞാന്ന്",
+            "relative-type--1": "ഇന്നലെ",
             "relative-type-0": "ഇന്ന്",
             "relative-type-1": "നാളെ",
             "relative-type-2": "മറ്റന്നാൾ",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "ദിവസം",
-            "relative-type--1": "ഇന്നലെ",
             "relative-type--2": "മിനിഞ്ഞാന്ന്",
+            "relative-type--1": "ഇന്നലെ",
             "relative-type-0": "ഇന്ന്",
             "relative-type-1": "നാളെ",
             "relative-type-2": "മറ്റന്നാൾ",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "ദിവസം",
-            "relative-type--1": "ഇന്നലെ",
             "relative-type--2": "മിനിഞ്ഞാന്ന്",
+            "relative-type--1": "ഇന്നലെ",
             "relative-type-0": "ഇന്ന്",
             "relative-type-1": "നാളെ",
             "relative-type-2": "മറ്റന്നാൾ",
@@ -241,14 +238,14 @@
             "relative-type-1": "അടുത്ത ഞായറാഴ്ച"
           },
           "sun-short": {
-            "relative-type--1": "കഴിഞ്ഞ ഞായറാഴ്ച",
-            "relative-type-0": "ഈ ഞായറാഴ്ച",
-            "relative-type-1": "അടുത്ത ഞായറാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ഞായർ",
+            "relative-type-0": "ഈ ഞായർ",
+            "relative-type-1": "അടുത്ത ഞായർ"
           },
           "sun-narrow": {
-            "relative-type--1": "കഴിഞ്ഞ ഞായറാഴ്ച",
-            "relative-type-0": "ഈ ഞായറാഴ്ച",
-            "relative-type-1": "അടുത്ത ഞായറാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ഞായർ",
+            "relative-type-0": "ഈ ഞായർ",
+            "relative-type-1": "അടുത്ത ഞായർ"
           },
           "mon": {
             "relative-type--1": "കഴിഞ്ഞ തിങ്കളാഴ്ച",
@@ -256,14 +253,14 @@
             "relative-type-1": "അടുത്ത തിങ്കളാഴ്ച"
           },
           "mon-short": {
-            "relative-type--1": "കഴിഞ്ഞ തിങ്കളാഴ്ച",
-            "relative-type-0": "ഈ തിങ്കളാഴ്ച",
-            "relative-type-1": "അടുത്ത തിങ്കളാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ തിങ്കൾ",
+            "relative-type-0": "ഈ തിങ്കൾ",
+            "relative-type-1": "അടുത്ത തിങ്കൾ"
           },
           "mon-narrow": {
-            "relative-type--1": "കഴിഞ്ഞ തിങ്കളാഴ്ച",
-            "relative-type-0": "ഈ തിങ്കളാഴ്ച",
-            "relative-type-1": "അടുത്ത തിങ്കളാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ തിങ്കൾ",
+            "relative-type-0": "ഈ തിങ്കൾ",
+            "relative-type-1": "അടുത്ത തിങ്കൾ"
           },
           "tue": {
             "relative-type--1": "കഴിഞ്ഞ ചൊവാഴ്ച",
@@ -271,14 +268,14 @@
             "relative-type-1": "അടുത്ത ചൊവാഴ്ച"
           },
           "tue-short": {
-            "relative-type--1": "കഴിഞ്ഞ ചൊവാഴ്ച",
-            "relative-type-0": "ഈ ചൊവാഴ്ച",
-            "relative-type-1": "അടുത്ത ചൊവാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ചൊവ്വ",
+            "relative-type-0": "ഈ ചൊവ്വ",
+            "relative-type-1": "അടുത്ത ചൊവ്വ"
           },
           "tue-narrow": {
-            "relative-type--1": "കഴിഞ്ഞ ചൊവാഴ്ച",
-            "relative-type-0": "ഈ ചൊവാഴ്ച",
-            "relative-type-1": "അടുത്ത ചൊവാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ചൊവ്വ",
+            "relative-type-0": "ഈ ചൊവ്വ",
+            "relative-type-1": "അടുത്ത ചൊവ്വ"
           },
           "wed": {
             "relative-type--1": "കഴിഞ്ഞ ബുധനാഴ്ച",
@@ -286,14 +283,14 @@
             "relative-type-1": "അടുത്ത ബുധനാഴ്ച"
           },
           "wed-short": {
-            "relative-type--1": "കഴിഞ്ഞ ബുധനാഴ്ച",
-            "relative-type-0": "ഈ ബുധനാഴ്ച",
-            "relative-type-1": "അടുത്ത ബുധനാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ബുധൻ",
+            "relative-type-0": "ഈ ബുധൻ",
+            "relative-type-1": "അടുത്ത ബുധൻ"
           },
           "wed-narrow": {
-            "relative-type--1": "കഴിഞ്ഞ ബുധനാഴ്ച",
-            "relative-type-0": "ഈ ബുധനാഴ്ച",
-            "relative-type-1": "അടുത്ത ബുധനാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ബുധൻ",
+            "relative-type-0": "ഈ ബുധൻ",
+            "relative-type-1": "അടുത്ത ബുധൻ"
           },
           "thu": {
             "relative-type--1": "കഴിഞ്ഞ വ്യാഴാഴ്ച",
@@ -301,14 +298,14 @@
             "relative-type-1": "അടുത്ത വ്യാഴാഴ്ച"
           },
           "thu-short": {
-            "relative-type--1": "കഴിഞ്ഞ വ്യാഴാഴ്ച",
-            "relative-type-0": "ഈ വ്യാഴാഴ്ച",
-            "relative-type-1": "അടുത്ത വ്യാഴാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ വ്യാഴം",
+            "relative-type-0": "ഈ വ്യാഴം",
+            "relative-type-1": "അടുത്ത വ്യാഴം"
           },
           "thu-narrow": {
-            "relative-type--1": "കഴിഞ്ഞ വ്യാഴാഴ്ച",
-            "relative-type-0": "ഈ വ്യാഴാഴ്ച",
-            "relative-type-1": "അടുത്ത വ്യാഴാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ വ്യാഴം",
+            "relative-type-0": "ഈ വ്യാഴം",
+            "relative-type-1": "അടുത്ത വ്യാഴം"
           },
           "fri": {
             "relative-type--1": "കഴിഞ്ഞ വെള്ളിയാഴ്ച",
@@ -316,14 +313,14 @@
             "relative-type-1": "അടുത്ത വെള്ളിയാഴ്ച"
           },
           "fri-short": {
-            "relative-type--1": "കഴിഞ്ഞ വെള്ളിയാഴ്ച",
-            "relative-type-0": "ഈ വെള്ളിയാഴ്ച",
-            "relative-type-1": "അടുത്ത വെള്ളിയാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ വെള്ളി",
+            "relative-type-0": "ഈ വെള്ളി",
+            "relative-type-1": "അടുത്ത വെള്ളി"
           },
           "fri-narrow": {
-            "relative-type--1": "കഴിഞ്ഞ വെള്ളിയാഴ്ച",
-            "relative-type-0": "ഈ വെള്ളിയാഴ്ച",
-            "relative-type-1": "അടുത്ത വെള്ളിയാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ വെള്ളി",
+            "relative-type-0": "ഈ വെള്ളി",
+            "relative-type-1": "അടുത്ത വെള്ളി"
           },
           "sat": {
             "relative-type--1": "കഴിഞ്ഞ ശനിയാഴ്ച",
@@ -331,17 +328,17 @@
             "relative-type-1": "അടുത്ത ശനിയാഴ്ച"
           },
           "sat-short": {
-            "relative-type--1": "കഴിഞ്ഞ ശനിയാഴ്ച",
-            "relative-type-0": "ഈ ശനിയാഴ്ച",
-            "relative-type-1": "അടുത്ത ശനിയാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ശനി",
+            "relative-type-0": "ഈ ശനി",
+            "relative-type-1": "അടുത്ത ശനി"
           },
           "sat-narrow": {
-            "relative-type--1": "കഴിഞ്ഞ ശനിയാഴ്ച",
-            "relative-type-0": "ഈ ശനിയാഴ്ച",
-            "relative-type-1": "അടുത്ത ശനിയാഴ്ച"
+            "relative-type--1": "കഴിഞ്ഞ ശനി",
+            "relative-type-0": "ഈ ശനി",
+            "relative-type-1": "അടുത്ത ശനി"
           },
           "dayperiod": {
-            "displayName": "am/pm"
+            "displayName": "AM/PM"
           },
           "hour": {
             "displayName": "മണിക്കൂർ",
@@ -377,7 +374,7 @@
             }
           },
           "minute": {
-            "displayName": "മിനിട്ട്",
+            "displayName": "മിനിറ്റ്",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} മിനിറ്റിൽ",
               "relativeTimePattern-count-other": "{0} മിനിറ്റിൽ"
@@ -388,7 +385,7 @@
             }
           },
           "minute-short": {
-            "displayName": "മിനിറ്റ്",
+            "displayName": "മി.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} മിനിറ്റിൽ",
               "relativeTimePattern-count-other": "{0} മിനിറ്റിൽ"
@@ -399,7 +396,7 @@
             }
           },
           "minute-narrow": {
-            "displayName": "മിനിറ്റ്",
+            "displayName": "മി.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} മിനിറ്റിൽ",
               "relativeTimePattern-count-other": "{0} മിനിറ്റിൽ"
@@ -410,7 +407,7 @@
             }
           },
           "second": {
-            "displayName": "സെക്കൻറ്",
+            "displayName": "സെക്കൻഡ്",
             "relative-type-0": "ഇപ്പോൾ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} സെക്കൻഡിൽ",
@@ -422,7 +419,7 @@
             }
           },
           "second-short": {
-            "displayName": "സെക്കൻഡ്",
+            "displayName": "സെ.",
             "relative-type-0": "ഇപ്പോൾ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} സെക്കൻഡിൽ",
@@ -434,7 +431,7 @@
             }
           },
           "second-narrow": {
-            "displayName": "സെക്കൻഡ്",
+            "displayName": "സെ.",
             "relative-type-0": "ഇപ്പോൾ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} സെക്കൻഡിൽ",
@@ -446,7 +443,7 @@
             }
           },
           "zone": {
-            "displayName": "മേഖല"
+            "displayName": "സമയ മേഖല"
           }
         }
       }

@@ -3,11 +3,8 @@
     "da-GL": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "da",
         "territory": "GL"
@@ -46,7 +43,7 @@
           "419": "Latinamerika",
           "AC": "Ascensionøen",
           "AD": "Andorra",
-          "AE": "Forenede Arabiske Emirater",
+          "AE": "De Forenede Arabiske Emirater",
           "AF": "Afghanistan",
           "AG": "Antigua og Barbuda",
           "AI": "Anguilla",
@@ -75,7 +72,7 @@
           "BM": "Bermuda",
           "BN": "Brunei",
           "BO": "Bolivia",
-          "BQ": "Nederlandske antiller",
+          "BQ": "De Nederlandske Antiller",
           "BR": "Brasilien",
           "BS": "Bahamas",
           "BT": "Bhutan",
@@ -87,7 +84,7 @@
           "CC": "Cocosøerne",
           "CD": "Congo-Kinshasa",
           "CD-alt-variant": "Den Demokratiske Republik Congo",
-          "CF": "Centralafrikanske Republik",
+          "CF": "Den Centralafrikanske Republik",
           "CG": "Congo-Brazzaville",
           "CG-alt-variant": "Republikken Congo",
           "CH": "Schweiz",
@@ -201,7 +198,7 @@
           "MG": "Madagaskar",
           "MH": "Marshalløerne",
           "MK": "Makedonien",
-          "MK-alt-variant": "Makedonien (Den Tidligere Jugoslaviske Republik Makedonien)",
+          "MK-alt-variant": "Den tidligere jugoslaviske republik Makedonien",
           "ML": "Mali",
           "MM": "Myanmar (Burma)",
           "MN": "Mongoliet",
@@ -224,7 +221,7 @@
           "NF": "Norfolk Island",
           "NG": "Nigeria",
           "NI": "Nicaragua",
-          "NL": "Holland",
+          "NL": "Nederlandene",
           "NO": "Norge",
           "NP": "Nepal",
           "NR": "Nauru",
@@ -269,7 +266,7 @@
           "SO": "Somalia",
           "SR": "Surinam",
           "SS": "Sydsudan",
-          "ST": "Sao Tome og Principe",
+          "ST": "São Tomé og Príncipe",
           "SV": "El Salvador",
           "SX": "Sint Maarten",
           "SY": "Syrien",

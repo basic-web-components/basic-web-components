@@ -3,11 +3,8 @@
     "zu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11093 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-02 21:36:02 -0600 (Fri, 02 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "zu"
       },
@@ -17,1290 +14,1290 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Isikhathi sase-{0}",
-          "regionFormat-type-standard": "{0} Isikhathi esijwayelekile",
           "regionFormat-type-daylight": "{0} Isikhathi sasemini",
+          "regionFormat-type-standard": "{0} isikhathi esivamile",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
               "Adak": {
-                "exemplarCity": "esase-Adak"
+                "exemplarCity": "i-Adak"
               },
               "Anchorage": {
-                "exemplarCity": "Anchorage"
+                "exemplarCity": "i-Anchorage"
               },
               "Anguilla": {
-                "exemplarCity": "Anguilla"
+                "exemplarCity": "i-Anguilla"
               },
               "Antigua": {
-                "exemplarCity": "Antigua"
+                "exemplarCity": "i-Antigua"
               },
               "Araguaina": {
-                "exemplarCity": "Araguaina"
+                "exemplarCity": "i-Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
-                  "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
+                  "exemplarCity": "i-Rio Gallegos"
                 },
                 "San_Juan": {
-                  "exemplarCity": "San Juan"
-                },
-                "San_Luis": {
-                  "exemplarCity": "San Luis"
-                },
-                "Tucuman": {
-                  "exemplarCity": "Tucuman"
+                  "exemplarCity": "i-San Juan"
                 },
                 "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
+                  "exemplarCity": "i-Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "i-La Rioja"
+                },
+                "San_Luis": {
+                  "exemplarCity": "i-San Luis"
+                },
+                "Salta": {
+                  "exemplarCity": "i-Salta"
+                },
+                "Tucuman": {
+                  "exemplarCity": "i-Tucuman"
                 }
               },
               "Aruba": {
-                "exemplarCity": "Aruba"
+                "exemplarCity": "i-Aruba"
               },
               "Asuncion": {
-                "exemplarCity": "I-Asunción"
+                "exemplarCity": "i-Asunción"
               },
               "Bahia": {
-                "exemplarCity": "Bahia"
+                "exemplarCity": "i-Bahia"
               },
               "Bahia_Banderas": {
-                "exemplarCity": "Bahia Banderas"
+                "exemplarCity": "i-Bahia Banderas"
               },
               "Barbados": {
-                "exemplarCity": "Barbados"
+                "exemplarCity": "i-Barbados"
               },
               "Belem": {
-                "exemplarCity": "Belem"
+                "exemplarCity": "i-Belem"
               },
               "Belize": {
-                "exemplarCity": "Belize"
+                "exemplarCity": "i-Belize"
               },
               "Blanc-Sablon": {
-                "exemplarCity": "Blanc-Sablon"
+                "exemplarCity": "i-Blanc-Sablon"
               },
               "Boa_Vista": {
-                "exemplarCity": "Boa Vista"
+                "exemplarCity": "i-Boa Vista"
               },
               "Bogota": {
-                "exemplarCity": "Bogota"
+                "exemplarCity": "i-Bogota"
               },
               "Boise": {
-                "exemplarCity": "Boise"
+                "exemplarCity": "i-Boise"
               },
               "Buenos_Aires": {
-                "exemplarCity": "Buenos Aires"
+                "exemplarCity": "i-Buenos Aires"
               },
               "Cambridge_Bay": {
-                "exemplarCity": "Cambridge Bay"
+                "exemplarCity": "i-Cambridge Bay"
               },
               "Campo_Grande": {
-                "exemplarCity": "Campo Grande"
+                "exemplarCity": "i-Campo Grande"
               },
               "Cancun": {
-                "exemplarCity": "Cancun"
+                "exemplarCity": "i-Cancun"
               },
               "Caracas": {
-                "exemplarCity": "Caracas"
+                "exemplarCity": "i-Caracas"
               },
               "Catamarca": {
-                "exemplarCity": "Catamarca"
+                "exemplarCity": "i-Catamarca"
               },
               "Cayenne": {
-                "exemplarCity": "Cayenne"
+                "exemplarCity": "i-Cayenne"
               },
               "Cayman": {
-                "exemplarCity": "Cayman"
+                "exemplarCity": "i-Cayman"
               },
               "Chicago": {
-                "exemplarCity": "Chicago"
+                "exemplarCity": "i-Chicago"
               },
               "Chihuahua": {
-                "exemplarCity": "Chihuahua"
+                "exemplarCity": "i-Chihuahua"
               },
               "Coral_Harbour": {
-                "exemplarCity": "Atikokan"
+                "exemplarCity": "i-Atikokan"
               },
               "Cordoba": {
-                "exemplarCity": "Cordoba"
+                "exemplarCity": "i-Cordoba"
               },
               "Costa_Rica": {
-                "exemplarCity": "Costa Rica"
+                "exemplarCity": "i-Costa Rica"
               },
               "Creston": {
-                "exemplarCity": "Creston"
+                "exemplarCity": "i-Creston"
               },
               "Cuiaba": {
-                "exemplarCity": "Cuiaba"
+                "exemplarCity": "i-Cuiaba"
               },
               "Curacao": {
-                "exemplarCity": "I-Curaçao"
+                "exemplarCity": "i-Curaçao"
               },
               "Danmarkshavn": {
-                "exemplarCity": "Danmarkshavn"
+                "exemplarCity": "i-Danmarkshavn"
               },
               "Dawson": {
-                "exemplarCity": "Dawson"
+                "exemplarCity": "i-Dawson"
               },
               "Dawson_Creek": {
-                "exemplarCity": "Dawson Creek"
+                "exemplarCity": "i-Dawson Creek"
               },
               "Denver": {
-                "exemplarCity": "Denver"
+                "exemplarCity": "i-Denver"
               },
               "Detroit": {
-                "exemplarCity": "Detroit"
+                "exemplarCity": "i-Detroit"
               },
               "Dominica": {
-                "exemplarCity": "Dominica"
+                "exemplarCity": "i-Dominica"
               },
               "Edmonton": {
-                "exemplarCity": "Edmonton"
+                "exemplarCity": "i-Edmonton"
               },
               "Eirunepe": {
-                "exemplarCity": "Eirunepe"
+                "exemplarCity": "i-Eirunepe"
               },
               "El_Salvador": {
-                "exemplarCity": "El Salvador"
+                "exemplarCity": "i-El Salvador"
               },
               "Fortaleza": {
-                "exemplarCity": "Fortaleza"
+                "exemplarCity": "i-Fortaleza"
               },
               "Glace_Bay": {
-                "exemplarCity": "Glace Bay"
+                "exemplarCity": "i-Glace Bay"
               },
               "Godthab": {
-                "exemplarCity": "Nuuk"
+                "exemplarCity": "i-Nuuk"
               },
               "Goose_Bay": {
-                "exemplarCity": "Goose Bay"
+                "exemplarCity": "i-Goose Bay"
               },
               "Grand_Turk": {
-                "exemplarCity": "Grand Turk"
+                "exemplarCity": "i-Grand Turk"
               },
               "Grenada": {
-                "exemplarCity": "Grenada"
+                "exemplarCity": "i-Grenada"
               },
               "Guadeloupe": {
-                "exemplarCity": "Guadeloupe"
+                "exemplarCity": "i-Guadeloupe"
               },
               "Guatemala": {
-                "exemplarCity": "Guatemala"
+                "exemplarCity": "i-Guatemala"
               },
               "Guayaquil": {
-                "exemplarCity": "Guayaquil"
+                "exemplarCity": "i-Guayaquil"
               },
               "Guyana": {
-                "exemplarCity": "Guyana"
+                "exemplarCity": "i-Guyana"
               },
               "Halifax": {
-                "exemplarCity": "Halifax"
+                "exemplarCity": "i-Halifax"
               },
               "Havana": {
-                "exemplarCity": "Havana"
+                "exemplarCity": "i-Havana"
               },
               "Hermosillo": {
-                "exemplarCity": "Hermosillo"
+                "exemplarCity": "i-Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "i-Vincennes, Indiana"
                 },
                 "Petersburg": {
-                  "exemplarCity": "Petersburg, Indiana"
+                  "exemplarCity": "i-Petersburg, Indiana"
                 },
                 "Tell_City": {
-                  "exemplarCity": "Tell City, Indiana"
+                  "exemplarCity": "i-Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "i-Knox, Indiana"
                 },
                 "Winamac": {
-                  "exemplarCity": "Winamac, Indiana"
+                  "exemplarCity": "i-Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "i-Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "i-Vevay, Indiana"
                 }
               },
               "Indianapolis": {
-                "exemplarCity": "Indianapolis"
+                "exemplarCity": "i-Indianapolis"
               },
               "Inuvik": {
-                "exemplarCity": "Inuvik"
+                "exemplarCity": "i-Inuvik"
               },
               "Iqaluit": {
-                "exemplarCity": "Iqaluit"
+                "exemplarCity": "i-Iqaluit"
               },
               "Jamaica": {
-                "exemplarCity": "Jamaica"
+                "exemplarCity": "i-Jamaica"
               },
               "Jujuy": {
-                "exemplarCity": "Jujuy"
+                "exemplarCity": "i-Jujuy"
               },
               "Juneau": {
-                "exemplarCity": "Juneau"
+                "exemplarCity": "i-Juneau"
               },
               "Kentucky": {
                 "Monticello": {
-                  "exemplarCity": "Monticello, Kentucky"
+                  "exemplarCity": "i-Monticello, Kentucky"
                 }
               },
               "Kralendijk": {
-                "exemplarCity": "Kralendijk"
+                "exemplarCity": "i-Kralendijk"
               },
               "La_Paz": {
-                "exemplarCity": "La Paz"
+                "exemplarCity": "i-La Paz"
               },
               "Lima": {
-                "exemplarCity": "Lima"
+                "exemplarCity": "i-Lima"
               },
               "Los_Angeles": {
-                "exemplarCity": "Los Angeles"
+                "exemplarCity": "i-Los Angeles"
               },
               "Louisville": {
-                "exemplarCity": "Louisville"
+                "exemplarCity": "i-Louisville"
               },
               "Lower_Princes": {
-                "exemplarCity": "I-Lower Prince’s Quarter"
+                "exemplarCity": "i-Lower Prince’s Quarter"
               },
               "Maceio": {
-                "exemplarCity": "Maceio"
+                "exemplarCity": "i-Maceio"
               },
               "Managua": {
-                "exemplarCity": "Managua"
+                "exemplarCity": "i-Managua"
               },
               "Manaus": {
-                "exemplarCity": "Manaus"
+                "exemplarCity": "i-Manaus"
               },
               "Marigot": {
-                "exemplarCity": "Marigot"
+                "exemplarCity": "i-Marigot"
               },
               "Martinique": {
-                "exemplarCity": "Martinique"
+                "exemplarCity": "i-Martinique"
               },
               "Matamoros": {
-                "exemplarCity": "Matamoros"
+                "exemplarCity": "i-Matamoros"
               },
               "Mazatlan": {
-                "exemplarCity": "Mazatlan"
+                "exemplarCity": "i-Mazatlan"
               },
               "Mendoza": {
-                "exemplarCity": "Mendoza"
+                "exemplarCity": "i-Mendoza"
               },
               "Menominee": {
-                "exemplarCity": "Menominee"
+                "exemplarCity": "i-Menominee"
               },
               "Merida": {
-                "exemplarCity": "Merida"
+                "exemplarCity": "i-Merida"
               },
               "Metlakatla": {
-                "exemplarCity": "Metlakatla"
+                "exemplarCity": "i-Metlakatla"
               },
               "Mexico_City": {
-                "exemplarCity": "Mexico City"
+                "exemplarCity": "i-Mexico City"
               },
               "Miquelon": {
-                "exemplarCity": "Miquelon"
+                "exemplarCity": "i-Miquelon"
               },
               "Moncton": {
-                "exemplarCity": "Moncton"
+                "exemplarCity": "i-Moncton"
               },
               "Monterrey": {
-                "exemplarCity": "Monterrey"
+                "exemplarCity": "i-Monterrey"
               },
               "Montevideo": {
-                "exemplarCity": "Montevideo"
+                "exemplarCity": "i-Montevideo"
               },
               "Montserrat": {
-                "exemplarCity": "Montserrat"
+                "exemplarCity": "i-Montserrat"
               },
               "Nassau": {
-                "exemplarCity": "Nassau"
+                "exemplarCity": "i-Nassau"
               },
               "New_York": {
-                "exemplarCity": "New York"
+                "exemplarCity": "i-New York"
               },
               "Nipigon": {
-                "exemplarCity": "Nipigon"
+                "exemplarCity": "i-Nipigon"
               },
               "Nome": {
-                "exemplarCity": "Nome"
+                "exemplarCity": "i-Nome"
               },
               "Noronha": {
-                "exemplarCity": "Noronha"
+                "exemplarCity": "i-Noronha"
               },
               "North_Dakota": {
                 "Beulah": {
-                  "exemplarCity": "Beulah, North Dakota"
-                },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
+                  "exemplarCity": "i-Beulah, North Dakota"
                 },
                 "New_Salem": {
-                  "exemplarCity": "New Salem, North Dakota"
+                  "exemplarCity": "i-New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "i-Center, North Dakota"
                 }
               },
               "Ojinaga": {
-                "exemplarCity": "Ojinaga"
+                "exemplarCity": "i-Ojinaga"
               },
               "Panama": {
-                "exemplarCity": "Panama"
+                "exemplarCity": "i-Panama"
               },
               "Pangnirtung": {
-                "exemplarCity": "Pangnirtung"
+                "exemplarCity": "i-Pangnirtung"
               },
               "Paramaribo": {
-                "exemplarCity": "Paramaribo"
+                "exemplarCity": "i-Paramaribo"
               },
               "Phoenix": {
-                "exemplarCity": "esase-Phoenix"
+                "exemplarCity": "i-Phoenix"
               },
               "Port-au-Prince": {
-                "exemplarCity": "esase-Port-au-Prince"
+                "exemplarCity": "i-Port-au-Prince"
               },
               "Port_of_Spain": {
-                "exemplarCity": "esase-Port of Spain"
+                "exemplarCity": "i-Port of Spain"
               },
               "Porto_Velho": {
-                "exemplarCity": "Porto Velho"
+                "exemplarCity": "i-Porto Velho"
               },
               "Puerto_Rico": {
-                "exemplarCity": "esase-Puerto Rico"
+                "exemplarCity": "i-Puerto Rico"
               },
               "Rainy_River": {
-                "exemplarCity": "esase-Rainy River"
+                "exemplarCity": "i-Rainy River"
               },
               "Rankin_Inlet": {
-                "exemplarCity": "esase-Rankin Inlet"
+                "exemplarCity": "i-Rankin Inlet"
               },
               "Recife": {
-                "exemplarCity": "Recife"
+                "exemplarCity": "i-Recife"
               },
               "Regina": {
-                "exemplarCity": "esase-Regina"
+                "exemplarCity": "i-Regina"
               },
               "Resolute": {
-                "exemplarCity": "esase-Resolute"
+                "exemplarCity": "i-Resolute"
               },
               "Rio_Branco": {
-                "exemplarCity": "Rio Branco"
+                "exemplarCity": "i-Rio Branco"
               },
               "Santa_Isabel": {
-                "exemplarCity": "esase-Santa Isabel"
+                "exemplarCity": "i-Santa Isabel"
               },
               "Santarem": {
-                "exemplarCity": "Santarem"
+                "exemplarCity": "i-Santarem"
               },
               "Santiago": {
-                "exemplarCity": "Santiago"
+                "exemplarCity": "i-Santiago"
               },
               "Santo_Domingo": {
-                "exemplarCity": "esase-Santo Domingo"
+                "exemplarCity": "i-Santo Domingo"
               },
               "Sao_Paulo": {
-                "exemplarCity": "Sao Paulo"
+                "exemplarCity": "i-Sao Paulo"
               },
               "Scoresbysund": {
-                "exemplarCity": "esase-Ittoqqortoormiit"
+                "exemplarCity": "i-Ittoqqortoormiit"
               },
               "Sitka": {
-                "exemplarCity": "esase-Sitka"
+                "exemplarCity": "i-Sitka"
               },
               "St_Barthelemy": {
-                "exemplarCity": "esase-Saint Barthélemy"
+                "exemplarCity": "i-St. Barthélemy"
               },
               "St_Johns": {
-                "exemplarCity": "esase-St. John’s"
+                "exemplarCity": "i-St. John’s"
               },
               "St_Kitts": {
-                "exemplarCity": "esase-St. Kitts"
+                "exemplarCity": "i-St. Kitts"
               },
               "St_Lucia": {
-                "exemplarCity": "esase-St. Lucia"
+                "exemplarCity": "i-"
               },
               "St_Thomas": {
-                "exemplarCity": "esase-St. Thomas"
+                "exemplarCity": "i-St. Thomas"
               },
               "St_Vincent": {
-                "exemplarCity": "esase-St. Vincent"
+                "exemplarCity": "i-St. Vincent"
               },
               "Swift_Current": {
-                "exemplarCity": "esase-Swift Current"
+                "exemplarCity": "i-Swift Current"
               },
               "Tegucigalpa": {
-                "exemplarCity": "esase-Tegucigalpa"
+                "exemplarCity": "i-Tegucigalpa"
               },
               "Thule": {
-                "exemplarCity": "esase-Thule"
+                "exemplarCity": "i-Thule"
               },
               "Thunder_Bay": {
-                "exemplarCity": "esase-Thunder Bay"
+                "exemplarCity": "i-Thunder Bay"
               },
               "Tijuana": {
-                "exemplarCity": "esase-Tijuana"
+                "exemplarCity": "i-Tijuana"
               },
               "Toronto": {
-                "exemplarCity": "esase-Toronto"
+                "exemplarCity": "i-Toronto"
               },
               "Tortola": {
-                "exemplarCity": "esase-Tortola"
+                "exemplarCity": "i-Tortola"
               },
               "Vancouver": {
-                "exemplarCity": "esase-Vancouver"
+                "exemplarCity": "i-Vancouver"
               },
               "Whitehorse": {
-                "exemplarCity": "esase-Whitehorse"
+                "exemplarCity": "i-Whitehorse"
               },
               "Winnipeg": {
-                "exemplarCity": "esase-Winnipeg"
+                "exemplarCity": "i-Winnipeg"
               },
               "Yakutat": {
-                "exemplarCity": "esase-Yakutat"
+                "exemplarCity": "i-Yakutat"
               },
               "Yellowknife": {
-                "exemplarCity": "esase-Yellowknife"
+                "exemplarCity": "i-Yellowknife"
               }
             },
             "Atlantic": {
               "Azores": {
-                "exemplarCity": "Azores"
+                "exemplarCity": "i-Azores"
               },
               "Bermuda": {
-                "exemplarCity": "Bermuda"
+                "exemplarCity": "i-Bermuda"
               },
               "Canary": {
-                "exemplarCity": "Canary"
+                "exemplarCity": "i-Canary"
               },
               "Cape_Verde": {
-                "exemplarCity": "Cape Verde"
+                "exemplarCity": "i-Cape Verde"
               },
               "Faeroe": {
-                "exemplarCity": "Faroe"
+                "exemplarCity": "i-Faroe"
               },
               "Madeira": {
-                "exemplarCity": "Madeira"
+                "exemplarCity": "i-Madeira"
               },
               "Reykjavik": {
-                "exemplarCity": "Reykjavik"
+                "exemplarCity": "i-Reykjavik"
               },
               "South_Georgia": {
-                "exemplarCity": "South Georgia"
+                "exemplarCity": "i-South Georgia"
               },
               "St_Helena": {
-                "exemplarCity": "St. Helena"
+                "exemplarCity": "i-St. Helena"
               },
               "Stanley": {
-                "exemplarCity": "Stanley"
+                "exemplarCity": "i-Stanley"
               }
             },
             "Europe": {
               "Amsterdam": {
-                "exemplarCity": "Amsterdam"
+                "exemplarCity": "i-Amsterdam"
               },
               "Andorra": {
-                "exemplarCity": "Andorra"
+                "exemplarCity": "i-Andorra"
               },
               "Athens": {
-                "exemplarCity": "Athens"
+                "exemplarCity": "i-Athens"
               },
               "Belgrade": {
-                "exemplarCity": "Belgrade"
+                "exemplarCity": "i-Belgrade"
               },
               "Berlin": {
-                "exemplarCity": "Berlin"
+                "exemplarCity": "i-Berlin"
               },
               "Bratislava": {
-                "exemplarCity": "Bratislava"
+                "exemplarCity": "i-Bratislava"
               },
               "Brussels": {
-                "exemplarCity": "Brussels"
+                "exemplarCity": "i-Brussels"
               },
               "Bucharest": {
-                "exemplarCity": "Bucharest"
+                "exemplarCity": "i-Bucharest"
               },
               "Budapest": {
-                "exemplarCity": "Budapest"
+                "exemplarCity": "i-Budapest"
               },
               "Busingen": {
-                "exemplarCity": "Busingen"
+                "exemplarCity": "i-Busingen"
               },
               "Chisinau": {
-                "exemplarCity": "Chisinau"
+                "exemplarCity": "i-Chisinau"
               },
               "Copenhagen": {
-                "exemplarCity": "Copenhagen"
+                "exemplarCity": "i-Copenhagen"
               },
               "Dublin": {
                 "long": {
-                  "daylight": "esase-Irish Standard Time"
+                  "daylight": "isikhathi sase-Irish esivamile"
                 },
-                "exemplarCity": "Dublin"
+                "exemplarCity": "i-Dublin"
               },
               "Gibraltar": {
-                "exemplarCity": "Gibraltar"
+                "exemplarCity": "i-Gibraltar"
               },
               "Guernsey": {
-                "exemplarCity": "Guernsey"
+                "exemplarCity": "i-Guernsey"
               },
               "Helsinki": {
-                "exemplarCity": "Helsinki"
+                "exemplarCity": "i-Helsinki"
               },
               "Isle_of_Man": {
-                "exemplarCity": "Isle of Man"
+                "exemplarCity": "i-Isle of Man"
               },
               "Istanbul": {
-                "exemplarCity": "Istanbul"
+                "exemplarCity": "i-Istanbul"
               },
               "Jersey": {
-                "exemplarCity": "Jersey"
+                "exemplarCity": "i-Jersey"
               },
               "Kaliningrad": {
-                "exemplarCity": "Kaliningrad"
+                "exemplarCity": "i-Kaliningrad"
               },
               "Kiev": {
-                "exemplarCity": "Kiev"
+                "exemplarCity": "i-Kiev"
               },
               "Lisbon": {
-                "exemplarCity": "Lisbon"
+                "exemplarCity": "i-Lisbon"
               },
               "Ljubljana": {
-                "exemplarCity": "Ljubljana"
+                "exemplarCity": "i-Ljubljana"
               },
               "London": {
                 "long": {
-                  "daylight": "esase-British Summer Time"
+                  "daylight": "isikhathi sase-British sasehlobo"
                 },
-                "exemplarCity": "London"
+                "exemplarCity": "i-London"
               },
               "Luxembourg": {
-                "exemplarCity": "Luxembourg"
+                "exemplarCity": "i-Luxembourg"
               },
               "Madrid": {
-                "exemplarCity": "Madrid"
+                "exemplarCity": "i-Madrid"
               },
               "Malta": {
-                "exemplarCity": "Malta"
+                "exemplarCity": "i-Malta"
               },
               "Mariehamn": {
-                "exemplarCity": "Mariehamn"
+                "exemplarCity": "i-Mariehamn"
               },
               "Minsk": {
-                "exemplarCity": "Minsk"
+                "exemplarCity": "i-Minsk"
               },
               "Monaco": {
-                "exemplarCity": "Monaco"
+                "exemplarCity": "i-Monaco"
               },
               "Moscow": {
-                "exemplarCity": "Moscow"
+                "exemplarCity": "i-Moscow"
               },
               "Oslo": {
-                "exemplarCity": "Oslo"
+                "exemplarCity": "i-Oslo"
               },
               "Paris": {
-                "exemplarCity": "Paris"
+                "exemplarCity": "i-Paris"
               },
               "Podgorica": {
-                "exemplarCity": "Podgorica"
+                "exemplarCity": "i-Podgorica"
               },
               "Prague": {
-                "exemplarCity": "Prague"
+                "exemplarCity": "i-Prague"
               },
               "Riga": {
-                "exemplarCity": "Riga"
+                "exemplarCity": "i-Riga"
               },
               "Rome": {
-                "exemplarCity": "Rome"
+                "exemplarCity": "i-Rome"
               },
               "Samara": {
-                "exemplarCity": "Samara"
+                "exemplarCity": "i-Samara"
               },
               "San_Marino": {
-                "exemplarCity": "San Marino"
+                "exemplarCity": "i-San Marino"
               },
               "Sarajevo": {
-                "exemplarCity": "Sarajevo"
+                "exemplarCity": "i-Sarajevo"
               },
               "Simferopol": {
-                "exemplarCity": "Simferopol"
+                "exemplarCity": "i-Simferopol"
               },
               "Skopje": {
-                "exemplarCity": "Skopje"
+                "exemplarCity": "i-Skopje"
               },
               "Sofia": {
-                "exemplarCity": "Sofia"
+                "exemplarCity": "i-Sofia"
               },
               "Stockholm": {
-                "exemplarCity": "Stockholm"
+                "exemplarCity": "i-Stockholm"
               },
               "Tallinn": {
-                "exemplarCity": "Tallinn"
+                "exemplarCity": "i-Tallinn"
               },
               "Tirane": {
-                "exemplarCity": "Tirane"
+                "exemplarCity": "i-Tirane"
               },
               "Uzhgorod": {
-                "exemplarCity": "Uzhgorod"
+                "exemplarCity": "i-Uzhhorod"
               },
               "Vaduz": {
-                "exemplarCity": "Vaduz"
+                "exemplarCity": "i-Vaduz"
               },
               "Vatican": {
-                "exemplarCity": "Vatican"
+                "exemplarCity": "i-Vatican"
               },
               "Vienna": {
-                "exemplarCity": "Vienna"
+                "exemplarCity": "i-Vienna"
               },
               "Vilnius": {
-                "exemplarCity": "Vilnius"
+                "exemplarCity": "i-Vilnius"
               },
               "Volgograd": {
-                "exemplarCity": "Volgograd"
+                "exemplarCity": "i-Volgograd"
               },
               "Warsaw": {
-                "exemplarCity": "Warsaw"
+                "exemplarCity": "i-Warsaw"
               },
               "Zagreb": {
-                "exemplarCity": "Zagreb"
+                "exemplarCity": "i-Zagreb"
               },
               "Zaporozhye": {
-                "exemplarCity": "Zaporozhye"
+                "exemplarCity": "i-Zaporozhye"
               },
               "Zurich": {
-                "exemplarCity": "Zurich"
+                "exemplarCity": "i-Zurich"
               }
             },
             "Africa": {
               "Abidjan": {
-                "exemplarCity": "Abidjan"
+                "exemplarCity": "i-Abidjan"
               },
               "Accra": {
-                "exemplarCity": "Accra"
+                "exemplarCity": "i-Accra"
               },
               "Addis_Ababa": {
-                "exemplarCity": "Addis Ababa"
+                "exemplarCity": "i-Addis Ababa"
               },
               "Algiers": {
-                "exemplarCity": "Algiers"
+                "exemplarCity": "i-Algiers"
               },
               "Asmera": {
-                "exemplarCity": "Asmara"
+                "exemplarCity": "i-Asmara"
               },
               "Bamako": {
-                "exemplarCity": "Bamako"
+                "exemplarCity": "i-Bamako"
               },
               "Bangui": {
-                "exemplarCity": "Bangui"
+                "exemplarCity": "i-Bangui"
               },
               "Banjul": {
-                "exemplarCity": "Banjul"
+                "exemplarCity": "i-Banjul"
               },
               "Bissau": {
-                "exemplarCity": "Bissau"
+                "exemplarCity": "i-Bissau"
               },
               "Blantyre": {
-                "exemplarCity": "Blantyre"
+                "exemplarCity": "i-Blantyre"
               },
               "Brazzaville": {
-                "exemplarCity": "Brazzaville"
+                "exemplarCity": "i-Brazzaville"
               },
               "Bujumbura": {
-                "exemplarCity": "Bujumbura"
+                "exemplarCity": "i-Bujumbura"
               },
               "Cairo": {
-                "exemplarCity": "Cairo"
+                "exemplarCity": "i-Cairo"
               },
               "Casablanca": {
-                "exemplarCity": "Casablanca"
+                "exemplarCity": "i-Casablanca"
               },
               "Ceuta": {
-                "exemplarCity": "Ceuta"
+                "exemplarCity": "i-Ceuta"
               },
               "Conakry": {
-                "exemplarCity": "Conakry"
+                "exemplarCity": "i-Conakry"
               },
               "Dakar": {
-                "exemplarCity": "Dakar"
+                "exemplarCity": "i-Dakar"
               },
               "Dar_es_Salaam": {
-                "exemplarCity": "Dar es Salaam"
+                "exemplarCity": "i-Dar es Salaam"
               },
               "Djibouti": {
-                "exemplarCity": "Djibouti"
+                "exemplarCity": "i-Djibouti"
               },
               "Douala": {
-                "exemplarCity": "Douala"
+                "exemplarCity": "i-Douala"
               },
               "El_Aaiun": {
-                "exemplarCity": "El Aaiun"
+                "exemplarCity": "i-El Aaiun"
               },
               "Freetown": {
-                "exemplarCity": "Freetown"
+                "exemplarCity": "i-Freetown"
               },
               "Gaborone": {
-                "exemplarCity": "Gaborone"
+                "exemplarCity": "i-Gaborone"
               },
               "Harare": {
-                "exemplarCity": "Harare"
+                "exemplarCity": "i-Harare"
               },
               "Johannesburg": {
-                "exemplarCity": "Johannesburg"
+                "exemplarCity": "i-Johannesburg"
               },
               "Juba": {
-                "exemplarCity": "Juba"
+                "exemplarCity": "iJuba"
               },
               "Kampala": {
-                "exemplarCity": "Kampala"
+                "exemplarCity": "i-Kampala"
               },
               "Khartoum": {
-                "exemplarCity": "Khartoum"
+                "exemplarCity": "i-Khartoum"
               },
               "Kigali": {
-                "exemplarCity": "Kigali"
+                "exemplarCity": "i-Kigali"
               },
               "Kinshasa": {
-                "exemplarCity": "Kinshasa"
+                "exemplarCity": "i-Kinshasa"
               },
               "Lagos": {
-                "exemplarCity": "Lagos"
+                "exemplarCity": "i-Lagos"
               },
               "Libreville": {
-                "exemplarCity": "Libreville"
+                "exemplarCity": "i-Libreville"
               },
               "Lome": {
-                "exemplarCity": "Lome"
+                "exemplarCity": "i-Lome"
               },
               "Luanda": {
-                "exemplarCity": "Luanda"
+                "exemplarCity": "i-Luanda"
               },
               "Lubumbashi": {
-                "exemplarCity": "Lubumbashi"
+                "exemplarCity": "i-Lubumbashi"
               },
               "Lusaka": {
-                "exemplarCity": "Lusaka"
+                "exemplarCity": "iLusaka"
               },
               "Malabo": {
-                "exemplarCity": "Malabo"
+                "exemplarCity": "iMalabo"
               },
               "Maputo": {
-                "exemplarCity": "Maputo"
+                "exemplarCity": "iMaputo"
               },
               "Maseru": {
-                "exemplarCity": "Maseru"
+                "exemplarCity": "iMaseru"
               },
               "Mbabane": {
-                "exemplarCity": "Mbabane"
+                "exemplarCity": "iMbabane"
               },
               "Mogadishu": {
-                "exemplarCity": "Mogadishu"
+                "exemplarCity": "i-Mogadishu"
               },
               "Monrovia": {
-                "exemplarCity": "Monrovia"
+                "exemplarCity": "i-Monrovia"
               },
               "Nairobi": {
-                "exemplarCity": "Nairobi"
+                "exemplarCity": "i-Nairobi"
               },
               "Ndjamena": {
-                "exemplarCity": "Ndjamena"
+                "exemplarCity": "i-Ndjamena"
               },
               "Niamey": {
-                "exemplarCity": "Niamey"
+                "exemplarCity": "i-Niamey"
               },
               "Nouakchott": {
-                "exemplarCity": "Nouakchott"
+                "exemplarCity": "i-Nouakchott"
               },
               "Ouagadougou": {
-                "exemplarCity": "Ouagadougou"
+                "exemplarCity": "i-Ouagadougou"
               },
               "Porto-Novo": {
-                "exemplarCity": "Porto-Novo"
+                "exemplarCity": "i-Porto-Novo"
               },
               "Sao_Tome": {
-                "exemplarCity": "I-São Tomé"
+                "exemplarCity": "i-São Tomé"
               },
               "Tripoli": {
-                "exemplarCity": "Tripoli"
+                "exemplarCity": "i-Tripoli"
               },
               "Tunis": {
-                "exemplarCity": "Tunis"
+                "exemplarCity": "i-Tunis"
               },
               "Windhoek": {
-                "exemplarCity": "Windhoek"
+                "exemplarCity": "i-Windhoek"
               }
             },
             "Asia": {
               "Aden": {
-                "exemplarCity": "Aden"
+                "exemplarCity": "i-Aden"
               },
               "Almaty": {
-                "exemplarCity": "Almaty"
+                "exemplarCity": "i-Almaty"
               },
               "Amman": {
-                "exemplarCity": "Amman"
+                "exemplarCity": "i-Amman"
               },
               "Anadyr": {
-                "exemplarCity": "Anadyr"
+                "exemplarCity": "i-Anadyr"
               },
               "Aqtau": {
-                "exemplarCity": "Aqtau"
+                "exemplarCity": "i-Aqtau"
               },
               "Aqtobe": {
-                "exemplarCity": "Aqtobe"
+                "exemplarCity": "i-Aqtobe"
               },
               "Ashgabat": {
-                "exemplarCity": "Ashgabat"
+                "exemplarCity": "i-Ashgabat"
               },
               "Baghdad": {
-                "exemplarCity": "Baghdad"
+                "exemplarCity": "i-Baghdad"
               },
               "Bahrain": {
-                "exemplarCity": "Bahrain"
+                "exemplarCity": "i-Bahrain"
               },
               "Baku": {
-                "exemplarCity": "Baku"
+                "exemplarCity": "i-Baku"
               },
               "Bangkok": {
-                "exemplarCity": "Bangkok"
+                "exemplarCity": "i-Bangkok"
               },
               "Beirut": {
-                "exemplarCity": "Beirut"
+                "exemplarCity": "i-Beirut"
               },
               "Bishkek": {
-                "exemplarCity": "Bishkek"
+                "exemplarCity": "i-Bishkek"
               },
               "Brunei": {
-                "exemplarCity": "Brunei"
+                "exemplarCity": "i-Brunei"
               },
               "Calcutta": {
-                "exemplarCity": "esase-Kolkata"
+                "exemplarCity": "i-Kolkata"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "i-Chita"
               },
               "Choibalsan": {
-                "exemplarCity": "Choibalsan"
+                "exemplarCity": "i-Choibalsan"
               },
               "Colombo": {
-                "exemplarCity": "esase-Colombo"
+                "exemplarCity": "i-Colombo"
               },
               "Damascus": {
-                "exemplarCity": "Damascus"
+                "exemplarCity": "i-Damascus"
               },
               "Dhaka": {
-                "exemplarCity": "esase-Dhaka"
+                "exemplarCity": "i-Dhaka"
               },
               "Dili": {
-                "exemplarCity": "Dili"
+                "exemplarCity": "i-Dili"
               },
               "Dubai": {
-                "exemplarCity": "Dubai"
+                "exemplarCity": "i-Dubai"
               },
               "Dushanbe": {
-                "exemplarCity": "Dushanbe"
+                "exemplarCity": "i-Dushanbe"
               },
               "Gaza": {
-                "exemplarCity": "Gaza"
+                "exemplarCity": "iGaza"
               },
               "Hebron": {
-                "exemplarCity": "Hebron"
+                "exemplarCity": "i-Hebron"
               },
               "Hong_Kong": {
-                "exemplarCity": "Hong Kong"
+                "exemplarCity": "i-Hong Kong"
               },
               "Hovd": {
-                "exemplarCity": "Hovd"
+                "exemplarCity": "i-Hovd"
               },
               "Irkutsk": {
-                "exemplarCity": "Irkutsk"
+                "exemplarCity": "i-Irkutsk"
               },
               "Jakarta": {
-                "exemplarCity": "Jakarta"
+                "exemplarCity": "i-Jakarta"
               },
               "Jayapura": {
-                "exemplarCity": "Jayapura"
+                "exemplarCity": "i-Jayapura"
               },
               "Jerusalem": {
-                "exemplarCity": "Jerusalem"
+                "exemplarCity": "i-Jerusalem"
               },
               "Kabul": {
-                "exemplarCity": "esase-Kabul"
+                "exemplarCity": "i-Kabul"
               },
               "Kamchatka": {
-                "exemplarCity": "Kamchatka"
+                "exemplarCity": "i-Kamchatka"
               },
               "Karachi": {
-                "exemplarCity": "esase-Karachi"
+                "exemplarCity": "i-Karachi"
               },
               "Katmandu": {
-                "exemplarCity": "esase-Kathmandu"
+                "exemplarCity": "i-Kathmandu"
               },
               "Khandyga": {
-                "exemplarCity": "Khandyga"
+                "exemplarCity": "i-Khandyga"
               },
               "Krasnoyarsk": {
-                "exemplarCity": "Krasnoyarsk"
+                "exemplarCity": "i-Krasnoyarsk"
               },
               "Kuala_Lumpur": {
-                "exemplarCity": "Kuala Lumpur"
+                "exemplarCity": "i-Kuala Lumpur"
               },
               "Kuching": {
-                "exemplarCity": "Kuching"
+                "exemplarCity": "i-Kuching"
               },
               "Kuwait": {
-                "exemplarCity": "Kuwait"
+                "exemplarCity": "i-Kuwait"
               },
               "Macau": {
-                "exemplarCity": "Macau"
+                "exemplarCity": "i-Macau"
               },
               "Magadan": {
-                "exemplarCity": "Magadan"
+                "exemplarCity": "i-Magadan"
               },
               "Makassar": {
-                "exemplarCity": "Makassar"
+                "exemplarCity": "i-Makassar"
               },
               "Manila": {
-                "exemplarCity": "Manila"
+                "exemplarCity": "i-Manila"
               },
               "Muscat": {
-                "exemplarCity": "Muscat"
+                "exemplarCity": "i-Muscat"
               },
               "Nicosia": {
-                "exemplarCity": "Nicosia"
+                "exemplarCity": "i-Nicosia"
               },
               "Novokuznetsk": {
-                "exemplarCity": "Novokuznetsk"
+                "exemplarCity": "i-Novokuznetsk"
               },
               "Novosibirsk": {
-                "exemplarCity": "Novosibirsk"
+                "exemplarCity": "i-Novosibirsk"
               },
               "Omsk": {
-                "exemplarCity": "Omsk"
+                "exemplarCity": "i-Omsk"
               },
               "Oral": {
-                "exemplarCity": "Oral"
+                "exemplarCity": "i-Oral"
               },
               "Phnom_Penh": {
-                "exemplarCity": "Phnom Penh"
+                "exemplarCity": "i-Phnom Penh"
               },
               "Pontianak": {
-                "exemplarCity": "Pontianak"
+                "exemplarCity": "i-Pontianak"
               },
               "Pyongyang": {
-                "exemplarCity": "Pyongyang"
+                "exemplarCity": "i-Pyongyang"
               },
               "Qatar": {
-                "exemplarCity": "Qatar"
+                "exemplarCity": "i-Qatar"
               },
               "Qyzylorda": {
-                "exemplarCity": "Qyzylorda"
+                "exemplarCity": "i-Qyzylorda"
               },
               "Rangoon": {
-                "exemplarCity": "Rangoon"
+                "exemplarCity": "i-Rangoon"
               },
               "Riyadh": {
-                "exemplarCity": "Riyadh"
+                "exemplarCity": "i-Riyadh"
               },
               "Saigon": {
-                "exemplarCity": "Ho Chi Minh"
+                "exemplarCity": "i-Ho Chi Minh City"
               },
               "Sakhalin": {
-                "exemplarCity": "Sakhalin"
+                "exemplarCity": "i-Sakhalin"
               },
               "Samarkand": {
-                "exemplarCity": "Samarkand"
+                "exemplarCity": "i-Samarkand"
               },
               "Seoul": {
-                "exemplarCity": "Seoul"
+                "exemplarCity": "i-Seoul"
               },
               "Shanghai": {
-                "exemplarCity": "Shanghai"
+                "exemplarCity": "i-Shanghai"
               },
               "Singapore": {
-                "exemplarCity": "Singapore"
+                "exemplarCity": "i-Singapore"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "i-Srednekolymsk"
               },
               "Taipei": {
-                "exemplarCity": "Taipei"
+                "exemplarCity": "i-Taipei"
               },
               "Tashkent": {
-                "exemplarCity": "Tashkent"
+                "exemplarCity": "i-Tashkent"
               },
               "Tbilisi": {
-                "exemplarCity": "Tbilisi"
+                "exemplarCity": "i-Tbilisi"
               },
               "Tehran": {
-                "exemplarCity": "esase-Tehran"
+                "exemplarCity": "i-Tehran"
               },
               "Thimphu": {
-                "exemplarCity": "esase-Thimphu"
+                "exemplarCity": "i-Thimphu"
               },
               "Tokyo": {
-                "exemplarCity": "Tokyo"
+                "exemplarCity": "i-Tokyo"
               },
               "Ulaanbaatar": {
-                "exemplarCity": "Ulaanbaatar"
+                "exemplarCity": "i-Ulaanbaatar"
               },
               "Urumqi": {
-                "exemplarCity": "Urumqi"
+                "exemplarCity": "i-Urumqi"
               },
               "Ust-Nera": {
-                "exemplarCity": "Ust-Nera"
+                "exemplarCity": "i-Ust-Nera"
               },
               "Vientiane": {
-                "exemplarCity": "Vientiane"
+                "exemplarCity": "i-Vientiane"
               },
               "Vladivostok": {
-                "exemplarCity": "Vladivostok"
+                "exemplarCity": "i-Vladivostok"
               },
               "Yakutsk": {
-                "exemplarCity": "Yakutsk"
+                "exemplarCity": "i-Yakutsk"
               },
               "Yekaterinburg": {
-                "exemplarCity": "Yekaterinburg"
+                "exemplarCity": "i-Yekaterinburg"
               },
               "Yerevan": {
-                "exemplarCity": "Yerevan"
+                "exemplarCity": "i-Yerevan"
               }
             },
             "Indian": {
               "Antananarivo": {
-                "exemplarCity": "Antananarivo"
+                "exemplarCity": "i-Antananarivo"
               },
               "Chagos": {
-                "exemplarCity": "Chagos"
+                "exemplarCity": "i-Chagos"
               },
               "Christmas": {
-                "exemplarCity": "Christmas"
+                "exemplarCity": "i-Christmas"
               },
               "Cocos": {
-                "exemplarCity": "Cocos"
+                "exemplarCity": "i-Cocos"
               },
               "Comoro": {
-                "exemplarCity": "Comoro"
+                "exemplarCity": "i-Comoro"
               },
               "Kerguelen": {
-                "exemplarCity": "Kerguelen"
+                "exemplarCity": "i-Kerguelen"
               },
               "Mahe": {
-                "exemplarCity": "Mahe"
+                "exemplarCity": "iMahe"
               },
               "Maldives": {
-                "exemplarCity": "esase-Maldives"
+                "exemplarCity": "i-Maldives"
               },
               "Mauritius": {
-                "exemplarCity": "Mauritius"
+                "exemplarCity": "i-Mauritius"
               },
               "Mayotte": {
-                "exemplarCity": "Mayotte"
+                "exemplarCity": "i-Mayotte"
               },
               "Reunion": {
-                "exemplarCity": "I-Réunion"
+                "exemplarCity": "i-Réunion"
               }
             },
             "Australia": {
               "Adelaide": {
-                "exemplarCity": "Adelaide"
+                "exemplarCity": "i-Adelaide"
               },
               "Brisbane": {
-                "exemplarCity": "Brisbane"
+                "exemplarCity": "i-Brisbane"
               },
               "Broken_Hill": {
-                "exemplarCity": "Broken Hill"
+                "exemplarCity": "i-Broken Hill"
               },
               "Currie": {
-                "exemplarCity": "Currie"
+                "exemplarCity": "i-Currie"
               },
               "Darwin": {
-                "exemplarCity": "Darwin"
+                "exemplarCity": "i-Darwin"
               },
               "Eucla": {
-                "exemplarCity": "Eucla"
+                "exemplarCity": "i-Eucla"
               },
               "Hobart": {
-                "exemplarCity": "Hobart"
+                "exemplarCity": "i-Hobart"
               },
               "Lindeman": {
-                "exemplarCity": "Lindeman"
+                "exemplarCity": "i-Lindeman"
               },
               "Lord_Howe": {
-                "exemplarCity": "Lord Howe"
+                "exemplarCity": "i-Lord Howe"
               },
               "Melbourne": {
-                "exemplarCity": "Melbourne"
+                "exemplarCity": "i-Melbourne"
               },
               "Perth": {
-                "exemplarCity": "Perth"
+                "exemplarCity": "i-Perth"
               },
               "Sydney": {
-                "exemplarCity": "Sydney"
+                "exemplarCity": "i-Sydney"
               }
             },
             "Pacific": {
               "Apia": {
-                "exemplarCity": "Apia"
+                "exemplarCity": "i-Apia"
               },
               "Auckland": {
-                "exemplarCity": "Auckland"
+                "exemplarCity": "i-Auckland"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "i-Bougainville"
               },
               "Chatham": {
-                "exemplarCity": "Chatham"
+                "exemplarCity": "i-Chatham"
               },
               "Easter": {
-                "exemplarCity": "Easter"
+                "exemplarCity": "i-Easter"
               },
               "Efate": {
-                "exemplarCity": "Efate"
+                "exemplarCity": "i-Efate"
               },
               "Enderbury": {
-                "exemplarCity": "Enderbury"
+                "exemplarCity": "i-Enderbury"
               },
               "Fakaofo": {
-                "exemplarCity": "Fakaofo"
+                "exemplarCity": "i-Fakaofo"
               },
               "Fiji": {
-                "exemplarCity": "Fiji"
+                "exemplarCity": "i-Fiji"
               },
               "Funafuti": {
-                "exemplarCity": "Funafuti"
+                "exemplarCity": "i-Funafuti"
               },
               "Galapagos": {
-                "exemplarCity": "Galapagos"
+                "exemplarCity": "i-Galapagos"
               },
               "Gambier": {
-                "exemplarCity": "Gambier"
+                "exemplarCity": "i-Gambier"
               },
               "Guadalcanal": {
-                "exemplarCity": "Guadalcanal"
+                "exemplarCity": "i-Guadalcanal"
               },
               "Guam": {
-                "exemplarCity": "Guam"
+                "exemplarCity": "i-Guam"
               },
               "Honolulu": {
-                "exemplarCity": "Honolulu"
+                "exemplarCity": "i-Honolulu"
               },
               "Johnston": {
-                "exemplarCity": "Johnston"
+                "exemplarCity": "i-Johnston"
               },
               "Kiritimati": {
-                "exemplarCity": "Kiritimati"
+                "exemplarCity": "i-Kiritimati"
               },
               "Kosrae": {
-                "exemplarCity": "Kosrae"
+                "exemplarCity": "i-Kosrae"
               },
               "Kwajalein": {
-                "exemplarCity": "Kwajalein"
+                "exemplarCity": "i-Kwajalein"
               },
               "Majuro": {
-                "exemplarCity": "Majuro"
+                "exemplarCity": "i-Majuro"
               },
               "Marquesas": {
-                "exemplarCity": "Marquesas"
+                "exemplarCity": "i-Marquesas"
               },
               "Midway": {
-                "exemplarCity": "Midway"
+                "exemplarCity": "i-Midway"
               },
               "Nauru": {
-                "exemplarCity": "Nauru"
+                "exemplarCity": "i-Nauru"
               },
               "Niue": {
-                "exemplarCity": "Niue"
+                "exemplarCity": "i-Niue"
               },
               "Norfolk": {
-                "exemplarCity": "Norfolk"
+                "exemplarCity": "i-Norfolk"
               },
               "Noumea": {
-                "exemplarCity": "Noumea"
+                "exemplarCity": "i-Noumea"
               },
               "Pago_Pago": {
-                "exemplarCity": "Pago Pago"
+                "exemplarCity": "i-Pago Pago"
               },
               "Palau": {
-                "exemplarCity": "Palau"
+                "exemplarCity": "i-Palau"
               },
               "Pitcairn": {
-                "exemplarCity": "Pitcairn"
+                "exemplarCity": "i-Pitcairn"
               },
               "Ponape": {
-                "exemplarCity": "Pohnpei"
+                "exemplarCity": "i-Pohnpei"
               },
               "Port_Moresby": {
-                "exemplarCity": "Port Moresby"
+                "exemplarCity": "i-Port Moresby"
               },
               "Rarotonga": {
-                "exemplarCity": "Rarotonga"
+                "exemplarCity": "i-Rarotonga"
               },
               "Saipan": {
-                "exemplarCity": "Saipan"
+                "exemplarCity": "i-Saipan"
               },
               "Tahiti": {
-                "exemplarCity": "Tahiti"
+                "exemplarCity": "i-Tahiti"
               },
               "Tarawa": {
-                "exemplarCity": "Tarawa"
+                "exemplarCity": "i-Tarawa"
               },
               "Tongatapu": {
-                "exemplarCity": "Tongatapu"
+                "exemplarCity": "i-Tongatapu"
               },
               "Truk": {
-                "exemplarCity": "Chuuk"
+                "exemplarCity": "i-Chuuk"
               },
               "Wake": {
-                "exemplarCity": "Wake"
+                "exemplarCity": "i-Wake"
               },
               "Wallis": {
-                "exemplarCity": "Wallis"
+                "exemplarCity": "i-Wallis"
               }
             },
             "Arctic": {
               "Longyearbyen": {
-                "exemplarCity": "Longyearbyen"
+                "exemplarCity": "i-Longyearbyen"
               }
             },
             "Antarctica": {
               "Casey": {
-                "exemplarCity": "Casey"
+                "exemplarCity": "i-Casey"
               },
               "Davis": {
-                "exemplarCity": "Davis"
+                "exemplarCity": "i-Davis"
               },
               "DumontDUrville": {
-                "exemplarCity": "Dumont d’Urville"
+                "exemplarCity": "i-Dumont d’Urville"
               },
               "Macquarie": {
-                "exemplarCity": "Macquarie"
+                "exemplarCity": "i-Macquarie"
               },
               "Mawson": {
-                "exemplarCity": "Mawson"
+                "exemplarCity": "i-Mawson"
               },
               "McMurdo": {
-                "exemplarCity": "McMurdo"
+                "exemplarCity": "i-McMurdo"
               },
               "Palmer": {
-                "exemplarCity": "Palmer"
+                "exemplarCity": "i-Palmer"
               },
               "Rothera": {
-                "exemplarCity": "Rothera"
+                "exemplarCity": "i-Rothera"
               },
               "Syowa": {
-                "exemplarCity": "Syowa"
+                "exemplarCity": "i-Syowa"
               },
               "Troll": {
-                "exemplarCity": "Troll"
+                "exemplarCity": "i-Troll"
               },
               "Vostok": {
-                "exemplarCity": "Vostok"
+                "exemplarCity": "i-Vostok"
               }
             },
             "Etc": {
@@ -1386,7 +1383,7 @@
                 "exemplarCity": "GMT-9"
               },
               "Unknown": {
-                "exemplarCity": "esase-Uknown City"
+                "exemplarCity": "idolobha elingaziwa"
               }
             }
           },
@@ -1408,56 +1405,56 @@
             },
             "Africa_Southern": {
               "long": {
-                "standard": "Isikhathi esivamile saseNingizimu Afrika"
+                "standard": "Isikhathi esijwayelekile saseNingizimu Afrika"
               }
             },
             "Africa_Western": {
               "long": {
                 "generic": "Isikhathi saseNtshonalanga Afrika",
-                "standard": "Isikhathi esivamile saseNtshonalanga Afrika",
-                "daylight": "Isikhathi sehlobo saseNtshonalanga Afrika"
+                "standard": "Isikhathi esijwayelekile saseNtshonalanga Afrika",
+                "daylight": "Isikhathi sasehlobo saseNtshonalanga Afrika"
               }
             },
             "Alaska": {
               "long": {
-                "generic": "esase-Alaska Time",
-                "standard": "esase-Alaska Standard Time",
-                "daylight": "esase-Alaska Daylight Time"
+                "generic": "isikhathi sase-Alaska",
+                "standard": "isikhathi sase-Alaska esijwayelekile",
+                "daylight": "Isikhathi sase-Alaska sasemini"
               }
             },
             "Amazon": {
               "long": {
-                "generic": "esase-Amazon Time",
-                "standard": "Isikhathi esivamile sase-Amazon",
-                "daylight": "Isikhathi sehlobo sase-Amazon"
+                "generic": "Isikhathi sase-Amazon",
+                "standard": "Isikhathi sase-Amazon esijwayelekile",
+                "daylight": "Isikhathi sase-Amazon sasehlobo"
               }
             },
             "America_Central": {
               "long": {
-                "generic": "esase-Central Time",
-                "standard": "esase-Central Standard Time",
-                "daylight": "esase-Central Daylight Time"
+                "generic": "isikhathi sase-North American Central",
+                "standard": "isikhathi sase-North American Central esijwayelekile",
+                "daylight": "isikhathi sase-North American Central sasemini"
               }
             },
             "America_Eastern": {
               "long": {
-                "generic": "esase-Eastern Time",
-                "standard": "esase-Eastern Standard Time",
-                "daylight": "esase-Eastern Daylight Time"
+                "generic": "isikhathi sase-North American East",
+                "standard": "isikhathi sase-North American East esijwayelekile",
+                "daylight": "isikhathi sase-North American East sasemini"
               }
             },
             "America_Mountain": {
               "long": {
-                "generic": "esase-Mountain Time",
-                "standard": "esase-Mountain Standard Time",
-                "daylight": "esase-Mountain Daylight Time"
+                "generic": "isikhathi sase-North American Mountain",
+                "standard": "isikhathi sase-North American Mountain esijwayelekile",
+                "daylight": "isikhathi sase-North American Mountain sasemini"
               }
             },
             "America_Pacific": {
               "long": {
-                "generic": "esase-Pacific Time",
-                "standard": "esase-Pacific Standard Time",
-                "daylight": "esase-Pacific Daylight Time"
+                "generic": "isikhathi sase-North American Pacific",
+                "standard": "isikhathi sase-North American Pacific esijwayelekile",
+                "daylight": "isikhathi sase-North American Pacific sasemini"
               }
             },
             "Anadyr": {
@@ -1483,16 +1480,16 @@
             },
             "Argentina": {
               "long": {
-                "generic": "esase-Argentina Time",
-                "standard": "Isikhathi esimisiwe sase-Argentina",
-                "daylight": "esase-Argentina Summer Time"
+                "generic": "Isikhathi sase-Argentina",
+                "standard": "Isikhathi sase-Argentina esijwayelekile",
+                "daylight": "Isikhathi sase-Argentina sasehlobo"
               }
             },
             "Argentina_Western": {
               "long": {
                 "generic": "Isikhathi saseNyakatho ne-Argentina",
-                "standard": "Isikhathi esimisiwe sase-Ntshonalanga ne-Argentina",
-                "daylight": "Isikhathi sasehlobo sase-Ntshonalanga ne-Argentina"
+                "standard": "Isikhathi saseNyakatho ne-Argentina esijwayelekile",
+                "daylight": "Isikhathi saseNyakatho ne-Argentina sasehlobo"
               }
             },
             "Armenia": {
@@ -1504,9 +1501,9 @@
             },
             "Atlantic": {
               "long": {
-                "generic": "esase-Atlantic Time",
-                "standard": "esase-Atlantic Standard Time",
-                "daylight": "esase-Atlantic Daylight Time"
+                "generic": "isikhathi sase-Atlantic",
+                "standard": "isikhathi sase-Atlantic esijwayelekile",
+                "daylight": "isikhathi sase-Atlantic sasemini"
               }
             },
             "Australia_Central": {
@@ -1518,23 +1515,23 @@
             },
             "Australia_CentralWestern": {
               "long": {
-                "generic": "esase-Austrilian Central Western Time",
-                "standard": "esase-Austrilian Central Western Standard Time",
-                "daylight": "esase-Austrilian Central Western Daylight Time"
+                "generic": "Isikhathi sase-Australian Central West",
+                "standard": "Isikhathi sase-Australian Central West esivamile",
+                "daylight": "Isikhathi sasemini sase-Australian Central West"
               }
             },
             "Australia_Eastern": {
               "long": {
-                "generic": "esase-Austrilian Eastern Time",
-                "standard": "esase-Australian Eastern Standard Time",
-                "daylight": "esase-Australian Eastern Daylight Time"
+                "generic": "Isikhathi sase-Eastern Australia",
+                "standard": "Isikhathi esivamile sase-Australian East",
+                "daylight": "Isikhathi sasemini sase-Australian East"
               }
             },
             "Australia_Western": {
               "long": {
-                "generic": "esase-Western Australia Time",
-                "standard": "esase-Austrilian Western Standard Time",
-                "daylight": "esase-Austrilian Western Daylight Time"
+                "generic": "Isikhathi sase-Western Australia",
+                "standard": "I-Australian Western Standard Time",
+                "daylight": "I-Australian Western Daylight Time"
               }
             },
             "Azerbaijan": {
@@ -1547,8 +1544,8 @@
             "Azores": {
               "long": {
                 "generic": "Isikhathi sase-Azores",
-                "standard": "Isikhathi esivamile sase-Azores",
-                "daylight": "Isikhathi sehlobo sase-Azores"
+                "standard": "Isikhathi esijwayelekile sase-Azores",
+                "daylight": "Isikhathi sasehlobo sase-Azores"
               }
             },
             "Bangladesh": {
@@ -1570,9 +1567,9 @@
             },
             "Brasilia": {
               "long": {
-                "generic": "esase-Brasilia Time",
-                "standard": "Isikhathi esimisiwe sase-Brasilia",
-                "daylight": "esase-Brasilia Summer Time"
+                "generic": "Isikhathi sase-Brasilia",
+                "standard": "Isikhathi sase-Brasilia esijwayelekile",
+                "daylight": "Isikhathi sase-Brasilia sasehlobo"
               }
             },
             "Brunei": {
@@ -1589,7 +1586,7 @@
             },
             "Chamorro": {
               "long": {
-                "standard": "Isikhathi esezingeni sase-Chamorro"
+                "standard": "Isikhathi esijwayelekile sase-Chamorro"
               }
             },
             "Chatham": {
@@ -1602,8 +1599,8 @@
             "Chile": {
               "long": {
                 "generic": "Isikhathi sase-Chile",
-                "standard": "Isikhathi esivamile sase-Chile",
-                "daylight": "Isikhathi sehlobo sase-Chile"
+                "standard": "Isikhathi sase-Chile esijwayelekile",
+                "daylight": "Isikhathi sase-Chile sasehlobo"
               }
             },
             "China": {
@@ -1615,7 +1612,7 @@
             },
             "Choibalsan": {
               "long": {
-                "generic": "esase-Choibalsan Time",
+                "generic": "Isikhathi sase-Choibalsan",
                 "standard": "Isikhathi Esimisiwe sase-Choibalsan",
                 "daylight": "esase-Choibalsan Summer Time"
               }
@@ -1633,8 +1630,8 @@
             "Colombia": {
               "long": {
                 "generic": "Isikhathi sase-Colombia",
-                "standard": "Isikhathi esivamile sase-Colombia",
-                "daylight": "Isikhathi sehlobo sase-Colombia"
+                "standard": "Isikhathi sase-Colombia esijwayelekile",
+                "daylight": "Isikhathi sase-Colombia sasehlobo"
               }
             },
             "Cook": {
@@ -1646,9 +1643,9 @@
             },
             "Cuba": {
               "long": {
-                "generic": "esase-Cuba Time",
-                "standard": "esase-Cuba Standard Time",
-                "daylight": "esase-Cuba Daylight Time"
+                "generic": "isikhathi sase-Cuba",
+                "standard": "isikhathi sase-Cuba esijwayelekile",
+                "daylight": "isikhathi sase-Cuba sasemini"
               }
             },
             "Davis": {
@@ -1669,8 +1666,8 @@
             "Easter": {
               "long": {
                 "generic": "Isikhathi sase-Easter Island",
-                "standard": "Isikhathi esivamile sase-Easter Island",
-                "daylight": "Isikhathi sehlobo sase-Easter Island"
+                "standard": "Isikhathi sase-Easter Island esijwayelekile",
+                "daylight": "Isikhathi sase-Easter Island sasehlobo"
               }
             },
             "Ecuador": {
@@ -1681,34 +1678,34 @@
             "Europe_Central": {
               "long": {
                 "generic": "Isikhathi sase-Central Europe",
-                "standard": "Isikhathi esivamile sase-Central Europe",
-                "daylight": "Isikhathi sehlobo sase-Central Europe"
+                "standard": "Isikhathi esijwayelekile sase-Central Europe",
+                "daylight": "Isikhathi sasehlobo sase-Central Europe"
               }
             },
             "Europe_Eastern": {
               "long": {
                 "generic": "Isikhathi sase-Eastern Europe",
-                "standard": "Isikhathi esivamile sase-Eastern Europe",
-                "daylight": "Isikhathi sehlobo sase-Eastern Europe"
+                "standard": "Isikhathi esijwayelekile sase-Eastern Europe",
+                "daylight": "Isikhathi sasehlobo sase-Eastern Europe"
               }
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "esase-Further-eastern European Time"
+                "standard": "Isikhathi sase-Further-eastern Europe"
               }
             },
             "Europe_Western": {
               "long": {
                 "generic": "Isikhathi sase-Western Europe",
-                "standard": "Isikhathi esivamile sase-Western Europe",
-                "daylight": "Isikhathi sehlobo sase-Western Europe"
+                "standard": "Isikhathi esijwayelekile sase-Western Europe",
+                "daylight": "Isikhathi sasehlobo sase-Western Europe"
               }
             },
             "Falkland": {
               "long": {
                 "generic": "Isikhathi sase-Falkland Islands",
-                "standard": "Isikhathi esivamile sase-Falkland Islands",
-                "daylight": "Isikhathi sehlobo sase-Falkland Islands"
+                "standard": "Isikhathi sase-Falkland Islands esijwayelekile",
+                "daylight": "Isikhathi sase-Falkland Islands sasehlobo"
               }
             },
             "Fiji": {
@@ -1726,11 +1723,6 @@
             "French_Southern": {
               "long": {
                 "standard": "Isikhathi sase-French Southern and Antarctic"
-              }
-            },
-            "GMT": {
-              "long": {
-                "standard": "Isikhathi sase-Greenwich Mean"
               }
             },
             "Galapagos": {
@@ -1755,18 +1747,23 @@
                 "standard": "Isikhathi sase-Gilbert Islands"
               }
             },
+            "GMT": {
+              "long": {
+                "standard": "Isikhathi sase-Greenwich Mean"
+              }
+            },
             "Greenland_Eastern": {
               "long": {
-                "generic": "esase-East Greenland Time",
-                "standard": "esase-East Greenland Standard Time",
-                "daylight": "esase-East Greenland Summer Time"
+                "generic": "isikhathi sase-East Greenland",
+                "standard": "isikhathi sase-East Greenland esijwayelekile",
+                "daylight": "isikhathi sase-East Greenland sasemini"
               }
             },
             "Greenland_Western": {
               "long": {
-                "generic": "esase-West Greenland Time",
-                "standard": "esase-West Greenland Standard Time",
-                "daylight": "esase-West Greenland Summer Time"
+                "generic": "isikhathi sase-West Greenland",
+                "standard": "isikhathi sase-West Greenland esijwayelekile",
+                "daylight": "isikhathi sase-West Greenland sasemini"
               }
             },
             "Gulf": {
@@ -1781,9 +1778,9 @@
             },
             "Hawaii_Aleutian": {
               "long": {
-                "generic": "esase-Hawaii-Aleutian Time",
-                "standard": "esase-Hawaii-Aleutian Standard Time",
-                "daylight": "esase-Hawaii-Aleutian Daylight Time"
+                "generic": "isikhathi sase-Hawaii-Aleutia",
+                "standard": "isikhathi sase-Hawaii-Aleutia esijwayelekile",
+                "daylight": "isikhathi sase-Hawaii-Aleutia sasemini"
               }
             },
             "Hong_Kong": {
@@ -1795,7 +1792,7 @@
             },
             "Hovd": {
               "long": {
-                "generic": "esase-Hovd Time",
+                "generic": "Isikhathi sase-Hovd",
                 "standard": "Isikhathi Esimisiwe sase-Hovd",
                 "daylight": "esase-Hovd Summer Time"
               }
@@ -1839,7 +1836,7 @@
             },
             "Irkutsk": {
               "long": {
-                "generic": "esase-Irkutsk Time",
+                "generic": "Isikhathi sase-Irkutsk",
                 "standard": "Isikhathi Esimisiwe sase-Irkutsk",
                 "daylight": "esase-Irkutsk Summer Time"
               }
@@ -1889,9 +1886,9 @@
             },
             "Krasnoyarsk": {
               "long": {
-                "generic": "esase-Krasnoyarsk Time",
+                "generic": "Isikhathi sase-Krasnoyarsk",
                 "standard": "Isikhathi Esimisiwe sase-Krasnoyarsk",
-                "daylight": "esase-Krasnoyarsk Summer Time"
+                "daylight": "Isikhathi sase-Krasnoyarsk sasehlobo"
               }
             },
             "Kyrgystan": {
@@ -1906,9 +1903,9 @@
             },
             "Lord_Howe": {
               "long": {
-                "generic": "esase-Lord Howe Time",
-                "standard": "esase-Lord Howe Standard Time",
-                "daylight": "esase-Lord Howe Daylight Time"
+                "generic": "Isikhathi sase-Lord Howe",
+                "standard": "Isikhathi sase-Lord Howe esivamile",
+                "daylight": "Isikhathi sase-Lord Howe sasemini"
               }
             },
             "Macquarie": {
@@ -1918,7 +1915,7 @@
             },
             "Magadan": {
               "long": {
-                "generic": "esase-Magadan Time",
+                "generic": "Isikhathi sase-Magadan",
                 "standard": "Isikhathi Esimisiwe sase-Magadan",
                 "daylight": "esase-Magadan Summer Time"
               }
@@ -1957,16 +1954,16 @@
             },
             "Mexico_Northwest": {
               "long": {
-                "generic": "esase-Northwest Mexico Time",
-                "standard": "esase-Northwest Mexico Standard Time",
-                "daylight": "esase-Northwest Mexico Daylight Time"
+                "generic": "isikhathi sase-Northwest Mexico",
+                "standard": "isikhathi sase-Northwest Mexico esijwayelekile",
+                "daylight": "isikhathi sase-Northwest Mexico sasemini"
               }
             },
             "Mexico_Pacific": {
               "long": {
-                "generic": "esase-Mexican Pacific Time",
-                "standard": "esase-Mexican Pacific Standard Time",
-                "daylight": "esase-Mexican Pacific Daylight Time"
+                "generic": "isikhathi sase-Mexican Pacific",
+                "standard": "isikhathi sase-Mexican Pacific esijwayelekile",
+                "daylight": "isikhathi sase-Mexican Pacific sasemini"
               }
             },
             "Mongolia": {
@@ -2001,8 +1998,8 @@
             "New_Caledonia": {
               "long": {
                 "generic": "Isikhathi sase-New Caledonia",
-                "standard": "Isikhathi esivamile sase-New Caledonia",
-                "daylight": "Isikhathi sehlobo sase-New Caledonia"
+                "standard": "Isikhathi sase-New Caledonia esijwayelekile",
+                "daylight": "Isikhathi sase-New Caledonia sasehlobo"
               }
             },
             "New_Zealand": {
@@ -2014,9 +2011,9 @@
             },
             "Newfoundland": {
               "long": {
-                "generic": "esase-Newfoundland Time",
-                "standard": "esase-Newfoundland Standard Time",
-                "daylight": "esase-Newfoundland Daylight Time"
+                "generic": "isikhathi sase-Newfoundland",
+                "standard": "isikhathi sase-Newfoundland esijwayelekile",
+                "daylight": "isikhathi sase-Newfoundland sasemini"
               }
             },
             "Niue": {
@@ -2032,20 +2029,20 @@
             "Noronha": {
               "long": {
                 "generic": "Isikhathi sase-Fernando de Noronha",
-                "standard": "Isikhathi esimisiwe sase-Fernando de Noronha",
-                "daylight": "esase-Fernando de Noronha Summer Time"
+                "standard": "Isikhathi sase-Fernando de Noronha esijwayelekile",
+                "daylight": "Isikhathi sase-Fernando de Noronha sasehlobo"
               }
             },
             "Novosibirsk": {
               "long": {
-                "generic": "esase-Novosibirsk Time",
+                "generic": "Isikhathi sase-Novosibirsk",
                 "standard": "Isikhathi Esimisiwe sase-Novosibirsk",
                 "daylight": "esase-Novosibirsk Summer Time"
               }
             },
             "Omsk": {
               "long": {
-                "generic": "esase-Omsk Time",
+                "generic": "Isikhathi sase-Omsk",
                 "standard": "Isikhathi Esimisiwe sase-Omsk",
                 "daylight": "esase-Omsk Summer Time"
               }
@@ -2070,15 +2067,15 @@
             "Paraguay": {
               "long": {
                 "generic": "Isikhathi sase-Paraguay",
-                "standard": "Isikhathi esivamile sase-Paraguay",
-                "daylight": "Isikhathi sehlobo sase-Paraguay"
+                "standard": "Isikhathi sase-Paraguay esijwayelekile",
+                "daylight": "Isikhathi sase-Paraguay sasehlobo"
               }
             },
             "Peru": {
               "long": {
                 "generic": "Isikhathi sase-Peru",
-                "standard": "Isikhathi esivamile sase-Peru",
-                "daylight": "Isikhathi sehlobo sase-Peru"
+                "standard": "Isikhathi sase-Peru esijwayelekile",
+                "daylight": "Isikhathi sase-Peru sasehlobo"
               }
             },
             "Philippines": {
@@ -2095,9 +2092,9 @@
             },
             "Pierre_Miquelon": {
               "long": {
-                "generic": "esase-Saint Pierre and Miquelon Time",
-                "standard": "esase-Saint Pierre and Miquelon Standard Time",
-                "daylight": "esase-Saint Pierre and Miquelon Daylight Time"
+                "generic": "isikhathi sase-Saint Pierre nase-Miquelon",
+                "standard": "isikhathi sase-Saint Pierre nase-Miquelon esijwayelekile",
+                "daylight": "isikhathi sase-Saint Pierre nase-Miquelon sasemini"
               }
             },
             "Pitcairn": {
@@ -2122,7 +2119,7 @@
             },
             "Sakhalin": {
               "long": {
-                "generic": "esase-Sakhalin Time",
+                "generic": "Isikhathi sase-Sakhalin",
                 "standard": "Isikhathi Esimisiwe sase-Sakhalin",
                 "daylight": "esase-Sakhalin Summer Time"
               }
@@ -2137,8 +2134,8 @@
             "Samoa": {
               "long": {
                 "generic": "Isikhathi sase-Samoa",
-                "standard": "Isikhathi esivamile sase-Samoa",
-                "daylight": "Isikhathi sehlobo sase-Samoa"
+                "standard": "Isikhathi sase-Samoa esijwayelekile",
+                "daylight": "Isikhathi sase-Samoa sasemini"
               }
             },
             "Seychelles": {
@@ -2196,8 +2193,8 @@
             "Tonga": {
               "long": {
                 "generic": "Isikhathi sase-Tonga",
-                "standard": "Isikhathi esivamile sase-Tonga",
-                "daylight": "Isikhathi sehlobo sase-Tonga"
+                "standard": "Isikhathi sase-Tonga esijwayelekile",
+                "daylight": "Isikhathi sase-Tonga sasehlobo"
               }
             },
             "Truk": {
@@ -2220,8 +2217,8 @@
             "Uruguay": {
               "long": {
                 "generic": "Isikhathi sase-Uruguay",
-                "standard": "Isikhathi esivamile sase-Uruguay",
-                "daylight": "Isikhathi sehlobo sase-Uruguay"
+                "standard": "Isikhathi sase-Uruguay esijwayelekile",
+                "daylight": "Isikhathi sase-Uruguay sasehlobo"
               }
             },
             "Uzbekistan": {
@@ -2234,8 +2231,8 @@
             "Vanuatu": {
               "long": {
                 "generic": "Isikhathi sase-Vanuatu",
-                "standard": "Isikhathi esivamile sase-Vanuatu",
-                "daylight": "Isikhathi sehlobo sase-Vanuatu"
+                "standard": "Isikhathi sase-Vanuatu esijwayelekile",
+                "daylight": "Isikhathi sase-Vanuatu sasehlobo"
               }
             },
             "Venezuela": {
@@ -2245,14 +2242,14 @@
             },
             "Vladivostok": {
               "long": {
-                "generic": "esase-Vladivostok Time",
+                "generic": "Isikhathi sase-Vladivostok",
                 "standard": "Isikhathi Esimisiwe sase-Vladivostok",
                 "daylight": "esase-Vladivostok Summer Time"
               }
             },
             "Volgograd": {
               "long": {
-                "generic": "esase-Volgograd Time",
+                "generic": "Isikhathi sase-Volgograd",
                 "standard": "Isikhathi Esimisiwe sase-Volgograd",
                 "daylight": "esase-Volgograd Summer Time"
               }
@@ -2274,14 +2271,14 @@
             },
             "Yakutsk": {
               "long": {
-                "generic": "esase-Yakutsk Time",
+                "generic": "Isikhathi sase-Yakutsk",
                 "standard": "Isikhathi Esimisiwe sase-Yakutsk",
                 "daylight": "esase-Yakutsk Summer Time"
               }
             },
             "Yekaterinburg": {
               "long": {
-                "generic": "esase-Yekaterinburg Time",
+                "generic": "Isikhathi sase-Yekaterinburg",
                 "standard": "Isikhathi Esimisiwe sase-Yekaterinburg",
                 "daylight": "esase-Yekaterinburg Summer Time"
               }

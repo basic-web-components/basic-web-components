@@ -3,11 +3,8 @@
     "sq-XK": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sq",
         "territory": "XK"
@@ -193,7 +190,7 @@
             "symbol": "BIF"
           },
           "BMD": {
-            "displayName": "Dollari e Bermudeve",
+            "displayName": "Dollari i Bermudeve",
             "displayName-count-one": "dollar bermude",
             "displayName-count-other": "dollarë bermude",
             "symbol": "BMD",
@@ -274,9 +271,9 @@
             "symbol": "BUK"
           },
           "BWP": {
-            "displayName": "Pula botsvane",
-            "displayName-count-one": "pulë botsvane",
-            "displayName-count-other": "pula botsvane",
+            "displayName": "Pula botsuane",
+            "displayName-count-one": "pulë botsuane",
+            "displayName-count-other": "pula botsuane",
             "symbol": "BWP",
             "symbol-alt-narrow": "P"
           },
@@ -374,16 +371,16 @@
             "symbol": "CSK"
           },
           "CUC": {
-            "displayName": "Pezoja kubane e shkëmbyeshme",
-            "displayName-count-one": "pezo kubane e shkëmbyeshme",
-            "displayName-count-other": "pezo kubane të shkëmbyeshme",
+            "displayName": "Pezoja kubaneze e shkëmbyeshme",
+            "displayName-count-one": "pezo kubaneze e shkëmbyeshme",
+            "displayName-count-other": "pezo kubaneze të shkëmbyeshme",
             "symbol": "CUC",
             "symbol-alt-narrow": "$"
           },
           "CUP": {
-            "displayName": "Pezoja kubane",
-            "displayName-count-one": "pezo kubane",
-            "displayName-count-other": "pezo kubane",
+            "displayName": "Pezoja kubaneze",
+            "displayName-count-one": "pezo kubaneze",
+            "displayName-count-other": "pezo kubaneze",
             "symbol": "CUP",
             "symbol-alt-narrow": "$"
           },
@@ -526,7 +523,8 @@
             "displayName": "Laria gjeorgjiane",
             "displayName-count-one": "lari gjeorgjian",
             "displayName-count-other": "lari gjeorgjiane",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -648,7 +646,7 @@
           "ILS": {
             "displayName": "Shekeli izrealit",
             "displayName-count-one": "shekel izrealit",
-            "displayName-count-other": "shekelë izrealite",
+            "displayName-count-other": "shekelë izrealit",
             "symbol": "₪",
             "symbol-alt-narrow": "₪"
           },
@@ -785,7 +783,7 @@
             "symbol-alt-narrow": "L£"
           },
           "LKR": {
-            "displayName": "Rupia e Sri Lankës",
+            "displayName": "Rupia e Sri-Lankës",
             "displayName-count-one": "rupi sri-lanke",
             "displayName-count-other": "rupi sri-lanke",
             "symbol": "LKR",
@@ -1129,7 +1127,7 @@
             "displayName-count-one": "rubël ruse",
             "displayName-count-other": "rubla ruse",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1150,16 +1148,16 @@
             "symbol": "SAR"
           },
           "SBD": {
-            "displayName": "Dollari i Ishujve Solomon",
-            "displayName-count-one": "dollar i Ishujve Solomon",
-            "displayName-count-other": "dollarë të Ishujve Solomon",
+            "displayName": "Dollari i Ishujve Solomonë",
+            "displayName-count-one": "dollar i Ishujve Solomonë",
+            "displayName-count-other": "dollarë të Ishujve Solomonë",
             "symbol": "SBD",
             "symbol-alt-narrow": "$"
           },
           "SCR": {
-            "displayName": "Rupia e Ishujve Sejçelë",
-            "displayName-count-one": "rupi e Ishujve Sejçelë",
-            "displayName-count-other": "rupi të Ishujve Sejçelë",
+            "displayName": "Rupia e Ishujve Sishelë",
+            "displayName-count-one": "rupi e Ishujve Sishelë",
+            "displayName-count-other": "rupi të Ishujve Sishelë",
             "symbol": "SCR"
           },
           "SDD": {
@@ -1191,9 +1189,9 @@
             "symbol-alt-narrow": "$"
           },
           "SHP": {
-            "displayName": "Stërlina e Ishullit të Shën Helenës",
-            "displayName-count-one": "stërlinë e Ishullit të Shën Helenës",
-            "displayName-count-other": "stërlina të Ishullit të Shën Helenës",
+            "displayName": "Stërlina e Ishullit të Shën-Helenës",
+            "displayName-count-one": "stërlinë e Ishullit të Shën-Helenës",
+            "displayName-count-other": "stërlina të Ishullit të Shën-Helenës",
             "symbol": "SHP",
             "symbol-alt-narrow": "£"
           },
@@ -1206,9 +1204,9 @@
             "symbol": "SKK"
           },
           "SLL": {
-            "displayName": "Leoni i Sierra Leones",
-            "displayName-count-one": "leon i Sierra Leones",
-            "displayName-count-other": "leonë të Sierra Leones",
+            "displayName": "Leoni i Sierra-Leones",
+            "displayName-count-one": "leon i Sierra-Leones",
+            "displayName-count-other": "leonë të Sierra-Leones",
             "symbol": "SLL"
           },
           "SOS": {
@@ -1236,9 +1234,9 @@
             "symbol-alt-narrow": "£"
           },
           "STD": {
-            "displayName": "Dobra e Sao Tomes dhe Prinsipes",
-            "displayName-count-one": "dobër e Sao Tomes dhe Prinsipes",
-            "displayName-count-other": "dobra të Sao Tomes dhe Prinsipes",
+            "displayName": "Dobra e Sao-Tomes dhe Prinsipes",
+            "displayName-count-one": "dobër e Sao-Tomes dhe Prinsipes",
+            "displayName-count-other": "dobra të Sao-Tomes dhe Prinsipes",
             "symbol": "STD",
             "symbol-alt-narrow": "Db"
           },
@@ -1258,9 +1256,9 @@
             "symbol-alt-narrow": "£"
           },
           "SZL": {
-            "displayName": "Lilangeni i Svazilandit",
-            "displayName-count-one": "lilangen svazilandi",
-            "displayName-count-other": "lilangenë svazilandi",
+            "displayName": "Lilangeni i Suazilandës",
+            "displayName-count-one": "lilangen suazilande",
+            "displayName-count-other": "lilangenë suazilande",
             "symbol": "SZL"
           },
           "THB": {
@@ -1331,7 +1329,7 @@
             "displayName-count-one": "dollar tajvanez",
             "displayName-count-other": "dollarë tajvanez",
             "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "Shilinga e Tanzanisë",
@@ -1521,8 +1519,8 @@
           },
           "XXX": {
             "displayName": "Valutë e panjohur",
-            "displayName-count-one": "(njësi e panjohur valute)",
-            "displayName-count-other": "(njësi të panjohura valute)",
+            "displayName-count-one": "(njësi e panjohur valutore)",
+            "displayName-count-other": "(njësi të panjohura valutore)",
             "symbol": "XXX"
           },
           "YDD": {

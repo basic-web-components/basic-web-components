@@ -3,11 +3,8 @@
     "mr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11953 $"
         },
         "language": "mr"
       },
@@ -186,9 +183,9 @@
             "symbol": "BHD"
           },
           "BIF": {
-            "displayName": "बुरुडियन फ्रँक",
-            "displayName-count-one": "बुरुडियन फ्रँक",
-            "displayName-count-other": "बुरुडियन फ्रँक्स",
+            "displayName": "बुरुंडियन फ्रँक",
+            "displayName-count-one": "बुरुंडियन फ्रँक",
+            "displayName-count-other": "बुरुंडियन फ्रँक्स",
             "symbol": "BIF"
           },
           "BMD": {
@@ -273,8 +270,8 @@
             "symbol": "BUK"
           },
           "BWP": {
-            "displayName": "बोट्सवाना पुला",
-            "displayName-count-one": "बोट्सवाना पुला",
+            "displayName": "बोट्सवानन पुला",
+            "displayName-count-one": "बोट्सवानन पुला",
             "displayName-count-other": "बोट्सवाना पुलाज",
             "symbol": "BWP",
             "symbol-alt-narrow": "P"
@@ -457,9 +454,9 @@
             "symbol-alt-narrow": "E£"
           },
           "ERN": {
-            "displayName": "इरिट्रियन नाफ्का",
-            "displayName-count-one": "इरिट्रिया नाफ्का",
-            "displayName-count-other": "इरिट्रिया नाफ्काज",
+            "displayName": "इरिट्रियन नाक्फा",
+            "displayName-count-one": "इरिट्रियन नाक्फा",
+            "displayName-count-other": "इरिट्रियन नाक्फाज",
             "symbol": "ERN"
           },
           "ESA": {
@@ -511,9 +508,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "ब्रिटिश पाऊंड स्टर्लिंग",
-            "displayName-count-one": "ब्रिटिश पाऊंड स्टर्लिंग",
-            "displayName-count-other": "ब्रिटिश पाऊंड्स स्टर्लिंग",
+            "displayName": "ब्रिटिश पाऊंड",
+            "displayName-count-one": "ब्रिटिश पाऊंड",
+            "displayName-count-other": "ब्रिटिश पाऊंड्स",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -525,7 +522,8 @@
             "displayName": "जॉर्जियन लारी",
             "displayName-count-one": "जॉर्जियन लारी",
             "displayName-count-other": "जॉर्जियन लारी",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "[₾]"
           },
           "GHC": {
             "displayName": "GHC",
@@ -599,9 +597,9 @@
             "symbol-alt-narrow": "$"
           },
           "HNL": {
-            "displayName": "होंडुरा लेम्पियरा",
-            "displayName-count-one": "होंडुरा लेम्पियरा",
-            "displayName-count-other": "होंडुरा लेम्पियराज",
+            "displayName": "होन्डुरन लेंपिरा",
+            "displayName-count-one": "होन्डुरन लेंपिरा",
+            "displayName-count-other": "होन्डुरन लेंपिराज",
             "symbol": "HNL",
             "symbol-alt-narrow": "L"
           },
@@ -630,9 +628,9 @@
             "symbol-alt-narrow": "Ft"
           },
           "IDR": {
-            "displayName": "इंडोनेशियन रुपैयाह",
-            "displayName-count-one": "इंडोनेशियन रुपैयाह",
-            "displayName-count-other": "इंडोनेशियन रुपैयाह",
+            "displayName": "इंडोनेशियन रुपिया",
+            "displayName-count-one": "इंडोनेशियन रुपिया",
+            "displayName-count-other": "इंडोनेशियन रुपिया",
             "symbol": "IDR",
             "symbol-alt-narrow": "Rp"
           },
@@ -721,9 +719,9 @@
             "symbol-alt-narrow": "៛"
           },
           "KMF": {
-            "displayName": "कोलोरियन फ्रँक",
-            "displayName-count-one": "कोलोरियन फ्रँक",
-            "displayName-count-other": "कोलोरियन फ्रँक्स",
+            "displayName": "कोमोरियन फ्रँक",
+            "displayName-count-one": "कोमोरियन फ्रँक",
+            "displayName-count-other": "कोमोरियन फ्रँक्स",
             "symbol": "KMF",
             "symbol-alt-narrow": "CF"
           },
@@ -770,9 +768,9 @@
             "symbol-alt-narrow": "₸"
           },
           "LAK": {
-            "displayName": "लेओशियन किप",
-            "displayName-count-one": "लेओशियन किप",
-            "displayName-count-other": "लेओशियन किप",
+            "displayName": "लाओशियन किप",
+            "displayName-count-one": "लाओशियन किप",
+            "displayName-count-other": "लाओशियन किप",
             "symbol": "LAK",
             "symbol-alt-narrow": "₭"
           },
@@ -784,8 +782,8 @@
             "symbol-alt-narrow": "L£"
           },
           "LKR": {
-            "displayName": "श्रीलंकन रुपी",
-            "displayName-count-one": "श्रीलंकन रुपी",
+            "displayName": "श्रीलंकन रुपया",
+            "displayName-count-one": "श्रीलंकन रुपया",
             "displayName-count-other": "श्रीलंकन रुपये",
             "symbol": "LKR",
             "symbol-alt-narrow": "Rs"
@@ -838,13 +836,13 @@
           "LYD": {
             "displayName": "लिबियाचा दिनार",
             "displayName-count-one": "लिबियाचा दिनार",
-            "displayName-count-other": "लिबियाचा दिनार",
+            "displayName-count-other": "लिबियन दिनार",
             "symbol": "LYD"
           },
           "MAD": {
             "displayName": "मोरोक्को दिरहॅम",
             "displayName-count-one": "मोरोक्को दिरहॅम",
-            "displayName-count-other": "मोरोक्को दिरहॅम",
+            "displayName-count-other": "मोरोक्कन दिरहाम",
             "symbol": "MAD"
           },
           "MAF": {
@@ -1000,7 +998,7 @@
           "NIO": {
             "displayName": "निकाराग्वेचा कोर्डोबा",
             "displayName-count-one": "निकाराग्वेचा कोर्डोबा",
-            "displayName-count-other": "निकाराग्वेचा कोर्डोबाज",
+            "displayName-count-other": "निकाराग्वन कोर्डोबाज",
             "symbol": "NIO",
             "symbol-alt-narrow": "C$"
           },
@@ -1128,7 +1126,7 @@
             "displayName-count-one": "रशियन रुबल",
             "displayName-count-other": "रशियन रुबल्स",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1276,7 +1274,7 @@
           "TJS": {
             "displayName": "ताजकीस्तानी सोमोनी",
             "displayName-count-one": "ताजकीस्तानी सोमोनी",
-            "displayName-count-other": "ताजकीस्तानचा सोमोनी",
+            "displayName-count-other": "ताजकीस्तानी सोमोनीज",
             "symbol": "TJS"
           },
           "TMM": {
@@ -1296,9 +1294,9 @@
             "symbol": "TND"
           },
           "TOP": {
-            "displayName": "टोंगा पाआंगा",
-            "displayName-count-one": "टोंगा पाआंगा",
-            "displayName-count-other": "टोंगा पाआंगा",
+            "displayName": "टोंगन पाआंगा",
+            "displayName-count-one": "टोंगन पाआंगा",
+            "displayName-count-other": "टोंगन पाआंगा",
             "symbol": "TOP",
             "symbol-alt-narrow": "T$"
           },
@@ -1390,9 +1388,9 @@
             "symbol-alt-narrow": "$"
           },
           "UZS": {
-            "displayName": "उझबेकिस्तान सॉम",
-            "displayName-count-one": "उझबेकिस्तान सॉम",
-            "displayName-count-other": "उझबेकिस्तान सॉम",
+            "displayName": "उझबेकिस्तानी सोम",
+            "displayName-count-one": "उझबेकिस्तानी सोम",
+            "displayName-count-other": "उझबेकिस्तानी सोम",
             "symbol": "UZS"
           },
           "VEB": {
@@ -1418,9 +1416,9 @@
             "symbol": "VNN"
           },
           "VUV": {
-            "displayName": "वानाटु वाटु",
-            "displayName-count-one": "वानाटु वाटु",
-            "displayName-count-other": "वानाटु वाटुज",
+            "displayName": "वानुआतु वाटु",
+            "displayName-count-one": "वानुआतु वाटु",
+            "displayName-count-other": "वानुआतु वाटु",
             "symbol": "VUV"
           },
           "WST": {
@@ -1430,9 +1428,9 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "[CFA] फ्रँक [BEAC]",
-            "displayName-count-one": "[CFA] फ्रँक [BEAC]",
-            "displayName-count-other": "[CFA] फ्रँक्स [BEAC]",
+            "displayName": "मध्य आफ्रिकन [CFA] फ्रँक",
+            "displayName-count-one": "मध्य आफ्रिकन [CFA] फ्रँक",
+            "displayName-count-other": "मध्य आफ्रिकन [CFA] फ्रँक",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1483,9 +1481,9 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "[CFA] फ्रँक [BCEAO]",
-            "displayName-count-one": "[CFA] फ्रँक [BCEAO]",
-            "displayName-count-other": "[CFA] फ्रँक्स [BCEAO]",
+            "displayName": "पश्चिम आफ्रिकन [CFA] फ्रँक",
+            "displayName-count-one": "पश्चिम आफ्रिकन [CFA] फ्रँक",
+            "displayName-count-other": "पश्चिम आफ्रिकन [CFA] फ्रँक्स",
             "symbol": "CFA"
           },
           "XPD": {
@@ -1520,7 +1518,7 @@
           },
           "XXX": {
             "displayName": "अज्ञात चलन",
-            "displayName-count-one": "अज्ञात चलन",
+            "displayName-count-one": "(चलनाचे अज्ञात एकक)",
             "displayName-count-other": "(अज्ञात चलन)",
             "symbol": "XXX"
           },

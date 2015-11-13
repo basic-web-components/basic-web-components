@@ -3,18 +3,15 @@
     "hi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11947 $"
         },
         "language": "hi"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "अरबी",
           "Arab-alt-variant": "फ़ारसी-अरबी",
           "Armi": "इम्पिरियल आर्मेनिक",
@@ -64,6 +61,7 @@
           "Hans-alt-stand-alone": "सरलीकृत हान",
           "Hant": "पारंपरिक",
           "Hant-alt-stand-alone": "पारंपरिक हान",
+          "Hatr": "Hatr",
           "Hebr": "हिब्रू",
           "Hira": "हिरागाना",
           "Hluw": "Hluw",
@@ -74,7 +72,6 @@
           "Ital": "पुरानी इटली",
           "Java": "जावानीस",
           "Jpan": "जापानी",
-          "Jurc": "Jurc",
           "Kali": "कायाह ली",
           "Kana": "काताकाना",
           "Khar": "खारोशथी",
@@ -82,7 +79,6 @@
           "Khoj": "Khoj",
           "Knda": "कन्नड़",
           "Kore": "कोरियाई",
-          "Kpel": "Kpel",
           "Kthi": "कैथी",
           "Lana": "लाना",
           "Laoo": "लाओ",
@@ -94,7 +90,6 @@
           "Lina": "लीनियर A",
           "Linb": "लीनियर बी",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "लिशियन",
           "Lydi": "लिडियन",
           "Mahj": "Mahj",
@@ -110,12 +105,11 @@
           "Moon": "मून",
           "Mroo": "Mroo",
           "Mtei": "मेइतेइ मायेक",
+          "Mult": "Mult",
           "Mymr": "म्यांमार",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "एन्‘को",
-          "Nshu": "Nshu",
           "Ogam": "ओगम",
           "Olck": "ऑल चिकी",
           "Orkh": "ओरखोन",
@@ -205,7 +199,6 @@
           "Tale": "ताई ली",
           "Talu": "नया ताई लु",
           "Taml": "तमिल",
-          "Tang": "Tang",
           "Tavt": "ताई विएत",
           "Telu": "तेलुगू",
           "Teng": "तेन्गवार",
@@ -219,7 +212,6 @@
           "Vaii": "वाई",
           "Visp": "विसिबल स्पीच",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "पुरानी फारसी",
           "Xsux": "सुमेरो अक्कादियन सुनिफॉर्म",
           "Yiii": "यी",

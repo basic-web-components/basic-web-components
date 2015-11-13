@@ -3,11 +3,8 @@
     "id": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "id"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Waktu {0}",
-          "regionFormat-type-standard": "Waktu Standar {0}",
           "regionFormat-type-daylight": "Waktu Terang {0}",
+          "regionFormat-type-standard": "Waktu Standar {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Dakota Utara"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Dakota Utara"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Dakota Utara"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Dakota Utara"
                 }
               },
               "Ojinaga": {
@@ -540,7 +537,7 @@
               },
               "Dublin": {
                 "long": {
-                  "daylight": "Musim Panas Irlandia"
+                  "daylight": "Waktu Standar Irlandia"
                 },
                 "exemplarCity": "Dublin"
               },
@@ -576,7 +573,7 @@
               },
               "London": {
                 "long": {
-                  "daylight": "Musim Panas Inggris"
+                  "daylight": "Waktu Musim Panas Inggris"
                 },
                 "exemplarCity": "London"
               },
@@ -1429,7 +1426,7 @@
               "long": {
                 "generic": "Waktu Alaska",
                 "standard": "Waktu Standar Alaska",
-                "daylight": "Waktu Terang Alaska"
+                "daylight": "Waktu Musim Panas Alaska"
               }
             },
             "Almaty": {
@@ -1450,28 +1447,28 @@
               "long": {
                 "generic": "Waktu Tengah",
                 "standard": "Waktu Standar Tengah",
-                "daylight": "Waktu Terang Hari Tengah"
+                "daylight": "Waktu Musim Panas Tengah"
               }
             },
             "America_Eastern": {
               "long": {
                 "generic": "Waktu Timur",
                 "standard": "Waktu Standar Timur",
-                "daylight": "Waktu Terang Hari Timur"
+                "daylight": "Waktu Musim Panas Timur"
               }
             },
             "America_Mountain": {
               "long": {
                 "generic": "Waktu Pegunungan",
                 "standard": "Waktu Standar Pegunungan",
-                "daylight": "Waktu Terang Hari Pegunungan"
+                "daylight": "Waktu Musim Panas Pegunungan"
               }
             },
             "America_Pacific": {
               "long": {
                 "generic": "Waktu Pasifik",
                 "standard": "Waktu Standar Pasifik",
-                "daylight": "Waktu Terang Hari Pasifik"
+                "daylight": "Waktu Musim Panas Pasifik"
               }
             },
             "Anadyr": {
@@ -1506,7 +1503,7 @@
               "long": {
                 "generic": "Waktu Arab",
                 "standard": "Waktu Standar Arab",
-                "daylight": "Waktu Terang Arab"
+                "daylight": "Waktu Musim Panas Arab"
               }
             },
             "Argentina": {
@@ -1534,35 +1531,35 @@
               "long": {
                 "generic": "Waktu Atlantik",
                 "standard": "Waktu Standar Atlantik",
-                "daylight": "Waktu Terang Atlantik"
+                "daylight": "Waktu Musim Panas Atlantik"
               }
             },
             "Australia_Central": {
               "long": {
                 "generic": "Waktu Tengah Australia",
                 "standard": "Waktu Standar Tengah Australia",
-                "daylight": "Waktu Terang Tengah Australia"
+                "daylight": "Waktu Musim Panas Tengah Australia"
               }
             },
             "Australia_CentralWestern": {
               "long": {
                 "generic": "Waktu Barat Tengah Australia",
                 "standard": "Waktu Standar Barat Tengah Australia",
-                "daylight": "Waktu Terang Barat Tengah Australia"
+                "daylight": "Waktu Musim Panas Barat Tengah Australia"
               }
             },
             "Australia_Eastern": {
               "long": {
                 "generic": "Waktu Timur Australia",
                 "standard": "Waktu Standar Timur Australia",
-                "daylight": "Waktu Terang Timur Australia"
+                "daylight": "Waktu Musim Panas Timur Australia"
               }
             },
             "Australia_Western": {
               "long": {
-                "generic": "Waktu Australia Barat",
+                "generic": "Waktu Barat Australia",
                 "standard": "Waktu Standar Barat Australia",
-                "daylight": "Waktu Terang Barat Australia"
+                "daylight": "Waktu Musim Panas Barat Australia"
               }
             },
             "Azerbaijan": {
@@ -1629,7 +1626,7 @@
               "long": {
                 "generic": "Waktu Chatham",
                 "standard": "Waktu Standar Chatham",
-                "daylight": "Waktu Terang Chatham"
+                "daylight": "Waktu Musim Panas Chatham"
               }
             },
             "Chile": {
@@ -1761,11 +1758,6 @@
                 "standard": "Waktu Wilayah Selatan dan Antarktika Prancis"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Waktu Rata-rata Greenwich"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Waktu Galapagos"
@@ -1786,6 +1778,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Waktu Kep. Gilbert"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Waktu Rata-rata Greenwich"
               }
             },
             "Greenland_Eastern": {
@@ -1821,7 +1818,7 @@
               "long": {
                 "generic": "Waktu Hawaii-Aleutian",
                 "standard": "Waktu Standar Hawaii-Aleutian",
-                "daylight": "Waktu Terang Hawaii-Aleutian"
+                "daylight": "Waktu Musim Panas Hawaii-Aleutian"
               }
             },
             "Hong_Kong": {
@@ -1960,7 +1957,7 @@
               "long": {
                 "generic": "Waktu Lord Howe",
                 "standard": "Waktu Standar Lord Howe",
-                "daylight": "Waktu Terang Lord Howe"
+                "daylight": "Waktu Musim Panas Lord Howe"
               }
             },
             "Macau": {
@@ -2068,14 +2065,14 @@
               "long": {
                 "generic": "Waktu Selandia Baru",
                 "standard": "Waktu Standar Selandia Baru",
-                "daylight": "Waktu Terang Selandia Baru"
+                "daylight": "Waktu Musim Panas Selandia Baru"
               }
             },
             "Newfoundland": {
               "long": {
                 "generic": "Waktu Newfoundland",
                 "standard": "Waktu Standar Newfoundland",
-                "daylight": "Waktu Siang Hari Newfoundland"
+                "daylight": "Waktu Musim Panas Newfoundland"
               }
             },
             "Niue": {

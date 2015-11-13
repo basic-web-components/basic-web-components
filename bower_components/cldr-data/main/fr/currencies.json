@@ -3,11 +3,8 @@
     "fr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "fr"
       },
@@ -529,7 +526,7 @@
             "displayName-count-one": "livre égyptienne",
             "displayName-count-other": "livres égyptiennes",
             "symbol": "EGP",
-            "symbol-alt-narrow": "E£"
+            "symbol-alt-narrow": "£E"
           },
           "ERN": {
             "displayName": "nafka érythréen",
@@ -612,7 +609,8 @@
             "displayName": "lari géorgien",
             "displayName-count-one": "lari géorgien",
             "displayName-count-other": "lari géorgiens",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "cédi",
@@ -832,7 +830,7 @@
             "displayName-count-one": "franc comorien",
             "displayName-count-other": "francs comoriens",
             "symbol": "KMF",
-            "symbol-alt-narrow": "CF"
+            "symbol-alt-narrow": "FC"
           },
           "KPW": {
             "displayName": "won nord-coréen",
@@ -888,7 +886,7 @@
             "displayName-count-one": "livre libanaise",
             "displayName-count-other": "livres libanaises",
             "symbol": "£LB",
-            "symbol-alt-narrow": "L£"
+            "symbol-alt-narrow": "£L"
           },
           "LKR": {
             "displayName": "roupie srilankaise",
@@ -1141,7 +1139,7 @@
             "displayName-count-one": "córdoba oro nicaraguayen",
             "displayName-count-other": "córdobas oro nicaraguayens",
             "symbol": "NIO",
-            "symbol-alt-narrow": "C$"
+            "symbol-alt-narrow": "$C"
           },
           "NLG": {
             "displayName": "florin néerlandais",
@@ -1281,7 +1279,7 @@
             "displayName-count-one": "rouble russe",
             "displayName-count-other": "roubles russes",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "rouble russe (1991–1998)",
@@ -1295,7 +1293,7 @@
             "displayName-count-one": "franc rwandais",
             "displayName-count-other": "francs rwandais",
             "symbol": "RWF",
-            "symbol-alt-narrow": "RF"
+            "symbol-alt-narrow": "FR"
           },
           "SAR": {
             "displayName": "rial saoudien",
@@ -1435,7 +1433,7 @@
             "displayName": "baht thaïlandais",
             "displayName-count-one": "baht thaïlandais",
             "displayName-count-other": "bahts thaïlandais",
-            "symbol": "฿",
+            "symbol": "THB",
             "symbol-alt-narrow": "฿"
           },
           "TJR": {
@@ -1493,7 +1491,7 @@
             "displayName-count-other": "livres turques",
             "symbol": "TRY",
             "symbol-alt-narrow": "₺",
-            "symbol-alt-variant": "TL"
+            "symbol-alt-variant": "LT"
           },
           "TTD": {
             "displayName": "dollar trinidadien",
@@ -1737,8 +1735,8 @@
           },
           "XXX": {
             "displayName": "devise inconnue ou non valide",
-            "displayName-count-one": "(devise inconnue ou non valide)",
-            "displayName-count-other": "(devise inconnue ou non valide)",
+            "displayName-count-one": "devise inconnue",
+            "displayName-count-other": "devises inconnues",
             "symbol": "XXX"
           },
           "YDD": {
@@ -1799,7 +1797,7 @@
             "displayName-count-one": "kwacha zambien",
             "displayName-count-other": "kwachas zambiens",
             "symbol": "ZMW",
-            "symbol-alt-narrow": "ZK"
+            "symbol-alt-narrow": "Kw"
           },
           "ZRN": {
             "displayName": "nouveau zaïre zaïrien",

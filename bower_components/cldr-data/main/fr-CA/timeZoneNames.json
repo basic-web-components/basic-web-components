@@ -3,11 +3,8 @@
     "fr-CA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "fr",
         "territory": "CA"
@@ -18,8 +15,8 @@
           "gmtFormat": "UTC{0}",
           "gmtZeroFormat": "UTC",
           "regionFormat": "heure : {0}",
-          "regionFormat-type-standard": "{0} (heure normale)",
           "regionFormat-type-daylight": "{0} (heure avancée)",
+          "regionFormat-type-standard": "{0} (heure normale)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaína"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Río Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaïa"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucumán"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaïa"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox [Indiana]"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo [Indiana]"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes [Indiana]"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg [Indiana]"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City [Indiana]"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay [Indiana]"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes [Indiana]"
+                "Knox": {
+                  "exemplarCity": "Knox [Indiana]"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac [Indiana]"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo [Indiana]"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay [Indiana]"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah [Dakota du Nord]"
                 },
-                "Center": {
-                  "exemplarCity": "Center [Dakota du Nord]"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Dakota du Nord"
+                },
+                "Center": {
+                  "exemplarCity": "Center [Dakota du Nord]"
                 }
               },
               "Ojinaga": {
@@ -883,7 +880,7 @@
                 "exemplarCity": "Calcutta"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Tchita"
               },
               "Choibalsan": {
                 "exemplarCity": "Tchoïbalsan"
@@ -1387,7 +1384,7 @@
                 "exemplarCity": "GMT-9"
               },
               "Unknown": {
-                "exemplarCity": "zone inconnue"
+                "exemplarCity": "ville inconnue"
               }
             }
           },
@@ -1777,11 +1774,6 @@
                 "standard": "heure des Terres australes et antarctiques françaises"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "heure moyenne de Greenwich"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "heure des îles Galápagos"
@@ -1802,6 +1794,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "heure des îles Gilbert"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "heure moyenne de Greenwich"
               }
             },
             "Greenland_Eastern": {

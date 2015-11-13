@@ -3,11 +3,8 @@
     "uz-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "uz",
         "script": "Latn"
@@ -29,7 +26,7 @@
           "superscriptingExponent": "×",
           "perMille": "‰",
           "infinity": "∞",
-          "nan": "NaN",
+          "nan": "haqiqiy son emas",
           "timeSeparator": ":"
         },
         "decimalFormats-numberSystem-latn": {
@@ -54,40 +51,40 @@
               "10000000000-count-other": "00 milliard",
               "100000000000-count-one": "000 milliard",
               "100000000000-count-other": "000 milliard",
-              "1000000000000-count-one": "0 trilion",
-              "1000000000000-count-other": "0 trilion",
-              "10000000000000-count-one": "00 trilion",
-              "10000000000000-count-other": "00 trilion",
-              "100000000000000-count-one": "000 trilion",
-              "100000000000000-count-other": "000 trilion"
+              "1000000000000-count-one": "0 trillion",
+              "1000000000000-count-other": "0 trillion",
+              "10000000000000-count-one": "00 trillion",
+              "10000000000000-count-other": "00 trillion",
+              "100000000000000-count-one": "000 trillion",
+              "100000000000000-count-other": "000 trillion"
             }
           },
           "short": {
             "decimalFormat": {
-              "1000-count-one": "0ming",
-              "1000-count-other": "0ming",
-              "10000-count-one": "00ming",
-              "10000-count-other": "00ming",
-              "100000-count-one": "000ming",
-              "100000-count-other": "000ming",
-              "1000000-count-one": "0mln",
-              "1000000-count-other": "0mln",
-              "10000000-count-one": "00mln",
-              "10000000-count-other": "00mln",
-              "100000000-count-one": "000mln",
-              "100000000-count-other": "000mln",
-              "1000000000-count-one": "0mlrd",
-              "1000000000-count-other": "0mlrd",
-              "10000000000-count-one": "00mlrd",
-              "10000000000-count-other": "00mlrd",
-              "100000000000-count-one": "000mlrd",
-              "100000000000-count-other": "000mlrd",
-              "1000000000000-count-one": "0trln",
-              "1000000000000-count-other": "0trln",
-              "10000000000000-count-one": "00trln",
-              "10000000000000-count-other": "00trln",
-              "100000000000000-count-one": "000trln",
-              "100000000000000-count-other": "000trln"
+              "1000-count-one": "0 ming",
+              "1000-count-other": "0 ming",
+              "10000-count-one": "00 ming",
+              "10000-count-other": "00 ming",
+              "100000-count-one": "000 ming",
+              "100000-count-other": "000 ming",
+              "1000000-count-one": "0 mln",
+              "1000000-count-other": "0 mln",
+              "10000000-count-one": "00 mln",
+              "10000000-count-other": "00 mln",
+              "100000000-count-one": "000 mln",
+              "100000000-count-other": "000 mln",
+              "1000000000-count-one": "0 mlrd",
+              "1000000000-count-other": "0 mlrd",
+              "10000000000-count-one": "00 mlrd",
+              "10000000000-count-other": "00 mlrd",
+              "100000000000-count-one": "000 mlrd",
+              "100000000000-count-other": "000 mlrd",
+              "1000000000000-count-one": "0 trln",
+              "1000000000000-count-other": "0 trln",
+              "10000000000000-count-one": "00 trln",
+              "10000000000000-count-other": "00 trln",
+              "100000000000000-count-one": "000 trln",
+              "100000000000000-count-other": "000 trln"
             }
           }
         },
@@ -110,13 +107,41 @@
               "insertBetween": " "
             }
           },
-          "accounting": "¤ #,##0.00",
-          "standard": "¤ #,##0.00",
+          "standard": "#,##0.00 ¤",
+          "accounting": "#,##0.00 ¤",
+          "short": {
+            "standard": {
+              "1000-count-one": "0 ming ¤",
+              "1000-count-other": "0 ming ¤",
+              "10000-count-one": "00 ming ¤",
+              "10000-count-other": "00 ming ¤",
+              "100000-count-one": "000 ming ¤",
+              "100000-count-other": "000 ming ¤",
+              "1000000-count-one": "0 mln ¤",
+              "1000000-count-other": "0 mln ¤",
+              "10000000-count-one": "00 mln ¤",
+              "10000000-count-other": "00 mln ¤",
+              "100000000-count-one": "000 mln ¤",
+              "100000000-count-other": "000 mln ¤",
+              "1000000000-count-one": "0 mlrd ¤",
+              "1000000000-count-other": "0 mlrd ¤",
+              "10000000000-count-one": "00 mlrd ¤",
+              "10000000000-count-other": "00 mlrd ¤",
+              "100000000000-count-one": "000 mlrd ¤",
+              "100000000000-count-other": "000 mlrd ¤",
+              "1000000000000-count-one": "0 trln ¤",
+              "1000000000000-count-other": "0 trln ¤",
+              "10000000000000-count-one": "00 trln ¤",
+              "10000000000000-count-other": "00 trln ¤",
+              "100000000000000-count-one": "000 trln ¤",
+              "100000000000000-count-other": "000 trln ¤"
+            }
+          },
           "unitPattern-count-one": "{0} {1}",
           "unitPattern-count-other": "{0} {1}"
         },
         "miscPatterns-numberSystem-latn": {
-          "atLeast": "⩾{0}",
+          "atLeast": "{0}+",
           "range": "{0}–{1}"
         }
       }

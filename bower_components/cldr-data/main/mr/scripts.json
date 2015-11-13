@@ -3,18 +3,15 @@
     "mr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11953 $"
         },
         "language": "mr"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "अरबी",
           "Arab-alt-variant": "फारसी-अरबी",
           "Armi": "इम्पिरियल आर्मेनिक",
@@ -64,6 +61,7 @@
           "Hans-alt-stand-alone": "सरलीकृत हान",
           "Hant": "पारंपारिक",
           "Hant-alt-stand-alone": "पारंपारिक हान",
+          "Hatr": "Hatr",
           "Hebr": "हिब्रू",
           "Hira": "हिरागाना",
           "Hluw": "Hluw",
@@ -74,7 +72,6 @@
           "Ital": "जुनी इटालिक",
           "Java": "जावानीस",
           "Jpan": "जपानी",
-          "Jurc": "Jurc",
           "Kali": "कायाह ली",
           "Kana": "कॅटाकाना",
           "Khar": "खारोश्थी",
@@ -82,7 +79,6 @@
           "Khoj": "Khoj",
           "Knda": "कन्नड",
           "Kore": "कोरियन",
-          "Kpel": "Kpel",
           "Kthi": "काइथी",
           "Lana": "लाना",
           "Laoo": "लाओ",
@@ -94,7 +90,6 @@
           "Lina": "लीनियार अ",
           "Linb": "लीनियर बी",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "लायशियान",
           "Lydi": "लायडियान",
           "Mahj": "Mahj",
@@ -110,12 +105,11 @@
           "Moon": "मून",
           "Mroo": "Mroo",
           "Mtei": "मेइतेइ मायेक",
+          "Mult": "Mult",
           "Mymr": "म्यानमार",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "एन्‘को",
-          "Nshu": "Nshu",
           "Ogam": "ओघाम",
           "Olck": "ओल चिकि",
           "Orkh": "ओर्खोन",
@@ -205,7 +199,6 @@
           "Tale": "ताई ली",
           "Talu": "नवीन ताई लू",
           "Taml": "तामिळ",
-          "Tang": "Tang",
           "Tavt": "ताई विएत",
           "Telu": "तेलगु",
           "Teng": "तेन्गवार",
@@ -219,7 +212,6 @@
           "Vaii": "वाई",
           "Visp": "दृश्य संवाद",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "पुरातन फारसी",
           "Xsux": "दृश्यमान भाषा",
           "Yiii": "यी",

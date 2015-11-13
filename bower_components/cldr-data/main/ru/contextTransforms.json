@@ -3,58 +3,55 @@
     "ru": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11353 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 15:54:42 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11974 $"
         },
         "language": "ru"
       },
       "contextTransforms": {
         "currencyName": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "day-format-except-narrow": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "day-standalone-except-narrow": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "era-abbr": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "era-name": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "keyValue": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "languages": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "month-format-except-narrow": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "month-standalone-except-narrow": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "relative": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         },
         "script": {
-          "uiListOrMenu": "titlecase-firstword",
-          "stand-alone": "titlecase-firstword"
+          "stand-alone": "titlecase-firstword",
+          "uiListOrMenu": "titlecase-firstword"
         }
       }
     }

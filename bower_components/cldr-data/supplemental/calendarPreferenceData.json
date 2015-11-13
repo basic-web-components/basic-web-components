@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11318 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-25 23:47:56 -0600 (Wed, 25 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11969 $"
     },
     "calendarPreferenceData": {
       "001": "gregorian",
@@ -38,7 +36,7 @@
       "OM": "gregorian islamic islamic-civil islamic-tbla",
       "PS": "gregorian islamic islamic-civil islamic-tbla",
       "QA": "gregorian islamic-umalqura islamic islamic-civil islamic-tbla",
-      "SA": "gregorian islamic-umalqura islamic islamic-rgsa",
+      "SA": "islamic-umalqura gregorian islamic islamic-rgsa",
       "SD": "gregorian islamic islamic-civil islamic-tbla",
       "SG": "gregorian chinese",
       "SY": "gregorian islamic islamic-civil islamic-tbla",

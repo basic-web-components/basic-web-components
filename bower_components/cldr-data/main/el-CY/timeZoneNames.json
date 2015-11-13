@@ -3,11 +3,8 @@
     "el-CY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11171 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-10 11:03:58 -0600 (Tue, 10 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "el",
         "territory": "CY"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Ώρα ({0})",
-          "regionFormat-type-standard": "Χειμερινή ώρα ({0})",
           "regionFormat-type-daylight": "Θερινή ώρα ({0})",
+          "regionFormat-type-standard": "Χειμερινή ώρα ({0})",
           "fallbackFormat": "[{1} ({0})]",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Αραγκουάινα"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "Λα Ριόχα"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Ρίο Γκαγιέγκος"
-                },
-                "Salta": {
-                  "exemplarCity": "Σάλτα"
                 },
                 "San_Juan": {
                   "exemplarCity": "Σαν Χουάν"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ουσουάια"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "Λα Ριόχα"
+                },
                 "San_Luis": {
                   "exemplarCity": "Σαν Λούις"
                 },
+                "Salta": {
+                  "exemplarCity": "Σάλτα"
+                },
                 "Tucuman": {
                   "exemplarCity": "Τουκουμάν"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ουσουάια"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Ερμοσίγιο"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Νοξ, Ιντιάνα"
-                },
-                "Marengo": {
-                  "exemplarCity": "Μαρένγκο, Ιντιάνα"
+                "Vincennes": {
+                  "exemplarCity": "Βίνκενες, Ιντιάνα"
                 },
                 "Petersburg": {
                   "exemplarCity": "Πίτερσμπεργκ, Ιντιάνα"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Τελ Σίτυ, Ιντιάνα"
                 },
-                "Vevay": {
-                  "exemplarCity": "Βεβάι, Ιντιάνα"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Βίνκενες, Ιντιάνα"
+                "Knox": {
+                  "exemplarCity": "Νοξ, Ιντιάνα"
                 },
                 "Winamac": {
                   "exemplarCity": "Γουίναμακ, Ιντιάνα"
+                },
+                "Marengo": {
+                  "exemplarCity": "Μαρένγκο, Ιντιάνα"
+                },
+                "Vevay": {
+                  "exemplarCity": "Βεβάι, Ιντιάνα"
                 }
               },
               "Indianapolis": {
@@ -270,7 +267,7 @@
                 "exemplarCity": "Λούισβιλ"
               },
               "Lower_Princes": {
-                "exemplarCity": "Lower Prince’s Quarter (Άγιος Μαρτίνος Ολλανδίας)"
+                "exemplarCity": "Άγιος Μαρτίνος Ολλανδίας"
               },
               "Maceio": {
                 "exemplarCity": "Μασέιο"
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Μπέουλαχ, Βόρεια Ντακότα"
                 },
-                "Center": {
-                  "exemplarCity": "Κέντρο, Βόρεια Ντακότα"
-                },
                 "New_Salem": {
                   "exemplarCity": "Νιου Σάλεμ, Βόρεια Ντακότα"
+                },
+                "Center": {
+                  "exemplarCity": "Κέντρο, Βόρεια Ντακότα"
                 }
               },
               "Ojinaga": {
@@ -883,7 +880,7 @@
                 "exemplarCity": "Καλκούτα"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Τσίτα"
               },
               "Choibalsan": {
                 "exemplarCity": "Χόιμπαλσαν"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "Σιγκαπούρη"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Σρεντνεκόλιμσκ"
               },
               "Taipei": {
                 "exemplarCity": "Ταϊπέι"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "Όκλαντ"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "Μπουγκενβίλ"
               },
               "Chatham": {
                 "exemplarCity": "Τσάταμ"
@@ -1744,11 +1741,6 @@
                 "standard": "Ώρα Γαλλικού Νότου και Ανταρκτικής"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Μέση ώρα Γκρίνουιτς"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Ώρα Γκαλάπαγκος"
@@ -1769,6 +1761,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Ώρα Νησιών Γκίλμπερτ"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Μέση ώρα Γκρίνουιτς"
               }
             },
             "Greenland_Eastern": {

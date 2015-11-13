@@ -3,11 +3,8 @@
     "ko-KP": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ko",
         "territory": "KP"
@@ -435,8 +432,8 @@
             "symbol-alt-narrow": "₧"
           },
           "ETB": {
-            "displayName": "이디오피아 비르",
-            "displayName-count-other": "이디오피아 비르",
+            "displayName": "에티오피아 비르",
+            "displayName-count-other": "에티오피아 비르",
             "symbol": "ETB"
           },
           "EUR": {
@@ -478,7 +475,8 @@
           "GEL": {
             "displayName": "조지아 라리",
             "displayName-count-other": "조지아 라리",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "가나 시디 (1979–2007)",
@@ -1013,7 +1011,7 @@
             "displayName": "러시아 루블",
             "displayName-count-other": "러시아 루블",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "러시아 루블 (1991–1998)",
@@ -1368,7 +1366,7 @@
           },
           "XXX": {
             "displayName": "알 수 없는 통화단위",
-            "displayName-count-other": "알 수 없는 통화단위",
+            "displayName-count-other": "(알 수 없는 통화단위)",
             "symbol": "XXX"
           },
           "YDD": {

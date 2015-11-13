@@ -3,14 +3,11 @@
     "es-PY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "es",
-        "territory": "419"
+        "territory": "PY"
       },
       "numbers": {
         "currencies": {
@@ -191,7 +188,7 @@
           "BGN": {
             "displayName": "lev búlgaro",
             "displayName-count-one": "lev búlgaro",
-            "displayName-count-other": "levas búlgaras",
+            "displayName-count-other": "leva búlgaros",
             "symbol": "BGN"
           },
           "BGO": {
@@ -518,7 +515,7 @@
             "symbol-alt-narrow": "E£"
           },
           "ERN": {
-            "displayName": "nakfa eritreo",
+            "displayName": "nafka",
             "displayName-count-one": "nakfa",
             "displayName-count-other": "nakfas",
             "symbol": "ERN"
@@ -596,7 +593,8 @@
             "displayName": "lari",
             "displayName-count-one": "lari",
             "displayName-count-other": "laris",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "cedi ghanés (1979–2007)",
@@ -1211,7 +1209,7 @@
             "displayName": "guaraní paraguayo",
             "displayName-count-one": "guaraní paraguayo",
             "displayName-count-other": "guaraníes paraguayos",
-            "symbol": "₲",
+            "symbol": "Gs.",
             "symbol-alt-narrow": "₲"
           },
           "QAR": {
@@ -1247,7 +1245,7 @@
             "displayName-count-one": "rublo ruso",
             "displayName-count-other": "rublos rusos",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "rublo ruso (1991–1998)",
@@ -1553,7 +1551,7 @@
             "displayName-count-one": "bolívar venezolano",
             "displayName-count-other": "bolívares venezolanos",
             "symbol": "VEF",
-            "symbol-alt-narrow": "Bs"
+            "symbol-alt-narrow": "BsF"
           },
           "VND": {
             "displayName": "dong",

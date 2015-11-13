@@ -3,11 +3,8 @@
     "lt": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "lt"
       },
@@ -55,7 +52,6 @@
           "ay": "aimarų",
           "az": "azerbaidžaniečių",
           "az-alt-short": "azeri",
-          "azb": "pietų Azerbaidžano",
           "ba": "baškirų",
           "bal": "baluči",
           "ban": "balinezų",
@@ -72,6 +68,7 @@
           "bfd": "bafutų",
           "bfq": "badaga",
           "bg": "bulgarų",
+          "bgn": "vakarų beludžių",
           "bho": "baučpuri",
           "bi": "bislama",
           "bik": "bikolų",
@@ -333,6 +330,7 @@
           "lo": "laosiečių",
           "lol": "mongo",
           "loz": "lozi",
+          "lrc": "šiaurės luri",
           "lt": "lietuvių",
           "ltg": "latgalių",
           "lu": "luba katanga",
@@ -354,6 +352,7 @@
           "mas": "masajų",
           "mde": "mabų",
           "mdf": "mokša",
+          "mdh": "mdh",
           "mdr": "mandar",
           "men": "mende",
           "mer": "merų",
@@ -366,6 +365,7 @@
           "mi": "maorių",
           "mic": "mikmak",
           "min": "minankabu",
+          "mis": "mis",
           "mk": "makedonų",
           "ml": "malajalių",
           "mn": "mongolų",
@@ -394,6 +394,7 @@
           "nb": "Norvegijos rašytinė – būkmolų",
           "nd": "šiaurės ndebelų",
           "nds": "Žemutinės Vokietijos",
+          "nds-NL": "Žemutinės Saksonijos (Nyderlandai)",
           "ne": "nepaliečių",
           "new": "nevari",
           "ng": "ndongų",
@@ -487,6 +488,7 @@
           "sco": "škotų",
           "sd": "sindų",
           "sdc": "sasaresų sardinų",
+          "sdh": "pietų kurdų",
           "se": "šiaurės samių",
           "see": "senecų",
           "seh": "senų",
@@ -597,6 +599,7 @@
           "wal": "valamo",
           "war": "varai",
           "was": "vašo",
+          "wbp": "valrpiri",
           "wo": "volofų",
           "wuu": "kinų kalbos vu tarmė",
           "xal": "kalmukų",

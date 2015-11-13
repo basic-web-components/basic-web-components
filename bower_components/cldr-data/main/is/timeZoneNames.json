@@ -3,11 +3,8 @@
     "is": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "is"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}",
-          "regionFormat-type-standard": "{0} (staðaltími)",
           "regionFormat-type-daylight": "{0} (sumartími)",
+          "regionFormat-type-standard": "{0} (staðaltími)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, North Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, North Dakota"
                 }
               },
               "Ojinaga": {
@@ -415,7 +412,7 @@
                 "exemplarCity": "Sitka"
               },
               "St_Barthelemy": {
-                "exemplarCity": "Saint Barthélemy"
+                "exemplarCity": "Sankti Bartólómeusareyjar"
               },
               "St_Johns": {
                 "exemplarCity": "St. John’s"
@@ -427,7 +424,7 @@
                 "exemplarCity": "Sankti Lúsía"
               },
               "St_Thomas": {
-                "exemplarCity": "St. Thomas"
+                "exemplarCity": "Sankti Thomas"
               },
               "St_Vincent": {
                 "exemplarCity": "Sankti Vinsent"
@@ -590,7 +587,7 @@
                 "exemplarCity": "Malta"
               },
               "Mariehamn": {
-                "exemplarCity": "Mariehamn"
+                "exemplarCity": "Maríuhöfn"
               },
               "Minsk": {
                 "exemplarCity": "Minsk"
@@ -1002,7 +999,7 @@
                 "exemplarCity": "Qyzylorda"
               },
               "Rangoon": {
-                "exemplarCity": "Rangoon"
+                "exemplarCity": "Rangún"
               },
               "Riyadh": {
                 "exemplarCity": "Ríjad"
@@ -1020,7 +1017,7 @@
                 "exemplarCity": "Seúl"
               },
               "Shanghai": {
-                "exemplarCity": "Shanghai"
+                "exemplarCity": "Sjanghæ"
               },
               "Singapore": {
                 "exemplarCity": "Singapúr"
@@ -1170,7 +1167,7 @@
                 "exemplarCity": "Fakaofo"
               },
               "Fiji": {
-                "exemplarCity": "Fídjieyjar"
+                "exemplarCity": "Fidjí"
               },
               "Funafuti": {
                 "exemplarCity": "Funafuti"
@@ -1553,7 +1550,7 @@
             },
             "Bangladesh": {
               "long": {
-                "generic": "Bangladesstími",
+                "generic": "Bangladess-tími",
                 "standard": "Staðaltími í Bangladess",
                 "daylight": "Sumartími í Bangladess"
               }
@@ -1663,7 +1660,7 @@
             },
             "East_Timor": {
               "long": {
-                "standard": "Tími á Tímor-Leste"
+                "standard": "Tíminn á Tímor-Leste"
               }
             },
             "Easter": {
@@ -1728,11 +1725,6 @@
                 "standard": "Tími á frönsku suðurhafssvæðum og Suðurskautslandssvæði"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Greenwich-staðaltími"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapagos-tími"
@@ -1752,7 +1744,12 @@
             },
             "Gilbert_Islands": {
               "long": {
-                "standard": "Gilberteyjatími"
+                "standard": "Tími á Gilbert-eyjum"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwich-staðaltími"
               }
             },
             "Greenland_Eastern": {
@@ -1781,9 +1778,9 @@
             },
             "Hawaii_Aleutian": {
               "long": {
-                "generic": "Tími á Hawaii og Aleútaeyjum",
-                "standard": "Staðaltími á Hawaí og Aleútaeyjum",
-                "daylight": "Sumartími á Hawaii og Aleútaeyjum"
+                "generic": "Tími á Havaí og Aleúta",
+                "standard": "Staðaltími á Havaí og Aleúta",
+                "daylight": "Sumartími á Havaí og Aleúta"
               }
             },
             "Hong_Kong": {
@@ -1795,7 +1792,7 @@
             },
             "Hovd": {
               "long": {
-                "generic": "Tími í Hovd",
+                "generic": "Hovd-tími",
                 "standard": "Staðaltími í Hovd",
                 "daylight": "Sumartími í Hovd"
               }
@@ -1896,12 +1893,12 @@
             },
             "Kyrgystan": {
               "long": {
-                "standard": "Kirgisistantími"
+                "standard": "Kirgistan-tími"
               }
             },
             "Line_Islands": {
               "long": {
-                "standard": "Línueyjatími"
+                "standard": "Línueyja-tími"
               }
             },
             "Lord_Howe": {
@@ -1930,7 +1927,7 @@
             },
             "Maldives": {
               "long": {
-                "standard": "Maldíveyjatími"
+                "standard": "Maldíveyja-tími"
               }
             },
             "Marquesas": {
@@ -1940,7 +1937,7 @@
             },
             "Marshall_Islands": {
               "long": {
-                "standard": "Marshall-eyjatími"
+                "standard": "Tími á Marshall-eyjum"
               }
             },
             "Mauritius": {
@@ -1978,19 +1975,19 @@
             },
             "Moscow": {
               "long": {
-                "generic": "Tími í Moskvu",
+                "generic": "Moskvutími",
                 "standard": "Staðaltími í Moskvu",
                 "daylight": "Sumartími í Moskvu"
               }
             },
             "Myanmar": {
               "long": {
-                "standard": "Mjanmartími"
+                "standard": "Mjanmar-tími"
               }
             },
             "Nauru": {
               "long": {
-                "standard": "Nárútími"
+                "standard": "Nárú-tími"
               }
             },
             "Nepal": {
@@ -2045,7 +2042,7 @@
             },
             "Omsk": {
               "long": {
-                "generic": "Tími í Omsk",
+                "generic": "Tíminn í Omsk",
                 "standard": "Staðaltími í Omsk",
                 "daylight": "Sumartími í Omsk"
               }
@@ -2173,7 +2170,7 @@
             },
             "Tahiti": {
               "long": {
-                "standard": "Tahítítími"
+                "standard": "Tahítí-tími"
               }
             },
             "Taipei": {
@@ -2185,12 +2182,12 @@
             },
             "Tajikistan": {
               "long": {
-                "standard": "Tadsjíkistantími"
+                "standard": "Tadsjíkistan-tími"
               }
             },
             "Tokelau": {
               "long": {
-                "standard": "Tókelátími"
+                "standard": "Tókelá-tími"
               }
             },
             "Tonga": {
@@ -2207,7 +2204,7 @@
             },
             "Turkmenistan": {
               "long": {
-                "generic": "Túrkmenistantími",
+                "generic": "Túrkmenistan-tími",
                 "standard": "Staðaltími í Túrkmenistan",
                 "daylight": "Sumartími í Túrkmenistan"
               }
@@ -2226,16 +2223,16 @@
             },
             "Uzbekistan": {
               "long": {
-                "generic": "Úsbekistantími",
+                "generic": "Úsbekistan-tími",
                 "standard": "Staðaltími í Úsbekistan",
                 "daylight": "Sumartími í Úsbekistan"
               }
             },
             "Vanuatu": {
               "long": {
-                "generic": "Vanúatútími",
-                "standard": "Staðaltími í Vanúatú",
-                "daylight": "Sumartími í Vanúatú"
+                "generic": "Vanúatú-tími",
+                "standard": "Staðaltími á Vanúatú",
+                "daylight": "Sumartími á Vanúatú"
               }
             },
             "Venezuela": {
@@ -2264,7 +2261,7 @@
             },
             "Wake": {
               "long": {
-                "standard": "Wake-eyjartími"
+                "standard": "Tími á Wake-eyju"
               }
             },
             "Wallis": {
@@ -2274,7 +2271,7 @@
             },
             "Yakutsk": {
               "long": {
-                "generic": "Tími í Yakutsk",
+                "generic": "Tíminn í Yakutsk",
                 "standard": "Staðaltími í Yakutsk",
                 "daylight": "Sumartími í Yakutsk"
               }

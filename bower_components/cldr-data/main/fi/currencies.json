@@ -3,11 +3,8 @@
     "fi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11333 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-01 16:07:08 -0600 (Sun, 01 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "fi"
       },
@@ -635,7 +632,8 @@
             "displayName": "Georgian lari",
             "displayName-count-one": "Georgian lari",
             "displayName-count-other": "Georgian laria",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ghanan cedi (1979–2007)",
@@ -1332,7 +1330,7 @@
             "displayName-count-one": "Venäjän rupla",
             "displayName-count-other": "Venäjän ruplaa",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Venäjän rupla (1991–1998)",
@@ -1681,14 +1679,14 @@
           },
           "XAG": {
             "displayName": "hopea",
-            "displayName-count-one": "hopeayksikkö",
-            "displayName-count-other": "hopeayksikköä",
+            "displayName-count-one": "troy-unssi hopeaa",
+            "displayName-count-other": "troy-unssia hopeaa",
             "symbol": "XAG"
           },
           "XAU": {
             "displayName": "kulta",
-            "displayName-count-one": "kultayksikkö",
-            "displayName-count-other": "kultayksikköä",
+            "displayName-count-one": "troy-unssi kultaa",
+            "displayName-count-other": "troy-unssia kultaa",
             "symbol": "XAU"
           },
           "XBA": {
@@ -1754,8 +1752,8 @@
           },
           "XPD": {
             "displayName": "palladium",
-            "displayName-count-one": "palladiumyksikkö",
-            "displayName-count-other": "palladiumyksikköä",
+            "displayName-count-one": "troy-unssi palladiumia",
+            "displayName-count-other": "troy-unssia palladiumia",
             "symbol": "XPD"
           },
           "XPF": {
@@ -1766,8 +1764,8 @@
           },
           "XPT": {
             "displayName": "platina",
-            "displayName-count-one": "platinayksikkö",
-            "displayName-count-other": "platinayksikköä",
+            "displayName-count-one": "troy-unssi platinaa",
+            "displayName-count-other": "troy-unssia platinaa",
             "symbol": "XPT"
           },
           "XRE": {

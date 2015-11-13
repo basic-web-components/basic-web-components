@@ -3,11 +3,8 @@
     "ca": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ca"
       },
@@ -15,6 +12,7 @@
         "scripts": {
           "Afak": "afaka",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "àrab",
           "Arab-alt-variant": "persoaràbic",
           "Armi": "arameu imperial",
@@ -64,6 +62,7 @@
           "Hans-alt-stand-alone": "han simplificat",
           "Hant": "tradicional",
           "Hant-alt-stand-alone": "han tradicional",
+          "Hatr": "Hatr",
           "Hebr": "hebreu",
           "Hira": "hiragana",
           "Hluw": "jeroglífic anatoli",
@@ -110,6 +109,7 @@
           "Moon": "moon",
           "Mroo": "mro",
           "Mtei": "manipurí",
+          "Mult": "Mult",
           "Mymr": "birmà",
           "Narb": "antic nord-aràbic",
           "Nbat": "nabateu",

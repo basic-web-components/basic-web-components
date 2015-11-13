@@ -3,11 +3,8 @@
     "ky": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11919 $"
         },
         "language": "ky"
       },
@@ -18,50 +15,77 @@
           "localeKeyTypePattern": "{0}: {1}"
         },
         "keys": {
-          "calendar": "календарь",
-          "collation": "иреттөө тартиби",
-          "currency": "валюта",
+          "calendar": "Жылнаама",
+          "cf": "cf",
+          "collation": "Иргөө тартиби",
+          "currency": "Валюта",
+          "hc": "Саат мерчеми (12/24)",
+          "lb": "Саптарды ажыратуу стили",
+          "ms": "Өлчөө тутуму",
           "numbers": "сандар"
         },
         "types": {
           "calendar": {
-            "buddhist": "буддачылык календары",
-            "chinese": "кытай календары",
+            "buddhist": "Будда жылнаамасы",
+            "chinese": "Кытай жылнаамасы",
             "coptic": "coptic",
-            "dangi": "данги каленендары",
-            "ethiopic": "эфиоп календары",
+            "dangi": "Данги жылнаамасы",
+            "ethiopic": "Эфиоп жылнаамасы",
             "ethiopic-amete-alem": "ethiopic-amete-alem",
-            "gregorian": "григориан календары",
-            "hebrew": "иврит календары",
+            "gregorian": "Григориан жылнаамасы",
+            "hebrew": "Иврит жылнаамасы",
             "indian": "indian",
-            "islamic": "ислам календары",
+            "islamic": "Ислам жылнаамасы",
             "islamic-civil": "islamic-civil",
             "islamic-rgsa": "islamic-rgsa",
             "islamic-tbla": "islamic-tbla",
             "islamic-umalqura": "islamic-umalqura",
-            "iso8601": "ИСО-8601 календары",
-            "japanese": "япон календары",
-            "persian": "перс календары",
-            "roc": "мингуо календары"
+            "iso8601": "ИСО-8601 жылнаамасы",
+            "japanese": "Жапон жылнаамасы",
+            "persian": "Перс жылнаамасы",
+            "roc": "Мингуо жылнаамасы"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "dictionary",
-            "ducet": "баштапкы уникод ирети",
+            "ducet": "Демейки Unicode иргөө тартиби",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
             "pinyin": "pinyin",
             "reformed": "reformed",
-            "search": "жалпы издөө",
+            "search": "Жалпы издөө",
             "searchjl": "searchjl",
-            "standard": "иреттөө стандарты",
+            "standard": "Стандарттуу иргөө тартиби",
             "stroke": "stroke",
             "traditional": "traditional",
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12 сааттык тутум (0–11)",
+            "h12": "12 сааттык тутум (1–12)",
+            "h23": "24 сааттык тутум (0–23)",
+            "h24": "24 сааттык тутум (1–24)"
+          },
+          "lb": {
+            "loose": "Саптардын арасы кенен",
+            "normal": "Саптардын арасы орточо",
+            "strict": "Саптардын арасы тыкыс"
+          },
+          "ms": {
+            "metric": "Метрикалык тутум",
+            "uksystem": "Британ империясынын өлчөө тутуму",
+            "ussystem": "АКШнын өлчөө тутуму"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "араб-индус сандары",
             "arabext": "кеңейтилген араб-индус сандары",
             "armn": "армян сандары",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "деванагари сандары",
             "ethi": "эфиоп сандары",
             "fullwide": "толук эндүү сандар",
@@ -85,6 +110,7 @@
             "hant": "салттуу кытай сандары",
             "hantfin": "салттуу кытай финансы сандары",
             "hebr": "иврит сандары",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "япон сандары",
             "jpanfin": "япон финансы сандары",
@@ -97,11 +123,19 @@
             "latn": "батыш сандары",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "малайалам сандары",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "мйанмар сандары",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "ория сандары",
@@ -110,6 +144,8 @@
             "romanlow": "роман сандары (саптык жазылыш)",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,7 +155,9 @@
             "telu": "телугу сандары",
             "thai": "тай сандары",
             "tibt": "тибет сандары",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

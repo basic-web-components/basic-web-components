@@ -3,11 +3,8 @@
     "vi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "vi"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Lịch",
+          "cf": "cf",
           "colAlternate": "Bỏ qua sắp xếp biểu tượng",
           "colBackwards": "Sắp xếp dấu trọng âm đảo ngược",
           "colCaseFirst": "Sắp xếp chữ hoa/chữ thường",
           "colCaseLevel": "Sắp xếp phân biệt chữ hoa/chữ thường",
           "colHiraganaQuaternary": "Sắp xếp chữ Kana",
+          "collation": "Thứ tự sắp xếp",
           "colNormalization": "Sắp xếp theo chuẩn hóa",
           "colNumeric": "Sắp xếp theo số",
           "colStrength": "Cường độ sắp xếp",
-          "collation": "Thứ tự sắp xếp",
           "currency": "Tiền tệ",
+          "hc": "Chu kỳ giờ (12 vs 24)",
+          "lb": "Kiểu xuống dòng",
+          "ms": "Hệ thống đo lường",
           "numbers": "Số",
           "timezone": "Múi giờ",
           "va": "Biến thể ngôn ngữ",
@@ -56,6 +57,10 @@
             "persian": "Lịch Ba Tư",
             "roc": "Lịch Trung Hoa Dân Quốc"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Sắp xếp biểu tượng",
             "shifted": "Sắp xếp biểu tượng bỏ qua"
@@ -77,6 +82,26 @@
             "no": "Sắp xếp chữ Kana riêng biệt",
             "yes": "Sắp xếp chữ Kana khác nhau"
           },
+          "collation": {
+            "big5han": "Thứ tự sắp xếp theo tiếng Trung phồn thể - Big5",
+            "compat": "compat",
+            "dictionary": "Thứ tự sắp xếp theo từ điển",
+            "ducet": "Thứ tự sắp xếp unicode mặc định",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Thứ tự sắp xếp theo tiếng Trung giản thể - GB2312",
+            "phonebook": "Thứ tự sắp xếp theo danh bạ điện thoại",
+            "phonetic": "Thứ tự sắp xếp theo ngữ âm",
+            "pinyin": "Thứ tự sắp xếp theo bính âm",
+            "reformed": "Thứ tự sắp xếp đã sửa đổi",
+            "search": "Tìm kiếm mục đích chung",
+            "searchjl": "Tìm kiếm theo Phụ âm Đầu Hangul",
+            "standard": "Thứ tự sắp xếp chuẩn",
+            "stroke": "Thứ tự sắp xếp theo nét chữ",
+            "traditional": "Thứ tự sắp xếp truyền thống",
+            "unihan": "Trình tự sắp xếp theo bộ-nét",
+            "zhuyin": "Thứ tự sắp xếp Zhuyin"
+          },
           "colNormalization": {
             "no": "Sắp xếp không theo chuẩn hóa",
             "yes": "Sắp xếp unicode được chuẩn hóa"
@@ -92,25 +117,24 @@
             "secondary": "Sắp xếp dấu trọng âm",
             "tertiary": "Sắp xếp dấu trọng âm/chữ cái/độ rộng"
           },
-          "collation": {
-            "big5han": "Thứ tự sắp xếp theo tiếng Trung phồn thể - Big5",
-            "dictionary": "Thứ tự sắp xếp theo từ điển",
-            "ducet": "Thứ tự sắp xếp unicode mặc định",
-            "eor": "eor",
-            "gb2312han": "Thứ tự sắp xếp theo tiếng Trung giản thể - GB2312",
-            "phonebook": "Thứ tự sắp xếp theo danh bạ điện thoại",
-            "phonetic": "Thứ tự sắp xếp theo ngữ âm",
-            "pinyin": "Thứ tự sắp xếp theo bính âm",
-            "reformed": "Thứ tự sắp xếp đã sửa đổi",
-            "search": "Tìm kiếm mục đích chung",
-            "searchjl": "Tìm kiếm theo Phụ âm Đầu Hangul",
-            "standard": "Thứ tự sắp xếp chuẩn",
-            "stroke": "Thứ tự sắp xếp theo nét chữ",
-            "traditional": "Thứ tự sắp xếp truyền thống",
-            "unihan": "Trình tự sắp xếp theo bộ-nét",
-            "zhuyin": "Thứ tự sắp xếp Zhuyin"
+          "hc": {
+            "h11": "Hệ thống 12 giờ (0–11)",
+            "h12": "Hệ thống 12 giờ (1–12)",
+            "h23": "Hệ thống 24 giờ (0–23)",
+            "h24": "Hệ thống 24 giờ (1–24)"
+          },
+          "lb": {
+            "loose": "Kiểu xuống dòng thoáng",
+            "normal": "Kiểu xuống dòng thường",
+            "strict": "Kiểu xuống dòng hẹp"
+          },
+          "ms": {
+            "metric": "Hệ mét",
+            "uksystem": "Hệ đo lường Anh",
+            "ussystem": "Hệ đo lường Mỹ"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Chữ số Ả Rập - Ấn Độ",
             "arabext": "Chữ số Ả Rập - Ấn Độ mở rộng",
             "armn": "Chữ số Armenia",
@@ -120,6 +144,7 @@
             "brah": "Chữ số Brahmi",
             "cakm": "Chữ số Chakma",
             "cham": "Chữ số Chăm",
+            "cyrl": "cyrl",
             "deva": "Chữ số Devanagari",
             "ethi": "Chữ số Ethiopia",
             "finance": "Chữ số dùng trong tài chính",
@@ -135,6 +160,7 @@
             "hant": "Chữ số tiếng Trung phồn thể",
             "hantfin": "Chữ số dùng trong tài chính của tiếng Trung phồn thể",
             "hebr": "Chữ số Do Thái",
+            "hmng": "hmng",
             "java": "Chữ số Java",
             "jpan": "Chữ số Nhật Bản",
             "jpanfin": "Chữ số dùng trong tài chính của tiếng Nhật",
@@ -147,11 +173,19 @@
             "latn": "Chữ số phương Tây",
             "lepc": "Chữ số Lepcha",
             "limb": "Chữ số Limbu",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Chữ số Malayalam",
+            "modi": "modi",
             "mong": "Chữ số Mông Cổ",
+            "mroo": "mroo",
             "mtei": "Chữ số Meetei Mayek",
             "mymr": "Chữ số Myanma",
             "mymrshan": "Chữ số Myanmar Shan",
+            "mymrtlng": "mymrtlng",
             "native": "Chữ số tự nhiên",
             "nkoo": "Chữ số N’Ko",
             "olck": "Chữ số Ol Chiki",
@@ -161,6 +195,8 @@
             "romanlow": "Chữ số La Mã viết thường",
             "saur": "Chữ số Saurashtra",
             "shrd": "Chữ số Sharada",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "Chữ số Sora Sompeng",
             "sund": "Chữ số Sudan",
             "takr": "Chữ số Takri",
@@ -170,8 +206,10 @@
             "telu": "Chữ số Telugu",
             "thai": "Chữ số Thái",
             "tibt": "Chữ số Tây Tạng",
+            "tirh": "tirh",
             "traditional": "Số truyền thống",
-            "vaii": "Chữ số Vai"
+            "vaii": "Chữ số Vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {

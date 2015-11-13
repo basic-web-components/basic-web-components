@@ -3,11 +3,8 @@
     "bs": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "bs"
       },
@@ -19,9 +16,13 @@
         },
         "keys": {
           "calendar": "Kalendar",
+          "cf": "cf",
           "collation": "Sortiranje",
           "currency": "Valuta",
-          "numbers": "brojevi"
+          "hc": "Satni ciklus (12 ili 24)",
+          "lb": "Stil završetka reda",
+          "ms": "Mjerni sistem",
+          "numbers": "Brojevi"
         },
         "types": {
           "calendar": {
@@ -44,10 +45,16 @@
             "persian": "Perzijski kalendar",
             "roc": "Kalendar Republike Kine"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "Tradicionalno kinesko sortiranje",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "Standardno Unicode razvrstavanje",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "Pojednostavljeno kinesko sortiranje",
             "phonebook": "Sortiranje kao telefonski imenik",
@@ -61,65 +68,96 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12-satni sistem (0-11)",
+            "h12": "12-satni sistem (1-12)",
+            "h23": "24- satni sistem (0-23)",
+            "h24": "24-satni sistem (1-24)"
+          },
+          "lb": {
+            "loose": "Opušteni stil završetka reda",
+            "normal": "Normalni stil završetka reda",
+            "strict": "Strogi stil završetka reda"
+          },
+          "ms": {
+            "metric": "Metrički sistem",
+            "uksystem": "Imperijalni mjerni sistem",
+            "ussystem": "Američki mjerni sistem"
+          },
           "numbers": {
-            "arab": "arapsko-indijske znamenke",
-            "arabext": "proširene arapsko-indijske znamenke",
+            "ahom": "ahom",
+            "arab": "arapsko-indijske brojke",
+            "arabext": "proširene arapsko-indijske brojke",
             "armn": "jermenski brojevi",
             "armnlow": "mali jermenski brojevi",
             "bali": "bali",
-            "beng": "znamenke bengalskog pisma",
+            "beng": "brojke bengalskog pisma",
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
-            "deva": "znamenke pisma devanagari",
+            "cyrl": "cyrl",
+            "deva": "brojke pisma devanagari",
             "ethi": "etiopski brojevi",
-            "fullwide": "široki brojevi",
+            "fullwide": "Široki brojevi",
             "geor": "gruzijski brojevi",
             "grek": "grčki brojevi",
             "greklow": "mali grčki brojevi",
-            "gujr": "gudžaratske znamenke",
-            "guru": "znamenke pisma gurmuki",
+            "gujr": "gudžaratske brojke",
+            "guru": "brojke pisma gurmuki",
             "hanidec": "kineski decimalni brojevi",
             "hans": "pojednostavljeni kineski brojevi",
             "hansfin": "pojednostavljeni kineski finansijski brojevi",
             "hant": "tradicionalni kineski brojevi",
             "hantfin": "tradicionalni kineski finansijski brojevi",
             "hebr": "hebrejski brojevi",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "japanski brojevi",
             "jpanfin": "japanski finansijski brojevi",
             "kali": "kali",
-            "khmr": "kmerske znamenke",
-            "knda": "znamenke pisma kanada",
+            "khmr": "kmerske brojke",
+            "knda": "brojke pisma kanada",
             "lana": "lana",
             "lanatham": "lanatham",
-            "laoo": "laoske znamenke",
+            "laoo": "laoske brojke",
             "latn": "arapski brojevi",
             "lepc": "lepc",
             "limb": "limb",
-            "mlym": "malajalamske znamenke",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
+            "mlym": "malajalamske brojke",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
-            "mymr": "mijanmarske znamenke",
+            "mymr": "mijanmarske brojke",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
-            "orya": "orijske znamenke",
+            "orya": "orijske brojke",
             "osma": "osma",
             "roman": "rimski brojevi",
             "romanlow": "mali rimski brojevi",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
             "talu": "talu",
             "taml": "tamilski brojevi",
-            "tamldec": "tamilske znamenke",
-            "telu": "znamenke teluškog pisma",
-            "thai": "tajske znamenke",
-            "tibt": "tibetske znamenke",
-            "vaii": "vaii"
+            "tamldec": "tamilske brojke",
+            "telu": "brojke teluškog pisma",
+            "thai": "tajlandske brojke",
+            "tibt": "tibetske brojke",
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

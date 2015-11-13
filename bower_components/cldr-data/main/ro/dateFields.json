@@ -3,11 +3,8 @@
     "ro": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "ro"
       },
@@ -66,9 +63,9 @@
           },
           "quarter": {
             "displayName": "Trimestru",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "trimestrul trecut",
+            "relative-type-0": "trimestrul acesta",
+            "relative-type-1": "trimestrul viitor",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "peste {0} trimestru",
               "relativeTimePattern-count-few": "peste {0} trimestre",
@@ -82,9 +79,9 @@
           },
           "quarter-short": {
             "displayName": "trim.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "trim. trecut",
+            "relative-type-0": "trim. acesta",
+            "relative-type-1": "trim. viitor",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "peste {0} trim.",
               "relativeTimePattern-count-few": "peste {0} trim.",
@@ -98,18 +95,18 @@
           },
           "quarter-narrow": {
             "displayName": "trim.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "trim. trecut",
+            "relative-type-0": "trim. acesta",
+            "relative-type-1": "trim. viitor",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} trim.",
               "relativeTimePattern-count-few": "+{0} trim.",
               "relativeTimePattern-count-other": "+{0} trim."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "+{0} trim.",
-              "relativeTimePattern-count-few": "+{0} trim.",
-              "relativeTimePattern-count-other": "+{0} trim."
+              "relativeTimePattern-count-one": "-{0} trim.",
+              "relativeTimePattern-count-few": "-{0} trim.",
+              "relativeTimePattern-count-other": "-{0} trim."
             }
           },
           "month": {
@@ -210,8 +207,8 @@
           },
           "day": {
             "displayName": "Zi",
-            "relative-type--1": "ieri",
             "relative-type--2": "alaltăieri",
+            "relative-type--1": "ieri",
             "relative-type-0": "azi",
             "relative-type-1": "mâine",
             "relative-type-2": "poimâine",
@@ -228,8 +225,8 @@
           },
           "day-short": {
             "displayName": "zi",
-            "relative-type--1": "ieri",
             "relative-type--2": "alaltăieri",
+            "relative-type--1": "ieri",
             "relative-type-0": "azi",
             "relative-type-1": "mâine",
             "relative-type-2": "poimâine",
@@ -246,8 +243,8 @@
           },
           "day-narrow": {
             "displayName": "zi",
-            "relative-type--1": "ieri",
             "relative-type--2": "alaltăieri",
+            "relative-type--1": "ieri",
             "relative-type-0": "azi",
             "relative-type-1": "mâine",
             "relative-type-2": "poimâine",

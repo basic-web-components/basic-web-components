@@ -3,11 +3,8 @@
     "ca": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ca"
       },
@@ -65,7 +62,7 @@
             "displayName-count-one": "kwanza angolès",
             "displayName-count-other": "kwanzas angolesos",
             "symbol": "AOA",
-            "symbol-alt-narrow": "Kz"
+            "symbol-alt-narrow": "AOA"
           },
           "AOK": {
             "displayName": "kwanza angolès (1977–1991)",
@@ -253,7 +250,7 @@
             "displayName-count-one": "bolivià",
             "displayName-count-other": "bolivians",
             "symbol": "BOB",
-            "symbol-alt-narrow": "Bs"
+            "symbol-alt-narrow": "BOB"
           },
           "BOL": {
             "displayName": "boliviano bolivià (1863–1963)",
@@ -360,7 +357,7 @@
             "displayName-count-one": "dòlar de Belize",
             "displayName-count-other": "dòlars de Belize",
             "symbol": "BZD",
-            "symbol-alt-narrow": "USD"
+            "symbol-alt-narrow": "$"
           },
           "CAD": {
             "displayName": "dòlar canadenc",
@@ -511,7 +508,7 @@
             "displayName-count-one": "corona danesa",
             "displayName-count-other": "corones daneses",
             "symbol": "DKK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "DKK"
           },
           "DOP": {
             "displayName": "peso dominicà",
@@ -619,9 +616,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "lliura britànica",
-            "displayName-count-one": "lliura britànica",
-            "displayName-count-other": "lliures britàniques",
+            "displayName": "lliura esterlina britànica",
+            "displayName-count-one": "lliura esterlina britànica",
+            "displayName-count-other": "lliures esterlines britàniques",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -635,7 +632,8 @@
             "displayName": "lari georgià",
             "displayName-count-one": "lari georgià",
             "displayName-count-other": "laris georgians",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "cedi ghanès (1979–2007)",
@@ -692,7 +690,7 @@
             "displayName-count-one": "quetzal guatemalenc",
             "displayName-count-other": "quetzals guatemalencs",
             "symbol": "GTQ",
-            "symbol-alt-narrow": "Q"
+            "symbol-alt-narrow": "GTQ"
           },
           "GWE": {
             "displayName": "escut de la Guinea Portuguesa",
@@ -725,7 +723,7 @@
             "displayName-count-one": "lempira hondurenya",
             "displayName-count-other": "lempires hondurenyes",
             "symbol": "HNL",
-            "symbol-alt-narrow": "L"
+            "symbol-alt-narrow": "HNL"
           },
           "HRD": {
             "displayName": "dinar croat",
@@ -813,7 +811,7 @@
             "displayName-count-one": "corona islandesa",
             "displayName-count-other": "corones islandeses",
             "symbol": "ISK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "ISK"
           },
           "ITL": {
             "displayName": "lira italiana",
@@ -1197,7 +1195,7 @@
             "displayName-count-one": "corona noruega",
             "displayName-count-other": "corones noruegues",
             "symbol": "NOK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "NOK"
           },
           "NPR": {
             "displayName": "rupia nepalesa",
@@ -1324,7 +1322,7 @@
             "displayName-count-one": "ruble rus",
             "displayName-count-other": "rubles russos",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "ruble rus (1991–1998)",
@@ -1382,7 +1380,7 @@
             "displayName-count-one": "corona sueca",
             "displayName-count-other": "corones sueques",
             "symbol": "SEK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "SEK"
           },
           "SGD": {
             "displayName": "dòlar de Singapur",
@@ -1447,7 +1445,7 @@
             "displayName-count-one": "dobra de São Tomé i Príncipe",
             "displayName-count-other": "dobras de São Tomé i Príncipe",
             "symbol": "STD",
-            "symbol-alt-narrow": "Db"
+            "symbol-alt-narrow": "STD"
           },
           "SUR": {
             "displayName": "ruble soviètic",
@@ -1550,7 +1548,7 @@
             "displayName-count-one": "nou dòlar de Taiwan",
             "displayName-count-other": "nous dòlars de Taiwan",
             "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "xíling tanzà",
@@ -1638,7 +1636,7 @@
             "displayName-count-one": "bolívar veneçolà",
             "displayName-count-other": "bolívars veneçolans",
             "symbol": "VEF",
-            "symbol-alt-narrow": "Bs"
+            "symbol-alt-narrow": "VEF"
           },
           "VND": {
             "displayName": "dong vietnamita",
@@ -1742,7 +1740,7 @@
             "displayName": "franc CFA BCEAO",
             "displayName-count-one": "franc CFA BCEAO",
             "displayName-count-other": "francs CFA BCEAO",
-            "symbol": "XOF"
+            "symbol": "CFA"
           },
           "XPD": {
             "displayName": "pal·ladi",

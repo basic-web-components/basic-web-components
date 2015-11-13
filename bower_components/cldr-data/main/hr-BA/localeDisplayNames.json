@@ -3,11 +3,8 @@
     "hr-BA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "hr",
         "territory": "BA"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "kalendar",
+          "cf": "cf",
           "colAlternate": "Zanemarivanje poredavanja simbola",
           "colBackwards": "Obrnuto poredavanje po naglasku",
           "colCaseFirst": "Poredavanje po velikim/malim slovima",
           "colCaseLevel": "Poredavanje u skladu s veličinom slova",
           "colHiraganaQuaternary": "Poredavanje po pismu kana",
+          "collation": "Redoslijed razvrstavanja",
           "colNormalization": "Normalizirano poredavanje",
           "colNumeric": "Numeričko poredavanje",
           "colStrength": "Jačina poredavanja",
-          "collation": "Redoslijed razvrstavanja",
           "currency": "valuta",
+          "hc": "format vremena (12 ili 24)",
+          "lb": "stil prijeloma retka",
+          "ms": "sustav mjernih jedinica",
           "numbers": "brojevi",
           "timezone": "Vremenska zona",
           "va": "Varijanta zemlje/jezika",
@@ -43,7 +44,7 @@
             "coptic": "Koptski kalendar",
             "dangi": "dangi kalendar",
             "ethiopic": "etiopski kalendar",
-            "ethiopic-amete-alem": "Etiopski kalendar \"Amete Alem\"",
+            "ethiopic-amete-alem": "Etiopski kalendar \\\"Amete Alem\\\"",
             "gregorian": "gregorijanski kalendar",
             "hebrew": "hebrejski kalendar",
             "indian": "indijski nacionalni kalendar",
@@ -56,6 +57,10 @@
             "japanese": "japanski kalendar",
             "persian": "perzijski kalendar",
             "roc": "kalendar Republike Kine"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "colAlternate": {
             "non-ignorable": "Poredaj simbole",
@@ -78,6 +83,26 @@
             "no": "Poredaj pismo kana zasebno",
             "yes": "Poredaj pismo kana drugačije"
           },
+          "collation": {
+            "big5han": "razvrstavanje prema tradicionalnom kineskom - Big5",
+            "compat": "compat",
+            "dictionary": "rječničko razvrstavanje",
+            "ducet": "Standardno Unicode razvrstavanje",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "razvrstavanje prema pojednostavljenom kineskom - GB2312",
+            "phonebook": "razvrstavanje po abecedi",
+            "phonetic": "Fonetski poredak",
+            "pinyin": "Pinyin razvrstavanje",
+            "reformed": "reformirano razvrstavanje",
+            "search": "Općenito pretraživanje",
+            "searchjl": "Pretraživanje po početnom suglasniku hangula",
+            "standard": "standardno razvrstavanje",
+            "stroke": "razvrstavanje po redoslijedu poteza za kineski",
+            "traditional": "tradicionalno razvrstavanje",
+            "unihan": "razvrstavanje prema korijenu i potezu",
+            "zhuyin": "zhuyin razvrstavanje"
+          },
           "colNormalization": {
             "no": "Poredaj bez normalizacije",
             "yes": "Poredaj unikod normalizirano"
@@ -93,25 +118,24 @@
             "secondary": "Poredaj po naglasku",
             "tertiary": "Poredaj po naglascima/veličini/širini"
           },
-          "collation": {
-            "big5han": "razvrstavanje prema tradicionalnom kineskom - Big5",
-            "dictionary": "rječničko razvrstavanje",
-            "ducet": "Standardno Unicode razvrstavanje",
-            "eor": "eor",
-            "gb2312han": "razvrstavanje prema pojednostavljenom kineskom - GB2312",
-            "phonebook": "razvrstavanje po abecedi",
-            "phonetic": "Fonetski poredak",
-            "pinyin": "Pinyin razvrstavanje",
-            "reformed": "reformirano razvrstavanje",
-            "search": "Općenito pretraživanje",
-            "searchjl": "Pretraživanje po početnom suglasniku hangula",
-            "standard": "Standardno razvrstavanje",
-            "stroke": "razvrstavanje po redoslijedu poteza za kineski",
-            "traditional": "tradicionalno razvrstavanje",
-            "unihan": "razvrstavanje prema korijenu i potezu",
-            "zhuyin": "zhuyin razvrstavanje"
+          "hc": {
+            "h11": "12-satni format (0-11)",
+            "h12": "12-satni format (1-12)",
+            "h23": "24-satni format (0-23)",
+            "h24": "24-satni format (1-24)"
+          },
+          "lb": {
+            "loose": "slobodni stil prijeloma retka",
+            "normal": "normalni stil prijeloma retka",
+            "strict": "strogi stil prijeloma retka"
+          },
+          "ms": {
+            "metric": "metrički sustav",
+            "uksystem": "imperijalni sustav mjera",
+            "ussystem": "američki sustav mjera"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "arapsko-indijske znamenke",
             "arabext": "proširene arapsko-indijske znamenke",
             "armn": "armenski brojevi",
@@ -121,6 +145,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "znamenke pisma devanagari",
             "ethi": "etiopski brojevi",
             "finance": "Financijski brojevi",
@@ -136,6 +161,7 @@
             "hant": "tradicionalni kineski brojevi",
             "hantfin": "tradicionalni kineski financijski brojevi",
             "hebr": "hebrejski brojevi",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "japanski brojevi",
             "jpanfin": "japanski financijski brojevi",
@@ -148,11 +174,19 @@
             "latn": "arapski brojevi",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "malajalamske znamenke",
+            "modi": "modi",
             "mong": "Mongolske znamenke",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "mijanmarske znamenke",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Izvorne znamenke",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "mali rimski brojevi",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,8 +207,10 @@
             "telu": "znamenke teluškog pisma",
             "thai": "tajske znamenke",
             "tibt": "tibetske znamenke",
+            "tirh": "tirh",
             "traditional": "Tradicionalni brojevi",
-            "vaii": "Vai znamenke"
+            "vaii": "Vai znamenke",
+            "wara": "wara"
           }
         },
         "codePatterns": {

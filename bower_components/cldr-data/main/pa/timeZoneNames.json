@@ -3,11 +3,8 @@
     "pa": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "pa"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} ਸਮਾਂ",
-          "regionFormat-type-standard": "{0} ਮਿਆਰੀ ਸਮਾਂ",
           "regionFormat-type-daylight": "{0} ਪ੍ਰਕਾਸ਼ ਸਮਾਂ",
+          "regionFormat-type-standard": "{0} ਮਿਆਰੀ ਸਮਾਂ",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "ਆਰਗੁਆਇਨਾ"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ਲਾ ਰਿਉਜਾ"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "ਰਿਓ ਗੈਲੇਗੋਸ"
-                },
-                "Salta": {
-                  "exemplarCity": "ਸਾਲਟਾ"
                 },
                 "San_Juan": {
                   "exemplarCity": "ਸੇਨ ਜੁਆਨ"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ਉਸ਼ਵਾਇਆ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ਲਾ ਰਿਉਜਾ"
+                },
                 "San_Luis": {
                   "exemplarCity": "ਸੇਨ ਲੂਈਸ"
                 },
+                "Salta": {
+                  "exemplarCity": "ਸਾਲਟਾ"
+                },
                 "Tucuman": {
                   "exemplarCity": "ਟੁਕੁਮਨ"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ਉਸ਼ਵਾਇਆ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ਹਰਮੋਸਿੱਲੋ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "ਨੋਕਸ, ਇੰਡੀਆਨਾ"
-                },
-                "Marengo": {
-                  "exemplarCity": "ਮਾਰੇਂਗੋ, ਇੰਡੀਆਨਾ"
+                "Vincennes": {
+                  "exemplarCity": "ਵਿੰਸੇਨੇਸ, ਇੰਡੀਆਨਾ"
                 },
                 "Petersburg": {
                   "exemplarCity": "ਪੀਟਰਸਬਰਗ, ਇੰਡੀਆਨਾ"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "ਟੈਲ ਸਿਟੀ, ਇੰਡੀਆਨਾ"
                 },
-                "Vevay": {
-                  "exemplarCity": "ਵੇਵੇ, ਇੰਡੀਆਨਾ"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ਵਿੰਸੇਨੇਸ, ਇੰਡੀਆਨਾ"
+                "Knox": {
+                  "exemplarCity": "ਨੋਕਸ, ਇੰਡੀਆਨਾ"
                 },
                 "Winamac": {
                   "exemplarCity": "ਵਿਨਮੈਕ, ਇੰਡੀਆਨਾ"
+                },
+                "Marengo": {
+                  "exemplarCity": "ਮਾਰੇਂਗੋ, ਇੰਡੀਆਨਾ"
+                },
+                "Vevay": {
+                  "exemplarCity": "ਵੇਵੇ, ਇੰਡੀਆਨਾ"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ਬਿਉਲਾ, ਉੱਤਰੀ ਡਕੋਟਾ"
                 },
-                "Center": {
-                  "exemplarCity": "ਸੇਂਟਰ, ਉੱਤਰੀ ਡਕੋਟਾ"
-                },
                 "New_Salem": {
                   "exemplarCity": "ਨਿਊ ਸਲੇਮ, ਉੱਤਰੀ ਡਕੋਟਾ"
+                },
+                "Center": {
+                  "exemplarCity": "ਸੇਂਟਰ, ਉੱਤਰੀ ਡਕੋਟਾ"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "ਕੋਲਕਾਤਾ"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ਚਿਤਾ"
               },
               "Choibalsan": {
                 "exemplarCity": "ਚੋਇਲਬਾਲਸਨ"
@@ -1008,7 +1005,7 @@
                 "exemplarCity": "ਰਿਆਧ"
               },
               "Saigon": {
-                "exemplarCity": "ਹੋ ਚਾਈ ਮਿਨ੍ਹ ਸਿਟੀ"
+                "exemplarCity": "ਹੋ ਚੀ ਮਿਨ੍ਹ ਸਿਟੀ"
               },
               "Sakhalin": {
                 "exemplarCity": "ਸਖਲੀਨ"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "ਸਿੰਗਾਪੁਰ"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "ਸਰਿਡਨੀਕੋਲਿਸਕ"
               },
               "Taipei": {
                 "exemplarCity": "ਤੈਪਈ"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ਆਕਲੈਂਡ"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ਬੋਗਨਵਿਲੇ"
               },
               "Chatham": {
                 "exemplarCity": "ਚੈਥਮ"
@@ -1386,7 +1383,7 @@
                 "exemplarCity": "GMT-9"
               },
               "Unknown": {
-                "exemplarCity": "ਅਣਪਛਾਤਾ ਸ਼ਹਿਰ"
+                "exemplarCity": "ਅਗਿਆਤ ਸ਼ਹਿਰ"
               }
             }
           },
@@ -1747,11 +1744,6 @@
                 "standard": "ਫ੍ਰੈਂਚ ਦੱਖਣੀ ਅਤੇ ਐਂਟਾਰਟਿਕ ਸਮਾਂ"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ਗ੍ਰੀਨਵਿਚ ਮੀਨ ਟਾਈਮ"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ਗਲਾਪਾਗੋਸ ਸਮਾਂ"
@@ -1772,6 +1764,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "ਗਿਲਬਰਟ ਆਈਲੈਂਡ ਸਮਾਂ"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ਗ੍ਰੀਨਵਿਚ ਮੀਨ ਟਾਈਮ"
               }
             },
             "Greenland_Eastern": {

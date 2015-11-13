@@ -1,7 +1,7 @@
 {
   "name": "cldr-data",
   "main": "index.json",
-  "version": "27.0.3",
+  "version": "28.0.1",
   "homepage": "https://github.com/rxaviers/cldr-data-bower",
   "authors": [
     "Rafael Xavier de Souza <rxaviers@gmail.com>"
@@ -18,11 +18,11 @@
     "data"
   ],
   "license": "MIT",
-  "_release": "27.0.3",
+  "_release": "28.0.1",
   "_resolution": {
     "type": "version",
-    "tag": "27.0.3",
-    "commit": "161f46ecaa877d88cb91cfb42f2621ede30323b8"
+    "tag": "28.0.1",
+    "commit": "970c3a5b9eaaf6f4bfbd4d88f2d700c092a9a312"
   },
   "_source": "git://github.com/rxaviers/cldr-data-bower.git",
   "_target": ">=25",

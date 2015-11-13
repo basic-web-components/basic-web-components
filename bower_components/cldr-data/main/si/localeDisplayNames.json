@@ -3,11 +3,8 @@
     "si": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "si"
       },
@@ -19,8 +16,12 @@
         },
         "keys": {
           "calendar": "දින දර්ශනය",
+          "cf": "cf",
           "collation": "පෙළගැස්ම",
           "currency": "විනිමය",
+          "hc": "පැය චක්‍රය",
+          "lb": "පේළි කඩන විලාසය",
+          "ms": "මිනුම් ක්‍රමය",
           "numbers": "ඉලක්කම්"
         },
         "types": {
@@ -44,10 +45,16 @@
             "persian": "පර්සියානු දින දර්ශනය",
             "roc": "මින්ගා දින දර්ශනය"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "ශබ්දකෝෂ පෙළගැස්ම",
             "ducet": "යුනිකේත පෙරනිමි පෙළගැස්ම",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
@@ -61,7 +68,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "පැය 12 ක්‍රමය",
+            "h12": "පැය 12 ක්‍රමය",
+            "h23": "පැය 24 ක්‍රමය",
+            "h24": "පැය 24 ක්‍රමය"
+          },
+          "lb": {
+            "loose": "ලිහිල් කඩන විලාසය",
+            "normal": "සාමාන්‍ය පේළි කඩන විලාසය",
+            "strict": "තද පේළි කඩන විලාසය"
+          },
+          "ms": {
+            "metric": "මෙට්‍රික් ක්‍රමය",
+            "uksystem": "රාජකීය මිනුම් ක්‍රමය",
+            "ussystem": "එජ මිනුම් ක්‍රමය"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "ඉන්දු අරාබි ඉලක්කම්",
             "arabext": "වැඩි කළ ඉන්දු අරාබි ඉලක්කම්",
             "armn": "ඇමරිකානු සංඛ්‍යාංකන",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "දේවනාගරී ඉලක්කම්",
             "ethi": "ඉතියෝපියානු සංඛ්‍යාංකන",
             "fullwide": "සම්පූර්ණ පළල ඉලක්කම්",
@@ -85,6 +110,7 @@
             "hant": "සාම්ප්‍රදායික චීන සංඛ්‍යාංකන",
             "hantfin": "සාම්ප්‍රදායික චීන මුල්‍යමය සංඛ්‍යාංකන",
             "hebr": "හීබෲ සංඛ්‍යාංකන",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "ජපාන සංඛ්‍යාංකන",
             "jpanfin": "ජපාන මුල්‍යමය සංඛ්‍යාංකන",
@@ -97,11 +123,19 @@
             "latn": "බටහිර ඉලක්කම්",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "මලයාලම් ඉලක්කම්",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "බුරුම ඉලක්කම්",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "ඔරියා ඉලක්කම්",
@@ -110,6 +144,8 @@
             "romanlow": "රෝමානු කුඩා සංඛ්‍යාංකන",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,7 +155,9 @@
             "telu": "තෙළිඟු ඉලක්කම්",
             "thai": "තායි ඉලක්කම්",
             "tibt": "ටිබෙට ඉලක්කම්",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

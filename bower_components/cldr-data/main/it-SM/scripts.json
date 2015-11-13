@@ -3,11 +3,8 @@
     "it-SM": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "it",
         "territory": "SM"
@@ -16,6 +13,7 @@
         "scripts": {
           "Afak": "afaka",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "arabo",
           "Arab-alt-variant": "arabo-persiano",
           "Armi": "aramaico imperiale",
@@ -62,9 +60,10 @@
           "Hani": "han",
           "Hano": "hanunoo",
           "Hans": "semplificato",
-          "Hans-alt-stand-alone": "Han semplificato",
+          "Hans-alt-stand-alone": "han semplificato",
           "Hant": "tradizionale",
-          "Hant-alt-stand-alone": "Han tradizionale",
+          "Hant-alt-stand-alone": "han tradizionale",
+          "Hatr": "Hatr",
           "Hebr": "ebraico",
           "Hira": "hiragana",
           "Hluw": "geroglifici anatolici",
@@ -111,6 +110,7 @@
           "Moon": "moon",
           "Mroo": "mro",
           "Mtei": "meetei mayek",
+          "Mult": "Mult",
           "Mymr": "birmano",
           "Narb": "arabo settentrionale antico",
           "Nbat": "nabateo",
@@ -229,7 +229,7 @@
           "Zsym": "simboli",
           "Zxxx": "non scritto",
           "Zyyy": "comune",
-          "Zzzz": "ignoto o non valido"
+          "Zzzz": "scrittura sconosciuta"
         }
       }
     }

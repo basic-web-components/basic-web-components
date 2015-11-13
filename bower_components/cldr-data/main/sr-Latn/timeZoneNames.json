@@ -3,11 +3,8 @@
     "sr-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11324 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 16:53:17 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "sr",
         "script": "Latn"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Vreme u zemlji: {0}",
-          "regionFormat-type-standard": "{0}, standardno vreme",
           "regionFormat-type-daylight": "{0}, letnje vreme",
+          "regionFormat-type-standard": "{0}, standardno vreme",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Aragvajana"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioha"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gelegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Huan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ušuaija"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioha"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Lui"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tukuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ušuaija"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosiljo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Noks, Indijana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indijana"
+                "Vincennes": {
+                  "exemplarCity": "Vincenes, Indijana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Pitersburg, Indijana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tel Siti"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevaj, Indijana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincenes, Indijana"
+                "Knox": {
+                  "exemplarCity": "Noks, Indijana"
                 },
                 "Winamac": {
                   "exemplarCity": "Vinamak, Indijana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indijana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevaj, Indijana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Bijula, Severna Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Centar, Severna Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "Novi Salem, Severna Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Centar, Severna Dakota"
                 }
               },
               "Ojinaga": {
@@ -541,7 +538,7 @@
               },
               "Dublin": {
                 "long": {
-                  "daylight": "irsko letnje vreme"
+                  "daylight": "Irska standardno vreme"
                 },
                 "exemplarCity": "Dablin"
               },
@@ -577,7 +574,7 @@
               },
               "London": {
                 "long": {
-                  "daylight": "britansko letnje vreme"
+                  "daylight": "Britanija letnje računanje vremena"
                 },
                 "exemplarCity": "London"
               },
@@ -883,7 +880,7 @@
                 "exemplarCity": "Kalkuta"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Čita"
               },
               "Choibalsan": {
                 "exemplarCity": "Čojbalsan"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "Singapur"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Srednjekolimsk"
               },
               "Taipei": {
                 "exemplarCity": "Tajpej"
@@ -1118,7 +1115,7 @@
                 "exemplarCity": "Broken Hil"
               },
               "Currie": {
-                "exemplarCity": "Kurie"
+                "exemplarCity": "Kari"
               },
               "Darwin": {
                 "exemplarCity": "Darvin"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "Okland"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "Buganvil"
               },
               "Chatham": {
                 "exemplarCity": "Čatam"
@@ -1428,9 +1425,9 @@
             },
             "Alaska": {
               "long": {
-                "generic": "Aljaško vreme",
-                "standard": "Aljaško standardno vreme",
-                "daylight": "Aljaško letnje vreme"
+                "generic": "Aljaska",
+                "standard": "Aljaska, standardno vreme",
+                "daylight": "Aljaska, letnje računanje vremena"
               }
             },
             "Almaty": {
@@ -1526,9 +1523,9 @@
             },
             "Armenia": {
               "long": {
-                "generic": "Armenija vreme",
-                "standard": "Armenija standardno vreme",
-                "daylight": "Armenija letnje računanje vremena"
+                "generic": "Jermenija vreme",
+                "standard": "Jermenija standardno vreme",
+                "daylight": "Jermenija letnje računanje vremena"
               }
             },
             "Atlantic": {
@@ -1611,9 +1608,9 @@
             },
             "Cape_Verde": {
               "long": {
-                "generic": "Zelenirtsko vreme",
-                "standard": "Zelenirtsko standardno vreme",
-                "daylight": "Zelenortsko letnje računanje vremena"
+                "generic": "Zelenortska Ostrva vreme",
+                "standard": "Zelenortska Ostrva standardno vreme",
+                "daylight": "Zelenortska Ostrva letnje računanje vremena"
               }
             },
             "Chamorro": {
@@ -1651,7 +1648,7 @@
             },
             "Christmas": {
               "long": {
-                "standard": "Božićna ostrva vreme"
+                "standard": "Božićno ostrvo vreme"
               }
             },
             "Cocos": {
@@ -1772,14 +1769,6 @@
                 "standard": "Francusko južno i antarktičko vreme"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Srednje vreme po Griniču"
-              },
-              "short": {
-                "standard": "GMT"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapagos vreme"
@@ -1787,7 +1776,7 @@
             },
             "Gambier": {
               "long": {
-                "standard": "Gambijer vreme"
+                "standard": "Gambije vreme"
               }
             },
             "Georgia": {
@@ -1800,6 +1789,14 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilbert ostrva vreme"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Srednje vreme po Griniču"
+              },
+              "short": {
+                "standard": "GMT"
               }
             },
             "Greenland_Eastern": {
@@ -1958,7 +1955,7 @@
             },
             "Line_Islands": {
               "long": {
-                "standard": "Line Ostrva vreme"
+                "standard": "Ostrva Lajn vreme"
               }
             },
             "Lord_Howe": {
@@ -1977,7 +1974,7 @@
             },
             "Macquarie": {
               "long": {
-                "standard": "Makverijsko vreme"
+                "standard": "Ostrvo Makveri vreme"
               }
             },
             "Magadan": {
@@ -2176,7 +2173,7 @@
             },
             "Ponape": {
               "long": {
-                "standard": "Ponpei vreme"
+                "standard": "Ponpej vreme"
               }
             },
             "Qyzylorda": {
@@ -2239,7 +2236,7 @@
             },
             "Suriname": {
               "long": {
-                "standard": "Surinam"
+                "standard": "Surinam vreme"
               }
             },
             "Syowa": {

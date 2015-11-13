@@ -2,11 +2,8 @@
   "segments": {
     "identity": {
       "version": {
-        "_cldrVersion": "27.0.1",
-        "_number": "$Revision: 8242 $"
-      },
-      "generation": {
-        "_date": "$Date: 2013-02-24 21:06:02 -0600 (Sun, 24 Feb 2013) $"
+        "_cldrVersion": "28",
+        "_number": "$Revision: 11914 $"
       },
       "language": "en",
       "territory": "US",
@@ -15,9 +12,15 @@
     "segmentations": {
       "WordBreak": {
         "variables": [
-          { "$MidLetter": "[[$MidLetter]-[\\:]]"},
-          { "$MidNumLet": "[[$MidNumLet]-[.]]"},
-          { "$MidNum": "[[$MidNum] [.]]"}
+          {
+            "$MidLetter": "[[$MidLetter]-[\\\\:]]"
+          },
+          {
+            "$MidNumLet": "[[$MidNumLet]-[.]]"
+          },
+          {
+            "$MidNum": "[[$MidNum] [.]]"
+          }
         ]
       }
     }

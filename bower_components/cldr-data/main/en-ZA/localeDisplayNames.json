@@ -3,14 +3,11 @@
     "en-ZA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11151 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-23 22:41:37 -0600 (Fri, 23 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "ZA"
       },
       "localeDisplayNames": {
         "localeDisplayPattern": {
@@ -20,20 +17,26 @@
         },
         "keys": {
           "calendar": "Calendar",
+          "cf": "Currency Format",
           "colAlternate": "Ignore Symbols Sorting",
           "colBackwards": "Reversed Accent Sorting",
           "colCaseFirst": "Uppercase/Lowercase Ordering",
           "colCaseLevel": "Case Sensitive Sorting",
           "colHiraganaQuaternary": "Kana Sorting",
+          "collation": "Sort Order",
           "colNormalization": "Normalized Sorting",
           "colNumeric": "Numeric Sorting",
           "colReorder": "Script/Block Reordering",
           "colStrength": "Sorting Strength",
-          "collation": "Sort Order",
           "currency": "Currency",
+          "fw": "First day of week",
+          "hc": "Hour Cycle (12 vs 24)",
           "kv": "Highest Ignored",
           "lb": "Line Break Style",
+          "lw": "Line Breaks In Words Setting",
+          "ms": "Measurement System",
           "numbers": "Numbers",
+          "ss": "Sentence Break Suppressions Type",
           "timezone": "Time Zone",
           "va": "Locale Variant",
           "variableTop": "Sort As Symbols",
@@ -60,6 +63,10 @@
             "persian": "Persian Calendar",
             "roc": "Minguo Calendar"
           },
+          "cf": {
+            "account": "Accounting Currency Format",
+            "standard": "Standard Currency Format"
+          },
           "colAlternate": {
             "non-ignorable": "Sort Symbols",
             "shifted": "Sort Ignoring Symbols"
@@ -81,21 +88,6 @@
             "no": "Sort Kana Separately",
             "yes": "Sort Kana Differently"
           },
-          "colNormalization": {
-            "no": "Sort Without Normalization",
-            "yes": "Sort Unicode Normalized"
-          },
-          "colNumeric": {
-            "no": "Sort Digits Individually",
-            "yes": "Sort Digits Numerically"
-          },
-          "colStrength": {
-            "identical": "Sort All",
-            "primary": "Sort Base Letters Only",
-            "quaternary": "Sort Accents/Case/Width/Kana",
-            "secondary": "Sort Accents",
-            "tertiary": "Sort Accents/Case/Width"
-          },
           "collation": {
             "big5han": "Traditional Chinese Sort Order - Big5",
             "compat": "Previous Sort Order, for compatibility",
@@ -116,12 +108,44 @@
             "unihan": "Radical-Stroke Sort Order",
             "zhuyin": "Zhuyin Sort Order"
           },
+          "colNormalization": {
+            "no": "Sort Without Normalization",
+            "yes": "Sort Unicode Normalized"
+          },
+          "colNumeric": {
+            "no": "Sort Digits Individually",
+            "yes": "Sort Digits Numerically"
+          },
+          "colStrength": {
+            "identical": "Sort All",
+            "primary": "Sort Base Letters Only",
+            "quaternary": "Sort Accents/Case/Width/Kana",
+            "secondary": "Sort Accents",
+            "tertiary": "Sort Accents/Case/Width"
+          },
+          "hc": {
+            "h11": "12 Hour System (0–11)",
+            "h12": "12 Hour System (1–12)",
+            "h23": "24 Hour System (0–23)",
+            "h24": "24 Hour System (1–24)"
+          },
           "lb": {
             "loose": "Loose Line Break Style",
             "normal": "Normal Line Break Style",
             "strict": "Strict Line Break Style"
           },
+          "lw": {
+            "breakall": "Allow Line Breaks In All Words",
+            "keepall": "Prevent Line Breaks In All Words",
+            "normal": "Normal Line Breaks For Words"
+          },
+          "ms": {
+            "metric": "Metric System",
+            "uksystem": "Imperial Measurement System",
+            "ussystem": "US Measurement System"
+          },
           "numbers": {
+            "ahom": "Ahom Digits",
             "arab": "Arabic-Indic Digits",
             "arabext": "Extended Arabic-Indic Digits",
             "arabext-alt-short": "X Arabic-Indic Digits",
@@ -132,6 +156,7 @@
             "brah": "Brahmi Digits",
             "cakm": "Chakma Digits",
             "cham": "Cham Digits",
+            "cyrl": "Cyrillic Numerals",
             "deva": "Devanagari Digits",
             "ethi": "Ethiopic Numerals",
             "finance": "Financial Numerals",
@@ -148,6 +173,7 @@
             "hant": "Traditional Chinese Numerals",
             "hantfin": "Traditional Chinese Financial Numerals",
             "hebr": "Hebrew Numerals",
+            "hmng": "Pahawh Hmong Digits",
             "java": "Javanese Digits",
             "jpan": "Japanese Numerals",
             "jpanfin": "Japanese Financial Numerals",
@@ -160,11 +186,19 @@
             "latn": "Western Digits",
             "lepc": "Lepcha Digits",
             "limb": "Limbu Digits",
+            "mathbold": "Mathematical Bold Digits",
+            "mathdbl": "Mathematical Double-Struck Digits",
+            "mathmono": "Mathematical Monospace Digits",
+            "mathsanb": "Mathematical Sans-Serif Bold Digits",
+            "mathsans": "Mathematical Sans-Serif Digits",
             "mlym": "Malayalam Digits",
+            "modi": "Modi Digits",
             "mong": "Mongolian Digits",
+            "mroo": "Mro Digits",
             "mtei": "Meetei Mayek Digits",
             "mymr": "Myanmar Digits",
             "mymrshan": "Myanmar Shan Digits",
+            "mymrtlng": "Myanmar Tai Laing Digits",
             "native": "Native Digits",
             "nkoo": "N’Ko Digits",
             "olck": "Ol Chiki Digits",
@@ -174,6 +208,8 @@
             "romanlow": "Roman Lowercase Numerals",
             "saur": "Saurashtra Digits",
             "shrd": "Sharada Digits",
+            "sind": "Khudawadi Digits",
+            "sinh": "Sinhala Lith Digits",
             "sora": "Sora Sompeng Digits",
             "sund": "Sundanese Digits",
             "takr": "Takri Digits",
@@ -183,8 +219,14 @@
             "telu": "Telugu Digits",
             "thai": "Thai Digits",
             "tibt": "Tibetan Digits",
+            "tirh": "Tirhuta Digits",
             "traditional": "Traditional Numerals",
-            "vaii": "Vai Digits"
+            "vaii": "Vai Digits",
+            "wara": "Warang Citi Digits"
+          },
+          "ss": {
+            "none": "Sentence Breaks Without Abbreviation Handling",
+            "standard": "Suppress Sentence Breaks After Standard Abbreviations"
           },
           "va": {
             "posix": "POSIX Compliant Locale"

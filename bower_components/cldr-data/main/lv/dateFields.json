@@ -3,21 +3,18 @@
     "lv": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11919 $"
         },
         "language": "lv"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Ēra"
+            "displayName": "ēra"
           },
           "year": {
-            "displayName": "Gads",
+            "displayName": "gads",
             "relative-type--1": "pagājušajā gadā",
             "relative-type-0": "šajā gadā",
             "relative-type-1": "nākamajā gadā",
@@ -113,7 +110,7 @@
             }
           },
           "month": {
-            "displayName": "Mēnesis",
+            "displayName": "mēnesis",
             "relative-type--1": "pagājušajā mēnesī",
             "relative-type-0": "šajā mēnesī",
             "relative-type-1": "nākamajā mēnesī",
@@ -210,8 +207,8 @@
           },
           "day": {
             "displayName": "diena",
-            "relative-type--1": "vakar",
             "relative-type--2": "aizvakar",
+            "relative-type--1": "vakar",
             "relative-type-0": "šodien",
             "relative-type-1": "rīt",
             "relative-type-2": "parīt",
@@ -228,8 +225,8 @@
           },
           "day-short": {
             "displayName": "d.",
-            "relative-type--1": "vakar",
             "relative-type--2": "aizvakar",
+            "relative-type--1": "vakar",
             "relative-type-0": "šodien",
             "relative-type-1": "rīt",
             "relative-type-2": "parīt",
@@ -246,8 +243,8 @@
           },
           "day-narrow": {
             "displayName": "d.",
-            "relative-type--1": "vakar",
             "relative-type--2": "aizvakar",
+            "relative-type--1": "vakar",
             "relative-type-0": "šodien",
             "relative-type-1": "rīt",
             "relative-type-2": "parīt",
@@ -371,10 +368,10 @@
             "relative-type-1": "nāk. sestd."
           },
           "dayperiod": {
-            "displayName": "Priekšpusdienā/pēcpusdienā"
+            "displayName": "priekšpusdienā/pēcpusdienā"
           },
           "hour": {
-            "displayName": "Stundas",
+            "displayName": "stundas",
             "relativeTime-type-future": {
               "relativeTimePattern-count-zero": "pēc {0} stundām",
               "relativeTimePattern-count-one": "pēc {0} stundas",
@@ -413,7 +410,7 @@
             }
           },
           "minute": {
-            "displayName": "Minūtes",
+            "displayName": "minūtes",
             "relativeTime-type-future": {
               "relativeTimePattern-count-zero": "pēc {0} minūtēm",
               "relativeTimePattern-count-one": "pēc {0} minūtes",
@@ -452,7 +449,7 @@
             }
           },
           "second": {
-            "displayName": "Sekundes",
+            "displayName": "sekundes",
             "relative-type-0": "tagad",
             "relativeTime-type-future": {
               "relativeTimePattern-count-zero": "pēc {0} sekundēm",
@@ -494,7 +491,7 @@
             }
           },
           "zone": {
-            "displayName": "Laika josla"
+            "displayName": "laika josla"
           }
         }
       }

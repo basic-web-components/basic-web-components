@@ -3,11 +3,8 @@
     "sw-KE": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sw",
         "territory": "KE"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "Kalenda",
+          "cf": "cf",
           "colAlternate": "Puuza Upangaji Alama",
           "colBackwards": "Upangaji Uliogeuzwa wa Kiinitoni",
           "colCaseFirst": "Upangaji wa Herufi kubwa/Herufi ndogo",
           "colCaseLevel": "Upangaji Unaoathiriwa na Herufi",
           "colHiraganaQuaternary": "Upangaji wa Kana",
+          "collation": "Mpangilio",
           "colNormalization": "Upangaji wa Kawaida",
           "colNumeric": "Upangaji wa Namba",
           "colStrength": "Nguvu ya Upangaji",
-          "collation": "Utaratibu wa Kupanga",
           "currency": "Sarafu",
+          "hc": "hc",
+          "lb": "lb",
+          "ms": "ms",
           "numbers": "Nambari",
           "timezone": "Ukanda Saa",
           "va": "Tofauti ya Mandhari",
@@ -45,7 +46,7 @@
             "ethiopic": "Kalenda ya Kiethiopia",
             "ethiopic-amete-alem": "Kalenda ya Kiethiopia ya Amete Alem",
             "gregorian": "Kalenda ya Kigregori",
-            "hebrew": "Kalenda ya Kihebrania",
+            "hebrew": "Kalenda ya Kiebrania",
             "indian": "Kalenda ya Taifa ya India",
             "islamic": "Kalenda ya Kiislamu",
             "islamic-civil": "Kalenda ya Kiislamu/Rasmi",
@@ -56,6 +57,10 @@
             "japanese": "Kalenda ya Kijapani",
             "persian": "Kalenda ya Kiajemi",
             "roc": "Kalenda ya Minguo"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "colAlternate": {
             "non-ignorable": "Panga Alama",
@@ -78,6 +83,26 @@
             "no": "Panga Kana Kando",
             "yes": "Panga Kana Kitofauti"
           },
+          "collation": {
+            "big5han": "Mpangilio wa Kichina cha Jadi - Big5",
+            "compat": "compat",
+            "dictionary": "Mpangilio wa Kamusi",
+            "ducet": "Mpangilio Chaguo-Msingi wa Unicode",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Mpangilio wa Kichina Rahisi - GB2312",
+            "phonebook": "Mpangilio wa Orodha za Nambari za Simu",
+            "phonetic": "Utaratibu wa Kupanga Fonetiki",
+            "pinyin": "Mpangilio wa Kipinyin",
+            "reformed": "Mpangilio Uliorekebishwa",
+            "search": "Utafutaji wa Kijumla",
+            "searchjl": "Tafuta kwa Konsonanti Halisi ya Hangul",
+            "standard": "Mpangilio wa Kawaida",
+            "stroke": "Mpangilio wa Mikwaju",
+            "traditional": "Mpangilio wa Kawaida",
+            "unihan": "Mpangilio wa Mikwaju ya Shina",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Panga Bila Ukawaida",
             "yes": "Upangaji Msimbosare Umekawaidishwa"
@@ -93,34 +118,34 @@
             "secondary": "Panga Viinitoni",
             "tertiary": "Panga Viinitoni/Herufi/Upana"
           },
-          "collation": {
-            "big5han": "Mpangilio wa Kichina cha Jadi - Big5",
-            "dictionary": "Mpangilio wa Kamusi",
-            "ducet": "Mpangilio wa Chaguo-Msingi wa Unicode",
-            "eor": "eor",
-            "gb2312han": "Mpangilio wa Kichina Rahisi - GB2312",
-            "phonebook": "Mpangilio wa Orodha za Nambari za Simu",
-            "phonetic": "Utaratibu wa Kupanga Fonetiki",
-            "pinyin": "Mpangilio wa Kipinyin",
-            "reformed": "Mpangilio Uliorekebishwa",
-            "search": "Utafutaji wa Kijumla",
-            "searchjl": "Tafuta kwa Konsonanti Halisi ya Hangul",
-            "standard": "standard",
-            "stroke": "Mpangilio wa Mikwaju",
-            "traditional": "Mpangilio wa Kawaida",
-            "unihan": "Mpangilio wa Mikwaju ya Shina",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "h11",
+            "h12": "h12",
+            "h23": "h23",
+            "h24": "h24"
+          },
+          "lb": {
+            "loose": "loose",
+            "normal": "normal",
+            "strict": "strict"
+          },
+          "ms": {
+            "metric": "metriki",
+            "uksystem": "mfumo wa UK",
+            "ussystem": "Mfumo wa US"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Nambari za Kiarabu/Kihindi",
             "arabext": "Nambari za Kiarabu/Kihindi Zilizopanuliwa",
             "armn": "Nambari za Kiarmenia",
-            "armnlow": "Nambari Ndogo za Kiamenia",
+            "armnlow": "Nambari Ndogo za Kiarmenia",
             "bali": "bali",
             "beng": "Nambari za Kibengali",
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Nambari za Kidevanagari",
             "ethi": "Nambari za Kiethiopia",
             "finance": "Tarakimu za Kifedha",
@@ -135,7 +160,8 @@
             "hansfin": "Nambari za Kifedha za Kichina Rahisi",
             "hant": "Nambari za Kichina cha Jadi",
             "hantfin": "Nambari za Kichina za Fedha",
-            "hebr": "Nambari za Kihebrania",
+            "hebr": "Nambari za Kiebrania",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Nambari za Kijapani",
             "jpanfin": "Nambari za Kifedha za Kijapani",
@@ -148,11 +174,19 @@
             "latn": "Nambari za Magharibi",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Nambari za Kimalayamu",
+            "modi": "modi",
             "mong": "Nambari za Kimongolia",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Nambari za Myama",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Digiti Asili",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "Nambari Ndogo za Kirumi",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,8 +207,10 @@
             "telu": "Nambari za Kitelugu",
             "thai": "Nambari za Kitai",
             "tibt": "Nambari za Kitibeti",
+            "tirh": "tirh",
             "traditional": "Tarakimu za Jadi",
-            "vaii": "Dijiti za Vai"
+            "vaii": "Dijiti za Vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {

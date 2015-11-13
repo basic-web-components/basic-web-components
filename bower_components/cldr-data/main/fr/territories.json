@@ -3,11 +3,8 @@
     "fr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "fr"
       },
@@ -39,7 +36,7 @@
           "143": "Asie centrale",
           "145": "Asie occidentale",
           "150": "Europe",
-          "151": "Europe orientale",
+          "151": "Europe de l’Est",
           "154": "Europe septentrionale",
           "155": "Europe occidentale",
           "419": "Amérique latine",
@@ -202,7 +199,7 @@
           "MK": "Macédoine",
           "MK-alt-variant": "Macédoine (ARYM)",
           "ML": "Mali",
-          "MM": "Myanmar",
+          "MM": "Myanmar (Birmanie)",
           "MN": "Mongolie",
           "MO": "R.A.S. chinoise de Macao",
           "MO-alt-short": "Macao",
@@ -280,7 +277,7 @@
           "TG": "Togo",
           "TH": "Thaïlande",
           "TJ": "Tadjikistan",
-          "TK": "Tokelau",
+          "TK": "Tokélaou",
           "TL": "Timor oriental",
           "TL-alt-variant": "Timor-Oriental",
           "TM": "Turkménistan",

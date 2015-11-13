@@ -3,11 +3,8 @@
     "ky": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11919 $"
         },
         "language": "ky"
       },
@@ -196,7 +193,7 @@
             "displayName-count-one": "бермуд доллары",
             "displayName-count-other": "бермуд доллары",
             "symbol": "BMD",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "BD$"
           },
           "BND": {
             "displayName": "Бруней доллары",
@@ -260,7 +257,7 @@
             "displayName-count-one": "багама доллары",
             "displayName-count-other": "багама доллары",
             "symbol": "BSD",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "B$"
           },
           "BTN": {
             "displayName": "Бутан нгултруму",
@@ -295,14 +292,14 @@
             "displayName-count-one": "белиз доллары",
             "displayName-count-other": "белиз доллары",
             "symbol": "BZD",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "BZ$"
           },
           "CAD": {
             "displayName": "канада доллары",
             "displayName-count-one": "канада доллары",
             "displayName-count-other": "канада долларлары",
             "symbol": "CAD",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "C$"
           },
           "CDF": {
             "displayName": "Конго франкы",
@@ -429,12 +426,12 @@
             "displayName-count-one": "доминикан песосу",
             "displayName-count-other": "доминикан песосу",
             "symbol": "DOP",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "RD$"
           },
           "DZD": {
-            "displayName": "Алжир динары",
-            "displayName-count-one": "Алжир динары",
-            "displayName-count-other": "Алжир динары",
+            "displayName": "алжир динары",
+            "displayName-count-one": "алжир динары",
+            "displayName-count-other": "алжир динары",
             "symbol": "DZD"
           },
           "ECS": {
@@ -450,11 +447,11 @@
             "symbol": "EEK"
           },
           "EGP": {
-            "displayName": "Мисир фунту",
-            "displayName-count-one": "Мисир фунту",
-            "displayName-count-other": "Мисир фунту",
+            "displayName": "египет фунту",
+            "displayName-count-one": "египет фунту",
+            "displayName-count-other": "египет фунту",
             "symbol": "EGP",
-            "symbol-alt-narrow": "E£"
+            "symbol-alt-narrow": "LE"
           },
           "ERN": {
             "displayName": "Эритреа накфасы",
@@ -511,9 +508,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "британия фунт",
-            "displayName-count-one": "британия фунт",
-            "displayName-count-other": "британия фунт",
+            "displayName": "британия фунт стерлинги",
+            "displayName-count-one": "британия фунт стерлинги",
+            "displayName-count-other": "британия фунт стерлинги",
             "symbol": "GBP",
             "symbol-alt-narrow": "£"
           },
@@ -525,7 +522,8 @@
             "displayName": "Грузия лариси",
             "displayName-count-one": "Грузия лариси",
             "displayName-count-other": "Грузия лариси",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -592,11 +590,11 @@
             "symbol-alt-narrow": "$"
           },
           "HKD": {
-            "displayName": "Гоӊ Коӊ доллары",
-            "displayName-count-one": "Гоӊ Коӊ доллары",
-            "displayName-count-other": "Гоӊ Коӊ доллары",
+            "displayName": "Гонконг доллары",
+            "displayName-count-one": "Гонконг доллары",
+            "displayName-count-other": "Гонконг доллары",
             "symbol": "HKD",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "HK$"
           },
           "HNL": {
             "displayName": "гондурас лемпирасы",
@@ -614,7 +612,7 @@
             "displayName-count-one": "хорват кунасы",
             "displayName-count-other": "хорват кунасы",
             "symbol": "HRK",
-            "symbol-alt-narrow": "kn"
+            "symbol-alt-narrow": "Kn"
           },
           "HTG": {
             "displayName": "гаити гурдусу",
@@ -686,7 +684,7 @@
             "displayName-count-one": "ямайка доллары",
             "displayName-count-other": "ямайка доллары",
             "symbol": "JMD",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "J$"
           },
           "JOD": {
             "displayName": "Йордания динары",
@@ -836,15 +834,15 @@
             "symbol": "LVR"
           },
           "LYD": {
-            "displayName": "Ливия динары",
-            "displayName-count-one": "Ливия динары",
-            "displayName-count-other": "Ливия динары",
+            "displayName": "ливия динары",
+            "displayName-count-one": "ливия динары",
+            "displayName-count-other": "ливия динары",
             "symbol": "LYD"
           },
           "MAD": {
-            "displayName": "Марокко дирхамы",
-            "displayName-count-one": "Марокко дирхамы",
-            "displayName-count-other": "Марокко дирхамы",
+            "displayName": "марокко дирхамы",
+            "displayName-count-one": "марокко дирхамы",
+            "displayName-count-other": "марокко дирхамы",
             "symbol": "MAD"
           },
           "MAF": {
@@ -932,9 +930,9 @@
             "symbol-alt-narrow": "Rs"
           },
           "MVR": {
-            "displayName": "Малдив Руфийасы",
-            "displayName-count-one": "Малдив Руфийасы",
-            "displayName-count-other": "Малдив Руфийасы",
+            "displayName": "Малдив руфийасы",
+            "displayName-count-one": "Малдив руфийасы",
+            "displayName-count-other": "Малдив руфийасы",
             "symbol": "MVR"
           },
           "MWK": {
@@ -1128,7 +1126,7 @@
             "displayName-count-one": "орус рублу",
             "displayName-count-other": "орус рублу",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1166,9 +1164,9 @@
             "symbol": "SDD"
           },
           "SDG": {
-            "displayName": "Судан фунту",
-            "displayName-count-one": "Судан фунту",
-            "displayName-count-other": "Судан фунту",
+            "displayName": "судан фунту",
+            "displayName-count-one": "судан фунту",
+            "displayName-count-other": "судан фунту",
             "symbol": "SDG"
           },
           "SDP": {
@@ -1290,9 +1288,9 @@
             "symbol": "TMT"
           },
           "TND": {
-            "displayName": "Тунис динары",
-            "displayName-count-one": "Тунис динары",
-            "displayName-count-other": "Тунис динары",
+            "displayName": "тунис динары",
+            "displayName-count-one": "тунис динары",
+            "displayName-count-other": "тунис динары",
             "symbol": "TND"
           },
           "TOP": {
@@ -1323,7 +1321,7 @@
             "displayName-count-one": "тринидад жана тобаго доллары",
             "displayName-count-other": "тринидад жана тобаго доллары",
             "symbol": "TTD",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "TT$"
           },
           "TWD": {
             "displayName": "Тайвань жаӊы доллары",
@@ -1520,8 +1518,8 @@
           },
           "XXX": {
             "displayName": "Белгисиз акча",
-            "displayName-count-one": "Белгисиз акча",
-            "displayName-count-other": "Белгисиз акча",
+            "displayName-count-one": "(белгисиз акча бирдиги)",
+            "displayName-count-other": "(белгисиз акча)",
             "symbol": "XXX"
           },
           "YDD": {

@@ -3,11 +3,8 @@
     "mn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "mn"
       },
@@ -55,7 +52,6 @@
           "ay": "ay",
           "az": "азербайжан",
           "az-alt-short": "азери",
-          "azb": "azb",
           "ba": "башкир",
           "bal": "bal",
           "ban": "ban",
@@ -72,6 +68,7 @@
           "bfd": "bfd",
           "bfq": "bfq",
           "bg": "болгар",
+          "bgn": "bgn",
           "bho": "bho",
           "bi": "bi",
           "bik": "bik",
@@ -333,6 +330,7 @@
           "lo": "лаос",
           "lol": "lol",
           "loz": "loz",
+          "lrc": "lrc",
           "lt": "литва",
           "ltg": "ltg",
           "lu": "луба-катанга",
@@ -354,6 +352,7 @@
           "mas": "масай",
           "mde": "mde",
           "mdf": "mdf",
+          "mdh": "mdh",
           "mdr": "mdr",
           "men": "men",
           "mer": "меру",
@@ -366,6 +365,7 @@
           "mi": "маори",
           "mic": "mic",
           "min": "min",
+          "mis": "mis",
           "mk": "македон",
           "ml": "малайлам",
           "mn": "монгол",
@@ -394,6 +394,7 @@
           "nb": "норвегийн букмол",
           "nd": "хойд ндебеле",
           "nds": "nds",
+          "nds-NL": "nds (Нидерланд)",
           "ne": "балба",
           "new": "new",
           "ng": "ng",
@@ -487,6 +488,7 @@
           "sco": "sco",
           "sd": "синдхи",
           "sdc": "sdc",
+          "sdh": "sdh",
           "se": "хойд сами",
           "see": "see",
           "seh": "сена",
@@ -597,6 +599,7 @@
           "wal": "wal",
           "war": "war",
           "was": "was",
+          "wbp": "wbp",
           "wo": "волоф",
           "wuu": "wuu",
           "xal": "xal",

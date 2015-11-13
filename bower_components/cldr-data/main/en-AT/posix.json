@@ -1,0 +1,20 @@
+{
+  "main": {
+    "en-AT": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11969 $"
+        },
+        "language": "en",
+        "territory": "AT"
+      },
+      "posix": {
+        "messages": {
+          "yesstr": "yes:y",
+          "nostr": "no:n"
+        }
+      }
+    }
+  }
+}

@@ -3,11 +3,8 @@
     "sr-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11324 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 16:53:17 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "sr",
         "script": "Latn"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "kalendar",
+          "cf": "cf",
           "colAlternate": "Sortiranje uz ignorisanje simbola",
           "colBackwards": "Sortiranje prema obrnutim akcentima",
           "colCaseFirst": "Ređanje prema malom/velikom slovu",
           "colCaseLevel": "Sortiranje prema malom/velikom slovu",
           "colHiraganaQuaternary": "Sortiranje prema kana simbolima",
+          "collation": "Sortiranje",
           "colNormalization": "Normalizovano sortiranje",
           "colNumeric": "Numeričko sortiranje",
           "colStrength": "Sortiranje prema jačini",
-          "collation": "Sortiranje",
           "currency": "valuta",
+          "hc": "hc",
+          "lb": "stil preloma reda",
+          "ms": "ms",
           "numbers": "brojevi",
           "timezone": "Vremenska zona",
           "va": "Varijanta lokaliteta",
@@ -57,6 +58,10 @@
             "persian": "persijski kalendar",
             "roc": "kalendar Republike Kine"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Sortiraj simbole",
             "shifted": "Sortiranje uz ignorisanje simbola"
@@ -78,6 +83,26 @@
             "no": "Sortiraj kana simbole odvojeno",
             "yes": "Sortiraj kana simbole drugačije"
           },
+          "collation": {
+            "big5han": "Tradicionalno kinesko sortiranje",
+            "compat": "compat",
+            "dictionary": "Redosled sortiranja u rečniku",
+            "ducet": "Podrazumevani Unicode redosled sortiranja",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Pojednostavljeno kinesko sortiranje",
+            "phonebook": "Sortiranje kao telefonski imenik",
+            "phonetic": "Fonetski redosled sortiranja",
+            "pinyin": "Pinjin sortiranje",
+            "reformed": "Reformisani redosled sortiranja",
+            "search": "pretraga opšte namene",
+            "searchjl": "Pretraga prema hangul početnom suglasniku",
+            "standard": "standardni redosled sortiranja",
+            "stroke": "Sortiranje po broju crta",
+            "traditional": "Tradicionalno sortiranje",
+            "unihan": "Redosled sortiranja radikalnim crticama",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Sortiraj bez normalizacije",
             "yes": "Sortiraj Unicode normalizovano"
@@ -93,25 +118,24 @@
             "secondary": "Sortiraj akcente",
             "tertiary": "Sortiraj akcente/mala i velika slova/širinu"
           },
-          "collation": {
-            "big5han": "Tradicionalno kinesko sortiranje",
-            "dictionary": "Redosled sortiranja u rečniku",
-            "ducet": "Podrazumevani Unicode redosled sortiranja",
-            "eor": "eor",
-            "gb2312han": "Pojednostavljeno kinesko sortiranje",
-            "phonebook": "Sortiranje kao telefonski imenik",
-            "phonetic": "Fonetski redosled sortiranja",
-            "pinyin": "Pinjin sortiranje",
-            "reformed": "Reformisani redosled sortiranja",
-            "search": "pretraga opšte namene",
-            "searchjl": "Pretraga prema hangul početnom suglasniku",
-            "standard": "standardni redosled sortiranja",
-            "stroke": "Sortiranje po broju crta",
-            "traditional": "Tradicionalno sortiranje",
-            "unihan": "Redosled sortiranja radikalnim crticama",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "h11",
+            "h12": "h12",
+            "h23": "h23",
+            "h24": "h24"
+          },
+          "lb": {
+            "loose": "loose",
+            "normal": "normal",
+            "strict": "strict"
+          },
+          "ms": {
+            "metric": "metric",
+            "uksystem": "uksystem",
+            "ussystem": "ussystem"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "arapsko-indijske cifre",
             "arabext": "produžene arapsko-indijske cifre",
             "armn": "jermenski brojevi",
@@ -121,6 +145,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "devangari cifre",
             "ethi": "etiopski brojevi",
             "finance": "Finansijski brojevi",
@@ -136,6 +161,7 @@
             "hant": "tradicionalni kineski brojevi",
             "hantfin": "tradicionalni kineski finansijski brojevi",
             "hebr": "hebrejski brojevi",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "japanski brojevi",
             "jpanfin": "japanski finansijski brojevi",
@@ -148,11 +174,19 @@
             "latn": "zapadne cifre",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "malajalam cifre",
+            "modi": "modi",
             "mong": "mongolske cifre",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "mijanmarske cifre",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Lokalne cifre",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "mali rimski brojevi",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,8 +207,10 @@
             "telu": "telugu cifre",
             "thai": "tajske cifre",
             "tibt": "tibetanske cifre",
+            "tirh": "tirh",
             "traditional": "Tradicionalni brojevi",
-            "vaii": "Vai cifre"
+            "vaii": "Vai cifre",
+            "wara": "wara"
           }
         },
         "codePatterns": {

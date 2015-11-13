@@ -3,11 +3,8 @@
     "fa-AF": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11217 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-17 23:51:09 -0600 (Tue, 17 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "fa",
         "territory": "AF"
@@ -228,60 +225,66 @@
             "dayPeriods": {
               "format": {
                 "abbreviated": {
-                  "afternoon": "عصر",
-                  "am": "قبل‌ازظهر",
-                  "earlyMorning": "بامداد",
-                  "midDay": "بعدازظهر",
-                  "morning": "صبح",
-                  "night": "شب",
+                  "midnight": "نیمه‌شب",
+                  "am": "ق.ظ.",
                   "noon": "ظهر",
-                  "pm": "بعدازظهر",
-                  "weeHours": "نیمه‌شب"
+                  "pm": "ب.ظ.",
+                  "morning1": "صبح",
+                  "afternoon1": "عصر",
+                  "evening1": "عصر",
+                  "night1": "شب"
                 },
                 "narrow": {
+                  "midnight": "ن",
                   "am": "ق",
                   "noon": "ظ",
-                  "pm": "ب"
+                  "pm": "ب",
+                  "morning1": "ص",
+                  "afternoon1": "ب",
+                  "evening1": "ع",
+                  "night1": "ش"
                 },
                 "wide": {
-                  "afternoon": "عصر",
+                  "midnight": "نیمه‌شب",
                   "am": "قبل‌ازظهر",
-                  "earlyMorning": "بامداد",
-                  "midDay": "بعدازظهر",
-                  "morning": "صبح",
-                  "night": "شب",
                   "noon": "ظهر",
                   "pm": "بعدازظهر",
-                  "weeHours": "نیمه‌شب"
+                  "morning1": "صبح",
+                  "afternoon1": "عصر",
+                  "evening1": "عصر",
+                  "night1": "شب"
                 }
               },
               "stand-alone": {
                 "abbreviated": {
-                  "afternoon": "عصر",
-                  "am": "قبل‌ازظهر",
-                  "earlyMorning": "بامداد",
-                  "midDay": "بعدازظهر",
-                  "morning": "صبح",
-                  "night": "شب",
-                  "noon": "ظهر",
-                  "pm": "بعدازظهر",
-                  "weeHours": "نیمه‌شب"
+                  "midnight": "نیمه‌شب",
+                  "am": "ق.ظ.",
+                  "noon": "ظ",
+                  "pm": "ب.ظ.",
+                  "morning1": "صبح",
+                  "afternoon1": "عصر",
+                  "evening1": "سر شب",
+                  "night1": "شب"
                 },
                 "narrow": {
-                  "am": "ق",
-                  "noon": "ظ",
-                  "pm": "ب"
+                  "midnight": "نیمه‌شب",
+                  "am": "ق.ظ.",
+                  "noon": "ظهر",
+                  "pm": "ب.ظ.",
+                  "morning1": "صبح",
+                  "afternoon1": "عصر",
+                  "evening1": "سر شب",
+                  "night1": "شب"
                 },
                 "wide": {
-                  "afternoon": "عصر",
+                  "midnight": "نیمه‌شب",
                   "am": "قبل‌ازظهر",
-                  "earlyMorning": "بامداد",
-                  "midDay": "بعدازظهر",
-                  "morning": "صبح",
-                  "night": "شب",
                   "noon": "ظهر",
                   "pm": "بعدازظهر",
-                  "weeHours": "نیمه‌شب"
+                  "morning1": "صبح",
+                  "afternoon1": "عصر",
+                  "evening1": "سر شب",
+                  "night1": "شب"
                 }
               }
             },
@@ -297,7 +300,7 @@
               }
             },
             "dateFormats": {
-              "full": "EEEE d MMMM y G",
+              "full": "G y MMMM d, EEEE",
               "long": "d MMMM y G",
               "medium": "d MMM y G",
               "short": "y/M/d G"
@@ -314,41 +317,42 @@
               "medium": "{1}،‏ {0}",
               "short": "{1}،‏ {0}",
               "availableFormats": {
+                "d": "d",
                 "E": "ccc",
-                "EHm": "E HH:mm",
-                "EHms": "E HH:mm:ss",
                 "Ed": "E d",
                 "Ehm": "E h:mm a",
+                "EHm": "E HH:mm",
                 "Ehms": "E h:mm:ss a",
+                "EHms": "E HH:mm:ss",
                 "Gy": "y G",
                 "GyMMM": "MMM y G",
-                "GyMMMEd": "E d MMM y G",
                 "GyMMMd": "d MMM y G",
+                "GyMMMEd": "E d MMM y G",
+                "h": "h a",
                 "H": "H",
                 "HHmmZ": "HH:mm (Z)",
+                "hm": "h:mm a",
                 "Hm": "H:mm",
+                "hms": "h:mm:ss a",
                 "Hms": "H:mm:ss",
                 "M": "L",
+                "Md": "M/d",
                 "MEd": "E M/d",
                 "MMM": "LLL",
-                "MMMEd": "E d LLL",
-                "MMMMEd": "E d LLLL",
-                "MMMMd": "d LLLL",
                 "MMMd": "d LLL",
-                "Md": "M/d",
-                "d": "d",
-                "h": "h a",
-                "hm": "h:mm a",
-                "hms": "h:mm:ss a",
+                "MMMEd": "E d LLL",
+                "MMMMd": "d LLLL",
+                "MMMMEd": "E d LLLL",
                 "ms": "mm:ss",
                 "y": "y G",
                 "yyyy": "y G",
                 "yyyyM": "y/M G",
+                "yyyyMd": "y/M/d G",
                 "yyyyMEd": "E y/M/d G",
                 "yyyyMMM": "MMM y G",
-                "yyyyMMMEd": "E d MMM y G",
                 "yyyyMMMd": "d MMM y G",
-                "yyyyMd": "y/M/d G",
+                "yyyyMMMEd": "E d MMM y G",
+                "yyyyMMMM": "G y MMMM",
                 "yyyyQQQ": "QQQQ y G",
                 "yyyyQQQQ": "QQQQ y G"
               },
@@ -367,42 +371,6 @@
               },
               "intervalFormats": {
                 "intervalFormatFallback": "{0} تا {1}",
-                "H": {
-                  "H": "H تا H"
-                },
-                "Hm": {
-                  "H": "H:mm تا H:mm",
-                  "m": "H:mm تا H:mm"
-                },
-                "Hmv": {
-                  "H": "H:mm تا H:mm (v)",
-                  "m": "H:mm تا H:mm (v)"
-                },
-                "Hv": {
-                  "H": "H تا H (v)"
-                },
-                "M": {
-                  "M": "M تا M"
-                },
-                "MEd": {
-                  "M": "E M/d تا E M/d",
-                  "d": "E M/d تا E M/d"
-                },
-                "MMM": {
-                  "M": "LLL تا LLL"
-                },
-                "MMMEd": {
-                  "M": "E d LLL تا E d LLL",
-                  "d": "E d LLL تا E d LLL"
-                },
-                "MMMd": {
-                  "M": "d LLL تا d LLL",
-                  "d": "d تا d LLL"
-                },
-                "Md": {
-                  "M": "M/d تا M/d",
-                  "d": "M/d تا M/d"
-                },
                 "d": {
                   "d": "d تا d"
                 },
@@ -410,19 +378,55 @@
                   "a": "h a تا h a",
                   "h": "h تا h a"
                 },
+                "H": {
+                  "H": "H تا H"
+                },
                 "hm": {
                   "a": "h:mm a تا h:mm a",
                   "h": "h:mm تا h:mm a",
                   "m": "h:mm تا h:mm a"
+                },
+                "Hm": {
+                  "H": "H:mm تا H:mm",
+                  "m": "H:mm تا H:mm"
                 },
                 "hmv": {
                   "a": "h:mm a تا h:mm a (v)",
                   "h": "h:mm تا h:mm a (v)",
                   "m": "h:mm تا h:mm a (v)"
                 },
+                "Hmv": {
+                  "H": "H:mm تا H:mm (v)",
+                  "m": "H:mm تا H:mm (v)"
+                },
                 "hv": {
                   "a": "h a تا h a (v)",
                   "h": "h تا h a (v)"
+                },
+                "Hv": {
+                  "H": "H تا H (v)"
+                },
+                "M": {
+                  "M": "M تا M"
+                },
+                "Md": {
+                  "d": "M/d تا M/d",
+                  "M": "M/d تا M/d"
+                },
+                "MEd": {
+                  "d": "E M/d تا E M/d",
+                  "M": "E M/d تا E M/d"
+                },
+                "MMM": {
+                  "M": "MMM تا MMM"
+                },
+                "MMMd": {
+                  "d": "d تا d LLL",
+                  "M": "d LLL تا d LLL"
+                },
+                "MMMEd": {
+                  "d": "E d LLL تا E d LLL",
+                  "M": "E d LLL تا E d LLL"
                 },
                 "y": {
                   "y": "y تا y G"
@@ -431,33 +435,33 @@
                   "M": "y/M تا y/M G",
                   "y": "y/M تا y/M G"
                 },
+                "yMd": {
+                  "d": "y/M/d تا y/M/d G",
+                  "M": "y/M/d تا y/M/d G",
+                  "y": "y/M/d تا y/M/d G"
+                },
                 "yMEd": {
-                  "M": "E y/M/d تا E y/M/d G",
                   "d": "E y/M/d تا E y/M/d G",
+                  "M": "E y/M/d تا E y/M/d G",
                   "y": "E y/M/d تا E y/M/d G"
                 },
                 "yMMM": {
                   "M": "LLL تا MMM y G",
                   "y": "MMM y تا MMM y G"
                 },
+                "yMMMd": {
+                  "d": "d تا d MMM y G",
+                  "M": "d LLL تا d MMM y G",
+                  "y": "d MMM y تا d MMM y G"
+                },
                 "yMMMEd": {
-                  "M": "E d LLL تا E d MMM y G",
                   "d": "E d LLL تا E d MMM y G",
+                  "M": "E d LLL تا E d MMM y G",
                   "y": "E d MMM y تا E d MMM y G"
                 },
                 "yMMMM": {
                   "M": "LLLL تا MMMM y G",
                   "y": "MMMM y تا MMMM y G"
-                },
-                "yMMMd": {
-                  "M": "d LLL تا d MMM y G",
-                  "d": "d تا d MMM y G",
-                  "y": "d MMM y تا d MMM y G"
-                },
-                "yMd": {
-                  "M": "y/M/d تا y/M/d G",
-                  "d": "y/M/d تا y/M/d G",
-                  "y": "y/M/d تا y/M/d G"
                 }
               }
             }

@@ -3,11 +3,8 @@
     "km": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "km"
       },
@@ -108,7 +105,7 @@
               "format": {
                 "abbreviated": {
                   "sun": "អាទិត្យ",
-                  "mon": "ចន្ទ",
+                  "mon": "ច័ន្ទ",
                   "tue": "អង្គារ",
                   "wed": "ពុធ",
                   "thu": "ព្រហស្បតិ៍",
@@ -116,17 +113,17 @@
                   "sat": "សៅរ៍"
                 },
                 "narrow": {
-                  "sun": "1",
-                  "mon": "2",
-                  "tue": "3",
-                  "wed": "4",
-                  "thu": "5",
-                  "fri": "6",
-                  "sat": "7"
+                  "sun": "អា",
+                  "mon": "ច",
+                  "tue": "អ",
+                  "wed": "ពុ",
+                  "thu": "ព្រ",
+                  "fri": "សុ",
+                  "sat": "ស"
                 },
                 "short": {
                   "sun": "អាទិត្យ",
-                  "mon": "ចន្ទ",
+                  "mon": "ច័ន្ទ",
                   "tue": "អង្គារ",
                   "wed": "ពុធ",
                   "thu": "ព្រហស្បតិ៍",
@@ -135,7 +132,7 @@
                 },
                 "wide": {
                   "sun": "អាទិត្យ",
-                  "mon": "ចន្ទ",
+                  "mon": "ច័ន្ទ",
                   "tue": "អង្គារ",
                   "wed": "ពុធ",
                   "thu": "ព្រហស្បតិ៍",
@@ -146,7 +143,7 @@
               "stand-alone": {
                 "abbreviated": {
                   "sun": "អាទិត្យ",
-                  "mon": "ចន្ទ",
+                  "mon": "ច័ន្ទ",
                   "tue": "អង្គារ",
                   "wed": "ពុធ",
                   "thu": "ព្រហស្បតិ៍",
@@ -154,17 +151,17 @@
                   "sat": "សៅរ៍"
                 },
                 "narrow": {
-                  "sun": "1",
-                  "mon": "2",
-                  "tue": "3",
-                  "wed": "4",
-                  "thu": "5",
-                  "fri": "6",
-                  "sat": "7"
+                  "sun": "អា",
+                  "mon": "ច",
+                  "tue": "អ",
+                  "wed": "ពុ",
+                  "thu": "ព្រ",
+                  "fri": "សុ",
+                  "sat": "ស"
                 },
                 "short": {
                   "sun": "អាទិត្យ",
-                  "mon": "ចន្ទ",
+                  "mon": "ច័ន្ទ",
                   "tue": "អង្គារ",
                   "wed": "ពុធ",
                   "thu": "ព្រហស្បតិ៍",
@@ -173,7 +170,7 @@
                 },
                 "wide": {
                   "sun": "អាទិត្យ",
-                  "mon": "ចន្ទ",
+                  "mon": "ច័ន្ទ",
                   "tue": "អង្គារ",
                   "wed": "ពុធ",
                   "thu": "ព្រហស្បតិ៍",
@@ -185,78 +182,108 @@
             "quarters": {
               "format": {
                 "abbreviated": {
-                  "1": "ត្រីមាសទី ១",
-                  "2": "ត្រីមាសទី ២",
-                  "3": "ត្រីមាសទី ៣",
-                  "4": "ត្រីមាសទី ៤"
+                  "1": "ត្រីមាសទី 1",
+                  "2": "ត្រីមាសទី 2",
+                  "3": "ត្រីមាសទី 3",
+                  "4": "ត្រីមាសទី 4"
                 },
                 "narrow": {
-                  "1": "១",
-                  "2": "២",
-                  "3": "៣",
-                  "4": "៤"
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
                 },
                 "wide": {
-                  "1": "ត្រីមាសទី ១",
-                  "2": "ត្រីមាសទី ២",
-                  "3": "ត្រីមាសទី ៣",
-                  "4": "ត្រីមាសទី ៤"
+                  "1": "ត្រីមាសទី 1",
+                  "2": "ត្រីមាសទី 2",
+                  "3": "ត្រីមាសទី 3",
+                  "4": "ត្រីមាសទី 4"
                 }
               },
               "stand-alone": {
                 "abbreviated": {
-                  "1": "ត្រីមាសទី ១",
-                  "2": "ត្រីមាសទី ២",
-                  "3": "ត្រីមាសទី ៣",
-                  "4": "ត្រីមាសទី ៤"
+                  "1": "ត្រីមាសទី 1",
+                  "2": "ត្រីមាសទី 2",
+                  "3": "ត្រីមាសទី 3",
+                  "4": "ត្រីមាសទី 4"
                 },
                 "narrow": {
-                  "1": "១",
-                  "2": "២",
-                  "3": "៣",
-                  "4": "៤"
+                  "1": "1",
+                  "2": "2",
+                  "3": "3",
+                  "4": "4"
                 },
                 "wide": {
-                  "1": "ត្រីមាសទី ១",
-                  "2": "ត្រីមាសទី ២",
-                  "3": "ត្រីមាសទី ៣",
-                  "4": "ត្រីមាសទី ៤"
+                  "1": "ត្រីមាសទី 1",
+                  "2": "ត្រីមាសទី 2",
+                  "3": "ត្រីមាសទី 3",
+                  "4": "ត្រីមាសទី 4"
                 }
               }
             },
             "dayPeriods": {
               "format": {
                 "abbreviated": {
+                  "midnight": "អាធ្រាត្រ",
                   "am": "ព្រឹក",
                   "noon": "ថ្ងៃ",
-                  "pm": "ល្ងាច"
+                  "pm": "ល្ងាច",
+                  "morning1": "ព្រឹក",
+                  "afternoon1": "រសៀល",
+                  "evening1": "ល្ងាច",
+                  "night1": "យប់"
                 },
                 "narrow": {
+                  "midnight": "កណ្តាលអាធ្រាត្រ",
                   "am": "ព្រឹក",
-                  "noon": "ថ្ងៃ",
-                  "pm": "ល្ងាច"
+                  "noon": "ថ្ងៃត្រង់",
+                  "pm": "ល្ងាច",
+                  "morning1": "ព្រឹក",
+                  "afternoon1": "រសៀល",
+                  "evening1": "ល្ងាច",
+                  "night1": "យប់"
                 },
                 "wide": {
+                  "midnight": "អាធ្រាត្រ",
                   "am": "ព្រឹក",
                   "noon": "ថ្ងៃ",
-                  "pm": "ល្ងាច"
+                  "pm": "ល្ងាច",
+                  "morning1": "ព្រឹក",
+                  "afternoon1": "រសៀល",
+                  "evening1": "ល្ងាច",
+                  "night1": "យប់"
                 }
               },
               "stand-alone": {
                 "abbreviated": {
+                  "midnight": "កណ្តាលអាធ្រាត្រ",
                   "am": "ព្រឹក",
-                  "noon": "ថ្ងៃ",
-                  "pm": "ល្ងាច"
+                  "noon": "ថ្ងៃ​ត្រង់",
+                  "pm": "ល្ងាច",
+                  "morning1": "ព្រឹក",
+                  "afternoon1": "រសៀល",
+                  "evening1": "ល្ងាច",
+                  "night1": "យប់"
                 },
                 "narrow": {
+                  "midnight": "កណ្តាលអាធ្រាត្រ",
                   "am": "ព្រឹក",
-                  "noon": "ថ្ងៃ",
-                  "pm": "ល្ងាច"
+                  "noon": "ថ្ងៃ​ត្រង់",
+                  "pm": "ល្ងាច",
+                  "morning1": "ព្រឹក",
+                  "afternoon1": "រសៀល",
+                  "evening1": "ល្ងាច",
+                  "night1": "យប់"
                 },
                 "wide": {
+                  "midnight": "កណ្តាលអាធ្រាត្រ",
                   "am": "ព្រឹក",
-                  "noon": "ថ្ងៃ",
-                  "pm": "ល្ងាច"
+                  "noon": "ថ្ងៃ​ត្រង់",
+                  "pm": "ល្ងាច",
+                  "morning1": "ព្រឹក",
+                  "afternoon1": "រសៀល",
+                  "evening1": "ល្ងាច",
+                  "night1": "យប់"
                 }
               }
             },
@@ -289,38 +316,40 @@
               "medium": "{1}, {0}",
               "short": "{1}, {0}",
               "availableFormats": {
+                "d": "d",
                 "E": "ccc",
-                "EHm": "E HH:mm",
-                "EHms": "E HH:mm:ss",
                 "Ed": "d E",
                 "Ehm": "E h:mm a",
+                "EHm": "E HH:mm",
                 "Ehms": "E h:mm:ss a",
+                "EHms": "E HH:mm:ss",
                 "Gy": "y G",
                 "GyMMM": "MMM y G",
-                "GyMMMEd": "E, d MMM y G",
                 "GyMMMd": "d MMM y G",
+                "GyMMMEd": "E, d MMM y G",
+                "h": "h a",
                 "H": "HH",
+                "hm": "h:mm a",
                 "Hm": "HH:mm",
+                "hms": "h:mm:ss a",
                 "Hms": "HH:mm:ss",
                 "M": "L",
+                "Md": "d-M",
                 "MEd": "E, d-M",
                 "MMM": "LLL",
-                "MMMEd": "E d MMM",
                 "MMMd": "d MMM",
-                "Md": "d-M",
-                "d": "d",
-                "h": "h a",
-                "hm": "h:mm a",
-                "hms": "h:mm:ss a",
+                "MMMEd": "E d MMM",
+                "MMMMd": "MMMM d",
                 "ms": "mm:ss",
                 "y": "y G",
                 "yyyy": "y G",
                 "yyyyM": "M-y GGGGG",
+                "yyyyMd": "d-M-y G",
                 "yyyyMEd": "E, d-M-y G",
                 "yyyyMMM": "MMM y G",
-                "yyyyMMMEd": "E, d MMM y G",
                 "yyyyMMMd": "d MMM y G",
-                "yyyyMd": "d-M-y G",
+                "yyyyMMMEd": "E, d MMM y G",
+                "yyyyMMMM": "G y MMMM",
                 "yyyyQQQ": "QQQ y G",
                 "yyyyQQQQ": "QQQQ y G"
               },
@@ -339,42 +368,6 @@
               },
               "intervalFormats": {
                 "intervalFormatFallback": "{0} - {1}",
-                "H": {
-                  "H": "H–H"
-                },
-                "Hm": {
-                  "H": "H:mm–H:mm",
-                  "m": "H:mm–H:mm"
-                },
-                "Hmv": {
-                  "H": "H:mm–H:mm v",
-                  "m": "H:mm–H:mm v"
-                },
-                "Hv": {
-                  "H": "H–H v"
-                },
-                "M": {
-                  "M": "M – M"
-                },
-                "MEd": {
-                  "M": "E, d/M – E, d/M",
-                  "d": "E, d/M– E, d/M"
-                },
-                "MMM": {
-                  "M": "MMM – MMM"
-                },
-                "MMMEd": {
-                  "M": "E, d MMM – E, d MMM",
-                  "d": "E, d MMM – E, d MMM"
-                },
-                "MMMd": {
-                  "M": "d MMM – d MMM",
-                  "d": "d – d MMM"
-                },
-                "Md": {
-                  "M": "d/M – d/M",
-                  "d": "d/M – d/M"
-                },
                 "d": {
                   "d": "d – d"
                 },
@@ -382,19 +375,55 @@
                   "a": "h a – h a",
                   "h": "h–h a"
                 },
+                "H": {
+                  "H": "H–H"
+                },
                 "hm": {
                   "a": "h:mm a – h:mm a",
                   "h": "h:mm–h:mm a",
                   "m": "h:mm–h:mm a"
+                },
+                "Hm": {
+                  "H": "H:mm–H:mm",
+                  "m": "H:mm–H:mm"
                 },
                 "hmv": {
                   "a": "h:mm a – h:mm a v",
                   "h": "h:mm–h:mm a v",
                   "m": "h:mm–h:mm a v"
                 },
+                "Hmv": {
+                  "H": "H:mm–H:mm v",
+                  "m": "H:mm–H:mm v"
+                },
                 "hv": {
                   "a": "h a – h a v",
                   "h": "h–h a v"
+                },
+                "Hv": {
+                  "H": "H–H v"
+                },
+                "M": {
+                  "M": "M – M"
+                },
+                "Md": {
+                  "d": "d/M – d/M",
+                  "M": "d/M – d/M"
+                },
+                "MEd": {
+                  "d": "E, d/M– E, d/M",
+                  "M": "E, d/M – E, d/M"
+                },
+                "MMM": {
+                  "M": "MMM – MMM"
+                },
+                "MMMd": {
+                  "d": "d – d MMM",
+                  "M": "d MMM – d MMM"
+                },
+                "MMMEd": {
+                  "d": "E, d MMM – E, d MMM",
+                  "M": "E, d MMM – E, d MMM"
                 },
                 "y": {
                   "y": "y – y G"
@@ -403,33 +432,33 @@
                   "M": "M/y – M/y GGGGG",
                   "y": "M/y – M/y GGGGG"
                 },
+                "yMd": {
+                  "d": "d/M/y – d/M/y G",
+                  "M": "d/M/y – d/M/y GGGGG",
+                  "y": "d/M/y – d/M/y GGGGG"
+                },
                 "yMEd": {
-                  "M": "E, d/M/y – E, d/M/y GGGGG",
                   "d": "E, d/M/y – E, d/M/y GGGGG",
+                  "M": "E, d/M/y – E, d/M/y GGGGG",
                   "y": "E, d/M/y – E, d/M/y GGGGG"
                 },
                 "yMMM": {
                   "M": "MMM – MMM y G",
                   "y": "MM-y – MM-y G"
                 },
+                "yMMMd": {
+                  "d": "d–d MMM y G",
+                  "M": "MMM d – MMM d, y G",
+                  "y": "d MMM, y – d MMM, y G"
+                },
                 "yMMMEd": {
-                  "M": "E, d MMM – E, d MMM, y G",
                   "d": "E, d MMM – E, d MMM, y G",
+                  "M": "E, d MMM – E, d MMM, y G",
                   "y": "E, d MMM, y – E, d MMM, y G"
                 },
                 "yMMMM": {
                   "M": "MMMM – MMMM y G",
                   "y": "MMMM y – MMMM y G"
-                },
-                "yMMMd": {
-                  "M": "MMM d – MMM d, y G",
-                  "d": "d–d MMM y G",
-                  "y": "d MMM, y – d MMM, y G"
-                },
-                "yMd": {
-                  "M": "d/M/y – d/M/y GGGGG",
-                  "d": "d/M/y – d/M/y G",
-                  "y": "d/M/y – d/M/y GGGGG"
                 }
               }
             }

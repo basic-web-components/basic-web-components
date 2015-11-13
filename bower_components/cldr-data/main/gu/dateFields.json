@@ -3,11 +3,8 @@
     "gu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "gu"
       },
@@ -31,7 +28,7 @@
             }
           },
           "year-short": {
-            "displayName": "વર્ષ",
+            "displayName": "વ.",
             "relative-type--1": "ગયા વર્ષે",
             "relative-type-0": "આ વર્ષે",
             "relative-type-1": "આવતા વર્ષે",
@@ -45,35 +42,35 @@
             }
           },
           "year-narrow": {
-            "displayName": "વર્ષ",
+            "displayName": "વ.",
             "relative-type--1": "ગયા વર્ષે",
             "relative-type-0": "આ વર્ષે",
             "relative-type-1": "આવતા વર્ષે",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} વર્ષ",
+              "relativeTimePattern-count-one": "{0} વર્ષમાં",
               "relativeTimePattern-count-other": "+{0} વર્ષ"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} વર્ષ",
+              "relativeTimePattern-count-one": "{0} વર્ષ પહેલા",
               "relativeTimePattern-count-other": "-{0} વર્ષ"
             }
           },
           "quarter": {
-            "displayName": "ક્વાર્ટર",
+            "displayName": "ત્રિમાસિક",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} ત્રિમાસમાં",
-              "relativeTimePattern-count-other": "{0} ત્રિમાસમાં"
+              "relativeTimePattern-count-one": "{0} ત્રિમાસિકમાં",
+              "relativeTimePattern-count-other": "{0} ત્રિમાસિકમાં"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} ત્રિમાસ પહેલાં",
-              "relativeTimePattern-count-other": "{0} ત્રિમાસ પહેલાં"
+              "relativeTimePattern-count-one": "{0} ત્રિમાસિક પહેલા",
+              "relativeTimePattern-count-other": "{0} ત્રિમાસિક પહેલા"
             }
           },
           "quarter-short": {
-            "displayName": "ક્વા.",
+            "displayName": "ત્રિમાસ.",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -87,7 +84,7 @@
             }
           },
           "quarter-narrow": {
-            "displayName": "ક્વા.",
+            "displayName": "ત્રિમાસ.",
             "relative-type--1": "last quarter",
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "દિવસ",
-            "relative-type--1": "ગઈકાલે",
             "relative-type--2": "ગયા પરમદિવસે",
+            "relative-type--1": "ગઈકાલે",
             "relative-type-0": "આજે",
             "relative-type-1": "આવતીકાલે",
             "relative-type-2": "પરમદિવસે",
@@ -196,14 +193,14 @@
               "relativeTimePattern-count-other": "{0} દિવસમાં"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} દિવસ પહેલા",
+              "relativeTimePattern-count-one": "{0} દિવસ પહેલાં",
               "relativeTimePattern-count-other": "{0} દિવસ પહેલા"
             }
           },
           "day-short": {
             "displayName": "દિ.",
-            "relative-type--1": "ગઈકાલે",
             "relative-type--2": "ગયા પરમદિવસે",
+            "relative-type--1": "ગઈકાલે",
             "relative-type-0": "આજે",
             "relative-type-1": "આવતીકાલે",
             "relative-type-2": "પરમદિવસે",
@@ -212,14 +209,14 @@
               "relativeTimePattern-count-other": "{0} દિવસમાં"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} દિવસ પહેલા",
+              "relativeTimePattern-count-one": "{0} દિવસ પહેલાં",
               "relativeTimePattern-count-other": "{0} દિવસ પહેલા"
             }
           },
           "day-narrow": {
-            "displayName": "દિ.",
-            "relative-type--1": "ગઈકાલે",
+            "displayName": "દિવસ",
             "relative-type--2": "ગયા પરમદિવસે",
+            "relative-type--1": "ગઈકાલે",
             "relative-type-0": "આજે",
             "relative-type-1": "આવતીકાલે",
             "relative-type-2": "પરમદિવસે",
@@ -228,7 +225,7 @@
               "relativeTimePattern-count-other": "+{0} દિવસ"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} દિવસ",
+              "relativeTimePattern-count-one": "{0} દિવસ પહેલાં",
               "relativeTimePattern-count-other": "-{0} દિવસ"
             }
           },
@@ -366,7 +363,7 @@
             }
           },
           "hour-narrow": {
-            "displayName": "ક",
+            "displayName": "ક.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} કલાકમાં",
               "relativeTimePattern-count-other": "{0} કલાકમાં"
@@ -399,7 +396,7 @@
             }
           },
           "minute-narrow": {
-            "displayName": "મિ",
+            "displayName": "મિ.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} મિનિટમાં",
               "relativeTimePattern-count-other": "{0} મિનિટમાં"
@@ -422,7 +419,7 @@
             }
           },
           "second-short": {
-            "displayName": "સેકન્ડ",
+            "displayName": "સે.",
             "relative-type-0": "હમણાં",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} સેકંડમાં",
@@ -434,7 +431,7 @@
             }
           },
           "second-narrow": {
-            "displayName": "સે",
+            "displayName": "સે.",
             "relative-type-0": "હમણાં",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} સેકંડમાં",

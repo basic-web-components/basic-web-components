@@ -3,11 +3,8 @@
     "gl": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "gl"
       },
@@ -560,7 +557,8 @@
             "displayName": "Lari xeorxiano",
             "displayName-count-one": "lari xeorxiano",
             "displayName-count-other": "laris xeorxianos",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -1131,7 +1129,7 @@
           },
           "PYG": {
             "displayName": "Guaraní paraguaio",
-            "displayName-count-one": "Guaraní paraguaio",
+            "displayName-count-one": "guaraní paraguaio",
             "displayName-count-other": "guaranís paraguaios",
             "symbol": "PYG",
             "symbol-alt-narrow": "₲"
@@ -1167,7 +1165,7 @@
             "displayName-count-one": "rublo ruso",
             "displayName-count-other": "rublos rusos",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Rublo ruso (1991–1998)",
@@ -1341,7 +1339,7 @@
           "TOP": {
             "displayName": "Paʻanga de Tonga",
             "displayName-count-one": "paʻanga de Tonga",
-            "displayName-count-other": "Paʻanga de Tonga",
+            "displayName-count-other": "pa’anga de Tonga",
             "symbol": "TOP",
             "symbol-alt-narrow": "T$"
           },

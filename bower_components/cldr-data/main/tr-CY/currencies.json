@@ -3,11 +3,8 @@
     "tr-CY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "tr",
         "territory": "CY"
@@ -628,7 +625,8 @@
             "displayName": "Gürcistan Larisi",
             "displayName-count-one": "Gürcistan larisi",
             "displayName-count-other": "Gürcistan larisi",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Gana Sedisi (1979–2007)",
@@ -1298,7 +1296,7 @@
             "displayName-count-one": "Rus rublesi",
             "displayName-count-other": "Rus rublesi",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Rus Rublesi (1991–1998)",

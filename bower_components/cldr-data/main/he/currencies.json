@@ -3,11 +3,8 @@
     "he": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "he"
       },
@@ -621,7 +618,8 @@
             "displayName-count-two": "לרי גאורגי",
             "displayName-count-many": "לרי גאורגי",
             "displayName-count-other": "לרי גאורגי",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -783,11 +781,11 @@
             "symbol-alt-narrow": "₹"
           },
           "IQD": {
-            "displayName": "דינר עירקי",
-            "displayName-count-one": "דינר עירקי",
-            "displayName-count-two": "דינר עירקי",
-            "displayName-count-many": "דינר עירקי",
-            "displayName-count-other": "דינר עירקי",
+            "displayName": "דינר עיראקי",
+            "displayName-count-one": "דינר עיראקי",
+            "displayName-count-two": "דינר עיראקי",
+            "displayName-count-many": "דינר עיראקי",
+            "displayName-count-other": "דינר עיראקי",
             "symbol": "IQD"
           },
           "IRR": {
@@ -1360,6 +1358,7 @@
             "displayName-count-many": "רובל רוסי",
             "displayName-count-other": "רובל רוסי",
             "symbol": "RUB",
+            "symbol-alt-narrow": "₽",
             "symbol-alt-variant": "₽"
           },
           "RUR": {

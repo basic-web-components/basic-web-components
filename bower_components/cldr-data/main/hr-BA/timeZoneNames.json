@@ -3,11 +3,8 @@
     "hr-BA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "hr",
         "territory": "BA"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}",
-          "regionFormat-type-standard": "{0}, standardno vrijeme",
           "regionFormat-type-daylight": "{0}, ljetno vrijeme",
+          "regionFormat-type-standard": "{0}, standardno vrijeme",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Sjeverna Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Sjeverna Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Sjeverna Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Sjeverna Dakota"
                 }
               },
               "Ojinaga": {
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "Singapur"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Srednekolimsk"
               },
               "Taipei": {
                 "exemplarCity": "Taipei"
@@ -1777,14 +1774,6 @@
                 "standard": "južnofrancusko i antarktičko vrijeme"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "univerzalno vrijeme"
-              },
-              "short": {
-                "standard": "GMT"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "vrijeme Galapagosa"
@@ -1805,6 +1794,14 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "vrijeme Gilbertovih Otoka"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "univerzalno vrijeme"
+              },
+              "short": {
+                "standard": "GMT"
               }
             },
             "Greenland_Eastern": {

@@ -3,11 +3,8 @@
     "pt-PT": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11979 $"
         },
         "language": "pt",
         "territory": "PT"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Hora de {0}",
-          "regionFormat-type-standard": "Hora padrão de {0}",
           "regionFormat-type-daylight": "Hora padrão de {0}",
+          "regionFormat-type-standard": "Hora padrão de {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucumán"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Dakota do Norte"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Dakota do Norte"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salen, Dakota do Norte"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Dakota do Norte"
                 }
               },
               "Ojinaga": {
@@ -624,7 +621,7 @@
                 "exemplarCity": "Samara"
               },
               "San_Marino": {
-                "exemplarCity": "São Marino"
+                "exemplarCity": "São Marinho"
               },
               "Sarajevo": {
                 "exemplarCity": "Sarajevo"
@@ -1463,7 +1460,7 @@
             },
             "America_Mountain": {
               "long": {
-                "generic": "Hora da Montanha",
+                "generic": "Hora de Montanha",
                 "standard": "Hora padrão da Montanha",
                 "daylight": "Hora de verão da Montanha"
               }
@@ -1484,9 +1481,9 @@
             },
             "Apia": {
               "long": {
-                "generic": "Horário de Apia",
-                "standard": "Horário Padrão de Apia",
-                "daylight": "Horário de Verão de Apia"
+                "generic": "Hora de Apia",
+                "standard": "Hora padrão de Apia",
+                "daylight": "Hora de verão de Apia"
               }
             },
             "Aqtau": {
@@ -1777,11 +1774,6 @@
                 "standard": "Hora das Terras Austrais e Antárcticas Francesas"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Hora de Greenwich"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Hora das Galápagos"
@@ -1802,6 +1794,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Hora das Ilhas Gilbert"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Hora de Greenwich"
               }
             },
             "Greenland_Eastern": {

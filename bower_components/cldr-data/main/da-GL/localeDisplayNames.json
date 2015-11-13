@@ -3,11 +3,8 @@
     "da-GL": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "da",
         "territory": "GL"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "kalender",
+          "cf": "cf",
           "colAlternate": "Ignorer symboler under sortering",
           "colBackwards": "Omvendt sortering efter accenter",
           "colCaseFirst": "Sortering efter store/små bogstaver",
           "colCaseLevel": "Sortering med forskel på små og store bogstaver",
           "colHiraganaQuaternary": "Sortering efter kana",
+          "collation": "sorteringsrækkefølge",
           "colNormalization": "Normaliseret sortering",
           "colNumeric": "Numerisk sortering",
           "colStrength": "Sorteringsstyrke",
-          "collation": "sorteringsrækkefølge",
           "currency": "valuta",
+          "hc": "timeur (12 vs. 24)",
+          "lb": "linjeskift",
+          "ms": "målesystem",
           "numbers": "tal",
           "timezone": "Tidszone",
           "va": "Sprogvariant",
@@ -57,6 +58,10 @@
             "persian": "persisk kalender",
             "roc": "kalender for Republikken Kina"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Sortér efter symboler",
             "shifted": "Sortér, og ignorer symboler"
@@ -78,6 +83,26 @@
             "no": "Sortér kana separat",
             "yes": "Sortér kana med forskel på varianter"
           },
+          "collation": {
+            "big5han": "sorteringsrækkefølge uforkortet kinesisk - Big5",
+            "compat": "compat",
+            "dictionary": "sorteringsrækkefølge for ordbog",
+            "ducet": "Unicode-standardsortering",
+            "emoji": "emoji",
+            "eor": "europæisk sorteringsrækkefølge",
+            "gb2312han": "sorteringsrækkefølge forkortet kinesisk - GB2312",
+            "phonebook": "sorteringsrækkefølge i telefonbøger",
+            "phonetic": "fonetisk sorteringsrækkefølge",
+            "pinyin": "pinyin-baseret sorteringsrækkefølge",
+            "reformed": "ny sorteringsrækkefølge",
+            "search": "generel søgning",
+            "searchjl": "sortér efter den første konsonant i hangul",
+            "standard": "standardsorteringsrækkefølge",
+            "stroke": "stregbaseret sorteringsrækkefølge",
+            "traditional": "traditionel sorteringsrækkefølge",
+            "unihan": "sortering efter streger i rodtegn",
+            "zhuyin": "zhuyin-sorteringsrækkefølge"
+          },
           "colNormalization": {
             "no": "Sortér uden normalisering",
             "yes": "Sortér Unicode efter første normalisering"
@@ -93,25 +118,24 @@
             "secondary": "Sortér efter accenter",
             "tertiary": "Sortér efter accenter/store og små bogstaver/bredde"
           },
-          "collation": {
-            "big5han": "sorteringsrækkefølge uforkortet kinesisk - Big5",
-            "dictionary": "sorteringsrækkefølge for ordbog",
-            "ducet": "Unicode-standardsortering",
-            "eor": "europæisk sorteringsrækkefølge",
-            "gb2312han": "sorteringsrækkefølge forkortet kinesisk - GB2312",
-            "phonebook": "sorteringsrækkefølge i telefonbøger",
-            "phonetic": "fonetisk sorteringsrækkefølge",
-            "pinyin": "pinyin-baseret sorteringsrækkefølge",
-            "reformed": "ny sorteringsrækkefølge",
-            "search": "generel søgning",
-            "searchjl": "sortér efter den første konsonant i hangul",
-            "standard": "standardsorteringsrækkefølge",
-            "stroke": "stregbaseret sorteringsrækkefølge",
-            "traditional": "traditionel sorteringsrækkefølge",
-            "unihan": "sortering efter streger i rodtegn",
-            "zhuyin": "zhuyin-sorteringsrækkefølge"
+          "hc": {
+            "h11": "12-timersur (0-11)",
+            "h12": "12-timersur (1-12)",
+            "h23": "24-timersur (0-23)",
+            "h24": "24-timersur (1-24)"
+          },
+          "lb": {
+            "loose": "løst linjeskift",
+            "normal": "normalt linjeskift",
+            "strict": "hårdt linjeskift"
+          },
+          "ms": {
+            "metric": "metersystem",
+            "uksystem": "britisk målesystem",
+            "ussystem": "amerikansk målesystem"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "hindu-arabiske tal",
             "arabext": "udvidede hindu-arabiske tal",
             "armn": "armenske tal",
@@ -121,6 +145,7 @@
             "brah": "Brahmi-tal",
             "cakm": "Chakma-tal",
             "cham": "Cham-tal",
+            "cyrl": "cyrl",
             "deva": "devanagariske tal",
             "ethi": "etiopiske tal",
             "finance": "Finansielle tal",
@@ -136,6 +161,7 @@
             "hant": "traditionelle kinesiske tal",
             "hantfin": "traditionelle kinesiske finansielle tal",
             "hebr": "hebræiske tal",
+            "hmng": "hmng",
             "java": "Javanesiske tal",
             "jpan": "japanske tal",
             "jpanfin": "japanske financielle tal",
@@ -148,11 +174,19 @@
             "latn": "arabertal",
             "lepc": "Lepcha-tal",
             "limb": "Limbu-tal",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malayalamske tal",
+            "modi": "modi",
             "mong": "Mongolske tal",
+            "mroo": "mroo",
             "mtei": "Meetei Mayek-tal",
             "mymr": "Myanmar tal",
             "mymrshan": "Myanmar Shan-tal",
+            "mymrtlng": "mymrtlng",
             "native": "Nationale cifre",
             "nkoo": "N’Ko-tal",
             "olck": "Ol Chiki-tal",
@@ -162,6 +196,8 @@
             "romanlow": "romertal i små bogstaver",
             "saur": "Saurashtra-tal",
             "shrd": "Sharada-tal",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "Sora Sompeng-tal",
             "sund": "Sundanesiske tal",
             "takr": "Takri-tal",
@@ -171,13 +207,15 @@
             "telu": "Telugu tal",
             "thai": "thailandske tal",
             "tibt": "tibetanske tal",
+            "tirh": "tirh",
             "traditional": "Traditionelle tal",
-            "vaii": "Vai-tal"
+            "vaii": "Vai-tal",
+            "wara": "wara"
           }
         },
         "codePatterns": {
           "language": "Sprog: {0}",
-          "script": "Instruks: {0}",
+          "script": "Skrift: {0}",
           "territory": "Område: {0}"
         }
       }

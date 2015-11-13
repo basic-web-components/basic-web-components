@@ -3,11 +3,8 @@
     "zh-Hant": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "zh",
         "script": "Hant"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}時間",
-          "regionFormat-type-standard": "{0} (+0)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1}（{0}）",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "阿拉圭那"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "拉略哈"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "里奧加耶戈斯"
-                },
-                "Salta": {
-                  "exemplarCity": "薩爾塔"
                 },
                 "San_Juan": {
                   "exemplarCity": "聖胡安"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "烏斯懷亞"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "拉略哈"
+                },
                 "San_Luis": {
                   "exemplarCity": "聖路易"
                 },
+                "Salta": {
+                  "exemplarCity": "薩爾塔"
+                },
                 "Tucuman": {
                   "exemplarCity": "吐庫曼"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "烏斯懷亞"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "埃莫西約"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "印第安那州諾克斯"
-                },
-                "Marengo": {
-                  "exemplarCity": "印第安那州馬倫哥"
+                "Vincennes": {
+                  "exemplarCity": "印第安那州溫森斯"
                 },
                 "Petersburg": {
                   "exemplarCity": "印第安那州彼得堡"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "印第安那州泰爾城"
                 },
-                "Vevay": {
-                  "exemplarCity": "印第安那州維威"
-                },
-                "Vincennes": {
-                  "exemplarCity": "印第安那州溫森斯"
+                "Knox": {
+                  "exemplarCity": "印第安那州諾克斯"
                 },
                 "Winamac": {
                   "exemplarCity": "印第安那州威納馬克"
+                },
+                "Marengo": {
+                  "exemplarCity": "印第安那州馬倫哥"
+                },
+                "Vevay": {
+                  "exemplarCity": "印第安那州維威"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "北達科他州布由拉"
                 },
-                "Center": {
-                  "exemplarCity": "北達科他州中心"
-                },
                 "New_Salem": {
                   "exemplarCity": "北達科他州紐沙倫"
+                },
+                "Center": {
+                  "exemplarCity": "北達科他州中心"
                 }
               },
               "Ojinaga": {
@@ -669,7 +666,7 @@
                 "exemplarCity": "華沙"
               },
               "Zagreb": {
-                "exemplarCity": "札格雷布"
+                "exemplarCity": "札格瑞布"
               },
               "Zaporozhye": {
                 "exemplarCity": "札波羅結"
@@ -883,7 +880,7 @@
                 "exemplarCity": "加爾各答"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "赤塔"
               },
               "Choibalsan": {
                 "exemplarCity": "喬巴山"
@@ -970,7 +967,7 @@
                 "exemplarCity": "馬尼拉"
               },
               "Muscat": {
-                "exemplarCity": "馬斯喀特"
+                "exemplarCity": "馬斯開特"
               },
               "Nicosia": {
                 "exemplarCity": "尼古西亞"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "新加坡"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "中科雷姆斯克"
               },
               "Taipei": {
                 "exemplarCity": "台北"
@@ -1086,7 +1083,7 @@
                 "exemplarCity": "科科斯群島"
               },
               "Comoro": {
-                "exemplarCity": "葛摩"
+                "exemplarCity": "科摩羅群島"
               },
               "Kerguelen": {
                 "exemplarCity": "凱爾蓋朗島"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "奧克蘭"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "布干維爾"
               },
               "Chatham": {
                 "exemplarCity": "查坦"
@@ -1762,11 +1759,6 @@
                 "standard": "法國南方及南極時間"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "格林威治標準時間"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "加拉巴哥群島時間"
@@ -1787,6 +1779,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "吉爾伯特群島時間"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "格林威治標準時間"
               }
             },
             "Greenland_Eastern": {

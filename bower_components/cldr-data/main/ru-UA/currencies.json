@@ -3,11 +3,8 @@
     "ru-UA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11248 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-18 16:47:15 -0600 (Wed, 18 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ru",
         "territory": "UA"
@@ -616,11 +613,11 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "Английский фунт",
-            "displayName-count-one": "английский фунт",
-            "displayName-count-few": "английских фунта",
-            "displayName-count-many": "английских фунтов",
-            "displayName-count-other": "английского фунта",
+            "displayName": "Английский фунт стерлингов",
+            "displayName-count-one": "английский фунт стерлингов",
+            "displayName-count-few": "английских фунта стерлингов",
+            "displayName-count-many": "английских фунтов стерлингов",
+            "displayName-count-other": "английского фунта стерлингов",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -634,7 +631,8 @@
             "displayName-count-few": "грузинских лари",
             "displayName-count-many": "грузинских лари",
             "displayName-count-other": "грузинского лари",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ганский седи (1979–2007)",
@@ -1372,8 +1370,8 @@
             "displayName-count-few": "российских рубля",
             "displayName-count-many": "российских рублей",
             "displayName-count-other": "российского рубля",
-            "symbol": "руб.",
-            "symbol-alt-variant": "₽"
+            "symbol": "₽",
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Российский рубль (1991–1998)",
@@ -1601,7 +1599,7 @@
           },
           "TRY": {
             "displayName": "Турецкая лира",
-            "displayName-count-one": "новая турецкая лира",
+            "displayName-count-one": "турецкая лира",
             "displayName-count-few": "турецкие лиры",
             "displayName-count-many": "турецких лир",
             "displayName-count-other": "турецкой лиры",
@@ -1642,7 +1640,8 @@
             "displayName-count-many": "украинских гривен",
             "displayName-count-other": "украинской гривны",
             "symbol": "₴",
-            "symbol-alt-narrow": "₴"
+            "symbol-alt-narrow": "₴",
+            "symbol-alt-variant": "грн."
           },
           "UAK": {
             "displayName": "Карбованец (украинский)",

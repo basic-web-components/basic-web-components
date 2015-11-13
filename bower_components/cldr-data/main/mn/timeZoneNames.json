@@ -3,11 +3,8 @@
     "mn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "mn"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}-н цагаар",
-          "regionFormat-type-standard": "{0} (+0)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Арагуана"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "Ла-Риоха"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Рио-Гальегос"
-                },
-                "Salta": {
-                  "exemplarCity": "Салта"
                 },
                 "San_Juan": {
                   "exemplarCity": "Сан-Хуан"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ушуайя"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "Ла-Риоха"
+                },
                 "San_Luis": {
                   "exemplarCity": "Сан Луи"
                 },
+                "Salta": {
+                  "exemplarCity": "Салта"
+                },
                 "Tucuman": {
                   "exemplarCity": "Тукуман"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ушуайя"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "Хермосилло"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Нокс, Индиана"
-                },
-                "Marengo": {
-                  "exemplarCity": "Маренго, Индиана"
+                "Vincennes": {
+                  "exemplarCity": "Винсенес, Индиана"
                 },
                 "Petersburg": {
                   "exemplarCity": "Питерсбург, Индиана"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Тел Сити, Индиана"
                 },
-                "Vevay": {
-                  "exemplarCity": "Вивей, Индиана"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Винсенес, Индиана"
+                "Knox": {
+                  "exemplarCity": "Нокс, Индиана"
                 },
                 "Winamac": {
                   "exemplarCity": "Винамак, Индиана"
+                },
+                "Marengo": {
+                  "exemplarCity": "Маренго, Индиана"
+                },
+                "Vevay": {
+                  "exemplarCity": "Вивей, Индиана"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Била, Хойд Дакота"
                 },
-                "Center": {
-                  "exemplarCity": "Төв, Хойд Дакота"
-                },
                 "New_Salem": {
                   "exemplarCity": "Нью-Салем, Хойд Дакота"
+                },
+                "Center": {
+                  "exemplarCity": "Төв, Хойд Дакота"
                 }
               },
               "Ojinaga": {
@@ -1721,11 +1718,6 @@
                 "standard": "Францын Өмнөд ба Антарктик цаг"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Гринвичийн үндсэн цаг"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Галапагосын цаг"
@@ -1746,6 +1738,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Жильбер арлын цаг"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Гринвичийн үндсэн цаг"
               }
             },
             "Greenland_Eastern": {

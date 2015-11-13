@@ -3,11 +3,8 @@
     "ne": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ne"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} समय",
-          "regionFormat-type-standard": "{0} (+०)",
           "regionFormat-type-daylight": "{0} (+१)",
+          "regionFormat-type-standard": "{0} (+०)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "आरागुवाना"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ला रियोजा"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "रियो ग्यालेगोस"
-                },
-                "Salta": {
-                  "exemplarCity": "साल्टा"
                 },
                 "San_Juan": {
                   "exemplarCity": "सान जुवान"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "उशुआइआ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ला रियोजा"
+                },
                 "San_Luis": {
                   "exemplarCity": "सान लुइस"
                 },
+                "Salta": {
+                  "exemplarCity": "साल्टा"
+                },
                 "Tucuman": {
                   "exemplarCity": "टुकुमान"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "उशुआइआ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "हेर्मोसिल्लो"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "नोक्स, इण्डियाना"
-                },
-                "Marengo": {
-                  "exemplarCity": "मारेन्गो, इन्डियाना"
+                "Vincennes": {
+                  "exemplarCity": "भिन्सेन्स"
                 },
                 "Petersburg": {
                   "exemplarCity": "पिटर्सबर्ग, इन्डियाना"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "टेल सिटी, इन्डियाना"
                 },
-                "Vevay": {
-                  "exemplarCity": "भेभे, इन्डियाना"
-                },
-                "Vincennes": {
-                  "exemplarCity": "भिन्सेन्स"
+                "Knox": {
+                  "exemplarCity": "नोक्स, इण्डियाना"
                 },
                 "Winamac": {
                   "exemplarCity": "विनामाक, इन्डियाना"
+                },
+                "Marengo": {
+                  "exemplarCity": "मारेन्गो, इन्डियाना"
+                },
+                "Vevay": {
+                  "exemplarCity": "भेभे, इन्डियाना"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "बेलुआ, उत्तर डोकोटा"
                 },
-                "Center": {
-                  "exemplarCity": "उत्तर डाकोटा, केन्द्र"
-                },
                 "New_Salem": {
                   "exemplarCity": "नयाँ सालेम, उत्तर डाकोटा"
+                },
+                "Center": {
+                  "exemplarCity": "उत्तर डाकोटा, केन्द्र"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "कोलकाता"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "चिता"
               },
               "Choibalsan": {
                 "exemplarCity": "चोइबाल्सान"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "सिंगापुर"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "स्रेद्निकोलिम्स्क"
               },
               "Taipei": {
                 "exemplarCity": "ताईपे"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "अक्कल्यान्ड"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "बुगेनभिल्ले"
               },
               "Chatham": {
                 "exemplarCity": "चाथाम"
@@ -1721,11 +1718,6 @@
                 "standard": "फ्रेन्च दक्षिणी र अन्टार्टिक समय"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ग्रीनविच मिन समय"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "गालापागोस् समय"
@@ -1746,6 +1738,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "गिल्बर्ट टापु समय"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ग्रीनविच मिन समय"
               }
             },
             "Greenland_Eastern": {

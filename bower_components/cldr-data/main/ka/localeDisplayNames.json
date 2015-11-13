@@ -3,11 +3,8 @@
     "ka": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11322 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 14:53:52 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ka"
       },
@@ -19,8 +16,12 @@
         },
         "keys": {
           "calendar": "კალენდარი",
+          "cf": "cf",
           "collation": "დახარისხების თანმიმდევრობა",
           "currency": "ვალუტა",
+          "hc": "დროის სისტემა (12 ან 24)",
+          "lb": "სტრიქონის წყვეტის სტილი",
+          "ms": "საზომი სისტემა",
           "numbers": "რიცხვები"
         },
         "types": {
@@ -44,10 +45,16 @@
             "persian": "სპარსული კალენდარი",
             "roc": "ჩინეთის რესპუბლიკის კალენდარი"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "ტრადიციული ჩინური",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "უნიკოდის ნაგულისხმევი დახარისხების თანმიმდევრობა",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "გამარტივებული ჩინური",
             "phonebook": "phonebook",
@@ -61,7 +68,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12-საათიანი სისტემა (0-11)",
+            "h12": "12-საათიანი სისტემა (1-12)",
+            "h23": "24-საათიანი სისტემა (0-23)",
+            "h24": "24-საათიანი სისტემა (1-24)"
+          },
+          "lb": {
+            "loose": "სტრიქონის რბილი წყვეტის სტილი",
+            "normal": "სტრიქონის ჩვეულებრივი წყვეტის სტილი",
+            "strict": "სტრიქონის ზედმიწევნითი წყვეტის სტილი"
+          },
+          "ms": {
+            "metric": "მეტრული სისტემა",
+            "uksystem": "ბრიტანული საზომი სისტემა",
+            "ussystem": "ამერიკული საზომი სისტემა"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "არაბულ-ინდური ციფრები",
             "arabext": "გაფართოებული არაბულ-ინდური ციფრები",
             "armn": "სომხური რიცხვები",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "დევანაგარის ციფრები",
             "ethi": "ეთიოპიური რიცხვები",
             "fullwide": "სრულსიგანიანი ციფრები",
@@ -85,6 +110,7 @@
             "hant": "ტრადიციული ჩინური რიცხვები",
             "hantfin": "ტრადიციული ჩინური ფინანსური რიცხვები",
             "hebr": "ებრაული რიცხვები",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "იაპონური რიცხვები",
             "jpanfin": "იაპონური ფინანსური რიცხვები",
@@ -97,11 +123,19 @@
             "latn": "დასავლური ციფრები",
             "lepc": "lepc",
             "limb": "ლიმბური ციფრები",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "მალაიალამური ციფრები",
+            "modi": "modi",
             "mong": "მონღოლური ციფრები",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "მიანმური ციფრები",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "ორიული ციფრები",
@@ -110,6 +144,8 @@
             "romanlow": "რომაული ქვედა რეგისტრის რიცხვები",
             "saur": "საურაშტრული ციფრები",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "სუნდანური ციფრები",
             "takr": "takr",
@@ -119,7 +155,9 @@
             "telu": "ტელუგუს ციფრები",
             "thai": "ტაილანდური ციფრები",
             "tibt": "ტიბეტური ციფრები",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

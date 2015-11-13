@@ -3,11 +3,8 @@
     "hu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "hu"
       },
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "negyedév",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "előző negyedév",
+            "relative-type-0": "ez a negyedév",
+            "relative-type-1": "következő negyedév",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} negyedév múlva",
               "relativeTimePattern-count-other": "{0} negyedév múlva"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "negyedév",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "előző negyedév",
+            "relative-type-0": "ez a negyedév",
+            "relative-type-1": "következő negyedév",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} negyedév múlva",
               "relativeTimePattern-count-other": "{0} negyedév múlva"
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "negyedév",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "előző negyedév",
+            "relative-type-0": "ez a negyedév",
+            "relative-type-1": "következő negyedév",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} negyedév múlva",
               "relativeTimePattern-count-other": "{0} negyedév múlva"
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "nap",
-            "relative-type--1": "tegnap",
             "relative-type--2": "tegnapelőtt",
+            "relative-type--1": "tegnap",
             "relative-type-0": "ma",
             "relative-type-1": "holnap",
             "relative-type-2": "holnapután",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "nap",
-            "relative-type--1": "tegnap",
             "relative-type--2": "tegnapelőtt",
+            "relative-type--1": "tegnap",
             "relative-type-0": "ma",
             "relative-type-1": "holnap",
             "relative-type-2": "holnapután",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "nap",
-            "relative-type--1": "tegnap",
             "relative-type--2": "tegnapelőtt",
+            "relative-type--1": "tegnap",
             "relative-type-0": "ma",
             "relative-type-1": "holnap",
             "relative-type-2": "holnapután",

@@ -3,11 +3,8 @@
     "ml": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "ml"
       },
@@ -365,7 +362,7 @@
           "CHF": {
             "displayName": "സ്വിസ് ഫ്രാങ്ക്",
             "displayName-count-one": "സ്വിസ് ഫ്രാങ്ക്",
-            "displayName-count-other": "സ്വിസ് ഫ്രാങ്ക്സ്",
+            "displayName-count-other": "സ്വിസ് ഫ്രാങ്ക്",
             "symbol": "CHF"
           },
           "CHW": {
@@ -591,9 +588,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "ബ്രിട്ടീഷ് പൗണ്ട് സ്‌റ്റെർലിംഗ്",
-            "displayName-count-one": "ബ്രിട്ടീഷ് പൗണ്ട് സ്‌റ്റെർലിംഗ്",
-            "displayName-count-other": "ബ്രിട്ടീഷ് പൗണ്ട് സ്‌റ്റെർലിംഗ്",
+            "displayName": "ബ്രിട്ടീഷ് പൗണ്ട്",
+            "displayName-count-one": "ബ്രിട്ടീഷ് പൗണ്ട്",
+            "displayName-count-other": "ബ്രിട്ടീഷ് പൗണ്ട്",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -607,7 +604,8 @@
             "displayName": "ജോർജ്ജിയൻ ലാറി",
             "displayName-count-one": "ജോർജ്ജിയൻ ലാറി",
             "displayName-count-other": "ജോർജ്ജിയൻ ലാറി",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "ഘാന കെഡി (1979–2007)",
@@ -797,7 +795,7 @@
             "symbol": "JOD"
           },
           "JPY": {
-            "displayName": "ജപ്പാനീസ് യെൻ",
+            "displayName": "ജാപ്പനീസ് യെൻ",
             "displayName-count-one": "ജാപ്പനീസ് യെൻ",
             "displayName-count-other": "ജാപ്പനീസ് യെൻ",
             "symbol": "¥",
@@ -1252,7 +1250,7 @@
             "displayName-count-one": "റഷ്യൻ റൂബിൾ",
             "displayName-count-other": "റഷ്യൻ റൂബിൾ",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "റഷ്യൻ റൂബിൾ (1991–1998)",
@@ -1495,8 +1493,8 @@
           },
           "USD": {
             "displayName": "യു.എസ്. ഡോളർ",
-            "displayName-count-one": "യു.എസ് ഡോളർ",
-            "displayName-count-other": "യു.എസ് ഡോളർ",
+            "displayName-count-one": "യു.എസ്. ഡോളർ",
+            "displayName-count-other": "യു.എസ്. ഡോളർ",
             "symbol": "$",
             "symbol-alt-narrow": "$"
           },
@@ -1572,9 +1570,9 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "CFA ഫ്രാങ്ക് BEAC",
-            "displayName-count-one": "CFA ഫ്രാങ്ക് BEAC",
-            "displayName-count-other": "CFA ഫ്രാങ്ക് BEAC",
+            "displayName": "മദ്ധ്യ ആഫ്രിക്കൻ [CFA] ഫ്രാങ്ക്",
+            "displayName-count-one": "മദ്ധ്യ ആഫ്രിക്കൻ [CFA] ഫ്രാങ്ക്",
+            "displayName-count-other": "മദ്ധ്യ ആഫ്രിക്കൻ [CFA] ഫ്രാങ്ക്",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1645,9 +1643,9 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "CFA ഫ്രാങ്ക് BCEAO",
-            "displayName-count-one": "CFA ഫ്രാങ്ക് BCEAO",
-            "displayName-count-other": "CFA ഫ്രാങ്ക് BCEAO",
+            "displayName": "പശ്ചിമ ആഫ്രിക്കൻ [CFA] ഫ്രാങ്ക്",
+            "displayName-count-one": "പശ്ചിമ ആഫ്രിക്കൻ [CFA] ഫ്രാങ്ക്",
+            "displayName-count-other": "പശ്ചിമ ആഫ്രിക്കൻ [CFA] ഫ്രാങ്ക്",
             "symbol": "CFA"
           },
           "XPD": {

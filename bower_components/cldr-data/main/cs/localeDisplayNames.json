@@ -3,11 +3,8 @@
     "cs": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "cs"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Kalendář",
+          "cf": "cf",
           "colAlternate": "Ignorovat řazení symbolů",
           "colBackwards": "Obrácené řazení akcentů",
           "colCaseFirst": "Řazení velkých a malých písmen",
           "colCaseLevel": "Rozlišovaní velkých a malých písmen při řazení",
           "colHiraganaQuaternary": "Řazení podle slabičných písem (kana)",
+          "collation": "Řazení",
           "colNormalization": "Normalizované řazení",
           "colNumeric": "Číselné řazení",
           "colStrength": "Míra řazení",
-          "collation": "Řazení",
           "currency": "Měna",
+          "hc": "Hodinový cyklus (12 vs. 24)",
+          "lb": "Styl zalamování řádků",
+          "ms": "Měrná soustava",
           "numbers": "Čísla",
           "timezone": "Časové pásmo",
           "va": "Varianta národního prostředí",
@@ -56,6 +57,10 @@
             "persian": "Perský kalendář",
             "roc": "Kalendář Čínské republiky"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Řadit symboly",
             "shifted": "Při řazení ignorovat symboly"
@@ -77,6 +82,26 @@
             "no": "Řadit slabičná písma (kana) samostatně",
             "yes": "Řadit jednotlivé typy slabičných písem (kana) různě"
           },
+          "collation": {
+            "big5han": "Řazení pro tradiční čínštinu – Big5",
+            "compat": "compat",
+            "dictionary": "Slovníkové řazení",
+            "ducet": "Výchozí řazení Unicode",
+            "emoji": "emoji",
+            "eor": "Evropské řazení",
+            "gb2312han": "Řazení pro zjednodušenou čínštinu – GB2312",
+            "phonebook": "Řazení jako v telefonním seznamu",
+            "phonetic": "Fonetické řazení",
+            "pinyin": "Řazení podle pchin-jinu",
+            "reformed": "Reformované řazení",
+            "search": "Obecné hledání",
+            "searchjl": "Vyhledávat podle počáteční souhlásky písma hangul",
+            "standard": "Standardní řazení",
+            "stroke": "Řazení podle tahů",
+            "traditional": "Tradiční řazení",
+            "unihan": "Řazení podle radikálů",
+            "zhuyin": "Ču-jin"
+          },
           "colNormalization": {
             "no": "Řadit bez normalizace",
             "yes": "Řadit podle normalizovaného kódování Unicode"
@@ -92,25 +117,24 @@
             "secondary": "Řadit akcenty",
             "tertiary": "Řadit akcenty/velká a malá písmena/šířku"
           },
-          "collation": {
-            "big5han": "Řazení pro tradiční čínštinu – Big5",
-            "dictionary": "Slovníkové řazení",
-            "ducet": "Výchozí řazení Unicode",
-            "eor": "Evropské řazení",
-            "gb2312han": "Řazení pro zjednodušenou čínštinu – GB2312",
-            "phonebook": "Řazení jako v telefonním seznamu",
-            "phonetic": "Fonetické řazení",
-            "pinyin": "Řazení podle pchin-jinu",
-            "reformed": "Reformované řazení",
-            "search": "Obecné hledání",
-            "searchjl": "Vyhledávat podle počáteční souhlásky písma hangul",
-            "standard": "Standardní řazení",
-            "stroke": "Řazení podle tahů",
-            "traditional": "Tradiční řazení",
-            "unihan": "Řazení podle radikálů",
-            "zhuyin": "Ču-jin"
+          "hc": {
+            "h11": "12hodinový systém (0–11)",
+            "h12": "12hodinový systém (1–12)",
+            "h23": "24hodinový systém (0–23)",
+            "h24": "24hodinový systém (1–24)"
+          },
+          "lb": {
+            "loose": "Volný styl zalamování řádků",
+            "normal": "Běžný styl zalamování řádků",
+            "strict": "Striktní styl zalamování řádků"
+          },
+          "ms": {
+            "metric": "Metrická soustava",
+            "uksystem": "Britská měrná soustava",
+            "ussystem": "Americká měrná soustava"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Arabsko-indické číslice",
             "arabext": "Rozšířené arabsko-indické číslice",
             "armn": "Arménské číslice",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Číslice písma dévanágarí",
             "ethi": "Etiopské číslice",
             "finance": "Finanční zápis čísel",
@@ -135,6 +160,7 @@
             "hant": "Číslice tradiční čínštiny",
             "hantfin": "Finanční číslice tradiční čínštiny",
             "hebr": "Hebrejské číslice",
+            "hmng": "hmng",
             "java": "Javánské číslice",
             "jpan": "Japonské číslice",
             "jpanfin": "Japonské finanční číslice",
@@ -147,11 +173,19 @@
             "latn": "Západní číslice",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malajálamské číslice",
+            "modi": "modi",
             "mong": "Mongolské číslice",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Myanmarské číslice",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Nativní číslice",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "Malé římské číslice",
             "saur": "Saurášterské číslice",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "Sundské číslice",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "Telugské číslice",
             "thai": "Thajské číslice",
             "tibt": "Tibetské číslice",
+            "tirh": "tirh",
             "traditional": "Tradiční číslovky",
-            "vaii": "Vaiské číslice"
+            "vaii": "Vaiské číslice",
+            "wara": "wara"
           }
         },
         "codePatterns": {

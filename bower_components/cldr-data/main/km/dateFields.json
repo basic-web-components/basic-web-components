@@ -3,11 +3,8 @@
     "km": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "km"
       },
@@ -54,9 +51,9 @@
           },
           "quarter": {
             "displayName": "ត្រីមាស",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ត្រីមាស​មុន",
+            "relative-type-0": "ត្រីមាស​នេះ",
+            "relative-type-1": "ត្រីមាស​ក្រោយ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "ក្នុង​រយៈ​ពេល {0} ត្រីមាស"
             },
@@ -66,9 +63,9 @@
           },
           "quarter-short": {
             "displayName": "ត្រីមាស",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ត្រីមាស​មុន",
+            "relative-type-0": "ត្រីមាស​នេះ",
+            "relative-type-1": "ត្រីមាស​ក្រោយ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "ក្នុង​រយៈ​ពេល {0} ត្រីមាស"
             },
@@ -78,9 +75,9 @@
           },
           "quarter-narrow": {
             "displayName": "ត្រីមាស",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ត្រីមាស​មុន",
+            "relative-type-0": "ត្រីមាស​នេះ",
+            "relative-type-1": "ត្រីមាស​ក្រោយ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "ក្នុង​រយៈ​ពេល {0} ត្រីមាស"
             },
@@ -162,8 +159,8 @@
           },
           "day": {
             "displayName": "ថ្ងៃ",
-            "relative-type--1": "ម្សិលមិញ",
             "relative-type--2": "ម្សិល​ម៉្ងៃ",
+            "relative-type--1": "ម្សិលមិញ",
             "relative-type-0": "ថ្ងៃ​នេះ",
             "relative-type-1": "ថ្ងៃ​ស្អែក",
             "relative-type-2": "​ខាន​ស្អែក",
@@ -176,10 +173,10 @@
           },
           "day-short": {
             "displayName": "ថ្ងៃ",
-            "relative-type--1": "ម្សិលមិញ",
             "relative-type--2": "ម្សិល​ម៉្ងៃ",
+            "relative-type--1": "ម្សិលមិញ",
             "relative-type-0": "ថ្ងៃ​នេះ",
-            "relative-type-1": "ថ្ងៃ​ស្អែក",
+            "relative-type-1": "ថ្ងៃស្អែក",
             "relative-type-2": "​ខាន​ស្អែក",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "ក្នុង​រយៈ​ពេល {0} ថ្ងៃ"
@@ -190,10 +187,10 @@
           },
           "day-narrow": {
             "displayName": "ថ្ងៃ",
-            "relative-type--1": "ម្សិលមិញ",
             "relative-type--2": "ម្សិល​ម៉្ងៃ",
+            "relative-type--1": "ម្សិលមិញ",
             "relative-type-0": "ថ្ងៃ​នេះ",
-            "relative-type-1": "ថ្ងៃ​ស្អែក",
+            "relative-type-1": "ថ្ងៃស្អែក",
             "relative-type-2": "​ខាន​ស្អែក",
             "relativeTime-type-future": {
               "relativeTimePattern-count-other": "ក្នុងពេល {0} ថ្ងៃ"
@@ -398,7 +395,7 @@
             }
           },
           "zone": {
-            "displayName": "តំបន់​ពេល​វេលា"
+            "displayName": "ល្វែងម៉ោង"
           }
         }
       }

@@ -3,11 +3,8 @@
     "et": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "et"
       },
@@ -15,6 +12,8 @@
         "currencies": {
           "ADP": {
             "displayName": "Andorra peseeta",
+            "displayName-count-one": "Andorra peseeta",
+            "displayName-count-other": "Andorra peseetat",
             "symbol": "ADP"
           },
           "AED": {
@@ -24,7 +23,9 @@
             "symbol": "AED"
           },
           "AFA": {
-            "displayName": "Afganistani afgaani, 1927-2002",
+            "displayName": "Afganistani afgaani (1927–2002)",
+            "displayName-count-one": "Afganistani afgaani (1927–2002)",
+            "displayName-count-other": "Afganistani afgaanit (1927–2002)",
             "symbol": "AFA"
           },
           "AFN": {
@@ -32,6 +33,11 @@
             "displayName-count-one": "Afganistani afgaani",
             "displayName-count-other": "Afganistani afgaanit",
             "symbol": "AFN"
+          },
+          "ALK": {
+            "displayName": "Albaania lekk (1946–1965)",
+            "displayName-count-one": "Albaania lekk (1946–1965)",
+            "displayName-count-other": "Albaania lekki (1946–1965)"
           },
           "ALL": {
             "displayName": "Albaania lekk",
@@ -59,15 +65,19 @@
             "symbol-alt-narrow": "Kz"
           },
           "AOK": {
-            "displayName": "Angola kvanza, 1977-1990",
+            "displayName": "Angola kvanza (1977–1990)",
+            "displayName-count-one": "Angola kvanza (1977–1990)",
+            "displayName-count-other": "Angola kvanzat (1977–1990)",
             "symbol": "AOK"
           },
           "AON": {
-            "displayName": "Angola kvanza, 1990-2000",
+            "displayName": "Angola kvanza (1990–2000)",
+            "displayName-count-one": "Angola kvanza (1990–2000)",
+            "displayName-count-other": "Angola kvanzat (1990–2000)",
             "symbol": "AON"
           },
           "AOR": {
-            "displayName": "Angola reformitud kvanza, 1995-1999",
+            "displayName": "Angola reformitud kvanza, 1995–1999",
             "symbol": "AOR"
           },
           "ARA": {
@@ -79,11 +89,15 @@
             "symbol": "ARL"
           },
           "ARM": {
-            "displayName": "ARM",
+            "displayName": "Argentina peeso (1881–1970)",
+            "displayName-count-one": "Argentina peeso (1881–1970)",
+            "displayName-count-other": "Argentina peesot (1881–1970)",
             "symbol": "ARM"
           },
           "ARP": {
-            "displayName": "Argentina peeso, 1983-1985",
+            "displayName": "Argentina peeso (1983–1985)",
+            "displayName-count-one": "Argentina peeso (1983–1985)",
+            "displayName-count-other": "Argentina peesot (1983–1985)",
             "symbol": "ARP"
           },
           "ARS": {
@@ -95,6 +109,8 @@
           },
           "ATS": {
             "displayName": "Austria šilling",
+            "displayName-count-one": "Austria šilling",
+            "displayName-count-other": "Austria šillingit",
             "symbol": "ATS"
           },
           "AUD": {
@@ -105,13 +121,15 @@
             "symbol-alt-narrow": "$"
           },
           "AWG": {
-            "displayName": "Aruba guilder",
-            "displayName-count-one": "Aruba guilder",
-            "displayName-count-other": "Aruba guilderit",
+            "displayName": "Aruba kulden",
+            "displayName-count-one": "Aruba kulden",
+            "displayName-count-other": "Aruba kuldnat",
             "symbol": "AWG"
           },
           "AZM": {
-            "displayName": "Aserbaidžaani manat, 1993-2006",
+            "displayName": "Aserbaidžaani manat (1993–2006)",
+            "displayName-count-one": "Aserbaidžaani manat (1993–2006)",
+            "displayName-count-other": "Aserbaidžaani manatit (1993–2006)",
             "symbol": "AZM"
           },
           "AZN": {
@@ -121,18 +139,22 @@
             "symbol": "AZN"
           },
           "BAD": {
-            "displayName": "Bosnia-Hertsegoviina dinaar",
+            "displayName": "Bosnia ja Hertsegoviina dinaar (1992–1994)",
+            "displayName-count-one": "Bosnia ja Hertsegoviina dinaar (1992–1994)",
+            "displayName-count-other": "Bosnia ja Hertsegoviina dinaari (1992–1994)",
             "symbol": "BAD"
           },
           "BAM": {
-            "displayName": "Bosnia-Hertsegoviina mark",
-            "displayName-count-one": "Bosnia-Hertsegoviina mark",
-            "displayName-count-other": "Bosnia-Hertsegoviina marka",
+            "displayName": "Bosnia ja Hertsegoviina konverteeritav mark",
+            "displayName-count-one": "Bosnia ja Hertsegoviina konverteeritav mark",
+            "displayName-count-other": "Bosnia ja Hertsegoviina konverteeritavat marka",
             "symbol": "BAM",
             "symbol-alt-narrow": "KM"
           },
           "BAN": {
-            "displayName": "BAN",
+            "displayName": "Bosnia ja Hertsegoviina uus dinaar (1994–1997)",
+            "displayName-count-one": "Bosnia ja Hertsegoviina uus dinaar (1994–1997)",
+            "displayName-count-other": "Bosnia ja Hertsegoviina uut dinaari (1994–1997)",
             "symbol": "BAN"
           },
           "BBD": {
@@ -151,10 +173,14 @@
           },
           "BEC": {
             "displayName": "Belgia konverteeritav frank",
+            "displayName-count-one": "Belgia konverteeritav frank",
+            "displayName-count-other": "Belgia konverteeritavat franki",
             "symbol": "BEC"
           },
           "BEF": {
             "displayName": "Belgia frank",
+            "displayName-count-one": "Belgia frank",
+            "displayName-count-other": "Belgia franki",
             "symbol": "BEF"
           },
           "BEL": {
@@ -176,7 +202,9 @@
             "symbol": "BGN"
           },
           "BGO": {
-            "displayName": "BGO",
+            "displayName": "Bulgaaria leev (1879–1952)",
+            "displayName-count-one": "Bulgaaria leev (1879–1952)",
+            "displayName-count-other": "Bulgaaria leevi (1879–1952)",
             "symbol": "BGO"
           },
           "BHD": {
@@ -206,18 +234,22 @@
             "symbol-alt-narrow": "$"
           },
           "BOB": {
-            "displayName": "Bolivia boliviaano",
-            "displayName-count-one": "Bolivia boliviaano",
-            "displayName-count-other": "Bolivia boliviaanot",
+            "displayName": "Boliivia boliviaano",
+            "displayName-count-one": "Boliivia boliviaano",
+            "displayName-count-other": "Boliivia boliviaanot",
             "symbol": "BOB",
             "symbol-alt-narrow": "Bs"
           },
           "BOL": {
-            "displayName": "BOL",
+            "displayName": "Boliivia boliviaano (1863–1963)",
+            "displayName-count-one": "Boliivia boliviaano (1863–1963)",
+            "displayName-count-other": "Boliivia boliviaanot (1863–1963)",
             "symbol": "BOL"
           },
           "BOP": {
             "displayName": "Boliivia peeso",
+            "displayName-count-one": "Boliivia peeso",
+            "displayName-count-other": "Boliivia peesot",
             "symbol": "BOP"
           },
           "BOV": {
@@ -225,7 +257,9 @@
             "symbol": "BOV"
           },
           "BRB": {
-            "displayName": "BRB",
+            "displayName": "Brasiilia uus kruseiro (1967–1986)",
+            "displayName-count-one": "Brasiilia uus kruseiro (1967–1986)",
+            "displayName-count-other": "Brasiilia uut kruseirot (1967–1986)",
             "symbol": "BRB"
           },
           "BRC": {
@@ -233,7 +267,9 @@
             "symbol": "BRC"
           },
           "BRE": {
-            "displayName": "BRE",
+            "displayName": "Brasiilia kruseiro (1990–1993)",
+            "displayName-count-one": "Brasiilia kruseiro (1990–1993)",
+            "displayName-count-other": "Brasiilia kruseirot (1990–1993)",
             "symbol": "BRE"
           },
           "BRL": {
@@ -248,11 +284,15 @@
             "symbol": "BRN"
           },
           "BRR": {
-            "displayName": "BRR",
+            "displayName": "Brasiilia kruseiro (1993–1994)",
+            "displayName-count-one": "Brasiilia kruseiro (1993–1994)",
+            "displayName-count-other": "Brasiilia kruseirot (1993–1994)",
             "symbol": "BRR"
           },
           "BRZ": {
-            "displayName": "BRZ",
+            "displayName": "Brasiilia kruseiro (1942–1967)",
+            "displayName-count-one": "Brasiilia kruseiro (1942–1967)",
+            "displayName-count-other": "Brasiilia kruseirot (1942–1967)",
             "symbol": "BRZ"
           },
           "BSD": {
@@ -270,6 +310,8 @@
           },
           "BUK": {
             "displayName": "Birma kjatt",
+            "displayName-count-one": "Birma kjatt",
+            "displayName-count-other": "Birma kjatti",
             "symbol": "BUK"
           },
           "BWP": {
@@ -280,7 +322,9 @@
             "symbol-alt-narrow": "P"
           },
           "BYB": {
-            "displayName": "Valgevene uus rubla, 1994-1999",
+            "displayName": "Valgevene uus rubla (1994–1999)",
+            "displayName-count-one": "Valgevene uus rubla (1994–1999)",
+            "displayName-count-other": "Valgevene uut rubla (1994–1999)",
             "symbol": "BYB"
           },
           "BYR": {
@@ -291,9 +335,9 @@
             "symbol-alt-narrow": "р."
           },
           "BZD": {
-            "displayName": "Belize dollar",
-            "displayName-count-one": "Belize dollar",
-            "displayName-count-other": "Belize dollarit",
+            "displayName": "Belize’i dollar",
+            "displayName-count-one": "Belize’i dollar",
+            "displayName-count-other": "Belize’i dollarit",
             "symbol": "BZD",
             "symbol-alt-narrow": "$"
           },
@@ -325,7 +369,9 @@
             "symbol": "CHW"
           },
           "CLE": {
-            "displayName": "CLE",
+            "displayName": "Tšiili eskuudo",
+            "displayName-count-one": "Tšiili eskuudo",
+            "displayName-count-other": "Tšiili eskuudot",
             "symbol": "CLE"
           },
           "CLF": {
@@ -347,9 +393,9 @@
             "symbol-alt-narrow": "¥"
           },
           "COP": {
-            "displayName": "Kolumbia peeso",
-            "displayName-count-one": "Kolumbia peeso",
-            "displayName-count-other": "Kolumbia peesot",
+            "displayName": "Colombia peeso",
+            "displayName-count-one": "Colombia peeso",
+            "displayName-count-other": "Colombia peesot",
             "symbol": "COP",
             "symbol-alt-narrow": "$"
           },
@@ -358,14 +404,16 @@
             "symbol": "COU"
           },
           "CRC": {
-            "displayName": "Costa Rica colón",
-            "displayName-count-one": "Costa Rica colón",
-            "displayName-count-other": "Costa Rica colóni",
+            "displayName": "Costa Rica koloon",
+            "displayName-count-one": "Costa Rica koloon",
+            "displayName-count-other": "Costa Rica kolooni",
             "symbol": "CRC",
             "symbol-alt-narrow": "₡"
           },
           "CSD": {
-            "displayName": "Serbia vana dinaar",
+            "displayName": "Serbia dinaar (2002–2006)",
+            "displayName-count-one": "Serbia dinaar (2002–2006)",
+            "displayName-count-other": "Serbia dinaari (2002–2006)",
             "symbol": "CSD"
           },
           "CSK": {
@@ -387,13 +435,15 @@
             "symbol-alt-narrow": "$"
           },
           "CVE": {
-            "displayName": "Roheneemesaarte eskuudo",
-            "displayName-count-one": "Roheneemesaarte eskuudo",
-            "displayName-count-other": "Roheneemesaarte eskuudot",
+            "displayName": "Cabo Verde eskuudo",
+            "displayName-count-one": "Cabo Verde eskuudo",
+            "displayName-count-other": "Cabo Verde eskuudot",
             "symbol": "CVE"
           },
           "CYP": {
             "displayName": "Küprose nael",
+            "displayName-count-one": "Küprose nael",
+            "displayName-count-other": "Küprose naela",
             "symbol": "CYP"
           },
           "CZK": {
@@ -404,11 +454,15 @@
             "symbol-alt-narrow": "Kč"
           },
           "DDM": {
-            "displayName": "DDM",
+            "displayName": "Ida-Saksa mark",
+            "displayName-count-one": "Ida-Saksa mark",
+            "displayName-count-other": "Ida-Saksa marka",
             "symbol": "DDM"
           },
           "DEM": {
             "displayName": "Saksa mark",
+            "displayName-count-one": "Saksa mark",
+            "displayName-count-other": "Saksa marka",
             "symbol": "DEM"
           },
           "DJF": {
@@ -439,6 +493,8 @@
           },
           "ECS": {
             "displayName": "Ecuadori sukre",
+            "displayName-count-one": "Ecuadori sukre",
+            "displayName-count-other": "Ecuadori sukret",
             "symbol": "ECS"
           },
           "ECV": {
@@ -476,6 +532,8 @@
           },
           "ESP": {
             "displayName": "Hispaania peseeta",
+            "displayName-count-one": "Hispaania peseeta",
+            "displayName-count-other": "Hispaania peseetat",
             "symbol": "ESP",
             "symbol-alt-narrow": "₧"
           },
@@ -494,6 +552,8 @@
           },
           "FIM": {
             "displayName": "Soome mark",
+            "displayName-count-one": "Soome mark",
+            "displayName-count-other": "Soome marka",
             "symbol": "FIM"
           },
           "FJD": {
@@ -512,6 +572,8 @@
           },
           "FRF": {
             "displayName": "Prantsuse frank",
+            "displayName-count-one": "Prantsuse frank",
+            "displayName-count-other": "Prantsuse franki",
             "symbol": "FRF"
           },
           "GBP": {
@@ -529,16 +591,19 @@
             "displayName": "Gruusia lari",
             "displayName-count-one": "Gruusia lari",
             "displayName-count-other": "Gruusia lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
-            "displayName": "Ghana sedi",
+            "displayName": "Ghana sedi (1979–2007)",
+            "displayName-count-one": "Ghana sedi (1979–2007)",
+            "displayName-count-other": "Ghana sedit (1979–2007)",
             "symbol": "GHC"
           },
           "GHS": {
-            "displayName": "Ghana cedi",
-            "displayName-count-one": "Ghana cedi",
-            "displayName-count-other": "Ghana cedit",
+            "displayName": "Ghana sedi",
+            "displayName-count-one": "Ghana sedi",
+            "displayName-count-other": "Ghana sedit",
             "symbol": "GHS"
           },
           "GIP": {
@@ -571,21 +636,27 @@
           },
           "GRD": {
             "displayName": "Kreeka drahm",
+            "displayName-count-one": "Kreeka drahm",
+            "displayName-count-other": "Kreeka drahmi",
             "symbol": "GRD"
           },
           "GTQ": {
-            "displayName": "Guatemala ketsal",
-            "displayName-count-one": "Guatemala ketsal",
-            "displayName-count-other": "Guatemala ketsalit",
+            "displayName": "Guatemala ketsaal",
+            "displayName-count-one": "Guatemala ketsaal",
+            "displayName-count-other": "Guatemala ketsaali",
             "symbol": "GTQ",
             "symbol-alt-narrow": "Q"
           },
           "GWE": {
-            "displayName": "GWE",
+            "displayName": "Portugali Guinea eskuudo",
+            "displayName-count-one": "Portugali Guinea eskuudo",
+            "displayName-count-other": "Portugali Guinea eskuudot",
             "symbol": "GWE"
           },
           "GWP": {
             "displayName": "Guinea-Bissau peeso",
+            "displayName-count-one": "Guinea-Bissau peeso",
+            "displayName-count-other": "Guinea-Bissau peesot",
             "symbol": "GWP"
           },
           "GYD": {
@@ -610,13 +681,15 @@
             "symbol-alt-narrow": "L"
           },
           "HRD": {
-            "displayName": "HRD",
+            "displayName": "Horvaatia dinaar",
+            "displayName-count-one": "Horvaatia dinaar",
+            "displayName-count-other": "Horvaatia dinaari",
             "symbol": "HRD"
           },
           "HRK": {
             "displayName": "Horvaatia kuna",
             "displayName-count-one": "Horvaatia kuna",
-            "displayName-count-other": "Horvaatia kunat",
+            "displayName-count-other": "Horvaatia kuna",
             "symbol": "HRK",
             "symbol-alt-narrow": "kn"
           },
@@ -642,11 +715,20 @@
           },
           "IEP": {
             "displayName": "Iiri nael",
+            "displayName-count-one": "Iiri nael",
+            "displayName-count-other": "Iiri naela",
             "symbol": "IEP"
           },
           "ILP": {
             "displayName": "Iisraeli nael",
+            "displayName-count-one": "Iisraeli nael",
+            "displayName-count-other": "Iisraeli naela",
             "symbol": "ILP"
+          },
+          "ILR": {
+            "displayName": "Iisraeli seekel (1980–1985)",
+            "displayName-count-one": "Iisraeli seekel (1980–1985)",
+            "displayName-count-other": "Iisraeli seekelit (1980–1985)"
           },
           "ILS": {
             "displayName": "Iisraeli uus seekel",
@@ -674,6 +756,11 @@
             "displayName-count-other": "Iraani riaali",
             "symbol": "IRR"
           },
+          "ISJ": {
+            "displayName": "Islandi kroon (1918–1981)",
+            "displayName-count-one": "Islandi kroon (1918–1981)",
+            "displayName-count-other": "Islandi krooni (1918–1981)"
+          },
           "ISK": {
             "displayName": "Islandi kroon",
             "displayName-count-one": "Islandi kroon",
@@ -683,6 +770,8 @@
           },
           "ITL": {
             "displayName": "Itaalia liir",
+            "displayName-count-one": "Itaalia liir",
+            "displayName-count-other": "Itaalia liiri",
             "symbol": "ITL"
           },
           "JMD": {
@@ -706,9 +795,9 @@
             "symbol-alt-narrow": "¥"
           },
           "KES": {
-            "displayName": "Kenya šilling",
-            "displayName-count-one": "Kenya šilling",
-            "displayName-count-other": "Kenya šillingit",
+            "displayName": "Keenia šilling",
+            "displayName-count-one": "Keenia šilling",
+            "displayName-count-other": "Keenia šillingit",
             "symbol": "KES"
           },
           "KGS": {
@@ -725,9 +814,9 @@
             "symbol-alt-narrow": "៛"
           },
           "KMF": {
-            "displayName": "Komooride frank",
-            "displayName-count-one": "Komooride frank",
-            "displayName-count-other": "Komooride franki",
+            "displayName": "Komoori frank",
+            "displayName-count-one": "Komoori frank",
+            "displayName-count-other": "Komoori franki",
             "symbol": "KMF",
             "symbol-alt-narrow": "CF"
           },
@@ -743,7 +832,9 @@
             "symbol": "KRH"
           },
           "KRO": {
-            "displayName": "KRO",
+            "displayName": "Lõuna-Korea vonn (1945–1953)",
+            "displayName-count-one": "Lõuna-Korea vonn (1945–1953)",
+            "displayName-count-other": "Lõuna-Korea vonni (1945–1953)",
             "symbol": "KRO"
           },
           "KRW": {
@@ -760,9 +851,9 @@
             "symbol": "KWD"
           },
           "KYD": {
-            "displayName": "Caymani saarte dollar",
-            "displayName-count-one": "Caymani saarte dollar",
-            "displayName-count-other": "Caymani saarte dollarit",
+            "displayName": "Kaimanisaarte dollar",
+            "displayName-count-one": "Kaimanisaarte dollar",
+            "displayName-count-other": "Kaimanisaarte dollarit",
             "symbol": "KYD",
             "symbol-alt-narrow": "$"
           },
@@ -803,6 +894,8 @@
           },
           "LSL": {
             "displayName": "Lesotho loti",
+            "displayName-count-one": "Lesotho loti",
+            "displayName-count-other": "Lesotho lotit",
             "symbol": "LSL"
           },
           "LTL": {
@@ -817,11 +910,15 @@
             "symbol": "LTT"
           },
           "LUC": {
-            "displayName": "LUC",
+            "displayName": "Luksemburgi konverteeritav frank",
+            "displayName-count-one": "Luksemburgi konverteeritav frank",
+            "displayName-count-other": "Luksemburgi konverteeritavat franki",
             "symbol": "LUC"
           },
           "LUF": {
             "displayName": "Luksemburgi frank",
+            "displayName-count-one": "Luksemburgi frank",
+            "displayName-count-other": "Luksemburgi franki",
             "symbol": "LUF"
           },
           "LUL": {
@@ -836,7 +933,9 @@
             "symbol-alt-narrow": "Ls"
           },
           "LVR": {
-            "displayName": "LVR",
+            "displayName": "Läti rubla",
+            "displayName-count-one": "Läti rubla",
+            "displayName-count-other": "Läti rubla",
             "symbol": "LVR"
           },
           "LYD": {
@@ -852,11 +951,15 @@
             "symbol": "MAD"
           },
           "MAF": {
-            "displayName": "MAF",
+            "displayName": "Maroko frank",
+            "displayName-count-one": "Maroko frank",
+            "displayName-count-other": "Maroko franki",
             "symbol": "MAF"
           },
           "MCF": {
-            "displayName": "MCF",
+            "displayName": "Monaco frank",
+            "displayName-count-one": "Monaco frank",
+            "displayName-count-other": "Monaco franki",
             "symbol": "MCF"
           },
           "MDC": {
@@ -870,28 +973,34 @@
             "symbol": "MDL"
           },
           "MGA": {
-            "displayName": "Madagaskari ariary",
-            "displayName-count-one": "Madagaskari ariary",
-            "displayName-count-other": "Madagaskari ariaryt",
+            "displayName": "Madagaskari ariari",
+            "displayName-count-one": "Madagaskari ariari",
+            "displayName-count-other": "Madagaskari ariarit",
             "symbol": "MGA",
             "symbol-alt-narrow": "Ar"
           },
           "MGF": {
-            "displayName": "MGF",
+            "displayName": "Madagaskar frank",
+            "displayName-count-one": "Madagaskar frank",
+            "displayName-count-other": "Madagaskar franki",
             "symbol": "MGF"
           },
           "MKD": {
-            "displayName": "Makedoonia denaar",
-            "displayName-count-one": "Makedoonia denaar",
-            "displayName-count-other": "Makedoonia denaari",
+            "displayName": "Makedoonia dinaar",
+            "displayName-count-one": "Makedoonia dinaar",
+            "displayName-count-other": "Makedoonia dinaari",
             "symbol": "MKD"
           },
           "MKN": {
-            "displayName": "MKN",
+            "displayName": "Makedoonia dinaar (1992–1993)",
+            "displayName-count-one": "Makedoonia dinaar (1992–1993)",
+            "displayName-count-other": "Makedoonia dinaari (1992–1993)",
             "symbol": "MKN"
           },
           "MLF": {
-            "displayName": "MLF",
+            "displayName": "Mali frank",
+            "displayName-count-one": "Mali frank",
+            "displayName-count-other": "Mali franki",
             "symbol": "MLF"
           },
           "MMK": {
@@ -909,9 +1018,9 @@
             "symbol-alt-narrow": "₮"
           },
           "MOP": {
-            "displayName": "Macao pataka",
-            "displayName-count-one": "Macao pataka",
-            "displayName-count-other": "Macao patakat",
+            "displayName": "Macau pataaka",
+            "displayName-count-one": "Macau pataaka",
+            "displayName-count-other": "Macau pataakat",
             "symbol": "MOP"
           },
           "MRO": {
@@ -922,10 +1031,14 @@
           },
           "MTL": {
             "displayName": "Malta liir",
+            "displayName-count-one": "Malta liir",
+            "displayName-count-other": "Malta liiri",
             "symbol": "MTL"
           },
           "MTP": {
-            "displayName": "MTP",
+            "displayName": "Malta nael",
+            "displayName-count-one": "Malta nael",
+            "displayName-count-other": "Malta naela",
             "symbol": "MTP"
           },
           "MUR": {
@@ -935,10 +1048,15 @@
             "symbol": "MUR",
             "symbol-alt-narrow": "Rs"
           },
+          "MVP": {
+            "displayName": "Maldiivi ruupia (1947–1981)",
+            "displayName-count-one": "Maldiivi ruupia (1947–1981)",
+            "displayName-count-other": "Maldiivi ruupiat (1947–1981)"
+          },
           "MVR": {
-            "displayName": "Maldiivide ruupia",
-            "displayName-count-one": "Maldiivide ruupia",
-            "displayName-count-other": "Maldiivide ruupiat",
+            "displayName": "Maldiivi ruupia",
+            "displayName-count-one": "Maldiivi ruupia",
+            "displayName-count-other": "Maldiivi ruupiat",
             "symbol": "MVR"
           },
           "MWK": {
@@ -955,7 +1073,9 @@
             "symbol-alt-narrow": "$"
           },
           "MXP": {
-            "displayName": "Mehhiko peeso, 1861-1990",
+            "displayName": "Mehhiko peeso (1861–1992)",
+            "displayName-count-one": "Mehhiko peeso (1861–1992)",
+            "displayName-count-other": "Mehhiko peesot (1861–1992)",
             "symbol": "MXP"
           },
           "MXV": {
@@ -970,11 +1090,15 @@
             "symbol-alt-narrow": "RM"
           },
           "MZE": {
-            "displayName": "MZE",
+            "displayName": "Mosambiigi eskuudo",
+            "displayName-count-one": "Mosambiigi eskuudo",
+            "displayName-count-other": "Mosambiigi eskuudot",
             "symbol": "MZE"
           },
           "MZM": {
-            "displayName": "MZM",
+            "displayName": "Mosambiigi metikal (1980–2006)",
+            "displayName-count-one": "Mosambiigi metikal (1980–2006)",
+            "displayName-count-other": "Mosambiigi metikali (1980–2006)",
             "symbol": "MZM"
           },
           "MZN": {
@@ -998,18 +1122,22 @@
             "symbol-alt-narrow": "₦"
           },
           "NIC": {
-            "displayName": "Nicaragua kordoba",
+            "displayName": "Nicaragua kordoba (1988–1991)",
+            "displayName-count-one": "Nicaragua kordoba (1988–1991)",
+            "displayName-count-other": "Nicaragua kordobat (1988–1991)",
             "symbol": "NIC"
           },
           "NIO": {
-            "displayName": "Nicaragua kuldkordoba",
-            "displayName-count-one": "Nicaragua kuldkordoba",
-            "displayName-count-other": "Nicaragua kuldkordobat",
+            "displayName": "Nicaragua kordoba",
+            "displayName-count-one": "Nicaragua kordoba",
+            "displayName-count-other": "Nicaragua kordobad",
             "symbol": "NIO",
             "symbol-alt-narrow": "C$"
           },
           "NLG": {
             "displayName": "Hollandi kulden",
+            "displayName-count-one": "Hollandi kulden",
+            "displayName-count-other": "Hollandi kuldnat",
             "symbol": "NLG"
           },
           "NOK": {
@@ -1056,7 +1184,9 @@
             "symbol": "PEN"
           },
           "PES": {
-            "displayName": "Peruu soll",
+            "displayName": "Peruu soll (1863–1965)",
+            "displayName-count-one": "Peruu soll (1863–1965)",
+            "displayName-count-other": "Peruu solli (1863–1965)",
             "symbol": "PES"
           },
           "PGK": {
@@ -1066,9 +1196,9 @@
             "symbol": "PGK"
           },
           "PHP": {
-            "displayName": "Filipiinide peeso",
-            "displayName-count-one": "Filipiinide peeso",
-            "displayName-count-other": "Filipiinide peesot",
+            "displayName": "Filipiini peeso",
+            "displayName-count-one": "Filipiini peeso",
+            "displayName-count-other": "Filipiini peesot",
             "symbol": "PHP",
             "symbol-alt-narrow": "₱"
           },
@@ -1087,38 +1217,46 @@
             "symbol-alt-narrow": "zł"
           },
           "PLZ": {
-            "displayName": "Poola zlott, 1950-1995",
+            "displayName": "Poola zlott (1950–1995)",
+            "displayName-count-one": "Poola zlott (1950–1995)",
+            "displayName-count-other": "Poola zlotti (1950–1995)",
             "symbol": "PLZ"
           },
           "PTE": {
             "displayName": "Portugali eskuudo",
+            "displayName-count-one": "Portugali eskuudo",
+            "displayName-count-other": "Portugali eskuudot",
             "symbol": "PTE"
           },
           "PYG": {
-            "displayName": "Paraguai guaranii",
-            "displayName-count-one": "Paraguai guaranii",
-            "displayName-count-other": "Paraguai guaraniid",
+            "displayName": "Paraguay guaranii",
+            "displayName-count-one": "Paraguay guaranii",
+            "displayName-count-other": "Paraguay guaraniid",
             "symbol": "PYG",
             "symbol-alt-narrow": "₲"
           },
           "QAR": {
-            "displayName": "Quatari riaal",
-            "displayName-count-one": "Quatari riaal",
-            "displayName-count-other": "Quatari riaali",
+            "displayName": "Katari riaal",
+            "displayName-count-one": "Katari riaal",
+            "displayName-count-other": "Katari riaali",
             "symbol": "QAR"
           },
           "RHD": {
-            "displayName": "RHD",
+            "displayName": "Rodeesia dollar",
+            "displayName-count-one": "Rodeesia dollar",
+            "displayName-count-other": "Rodeesia dollarit",
             "symbol": "RHD"
           },
           "ROL": {
-            "displayName": "Rumeenia lei, -2005",
+            "displayName": "Rumeenia leu (1952–2006)",
+            "displayName-count-one": "Rumeenia leu (1952–2006)",
+            "displayName-count-other": "Rumeenia leud (1952–2006)",
             "symbol": "ROL"
           },
           "RON": {
-            "displayName": "Rumeenia lei",
-            "displayName-count-one": "Rumeenia lei",
-            "displayName-count-other": "Rumeenia leid",
+            "displayName": "Rumeenia leu",
+            "displayName-count-one": "Rumeenia leu",
+            "displayName-count-other": "Rumeenia leud",
             "symbol": "RON"
           },
           "RSD": {
@@ -1132,10 +1270,10 @@
             "displayName-count-one": "Venemaa rubla",
             "displayName-count-other": "Venemaa rubla",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
-            "displayName": "Venemaa rubla, 1991-1998",
+            "displayName": "Venemaa rubla (1991–1998)",
             "symbol": "RUR",
             "symbol-alt-narrow": "р."
           },
@@ -1147,26 +1285,28 @@
             "symbol-alt-narrow": "RF"
           },
           "SAR": {
-            "displayName": "Saudi-Araabia riaal",
-            "displayName-count-one": "Saudi-Araabia riaal",
-            "displayName-count-other": "Saudi-Araabia riaali",
+            "displayName": "Saudi Araabia riaal",
+            "displayName-count-one": "Saudi Araabia riaal",
+            "displayName-count-other": "Saudi Araabia riaali",
             "symbol": "SAR"
           },
           "SBD": {
-            "displayName": "Saalomoni saarte dollar",
-            "displayName-count-one": "Saalomoni saarte dollar",
-            "displayName-count-other": "Saalomoni saarte dollarit",
+            "displayName": "Saalomoni Saarte dollar",
+            "displayName-count-one": "Saalomoni Saarte dollar",
+            "displayName-count-other": "Saalomoni Saarte dollarit",
             "symbol": "SBD",
             "symbol-alt-narrow": "$"
           },
           "SCR": {
-            "displayName": "Seišelli saarte ruupia",
-            "displayName-count-one": "Seišelli saarte ruupia",
-            "displayName-count-other": "Seišelli saarte ruupiat",
+            "displayName": "Seišelli ruupia",
+            "displayName-count-one": "Seišelli ruupia",
+            "displayName-count-other": "Seišelli ruupiat",
             "symbol": "SCR"
           },
           "SDD": {
-            "displayName": "SDD",
+            "displayName": "Sudaani dinaar (1992–2007)",
+            "displayName-count-one": "Sudaani dinaar (1992–2007)",
+            "displayName-count-other": "Sudaani dinaari (1992–2007)",
             "symbol": "SDD"
           },
           "SDG": {
@@ -1176,7 +1316,9 @@
             "symbol": "SDG"
           },
           "SDP": {
-            "displayName": "Sudaani nael, 1957-1998",
+            "displayName": "Sudaani nael (1957–1998)",
+            "displayName-count-one": "Sudaani nael (1957–1998)",
+            "displayName-count-other": "Sudaani naela (1957–1998)",
             "symbol": "SDP"
           },
           "SEK": {
@@ -1202,12 +1344,14 @@
           },
           "SIT": {
             "displayName": "Sloveenia tolar",
+            "displayName-count-one": "Sloveenia tolar",
+            "displayName-count-other": "Sloveenia tolarit",
             "symbol": "SIT"
           },
           "SKK": {
-            "displayName": "Slovakkia kroon",
-            "displayName-count-one": "Slovakkia kroon",
-            "displayName-count-other": "Slovakkia krooni",
+            "displayName": "Slovaki kroon",
+            "displayName-count-one": "Slovaki kroon",
+            "displayName-count-other": "Slovaki krooni",
             "symbol": "SKK"
           },
           "SLL": {
@@ -1223,14 +1367,16 @@
             "symbol": "SOS"
           },
           "SRD": {
-            "displayName": "Surinami dollar",
-            "displayName-count-one": "Surinami dollar",
-            "displayName-count-other": "Surinami dollarit",
+            "displayName": "Suriname dollar",
+            "displayName-count-one": "Suriname dollar",
+            "displayName-count-other": "Suriname dollarit",
             "symbol": "SRD",
             "symbol-alt-narrow": "$"
           },
           "SRG": {
-            "displayName": "Surinami kulden",
+            "displayName": "Suriname kulden",
+            "displayName-count-one": "Suriname kulden",
+            "displayName-count-other": "Suriname kuldnat",
             "symbol": "SRG"
           },
           "SSP": {
@@ -1248,11 +1394,13 @@
             "symbol-alt-narrow": "Db"
           },
           "SUR": {
-            "displayName": "NSVL rubla",
+            "displayName": "NSVL-i rubla",
             "symbol": "SUR"
           },
           "SVC": {
-            "displayName": "Salvadori koloon",
+            "displayName": "El Salvadori koloon",
+            "displayName-count-one": "El Salvadori koloon",
+            "displayName-count-other": "El Salvadori kolooni",
             "symbol": "SVC"
           },
           "SYP": {
@@ -1276,7 +1424,9 @@
             "symbol-alt-narrow": "฿"
           },
           "TJR": {
-            "displayName": "TJR",
+            "displayName": "Tadžikistani rubla",
+            "displayName-count-one": "Tadžikistani rubla",
+            "displayName-count-other": "Tadžikistani rubla",
             "symbol": "TJR"
           },
           "TJS": {
@@ -1286,7 +1436,9 @@
             "symbol": "TJS"
           },
           "TMM": {
-            "displayName": "Türkmenistani manat, 1993-2009",
+            "displayName": "Türkmenistani manat (1993–2009)",
+            "displayName-count-one": "Türkmenistani manat (1993–2009)",
+            "displayName-count-other": "Türkmenistani manatit (1993–2009)",
             "symbol": "TMM"
           },
           "TMT": {
@@ -1310,16 +1462,20 @@
           },
           "TPE": {
             "displayName": "Timori eskuudo",
+            "displayName-count-one": "Timori eskuudo",
+            "displayName-count-other": "Timori eskuudot",
             "symbol": "TPE"
           },
           "TRL": {
-            "displayName": "Türgi liir",
+            "displayName": "Türgi liir (1922–2005)",
+            "displayName-count-one": "Türgi liir (1922–2005)",
+            "displayName-count-other": "Türgi liiri (1922–2005)",
             "symbol": "TRL"
           },
           "TRY": {
-            "displayName": "Türgi uus liir",
-            "displayName-count-one": "Türgi uus liir",
-            "displayName-count-other": "Türgi uut liiri",
+            "displayName": "Türgi liir",
+            "displayName-count-one": "Türgi liir",
+            "displayName-count-other": "Türgi liiri",
             "symbol": "TRY",
             "symbol-alt-narrow": "₺",
             "symbol-alt-variant": "TL"
@@ -1356,7 +1512,9 @@
             "symbol": "UAK"
           },
           "UGS": {
-            "displayName": "UGS",
+            "displayName": "Uganda šilling (1966–1987)",
+            "displayName-count-one": "Uganda šilling (1966–1987)",
+            "displayName-count-other": "Uganda šillingit (1966–1987)",
             "symbol": "UGS"
           },
           "UGX": {
@@ -1385,13 +1543,15 @@
             "symbol": "UYI"
           },
           "UYP": {
-            "displayName": "UYP",
+            "displayName": "Uruguay peeso (1975–1993)",
+            "displayName-count-one": "Uruguay peeso (1975–1993)",
+            "displayName-count-other": "Uruguay peesot (1975–1993)",
             "symbol": "UYP"
           },
           "UYU": {
-            "displayName": "Uruguai peeso",
-            "displayName-count-one": "Uruguai peeso",
-            "displayName-count-other": "Uruguai peesot",
+            "displayName": "Uruguay peeso",
+            "displayName-count-one": "Uruguay peeso",
+            "displayName-count-other": "Uruguay peesot",
             "symbol": "UYU",
             "symbol-alt-narrow": "$"
           },
@@ -1402,14 +1562,14 @@
             "symbol": "UZS"
           },
           "VEB": {
-            "displayName": "Venezuela bolívar (1871–2008)",
-            "displayName-count-one": "Venezuela bolívar (1871–2008)",
+            "displayName": "Venezuela boliivar (1871–2008)",
+            "displayName-count-one": "Venezuela boliivar (1871–2008)",
             "displayName-count-other": "Venezuela boliivarit (1871–2008)",
             "symbol": "VEB"
           },
           "VEF": {
-            "displayName": "Venezuela bolívar",
-            "displayName-count-one": "Venezuela bolívar",
+            "displayName": "Venezuela boliivar",
+            "displayName-count-one": "Venezuela boliivar",
             "displayName-count-other": "Venezuela boliivarit",
             "symbol": "VEF",
             "symbol-alt-narrow": "Bs"
@@ -1422,7 +1582,9 @@
             "symbol-alt-narrow": "₫"
           },
           "VNN": {
-            "displayName": "VNN",
+            "displayName": "Vietnami dong (1978–1985)",
+            "displayName-count-one": "Vietnami dong (1978–1985)",
+            "displayName-count-other": "Vietnami dongi (1978–1985)",
             "symbol": "VNN"
           },
           "VUV": {
@@ -1432,27 +1594,27 @@
             "symbol": "VUV"
           },
           "WST": {
-            "displayName": "Lääne-Samoa tala",
-            "displayName-count-one": "Lääne-Samoa tala",
-            "displayName-count-other": "Lääne-Samoa tala",
+            "displayName": "Samoa taala",
+            "displayName-count-one": "Samoa taala",
+            "displayName-count-other": "Samoa taalat",
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "CFA frank BEAC",
-            "displayName-count-one": "CFA frank BEAC",
-            "displayName-count-other": "CFA franki BEAC",
+            "displayName": "Kesk-Aafrika CFA frank",
+            "displayName-count-one": "Kesk-Aafrika CFA frank",
+            "displayName-count-other": "Kesk-Aafrika CFA franki",
             "symbol": "FCFA"
           },
           "XAG": {
             "displayName": "hõbe",
-            "displayName-count-one": "hõbe",
-            "displayName-count-other": "hõbedat",
+            "displayName-count-one": "troiunts hõbedat",
+            "displayName-count-other": "troiuntsi hõbedat",
             "symbol": "XAG"
           },
           "XAU": {
             "displayName": "kuld",
-            "displayName-count-one": "kuld",
-            "displayName-count-other": "kulda",
+            "displayName-count-one": "troiunts kulda",
+            "displayName-count-other": "troiuntsi kulda",
             "symbol": "XAU"
           },
           "XBA": {
@@ -1484,10 +1646,14 @@
           },
           "XEU": {
             "displayName": "eküü",
+            "displayName-count-one": "eküü",
+            "displayName-count-other": "eküüd",
             "symbol": "XEU"
           },
           "XFO": {
             "displayName": "Prantsuse kuldfrank",
+            "displayName-count-one": "Prantsuse kuldfrank",
+            "displayName-count-other": "Prantsuse kuldfranki",
             "symbol": "XFO"
           },
           "XFU": {
@@ -1495,27 +1661,27 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "Aafrika ühisfrank BCEAO",
-            "displayName-count-one": "Aafrika ühisfrank BCEAO",
-            "displayName-count-other": "Aafrika ühisfranki BCEAO",
+            "displayName": "Lääne-Aafrika CFA frank",
+            "displayName-count-one": "Lääne-Aafrika CFA frank",
+            "displayName-count-other": "Lääne-Aafrika CFA franki",
             "symbol": "CFA"
           },
           "XPD": {
             "displayName": "pallaadium",
-            "displayName-count-one": "pallaadium",
-            "displayName-count-other": "pallaadiumit",
+            "displayName-count-one": "troiunts pallaadiumit",
+            "displayName-count-other": "troiuntsi pallaadiumit",
             "symbol": "XPD"
           },
           "XPF": {
-            "displayName": "Prantsuse Vaikse-Ookeani frank",
-            "displayName-count-one": "Prantsuse Vaikse-Ookeani frank",
-            "displayName-count-other": "Prantsuse Vaikse-Ookeani franki",
+            "displayName": "CFP frank",
+            "displayName-count-one": "CFP frank",
+            "displayName-count-other": "CFP franki",
             "symbol": "CFPF"
           },
           "XPT": {
             "displayName": "plaatina",
-            "displayName-count-one": "plaatina",
-            "displayName-count-other": "plaatina",
+            "displayName-count-one": "troiunts plaatinat",
+            "displayName-count-other": "troiuntsi plaatinat",
             "symbol": "XPT"
           },
           "XRE": {
@@ -1536,12 +1702,14 @@
           },
           "XXX": {
             "displayName": "määramata rahaühik",
-            "displayName-count-one": "määramata rahaühik",
-            "displayName-count-other": "määramata rahaühikut",
+            "displayName-count-one": "(määramata rahaühik)",
+            "displayName-count-other": "(määramata rahaühikut)",
             "symbol": "XXX"
           },
           "YDD": {
             "displayName": "Jeemeni dinaar",
+            "displayName-count-one": "Jeemeni dinaar",
+            "displayName-count-other": "Jeemeni dinaari",
             "symbol": "YDD"
           },
           "YER": {
@@ -1555,11 +1723,15 @@
             "symbol": "YUD"
           },
           "YUM": {
-            "displayName": "Jugoslaavia uus dinaar",
+            "displayName": "Jugoslaavia uus dinaar (1994–2002)",
+            "displayName-count-one": "Jugoslaavia uus dinaar (1994–2002)",
+            "displayName-count-other": "Jugoslaavia uut dinaari (1994–2002)",
             "symbol": "YUM"
           },
           "YUN": {
-            "displayName": "Jugoslaavia konverteeritav dinaar",
+            "displayName": "Jugoslaavia konverteeritav dinaar (1990–1992)",
+            "displayName-count-one": "Jugoslaavia konverteeritav dinaar (1990–1992)",
+            "displayName-count-other": "Jugoslaavia konverteeritavat dinaari (1990–1992)",
             "symbol": "YUN"
           },
           "YUR": {
@@ -1573,7 +1745,7 @@
           "ZAR": {
             "displayName": "Lõuna-Aafrika rand",
             "displayName-count-one": "Lõuna-Aafrika rand",
-            "displayName-count-other": "LAVi randi",
+            "displayName-count-other": "Lõuna-Aafrika randi",
             "symbol": "ZAR",
             "symbol-alt-narrow": "R"
           },
@@ -1599,15 +1771,21 @@
             "symbol": "ZRZ"
           },
           "ZWD": {
-            "displayName": "Zimbabwe dollar",
+            "displayName": "Zimbabwe dollar (1980–2008)",
+            "displayName-count-one": "Zimbabwe dollar (1980–2008)",
+            "displayName-count-other": "Zimbabwe dollarit (1980–2008)",
             "symbol": "ZWD"
           },
           "ZWL": {
-            "displayName": "ZWL",
+            "displayName": "Zimbabwe dollar (2009)",
+            "displayName-count-one": "Zimbabwe dollar (2009)",
+            "displayName-count-other": "Zimbabwe dollarit (2009)",
             "symbol": "ZWL"
           },
           "ZWR": {
-            "displayName": "ZWR",
+            "displayName": "Zimbabwe dollar (2008)",
+            "displayName-count-one": "Zimbabwe dollar (2008)",
+            "displayName-count-other": "Zimbabwe dollarit (2008)",
             "symbol": "ZWR"
           }
         }

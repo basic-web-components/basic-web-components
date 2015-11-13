@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11318 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-25 23:47:56 -0600 (Wed, 25 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11969 $"
     },
     "timeData": {
       "001": {
@@ -165,6 +163,10 @@
         "_preferred": "H"
       },
       "DM": {
+        "_allowed": "H h",
+        "_preferred": "h"
+      },
+      "DO": {
         "_allowed": "H h",
         "_preferred": "h"
       },
@@ -348,10 +350,6 @@
         "_allowed": "H h",
         "_preferred": "h"
       },
-      "MA": {
-        "_allowed": "H h",
-        "_preferred": "h"
-      },
       "MC": {
         "_allowed": "H",
         "_preferred": "H"
@@ -428,7 +426,15 @@
         "_allowed": "H h",
         "_preferred": "h"
       },
+      "PA": {
+        "_allowed": "H h",
+        "_preferred": "h"
+      },
       "PG": {
+        "_allowed": "H h",
+        "_preferred": "h"
+      },
+      "PH": {
         "_allowed": "H h",
         "_preferred": "h"
       },
@@ -552,6 +558,10 @@
         "_allowed": "H h",
         "_preferred": "h"
       },
+      "TO": {
+        "_allowed": "H h",
+        "_preferred": "h"
+      },
       "TR": {
         "_allowed": "H",
         "_preferred": "H"
@@ -573,6 +583,10 @@
         "_preferred": "h"
       },
       "VC": {
+        "_allowed": "H h",
+        "_preferred": "h"
+      },
+      "VE": {
         "_allowed": "H h",
         "_preferred": "h"
       },

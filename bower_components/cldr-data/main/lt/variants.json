@@ -3,24 +3,23 @@
     "lt": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "lt"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "1606 -ųjų metų prancūzų kalba",
-          "1694ACAD": "Ankstyvasis Prancūzijos modernizmas",
           "1901": "Įprasta vokiečių rašyba",
-          "1959ACAD": "Akademinis",
           "1994": "Sunorminta Resian rašyba",
           "1996": "1996 -ųjų metų vokiečių rašyba",
+          "1606NICT": "1606 -ųjų metų prancūzų kalba",
+          "1694ACAD": "Ankstyvasis Prancūzijos modernizmas",
+          "1959ACAD": "Akademinis",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALALC97",
           "ALUKU": "ALUKU",
+          "AO1990": "AO1990",
           "AREVELA": "Rytų armėnai",
           "AREVMDA": "Vakarų armėnai",
           "BAKU1926": "Suvienodinta turkų kalbos lotyniška abėcėlė",
@@ -31,6 +30,7 @@
           "BISKE": "San Giorgio / Bila tarmė",
           "BOHORIC": "BOHORIC",
           "BOONT": "Boontling",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -56,6 +56,7 @@
           "NJIVA": "Gniva / Njiva tarmė",
           "NULIK": "NULIK",
           "OSOJS": "Oseacco / Osojane tarmė",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "PAMAKA",
           "PETR1708": "PETR1708",
           "PINYIN": "Kinų hieroglifų vertimo sistema Romanization",

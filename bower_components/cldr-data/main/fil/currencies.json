@@ -3,11 +3,8 @@
     "fil": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "fil"
       },
@@ -46,9 +43,9 @@
             "symbol": "AMD"
           },
           "ANG": {
-            "displayName": "Netherlands Antillean Guilder",
-            "displayName-count-one": "Netherlands Antillean guilder",
-            "displayName-count-other": "Netherlands Antillean guilders",
+            "displayName": "Antillean Guilder ng Netherlands",
+            "displayName-count-one": "Antillean guilder ng Netherlands",
+            "displayName-count-other": "Antillean guilders ng Netherlands",
             "symbol": "ANG"
           },
           "AOA": {
@@ -87,9 +84,9 @@
             "symbol": "ARP"
           },
           "ARS": {
-            "displayName": "Argentine Peso",
-            "displayName-count-one": "Argentine peso",
-            "displayName-count-other": "Argentine pesos",
+            "displayName": "Piso ng Argentina",
+            "displayName-count-one": "piso ng Argentina",
+            "displayName-count-other": "piso ng Argentina",
             "symbol": "ARS",
             "symbol-alt-narrow": "$"
           },
@@ -105,9 +102,9 @@
             "symbol-alt-narrow": "$"
           },
           "AWG": {
-            "displayName": "Aruban Florin",
-            "displayName-count-one": "Aruban florin",
-            "displayName-count-other": "Aruban florin",
+            "displayName": "Florin ng Aruba",
+            "displayName-count-one": "florin ng Aruba",
+            "displayName-count-other": "florin ng Aruba",
             "symbol": "AWG"
           },
           "AZM": {
@@ -206,9 +203,9 @@
             "symbol-alt-narrow": "$"
           },
           "BOB": {
-            "displayName": "Bolivian Boliviano",
-            "displayName-count-one": "Bolivian boliviano",
-            "displayName-count-other": "Bolivian bolivianos",
+            "displayName": "Boliviano ng Bolivia",
+            "displayName-count-one": "boliviano ng Bolivia",
+            "displayName-count-other": "bolivianos ng Bolivia",
             "symbol": "BOB",
             "symbol-alt-narrow": "Bs"
           },
@@ -237,9 +234,9 @@
             "symbol": "BRE"
           },
           "BRL": {
-            "displayName": "Brazilian Real",
-            "displayName-count-one": "Brazilian real",
-            "displayName-count-other": "Brazilian reals",
+            "displayName": "Real ng Barzil",
+            "displayName-count-one": "real ng Brazil",
+            "displayName-count-other": "reals ng Brazil",
             "symbol": "R$",
             "symbol-alt-narrow": "R$"
           },
@@ -358,9 +355,9 @@
             "symbol": "COU"
           },
           "CRC": {
-            "displayName": "Costa Rican Colón",
-            "displayName-count-one": "Costa Rican colón",
-            "displayName-count-other": "Costa Rican colóns",
+            "displayName": "Colón ng Costa Rica",
+            "displayName-count-one": "colón ng Costa Rica",
+            "displayName-count-other": "colóns ng Costa Rica",
             "symbol": "CRC",
             "symbol-alt-narrow": "₡"
           },
@@ -418,7 +415,7 @@
             "symbol": "DJF"
           },
           "DKK": {
-            "displayName": "Denmark Krone",
+            "displayName": "Danish Krone",
             "displayName-count-one": "Danish krone",
             "displayName-count-other": "Danish kroner",
             "symbol": "DKK",
@@ -500,9 +497,9 @@
             "symbol-alt-narrow": "$"
           },
           "FKP": {
-            "displayName": "Falkland Islands Pound",
-            "displayName-count-one": "Falkland Islands pound",
-            "displayName-count-other": "Falkland Islands pounds",
+            "displayName": "Pound ng Falkland Islands",
+            "displayName-count-one": "pound ng Falkland Islands",
+            "displayName-count-other": "pounds ng Falkland Islands",
             "symbol": "FKP",
             "symbol-alt-narrow": "£"
           },
@@ -525,7 +522,8 @@
             "displayName": "Georgian Lari",
             "displayName-count-one": "Georgian lari",
             "displayName-count-other": "Georgian laris",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -534,7 +532,7 @@
           "GHS": {
             "displayName": "Ghanaian Cedi",
             "displayName-count-one": "Ghanaian cedi",
-            "displayName-count-other": "Ghanaian CediGhanaian cedis",
+            "displayName-count-other": "Ghanian cedis",
             "symbol": "GHS"
           },
           "GIP": {
@@ -570,9 +568,9 @@
             "symbol": "GRD"
           },
           "GTQ": {
-            "displayName": "Guatemalan Quetzal",
-            "displayName-count-one": "Guatemalan quetzal",
-            "displayName-count-other": "Guatemalan quetzals",
+            "displayName": "Quetzal ng Guatemala",
+            "displayName-count-one": "quetzal ng Guatemala",
+            "displayName-count-other": "quetzals ng Guatemala",
             "symbol": "GTQ",
             "symbol-alt-narrow": "Q"
           },
@@ -599,9 +597,9 @@
             "symbol-alt-narrow": "$"
           },
           "HNL": {
-            "displayName": "Honduran Lempira",
-            "displayName-count-one": "Honduran lempira",
-            "displayName-count-other": "Honduran lempiras",
+            "displayName": "Lempira ng Honduras",
+            "displayName-count-one": "lempira ng Honduras",
+            "displayName-count-other": "lempiras ng Honduras",
             "symbol": "HNL",
             "symbol-alt-narrow": "L"
           },
@@ -617,9 +615,9 @@
             "symbol-alt-narrow": "kn"
           },
           "HTG": {
-            "displayName": "Haitian Gourde",
-            "displayName-count-one": "Haitian gourde",
-            "displayName-count-other": "Haitian gourdes",
+            "displayName": "Gourde ng Haiti",
+            "displayName-count-one": "gourde ng Haiti",
+            "displayName-count-other": "gourdes ng Haiti",
             "symbol": "HTG"
           },
           "HUF": {
@@ -728,9 +726,9 @@
             "symbol-alt-narrow": "CF"
           },
           "KPW": {
-            "displayName": "North Korean Won",
-            "displayName-count-one": "North Korean won",
-            "displayName-count-other": "North Korean won",
+            "displayName": "Won ng Hilagang Korea",
+            "displayName-count-one": "won ng Hilagang Korea",
+            "displayName-count-other": "won ng Hilagang Korea",
             "symbol": "KPW",
             "symbol-alt-narrow": "₩"
           },
@@ -743,9 +741,9 @@
             "symbol": "KRO"
           },
           "KRW": {
-            "displayName": "South Korean Won",
-            "displayName-count-one": "South Korean won",
-            "displayName-count-other": "South Korean won",
+            "displayName": "Won ng Timog Korea",
+            "displayName-count-one": "won ng Timog Korea",
+            "displayName-count-other": "won ng Timog Korea",
             "symbol": "₩",
             "symbol-alt-narrow": "₩"
           },
@@ -777,9 +775,9 @@
             "symbol-alt-narrow": "₭"
           },
           "LBP": {
-            "displayName": "Lebanese Pound",
-            "displayName-count-one": "Lebanese pound",
-            "displayName-count-other": "Lebanese pounds",
+            "displayName": "Pound ng Lebanon",
+            "displayName-count-one": "pound ng Lebanon",
+            "displayName-count-other": "pounds ng Lebanon",
             "symbol": "LBP",
             "symbol-alt-narrow": "L£"
           },
@@ -946,7 +944,7 @@
           "MXN": {
             "displayName": "Piso ng Mexico",
             "displayName-count-one": "piso ng Mexico",
-            "displayName-count-other": "Piso ng Mexico",
+            "displayName-count-other": "piso ng Mexico",
             "symbol": "MX$",
             "symbol-alt-narrow": "$"
           },
@@ -998,8 +996,8 @@
             "symbol": "NIC"
           },
           "NIO": {
-            "displayName": "Nicaraguan Córdoba",
-            "displayName-count-one": "Nicaraguan córdoba",
+            "displayName": "Córdoba ng Nicaragua",
+            "displayName-count-one": "córdoba ng Nicaragua",
             "displayName-count-other": "Nicaraguan córdobas",
             "symbol": "NIO",
             "symbol-alt-narrow": "C$"
@@ -1036,9 +1034,9 @@
             "symbol": "OMR"
           },
           "PAB": {
-            "displayName": "Panamanian Balboa",
-            "displayName-count-one": "Panamanian balboa",
-            "displayName-count-other": "Panamanian balboas",
+            "displayName": "Balboa ng Panama",
+            "displayName-count-one": "balboa ng Panama",
+            "displayName-count-other": "Balboas ng Panama",
             "symbol": "PAB"
           },
           "PEI": {
@@ -1128,7 +1126,7 @@
             "displayName-count-one": "Russian ruble",
             "displayName-count-other": "Russian rubles",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1166,8 +1164,8 @@
             "symbol": "SDD"
           },
           "SDG": {
-            "displayName": "Sudanese Pound",
-            "displayName-count-one": "Sudanese pound",
+            "displayName": "Pound ng Sudan",
+            "displayName-count-one": "pound ng Sudan",
             "displayName-count-other": "Sudanese pounds",
             "symbol": "SDG"
           },
@@ -1228,16 +1226,16 @@
             "symbol": "SRG"
           },
           "SSP": {
-            "displayName": "South Sudanese Pound",
-            "displayName-count-one": "South Sudanese pound",
-            "displayName-count-other": "South Sudanese pounds",
+            "displayName": "Pound ng Timog Sudan",
+            "displayName-count-one": "Pound ng Timog Sudan",
+            "displayName-count-other": "pounds ng Timog Sudan",
             "symbol": "SSP",
             "symbol-alt-narrow": "£"
           },
           "STD": {
-            "displayName": "Sao Tome and Principe Dobra",
-            "displayName-count-one": "Sao Tome and Principe dobra",
-            "displayName-count-other": "Sao Tome and Principe dobras",
+            "displayName": "São Tomé & Príncipe Dobra",
+            "displayName-count-one": "São Tomé & Príncipe dobra",
+            "displayName-count-other": "São Tomé & Príncipe dobras",
             "symbol": "STD",
             "symbol-alt-narrow": "Db"
           },
@@ -1400,9 +1398,9 @@
             "symbol": "VEB"
           },
           "VEF": {
-            "displayName": "Venezuelan Bolívar",
-            "displayName-count-one": "Venezuelan bolívar",
-            "displayName-count-other": "Venezuelan bolívars",
+            "displayName": "Bolívar ng Venezuela",
+            "displayName-count-one": "bolívar ng Venezuela",
+            "displayName-count-other": "bolívars ng Venezuela",
             "symbol": "VEF",
             "symbol-alt-narrow": "Bs"
           },
@@ -1483,9 +1481,9 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "CFA Franc BCEAO",
-            "displayName-count-one": "CFA franc BCEAO",
-            "displayName-count-other": "CFA francs BCEAO",
+            "displayName": "CFA Franc ng Kanlurang Africa",
+            "displayName-count-one": "CFA franc ng Kanlurang Africa",
+            "displayName-count-other": "CFA francs ng Kanlurang Africa",
             "symbol": "CFA"
           },
           "XPD": {
@@ -1555,9 +1553,9 @@
             "symbol": "ZAL"
           },
           "ZAR": {
-            "displayName": "South African Rand",
-            "displayName-count-one": "South African rand",
-            "displayName-count-other": "South African rand",
+            "displayName": "Rand ng Timog Africa",
+            "displayName-count-one": "rand ng Timog Africa",
+            "displayName-count-other": "rand ng Timog Africa",
             "symbol": "ZAR",
             "symbol-alt-narrow": "R"
           },

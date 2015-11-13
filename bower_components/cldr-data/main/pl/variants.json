@@ -3,24 +3,23 @@
     "pl": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "pl"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "szesnastowieczny francuski",
-          "1694ACAD": "siedemnastowieczny francuski",
           "1901": "tradycyjna ortografia niemiecka",
-          "1959ACAD": "1959ACAD",
           "1994": "standardowa ortografia regionu Resia",
           "1996": "ortografia niemiecka z 1996 r.",
+          "1606NICT": "szesnastowieczny francuski",
+          "1694ACAD": "siedemnastowieczny francuski",
+          "1959ACAD": "1959ACAD",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALALC97",
           "ALUKU": "ALUKU",
+          "AO1990": "AO1990",
           "AREVELA": "ormiański wchodni",
           "AREVMDA": "ormiański zachodni",
           "BAKU1926": "turecki zunifikowany alfabet łaciński",
@@ -31,6 +30,7 @@
           "BISKE": "dialekt San Giorgio/Bila",
           "BOHORIC": "BOHORIC",
           "BOONT": "dialekt Boontling",
+          "COLB1945": "COLB1945",
           "DAJNKO": "DAJNKO",
           "EKAVSK": "EKAVSK",
           "EMODENG": "EMODENG",
@@ -56,6 +56,7 @@
           "NJIVA": "dialekt Gniva/Njiva",
           "NULIK": "NULIK",
           "OSOJS": "dialekt Oseacco/Osojane",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "PAMAKA",
           "PETR1708": "PETR1708",
           "PINYIN": "PINYIN",

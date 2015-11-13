@@ -3,11 +3,8 @@
     "ro-MD": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ro",
         "territory": "MD"
@@ -216,12 +213,12 @@
           "MV": "Maldive",
           "MW": "Malawi",
           "MX": "Mexic",
-          "MY": "Malaezia",
+          "MY": "Malaysia",
           "MZ": "Mozambic",
           "NA": "Namibia",
           "NC": "Noua Caledonie",
           "NE": "Niger",
-          "NF": "Insulele Norfolk",
+          "NF": "Insula Norfolk",
           "NG": "Nigeria",
           "NI": "Nicaragua",
           "NL": "Țările de Jos",
@@ -267,7 +264,7 @@
           "SM": "San Marino",
           "SN": "Senegal",
           "SO": "Somalia",
-          "SR": "Surinam",
+          "SR": "Suriname",
           "SS": "Sudanul de Sud",
           "ST": "Sao Tome și Principe",
           "SV": "El Salvador",
@@ -300,7 +297,7 @@
           "UY": "Uruguay",
           "UZ": "Uzbekistan",
           "VA": "Statul Cetății Vaticanului",
-          "VC": "Saint Vincent și Grenadine",
+          "VC": "Saint Vincent și Grenadinele",
           "VE": "Venezuela",
           "VG": "Insulele Virgine Britanice",
           "VI": "Insulele Virgine S.U.A.",

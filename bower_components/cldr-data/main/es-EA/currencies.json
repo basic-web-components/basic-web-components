@@ -3,11 +3,8 @@
     "es-EA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "es",
         "territory": "EA"
@@ -43,7 +40,7 @@
             "symbol": "ALL"
           },
           "AMD": {
-            "displayName": "dram armenio",
+            "displayName": "dram",
             "displayName-count-one": "dram",
             "displayName-count-other": "drams",
             "symbol": "AMD"
@@ -515,10 +512,10 @@
             "displayName-count-one": "libra egipcia",
             "displayName-count-other": "libras egipcias",
             "symbol": "EGP",
-            "symbol-alt-narrow": "E£"
+            "symbol-alt-narrow": "EGP"
           },
           "ERN": {
-            "displayName": "nakfa eritreo",
+            "displayName": "nakfa",
             "displayName-count-one": "nakfa",
             "displayName-count-other": "nakfas",
             "symbol": "ERN"
@@ -596,7 +593,8 @@
             "displayName": "lari",
             "displayName-count-one": "lari",
             "displayName-count-other": "laris",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "cedi ghanés (1979–2007)",
@@ -1247,7 +1245,7 @@
             "displayName-count-one": "rublo ruso",
             "displayName-count-other": "rublos rusos",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "rublo ruso (1991–1998)",
@@ -1691,7 +1689,7 @@
           },
           "XXX": {
             "displayName": "moneda desconocida",
-            "displayName-count-one": "(unidad de moneda desconocida)",
+            "displayName-count-one": "(moneda desconocida)",
             "displayName-count-other": "(moneda desconocida)",
             "symbol": "XXX"
           },

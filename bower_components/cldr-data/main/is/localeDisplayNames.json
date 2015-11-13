@@ -3,11 +3,8 @@
     "is": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "is"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Dagatal",
+          "cf": "cf",
           "colAlternate": "Röðun óháð táknum",
           "colBackwards": "Röðun með viðsnúnum áherslum",
           "colCaseFirst": "Röðun eftir hástöfum/lágstöfum",
           "colCaseLevel": "Stafrétt röðun",
           "colHiraganaQuaternary": "Kana-röðun",
+          "collation": "Röðun",
           "colNormalization": "Stöðluð röðun",
           "colNumeric": "Talnaröðun",
           "colStrength": "Röðunarstyrkur",
-          "collation": "Röðun",
           "currency": "Gjaldmiðill",
+          "hc": "Tímakerfi (12 eða 24)",
+          "lb": "Línuskipting",
+          "ms": "Mælingakerfi",
           "numbers": "Tölur",
           "timezone": "Tímabelti",
           "va": "Landsstaðalsafbrigði",
@@ -56,6 +57,10 @@
             "persian": "Persneskt dagatal",
             "roc": "Minguo dagatal"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Raða táknum",
             "shifted": "Raða óháð táknum"
@@ -77,6 +82,26 @@
             "no": "Raða Kana sér",
             "yes": "Raða Kana öðruvísi"
           },
+          "collation": {
+            "big5han": "hefðbundin kínversk röðun - Big5",
+            "compat": "compat",
+            "dictionary": "Orðabókarröð",
+            "ducet": "Sjálfgefin Unicode-röðun",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "einfölduð kínversk röðun - GB2312",
+            "phonebook": "Símaskráarröðun",
+            "phonetic": "Hljóðfræðileg röð",
+            "pinyin": "Pinyin-röðun",
+            "reformed": "Endurbætt röð",
+            "search": "Almenn leit",
+            "searchjl": "Leita eftir upphafssamhljóða í Hangul",
+            "standard": "Stöðluð röðun",
+            "stroke": "Strikaröðun",
+            "traditional": "Hefðbundin",
+            "unihan": "Röðun eftir grunnstrikum",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Raða án stöðlunar",
             "yes": "Raða Unicode með stöðluðum hætti"
@@ -92,25 +117,24 @@
             "secondary": "Raða áherslum",
             "tertiary": "Raða áherslum/hástaf eða lágstaf/breidd"
           },
-          "collation": {
-            "big5han": "hefðbundin kínversk röðun - Big5",
-            "dictionary": "Orðabókarröð",
-            "ducet": "Sjálfgefin Unicode-röðun",
-            "eor": "eor",
-            "gb2312han": "einfölduð kínversk röðun - GB2312",
-            "phonebook": "Símaskráarröðun",
-            "phonetic": "Hljóðfræðileg röð",
-            "pinyin": "Pinyin-röðun",
-            "reformed": "Endurbætt röð",
-            "search": "Almenn leit",
-            "searchjl": "Leita eftir upphafssamhljóða í Hangul",
-            "standard": "Stöðluð röðun",
-            "stroke": "Strikaröðun",
-            "traditional": "Hefðbundin",
-            "unihan": "Röðun eftir grunnstrikum",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "12 tíma kerfi (0–11)",
+            "h12": "12 tíma kerfi (1–12)",
+            "h23": "24 tíma kerfi (0–23)",
+            "h24": "24 tíma kerfi (1–24)"
+          },
+          "lb": {
+            "loose": "Laus línuskipting",
+            "normal": "Venjuleg línuskipting",
+            "strict": "Ströng línuskipting"
+          },
+          "ms": {
+            "metric": "Metrakerfi",
+            "uksystem": "Breskt mælingakerfi",
+            "ussystem": "Bandarískt mælingakerfi"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Arabískar-indverskar tölur",
             "arabext": "Auknar arabískar-indverskar tölur",
             "armn": "Armenskir tölustafir",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Devanagari tölur",
             "ethi": "Eþíópískir tölustafir",
             "finance": "Viðskiptafræðileg töluorð",
@@ -135,6 +160,7 @@
             "hant": "Hefðbundnir kínverskir tölustafir",
             "hantfin": "Hefðbundnar kínverskar fjármálatölur",
             "hebr": "Hebreskir tölustafir",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Japanskir tölustafir",
             "jpanfin": "Japanskar fjármálatölur",
@@ -147,11 +173,19 @@
             "latn": "Vestrænar tölur",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malayalam-tölur",
+            "modi": "modi",
             "mong": "Mongólskar tölur",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Mjanmarskar tölur",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Upprunalegir tölustafir",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "Rómverskar lágstafatölur",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "Telúgú-tölur",
             "thai": "Tælenskar tölur",
             "tibt": "Tíbeskir tölustafir",
+            "tirh": "tirh",
             "traditional": "Hefðbundin tölutákn",
-            "vaii": "Vai-tölustafir"
+            "vaii": "Vai-tölustafir",
+            "wara": "wara"
           }
         },
         "codePatterns": {

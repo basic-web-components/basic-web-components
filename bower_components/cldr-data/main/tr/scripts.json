@@ -3,11 +3,8 @@
     "tr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "tr"
       },
@@ -15,6 +12,7 @@
         "scripts": {
           "Afak": "Afaka",
           "Aghb": "Kafkas Albanyası",
+          "Ahom": "Ahom",
           "Arab": "Arap",
           "Arab-alt-variant": "Fars-Arap",
           "Armi": "İmparatorluk Aramicesi",
@@ -64,6 +62,7 @@
           "Hans-alt-stand-alone": "Basitleştirilmiş Han",
           "Hant": "Geleneksel",
           "Hant-alt-stand-alone": "Geleneksel Han",
+          "Hatr": "Hatr",
           "Hebr": "İbrani",
           "Hira": "Hiragana",
           "Hluw": "Anadolu Hiyeroglifleri",
@@ -110,6 +109,7 @@
           "Moon": "Moon",
           "Mroo": "Mro",
           "Mtei": "Meitei Mayek",
+          "Mult": "Mult",
           "Mymr": "Burma",
           "Narb": "Eski Kuzey Arap",
           "Nbat": "Nebati",

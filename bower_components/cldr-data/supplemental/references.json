@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11318 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-25 23:47:56 -0600 (Wed, 25 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11969 $"
     },
     "references": {
       "R1000": {
@@ -413,10 +411,6 @@
         "_value": "[missing]",
         "_uri": "http://www.ethnologue.com/show_language.asp?code=bem"
       },
-      "R1105": {
-        "_value": "Also called MÃ²orÃ©",
-        "_uri": "http://www.ethnologue.com/show_language.asp?code=mos"
-      },
       "R1106": {
         "_value": "- More than 95% of Pakistanis can speak or understand Urdu as their second or third language",
         "_uri": "http://en.wikipedia.org/wiki/Languages_of_Pakistan"
@@ -732,7 +726,7 @@
         "_uri": "https://www.cia.gov/library/publications/the-world-factbook/geos/bl.html"
       },
       "R1192": {
-        "_value": "Spanish \"\"universal\"\", set to 98%",
+        "_value": "Spanish \\\"\\\"universal\\\"\\\", set to 98%",
         "_uri": "http://en.wikipedia.org/wiki/Demographics_of_Chile#Languages"
       },
       "R1193": {
@@ -796,6 +790,10 @@
         "_value": "1st lang literacy 8%",
         "_uri": "http://www.ethnologue.com/language/nnh"
       },
+      "R1209": {
+        "_value": "low literacy",
+        "_uri": "http://www.ethnologue.com/language/bgn"
+      },
       "R1210": "percentage calculated from http://www.spanishcourses.info/Mains/SpanishSpoken_EN.htm , see also http://www.spanishseo.org/resources/worldwide-spanish-speaking-population",
       "R1211": {
         "_value": "[missing]",
@@ -811,7 +809,7 @@
         "_uri": "http://www.tatar.ru/"
       },
       "R1215": " http://en.wikipedia.org/wiki/Interlingua#Community Has a regular conf in Sweden, also Brazil; an auxiliary language with tiny population worldwide",
-      "R1216": "This is base pop for \"\"\"\"\"\"\"\"fub\"\"\"\"\"\"\"\" lang code; ff shows as a macrolanguage",
+      "R1216": "This is base pop for \\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"fub\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\" lang code; ff shows as a macrolanguage",
       "R1217": {
         "_value": "[missing]",
         "_uri": "http://www.ethnologue.com/language/bkm"
@@ -824,7 +822,7 @@
         "_value": "Modern use of Arabic (Jawi) seems to be minimal, but is co-official with ms_Latn; set to 5% for now.",
         "_uri": "http://en.wikipedia.org/wiki/Languages_of_Brunei"
       },
-      "R1220": "​http://www.interlingua.com/statutos leading Interlingua assoc \"\"\"\"\"\"\"\"Union Mundial pro Interlingua\"\"\"\"\"\"\"\" registered French non-profit - real user pop figure is unknown but low",
+      "R1220": "​http://www.interlingua.com/statutos leading Interlingua assoc \\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"Union Mundial pro Interlingua\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\" registered French non-profit - real user pop figure is unknown but low",
       "R1221": {
         "_value": "[missing]",
         "_uri": "https://www.cia.gov/library/publications/the-world-factbook/geos/cc.html"
@@ -856,10 +854,6 @@
       "R1228": {
         "_value": "language also called Kamta in India",
         "_uri": "http://www.ethnologue.com/show_language.asp?code=rkt"
-      },
-      "R1229": {
-        "_value": "(\"\"\"\"\"\"\"\"syr\"\"\"\"\"\"\"\" is a macrolang containing \"\"\"\"\"\"\"\"cld\"\"\"\"\"\"\"\" and \"\"\"\"\"\"\"\"aii\"\"\"\"\"\"\"\")",
-        "_uri": "http://www.ethnologue.com/show_language.asp?code=cld"
       },
       "R1230": {
         "_value": "[missing]",
@@ -981,7 +975,7 @@
         "_uri": "http://www.ethnologue.com/language/jgo"
       },
       "R1268": {
-        "_value": "http://en.wikipedia.org/wiki/Akademio_Internacia_de_la_Sciencoj_San_Marino - estimate 100% of the academy can use Esperanto; the language is used as 1st language of instruction; academy has 300 \"\"\"\"\"\"\"\"members\"\"\"\"\"\"\"\".",
+        "_value": "http://en.wikipedia.org/wiki/Akademio_Internacia_de_la_Sciencoj_San_Marino - estimate 100% of the academy can use Esperanto; the language is used as 1st language of instruction; academy has 300 \\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"members\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\".",
         "_uri": "http://en.wikipedia.org/wiki/Esperanto"
       },
       "R1269": {
@@ -1105,6 +1099,38 @@
       "R1306": {
         "_value": "[missing]",
         "_uri": "http://www.bevoelkerungsschutz-portal.de/SharedDocs/Downloads/DE/Broschueren/2008/Regional_und_Minderheitensprachen.pdf"
+      },
+      "R1307": {
+        "_value": "Also called Moré",
+        "_uri": "http://www.ethnologue.com/show_language.asp?code=mos"
+      },
+      "R1308": {
+        "_value": "Newly designated official, not so widely used",
+        "_uri": "http://www.iwacu-burundi.org/blogs/english/english-is-now-official-language-of-burundi/"
+      },
+      "R1309": {
+        "_value": "[missing]",
+        "_uri": "https://en.wikipedia.org/wiki/Faroese_language"
+      },
+      "R1310": {
+        "_value": "[missing]",
+        "_uri": "http://www.ethnologue.com/language/lrc"
+      },
+      "R1311": {
+        "_value": "syr is a macrolang containing cld and aii)",
+        "_uri": "http://www.ethnologue.com/show_language.asp?code=cld"
+      },
+      "R1312": {
+        "_value": "[missing]",
+        "_uri": "http://www.ethnologue.com/language/sdh"
+      },
+      "R1313": {
+        "_value": "[missing]",
+        "_uri": "https://www.ethnologue.com/language/wni"
+      },
+      "R1314": {
+        "_value": "[missing]",
+        "_uri": "http://www.axl.cefan.ulaval.ca/afrique/soudan.htm"
       }
     }
   }

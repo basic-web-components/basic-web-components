@@ -3,11 +3,8 @@
     "lt": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "lt"
       },
@@ -541,11 +538,11 @@
             "symbol-alt-narrow": "$"
           },
           "CNX": {
-            "displayName": "Kinijos \"People\" banko doleris",
-            "displayName-count-one": "Kinijos \"People\" banko doleris",
-            "displayName-count-few": "Kinijos \"People\" banko doleriai",
-            "displayName-count-many": "Kinijos \"People\" banko dolerio",
-            "displayName-count-other": "Kinijos \"People\" banko dolerių"
+            "displayName": "Kinijos \\\"People\\\" banko doleris",
+            "displayName-count-one": "Kinijos \\\"People\\\" banko doleris",
+            "displayName-count-few": "Kinijos \\\"People\\\" banko doleriai",
+            "displayName-count-many": "Kinijos \\\"People\\\" banko dolerio",
+            "displayName-count-other": "Kinijos \\\"People\\\" banko dolerių"
           },
           "CNY": {
             "displayName": "Kinijos ženminbi juanis",
@@ -831,7 +828,8 @@
             "displayName-count-few": "Gruzijos lariai",
             "displayName-count-many": "Gruzijos lario",
             "displayName-count-other": "Gruzijos larių",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ganos sedis (1979–2007)",
@@ -1099,7 +1097,7 @@
             "displayName-count-many": "Japonijos jenos",
             "displayName-count-other": "Japonijos jenų",
             "symbol": "JPY",
-            "symbol-alt-narrow": "JPY"
+            "symbol-alt-narrow": "¥"
           },
           "KES": {
             "displayName": "Kenijos šilingas",
@@ -1193,7 +1191,7 @@
             "displayName-count-many": "Kazachstano tengės",
             "displayName-count-other": "Kazachstano tengių",
             "symbol": "KZT",
-            "symbol-alt-narrow": "KZT"
+            "symbol-alt-narrow": "₸"
           },
           "LAK": {
             "displayName": "Laoso kipas",
@@ -1669,7 +1667,7 @@
             "displayName-count-many": "Lenkijos zloto",
             "displayName-count-other": "Lenkijos zlotų",
             "symbol": "PLN",
-            "symbol-alt-narrow": "zł"
+            "symbol-alt-narrow": "zl"
           },
           "PLZ": {
             "displayName": "Lenkijos zlotas (1950–1995)",
@@ -1743,6 +1741,7 @@
             "displayName-count-many": "Rusijos rublio",
             "displayName-count-other": "Rusijos rublių",
             "symbol": "RUB",
+            "symbol-alt-narrow": "rb",
             "symbol-alt-variant": "₽"
           },
           "RUR": {
@@ -2088,7 +2087,7 @@
             "displayName-count-few": "JAV doleriai",
             "displayName-count-many": "JAV dolerio",
             "displayName-count-other": "JAV dolerių",
-            "symbol": "dol.",
+            "symbol": "USD",
             "symbol-alt-narrow": "$"
           },
           "USN": {

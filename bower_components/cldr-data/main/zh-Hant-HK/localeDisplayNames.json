@@ -3,11 +3,8 @@
     "zh-Hant-HK": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "zh",
         "script": "Hant",
@@ -21,16 +18,20 @@
         },
         "keys": {
           "calendar": "曆法",
+          "cf": "cf",
           "colAlternate": "略過符號排序",
           "colBackwards": "反向重音排序",
           "colCaseFirst": "大寫/小寫排列",
           "colCaseLevel": "區分大小寫排序",
           "colHiraganaQuaternary": "假名排序",
+          "collation": "排序",
           "colNormalization": "正規化排序",
           "colNumeric": "數字排序",
           "colStrength": "排序強度",
-          "collation": "排序",
           "currency": "貨幣",
+          "hc": "時間週期（12 小時制與 24 小時制）",
+          "lb": "換行樣式",
+          "ms": "度量衡系統",
           "numbers": "數字",
           "timezone": "時區",
           "va": "區域變異",
@@ -58,6 +59,10 @@
             "persian": "波斯曆",
             "roc": "民國曆"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "排序符號",
             "shifted": "略過符號排序"
@@ -79,6 +84,26 @@
             "no": "個別排序假名",
             "yes": "分別排序假名"
           },
+          "collation": {
+            "big5han": "繁體中文排序 (Big5)",
+            "compat": "compat",
+            "dictionary": "詞典排序",
+            "ducet": "預設 Unicode 排序",
+            "emoji": "emoji",
+            "eor": "歐洲排序規則",
+            "gb2312han": "簡體中文排序 (GB2312)",
+            "phonebook": "電話簿排序",
+            "phonetic": "發音排序",
+            "pinyin": "拼音排序",
+            "reformed": "改革版排序",
+            "search": "一般用途搜尋",
+            "searchjl": "韓文子音排序",
+            "standard": "標準排序",
+            "stroke": "筆畫排序",
+            "traditional": "傳統排序",
+            "unihan": "部首筆畫排序",
+            "zhuyin": "注音排序"
+          },
           "colNormalization": {
             "no": "非正規化排序",
             "yes": "依正規化排序 Unicode"
@@ -94,25 +119,24 @@
             "secondary": "排序重音",
             "tertiary": "排序重音/大小寫/全半形"
           },
-          "collation": {
-            "big5han": "繁體中文排序 (Big5)",
-            "dictionary": "詞典排序",
-            "ducet": "預設 Unicode 排序",
-            "eor": "歐洲排序規則",
-            "gb2312han": "簡體中文排序 (GB2312)",
-            "phonebook": "電話簿排序",
-            "phonetic": "發音排序",
-            "pinyin": "拼音排序",
-            "reformed": "改革版排序",
-            "search": "一般用途搜尋",
-            "searchjl": "韓文子音排序",
-            "standard": "標準排序",
-            "stroke": "筆畫排序",
-            "traditional": "傳統排序",
-            "unihan": "部首筆畫排序",
-            "zhuyin": "注音排序"
+          "hc": {
+            "h11": "12 小時制 (0–11)",
+            "h12": "12 小時制 (1–12)",
+            "h23": "24 小時制 (0–23)",
+            "h24": "24 小時制 (1–24)"
+          },
+          "lb": {
+            "loose": "寬鬆換行樣式",
+            "normal": "一般換行樣式",
+            "strict": "強制換行樣式"
+          },
+          "ms": {
+            "metric": "公制",
+            "uksystem": "英制",
+            "ussystem": "美制"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "阿拉伯-印度數字",
             "arabext": "阿拉伯-印度擴充數字",
             "armn": "亞美尼亞數字",
@@ -122,7 +146,8 @@
             "brah": "婆羅米數字",
             "cakm": "查克馬數字",
             "cham": "占文數字",
-            "deva": "梵文數字",
+            "cyrl": "cyrl",
+            "deva": "天城體數字",
             "ethi": "埃塞俄比亞數字",
             "finance": "金融數字",
             "fullwide": "全形數字",
@@ -137,6 +162,7 @@
             "hant": "小寫繁體中文數字",
             "hantfin": "大寫繁體中文數字",
             "hebr": "希伯來數字",
+            "hmng": "hmng",
             "java": "爪哇文數字",
             "jpan": "小寫日文數字",
             "jpanfin": "大寫日文數字",
@@ -149,11 +175,19 @@
             "latn": "阿拉伯數字",
             "lepc": "西納文數字",
             "limb": "林布文數字",
-            "mlym": "馬來亞拉姆數字",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
+            "mlym": "馬拉雅拉姆數字",
+            "modi": "modi",
             "mong": "蒙古數字",
+            "mroo": "mroo",
             "mtei": "曼尼普爾數字",
             "mymr": "緬甸數字",
             "mymrshan": "緬甸撣文數字",
+            "mymrtlng": "mymrtlng",
             "native": "原始數字",
             "nkoo": "曼德數字",
             "olck": "桑塔利文數字",
@@ -163,17 +197,21 @@
             "romanlow": "小寫羅馬數字",
             "saur": "索拉什特拉文數字",
             "shrd": "夏拉達數字",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "索朗桑朋數字",
             "sund": "巽他數字",
             "takr": "塔卡里數字",
             "talu": "新傣仂文數字",
             "taml": "泰米爾數字",
-            "tamldec": "坦米爾數字",
+            "tamldec": "泰米爾數字",
             "telu": "泰盧固數字",
             "thai": "泰文數字",
             "tibt": "西藏數字",
+            "tirh": "tirh",
             "traditional": "傳統數字",
-            "vaii": "瓦伊文數字"
+            "vaii": "瓦伊文數字",
+            "wara": "wara"
           }
         },
         "codePatterns": {

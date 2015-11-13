@@ -3,11 +3,8 @@
     "lo": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "lo"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "ເວລາ {0}",
-          "regionFormat-type-standard": "{0} (+0)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "ອາຣາກົວນາ"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ລາ ຣິໂອຈາ"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "ຣິໂກ ແກວເລກອສ"
-                },
-                "Salta": {
-                  "exemplarCity": "ຊານຕາ"
                 },
                 "San_Juan": {
                   "exemplarCity": "ແຊນຮວນ"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ອູຊູເອຍ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ລາ ຣິໂອຈາ"
+                },
                 "San_Luis": {
                   "exemplarCity": "ແຊນລຸຍສ໌"
                 },
+                "Salta": {
+                  "exemplarCity": "ຊານຕາ"
+                },
                 "Tucuman": {
                   "exemplarCity": "ຕູຄູແມນ"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ອູຊູເອຍ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ເອໂມຊິໂຢ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "ນ໋ອກ, ອິນເດຍນາ"
-                },
-                "Marengo": {
-                  "exemplarCity": "ມາເຣນໂກ, ອິນເດຍນາ"
+                "Vincennes": {
+                  "exemplarCity": "ວິນເຊນເນສ, ອິນເດຍນາ"
                 },
                 "Petersburg": {
                   "exemplarCity": "ປີເຕີສເປີກ, ອິນເດຍນາ"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "ເທວ ຊິຕີ, ອິນເດຍນາ"
                 },
-                "Vevay": {
-                  "exemplarCity": "ວີເວ, ອິນເດຍນາ"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ວິນເຊນເນສ, ອິນເດຍນາ"
+                "Knox": {
+                  "exemplarCity": "ນ໋ອກ, ອິນເດຍນາ"
                 },
                 "Winamac": {
                   "exemplarCity": "ວິນາແມັກ, ອິນເດຍນາ"
+                },
+                "Marengo": {
+                  "exemplarCity": "ມາເຣນໂກ, ອິນເດຍນາ"
+                },
+                "Vevay": {
+                  "exemplarCity": "ວີເວ, ອິນເດຍນາ"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ເບີລາ, ນອດ ດາໂກຕາ"
                 },
-                "Center": {
-                  "exemplarCity": "ເຊັນເຈີ, ນອດ ດາໂກຕາ"
-                },
                 "New_Salem": {
                   "exemplarCity": "ນິວ ຊາເລມ, ນອດ ດາໂກຕາ"
+                },
+                "Center": {
+                  "exemplarCity": "ເຊັນເຈີ, ນອດ ດາໂກຕາ"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "ໂຄກາຕາ"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ຊີຕ່າ"
               },
               "Choibalsan": {
                 "exemplarCity": "ຊອຍບອລຊານ"
@@ -894,7 +891,7 @@
                 "exemplarCity": "ດາມາສຄັສ"
               },
               "Dhaka": {
-                "exemplarCity": "Dhaka"
+                "exemplarCity": "ດາຫ໌ກາ"
               },
               "Dili": {
                 "exemplarCity": "ດີລີ"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "ສິງກະໂປ"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "ສຣິລເນັກໂກລີດ"
               },
               "Taipei": {
                 "exemplarCity": "ໄທເປ"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ອັກແລນ"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ເວລາຕາມເຂດບູນກຽນວິວ"
               },
               "Chatham": {
                 "exemplarCity": "ແຊແທມ"
@@ -1386,7 +1383,7 @@
                 "exemplarCity": "GMT-9"
               },
               "Unknown": {
-                "exemplarCity": "ບໍ່ຮູ້ຈັກ"
+                "exemplarCity": "ບໍ່ຮູ້ຊື່ເມືອງ"
               }
             }
           },
@@ -1429,7 +1426,7 @@
               "long": {
                 "generic": "ເວລາອະແລສກາ",
                 "standard": "ເວລາມາດຕະຖານອະແລສກາ",
-                "daylight": "ເວລາຕອນທ່ຽງຂອງອະແລສກາ"
+                "daylight": "ເວລາກາງເວັນອະແລສກາ"
               }
             },
             "Almaty": {
@@ -1441,16 +1438,16 @@
             },
             "Amazon": {
               "long": {
-                "generic": "ເວ​ລາ​ອາ​ເມ​ຊອນ",
+                "generic": "ເວລາຕາມເຂດອາເມຊອນ",
                 "standard": "ເວ​ລາ​ມາດ​ຕະ​ຖານອາ​ເມ​ຊອນ",
                 "daylight": "ເວ​ລາ​ລະ​ດູ​ຮ້ອນອາ​ເມ​ຊອນ"
               }
             },
             "America_Central": {
               "long": {
-                "generic": "ເວລາຕອນທ່ຽງ",
-                "standard": "ເວລາມາດຕະຖານ",
-                "daylight": "ເວລາຕອນທ່ຽງຂອງອາເມລິກາເໝືອ"
+                "generic": "ເວລາກາງ",
+                "standard": "ເວລາມາດຕະຖານກາງ",
+                "daylight": "ເວລາກາງເວັນກາງ"
               }
             },
             "America_Eastern": {
@@ -1464,14 +1461,14 @@
               "long": {
                 "generic": "ເວລາແຖບພູເຂົາ",
                 "standard": "ເວລາມາດຕະຖານແຖບພູເຂົາ",
-                "daylight": "ເວລາຕອນທ່ຽງແຖວພູເຂົາ"
+                "daylight": "ເວລາກາງເວັນແຖວພູເຂົາ"
               }
             },
             "America_Pacific": {
               "long": {
                 "generic": "ເວລາປາຊີຟິກ",
                 "standard": "ເວລາມາດຕະຖານຂອງປາຊີຟິກ",
-                "daylight": "ເວລາຕອນທ່ຽງຂອງປາຊີຟິກ"
+                "daylight": "ເວລາກາງເວັນຂອງປາຊີຟິກ"
               }
             },
             "Apia": {
@@ -1527,7 +1524,7 @@
               "long": {
                 "generic": "ເວລາຂອງອາແລນຕິກ",
                 "standard": "ເວລາມາດຕະຖານຂອງອາແລນຕິກ",
-                "daylight": "ເວລາຕອນທ່ຽງຂອງອາແລນຕິກ"
+                "daylight": "ເວລາກາງເວັນຂອງອາແລນຕິກ"
               }
             },
             "Australia_Central": {
@@ -1591,9 +1588,9 @@
             },
             "Brasilia": {
               "long": {
-                "generic": "ເວລາເບຣຊີເລຍ",
+                "generic": "ເວລາຕາມເຂດບຣາຊິເລຍ",
                 "standard": "ເວລາມາດຕາຖານເບຣຊີເລຍ",
-                "daylight": "ເວລາລະດູຮ້ອນເບຣຊີເລຍ"
+                "daylight": "ເວລາຕາມເຂດລະດູຮ້ອນຕາມເຂດບຣາຊີເລຍ"
               }
             },
             "Brunei": {
@@ -1754,11 +1751,6 @@
                 "standard": "ເວລາຝຣັ່ງຕອນໃຕ້ແລະແອນຕາກຕິກ"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ເວ​ລາກຣີນ​ວິ​ຊ"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ເວ​ລາ​ກາ​ລາ​ປາ​ກອ​ສ"
@@ -1779,6 +1771,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "ເວລາຫມູ່ເກາະກິລເບີດ"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ເວ​ລາກຣີນ​ວິ​ຊ"
               }
             },
             "Greenland_Eastern": {

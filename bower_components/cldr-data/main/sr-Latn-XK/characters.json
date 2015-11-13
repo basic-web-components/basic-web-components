@@ -3,28 +3,25 @@
     "sr-Latn-XK": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11324 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 16:53:17 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sr",
         "script": "Latn",
         "territory": "XK"
       },
       "characters": {
-        "exemplarCharacters": "[a b c ć č d đ {dž} e f g h i j k l {lj} m n {nj} o p r s š t u v z ž]",
+        "exemplarCharacters": "[a b c č ć d {dž} đ e f g h i j k l {lj} m n {nj} o p r s š t u v z ž]",
         "auxiliary": "[å q w x y]",
-        "punctuation": "[\\- ‐ – , ; \\: ! ? . … ‘ ‚ “ „ ( ) \\[ \\] \\{ \\} * #]",
-        "index": "[A B C Ć Č D {DŽ} E F G H I J K L {LJ} M N {NJ} O P Q R S Š T U V W X Y Z Ž]",
+        "index": "[A B C Č Ć D {DŽ} E F G H I J K L {LJ} M N {NJ} O P Q R S Š T U V W X Y Z Ž]",
+        "punctuation": "[\\\\- ‐ – , ; \\\\: ! ? . … ‘ ‚ “ „ ( ) \\\\[ \\\\] \\\\{ \\\\} * #]",
         "ellipsis": {
+          "final": "{0}…",
           "initial": "…{0}",
           "medial": "{0}…{1}",
-          "final": "{0}…",
+          "word-final": "{0} …",
           "word-initial": "… {0}",
-          "word-medial": "{0} … {1}",
-          "word-final": "{0} …"
+          "word-medial": "{0} … {1}"
         },
         "moreInformation": "?"
       }

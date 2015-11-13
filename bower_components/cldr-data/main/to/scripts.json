@@ -3,11 +3,8 @@
     "to": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "to"
       },
@@ -15,6 +12,7 @@
         "scripts": {
           "Afak": "tohinima fakaʻafaka",
           "Aghb": "tohinima fakaʻalapēnia-kaukasia",
+          "Ahom": "Ahom",
           "Arab": "tohinima fakaʻalepea",
           "Armi": "tohinima fakaʻalāmiti-ʻemipaea",
           "Armn": "tohinima fakaʻāmenia",
@@ -63,6 +61,7 @@
           "Hans-alt-stand-alone": "tohinima fakasiaina-fakafaingofua",
           "Hant": "tohinima fakasiaina-tukufakaholo",
           "Hant-alt-stand-alone": "tohinima fakasiaina-tukufakaholo",
+          "Hatr": "Hatr",
           "Hebr": "tohinima fakahepelū",
           "Hira": "tohinima fakasiapani-hilakana",
           "Hluw": "tohinima tongitapu-fakaʻanatolia",
@@ -109,6 +108,7 @@
           "Moon": "tohinima laukonga ki he kui-māhina",
           "Mroo": "tohinima fakamolō",
           "Mtei": "tohinima fakametei-maieki",
+          "Mult": "Mult",
           "Mymr": "tohinima fakapema",
           "Narb": "tohinima fakaʻalepea-tokelau-motuʻa",
           "Nbat": "tohinima fakanapatea",
@@ -214,7 +214,7 @@
           "Thai": "tohinima fakatailani",
           "Tibt": "tohinima fakataipeti",
           "Tirh": "tohinima fakatīhuta",
-          "Ugar": "lea fakaʻūkaliti",
+          "Ugar": "tohinima fakaʻūkaliti",
           "Vaii": "tohinima fakavai",
           "Visp": "tohinima fakafonētiki-hāmai",
           "Wara": "tohinima fakavalangi-kisitī",

@@ -3,11 +3,8 @@
     "es-PH": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "es",
         "territory": "PH"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "calendario",
+          "cf": "cf",
           "colAlternate": "Orden ignorando símbolos",
           "colBackwards": "Orden de acentos con inversión",
           "colCaseFirst": "Orden de mayúsculas/minúsculas",
           "colCaseLevel": "Orden con distinción entre mayúsculas y minúsculas",
           "colHiraganaQuaternary": "Orden de kana",
+          "collation": "orden",
           "colNormalization": "Orden con normalización",
           "colNumeric": "Orden numérico",
           "colStrength": "Intensidad de orden",
-          "collation": "orden",
           "currency": "moneda",
+          "hc": "ciclo horario (12 o 24 horas)",
+          "lb": "salto de línea",
+          "ms": "sistema de medición",
           "numbers": "números",
           "timezone": "Zona horaria",
           "va": "Variante local",
@@ -57,6 +58,10 @@
             "persian": "calendario persa",
             "roc": "calendario de la República de China"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Ordenar símbolos",
             "shifted": "Ordenar ignorando símbolos"
@@ -78,6 +83,26 @@
             "no": "Ordenar caracteres kana por separado",
             "yes": "Ordenar diferenciando caracteres kana"
           },
+          "collation": {
+            "big5han": "orden del chino tradicional - Big5",
+            "compat": "compat",
+            "dictionary": "orden de clasificación del diccionario",
+            "ducet": "orden de clasificación de Unicode predeterminado",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "orden del chino simplificado - GB2312",
+            "phonebook": "orden de listín telefónico",
+            "phonetic": "Orden de clasificación fonético",
+            "pinyin": "orden pinyin",
+            "reformed": "orden de clasificación reformado",
+            "search": "búsqueda de uso general",
+            "searchjl": "Buscar por consonante inicial de hangul",
+            "standard": "orden estándar",
+            "stroke": "orden de los trazos",
+            "traditional": "orden tradicional",
+            "unihan": "orden de clasificación de trazos radicales",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Ordenar sin normalización",
             "yes": "Ordenar con normalización Unicode"
@@ -93,25 +118,24 @@
             "secondary": "Ordenar acentos",
             "tertiary": "Ordenar acentos/mayúsculas y minúsculas/ancho"
           },
-          "collation": {
-            "big5han": "orden del chino tradicional - Big5",
-            "dictionary": "orden de clasificación del diccionario",
-            "ducet": "orden de clasificación de Unicode predeterminado",
-            "eor": "eor",
-            "gb2312han": "orden del chino simplificado - GB2312",
-            "phonebook": "orden de listín telefónico",
-            "phonetic": "Orden de clasificación fonético",
-            "pinyin": "orden pinyin",
-            "reformed": "orden de clasificación reformado",
-            "search": "búsqueda de uso general",
-            "searchjl": "Buscar por consonante inicial de hangul",
-            "standard": "orden estándar",
-            "stroke": "orden de los trazos",
-            "traditional": "orden tradicional",
-            "unihan": "orden de clasificación de trazos radicales",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "sistema de 12 horas (0–11)",
+            "h12": "sistema de 12 horas (1–12)",
+            "h23": "sistema de 24 horas (0–23)",
+            "h24": "sistema de 24 horas (1–24)"
+          },
+          "lb": {
+            "loose": "salto de línea flexible",
+            "normal": "salto de línea normal",
+            "strict": "salto de línea estricto"
+          },
+          "ms": {
+            "metric": "sistema métrico",
+            "uksystem": "sistema imperial",
+            "ussystem": "sistema estadounidense"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "dígitos indoarábigos",
             "arabext": "dígitos indoarábigos extendidos",
             "armn": "números en armenio",
@@ -121,6 +145,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "dígitos en devanagari",
             "ethi": "números en etíope",
             "finance": "Números financieros",
@@ -136,6 +161,7 @@
             "hant": "números en chino tradicional",
             "hantfin": "números financieros en chino tradicional",
             "hebr": "números en hebreo",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "números en japonés",
             "jpanfin": "números financieros en japonés",
@@ -148,11 +174,19 @@
             "latn": "dígitos occidentales",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "dígitos en malayalam",
+            "modi": "modi",
             "mong": "dígitos en mongol",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "dígitos en birmano",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Dígitos nativos",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "números romanos en minúscula",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,13 +207,15 @@
             "telu": "dígitos en telugu",
             "thai": "dígitos en tailandés",
             "tibt": "dígitos en tibetano",
+            "tirh": "tirh",
             "traditional": "Números tradicionales",
-            "vaii": "Dígitos vai"
+            "vaii": "Dígitos vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {
           "language": "Idioma: {0}",
-          "script": "Alfabeto: {0}",
+          "script": "Sistema de escritura: {0}",
           "territory": "Región: {0}"
         }
       }

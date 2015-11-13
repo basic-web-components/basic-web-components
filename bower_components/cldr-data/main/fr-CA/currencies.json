@@ -3,11 +3,8 @@
     "fr-CA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "fr",
         "territory": "CA"
@@ -530,7 +527,7 @@
             "displayName-count-one": "livre égyptienne",
             "displayName-count-other": "livres égyptiennes",
             "symbol": "EGP",
-            "symbol-alt-narrow": "E£"
+            "symbol-alt-narrow": "£E"
           },
           "ERN": {
             "displayName": "nafka érythréen",
@@ -613,7 +610,8 @@
             "displayName": "lari géorgien",
             "displayName-count-one": "lari géorgien",
             "displayName-count-other": "lari géorgiens",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "cédi",
@@ -761,7 +759,7 @@
             "displayName": "roupie indienne",
             "displayName-count-one": "roupie indienne",
             "displayName-count-other": "roupies indiennes",
-            "symbol": "INR",
+            "symbol": "₹",
             "symbol-alt-narrow": "₹"
           },
           "IQD": {
@@ -889,7 +887,7 @@
             "displayName-count-one": "livre libanaise",
             "displayName-count-other": "livres libanaises",
             "symbol": "LBP",
-            "symbol-alt-narrow": "L£"
+            "symbol-alt-narrow": "£L"
           },
           "LKR": {
             "displayName": "roupie srilankaise",
@@ -1282,7 +1280,7 @@
             "displayName-count-one": "rouble russe",
             "displayName-count-other": "roubles russes",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "rouble russe (1991–1998)",
@@ -1296,7 +1294,7 @@
             "displayName-count-one": "franc rwandais",
             "displayName-count-other": "francs rwandais",
             "symbol": "RWF",
-            "symbol-alt-narrow": "RF"
+            "symbol-alt-narrow": "FR"
           },
           "SAR": {
             "displayName": "rial saoudien",
@@ -1384,7 +1382,7 @@
             "displayName": "dollar surinamais",
             "displayName-count-one": "dollar surinamais",
             "displayName-count-other": "dollars surinamais",
-            "symbol": "$SR",
+            "symbol": "SRD",
             "symbol-alt-narrow": "$"
           },
           "SRG": {
@@ -1470,9 +1468,9 @@
             "symbol": "TND"
           },
           "TOP": {
-            "displayName": "pa’anga tongan",
-            "displayName-count-one": "pa’anga tongan",
-            "displayName-count-other": "pa’angas tongans",
+            "displayName": "pa’anga",
+            "displayName-count-one": "pa’anga",
+            "displayName-count-other": "pa’angas",
             "symbol": "TOP",
             "symbol-alt-narrow": "T$"
           },
@@ -1737,9 +1735,9 @@
             "symbol": "XUA"
           },
           "XXX": {
-            "displayName": "devise inconnue ou non valide",
-            "displayName-count-one": "(devise inconnue ou non valide)",
-            "displayName-count-other": "(devise inconnue ou non valide)",
+            "displayName": "Devise inconnue",
+            "displayName-count-one": "(devise inconnue)",
+            "displayName-count-other": "(devise inconnue)",
             "symbol": "XXX"
           },
           "YDD": {

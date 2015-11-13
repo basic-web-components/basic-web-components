@@ -3,11 +3,8 @@
     "id": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "id"
       },
@@ -497,7 +494,8 @@
           "GEL": {
             "displayName": "Lari Georgia",
             "displayName-count-other": "Lari Georgia",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Cedi Ghana (1979–2007)",
@@ -1054,7 +1052,7 @@
             "displayName": "Rubel Rusia",
             "displayName-count-other": "Rubel Rusia",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Rubel Rusia (1991–1998)",

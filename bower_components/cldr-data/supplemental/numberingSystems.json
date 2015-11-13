@@ -1,13 +1,15 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 9732 $"
-    },
-    "generation": {
-      "_date": "$Date: 2014-02-13 11:57:02 -0600 (Thu, 13 Feb 2014) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11966 $"
     },
     "numberingSystems": {
+      "ahom": {
+        "_digits": "𑜰𑜱𑜲𑜳𑜴𑜵𑜶𑜷𑜸𑜹",
+        "_type": "numeric"
+      },
       "arab": {
         "_digits": "٠١٢٣٤٥٦٧٨٩",
         "_type": "numeric"
@@ -15,6 +17,14 @@
       "arabext": {
         "_digits": "۰۱۲۳۴۵۶۷۸۹",
         "_type": "numeric"
+      },
+      "armn": {
+        "_type": "algorithmic",
+        "_rules": "armenian-upper"
+      },
+      "armnlow": {
+        "_type": "algorithmic",
+        "_rules": "armenian-lower"
       },
       "bali": {
         "_digits": "᭐᭑᭒᭓᭔᭕᭖᭗᭘᭙",
@@ -24,17 +34,45 @@
         "_digits": "০১২৩৪৫৬৭৮৯",
         "_type": "numeric"
       },
+      "brah": {
+        "_digits": "𑁦𑁧𑁨𑁩𑁪𑁫𑁬𑁭𑁮𑁯",
+        "_type": "numeric"
+      },
+      "cakm": {
+        "_digits": "𑄶𑄷𑄸𑄹𑄺𑄻𑄼𑄽𑄾𑄿",
+        "_type": "numeric"
+      },
       "cham": {
         "_digits": "꩐꩑꩒꩓꩔꩕꩖꩗꩘꩙",
         "_type": "numeric"
+      },
+      "cyrl": {
+        "_type": "algorithmic",
+        "_rules": "cyrillic-lower"
       },
       "deva": {
         "_digits": "०१२३४५६७८९",
         "_type": "numeric"
       },
+      "ethi": {
+        "_type": "algorithmic",
+        "_rules": "ethiopic"
+      },
       "fullwide": {
         "_digits": "０１２３４５６７８９",
         "_type": "numeric"
+      },
+      "geor": {
+        "_type": "algorithmic",
+        "_rules": "georgian"
+      },
+      "grek": {
+        "_type": "algorithmic",
+        "_rules": "greek-upper"
+      },
+      "greklow": {
+        "_type": "algorithmic",
+        "_rules": "greek-lower"
       },
       "gujr": {
         "_digits": "૦૧૨૩૪૫૬૭૮૯",
@@ -44,13 +82,49 @@
         "_digits": "੦੧੨੩੪੫੬੭੮੯",
         "_type": "numeric"
       },
+      "hanidays": {
+        "_type": "algorithmic",
+        "_rules": "zh/SpelloutRules/spellout-numbering-days"
+      },
       "hanidec": {
         "_digits": "〇一二三四五六七八九",
+        "_type": "numeric"
+      },
+      "hans": {
+        "_type": "algorithmic",
+        "_rules": "zh/SpelloutRules/spellout-cardinal"
+      },
+      "hansfin": {
+        "_type": "algorithmic",
+        "_rules": "zh/SpelloutRules/spellout-cardinal-financial"
+      },
+      "hant": {
+        "_type": "algorithmic",
+        "_rules": "zh_Hant/SpelloutRules/spellout-cardinal"
+      },
+      "hantfin": {
+        "_type": "algorithmic",
+        "_rules": "zh_Hant/SpelloutRules/spellout-cardinal-financial"
+      },
+      "hebr": {
+        "_type": "algorithmic",
+        "_rules": "hebrew"
+      },
+      "hmng": {
+        "_digits": "𖭐𖭑𖭒𖭓𖭔𖭕𖭖𖭗𖭘𖭙",
         "_type": "numeric"
       },
       "java": {
         "_digits": "꧐꧑꧒꧓꧔꧕꧖꧗꧘꧙",
         "_type": "numeric"
+      },
+      "jpan": {
+        "_type": "algorithmic",
+        "_rules": "ja/SpelloutRules/spellout-cardinal"
+      },
+      "jpanfin": {
+        "_type": "algorithmic",
+        "_rules": "ja/SpelloutRules/spellout-cardinal-financial"
       },
       "kali": {
         "_digits": "꤀꤁꤂꤃꤄꤅꤆꤇꤈꤉",
@@ -88,12 +162,40 @@
         "_digits": "᥆᥇᥈᥉᥊᥋᥌᥍᥎᥏",
         "_type": "numeric"
       },
+      "mathbold": {
+        "_digits": "𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗",
+        "_type": "numeric"
+      },
+      "mathdbl": {
+        "_digits": "𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡",
+        "_type": "numeric"
+      },
+      "mathmono": {
+        "_digits": "𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿",
+        "_type": "numeric"
+      },
+      "mathsanb": {
+        "_digits": "𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵",
+        "_type": "numeric"
+      },
+      "mathsans": {
+        "_digits": "𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫",
+        "_type": "numeric"
+      },
       "mlym": {
         "_digits": "൦൧൨൩൪൫൬൭൮൯",
         "_type": "numeric"
       },
+      "modi": {
+        "_digits": "𑙐𑙑𑙒𑙓𑙔𑙕𑙖𑙗𑙘𑙙",
+        "_type": "numeric"
+      },
       "mong": {
         "_digits": "᠐᠑᠒᠓᠔᠕᠖᠗᠘᠙",
+        "_type": "numeric"
+      },
+      "mroo": {
+        "_digits": "𖩠𖩡𖩢𖩣𖩤𖩥𖩦𖩧𖩨𖩩",
         "_type": "numeric"
       },
       "mtei": {
@@ -108,6 +210,10 @@
         "_digits": "႐႑႒႓႔႕႖႗႘႙",
         "_type": "numeric"
       },
+      "mymrtlng": {
+        "_digits": "꧰꧱꧲꧳꧴꧵꧶꧷꧸꧹",
+        "_type": "numeric"
+      },
       "nkoo": {
         "_digits": "߀߁߂߃߄߅߆߇߈߉",
         "_type": "numeric"
@@ -120,17 +226,53 @@
         "_digits": "୦୧୨୩୪୫୬୭୮୯",
         "_type": "numeric"
       },
+      "osma": {
+        "_digits": "𐒠𐒡𐒢𐒣𐒤𐒥𐒦𐒧𐒨𐒩",
+        "_type": "numeric"
+      },
+      "roman": {
+        "_type": "algorithmic",
+        "_rules": "roman-upper"
+      },
+      "romanlow": {
+        "_type": "algorithmic",
+        "_rules": "roman-lower"
+      },
       "saur": {
         "_digits": "꣐꣑꣒꣓꣔꣕꣖꣗꣘꣙",
+        "_type": "numeric"
+      },
+      "shrd": {
+        "_digits": "𑇐𑇑𑇒𑇓𑇔𑇕𑇖𑇗𑇘𑇙",
+        "_type": "numeric"
+      },
+      "sind": {
+        "_digits": "𑋰𑋱𑋲𑋳𑋴𑋵𑋶𑋷𑋸𑋹",
+        "_type": "numeric"
+      },
+      "sinh": {
+        "_digits": "෦෧෨෩෪෫෬෭෮෯",
+        "_type": "numeric"
+      },
+      "sora": {
+        "_digits": "𑃰𑃱𑃲𑃳𑃴𑃵𑃶𑃷𑃸𑃹",
         "_type": "numeric"
       },
       "sund": {
         "_digits": "᮰᮱᮲᮳᮴᮵᮶᮷᮸᮹",
         "_type": "numeric"
       },
+      "takr": {
+        "_digits": "𑛀𑛁𑛂𑛃𑛄𑛅𑛆𑛇𑛈𑛉",
+        "_type": "numeric"
+      },
       "talu": {
         "_digits": "᧐᧑᧒᧓᧔᧕᧖᧗᧘᧙",
         "_type": "numeric"
+      },
+      "taml": {
+        "_type": "algorithmic",
+        "_rules": "tamil"
       },
       "tamldec": {
         "_digits": "௦௧௨௩௪௫௬௭௮௯",
@@ -148,77 +290,17 @@
         "_digits": "༠༡༢༣༤༥༦༧༨༩",
         "_type": "numeric"
       },
+      "tirh": {
+        "_digits": "𑓐𑓑𑓒𑓓𑓔𑓕𑓖𑓗𑓘𑓙",
+        "_type": "numeric"
+      },
       "vaii": {
         "_digits": "꘠꘡꘢꘣꘤꘥꘦꘧꘨꘩",
         "_type": "numeric"
       },
-      "armn": {
-        "_type": "algorithmic",
-        "_rules": "armenian-upper"
-      },
-      "armnlow": {
-        "_type": "algorithmic",
-        "_rules": "armenian-lower"
-      },
-      "ethi": {
-        "_type": "algorithmic",
-        "_rules": "ethiopic"
-      },
-      "geor": {
-        "_type": "algorithmic",
-        "_rules": "georgian"
-      },
-      "grek": {
-        "_type": "algorithmic",
-        "_rules": "greek-upper"
-      },
-      "greklow": {
-        "_type": "algorithmic",
-        "_rules": "greek-lower"
-      },
-      "hanidays": {
-        "_type": "algorithmic",
-        "_rules": "zh/SpelloutRules/spellout-numbering-days"
-      },
-      "hans": {
-        "_type": "algorithmic",
-        "_rules": "zh/SpelloutRules/spellout-cardinal"
-      },
-      "hansfin": {
-        "_type": "algorithmic",
-        "_rules": "zh/SpelloutRules/spellout-cardinal-financial"
-      },
-      "hant": {
-        "_type": "algorithmic",
-        "_rules": "zh_Hant/SpelloutRules/spellout-cardinal"
-      },
-      "hantfin": {
-        "_type": "algorithmic",
-        "_rules": "zh_Hant/SpelloutRules/spellout-cardinal-financial"
-      },
-      "hebr": {
-        "_type": "algorithmic",
-        "_rules": "hebrew"
-      },
-      "jpan": {
-        "_type": "algorithmic",
-        "_rules": "ja/SpelloutRules/spellout-cardinal"
-      },
-      "jpanfin": {
-        "_type": "algorithmic",
-        "_rules": "ja/SpelloutRules/spellout-cardinal-financial"
-      },
-      "roman": {
-        "_type": "algorithmic",
-        "_rules": "roman-upper"
-      },
-      "romanlow": {
-        "_type": "algorithmic",
-        "_rules": "roman-lower"
-      },
-      "taml": {
-        "_type": "algorithmic",
-        "_rules": "tamil"
+      "wara": {
+        "_digits": "𑣠𑣡𑣢𑣣𑣤𑣥𑣦𑣧𑣨𑣩",
+        "_type": "numeric"
       }
     }
   }

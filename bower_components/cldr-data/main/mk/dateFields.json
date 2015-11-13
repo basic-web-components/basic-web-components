@@ -3,18 +3,15 @@
     "mk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "mk"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Ера"
+            "displayName": "ера"
           },
           "year": {
             "displayName": "година",
@@ -50,12 +47,12 @@
             "relative-type-0": "оваа година",
             "relative-type-1": "следната година",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "За {0} години",
-              "relativeTimePattern-count-other": "За {0} години"
+              "relativeTimePattern-count-one": "за {0} години",
+              "relativeTimePattern-count-other": "за {0} години"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "Пред {0} години",
-              "relativeTimePattern-count-other": "Пред {0} години"
+              "relativeTimePattern-count-one": "пред {0} години",
+              "relativeTimePattern-count-other": "пред {0} години"
             }
           },
           "quarter": {
@@ -78,11 +75,11 @@
             "relative-type-0": "this quarter",
             "relative-type-1": "next quarter",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "за {0} тромесечје",
+              "relativeTimePattern-count-one": "за {0} тромес.",
               "relativeTimePattern-count-other": "за {0} тромесечја"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "пред {0} тромесечје",
+              "relativeTimePattern-count-one": "пред {0} тромес.",
               "relativeTimePattern-count-other": "пред {0} тромесечја"
             }
           },
@@ -101,7 +98,7 @@
             }
           },
           "month": {
-            "displayName": "Месец",
+            "displayName": "месец",
             "relative-type--1": "минатиот месец",
             "relative-type-0": "овој месец",
             "relative-type-1": "следниот месец",
@@ -143,7 +140,7 @@
             }
           },
           "week": {
-            "displayName": "Недела",
+            "displayName": "недела",
             "relative-type--1": "минатата седмица",
             "relative-type-0": "оваа седмица",
             "relative-type-1": "следната седмица",
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "ден",
-            "relative-type--1": "вчера",
             "relative-type--2": "завчера",
+            "relative-type--1": "вчера",
             "relative-type-0": "денес",
             "relative-type-1": "утре",
             "relative-type-2": "задутре",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "ден",
-            "relative-type--1": "вчера",
             "relative-type--2": "завчера",
+            "relative-type--1": "вчера",
             "relative-type-0": "денес",
             "relative-type-1": "утре",
             "relative-type-2": "задутре",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "ден",
-            "relative-type--1": "вчера",
             "relative-type--2": "завчера",
+            "relative-type--1": "вчера",
             "relative-type-0": "денес",
             "relative-type-1": "утре",
             "relative-type-2": "задутре",
@@ -233,7 +230,7 @@
             }
           },
           "weekday": {
-            "displayName": "Ден во неделата"
+            "displayName": "ден во неделата"
           },
           "sun": {
             "relative-type--1": "минатата недела",
@@ -271,7 +268,7 @@
             "relative-type-1": "следниот вторник"
           },
           "tue-short": {
-            "relative-type--1": "минатиот вторник",
+            "relative-type--1": "мин. вт.",
             "relative-type-0": "овој вторник",
             "relative-type-1": "следниот вторник"
           },
@@ -344,7 +341,7 @@
             "displayName": "претпладне/попладне"
           },
           "hour": {
-            "displayName": "Час",
+            "displayName": "час",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "за {0} час",
               "relativeTimePattern-count-other": "за {0} часа"
@@ -377,7 +374,7 @@
             }
           },
           "minute": {
-            "displayName": "Минута",
+            "displayName": "минута",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "за {0} минута",
               "relativeTimePattern-count-other": "за {0} минути"
@@ -410,7 +407,7 @@
             }
           },
           "second": {
-            "displayName": "Секунда",
+            "displayName": "секунда",
             "relative-type-0": "сега",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "за {0} секунда",
@@ -446,7 +443,7 @@
             }
           },
           "zone": {
-            "displayName": "зона"
+            "displayName": "временска зона"
           }
         }
       }

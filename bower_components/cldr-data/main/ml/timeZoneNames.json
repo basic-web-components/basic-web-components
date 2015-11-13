@@ -3,11 +3,8 @@
     "ml": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "ml"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "ജിഎംടി {0}",
           "gmtZeroFormat": "ജിഎംടി",
           "regionFormat": "{0} സമയം",
-          "regionFormat-type-standard": "{0} സ്റ്റാന്റേഡ് സമയം",
           "regionFormat-type-daylight": "{0} ഡേലൈറ്റ് സമയം",
+          "regionFormat-type-standard": "{0} സ്റ്റാൻഡേർഡ് സമയം",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "അറഗ്വൈന"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ലാ റിയോജ"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "റിയോ ഗ്യാലഗോസ്"
-                },
-                "Salta": {
-                  "exemplarCity": "സാൽട്ട"
                 },
                 "San_Juan": {
                   "exemplarCity": "സാൻ ജുവാൻ"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ഉഷിയ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ലാ റിയോജ"
+                },
                 "San_Luis": {
                   "exemplarCity": "സാൻ ലൂയിസ്"
                 },
+                "Salta": {
+                  "exemplarCity": "സാൽട്ട"
+                },
                 "Tucuman": {
                   "exemplarCity": "റ്റുകുമാൻ"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ഉഷിയ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ഹെർമോസില്ലോ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "നോക്സ്, ഇൻഡ്യാന"
-                },
-                "Marengo": {
-                  "exemplarCity": "മരെങ്കോ, ഇൻഡ്യാനാ"
+                "Vincennes": {
+                  "exemplarCity": "വിൻസെൻസ്, ഇൻഡ്യാന"
                 },
                 "Petersburg": {
                   "exemplarCity": "പീറ്റേഴ്സ്ബർഗ്, ഇൻഡ്യാന"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "റ്റെൽ സിറ്റി, ഇൻഡ്യാന"
                 },
-                "Vevay": {
-                  "exemplarCity": "വിവെയ്, ഇൻഡ്യാന"
-                },
-                "Vincennes": {
-                  "exemplarCity": "വിൻസെൻസ്, ഇൻഡ്യാന"
+                "Knox": {
+                  "exemplarCity": "നോക്സ്, ഇൻഡ്യാന"
                 },
                 "Winamac": {
                   "exemplarCity": "വിനാമാക്, ഇൻഡ്യാന"
+                },
+                "Marengo": {
+                  "exemplarCity": "മരെങ്കോ, ഇൻഡ്യാനാ"
+                },
+                "Vevay": {
+                  "exemplarCity": "വിവെയ്, ഇൻഡ്യാന"
                 }
               },
               "Indianapolis": {
@@ -308,7 +305,7 @@
                 "exemplarCity": "മെക്സിക്കോ സിറ്റി"
               },
               "Miquelon": {
-                "exemplarCity": "മൈക്വെലൻ‌"
+                "exemplarCity": "മിക്വലൻ"
               },
               "Moncton": {
                 "exemplarCity": "മോംഗ്‌ടൻ"
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ബ്യൂല, വടക്കൻ ഡെക്കോട്ട"
                 },
-                "Center": {
-                  "exemplarCity": "സെന്റർ, വടക്കൻ ഡെക്കോട്ട"
-                },
                 "New_Salem": {
                   "exemplarCity": "ന്യൂ സെയ്‌ലം, വടക്കൻ ഡെക്കോട്ട"
+                },
+                "Center": {
+                  "exemplarCity": "സെന്റർ, വടക്കൻ ഡെക്കോട്ട"
                 }
               },
               "Ojinaga": {
@@ -709,7 +706,7 @@
                 "exemplarCity": "ബ്ലാണ്ടെയർ‌"
               },
               "Brazzaville": {
-                "exemplarCity": "ബ്രാസവിൽ"
+                "exemplarCity": "ബ്രാസവില്ലി"
               },
               "Bujumbura": {
                 "exemplarCity": "ബുജും‌ബുര"
@@ -742,7 +739,7 @@
                 "exemplarCity": "എൽ‌ ഐയുൻ‌"
               },
               "Freetown": {
-                "exemplarCity": "ഫ്രീടൌൺ‌"
+                "exemplarCity": "ഫ്രീടൗൺ"
               },
               "Gaborone": {
                 "exemplarCity": "ഗാബറോൺ"
@@ -814,7 +811,7 @@
                 "exemplarCity": "നിയാമി"
               },
               "Nouakchott": {
-                "exemplarCity": "നൌവാൿഷോട്ട്"
+                "exemplarCity": "നൗവാക്‌ഷോട്ട്"
               },
               "Ouagadougou": {
                 "exemplarCity": "ഔഗാദൌഗൌ"
@@ -882,7 +879,7 @@
                 "exemplarCity": "കൊൽ‌ക്കത്ത"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ചീറ്റ"
               },
               "Choibalsan": {
                 "exemplarCity": "ചൊയ്ബൽസൻ"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "സിംഗപ്പൂർ"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "സ്രിഡ്‌നികോളിംസ്ക്"
               },
               "Taipei": {
                 "exemplarCity": "തായ്‌പെയ്"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ഓക്ക്‌‌ലാൻറ്"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ബോഗൺവില്ലെ"
               },
               "Chatham": {
                 "exemplarCity": "ചാതം"
@@ -1179,10 +1176,10 @@
                 "exemplarCity": "ഗാലപ്പാഗോസ്"
               },
               "Gambier": {
-                "exemplarCity": "ഗാന്പിയർ"
+                "exemplarCity": "ഗാമ്പിയർ"
               },
               "Guadalcanal": {
-                "exemplarCity": "ഗ്വാഡോ കനാൽ"
+                "exemplarCity": "ഗ്വാഡൽകനാൽ"
               },
               "Guam": {
                 "exemplarCity": "ഗ്വാം"
@@ -1224,7 +1221,7 @@
                 "exemplarCity": "നോമിയ"
               },
               "Pago_Pago": {
-                "exemplarCity": "പാഗോ പോഗോ"
+                "exemplarCity": "പാഗോ പാഗോ"
               },
               "Palau": {
                 "exemplarCity": "പലാവു"
@@ -1450,7 +1447,7 @@
               "long": {
                 "generic": "വടക്കെ അമേരിക്കൻ സെൻട്രൽ സമയം",
                 "standard": "വടക്കെ അമേരിക്കൻ സെൻട്രൽ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "വടക്കെ അമേരിക്കൻ സെൻട്രൽ പകൽ സമയം"
+                "daylight": "വടക്കെ അമേരിക്കൻ സെൻട്രൽ ഡേലൈറ്റ് സമയം"
               }
             },
             "America_Eastern": {
@@ -1464,14 +1461,14 @@
               "long": {
                 "generic": "വടക്കെ അമേരിക്കൻ മൌണ്ടൻ സമയം",
                 "standard": "വടക്കെ അമേരിക്കൻ മൗണ്ടൻ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "വടക്കെ അമേരിക്കൻ മൌണ്ടൻ പകൽ സമയം"
+                "daylight": "വടക്കെ അമേരിക്കൻ മൗണ്ടൻ ഡേലൈറ്റ് സമയം"
               }
             },
             "America_Pacific": {
               "long": {
                 "generic": "വടക്കെ അമേരിക്കൻ പസഫിക് സമയം",
                 "standard": "വടക്കെ അമേരിക്കൻ പസഫിക് സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "വടക്കെ അമേരിക്കൻ പസഫിക് പകൽ സമയം"
+                "daylight": "വടക്കെ അമേരിക്കൻ പസഫിക് ഡേലൈറ്റ് സമയം"
               }
             },
             "Anadyr": {
@@ -1506,7 +1503,7 @@
               "long": {
                 "generic": "അറേബ്യൻ സമയം",
                 "standard": "അറേബ്യൻ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "അറേബ്യൻ പകൽ സമയം"
+                "daylight": "അറേബ്യൻ ഡേലൈറ്റ് സമയം"
               }
             },
             "Argentina": {
@@ -1532,16 +1529,16 @@
             },
             "Atlantic": {
               "long": {
-                "generic": "അറ്റ്ലാൻറിക് സമയം",
-                "standard": "അറ്റ്ലാൻറിക് സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "അറ്റ്ലാൻറിക് പകൽ സമയം"
+                "generic": "അറ്റ്‌ലാന്റിക് സമയം",
+                "standard": "അറ്റ്‌ലാന്റിക് സ്റ്റാൻഡേർഡ് സമയം",
+                "daylight": "അറ്റ്‌ലാന്റിക് ഡേലൈറ്റ് സമയം"
               }
             },
             "Australia_Central": {
               "long": {
                 "generic": "സെൻട്രൽ ഓസ്ട്രേലിയ സമയം",
                 "standard": "ഓസ്ട്രേലിയൻ സെൻട്രൽ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "ഓസ്ട്രേലിയൻ സെൻട്രൽ പകൽ സമയം"
+                "daylight": "ഓസ്ട്രേലിയൻ സെൻട്രൽ ഡേലൈറ്റ് സമയം"
               }
             },
             "Australia_CentralWestern": {
@@ -1638,7 +1635,7 @@
               "long": {
                 "generic": "ചൈന സമയം",
                 "standard": "ചൈന സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "ചൈന പകൽ സമയം"
+                "daylight": "ചൈന ഡേലൈറ്റ് സമയം"
               }
             },
             "Choibalsan": {
@@ -1710,19 +1707,19 @@
               "long": {
                 "generic": "സെൻട്രൽ യൂറോപ്യൻ സമയം",
                 "standard": "സെൻട്രൽ യൂറോപ്യൻ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "സെൻട്രൽ യൂറോപ്യൻ വേനൽക്കാല സമയം"
+                "daylight": "സെൻട്രൽ യൂറോപ്യൻ ഗ്രീഷ്മകാല സമയം"
               }
             },
             "Europe_Eastern": {
               "long": {
                 "generic": "കിഴക്കൻ യൂറോപ്യൻ സമയം",
                 "standard": "കിഴക്കൻ യൂറോപ്യൻ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "കിഴക്കൻ യൂറോപ്യൻ വേനൽക്കാല സമയം"
+                "daylight": "കിഴക്കൻ യൂറോപ്യൻ ഗ്രീഷ്മകാല സമയം"
               }
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "ഇനിയും-കിഴക്കൻ യൂറോപ്യൻ സമയം"
+                "standard": "കിഴക്കേയറ്റത്തെ യൂറോപ്യൻ സമയം"
               }
             },
             "Europe_Western": {
@@ -1756,11 +1753,6 @@
                 "standard": "ഫ്രഞ്ച് സതേൺ, അന്റാർട്ടിക് സമയം"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ഗ്രീൻവിച്ച് മീൻ സമയം"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ഗാലപ്പഗോസ് സമയം"
@@ -1781,6 +1773,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "ഗിൽബേർട്ട് ദ്വീപുകൾ സമയം"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ഗ്രീൻവിച്ച് മീൻ സമയം"
               }
             },
             "Greenland_Eastern": {
@@ -1870,7 +1867,7 @@
               "long": {
                 "generic": "ഇറാൻ സമയം",
                 "standard": "ഇറാൻ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "ഇറാൻ പകൽ സമയം"
+                "daylight": "ഇറാൻ ഡേലൈറ്റ് സമയം"
               }
             },
             "Irkutsk": {
@@ -1891,7 +1888,7 @@
               "long": {
                 "generic": "ജപ്പാൻ സമയം",
                 "standard": "ജപ്പാൻ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "ജപ്പാൻ പകൽ സമയം"
+                "daylight": "ജപ്പാൻ ഡേലൈറ്റ് സമയം"
               }
             },
             "Kamchatka": {
@@ -1915,7 +1912,7 @@
               "long": {
                 "generic": "കൊറിയൻ സമയം",
                 "standard": "കൊറിയൻ സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "കൊറിയൻ പകൽ സമയം"
+                "daylight": "കൊറിയൻ ഡേലൈറ്റ് സമയം"
               }
             },
             "Kosrae": {
@@ -1949,7 +1946,7 @@
               "long": {
                 "generic": "ലോർഡ് ഹോവ് സമയം",
                 "standard": "ലോർഡ് ഹോവ് സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "ലോർഡ് ഹോവ് പകൽ സമയം"
+                "daylight": "ലോർഡ് ഹോവ് ഡേലൈറ്റ് സമയം"
               }
             },
             "Macau": {
@@ -2013,7 +2010,7 @@
             "Mexico_Pacific": {
               "long": {
                 "generic": "മെക്സിക്കൻ പസഫിക് സമയം",
-                "standard": "മെക്സിക്കൻ പസഫിക് സാധാരണ സമയം",
+                "standard": "മെക്‌സിക്കൻ പസഫിക് സ്റ്റാൻഡേർഡ് സമയം",
                 "daylight": "മെക്സിക്കൻ പസഫിക് ഡേലൈറ്റ് സമയം"
               }
             },
@@ -2062,9 +2059,9 @@
             },
             "Newfoundland": {
               "long": {
-                "generic": "ന്യൂഫൗണ്ട്ലാൻഡ് സമയം",
-                "standard": "ന്യൂഫൗണ്ട്ലാൻഡ് സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "ന്യൂഫൗണ്ട്ലാൻഡ് ഡേലൈറ്റ് സമയം"
+                "generic": "ന്യൂഫൗണ്ട്‌ലാന്റ് സമയം",
+                "standard": "ന്യൂഫൗണ്ട്‌ലാന്റ് സ്റ്റാൻഡേർഡ് സമയം",
+                "daylight": "ന്യൂഫൗണ്ട്‌ലാന്റ് ഡേലൈറ്റ് സമയം"
               }
             },
             "Niue": {
@@ -2240,7 +2237,7 @@
               "long": {
                 "generic": "തായ്‌പെയ് സമയം",
                 "standard": "തായ്‌പെയ് സ്റ്റാൻഡേർഡ് സമയം",
-                "daylight": "തായ്‌പെയ് പകൽ സമയം"
+                "daylight": "തായ്‌പെയ് ഡേലൈറ്റ് സമയം"
               }
             },
             "Tajikistan": {

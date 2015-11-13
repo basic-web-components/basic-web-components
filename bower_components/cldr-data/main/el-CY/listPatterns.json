@@ -3,11 +3,8 @@
     "el-CY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11171 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-10 11:03:58 -0600 (Tue, 10 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "el",
         "territory": "CY"
@@ -22,14 +19,14 @@
         "listPattern-type-unit": {
           "start": "{0}, {1}",
           "middle": "{0}, {1}",
-          "end": "{0} και {1}",
-          "2": "{0} και {1}"
-        },
-        "listPattern-type-unit-narrow": {
-          "start": "{0}, {1}",
-          "middle": "{0}, {1}",
           "end": "{0}, {1}",
           "2": "{0}, {1}"
+        },
+        "listPattern-type-unit-narrow": {
+          "start": "{0} {1}",
+          "middle": "{0} {1}",
+          "end": "{0} {1}",
+          "2": "{0} {1}"
         },
         "listPattern-type-unit-short": {
           "start": "{0}, {1}",

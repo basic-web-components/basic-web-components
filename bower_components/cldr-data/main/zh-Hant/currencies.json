@@ -3,11 +3,8 @@
     "zh-Hant": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "zh",
         "script": "Hant"
@@ -535,7 +532,8 @@
           "GEL": {
             "displayName": "喬治亞拉里",
             "displayName-count-other": "喬治亞拉里",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "迦納賽地 (1979–2007)",
@@ -596,8 +594,8 @@
             "symbol": "GWP"
           },
           "GYD": {
-            "displayName": "蓋亞那元",
-            "displayName-count-other": "蓋亞那元",
+            "displayName": "圭亞那元",
+            "displayName-count-other": "圭亞那元",
             "symbol": "GYD",
             "symbol-alt-narrow": "$"
           },
@@ -927,8 +925,8 @@
             "symbol": "MTP"
           },
           "MUR": {
-            "displayName": "模里西斯盧布",
-            "displayName-count-other": "模里西斯盧布",
+            "displayName": "模里西斯盧比",
+            "displayName-count-other": "模里西斯盧比",
             "symbol": "MUR",
             "symbol-alt-narrow": "Rs"
           },
@@ -1123,7 +1121,7 @@
             "displayName": "俄羅斯盧布",
             "displayName-count-other": "俄羅斯盧布",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "俄羅斯盧布 (1991–1998)",
@@ -1253,7 +1251,7 @@
           "THB": {
             "displayName": "泰銖",
             "displayName-count-other": "泰銖",
-            "symbol": "฿",
+            "symbol": "THB",
             "symbol-alt-narrow": "฿"
           },
           "TJR": {
@@ -1311,10 +1309,10 @@
             "symbol-alt-narrow": "$"
           },
           "TWD": {
-            "displayName": "新臺幣",
-            "displayName-count-other": "新臺幣",
-            "symbol": "NT$",
-            "symbol-alt-narrow": "NT$"
+            "displayName": "新台幣",
+            "displayName-count-other": "新台幣",
+            "symbol": "$",
+            "symbol-alt-narrow": "$"
           },
           "TZS": {
             "displayName": "坦尚尼亞先令",
@@ -1345,7 +1343,7 @@
           "USD": {
             "displayName": "美元",
             "displayName-count-other": "美元",
-            "symbol": "$",
+            "symbol": "US$",
             "symbol-alt-narrow": "$"
           },
           "USN": {
@@ -1514,7 +1512,7 @@
           },
           "XXX": {
             "displayName": "未知貨幣",
-            "displayName-count-other": "未知貨幣",
+            "displayName-count-other": "（未知貨幣）",
             "symbol": "XXX"
           },
           "YDD": {

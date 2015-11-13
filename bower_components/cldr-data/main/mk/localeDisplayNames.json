@@ -3,11 +3,8 @@
     "mk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "mk"
       },
@@ -19,8 +16,12 @@
         },
         "keys": {
           "calendar": "Календар",
+          "cf": "cf",
           "collation": "Подредување",
           "currency": "Валута",
+          "hc": "Часовен циклус (12 или 24)",
+          "lb": "Стил за разделување редови",
+          "ms": "Мерен систем",
           "numbers": "Броеви"
         },
         "types": {
@@ -42,12 +43,18 @@
             "iso8601": "Календар ISO-8601",
             "japanese": "Јапонски календар",
             "persian": "Персиски календар",
-            "roc": "Календар на Република Кина"
+            "roc": "Мингуо-календар"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "collation": {
             "big5han": "Традиционално кинеско сортирање",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "Стандардно сортирање во уникод",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "Поедноставено кинеско сортирање",
             "phonebook": "Азбучен редослед",
@@ -61,8 +68,25 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12-часовен систем (0-11)",
+            "h12": "12-часовен систем (1-12)",
+            "h23": "24-часовен систем (0-23)",
+            "h24": "24-часовен систем (1-24)"
+          },
+          "lb": {
+            "loose": "Допустлив стил за разделување редови",
+            "normal": "Нормален стил за разделување редови",
+            "strict": "Строг стил за разделување редови"
+          },
+          "ms": {
+            "metric": "Метрички систем",
+            "uksystem": "Империјален мерен систем",
+            "ussystem": "Американски мерен систем"
+          },
           "numbers": {
-            "arab": "Арапски-индиски цифри",
+            "ahom": "ahom",
+            "arab": "Арапско-индиски цифри",
             "arabext": "Проширени арапско-индиски цифри",
             "armn": "Ерменски броеви",
             "armnlow": "Ерменски мали броеви",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "деванагарски цифри",
             "ethi": "Етиопски броеви",
             "fullwide": "Цифри со целосна ширина",
@@ -85,6 +110,7 @@
             "hant": "Традиционални кинески броеви",
             "hantfin": "Традиционални кинески финансиски броеви",
             "hebr": "Хебрејски броеви",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Јапонски броеви",
             "jpanfin": "Јапонски финансиски броеви",
@@ -97,11 +123,19 @@
             "latn": "Арапски броеви",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Малајаламски цифри",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Мјанмарски цифри",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "Оријски цифри",
@@ -110,6 +144,8 @@
             "romanlow": "Римски мали броеви",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,7 +155,9 @@
             "telu": "Телугу цифри",
             "thai": "Тајландски цифри",
             "tibt": "Тибетски цифри",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

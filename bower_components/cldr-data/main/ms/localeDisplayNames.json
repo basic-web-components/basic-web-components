@@ -3,11 +3,8 @@
     "ms": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ms"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Kalendar",
+          "cf": "cf",
           "colAlternate": "Abaikan Pengisihan Simbol",
           "colBackwards": "Pengisihan Aksen Terbalik",
           "colCaseFirst": "Penyusunan Huruf Besar/Huruf Kecil",
           "colCaseLevel": "Pengisihan Sensitif Atur",
           "colHiraganaQuaternary": "Pengisihan Kana",
+          "collation": "Urutan Isihan",
           "colNormalization": "Pengisihan Ternormal",
           "colNumeric": "Pengisihan Berangka",
           "colStrength": "Kekuatan Pengisihan",
-          "collation": "Urutan Isihan",
           "currency": "Mata wang",
+          "hc": "Kitaran Jam (12 berbanding 24)",
+          "lb": "Gaya Pemisah Baris",
+          "ms": "Sistem Ukuran",
           "numbers": "Nombor",
           "timezone": "Zon Waktu",
           "va": "Varian Tempat",
@@ -56,6 +57,10 @@
             "persian": "Kalendar Parsi",
             "roc": "Kalendar Minguo"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Isih Simbol",
             "shifted": "Isih Mengabaikan Simbol"
@@ -77,6 +82,26 @@
             "no": "Isih Kana Berasingan",
             "yes": "Isih Kana Secara Berbeza"
           },
+          "collation": {
+            "big5han": "Aturan Isih Cina Tradisional - Big5",
+            "compat": "compat",
+            "dictionary": "Aturan Isih Kamus",
+            "ducet": "Aturan Isih Unikod Lalai",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Aturan Isih Bahasa Cina Ringkas - GB2312",
+            "phonebook": "Aturan Isih Buku Telefon",
+            "phonetic": "Urutan Isih Fonetik",
+            "pinyin": "Aturan Isih Pinyin",
+            "reformed": "Aturan Isih Pembaharuan",
+            "search": "Carian Tujuan Umum",
+            "searchjl": "Cari Mengikut Konsonan Awal Hangul",
+            "standard": "Urutan Isihan Standard",
+            "stroke": "Aturan Isih Coretan",
+            "traditional": "Aturan Isih Tradisional",
+            "unihan": "Aturan Isih Coretan Radikal",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Isih Tanpa Penormalan",
             "yes": "Isih Unikod Ternormal"
@@ -92,25 +117,24 @@
             "secondary": "Isih Aksen",
             "tertiary": "Isih Aksen/Atur/Lebar"
           },
-          "collation": {
-            "big5han": "Aturan Isih Cina Tradisional - Big5",
-            "dictionary": "Aturan Isih Kamus",
-            "ducet": "Aturan Isih Unikod Lalai",
-            "eor": "eor",
-            "gb2312han": "Aturan Isih Bahasa Cina Ringkas - GB2312",
-            "phonebook": "Aturan Isih Buku Telefon",
-            "phonetic": "Urutan Isih Fonetik",
-            "pinyin": "Aturan Isih Pinyin",
-            "reformed": "Aturan Isih Pembaharuan",
-            "search": "Carian Tujuan Umum",
-            "searchjl": "Cari Mengikut Konsonan Awal Hangul",
-            "standard": "Urutan Isihan Standard",
-            "stroke": "Aturan Isih Coretan",
-            "traditional": "Aturan Isih Tradisional",
-            "unihan": "Aturan Isih Coretan Radikal",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "Sistem 12 Jam (0–11)",
+            "h12": "Sistem 12 Jam (1–12)",
+            "h23": "Sistem 24 Jam (0–23)",
+            "h24": "Sistem 24 Jam (1–24)"
+          },
+          "lb": {
+            "loose": "Gaya Pemisah Baris Bebas",
+            "normal": "Gaya Pemisah Baris Biasa",
+            "strict": "Gaya Pemisah Baris Ketat"
+          },
+          "ms": {
+            "metric": "Sistem Metrik",
+            "uksystem": "Sistem Ukuran Imperial",
+            "ussystem": "Sistem Ukuran AS"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Digit Indi-Arab",
             "arabext": "Digit Indi Arab Lanjutan",
             "armn": "Angka Armenia",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Digit Devanagari",
             "ethi": "Angka Ethiopia",
             "finance": "Angka Kewangan",
@@ -135,6 +160,7 @@
             "hant": "Angka Cina Tradisional",
             "hantfin": "Angka Kewangan Cina Tradisional",
             "hebr": "Angka Ibrani",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Angka Jepun",
             "jpanfin": "Angka Kewangan Jepun",
@@ -147,11 +173,19 @@
             "latn": "Digit Barat",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Digit Malayalam",
+            "modi": "modi",
             "mong": "Digit Mongolia",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Digit Myammar",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Digit Asal",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "Angka Huruf Kecil Roman",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "Digit Telugu",
             "thai": "Digit Thai",
             "tibt": "Digit Tibet",
+            "tirh": "tirh",
             "traditional": "Angka Tradisional",
-            "vaii": "Digit Vai"
+            "vaii": "Digit Vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {

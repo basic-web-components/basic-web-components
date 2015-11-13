@@ -3,11 +3,8 @@
     "de": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11304 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-24 11:35:18 -0600 (Tue, 24 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11972 $"
         },
         "language": "de"
       },
@@ -462,7 +459,7 @@
             "displayName-count-one": "Kubanischer Peso (konvertibel)",
             "displayName-count-other": "Kubanische Pesos (konvertibel)",
             "symbol": "CUC",
-            "symbol-alt-narrow": "$"
+            "symbol-alt-narrow": "Cub$"
           },
           "CUP": {
             "displayName": "Kubanischer Peso",
@@ -609,7 +606,7 @@
             "displayName-count-one": "Falkland-Pfund",
             "displayName-count-other": "Falkland-Pfund",
             "symbol": "FKP",
-            "symbol-alt-narrow": "£"
+            "symbol-alt-narrow": "Fl£"
           },
           "FRF": {
             "displayName": "Französischer Franc",
@@ -634,7 +631,8 @@
             "displayName": "Georgischer Lari",
             "displayName-count-one": "Georgischer Lari",
             "displayName-count-other": "Georgische Lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ghanaischer Cedi (1979–2007)",
@@ -666,7 +664,7 @@
             "displayName-count-one": "Guinea-Franc",
             "displayName-count-other": "Guinea-Franc",
             "symbol": "GNF",
-            "symbol-alt-narrow": "FG"
+            "symbol-alt-narrow": "F.G."
           },
           "GNS": {
             "displayName": "Guineischer Syli",
@@ -864,7 +862,7 @@
             "displayName-count-one": "Komoren-Franc",
             "displayName-count-other": "Komoren-Francs",
             "symbol": "KMF",
-            "symbol-alt-narrow": "CF"
+            "symbol-alt-narrow": "FC"
           },
           "KPW": {
             "displayName": "Nordkoreanischer Won",
@@ -1328,7 +1326,7 @@
             "displayName-count-one": "Russischer Rubel",
             "displayName-count-other": "Russische Rubel",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Russischer Rubel (1991–1998)",
@@ -1342,7 +1340,7 @@
             "displayName-count-one": "Ruanda-Franc",
             "displayName-count-other": "Ruanda-Francs",
             "symbol": "RWF",
-            "symbol-alt-narrow": "RF"
+            "symbol-alt-narrow": "F.Rw"
           },
           "SAR": {
             "displayName": "Saudi-Rial",
@@ -1470,7 +1468,7 @@
             "displayName-count-one": "Syrisches Pfund",
             "displayName-count-other": "Syrische Pfund",
             "symbol": "SYP",
-            "symbol-alt-narrow": "£"
+            "symbol-alt-narrow": "SYP"
           },
           "SZL": {
             "displayName": "Swasiländischer Lilangeni",
@@ -1856,7 +1854,7 @@
             "displayName-count-one": "Kwacha",
             "displayName-count-other": "Kwacha",
             "symbol": "ZMW",
-            "symbol-alt-narrow": "ZK"
+            "symbol-alt-narrow": "K"
           },
           "ZRN": {
             "displayName": "Zaire-Neuer Zaïre (1993–1998)",

@@ -3,11 +3,8 @@
     "gu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "gu"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} સમય",
-          "regionFormat-type-standard": "{0} (+0)",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "અરાગુઇના"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "લા રિઓહા"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "રિઓ ગેલેગોસ"
-                },
-                "Salta": {
-                  "exemplarCity": "સાલ્ટા"
                 },
                 "San_Juan": {
                   "exemplarCity": "સેન જુએન"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ઉશાયા"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "લા રિઓહા"
+                },
                 "San_Luis": {
                   "exemplarCity": "સેન લુઇસ"
                 },
+                "Salta": {
+                  "exemplarCity": "સાલ્ટા"
+                },
                 "Tucuman": {
                   "exemplarCity": "તુકુમાન"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ઉશાયા"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "એરમોસિયો"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "નોક્સ,ઇન્ડિયાના"
-                },
-                "Marengo": {
-                  "exemplarCity": "મેરેંગો, ઇન્ડિયાના"
+                "Vincennes": {
+                  "exemplarCity": "વેસેંન, ઇન્ડિયાના"
                 },
                 "Petersburg": {
                   "exemplarCity": "પિટર્સબર્ગ,ઇન્ડિયાના"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "ટેલ સિટી,ઇન્ડિયાના"
                 },
-                "Vevay": {
-                  "exemplarCity": "વેવૈ, ઇન્ડિયાના"
-                },
-                "Vincennes": {
-                  "exemplarCity": "વેસેંન, ઇન્ડિયાના"
+                "Knox": {
+                  "exemplarCity": "નોક્સ,ઇન્ડિયાના"
                 },
                 "Winamac": {
                   "exemplarCity": "વિનામેક,ઇન્ડિયાના"
+                },
+                "Marengo": {
+                  "exemplarCity": "મેરેંગો, ઇન્ડિયાના"
+                },
+                "Vevay": {
+                  "exemplarCity": "વેવૈ, ઇન્ડિયાના"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "બિયુલાહ, ઉત્તર ડેકોટા"
                 },
-                "Center": {
-                  "exemplarCity": "સેન્ટર, ઉત્તર ડેકોટા"
-                },
                 "New_Salem": {
                   "exemplarCity": "ન્યુ સેલમ, ઉત્તર ડેકોટા"
+                },
+                "Center": {
+                  "exemplarCity": "સેન્ટર, ઉત્તર ડેકોટા"
                 }
               },
               "Ojinaga": {
@@ -540,7 +537,7 @@
               },
               "Dublin": {
                 "long": {
-                  "daylight": "આઇરિશ ગ્રીષ્મ સમય"
+                  "daylight": "આઈરિશ માનક સમય"
                 },
                 "exemplarCity": "ડબલિન"
               },
@@ -882,7 +879,7 @@
                 "exemplarCity": "કોલકાતા"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ચિતા"
               },
               "Choibalsan": {
                 "exemplarCity": "ચોઇબાલ્સન"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "સિંગાપુર"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "સ્રેડ્નેકોલીમ્સ્ક"
               },
               "Taipei": {
                 "exemplarCity": "તાઇપેઇ"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ઑકલેન્ડ"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "બૌગેઈનવિલે"
               },
               "Chatham": {
                 "exemplarCity": "ચથમ"
@@ -1449,7 +1446,7 @@
             "America_Central": {
               "long": {
                 "generic": "ઉત્તર અમેરિકન મધ્ય સમય",
-                "standard": "ઉત્તર અમેરિકન મધ્ય પ્રમાણભૂત સમય",
+                "standard": "ઉત્તર અમેરિકન કેન્દ્રિય પ્રમાણભૂત સમય",
                 "daylight": "ઉત્તર અમેરિકન મધ્ય દિવસ સમય"
               }
             },
@@ -1483,8 +1480,8 @@
             },
             "Apia": {
               "long": {
-                "generic": "અપિયા સમય",
-                "standard": "અપિયા માનક સમય",
+                "generic": "એપિયા સમય",
+                "standard": "એપિયા પ્રમાણભૂત સમય",
                 "daylight": "અપિયા દિવસ સમય"
               }
             },
@@ -1722,7 +1719,7 @@
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "વધુ પૂર્વીય યુરોપીયન સમય"
+                "standard": "આગળનું-પૂર્વીય યુરોપીયન સમય"
               }
             },
             "Europe_Western": {
@@ -1756,11 +1753,6 @@
                 "standard": "ફ્રેન્ચ સાઉધર્ન અને એન્ટાર્કટિક સમય"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ગ્રીનવિચ મધ્યમ સમય"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ગાલાપાગોસ સમય"
@@ -1781,6 +1773,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "ગિલબર્ટ આઇલેન્ડ સમય"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ગ્રીનવિચ મધ્યમ સમય"
               }
             },
             "Greenland_Eastern": {

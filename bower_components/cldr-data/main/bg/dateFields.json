@@ -3,11 +3,8 @@
     "bg": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "bg"
       },
@@ -32,9 +29,9 @@
           },
           "year-short": {
             "displayName": "г.",
-            "relative-type--1": "миналата година",
-            "relative-type-0": "тази година",
-            "relative-type-1": "следващата година",
+            "relative-type--1": "мин. г.",
+            "relative-type-0": "т. г.",
+            "relative-type-1": "следв. г.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "сл. {0} г.",
               "relativeTimePattern-count-other": "сл. {0} г."
@@ -46,9 +43,9 @@
           },
           "year-narrow": {
             "displayName": "г.",
-            "relative-type--1": "миналата година",
-            "relative-type-0": "тази година",
-            "relative-type-1": "следващата година",
+            "relative-type--1": "мин. г.",
+            "relative-type-0": "т. г.",
+            "relative-type-1": "сл. г.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "сл. {0} г.",
               "relativeTimePattern-count-other": "сл. {0} г."
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "тримесечие",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "миналото тримесечие",
+            "relative-type-0": "това тримесечие",
+            "relative-type-1": "следващото тримесечие",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "след {0} тримесечие",
               "relativeTimePattern-count-other": "след {0} тримесечия"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "трим.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "мин. трим.",
+            "relative-type-0": "това трим.",
+            "relative-type-1": "следв. трим.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "сл. {0} трим.",
               "relativeTimePattern-count-other": "сл. {0} трим."
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "трим.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "мин. трим.",
+            "relative-type-0": "това трим.",
+            "relative-type-1": "следв. трим.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "сл. {0} трим.",
               "relativeTimePattern-count-other": "сл. {0} трим."
@@ -116,9 +113,9 @@
           },
           "month-short": {
             "displayName": "м",
-            "relative-type--1": "миналият месец",
-            "relative-type-0": "този месец",
-            "relative-type-1": "следващият месец",
+            "relative-type--1": "мин. мес.",
+            "relative-type-0": "този мес.",
+            "relative-type-1": "следв. мес.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "сл. {0} м.",
               "relativeTimePattern-count-other": "сл. {0} м."
@@ -130,9 +127,9 @@
           },
           "month-narrow": {
             "displayName": "м",
-            "relative-type--1": "миналият месец",
-            "relative-type-0": "този месец",
-            "relative-type-1": "следващият месец",
+            "relative-type--1": "мин. м.",
+            "relative-type-0": "т. м.",
+            "relative-type-1": "сл. м.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "сл. {0} м.",
               "relativeTimePattern-count-other": "сл. {0} м."
@@ -157,10 +154,10 @@
             }
           },
           "week-short": {
-            "displayName": "седм",
+            "displayName": "седм.",
             "relative-type--1": "миналата седмица",
-            "relative-type-0": "тази седмица",
-            "relative-type-1": "следващата седмица",
+            "relative-type-0": "тази седм.",
+            "relative-type-1": "следв. седм.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "след {0} седм.",
               "relativeTimePattern-count-other": "след {0} седм."
@@ -171,10 +168,10 @@
             }
           },
           "week-narrow": {
-            "displayName": "седм",
-            "relative-type--1": "миналата седмица",
-            "relative-type-0": "тази седмица",
-            "relative-type-1": "следващата седмица",
+            "displayName": "седм.",
+            "relative-type--1": "мин. седм.",
+            "relative-type-0": "тази седм.",
+            "relative-type-1": "сл. седм.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "сл. {0} седм.",
               "relativeTimePattern-count-other": "сл. {0} седм."
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "ден",
-            "relative-type--1": "вчера",
             "relative-type--2": "онзи ден",
+            "relative-type--1": "вчера",
             "relative-type-0": "днес",
             "relative-type-1": "утре",
             "relative-type-2": "вдругиден",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "д",
-            "relative-type--1": "вчера",
             "relative-type--2": "онзи ден",
+            "relative-type--1": "вчера",
             "relative-type-0": "днес",
             "relative-type-1": "утре",
             "relative-type-2": "вдругиден",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "д",
-            "relative-type--1": "вчера",
             "relative-type--2": "онзи ден",
+            "relative-type--1": "вчера",
             "relative-type-0": "днес",
             "relative-type-1": "утре",
             "relative-type-2": "вдругиден",

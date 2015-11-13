@@ -3,11 +3,8 @@
     "vi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "vi"
       },
@@ -70,7 +67,7 @@
           "BH": "Bahrain",
           "BI": "Burundi",
           "BJ": "Benin",
-          "BL": "Saint Barthélemy",
+          "BL": "St. Barthélemy",
           "BM": "Bermuda",
           "BN": "Brunei",
           "BO": "Bolivia",
@@ -148,9 +145,9 @@
           "GU": "Guam",
           "GW": "Guinea-Bissau",
           "GY": "Guyana",
-          "HK": "Đặc khu hành chính Hồng Kông - Trung Quốc",
+          "HK": "Hồng Kông, Trung Quốc",
           "HK-alt-short": "Hồng Kông",
-          "HM": "Đảo Heard và Quần đảo McDonald",
+          "HM": "Quần đảo Heard và McDonald",
           "HN": "Honduras",
           "HR": "Croatia",
           "HT": "Haiti",
@@ -175,7 +172,7 @@
           "KH": "Campuchia",
           "KI": "Kiribati",
           "KM": "Comoros",
-          "KN": "Saint Kitts và Nevis",
+          "KN": "St. Kitts và Nevis",
           "KP": "Triều Tiên",
           "KR": "Hàn Quốc",
           "KW": "Cô-oét",
@@ -183,7 +180,7 @@
           "KZ": "Kazakhstan",
           "LA": "Lào",
           "LB": "Li-băng",
-          "LC": "Saint Lucia",
+          "LC": "St. Lucia",
           "LI": "Liechtenstein",
           "LK": "Sri Lanka",
           "LR": "Liberia",
@@ -196,7 +193,7 @@
           "MC": "Monaco",
           "MD": "Moldova",
           "ME": "Montenegro",
-          "MF": "Saint Martin",
+          "MF": "St. Martin",
           "MG": "Madagascar",
           "MH": "Quần đảo Marshall",
           "MK": "Macedonia",
@@ -204,7 +201,7 @@
           "ML": "Mali",
           "MM": "Myanmar (Miến Điện)",
           "MN": "Mông Cổ",
-          "MO": "Đặc khu hành chính Macao - Trung Quốc",
+          "MO": "Macao, Trung Quốc",
           "MO-alt-short": "Macao",
           "MP": "Quần đảo Bắc Mariana",
           "MQ": "Martinique",
@@ -258,7 +255,7 @@
           "SD": "Sudan",
           "SE": "Thụy Điển",
           "SG": "Singapore",
-          "SH": "Saint Helena",
+          "SH": "St. Helena",
           "SI": "Slovenia",
           "SJ": "Svalbard và Jan Mayen",
           "SK": "Slovakia",
@@ -299,7 +296,7 @@
           "UY": "Uruguay",
           "UZ": "Uzbekistan",
           "VA": "Thành Vatican",
-          "VC": "Saint Vincent và Grenadines",
+          "VC": "St. Vincent và Grenadines",
           "VE": "Venezuela",
           "VG": "Quần đảo Virgin thuộc Anh",
           "VI": "Quần đảo Virgin thuộc Mỹ",

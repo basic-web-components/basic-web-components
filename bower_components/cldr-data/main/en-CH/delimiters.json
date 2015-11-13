@@ -1,0 +1,20 @@
+{
+  "main": {
+    "en-CH": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11969 $"
+        },
+        "language": "en",
+        "territory": "CH"
+      },
+      "delimiters": {
+        "quotationStart": "“",
+        "quotationEnd": "”",
+        "alternateQuotationStart": "‘",
+        "alternateQuotationEnd": "’"
+      }
+    }
+  }
+}

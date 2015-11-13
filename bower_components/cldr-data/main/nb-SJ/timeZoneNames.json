@@ -3,11 +3,8 @@
     "nb-SJ": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "nb",
         "territory": "SJ"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "tidssone for {0}",
-          "regionFormat-type-standard": "normaltid – {0}",
           "regionFormat-type-daylight": "sommertid – {0}",
+          "regionFormat-type-standard": "normaltid – {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaína"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucumán"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Nord-Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Nord-Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Nord-Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Nord-Dakota"
                 }
               },
               "Ojinaga": {
@@ -1431,6 +1428,11 @@
                 "generic": "alaskisk tid",
                 "standard": "alaskisk normaltid",
                 "daylight": "alaskisk sommertid"
+              },
+              "short": {
+                "generic": "AKT",
+                "standard": "AKST",
+                "daylight": "AKDT"
               }
             },
             "Almaty": {
@@ -1452,6 +1454,11 @@
                 "generic": "tidssone for det sentrale Nord-Amerika",
                 "standard": "normaltid for det sentrale Nord-Amerika",
                 "daylight": "sommertid for det sentrale Nord-Amerika"
+              },
+              "short": {
+                "generic": "CT",
+                "standard": "CST",
+                "daylight": "CDT"
               }
             },
             "America_Eastern": {
@@ -1459,6 +1466,11 @@
                 "generic": "tidssone for den nordamerikanske østkysten",
                 "standard": "normaltid for den nordamerikanske østkysten",
                 "daylight": "sommertid for den nordamerikanske østkysten"
+              },
+              "short": {
+                "generic": "ET",
+                "standard": "EST",
+                "daylight": "EDT"
               }
             },
             "America_Mountain": {
@@ -1466,6 +1478,11 @@
                 "generic": "tidssone for Rocky Mountains (USA)",
                 "standard": "normaltid for Rocky Mountains (USA)",
                 "daylight": "sommertid for Rocky Mountains (USA)"
+              },
+              "short": {
+                "generic": "MT",
+                "standard": "MST",
+                "daylight": "MDT"
               }
             },
             "America_Pacific": {
@@ -1473,6 +1490,11 @@
                 "generic": "tidssone for den nordamerikanske Stillehavskysten",
                 "standard": "normaltid for den nordamerikanske Stillehavskysten",
                 "daylight": "sommertid for den nordamerikanske Stillehavskysten"
+              },
+              "short": {
+                "generic": "PT",
+                "standard": "PST",
+                "daylight": "PDT"
               }
             },
             "Anadyr": {
@@ -1486,7 +1508,7 @@
               "long": {
                 "generic": "tidssone for Apia",
                 "standard": "normaltid for Apia",
-                "daylight": "sommetid for Apia"
+                "daylight": "sommertid for Apia"
               }
             },
             "Aqtau": {
@@ -1536,6 +1558,11 @@
                 "generic": "atlanterhavskystlig tid",
                 "standard": "atlanterhavskystlig standardtid",
                 "daylight": "atlanterhavskystlig sommertid"
+              },
+              "short": {
+                "generic": "AT",
+                "standard": "AST",
+                "daylight": "ADT"
               }
             },
             "Australia_Central": {
@@ -1643,7 +1670,7 @@
             "China": {
               "long": {
                 "generic": "kinesisk tid",
-                "standard": "kinesisk standardtid",
+                "standard": "kinesisk normaltid",
                 "daylight": "kinesisk sommertid"
               }
             },
@@ -1777,14 +1804,6 @@
                 "standard": "tidssone for De franske sørterritorier"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Greenwich middeltid"
-              },
-              "short": {
-                "standard": "GMT"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "tidssone for Galápagosøyene"
@@ -1805,6 +1824,14 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "tidssone for Gilbertøyene"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwich middeltid"
+              },
+              "short": {
+                "standard": "GMT"
               }
             },
             "Greenland_Eastern": {
@@ -1841,6 +1868,11 @@
                 "generic": "tidssone for Hawaii og Aleutene",
                 "standard": "normaltid for Hawaii og Aleutene",
                 "daylight": "sommertid for Hawaii og Aleutene"
+              },
+              "short": {
+                "generic": "HAT",
+                "standard": "HAST",
+                "daylight": "HADT"
               }
             },
             "Hong_Kong": {

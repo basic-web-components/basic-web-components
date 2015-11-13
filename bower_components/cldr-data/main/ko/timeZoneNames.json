@@ -3,11 +3,8 @@
     "ko": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ko"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} 시간",
-          "regionFormat-type-standard": "{0} 표준시",
           "regionFormat-type-daylight": "{0} 하계 표준시",
+          "regionFormat-type-standard": "{0} 표준시",
           "fallbackFormat": "{1}({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "아라과이나"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "라 리오하"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "리오 가예고스"
-                },
-                "Salta": {
-                  "exemplarCity": "살타"
                 },
                 "San_Juan": {
                   "exemplarCity": "산후안"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "우수아이아"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "라 리오하"
+                },
                 "San_Luis": {
                   "exemplarCity": "산루이스"
                 },
+                "Salta": {
+                  "exemplarCity": "살타"
+                },
                 "Tucuman": {
                   "exemplarCity": "뚜꾸만"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "우수아이아"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "에르모시요"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "인디애나주 녹스"
-                },
-                "Marengo": {
-                  "exemplarCity": "인디애나주, 마렝고"
+                "Vincennes": {
+                  "exemplarCity": "인디아나주, 뱅센"
                 },
                 "Petersburg": {
                   "exemplarCity": "인디애나주, 피츠버그"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "인디아나주, 텔시티"
                 },
-                "Vevay": {
-                  "exemplarCity": "비비"
-                },
-                "Vincennes": {
-                  "exemplarCity": "인디아나주, 뱅센"
+                "Knox": {
+                  "exemplarCity": "인디애나주 녹스"
                 },
                 "Winamac": {
                   "exemplarCity": "인디아나주, 워너맥"
+                },
+                "Marengo": {
+                  "exemplarCity": "인디애나주, 마렝고"
+                },
+                "Vevay": {
+                  "exemplarCity": "비비"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "노스다코타주, 베라"
                 },
-                "Center": {
-                  "exemplarCity": "중부, 노스다코타"
-                },
                 "New_Salem": {
                   "exemplarCity": "노스 다코타주, 뉴살렘"
+                },
+                "Center": {
+                  "exemplarCity": "중부, 노스다코타"
                 }
               },
               "Ojinaga": {
@@ -576,7 +573,7 @@
               },
               "London": {
                 "long": {
-                  "daylight": "영국 일광 절약 시간"
+                  "daylight": "영국 하계 표준시"
                 },
                 "exemplarCity": "런던"
               },
@@ -882,7 +879,7 @@
                 "exemplarCity": "콜카타"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "치타"
               },
               "Choibalsan": {
                 "exemplarCity": "초이발산"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "싱가포르"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "스레드네콜림스크"
               },
               "Taipei": {
                 "exemplarCity": "타이베이"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "오클랜드"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "부갱빌"
               },
               "Chatham": {
                 "exemplarCity": "채텀"
@@ -1539,7 +1536,7 @@
             },
             "Australia_Central": {
               "long": {
-                "generic": "중앙 오스트레일리아 시간",
+                "generic": "오스트레일리아 중부 시간",
                 "standard": "오스트레일리아 중부 표준시",
                 "daylight": "오스트레일리아 중부 하계 표준시"
               }
@@ -1553,14 +1550,14 @@
             },
             "Australia_Eastern": {
               "long": {
-                "generic": "동부 오스트레일리아 시간",
+                "generic": "오스트레일리아 동부 시간",
                 "standard": "오스트레일리아 동부 표준시",
                 "daylight": "오스트레일리아 동부 하계 표준시"
               }
             },
             "Australia_Western": {
               "long": {
-                "generic": "서부 오스트레일리아 시간",
+                "generic": "오스트레일리아 서부 시간",
                 "standard": "오스트레일리아 서부 표준시",
                 "daylight": "오스트레일리아 서부 하계 표준시"
               }
@@ -1715,14 +1712,14 @@
               "long": {
                 "generic": "중부 유럽 시간",
                 "standard": "중부 유럽 표준시",
-                "daylight": "중부유럽 하계 표준시"
+                "daylight": "중부 유럽 하계 표준시"
               }
             },
             "Europe_Eastern": {
               "long": {
-                "generic": "동부유럽 시간",
-                "standard": "동부유럽 표준시",
-                "daylight": "동부유럽 하계 표준시"
+                "generic": "동유럽 시간",
+                "standard": "동유럽 표준시",
+                "daylight": "동유럽 하계 표준시"
               }
             },
             "Europe_Further_Eastern": {
@@ -1739,9 +1736,9 @@
             },
             "Falkland": {
               "long": {
-                "generic": "포클랜드 시간",
+                "generic": "포클랜드 제도 시간",
                 "standard": "포클랜드 제도 표준시",
-                "daylight": "포클랜드 하계 표준시"
+                "daylight": "포클랜드 제도 하계 표준시"
               }
             },
             "Fiji": {
@@ -1759,11 +1756,6 @@
             "French_Southern": {
               "long": {
                 "standard": "프랑스령 남부 식민지 및 남극 시간"
-              }
-            },
-            "GMT": {
-              "long": {
-                "standard": "그리니치 표준시"
               }
             },
             "Galapagos": {
@@ -1786,6 +1778,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "길버트 제도 시간"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "그리니치 표준시"
               }
             },
             "Greenland_Eastern": {
@@ -2042,7 +2039,7 @@
               "long": {
                 "generic": "뉴칼레도니아 시간",
                 "standard": "뉴칼레도니아 표준시",
-                "daylight": "뉴 칼레도니아 하계 표준시"
+                "daylight": "뉴칼레도니아 하계 표준시"
               }
             },
             "New_Zealand": {
@@ -2094,7 +2091,7 @@
               "long": {
                 "generic": "파키스탄 시간",
                 "standard": "파키스탄 표준시",
-                "daylight": "파키스탄 서머 타임"
+                "daylight": "파키스탄 하계 표준시"
               }
             },
             "Palau": {

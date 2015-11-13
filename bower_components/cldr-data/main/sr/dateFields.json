@@ -3,11 +3,8 @@
     "sr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "sr"
       },
@@ -66,9 +63,9 @@
           },
           "quarter": {
             "displayName": "квартал",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "прошлог квартала",
+            "relative-type-0": "овог квартала",
+            "relative-type-1": "следећег квартала",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "за {0} квартал",
               "relativeTimePattern-count-few": "за {0} квартала",
@@ -81,35 +78,35 @@
             }
           },
           "quarter-short": {
-            "displayName": "квартал",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "кв.",
+            "relative-type--1": "прошлог квартала",
+            "relative-type-0": "овог квартала",
+            "relative-type-1": "следећег квартала",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "за {0} квартала",
-              "relativeTimePattern-count-few": "за {0} квартала",
-              "relativeTimePattern-count-other": "за {0} квартала"
+              "relativeTimePattern-count-one": "за {0} кв.",
+              "relativeTimePattern-count-few": "за {0} кв.",
+              "relativeTimePattern-count-other": "за {0} кв."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "пре {0} квартала",
-              "relativeTimePattern-count-few": "пре {0} квартала",
-              "relativeTimePattern-count-other": "пре {0} квартала"
+              "relativeTimePattern-count-one": "пре {0} кв.",
+              "relativeTimePattern-count-few": "пре {0} кв.",
+              "relativeTimePattern-count-other": "пре {0} кв."
             }
           },
           "quarter-narrow": {
-            "displayName": "квартал",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "кв.",
+            "relative-type--1": "прошлог квартала",
+            "relative-type-0": "овог квартала",
+            "relative-type-1": "следећег квартала",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "за {0} квартала",
-              "relativeTimePattern-count-few": "за {0} квартала",
-              "relativeTimePattern-count-other": "за {0} квартала"
+              "relativeTimePattern-count-one": "за {0} кв.",
+              "relativeTimePattern-count-few": "за {0} кв.",
+              "relativeTimePattern-count-other": "за {0} кв."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "пре {0} квартала",
-              "relativeTimePattern-count-few": "пре {0} квартала",
-              "relativeTimePattern-count-other": "пре {0} квартала"
+              "relativeTimePattern-count-one": "пре {0} кв.",
+              "relativeTimePattern-count-few": "пре {0} кв.",
+              "relativeTimePattern-count-other": "пре {0} кв."
             }
           },
           "month": {
@@ -210,8 +207,8 @@
           },
           "day": {
             "displayName": "дан",
-            "relative-type--1": "јуче",
             "relative-type--2": "прекјуче",
+            "relative-type--1": "јуче",
             "relative-type-0": "данас",
             "relative-type-1": "сутра",
             "relative-type-2": "прекосутра",
@@ -228,8 +225,8 @@
           },
           "day-short": {
             "displayName": "д.",
-            "relative-type--1": "јуче",
             "relative-type--2": "прекјуче",
+            "relative-type--1": "јуче",
             "relative-type-0": "данас",
             "relative-type-1": "сутра",
             "relative-type-2": "прекосутра",
@@ -246,8 +243,8 @@
           },
           "day-narrow": {
             "displayName": "д.",
-            "relative-type--1": "јуче",
             "relative-type--2": "прекјуче",
+            "relative-type--1": "јуче",
             "relative-type-0": "данас",
             "relative-type-1": "сутра",
             "relative-type-2": "прекосутра",

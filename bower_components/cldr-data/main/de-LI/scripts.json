@@ -3,11 +3,8 @@
     "de-LI": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "de",
         "territory": "LI"
@@ -16,6 +13,7 @@
         "scripts": {
           "Afak": "Afaka",
           "Aghb": "Kaukasisch-Albanisch",
+          "Ahom": "Ahom",
           "Arab": "Arabisch",
           "Arab-alt-variant": "Persisch",
           "Armi": "Armi",
@@ -65,6 +63,7 @@
           "Hans-alt-stand-alone": "Vereinfachtes Chinesisch",
           "Hant": "Traditionell",
           "Hant-alt-stand-alone": "Traditionelles Chinesisch",
+          "Hatr": "Hatr",
           "Hebr": "Hebräisch",
           "Hira": "Hiragana",
           "Hluw": "Hieroglyphen-Luwisch",
@@ -111,6 +110,7 @@
           "Moon": "Moon",
           "Mroo": "Mro",
           "Mtei": "Meitei Mayek",
+          "Mult": "Mult",
           "Mymr": "Birmanisch",
           "Narb": "Altnordarabisch",
           "Nbat": "Nabatäisch",

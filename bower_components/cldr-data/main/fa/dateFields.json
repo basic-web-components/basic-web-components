@@ -3,11 +3,8 @@
     "fa": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "fa"
       },
@@ -60,44 +57,44 @@
           },
           "quarter": {
             "displayName": "سه‌ماهه",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "سه‌ماههٔ گذشته",
+            "relative-type-0": "سه‌ماههٔ کنونی",
+            "relative-type-1": "سه‌ماههٔ آینده",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} سه‌ماهه بعد",
-              "relativeTimePattern-count-other": "{0} سه‌ماهه بعد"
+              "relativeTimePattern-count-one": "{0} سه‌ماههٔ بعد",
+              "relativeTimePattern-count-other": "{0} سه‌ماههٔ بعد"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} سه‌ماهه پیش",
-              "relativeTimePattern-count-other": "{0} سه‌ماهه پیش"
+              "relativeTimePattern-count-one": "{0} سه‌ماههٔ پیش",
+              "relativeTimePattern-count-other": "{0} سه‌ماههٔ پیش"
             }
           },
           "quarter-short": {
             "displayName": "سه‌ماهه",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "سه‌ماههٔ گذشته",
+            "relative-type-0": "سه‌ماههٔ کنونی",
+            "relative-type-1": "سه‌ماههٔ آینده",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} سه‌ماهه بعد",
-              "relativeTimePattern-count-other": "{0} سه‌ماهه بعد"
+              "relativeTimePattern-count-one": "{0} سه‌ماههٔ بعد",
+              "relativeTimePattern-count-other": "{0} سه‌ماههٔ بعد"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} سه‌ماهه پیش",
-              "relativeTimePattern-count-other": "{0} سه‌ماهه پیش"
+              "relativeTimePattern-count-one": "{0} سه‌ماههٔ پیش",
+              "relativeTimePattern-count-other": "{0} سه‌ماههٔ پیش"
             }
           },
           "quarter-narrow": {
             "displayName": "سه‌ماهه",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "سه‌ماههٔ گذشته",
+            "relative-type-0": "سه‌ماههٔ کنونی",
+            "relative-type-1": "سه‌ماههٔ آینده",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "{0} سه‌ماهه بعد",
-              "relativeTimePattern-count-other": "{0} سه‌ماهه بعد"
+              "relativeTimePattern-count-one": "{0} سه‌ماههٔ بعد",
+              "relativeTimePattern-count-other": "{0} سه‌ماههٔ بعد"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} سه‌ماهه پیش",
-              "relativeTimePattern-count-other": "{0} سه‌ماهه پیش"
+              "relativeTimePattern-count-one": "{0} سه‌ماههٔ پیش",
+              "relativeTimePattern-count-other": "{0} سه‌ماههٔ پیش"
             }
           },
           "month": {
@@ -116,7 +113,7 @@
           },
           "month-short": {
             "displayName": "ماه",
-            "relative-type--1": "ماه گذشته",
+            "relative-type--1": "ماه پیش",
             "relative-type-0": "این ماه",
             "relative-type-1": "ماه آینده",
             "relativeTime-type-future": {
@@ -130,7 +127,7 @@
           },
           "month-narrow": {
             "displayName": "ماه",
-            "relative-type--1": "ماه گذشته",
+            "relative-type--1": "ماه پیش",
             "relative-type-0": "این ماه",
             "relative-type-1": "ماه آینده",
             "relativeTime-type-future": {
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "روز",
-            "relative-type--1": "دیروز",
             "relative-type--2": "پریروز",
+            "relative-type--1": "دیروز",
             "relative-type-0": "امروز",
             "relative-type-1": "فردا",
             "relative-type-2": "پس‌فردا",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "روز",
-            "relative-type--1": "دیروز",
             "relative-type--2": "پریروز",
+            "relative-type--1": "دیروز",
             "relative-type-0": "امروز",
             "relative-type-1": "فردا",
             "relative-type-2": "پس‌فردا",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "روز",
-            "relative-type--1": "دیروز",
             "relative-type--2": "پریروز",
+            "relative-type--1": "دیروز",
             "relative-type-0": "امروز",
             "relative-type-1": "فردا",
             "relative-type-2": "پس‌فردا",

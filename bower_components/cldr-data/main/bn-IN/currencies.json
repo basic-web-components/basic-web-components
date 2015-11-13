@@ -3,11 +3,8 @@
     "bn-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11169 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-09 16:11:16 -0600 (Mon, 09 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "bn",
         "territory": "IN"
@@ -526,7 +523,8 @@
             "displayName": "জর্জিয়ান লারি",
             "displayName-count-one": "জর্জিয়ান লারি",
             "displayName-count-other": "জর্জিয়ান লারি",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "ঘানা সেডি (১৯৭৯–২০০৭)",
@@ -764,9 +762,9 @@
             "symbol-alt-narrow": "$"
           },
           "KZT": {
-            "displayName": "কাজাক্সটান টেঙ্গে",
-            "displayName-count-one": "কাজাক্সটান টেঙ্গে",
-            "displayName-count-other": "কাজাক্সটান টেঙ্গে",
+            "displayName": "কাজাখাস্তানি টেঙ্গে",
+            "displayName-count-one": "কাজাখাস্তানি টেঙ্গে",
+            "displayName-count-other": "কাজাখাস্তানি টেঙ্গে",
             "symbol": "KZT",
             "symbol-alt-narrow": "₸"
           },
@@ -1129,7 +1127,7 @@
             "displayName-count-one": "রাশিয়ান রুবেল",
             "displayName-count-other": "রাশিয়ান রুবেল",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "রাশিয়ান রুবল (১৯৯১–১৯৯৮)",
@@ -1285,9 +1283,9 @@
             "symbol": "TMM"
           },
           "TMT": {
-            "displayName": "তুর্কমেনিস্তান নতুন মানত",
-            "displayName-count-one": "তুর্কমেনিস্তান নতুন মানত",
-            "displayName-count-other": "তুর্কমেনিস্তান নতুন মানত",
+            "displayName": "তুর্কমেনিস্তান মানত",
+            "displayName-count-one": "তুর্কমেনিস্তান মানত",
+            "displayName-count-other": "তুর্কমেনিস্তান মানত",
             "symbol": "TMT"
           },
           "TND": {
@@ -1431,9 +1429,9 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "সিএফএ ফ্র্যাঙ্ক বিইএসি",
-            "displayName-count-one": "সিএফএ ফ্র্যাঙ্ক বিইএসি",
-            "displayName-count-other": "সিএফএ ফ্র্যাঙ্ক বিইএসি",
+            "displayName": "মধ্য আফ্রিকান [CFA] ফ্র্যাঙ্ক",
+            "displayName-count-one": "মধ্য আফ্রিকান [CFA] ফ্র্যাঙ্ক",
+            "displayName-count-other": "মধ্য আফ্রিকান [CFA] ফ্র্যাঙ্ক",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1484,9 +1482,9 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "সিএফএ ফ্র্যাঙ্ক বিসিইএও",
-            "displayName-count-one": "সিএফএ ফ্র্যাঙ্ক বিসিইএও",
-            "displayName-count-other": "সিএফএ ফ্র্যাঙ্ক বিসিইএও",
+            "displayName": "পশ্চিম আফ্রিকান [CFA] ফ্র্যাঙ্ক",
+            "displayName-count-one": "পশ্চিম আফ্রিকান [CFA] ফ্র্যাঙ্ক",
+            "displayName-count-other": "পশ্চিম আফ্রিকান [CFA] ফ্র্যাঙ্ক",
             "symbol": "CFA"
           },
           "XPD": {

@@ -3,11 +3,8 @@
     "tr-CY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "tr",
         "territory": "CY"
@@ -187,8 +184,8 @@
           },
           "day": {
             "displayName": "Gün",
-            "relative-type--1": "dün",
             "relative-type--2": "evvelsi gün",
+            "relative-type--1": "dün",
             "relative-type-0": "bugün",
             "relative-type-1": "yarın",
             "relative-type-2": "öbür gün",
@@ -203,8 +200,8 @@
           },
           "day-short": {
             "displayName": "gün",
-            "relative-type--1": "dün",
             "relative-type--2": "evvelsi gün",
+            "relative-type--1": "dün",
             "relative-type-0": "bugün",
             "relative-type-1": "yarın",
             "relative-type-2": "öbür gün",
@@ -219,8 +216,8 @@
           },
           "day-narrow": {
             "displayName": "gün",
-            "relative-type--1": "dün",
             "relative-type--2": "evvelsi gün",
+            "relative-type--1": "dün",
             "relative-type-0": "bugün",
             "relative-type-1": "yarın",
             "relative-type-2": "öbür gün",

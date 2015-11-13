@@ -3,11 +3,8 @@
     "pa-Guru": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "pa",
         "script": "Guru"
@@ -20,9 +17,13 @@
         },
         "keys": {
           "calendar": "ਕੈਲੰਡਰ",
+          "cf": "cf",
           "collation": "ਲੜੀਬੱਧ ਕ੍ਰਮ",
           "currency": "ਮੁਦਰਾ",
-          "numbers": "ਸੰਖਿਆ"
+          "hc": "ਘੰਟੇ ਦਾ ਚੱਕਰ (12 ਬਨਾਮ 24)",
+          "lb": "ਰੇਖਾ ਵਿੱਥ ਸ਼ੈਲੀ",
+          "ms": "ਮਾਪ ਪ੍ਰਣਾਲੀ",
+          "numbers": "ਸੰਖਿਆਵਾਂ"
         },
         "types": {
           "calendar": {
@@ -45,10 +46,16 @@
             "persian": "ਫ਼ਾਰਸੀ ਕੈਲੰਡਰ",
             "roc": "ਮਿੰਗੂਓ ਕੈਲੰਡਰ"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "ਸ਼ਬਦ-ਕੋਸ਼ ਲੜੀਬੱਧ ਕ੍ਰਮ",
             "ducet": "ਮੂਲ ਯੂਨੀਕੋਡ ਲੜੀਬੱਧ ਕ੍ਰਮ",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
@@ -62,7 +69,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12 ਘੰਟੇ ਦੀ ਪੱਧਤੀ (0–11)",
+            "h12": "12 ਘੰਟੇ ਦੀ ਪੱਧਤੀ (1–12)",
+            "h23": "24 ਘੰਟੇ ਦੀ ਪੱਧਤੀ (0–23)",
+            "h24": "24 ਘੰਟੇ ਦੀ ਪੱਧਤੀ (1–24)"
+          },
+          "lb": {
+            "loose": "ਖੁੱਲ੍ਹੀ ਰੇਖਾ ਵਿੱਥ ਸ਼ੈਲੀ",
+            "normal": "ਸਧਾਰਨ ਰੇਖਾ ਵਿੱਥ ਸ਼ੈਲੀ",
+            "strict": "ਪੱਕੀ ਰੇਖਾ ਵਿੱਥ ਸ਼ੈਲੀ"
+          },
+          "ms": {
+            "metric": "ਮੀਟਰਿਕ ਪ੍ਰਣਾਲੀ",
+            "uksystem": "ਇੰਪੀਰੀਅਲ ਮਾਪ ਪ੍ਰਣਾਲੀ",
+            "ussystem": "ਅਮਰੀਕੀ ਮਾਪ ਪ੍ਰਣਾਲੀ"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "ਅਰਬੀ-ਭਾਰਤੀ ਅੰਕ",
             "arabext": "ਵਿਸਤਾਰਿਤ ਅਰਬੀ-ਭਾਰਤੀ ਅੰਕ",
             "armn": "ਆਰਮੀਨੀਅਨ ਸੰਖਿਆਵਾਂ",
@@ -72,6 +96,7 @@
             "brah": "ਬਰਾਹਮੀ ਅੰਕ",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "ਦੇਵਨਾਗਰੀ ਅੰਕ",
             "ethi": "ਐਥਿਓਪਿਕ ਸੰਖਿਆਵਾਂ",
             "fullwide": "ਪੂਰਨ ਵਿਸਤਾਰ ਅੰਕ",
@@ -86,6 +111,7 @@
             "hant": "ਰਵਾਇਤੀ ਚੀਨੀ ਸੰਖਿਆਵਾਂ",
             "hantfin": "ਰਵਾਇਤੀ ਚੀਨੀ ਵਿੱਤੀ ਸੰਖਿਆਵਾਂ",
             "hebr": "ਹਿਬਰੂ ਸੰਖਿਆਵਾਂ",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "ਜਾਪਾਨੀ ਸੰਖਿਆਵਾਂ",
             "jpanfin": "ਜਾਪਾਨੀ ਵਿੱਤੀ ਸੰਖਿਆਵਾਂ",
@@ -98,11 +124,19 @@
             "latn": "ਪੱਛਮੀ ਅੰਕ",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "ਮਲਿਆਲਮ ਅੰਕ",
+            "modi": "modi",
             "mong": "ਮੰਗੋਲ ਅੰਕ",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "ਮਿਆਂਮਾਰ ਅੰਕ",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "ਉੜੀਆ ਅੰਕ",
@@ -111,6 +145,8 @@
             "romanlow": "ਰੋਮਨ ਲੋਅਰਕੇਸ ਸੰਖਿਆਵਾਂ",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -120,7 +156,9 @@
             "telu": "ਤੇਲਗੂ ਅੰਕ",
             "thai": "ਥਾਈ ਅੰਕ",
             "tibt": "ਤਿੱਬਤੀ ਅੰਕ",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {

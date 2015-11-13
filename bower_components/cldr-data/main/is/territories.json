@@ -3,11 +3,8 @@
     "is": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "is"
       },
@@ -70,7 +67,7 @@
           "BH": "Barein",
           "BI": "Búrúndí",
           "BJ": "Benín",
-          "BL": "Saint Barthélemy",
+          "BL": "Sankti Bartólómeusareyjar",
           "BM": "Bermúdaeyjar",
           "BN": "Brúnei",
           "BO": "Bólivía",
@@ -122,7 +119,7 @@
           "ET": "Eþíópía",
           "EU": "Evrópusambandið",
           "FI": "Finnland",
-          "FJ": "Fídjieyjar",
+          "FJ": "Fídjíeyjar",
           "FK": "Falklandseyjar",
           "FK-alt-variant": "Falklandseyjar (Malvinas)",
           "FM": "Míkrónesía",
@@ -196,7 +193,7 @@
           "MC": "Mónakó",
           "MD": "Moldóva",
           "ME": "Svartfjallaland",
-          "MF": "Saint Martin",
+          "MF": "St. Martin",
           "MG": "Madagaskar",
           "MH": "Marshalleyjar",
           "MK": "Makedónía",
@@ -270,7 +267,7 @@
           "SS": "Suður-Súdan",
           "ST": "Saó Tóme og Prinsípe",
           "SV": "El Salvador",
-          "SX": "Sint Maarten",
+          "SX": "Sankti Martin",
           "SY": "Sýrland",
           "SZ": "Svasíland",
           "TA": "Tristan da Cunha",

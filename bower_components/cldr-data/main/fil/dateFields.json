@@ -3,11 +3,8 @@
     "fil": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "fil"
       },
@@ -17,7 +14,7 @@
             "displayName": "Era"
           },
           "year": {
-            "displayName": "Taon",
+            "displayName": "taon",
             "relative-type--1": "nakaraang taon",
             "relative-type-0": "ngayong taon",
             "relative-type-1": "susunod na taon",
@@ -31,7 +28,7 @@
             }
           },
           "year-short": {
-            "displayName": "yr.",
+            "displayName": "taon",
             "relative-type--1": "nakaraang taon",
             "relative-type-0": "ngayong taon",
             "relative-type-1": "susunod na taon",
@@ -45,7 +42,7 @@
             }
           },
           "year-narrow": {
-            "displayName": "yr.",
+            "displayName": "taon",
             "relative-type--1": "nakaraang taon",
             "relative-type-0": "ngayong taon",
             "relative-type-1": "susunod na taon",
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "Quarter",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "nakaraang quarter",
+            "relative-type-0": "ngayong quarter",
+            "relative-type-1": "susunod na quarter",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} quarter",
               "relativeTimePattern-count-other": "sa {0} (na) quarter"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "qtr.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "nakaraang quarter",
+            "relative-type-0": "ngayong quarter",
+            "relative-type-1": "susunod na quarter",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} (na) quarter",
               "relativeTimePattern-count-other": "sa {0} (na) quarter"
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "qtr.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "nakaraang quarter",
+            "relative-type-0": "ngayong quarter",
+            "relative-type-1": "susunod na quarter",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} quarter",
               "relativeTimePattern-count-other": "sa {0} (na) quarter"
@@ -101,7 +98,7 @@
             }
           },
           "month": {
-            "displayName": "Buwan",
+            "displayName": "buwan",
             "relative-type--1": "nakaraang buwan",
             "relative-type-0": "ngayong buwan",
             "relative-type-1": "susunod na buwan",
@@ -115,7 +112,7 @@
             }
           },
           "month-short": {
-            "displayName": "mo.",
+            "displayName": "buwan",
             "relative-type--1": "nakaraang buwan",
             "relative-type-0": "ngayong buwan",
             "relative-type-1": "susunod na buwan",
@@ -129,7 +126,7 @@
             }
           },
           "month-narrow": {
-            "displayName": "mo.",
+            "displayName": "buwan",
             "relative-type--1": "nakaraang buwan",
             "relative-type-0": "ngayong buwan",
             "relative-type-1": "susunod na buwan",
@@ -143,9 +140,9 @@
             }
           },
           "week": {
-            "displayName": "Linggo",
-            "relative-type--1": "nakaraang linggo",
-            "relative-type-0": "ngayong linggo",
+            "displayName": "linggo",
+            "relative-type--1": "nakalipas na linggo",
+            "relative-type-0": "sa linggong ito",
             "relative-type-1": "susunod na linggo",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} linggo",
@@ -157,7 +154,7 @@
             }
           },
           "week-short": {
-            "displayName": "wk.",
+            "displayName": "linggo",
             "relative-type--1": "nakaraang linggo",
             "relative-type-0": "ngayong linggo",
             "relative-type-1": "susunod na linggo",
@@ -171,7 +168,7 @@
             }
           },
           "week-narrow": {
-            "displayName": "wk.",
+            "displayName": "linggo",
             "relative-type--1": "nakaraang linggo",
             "relative-type-0": "ngayong linggo",
             "relative-type-1": "susunod na linggo",
@@ -185,9 +182,9 @@
             }
           },
           "day": {
-            "displayName": "Araw",
-            "relative-type--1": "kahapon",
+            "displayName": "araw",
             "relative-type--2": "Araw bago ang kahapon",
+            "relative-type--1": "kahapon",
             "relative-type-0": "ngayong araw",
             "relative-type-1": "bukas",
             "relative-type-2": "Samakalawa",
@@ -201,25 +198,25 @@
             }
           },
           "day-short": {
-            "displayName": "Araw",
-            "relative-type--1": "kahapon",
+            "displayName": "araw",
             "relative-type--2": "Araw bago ang kahapon",
+            "relative-type--1": "kahapon",
             "relative-type-0": "ngayong araw",
             "relative-type-1": "bukas",
             "relative-type-2": "Samakalawa",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "sa {0} araw",
+              "relativeTimePattern-count-one": "sa {0} (na) araw",
               "relativeTimePattern-count-other": "sa {0} (na) araw"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} araw ang nakalipas",
-              "relativeTimePattern-count-other": "{0} (na) araw nakalipas"
+              "relativeTimePattern-count-one": "{0} (na) araw ang nakalipas",
+              "relativeTimePattern-count-other": "{0} (na) araw ang nakalipas"
             }
           },
           "day-narrow": {
-            "displayName": "Araw",
-            "relative-type--1": "kahapon",
+            "displayName": "araw",
             "relative-type--2": "Araw bago ang kahapon",
+            "relative-type--1": "kahapon",
             "relative-type-0": "ngayong araw",
             "relative-type-1": "bukas",
             "relative-type-2": "Samakalawa",
@@ -229,15 +226,15 @@
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} araw ang nakalipas",
-              "relativeTimePattern-count-other": "{0} (na) araw nakalipas"
+              "relativeTimePattern-count-other": "{0} (na) araw ang nakalipas"
             }
           },
           "weekday": {
-            "displayName": "Araw ng Linggo"
+            "displayName": "araw ng linggo"
           },
           "sun": {
-            "relative-type--1": "nakaraang Linggo",
-            "relative-type-0": "ngayong Linggo",
+            "relative-type--1": "lumipas na Linggo",
+            "relative-type-0": "sa Linggo",
             "relative-type-1": "susunod na Linggo"
           },
           "sun-short": {
@@ -344,7 +341,7 @@
             "displayName": "AM/PM"
           },
           "hour": {
-            "displayName": "Oras",
+            "displayName": "oras",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} oras",
               "relativeTimePattern-count-other": "sa {0} (na) oras"
@@ -355,18 +352,18 @@
             }
           },
           "hour-short": {
-            "displayName": "hr.",
+            "displayName": "oras",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} oras",
               "relativeTimePattern-count-other": "sa {0} (na) oras"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "{0} oras nakalipas",
-              "relativeTimePattern-count-other": "{0} (na) oras nakalipas"
+              "relativeTimePattern-count-one": "{0} oras ang nakalipas",
+              "relativeTimePattern-count-other": "{0} (na) oras ang nakalipas"
             }
           },
           "hour-narrow": {
-            "displayName": "hr.",
+            "displayName": "oras",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} oras",
               "relativeTimePattern-count-other": "sa {0} (na) oras"
@@ -377,14 +374,14 @@
             }
           },
           "minute": {
-            "displayName": "Minuto",
+            "displayName": "minuto",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} minuto",
               "relativeTimePattern-count-other": "sa {0} (na) minuto"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "{0} minuto ang nakalipas",
-              "relativeTimePattern-count-other": "sa {0} (na) minuto"
+              "relativeTimePattern-count-other": "{0} (na) minuto ang nakalipas"
             }
           },
           "minute-short": {
@@ -410,7 +407,7 @@
             }
           },
           "second": {
-            "displayName": "Segundo",
+            "displayName": "segundo",
             "relative-type-0": "ngayon",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "sa {0} segundo",
@@ -446,7 +443,7 @@
             }
           },
           "zone": {
-            "displayName": "Time Zone"
+            "displayName": "time zone"
           }
         }
       }

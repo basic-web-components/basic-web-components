@@ -3,19 +3,16 @@
     "es-PY": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "es",
-        "territory": "419"
+        "territory": "PY"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "árabe",
           "Arab-alt-variant": "perso-árabe",
           "Armi": "Armi",
@@ -65,6 +62,7 @@
           "Hans-alt-stand-alone": "han simplificado",
           "Hant": "tradicional",
           "Hant-alt-stand-alone": "han tradicional",
+          "Hatr": "Hatr",
           "Hebr": "hebreo",
           "Hira": "hiragana",
           "Hluw": "Hluw",
@@ -75,7 +73,6 @@
           "Ital": "antigua bastardilla",
           "Java": "javanés",
           "Jpan": "japonés",
-          "Jurc": "Jurc",
           "Kali": "kayah li",
           "Kana": "katakana",
           "Khar": "kharosthi",
@@ -83,7 +80,6 @@
           "Khoj": "Khoj",
           "Knda": "canarés",
           "Kore": "coreano",
-          "Kpel": "Kpel",
           "Kthi": "Kthi",
           "Lana": "lanna",
           "Laoo": "lao",
@@ -95,7 +91,6 @@
           "Lina": "lineal A",
           "Linb": "lineal B",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "licio",
           "Lydi": "lidio",
           "Mahj": "Mahj",
@@ -111,12 +106,11 @@
           "Moon": "moon",
           "Mroo": "Mroo",
           "Mtei": "manipuri",
+          "Mult": "Mult",
           "Mymr": "birmano",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "n’ko",
-          "Nshu": "Nshu",
           "Ogam": "ogham",
           "Olck": "ol ciki",
           "Orkh": "orkhon",
@@ -128,7 +122,6 @@
           "Phag": "phags-pa",
           "Phli": "Phli",
           "Phlp": "Phlp",
-          "Phlv": "Phlv",
           "Phnx": "fenicio",
           "Plrd": "Pollard Miao",
           "Prti": "Prti",
@@ -206,7 +199,6 @@
           "Tale": "tai le",
           "Talu": "nuevo tai lue",
           "Taml": "tamil",
-          "Tang": "Tang",
           "Tavt": "Tavt",
           "Telu": "telugu",
           "Teng": "tengwar",
@@ -220,7 +212,6 @@
           "Vaii": "vai",
           "Visp": "lenguaje visible",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "persa antiguo",
           "Xsux": "cuneiforme sumerio-acadio",
           "Yiii": "yi",

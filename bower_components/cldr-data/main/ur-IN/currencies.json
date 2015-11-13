@@ -3,11 +3,8 @@
     "ur-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ur",
         "territory": "IN"
@@ -526,7 +523,8 @@
             "displayName": "جارجیائی لاری",
             "displayName-count-one": "جارجیائی لاری",
             "displayName-count-other": "جارجیائی لاری",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -1129,7 +1127,7 @@
             "displayName-count-one": "روسی روبل",
             "displayName-count-other": "روسی روبل",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1431,9 +1429,9 @@
             "symbol": "WST"
           },
           "XAF": {
-            "displayName": "CFA فرانک BEAC",
-            "displayName-count-one": "CFA فرانک BEAC",
-            "displayName-count-other": "CFA فرانکس BEAC",
+            "displayName": "وسطی افریقی [CFA] فرانک",
+            "displayName-count-one": "وسطی افریقی [CFA] فرانک",
+            "displayName-count-other": "وسطی افریقی [CFA] فرانک",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1484,9 +1482,9 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "CFA فرانک BCEAO",
-            "displayName-count-one": "CFA فرانک BCEAO",
-            "displayName-count-other": "CFA فرانکس BCEAO",
+            "displayName": "مغربی افریقی [CFA] فرانک",
+            "displayName-count-one": "مغربی افریقی [CFA] فرانک",
+            "displayName-count-other": "مغربی افریقی [CFA] فرانک",
             "symbol": "CFA"
           },
           "XPD": {

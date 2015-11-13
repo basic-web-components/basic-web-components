@@ -3,11 +3,8 @@
     "sr-Latn-BA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11324 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 16:53:17 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sr",
         "script": "Latn",
@@ -68,9 +65,9 @@
           },
           "quarter": {
             "displayName": "kvartal",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "prošlog kvartala",
+            "relative-type-0": "ovog kvartala",
+            "relative-type-1": "sledećeg kvartala",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} kvartal",
               "relativeTimePattern-count-few": "za {0} kvartala",
@@ -83,35 +80,35 @@
             }
           },
           "quarter-short": {
-            "displayName": "kvartal",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "kv.",
+            "relative-type--1": "prošlog kvartala",
+            "relative-type-0": "ovog kvartala",
+            "relative-type-1": "sledećeg kvartala",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "za {0} kvartala",
-              "relativeTimePattern-count-few": "za {0} kvartala",
-              "relativeTimePattern-count-other": "za {0} kvartala"
+              "relativeTimePattern-count-one": "za {0} kv.",
+              "relativeTimePattern-count-few": "za {0} kv.",
+              "relativeTimePattern-count-other": "za {0} kv."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "pre {0} kvartala",
-              "relativeTimePattern-count-few": "pre {0} kvartala",
-              "relativeTimePattern-count-other": "pre {0} kvartala"
+              "relativeTimePattern-count-one": "pre {0} kv.",
+              "relativeTimePattern-count-few": "pre {0} kv.",
+              "relativeTimePattern-count-other": "pre {0} kv."
             }
           },
           "quarter-narrow": {
-            "displayName": "kvartal",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "kv.",
+            "relative-type--1": "prošlog kvartala",
+            "relative-type-0": "ovog kvartala",
+            "relative-type-1": "sledećeg kvartala",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "za {0} kvartala",
-              "relativeTimePattern-count-few": "za {0} kvartala",
-              "relativeTimePattern-count-other": "za {0} kvartala"
+              "relativeTimePattern-count-one": "za {0} kv.",
+              "relativeTimePattern-count-few": "za {0} kv.",
+              "relativeTimePattern-count-other": "za {0} kv."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "pre {0} kvartala",
-              "relativeTimePattern-count-few": "pre {0} kvartala",
-              "relativeTimePattern-count-other": "pre {0} kvartala"
+              "relativeTimePattern-count-one": "pre {0} kv.",
+              "relativeTimePattern-count-few": "pre {0} kv.",
+              "relativeTimePattern-count-other": "pre {0} kv."
             }
           },
           "month": {
@@ -212,8 +209,8 @@
           },
           "day": {
             "displayName": "dan",
-            "relative-type--1": "juče",
             "relative-type--2": "prekjuče",
+            "relative-type--1": "juče",
             "relative-type-0": "danas",
             "relative-type-1": "sutra",
             "relative-type-2": "prekosutra",
@@ -230,8 +227,8 @@
           },
           "day-short": {
             "displayName": "d.",
-            "relative-type--1": "juče",
             "relative-type--2": "prekjuče",
+            "relative-type--1": "juče",
             "relative-type-0": "danas",
             "relative-type-1": "sutra",
             "relative-type-2": "prekosutra",
@@ -248,8 +245,8 @@
           },
           "day-narrow": {
             "displayName": "d.",
-            "relative-type--1": "juče",
             "relative-type--2": "prekjuče",
+            "relative-type--1": "juče",
             "relative-type-0": "danas",
             "relative-type-1": "sutra",
             "relative-type-2": "prekosutra",

@@ -3,11 +3,8 @@
     "mn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "mn"
       },
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "Өдөр",
-            "relative-type--1": "өчигдөр",
             "relative-type--2": "уржигдар",
+            "relative-type--1": "өчигдөр",
             "relative-type-0": "өнөөдөр",
             "relative-type-1": "маргааш",
             "relative-type-2": "нөгөөдөр",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "Өдөр",
-            "relative-type--1": "өчигдөр",
             "relative-type--2": "уржигдар",
+            "relative-type--1": "өчигдөр",
             "relative-type-0": "өнөөдөр",
             "relative-type-1": "маргааш",
             "relative-type-2": "нөгөөдөр",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "Өдөр",
-            "relative-type--1": "өчигдөр",
             "relative-type--2": "уржигдар",
+            "relative-type--1": "өчигдөр",
             "relative-type-0": "өнөөдөр",
             "relative-type-1": "маргааш",
             "relative-type-2": "нөгөөдөр",

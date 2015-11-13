@@ -3,11 +3,8 @@
     "fr-DJ": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "fr",
         "territory": "DJ"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "calendrier",
+          "cf": "cf",
           "colAlternate": "Tri ne tenant pas compte des symboles",
           "colBackwards": "Tri inversé des caractères accentués",
           "colCaseFirst": "Classement basé sur les majuscules et les minuscules",
           "colCaseLevel": "Tri sensible à la casse",
           "colHiraganaQuaternary": "Tri des caractères Kana",
+          "collation": "ordre de tri",
           "colNormalization": "Tri normalisé",
           "colNumeric": "Tri numérique",
           "colStrength": "Priorité du tri",
-          "collation": "ordre de tri",
           "currency": "devise",
+          "hc": "système horaire (12 ou 24 heures)",
+          "lb": "style de saut de ligne",
+          "ms": "système de mesure",
           "numbers": "nombres",
           "timezone": "Fuseau horaire",
           "va": "Variante locale",
@@ -57,6 +58,10 @@
             "persian": "calendrier persan",
             "roc": "calendrier républicain chinois"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Trier les symboles",
             "shifted": "Trier en ignorant les symboles"
@@ -78,6 +83,26 @@
             "no": "Trier les caractères Kana séparément",
             "yes": "Trier les caractères Kana différemment"
           },
+          "collation": {
+            "big5han": "Ordre chinois traditionnel - Big5",
+            "compat": "compat",
+            "dictionary": "Ordre du dictionnaire",
+            "ducet": "ordre de tri Unicode par défaut",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Ordre chinois simplifié - GB2312",
+            "phonebook": "Ordre de l’annuaire",
+            "phonetic": "Ordre de tri phonétique",
+            "pinyin": "Ordre pinyin",
+            "reformed": "Ordre réformé",
+            "search": "recherche générique",
+            "searchjl": "rechercher par consonne initiale en hangeul",
+            "standard": "ordre de tri standard",
+            "stroke": "Ordre des traits",
+            "traditional": "Ordre traditionnel",
+            "unihan": "Ordre de tri radical-traits",
+            "zhuyin": "ordre zhuyin"
+          },
           "colNormalization": {
             "no": "Trier sans normalisation",
             "yes": "Trier avec normalisation Unicode"
@@ -93,25 +118,24 @@
             "secondary": "Trier en tenant compte des caractères accentués",
             "tertiary": "Trier en tenant compte des caractères accentués, de la casse et de la largeur"
           },
-          "collation": {
-            "big5han": "Ordre chinois traditionnel - Big5",
-            "dictionary": "Ordre du dictionnaire",
-            "ducet": "ordre de tri Unicode par défaut",
-            "eor": "eor",
-            "gb2312han": "Ordre chinois simplifié - GB2312",
-            "phonebook": "Ordre de l’annuaire",
-            "phonetic": "Ordre de tri phonétique",
-            "pinyin": "Ordre pinyin",
-            "reformed": "Ordre réformé",
-            "search": "recherche générique",
-            "searchjl": "Rechercher par consonne initiale en hangeul",
-            "standard": "ordre de tri standard",
-            "stroke": "Ordre des traits",
-            "traditional": "Ordre traditionnel",
-            "unihan": "Ordre de tri radical-traits",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "système horaire de 12 heures (0–11)",
+            "h12": "système horaire de 12 heures (1–12)",
+            "h23": "système horaire de 24 heures (0–23)",
+            "h24": "système horaire de 24 heures (1–24)"
+          },
+          "lb": {
+            "loose": "style de saut de ligne permissif",
+            "normal": "style de saut de ligne normal",
+            "strict": "style de saut de ligne strict"
+          },
+          "ms": {
+            "metric": "système métrique",
+            "uksystem": "système impérial",
+            "ussystem": "système américain"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "chiffres arabes",
             "arabext": "chiffres arabes étendus",
             "armn": "chiffres arméniens",
@@ -121,6 +145,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "chiffres devanagaris",
             "ethi": "chiffres éthiopiens",
             "finance": "Chiffres financiers",
@@ -136,6 +161,7 @@
             "hant": "chiffres en chinois traditionnel",
             "hantfin": "chiffres financiers en chinois traditionnel",
             "hebr": "chiffres hébreux",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "chiffres japonais",
             "jpanfin": "chiffres japonais financiers",
@@ -148,11 +174,19 @@
             "latn": "chiffres occidentaux",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "chiffres malayâlams",
+            "modi": "modi",
             "mong": "chiffres mongols",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "chiffres birmans",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Chiffres natifs",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "chiffres romains minuscules",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,8 +207,10 @@
             "telu": "chiffres télougous",
             "thai": "chiffres thaïs",
             "tibt": "chiffres tibétains",
+            "tirh": "tirh",
             "traditional": "Chiffres traditionnels",
-            "vaii": "Chiffres en vaï"
+            "vaii": "Chiffres en vaï",
+            "wara": "wara"
           }
         },
         "codePatterns": {

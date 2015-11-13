@@ -3,11 +3,8 @@
     "ko": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ko"
       },
@@ -15,6 +12,7 @@
         "scripts": {
           "Afak": "아파카 문자",
           "Aghb": "코카시안 알바니아 문자",
+          "Ahom": "Ahom",
           "Arab": "아랍 문자",
           "Arab-alt-variant": "페르소-아라비아어",
           "Armi": "아랍제국 문자",
@@ -60,10 +58,11 @@
           "Hang": "한글",
           "Hani": "한자",
           "Hano": "하누누 문자",
-          "Hans": "한자(간체)",
+          "Hans": "간체",
           "Hans-alt-stand-alone": "한자 간체",
-          "Hant": "한자(번체)",
+          "Hant": "번체",
           "Hant-alt-stand-alone": "한자 번체",
+          "Hatr": "Hatr",
           "Hebr": "히브리 문자",
           "Hira": "히라가나",
           "Hluw": "아나톨리아 상형문자",
@@ -110,6 +109,7 @@
           "Moon": "문 문자",
           "Mroo": "므로 문자",
           "Mtei": "메이테이 마옉 문자",
+          "Mult": "Mult",
           "Mymr": "미얀마 문자",
           "Narb": "옛 북부 아라비아 문자",
           "Nbat": "나바테아 문자",

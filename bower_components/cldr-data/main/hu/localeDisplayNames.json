@@ -3,11 +3,8 @@
     "hu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "hu"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Naptár",
+          "cf": "cf",
           "colAlternate": "Szimbólumokat figyelmen kívül hagyó rendezés",
           "colBackwards": "Ékezetek fordított rendezése",
           "colCaseFirst": "Rendezés nagy- vagy kisbetűk szerint",
           "colCaseLevel": "Kisbetű-nagybetű érzékeny rendezés",
           "colHiraganaQuaternary": "Kanák szerinti rendezés",
+          "collation": "Rendezési sorrend",
           "colNormalization": "Normalizált rendezés",
           "colNumeric": "Numerikus rendezés",
           "colStrength": "Rendezés erőssége",
-          "collation": "Rendezési sorrend",
           "currency": "Pénznem",
+          "hc": "Óraformátum (12 – 24)",
+          "lb": "Sortörés stílusa",
+          "ms": "Mértékegységrendszer",
           "numbers": "Számok",
           "timezone": "Időzóna",
           "va": "Földrajzi helyvariáns",
@@ -56,6 +57,10 @@
             "persian": "Perzsa naptár",
             "roc": "Kínai köztársasági naptár"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Szimbólumok rendezése",
             "shifted": "Rendezés szimbólumok figyelmen kívül hagyásával"
@@ -77,6 +82,26 @@
             "no": "Kanák rendezése külön",
             "yes": "Kanák megkülönböztető rendezése"
           },
+          "collation": {
+            "big5han": "Hagyományos kínai sorrend - Big5",
+            "compat": "compat",
+            "dictionary": "Szótári rendezési sorrend",
+            "ducet": "Alapértelmezett Unicode rendezési sorrend",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "Egyszerűsített kínai sorrend - GB2312",
+            "phonebook": "Telefonkönyv sorrend",
+            "phonetic": "Fonetikus rendezési sorrend",
+            "pinyin": "Pinyin sorrend",
+            "reformed": "Átalakított rendezési elv",
+            "search": "Általános célú keresés",
+            "searchjl": "Keresés hangul kezdő mássalhangzó szerint",
+            "standard": "Normál rendezési sorrend",
+            "stroke": "Vonássorrend",
+            "traditional": "Hagyományos",
+            "unihan": "Szótővonás rendezési sorrend",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Rendezés normalizálás nélkül",
             "yes": "Unicode szerinti normalizált rendezés"
@@ -92,25 +117,24 @@
             "secondary": "Ékezetek rendezése",
             "tertiary": "Ékezetek/kisbetű-nagybetű/szélesség rendezése"
           },
-          "collation": {
-            "big5han": "Hagyományos kínai sorrend - Big5",
-            "dictionary": "Szótári rendezési sorrend",
-            "ducet": "Alapértelmezett Unicode rendezési sorrend",
-            "eor": "eor",
-            "gb2312han": "Egyszerűsített kínai sorrend - GB2312",
-            "phonebook": "Telefonkönyv sorrend",
-            "phonetic": "Fonetikus rendezési sorrend",
-            "pinyin": "Pinyin sorrend",
-            "reformed": "Átalakított rendezési elv",
-            "search": "Általános célú keresés",
-            "searchjl": "Keresés hangul kezdő mássalhangzó szerint",
-            "standard": "Normál rendezési sorrend",
-            "stroke": "Vonássorrend",
-            "traditional": "Hagyományos",
-            "unihan": "Szótővonás rendezési sorrend",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "12 órás rendszer (0–11)",
+            "h12": "12 órás rendszer (0–12)",
+            "h23": "24 órás rendszer (0–23)",
+            "h24": "24 órás rendszer (0–24)"
+          },
+          "lb": {
+            "loose": "Tág stílusú sortörés",
+            "normal": "Normál stílusú sortörés",
+            "strict": "Szűk stílusú sortörés"
+          },
+          "ms": {
+            "metric": "Méterrendszer",
+            "uksystem": "Angolszász mértékegységrendszer",
+            "ussystem": "Amerikai mértékegységrendszer"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Arab-indiai számjegyek",
             "arabext": "Kibővített arab-indiai számjegyek",
             "armn": "Örmény számok",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Dévanágari számjegyek",
             "ethi": "Etióp számok",
             "finance": "Pénzügyi számok",
@@ -135,6 +160,7 @@
             "hant": "Hagyományos kínai számok",
             "hantfin": "Hagyományos kínai pénzügyi számok",
             "hebr": "Héber számok",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Japán számok",
             "jpanfin": "Japán pénzügyi számok",
@@ -147,11 +173,19 @@
             "latn": "Nyugati számjegyek",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malajálam számjegyek",
+            "modi": "modi",
             "mong": "Mongol számjegyek",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Mianmari számjegyek",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "Natív számjegyek",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "Római kisbetűs számok",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "Telugu számjegyek",
             "thai": "Thai számjegyek",
             "tibt": "Tibeti számjegyek",
+            "tirh": "tirh",
             "traditional": "Hagyományos számok",
-            "vaii": "Vai számjegyek"
+            "vaii": "Vai számjegyek",
+            "wara": "wara"
           }
         },
         "codePatterns": {

@@ -3,11 +3,8 @@
     "kk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "kk"
       },
@@ -19,8 +16,12 @@
         },
         "keys": {
           "calendar": "Күнтізбе",
+          "cf": "cf",
           "collation": "Сұрыптау реті",
           "currency": "Валюта",
+          "hc": "Уақыт пішімі (12 не 24)",
+          "lb": "Жолды тасымалдау стилі",
+          "ms": "Өлшемдер жүйесі",
           "numbers": "Сандар"
         },
         "types": {
@@ -44,10 +45,16 @@
             "persian": "Парсы күнтізбесі",
             "roc": "Мингуо күнтізбесі"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "dictionary",
             "ducet": "Әдепкі уникод сұрыптау реті",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
@@ -61,7 +68,24 @@
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12 сағаттық жүйе (0–11)",
+            "h12": "12 сағаттық жүйе (1–12)",
+            "h23": "24 сағаттық жүйе (0–23)",
+            "h24": "24 сағаттық жүйе (1–24)"
+          },
+          "lb": {
+            "loose": "Жолды тасымалдаудың еркін стилі",
+            "normal": "Жолды тасымалдаудың қалыпты стилі",
+            "strict": "Жолды тасымалдаудың қатаң стилі"
+          },
+          "ms": {
+            "metric": "Метрлік жүйе",
+            "uksystem": "Империялық өлшемдер жүйесі",
+            "ussystem": "Американдық өлшемдер жүйесі"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Үнді-араб сандары",
             "arabext": "Үнді-араб сандарының кеңейтілген жүйесі",
             "armn": "Армян сандары",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "Деванагари сандары",
             "ethi": "Эфиопия сандары",
             "fullwide": "Сандардың толық пішімі",
@@ -80,11 +105,12 @@
             "gujr": "Гуджарати сандары",
             "guru": "Гурмукхи сандары",
             "hanidec": "Қытай ондық сандары",
-            "hans": "Қарапайым қытай сандары",
-            "hansfin": "Қаржы саласындағы қарапайым қытай сандары",
+            "hans": "Жеңілдетілген қытай сандары",
+            "hansfin": "Қаржы саласындағы жеңілдетілген қытай сандары",
             "hant": "Дәстүрлі қытай сандары",
             "hantfin": "Қаржы саласындағы дәстүрлі қытай сандары",
             "hebr": "Иврит сандары",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "Жапон сандары",
             "jpanfin": "Қаржы саласындағы жапон сандары",
@@ -97,11 +123,19 @@
             "latn": "Батыс сандары",
             "lepc": "lepc",
             "limb": "limb",
-            "mlym": "Малаялам",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
+            "mlym": "Малаялам сандары",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "Мьянма сандары",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "Ория сандары",
@@ -110,6 +144,8 @@
             "romanlow": "Кіші әріппен берілген рим сандары",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,12 +155,14 @@
             "telu": "Телугу сандары",
             "thai": "Тай сандары",
             "tibt": "Тибет сандары",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {
           "language": "Тіл: {0}",
-          "script": "Жазылуы: {0}",
+          "script": "Жазу: {0}",
           "territory": "Аймақ: {0}"
         }
       }

@@ -3,11 +3,8 @@
     "sv-FI": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11181 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-11 13:14:59 -0600 (Wed, 11 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sv",
         "territory": "FI"
@@ -26,7 +23,7 @@
           "plusSign": "+",
           "minusSign": "−",
           "exponential": "×10^",
-          "superscriptingExponent": "·",
+          "superscriptingExponent": "×",
           "perMille": "‰",
           "infinity": "∞",
           "nan": "¤¤¤",
@@ -110,8 +107,36 @@
               "insertBetween": " "
             }
           },
-          "accounting": "#,##0.00 ¤",
           "standard": "#,##0.00 ¤",
+          "accounting": "#,##0.00 ¤",
+          "short": {
+            "standard": {
+              "1000-count-one": "0 tn ¤",
+              "1000-count-other": "0 tn ¤",
+              "10000-count-one": "00 tn ¤",
+              "10000-count-other": "00 tn ¤",
+              "100000-count-one": "000 tn ¤",
+              "100000-count-other": "000 tn ¤",
+              "1000000-count-one": "0 mn ¤",
+              "1000000-count-other": "0 mn ¤",
+              "10000000-count-one": "00 mn ¤",
+              "10000000-count-other": "00 mn ¤",
+              "100000000-count-one": "000 mn ¤",
+              "100000000-count-other": "000 mn ¤",
+              "1000000000-count-one": "0 md ¤",
+              "1000000000-count-other": "0 md ¤",
+              "10000000000-count-one": "00 md ¤",
+              "10000000000-count-other": "00 md ¤",
+              "100000000000-count-one": "000 md ¤",
+              "100000000000-count-other": "000 md ¤",
+              "1000000000000-count-one": "0 bn ¤",
+              "1000000000000-count-other": "0 bn ¤",
+              "10000000000000-count-one": "00 bn ¤",
+              "10000000000000-count-other": "00 bn ¤",
+              "100000000000000-count-one": "000 bn ¤",
+              "100000000000000-count-other": "000 bn ¤"
+            }
+          },
           "unitPattern-count-one": "{0} {1}",
           "unitPattern-count-other": "{0} {1}"
         },

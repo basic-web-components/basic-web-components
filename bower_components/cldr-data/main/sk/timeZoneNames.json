@@ -3,11 +3,8 @@
     "sk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sk"
       },
@@ -16,9 +13,9 @@
           "hourFormat": "+HH:mm;-HH:mm",
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
-          "regionFormat": "Časové pásmo {0}",
-          "regionFormat-type-standard": "{0} (+0)",
+          "regionFormat": "časové pásmo {0}",
           "regionFormat-type-daylight": "{0} (+1)",
+          "regionFormat-type-standard": "{0} (+0)",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -88,7 +85,7 @@
                 "exemplarCity": "Boa Vista"
               },
               "Bogota": {
-                "exemplarCity": "Bogota"
+                "exemplarCity": "Bogotá"
               },
               "Boise": {
                 "exemplarCity": "Boise"
@@ -115,7 +112,7 @@
                 "exemplarCity": "Cayenne"
               },
               "Cayman": {
-                "exemplarCity": "Cayman"
+                "exemplarCity": "Kajmanie ostrovy"
               },
               "Chicago": {
                 "exemplarCity": "Chicago"
@@ -208,11 +205,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -305,7 +302,7 @@
                 "exemplarCity": "Metlakatla"
               },
               "Mexico_City": {
-                "exemplarCity": "Mexiko (mesto)"
+                "exemplarCity": "México"
               },
               "Miquelon": {
                 "exemplarCity": "Miquelon"
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Severná Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Severná Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Severná Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Severná Dakota"
                 }
               },
               "Ojinaga": {
@@ -471,7 +468,7 @@
             },
             "Atlantic": {
               "Azores": {
-                "exemplarCity": "Azorské ostrovy"
+                "exemplarCity": "Azory"
               },
               "Bermuda": {
                 "exemplarCity": "Bermudy"
@@ -495,7 +492,7 @@
                 "exemplarCity": "Južná Georgia"
               },
               "St_Helena": {
-                "exemplarCity": "Sv. Helena"
+                "exemplarCity": "Svätá Helena"
               },
               "Stanley": {
                 "exemplarCity": "Stanley"
@@ -540,7 +537,7 @@
               },
               "Dublin": {
                 "long": {
-                  "daylight": "Írsky štandardný čas"
+                  "daylight": "írsky štandardný čas"
                 },
                 "exemplarCity": "Dublin"
               },
@@ -576,7 +573,7 @@
               },
               "London": {
                 "long": {
-                  "daylight": "Britský letný čas"
+                  "daylight": "britský letný čas"
                 },
                 "exemplarCity": "Londýn"
               },
@@ -733,7 +730,7 @@
                 "exemplarCity": "Dar es Salaam"
               },
               "Djibouti": {
-                "exemplarCity": "Džibutsko"
+                "exemplarCity": "Džibuti"
               },
               "Douala": {
                 "exemplarCity": "Douala"
@@ -775,7 +772,7 @@
                 "exemplarCity": "Libreville"
               },
               "Lome": {
-                "exemplarCity": "Lome"
+                "exemplarCity": "Lomé"
               },
               "Luanda": {
                 "exemplarCity": "Luanda"
@@ -808,7 +805,7 @@
                 "exemplarCity": "Nairobi"
               },
               "Ndjamena": {
-                "exemplarCity": "Ndjamena"
+                "exemplarCity": "N’Djamena"
               },
               "Niamey": {
                 "exemplarCity": "Niamey"
@@ -840,7 +837,7 @@
                 "exemplarCity": "Aden"
               },
               "Almaty": {
-                "exemplarCity": "Alma-Ata"
+                "exemplarCity": "Almaty"
               },
               "Amman": {
                 "exemplarCity": "Ammán"
@@ -882,7 +879,7 @@
                 "exemplarCity": "Kalkata"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Čita"
               },
               "Choibalsan": {
                 "exemplarCity": "Čojbalsan"
@@ -915,7 +912,7 @@
                 "exemplarCity": "Hongkong"
               },
               "Hovd": {
-                "exemplarCity": "Hovd"
+                "exemplarCity": "Chovd"
               },
               "Irkutsk": {
                 "exemplarCity": "Irkutsk"
@@ -1085,7 +1082,7 @@
                 "exemplarCity": "Kokosové ostrovy"
               },
               "Comoro": {
-                "exemplarCity": "Comoro"
+                "exemplarCity": "Komory"
               },
               "Kerguelen": {
                 "exemplarCity": "Kergueleny"
@@ -1294,7 +1291,7 @@
                 "exemplarCity": "Rothera"
               },
               "Syowa": {
-                "exemplarCity": "Syowa"
+                "exemplarCity": "Šówa"
               },
               "Troll": {
                 "exemplarCity": "Troll"
@@ -1386,78 +1383,78 @@
                 "exemplarCity": "GMT-9"
               },
               "Unknown": {
-                "exemplarCity": "Neznáme mesto"
+                "exemplarCity": "neznáme mesto"
               }
             }
           },
           "metazone": {
             "Afghanistan": {
               "long": {
-                "standard": "Afganský čas"
+                "standard": "afganský čas"
               }
             },
             "Africa_Central": {
               "long": {
-                "standard": "Stredoafrický čas"
+                "standard": "stredoafrický čas"
               }
             },
             "Africa_Eastern": {
               "long": {
-                "standard": "Východoafrický čas"
+                "standard": "východoafrický čas"
               }
             },
             "Africa_Southern": {
               "long": {
-                "standard": "Juhoafrický čas"
+                "standard": "juhoafrický čas"
               }
             },
             "Africa_Western": {
               "long": {
-                "generic": "Západoafrický čas",
-                "standard": "Západoafrický štandardný čas",
-                "daylight": "Západoafrický letný čas"
+                "generic": "západoafrický čas",
+                "standard": "západoafrický štandardný čas",
+                "daylight": "západoafrický letný čas"
               }
             },
             "Alaska": {
               "long": {
-                "generic": "Aljašský čas",
-                "standard": "Aljašský štandardný čas",
-                "daylight": "Aljašský letný čas"
+                "generic": "aljašský čas",
+                "standard": "aljašský štandardný čas",
+                "daylight": "aljašský letný čas"
               }
             },
             "Amazon": {
               "long": {
-                "generic": "Amazonský čas",
-                "standard": "Amazonský štandardný čas",
-                "daylight": "Amazonský letný čas"
+                "generic": "amazonský čas",
+                "standard": "amazonský štandardný čas",
+                "daylight": "amazonský letný čas"
               }
             },
             "America_Central": {
               "long": {
-                "generic": "Centrálny čas",
-                "standard": "Centrálny štandardný čas",
-                "daylight": "Centrálny letný čas"
+                "generic": "severoamerický centrálny čas",
+                "standard": "severoamerický centrálny štandardný čas",
+                "daylight": "severoamerický centrálny letný čas"
               }
             },
             "America_Eastern": {
               "long": {
-                "generic": "Východný čas",
-                "standard": "Východný štandardný čas",
-                "daylight": "Východný letný čas"
+                "generic": "severoamerický východný čas",
+                "standard": "severoamerický východný štandardný čas",
+                "daylight": "severoamerický východný letný čas"
               }
             },
             "America_Mountain": {
               "long": {
-                "generic": "Horský čas",
-                "standard": "Horský štandardný čas",
-                "daylight": "Horský letný čas"
+                "generic": "severoamerický horský čas",
+                "standard": "severoamerický horský štandardný čas",
+                "daylight": "severoamerický horský letný čas"
               }
             },
             "America_Pacific": {
               "long": {
-                "generic": "Tichomorský čas",
-                "standard": "Tichomorský štandardný čas",
-                "daylight": "Tichomorský letný čas"
+                "generic": "severoamerický tichomorský čas",
+                "standard": "severoamerický tichomorský štandardný čas",
+                "daylight": "severoamerický tichomorský letný čas"
               }
             },
             "Anadyr": {
@@ -1469,220 +1466,220 @@
             },
             "Apia": {
               "long": {
-                "generic": "Apijský čas",
-                "standard": "Apijský štandardný čas",
-                "daylight": "Apijský letný čas"
+                "generic": "apijský čas",
+                "standard": "apijský štandardný čas",
+                "daylight": "apijský letný čas"
               }
             },
             "Arabian": {
               "long": {
-                "generic": "Arabský čas",
-                "standard": "Arabský štandardný čas",
-                "daylight": "Arabský letný čas"
+                "generic": "arabský čas",
+                "standard": "arabský štandardný čas",
+                "daylight": "arabský letný čas"
               }
             },
             "Argentina": {
               "long": {
-                "generic": "Argentínsky čas",
-                "standard": "Argentínsky štandardný čas",
-                "daylight": "Argentínsky letný čas"
+                "generic": "argentínsky čas",
+                "standard": "argentínsky štandardný čas",
+                "daylight": "argentínsky letný čas"
               }
             },
             "Argentina_Western": {
               "long": {
-                "generic": "Západoargentínsky čas",
-                "standard": "Západoargentínsky štandardný čas",
-                "daylight": "Západoargentínsky letný čas"
+                "generic": "západoargentínsky čas",
+                "standard": "západoargentínsky štandardný čas",
+                "daylight": "západoargentínsky letný čas"
               }
             },
             "Armenia": {
               "long": {
-                "generic": "Arménsky čas",
-                "standard": "Arménsky štandardný čas",
-                "daylight": "Arménsky letný čas"
+                "generic": "arménsky čas",
+                "standard": "arménsky štandardný čas",
+                "daylight": "arménsky letný čas"
               }
             },
             "Atlantic": {
               "long": {
-                "generic": "Atlantický čas",
-                "standard": "Atlantický štandardný čas",
-                "daylight": "Atlantický letný čas"
+                "generic": "atlantický čas",
+                "standard": "atlantický štandardný čas",
+                "daylight": "atlantický letný čas"
               }
             },
             "Australia_Central": {
               "long": {
-                "generic": "Stredoaustrálsky čas",
-                "standard": "Stredoaustrálsky štandardný čas",
-                "daylight": "Stredoaustrálsky letný čas"
+                "generic": "stredoaustrálsky čas",
+                "standard": "stredoaustrálsky štandardný čas",
+                "daylight": "stredoaustrálsky letný čas"
               }
             },
             "Australia_CentralWestern": {
               "long": {
-                "generic": "Stredozápadný austrálsky čas",
-                "standard": "Stredozápadný austrálsky štandardný čas",
-                "daylight": "Stredozápadný austrálsky letný čas"
+                "generic": "stredozápadný austrálsky čas",
+                "standard": "stredozápadný austrálsky štandardný čas",
+                "daylight": "stredozápadný austrálsky letný čas"
               }
             },
             "Australia_Eastern": {
               "long": {
-                "generic": "Východoaustrálsky čas",
-                "standard": "Východoaustrálsky štandardný čas",
-                "daylight": "Východoaustrálsky letný čas"
+                "generic": "východoaustrálsky čas",
+                "standard": "východoaustrálsky štandardný čas",
+                "daylight": "východoaustrálsky letný čas"
               }
             },
             "Australia_Western": {
               "long": {
-                "generic": "Západoaustrálsky čas",
-                "standard": "Západoaustrálsky štandardný čas",
-                "daylight": "Západoaustrálsky letný čas"
+                "generic": "západoaustrálsky čas",
+                "standard": "západoaustrálsky štandardný čas",
+                "daylight": "západoaustrálsky letný čas"
               }
             },
             "Azerbaijan": {
               "long": {
-                "generic": "Azerbajdžanský čas",
-                "standard": "Azerbajdžanský štandardný čas",
-                "daylight": "Azerbajdžanský letný čas"
+                "generic": "azerbajdžanský čas",
+                "standard": "azerbajdžanský štandardný čas",
+                "daylight": "azerbajdžanský letný čas"
               }
             },
             "Azores": {
               "long": {
-                "generic": "Azorský čas",
-                "standard": "Azorský štandardný čas",
-                "daylight": "Azorský letný čas"
+                "generic": "azorský čas",
+                "standard": "azorský štandardný čas",
+                "daylight": "azorský letný čas"
               }
             },
             "Bangladesh": {
               "long": {
-                "generic": "Bangladéšsky čas",
-                "standard": "Bangladéšsky štandardný čas",
-                "daylight": "Bangladéšsky letný čas"
+                "generic": "bangladéšsky čas",
+                "standard": "bangladéšsky štandardný čas",
+                "daylight": "bangladéšsky letný čas"
               }
             },
             "Bhutan": {
               "long": {
-                "standard": "Bhutánsky čas"
+                "standard": "bhutánsky čas"
               }
             },
             "Bolivia": {
               "long": {
-                "standard": "Bolívijský čas"
+                "standard": "bolívijský čas"
               }
             },
             "Brasilia": {
               "long": {
-                "generic": "Brazílsky čas",
-                "standard": "Brazílsky štandardný čas",
-                "daylight": "Brazílsky letný čas"
+                "generic": "brazílsky čas",
+                "standard": "brazílsky štandardný čas",
+                "daylight": "brazílsky letný čas"
               }
             },
             "Brunei": {
               "long": {
-                "standard": "Brunejský čas"
+                "standard": "brunejský čas"
               }
             },
             "Cape_Verde": {
               "long": {
-                "generic": "Kapverdský čas",
-                "standard": "Kapverdský štandardný čas",
-                "daylight": "Kapverdský letný čas"
+                "generic": "kapverdský čas",
+                "standard": "kapverdský štandardný čas",
+                "daylight": "kapverdský letný čas"
               }
             },
             "Chamorro": {
               "long": {
-                "standard": "Chamorrský štandardný čas"
+                "standard": "chamorrský štandardný čas"
               }
             },
             "Chatham": {
               "long": {
-                "generic": "Chathamský čas",
-                "standard": "Chathamský štandardný čas",
-                "daylight": "Chathamský letný čas"
+                "generic": "chathamský čas",
+                "standard": "chathamský štandardný čas",
+                "daylight": "chathamský letný čas"
               }
             },
             "Chile": {
               "long": {
-                "generic": "Čilský čas",
-                "standard": "Čilský štandardný čas",
-                "daylight": "Čilský letný čas"
+                "generic": "čilský čas",
+                "standard": "čilský štandardný čas",
+                "daylight": "čilský letný čas"
               }
             },
             "China": {
               "long": {
-                "generic": "Čínsky čas",
-                "standard": "Čínsky štandardný čas",
-                "daylight": "Čínsky letný čas"
+                "generic": "čínsky čas",
+                "standard": "čínsky štandardný čas",
+                "daylight": "čínsky letný čas"
               }
             },
             "Choibalsan": {
               "long": {
-                "generic": "Choibalsanský čas",
-                "standard": "Čojbalsanský štandardný čas",
-                "daylight": "Choibalsanský letný čas"
+                "generic": "čojbalsanský čas",
+                "standard": "čojbalsanský štandardný čas",
+                "daylight": "čojbalsanský letný čas"
               }
             },
             "Christmas": {
               "long": {
-                "standard": "Čas Vianočného ostrova"
+                "standard": "čas Vianočného ostrova"
               }
             },
             "Cocos": {
               "long": {
-                "standard": "Čas Kokosových ostrovov"
+                "standard": "čas Kokosových ostrovov"
               }
             },
             "Colombia": {
               "long": {
-                "generic": "Kolumbijský čas",
-                "standard": "Kolumbijský štandardný čas",
-                "daylight": "Kolumbijský letný čas"
+                "generic": "kolumbijský čas",
+                "standard": "kolumbijský štandardný čas",
+                "daylight": "kolumbijský letný čas"
               }
             },
             "Cook": {
               "long": {
-                "generic": "Čas Cookových ostrovov",
-                "standard": "Štandardný čas Cookových ostrovov",
-                "daylight": "Letný čas Cookových ostrovov"
+                "generic": "čas Cookových ostrovov",
+                "standard": "štandardný čas Cookových ostrovov",
+                "daylight": "letný čas Cookových ostrovov"
               }
             },
             "Cuba": {
               "long": {
-                "generic": "Kubánsky čas",
-                "standard": "Kubánsky štandardný čas",
-                "daylight": "Kubánsky letný čas"
+                "generic": "kubánsky čas",
+                "standard": "kubánsky štandardný čas",
+                "daylight": "kubánsky letný čas"
               }
             },
             "Davis": {
               "long": {
-                "standard": "Čas Davisovej stanice"
+                "standard": "čas Davisovej stanice"
               }
             },
             "DumontDUrville": {
               "long": {
-                "standard": "Čas stanice Dumonta d’Urvillea"
+                "standard": "čas stanice Dumonta d’Urvillea"
               }
             },
             "East_Timor": {
               "long": {
-                "standard": "Východotimorský čas"
+                "standard": "východotimorský čas"
               }
             },
             "Easter": {
               "long": {
-                "generic": "Čas Veľkonočného ostrova",
-                "standard": "Štandardný čas Veľkonočného ostrova",
-                "daylight": "Letný čas Veľkonočného ostrova"
+                "generic": "čas Veľkonočného ostrova",
+                "standard": "štandardný čas Veľkonočného ostrova",
+                "daylight": "letný čas Veľkonočného ostrova"
               }
             },
             "Ecuador": {
               "long": {
-                "standard": "Ekvádorský čas"
+                "standard": "ekvádorský čas"
               }
             },
             "Europe_Central": {
               "long": {
-                "generic": "Stredoeurópsky čas",
-                "standard": "Stredoeurópsky štandardný čas",
-                "daylight": "Stredoeurópsky letný čas"
+                "generic": "stredoeurópsky čas",
+                "standard": "stredoeurópsky štandardný čas",
+                "daylight": "stredoeurópsky letný čas"
               },
               "short": {
                 "generic": "SEČ",
@@ -1692,175 +1689,175 @@
             },
             "Europe_Eastern": {
               "long": {
-                "generic": "Východoeurópsky čas",
-                "standard": "Východoeurópsky štandardný čas",
-                "daylight": "Východoeurópsky letný čas"
+                "generic": "východoeurópsky čas",
+                "standard": "východoeurópsky štandardný čas",
+                "daylight": "východoeurópsky letný čas"
               }
             },
             "Europe_Further_Eastern": {
               "long": {
-                "standard": "Ďalší východoeurópsky čas"
+                "standard": "minský čas"
               }
             },
             "Europe_Western": {
               "long": {
-                "generic": "Západoeurópsky čas",
-                "standard": "Západoeurópsky štandardný čas",
-                "daylight": "Západoeurópsky letný čas"
+                "generic": "západoeurópsky čas",
+                "standard": "západoeurópsky štandardný čas",
+                "daylight": "západoeurópsky letný čas"
               }
             },
             "Falkland": {
               "long": {
-                "generic": "Čas Falklandských ostrovov",
-                "standard": "Štandardný čas Falklandských ostrovov",
-                "daylight": "Letný čas Falklandských ostrovov"
+                "generic": "falklandský čas",
+                "standard": "falklandský štandardný čas",
+                "daylight": "falklandský letný čas"
               }
             },
             "Fiji": {
               "long": {
-                "generic": "Fidžijský čas",
-                "standard": "Fidžijský štandardný čas",
-                "daylight": "Fidžijský letný čas"
+                "generic": "fidžijský čas",
+                "standard": "fidžijský štandardný čas",
+                "daylight": "fidžijský letný čas"
               }
             },
             "French_Guiana": {
               "long": {
-                "standard": "Čas Francúzskej Guyany"
+                "standard": "francúzskoguyanský čas"
               }
             },
             "French_Southern": {
               "long": {
-                "standard": "Francúzsky južný a antarktický čas"
-              }
-            },
-            "GMT": {
-              "long": {
-                "standard": "Greenwichský čas"
+                "standard": "čas Francúzskych južných a antarktických území"
               }
             },
             "Galapagos": {
               "long": {
-                "standard": "Galapágsky čas"
+                "standard": "galapágsky čas"
               }
             },
             "Gambier": {
               "long": {
-                "standard": "Gambierský čas"
+                "standard": "gambierský čas"
               }
             },
             "Georgia": {
               "long": {
-                "generic": "Gruzínsky čas",
-                "standard": "Gruzínsky štandardný čas",
-                "daylight": "Gruzínsky letný čas"
+                "generic": "gruzínsky čas",
+                "standard": "gruzínsky štandardný čas",
+                "daylight": "gruzínsky letný čas"
               }
             },
             "Gilbert_Islands": {
               "long": {
-                "standard": "Čas Gilbertových ostrovov"
+                "standard": "čas Gilbertových ostrovov"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "greenwichský čas"
               }
             },
             "Greenland_Eastern": {
               "long": {
-                "generic": "Východogrónsky čas",
-                "standard": "Východogrónsky štandardný čas",
-                "daylight": "Východogrónsky letný čas"
+                "generic": "východogrónsky čas",
+                "standard": "východogrónsky štandardný čas",
+                "daylight": "východogrónsky letný čas"
               }
             },
             "Greenland_Western": {
               "long": {
-                "generic": "Západogrónsky čas",
-                "standard": "Západogrónsky štandardný čas",
-                "daylight": "Západogrónsky letný čas"
+                "generic": "západogrónsky čas",
+                "standard": "západogrónsky štandardný čas",
+                "daylight": "západogrónsky letný čas"
               }
             },
             "Gulf": {
               "long": {
-                "standard": "Štandardný čas Perzského zálivu"
+                "standard": "štandardný čas Perzského zálivu"
               }
             },
             "Guyana": {
               "long": {
-                "standard": "Guyanský čas"
+                "standard": "guyanský čas"
               }
             },
             "Hawaii_Aleutian": {
               "long": {
-                "generic": "Havajsko-aleutský čas",
-                "standard": "Havajsko-aleutský štandardný čas",
-                "daylight": "Havajsko-aleutský letný čas"
+                "generic": "havajsko-aleutský čas",
+                "standard": "havajsko-aleutský štandardný čas",
+                "daylight": "havajsko-aleutský letný čas"
               }
             },
             "Hong_Kong": {
               "long": {
-                "generic": "Hongkongský čas",
-                "standard": "Hongkongský štandardný čas",
-                "daylight": "Hongkongský letný čas"
+                "generic": "hongkonský čas",
+                "standard": "hongkonský štandardný čas",
+                "daylight": "hongkonský letný čas"
               }
             },
             "Hovd": {
               "long": {
-                "generic": "Chovdský čas",
-                "standard": "Chovdský štandardný čas",
-                "daylight": "Chovdský letný čas"
+                "generic": "chovdský čas",
+                "standard": "chovdský štandardný čas",
+                "daylight": "chovdský letný čas"
               }
             },
             "India": {
               "long": {
-                "standard": "Indický čas"
+                "standard": "indický čas"
               }
             },
             "Indian_Ocean": {
               "long": {
-                "standard": "Čas Indického oceánu"
+                "standard": "indickooceánsky čas"
               }
             },
             "Indochina": {
               "long": {
-                "standard": "Indočínsky čas"
+                "standard": "indočínsky čas"
               }
             },
             "Indonesia_Central": {
               "long": {
-                "standard": "Stredoindonézsky čas"
+                "standard": "stredoindonézsky čas"
               }
             },
             "Indonesia_Eastern": {
               "long": {
-                "standard": "Východoindonézsky čas"
+                "standard": "východoindonézsky čas"
               }
             },
             "Indonesia_Western": {
               "long": {
-                "standard": "Západoindonézsky čas"
+                "standard": "západoindonézsky čas"
               }
             },
             "Iran": {
               "long": {
-                "generic": "Iránsky čas",
-                "standard": "Iránsky štandardný čas",
-                "daylight": "Iránsky letný čas"
+                "generic": "iránsky čas",
+                "standard": "iránsky štandardný čas",
+                "daylight": "iránsky letný čas"
               }
             },
             "Irkutsk": {
               "long": {
-                "generic": "Irkutský čas",
-                "standard": "Irkutský štandardný čas",
-                "daylight": "Irkutský letný čas"
+                "generic": "irkutský čas",
+                "standard": "irkutský štandardný čas",
+                "daylight": "irkutský letný čas"
               }
             },
             "Israel": {
               "long": {
-                "generic": "Izraelský čas",
-                "standard": "Izraelský štandardný čas",
-                "daylight": "Izraelský letný čas"
+                "generic": "izraelský čas",
+                "standard": "izraelský štandardný čas",
+                "daylight": "izraelský letný čas"
               }
             },
             "Japan": {
               "long": {
-                "generic": "Japonský čas",
-                "standard": "Japonský štandardný čas",
-                "daylight": "Japonský letný čas"
+                "generic": "japonský čas",
+                "standard": "japonský štandardný čas",
+                "daylight": "japonský letný čas"
               }
             },
             "Kamchatka": {
@@ -1872,264 +1869,264 @@
             },
             "Kazakhstan_Eastern": {
               "long": {
-                "standard": "Východokazašský čas"
+                "standard": "východokazachstanský čas"
               }
             },
             "Kazakhstan_Western": {
               "long": {
-                "standard": "Západokazašský čas"
+                "standard": "západokazachstanský čas"
               }
             },
             "Korea": {
               "long": {
-                "generic": "Kórejský čas",
-                "standard": "Kórejský štandardný čas",
-                "daylight": "Kórejský letný čas"
+                "generic": "kórejský čas",
+                "standard": "kórejský štandardný čas",
+                "daylight": "kórejský letný čas"
               }
             },
             "Kosrae": {
               "long": {
-                "standard": "Kosraeský čas"
+                "standard": "kosrajský čas"
               }
             },
             "Krasnoyarsk": {
               "long": {
-                "generic": "Krasnojarský čas",
-                "standard": "Krasnojarský štandardný čas",
-                "daylight": "Krasnojarský letný čas"
+                "generic": "krasnojarský čas",
+                "standard": "krasnojarský štandardný čas",
+                "daylight": "krasnojarský letný čas"
               }
             },
             "Kyrgystan": {
               "long": {
-                "standard": "Kirgizský čas"
+                "standard": "kirgizský čas"
               }
             },
             "Line_Islands": {
               "long": {
-                "standard": "Čas Rovníkových ostrovov"
+                "standard": "čas Rovníkových ostrovov"
               }
             },
             "Lord_Howe": {
               "long": {
-                "generic": "Čas ostrova lorda Howa",
-                "standard": "Štandardný čas ostrova lorda Howa",
-                "daylight": "Letný čas ostrova lorda Howa"
+                "generic": "čas ostrova lorda Howa",
+                "standard": "štandardný čas ostrova lorda Howa",
+                "daylight": "letný čas ostrova lorda Howa"
               }
             },
             "Macquarie": {
               "long": {
-                "standard": "Čas ostrova Macquarie"
+                "standard": "čas ostrova Macquarie"
               }
             },
             "Magadan": {
               "long": {
-                "generic": "Magadanský čas",
-                "standard": "Magadanský štandardný čas",
-                "daylight": "Magadanský letný čas"
+                "generic": "magadanský čas",
+                "standard": "magadanský štandardný čas",
+                "daylight": "magadanský letný čas"
               }
             },
             "Malaysia": {
               "long": {
-                "standard": "Malajzijský čas"
+                "standard": "malajzijský čas"
               }
             },
             "Maldives": {
               "long": {
-                "standard": "Maldivský čas"
+                "standard": "maldivský čas"
               }
             },
             "Marquesas": {
               "long": {
-                "standard": "Markézsky čas"
+                "standard": "markézsky čas"
               }
             },
             "Marshall_Islands": {
               "long": {
-                "standard": "Čas Marshallových ostrovov"
+                "standard": "čas Marshallových ostrovov"
               }
             },
             "Mauritius": {
               "long": {
-                "generic": "Maurícijský čas",
-                "standard": "Maurícijský štandardný čas",
-                "daylight": "Maurícijský letný čas"
+                "generic": "maurícijský čas",
+                "standard": "maurícijský štandardný čas",
+                "daylight": "maurícijský letný čas"
               }
             },
             "Mawson": {
               "long": {
-                "standard": "Čas Mawsonovej stanice"
+                "standard": "čas Mawsonovej stanice"
               }
             },
             "Mexico_Northwest": {
               "long": {
-                "generic": "Severozápadný mexický čas",
-                "standard": "Severozápadný mexický štandardný čas",
-                "daylight": "Severozápadný mexický letný čas"
+                "generic": "severozápadný mexický čas",
+                "standard": "severozápadný mexický štandardný čas",
+                "daylight": "severozápadný mexický letný čas"
               }
             },
             "Mexico_Pacific": {
               "long": {
-                "generic": "Mexický tichomorský čas",
-                "standard": "Mexický tichomorský štandardný čas",
-                "daylight": "Mexický tichomorský letný čas"
+                "generic": "mexický tichomorský čas",
+                "standard": "mexický tichomorský štandardný čas",
+                "daylight": "mexický tichomorský letný čas"
               }
             },
             "Mongolia": {
               "long": {
-                "generic": "Ulanbátarský čas",
-                "standard": "Ulanbátarský štandardný čas",
-                "daylight": "Ulanbátarský letný čas"
+                "generic": "ulanbátarský čas",
+                "standard": "ulanbátarský štandardný čas",
+                "daylight": "ulanbátarský letný čas"
               }
             },
             "Moscow": {
               "long": {
-                "generic": "Moskovský čas",
-                "standard": "Moskovský štandardný čas",
-                "daylight": "Moskovský letný čas"
+                "generic": "moskovský čas",
+                "standard": "moskovský štandardný čas",
+                "daylight": "moskovský letný čas"
               }
             },
             "Myanmar": {
               "long": {
-                "standard": "Mjanmarský čas"
+                "standard": "mjanmarský čas"
               }
             },
             "Nauru": {
               "long": {
-                "standard": "Čas ostrova Nauru"
+                "standard": "nauruský čas"
               }
             },
             "Nepal": {
               "long": {
-                "standard": "Nepálsky čas"
+                "standard": "nepálsky čas"
               }
             },
             "New_Caledonia": {
               "long": {
-                "generic": "Novokaledónsky čas",
-                "standard": "Novokaledónsky štandardný čas",
-                "daylight": "Novokaledónsky letný čas"
+                "generic": "novokaledónsky čas",
+                "standard": "novokaledónsky štandardný čas",
+                "daylight": "novokaledónsky letný čas"
               }
             },
             "New_Zealand": {
               "long": {
-                "generic": "Novozélandský čas",
-                "standard": "Novozélandský štandardný čas",
-                "daylight": "Novozélandský letný čas"
+                "generic": "novozélandský čas",
+                "standard": "novozélandský štandardný čas",
+                "daylight": "novozélandský letný čas"
               }
             },
             "Newfoundland": {
               "long": {
-                "generic": "Newfoundlandský čas",
-                "standard": "Newfoundlandský štandardný čas",
-                "daylight": "Newfoundlandský letný čas"
+                "generic": "newfoundlandský čas",
+                "standard": "newfoundlandský štandardný čas",
+                "daylight": "newfoundlandský letný čas"
               }
             },
             "Niue": {
               "long": {
-                "standard": "Čas ostrova Niue"
+                "standard": "niuejský čas"
               }
             },
             "Norfolk": {
               "long": {
-                "standard": "Čas Norfolkských ostrovov"
+                "standard": "norfolský čas"
               }
             },
             "Noronha": {
               "long": {
-                "generic": "Čas ostrova Fernando de Noronha",
-                "standard": "Štandardný čas ostrova Fernando de Noronha",
-                "daylight": "Letný čas ostrovov Fernanda de Noronha"
+                "generic": "čas súostrovia Fernando de Noronha",
+                "standard": "štandardný čas súostrovia Fernando de Noronha",
+                "daylight": "letný čas súostrovia Fernando de Noronha"
               }
             },
             "Novosibirsk": {
               "long": {
-                "generic": "Novosibírsky čas",
-                "standard": "Novosibirský štandardný čas",
-                "daylight": "Novosibírsky letný čas"
+                "generic": "novosibirský čas",
+                "standard": "novosibirský štandardný čas",
+                "daylight": "novosibirský letný čas"
               }
             },
             "Omsk": {
               "long": {
-                "generic": "Omský čas",
-                "standard": "Omský štandardný čas",
-                "daylight": "Omský letný čas"
+                "generic": "omský čas",
+                "standard": "omský štandardný čas",
+                "daylight": "omský letný čas"
               }
             },
             "Pakistan": {
               "long": {
-                "generic": "Pakistanský čas",
-                "standard": "Pakistanský štandardný čas",
-                "daylight": "Pakistanský letný čas"
+                "generic": "pakistanský čas",
+                "standard": "pakistanský štandardný čas",
+                "daylight": "pakistanský letný čas"
               }
             },
             "Palau": {
               "long": {
-                "standard": "Palauský čas"
+                "standard": "palauský čas"
               }
             },
             "Papua_New_Guinea": {
               "long": {
-                "standard": "Čas Papuy-Novej Guiney"
+                "standard": "čas Papuy-Novej Guiney"
               }
             },
             "Paraguay": {
               "long": {
-                "generic": "Paraguajský čas",
-                "standard": "Paraguajský štandardný čas",
-                "daylight": "Paraguajský letný čas"
+                "generic": "paraguajský čas",
+                "standard": "paraguajský štandardný čas",
+                "daylight": "paraguajský letný čas"
               }
             },
             "Peru": {
               "long": {
-                "generic": "Peruánsky čas",
-                "standard": "Peruánsky štandardný čas",
-                "daylight": "Peruánsky letný čas"
+                "generic": "peruánsky čas",
+                "standard": "peruánsky štandardný čas",
+                "daylight": "peruánsky letný čas"
               }
             },
             "Philippines": {
               "long": {
-                "generic": "Filipínsky čas",
-                "standard": "Filipínsky štandardný čas",
-                "daylight": "Filipínsky letný čas"
+                "generic": "filipínsky čas",
+                "standard": "filipínsky štandardný čas",
+                "daylight": "filipínsky letný čas"
               }
             },
             "Phoenix_Islands": {
               "long": {
-                "standard": "Čas Fénixových ostrovov"
+                "standard": "čas Fénixových ostrovov"
               }
             },
             "Pierre_Miquelon": {
               "long": {
-                "generic": "Čas ostrovov Saint-Pierre a Miquelon",
-                "standard": "Štandardný čas ostrovov Saint-Pierre a Miquelon",
-                "daylight": "Letný čas ostrovov Saint-Pierre a Miquelon"
+                "generic": "pierre-miquelonský čas",
+                "standard": "pierre-miquelonský štandardný čas",
+                "daylight": "pierre-miquelonský letný čas"
               }
             },
             "Pitcairn": {
               "long": {
-                "standard": "Čas Pitcairnovho ostrova"
+                "standard": "čas Pitcairnových ostrovov"
               }
             },
             "Ponape": {
               "long": {
-                "standard": "Ponapský čas"
+                "standard": "ponapský čas"
               }
             },
             "Reunion": {
               "long": {
-                "standard": "Réunionský čas"
+                "standard": "réunionský čas"
               }
             },
             "Rothera": {
               "long": {
-                "standard": "Čas Rotherovej stanice"
+                "standard": "čas Rotherovej stanice"
               }
             },
             "Sakhalin": {
               "long": {
-                "generic": "Sachalinský čas",
-                "standard": "Sachalinský štandardný čas",
-                "daylight": "Sachalinský letný čas"
+                "generic": "sachalinský čas",
+                "standard": "sachalinský štandardný čas",
+                "daylight": "sachalinský letný čas"
               }
             },
             "Samara": {
@@ -2141,154 +2138,154 @@
             },
             "Samoa": {
               "long": {
-                "generic": "Samojský čas",
-                "standard": "Samojský štandardný čas",
-                "daylight": "Samojský letný čas"
+                "generic": "samojský čas",
+                "standard": "samojský štandardný čas",
+                "daylight": "samojský letný čas"
               }
             },
             "Seychelles": {
               "long": {
-                "standard": "Seychelský čas"
+                "standard": "seychelský čas"
               }
             },
             "Singapore": {
               "long": {
-                "standard": "Singapurský štandardný čas"
+                "standard": "singapurský štandardný čas"
               }
             },
             "Solomon": {
               "long": {
-                "standard": "Čas Šalamúnových ostrovov"
+                "standard": "čas Šalamúnových ostrovov"
               }
             },
             "South_Georgia": {
               "long": {
-                "standard": "Čas Južnej Georgie"
+                "standard": "čas Južnej Georgie"
               }
             },
             "Suriname": {
               "long": {
-                "standard": "Surinamský čas"
+                "standard": "surinamský čas"
               }
             },
             "Syowa": {
               "long": {
-                "standard": "Čas stanice Šówa"
+                "standard": "čas stanice Šówa"
               }
             },
             "Tahiti": {
               "long": {
-                "standard": "Tahitský čas"
+                "standard": "tahitský čas"
               }
             },
             "Taipei": {
               "long": {
-                "generic": "Tchajpejský čas",
-                "standard": "Tchajpejský štandardný čas",
-                "daylight": "Tchajpejský letný čas"
+                "generic": "tchajpejský čas",
+                "standard": "tchajpejský štandardný čas",
+                "daylight": "tchajpejský letný čas"
               }
             },
             "Tajikistan": {
               "long": {
-                "standard": "Tadžický čas"
+                "standard": "tadžický čas"
               }
             },
             "Tokelau": {
               "long": {
-                "standard": "Tokelauský čas"
+                "standard": "tokelauský čas"
               }
             },
             "Tonga": {
               "long": {
-                "generic": "Tonžský čas",
-                "standard": "Tonžský štandardný čas",
-                "daylight": "Tonžský letný čas"
+                "generic": "tonžský čas",
+                "standard": "tonžský štandardný čas",
+                "daylight": "tonžský letný čas"
               }
             },
             "Truk": {
               "long": {
-                "standard": "Chuukský čas"
+                "standard": "chuukský čas"
               }
             },
             "Turkmenistan": {
               "long": {
-                "generic": "Turkménsky čas",
-                "standard": "Turkménsky štandardný čas",
-                "daylight": "Turkménsky letný čas"
+                "generic": "turkménsky čas",
+                "standard": "turkménsky štandardný čas",
+                "daylight": "turkménsky letný čas"
               }
             },
             "Tuvalu": {
               "long": {
-                "standard": "Tuvalský čas"
+                "standard": "tuvalský čas"
               }
             },
             "Uruguay": {
               "long": {
-                "generic": "Uruguajský čas",
-                "standard": "Uruguajský štandardný čas",
-                "daylight": "Uruguajský letný čas"
+                "generic": "uruguajský čas",
+                "standard": "uruguajský štandardný čas",
+                "daylight": "uruguajský letný čas"
               }
             },
             "Uzbekistan": {
               "long": {
-                "generic": "Uzbecký čas",
-                "standard": "Uzbecký štandardný čas",
-                "daylight": "Uzbecký letný čas"
+                "generic": "uzbecký čas",
+                "standard": "uzbecký štandardný čas",
+                "daylight": "uzbecký letný čas"
               }
             },
             "Vanuatu": {
               "long": {
-                "generic": "Vanuatský čas",
-                "standard": "Vanuatský štandardný čas",
-                "daylight": "Vanuatský letný čas"
+                "generic": "vanuatský čas",
+                "standard": "vanuatský štandardný čas",
+                "daylight": "vanuatský letný čas"
               }
             },
             "Venezuela": {
               "long": {
-                "standard": "Venezuelský čas"
+                "standard": "venezuelský čas"
               }
             },
             "Vladivostok": {
               "long": {
-                "generic": "Vladivostocký čas",
-                "standard": "Vladivostocký štandardný čas",
-                "daylight": "Vladivostocký letný čas"
+                "generic": "vladivostocký čas",
+                "standard": "vladivostocký štandardný čas",
+                "daylight": "vladivostocký letný čas"
               }
             },
             "Volgograd": {
               "long": {
-                "generic": "Volgogradský čas",
-                "standard": "Volgogradský štandardný čas",
-                "daylight": "Volgogradský letný čas"
+                "generic": "volgogradský čas",
+                "standard": "volgogradský štandardný čas",
+                "daylight": "volgogradský letný čas"
               }
             },
             "Vostok": {
               "long": {
-                "standard": "Čas stanice Vostok"
+                "standard": "čas stanice Vostok"
               }
             },
             "Wake": {
               "long": {
-                "standard": "Čas ostrova Wake"
+                "standard": "čas ostrova Wake"
               }
             },
             "Wallis": {
               "long": {
-                "standard": "Čas ostrovov Wallis a Futuna"
+                "standard": "čas ostrovov Wallis a Futuna"
               }
             },
             "Yakutsk": {
               "long": {
-                "generic": "Jakutský čas",
-                "standard": "Jakutský štandardný čas",
-                "daylight": "Jakutský letný čas"
+                "generic": "jakutský čas",
+                "standard": "jakutský štandardný čas",
+                "daylight": "jakutský letný čas"
               }
             },
             "Yekaterinburg": {
               "long": {
-                "generic": "Jekaterinburgský čas",
-                "standard": "Jekaterinburgský štandardný čas",
-                "daylight": "Jekaterinburský letný čas"
+                "generic": "jekaterinburský čas",
+                "standard": "jekaterinburský štandardný čas",
+                "daylight": "jekaterinburský letný čas"
               }
             }
           }

@@ -3,11 +3,8 @@
     "ur": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "ur"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "کیلنڈر",
+          "cf": "cf",
           "colAlternate": "علامات کی چھٹائی نظرانداز کریں",
           "colBackwards": "معکوس تلفظ کی چھٹائی",
           "colCaseFirst": "بڑے حروف/ چھوٹے حروف کی ترتیب بندی",
           "colCaseLevel": "حروف کے تئیں حساس چھٹائی",
           "colHiraganaQuaternary": "Kena چھٹائی",
+          "collation": "چھٹائی کی ترتیب",
           "colNormalization": "معمول کی چھٹائی",
           "colNumeric": "عددی چھٹائی",
           "colStrength": "چھٹائی کی قوت",
-          "collation": "چھٹائی کی ترتیب",
           "currency": "کرنسی",
+          "hc": "گھنٹہ سائیکل (12 بنام 24)",
+          "lb": "لائن بریک انداز",
+          "ms": "پیمائش کا نظام",
           "numbers": "اعداد",
           "timezone": "منطقۂ وقت",
           "va": "مقام کا متغیرہ",
@@ -40,7 +41,7 @@
             "buddhist": "بودھ کلینڈر",
             "chinese": "چینی کیلنڈر",
             "coptic": "کاپٹک کیلنڈر",
-            "dangi": "ڈینگی کیلنڈر",
+            "dangi": "ڈانگی کیلنڈر",
             "ethiopic": "ایتھوپیائی کیلنڈر",
             "ethiopic-amete-alem": "ایتھوپک امیٹ الیم کیلنڈر",
             "gregorian": "جارجیائی کیلنڈر",
@@ -55,6 +56,10 @@
             "japanese": "جاپانی کیلنڈر",
             "persian": "فارسی کیلنڈر",
             "roc": "منگوو کیلنڈر"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "colAlternate": {
             "non-ignorable": "علامات کی چھٹائی کریں",
@@ -77,6 +82,26 @@
             "no": "Kana کی چھٹائی الگ الگ کریں",
             "yes": "Kana کی مختلف طریقے سے چھٹائی کریں"
           },
+          "collation": {
+            "big5han": "روایتی چینی کی چھٹائی کی ترتیب - Big5",
+            "compat": "compat",
+            "dictionary": "لغت کی چھٹنی کی ترتیب",
+            "ducet": "ڈیفالٹ یونیکوڈ کی چھٹنی کی ترتیب",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "آسان چینی کی چھٹائی کی ترتیب - GB2312",
+            "phonebook": "فون بک کی چھٹنی کی ترتیب",
+            "phonetic": "صوتی چھٹائی کی ترتیب",
+            "pinyin": "پن ین کی چھٹنی کی ترتیب",
+            "reformed": "دوبارہ تشکیل شدہ چھٹنی کی ترتیب",
+            "search": "عام-مقصد کی تلاش",
+            "searchjl": "Hangul Initial Consonant کے لحاظ سے تلاش کریں",
+            "standard": "معیاری چھنٹائی کی ترتیب",
+            "stroke": "سٹروک کی چھٹنی کی ترتیب",
+            "traditional": "روایتی چھٹنی کی ترتیب",
+            "unihan": "اساسی-سٹروک کی چھٹنی کی ترتیب",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "حسب معمول بنائے بغیر چھٹائی کریں",
             "yes": "معمول کے یونیکوڈ کی چھٹائی کریں"
@@ -92,25 +117,24 @@
             "secondary": "لہجوں کی چھٹائی کریں",
             "tertiary": "لہجوں/حروف/چوڑائی کی چھٹائی کریں"
           },
-          "collation": {
-            "big5han": "روایتی چینی کی چھٹائی کی ترتیب - Big5",
-            "dictionary": "لغت کی چھٹنی کی ترتیب",
-            "ducet": "ڈیفالٹ یونیکوڈ کی چھٹنی کی ترتیب",
-            "eor": "eor",
-            "gb2312han": "آسان چینی کی چھٹائی کی ترتیب - GB2312",
-            "phonebook": "فون بک کی چھٹنی کی ترتیب",
-            "phonetic": "صوتی چھٹائی کی ترتیب",
-            "pinyin": "پن ین کی چھٹنی کی ترتیب",
-            "reformed": "دوبارہ تشکیل شدہ چھٹنی کی ترتیب",
-            "search": "عام-مقصد کی تلاش",
-            "searchjl": "Hangul Initial Consonant کے لحاظ سے تلاش کریں",
-            "standard": "معیاری چھنٹائی کی ترتیب",
-            "stroke": "سٹروک کی چھٹنی کی ترتیب",
-            "traditional": "روایتی چھٹنی کی ترتیب",
-            "unihan": "اساسی-سٹروک کی چھٹنی کی ترتیب",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "12 گھنٹے کا نظام (0–11)",
+            "h12": "12 گھنٹے کا نظام (1–12)",
+            "h23": "24 گھنٹے کا نظام (0–23)",
+            "h24": "24 گھنٹے کا نظام (1–24)"
+          },
+          "lb": {
+            "loose": "ڈھیلا لائن بریک انداز",
+            "normal": "عمومی لائن بریک انداز",
+            "strict": "سخت لائن بریک انداز"
+          },
+          "ms": {
+            "metric": "metric",
+            "uksystem": "پیمائش کا امپیریل نظام",
+            "ussystem": "پیمائش کا برطانوی نظام"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "عربی ہندی ہندسے",
             "arabext": "توسیع شدہ عربی ہندی ہندسے",
             "armn": "آرمینیائی اعداد",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "دیوناگری ہندسے",
             "ethi": "ایتھوپیائی اعداد",
             "finance": "مالیاتی ہندسے",
@@ -135,6 +160,7 @@
             "hant": "روایتی چینی اعداد",
             "hantfin": "روایتی چینی مالی اعداد",
             "hebr": "عبرانی اعداد",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "جاپانی اعداد",
             "jpanfin": "جاپانی مالی اعداد",
@@ -147,11 +173,19 @@
             "latn": "مغربی ہندسے",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "ملیالم ہندسے",
+            "modi": "modi",
             "mong": "منگولیائی ہندسے",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "میانمار کے ہندسے",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "اصل ہندسے",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "رومن زیریں اعداد",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "تیلگو ہندسے",
             "thai": "تھائی ہندسے",
             "tibt": "تبتی اعداد",
+            "tirh": "tirh",
             "traditional": "روایتی اعداد",
-            "vaii": "وائی ہندسے"
+            "vaii": "وائی ہندسے",
+            "wara": "wara"
           }
         },
         "codePatterns": {

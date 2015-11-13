@@ -3,11 +3,8 @@
     "lo": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "lo"
       },
@@ -158,6 +155,7 @@
           },
           "BGN": {
             "displayName": "ບັງ​ກາ​ຣຽນ ເລບ",
+            "displayName-count-other": "ເລບ ບູນກາຣີ",
             "symbol": "BGN"
           },
           "BGO": {
@@ -464,8 +462,8 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "ພາວ​ດ໌ ສະ​ເຕີ​ຣິງ (ອັງ​ກິດ)",
-            "displayName-count-other": "ພາວ​ດ໌ ສະ​ເຕີ​ຣິງ (ອັງ​ກິດ)",
+            "displayName": "ປອນ ສະ​ເຕີ​ຣິງ (ອັງ​ກິດ)",
+            "displayName-count-other": "ປອນ ສະເຕີຣິງ (ອັງກິດ)",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -476,7 +474,8 @@
           "GEL": {
             "displayName": "ຈໍ​ຈຽນ ລາ​ຣິ",
             "displayName-count-other": "ຈໍ​ຈຽນ ລາ​ຣິ",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "ລາຣີ"
           },
           "GHC": {
             "displayName": "ເຊດີ ການາ (1979–2007)",
@@ -560,6 +559,7 @@
           },
           "HTG": {
             "displayName": "ໄຮ​ຕຽນ ກົວ​ເດ",
+            "displayName-count-other": "ໄຮ​ຕຽນ ກົວ​ເດ",
             "symbol": "HTG"
           },
           "HUF": {
@@ -979,6 +979,7 @@
           },
           "PYG": {
             "displayName": "ກວາຣານີ ປາຣາກວາຍ",
+            "displayName-count-other": "ກວາຣານີ ປາຣາກວາຍ",
             "symbol": "PYG",
             "symbol-alt-narrow": "₲"
           },
@@ -1009,7 +1010,7 @@
             "displayName": "ຣັສ​ຊຽນ ຣູ​ເບິນ",
             "displayName-count-other": "ຣັສ​ຊຽນ ຣູ​ເບິນ",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "ຣູໂບ ຣັດເຊຍ (1991–1998)",
@@ -1186,6 +1187,7 @@
           },
           "TWD": {
             "displayName": "ນິວ ໄຕ້​ຫວັນ ໂດ​ລ່າ",
+            "displayName-count-other": "ນິວ ໄຕ້​ຫວັນ ໂດ​ລ່າ",
             "symbol": "NT$",
             "symbol-alt-narrow": "NT$"
           },
@@ -1278,6 +1280,7 @@
           },
           "XAF": {
             "displayName": "ຟຣັງ ເຊຟານ ທະນາຄານລັດອາຟຣິກາກາງ",
+            "displayName-count-other": "ຟຣັງ ເຊຟານ ທະນາຄານລັດອາຟຣິກາກາງ",
             "symbol": "FCFA"
           },
           "XAG": {
@@ -1328,6 +1331,7 @@
           },
           "XOF": {
             "displayName": "ຟັງເຊຟານ ອາຟຣິກາຕາເວັນຕົກ",
+            "displayName-count-other": "ຟັງເຊຟານ ອາຟຣິກາຕາເວັນຕົກ",
             "symbol": "CFA"
           },
           "XPD": {

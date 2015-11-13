@@ -3,11 +3,8 @@
     "mr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11953 $"
         },
         "language": "mr"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "दिनदर्शिका",
+          "cf": "cf",
           "colAlternate": "प्रतीक क्रमवारीकडे दुर्लक्ष करा",
           "colBackwards": "उलट उच्चार क्रमवारी",
           "colCaseFirst": "अपरकेस/लोअरकेस क्रम",
           "colCaseLevel": "केस संवेदी क्रमवारी",
           "colHiraganaQuaternary": "काना क्रमवारी",
+          "collation": "क्रमवारी क्रम",
           "colNormalization": "सामान्य क्रमवारी",
           "colNumeric": "अंकीय क्रमवारी",
           "colStrength": "क्रमवारी सामर्थ्य",
-          "collation": "क्रमवारी क्रम",
           "currency": "चलन",
+          "hc": "तास चक्र (12 वि 24)",
+          "lb": "लाइन ब्रेक शैली",
+          "ms": "मापन पद्धती",
           "numbers": "संख्या",
           "timezone": "टाइम झोन",
           "va": "लोकेल व्हेरियंट",
@@ -56,6 +57,10 @@
             "persian": "फारसी दिनदर्शिका",
             "roc": "मिनगुओ दिनदर्शिका"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "प्रतीकांची क्रमवारी लावा",
             "shifted": "दुर्लक्षित प्रतीकांची क्रमवारी लावा"
@@ -77,6 +82,26 @@
             "no": "काना विभक्तपणे क्रमवारी लावा",
             "yes": "काना भिन्नपणे क्रमवारी लावा"
           },
+          "collation": {
+            "big5han": "पारंपारिक चिनी क्रमवारी क्रम - Big5",
+            "compat": "compat",
+            "dictionary": "शब्दकोश अनुक्रम",
+            "ducet": "डीफॉल्ट युनिकोड क्रमवारी क्रम",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "सरलीकृत चिनी क्रमवारी क्रम - GB2312",
+            "phonebook": "फोनबुक अनुक्रम",
+            "phonetic": "ध्वनीविचार क्रमवारी क्रम",
+            "pinyin": "पिनयिन अनुक्रम",
+            "reformed": "पुनर्स्वरूपित अनुक्रम",
+            "search": "सामान्य हेतु शोध",
+            "searchjl": "हँगुल प्रारंभिक व्यंजनानुसार शोधा",
+            "standard": "प्रमाणित क्रमवारी क्रम",
+            "stroke": "स्ट्रोक अनुक्रम",
+            "traditional": "पारंपारिक अनुक्रम",
+            "unihan": "रॅडिकल-स्ट्रोक अनुक्रम",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "नेहमीसारखे न करता क्रमवारी लावा",
             "yes": "युनिकोड सामान्यीकृत क्रमवारी लावा"
@@ -92,34 +117,34 @@
             "secondary": "उच्चार क्रमवारी लावा",
             "tertiary": "उच्चार/केस/रुंदीची क्रमवारी लावा"
           },
-          "collation": {
-            "big5han": "पारंपारिक चिनी क्रमवारी क्रम - Big5",
-            "dictionary": "शब्दकोश अनुक्रम",
-            "ducet": "डीफॉल्ट युनिकोड क्रमवारी क्रम",
-            "eor": "eor",
-            "gb2312han": "सरलीकृत चिनी क्रमवारी क्रम - GB2312",
-            "phonebook": "फोनबुक अनुक्रम",
-            "phonetic": "ध्वनीविचार क्रमवारी क्रम",
-            "pinyin": "पिनयिन अनुक्रम",
-            "reformed": "पुनर्स्वरूपित अनुक्रम",
-            "search": "सामान्य हेतु शोध",
-            "searchjl": "हँगुल प्रारंभिक व्यंजनानुसार शोधा",
-            "standard": "प्रमाणित क्रमवारी क्रम",
-            "stroke": "स्ट्रोक अनुक्रम",
-            "traditional": "पारंपारिक अनुक्रम",
-            "unihan": "रॅडिकल-स्ट्रोक अनुक्रम",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "12 तास पद्धती (0–11)",
+            "h12": "12 तास पद्धती (1–12)",
+            "h23": "24 तास पद्धती (0–23)",
+            "h24": "24 तास पद्धती (1–24)"
+          },
+          "lb": {
+            "loose": "ढिली लाइन ब्रेक शैली",
+            "normal": "सामान्य लाइन ब्रेक शैली",
+            "strict": "काटेकोर लाइन ब्रेक"
+          },
+          "ms": {
+            "metric": "दशमान पद्धती",
+            "uksystem": "ब्रिटिश मापन पद्धती",
+            "ussystem": "अमेरीकन मापन पद्धती"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "अरबी-भारतीय अंक",
             "arabext": "विस्तारित अरबी-भारतीय अंक",
-            "armn": "अमेरिकन अंक",
+            "armn": "अर्मेनियन अंक",
             "armnlow": "अर्मेनियन छोटी लिपी अंक",
             "bali": "bali",
             "beng": "बंगाली अंक",
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "देवनागरी अंक",
             "ethi": "इथिओपिक अंक",
             "finance": "वित्तीय संख्‍या",
@@ -135,6 +160,7 @@
             "hant": "पारंपारिक चीनी अंक",
             "hantfin": "पारंपारिक चीनी वित्तीय अंक",
             "hebr": "हिब्रू अंक",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "जपानी अंक",
             "jpanfin": "जपानी वित्तीय अंक",
@@ -147,11 +173,19 @@
             "latn": "पश्चिमी अंक",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "मल्याळम अंक",
+            "modi": "modi",
             "mong": "मंगोलियन अंक",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "म्यानमार अंक",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "मूळ अंक",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -161,6 +195,8 @@
             "romanlow": "रोमन लहान लिपीचे अंक",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "तेलगु अंक",
             "thai": "थाई अंक",
             "tibt": "तिबेटी अंक",
+            "tirh": "tirh",
             "traditional": "पारंपारिक संख्‍या",
-            "vaii": "व्हाई अंक"
+            "vaii": "व्हाई अंक",
+            "wara": "wara"
           }
         },
         "codePatterns": {

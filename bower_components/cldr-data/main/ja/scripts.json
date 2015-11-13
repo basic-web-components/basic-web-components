@@ -3,11 +3,8 @@
     "ja": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "ja"
       },
@@ -15,6 +12,7 @@
         "scripts": {
           "Afak": "アファカ文字",
           "Aghb": "カフカス・アルバニア文字",
+          "Ahom": "Ahom",
           "Arab": "アラビア文字",
           "Arab-alt-variant": "ペルソ・アラビア文字",
           "Armi": "帝国アラム文字",
@@ -49,8 +47,8 @@
           "Egyp": "エジプト聖刻文字",
           "Elba": "エルバサン文字",
           "Ethi": "エチオピア文字",
-          "Geok": "グルジア文字(フツリ)",
-          "Geor": "グルジア文字",
+          "Geok": "ジョージア文字(フツリ)",
+          "Geor": "ジョージア文字",
           "Glag": "グラゴル文字",
           "Goth": "ゴート文字",
           "Gran": "グランタ文字",
@@ -64,6 +62,7 @@
           "Hans-alt-stand-alone": "漢字(簡体字)",
           "Hant": "繁体字",
           "Hant-alt-stand-alone": "漢字(繁体字)",
+          "Hatr": "Hatr",
           "Hebr": "ヘブライ文字",
           "Hira": "ひらがな",
           "Hluw": "アナトリア象形文字",
@@ -110,6 +109,7 @@
           "Moon": "ムーン文字",
           "Mroo": "ムロ文字",
           "Mtei": "メイテイ文字",
+          "Mult": "Mult",
           "Mymr": "ミャンマー文字",
           "Narb": "古代北アラビア文字",
           "Nbat": "ナバテア文字",

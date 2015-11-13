@@ -3,11 +3,8 @@
     "ur-IN": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11323 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 15:25:28 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ur",
         "territory": "IN"
@@ -117,9 +114,9 @@
           },
           "month-short": {
             "displayName": "مہینہ",
-            "relative-type--1": "گزشتہ ماہ",
-            "relative-type-0": "اس ماہ",
-            "relative-type-1": "اگلے ماہ",
+            "relative-type--1": "پچھلے مہینہ",
+            "relative-type-0": "اس مہینہ",
+            "relative-type-1": "اگلے مہینہ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} ماہ میں",
               "relativeTimePattern-count-other": "{0} ماہ میں"
@@ -131,9 +128,9 @@
           },
           "month-narrow": {
             "displayName": "مہینہ",
-            "relative-type--1": "گزشتہ ماہ",
-            "relative-type-0": "اس ماہ",
-            "relative-type-1": "اگلے ماہ",
+            "relative-type--1": "پچھلے مہینہ",
+            "relative-type-0": "اس مہینہ",
+            "relative-type-1": "اگلے مہینہ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} ماہ میں",
               "relativeTimePattern-count-other": "+{0} ماہ میں"
@@ -159,7 +156,7 @@
           },
           "week-short": {
             "displayName": "ہفتہ",
-            "relative-type--1": "گزشتہ ہفتہ",
+            "relative-type--1": "پچھلے ہفتہ",
             "relative-type-0": "اس ہفتہ",
             "relative-type-1": "اگلے ہفتہ",
             "relativeTime-type-future": {
@@ -173,7 +170,7 @@
           },
           "week-narrow": {
             "displayName": "ہفتہ",
-            "relative-type--1": "گزشتہ ہفتہ",
+            "relative-type--1": "پچھلے ہفتہ",
             "relative-type-0": "اس ہفتہ",
             "relative-type-1": "اگلے ہفتہ",
             "relativeTime-type-future": {
@@ -187,8 +184,8 @@
           },
           "day": {
             "displayName": "دن",
-            "relative-type--1": "گزشتہ کل",
             "relative-type--2": "گزشتہ پرسوں",
+            "relative-type--1": "گزشتہ کل",
             "relative-type-0": "آج",
             "relative-type-1": "آئندہ کل",
             "relative-type-2": "آنے والا پرسوں",
@@ -203,8 +200,8 @@
           },
           "day-short": {
             "displayName": "دن",
-            "relative-type--1": "گزشتہ کل",
             "relative-type--2": "گزشتہ پرسوں",
+            "relative-type--1": "گزشتہ کل",
             "relative-type-0": "آج",
             "relative-type-1": "آئندہ کل",
             "relative-type-2": "آنے والا پرسوں",
@@ -219,8 +216,8 @@
           },
           "day-narrow": {
             "displayName": "دن",
-            "relative-type--1": "گزشتہ کل",
             "relative-type--2": "گزشتہ پرسوں",
+            "relative-type--1": "گزشتہ کل",
             "relative-type-0": "آج",
             "relative-type-1": "آئندہ کل",
             "relative-type-2": "آنے والا پرسوں",
@@ -327,9 +324,9 @@
             "relative-type-1": "اگلے جمعہ"
           },
           "sat": {
-            "relative-type--1": "پچھلے ہفتہ",
-            "relative-type-0": "اس ہفتہ",
-            "relative-type-1": "اگلے ہفتہ"
+            "relative-type--1": "گزشتہ سنیچر",
+            "relative-type-0": "اس سنیچر",
+            "relative-type-1": "اگلے سنیچر"
           },
           "sat-short": {
             "relative-type--1": "گزشتہ سنیچر",

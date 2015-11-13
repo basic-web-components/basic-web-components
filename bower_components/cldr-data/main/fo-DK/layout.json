@@ -1,0 +1,20 @@
+{
+  "main": {
+    "fo-DK": {
+      "identity": {
+        "version": {
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
+        },
+        "language": "fo",
+        "territory": "DK"
+      },
+      "layout": {
+        "orientation": {
+          "characterOrder": "left-to-right",
+          "lineOrder": "top-to-bottom"
+        }
+      }
+    }
+  }
+}

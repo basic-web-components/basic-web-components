@@ -3,11 +3,8 @@
     "kn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "kn"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} ಸಮಯ",
-          "regionFormat-type-standard": "{0} (+0) ಪ್ರಮಾಣಿತ ಸಮಯ",
           "regionFormat-type-daylight": "{0} (+1) ದಿನದ ಸಮಯ",
+          "regionFormat-type-standard": "{0} (+0) ಪ್ರಮಾಣಿತ ಸಮಯ",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "ಅರಾಗುಯಾನಾ"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ಲಾ ರಿಯೋಜಾ"
-                },
                 "Rio_Gallegos": {
-                  "exemplarCity": "ರಿಯೋ ಗಯೇಗೋ"
-                },
-                "Salta": {
-                  "exemplarCity": "ಸಾಲ್ಟಾ"
+                  "exemplarCity": "ರಿಯೋ ಗಲ್ಲೆಗೊಸ್"
                 },
                 "San_Juan": {
                   "exemplarCity": "ಸ್ಯಾನ್ ಜುವಾನ್"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "ಉಶ್ವಾಯ"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ಲಾ ರಿಯೋಜಾ"
+                },
                 "San_Luis": {
                   "exemplarCity": "ಸ್ಯಾನ್ ಲೂಯೀಸ್"
                 },
+                "Salta": {
+                  "exemplarCity": "ಸಾಲ್ಟಾ"
+                },
                 "Tucuman": {
                   "exemplarCity": "ಟುಕುಮಾನ್"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "ಉಶ್ವಾಯ"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ಹರ್ಮೊಸಿಲ್ಲೋ"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "ನಾಕ್ಸ್, ಇಂಡಿಯಾನಾ"
-                },
-                "Marengo": {
-                  "exemplarCity": "ಮರೆಂಗೊ, ಇಂಡಿಯಾನಾ"
+                "Vincennes": {
+                  "exemplarCity": "ವಿನ್‌ಸೆನ್ನೀಸ್, ಇಂಡಿಯಾನಾ"
                 },
                 "Petersburg": {
                   "exemplarCity": "ಪೀಟರ್ಸ್‌ಬರ್ಗ್, ಇಂಡಿಯಾನಾ"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "ಟೆಲ್ ಸಿಟಿ, ಇಂಡಿಯಾನಾ"
                 },
-                "Vevay": {
-                  "exemplarCity": "ವೇವಾಯ್, ಇಂಡಿಯಾನಾ"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ವಿನ್‌ಸೆನ್ನೀಸ್, ಇಂಡಿಯಾನಾ"
+                "Knox": {
+                  "exemplarCity": "ನಾಕ್ಸ್, ಇಂಡಿಯಾನಾ"
                 },
                 "Winamac": {
                   "exemplarCity": "ವಿನಾಮ್ಯಾಕ್, ಇಂಡಿಯಾನಾ"
+                },
+                "Marengo": {
+                  "exemplarCity": "ಮರೆಂಗೊ, ಇಂಡಿಯಾನಾ"
+                },
+                "Vevay": {
+                  "exemplarCity": "ವೇವಾಯ್, ಇಂಡಿಯಾನಾ"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ಬ್ಯೂಲಾ, ಉತ್ತರ ಡಕೊಟ"
                 },
-                "Center": {
-                  "exemplarCity": "ಸೆಂಟರ್, ಉತ್ತರ ಡಕೊಟ"
-                },
                 "New_Salem": {
                   "exemplarCity": "ನ್ಯೂ ಸಲೇಂ, ಉತ್ತರ ಡಕೊಟ"
+                },
+                "Center": {
+                  "exemplarCity": "ಸೆಂಟರ್, ಉತ್ತರ ಡಕೊಟ"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "ಕೊಲ್ಕತ್ತಾ"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ಚಿಟ"
               },
               "Choibalsan": {
                 "exemplarCity": "ಚೊಯ್‍ಬಾಲ್ಸನ್"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "ಸಿಂಗಾಪೂರ್"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "ಸ್ರೇದ್ನೇಕೋಲೀಮಸ್ಕ"
               },
               "Taipei": {
                 "exemplarCity": "ತೈಪೆ"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ಆಕ್ ಲ್ಯಾಂಡ್"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ಬೌಗೆನ್‍ವಿಲ್ಲೆ"
               },
               "Chatham": {
                 "exemplarCity": "ಚತಮ್"
@@ -1728,11 +1725,6 @@
                 "standard": "ದಕ್ಷಿಣ ಫ್ರೆಂಚ್ ಮತ್ತು ಅಂಟಾರ್ಟಿಕಾ ಸಮಯ"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ಗ್ರೀನ್‌ವಿಚ್ ಸರಾಸರಿ ಕಾಲಮಾನ"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "ಗಾಲಾಪಾಗೋಸ್ ಸಮಯ"
@@ -1753,6 +1745,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "ಗಿಲ್ಬರ್ಟ್ ದ್ವೀಪಗಳ ಸಮಯ"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ಗ್ರೀನ್‌ವಿಚ್ ಸರಾಸರಿ ಕಾಲಮಾನ"
               }
             },
             "Greenland_Eastern": {
@@ -1820,12 +1817,12 @@
             },
             "Indonesia_Central": {
               "long": {
-                "standard": "ಮಧ್ಯ ಇಂಡೋನೇಷಿಯ ಸಮಯ"
+                "standard": "ಮಧ್ಯ ಇಂಡೋನೇಷಿಯಾ ಸಮಯ"
               }
             },
             "Indonesia_Eastern": {
               "long": {
-                "standard": "ಪೂರ್ವ ಇಂಡೋನೇಷಿಯ ಸಮಯ"
+                "standard": "ಪೂರ್ವ ಇಂಡೋನೇಷಿಯಾ ಸಮಯ"
               }
             },
             "Indonesia_Western": {
@@ -1892,7 +1889,7 @@
             },
             "Krasnoyarsk": {
               "long": {
-                "generic": "ಕ್ರಸ್ನಿಯಾರ್ಕ್ಸ್ ಸಮಯ",
+                "generic": "ಕ್ರಾಸ್‌ನೊಯಾರ್ಸ್ಕ್ ಸಮಯ",
                 "standard": "ಕ್ರಾಸ್‌ನೊಯಾರ್ಸ್ಕ್ ಪ್ರಮಾಣಿತ ಸಮಯ",
                 "daylight": "ಕ್ರಾಸ್‌ನೊಯಾರ್ಸ್ಕ್ ಬೇಸಿಗೆ ಸಮಯ"
               }
@@ -2151,7 +2148,7 @@
             },
             "Singapore": {
               "long": {
-                "standard": "ಸಿಂಗಪುರ್ ಪ್ರಮಾಣಿತ ಸಮಯ"
+                "standard": "ಸಿಂಗಾಪುರ್ ಪ್ರಮಾಣಿತ ಸಮಯ"
               }
             },
             "Solomon": {

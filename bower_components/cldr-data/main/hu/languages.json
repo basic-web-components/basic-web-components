@@ -3,11 +3,8 @@
     "hu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "hu"
       },
@@ -55,7 +52,6 @@
           "ay": "ajmara",
           "az": "azerbajdzsáni",
           "az-alt-short": "azeri",
-          "azb": "azb",
           "ba": "baskír",
           "bal": "balucsi",
           "ban": "balinéz",
@@ -72,6 +68,7 @@
           "bfd": "bafut",
           "bfq": "bfq",
           "bg": "bolgár",
+          "bgn": "nyugati beludzs",
           "bho": "bodzspuri",
           "bi": "bislama",
           "bik": "bikol",
@@ -333,6 +330,7 @@
           "lo": "laoszi",
           "lol": "mongó",
           "loz": "lozi",
+          "lrc": "északi luri",
           "lt": "litván",
           "ltg": "ltg",
           "lu": "luba-katanga",
@@ -354,6 +352,7 @@
           "mas": "masai",
           "mde": "maba",
           "mdf": "moksán",
+          "mdh": "mdh",
           "mdr": "mandar",
           "men": "mende",
           "mer": "meru",
@@ -366,6 +365,7 @@
           "mi": "maori",
           "mic": "mikmak",
           "min": "minangkabau",
+          "mis": "mis",
           "mk": "macedón",
           "ml": "malajálam",
           "mn": "mongol",
@@ -386,7 +386,7 @@
           "my": "burmai",
           "mye": "myene",
           "myv": "erzjány",
-          "mzn": "mzn",
+          "mzn": "mázanderáni",
           "na": "naurui",
           "nan": "nan",
           "nap": "nápolyi",
@@ -394,6 +394,7 @@
           "nb": "norvég bokmal",
           "nd": "északi ndebele",
           "nds": "alsónémet",
+          "nds-NL": "alsószász",
           "ne": "nepáli",
           "new": "nevari",
           "ng": "ndonga",
@@ -487,6 +488,7 @@
           "sco": "skót",
           "sd": "szindhi",
           "sdc": "sdc",
+          "sdh": "dél-kurd",
           "se": "északi számi",
           "see": "szeneka",
           "seh": "szena",
@@ -597,6 +599,7 @@
           "wal": "valamo",
           "war": "varaó",
           "was": "vasó",
+          "wbp": "warlpiri",
           "wo": "volof",
           "wuu": "wuu",
           "xal": "kalmük",

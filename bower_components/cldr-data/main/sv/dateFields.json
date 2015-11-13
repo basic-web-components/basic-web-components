@@ -3,21 +3,18 @@
     "sv": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "sv"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Era"
+            "displayName": "era"
           },
           "year": {
-            "displayName": "År",
+            "displayName": "år",
             "relative-type--1": "i fjol",
             "relative-type-0": "i år",
             "relative-type-1": "nästa år",
@@ -54,15 +51,15 @@
               "relativeTimePattern-count-other": "+{0} år"
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} år",
-              "relativeTimePattern-count-other": "-{0} år"
+              "relativeTimePattern-count-one": "−{0} år",
+              "relativeTimePattern-count-other": "−{0} år"
             }
           },
           "quarter": {
-            "displayName": "Kvartal",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "kvartal",
+            "relative-type--1": "förra kvartalet",
+            "relative-type-0": "detta kvartal",
+            "relative-type-1": "nästa kvartal",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} kvartal",
               "relativeTimePattern-count-other": "om {0} kvartal"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "kv.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "förra kv.",
+            "relative-type-0": "detta kv.",
+            "relative-type-1": "nästa kv.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} kv.",
               "relativeTimePattern-count-other": "om {0} kv."
@@ -88,20 +85,20 @@
           },
           "quarter-narrow": {
             "displayName": "kv.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "förra kv.",
+            "relative-type-0": "detta kv.",
+            "relative-type-1": "nästa kv.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} kv.",
               "relativeTimePattern-count-other": "+{0} kv."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} kv.",
-              "relativeTimePattern-count-other": "-{0} kv."
+              "relativeTimePattern-count-one": "−{0} kv",
+              "relativeTimePattern-count-other": "−{0} kv"
             }
           },
           "month": {
-            "displayName": "Månad",
+            "displayName": "månad",
             "relative-type--1": "förra månaden",
             "relative-type-0": "denna månad",
             "relative-type-1": "nästa månad",
@@ -116,9 +113,9 @@
           },
           "month-short": {
             "displayName": "m",
-            "relative-type--1": "förra månaden",
-            "relative-type-0": "denna månad",
-            "relative-type-1": "nästa månad",
+            "relative-type--1": "förra mån.",
+            "relative-type-0": "denna mån.",
+            "relative-type-1": "nästa mån.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} mån.",
               "relativeTimePattern-count-other": "om {0} mån."
@@ -130,20 +127,20 @@
           },
           "month-narrow": {
             "displayName": "m",
-            "relative-type--1": "förra månaden",
-            "relative-type-0": "denna månad",
-            "relative-type-1": "nästa månad",
+            "relative-type--1": "förra mån.",
+            "relative-type-0": "denna mån.",
+            "relative-type-1": "nästa mån.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} mån.",
               "relativeTimePattern-count-other": "+{0} mån."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} mån.",
-              "relativeTimePattern-count-other": "-{0} mån."
+              "relativeTimePattern-count-one": "−{0} mån",
+              "relativeTimePattern-count-other": "−{0} mån"
             }
           },
           "week": {
-            "displayName": "Vecka",
+            "displayName": "vecka",
             "relative-type--1": "förra veckan",
             "relative-type-0": "denna vecka",
             "relative-type-1": "nästa vecka",
@@ -158,9 +155,9 @@
           },
           "week-short": {
             "displayName": "v",
-            "relative-type--1": "förra veckan",
-            "relative-type-0": "denna vecka",
-            "relative-type-1": "nästa vecka",
+            "relative-type--1": "förra v.",
+            "relative-type-0": "denna v.",
+            "relative-type-1": "nästa v.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} v.",
               "relativeTimePattern-count-other": "om {0} v."
@@ -172,22 +169,22 @@
           },
           "week-narrow": {
             "displayName": "v",
-            "relative-type--1": "förra veckan",
-            "relative-type-0": "denna vecka",
-            "relative-type-1": "nästa vecka",
+            "relative-type--1": "förra v.",
+            "relative-type-0": "denna v.",
+            "relative-type-1": "nästa v.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} v.",
               "relativeTimePattern-count-other": "+{0} v."
             },
             "relativeTime-type-past": {
-              "relativeTimePattern-count-one": "-{0} v.",
-              "relativeTimePattern-count-other": "-{0} v."
+              "relativeTimePattern-count-one": "−{0} v",
+              "relativeTimePattern-count-other": "−{0} v"
             }
           },
           "day": {
-            "displayName": "Dag",
-            "relative-type--1": "i går",
+            "displayName": "dag",
             "relative-type--2": "i förrgår",
+            "relative-type--1": "i går",
             "relative-type-0": "i dag",
             "relative-type-1": "i morgon",
             "relative-type-2": "i övermorgon",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "dag",
-            "relative-type--1": "i går",
             "relative-type--2": "i förrgår",
+            "relative-type--1": "i går",
             "relative-type-0": "i dag",
             "relative-type-1": "i morgon",
             "relative-type-2": "i övermorgon",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "dag",
-            "relative-type--1": "i går",
             "relative-type--2": "i förrgår",
+            "relative-type--1": "i går",
             "relative-type-0": "i dag",
             "relative-type-1": "i morgon",
             "relative-type-2": "i övermorgon",
@@ -233,7 +230,7 @@
             }
           },
           "weekday": {
-            "displayName": "Veckodag"
+            "displayName": "veckodag"
           },
           "sun": {
             "relative-type--1": "söndag förra veckan",
@@ -344,7 +341,7 @@
             "displayName": "fm/em"
           },
           "hour": {
-            "displayName": "Timme",
+            "displayName": "timme",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} timme",
               "relativeTimePattern-count-other": "om {0} timmar"
@@ -377,7 +374,7 @@
             }
           },
           "minute": {
-            "displayName": "Minut",
+            "displayName": "minut",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} minut",
               "relativeTimePattern-count-other": "om {0} minuter"
@@ -401,8 +398,8 @@
           "minute-narrow": {
             "displayName": "m",
             "relativeTime-type-future": {
-              "relativeTimePattern-count-one": "+{0} m",
-              "relativeTimePattern-count-other": "+{0} m"
+              "relativeTimePattern-count-one": "+{0} min",
+              "relativeTimePattern-count-other": "+{0} min"
             },
             "relativeTime-type-past": {
               "relativeTimePattern-count-one": "−{0} min",
@@ -410,7 +407,7 @@
             }
           },
           "second": {
-            "displayName": "Sekund",
+            "displayName": "sekund",
             "relative-type-0": "nu",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "om {0} sekund",
@@ -446,7 +443,7 @@
             }
           },
           "zone": {
-            "displayName": "Tidszon"
+            "displayName": "tidszon"
           }
         }
       }

@@ -3,11 +3,8 @@
     "af-NA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11168 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-06 17:46:28 -0600 (Fri, 06 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "af",
         "territory": "NA"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0}-tyd",
-          "regionFormat-type-standard": "{0}-standaardtyd",
           "regionFormat-type-daylight": "{0}-dagligtyd",
+          "regionFormat-type-standard": "{0}-standaardtyd",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -98,7 +95,7 @@
                 "exemplarCity": "Buenos Aires"
               },
               "Cambridge_Bay": {
-                "exemplarCity": "Cambridge Bay"
+                "exemplarCity": "Cambridgebaai"
               },
               "Campo_Grande": {
                 "exemplarCity": "Campo Grande"
@@ -116,7 +113,7 @@
                 "exemplarCity": "Cayenne"
               },
               "Cayman": {
-                "exemplarCity": "Cayman"
+                "exemplarCity": "Kaaiman"
               },
               "Chicago": {
                 "exemplarCity": "Chicago"
@@ -173,13 +170,13 @@
                 "exemplarCity": "Fortaleza"
               },
               "Glace_Bay": {
-                "exemplarCity": "Glace Bay"
+                "exemplarCity": "Glacebaai"
               },
               "Godthab": {
                 "exemplarCity": "Nuuk"
               },
               "Goose_Bay": {
-                "exemplarCity": "Goose Bay"
+                "exemplarCity": "Goosebaai"
               },
               "Grand_Turk": {
                 "exemplarCity": "Grand Turk"
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, North Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Center, North Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, North Dakota"
+                },
+                "Center": {
+                  "exemplarCity": "Center, North Dakota"
                 }
               },
               "Ojinaga": {
@@ -422,16 +419,16 @@
                 "exemplarCity": "Sint John’s"
               },
               "St_Kitts": {
-                "exemplarCity": "St. Kitts"
+                "exemplarCity": "Sint Kitts"
               },
               "St_Lucia": {
-                "exemplarCity": "St. Lucia"
+                "exemplarCity": "Sint Lucia"
               },
               "St_Thomas": {
-                "exemplarCity": "St. Thomas"
+                "exemplarCity": "Sint Thomas"
               },
               "St_Vincent": {
-                "exemplarCity": "St. Vincent"
+                "exemplarCity": "Sint Vincent"
               },
               "Swift_Current": {
                 "exemplarCity": "Swift Current"
@@ -443,7 +440,7 @@
                 "exemplarCity": "Thule"
               },
               "Thunder_Bay": {
-                "exemplarCity": "Thunder Bay"
+                "exemplarCity": "Thunderbaai"
               },
               "Tijuana": {
                 "exemplarCity": "Tijuana"
@@ -1743,11 +1740,6 @@
                 "standard": "Franse Suider- en Antarktiese tyd"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Greenwich-mediaantyd"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Galapagos-tyd"
@@ -1768,6 +1760,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilberteilande-tyd"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Greenwich-mediaantyd"
               }
             },
             "Greenland_Eastern": {

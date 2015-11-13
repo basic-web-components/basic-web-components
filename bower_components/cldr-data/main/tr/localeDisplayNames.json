@@ -3,11 +3,8 @@
     "tr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "tr"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Takvim",
+          "cf": "cf",
           "colAlternate": "Sembolleri Sıralamayı Yoksayma",
           "colBackwards": "Ters Aksan Sıralama",
           "colCaseFirst": "Büyük/Küçük Harf Sıralama",
           "colCaseLevel": "Büyük/Küçük Harfe Duyarlı Sıralama",
           "colHiraganaQuaternary": "Kana Sıralaması",
+          "collation": "Sıralama Düzeni",
           "colNormalization": "Normalleştirilmiş Sıralama",
           "colNumeric": "Sayısal Sıralama",
           "colStrength": "Sıralama Gücü",
-          "collation": "Sıralama Düzeni",
           "currency": "Para Birimi",
+          "hc": "Saat Sistemi (12 - 24)",
+          "lb": "lb",
+          "ms": "Ölçü Sistemi",
           "numbers": "Rakamlar",
           "timezone": "Saat Dilimi",
           "va": "Yerel Varyant",
@@ -56,6 +57,10 @@
             "persian": "İran Takvimi",
             "roc": "Çin Cumhuriyeti Takvimi"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Sembolleri Sıralama",
             "shifted": "Sembolleri Yoksayarak Sıralama"
@@ -77,6 +82,26 @@
             "no": "Kana’yı Ayrı Sıralama",
             "yes": "Kana’yı Farklı Sıralama"
           },
+          "collation": {
+            "big5han": "Geleneksel Çince Sıralaması - Big5",
+            "compat": "compat",
+            "dictionary": "Sözlük Sıralama Düzeni",
+            "ducet": "Saptanmış Unicode Sıralaması",
+            "emoji": "emoji",
+            "eor": "Avrupa Sıralama Kuralları",
+            "gb2312han": "Basitleştirilmiş Çince Sıralaması - GB2312",
+            "phonebook": "Telefon Defteri Sıralaması",
+            "phonetic": "Fonetik Sıralama Düzeni",
+            "pinyin": "Basitleştirilmiş Çince Pinyin Sıralaması",
+            "reformed": "Yeni Sıralama Düzeni",
+            "search": "Genel Amaçlı Arama",
+            "searchjl": "Hangul İlk Sessiz Harfe Göre Arama",
+            "standard": "Standart Sıralama",
+            "stroke": "Geleneksel Çince Vuruş Sıralaması",
+            "traditional": "Geleneksel Sıralama",
+            "unihan": "Radical-Stroke Sıralama Düzeni",
+            "zhuyin": "Zhuyin Sıralaması"
+          },
           "colNormalization": {
             "no": "Normalleştirme Olmadan Sıralama",
             "yes": "Unicode Normalleştirilmiş Olarak Sıralama"
@@ -92,25 +117,24 @@
             "secondary": "Aksanları Sıralama",
             "tertiary": "Aksanları/Büyük-Küçük Harfleri/Genişliği Sıralama"
           },
-          "collation": {
-            "big5han": "Geleneksel Çince Sıralaması - Big5",
-            "dictionary": "Sözlük Sıralama Düzeni",
-            "ducet": "Saptanmış Unicode Sıralaması",
-            "eor": "Avrupa Sıralama Kuralları",
-            "gb2312han": "Basitleştirilmiş Çince Sıralaması - GB2312",
-            "phonebook": "Telefon Defteri Sıralaması",
-            "phonetic": "Fonetik Sıralama Düzeni",
-            "pinyin": "Basitleştirilmiş Çince Pinyin Sıralaması",
-            "reformed": "Yeni Sıralama Düzeni",
-            "search": "Genel Amaçlı Arama",
-            "searchjl": "Hangul İlk Sessiz Harfe Göre Arama",
-            "standard": "Standart Sıralama",
-            "stroke": "Geleneksel Çince Vuruş Sıralaması",
-            "traditional": "Geleneksel Sıralama",
-            "unihan": "Radical-Stroke Sıralama Düzeni",
-            "zhuyin": "Zhuyin Sıralaması"
+          "hc": {
+            "h11": "12 Saat Sistemi (0–11)",
+            "h12": "12 Saat Sistemi (1–12)",
+            "h23": "24 Saat Sistemi (0–23)",
+            "h24": "24 Saat Sistemi (1–24)"
+          },
+          "lb": {
+            "loose": "loose",
+            "normal": "normal",
+            "strict": "strict"
+          },
+          "ms": {
+            "metric": "Metrik Sistem",
+            "uksystem": "uksystem",
+            "ussystem": "ABD Ölçü Sistemi"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Hint-Arap Rakamları",
             "arabext": "Genişletilmiş Hint-Arap Rakamları",
             "armn": "Ermeni Rakamları",
@@ -120,6 +144,7 @@
             "brah": "Brahmi Rakamları",
             "cakm": "Chakma Rakamları",
             "cham": "Cham Rakamları",
+            "cyrl": "cyrl",
             "deva": "Devanagari Rakamları",
             "ethi": "Ge’ez Rakamları",
             "finance": "Finansal Sayılar",
@@ -135,6 +160,7 @@
             "hant": "Geleneksel Çin Rakamları",
             "hantfin": "Finansal Geleneksel Çin Rakamları",
             "hebr": "İbrani Rakamları",
+            "hmng": "hmng",
             "java": "Cava Rakamları",
             "jpan": "Japon Rakamları",
             "jpanfin": "Finansal Japon Rakamları",
@@ -147,11 +173,19 @@
             "latn": "Batı Rakamları",
             "lepc": "Lepça Rakamları",
             "limb": "Limbu Rakamları",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Malayalam Rakamları",
+            "modi": "modi",
             "mong": "Moğolca Rakamlar",
+            "mroo": "mroo",
             "mtei": "Meetei Mayek Rakamları",
             "mymr": "Myanmar Rakamları",
             "mymrshan": "Myanmar Shan Rakamları",
+            "mymrtlng": "mymrtlng",
             "native": "Yerel Rakamlar",
             "nkoo": "N’Ko Rakamları",
             "olck": "Ol Chiki Rakamları",
@@ -161,6 +195,8 @@
             "romanlow": "Küçük Harf Roma Rakamları",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "Telugu Rakamları",
             "thai": "Tay Rakamları",
             "tibt": "Tibet Rakamları",
+            "tirh": "tirh",
             "traditional": "Geleneksel Rakamlar",
-            "vaii": "Vai Rakamları"
+            "vaii": "Vai Rakamları",
+            "wara": "wara"
           }
         },
         "codePatterns": {

@@ -3,11 +3,8 @@
     "ar-DZ": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11217 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-17 23:51:09 -0600 (Tue, 17 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ar",
         "territory": "DZ"

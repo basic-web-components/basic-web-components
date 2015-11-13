@@ -3,11 +3,8 @@
     "af-NA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11168 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-06 17:46:28 -0600 (Fri, 06 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "af",
         "territory": "NA"
@@ -88,8 +85,8 @@
           "CD": "Demokratiese Republiek van die Kongo",
           "CD-alt-variant": "Kongo (DRK)",
           "CF": "Sentraal-Afrikaanse Republiek",
-          "CG": "Republiek van die Kongo",
-          "CG-alt-variant": "Kongo (Republiek)",
+          "CG": "Kongo - Brazzaville",
+          "CG-alt-variant": "Kongo (Republiek die)",
           "CH": "Switserland",
           "CI": "Ivoorkus",
           "CI-alt-variant": "CI",
@@ -197,7 +194,7 @@
           "MC": "Monaco",
           "MD": "Moldowa",
           "ME": "Montenegro",
-          "MF": "Sint Martin",
+          "MF": "St. Martin",
           "MG": "Madagaskar",
           "MH": "Marshalleilande",
           "MK": "Macedonië",

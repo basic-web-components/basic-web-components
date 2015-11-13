@@ -3,11 +3,8 @@
     "sw-CD": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11152 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-01-26 15:28:00 -0600 (Mon, 26 Jan 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sw",
         "territory": "CD"

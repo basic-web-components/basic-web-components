@@ -3,11 +3,8 @@
     "nl-BE": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11173 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-10 17:51:18 -0600 (Tue, 10 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "nl",
         "territory": "BE"
@@ -16,6 +13,7 @@
         "scripts": {
           "Afak": "Defaka",
           "Aghb": "Kaukasisch Albanees",
+          "Ahom": "Ahom",
           "Arab": "Arabisch",
           "Arab-alt-variant": "Perso-Arabisch",
           "Armi": "Keizerlijk Aramees",
@@ -65,6 +63,7 @@
           "Hans-alt-stand-alone": "vereenvoudigd Chinees",
           "Hant": "traditioneel",
           "Hant-alt-stand-alone": "traditioneel Chinees",
+          "Hatr": "Hatran",
           "Hebr": "Hebreeuws",
           "Hira": "Hiragana",
           "Hluw": "Anatolische hiërogliefen",
@@ -111,6 +110,7 @@
           "Moon": "Moon",
           "Mroo": "Mro",
           "Mtei": "Meitei",
+          "Mult": "Multani",
           "Mymr": "Birmaans",
           "Narb": "Oud Noord-Arabisch",
           "Nbat": "Nabateaans",

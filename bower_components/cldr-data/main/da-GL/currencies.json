@@ -3,11 +3,8 @@
     "da-GL": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "da",
         "territory": "GL"
@@ -52,7 +49,7 @@
           },
           "ANG": {
             "displayName": "Nederlandske Antiller-gylden",
-            "displayName-count-one": "Nederlandske Antiller-gylden",
+            "displayName-count-one": "Nederlandsk Antiller-gylden",
             "displayName-count-other": "Nederlandske Antiller-gylden",
             "symbol": "ANG"
           },
@@ -364,9 +361,9 @@
             "symbol": "CHE"
           },
           "CHF": {
-            "displayName": "Schweizisk franc",
-            "displayName-count-one": "Schweizisk franc",
-            "displayName-count-other": "Schweiziske franc",
+            "displayName": "Schweizerfranc",
+            "displayName-count-one": "Schweizerfranc",
+            "displayName-count-other": "Schweizerfranc",
             "symbol": "CHF"
           },
           "CHW": {
@@ -483,7 +480,7 @@
             "displayName-count-one": "Dansk krone",
             "displayName-count-other": "Danske kroner",
             "symbol": "kr.",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "kr."
           },
           "DOP": {
             "displayName": "Dominikansk peso",
@@ -602,7 +599,8 @@
             "displayName": "Georgisk lari",
             "displayName-count-one": "Georgisk lari",
             "displayName-count-other": "Georgiske lari",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "Ghanesisk cedi (1979–2007)",
@@ -770,7 +768,7 @@
             "displayName-count-one": "Islandsk krone",
             "displayName-count-other": "Islandske kroner",
             "symbol": "ISK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "kr."
           },
           "ITL": {
             "displayName": "Italiensk lire",
@@ -1142,7 +1140,7 @@
             "displayName-count-one": "Norsk krone",
             "displayName-count-other": "Norske kroner",
             "symbol": "NOK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "kr."
           },
           "NPR": {
             "displayName": "Nepalesisk rupee",
@@ -1267,7 +1265,7 @@
             "displayName-count-one": "Russisk rubel",
             "displayName-count-other": "Russiske rubler",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "Russisk rubel (1991–1998)",
@@ -1325,7 +1323,7 @@
             "displayName-count-one": "Svensk krone",
             "displayName-count-other": "Svenske kroner",
             "symbol": "SEK",
-            "symbol-alt-narrow": "kr"
+            "symbol-alt-narrow": "kr."
           },
           "SGD": {
             "displayName": "Singaporeansk dollar",
@@ -1491,7 +1489,7 @@
           "TWD": {
             "displayName": "Ny taiwansk dollar",
             "displayName-count-one": "Ny taiwansk dollar",
-            "displayName-count-other": "Ny taiwanske dollar",
+            "displayName-count-other": "Nye taiwanske dollar",
             "symbol": "NT$",
             "symbol-alt-narrow": "NT$"
           },

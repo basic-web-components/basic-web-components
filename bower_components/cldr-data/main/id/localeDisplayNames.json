@@ -3,11 +3,8 @@
     "id": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "id"
       },
@@ -19,16 +16,20 @@
         },
         "keys": {
           "calendar": "Kalender",
+          "cf": "cf",
           "colAlternate": "Penyortiran Abaikan Simbol",
           "colBackwards": "Penyortiran Aksen Terbalik",
           "colCaseFirst": "Pengurutan Huruf Besar/Huruf Kecil",
           "colCaseLevel": "Penyortiran Peka Huruf Besar",
           "colHiraganaQuaternary": "Penyortiran Kana",
+          "collation": "Aturan Pengurutan",
           "colNormalization": "Penyortiran Dinormalisasi",
           "colNumeric": "Penyortiran Numerik",
           "colStrength": "Kekuatan Penyortiran",
-          "collation": "Urutan Sortir",
           "currency": "Mata Uang",
+          "hc": "Siklus Jam (12 vs 24)",
+          "lb": "Gaya Pemisah Baris",
+          "ms": "Sistem Pengukuran",
           "numbers": "Angka",
           "timezone": "Zona Waktu",
           "va": "Varian Lokal",
@@ -56,6 +57,10 @@
             "persian": "Kalender Persia",
             "roc": "Kalendar Minguo"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "Sortir Simbol",
             "shifted": "Sortir Abaikan Simbol"
@@ -77,6 +82,26 @@
             "no": "Sortir Kana Secara Terpisah",
             "yes": "Sortir Kana Secara Berbeda"
           },
+          "collation": {
+            "big5han": "Urutan Sortir China Tradisional - Big5",
+            "compat": "compat",
+            "dictionary": "Urutan Sortir Kamus",
+            "ducet": "Aturan Pengurutan Unicode Default",
+            "emoji": "emoji",
+            "eor": "Aturan Pengurutan Eropa",
+            "gb2312han": "Urutan Sortir China Aks. Sederhana - GB2312",
+            "phonebook": "Urutan Sortir Buku Telepon",
+            "phonetic": "Urutan Sortir Fonetik",
+            "pinyin": "Urutan Sortir Pinyin",
+            "reformed": "Urutan Sortir yang Diubah Bentuknya",
+            "search": "Pencarian Tujuan Umum",
+            "searchjl": "Pencarian Menurut Konsonan Awal Hangul",
+            "standard": "Aturan Pengurutan Standar",
+            "stroke": "Urutan Sortir Guratan",
+            "traditional": "Urutan Sortir Tradisional",
+            "unihan": "Urutan Sortir Guratan Radikal",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "Sortir Tanpa Normalisasi",
             "yes": "Sortir Unicode Dinormalisasi"
@@ -92,25 +117,24 @@
             "secondary": "Sortir Aksen",
             "tertiary": "Sortir Aksen/Ukuran Huruf/Lebar"
           },
-          "collation": {
-            "big5han": "Urutan Sortir China Tradisional - Big5",
-            "dictionary": "Urutan Sortir Kamus",
-            "ducet": "Urutan Sortir Unicode Default",
-            "eor": "Aturan Pengurutan Eropa",
-            "gb2312han": "Urutan Sortir China Aks. Sederhana - GB2312",
-            "phonebook": "Urutan Sortir Buku Telepon",
-            "phonetic": "Urutan Sortir Fonetik",
-            "pinyin": "Urutan Sortir Pinyin",
-            "reformed": "Urutan Sortir yang Diubah Bentuknya",
-            "search": "Pencarian Tujuan Umum",
-            "searchjl": "Pencarian Menurut Konsonan Awal Hangul",
-            "standard": "Urutan Sortir Standar",
-            "stroke": "Urutan Sortir Guratan",
-            "traditional": "Urutan Sortir Tradisional",
-            "unihan": "Urutan Sortir Guratan Radikal",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "Sistem 12 Jam (0–11)",
+            "h12": "Sistem 12 Jam (1–12)",
+            "h23": "Sistem 24 Jam (0–23)",
+            "h24": "Sistem 24 Jam (1–24)"
+          },
+          "lb": {
+            "loose": "Gaya Pemisah Baris Renggang",
+            "normal": "Gaya Pemisah Baris Normal",
+            "strict": "Gaya Pemisah Baris Rapat"
+          },
+          "ms": {
+            "metric": "Sistem Metrik",
+            "uksystem": "Sistem Pengukuran Imperial",
+            "ussystem": "Sistem Pengukuran A.S."
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "Angka Arab Timur",
             "arabext": "Angka Arab Timur Diperluas",
             "armn": "Angka Armenia",
@@ -120,6 +144,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "Angka Cham",
+            "cyrl": "cyrl",
             "deva": "Angka Devanagari",
             "ethi": "Angka Etiopia",
             "finance": "Angka Finansial",
@@ -135,6 +160,7 @@
             "hant": "Angka China Tradisional",
             "hantfin": "Angka Keuangan China Tradisional",
             "hebr": "Angka Ibrani",
+            "hmng": "hmng",
             "java": "Angka Jawa",
             "jpan": "Angka Jepang",
             "jpanfin": "Angka Keuangan Jepang",
@@ -147,11 +173,19 @@
             "latn": "Angka Latin",
             "lepc": "Angka Lepcha",
             "limb": "Angka Limbu",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "Angka Malayalam",
+            "modi": "modi",
             "mong": "Angka Mongolia",
+            "mroo": "mroo",
             "mtei": "Angka Meetei Mayek",
             "mymr": "Angka Myanmar",
             "mymrshan": "Angka Myanmar Shan",
+            "mymrtlng": "mymrtlng",
             "native": "Digit Asli",
             "nkoo": "Angka N’Ko",
             "olck": "Angka Ol Chiki",
@@ -161,6 +195,8 @@
             "romanlow": "Angka Huruf Kecil Romawi",
             "saur": "Angka Saurashtra",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "Angka Sunda",
             "takr": "takr",
@@ -170,8 +206,10 @@
             "telu": "Angka Telugu",
             "thai": "Angka Thai",
             "tibt": "Angka Tibet",
+            "tirh": "tirh",
             "traditional": "Angka Tradisional",
-            "vaii": "Angka Vai"
+            "vaii": "Angka Vai",
+            "wara": "wara"
           }
         },
         "codePatterns": {

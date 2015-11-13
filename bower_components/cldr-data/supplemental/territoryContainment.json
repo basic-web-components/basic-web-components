@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11318 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-25 23:47:56 -0600 (Wed, 25 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11969 $"
     },
     "territoryContainment": {
       "001": {
@@ -15,6 +13,16 @@
           "150",
           "142",
           "009"
+        ]
+      },
+      "001-status-deprecated": {
+        "_contains": [
+          "QU"
+        ]
+      },
+      "001-status-grouping": {
+        "_contains": [
+          "EU"
         ]
       },
       "002": {
@@ -384,16 +392,6 @@
           "155",
           "151",
           "039"
-        ]
-      },
-      "150-status-deprecated": {
-        "_contains": [
-          "QU"
-        ]
-      },
-      "150-status-grouping": {
-        "_contains": [
-          "EU"
         ]
       },
       "151": {

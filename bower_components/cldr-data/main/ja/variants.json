@@ -3,24 +3,23 @@
     "ja": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11989 $"
         },
         "language": "ja"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "後期中世フランス語(〜1606)",
-          "1694ACAD": "初期現代フランス語",
           "1901": "ドイツ語旧正書法",
-          "1959ACAD": "標準ベラルーシ語 (1959)",
           "1994": "標準レージア方言正書法",
           "1996": "ドイツ語正書法(1996)",
+          "1606NICT": "後期中世フランス語(〜1606)",
+          "1694ACAD": "初期現代フランス語",
+          "1959ACAD": "標準ベラルーシ語 (1959)",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALA-LCラテン文字化(1997)",
           "ALUKU": "アロコ方言",
+          "AO1990": "AO1990",
           "AREVELA": "東アルメニア文語",
           "AREVMDA": "西アルメニア文語",
           "BAKU1926": "統一トルコラテン文字",
@@ -31,6 +30,7 @@
           "BISKE": "サン・ジョルジョ/ビーラ方言",
           "BOHORIC": "ボホリッツ・アルファベット",
           "BOONT": "ブーントリング",
+          "COLB1945": "COLB1945",
           "DAJNKO": "ダインチッツァ",
           "EKAVSK": "EKAVSK",
           "EMODENG": "初期近代英語",
@@ -56,6 +56,7 @@
           "NJIVA": "ニヴァ方言",
           "NULIK": "現代ヴォラピュク語",
           "OSOJS": "オゼアッコ/オソヤネ方言",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "パマカ方言",
           "PETR1708": "PETR1708",
           "PINYIN": "ピン音(ローマ字表記法)",

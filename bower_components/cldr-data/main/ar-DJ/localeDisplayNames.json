@@ -3,11 +3,8 @@
     "ar-DJ": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "ar",
         "territory": "DJ"
@@ -20,16 +17,20 @@
         },
         "keys": {
           "calendar": "التقويم",
+          "cf": "cf",
           "colAlternate": "التصنيف بحسب تجاهل الرموز",
           "colBackwards": "التصنيف بحسب اللكنة المعكوسة",
           "colCaseFirst": "الترتيب بحسب الأحرف الكبيرة/الصغيرة",
           "colCaseLevel": "التصنيف بحسب حساسية حالة الأحرف",
           "colHiraganaQuaternary": "التصنيف بحسب الكانا",
+          "collation": "ترتيب الفرز",
           "colNormalization": "التصنيف الموحد",
           "colNumeric": "التصنيف الرقمي",
           "colStrength": "قوة التصنيف",
-          "collation": "ترتيب الفرز",
           "currency": "العملة",
+          "hc": "نظام التوقيت (12 مقابل 24)",
+          "lb": "نمط فصل السطور",
+          "ms": "نظام القياس",
           "numbers": "الأرقام",
           "timezone": "المنطقة الزمنية",
           "va": "متغيرات اللغة",
@@ -57,6 +58,10 @@
             "persian": "التقويم الفارسي",
             "roc": "تقويم مينجو"
           },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
+          },
           "colAlternate": {
             "non-ignorable": "تصنيف الرموز",
             "shifted": "تصنيف تجاهل الرموز"
@@ -78,6 +83,26 @@
             "no": "تصنيف الكانا بشكل منفصل",
             "yes": "تصنيف الكانا بشكل مختلف"
           },
+          "collation": {
+            "big5han": "ترتيب فرز الصينية التقليدية (Big5)",
+            "compat": "compat",
+            "dictionary": "ترتيب فرز القاموس",
+            "ducet": "ترتيب فرز Unicode الافتراضي",
+            "emoji": "emoji",
+            "eor": "eor",
+            "gb2312han": "ترتيب فرز الصينية المبسطة (GB2312)",
+            "phonebook": "ترتيب فرز دليل الهاتف",
+            "phonetic": "ترتيب الفرز الصوتي",
+            "pinyin": "الترتيب الصيني بنيين المبسط",
+            "reformed": "ترتيب فرز محسَّن",
+            "search": "بحث لأغراض عامة",
+            "searchjl": "بحث باستخدام حرف الهانغول الساكن الأول",
+            "standard": "ترتيب الفرز القياسي",
+            "stroke": "الترتيب الصيني بنيين التقليدي",
+            "traditional": "ترتيب تقليدي",
+            "unihan": "ترتيب تصنيف الجذر والضغطات",
+            "zhuyin": "zhuyin"
+          },
           "colNormalization": {
             "no": "التصفية بدون تسوية",
             "yes": "تصنيف Unicode طبيعي"
@@ -93,25 +118,24 @@
             "secondary": "تصنيف اللكنات",
             "tertiary": "تصنيف اللكنات/الحالة/العرض"
           },
-          "collation": {
-            "big5han": "ترتيب فرز الصينية التقليدية (Big5)",
-            "dictionary": "ترتيب فرز القاموس",
-            "ducet": "ترتيب فرز Unicode الافتراضي",
-            "eor": "eor",
-            "gb2312han": "ترتيب فرز الصينية المبسطة (GB2312)",
-            "phonebook": "ترتيب فرز دليل الهاتف",
-            "phonetic": "ترتيب الفرز الصوتي",
-            "pinyin": "الترتيب الصيني بنيين المبسط",
-            "reformed": "ترتيب فرز محسَّن",
-            "search": "بحث لأغراض عامة",
-            "searchjl": "بحث باستخدام حرف الهانغول الساكن الأول",
-            "standard": "ترتيب الفرز القياسي",
-            "stroke": "الترتيب الصيني بنيين التقليدي",
-            "traditional": "ترتيب تقليدي",
-            "unihan": "ترتيب تصنيف الجذر والضغطات",
-            "zhuyin": "zhuyin"
+          "hc": {
+            "h11": "نظام 12 ساعة (0–11)",
+            "h12": "نظام 12 ساعة (1–12)",
+            "h23": "نظام 24 ساعة (0–23)",
+            "h24": "نظام 24 ساعة (1–24)"
+          },
+          "lb": {
+            "loose": "نمط فصل السطور: متباعد",
+            "normal": "نمط فصل السطور: عادي",
+            "strict": "نمط فصل السطور: متقارب"
+          },
+          "ms": {
+            "metric": "نظام متري",
+            "uksystem": "نظام المملكة المتحدة",
+            "ussystem": "نظام الولايات المتحدة"
           },
           "numbers": {
+            "ahom": "ahom",
             "arab": "الأرقام العربية الهندية",
             "arabext": "الأرقام العربية الهندية الممتدة",
             "armn": "الأرقام الأرمينية",
@@ -121,6 +145,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "الأرقام الديفانغارية",
             "ethi": "الأرقام الإثيوبية",
             "finance": "الأرقام المالية",
@@ -136,6 +161,7 @@
             "hant": "الأرقام الصينية التقليدية",
             "hantfin": "الأرقام المالية الصينية التقليدية",
             "hebr": "الأرقام العبرية",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "الأرقام اليابانية",
             "jpanfin": "الأرقام المالية اليابانية",
@@ -148,11 +174,19 @@
             "latn": "الأرقام الغربية",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "الأرقام الملايلامية",
+            "modi": "modi",
             "mong": "الأرقام المغولية",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "أرقام ميانمار",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "native": "الأرقام الأصلية",
             "nkoo": "nkoo",
             "olck": "olck",
@@ -162,6 +196,8 @@
             "romanlow": "الأرقام الرومانية الصغيرة",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -171,8 +207,10 @@
             "telu": "الأرقام التيلوغوية",
             "thai": "الأرقام التايلاندية",
             "tibt": "الأرقام التبتية",
+            "tirh": "tirh",
             "traditional": "أرقام تقليدية",
-            "vaii": "أرقام فاي"
+            "vaii": "أرقام فاي",
+            "wara": "wara"
           }
         },
         "codePatterns": {

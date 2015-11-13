@@ -3,18 +3,15 @@
     "gu": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "gu"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "અરબી",
           "Arab-alt-variant": "પર્સો-અરબી",
           "Armi": "ઇમ્પિરિયલ આર્મનિક",
@@ -64,6 +61,7 @@
           "Hans-alt-stand-alone": "સરળીકૃત હાન",
           "Hant": "પરંપરાગત",
           "Hant-alt-stand-alone": "પરંપરાગત હાન",
+          "Hatr": "Hatr",
           "Hebr": "હીબ્રુ",
           "Hira": "હિરાગાના",
           "Hluw": "Hluw",
@@ -74,7 +72,6 @@
           "Ital": "જૂનુ ઇટાલિક",
           "Java": "જાવાનીસ",
           "Jpan": "જાપાની",
-          "Jurc": "Jurc",
           "Kali": "કાયાહ લી",
           "Kana": "કટાકાના",
           "Khar": "ખારોશ્થી",
@@ -82,7 +79,6 @@
           "Khoj": "Khoj",
           "Knda": "કન્નડા",
           "Kore": "કોરિયન",
-          "Kpel": "Kpel",
           "Kthi": "કૈથી",
           "Lana": "લાના",
           "Laoo": "લાઓ",
@@ -94,7 +90,6 @@
           "Lina": "લીનિયર અ",
           "Linb": "લીનિયર બી",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "લિશિયન",
           "Lydi": "લિડિયન",
           "Mahj": "Mahj",
@@ -110,12 +105,11 @@
           "Moon": "મૂન",
           "Mroo": "Mroo",
           "Mtei": "મેઇતેઇ માયેક",
+          "Mult": "Mult",
           "Mymr": "મ્યાંમાર",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "એન’ કો",
-          "Nshu": "Nshu",
           "Ogam": "ઓઘામ",
           "Olck": "ઓલ ચિકી",
           "Orkh": "ઓરખોન",
@@ -205,7 +199,6 @@
           "Tale": "તાઇ લી",
           "Talu": "નવીન તાઇ લૂ",
           "Taml": "તમિલ",
-          "Tang": "Tang",
           "Tavt": "તાઇ વેઇત",
           "Telu": "તેલુગુ",
           "Teng": "તેન્ગવાર",
@@ -219,13 +212,12 @@
           "Vaii": "વાઇ",
           "Visp": "વિસિબલ સ્પીચ",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "જુની ફારસી",
           "Xsux": "સુમેરો અક્કાદિયન સુનિફોર્મ",
           "Yiii": "યી",
           "Zinh": "વંશાગત",
           "Zmth": "ગણિતીય સંકેતલિપિ",
-          "Zsym": "પ્રતીક લિપી",
+          "Zsym": "પ્રતીકો",
           "Zxxx": "અલિખિત",
           "Zyyy": "સામાન્ય",
           "Zzzz": "અજ્ઞાત લિપિ"

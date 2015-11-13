@@ -3,11 +3,8 @@
     "fil": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "fil"
       },
@@ -16,7 +13,7 @@
           "001": "Mundo",
           "002": "Africa",
           "003": "Hilagang Amerika",
-          "005": "South America",
+          "005": "Timog Amerika",
           "009": "Oceania",
           "011": "Kanlurang Africa",
           "013": "Gitnang Amerika",
@@ -25,7 +22,7 @@
           "017": "Gitnang Africa",
           "018": "Katimugang Africa",
           "019": "Americas",
-          "021": "Rehiyon ng Hilagang Amerika",
+          "021": "Northern America",
           "029": "Carribbean",
           "030": "Silangang Asya",
           "034": "Katimugang Asya",
@@ -88,7 +85,7 @@
           "CD-alt-variant": "Congo (DRC)",
           "CF": "Central African Republic",
           "CG": "Congo - Brazzaville",
-          "CG-alt-variant": "Congo (Republic)",
+          "CG-alt-variant": "Congo (Republika)",
           "CH": "Switzerland",
           "CI": "Côte d’Ivoire",
           "CI-alt-variant": "Ivory Coast",
@@ -176,8 +173,8 @@
           "KI": "Kiribati",
           "KM": "Comoros",
           "KN": "Saint Kitts and Nevis",
-          "KP": "North Korea",
-          "KR": "South Korea",
+          "KP": "Hilagang Korea",
+          "KR": "Timog Korea",
           "KW": "Kuwait",
           "KY": "Cayman Islands",
           "KZ": "Kazakhstan",

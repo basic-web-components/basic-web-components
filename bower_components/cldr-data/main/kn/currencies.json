@@ -3,11 +3,8 @@
     "kn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "kn"
       },
@@ -30,7 +27,7 @@
           "AFN": {
             "displayName": "ಅಫ್‌ಘನ್ ಅಫಗಾನಿ",
             "displayName-count-one": "ಅಫ್‌ಘನ್ ಅಫಗಾನಿ",
-            "displayName-count-other": "ಅಫ್‌ಘನ್ ಅಫಗಾನಿ",
+            "displayName-count-other": "ಅಫ್‌ಘನ್ ಅಫಗಾನಿಗಳು",
             "symbol": "AFN"
           },
           "ALL": {
@@ -42,7 +39,7 @@
           "AMD": {
             "displayName": "ಅರ್ಮೆನಿಯನ್ ಡ್ರಾಮ್",
             "displayName-count-one": "ಅರ್ಮೆನಿಯನ್ ಡ್ರಾಮ್",
-            "displayName-count-other": "ಅರ್‌ಮೇನಿಯನ್ ಡ್ರಾಮ್",
+            "displayName-count-other": "ಅರ್‌ಮೇನಿಯನ್ ಡ್ರಾಮ್‌ಗಳು",
             "symbol": "AMD"
           },
           "ANG": {
@@ -145,7 +142,7 @@
           "BDT": {
             "displayName": "ಬಾಂಗ್ಲಾದೇಶದ ಟಾಕಾ",
             "displayName-count-one": "ಬಾಂಗ್ಲಾದೇಶದ ಟಾಕಾ",
-            "displayName-count-other": "ಬಾಂಗ್ಲಾದೇಶದ ಟಾಕಾ",
+            "displayName-count-other": "ಬಾಂಗ್ಲಾದೇಶದ ಟಾಕಾಗಳು",
             "symbol": "BDT",
             "symbol-alt-narrow": "৳"
           },
@@ -201,7 +198,7 @@
           "BND": {
             "displayName": "ಬ್ರೂನಿ ಡಾಲರ್",
             "displayName-count-one": "ಬ್ರೂನಿ ಡಾಲರ್",
-            "displayName-count-other": "ಬ್ರೂನಿ ಡಾಲರ್",
+            "displayName-count-other": "ಬ್ರೂನಿ ಡಾಲರ್‌ಗಳು",
             "symbol": "BND",
             "symbol-alt-narrow": "$"
           },
@@ -265,7 +262,7 @@
           "BTN": {
             "displayName": "ಭೂತಾನೀಸ್ ನುಲ್ತರಮ್",
             "displayName-count-one": "ಭೂತಾನೀಸ್ ನುಲ್ತರಮ್",
-            "displayName-count-other": "ಭೂತಾನೀಸ್ ನುಲ್ತರಮ್",
+            "displayName-count-other": "ಭೂತಾನೀಸ್ ನುಲ್ತರಮ್‌ಗಳು",
             "symbol": "BTN"
           },
           "BUK": {
@@ -349,7 +346,7 @@
           "COP": {
             "displayName": "ಕೊಲೊಂಬಿಯೋದ ಪೆಸೊ",
             "displayName-count-one": "ಕೊಲೊಂಬಿಯೋದ ಪೆಸೊ",
-            "displayName-count-other": "ಕೊಲೊಂಬಿಯೋದ ಪೆಸೊ",
+            "displayName-count-other": "ಕೊಲೊಂಬಿಯೋದ ಪೆಸೊಗಳು",
             "symbol": "COP",
             "symbol-alt-narrow": "$"
           },
@@ -511,9 +508,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "ಬ್ರಿಟೀಷ್ ಪೌಂಡ್ ಸ್ಟೆರ್ಲಿಂಗ್",
+            "displayName": "ಬ್ರಿಟೀಷ್ ಪೌಂಡ್",
             "displayName-count-one": "ಬ್ರಿಟೀಷ್ ಪೌಂಡ್ ಸ್ಟೆರ್ಲಿಂಗ್",
-            "displayName-count-other": "ಬ್ರಿಟೀಷ್ ಪೌಂಡ್ ಸ್ಟೆರ್ಲಿಂಗ್",
+            "displayName-count-other": "ಬ್ರಿಟೀಷ್ ಪೌಂಡ್‍ಗಳು",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -525,7 +522,8 @@
             "displayName": "ಜಾರ್ಜಿಯಾದ ಲಾರಿ",
             "displayName-count-one": "ಜಾರ್ಜಿಯಾದ ಲಾರಿ",
             "displayName-count-other": "ಜಾರ್ಜಿಯಾದ ಲಾರಿ",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -594,7 +592,7 @@
           "HKD": {
             "displayName": "ಹಾಂಗ್ ಕಾಂಗ್ ಡಾಲರ್",
             "displayName-count-one": "ಹಾಂಗ್ ಕಾಂಗ್ ಡಾಲರ್",
-            "displayName-count-other": "ಹಾಂಗ್ ಕಾಂಗ್ ಡಾಲರ್",
+            "displayName-count-other": "ಹಾಂಗ್ ಕಾಂಗ್ ಡಾಲರ್‌ಗಳು",
             "symbol": "HK$",
             "symbol-alt-narrow": "$"
           },
@@ -652,9 +650,9 @@
             "symbol-alt-narrow": "₪"
           },
           "INR": {
-            "displayName": "ಭಾರತೀಯ ರುಪಾಯಿ",
-            "displayName-count-one": "ಭಾರತೀಯ ರುಪಾಯಿ",
-            "displayName-count-other": "ಭಾರತೀಯ ರುಪಾಯಿ",
+            "displayName": "ಭಾರತೀಯ ರೂಪಾಯಿ",
+            "displayName-count-one": "ಭಾರತೀಯ ರೂಪಾಯಿ",
+            "displayName-count-other": "ಭಾರತೀಯ ರೂಪಾಯಿಗಳು",
             "symbol": "₹",
             "symbol-alt-narrow": "₹"
           },
@@ -667,7 +665,7 @@
           "IRR": {
             "displayName": "ಇರಾನಿಯನ್ ರಿಯಲ್",
             "displayName-count-one": "ಇರಾನಿಯನ್ ರಿಯಲ್",
-            "displayName-count-other": "ಇರಾನಿಯನ್ ರಿಯಲ್",
+            "displayName-count-other": "ಇರಾನಿಯನ್ ರಿಯಲ್‌ಗಳು",
             "symbol": "IRR"
           },
           "ISK": {
@@ -716,7 +714,7 @@
           "KHR": {
             "displayName": "ಕಾಂಬೋಡಿಯನ್ ರಿಯಲ್",
             "displayName-count-one": "ಕಾಂಬೋಡಿಯನ್ ರಿಯಲ್",
-            "displayName-count-other": "ಕಾಂಬೋಡಿಯನ್ ರಿಯಲ್",
+            "displayName-count-other": "ಕಾಂಬೋಡಿಯನ್ ರಿಯಲ್‍ಗಳು",
             "symbol": "KHR",
             "symbol-alt-narrow": "៛"
           },
@@ -772,7 +770,7 @@
           "LAK": {
             "displayName": "ಲೋಟಿಯನ್ ಕಿಪ್",
             "displayName-count-one": "ಲೋಟಿಯನ್ ಕಿಪ್",
-            "displayName-count-other": "ಲೋಟಿಯನ್ ಕಿಪ್",
+            "displayName-count-other": "ಲೋಟಿಯನ್ ಕಿಪ್‍ಗಳು",
             "symbol": "LAK",
             "symbol-alt-narrow": "₭"
           },
@@ -786,7 +784,7 @@
           "LKR": {
             "displayName": "ಶ್ರೀಲಂಕಾದ ರುಪೀ",
             "displayName-count-one": "ಶ್ರೀಲಂಕಾದ ರುಪೀ",
-            "displayName-count-other": "ಶ್ರೀಲಂಕಾದ ರುಪೀ",
+            "displayName-count-other": "ಶ್ರೀಲಂಕಾದ ರುಪೀಗಳು",
             "symbol": "LKR",
             "symbol-alt-narrow": "Rs"
           },
@@ -893,21 +891,21 @@
           "MMK": {
             "displayName": "ಮ್ಯಾನ್ಮಾರ್ ಕ್ಯಾಟ್",
             "displayName-count-one": "ಮ್ಯಾನ್ಮಾರ್ ಕ್ಯಾಟ್",
-            "displayName-count-other": "ಮ್ಯಾನ್ಮಾರ್ ಕ್ಯಾಟ್",
+            "displayName-count-other": "ಮ್ಯಾನ್ಮಾರ್ ಕ್ಯಾಟ್‍ಗಳು",
             "symbol": "MMK",
             "symbol-alt-narrow": "K"
           },
           "MNT": {
             "displayName": "ಮಂಗೋಲಿಯಾದ ತುಗ್ರಿಕ್‌‌",
             "displayName-count-one": "ಮಂಗೋಲಿಯಾದ ತುಗ್ರಿಕ್‌‌",
-            "displayName-count-other": "ಮಂಗೋಲಿಯಾದ ತುಗ್ರಿಕ್‌‌",
+            "displayName-count-other": "ಮಂಗೋಲಿಯಾದ ತುಗ್ರಿಕ್‌‌‌ಗಳು",
             "symbol": "MNT",
             "symbol-alt-narrow": "₮"
           },
           "MOP": {
             "displayName": "ಮಕ್ಯೂದ ಪಟಕಾ",
             "displayName-count-one": "ಮಕ್ಯೂದ ಪಟಕಾ",
-            "displayName-count-other": "ಮಕ್ಯೂದ ಪಟಕಾ",
+            "displayName-count-other": "ಮಕ್ಯೂದ ಪಟಕಾಗಳು",
             "symbol": "MOP"
           },
           "MRO": {
@@ -934,7 +932,7 @@
           "MVR": {
             "displayName": "ಮಾಲ್ಡೀವಿಯನ್ ರುಫಿಯಾ",
             "displayName-count-one": "ಮಾಲ್ಡೀವಿಯನ್ ರುಫಿಯಾ",
-            "displayName-count-other": "ಮಾಲ್ಡೀವಿಯನ್ ರುಫಿಯಾ",
+            "displayName-count-other": "ಮಾಲ್ಡೀವಿಯನ್ ರುಫಿಯಾಗಳು",
             "symbol": "MVR"
           },
           "MWK": {
@@ -961,7 +959,7 @@
           "MYR": {
             "displayName": "ಮಲೇಶಿಯನ್ ರಿಂಗಿಟ್ಟ್",
             "displayName-count-one": "ಮಲೇಶಿಯನ್ ರಿಂಗಿಟ್ಟ್",
-            "displayName-count-other": "ಮಲೇಶಿಯನ್ ರಿಂಗಿಟ್ಟ್",
+            "displayName-count-other": "ಮಲೇಶಿಯನ್ ರಿಂಗಿಟ್ಟ್‌ಗಳು",
             "symbol": "MYR",
             "symbol-alt-narrow": "RM"
           },
@@ -1018,7 +1016,7 @@
           "NPR": {
             "displayName": "ನೇಪಾಳದ ರುಪೀ",
             "displayName-count-one": "ನೇಪಾಳದ ರುಪೀ",
-            "displayName-count-other": "ನೇಪಾಳದ ರುಪೀ",
+            "displayName-count-other": "ನೇಪಾಳದ ರುಪೀಗಳು",
             "symbol": "NPR",
             "symbol-alt-narrow": "Rs"
           },
@@ -1064,14 +1062,14 @@
           "PHP": {
             "displayName": "ಫಿಲಿಪ್ಪೈನ್ ಪೆಸೊ",
             "displayName-count-one": "ಫಿಲಿಪ್ಪೈನ್ ಪೆಸೊ",
-            "displayName-count-other": "ಫಿಲಿಪ್ಪೈನ್ ಪೆಸೊ",
+            "displayName-count-other": "ಫಿಲಿಪ್ಪೈನ್ ಪೆಸೊಗಳು",
             "symbol": "PHP",
             "symbol-alt-narrow": "₱"
           },
           "PKR": {
             "displayName": "ಪಾಕಿಸ್ತಾನದ ರುಪೀ",
             "displayName-count-one": "ಪಾಕಿಸ್ತಾನದ ರುಪೀ",
-            "displayName-count-other": "ಪಾಕಿಸ್ತಾನದ ರುಪೀ",
+            "displayName-count-other": "ಪಾಕಿಸ್ತಾನದ ರುಪೀಗಳು",
             "symbol": "PKR",
             "symbol-alt-narrow": "Rs"
           },
@@ -1128,7 +1126,7 @@
             "displayName-count-one": "ರಶಿಯನ್ ರೂಬಲ್",
             "displayName-count-other": "ರಶಿಯನ್ ರೂಬಲ್‍ಗಳು",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1185,7 +1183,7 @@
           "SGD": {
             "displayName": "ಸಿಂಗಾಪುರ್ ಡಾಲರ್‌",
             "displayName-count-one": "ಸಿಂಗಾಪುರ್ ಡಾಲರ್‌",
-            "displayName-count-other": "ಸಿಂಗಾಪುರ್ ಡಾಲರ್‌",
+            "displayName-count-other": "ಸಿಂಗಾಪುರ್ ಡಾಲರ್‌‌ಗಳು",
             "symbol": "SGD",
             "symbol-alt-narrow": "$"
           },
@@ -1259,7 +1257,7 @@
           "SZL": {
             "displayName": "ಸ್ವಾಜಿ ಲಿಲಂಗೆನಿ",
             "displayName-count-one": "ಸ್ವಾಜಿ ಲಿಲಂಗೆನಿ",
-            "displayName-count-other": "ಸ್ವಾಜಿ ಲಿಲಂಗೆನಿಗಳು",
+            "displayName-count-other": "ಸ್ವಾಜಿ ಎಮಲಂಗೆನಿ",
             "symbol": "SZL"
           },
           "THB": {
@@ -1328,7 +1326,7 @@
           "TWD": {
             "displayName": "ನ್ಯೂ ತೈವಾನ್ ಡಾಲರ್",
             "displayName-count-one": "ನ್ಯೂ ತೈವಾನ್ ಡಾಲರ್",
-            "displayName-count-other": "ನ್ಯೂ ತೈವಾನ್ ಡಾಲರ್",
+            "displayName-count-other": "ನ್ಯೂ ತೈವಾನ್ ಡಾಲರ್‌ಗಳು",
             "symbol": "NT$",
             "symbol-alt-narrow": "NT$"
           },
@@ -1392,7 +1390,7 @@
           "UZS": {
             "displayName": "ಉಜ್ಬೇಕಿಸ್ತಾನ್ ಸೊಮ್",
             "displayName-count-one": "ಉಜ್ಬೇಕಿಸ್ತಾನ್ ಸೊಮ್",
-            "displayName-count-other": "ಉಜ್ಬೇಕಿಸ್ತಾನ್ ಸೊಮ್‍ಗಳು",
+            "displayName-count-other": "ಉಜ್ಬೇಕಿಸ್ತಾನ್ ಸೊಮ್",
             "symbol": "UZS"
           },
           "VEB": {
@@ -1484,7 +1482,7 @@
           },
           "XOF": {
             "displayName": "CFA ಫ್ರಾಂಕ್ BCEAO",
-            "displayName-count-one": "CFA ಫ್ರಾಂಕ್ BCEAO",
+            "displayName-count-one": "ಪಶ್ಚಿಮ ಆಫ್ರಿಕಾದ [CFA] ಫ್ರಾಂಕ್‌",
             "displayName-count-other": "CFA ಫ್ರಾಂಕ್ BCEAO",
             "symbol": "CFA"
           },
@@ -1493,7 +1491,7 @@
             "symbol": "XPD"
           },
           "XPF": {
-            "displayName": "CFP ಫ್ರಾಂಕ್",
+            "displayName": "[CFP] ಫ್ರಾಂಕ್",
             "displayName-count-one": "CFP ಫ್ರಾಂಕ್",
             "displayName-count-other": "CFP ಫ್ರಾಂಕ್",
             "symbol": "CFPF"

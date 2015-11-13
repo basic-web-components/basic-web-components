@@ -3,24 +3,23 @@
     "da": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11944 $"
         },
         "language": "da"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "sen middelfransk frem til 1606",
-          "1694ACAD": "tidlig moderne fransk",
           "1901": "traditionel tysk retskrivning",
-          "1959ACAD": "akademisk",
           "1994": "standardiseret Resi-ortografi",
           "1996": "tysk retskrivning fra 1996",
+          "1606NICT": "sen middelfransk frem til 1606",
+          "1694ACAD": "tidlig moderne fransk",
+          "1959ACAD": "akademisk",
+          "ABL1943": "ABL1943",
           "ALALC97": "ALA-LC-romanisering fra 1997",
           "ALUKU": "aluku-dialekt",
+          "AO1990": "AO1990",
           "AREVELA": "østarmensk",
           "AREVMDA": "vestarmensk",
           "BAKU1926": "forenet tyrkisk-latinsk alfabet",
@@ -31,6 +30,7 @@
           "BISKE": "San Giorgio-/Bila-dialekt",
           "BOHORIC": "Bohorič-alfabet",
           "BOONT": "boontling",
+          "COLB1945": "COLB1945",
           "DAJNKO": "Dajnko-alfabet",
           "EKAVSK": "EKAVSK",
           "EMODENG": "tidlig moderne engelsk",
@@ -56,6 +56,7 @@
           "NJIVA": "Gniva-/Nijva-dialekt",
           "NULIK": "moderne volapük",
           "OSOJS": "Oseacco-/Osojane-dialekt",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "Pamaka-dialekt",
           "PETR1708": "PETR1708",
           "PINYIN": "pinyin",

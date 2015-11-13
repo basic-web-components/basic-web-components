@@ -3,11 +3,8 @@
     "th": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "th"
       },
@@ -15,6 +12,7 @@
         "scripts": {
           "Afak": "อะฟาคา",
           "Aghb": "แอลเบเนีย คอเคเซีย",
+          "Ahom": "Ahom",
           "Arab": "อาหรับ",
           "Arab-alt-variant": "เปอร์เซีย-อาหรับ",
           "Armi": "อิมพีเรียล อราเมอิก",
@@ -64,6 +62,7 @@
           "Hans-alt-stand-alone": "ฮั่นตัวย่อ",
           "Hant": "ตัวเต็ม",
           "Hant-alt-stand-alone": "ฮั่นตัวเต็ม",
+          "Hatr": "Hatr",
           "Hebr": "ฮีบรู",
           "Hira": "ฮิระงะนะ",
           "Hluw": "อักขระอานาโตเลีย",
@@ -110,6 +109,7 @@
           "Moon": "มูน",
           "Mroo": "มโร",
           "Mtei": "เมเทมาเยก",
+          "Mult": "Mult",
           "Mymr": "พม่า",
           "Narb": "อาระเบียเหนือโบราณ",
           "Nbat": "นาบาทาเอียน",

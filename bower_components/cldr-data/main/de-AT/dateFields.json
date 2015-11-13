@@ -3,11 +3,8 @@
     "de-AT": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11250 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-18 17:24:51 -0600 (Wed, 18 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "de",
         "territory": "AT"
@@ -187,8 +184,8 @@
           },
           "day": {
             "displayName": "Tag",
-            "relative-type--1": "gestern",
             "relative-type--2": "vorgestern",
+            "relative-type--1": "gestern",
             "relative-type-0": "heute",
             "relative-type-1": "morgen",
             "relative-type-2": "übermorgen",
@@ -203,8 +200,8 @@
           },
           "day-short": {
             "displayName": "Tag",
-            "relative-type--1": "gestern",
             "relative-type--2": "vorgestern",
+            "relative-type--1": "gestern",
             "relative-type-0": "heute",
             "relative-type-1": "morgen",
             "relative-type-2": "übermorgen",
@@ -219,8 +216,8 @@
           },
           "day-narrow": {
             "displayName": "Tag",
-            "relative-type--1": "gestern",
             "relative-type--2": "vorgestern",
+            "relative-type--1": "gestern",
             "relative-type-0": "heute",
             "relative-type-1": "morgen",
             "relative-type-2": "übermorgen",

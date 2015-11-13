@@ -3,11 +3,8 @@
     "kn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11351 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-06 12:59:09 -0600 (Fri, 06 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11977 $"
         },
         "language": "kn"
       },
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "ತ್ರೈಮಾಸಿಕ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ಕಳೆದ ತ್ರೈಮಾಸಿಕ",
+            "relative-type-0": "ಈ ತ್ರೈಮಾಸಿಕ",
+            "relative-type-1": "ಮುಂದಿನ ತ್ರೈಮಾಸಿಕ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} ತ್ರೈಮಾಸಿಕದಲ್ಲಿ",
               "relativeTimePattern-count-other": "{0} ತ್ರೈಮಾಸಿಕಗಳಲ್ಲಿ"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "ತ್ರೈಮಾಸಿಕ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ಕಳೆದ ತ್ರೈಮಾಸಿಕ",
+            "relative-type-0": "ಈ ತ್ರೈಮಾಸಿಕ",
+            "relative-type-1": "ಮುಂದಿನ ತ್ರೈಮಾಸಿಕ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} ತ್ರೈ.ಮಾ.ದಲ್ಲಿ",
               "relativeTimePattern-count-other": "{0} ತ್ರೈ.ಮಾ.ಗಳಲ್ಲಿ"
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "ತ್ರೈಮಾಸಿಕ",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "ಕಳೆದ ತ್ರೈಮಾಸಿಕ",
+            "relative-type-0": "ಈ ತ್ರೈಮಾಸಿಕ",
+            "relative-type-1": "ಮುಂದಿನ ತ್ರೈಮಾಸಿಕ",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} ತ್ರೈ",
               "relativeTimePattern-count-other": "+{0} ತ್ರೈ"
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "ದಿನ",
-            "relative-type--1": "ನಿನ್ನೆ",
             "relative-type--2": "ಮೊನ್ನೆ",
+            "relative-type--1": "ನಿನ್ನೆ",
             "relative-type-0": "ಇಂದು",
             "relative-type-1": "ನಾಳೆ",
             "relative-type-2": "ನಾಡಿದ್ದು",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "ದಿನ",
-            "relative-type--1": "ನಿನ್ನೆ",
             "relative-type--2": "ಮೊನ್ನೆ",
+            "relative-type--1": "ನಿನ್ನೆ",
             "relative-type-0": "ಇಂದು",
             "relative-type-1": "ನಾಳೆ",
             "relative-type-2": "ನಾಡಿದ್ದು",
@@ -217,9 +214,9 @@
             }
           },
           "day-narrow": {
-            "displayName": "ದಿ",
-            "relative-type--1": "ನಿನ್ನೆ",
+            "displayName": "ದಿನ",
             "relative-type--2": "ಮೊನ್ನೆ",
+            "relative-type--1": "ನಿನ್ನೆ",
             "relative-type-0": "ಇಂದು",
             "relative-type-1": "ನಾಳೆ",
             "relative-type-2": "ನಾಡಿದ್ದು",

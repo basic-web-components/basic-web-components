@@ -3,11 +3,8 @@
     "nl-SR": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "nl",
         "territory": "SR"
@@ -81,7 +78,7 @@
           "BT": "Bhutan",
           "BV": "Bouveteiland",
           "BW": "Botswana",
-          "BY": "Wit-Rusland",
+          "BY": "Belarus",
           "BZ": "Belize",
           "CA": "Canada",
           "CC": "Cocoseilanden",
@@ -277,7 +274,7 @@
           "TA": "Tristan da Cunha",
           "TC": "Turks- en Caicoseilanden",
           "TD": "Tsjaad",
-          "TF": "Franse Zuidelijke Gebieden",
+          "TF": "Franse Gebieden in de zuidelijke Indische Oceaan",
           "TG": "Togo",
           "TH": "Thailand",
           "TJ": "Tadzjikistan",

@@ -3,11 +3,8 @@
     "ka": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11322 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-26 14:53:52 -0600 (Thu, 26 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ka"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "დრო: {0}",
-          "regionFormat-type-standard": "{0} სტანდარტული დრო",
           "regionFormat-type-daylight": "{0} ზაფხულის დრო",
+          "regionFormat-type-standard": "{0} სტანდარტული დრო",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -38,26 +35,26 @@
                 "exemplarCity": "არაგუაინა"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ლა რიოხა"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "რიო გალეგოსი"
-                },
-                "Salta": {
-                  "exemplarCity": "სალტა"
                 },
                 "San_Juan": {
                   "exemplarCity": "სან ხუანი"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "უშუაია"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ლა რიოხა"
+                },
                 "San_Luis": {
                   "exemplarCity": "სან-ლუისი"
                 },
+                "Salta": {
+                  "exemplarCity": "სალტა"
+                },
                 "Tucuman": {
                   "exemplarCity": "ტუკუმანი"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "უშუაია"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "ჰერმოსილო"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "ნოქსი, ინდიანა"
-                },
-                "Marengo": {
-                  "exemplarCity": "მარენგო, ინდიანა"
+                "Vincennes": {
+                  "exemplarCity": "ვინსენი, ინდიანა"
                 },
                 "Petersburg": {
                   "exemplarCity": "პიტერსბურგი, ინდიანა"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "თელ სითი, ინდიანა"
                 },
-                "Vevay": {
-                  "exemplarCity": "ვივეი, ინდიანა"
-                },
-                "Vincennes": {
-                  "exemplarCity": "ვინსენი, ინდიანა"
+                "Knox": {
+                  "exemplarCity": "ნოქსი, ინდიანა"
                 },
                 "Winamac": {
                   "exemplarCity": "უინემაკი, ინდიანა"
+                },
+                "Marengo": {
+                  "exemplarCity": "მარენგო, ინდიანა"
+                },
+                "Vevay": {
+                  "exemplarCity": "ვივეი, ინდიანა"
                 }
               },
               "Indianapolis": {
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ბიულა, ჩრდილოეთი დაკოტა"
                 },
-                "Center": {
-                  "exemplarCity": "ცენტრი, ჩრდილოეთი დაკოტა"
-                },
                 "New_Salem": {
                   "exemplarCity": "ნიუ სალემი, ჩრდილოეთი დაკოტა"
+                },
+                "Center": {
+                  "exemplarCity": "ცენტრი, ჩრდილოეთი დაკოტა"
                 }
               },
               "Ojinaga": {
@@ -882,7 +879,7 @@
                 "exemplarCity": "კალკუტა"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "ჩიტა"
               },
               "Choibalsan": {
                 "exemplarCity": "ჩოიბალსანი"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "სინგაპური"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "სრედნეკოლიმსკი"
               },
               "Taipei": {
                 "exemplarCity": "ტაიპეი"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ოკლენდი"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "ბუგენვილი"
               },
               "Chatham": {
                 "exemplarCity": "ჩათამი"
@@ -1721,11 +1718,6 @@
                 "standard": "ფრანგული სამხრეთის და ანტარქტიკის დრო"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "გრინვიჩის საშუალო დრო"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "გალაპაგოსის დრო"
@@ -1746,6 +1738,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "გილბერტის კუნძულების დრო"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "გრინვიჩის საშუალო დრო"
               }
             },
             "Greenland_Eastern": {

@@ -3,21 +3,18 @@
     "cs": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "cs"
       },
       "dates": {
         "fields": {
           "era": {
-            "displayName": "Letopočet"
+            "displayName": "letopočet"
           },
           "year": {
-            "displayName": "Rok",
+            "displayName": "rok",
             "relative-type--1": "minulý rok",
             "relative-type-0": "tento rok",
             "relative-type-1": "příští rok",
@@ -71,10 +68,10 @@
             }
           },
           "quarter": {
-            "displayName": "Čtvrtletí",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "displayName": "čtvrtletí",
+            "relative-type--1": "minulé čtvrtletí",
+            "relative-type-0": "toto čtvrtletí",
+            "relative-type-1": "příští čtvrtletí",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} čtvrtletí",
               "relativeTimePattern-count-few": "za {0} čtvrtletí",
@@ -90,9 +87,9 @@
           },
           "quarter-short": {
             "displayName": "Q",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "minulé čtvrtletí",
+            "relative-type-0": "toto čtvrtletí",
+            "relative-type-1": "příští čtvrtletí",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} Q",
               "relativeTimePattern-count-few": "+{0} Q",
@@ -108,9 +105,9 @@
           },
           "quarter-narrow": {
             "displayName": "Q",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "minulé čtvrtletí",
+            "relative-type-0": "toto čtvrtletí",
+            "relative-type-1": "příští čtvrtletí",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} Q",
               "relativeTimePattern-count-few": "+{0} Q",
@@ -125,7 +122,7 @@
             }
           },
           "month": {
-            "displayName": "Měsíc",
+            "displayName": "měsíc",
             "relative-type--1": "minulý měsíc",
             "relative-type-0": "tento měsíc",
             "relative-type-1": "příští měsíc",
@@ -179,7 +176,7 @@
             }
           },
           "week": {
-            "displayName": "Týden",
+            "displayName": "týden",
             "relative-type--1": "minulý týden",
             "relative-type-0": "tento týden",
             "relative-type-1": "příští týden",
@@ -198,9 +195,9 @@
           },
           "week-short": {
             "displayName": "týd.",
-            "relative-type--1": "minulý týden",
-            "relative-type-0": "tento týden",
-            "relative-type-1": "příští týden",
+            "relative-type--1": "minulý týd.",
+            "relative-type-0": "tento týd.",
+            "relative-type-1": "příští týd.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} týd.",
               "relativeTimePattern-count-few": "za {0} týd.",
@@ -216,9 +213,9 @@
           },
           "week-narrow": {
             "displayName": "týd.",
-            "relative-type--1": "minulý týden",
-            "relative-type-0": "tento týden",
-            "relative-type-1": "příští týden",
+            "relative-type--1": "minulý týd.",
+            "relative-type-0": "tento týd.",
+            "relative-type-1": "příští týd.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} týd.",
               "relativeTimePattern-count-few": "za {0} týd.",
@@ -233,9 +230,9 @@
             }
           },
           "day": {
-            "displayName": "Den",
-            "relative-type--1": "včera",
+            "displayName": "den",
             "relative-type--2": "předevčírem",
+            "relative-type--1": "včera",
             "relative-type-0": "dnes",
             "relative-type-1": "zítra",
             "relative-type-2": "pozítří",
@@ -254,8 +251,8 @@
           },
           "day-short": {
             "displayName": "den",
-            "relative-type--1": "včera",
             "relative-type--2": "předevčírem",
+            "relative-type--1": "včera",
             "relative-type-0": "dnes",
             "relative-type-1": "zítra",
             "relative-type-2": "pozítří",
@@ -274,8 +271,8 @@
           },
           "day-narrow": {
             "displayName": "den",
-            "relative-type--1": "včera",
             "relative-type--2": "předevčírem",
+            "relative-type--1": "včera",
             "relative-type-0": "dnes",
             "relative-type-1": "zítra",
             "relative-type-2": "pozítří",
@@ -293,7 +290,7 @@
             }
           },
           "weekday": {
-            "displayName": "Den v týdnu"
+            "displayName": "den v týdnu"
           },
           "sun": {
             "relative-type--1": "minulou neděli",
@@ -401,10 +398,10 @@
             "relative-type-1": "příští sobotu"
           },
           "dayperiod": {
-            "displayName": "dop./odp."
+            "displayName": "část dne"
           },
           "hour": {
-            "displayName": "Hodina",
+            "displayName": "hodina",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} hodinu",
               "relativeTimePattern-count-few": "za {0} hodiny",
@@ -449,7 +446,7 @@
             }
           },
           "minute": {
-            "displayName": "Minuta",
+            "displayName": "minuta",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} minutu",
               "relativeTimePattern-count-few": "za {0} minuty",
@@ -494,7 +491,7 @@
             }
           },
           "second": {
-            "displayName": "Sekunda",
+            "displayName": "sekunda",
             "relative-type-0": "nyní",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "za {0} sekundu",
@@ -542,7 +539,7 @@
             }
           },
           "zone": {
-            "displayName": "Časové pásmo"
+            "displayName": "časové pásmo"
           }
         }
       }

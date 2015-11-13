@@ -3,11 +3,8 @@
     "az-Latn": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "az",
         "script": "Latn"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "{0} Vaxtı",
-          "regionFormat-type-standard": "{0} Standart Vaxtı",
           "regionFormat-type-daylight": "{0} Yay Vaxtı",
+          "regionFormat-type-standard": "{0} Standart Vaxtı",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguayna"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "Rioxa"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Qalyeqos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Xuan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Uşuaya"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "Rioxa"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tukuman"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Uşuaya"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosilo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Noks"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marenqo"
+                "Vincennes": {
+                  "exemplarCity": "Vinsen"
                 },
                 "Petersburg": {
                   "exemplarCity": "Pitersburq"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vivey"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vinsen"
+                "Knox": {
+                  "exemplarCity": "Noks"
                 },
                 "Winamac": {
                   "exemplarCity": "Vinamak"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marenqo"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vivey"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Şimali Dakota"
                 },
-                "Center": {
-                  "exemplarCity": "Mərkəz, Şimal Dakota"
-                },
                 "New_Salem": {
                   "exemplarCity": "Nyu Salem"
+                },
+                "Center": {
+                  "exemplarCity": "Mərkəz, Şimal Dakota"
                 }
               },
               "Ojinaga": {
@@ -883,7 +880,7 @@
                 "exemplarCity": "Kolkata"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Çita"
               },
               "Choibalsan": {
                 "exemplarCity": "Çoybalsan"
@@ -1027,7 +1024,7 @@
                 "exemplarCity": "Sinqapur"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "Srednekolımsk"
               },
               "Taipei": {
                 "exemplarCity": "Taipei"
@@ -1153,7 +1150,7 @@
                 "exemplarCity": "Aukland"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "Buqanvil"
               },
               "Chatham": {
                 "exemplarCity": "Çatam"
@@ -1722,11 +1719,6 @@
                 "standard": "Fransız Cənubi və Antarktik Vaxtı"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Qrinviç Orta Vaxtı"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Qalapaqos Vaxtı"
@@ -1747,6 +1739,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Gilbert Adaları Vaxtı"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Qrinviç Orta Vaxtı"
               }
             },
             "Greenland_Eastern": {

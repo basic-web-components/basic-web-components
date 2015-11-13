@@ -3,11 +3,8 @@
     "sr-Cyrl-BA": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11254 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-18 22:16:36 -0600 (Wed, 18 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sr",
         "script": "Cyrl",
@@ -16,15 +13,15 @@
       "characters": {
         "exemplarCharacters": "[а б в г д ђ е ж з и ј к л љ м н њ о п р с т ћ у ф х ц ч џ ш]",
         "auxiliary": "[ё й щ ъ ы ь э ю я]",
-        "punctuation": "[\\- ‐ – , ; \\: ! ? . … ‘ ‚ “ „ ( ) \\[ \\] \\{ \\} * #]",
         "index": "[А Б В Г Д Ђ Е Ж З И Ј К Л Љ М Н Њ О П Р С Т Ћ У Ф Х Ц Ч Џ Ш]",
+        "punctuation": "[\\\\- ‐ – , ; \\\\: ! ? . … ‘ ‚ “ „ ( ) \\\\[ \\\\] \\\\{ \\\\} * #]",
         "ellipsis": {
+          "final": "{0}…",
           "initial": "…{0}",
           "medial": "{0}…{1}",
-          "final": "{0}…",
+          "word-final": "{0} …",
           "word-initial": "… {0}",
-          "word-medial": "{0} … {1}",
-          "word-final": "{0} …"
+          "word-medial": "{0} … {1}"
         },
         "moreInformation": "?"
       }

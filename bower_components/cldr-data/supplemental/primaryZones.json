@@ -1,11 +1,9 @@
 {
   "supplemental": {
     "version": {
-      "_unicodeVersion": "7.0.0",
-      "_number": "$Revision: 11162 $"
-    },
-    "generation": {
-      "_date": "$Date: 2015-02-03 17:45:30 -0600 (Tue, 03 Feb 2015) $"
+      "_cldrVersion": "28",
+      "_unicodeVersion": "8.0.0",
+      "_number": "$Revision: 11937 $"
     },
     "primaryZones": {
       "CL": "America/Santiago",

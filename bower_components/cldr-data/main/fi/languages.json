@@ -3,11 +3,8 @@
     "fi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11333 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-01 16:07:08 -0600 (Sun, 01 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "fi"
       },
@@ -55,7 +52,6 @@
           "ay": "aimara",
           "az": "azeri",
           "az-alt-short": "azeri",
-          "azb": "eteläazeri",
           "ba": "baškiiri",
           "bal": "belutši",
           "ban": "bali",
@@ -72,6 +68,7 @@
           "bfd": "fut",
           "bfq": "badaga",
           "bg": "bulgaria",
+          "bgn": "länsibelutši",
           "bho": "bhodžpuri",
           "bi": "bislama",
           "bik": "bikol",
@@ -166,7 +163,7 @@
           "eo": "esperanto",
           "es": "espanja",
           "es-419": "amerikanespanja",
-          "es-ES": "espanjanespanja",
+          "es-ES": "euroopanespanja",
           "es-MX": "meksikonespanja",
           "esu": "alaskanjupik",
           "et": "viro",
@@ -337,6 +334,7 @@
           "lo": "lao",
           "lol": "mongo",
           "loz": "lozi",
+          "lrc": "pohjoisluri",
           "lt": "liettua",
           "ltg": "latgalli",
           "lu": "katanganluba",
@@ -358,6 +356,7 @@
           "mas": "maasai",
           "mde": "maba",
           "mdf": "mokša",
+          "mdh": "mdh",
           "mdr": "mandar",
           "men": "mende",
           "mer": "meru",
@@ -370,6 +369,7 @@
           "mi": "maori",
           "mic": "micmac",
           "min": "minangkabau",
+          "mis": "mis",
           "mk": "makedonia",
           "ml": "malajalam",
           "mn": "mongoli",
@@ -398,6 +398,7 @@
           "nb": "norjan bokmål",
           "nd": "pohjois-ndebele",
           "nds": "alasaksa",
+          "nds-NL": "alankomaidenalasaksa",
           "ne": "nepali",
           "new": "newari",
           "ng": "ndonga",
@@ -453,7 +454,7 @@
           "ps": "paštu",
           "pt": "portugali",
           "pt-BR": "brasilianportugali",
-          "pt-PT": "portugalinportugali",
+          "pt-PT": "euroopanportugali",
           "qu": "ketšua",
           "quc": "kʼicheʼ",
           "qug": "chimborazonylänköketšua",
@@ -491,6 +492,7 @@
           "sco": "skotti",
           "sd": "sindhi",
           "sdc": "sassarinsardi",
+          "sdh": "eteläkurdi",
           "se": "pohjoissaame",
           "see": "seneca",
           "seh": "sena",
@@ -601,6 +603,7 @@
           "wal": "wolaitta",
           "war": "waray",
           "was": "washo",
+          "wbp": "warlpiri",
           "wo": "wolof",
           "wuu": "wu-kiina",
           "xal": "kalmukki",

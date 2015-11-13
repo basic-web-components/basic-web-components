@@ -3,11 +3,8 @@
     "it-SM": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "it",
         "territory": "SM"
@@ -18,8 +15,8 @@
           "gmtFormat": "GMT{0}",
           "gmtZeroFormat": "GMT",
           "regionFormat": "Ora {0}",
-          "regionFormat-type-standard": "Ora standard: {0}",
           "regionFormat-type-daylight": "Ora legale: {0}",
+          "regionFormat-type-standard": "Ora standard: {0}",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -27,7 +24,7 @@
                 "exemplarCity": "Adak"
               },
               "Anchorage": {
-                "exemplarCity": "Fuso orario Alaska"
+                "exemplarCity": "Anchorage"
               },
               "Anguilla": {
                 "exemplarCity": "Anguilla"
@@ -39,26 +36,26 @@
                 "exemplarCity": "Araguaina"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "La Rioja"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "Rio Gallegos"
-                },
-                "Salta": {
-                  "exemplarCity": "Salta"
                 },
                 "San_Juan": {
                   "exemplarCity": "San Juan"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "Ushuaia"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "La Rioja"
+                },
                 "San_Luis": {
                   "exemplarCity": "San Luis"
                 },
+                "Salta": {
+                  "exemplarCity": "Salta"
+                },
                 "Tucuman": {
                   "exemplarCity": "Tucumán"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "Ushuaia"
                 }
               },
               "Aruba": {
@@ -209,11 +206,8 @@
                 "exemplarCity": "Hermosillo"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "Knox, Indiana"
-                },
-                "Marengo": {
-                  "exemplarCity": "Marengo, Indiana"
+                "Vincennes": {
+                  "exemplarCity": "Vincennes, Indiana"
                 },
                 "Petersburg": {
                   "exemplarCity": "Petersburg, Indiana"
@@ -221,14 +215,17 @@
                 "Tell_City": {
                   "exemplarCity": "Tell City, Indiana"
                 },
-                "Vevay": {
-                  "exemplarCity": "Vevay, Indiana"
-                },
-                "Vincennes": {
-                  "exemplarCity": "Vincennes, Indiana"
+                "Knox": {
+                  "exemplarCity": "Knox, Indiana"
                 },
                 "Winamac": {
                   "exemplarCity": "Winamac, Indiana"
+                },
+                "Marengo": {
+                  "exemplarCity": "Marengo, Indiana"
+                },
+                "Vevay": {
+                  "exemplarCity": "Vevay, Indiana"
                 }
               },
               "Indianapolis": {
@@ -342,11 +339,11 @@
                 "Beulah": {
                   "exemplarCity": "Beulah, Dakota del nord"
                 },
-                "Center": {
-                  "exemplarCity": "Center, Dakota del nord"
-                },
                 "New_Salem": {
                   "exemplarCity": "New Salem, Dakota del nord"
+                },
+                "Center": {
+                  "exemplarCity": "Center, Dakota del nord"
                 }
               },
               "Ojinaga": {
@@ -484,7 +481,7 @@
                 "exemplarCity": "Capo Verde"
               },
               "Faeroe": {
-                "exemplarCity": "Isole Faeroe"
+                "exemplarCity": "Isole Fær Øer"
               },
               "Madeira": {
                 "exemplarCity": "Madeira"
@@ -541,7 +538,7 @@
               },
               "Dublin": {
                 "long": {
-                  "daylight": "Ora legale Irlanda"
+                  "daylight": "Ora legale dell’Irlanda"
                 },
                 "exemplarCity": "Dublino"
               },
@@ -577,7 +574,7 @@
               },
               "London": {
                 "long": {
-                  "daylight": "Ora legale Regno Unito"
+                  "daylight": "Ora legale del Regno Unito"
                 },
                 "exemplarCity": "Londra"
               },
@@ -883,7 +880,7 @@
                 "exemplarCity": "Calcutta"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "Čita"
               },
               "Choibalsan": {
                 "exemplarCity": "Choibalsan"
@@ -1422,8 +1419,8 @@
             "Alaska": {
               "long": {
                 "generic": "Ora dell’Alaska",
-                "standard": "Ora standard Alaska",
-                "daylight": "Ora legale Alaska"
+                "standard": "Ora standard dell’Alaska",
+                "daylight": "Ora legale dell’Alaska"
               }
             },
             "Amazon": {
@@ -1623,7 +1620,7 @@
             },
             "Christmas": {
               "long": {
-                "standard": "Ora dell’Isola di Natale"
+                "standard": "Ora dell’Isola Christmas"
               }
             },
             "Cocos": {
@@ -1744,11 +1741,6 @@
                 "standard": "Ora delle Terre australi e antartiche francesi"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "Ora del meridiano di Greenwich"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "Ora delle Galapagos"
@@ -1769,6 +1761,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "Ora delle isole Gilbert"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "Ora del meridiano di Greenwich"
               }
             },
             "Greenland_Eastern": {

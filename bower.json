@@ -4,10 +4,10 @@
   "dependencies": {
     "deepmerge": "^0.2.10",
     "globalize": "^1.0.0",
-    "iron-ajax": "PolymerElements/iron-ajax#^1.0.2",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.0.9",
     "iron-icons": "PolymerElements/iron-icons#^1.0.3",
-    "iron-overlay-behavior": "PolymerElements/iron-overlay-behavior#^1.0.6",
-    "polymer": "Polymer/polymer#^1.1"
+    "iron-overlay-behavior": "PolymerElements/iron-overlay-behavior#^1.0.9",
+    "polymer": "Polymer/polymer#^1.2.1"
   },
   "devDependencies": {
     "web-component-tester": "^3.3.22"

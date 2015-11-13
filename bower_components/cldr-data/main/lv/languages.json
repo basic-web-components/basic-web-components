@@ -3,11 +3,8 @@
     "lv": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11919 $"
         },
         "language": "lv"
       },
@@ -55,7 +52,7 @@
           "ay": "aimaru",
           "az": "azerbaidžāņu",
           "az-alt-short": "azerbaidžāņu",
-          "azb": "azb",
+          "az-Arab": "dienvidazerbaidžāņu",
           "ba": "baškīru",
           "bal": "beludžu",
           "ban": "baliešu",
@@ -72,6 +69,7 @@
           "bfd": "bafutu",
           "bfq": "bfq",
           "bg": "bulgāru",
+          "bgn": "rietumbeludžu",
           "bho": "bhodžpūru",
           "bi": "bišlamā",
           "bik": "bikolu",
@@ -158,7 +156,7 @@
           "en-AU": "Austrālijas angļu",
           "en-CA": "Kanādas angļu",
           "en-GB": "Lielbritānijas angļu",
-          "en-GB-alt-short": "en_GB",
+          "en-GB-alt-short": "angļu (Lielbritānija)",
           "en-US": "ASV angļu",
           "en-US-alt-short": "angļu (ASV)",
           "enm": "vidusangļu",
@@ -333,6 +331,7 @@
           "lo": "laosiešu",
           "lol": "mongu",
           "loz": "lozu",
+          "lrc": "ziemeļluru",
           "lt": "lietuviešu",
           "ltg": "ltg",
           "lu": "lubakatanga",
@@ -354,6 +353,7 @@
           "mas": "masaju",
           "mde": "mabu",
           "mdf": "mokšu",
+          "mdh": "mdh",
           "mdr": "mandaru",
           "men": "mendu",
           "mer": "meru",
@@ -366,6 +366,7 @@
           "mi": "maoru",
           "mic": "mikmaku",
           "min": "minangkabavu",
+          "mis": "mis",
           "mk": "maķedoniešu",
           "ml": "malajalu",
           "mn": "mongoļu",
@@ -386,7 +387,7 @@
           "my": "birmiešu",
           "mye": "mjenu",
           "myv": "erzju",
-          "mzn": "mzn",
+          "mzn": "mazanderāņu",
           "na": "nauruiešu",
           "nan": "nan",
           "nap": "neapoliešu",
@@ -394,6 +395,7 @@
           "nb": "norvēģu bukmols",
           "nd": "ziemeļndebelu",
           "nds": "lejasvācu",
+          "nds-NL": "lejassakšu",
           "ne": "nepāliešu",
           "new": "nevaru",
           "ng": "ndongu",
@@ -487,6 +489,7 @@
           "sco": "skotu",
           "sd": "sindhu",
           "sdc": "sdc",
+          "sdh": "dienvidkurdu",
           "se": "ziemeļsāmu",
           "see": "seneku",
           "seh": "senu",
@@ -597,6 +600,7 @@
           "wal": "valamu",
           "war": "varaju",
           "was": "vašo",
+          "wbp": "varlpirī",
           "wo": "volofu",
           "wuu": "wuu",
           "xal": "kalmiku",

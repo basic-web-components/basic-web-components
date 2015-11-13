@@ -3,11 +3,8 @@
     "sk": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sk"
       },
@@ -124,7 +121,7 @@
           "FI": "Fínsko",
           "FJ": "Fidži",
           "FK": "Falklandy",
-          "FK-alt-variant": "Malvíny",
+          "FK-alt-variant": "Falklandy (Malvíny)",
           "FM": "Mikronézia",
           "FO": "Faerské ostrovy",
           "FR": "Francúzsko",

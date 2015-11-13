@@ -3,11 +3,8 @@
     "sr-Cyrl-ME": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10669 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-07-23 16:10:33 -0500 (Wed, 23 Jul 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "sr",
         "script": "Cyrl",
@@ -133,7 +130,7 @@
           "AUD": {
             "displayName": "Аустралијски долар",
             "displayName-count-one": "аустралијски долар",
-            "displayName-count-few": "Аустралијска долара",
+            "displayName-count-few": "аустралијска долара",
             "displayName-count-other": "аустралијских долара",
             "symbol": "AUD",
             "symbol-alt-narrow": "$"
@@ -268,10 +265,10 @@
             "symbol-alt-narrow": "$"
           },
           "BOB": {
-            "displayName": "Боливијски Боливиано",
-            "displayName-count-one": "боливијски боливиано",
-            "displayName-count-few": "боливијска боливиана",
-            "displayName-count-other": "боливијских боливиана",
+            "displayName": "Боливијски боливијано",
+            "displayName-count-one": "боливијски боливијано",
+            "displayName-count-few": "боливијска боливијана",
+            "displayName-count-other": "боливијских боливијана",
             "symbol": "BOB",
             "symbol-alt-narrow": "Bs"
           },
@@ -403,9 +400,9 @@
           },
           "CDF": {
             "displayName": "Конгоански франак",
-            "displayName-count-one": "конголски франак",
-            "displayName-count-few": "конголска франка",
-            "displayName-count-other": "конголских франака",
+            "displayName-count-one": "конгоански франак",
+            "displayName-count-few": "конгоанска франка",
+            "displayName-count-other": "конгоанских франака",
             "symbol": "CDF"
           },
           "CHE": {
@@ -634,10 +631,10 @@
             "symbol-alt-narrow": "₧"
           },
           "ETB": {
-            "displayName": "Етиопијски бир",
-            "displayName-count-one": "етиопијски бир",
-            "displayName-count-few": "етиопијска бира",
-            "displayName-count-other": "етиопијских бира",
+            "displayName": "Етиопски бир",
+            "displayName-count-one": "етиопски бир",
+            "displayName-count-few": "етиопска бира",
+            "displayName-count-other": "етиопских бира",
             "symbol": "ETB"
           },
           "EUR": {
@@ -698,7 +695,8 @@
             "displayName-count-one": "грузијски лари",
             "displayName-count-few": "грузијска ларија",
             "displayName-count-other": "грузијских ларија",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "ლ"
           },
           "GHC": {
             "displayName": "Гански цеди (1979–2007)",
@@ -726,7 +724,7 @@
             "displayName": "Гамбијски даласи",
             "displayName-count-one": "гамбијски даласи",
             "displayName-count-few": "гамбијска даласа",
-            "displayName-count-other": "гамбијских даласа",
+            "displayName-count-other": "гамбијских даласија",
             "symbol": "GMD"
           },
           "GNF": {
@@ -798,8 +796,8 @@
           },
           "HNL": {
             "displayName": "Хондурашка лемпира",
-            "displayName-count-one": "хондурашки лемпир",
-            "displayName-count-few": "хондурашка лемпира",
+            "displayName-count-one": "хондурашка лемпира",
+            "displayName-count-few": "хондурашке лемпире",
             "displayName-count-other": "хондурашких лемпира",
             "symbol": "HNL",
             "symbol-alt-narrow": "L"
@@ -915,9 +913,9 @@
           },
           "JMD": {
             "displayName": "Јамајчански долар",
-            "displayName-count-one": "jамајкански долар",
-            "displayName-count-few": "jамајканскa доларa",
-            "displayName-count-other": "jамајканскиx доларa",
+            "displayName-count-one": "jамајчански долар",
+            "displayName-count-few": "jамајчанска долара",
+            "displayName-count-other": "jамајчанскиx долара",
             "symbol": "JMD",
             "symbol-alt-narrow": "$"
           },
@@ -1008,8 +1006,8 @@
           "KZT": {
             "displayName": "Казахстански тенге",
             "displayName-count-one": "казахстански тенге",
-            "displayName-count-few": "казахстанске тенге",
-            "displayName-count-other": "казахстанских тенги",
+            "displayName-count-few": "казахстанска тенгеа",
+            "displayName-count-other": "казахстанских тенгеа",
             "symbol": "KZT",
             "symbol-alt-narrow": "₸"
           },
@@ -1112,8 +1110,8 @@
           },
           "MAD": {
             "displayName": "Марокански дирхам",
-            "displayName-count-one": "мароканска дирхама",
-            "displayName-count-few": "мароканске дирхаме",
+            "displayName-count-one": "марокански дирхам",
+            "displayName-count-few": "мароканска дирхама",
             "displayName-count-other": "мароканских дирхама",
             "symbol": "MAD"
           },
@@ -1140,7 +1138,7 @@
             "symbol": "MDL"
           },
           "MGA": {
-            "displayName": "Малагасијски ариари",
+            "displayName": "Мадагаскарски ариари",
             "displayName-count-one": "малагасијски ариари",
             "displayName-count-few": "малагасијскa ариариja",
             "displayName-count-other": "малагасијских ариариja",
@@ -1189,10 +1187,10 @@
             "symbol-alt-narrow": "₮"
           },
           "MOP": {
-            "displayName": "Маканишка патака",
-            "displayName-count-one": "маканешка патака",
-            "displayName-count-few": "маканешке патаке",
-            "displayName-count-other": "маканешких патака",
+            "displayName": "Макаоска патака",
+            "displayName-count-one": "макаоска патака",
+            "displayName-count-few": "макаоске патаке",
+            "displayName-count-other": "макаоских патака",
             "symbol": "MOP"
           },
           "MRO": {
@@ -1261,10 +1259,10 @@
             "symbol": "MXV"
           },
           "MYR": {
-            "displayName": "Малезијски ринггит",
-            "displayName-count-one": "малезијски ринггит",
-            "displayName-count-few": "малезијска ринггита",
-            "displayName-count-other": "малезијских ринггита",
+            "displayName": "Малезијски рингит",
+            "displayName-count-one": "малезијски рингит",
+            "displayName-count-few": "малезијска рингита",
+            "displayName-count-other": "малезијских рингита",
             "symbol": "MYR",
             "symbol-alt-narrow": "RM"
           },
@@ -1283,10 +1281,10 @@
             "symbol": "MZM"
           },
           "MZN": {
-            "displayName": "Мозамбијски метикал",
-            "displayName-count-one": "мозамбијски метикал",
-            "displayName-count-few": "мозамбијска метикала",
-            "displayName-count-other": "мозамбијских метикала",
+            "displayName": "Мозамбички метикал",
+            "displayName-count-one": "мозамбички метикал",
+            "displayName-count-few": "мозамбичка метикала",
+            "displayName-count-other": "мозамбичких метикала",
             "symbol": "MZN"
           },
           "NAD": {
@@ -1373,10 +1371,10 @@
             "symbol": "PEI"
           },
           "PEN": {
-            "displayName": "Перуански нуево сол",
-            "displayName-count-one": "перуански нуево сол",
-            "displayName-count-few": "перуанска нуево сола",
-            "displayName-count-other": "перуанских нуево сола",
+            "displayName": "Перуански нови сол",
+            "displayName-count-one": "перуански нови сол",
+            "displayName-count-few": "перуанска нова сола",
+            "displayName-count-other": "перуанских нових сола",
             "symbol": "PEN"
           },
           "PES": {
@@ -1480,7 +1478,7 @@
             "displayName-count-few": "руске рубље",
             "displayName-count-other": "руских рубљи",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "руб"
           },
           "RUR": {
             "displayName": "Руска рубља (1991–1998)",
@@ -1580,7 +1578,7 @@
             "symbol": "SKK"
           },
           "SLL": {
-            "displayName": "Сијера-леоншки леоне",
+            "displayName": "Сијералеонски леоне",
             "displayName-count-one": "сијералеонски леоне",
             "displayName-count-few": "сијералеонска леона",
             "displayName-count-other": "сијералеонских леона",
@@ -1617,10 +1615,10 @@
             "symbol-alt-narrow": "£"
           },
           "STD": {
-            "displayName": "Сао Томе и Принципе добра",
-            "displayName-count-one": "сао томе и принципе добар",
-            "displayName-count-few": "сао томе и принципе добра",
-            "displayName-count-other": "сао томе и принципе добра",
+            "displayName": "Саотомска добра",
+            "displayName-count-one": "саотомска добра",
+            "displayName-count-few": "саотомске добре",
+            "displayName-count-other": "саотомских добри",
             "symbol": "STD",
             "symbol-alt-narrow": "Db"
           },
@@ -1647,10 +1645,10 @@
             "symbol-alt-narrow": "£"
           },
           "SZL": {
-            "displayName": "Свази лилангени",
-            "displayName-count-one": "свази емаланген",
-            "displayName-count-few": "свази емалангена",
-            "displayName-count-other": "свази емалангена",
+            "displayName": "Свазилендски лилангени",
+            "displayName-count-one": "свазилендски лилангени",
+            "displayName-count-few": "свазилендска лилангенија",
+            "displayName-count-other": "свазилендских лилангенија",
             "symbol": "SZL"
           },
           "THB": {
@@ -1697,10 +1695,10 @@
             "symbol": "TND"
           },
           "TOP": {
-            "displayName": "Тонгоншка Панга",
-            "displayName-count-one": "тонгашка панга",
-            "displayName-count-few": "тонгашке панге",
-            "displayName-count-other": "тонгашких панга",
+            "displayName": "Тонганска панга",
+            "displayName-count-one": "тонганска панга",
+            "displayName-count-few": "тонганске панге",
+            "displayName-count-other": "тонганских панги",
             "symbol": "TOP",
             "symbol-alt-narrow": "T$"
           },
@@ -1751,10 +1749,10 @@
             "symbol": "TZS"
           },
           "UAH": {
-            "displayName": "Украјинска гривна",
+            "displayName": "Украјинска хривња",
             "displayName-count-one": "украјинскa хривњa",
             "displayName-count-few": "украјинскe хривњe",
-            "displayName-count-other": "украјинских гривни",
+            "displayName-count-other": "украјинских хривњи",
             "symbol": "UAH",
             "symbol-alt-narrow": "₴"
           },
@@ -1926,8 +1924,8 @@
           "XCD": {
             "displayName": "Источнокарипски долар",
             "displayName-count-one": "источнокарипски долар",
-            "displayName-count-few": "источно-карипскa доларa",
-            "displayName-count-other": "источно-карипскиx доларa",
+            "displayName-count-few": "источнокарипскa доларa",
+            "displayName-count-other": "источнокарипскиx доларa",
             "symbol": "EC$",
             "symbol-alt-narrow": "$"
           },
@@ -2010,10 +2008,10 @@
             "symbol": "XUA"
           },
           "XXX": {
-            "displayName": "Непозната или неважећа валута",
-            "displayName-count-one": "непозната или неважећа валута",
-            "displayName-count-few": "непознате или неважеће валуте",
-            "displayName-count-other": "непознатих или неважећих валута",
+            "displayName": "Непозната валута",
+            "displayName-count-one": "непозната јединица валуте",
+            "displayName-count-few": "непознате валуте",
+            "displayName-count-other": "непознатих валута",
             "symbol": "XXX"
           },
           "YDD": {
@@ -2063,10 +2061,10 @@
             "symbol": "ZAL"
           },
           "ZAR": {
-            "displayName": "Јужно-афрички ранд",
-            "displayName-count-one": "јужно-афрички ранд",
-            "displayName-count-few": "јужно-афричка ранда",
-            "displayName-count-other": "јужно-афричких ранда",
+            "displayName": "Јужноафрички ранд",
+            "displayName-count-one": "јужноафрички ранд",
+            "displayName-count-few": "јужноафричка ранда",
+            "displayName-count-other": "јужноафричких ранда",
             "symbol": "ZAR",
             "symbol-alt-narrow": "R"
           },

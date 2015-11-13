@@ -3,11 +3,8 @@
     "mr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11953 $"
         },
         "language": "mr"
       },
@@ -17,8 +14,8 @@
           "gmtFormat": "[GMT]{0}",
           "gmtZeroFormat": "[GMT]",
           "regionFormat": "{0} वेळ",
-          "regionFormat-type-standard": "{0} प्रमाण वेळ",
           "regionFormat-type-daylight": "{0} सूर्यप्रकाश वेळ",
+          "regionFormat-type-standard": "{0} प्रमाण वेळ",
           "fallbackFormat": "{1} ({0})",
           "zone": {
             "America": {
@@ -35,29 +32,29 @@
                 "exemplarCity": "अँटिग्वा"
               },
               "Araguaina": {
-                "exemplarCity": "अरागुआइना"
+                "exemplarCity": "अरागायना"
               },
               "Argentina": {
-                "La_Rioja": {
-                  "exemplarCity": "ला रियोजा"
-                },
                 "Rio_Gallegos": {
                   "exemplarCity": "रियो गॅलेगॉस"
-                },
-                "Salta": {
-                  "exemplarCity": "सॉल्ता"
                 },
                 "San_Juan": {
                   "exemplarCity": "सान जुआन"
                 },
+                "Ushuaia": {
+                  "exemplarCity": "उस्वाइया"
+                },
+                "La_Rioja": {
+                  "exemplarCity": "ला रियोजा"
+                },
                 "San_Luis": {
                   "exemplarCity": "सॅन लुईस"
                 },
+                "Salta": {
+                  "exemplarCity": "सॉल्ता"
+                },
                 "Tucuman": {
                   "exemplarCity": "टुकुमान"
-                },
-                "Ushuaia": {
-                  "exemplarCity": "उस्वाइया"
                 }
               },
               "Aruba": {
@@ -208,11 +205,8 @@
                 "exemplarCity": "हर्मोसिलो"
               },
               "Indiana": {
-                "Knox": {
-                  "exemplarCity": "नॉक्स, इंडियाना"
-                },
-                "Marengo": {
-                  "exemplarCity": "मारेंगो, इंडियाना"
+                "Vincennes": {
+                  "exemplarCity": "विंसेनस, इंडियाना"
                 },
                 "Petersburg": {
                   "exemplarCity": "पीटर्सबर्ग, इंडियाना"
@@ -220,14 +214,17 @@
                 "Tell_City": {
                   "exemplarCity": "टेल सिटी, इंडियाना"
                 },
-                "Vevay": {
-                  "exemplarCity": "वेवाय-इंडियाना"
-                },
-                "Vincennes": {
-                  "exemplarCity": "विंसेनस, इंडियाना"
+                "Knox": {
+                  "exemplarCity": "नॉक्स, इंडियाना"
                 },
                 "Winamac": {
                   "exemplarCity": "विनमॅक, इंडियाना"
+                },
+                "Marengo": {
+                  "exemplarCity": "मारेंगो, इंडियाना"
+                },
+                "Vevay": {
+                  "exemplarCity": "वेवाय-इंडियाना"
                 }
               },
               "Indianapolis": {
@@ -266,10 +263,10 @@
                 "exemplarCity": "लॉस एंजेलिस"
               },
               "Louisville": {
-                "exemplarCity": "लुईव्हिल"
+                "exemplarCity": "ल्युइसव्हिल"
               },
               "Lower_Princes": {
-                "exemplarCity": "लोअर प्रिन्स क्वार्टर"
+                "exemplarCity": "लोअर प्रिन्सस क्वार्टर"
               },
               "Maceio": {
                 "exemplarCity": "मेसेइओ"
@@ -341,11 +338,11 @@
                 "Beulah": {
                   "exemplarCity": "ब्युलाह, उत्तर डकोटा"
                 },
-                "Center": {
-                  "exemplarCity": "मध्य, उत्तर डकोटा"
-                },
                 "New_Salem": {
                   "exemplarCity": "न्यू सालेम, उत्तर डकोटा"
+                },
+                "Center": {
+                  "exemplarCity": "मध्य, उत्तर डकोटा"
                 }
               },
               "Ojinaga": {
@@ -394,7 +391,7 @@
                 "exemplarCity": "रियो ब्रांको"
               },
               "Santa_Isabel": {
-                "exemplarCity": "सँटा इसाबेल"
+                "exemplarCity": "सांता इसाबेल"
               },
               "Santarem": {
                 "exemplarCity": "सँटारेम"
@@ -409,10 +406,10 @@
                 "exemplarCity": "साओ पावलो"
               },
               "Scoresbysund": {
-                "exemplarCity": "इट्टोकोर्टूरमिट"
+                "exemplarCity": "इटोकॉरटॉर्मीट"
               },
               "Sitka": {
-                "exemplarCity": "सितका"
+                "exemplarCity": "सिटका"
               },
               "St_Barthelemy": {
                 "exemplarCity": "सेंट बार्थेलेमी"
@@ -454,7 +451,7 @@
                 "exemplarCity": "टोर्टोला"
               },
               "Vancouver": {
-                "exemplarCity": "व्हँकुव्हर"
+                "exemplarCity": "व्हॅनकुव्हर"
               },
               "Whitehorse": {
                 "exemplarCity": "व्हाइटहॉर्स"
@@ -641,13 +638,13 @@
                 "exemplarCity": "स्टॉकहोम"
               },
               "Tallinn": {
-                "exemplarCity": "तल्लिन्न"
+                "exemplarCity": "तालिन"
               },
               "Tirane": {
                 "exemplarCity": "टिराने"
               },
               "Uzhgorod": {
-                "exemplarCity": "उझगोरोड"
+                "exemplarCity": "उझहोरोड"
               },
               "Vaduz": {
                 "exemplarCity": "वडूझ"
@@ -796,7 +793,7 @@
                 "exemplarCity": "मसेरु"
               },
               "Mbabane": {
-                "exemplarCity": "मबाबाने"
+                "exemplarCity": "अंबाबाने"
               },
               "Mogadishu": {
                 "exemplarCity": "मोगादिशु"
@@ -861,7 +858,7 @@
                 "exemplarCity": "बगदाद"
               },
               "Bahrain": {
-                "exemplarCity": "बहारीन"
+                "exemplarCity": "बेहरीन"
               },
               "Baku": {
                 "exemplarCity": "बाकु"
@@ -882,7 +879,7 @@
                 "exemplarCity": "कोलकाता"
               },
               "Chita": {
-                "exemplarCity": "Chita"
+                "exemplarCity": "चिता"
               },
               "Choibalsan": {
                 "exemplarCity": "चोईबाल्सन"
@@ -1026,7 +1023,7 @@
                 "exemplarCity": "सिंगापूर"
               },
               "Srednekolymsk": {
-                "exemplarCity": "Srednekolymsk"
+                "exemplarCity": "स्रेदनेकोलीम्स्क"
               },
               "Taipei": {
                 "exemplarCity": "तैपेई"
@@ -1152,7 +1149,7 @@
                 "exemplarCity": "ऑकलंड"
               },
               "Bougainville": {
-                "exemplarCity": "Bougainville"
+                "exemplarCity": "बॉगॅनव्हिल"
               },
               "Chatham": {
                 "exemplarCity": "चॅटहॅम"
@@ -1197,7 +1194,7 @@
                 "exemplarCity": "किरितिमाती"
               },
               "Kosrae": {
-                "exemplarCity": "कोसराए"
+                "exemplarCity": "कोशाय"
               },
               "Kwajalein": {
                 "exemplarCity": "क्वाजालेईन"
@@ -1230,7 +1227,7 @@
                 "exemplarCity": "पलाऊ"
               },
               "Pitcairn": {
-                "exemplarCity": "पिट्कैर्न"
+                "exemplarCity": "पिटकेर्न"
               },
               "Ponape": {
                 "exemplarCity": "पोनपेई"
@@ -1276,7 +1273,7 @@
                 "exemplarCity": "डेव्हिस"
               },
               "DumontDUrville": {
-                "exemplarCity": "डुमोंट डी‘उर्व्हिल"
+                "exemplarCity": "ड्युमॉन्ट ड्युर्विल"
               },
               "Macquarie": {
                 "exemplarCity": "मॅक्वायर"
@@ -1483,9 +1480,9 @@
             },
             "Apia": {
               "long": {
-                "generic": "आपिया वेळ",
-                "standard": "आपिया प्रमाण वेळ",
-                "daylight": "आपिया सूर्यप्रकाश वेळ"
+                "generic": "एपिया वेळ",
+                "standard": "एपिया प्रमाण वेळ",
+                "daylight": "एपिया सूर्यप्रकाश वेळ"
               }
             },
             "Aqtau": {
@@ -1518,9 +1515,9 @@
             },
             "Argentina_Western": {
               "long": {
-                "generic": "पश्चिम अर्जेंटिना वेळ",
-                "standard": "पश्चिम अर्जेंटिना प्रमाण वेळ",
-                "daylight": "पश्चिम अर्जेंटिना उन्हाळी वेळ"
+                "generic": "पश्चिमी अर्जेंटिना वेळ",
+                "standard": "पश्चिमी अर्जेंटिना प्रमाण वेळ",
+                "daylight": "पश्चिमी अर्जेंटिना उन्हाळी वेळ"
               }
             },
             "Armenia": {
@@ -1686,7 +1683,7 @@
             },
             "DumontDUrville": {
               "long": {
-                "standard": "डरमाँट-डी‘उर्व्हिले वेळ"
+                "standard": "ड्युमॉन्ट-ड्युर्विल वेळ"
               }
             },
             "East_Timor": {
@@ -1756,11 +1753,6 @@
                 "standard": "फ्रेंच दक्षिण आणि अंटार्क्टिक वेळ"
               }
             },
-            "GMT": {
-              "long": {
-                "standard": "ग्रीनिच प्रमाण वेळ"
-              }
-            },
             "Galapagos": {
               "long": {
                 "standard": "गॅलापागोस वेळ"
@@ -1781,6 +1773,11 @@
             "Gilbert_Islands": {
               "long": {
                 "standard": "गिल्बर्ट बेटे वेळ"
+              }
+            },
+            "GMT": {
+              "long": {
+                "standard": "ग्रीनिच प्रमाण वेळ"
               }
             },
             "Greenland_Eastern": {
@@ -1858,12 +1855,12 @@
             },
             "Indonesia_Eastern": {
               "long": {
-                "standard": "पूर्व इंडोनेशिया वेळ"
+                "standard": "पौर्वात्य इंडोनेशिया वेळ"
               }
             },
             "Indonesia_Western": {
               "long": {
-                "standard": "पश्चिम इंडोनेशिया वेळ"
+                "standard": "पश्चिमी इंडोनेशिया वेळ"
               }
             },
             "Iran": {
@@ -1882,9 +1879,9 @@
             },
             "Israel": {
               "long": {
-                "generic": "इस्राएल वेळ",
-                "standard": "इस्राएल प्रमाण वेळ",
-                "daylight": "इस्राएल सूर्यप्रकाश वेळ"
+                "generic": "इस्रायल",
+                "standard": "इस्रायल प्रमाण वेळ",
+                "daylight": "इस्रायल सूर्यप्रकाश वेळ"
               }
             },
             "Japan": {
@@ -2293,9 +2290,9 @@
             },
             "Vanuatu": {
               "long": {
-                "generic": "वनातू वेळ",
-                "standard": "वनातू प्रमाण वेळ",
-                "daylight": "वनातू उन्हाळी वेळ"
+                "generic": "वानुआतु वेळ",
+                "standard": "वानुआतु प्रमाण वेळ",
+                "daylight": "वानुआतु उन्हाळी वेळ"
               }
             },
             "Venezuela": {

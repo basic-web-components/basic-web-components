@@ -3,24 +3,23 @@
     "vi": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11917 $"
         },
         "language": "vi"
       },
       "localeDisplayNames": {
         "variants": {
-          "1606NICT": "Tiếng Pháp từ Cuối thời Trung cổ đến 1606",
-          "1694ACAD": "Tiếng Pháp Hiện đại Thời kỳ đầu",
           "1901": "Phép chính tả Tiếng Đức Truyền thống",
-          "1959ACAD": "Hàn lâm",
           "1994": "Phép chính tả Resian Chuẩn hóa",
           "1996": "Phép chính tả Tiếng Đức năm 1996",
+          "1606NICT": "Tiếng Pháp từ Cuối thời Trung cổ đến 1606",
+          "1694ACAD": "Tiếng Pháp Hiện đại Thời kỳ đầu",
+          "1959ACAD": "Hàn lâm",
+          "ABL1943": "ABL1943",
           "ALALC97": "La Mã hóa ALA-LC, ấn bản năm 1997",
           "ALUKU": "Phương ngữ Aluku",
+          "AO1990": "AO1990",
           "AREVELA": "Tiếng Armenia Miền Đông",
           "AREVMDA": "Tiếng Armenia Miền Tây",
           "BAKU1926": "Bảng chữ cái La-tinh Tiếng Turk Hợp nhất",
@@ -31,6 +30,7 @@
           "BISKE": "Phương ngữ San Giorgio/Bila",
           "BOHORIC": "Bảng chữ cái Bohorič",
           "BOONT": "Tiếng Boontling",
+          "COLB1945": "COLB1945",
           "DAJNKO": "Bảng chữ cái Dajnko",
           "EKAVSK": "EKAVSK",
           "EMODENG": "Tiếng Anh Hiện đại Thời kỳ đầu",
@@ -56,6 +56,7 @@
           "NJIVA": "Phương ngữ Gniva/Njiva",
           "NULIK": "Tiếng Volapük Hiện đại",
           "OSOJS": "Phương ngữ Oseacco/Osojane",
+          "OXENDICT": "OXENDICT",
           "PAMAKA": "Phương ngữ Pamaka",
           "PETR1708": "PETR1708",
           "PINYIN": "La Mã hóa Bính âm",

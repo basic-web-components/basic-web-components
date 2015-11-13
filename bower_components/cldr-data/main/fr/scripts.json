@@ -3,18 +3,15 @@
     "fr": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11346 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-03-05 00:47:17 -0600 (Thu, 05 Mar 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "fr"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "arabe",
           "Arab-alt-variant": "arabo-persan",
           "Armi": "araméen impérial",
@@ -64,6 +61,7 @@
           "Hans-alt-stand-alone": "sinogrammes simplifiés",
           "Hant": "traditionnel",
           "Hant-alt-stand-alone": "sinogrammes traditionnels",
+          "Hatr": "Hatr",
           "Hebr": "hébreu",
           "Hira": "hiragana",
           "Hluw": "Hluw",
@@ -74,7 +72,6 @@
           "Ital": "ancien italique",
           "Java": "javanais",
           "Jpan": "japonais",
-          "Jurc": "Jurc",
           "Kali": "kayah li",
           "Kana": "katakana",
           "Khar": "kharochthî",
@@ -82,7 +79,6 @@
           "Khoj": "Khoj",
           "Knda": "kannara",
           "Kore": "coréen",
-          "Kpel": "Kpel",
           "Kthi": "kaithî",
           "Lana": "lanna",
           "Laoo": "lao",
@@ -94,7 +90,6 @@
           "Lina": "linéaire A",
           "Linb": "linéaire B",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "lycien",
           "Lydi": "lydien",
           "Mahj": "Mahj",
@@ -110,12 +105,11 @@
           "Moon": "moon",
           "Mroo": "Mroo",
           "Mtei": "meitei mayek",
+          "Mult": "Mult",
           "Mymr": "birman",
           "Narb": "Narb",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "n’ko",
-          "Nshu": "Nshu",
           "Ogam": "ogam",
           "Olck": "ol tchiki",
           "Orkh": "orkhon",
@@ -205,7 +199,6 @@
           "Tale": "taï-le",
           "Talu": "nouveau taï-lue",
           "Taml": "tamoul",
-          "Tang": "Tang",
           "Tavt": "taï viêt",
           "Telu": "télougou",
           "Teng": "tengwar",
@@ -219,7 +212,6 @@
           "Vaii": "vaï",
           "Visp": "parole visible",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "cunéiforme persépolitain",
           "Xsux": "cunéiforme suméro-akkadien",
           "Yiii": "yi",

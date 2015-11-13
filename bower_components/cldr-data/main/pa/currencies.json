@@ -3,11 +3,8 @@
     "pa": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 12004 $"
         },
         "language": "pa"
       },
@@ -539,9 +536,9 @@
             "symbol": "FRF"
           },
           "GBP": {
-            "displayName": "ਬ੍ਰਿਟਿਸ਼ ਪੌਂਡ ਸਟਰਲਿੰਗ",
-            "displayName-count-one": "ਬ੍ਰਿਟਿਸ਼ ਪੌਂਡ ਸਟਰਲਿੰਗ",
-            "displayName-count-other": "ਬ੍ਰਿਟਿਸ਼ ਪੌਂਡ ਸਟਰਲਿੰਗ",
+            "displayName": "ਬ੍ਰਿਟਿਸ਼ ਪੌਂਡ",
+            "displayName-count-one": "ਬ੍ਰਿਟਿਸ਼ ਪੌਂਡ",
+            "displayName-count-other": "ਬ੍ਰਿਟਿਸ਼ ਪੌਂਡ",
             "symbol": "£",
             "symbol-alt-narrow": "£"
           },
@@ -553,7 +550,8 @@
             "displayName": "ਜਾਰਜੀਆਈ ਲਾਰੀ",
             "displayName-count-one": "ਜਾਰਜੀਆਈ ਲਾਰੀ",
             "displayName-count-other": "ਜਾਰਜੀਆਈ ਲਾਰੀ",
-            "symbol": "GEL"
+            "symbol": "GEL",
+            "symbol-alt-variant": "₾"
           },
           "GHC": {
             "displayName": "GHC",
@@ -1160,7 +1158,7 @@
             "displayName-count-one": "ਰੂਸੀ ਰੂਬਲ",
             "displayName-count-other": "ਰੂਸੀ ਰੂਬਲ",
             "symbol": "RUB",
-            "symbol-alt-variant": "₽"
+            "symbol-alt-narrow": "₽"
           },
           "RUR": {
             "displayName": "RUR",
@@ -1531,7 +1529,7 @@
             "symbol": "XFU"
           },
           "XOF": {
-            "displayName": "ਫ੍ਰੈਂਕ (CFA BCEAO)",
+            "displayName": "ਪੱਛਮੀ ਅਫ਼ਰੀਕੀ (CFA) ਫ੍ਰੈਂਕ",
             "displayName-count-one": "ਫ੍ਰੈਂਕ (CFA BCEAO)",
             "displayName-count-other": "ਫ੍ਰੈਂਕ (CFA BCEAO)",
             "symbol": "CFA"

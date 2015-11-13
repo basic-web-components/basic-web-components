@@ -3,14 +3,11 @@
     "en-AG": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 10712 $"
-        },
-        "generation": {
-          "_date": "$Date: 2014-08-01 12:07:43 -0500 (Fri, 01 Aug 2014) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11914 $"
         },
         "language": "en",
-        "territory": "001"
+        "territory": "AG"
       },
       "localeDisplayNames": {
         "languages": {
@@ -56,7 +53,6 @@
           "ay": "Aymara",
           "az": "Azerbaijani",
           "az-alt-short": "Azeri",
-          "azb": "South Azerbaijani",
           "ba": "Bashkir",
           "bal": "Baluchi",
           "ban": "Balinese",
@@ -73,6 +69,7 @@
           "bfd": "Bafut",
           "bfq": "Badaga",
           "bg": "Bulgarian",
+          "bgn": "Western Balochi",
           "bho": "Bhojpuri",
           "bi": "Bislama",
           "bik": "Bikol",
@@ -174,6 +171,7 @@
           "ewo": "Ewondo",
           "ext": "Extremaduran",
           "fa": "Persian",
+          "fa-AF": "Dari",
           "fan": "Fang",
           "fat": "Fanti",
           "ff": "Fulah",
@@ -236,7 +234,7 @@
           "hr": "Croatian",
           "hsb": "Upper Sorbian",
           "hsn": "Xiang Chinese",
-          "ht": "Haitian",
+          "ht": "Haitian Creole",
           "hu": "Hungarian",
           "hup": "Hupa",
           "hy": "Armenian",
@@ -335,6 +333,7 @@
           "lo": "Lao",
           "lol": "Mongo",
           "loz": "Lozi",
+          "lrc": "Northern Luri",
           "lt": "Lithuanian",
           "ltg": "Latgalian",
           "lu": "Luba-Katanga",
@@ -356,6 +355,7 @@
           "mas": "Masai",
           "mde": "Maba",
           "mdf": "Moksha",
+          "mdh": "mdh",
           "mdr": "Mandar",
           "men": "Mende",
           "mer": "Meru",
@@ -368,6 +368,7 @@
           "mi": "Maori",
           "mic": "Micmac",
           "min": "Minangkabau",
+          "mis": "mis",
           "mk": "Macedonian",
           "ml": "Malayalam",
           "mn": "Mongolian",
@@ -386,6 +387,7 @@
           "mwr": "Marwari",
           "mwv": "Mentawai",
           "my": "Burmese",
+          "my-alt-variant": "Myanmar Language",
           "mye": "Myene",
           "myv": "Erzya",
           "mzn": "Mazanderani",
@@ -396,6 +398,7 @@
           "nb": "Norwegian Bokmål",
           "nd": "North Ndebele",
           "nds": "Low German",
+          "nds-NL": "Low Saxon",
           "ne": "Nepali",
           "new": "Newari",
           "ng": "Ndonga",
@@ -411,7 +414,7 @@
           "nog": "Nogai",
           "non": "Old Norse",
           "nov": "Novial",
-          "nqo": "NʼKo",
+          "nqo": "N’Ko",
           "nr": "South Ndebele",
           "nso": "Northern Sotho",
           "nus": "Nuer",
@@ -490,6 +493,7 @@
           "sco": "Scots",
           "sd": "Sindhi",
           "sdc": "Sassarese Sardinian",
+          "sdh": "Southern Kurdish",
           "se": "Northern Sami",
           "see": "Seneca",
           "seh": "Sena",

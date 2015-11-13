@@ -3,11 +3,8 @@
     "hy": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "hy"
       },
@@ -15,53 +12,80 @@
         "localeDisplayPattern": {
           "localePattern": "{0} ({1})",
           "localeSeparator": "{0}, {1}",
-          "localeKeyTypePattern": "{0}. {1}"
+          "localeKeyTypePattern": "{0}՝ {1}"
         },
         "keys": {
           "calendar": "Տոմար",
+          "cf": "cf",
           "collation": "Տեսակավորման կարգ",
           "currency": "արժույթ",
+          "hc": "Ժամանակային համակարգ (12 կամ 24)",
+          "lb": "տողանցման ոճ",
+          "ms": "չափման համակարգ",
           "numbers": "թվեր"
         },
         "types": {
           "calendar": {
-            "buddhist": "Բուդդայական տոմար",
-            "chinese": "Չինական տոմար",
+            "buddhist": "բուդդայական տոմար",
+            "chinese": "չինական տոմար",
             "coptic": "coptic",
-            "dangi": "Դանգիական տոմար",
-            "ethiopic": "Եթովպիական տոմար",
+            "dangi": "դանգի տոմար",
+            "ethiopic": "եթովպիական տոմար",
             "ethiopic-amete-alem": "ethiopic-amete-alem",
-            "gregorian": "Գրիգորյան տոմար",
-            "hebrew": "Հրեական տոմար",
+            "gregorian": "գրիգորյան տոմար",
+            "hebrew": "հրեական տոմար",
             "indian": "indian",
-            "islamic": "Իսլամական տոմար",
+            "islamic": "իսլամական տոմար",
             "islamic-civil": "islamic-civil",
             "islamic-rgsa": "islamic-rgsa",
             "islamic-tbla": "islamic-tbla",
             "islamic-umalqura": "islamic-umalqura",
             "iso8601": "ISO-8601 տոմար",
-            "japanese": "Ճապոնական տոմար",
-            "persian": "Պարսկական տոմար",
-            "roc": "Մինգուո տոմար"
+            "japanese": "ճապոնական տոմար",
+            "persian": "պարսկական տոմար",
+            "roc": "մինգուո տոմար"
+          },
+          "cf": {
+            "account": "account",
+            "standard": "standard"
           },
           "collation": {
             "big5han": "big5han",
+            "compat": "compat",
             "dictionary": "dictionary",
-            "ducet": "Սկզբնադիր տեսակավորման կարգ Unicode-ի համար",
+            "ducet": "Unicode-ի ստանդարտ տեսակավորում",
+            "emoji": "emoji",
             "eor": "eor",
             "gb2312han": "gb2312han",
             "phonebook": "phonebook",
             "pinyin": "pinyin",
             "reformed": "reformed",
-            "search": "Ընդհանուր որոնում",
+            "search": "որոնում",
             "searchjl": "searchjl",
-            "standard": "Տեսակավորման ստանդարտ կարգ",
+            "standard": "տեսակավորման ստանդարտ կարգ",
             "stroke": "stroke",
             "traditional": "traditional",
             "unihan": "unihan",
             "zhuyin": "zhuyin"
           },
+          "hc": {
+            "h11": "12-ժամյա համակարգ (0-11)",
+            "h12": "12-ժամյա համակարգ (1-12)",
+            "h23": "24-ժամյա համակարգ (0-23)",
+            "h24": "24-ժամյա համակարգ (1-24)"
+          },
+          "lb": {
+            "loose": "փափուկ տողանցում",
+            "normal": "սովորական տողանցում",
+            "strict": "կոշտ տողանցում"
+          },
+          "ms": {
+            "metric": "մետրիկ համակարգ",
+            "uksystem": "չափման բրիտանական համակարգ",
+            "ussystem": "չափման ամերիկյան համակարգ"
+          },
           "numbers": {
+            "ahom": "ahom",
             "arab": "արաբա-հնդկական թվեր",
             "arabext": "արաբա-հնդկական թվերի ընդլայնված համակարգ",
             "armn": "հայկական թվեր",
@@ -71,6 +95,7 @@
             "brah": "brah",
             "cakm": "cakm",
             "cham": "cham",
+            "cyrl": "cyrl",
             "deva": "դեվանագարի թվեր",
             "ethi": "եթովպական թվեր",
             "fullwide": "թվերի լայն ձևաչափ",
@@ -85,6 +110,7 @@
             "hant": "չինական ավանդական թվեր",
             "hantfin": "չինական ավանդական ֆինանսական թվեր",
             "hebr": "եբրայերեն թվեր",
+            "hmng": "hmng",
             "java": "java",
             "jpan": "ճապոնական թվեր",
             "jpanfin": "ճապոնական ֆինանսական թվեր",
@@ -97,11 +123,19 @@
             "latn": "արևմտյան թվեր",
             "lepc": "lepc",
             "limb": "limb",
+            "mathbold": "mathbold",
+            "mathdbl": "mathdbl",
+            "mathmono": "mathmono",
+            "mathsanb": "mathsanb",
+            "mathsans": "mathsans",
             "mlym": "մալայալամ թվեր",
+            "modi": "modi",
             "mong": "mong",
+            "mroo": "mroo",
             "mtei": "mtei",
             "mymr": "բիրմական թվեր",
             "mymrshan": "mymrshan",
+            "mymrtlng": "mymrtlng",
             "nkoo": "nkoo",
             "olck": "olck",
             "orya": "օրիյա թվեր",
@@ -110,6 +144,8 @@
             "romanlow": "հռոմեական թվեր (փոքրատառ)",
             "saur": "saur",
             "shrd": "shrd",
+            "sind": "sind",
+            "sinh": "sinh",
             "sora": "sora",
             "sund": "sund",
             "takr": "takr",
@@ -119,13 +155,15 @@
             "telu": "թելուգու թվեր",
             "thai": "թայական թվեր",
             "tibt": "տիբեթական թվեր",
-            "vaii": "vaii"
+            "tirh": "tirh",
+            "vaii": "vaii",
+            "wara": "wara"
           }
         },
         "codePatterns": {
-          "language": "Լեզու. {0}",
-          "script": "Գիր. {0}",
-          "territory": "Շրջան. {0}"
+          "language": "Լեզու՝ {0}",
+          "script": "Գիր՝ {0}",
+          "territory": "Շրջան՝ {0}"
         }
       }
     }

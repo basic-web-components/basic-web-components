@@ -3,18 +3,15 @@
     "ar": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11994 $"
         },
         "language": "ar"
       },
       "localeDisplayNames": {
         "scripts": {
-          "Afak": "Afak",
           "Aghb": "Aghb",
+          "Ahom": "Ahom",
           "Arab": "العربية",
           "Arab-alt-variant": "العربية الفارسية",
           "Armi": "Armi",
@@ -64,6 +61,7 @@
           "Hans-alt-stand-alone": "الهان المبسطة",
           "Hant": "التقليدية",
           "Hant-alt-stand-alone": "الهان التقليدية",
+          "Hatr": "Hatr",
           "Hebr": "العبرية",
           "Hira": "الهيراجانا",
           "Hluw": "Hluw",
@@ -74,7 +72,6 @@
           "Ital": "الإيطالية القديمة",
           "Java": "الجاوية",
           "Jpan": "اليابانية",
-          "Jurc": "Jurc",
           "Kali": "الكياه لى",
           "Kana": "الكتكانا",
           "Khar": "الخاروشتى",
@@ -82,7 +79,6 @@
           "Khoj": "Khoj",
           "Knda": "الكانادا",
           "Kore": "الكورية",
-          "Kpel": "Kpel",
           "Kthi": "Kthi",
           "Lana": "الانا",
           "Laoo": "اللاو",
@@ -94,7 +90,6 @@
           "Lina": "الخطية أ",
           "Linb": "الخطية ب",
           "Lisu": "Lisu",
-          "Loma": "Loma",
           "Lyci": "الليسية",
           "Lydi": "الليدية",
           "Mahj": "Mahj",
@@ -110,12 +105,11 @@
           "Moon": "مون",
           "Mroo": "Mroo",
           "Mtei": "Mtei",
+          "Mult": "Mult",
           "Mymr": "الميانمار",
           "Narb": "العربية الشمالية القديمة",
           "Nbat": "Nbat",
-          "Nkgb": "Nkgb",
           "Nkoo": "أنكو",
-          "Nshu": "Nshu",
           "Ogam": "الأوجهام",
           "Olck": "Olck",
           "Orkh": "الأورخون",
@@ -127,7 +121,6 @@
           "Phag": "الفاجسبا",
           "Phli": "Phli",
           "Phlp": "Phlp",
-          "Phlv": "Phlv",
           "Phnx": "الفينيقية",
           "Plrd": "الصوتيات الجماء",
           "Prti": "Prti",
@@ -205,7 +198,6 @@
           "Tale": "التاي لي",
           "Talu": "التاى لى الجديد",
           "Taml": "التاميلية",
-          "Tang": "Tang",
           "Tavt": "Tavt",
           "Telu": "التيلجو",
           "Teng": "التينجوار",
@@ -219,7 +211,6 @@
           "Vaii": "الفاي",
           "Visp": "الكلام المرئي",
           "Wara": "Wara",
-          "Wole": "Wole",
           "Xpeo": "الفارسية القديمة",
           "Xsux": "الكتابة المسمارية الأكدية السومرية",
           "Yiii": "اليي",

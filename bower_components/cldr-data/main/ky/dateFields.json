@@ -3,11 +3,8 @@
     "ky": {
       "identity": {
         "version": {
-          "_cldrVersion": "27.0.1",
-          "_number": "$Revision: 11294 $"
-        },
-        "generation": {
-          "_date": "$Date: 2015-02-23 16:50:24 -0600 (Mon, 23 Feb 2015) $"
+          "_cldrVersion": "28",
+          "_number": "$Revision: 11919 $"
         },
         "language": "ky"
       },
@@ -60,9 +57,9 @@
           },
           "quarter": {
             "displayName": "чейрек",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "акыркы чейрек",
+            "relative-type-0": "бул чейрек",
+            "relative-type-1": "кийинки чейрек",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "кийинки {0} чейректе",
               "relativeTimePattern-count-other": "кийинки {0} чейректе"
@@ -74,9 +71,9 @@
           },
           "quarter-short": {
             "displayName": "чейр.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "акыркы чейр.",
+            "relative-type-0": "бул чейр.",
+            "relative-type-1": "кийинки чейр.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "кийинки {0} чейр.",
               "relativeTimePattern-count-other": "кийинки {0} чейр."
@@ -88,9 +85,9 @@
           },
           "quarter-narrow": {
             "displayName": "чейр.",
-            "relative-type--1": "last quarter",
-            "relative-type-0": "this quarter",
-            "relative-type-1": "next quarter",
+            "relative-type--1": "акыркы чейр.",
+            "relative-type-0": "бул чейр.",
+            "relative-type-1": "кийинки чейр.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} чейр.",
               "relativeTimePattern-count-other": "+{0} чейр."
@@ -158,9 +155,9 @@
           },
           "week-short": {
             "displayName": "апта",
-            "relative-type--1": "өткөн аптада",
-            "relative-type-0": "ушул аптада",
-            "relative-type-1": "келерки аптада",
+            "relative-type--1": "өткөн апт.",
+            "relative-type-0": "ушул апт.",
+            "relative-type-1": "келерки апт.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} апт. кийин",
               "relativeTimePattern-count-other": "{0} апт. кийин"
@@ -172,9 +169,9 @@
           },
           "week-narrow": {
             "displayName": "апта",
-            "relative-type--1": "өткөн аптада",
-            "relative-type-0": "ушул аптада",
-            "relative-type-1": "келерки аптада",
+            "relative-type--1": "өткөн апт.",
+            "relative-type-0": "ушул апт.",
+            "relative-type-1": "келерки апт.",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} апт.",
               "relativeTimePattern-count-other": "+{0} апт."
@@ -186,8 +183,8 @@
           },
           "day": {
             "displayName": "күн",
-            "relative-type--1": "кечээ",
             "relative-type--2": "мурдагы күнү",
+            "relative-type--1": "кечээ",
             "relative-type-0": "бүгүн",
             "relative-type-1": "эртеӊ",
             "relative-type-2": "бүрсүгүнү",
@@ -202,8 +199,8 @@
           },
           "day-short": {
             "displayName": "күн",
-            "relative-type--1": "кечээ",
             "relative-type--2": "мурдагы күнү",
+            "relative-type--1": "кечээ",
             "relative-type-0": "бүгүн",
             "relative-type-1": "эртеӊ",
             "relative-type-2": "бүрсүгүнү",
@@ -218,8 +215,8 @@
           },
           "day-narrow": {
             "displayName": "күн",
-            "relative-type--1": "кечээ",
             "relative-type--2": "мурдагы күнү",
+            "relative-type--1": "кечээ",
             "relative-type-0": "бүгүн",
             "relative-type-1": "эртеӊ",
             "relative-type-2": "бүрсүгүнү",
@@ -278,7 +275,7 @@
           "tue-narrow": {
             "relative-type--1": "өткөн шш.",
             "relative-type-0": "ушул шш.",
-            "relative-type-1": "ушул шш."
+            "relative-type-1": "келерки шейш."
           },
           "wed": {
             "relative-type--1": "өткөн шаршембиде",
@@ -355,7 +352,7 @@
             }
           },
           "hour-short": {
-            "displayName": "с.",
+            "displayName": "ст",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "{0} саат. кийин",
               "relativeTimePattern-count-other": "{0} саат. кийин"
@@ -366,7 +363,7 @@
             }
           },
           "hour-narrow": {
-            "displayName": "с",
+            "displayName": "ст",
             "relativeTime-type-future": {
               "relativeTimePattern-count-one": "+{0} с.",
               "relativeTimePattern-count-other": "+{0} с."
@@ -446,7 +443,7 @@
             }
           },
           "zone": {
-            "displayName": "саат алкагы"
+            "displayName": "убакыт алкагы"
           }
         }
       }
