@@ -25,6 +25,11 @@ basic-sliding-viewport-fit.
     #slidingContainer {
       height: 100%;
       position: absolute;
+      /*
+       Set width for IE/Edge. It's not clear why they need this, and the other
+       browsers don't.
+       */
+      width: 100%;
       will-change: transform;
     }
 
