@@ -16,6 +16,7 @@ component basic-spread-fit.
     <style>
     :host {
       display: block;
+      --basic-item-object-fit: contain;
     }
 
     #spreadContainer {
@@ -26,7 +27,7 @@ component basic-spread-fit.
     }
 
     #spreadContainer ::content > * {
-      object-fit: contain;
+      object-fit: var(--basic-item-object-fit);
       touch-action: none;
       height: 100%;
       -webkit-user-drag: none;
