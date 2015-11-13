@@ -47,7 +47,7 @@ suite('basic', function() {
       var dateFormatter = Globalize(locale).dateFormatter();
       var currencyFormatter = Globalize(locale).currencyFormatter('USD');
 
-      assert.equal(dateFormatter(new Date('May 6, 1994')), '6/5/1994');
+      assert.equal(dateFormatter(new Date('May 6, 1994')), '06/05/1994');
       assert.equal(numberFormatter(1234567.89), '1 234 567,89');
       assert.equal(currencyFormatter(1234.56), '1 234,56 $US');
 
