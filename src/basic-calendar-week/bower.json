@@ -1,16 +1,16 @@
 {
   "name": "basic-calendar-day",
   "description": "A single week in a calendar",
-  "version": "0.6.4-pre",
+  "version": "0.6.4",
   "license": "MIT",
   "main": "basic-calendar-week.html",
   "dependencies": {
-    "basic-shared": "basic-web-components/basic-shared#master",
-    "basic-calendar-day": "basic-web-components/basic-calendar-day#master",
+    "basic-shared": "basic-web-components/basic-shared#0.6.4",
+    "basic-calendar-day": "basic-web-components/basic-calendar-day#0.6.4",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.4",
     "web-component-tester": "*"
   },
   "keywords": [

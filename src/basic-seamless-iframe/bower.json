@@ -1,14 +1,14 @@
 {
   "name": "basic-seamless-iframe",
   "description": "Communicates across a frame boundary to an inner element",
-  "version": "0.6.4-pre",
+  "version": "0.6.4",
   "license": "MIT",
   "main": "basic-seamless-iframe.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.4",
     "web-component-tester": "*"
   },
   "keywords": [

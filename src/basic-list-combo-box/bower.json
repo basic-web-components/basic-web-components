@@ -1,11 +1,11 @@
 {
   "name": "basic-list-combo-box",
   "description": "A combo box which presents its choices as a dropdown list",
-  "version": "0.6.4-pre",
+  "version": "0.6.4",
   "license": "MIT",
   "main": "basic-list-combo-box.html",
   "dependencies": {
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-shared": "basic-web-components/basic-shared#0.6.4",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {

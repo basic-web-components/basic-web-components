@@ -1,17 +1,17 @@
 {
   "name": "basic-calendar-month-days",
   "description": "The days of a single calendar month (without headings)",
-  "version": "0.6.4-pre",
+  "version": "0.6.4",
   "license": "MIT",
   "main": "basic-calendar-month-days.html",
   "dependencies": {
-    "basic-calendar-day": "basic-web-components/basic-calendar-day#master",
-    "basic-calendar-week": "basic-web-components/basic-calendar-week#master",
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-calendar-day": "basic-web-components/basic-calendar-day#0.6.4",
+    "basic-calendar-week": "basic-web-components/basic-calendar-week#0.6.4",
+    "basic-shared": "basic-web-components/basic-shared#0.6.4",
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.4",
     "web-component-tester": "*"
   },
   "keywords": [

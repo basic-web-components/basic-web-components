@@ -1,12 +1,12 @@
 {
   "name": "basic-toggle-button",
   "description": "A button that can be toggled between an active (pressed) and inactive state",
-  "version": "0.6.4-pre",
+  "version": "0.6.4",
   "license": "MIT",
   "main": "basic-toggle-button.html",
   "dependencies": {
-    "basic-button": "basic-web-components/basic-button#master",
-    "basic-shared": "basic-web-components/basic-shared#master",
+    "basic-button": "basic-web-components/basic-button#0.6.4",
+    "basic-shared": "basic-web-components/basic-shared#0.6.4",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {

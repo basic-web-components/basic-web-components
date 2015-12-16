@@ -1,15 +1,15 @@
 {
   "name": "basic-selection-scroll",
   "description": "Aspect which scrolls a container to keep the selected item visible.",
-  "version": "0.6.4-pre",
+  "version": "0.6.4",
   "license": "MIT",
   "main": "basic-selection-scroll.html",
   "dependencies": {
-    "basic-aspect": "basic-web-components/basic-aspect#master",
+    "basic-aspect": "basic-web-components/basic-aspect#0.6.4",
     "polymer": "Polymer/polymer#^1.1"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-framed-content": "basic-web-components/basic-framed-content#0.6.4",
     "web-component-tester": "*"
   },
   "keywords": [
