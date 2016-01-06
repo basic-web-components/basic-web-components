@@ -164,6 +164,36 @@ module.exports = function(grunt) {
         push: true,
         pushTo: 'origin'
       }
+    },
+
+    browserify: {
+      options: {
+        browserifyOptions: {
+          debug: true
+        },
+        ignore: false, // Don't ignore node_modules; i.e., process them too
+        transform: ['babelify']
+      },
+      demos: {
+        files: {
+          'build/demos.js': ['packages/*/src/*.js']
+        }
+      },
+      // test: {
+      //   files: {
+      //     'build/tests.js': 'test/*.tests.js'
+      //   }
+      // },
+      watch: {
+        files: {
+          'build/demos.js': ['packages/*/src/*.js'] //,
+          // 'build/tests.js': 'test/*.tests.js'
+        },
+        options: {
+          keepAlive: true,
+          watch: true
+        }
+      }
     }
 
   });
@@ -188,7 +218,11 @@ module.exports = function(grunt) {
     ]);
   });
 
-  grunt.registerTask('default', ['build:release']);
+  grunt.registerTask('default', function() {
+    grunt.log.writeln('grunt commands this project supports:\n');
+    grunt.log.writeln('  grunt build');
+    grunt.log.writeln('  grunt watch');
+  });
 
   grunt.registerTask('mod_test_for_remote', function() {
     grunt.task.run('copy:remote_test', 'replace:remote_test');

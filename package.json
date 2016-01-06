@@ -1,6 +1,6 @@
 {
   "name": "basic-web-components",
-  "version": "0.6.4",
+  "version": "0.7.0-pre",
   "description": "Basic Web Components",
   "license": "MIT",
   "repository": {
@@ -8,10 +8,19 @@
     "url": "git://github.com/basic-web-components/basic-web-components.git"
   },
   "author": "info@component.kitchen",
+  "dependencies": {
+    "core-component-mixins": "ComponentKitchen/core-component-mixins#master",
+    "grunt-contrib-jshint": "^0.10.0",
+    "marked": "^0.3.3",
+    "mocha": "^1.21.4"
+  },
   "devDependencies": {
-    "grunt": "*",
+    "babel-preset-es2015": "^6.0.2",
+    "babelify": "^7.0.2",
     "grunt-banner": "^0.3.1",
+    "grunt-browserify": "^4.0.1",
     "grunt-bump": "^0.3.0",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-copy": "*",
@@ -24,12 +33,12 @@
     "grunt-sass": "*",
     "grunt-text-replace": "^0.4.0",
     "grunt-vulcanize": "^0.6.4",
+    "grunt": "^0.4.5",
     "load-grunt-tasks": "*",
-    "web-component-tester": "^3.3.22"
+    "web-component-tester": "^3.3.22",
+    "webcomponents.js": "^0.7.2"
   },
-  "dependencies": {
-    "grunt-contrib-jshint": "^0.10.0",
-    "marked": "^0.3.3",
-    "mocha": "^1.21.4"
+  "browserify": {
+    "transform": ["babelify"]
   }
 }
