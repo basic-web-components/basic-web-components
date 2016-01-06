@@ -174,9 +174,9 @@ module.exports = function(grunt) {
         ignore: false, // Don't ignore node_modules; i.e., process them too
         transform: ['babelify']
       },
-      demos: {
+      components: {
         files: {
-          'build/demos.js': ['packages/*/src/*.js']
+          'build/basic-web-components.js': ['packages/*/src/*.js']
         }
       },
       // test: {
@@ -186,7 +186,7 @@ module.exports = function(grunt) {
       // },
       watch: {
         files: {
-          'build/demos.js': ['packages/*/src/*.js'] //,
+          'build/basic-web-components.js': ['packages/*/src/*.js'] //,
           // 'build/tests.js': 'test/*.tests.js'
         },
         options: {
@@ -229,11 +229,9 @@ module.exports = function(grunt) {
     grunt.log.writeln('  grunt watch');
   });
 
-  grunt.registerTask('build', ['browserify:demos']);
+  grunt.registerTask('build', ['browserify:components']);
 
-  grunt.registerTask('watch', function() {
-    watchHelper(grunt, 'demos');
-  });
+  grunt.registerTask('watch', ['browserify:watch']);
 
   grunt.registerTask('mod_test_for_remote', function() {
     grunt.task.run('copy:remote_test', 'replace:remote_test');

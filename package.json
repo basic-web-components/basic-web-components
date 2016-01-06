@@ -9,7 +9,6 @@
   },
   "author": "info@component.kitchen",
   "dependencies": {
-    "core-component-mixins": "ComponentKitchen/core-component-mixins#master",
     "grunt-contrib-jshint": "^0.10.0",
     "marked": "^0.3.3",
     "mocha": "^1.21.4"

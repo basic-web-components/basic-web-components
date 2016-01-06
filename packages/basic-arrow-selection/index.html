@@ -4,22 +4,35 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>basic-autosize-textarea</title>
+  <title>basic-arrow-selection</title>
 
   <script src="../../node_modules/webcomponents.js/webcomponents.js"></script>
   <script src="../../build/basic-web-components.js"></script>
   <link rel="stylesheet" href="../basic-component-demos/demos.css">
 
+  <style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  basic-arrow-selection {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  </style>
+
 </head>
 
 <body>
-  <p>
-    The text area below will grow to contain its contents, unlike a standard
-    &lt;textarea&gt; element which always remains the same height.
-  </p>
-  <basic-autosize-textarea aria-label="Sample auto-sizing textarea" minimum-rows="2">
-    Type all you want here!
-  </basic-framed-content>
+  <basic-arrow-selection></basic-arrow-selection>
 </body>
 
 </html>

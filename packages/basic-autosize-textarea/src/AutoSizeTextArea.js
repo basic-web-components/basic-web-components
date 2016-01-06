@@ -8,7 +8,7 @@
  * @class AutosizeTextarea
  */
 
-import ElementBase from 'core-component-mixins/src/ElementBase';
+import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/ChildrenContent';
 import Generic from '../../basic-component-mixins/Generic';
 
