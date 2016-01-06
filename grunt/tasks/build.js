@@ -198,25 +198,30 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build:dist', function(arg) {
-    grunt.task.run([
-      'clean:build',
-      'copy:build',
-      'hogan_static:lib',
-      'vulcanize:dist',
-      'vulcanize:dist_include_polymer',
-      'usebanner:dist',
-      'usebanner:dist_include_polymer'
-    ]);
-  });
-
-  grunt.registerTask('build:dev', function() {
-    grunt.task.run([
-      'clean:build',
-      'copy:build',
-      'hogan_static:lib'
-    ]);
-  });
+  // grunt.registerTask('build:dist', function(arg) {
+  //   grunt.task.run([
+  //     'clean:build',
+  //     'copy:build',
+  //     'hogan_static:lib',
+  //     'vulcanize:dist',
+  //     'vulcanize:dist_include_polymer',
+  //     'usebanner:dist',
+  //     'usebanner:dist_include_polymer'
+  //   ]);
+  // });
+  //
+  // grunt.registerTask('build:dev', function() {
+  //   grunt.task.run([
+  //     'clean:build',
+  //     'copy:build',
+  //     'hogan_static:lib'
+  //   ]);
+  // });
+  //
+  // grunt.registerTask('build:release', function(version) {
+  //   version = version || 'patch';
+  //   grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_dist', 'replace:cldr');
+  // });
 
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
@@ -224,12 +229,13 @@ module.exports = function(grunt) {
     grunt.log.writeln('  grunt watch');
   });
 
-  grunt.registerTask('mod_test_for_remote', function() {
-    grunt.task.run('copy:remote_test', 'replace:remote_test');
+  grunt.registerTask('build', ['browserify:demos']);
+
+  grunt.registerTask('watch', function() {
+    watchHelper(grunt, 'demos');
   });
 
-  grunt.registerTask('build:release', function(version) {
-    version = version || 'patch';
-    grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_dist', 'replace:cldr');
+  grunt.registerTask('mod_test_for_remote', function() {
+    grunt.task.run('copy:remote_test', 'replace:remote_test');
   });
 };

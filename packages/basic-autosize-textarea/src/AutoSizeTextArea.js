@@ -5,15 +5,15 @@
  * grow in size; the expanding copy will expand the container, which in turn
  * stretch the text area.
  *
- * @class AutoSizeTextArea
+ * @class AutosizeTextarea
  */
 
 import ElementBase from 'core-component-mixins/src/ElementBase';
-import ChildrenContent from '../../mixins/ChildrenContent';
-import Generic from '../../mixins/Generic';
+import ChildrenContent from '../../basic-component-mixins/ChildrenContent';
+import Generic from '../../basic-component-mixins/Generic';
 
 
-export default class AutoSizeTextArea extends ElementBase.compose(
+export default class AutosizeTextarea extends ElementBase.compose(
   ChildrenContent,
   Generic
 ) {
@@ -355,4 +355,4 @@ function valueChanged(element) {
 }
 
 
-document.registerElement('basic-autosize-textarea', AutoSizeTextArea);
+document.registerElement('basic-autosize-textarea', AutosizeTextarea);
