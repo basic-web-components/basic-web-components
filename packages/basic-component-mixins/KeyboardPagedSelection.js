@@ -87,16 +87,23 @@ function getIndexOfItemAtY(element, y, downward) {
   let topOfClientArea = scrollTarget.offsetTop + scrollTarget.clientTop;
 
   // Find the item spanning the indicated y coordinate.
-  let itemIndex;
+  let item;
+  let itemIndex = start;
   let itemTop;
-  let item = items.find((item, index) => {
-    itemIndex = index;
+  let found = false;
+  while (itemIndex !== end) {
+    item = items[itemIndex];
     itemTop = item.offsetTop - topOfClientArea;
     let itemBottom = itemTop + item.offsetHeight;
-    return (itemTop <= y && itemBottom >= y);
-  });
+    if (itemTop <= y && itemBottom >= y) {
+      // Item spans the indicated y coordinate.
+      found = true;
+      break;
+    }
+    itemIndex += step;
+  }
 
-  if (!item) {
+  if (!found) {
     return null;
   }
 

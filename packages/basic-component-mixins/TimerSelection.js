@@ -78,7 +78,7 @@ function clearTimeout(element) {
 }
 
 function setTimeout(element) {
-  element._timeout = setTimeout(element._selectNextWithWrap.bind(this), 2000);
+  element._timeout = setTimeout(selectNextWithWrap.bind(this), 2000);
 }
 
 // Select the next item, wrapping to first item if necessary.

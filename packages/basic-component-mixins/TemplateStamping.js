@@ -11,6 +11,10 @@
  */
 
 
+// Feature detection for old Shadow DOM v0.
+const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== 'undefined');
+
+
 export default (base) => class TemplateStamping extends base {
 
   /*
@@ -47,10 +51,6 @@ export default (base) => class TemplateStamping extends base {
   }
 
 };
-
-
-// Feature detection for old Shadow DOM v0.
-const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== 'undefined');
 
 
 // Convert a plain string of HTML into a real template element.

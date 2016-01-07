@@ -10,8 +10,8 @@
  * @class basic-sliding-viewport
  */
 
+
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import SpreadItems from '../../basic-spread-items/src/SpreadItems';
 
 let base = ElementBase;
 

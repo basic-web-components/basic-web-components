@@ -1,9 +1,10 @@
 /**
  * Mixin which maps direction semantics (goLeft, goRight, etc.) to selection
  * semantics (selectPrevious, selectNext, etc.).
+ *
+ * @mixin DirectionSelection
  */
 
-import Composable from './Composable';
 
 export default (base) => class DirectionSelection extends base {
 

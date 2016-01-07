@@ -5,6 +5,10 @@
  */
 
 
+// Used to assign unique IDs to item elements without IDs.
+let idCount = 0;
+
+
 export default (base) => class ItemsAccessible extends base {
 
   applySelection(item, selected) {
@@ -85,10 +89,6 @@ export default (base) => class ItemsAccessible extends base {
   }
 
 };
-
-
-// Used to assign unique IDs to item elements without IDs.
-let idCount = 0;
 
 
 // Return the first ARIA activedescendant defined by the collective.

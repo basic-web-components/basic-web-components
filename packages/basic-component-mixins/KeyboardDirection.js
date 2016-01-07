@@ -5,7 +5,6 @@
  * @mixin KeyboardDirection
  */
 
-import Composable from './Composable';
 
 export default (base) => class KeyboardDirection extends base {
 

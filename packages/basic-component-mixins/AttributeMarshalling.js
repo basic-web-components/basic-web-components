@@ -37,7 +37,8 @@ function attributeToPropertyName(attributeName) {
 }
 
 // Convert hyphenated foo-bar name to camel case fooBar.
-function propertyToAttributeName(propertyName) {
-  let attributeName = propertyName.replace(/([a-z][A-Z])/g, g => g[0] + '-' + g[1].toLowerCase());
-  return attributeName;
-}
+// TODO: Use this when we support reflection of properties to attributes.
+// function propertyToAttributeName(propertyName) {
+//   let attributeName = propertyName.replace(/([a-z][A-Z])/g, g => g[0] + '-' + g[1].toLowerCase());
+//   return attributeName;
+// }

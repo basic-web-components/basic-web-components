@@ -101,7 +101,6 @@ import ItemsAccessible from '../../basic-component-mixins/ItemsAccessible';
 import ItemSelection from '../../basic-component-mixins/ItemSelection';
 import Keyboard from '../../basic-component-mixins/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/KeyboardDirection';
-import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport';
 import SwipeDirection from '../../basic-component-mixins/SwipeDirection';
 import TrackpadDirection from '../../basic-component-mixins/TrackpadDirection';
 
