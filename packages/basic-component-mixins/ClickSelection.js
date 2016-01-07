@@ -4,7 +4,7 @@
  * If the user clicks an element, and the element is an item in the list, then
  * the component's selectedIndex will be set to the index for that item.
  *
- * @class ClickSelection
+ * @mixin ClickSelection
  */
 
 export default (base) => class ClickSelection extends base {

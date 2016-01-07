@@ -1,14 +1,15 @@
 /**
  * Mixin that maps content semantics (children) to list item semantics.
  *
- * Items different from children in several ways:
+ * Items differ from children in several ways:
  *
  * * They can be referenced via index.
+ * * They can have a selection state.
  * * Auxiliary invisible child elements are filtered out and not counted as
  *   items. Auxiliary elements include link, script, style, and template
  *   elements.
  *
- * @class ContentItems
+ * @mixin ContentItems
  */
 
 export default (base) => class ContentItems extends base {

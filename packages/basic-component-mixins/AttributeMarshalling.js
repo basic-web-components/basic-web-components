@@ -1,5 +1,8 @@
-/*
+/**
  * Marshall attributes to properties (and eventually vice versa).
+ * Only supports string properties for now.
+ *
+ * @mixin AttributeMarshalling
  */
 
 export default (base) => class AttributeMarshalling extends base {

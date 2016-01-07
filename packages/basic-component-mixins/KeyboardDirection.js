@@ -2,7 +2,7 @@
  * Mixin which maps direction keys (Left, Right, etc.) to direction semantics
  * (goLeft, goRight, etc.).
  *
- * @class KeyboardDirection
+ * @mixin KeyboardDirection
  */
 
 import Composable from './Composable';

@@ -1,7 +1,7 @@
 /**
  * Mixin which manages ARIA roles for a component that wants to act as a list.
  *
- * @class ItemsAccessible
+ * @mixin ItemsAccessible
  */
 
 

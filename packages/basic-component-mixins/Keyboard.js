@@ -4,7 +4,7 @@
  * TODO: Document collective behavior.
  * TODO: Provide baseline behavior outside of a collective.
  *
- * @class Keyboard
+ * @mixin Keyboard
  */
 
 export default (base) => class Keyboard extends base {

@@ -21,8 +21,6 @@
  *
  * This makes it easy to remove all default styling -- set the generic attribute
  * to false, and all default styling will be removed.
- *
- * @class Generic
  */
 
 export default (base) => class Generic extends base {

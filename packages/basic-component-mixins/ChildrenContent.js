@@ -1,8 +1,7 @@
 /**
  * Mixin that defines a component's content as its children.
  *
- * @class ChildrenContent
- *
+ * @mixin ChildrenContent
  */
 
 // TODO: Factor content change tracking into its own mixin.

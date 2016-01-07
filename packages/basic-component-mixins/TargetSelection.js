@@ -3,7 +3,7 @@
  * target element. This is useful when defining components that act as
  * optional decorators for a component that acts like a list.
  *
- * @class TargetSelection
+ * @mixin TargetSelection
  */
 
 

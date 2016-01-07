@@ -17,7 +17,7 @@
  * To ensure the selected item is in view following use of Page Up/Down, use the
  * related SelectionScroll mixin.
  *
- * @class KeyboardPagedSelection
+ * @mixin KeyboardPagedSelection
  */
 
 export default (base) => class KeyboardPagedSelection extends base {
