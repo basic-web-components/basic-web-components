@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>basic-web-components vulcanize test</title>
+  <title>basic-web-components browserified test</title>
 
-  <link rel="import" href="bower_components/polymer/polymer.html">
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="basic-web-components.html">
+  <script src="../../node_modules/webcomponents.js/webcomponents-lite.min.js"></script>
+  <script src="../../build/basic-web-components.js"></script>
 
   <style>
     body,
@@ -42,7 +41,7 @@
 
 </head>
 
-<body unresolved>
+<body>
   <h2>basic-autosize-textarea</h2>
   <div class="demo">
     <basic-autosize-textarea minimum-rows="2">
@@ -62,21 +61,6 @@
           <img src="http://hosting.component.kitchen/resources/images/image7.jpg" alt="Palm tree">
         </basic-carousel>
       </basic-page-dots>
-    </basic-arrow-direction>
-  </div>
-
-  <h2>basic-carousel-fit</h2>
-  <div class="demo">
-    <basic-arrow-direction target="child" aria-label="Flags">
-      <basic-carousel-fit>
-        <img src="http://hosting.component.kitchen/resources/flags/Brazil.png" alt="Brazil flag">
-        <img src="http://hosting.component.kitchen/resources/flags/Cameroon.png" alt="Cameroon flag">
-        <img src="http://hosting.component.kitchen/resources/flags/Gabon.png" alt="Gabon flag">
-        <img src="http://hosting.component.kitchen/resources/flags/Nepal.png" alt="Nepal flag">
-        <img src="http://hosting.component.kitchen/resources/flags/South_Korea.png" alt="South Korea flag">
-        <img src="http://hosting.component.kitchen/resources/flags/Switzerland.png" alt="Switzerland flag">
-        <img src="http://hosting.component.kitchen/resources/flags/United_States.png" alt="United States flag">
-      </basic-carousel-fit>
     </basic-arrow-direction>
   </div>
 
@@ -127,16 +111,6 @@
       <div>Tangerine</div>
       <div>Watermelon</div>
     </basic-list-box>
-  </div>
-
-  <h2>basic-culture-selector</h2>
-  <div class="demo">
-    <template is="dom-bind">
-      <p>
-        Preferred language/culture: <basic-culture-selector culture="{{culture}}"></basic-culture-selector>
-      </p>
-      <basic-calendar-month culture="{{culture}}"></basic-calendar-month>
-    </template>
   </div>
 
 </body>
