@@ -17,7 +17,6 @@
     "babelify": "^7.0.2",
     "grunt-banner": "^0.3.1",
     "grunt-browserify": "^4.0.1",
-    "grunt-bump": "^0.3.0",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-connect": "^0.11.2",
@@ -29,9 +28,7 @@
     "grunt-hogan-static": "^0.3.0",
     "grunt-mocha-phantomjs": "^2.0.1",
     "grunt-text-replace": "^0.4.0",
-    "grunt-vulcanize": "^0.6.4",
     "grunt": "^0.4.5",
-    "load-grunt-tasks": "^3.4.0",
     "mocha": "^1.21.4",
     "web-component-tester": "^3.3.22",
     "webcomponents.js": "^0.7.2"
