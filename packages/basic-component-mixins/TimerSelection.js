@@ -55,7 +55,11 @@ export default (base) => class TimerSelection extends base {
 
   // Whether the user has selected an item manually, or we've automatically
   // advanced the selection, we wait for a bit before advancing again.
+  get selectedItem() {
+    return super.selectedItem;
+  }
   set selectedItem(item) {
+    if ('selectedItem' in base.prototype) { super.selectedItem = item; }
     clearTimeout(this);
     if (this.playing) {
       setTimeout(this);

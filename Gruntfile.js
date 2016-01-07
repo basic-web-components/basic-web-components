@@ -7,10 +7,11 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-hogan-static');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-text-replace');
 
   var modules = grunt.file.expand({cwd: SRC_DIR}, 'basic-*');
@@ -162,6 +163,13 @@ module.exports = function(grunt) {
           keepAlive: true,
           watch: true
         }
+      }
+    },
+
+    jshint: {
+      all: ['Gruntfile.js', 'packages/**/*.js'],
+      options: {
+        jshintrc: true
       }
     }
 

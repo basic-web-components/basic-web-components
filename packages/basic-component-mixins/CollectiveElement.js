@@ -11,6 +11,9 @@ export default (base) => class CollectiveElement extends base {
     this.collective = new Collective(this);
   }
 
+  get target() {
+    return super.target;
+  }
   set target(element) {
     if ('target' in base.prototype) { super.target = element; }
     this.collective.assimilate(element);
