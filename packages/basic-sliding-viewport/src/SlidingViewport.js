@@ -116,7 +116,7 @@ export default class SlidingViewport extends base {
       </style>
 
       <basic-spread-items id="slidingContainer">
-        <content></content>
+        <slot></slot>
       </basic-spread-items>
     `;
   }

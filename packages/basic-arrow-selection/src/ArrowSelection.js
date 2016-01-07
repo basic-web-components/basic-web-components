@@ -176,7 +176,7 @@ export default class ArrowSelection extends base {
         </svg>
       </button>
       <div id="arrowNavigationContainer">
-        <content></content>
+        <slot></slot>
       </div>
       <button id="buttonRight" class="navigationButton" disabled tabindex="-1" aria-hidden="true">
         <svg class="icon" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">

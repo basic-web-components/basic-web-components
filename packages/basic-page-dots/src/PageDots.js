@@ -125,7 +125,7 @@ export default class PageDots extends base {
       -->
       <!-- TODO: Replace with something that's basically a list box -->
       <div id="dots"></div>
-      <content></content>
+      <slot></slot>
     `;
   }
 

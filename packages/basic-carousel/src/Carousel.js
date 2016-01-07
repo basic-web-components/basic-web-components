@@ -166,7 +166,7 @@ export default class Carousel extends base {
       </style>
 
       <basic-sliding-viewport id="viewport">
-        <content></content>
+        <slot></slot>
       </basic-sliding-viewport>
     `;
   }

@@ -208,7 +208,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
         <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
       </div>
       <div id="contentContainer">
-        <content></content>
+        <slot></slot>
       </div>
     `;
   }

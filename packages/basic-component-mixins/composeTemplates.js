@@ -6,14 +6,14 @@
  * Example: if the first (sub) template is
  *
  *   <template>
- *     Hello, <content></content>.
+ *     Hello, <slot></slot>.
  *   </template>
  *
  * and the second (base) template is
  *
  *   <template>
  *     <b>
- *       <content></content>
+ *       <slot></slot>
  *     </b>
  *   </template>
  *
@@ -21,7 +21,7 @@
  *
  *   <template>
  *     <b>
- *       Hello, <content></content>.
+ *       Hello, <slot></slot>.
  *     </b>
  *   </template>
  */

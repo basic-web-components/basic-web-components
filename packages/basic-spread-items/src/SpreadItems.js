@@ -60,7 +60,7 @@ export default class SpreadItems extends ElementBase.compose(ChildrenContent) {
       </style>
 
       <div id="spreadContainer">
-        <content></content>
+        <slot></slot>
       </div>
     `;
   }
