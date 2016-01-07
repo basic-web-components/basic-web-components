@@ -5,7 +5,7 @@
  * @class DirectionSelection
  */
 
-import Composable from 'Composable/src/Composable';
+import Composable from './Composable';
 
 export default (base) => class DirectionSelection extends base {
 

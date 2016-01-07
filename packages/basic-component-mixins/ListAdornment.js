@@ -7,7 +7,7 @@
  * of specific mixins. That function form is somewhat awkward right now.
  */
 
-import Composable from 'Composable/src/Composable';
+import Composable from './Composable';
 
 import ChildrenContent from './ChildrenContent';
 import ContentFirstChildTarget from './ContentFirstChildTarget';

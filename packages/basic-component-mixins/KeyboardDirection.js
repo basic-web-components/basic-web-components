@@ -5,7 +5,7 @@
  * @class KeyboardDirection
  */
 
-import Composable from 'Composable/src/Composable';
+import Composable from './Composable';
 
 export default (base) => class KeyboardDirection extends base {
 
