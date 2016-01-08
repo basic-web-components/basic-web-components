@@ -211,7 +211,7 @@ function assumeButtonFocus(element, button) {
 
 function deviceSupportsTouch() {
   return 'ontouchstart' in window ||
-      (window.DocumentTouch && document instanceof DocumentTouch);
+      (window.DocumentTouch && document instanceof window.DocumentTouch);
 }
 
 

@@ -26,7 +26,7 @@ export default (base) => class TrackpadDirection extends base {
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.addEventListener('wheel', event => {
-      var handled = wheel(this, event);
+      let handled = wheel(this, event);
       if (handled) {
         event.preventDefault();
       }
@@ -128,11 +128,11 @@ function wheel(element, event) {
     wheelTimedOut(element);
   }, WHEEL_TIME);
 
-  var deltaX = event.deltaX;
-  var deltaY = event.deltaY;
+  let deltaX = event.deltaX;
+  let deltaY = event.deltaY;
 
   // See if element event represents acceleration or deceleration.
-  var acceleration = sign(deltaX) * (deltaX - element._lastDeltaX);
+  let acceleration = sign(deltaX) * (deltaX - element._lastDeltaX);
   element._lastDeltaX = deltaX;
   // console.log(deltaX + " " + acceleration + " " + element._absorbDeceleration + " " + element._postNavigateDelayComplete);
 
@@ -160,8 +160,8 @@ function wheel(element, event) {
   element._wheelDistance += deltaX;
 
   // Update the position of the items being navigated.
-  var width = element.offsetWidth;
-  var position = width > 0 ?
+  let width = element.offsetWidth;
+  let position = width > 0 ?
     element._wheelDistance / width :
     0;
   element.showTransition(false);
@@ -192,7 +192,7 @@ function wheelTimedOut(element) {
 
   // Snap to the closest item.
   element.showTransition(true);
-  var position = element.position;
+  let position = element.position;
   if (position >= 0.5) {
     // console.log("snap right");
     element.goRight();

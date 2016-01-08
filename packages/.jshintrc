@@ -1,0 +1,14 @@
+{
+  "browser": true,
+  "curly": true,
+  "eqnull": true,
+  "esnext": true,
+  "globals": {
+    "clearTimeout": false,
+    "console": false,
+    "setTimeout": false
+  },
+  "undef": true,
+  "unused": "vars",
+  "varstmt": true
+}

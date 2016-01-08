@@ -78,5 +78,5 @@ function polyfillSlotWithContent(template) {
 
 // Invoke basic style shimming with ShadowCSS.
 function shimTemplateStyles(template, tag) {
-  WebComponents.ShadowCSS.shimStyling(template.content, tag);
+  window.WebComponents.ShadowCSS.shimStyling(template.content, tag);
 }

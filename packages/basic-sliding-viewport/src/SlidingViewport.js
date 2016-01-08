@@ -126,21 +126,21 @@ export default class SlidingViewport extends base {
 
 function renderSelection() {
 
-  var count = this.items && this.items.length;
+  let count = this.items && this.items.length;
   if (!count) {
     // Null or zero means we don't have items to render yet.
     return;
   }
 
-  var index = this.selectedIndex;
+  let index = this.selectedIndex;
   if (index < 0) {
     // No selection
     // return;
     index = 0;
   }
 
-  var position = this.position || 0;
-  var dampenedPosition;
+  let position = this.position || 0;
+  let dampenedPosition;
   if (index === 0 && position < 0) {
     // Apply tension from the left edge.
     dampenedPosition = -damping(-position);
@@ -151,12 +151,12 @@ function renderSelection() {
     // No damping required.
     dampenedPosition = position;
   }
-  var fractionalIndex = index + dampenedPosition;
+  let fractionalIndex = index + dampenedPosition;
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
-  var left = -fractionalIndex * 100;
-  // var left = -(fractionalIndex / count) * 100;
-  var transform = 'translateX(' + left + '%)';
+  let left = -fractionalIndex * 100;
+  // let left = -(fractionalIndex / count) * 100;
+  let transform = 'translateX(' + left + '%)';
   this.$.slidingContainer.style.webkitTransform = transform;
   this.$.slidingContainer.style.transform = transform;
 }
@@ -178,7 +178,7 @@ function renderSelection() {
  * the distance the touchpoint has been dragged.
  */
 function damping(x) {
-  var y = (-1 / (x + 1)) + 1;
+  let y = (-1 / (x + 1)) + 1;
   return y;
 }
 

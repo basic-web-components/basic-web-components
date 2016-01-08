@@ -21,7 +21,7 @@ export default (base) => class TimerSelection extends base {
   play() {
     if (super.play) { super.play(); }
     this._playing = true;
-    setTimeout(this);
+    setTimer(this);
   }
 
   /**
@@ -31,7 +31,7 @@ export default (base) => class TimerSelection extends base {
    */
   pause() {
     if (super.pause) { super.pause(); }
-    clearTimeout(this);
+    clearTimer(this);
     this._playing = false;
   }
 
@@ -60,9 +60,9 @@ export default (base) => class TimerSelection extends base {
   }
   set selectedItem(item) {
     if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-    clearTimeout(this);
+    clearTimer(this);
     if (this.playing) {
-      setTimeout(this);
+      setTimer(this);
     }
   }
 
@@ -70,14 +70,14 @@ export default (base) => class TimerSelection extends base {
 
 
 
-function clearTimeout(element) {
+function clearTimer(element) {
   if (element._timeout) {
     clearTimeout(element._timeout);
     element._timeout = null;
   }
 }
 
-function setTimeout(element) {
+function setTimer(element) {
   element._timeout = setTimeout(selectNextWithWrap.bind(this), 2000);
 }
 

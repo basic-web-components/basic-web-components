@@ -22,9 +22,9 @@ export default (base) => class AutomaticNodeFinding extends base {
     if (super.createdCallback) { super.createdCallback(); }
     if (this.shadowRoot) {
       this.$ = {};
-      var nodesWithIds = this.shadowRoot.querySelectorAll('[id]');
+      let nodesWithIds = this.shadowRoot.querySelectorAll('[id]');
       [].forEach.call(nodesWithIds, node => {
-        var id = node.getAttribute('id');
+        let id = node.getAttribute('id');
         this.$[id] = node;
       });
     }

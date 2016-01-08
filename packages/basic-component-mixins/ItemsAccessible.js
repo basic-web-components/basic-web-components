@@ -14,7 +14,7 @@ export default (base) => class ItemsAccessible extends base {
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
     item.setAttribute('aria-selected', selected);
-    var itemId = item.getAttribute('id');
+    let itemId = item.getAttribute('id');
     if (itemId) {
       this.collective.outermostElement.setAttribute('aria-activedescendant', itemId);
     }
@@ -59,7 +59,7 @@ export default (base) => class ItemsAccessible extends base {
     // its items will get IDs that look like "_option1". Item IDs are prefixed
     // with an underscore to differentiate them from manually-assigned IDs, and
     // to minimize the potential for ID conflicts.
-    var elementId = this.getAttribute( "id" );
+    let elementId = this.getAttribute( "id" );
     this.itemBaseId = elementId ?
         "_" + elementId + "Option" :
         "_option";
