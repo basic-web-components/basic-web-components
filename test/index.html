@@ -9,33 +9,28 @@
   <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
 
   <script src="../node_modules/mocha/mocha.js" type="text/javascript"></script>
-  <script src="../node_modules/chai/chai.js" type="text/javascript"></script>
-  <!-- <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script> -->
+  <script src="../node_modules/webcomponents.js/webcomponents.js"></script>
+
+  <script>
+  mocha.setup('bdd');
+  </script>
+
+  <script src="../build/tests.js"></script>
 
 </head>
 
 <body>
-    <!-- Required for browser reporter -->
-    <div id="mocha"></div>
+  <!-- Required for browser reporter -->
+  <div id="mocha"></div>
 
-    <script>
-    console.log("Starting test run");
-    mocha.setup('bdd');
-    var assert = chai.assert; // Use Chai for assertions.
-
-    describe('Foo', function() {
-      console.log("In suite");
-      it('should do something', function() {
-        console.log("In test");
-        assert(true);
-      });
-    });
-
-    // Only tests run in real browser
-    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
-      mocha.run();
-    }
+  <script>
+  // Only tests run in real browser.
+  // When running under grunt-mocha, the grunt task will start the run.
+  if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+    mocha.run();
+  }
   </script>
+
 </body>
 
 </html>

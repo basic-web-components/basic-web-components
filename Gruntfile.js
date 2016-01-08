@@ -1,3 +1,9 @@
+/*
+ * Grunt configuration.
+ *
+ * Note: this file is in ES5. The rest of this project is ES6.
+ */
+
 var SRC_DIR = 'src';
 var GRUNT_TEST_DIR = 'grunt/test';
 var ROOT_DIR = './';
@@ -147,18 +153,18 @@ module.exports = function(grunt) {
       },
       components: {
         files: {
-          'build/basic-web-components.js': ['packages/*/src/*.js']
+          'build/basic-web-components.js': 'packages/*/src/*.js'
         }
       },
-      // test: {
-      //   files: {
-      //     'build/tests.js': 'test/*.tests.js'
-      //   }
-      // },
+      test: {
+        files: {
+          'build/tests.js': 'packages/*/test/*.js'
+        }
+      },
       watch: {
         files: {
-          'build/basic-web-components.js': ['packages/*/src/*.js'] //,
-          // 'build/tests.js': 'test/*.tests.js'
+          'build/basic-web-components.js': 'packages/*/src/*.js',
+          'build/tests.js': 'packages/*/test/*.js'
         },
         options: {
           keepAlive: true,
@@ -168,7 +174,10 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      all: ['Gruntfile.js', 'packages/**/*.js'],
+      all: [
+        'packages/**/*.js',
+        'test/**/*.js'
+      ],
       options: {
         jshintrc: true
       }
@@ -176,10 +185,11 @@ module.exports = function(grunt) {
 
     mocha: {
       test: {
-        src: ['test/**/*.html'],
+        src: 'test/**/*.html',
         options: {
           run: true,
-          log: true
+          log: true,
+          logErrors: true
         }
       }
     }
@@ -214,11 +224,13 @@ module.exports = function(grunt) {
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
     grunt.log.writeln('  grunt build');
+    grunt.log.writeln('  grunt lint');
     grunt.log.writeln('  grunt test');
     grunt.log.writeln('  grunt watch');
   });
 
   grunt.registerTask('build', ['browserify:components']);
+  grunt.registerTask('lint', ['jshint']);
   grunt.registerTask('test', ['mocha']);
   grunt.registerTask('watch', ['browserify:watch']);
 
