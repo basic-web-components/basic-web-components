@@ -30,6 +30,8 @@ export default (base) => class KeyboardDirection extends base {
 
   keydown(event) {
     let handled;
+    // Ignore Left/Right keys when metaKey or altKey modifier is also pressed,
+    // as the user may be trying to navigate back or forward in the browser.
     switch (event.keyCode) {
       case 35: // End
         handled = this.goEnd();
@@ -38,13 +40,17 @@ export default (base) => class KeyboardDirection extends base {
         handled = this.goStart();
         break;
       case 37: // Left
-        handled = this.goLeft();
+        if (!event.metaKey && !event.altKey) {
+          handled = this.goLeft();
+        }
         break;
       case 38: // Up
         handled = event.altKey ? this.goStart() : this.goUp();
         break;
       case 39: // Right
-        handled = this.goRight();
+        if (!event.metaKey && !event.altKey) {
+          handled = this.goRight();
+        }
         break;
       case 40: // Down
         handled = event.altKey ? this.goEnd() : this.goDown();
