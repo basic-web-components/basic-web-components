@@ -183,13 +183,18 @@ module.exports = function(grunt) {
       }
     },
 
+    /*
+     * NOTE: Mocha tests don't work from the command line yet, as the
+     * webcomponents.js polyfill currently triggers a "Parse error" in
+     * PhantomJS.
+     */
     mocha: {
       test: {
         src: 'test/**/*.html',
         options: {
-          run: true,
           log: true,
-          logErrors: true
+          logErrors: true,
+          run: true
         }
       }
     }
