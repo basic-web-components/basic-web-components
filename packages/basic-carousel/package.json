@@ -2,7 +2,6 @@
   "name": "basic-carousel",
   "version": "0.0.1",
   "description": "Lets the user navigate laterally through a sequence of child elements.",
-  "author": "Component Kitchen <info@component.kitchen>",
   "homepage": "https://component.kitchen",
   "license": "MIT",
   "repository": "https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-carousel",
