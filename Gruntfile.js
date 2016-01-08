@@ -179,7 +179,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      all: ['Gruntfile.js', 'packages/**/*.js'],
+      all: ['Gruntfile.js', 'packages/**/*.js', '!packages/**/dist/*'],
       options: {
         jshintrc: true
       }
@@ -189,8 +189,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
-    grunt.log.writeln('  grunt build');
-    grunt.log.writeln('  grunt watch');
+    grunt.log.writeln('  grunt build (builds consolodated basic-web-components.js and all package distributions)');
+    grunt.log.writeln('  grunt jshint (runs jshint on this Gruntfile.js and all package *.js files)');
+    grunt.log.writeln('  grunt watch (builds and watches changes to project files)');
   });
 
   grunt.registerTask('build', ['browserify:components']);
