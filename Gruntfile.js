@@ -10,8 +10,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-hogan-static');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-hogan-static');
+  grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-text-replace');
 
   var modules = grunt.file.expand({cwd: SRC_DIR}, 'basic-*');
@@ -171,6 +172,16 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       }
+    },
+
+    mocha: {
+      test: {
+        src: ['test/**/*.html'],
+        options: {
+          run: true,
+          log: true
+        }
+      }
     }
 
   });
@@ -203,11 +214,12 @@ module.exports = function(grunt) {
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
     grunt.log.writeln('  grunt build');
+    grunt.log.writeln('  grunt test');
     grunt.log.writeln('  grunt watch');
   });
 
   grunt.registerTask('build', ['browserify:components']);
-
+  grunt.registerTask('test', ['mocha']);
   grunt.registerTask('watch', ['browserify:watch']);
 
   grunt.registerTask('mod_test_for_remote', function() {
