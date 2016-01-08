@@ -4,9 +4,7 @@
   "eqnull": true,
   "esnext": true,
   "globals": {
-    "clearTimeout": false,
-    "console": false,
-    "setTimeout": false
+    "console": false
   },
   "undef": true,
   "unused": "vars",
