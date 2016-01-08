@@ -146,18 +146,30 @@ module.exports = function(grunt) {
       },
       components: {
         files: {
-          'build/basic-web-components.js': ['packages/*/src/*.js']
+          'build/basic-web-components.js': ['packages/*/src/*.js'],
+          'packages/basic-arrow-selection/dist/basic-arrow-selection.js': ['packages/basic-arrow-selection/src/*.js'],
+          'packages/basic-autosize-textarea/dist/basic-autosize-textarea.js': ['packages/basic-autosize-textarea/src/*.js'],
+          'packages/basic-carousel/dist/basic-carousel.js': ['packages/basic-carousel/src/*.js'],
+          'packages/basic-component-mixins/dist/basic-component-mixins.js': ['packages/basic-component-mixins/*.js'],
+          'packages/basic-element-base/dist/basic-element-base.js': ['packages/basic-element-base/src/*.js'],
+          'packages/basic-list-box/dist/basic-list-box.js': ['packages/basic-list-box/src/*.js'],
+          'packages/basic-page-dots/dist/basic-page-dots.js': ['packages/basic-page-dots/src/*.js'],
+          'packages/basic-sliding-viewport/dist/basic-sliding-viewport.js': ['packages/basic-sliding-viewport/src/*.js'],
+          'packages/basic-spread-items/dist/basic-spread-items.js': ['packages/basic-spread-items/src/*.js']
         }
       },
-      // test: {
-      //   files: {
-      //     'build/tests.js': 'test/*.tests.js'
-      //   }
-      // },
       watch: {
         files: {
-          'build/basic-web-components.js': ['packages/*/src/*.js'] //,
-          // 'build/tests.js': 'test/*.tests.js'
+          'build/basic-web-components.js': ['packages/*/src/*.js'],
+          'packages/basic-arrow-selection/dist/basic-arrow-selection.js': ['packages/basic-arrow-selection/src/*.js'],
+          'packages/basic-autosize-textarea/dist/basic-autosize-textarea.js': ['packages/basic-autosize-textarea/src/*.js'],
+          'packages/basic-carousel/dist/basic-carousel.js': ['packages/basic-carousel/src/*.js'],
+          'packages/basic-component-mixins/dist/basic-component-mixins.js': ['packages/basic-component-mixins/*.js'],
+          'packages/basic-element-base/dist/basic-element-base.js': ['packages/basic-element-base/src/*.js'],
+          'packages/basic-list-box/dist/basic-list-box.js': ['packages/basic-list-box/src/*.js'],
+          'packages/basic-page-dots/dist/basic-page-dots.js': ['packages/basic-page-dots/src/*.js'],
+          'packages/basic-sliding-viewport/dist/basic-sliding-viewport.js': ['packages/basic-sliding-viewport/src/*.js'],
+          'packages/basic-spread-items/dist/basic-spread-items.js': ['packages/basic-spread-items/src/*.js']
         },
         options: {
           keepAlive: true,
@@ -175,31 +187,6 @@ module.exports = function(grunt) {
 
   });
 
-  // grunt.registerTask('build:dist', function(arg) {
-  //   grunt.task.run([
-  //     'clean:build',
-  //     'copy:build',
-  //     'hogan_static:lib',
-  //     'vulcanize:dist',
-  //     'vulcanize:dist_include_polymer',
-  //     'usebanner:dist',
-  //     'usebanner:dist_include_polymer'
-  //   ]);
-  // });
-  //
-  // grunt.registerTask('build:dev', function() {
-  //   grunt.task.run([
-  //     'clean:build',
-  //     'copy:build',
-  //     'hogan_static:lib'
-  //   ]);
-  // });
-  //
-  // grunt.registerTask('build:release', function(version) {
-  //   version = version || 'patch';
-  //   grunt.task.run('clean:dist', 'build:dist', 'copy:dist', 'replace:bower', 'copy:test', 'mod_test_for_remote', 'copy:bower_dist', 'replace:cldr');
-  // });
-
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
     grunt.log.writeln('  grunt build');
@@ -207,10 +194,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', ['browserify:components']);
-
   grunt.registerTask('watch', ['browserify:watch']);
-
-  grunt.registerTask('mod_test_for_remote', function() {
-    grunt.task.run('copy:remote_test', 'replace:remote_test');
-  });
 };
