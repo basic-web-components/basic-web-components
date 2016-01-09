@@ -12,6 +12,7 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
+import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
 
 let base = ElementBase;
 

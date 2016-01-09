@@ -91,6 +91,7 @@
  * @class Carousel
  */
 
+
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/ChildrenContent';
 import CollectiveElement from '../../basic-component-mixins/CollectiveElement';
@@ -101,6 +102,7 @@ import ItemsAccessible from '../../basic-component-mixins/ItemsAccessible';
 import ItemSelection from '../../basic-component-mixins/ItemSelection';
 import Keyboard from '../../basic-component-mixins/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/KeyboardDirection';
+import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
 import SwipeDirection from '../../basic-component-mixins/SwipeDirection';
 import TrackpadDirection from '../../basic-component-mixins/TrackpadDirection';
 
