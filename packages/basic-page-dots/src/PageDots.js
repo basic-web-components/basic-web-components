@@ -9,11 +9,11 @@
  */
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/ChildrenContent';
-import CollectiveElement from '../../basic-component-mixins/CollectiveElement';
-import ContentFirstChildTarget from '../../basic-component-mixins/ContentFirstChildTarget';
-import Keyboard from '../../basic-component-mixins/Keyboard';
-import TargetSelection from '../../basic-component-mixins/TargetSelection';
+import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import CollectiveElement from '../../basic-component-mixins/src/CollectiveElement';
+import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
+import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
 
 let base = ElementBase.compose(

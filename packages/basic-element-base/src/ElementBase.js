@@ -5,10 +5,10 @@
  */
 
 
-import Composable from '../../basic-component-mixins/Composable';
-import TemplateStamping from '../../basic-component-mixins/TemplateStamping';
-import AutomaticNodeFinding from '../../basic-component-mixins/AutomaticNodeFinding';
-import AttributeMarshalling from '../../basic-component-mixins/AttributeMarshalling';
+import Composable from '../../basic-component-mixins/src/Composable';
+import TemplateStamping from '../../basic-component-mixins/src/TemplateStamping';
+import AutomaticNodeFinding from '../../basic-component-mixins/src/AutomaticNodeFinding';
+import AttributeMarshalling from '../../basic-component-mixins/src/AttributeMarshalling';
 
 
 export default class ElementBase extends Composable(HTMLElement).compose(

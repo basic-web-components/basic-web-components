@@ -9,7 +9,7 @@
  */
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/ChildrenContent';
+import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
 
 export default class SpreadItems extends ElementBase.compose(ChildrenContent) {
 

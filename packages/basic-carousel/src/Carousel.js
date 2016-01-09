@@ -93,18 +93,18 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/ChildrenContent';
-import CollectiveElement from '../../basic-component-mixins/CollectiveElement';
-import ContentItems from '../../basic-component-mixins/ContentItems';
-import DirectionSelection from '../../basic-component-mixins/DirectionSelection';
-import Generic from '../../basic-component-mixins/Generic';
-import ItemsAccessible from '../../basic-component-mixins/ItemsAccessible';
-import ItemSelection from '../../basic-component-mixins/ItemSelection';
-import Keyboard from '../../basic-component-mixins/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/KeyboardDirection';
+import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import CollectiveElement from '../../basic-component-mixins/src/CollectiveElement';
+import ContentItems from '../../basic-component-mixins/src/ContentItems';
+import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
+import Generic from '../../basic-component-mixins/src/Generic';
+import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
+import ItemSelection from '../../basic-component-mixins/src/ItemSelection';
+import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
-import SwipeDirection from '../../basic-component-mixins/SwipeDirection';
-import TrackpadDirection from '../../basic-component-mixins/TrackpadDirection';
+import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
+import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
 let base = ElementBase.compose(
   ChildrenContent,

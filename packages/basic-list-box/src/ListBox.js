@@ -41,20 +41,20 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/ChildrenContent';
-import ClickSelection from '../../basic-component-mixins/ClickSelection';
-import CollectiveElement from '../../basic-component-mixins/CollectiveElement';
-import ContentItems from '../../basic-component-mixins/ContentItems';
-import DirectionSelection from '../../basic-component-mixins/DirectionSelection';
-import Generic from '../../basic-component-mixins/Generic';
-import ItemSelection from '../../basic-component-mixins/ItemSelection';
-import ItemsAccessible from '../../basic-component-mixins/ItemsAccessible';
-import Keyboard from '../../basic-component-mixins/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/KeyboardDirection';
-import KeyboardPagedSelection from '../../basic-component-mixins/KeyboardPagedSelection';
-import KeyboardPrefixSelection from '../../basic-component-mixins/KeyboardPrefixSelection';
-import SelectionHighlight from '../../basic-component-mixins/SelectionHighlight';
-import SelectionScroll from '../../basic-component-mixins/SelectionScroll';
+import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
+import CollectiveElement from '../../basic-component-mixins/src/CollectiveElement';
+import ContentItems from '../../basic-component-mixins/src/ContentItems';
+import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
+import Generic from '../../basic-component-mixins/src/Generic';
+import ItemSelection from '../../basic-component-mixins/src/ItemSelection';
+import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
+import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
+import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPrefixSelection';
+import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
+import SelectionScroll from '../../basic-component-mixins/src/SelectionScroll';
 
 
 export default class ListBox extends ElementBase.compose(
