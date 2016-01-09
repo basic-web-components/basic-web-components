@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import TemplateStamping from '../TemplateStamping.js';
 
 
-
 /* Element with a simple template */
 class ElementWithStringTemplate extends TemplateStamping(HTMLElement) {
   get template() {
