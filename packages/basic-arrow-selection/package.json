@@ -1,0 +1,18 @@
+{
+  "name": "basic-arrow-selection",
+  "version": "0.0.1",
+  "description": "Mixin used to add prominent left and right arrow buttons to a wrapped child. Clicking the left/right buttons selects the previous/next item.",
+  "homepage": "https://component.kitchen",
+  "license": "MIT",
+  "repository": "https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-arrow-selection",
+  "keywords": [
+    "basic-web-components",
+    "es6",
+    "mixin",
+    "web-components"
+  ],
+  "dependencies": {
+    "basic-element-base": "^0.0.1",
+    "basic-component-mixins": "^0.0.1"
+  }
+}
