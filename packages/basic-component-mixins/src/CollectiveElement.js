@@ -6,9 +6,16 @@
  */
 export default (base) => class CollectiveElement extends base {
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    this.collective = new Collective(this);
+  get collective() {
+    if (!this._collective) {
+      this._collective = new Collective();
+      this._collective.assimilate(this);
+    }
+    return this._collective;
+  }
+  set collective(value) {
+    if ('collective' in base.prototype) { super.collective = value; }
+    this._collective = value;
   }
 
   get target() {
@@ -24,9 +31,8 @@ export default (base) => class CollectiveElement extends base {
 
 class Collective {
 
-  constructor(element) {
+  constructor() {
     this._elements = [];
-    this.assimilate(element);
   }
 
   assimilate(target) {

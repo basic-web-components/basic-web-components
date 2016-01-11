@@ -83,7 +83,7 @@ export default (base) => class ItemsAccessible extends base {
   set selectedItem(item) {
     if ('selectedItem' in base.prototype) { super.selectedItem = item; }
     // Catch the case where the selection is removed.
-    if (item == null) {
+    if (item == null && this.collective) {
       this.collective.outermostElement.removeAttribute('aria-activedescendant');
     }
   }

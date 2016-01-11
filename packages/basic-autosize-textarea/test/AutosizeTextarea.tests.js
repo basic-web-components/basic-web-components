@@ -16,51 +16,30 @@ describe('AutosizeTextarea', () => {
     container.innerHTML = '';
   });
 
-  // function setInnerHTML(elem, text) {
-  //   let textNode = document.createTextNode(text);
-  //   let children = Polymer.dom(elem).childNodes;
-  //   for (let i = 0; i < children.length; i++) {
-  //     Polymer.dom(elem).removeChild(children[i]);
-  //   }
-  //   Polymer.dom(elem).appendChild(textNode);
-  // }
-
-  it('instantiation', () => {
+  it('can be instantiated', () => {
     let fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
     assert(fixture);
   });
 
-  // test('innerHTML becomes value', done => {
-  //   container.innerHTML = '<basic-autosize-textarea>Hello</basic-autosize-textarea>';
-  //   let fixture = container.querySelector('basic-autosize-textarea');
-  //   flush(function() {
-  //     assert.equal(fixture.value, 'Hello');
-  //     done();
-  //   });
-  // });
-  //
-  // test('set innerHTML', done => {
-  //   let fixture = document.createElement('basic-autosize-textarea');
-  //   container.appendChild(fixture);
-  //   let content = 'Initial value';
-  //   fixture.value = content;
-  //   flush(function() {
-  //     assert.equal(fixture.value, content);
-  //     let newContent = 'New value';
-  //     if (fixture.shadowRoot) {
-  //       fixture.innerHTML = newContent;
-  //     }
-  //     else {
-  //       setInnerHTML(fixture, newContent);
-  //     }
-  //     flush(function() {
-  //       assert.equal(fixture.value, newContent);
-  //       done();
-  //     });
-  //   });
-  // });
-  //
+  it('sets initial value from initial innerHTML', () => {
+    container.innerHTML = '<basic-autosize-textarea>Hello</basic-autosize-textarea>';
+    let fixture = container.querySelector('basic-autosize-textarea');
+    assert.equal(fixture.value, 'Hello');
+  });
+
+  it('updates value when innerHTML changes', done => {
+    let fixture = document.createElement('basic-autosize-textarea');
+    container.appendChild(fixture);
+    fixture.value = 'Initial value';
+    let newContent = 'New value';
+    fixture.innerHTML = newContent;
+    setTimeout(() => {
+      assert.equal(fixture.value, newContent);
+      done();
+    });
+  });
+
   // test('default minimumRows', done => {
   //   let fixture = document.createElement('basic-autosize-textarea');
   //   container.appendChild(fixture);

@@ -1,10 +1,11 @@
 /**
- * Mixin that defines a component's content as its children.
+ * Mixin that defines a component's content as its children. Changes in the
+ * content will be tracked, and a contentChanged method will be invoked on the
+ * component when its children change.
  *
  * @mixin ChildrenContent
  */
 
-// TODO: Factor content change tracking into its own mixin.
 // TODO: Don't respond to changes in attributes, or at least offer that as an
 // option.
 
@@ -12,12 +13,12 @@ export default (base) => class ChildrenContent extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
-    // Until we have content observing again, force a call to contentChanged().
-    // HACK: Do this asynchronously, so other mixins have a chance to set up
-    // before this call.
-    setTimeout(() => this.contentChanged());
 
     observeContentChanges(this);
+
+    // Make an initial call to contentChanged() so that the component can do
+    // initialization that it normally does when content changes.
+    this.contentChanged();
   }
 
   contentChanged() {
