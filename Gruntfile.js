@@ -35,7 +35,6 @@ function buildBuildList() {
   return obj;
 }
 var buildList = buildBuildList();
-console.dir(buildList);
 
 
 module.exports = function(grunt) {
