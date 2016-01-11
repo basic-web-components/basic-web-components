@@ -19,6 +19,9 @@ var allPackages = [
   'basic-spread-items'
 ];
 
+// Global array used for reporting successful npm publish tasks
+var updatedPublishList = [];
+
 //
 // Build the buildList object for use in browserify:components
 //
@@ -114,7 +117,9 @@ module.exports = function(grunt) {
                 grunt.log.error('Package not published for unexpected reasons: ' + err);
             }
             else if (stdout && stdout.length > 0) {
-              grunt.log.writeln(stdout);
+              var output = stdout.trim();
+              grunt.log.writeln(output);
+              updatedPublishList.push(output);
             }
             if (cb) {
               cb();
@@ -138,7 +143,8 @@ module.exports = function(grunt) {
               grunt.log.error('Package owner not updated for unexpected reasons: ' + err);
             }
             else if (stdout && stdout.length > 0) {
-              grunt.log.writeln(stdout);
+              var output = stdout.trim();
+              grunt.log.writeln(output);
             }
             if (cb) {
               cb();
@@ -174,6 +180,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('npm-publish', function(package) {
+    updatedPublishList = [];
+
     if (!package || package.length < 1) {
       return grunt.log.error('No package specified');
     }
@@ -189,6 +197,19 @@ module.exports = function(grunt) {
 
     for (var i = 0; i < packages.length; i++) {
       grunt.task.run(['shell:npm-publish:' + packages[i], 'npm-addowners:' + packages[i]]);
+    }
+    grunt.task.run(['npm-publish-report']);
+  });
+
+  grunt.registerTask('npm-publish-report', function() {
+    if (updatedPublishList.length <= 0) {
+      grunt.log.writeln('No packages published');
+      return;
+    }
+
+    grunt.log.writeln('Successfully published the following:');
+    for (var i = 0; i < updatedPublishList.length; i++) {
+      grunt.log.writeln(updatedPublishList[i]);
     }
   });
 
