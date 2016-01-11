@@ -20,10 +20,13 @@ var allPackages = [
 ];
 
 //
-// Build the buildFiles object for use in browserify:components
+// Build the buildList object for use in browserify:components
 //
-function buildBuildFilesObject() {
-  var obj = {'build/basic-web-components.js': ['packages/*/src/*.js']};
+function buildBuildList() {
+  var obj = {
+    'build/basic-web-components.js': ['packages/*/src/*.js'],
+    'build/tests.js': ['packages/*/test/*.js']
+  };
 
   for (var i = 0; i < allPackages.length; i++) {
     obj['packages/' + allPackages[i] + '/dist/' + allPackages[i] + '.js'] = ['packages/' + allPackages[i] + '/*.js'];
@@ -31,13 +34,7 @@ function buildBuildFilesObject() {
 
   return obj;
 }
-var buildFiles = buildBuildFilesObject();
-
-//
-// Watch files - same as buildFiles with the following additions
-//
-var watchFiles = buildFiles;
-watchFiles['build/tests.js'] = ['packages/*/test/*.js'];
+var buildList = buildBuildList();
 
 
 module.exports = function(grunt) {
@@ -62,16 +59,11 @@ module.exports = function(grunt) {
         ignore: false, // Don't ignore node_modules; i.e., process them too
         transform: ['babelify']
       },
-      components: {
-        files: buildFiles
-      },
-      test: {
-        files: {
-          'build/tests.js': 'packages/*/test/*.js'
-        }
+      buildFiles: {
+        files: buildList
       },
       watch: {
-        files: watchFiles,
+        files: buildList,
         options: {
           keepAlive: true,
           watch: true
@@ -166,7 +158,7 @@ module.exports = function(grunt) {
     grunt.log.writeln('  grunt watch (builds and watches changes to project files)');
   });
 
-  grunt.registerTask('build', ['browserify:components', 'browserify:test']);
+  grunt.registerTask('build', ['browserify:buildFiles']);
   grunt.registerTask('lint', ['jshint']);
   grunt.registerTask('test', ['mocha']);
   grunt.registerTask('watch', ['browserify:watch']);
