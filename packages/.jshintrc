@@ -4,7 +4,7 @@
   "eqnull": true,
   "esnext": true,
   "globals": {
-    "after": false,
+    "afterEach": false,
     "before": false,
     "console": false,
     "describe": false,
