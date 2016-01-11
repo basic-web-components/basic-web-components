@@ -29,12 +29,13 @@ function buildBuildList() {
   };
 
   for (var i = 0; i < allPackages.length; i++) {
-    obj['packages/' + allPackages[i] + '/dist/' + allPackages[i] + '.js'] = ['packages/' + allPackages[i] + '/*.js'];
+    obj['packages/' + allPackages[i] + '/dist/' + allPackages[i] + '.js'] = ['packages/' + allPackages[i] + '/src/*.js'];
   }
 
   return obj;
 }
 var buildList = buildBuildList();
+console.dir(buildList);
 
 
 module.exports = function(grunt) {
