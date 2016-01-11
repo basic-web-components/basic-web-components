@@ -20,8 +20,5 @@
     "grunt-mocha": "^0.4.15",
     "grunt": "^0.4.5",
     "webcomponents.js": "^0.7.2"
-  },
-  "browserify": {
-    "transform": ["babelify"]
   }
 }
