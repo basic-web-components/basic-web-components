@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import AttributeMarshalling from '../AttributeMarshalling.js';
+import AttributeMarshalling from '../src/AttributeMarshalling';
 
 
 /* Element with camelCase property name */

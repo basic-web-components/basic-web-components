@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import Composable from '../Composable.js';
+import Composable from '../src/Composable';
 
 
 /* Element created via ES5-compatible .compose() */

@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import TemplateStamping from '../TemplateStamping.js';
+import TemplateStamping from '../src/TemplateStamping';
 
 
 /* Element with a simple template */
