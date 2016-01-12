@@ -85,11 +85,11 @@ export default (base) => class ChildrenContent extends base {
  */
 function expandContentElements(nodes, includeTextNodes) {
   let expanded = Array.prototype.map.call(nodes, node => {
-    // We want to see if the node is an instanceof HTMLContentElement, but
+    // We want to see if the node is an instanceof HTMLSlotELement, but
     // that class won't exist if the browser that doesn't support native
     // Shadow DOM and if the Shadow DOM polyfill hasn't been loaded. Instead,
-    // we do a simplistic check to see if the tag name is "content".
-    if (node.localName && node.localName === "content") {
+    // we do a simplistic check to see if the tag name is "slot" or "content".
+    if (node.localName && (node.localName === "slot" || node.localName === "content")) {
       // content element; use its distributed nodes instead.
       let distributedNodes = node.getDistributedNodes();
       return distributedNodes ?

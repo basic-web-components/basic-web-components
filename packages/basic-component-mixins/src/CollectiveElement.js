@@ -7,6 +7,7 @@
 export default (base) => class CollectiveElement extends base {
 
   get collective() {
+    // Lazily create the collective when first asked for it.
     if (!this._collective) {
       this._collective = new Collective();
       this._collective.assimilate(this);
