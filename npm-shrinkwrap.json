@@ -1782,6 +1782,11 @@
       "from": "grunt-mocha@>=0.4.15 <0.5.0",
       "resolved": "https://registry.npmjs.org/grunt-mocha/-/grunt-mocha-0.4.15.tgz"
     },
+    "grunt-shell": {
+      "version": "1.1.2",
+      "from": "grunt-shell@>=1.1.2 <2.0.0",
+      "resolved": "https://registry.npmjs.org/grunt-shell/-/grunt-shell-1.1.2.tgz"
+    },
     "has": {
       "version": "1.0.1",
       "from": "has@>=1.0.0 <2.0.0",
