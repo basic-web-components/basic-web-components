@@ -37,7 +37,7 @@ class Collective {
   }
 
   assimilate(target) {
-    let elements = target.collective ?
+    let elements = target.collective && target.collective.elements.length > 0 ?
       target.collective.elements :
       [target];
     elements.forEach(element => {
