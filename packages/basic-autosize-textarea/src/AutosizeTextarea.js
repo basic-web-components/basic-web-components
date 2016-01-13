@@ -41,29 +41,6 @@ export default class AutosizeTextarea extends ElementBase.compose(
   // value property text.
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
-
-    this.$.textBox.addEventListener('change', event => {
-      // Raise our own change event (since change events aren't automatically
-      // retargetted).
-      this.dispatchEvent(new CustomEvent('change'));
-    });
-    this.$.textBox.addEventListener('input', event => {
-      valueChanged(this);
-    });
-    this.$.textBox.addEventListener('keypress', event => {
-      keypress(this, event);
-    });
-
-    let text = getTextContent(this);
-
-    // If a value is provided as part of initialization, we will not overwrite
-    // it with content. The value property takes precedence. Do not set the value
-    // here unless necessary as it will establish a lineheight of zero if set
-    // to the empty string.
-    if (!this.value && text.length) {
-      this.value = unescapeHtml(text);
-    }
-
     initializeWhenRendered(this);
   }
 
@@ -89,7 +66,33 @@ export default class AutosizeTextarea extends ElementBase.compose(
 
   contentChanged() {
     if (super.contentChanged) { super.contentChanged(); }
-    this.value = getTextContent(this);
+    if (this._valueTracksContent) {
+      let text = getTextContent(this);
+      this.$.textBox.value = unescapeHtml(text);
+      valueChanged(this);
+    }
+  }
+
+  createdCallback() {
+    if (super.createdCallback) { super.createdCallback(); }
+
+    this.$.textBox.addEventListener('change', event => {
+      // Raise our own change event (since change events aren't automatically
+      // retargetted).
+      this.dispatchEvent(new CustomEvent('change'));
+    });
+    this.$.textBox.addEventListener('input', event => {
+      valueChanged(this);
+    });
+    this.$.textBox.addEventListener('keypress', event => {
+      keypress(this, event);
+    });
+
+    // A standard textarea has its value track its textContent by default.
+    // That is, changes to textContent update the value. However, if an attempt
+    // is made to change the value directly, this breaks the automatic tracking.
+    // From that point on, changes to textContent do *not* update the value.
+    this._valueTracksContent = true;
   }
 
   /**
@@ -97,7 +100,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
    * attribute on a standard textarea, but because this element can grow, is
    * expressed as a minimum rather than a fixed number.
    *
-   * @attribute minimumRows
+   * @property minimumRows
    * @type number
    * @default 1
    */
@@ -114,7 +117,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
   /**
    * A prompt shown when the field is empty to indicate what the user should enter.
    *
-   * @attribute placeholder
+   * @property placeholder
    * @type string
    */
   get placeholder() {
@@ -216,13 +219,19 @@ export default class AutosizeTextarea extends ElementBase.compose(
   /**
    * The text shown in the textarea.
    *
-   * @attribute value
+   * Note that the text shown in the textarea can also be updated by changing
+   * the element's innerHTML/textContent. However, if the value property is
+   * explicitly set, that will override the innerHTML/textContent.
+   *
+   * @property value
    * @type string
    */
   get value() {
     return this.$.textBox.value;
   }
   set value(text) {
+    // Explicitly setting value breaks automatic update of value from content.
+    this._valueTracksContent = false;
     this.$.textBox.value = text;
     valueChanged(this);
   }

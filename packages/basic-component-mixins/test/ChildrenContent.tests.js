@@ -8,8 +8,9 @@ import ChildrenContent from '../src/ChildrenContent';
 class ContentTest extends ChildrenContent(HTMLElement) {
 
   contentChanged() {
-    if (window.contentChangedHook) {
-      window.contentChangedHook(this);
+    this._saveTextContent = this.textContent;
+    if (this.contentChangedHook) {
+      this.contentChangedHook();
     }
   }
 
@@ -47,7 +48,6 @@ describe('ChildrenContent mixin', () => {
 
   afterEach(() => {
     container.innerHTML = '';
-    window.contentChangedHook = null;
   });
 
   it("provides helpers to access content", () => {
@@ -70,47 +70,48 @@ describe('ChildrenContent mixin', () => {
   it("provides helpers to access reprojected content", () => {
     let fixture = document.createElement('reproject-test');
     let div = document.createElement('div');
-    div.textContent = 'Hello';
+    div.textContent = 'aardvark';
     fixture.appendChild(div);
-    assert.equal(fixture.distributedTextContent, 'Hello');
+    assert.equal(fixture.distributedTextContent, 'aardvark');
     assert.equal(fixture.distributedChildren.length, 1);
     assert.equal(fixture.distributedChildNodes.length, 1);
     assert.equal(fixture.distributedChildNodes[0], div);
     // Inner element should report same results.
     let inner = fixture.shadowRoot.querySelector('content-test');
-    assert.equal(inner.distributedTextContent, 'Hello');
+    assert.equal(inner.distributedTextContent, 'aardvark');
     assert.equal(inner.distributedChildren.length, 1);
     assert.equal(inner.distributedChildNodes.length, 1);
     assert.equal(inner.distributedChildNodes[0], div);
   });
 
   it("makes initial call to contentChanged when component is created", done => {
-    window.contentChangedHook = (fixture) => {
-      assert.equal(fixture.textContent, 'Hello');
+    container.innerHTML = `<content-test>beaver</content-test>`;
+    let fixture = container.querySelector('content-test');
+    setTimeout(() => {
+      assert.equal(fixture._saveTextContent, 'beaver');
       done();
-    };
-    container.innerHTML = `<content-test>Hello</content-test>`;
+    });
   });
 
   it("calls contentChanged when textContent changes", done => {
     let fixture = document.createElement('content-test');
-    window.contentChangedHook = (element) => {
-      assert.equal(fixture.textContent, 'Hello');
+    fixture.contentChangedHook = (element) => {
+      assert.equal(fixture.textContent, 'chihuahua');
       done();
     };
     container.appendChild(fixture);
-    fixture.textContent = 'Hello';
+    fixture.textContent = 'chihuahua';
   });
 
   it("calls contentChanged when children change", done => {
     let fixture = document.createElement('content-test');
-    window.contentChangedHook = () => {
-      assert.equal(fixture.textContent, 'Hello');
+    fixture.contentChangedHook = () => {
+      assert.equal(fixture.textContent, 'dingo');
       done();
     };
     container.appendChild(fixture);
     let div = document.createElement('div');
-    div.textContent = 'Hello';
+    div.textContent = 'dingo';
     fixture.appendChild(div);
   });
 
@@ -119,40 +120,44 @@ describe('ChildrenContent mixin', () => {
     let fixture = document.createElement('reproject-test');
     let contentTest = fixture.shadowRoot.querySelector('content-test');
     container.appendChild(fixture);
-    window.contentChangedHook = function(element) {
+    fixture.contentChangedHook = function(element) {
       if (element === contentTest) {
-        assert.equal(element.textContent, 'Hello');
+        assert.equal(element.textContent, 'echidna');
         done();
       }
     };
-    fixture.textContent = 'Hello';
+    fixture.textContent = 'echidna';
   });
 
   it("doesn't call contentChanged for changes in the component's shadow tree", done => {
     let fixture = document.createElement('content-test');
-    window.contentChangedHook = function() {
-      assert.equal(fixture.textContent, 'Hello');
-      done();
-    };
     container.appendChild(fixture);
-    // Modify an element in the shadow, which shouldn't trigger contentChanged.
-    // Since contentChanged uses MutationObservers, and those only monitor light
-    // DOM content, this is not an issue on Shadow DOM. But under the polyfill,
-    // the mutation handler will need to filter out mutations that occur in
-    // Shady DOM elements.
-    let shadowElement = fixture.shadowRoot.querySelector('#static');
-    shadowElement.textContent = "This should be ignored";
-    setTimeout(() => {
-      // Now add an element to the light DOM, which we do expect to trigger
-      // contentChanged.
-      fixture.textContent = 'Hello';
+    // Wait for initial contentChanged to be invoked.
+    Promise.resolve().then(() => {
+      // Listen for future contentChanged invocations.
+      fixture.contentChangedHook = function() {
+        assert.equal(fixture.textContent, 'fox');
+        done();
+      };
+      // Modify an element in the shadow, which shouldn't trigger contentChanged.
+      // Since contentChanged uses MutationObservers, and those only monitor light
+      // DOM content, this is not an issue on Shadow DOM. But under the polyfill,
+      // the mutation handler will need to filter out mutations that occur in
+      // Shady DOM elements.
+      let shadowElement = fixture.shadowRoot.querySelector('#static');
+      shadowElement.textContent = "This should be ignored";
+
+      // Now add an element to the light DOM, which we *do* expect to trigger
+      // contentChanged. Use a timeout to ensure that contentChanged has had a
+      // chance to pick up (and ignore)the DOM mutation above.
+      setTimeout(() => fixture.textContent = 'fox');
     });
   });
 
   it("doesn't call contentChanged when node is removed from shadow DOM", done => {
     let fixture = document.createElement('content-test');
-    window.contentChangedHook = function() {
-      assert.equal(fixture.textContent, 'Hello');
+    fixture.contentChangedHook = function() {
+      assert.equal(fixture.textContent, 'gorilla');
       done();
     };
     container.appendChild(fixture);
@@ -163,7 +168,7 @@ describe('ChildrenContent mixin', () => {
 
     // Now add an element to the light DOM, which we do expect to trigger
     // contentChanged.
-    fixture.textContent = 'Hello';
+    fixture.textContent = 'gorilla';
   });
 
   it("*does* call contentChangend if node is removed from light DOM", done => {
@@ -172,7 +177,7 @@ describe('ChildrenContent mixin', () => {
     div.textContent = 'div';
     fixture.appendChild(div);
     container.appendChild(fixture);
-    window.contentChangedHook = function() {
+    fixture.contentChangedHook = function() {
       assert.equal(fixture.childNodes.length, 0);
       done();
     };
@@ -188,7 +193,7 @@ describe('ChildrenContent mixin', () => {
     let button = document.createElement('button');
     fixture.appendChild(button);
     container.appendChild(fixture);
-    window.contentChangedHook = function() {
+    fixture.contentChangedHook = function() {
       assert.isTrue(button.disabled);
       done();
     };
@@ -197,12 +202,12 @@ describe('ChildrenContent mixin', () => {
 
   it.skip("doesn't call contentChanged when element's own attributes change", done => {
     let fixture = document.createElement('content-test');
-    window.contentChangedHook = function() {
+    fixture.contentChangedHook = function() {
       // Shouldn't get invoked.
       done(new Error("The contentChanged handler was invoked, but shouldn't have been."));
     };
     container.appendChild(fixture);
-    fixture.sampleAttribute = 'Hello';
+    fixture.sampleAttribute = 'hedgehog';
     setTimeout(done);
   });
 

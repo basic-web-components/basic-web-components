@@ -20,26 +20,29 @@ describe('AutosizeTextarea', () => {
     assert(fixture);
   });
 
-  it("sets initial value from initial innerHTML", () => {
-    container.innerHTML = '<basic-autosize-textarea>Hello</basic-autosize-textarea>';
+  it("sets initial value from initial innerHTML", done => {
+    container.innerHTML = '<basic-autosize-textarea>aardvark</basic-autosize-textarea>';
     let fixture = container.querySelector('basic-autosize-textarea');
-    assert.equal(fixture.value, 'Hello');
+    // Use microtask to wait for contentChanged to be invoked.
+    Promise.resolve().then(() => {
+      assert.equal(fixture.value, 'aardvark');
+      done();
+    });
   });
 
   it("applies its value to the inner textarea", () => {
     let fixture = document.createElement('basic-autosize-textarea');
-    fixture.value = 'Hello';
-    assert(fixture.$.textBox.value, 'Hello');
+    fixture.value = 'beaver';
+    assert(fixture.$.textBox.value, 'beaver');
   });
 
   it("updates value when innerHTML changes", done => {
     let fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
-    fixture.value = 'Initial value';
-    let newContent = 'New value';
-    fixture.innerHTML = newContent;
-    setTimeout(() => {
-      assert.equal(fixture.value, newContent);
+    fixture.innerHTML = 'chihuahua';
+    // Use microtask to wait for mutation observer to pick up change.
+    Promise.resolve().then(() => {
+      assert.equal(fixture.value, 'chihuahua');
       done();
     });
   });
@@ -50,19 +53,19 @@ describe('AutosizeTextarea', () => {
   });
 
   it("marshalls the minimum-rows attribute to the minimumRows property", () => {
-    container.innerHTML = '<basic-autosize-textarea minimum-rows="10">Hello</basic-autosize-textarea>';
+    container.innerHTML = '<basic-autosize-textarea minimum-rows="10"></basic-autosize-textarea>';
     let fixture = container.querySelector('basic-autosize-textarea');
     assert.equal(fixture.minimumRows, 10);
   });
 
   it("raises a value-changed event when its value changes", done => {
-    container.innerHTML = '<basic-autosize-textarea minimum-rows="10">Hello</basic-autosize-textarea>';
-    let fixture = container.querySelector('basic-autosize-textarea');
+    let fixture = document.createElement('basic-autosize-textarea');
+    container.appendChild(fixture);
     fixture.addEventListener('value-changed', event => {
-      assert.equal(fixture.value, 'Goodbye');
+      assert.equal(fixture.value, 'fox');
       done();
     });
-    fixture.value = 'Goodbye';
+    fixture.value = 'fox';
   });
 
   it("autosizes to fit its contents", () => {
