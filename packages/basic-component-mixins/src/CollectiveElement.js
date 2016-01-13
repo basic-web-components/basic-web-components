@@ -6,17 +6,9 @@
  */
 export default (base) => class CollectiveElement extends base {
 
-  get collective() {
-    // Lazily create the collective when first asked for it.
-    if (!this._collective) {
-      this._collective = new Collective();
-      this._collective.assimilate(this);
-    }
-    return this._collective;
-  }
-  set collective(value) {
-    if ('collective' in base.prototype) { super.collective = value; }
-    this._collective = value;
+  createdCallback() {
+    if (super.createdCallback) { super.createdCallback(); }
+    this.collective = new Collective(this);
   }
 
   get target() {
@@ -32,12 +24,13 @@ export default (base) => class CollectiveElement extends base {
 
 class Collective {
 
-  constructor() {
+  constructor(element) {
     this._elements = [];
+    this.assimilate(element);
   }
 
   assimilate(target) {
-    let elements = target.collective && target.collective.elements.length > 0 ?
+    let elements = target.collective ?
       target.collective.elements :
       [target];
     elements.forEach(element => {

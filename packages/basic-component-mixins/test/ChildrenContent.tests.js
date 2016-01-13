@@ -94,7 +94,7 @@ describe('ChildrenContent mixin', () => {
 
   it("calls contentChanged when textContent changes", done => {
     let fixture = document.createElement('content-test');
-    window.contentChangedHook = () => {
+    window.contentChangedHook = (element) => {
       assert.equal(fixture.textContent, 'Hello');
       done();
     };

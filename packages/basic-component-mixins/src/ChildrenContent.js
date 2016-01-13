@@ -13,18 +13,28 @@ export default (base) => class ChildrenContent extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
-
     observeContentChanges(this);
 
     // Make an initial call to contentChanged() so that the component can do
     // initialization that it normally does when content changes.
-    this.contentChanged();
+    //
+    // This will invoke contentChanged() handlers in other mixins. In order that
+    // those mixins have a chance to complete their own initialization, we add
+    // the contentChanged() call to the microtask queue via a promise.
+    // See https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+    Promise.resolve().then(() => this.contentChanged());
   }
 
   contentChanged() {
     if (super.contentChanged) { super.contentChanged(); }
     let event = new CustomEvent('content-changed');
     this.dispatchEvent(event);
+  }
+
+  initialized() {
+    // Make an initial call to contentChanged() so that the component can do
+    // initialization that it normally does when content changes.
+    this.contentChanged();
   }
 
   /**
