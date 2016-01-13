@@ -2,10 +2,14 @@
  * Grunt configuration.
  *
  * Note: this file is in ES5. The rest of this project is ES6.
+ *
+ * Note to contributors: Consider modifications to the npm publish mechanism,
+ * including replacing the use of global variables and, potentially, utilizing a
+ * promise-chain of tasks to improve readability of intent.
  */
 
 //
-// allPackages is the array of npm-publishable packages in this monorepo
+// allPackages is the global array of npm-publishable packages in this monorepo
 //
 var allPackages = [
   'basic-arrow-selection',
@@ -23,7 +27,7 @@ var allPackages = [
 var updatedPublishList = [];
 
 //
-// Build the buildList object for use in browserify:components
+// Build the global buildList object for use in browserify:components
 //
 function buildBuildList() {
   var obj = {
@@ -101,6 +105,12 @@ module.exports = function(grunt) {
       }
     },
 
+    //
+    // The shell section specifies shell-based commands to be executed and is implemented
+    // by the Grunt grunt-shell plugin. Shell commands are specified under the "command" key,
+    // and any code that needs to be executed upon completion is specified under
+    // options/callback.
+    //
     shell: {
       'npm-publish': {
         command: function(package) {
@@ -156,6 +166,9 @@ module.exports = function(grunt) {
 
   });
 
+  //
+  // Default task - prints to the console the tasks that are available to be run from the command line
+  //
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
     grunt.log.writeln('  grunt build (builds consolidated basic-web-components.js, all package distributions, and all tests)');
@@ -164,30 +177,68 @@ module.exports = function(grunt) {
     grunt.log.writeln('  grunt watch (builds and watches changes to project files)');
   });
 
+  //
+  // The build task is callable from the command line and executes the browserify:buildFiles task
+  // defined in the Grunt config. This task builds ES5 transpiled files written to each package's
+  // dist folder. A developer who uses "npm install" on that package can import the resulting
+  // JavaScript file(s) from the package's dist folder without the need for Babel in an ES5
+  // ecosystem.
+  //
+  // This task makes use of the buildList global array.
+  //
   grunt.registerTask('build', ['browserify:buildFiles']);
+
+  //
+  // The lint task is callable from the command line and executes the jshint task defined
+  // in the Grunt config. This task looks for JavaScript warnings/errors.
+  //
   grunt.registerTask('lint', ['jshint']);
+
+  //
+  // The test task is callable from the command line and executes the mocha task defined
+  // in the Grunt config. This task executes the monorepo's test suite.
+  //
   grunt.registerTask('test', ['mocha']);
+
+  //
+  // The watch task is callable from the command line and executes the browserify:watch task
+  // defined in the Grunt config. This task performs a build and then watches for changes
+  // for instant update during development.
+  //
   grunt.registerTask('watch', ['browserify:watch']);
 
-  grunt.registerTask('npm-addowners', function(package) {
-    if (!package || package.length < 1) {
-      return grunt.log.error('No package specified');
-    }
-
-    grunt.task.run([
-      'shell:npm-owner-add:jan.miksovsky:' + package,
-      'shell:npm-owner-add:robbear:' + package]);
-  });
-
+  //
+  // The npm-publish task is callable from the command line and performs a publish operation
+  // to npm for a specified package if named, or all packages in the monorepo when "*" is
+  // used as the parameter (grunt npm-publish:*).
+  //
+  // This task also calls the npm-addowners task which assigns npm package ownership via
+  // "npm owner add <ownername> <packagename>". The owners are specified in the npm-addowners
+  // task code, referring to npm user accounts.
+  //
+  // This task makes use of the following globals:
+  //
+  // allPackages: In the case where "*" is used as the npm-publish parameter, the allPackages
+  // global array specifies the list of packages to be published.
+  //
+  // updatedPublishList: This global array is used to store the list of successfully published
+  // packages during the npm-publish run. At the completion of the task, the contents of the
+  // updatedPublishList array are printed to the console as a summary.
+  //
   grunt.registerTask('npm-publish', function(package) {
     updatedPublishList = [];
 
+    // Handle an improperly specified command line invocation where no package is specified
     if (!package || package.length < 1) {
       return grunt.log.error('No package specified');
     }
 
+    // We'll always assume we have an array of packages to publish, with the degenerate
+    // case being a single package.
     var packages = [];
 
+    // If the command line specifies "*", then set the array of packages to the global array, allPackages.
+    // Otherwise, just push the single specified package name.
     if (package == '*') {
       packages = allPackages;
     }
@@ -195,12 +246,26 @@ module.exports = function(grunt) {
       packages.push(package);
     }
 
+    // For each of the packages in the array, call the Grunt config-based shell task, shell:npm-publish
+    // (which uses grunt-shell to execute npm commands), and the task, npm-addowners, to assign
+    // npm package ownership.
+    //
+    // Note that grunt.task.run adds tasks to Grunt's task queue in the order in which they're
+    // specified, with the subsequent async operations executed sequentially in that order.
     for (var i = 0; i < packages.length; i++) {
       grunt.task.run(['shell:npm-publish:' + packages[i], 'npm-addowners:' + packages[i]]);
     }
+
+    // Finally, output the summary report to the console regarding successfully published packages.
+    // By virtue of Grunt's task queue, this task is guaranteed to run after each of the above
+    // publish/addowner operations.
     grunt.task.run(['npm-publish-report']);
   });
 
+  //
+  // Helper task that prints to the console the list of successfully published tasks.
+  // This task should not be called from the command line.
+  //
   grunt.registerTask('npm-publish-report', function() {
     if (updatedPublishList.length <= 0) {
       grunt.log.writeln('No packages published');
@@ -211,6 +276,21 @@ module.exports = function(grunt) {
     for (var i = 0; i < updatedPublishList.length; i++) {
       grunt.log.writeln(updatedPublishList[i]);
     }
+  });
+
+  //
+  // Helper task that uses the Grunt config shell:npm-owner-add task to assign
+  // npm account ownership to the specified package. This task should not be
+  // called from the command line.
+  //
+  grunt.registerTask('npm-addowners', function(package) {
+    if (!package || package.length < 1) {
+      return grunt.log.error('No package specified');
+    }
+
+    grunt.task.run([
+      'shell:npm-owner-add:jan.miksovsky:' + package,
+      'shell:npm-owner-add:robbear:' + package]);
   });
 
 };
