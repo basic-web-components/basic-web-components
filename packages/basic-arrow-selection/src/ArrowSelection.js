@@ -15,7 +15,7 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
 import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
-import ItemSelection from '../../basic-component-mixins/src/ItemSelection';
+import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
@@ -24,7 +24,7 @@ let base = ElementBase.compose(
   ChildrenContent,
   CollectiveMember,
   ContentFirstChildTarget,
-  ItemSelection,
+  ItemsSelection,
   Keyboard,
   TargetSelection
 );

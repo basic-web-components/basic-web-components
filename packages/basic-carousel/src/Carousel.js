@@ -99,7 +99,7 @@ import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
-import ItemSelection from '../../basic-component-mixins/src/ItemSelection';
+import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
@@ -112,7 +112,7 @@ let base = ElementBase.compose(
   ContentItems,
   DirectionSelection,
   Generic,
-  ItemSelection,
+  ItemsSelection,
   ItemsAccessible,
   Keyboard,
   KeyboardDirection,

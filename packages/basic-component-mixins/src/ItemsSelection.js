@@ -1,7 +1,7 @@
 /**
  * Mixin which manages selection semantics for items in a list.
  *
- * @mixin ItemSelection
+ * @mixin ItemsSelection
  */
 
 
@@ -20,7 +20,7 @@
  * @param detail.selectedIndex The new selected index.
  */
 
-export default (base) => class ItemSelection extends base {
+export default (base) => class ItemsSelection extends base {
 
   // Default implementation. This will typically be handled by other mixins.
   applySelection(item, selected) {
@@ -117,7 +117,7 @@ export default (base) => class ItemSelection extends base {
    */
   // TODO: Confirm item is in items before selecting.
   get selectedItem() {
-    return this._selectedItem;
+    return this._selectedItem || null;
   }
   set selectedItem(item) {
     if ('selectedItem' in base.prototype) { super.selectedItem = item; }

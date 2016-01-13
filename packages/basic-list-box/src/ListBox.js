@@ -47,7 +47,7 @@ import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember'
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
-import ItemSelection from '../../basic-component-mixins/src/ItemSelection';
+import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
@@ -64,7 +64,7 @@ export default class ListBox extends ElementBase.compose(
     ContentItems,
     DirectionSelection,
     Generic,
-    ItemSelection,
+    ItemsSelection,
     ItemsAccessible,
     Keyboard,
     KeyboardDirection,
@@ -121,6 +121,41 @@ export default class ListBox extends ElementBase.compose(
         <slot></slot>
       </div>
     `;
+  }
+
+  /**
+   * The text content of the selected item.
+   *
+   * Setting this to text not found in any list item will set selectedItem to
+   * null.
+   *
+   * @property value
+   * @type String
+   */
+  get value() {
+    return this.selectedItem == null || this.selectedItem.textContent == null ?
+      '' :
+      this.selectedItem.textContent;
+  }
+  set value(text) {
+
+    let currentIndex = this.selectedIndex;
+    let newIndex = -1; // Assume we won't find the text.
+
+    // Find the item with the indicated text.
+    let items = this.items;
+    for (let i = 0, length = items.length; i < length; i++) {
+      if (items[i].textContent === text) {
+        newIndex = i;
+        break;
+      }
+    }
+
+    if (newIndex !== currentIndex) {
+      this.selectedIndex = newIndex;
+      let event = new CustomEvent('value-changed');
+      this.dispatchEvent(event);
+    }
   }
 
 }

@@ -28,12 +28,13 @@ export default (base) => class ContentItems extends base {
   /**
    * Returns the positional index for the indicated item.
    *
+   * Because this acts like a getter, this does not invoke a base implementation.
+   *
    * @method indexOfItem
    * @param {Object} item The item whose index is requested.
    * @returns {Number} The index of the item, or -1 if not found.
    */
   indexOfItem(item) {
-    if (super.indexOfItem) { super.indexOfItem(item); }
     return this.items.indexOf(item);
   }
 
