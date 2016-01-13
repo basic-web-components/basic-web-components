@@ -43,7 +43,7 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
 import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
-import CollectiveElement from '../../basic-component-mixins/src/CollectiveElement';
+import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
@@ -60,7 +60,7 @@ import SelectionScroll from '../../basic-component-mixins/src/SelectionScroll';
 export default class ListBox extends ElementBase.compose(
     ChildrenContent,
     ClickSelection,
-    CollectiveElement,
+    CollectiveMember,
     ContentItems,
     DirectionSelection,
     Generic,

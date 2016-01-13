@@ -94,7 +94,7 @@
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
-import CollectiveElement from '../../basic-component-mixins/src/CollectiveElement';
+import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
@@ -108,7 +108,7 @@ import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirectio
 
 let base = ElementBase.compose(
   ChildrenContent,
-  CollectiveElement,
+  CollectiveMember,
   ContentItems,
   DirectionSelection,
   Generic,
