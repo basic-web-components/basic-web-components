@@ -23,8 +23,9 @@ describe("AutosizeTextarea", () => {
   it("sets initial value from initial innerHTML", done => {
     container.innerHTML = '<basic-autosize-textarea>aardvark</basic-autosize-textarea>';
     let fixture = container.querySelector('basic-autosize-textarea');
-    // Use microtask to wait for contentChanged to be invoked.
-    Promise.resolve().then(() => {
+    // Timeout gives time for: 1) polyfill to upgrade element, 2) contentChanged
+    // to be fired.
+    setTimeout(() => {
       assert.equal(fixture.value, 'aardvark');
       done();
     });
@@ -52,10 +53,14 @@ describe("AutosizeTextarea", () => {
     assert.equal(fixture.minimumRows, 1);
   });
 
-  it("marshalls the minimum-rows attribute to the minimumRows property", () => {
+  it("marshalls the minimum-rows attribute to the minimumRows property", done => {
     container.innerHTML = '<basic-autosize-textarea minimum-rows="10"></basic-autosize-textarea>';
-    let fixture = container.querySelector('basic-autosize-textarea');
-    assert.equal(fixture.minimumRows, 10);
+    // Timeout gives polyfill time to upgrade element.
+    setTimeout(() => {
+      let fixture = container.querySelector('basic-autosize-textarea');
+      assert.equal(fixture.minimumRows, 10);
+      done();
+    });
   });
 
   it("raises a value-changed event when its value changes", done => {
@@ -68,24 +73,35 @@ describe("AutosizeTextarea", () => {
     fixture.value = 'fox';
   });
 
-  it("autosizes to fit its contents", () => {
+  it("autosizes to fit its contents", done => {
     let fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
-    // Original height should be sufficient to hold single line of text.
-    let originalHeight = fixture.clientHeight;
-    fixture.value = 'One\nTwo\nThree';
-    // Height with three lines of text should be over twice as big.
-    assert(fixture.clientHeight > originalHeight * 2);
+    // Timeout gives polyfill time to upgrade element.
+    setTimeout(() => {
+      // Original height should be sufficient to hold single line of text.
+      let originalHeight = fixture.clientHeight;
+      fixture.value = 'One\nTwo\nThree';
+      // Height with three lines of text should be over twice as big.
+      assert(fixture.clientHeight > originalHeight * 2);
+      done();
+    });
   });
 
-  it("applies minimumRows when text isn't tall enough", () => {
+  it("applies minimumRows when text isn't tall enough", done => {
     let fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
-    // Original height should be sufficient to hold single line of text.
-    let originalHeight = fixture.clientHeight;
-    fixture.minimumRows = 3;
-    // Height with minimumRows=3 should be over twice as big.
-    assert(fixture.clientHeight > originalHeight * 2);
+    // Timeout gives polyfill time to upgrade element.
+    setTimeout(() => {
+      // Original height should be sufficient to hold single line of text.
+      let originalHeight = fixture.clientHeight;
+      fixture.minimumRows = 3;
+      // Timeout gives time to apply styling.
+      setTimeout(() => {
+        // Height with minimumRows=3 should be over twice as big.
+        assert(fixture.clientHeight > originalHeight * 2);
+        done();
+      });
+    });
   });
 
   it("autosizes works when its text content is HTML", () => {

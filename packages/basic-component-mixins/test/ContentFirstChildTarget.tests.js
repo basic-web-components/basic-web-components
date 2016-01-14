@@ -30,7 +30,8 @@ describe("ContentFirstChildTarget mixin", () => {
         <div></div>
       </content-first-child-target-test>
     `;
-    Promise.resolve().then(() => {
+    // Timeout gives polyfill time to upgrade element.
+    setTimeout(() => {
       let fixture = container.querySelector('content-first-child-target-test');
       let div = fixture.children[0];
       let collective = fixture.collective;

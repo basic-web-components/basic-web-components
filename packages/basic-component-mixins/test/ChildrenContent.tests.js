@@ -29,11 +29,9 @@ document.registerElement('content-test', ContentTest);
 /*
  * Element containing an instance of the above, so we can test reprojection.
  */
-class ReprojectTest extends ChildrenContent(HTMLElement) {
-  createdCallback() {
-    // TODO: Make this work in browsers other than Chrome Canary + Safari.
-    let root = this.attachShadow({open: true});
-    root.innerHTML = `<content-test><content></content></content-test>`;
+class ReprojectTest extends ChildrenContent(TemplateStamping(HTMLElement)) {
+  get template() {
+    return `<content-test><content></content></content-test>`;
   }
 }
 document.registerElement('reproject-test', ReprojectTest);
@@ -54,10 +52,9 @@ describe("ChildrenContent mixin", () => {
   it("provides helpers to access content", () => {
     let fixture = document.createElement('content-test');
     let div1 = document.createElement('div');
-    let text = new Text();
+    let text = document.createTextNode(' ');
     let div2 = document.createElement('div');
     div1.textContent = 'Hello';
-    text.textContent = ' ';
     div2.textContent = 'World';
     fixture.appendChild(div1);
     fixture.appendChild(text);

@@ -271,7 +271,7 @@ function initializeWhenRendered(element) {
   // If the component has been rendered, our height should be nonzero.
   if (element.clientHeight === 0) {
     // Not rendered yet: wait a bit before trying again.
-    setTimeout(() => element._initializeWhenRendered(), 10);
+    setTimeout(() => initializeWhenRendered(element), 10);
     return;
   }
 

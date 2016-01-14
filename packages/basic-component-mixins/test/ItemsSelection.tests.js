@@ -44,16 +44,19 @@ describe("ItemsSelection mixin", () => {
     assert.equal(element.selectedIndex, 2);
   });
 
-  it("can set selectedIndex in markup", () => {
-    let div = document.createElement('div');
-    div.innerHTML = `
+  it("can set selectedIndex in markup", done => {
+    container.innerHTML = `
       <items-selection-test selected-index="0">
         <div></div>
       </items-selection-test>
     `;
-    let list = div.children[0];
-    let item = list.children[0];
-    assert.equal(list.selectedItem, item);
+    // Microtask gives polyfill time to upgrade element.
+    Promise.resolve().then(() => {
+      let list = container.querySelector('items-selection-test');
+      let item = list.children[0];
+      assert.equal(list.selectedItem, item);
+      done();
+    });
   });
 
   it("changing selection raises the selected-item-changed event", done => {
