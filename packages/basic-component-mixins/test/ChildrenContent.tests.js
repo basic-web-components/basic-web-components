@@ -1,11 +1,12 @@
 import { assert } from 'chai';
+import TemplateStamping from '../src/TemplateStamping';
 import ChildrenContent from '../src/ChildrenContent';
 
 
 /*
  * Simple element using the ChildrenContent mixin.
  */
-class ContentTest extends ChildrenContent(HTMLElement) {
+class ContentTest extends ChildrenContent(TemplateStamping(HTMLElement)) {
 
   contentChanged() {
     this._saveTextContent = this.textContent;
@@ -14,11 +15,11 @@ class ContentTest extends ChildrenContent(HTMLElement) {
     }
   }
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    // TODO: Make this work in browsers other than Chrome Canary + Safari.
-    let root = this.attachShadow({open: true});
-    root.innerHTML = `<div id="static">This is static content</div><content></content>`;
+  get template() {
+    return `
+      <div id="static">This is static content</div>
+      <content></content>
+    `;
   }
 
 }
