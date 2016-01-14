@@ -26,8 +26,11 @@ describe("AutosizeTextarea", () => {
     // Timeout gives time for: 1) polyfill to upgrade element, 2) contentChanged
     // to be fired.
     setTimeout(() => {
-      assert.equal(fixture.value, 'aardvark');
-      done();
+      // Yet another timeout because Edge seems to need two cycles to upgrade.
+      setTimeout(() => {
+        assert.equal(fixture.value, 'aardvark');
+        done();
+      });
     });
   });
 

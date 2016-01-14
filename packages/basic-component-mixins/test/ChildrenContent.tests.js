@@ -85,9 +85,13 @@ describe("ChildrenContent mixin", () => {
   it("makes initial call to contentChanged when component is created", done => {
     container.innerHTML = `<content-test>beaver</content-test>`;
     let fixture = container.querySelector('content-test');
+    // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
-      assert.equal(fixture._saveTextContent, 'beaver');
-      done();
+      // Yet another timeout because Edge seems to need two cycles to upgrade.
+      setTimeout(() => {
+        assert.equal(fixture._saveTextContent, 'beaver');
+        done();
+      });
     });
   });
 
