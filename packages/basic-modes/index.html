@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>basic-modes</title>
+
+  <script src="../../node_modules/webcomponents.js/webcomponents.js"></script>
+  <script src="../basic-arrow-selection/dist/basic-arrow-selection.js"></script>
+  <script src="./dist/basic-modes.js"></script>
+
+  <link rel="stylesheet" href="../basic-component-demos/demos.css">
+
+  <style>
+  basic-modes {
+    display: -webkit-flex;
+    display: flex;
+    height: 300px;
+    width: 400px;
+  }
+
+  basic-modes > * {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  </style>
+
+</head>
+
+<body>
+  <basic-arrow-selection>
+    <basic-modes aria-label="Panels">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    </basic-modes>
+  </basic-arrow-selection>
+</body>
+
+</html>

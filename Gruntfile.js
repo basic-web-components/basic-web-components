@@ -18,6 +18,7 @@ var allPackages = [
   'basic-component-mixins',
   'basic-element-base',
   'basic-list-box',
+  'basic-modes',
   'basic-page-dots',
   'basic-sliding-viewport',
   'basic-spread-items'
