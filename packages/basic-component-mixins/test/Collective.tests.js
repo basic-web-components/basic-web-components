@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import Collective from '../src/Collective';
 
 
-describe('Collective', () => {
+describe("Collective", () => {
 
   it("initiallly has no members", function() {
     let collective = new Collective();

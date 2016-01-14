@@ -11,7 +11,8 @@ class ContentFirstChildTargetTest extends ContentFirstChildTarget(
 ) {}
 document.registerElement('content-first-child-target-test', ContentFirstChildTargetTest);
 
-describe('ContentFirstChildTarget mixin', () => {
+
+describe("ContentFirstChildTarget mixin", () => {
 
   let container;
 

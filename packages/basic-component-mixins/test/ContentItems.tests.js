@@ -7,7 +7,7 @@ class ContentItemsTest extends ContentItems(ChildrenContent(HTMLElement)) {}
 document.registerElement('content-items-test', ContentItemsTest);
 
 
-describe('ContentItems mixin', () => {
+describe("ContentItems mixin", () => {
 
   it("returns contents as items", function() {
     let element = document.createElement('content-items-test');

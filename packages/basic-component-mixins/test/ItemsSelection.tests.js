@@ -14,7 +14,7 @@ class ItemsSelectionTest extends ItemsSelection(AttributeMarshalling(HTMLElement
 document.registerElement('items-selection-test', ItemsSelectionTest);
 
 
-describe('ItemsSelection mixin', () => {
+describe("ItemsSelection mixin", () => {
 
   let container;
 

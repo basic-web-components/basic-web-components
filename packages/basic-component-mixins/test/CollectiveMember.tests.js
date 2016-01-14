@@ -6,7 +6,7 @@ class CollectiveMemberTest extends CollectiveMember(HTMLElement) {}
 document.registerElement('collective-member-test', CollectiveMemberTest);
 
 
-describe('CollectiveMember mixin', () => {
+describe("CollectiveMember mixin", () => {
 
   it("assimilates the element indicated by its target property", () => {
     let element1 = document.createElement('collective-member-test');

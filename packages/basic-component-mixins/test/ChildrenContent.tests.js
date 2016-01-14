@@ -38,7 +38,7 @@ class ReprojectTest extends ChildrenContent(HTMLElement) {
 document.registerElement('reproject-test', ReprojectTest);
 
 
-describe('ChildrenContent mixin', () => {
+describe("ChildrenContent mixin", () => {
 
   let container;
 

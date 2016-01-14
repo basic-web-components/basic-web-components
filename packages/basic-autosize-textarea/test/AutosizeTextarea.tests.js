@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import AutosizeTextarea from '../src/AutosizeTextarea'; // jshint ignore:line
 
 
-describe('AutosizeTextarea', () => {
+describe("AutosizeTextarea", () => {
 
   let container;
 
