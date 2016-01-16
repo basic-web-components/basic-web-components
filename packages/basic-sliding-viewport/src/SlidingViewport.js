@@ -1,5 +1,6 @@
 /**
- * Presents list items in a viewport such that only a single item is visible at a
+ * @class SlidingViewport
+ * @classdesc Presents list items in a viewport such that only a single item is visible at a
  * time. Navigating between items will be represented with a horizontal visual
  * sliding effect.
  *
@@ -7,7 +8,6 @@
  * variant which automatically sizes to its content, see the related component
  * basic-sliding-viewport-fit.
  *
- * @class basic-sliding-viewport
  */
 
 

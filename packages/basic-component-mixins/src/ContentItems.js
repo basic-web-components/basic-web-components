@@ -1,5 +1,6 @@
 /**
- * Mixin that maps content semantics (children) to list item semantics.
+ * @class ContentItems
+ * @classdesc Mixin that maps content semantics (children) to list item semantics.
  *
  * Items differ from children in several ways:
  *
@@ -9,7 +10,6 @@
  *   items. Auxiliary elements include link, script, style, and template
  *   elements.
  *
- * @mixin ContentItems
  */
 
 export default (base) => class ContentItems extends base {
@@ -31,8 +31,8 @@ export default (base) => class ContentItems extends base {
    * Because this acts like a getter, this does not invoke a base implementation.
    *
    * @method indexOfItem
-   * @param {Object} item The item whose index is requested.
-   * @returns {Number} The index of the item, or -1 if not found.
+   * @param {object} item The item whose index is requested.
+   * @returns {number} The index of the item, or -1 if not found.
    */
   indexOfItem(item) {
     return this.items.indexOf(item);
@@ -60,8 +60,7 @@ export default (base) => class ContentItems extends base {
   /**
    * The current set of items in the list.
    *
-   * @property items
-   * @type [Object]
+   * @property {object} items
    */
   // TODO: property notifications so elements can bind to this property
   get items() {

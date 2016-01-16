@@ -1,9 +1,9 @@
 /**
- * Mixin that allows a component to delegate its own selection semantics to a
+ * @class TargetSelection
+ * @classdesc Mixin that allows a component to delegate its own selection semantics to a
  * target element. This is useful when defining components that act as
  * optional decorators for a component that acts like a list.
  *
- * @mixin TargetSelection
  */
 
 

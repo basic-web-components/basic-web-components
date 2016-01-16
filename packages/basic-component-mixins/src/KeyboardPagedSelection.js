@@ -1,5 +1,6 @@
 /**
- * Mixin which maps page keys (Page Up, Page Down) into operations that move
+ * @class KeyboardPagedSelection
+ * @classdesc Mixin which maps page keys (Page Up, Page Down) into operations that move
  * the selection by one page.
  *
  * The keyboard interaction model generally follows that of Microsoft Windows'
@@ -17,7 +18,6 @@
  * To ensure the selected item is in view following use of Page Up/Down, use the
  * related SelectionScroll mixin.
  *
- * @mixin KeyboardPagedSelection
  */
 
 export default (base) => class KeyboardPagedSelection extends base {

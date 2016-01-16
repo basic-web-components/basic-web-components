@@ -1,5 +1,6 @@
 /**
- * Mixin to support Polymer-style automatic node finding.
+ * @class AutomaticNodeFinding
+ * @classdesc Mixin to support Polymer-style automatic node finding.
  *
  * This adds a member on the component called `$` that can be used to reference
  * elements with IDs. E.g., if component's shadow contains an element
@@ -13,7 +14,6 @@
  *
  * See https://www.polymer-project.org/1.0/docs/devguide/local-dom.html#node-finding.
  *
- * @mixin AutomaticNodeFinding
  */
 
 export default (base) => class AutomaticNodeFinding extends base {

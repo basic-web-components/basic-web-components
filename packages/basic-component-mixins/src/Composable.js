@@ -1,11 +1,11 @@
 /**
- * Mixin to make a class more easily composable with other mixins.
+ * @class Composable
+ * @classdesc Mixin to make a class more easily composable with other mixins.
  *
  * The main contribution is the introduction of a `compose` method that applies
  * a set of mixin functions and returns the resulting new class. This sugar
  * can make the application of many mixins at once easier to read.
  *
- * @mixin Composable
  */
 
 

@@ -1,7 +1,7 @@
 /**
- * Mixin which applies standard highlight colors to a selected item.
+ * @class SelectionHighlight
+ * @classdesc Mixin which applies standard highlight colors to a selected item.
  *
- * @mixin SelectionHighlight
  */
 
 export default (base) => class SelectionHighlight extends base {

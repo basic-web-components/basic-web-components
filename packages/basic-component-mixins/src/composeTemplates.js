@@ -1,5 +1,6 @@
-/*
- * Given two templates, "fold" one inside the other. For now, this just entails
+/**
+ * @class composeTemplates
+ * @classdesc Given two templates, "fold" one inside the other. For now, this just entails
  * putting the first inside the location of the first <content> node in the
  * second template.
  *

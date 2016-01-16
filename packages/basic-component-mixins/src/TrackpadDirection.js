@@ -1,5 +1,6 @@
 /**
- * Mixin which maps a horizontal trackpad swipe gestures (or horizontal mouse
+ * @class TrackpadDirection
+ * @classdesc Mixin which maps a horizontal trackpad swipe gestures (or horizontal mouse
  * wheel actions) to direction semantics.
  *
  * To respond to the trackpad, we can listen to the DOM's "wheel" events. These
@@ -18,7 +19,6 @@
  * complex nature of the problem make it extremely difficult to achieve the same
  * degree of trackpad responsiveness possible with native applications.
  *
- * @mixin TrackpadDirection
  */
 
 export default (base) => class TrackpadDirection extends base {

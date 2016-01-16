@@ -1,5 +1,6 @@
 /**
- * Mixin that allows a component to support a "generic" style: a minimalist
+ * @class Generic
+ * @classdesc Mixin that allows a component to support a "generic" style: a minimalist
  * style that can easily be removed to reset its visual appearance to a baseline
  * state.
  *

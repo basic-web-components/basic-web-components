@@ -1,5 +1,6 @@
-/*
- * A sample general-purpose base class for defining custom elements that mixes
+/**
+ * @class ElementBase
+ * @classdesc A sample general-purpose base class for defining custom elements that mixes
  * in some common features: template stamping into a shadow root, automatic node
  * finding, and marshalling between attributes and properties.
  */

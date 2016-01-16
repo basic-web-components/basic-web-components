@@ -1,5 +1,6 @@
-/*
- * Lets the user navigate laterally through a sequence of child elements.
+/**
+ * @class Carousel
+ * @classdesc Lets the user navigate laterally through a sequence of child elements.
  *
  * basic-carousel is an implementation of the carousel user interface pattern,
  * commonly used for navigating between images, pages, and other elements.
@@ -88,7 +89,6 @@
  * elements. This helps users navigate the sequence of elements in the carousel
  * using assistive technologies.
  *
- * @class Carousel
  */
 
 

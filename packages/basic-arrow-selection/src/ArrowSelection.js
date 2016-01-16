@@ -1,5 +1,6 @@
-/*
- * Mixin used to add prominent left and right arrow buttons to a wrapped child.
+/**
+ * @class basic-arrow-direction
+ * @classdesc Mixin used to add prominent left and right arrow buttons to a wrapped child.
  * Clicking the left/right buttons selects the previous/next item.
  *
  * By default, the arrow buttons are shown on devices with a mouse or mouse-like
@@ -7,7 +8,6 @@
  * movement is detected. To cause the buttons to always appear, apply the
  * 'showArrows' CSS class.
  *
- * @class basic-arrow-direction
  */
 
 import ElementBase from '../../basic-element-base/src/ElementBase';

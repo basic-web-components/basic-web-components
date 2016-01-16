@@ -44,12 +44,27 @@ function buildBuildList() {
 }
 var buildList = buildBuildList();
 
+//
+// Build the global docsList array for use in building the package's README.md documentation
+//
+function buildDocsList() {
+  var ary = [];
+  for (var i = 0; i < allPackages.length; i++) {
+    var obj = {src: 'packages/' + allPackages[i] + '/src/*.js', dest: 'packages/' + allPackages[i] + '/README.md'};
+    ary.push(obj);
+  }
+
+  return ary;
+}
+var docsList = buildDocsList();
+
 
 module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jsdoc-to-markdown');
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-shell');
 
@@ -76,6 +91,15 @@ module.exports = function(grunt) {
           keepAlive: true,
           watch: true
         }
+      }
+    },
+
+    jsdoc2md: {
+      docs: {
+        options: {
+          "global-index-format": "none"
+        },
+        files: docsList
       }
     },
 
@@ -172,7 +196,8 @@ module.exports = function(grunt) {
   //
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
-    grunt.log.writeln('  grunt build (builds consolidated basic-web-components.js, all package distributions, and all tests)');
+    grunt.log.writeln('  grunt build (builds consolidated basic-web-components.js, all package distributions, all documentation, and all tests)');
+    grunt.log.writeln('  grunt docs (builds all packages README.md files)');
     grunt.log.writeln('  grunt lint (runs jshint on all .js files)');
     grunt.log.writeln('  grunt npm-publish:package-name|* (publishes packages/package-name or all packages (packages/*) to npm)');
     grunt.log.writeln('  grunt watch (builds and watches changes to project files)');
@@ -185,9 +210,20 @@ module.exports = function(grunt) {
   // JavaScript file(s) from the package's dist folder without the need for Babel in an ES5
   // ecosystem.
   //
+  // Note that this task also builds each package's README.md file via the jsdocs2md:docs task.
+  //
   // This task makes use of the buildList global array.
   //
-  grunt.registerTask('build', ['browserify:buildFiles']);
+  grunt.registerTask('build', ['browserify:buildFiles', 'jsdoc2md:docs']);
+
+  //
+  // The docs task is callable from the command line and executes the jsdoc2md:docs task defined
+  // in the Grunt config. This task builds each package's README.md file from jsdoc tags in the
+  // package's src JavaScript files.
+  //
+  // This task makes use of the docsList global array.
+  //
+  grunt.registerTask('docs', ['jsdoc2md:docs']);
 
   //
   // The lint task is callable from the command line and executes the jshint task defined

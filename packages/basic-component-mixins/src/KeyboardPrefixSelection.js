@@ -1,8 +1,8 @@
 /**
- * Mixin that handles list box-style prefix typing, in which the user can type a
+ * @class KeyboardPrefixSelection
+ * @classdesc Mixin that handles list box-style prefix typing, in which the user can type a
  * string to select the first item that begins with that string.
  *
- * @mixin KeyboardPrefixSelection
  */
 
 // TODO: If the selection is changed by some other means (e.g., arrow keys) other
