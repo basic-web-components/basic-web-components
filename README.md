@@ -11,19 +11,29 @@ Each component can be used as is, or as the foundation for new components.
 
 Design goals for the overall project:
 
-* **Leverage the browser platform as much as possible.** No additional framework
-  or runtime is required to use these components.
+* **Leverage the browser platform as much as possible.** These components are
+  generally written as "close to the metal" as is possible in a web application.
+  These components are not built upon a monolithic framework, nor is any shared
+  runtime required to use these components.
 * **Write in plain JavaScript ES6.** An ES5 version of each component is
   provided in its /dist folder, so you can use these in ES5 projects. If you are
   already using ES6, you can use the ES6 source directly.
+* **Functional completeness.** Each component tries to provide the best
+  implementation possible of a very common user interface pattern. If that
+  pattern could meaningfully provide keyboard support, then the component does
+  so. If that pattern has accessibility implications, then the component tries
+  to address those to the maximum extent possible. If the pattern should be
+  responsive across display sizes and input modalities, the component tries to
+  do so.
 * **Provide a minimalist appearance.** These components are meant to serve as
   solid building blocks for your applications and user experiences, not present
   a heavily styled or branded appearance of their own.
-* **Be recombinable.** Careful factoring of user interface concerns gives you
-  components, helpers, base classes, and mixins that you can readily recombine
-  to create solid custom components of your own. Composition is generally
-  preferred over class inheritance as a means of aggregating behavior; see the
-  [core-component-mixins](packages/core-component-mixins) package for details.
+* **Provide good building blocks.** Careful factoring of user interface concerns
+  gives you components, helpers, base classes, and mixins that you can readily
+  recombine to create solid custom components of your own. Composition is
+  generally preferred over class inheritance as a means of aggregating behavior;
+  see the [core-component-mixins](packages/core-component-mixins) package for
+  details.
 * **Aim for the [Gold Standard for web
   components](https://github.com/webcomponents/gold-standard/wiki).** That
   standard sets a very high bar for component quality, attempting to make web
@@ -110,9 +120,9 @@ package includes a variety of mixins you can use in your own components.
 
 ## Older components
 
-The 0.6 release of Basic Web Components included more components which have not
-yet been rewritten in ES6. These components are still present in this repository
-for reference, and it is our intent to upgrade these when we can:
+The earlier 0.6 release of Basic Web Components included more components which
+have not yet been rewritten in ES6. These components are still present in this
+repository for reference, and it is our intent to upgrade these when we can:
 
 * [basic-button](old/basic-button)
   A button with a simple generic style.
@@ -178,93 +188,244 @@ the collection? If one of these interests you, feel free to run your
 plan/idea/questions by project member
 [Jan Miksovsky](https://github.com/JanMiksovsky).
 
-* Accordion. A list that can have a single item or multiple items expanded to show more detail.
-* Alphabetic indices. Renders the characters in a culture’s alphabet in standard order (e.g., as a vertical or horizontal strip). If supplied with a set of strings (or array of objects with key pointing to the important data member?), the UI will disable those characters which are not found as the initial character of any string.
-* Async operation button. A button whose caption changes to reflect an operation in progress (e.g., changing from “Sign In” to “Signing In...”) until the operation completes. The button is disabled during the operation to avoid confusion and to prevent unnecessary extra clicks.
-* Auto-complete. A text input field that helps the user quickly enter strings from a known list. This is similar to a combo box, which is arguably better because it adds a button to dropdown and see the list of choices without having to first type. That said, nearly all web implementations of auto-complete have no button to show the choices.
-* Auto-format. Applies a collection of heuristics for formatting text: adding smart quotes, converts double hyphens to endashes, etc.
-* Backdrop. Shows a background region of non-interactive elements behind the region’s main contents.
-* Breadcrumb bar. Indicates the user’s position in a navigational hierarchy.
-* Browser-specific. Conditionally shows contents based on the browser being used and/or whether the current browser supports a given feature.
-* Calendar month navigator. Lets the user select a date, typically in the near future, by navigating through calendar months.
-* Calendar months. Shows multiple months from a calendar.
-* Central column. A region whose main central column is fixed in width, and horizontally centered with respect to the viewport.
-* Checked list box. A list box showing a check box next to each item; the user can create a multiple selection by checking the boxes.
-* Close box. A platform-sensitive representation of a button that will close the current dialog or window.
-* Closeable panel. Shows information (e.g., a warning, or the result of a completed operation) that can be dismissed to remove the panel from the visible page.
-* Collapsible panel. A region that can be toggled between collapsed and expanded states.
-* Color wheel. Lets the user select a color in a variety of color spaces.
-* Combed text box. A text box sporting tick marks or vertical lines to visually indicate how many characters should be entered. (Combine with masked input?)
-* Content with banner(s), such as toolbar (on top) or status bar (on the bottom).
+* Accordion.
+  A list that can have a single item or multiple items expanded to show more
+  detail.
+* Alphabetic indices.
+  Renders the characters in a culture’s alphabet in standard order (e.g., as a
+  vertical or horizontal strip). If supplied with a set of strings (or array of
+  objects with key pointing to the important data member?), the UI will disable
+  those characters which are not found as the initial character of any string.
+* Async operation button.
+  A button whose caption changes to reflect an operation in progress (e.g.,
+  changing from “Sign In” to “Signing In...”) until the operation completes. The
+  button is disabled during the operation to avoid confusion and to prevent
+  unnecessary extra clicks.
+* Auto-complete.
+  A text input field that helps the user quickly enter strings from a known
+  list. This is similar to a combo box, which is arguably better because it adds
+  a button to dropdown and see the list of choices without having to first type.
+  That said, nearly all web implementations of auto-complete have no button to
+  show the choices.
+* Auto-format.
+  Applies a collection of heuristics for formatting text: adding smart quotes,
+  converts double hyphens to endashes, etc.
+* Backdrop.
+  Shows a background region of non-interactive elements behind the region’s main
+  contents.
+* Breadcrumb bar.
+  Indicates the user’s position in a navigational hierarchy.
+* Calendar month navigator.
+  Lets the user select a date, typically in the near future, by navigating
+  through calendar months.
+* Calendar months.
+  Shows multiple months from a calendar.
+* Central column.
+  A region whose main central column is fixed in width, and horizontally
+  centered with respect to the viewport.
+* Checked list box.
+  A list box showing a check box next to each item; the user can create a
+  multiple selection by checking the boxes.
+* Close box.
+  A platform-sensitive representation of a button that will close the current
+  dialog or window.
+* Closeable panel.
+  Shows information (e.g., a warning, or the result of a completed operation)
+  that can be dismissed to remove the panel from the visible page.
+* Collapsible panel.
+  A region that can be toggled between collapsed and expanded states.
+* Color wheel.
+  Lets the user select a color in a variety of color spaces.
+* Combed text box.
+  A text box sporting tick marks or vertical lines to visually indicate how many
+  characters should be entered. (Combine with masked input?)
+* Content with banner(s).
+  Such as toolbar (on top) or status bar (on the bottom).
 * Content with sidebar(s) on the left and/or right side.
-* Date combo box. Lets the user type a date or choose one from a dropdown calendar.
-* Date range calendar. Lets the user select a date range, typically in the near future.
-* Date text box. Lets the user type a date in several culture-specific formats.
-* Delimited list. A list of items interspersed with a decorative element (bullet, vertical bar, etc.) for cleaner delineation.
-* Device specific. Conditionally shows contents based on the type of device being used and/or device capabilities.
-* Dialog. A popup window, typically modal.
-* Editable in place. An element that supports its own in situ editing.
-* Editable text. A piece of static text data which can be clicked to produce a text box that can then be used to edit the data.
-* Expandable summary. A block of content with a “More” link at bottom; clicking this reveals the remainder of the content.
-* File uploader. Allows the user to click or drag-and-drop to supply a single file for upload.
-* Full screen expandable. A region supporting a mode in which the region will expand to fill the entire screen.
-* Full screen. A region which fills the viewport, independent of the size of the page content.
-* Infinite list. A list which asynchronously loads additional contents as the user scrolls.
-* Labeled input. An HTML input control (generally a check box or radio button) with an associated clickable label.
-* Link list. Uses a platform-sensitive presentation of a set of links (or items that behave like links).
-* List box. A list that supports single selection, including keyboard navigation.
-* List combo box. A combo box which presents its choices as a dropdown list.
-* List with detail pane. A list box showing a set of items, paired with a means of showing properties of the selected item. These properties are either a pane (usually to the right) on desktop or tablet devices, or a separate page on mobile devices with smaller screens.
-* Log. Displays a growing text log showing, for example, the output of an ongoing process.
-* Masked text. A text box which only accepts specified input characters.
-* Menu bar. A row of menus.
-* Menu item. A command in a menu.
-* Menu separator. A line separating commands in a menu.
-* Menu. A popup menu, often in a menu bar.
-* Mobile date/time picker. Platform-sensitive collection of elements which emulate the platform’s native date/time picker.
-* Multi list box. A list that supports multiple selection, including keyboard navigation.
-* Multiple file uploader. Allows the user to click or drag-and-drop to supply multiple files for upload.
-* Number with units. Facilitates entry of a number with units (e.g., “10 in.”, “5 minutes”, “60 kg”). Accepts an array of allowable units.
-* Overlay. A transparent or semi-transparent blanket over the entire page which absorbs interactions outside a modal element. May be able to use Polymer’s overlay component.
-* Packed columns. Packs its children into a dynamic number of columns of roughly equal height (e.g., see the Pinterest home page).
-* Page number navigator. Indicates the number of pages, e.g. of search results, and also allows navigation to a particular page of results.
-* Palette window. A persistent set of tools adjacent to, or superimposed on, a work surface, providing tools for manipulating the information on the surface.
-* Panel with overflow. A panel fixed in width or height which allows any items which don't fit to overflow into a dropdown menu.
-* Persistent header. A scrolling list in which the header for the group of items currently at the top of the visible list remains visible until the user scrolls the next group to the top. At this point, the new group header pushes the previous group header out of sight.
-* Persistent navigation bar. When user scrolls page, the navigation bar shrinks to a smaller, but persistent size
-* Persistent panel. A panel whose contents will bump up against the top or bottom of a scrolling parent so as to remain always visible.
-* Popout. An item that can expand (e.g., on hover) without affecting the visual position of surrounding items.
-* Popup button. A button that produces a popup when clicked.
-* Popup source. An element which invokes a popup.
-* Popup. An element which temporarily pops up over other things. Can be modal or modeless.
-* Process steps. Shows a numbered list of steps in a task, disabling steps which are not yet available.
-* Progress bar. Indicates the fraction of an operation which has been completed.
-* Progress indicator. Platform-sensitive representation of an ongoing operation whose expected duration is unknown.
-* Pull to refresh. A region which the user can pull down to reveal a platform-sensitive “Pull to refresh” and “Loading” representation.
-* Radio button list. A list box showing a radio button next to each item; an alternative way to represent selection in a single-selection list.
-* Ribbon. A space-sensitive presentation of a set of commands.
-* Rich text editor. Supports the basics: bold, italic, insert link, etc.
-* Scroll-up bar. Appears only when user scrolls down, then up. See http://usabilitypost.com/2014/05/24/the-scroll-up-bar/. Combine with persistent navigation bar?
-* Search box. A text box with standard decorations (magnifying class, customizable “Search” hint) to suggest a search field.
-* Slider. Accepts a discrete number in a constrained range.
-* Spin box. Accepts a discrete number, potentially in a constrained range.
-* Splitter. A movable line sitting between two panels which can be dragged to change their relative sizes. (Will Polymer upgrade core-splitter to an iron- element?)
-* Sprite. Shows a single image at a time from a strip or grid of images.
-* Stacked navigation pages. As the user navigates deeper in an app, a small residual portion of the previous page remains visible (typically on the left); the user can swipe away the top page to navigate back to an earlier point.
-* Star rating. Lets the user rate something (a restaurant, product, etc.) using the conventional star system. An attribute allows the glyph
-* Tab strip. A set of tab buttons, typically used to navigate among tabbed pages presenting different content, but which can also be used, for example, to apply one of a set of filters to a results list.
-* Tab. A tabbed page which can be hosted in a set of tabs.
-* Tabs. A set of pages which can be navigated by a set of tab buttons across the top. Uses basic-modes to actually handle determining which child element is shown.
-* Tag text box. Tokenizes text input into a set of tags, and provides auto-completion against a set of existing tags.
-* Text box with button. A control with a content area (usually some form of text box) and an associated button (“Go”, “Submit”, etc.).
-* Text condenser. Switches to a condensed font when necessary to squeeze in more text.
-* Time ago. Shows the amount of time elapsed since a given reference date/time using culturally-relevant language.
-* Time combo box. Lets the user type a time or choose one from a dropdown time picker.
-* Timeline. Positions items on a horizontal time axis.
-* Toggle button. A button the user can click to toggle its selected state.
-* ToolTip. A popup that appears when hovering the mouse over another element, providing more detail about that element.
-* Transient message. A message which briefly appears on a page before automatically disappearing. Typically used to display feedback after an operation has completed (e.g., “Message sent”) without requiring user acknowledgement.
-* Tree view. Visually renders a hierarchy of items as a tree whose branches can be expanded and collapsed.
-* Validating text input. Verifies that text input content meets some criteria.
-* Vote up/down. A pair of buttons to vote something up or down; can reflect the current state of the user’s vote.
-* Wizard. Steps the user through a task through a small set of pages.
+* Date combo box.
+  Lets the user type a date or choose one from a dropdown calendar.
+* Date range calendar.
+  Lets the user select a date range, typically in the near future.
+* Date text box.
+  Lets the user type a date in several culture-specific formats.
+* Delimited list.
+  A list of items interspersed with a decorative element (bullet, vertical bar,
+  etc.) for cleaner delineation.
+* Device specific.
+  Conditionally shows contents based on the type of device being used and/or
+  device capabilities.
+* Dialog.
+  A popup window, typically modal.
+* Editable in place.
+  An element that supports its own in situ editing.
+* Editable text.
+  A piece of static text data which can be clicked to produce a text box that
+  can then be used to edit the data.
+* Expandable summary.
+  A block of content with a “More” link at bottom; clicking this reveals the
+  remainder of the content.
+* File uploader.
+  Allows the user to click or drag-and-drop to supply a single file for upload.
+* Full screen expandable.
+  A region supporting a mode in which the region will expand to fill the entire
+  screen.
+* Full screen.
+  A region which fills the viewport, independent of the size of the page
+  content.
+* Infinite list.
+  A list which asynchronously loads additional contents as the user scrolls.
+* Labeled input.
+  An HTML input control (generally a check box or radio button) with an
+  associated clickable label.
+* Link list.
+  Uses a platform-sensitive presentation of a set of links (or items that behave
+  like links).
+* List combo box.
+  A combo box which presents its choices as a dropdown list.
+* List with detail pane.
+  A list box showing a set of items, paired with a means of showing properties
+  of the selected item. These properties are either a pane (usually to the
+  right) on desktop or tablet devices, or a separate page on mobile devices with
+  smaller screens.
+* Log.
+  Displays a growing text log showing, for example, the output of an ongoing
+  process.
+* Masked text.
+  A text box which only accepts specified input characters.
+* Menu bar.
+  A row of menus.
+* Menu item.
+  A command in a menu.
+* Menu separator.
+  A line separating commands in a menu.
+* Menu.
+  A popup menu, often in a menu bar.
+* Mobile date/time picker.
+  Platform-sensitive collection of elements which emulate the platform’s native
+  date/time picker.
+* Multi list box.
+  A list that supports multiple selection, including keyboard navigation.
+* Multiple file uploader.
+  Allows the user to click or drag-and-drop to supply multiple files for upload.
+* Number with units.
+  Facilitates entry of a number with units (e.g., “10 in.”, “5 minutes”, “60
+  kg”). Accepts an array of allowable units.
+* Overlay.
+  A transparent or semi-transparent blanket over the entire page which absorbs
+  interactions outside a modal element. May be able to use Polymer’s overlay
+  component.
+* Packed columns.
+  Packs its children into a dynamic number of columns of roughly equal height
+  (e.g., see the Pinterest home page).
+* Page number navigator.
+  Indicates the number of pages, e.g. of search results, and also allows
+  navigation to a particular page of results.
+* Palette window.
+  A persistent set of tools adjacent to, or superimposed on, a work surface,
+  providing tools for manipulating the information on the surface.
+* Panel with overflow.
+  A panel fixed in width or height which allows any items which don't fit to
+  overflow into a dropdown menu.
+* Persistent header.
+  A scrolling list in which the header for the group of items currently at the
+  top of the visible list remains visible until the user scrolls the next group
+  to the top. At this point, the new group header pushes the previous group
+  header out of sight.
+* Persistent navigation bar.
+  When user scrolls page, the navigation bar shrinks to a smaller, but
+  persistent size.
+* Persistent panel.
+  A panel whose contents will bump up against the top or bottom of a scrolling
+  parent so as to remain always visible.
+* Popout.
+  An item that can expand (e.g., on hover) without affecting the visual position
+  of surrounding items.
+* Popup button.
+  A button that produces a popup when clicked.
+* Popup source.
+  An element which invokes a popup.
+* Popup.
+  An element which temporarily pops up over other things. Can be modal or
+  modeless.
+* Process steps.
+  Shows a numbered list of steps in a task, disabling steps which are not yet
+  available.
+* Progress bar.
+  Indicates the fraction of an operation which has been completed.
+* Progress indicator.
+  Platform-sensitive representation of an ongoing operation whose expected
+  duration is unknown.
+* Pull to refresh.
+  A region which the user can pull down to reveal a platform-sensitive “Pull to
+  refresh” and “Loading” representation.
+* Radio button list.
+  A list box showing a radio button next to each item; an alternative way to
+  represent selection in a single-selection list.
+* Ribbon.
+  A space-sensitive presentation of a set of commands.
+* Rich text editor.
+  Supports the basics: bold, italic, insert link, etc.
+* Scroll-up bar.
+  Appears only when user scrolls down, then up. See
+  http://usabilitypost.com/2014/05/24/the-scroll-up-bar/. Combine with
+  persistent navigation bar?
+* Search box.
+  A text box with standard decorations (magnifying class, customizable “Search”
+  hint) to suggest a search field.
+* Slider.
+  Accepts a discrete number in a constrained range.
+* Spin box.
+  Accepts a discrete number, potentially in a constrained range.
+* Splitter.
+  A movable line sitting between two panels which can be dragged to change their
+  relative sizes.
+* Stacked navigation pages.
+  As the user navigates deeper in an app, a small residual portion of the
+  previous page remains visible (typically on the left); the user can swipe away
+  the top page to navigate back to an earlier point.
+* Star rating.
+  Lets the user rate something (a restaurant, product, etc.) using the
+  conventional star system.
+* Tab strip.
+  A set of tab buttons, typically used to navigate among tabbed pages presenting
+  different content, but which can also be used, for example, to apply one of a
+  set of filters to a results list.
+* Tab.
+  A tabbed page which can be hosted in a set of tabs.
+* Tabs.
+  A set of pages which can be navigated by a set of tab buttons across the top.
+  Uses basic-modes to actually handle determining which child element is shown.
+* Tag text box.
+  Tokenizes text input into a set of tags, and provides auto-completion against
+  a set of existing tags.
+* Text box with button.
+  A control with a content area (usually some form of text box) and an
+  associated button (“Go”, “Submit”, etc.).
+* Text condenser.
+  Switches to a condensed font when necessary to squeeze in more text.
+* Time ago.
+  Shows the amount of time elapsed since a given reference date/time using
+  culturally-relevant language.
+* Time combo box.
+  Lets the user type a time or choose one from a dropdown time picker.
+* Timeline.
+  Positions items on a horizontal time axis.
+* Toggle button.
+  A button the user can click to toggle its selected state.
+* ToolTip.
+  A popup that appears when hovering the mouse over another element, providing
+  more detail about that element.
+* Transient message.
+  A message which briefly appears on a page before automatically disappearing.
+  Typically used to display feedback after an operation has completed (e.g.,
+  “Message sent”) without requiring user acknowledgement.
+* Tree view.
+  Visually renders a hierarchy of items as a tree whose branches can be expanded
+  and collapsed.
+* Validating text input.
+  Verifies that text input content meets some criteria.
+* Vote up/down.
+  A pair of buttons to vote something up or down; can reflect the current state
+  of the user’s vote.
+* Wizard.
+  Steps the user through a task through a small set of pages.
