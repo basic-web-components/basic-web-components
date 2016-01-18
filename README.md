@@ -1,92 +1,183 @@
-This is the consolidated repository holding the source for all components in the Basic Web Components project. This repo is intended for component development, and for running component demos locally.
+This is the consolidated repository for all components in the Basic Web
+Components project. This repo is intended for component development, and for
+running component demos locally.
+
 
 # Introduction
 
-The Basic Web Components project seeks to provide a comprehensive set of solid, well-designed web components that implement very common user interface patterns. Each component can be used as is, or as the foundation for new components.
+The Basic Web Components project seeks to provide a comprehensive set of solid,
+well-designed web components that implement very common user interface patterns.
+Each component can be used as is, or as the foundation for new components.
 
-These components are not intended to be flashy or exciting. They are meant to serve as solid building blocks for your applications and user experiences. Careful factoring of user interface concerns attempts to give you components, helpers, base classes, mixins, etc., that you can readily combine (or recombine) to create solid custom components to meet your own needs.
+Design values for these components include:
 
-These components try to measure up to the [Gold Standard for web components](https://github.com/webcomponents/gold-standard/wiki). That standard sets a very high bar for component quality, attempting to make web components as flexible and reliable as the standard build-in HTML elements.
+* **Leverage the browser platform as much as possible.** No additional framework
+  or runtime is required to use these components.
+* **Write in plain JavaScript ES6.** An ES5 version of each component is
+  provided in its /dist folder, so you can use these in ES5 projects. If you are
+  already using ES6, you can use the ES6 source directly.
+* **Don't be flashy.** These components are meant to serve as solid building
+  blocks for your applications and user experiences, not present a
+  heavily-styled or branded appearance of their own.
+* **Be recombinable.** Careful factoring of user interface concerns gives you
+  components, helpers, base classes, and mixins that you can readily recombine
+  to create solid custom components of your own.
+* **Aim for the [Gold Standard for web
+  components](https://github.com/webcomponents/gold-standard/wiki).** That
+  standard sets a very high bar for component quality, attempting to make web
+  components as flexible and reliable as the standard build-in HTML elements.
+
 
 # Repository organization
 
-All the interesting work on Basic Web Components happens in this repository, known as the "consolidated" repository. This contains the source for all the basic- components in a single place, which makes it simple to clone and develop in. The source for each component is in a separate subfolder under the /src folder. E.g., the source for basic-autosize-textarea is found in /src/basic-autosize-textarea.
+All work on Basic Web Components happens in this monorepo, which keeps all the
+source in a single place. This makes it easy to clone, develop in, and track
+issues and pull requests.
 
-For registration and deployment via Bower, the individual components are copied into separate repositories. E.g., the source for basic-autosize-textarea will be copied from /src/basic-autosize-textarea in this repo to the individual component repo [basic-autosize-textarea](https://github.com/basic-web-components/basic-autosize-textarea). This is done via a deployment script. From there, the component source is registered with Bower. When someone wants to use basic-autosize-textarea in a project, Bower will pull the files from the individual component repo.
+The /packages folder contains the components and other cohesive units are
+registered with npm as separately installable packages. E.g., the source for the
+basic-autosize-textarea component is found in /packages/basic-autosize-textarea.
 
-This compromise arrangement greatly simplifies component development (in this consolidated repo here) while still support Bower's need to have components live in their own individual repos.
+
+# Installing components via npm
+
+You can install the specific components you want via npm. To add a component
+like basic-autosize-textarea, add a line to the `dependencies` key in your
+project's package.json file:
+
+    {
+      ...
+      "dependencies": {
+        "basic-autosize-textarea": "basic-web-components/basic-autosize-textarea"
+      },
+    }
+
+For more information on each component's purpose and API, see the component's
+README file at the top level of its package folder.
+
+Early versions of this library were distributed via the Bower package manager,
+but those packages were deprecated in the transition to using npm.
+
 
 # Using this repository to run demos
 
 1. Clone this repository to your local machine.
-2. Find the component you are interested in the /src folder.
+2. Find the component you are interested in the /packages folder.
 3. Open the index.html page for that component to view its demo.
 
-# Localization with Globalize.js
 
-The culture-dependent components (e.g., basic-calendar-month) use [Globalize.js]
-(https://github.com/jquery/globalize) for localization. For testing and
-demonstration purposes, this repository currently pulls in a *huge* set of
-culture data files under bower_components/cldr-data. This is obviously not
-ideal — we hope to find a better way to organize things in the future.
+# Project contents
 
-# Installing these components via Bower
-
-Each of these components is separately installable via [Bower](https://bower.io), so you can use just the components you want in your project. To install a component (e.g., basic-autosize-textarea) in your project, add a line to the `dependencies` key in your project's bower.json file:
-
-```
-{
-  ...
-  "dependencies": {
-    "basic-autosize-textarea": "basic-web-components/basic-autosize-textarea#master"
-  },
-}
-```
-
-For more information on each component's purpose and API, see the formatted [documentation](http://basic-web-components.github.io/basic-web-components/docs).
+The current release of Basic Web Components includes the following:
 
 
-# Components
+## Top-level components
 
-The current version of Basic Web Components is designed for use with the latest
-release of [Polymer](https://www.polymer-project.org), and includes the
-following web components:
+* [basic-autosize-textarea](packages/basic-autosize-textarea).
+  A text area that expands to contain its text.
+* [basic-carousel](packages/basic-carousel).
+  Lets the user navigate laterally through a sequence of child elements.
+* [basic-list-box](packages/basic-list-box).
+  A single-selection list box that supports selection highlighting (using the
+  system highlight color) and keyboard navigation.
 
-* [basic-autosize-textarea](https://github.com/basic-web-components/basic-autosize-textarea). A text area that expands to contain its text.
-* [basic-button](https://github.com/basic-web-components/basic-button) A button with a simple generic style.
-* [basic-calendar-day](https://github.com/basic-web-components/basic-calendar-day). Shows a single day in a calendar.
-* [basic-calendar-month-days](https://github.com/basic-web-components/basic-calendar-month-days). Shows a single month's worth of days as a seven-column table. No headings.
-* [basic-calendar-month](https://github.com/basic-web-components/basic-calendar-month). Shows a single month from a calendar as a standard seven-column table, taking care to reflect a given culture’s preference for the first day of the week. Includes headings for month name, year, and days of week.
-* [basic-calendar-week](https://github.com/basic-web-components/basic-calendar-week). Shows a single week from a calendar as seven days in a row, taking care to reflect a given culture’s preference for the first day of the week.
-* [basic-carousel](https://github.com/basic-web-components/basic-carousel). Lets the user navigate laterally through a sequence of child elements.
-* [basic-carousel-fit](https://github.com/basic-web-components/basic-carousel-fit). Lets the user navigate through a sequence of child elements, without requiring that an explicit height and width be applied to the carousel.
-* [basic-culture-selector](https://github.com/basic-web-components/basic-culture-selector). Lets the user select a preferred language/culture from a list of supported languages/cultures. Can also be used behind the scenes to load language/culture settings.
-* [basic-days-of-week](https://github.com/basic-web-components/basic-days-of-week). Shows the names of the seven days of the week using a given culture’s day names in short/abbreviated/full format.
-* [basic-fade-overflow](https://github.com/basic-web-components/basic-fade-overflow). Fade out content that overflows so the user knows there's more.
-* [basic-framed-content](https://github.com/basic-web-components/basic-framed-content). Allows communication outside of a framed page.
-* [basic-list-box](https://github.com/basic-web-components/basic-list-box). A single-selection list box that supports selection highlighting (using the system highlight color) and keyboard navigation.
-* [basic-month-and-year](https://github.com/basic-web-components/basic-month-and-year). Shows the month and year of a given date in a format appropriate for a given culture.
-* [basic-month-name](https://github.com/basic-web-components/basic-month-name). Shows a given culture’s name for the month of a given date.
-* [basic-seamless-iframe](https://github.com/basic-web-components/basic-seamless-iframe). Allows communication with a framed page. Can automatically size to the framed content.
-* basic-spread. Spreads out a set of items horizontally so they take equal space.
-* basic-sliding-viewport. Presents list items in a viewport such that only a single item is visible at a time.
-* basic-stack. Stacks its child elements on top of each other, taking on the maximum height and width of the child elements.
-* basic-text-extractor. Extracts the text of its content elements and exposes this as an attribute which can be bound to.
+## Helper components
+
+These aren't usually instantiated on their own, but are used in conjunction with
+other components.
+
+* [basic-arrow-selection](packages/basic-arrow-selection).
+  Adds arrow buttons to the side of a carousel.
+* [basic-element-base](packages/basic-element-base).
+  A simple base class for a component that includes the most common mixins.
+* [basic-page-dots](packages/basic-page-dots).
+  Adds a row of small dots to the bottom of a carousel.
+* [basic-sliding-viewport](packages/basic-sliding-viewport).
+  Presents list items in a viewport such that only a single item is visible at a
+  time.
+* [basic-spread-items](packages/basic-spread-items).
+  Spreads out a set of items horizontally so they take equal space.
+
+
+## Mixins
+
+Mixins are a core part of the Basic Web Components approach to creating
+functionally sophisticated components. The [basic-component-mixins](packages/basic-component-mixins)
+package includes a variety of mixins you can use in your own components.
+
+
+## Older components
+
+The 0.6 release of Basic Web Components included more components which have not
+yet been rewritten in ES6. These components are still present in this repository
+for reference, and it is our intent to upgrade these when we can:
+
+
+* [basic-button](old/basic-button)
+  A button with a simple generic style.
+* [basic-calendar-day](old/basic-calendar-day).
+  Shows a single day in a calendar.
+* [basic-calendar-month-days](old/basic-calendar-month-days).
+  Shows a single month's worth of days as a seven-column table. No headings.
+* [basic-calendar-month](old/basic-calendar-month).
+  Shows a single month from a calendar as a standard seven-column table, taking
+  care to reflect a given culture’s preference for the first day of the week.
+  Includes headings for month name, year, and days of week.
+* [basic-calendar-week](old/basic-calendar-week).
+  Shows a single week from a calendar as seven days in a row, taking care to
+  reflect a given culture’s preference for the first day of the week.
+* [basic-carousel-fit](old/basic-carousel-fit).
+  Lets the user navigate through a sequence of child elements, without requiring
+  that an explicit height and width be applied to the carousel.
+* [basic-culture-selector](old/basic-culture-selector).
+  Lets the user select a preferred language/culture from a list of supported
+  languages/cultures. Can also be used behind the scenes to load
+  language/culture settings.
+* [basic-days-of-week](old/basic-days-of-week).
+  Shows the names of the seven days of the week using a given culture’s day
+  names in short/abbreviated/full format.
+* [basic-fade-overflow](old/basic-fade-overflow).
+  Fade out content that overflows so the user knows there's more.
+* [basic-framed-content](old/basic-framed-content).
+  Allows communication outside of a framed page.
+* [basic-month-and-year](old/basic-month-and-year).
+  Shows the month and year of a given date in a format appropriate for a given
+  culture.
+* [basic-month-name](old/basic-month-name).
+  Shows a given culture’s name for the month of a given date.
+* [basic-seamless-iframe](old/basic-seamless-iframe).
+  Allows communication with a framed page. Can automatically size to the framed
+  content.
+* [basic-spread](old/basic-spread).
+  Spreads out a set of items horizontally so they take equal space.
+* [basic-stack](old/basic-stack).
+  Stacks its child elements on top of each other, taking on the maximum height
+  and width of the child elements.
+* [basic-text-extractor](old/basic-text-extractor).
+  Extracts the text of its content elements and exposes this as an attribute
+  which can be bound to.
+
 
 # Contributing
 
-The Basic Web Components project is open source under the MIT license. The project is led by [Component Kitchen](http://component.kitchen) and sponsored by Google. The Basic Web Components project encourages you to join in and contribute general-purpose components to this effort! We'd love the help.
+The Basic Web Components project is open source under the MIT license. The
+project is led by [Component Kitchen](http://component.kitchen) and sponsored in
+part by Google. The Basic Web Components project encourages you to join in and
+contribute general-purpose components to this effort! We'd love the help.
 
-* We'd prefer to have issues filed against this consolidate repository, rather than the individual deployment repositories for individual components.
-* Please submit PRs against this repository, not the invididual component repositories. Those individual component repos are for deployment only.
 * Code should follow the [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 * To the extent possible, components should try to measure up to the [Gold Standard for web components](https://github.com/webcomponents/gold-standard/wiki).
 
-# Desired components
 
-If you're interested in creating a web component that others can use, why not take a shot at one of the general-purpose components below and help us complete the collection? If one of these interests you, feel free to run your plan/idea/questions by project member [Jan Miksovsky](https://github.com/JanMiksovsky).
+## Desired components
 
-* Accordion. A list that can have a single item or multiple items expanded to show more detail. Should be built upon polymer-selector.
+If you're interested in creating a web component that others can use, why not
+take a shot at one of the general-purpose components below and help us complete
+the collection? If one of these interests you, feel free to run your
+plan/idea/questions by project member
+[Jan Miksovsky](https://github.com/JanMiksovsky).
+
+* Accordion. A list that can have a single item or multiple items expanded to show more detail.
 * Alphabetic indices. Renders the characters in a culture’s alphabet in standard order (e.g., as a vertical or horizontal strip). If supplied with a set of strings (or array of objects with key pointing to the important data member?), the UI will disable those characters which are not found as the initial character of any string.
 * Async operation button. A button whose caption changes to reflect an operation in progress (e.g., changing from “Sign In” to “Signing In...”) until the operation completes. The button is disabled during the operation to avoid confusion and to prevent unnecessary extra clicks.
 * Auto-complete. A text input field that helps the user quickly enter strings from a known list. This is similar to a combo box, which is arguably better because it adds a button to dropdown and see the list of choices without having to first type. That said, nearly all web implementations of auto-complete have no button to show the choices.
