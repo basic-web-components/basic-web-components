@@ -52,22 +52,22 @@ The current version of Basic Web Components is designed for use with the latest
 release of [Polymer](https://www.polymer-project.org), and includes the
 following web components:
 
-* [basic-autosize-textarea](http://component.kitchen/components/basic-web-components/basic-autosize-textarea). A text area that expands to contain its text.
-* [basic-button](http://component.kitchen/components/basic-web-components/basic-button) A button with a simple generic style.
-* [basic-calendar-day](http://component.kitchen/components/basic-web-components/basic-calendar-day). Shows a single day in a calendar.
-* [basic-calendar-month-days](http://component.kitchen/components/basic-web-components/basic-calendar-month-days). Shows a single month's worth of days as a seven-column table. No headings.
-* [basic-calendar-month](http://component.kitchen/components/basic-web-components/basic-calendar-month). Shows a single month from a calendar as a standard seven-column table, taking care to reflect a given culture’s preference for the first day of the week. Includes headings for month name, year, and days of week.
-* [basic-calendar-week](http://component.kitchen/components/basic-web-components/basic-calendar-week). Shows a single week from a calendar as seven days in a row, taking care to reflect a given culture’s preference for the first day of the week.
-* [basic-carousel](http://component.kitchen/components/basic-web-components/basic-carousel). Lets the user navigate laterally through a sequence of child elements.
-* [basic-carousel-fit](http://component.kitchen/components/basic-web-components/basic-carousel-fit). Lets the user navigate through a sequence of child elements, without requiring that an explicit height and width be applied to the carousel.
-* [basic-culture-selector](http://component.kitchen/components/basic-web-components/basic-culture-selector). Lets the user select a preferred language/culture from a list of supported languages/cultures. Can also be used behind the scenes to load language/culture settings.
-* [basic-days-of-week](http://component.kitchen/components/basic-web-components/basic-days-of-week). Shows the names of the seven days of the week using a given culture’s day names in short/abbreviated/full format.
-* [basic-fade-overflow](http://component.kitchen/components/basic-web-components/basic-fade-overflow). Fade out content that overflows so the user knows there's more.
-* [basic-framed-content](http://component.kitchen/components/basic-web-components/basic-framed-content). Allows communication outside of a framed page.
-* [basic-list-box](http://component.kitchen/components/basic-web-components/basic-list-box). A single-selection list box that supports selection highlighting (using the system highlight color) and keyboard navigation.
-* [basic-month-and-year](http://component.kitchen/components/basic-web-components/basic-month-and-year). Shows the month and year of a given date in a format appropriate for a given culture.
-* [basic-month-name](http://component.kitchen/components/basic-web-components/basic-month-name). Shows a given culture’s name for the month of a given date.
-* [basic-seamless-iframe](http://component.kitchen/components/basic-web-components/basic-seamless-iframe). Allows communication with a framed page. Can automatically size to the framed content.
+* [basic-autosize-textarea](https://github.com/basic-web-components/basic-autosize-textarea). A text area that expands to contain its text.
+* [basic-button](https://github.com/basic-web-components/basic-button) A button with a simple generic style.
+* [basic-calendar-day](https://github.com/basic-web-components/basic-calendar-day). Shows a single day in a calendar.
+* [basic-calendar-month-days](https://github.com/basic-web-components/basic-calendar-month-days). Shows a single month's worth of days as a seven-column table. No headings.
+* [basic-calendar-month](https://github.com/basic-web-components/basic-calendar-month). Shows a single month from a calendar as a standard seven-column table, taking care to reflect a given culture’s preference for the first day of the week. Includes headings for month name, year, and days of week.
+* [basic-calendar-week](https://github.com/basic-web-components/basic-calendar-week). Shows a single week from a calendar as seven days in a row, taking care to reflect a given culture’s preference for the first day of the week.
+* [basic-carousel](https://github.com/basic-web-components/basic-carousel). Lets the user navigate laterally through a sequence of child elements.
+* [basic-carousel-fit](https://github.com/basic-web-components/basic-carousel-fit). Lets the user navigate through a sequence of child elements, without requiring that an explicit height and width be applied to the carousel.
+* [basic-culture-selector](https://github.com/basic-web-components/basic-culture-selector). Lets the user select a preferred language/culture from a list of supported languages/cultures. Can also be used behind the scenes to load language/culture settings.
+* [basic-days-of-week](https://github.com/basic-web-components/basic-days-of-week). Shows the names of the seven days of the week using a given culture’s day names in short/abbreviated/full format.
+* [basic-fade-overflow](https://github.com/basic-web-components/basic-fade-overflow). Fade out content that overflows so the user knows there's more.
+* [basic-framed-content](https://github.com/basic-web-components/basic-framed-content). Allows communication outside of a framed page.
+* [basic-list-box](https://github.com/basic-web-components/basic-list-box). A single-selection list box that supports selection highlighting (using the system highlight color) and keyboard navigation.
+* [basic-month-and-year](https://github.com/basic-web-components/basic-month-and-year). Shows the month and year of a given date in a format appropriate for a given culture.
+* [basic-month-name](https://github.com/basic-web-components/basic-month-name). Shows a given culture’s name for the month of a given date.
+* [basic-seamless-iframe](https://github.com/basic-web-components/basic-seamless-iframe). Allows communication with a framed page. Can automatically size to the framed content.
 * basic-spread. Spreads out a set of items horizontally so they take equal space.
 * basic-sliding-viewport. Presents list items in a viewport such that only a single item is visible at a time.
 * basic-stack. Stacks its child elements on top of each other, taking on the maximum height and width of the child elements.
