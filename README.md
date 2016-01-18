@@ -9,7 +9,7 @@ The Basic Web Components project seeks to provide a comprehensive set of solid,
 well-designed web components that implement very common user interface patterns.
 Each component can be used as is, or as the foundation for new components.
 
-Design values for these components include:
+Design goals for the overall project:
 
 * **Leverage the browser platform as much as possible.** No additional framework
   or runtime is required to use these components.
@@ -21,7 +21,9 @@ Design values for these components include:
   heavily-styled or branded appearance of their own.
 * **Be recombinable.** Careful factoring of user interface concerns gives you
   components, helpers, base classes, and mixins that you can readily recombine
-  to create solid custom components of your own.
+  to create solid custom components of your own. Composition is generally
+  preferred over class inheritance as a means of aggregating behavior; see the
+  [core-component-mixins](packages/core-component-mixins) package for details.
 * **Aim for the [Gold Standard for web
   components](https://github.com/webcomponents/gold-standard/wiki).** That
   standard sets a very high bar for component quality, attempting to make web
@@ -43,12 +45,15 @@ basic-autosize-textarea component is found in /packages/basic-autosize-textarea.
 
 You can install the specific components you want via npm. To add a component
 like basic-autosize-textarea, add a line to the `dependencies` key in your
-project's package.json file:
+project's package.json file. Until Shadow DOM
+you'll
+likely want to include the [webcomponents.js polyfill](https://github.com/webcomponents/webcomponentsjs) as well:
 
     {
       ...
       "dependencies": {
-        "basic-autosize-textarea": "basic-web-components/basic-autosize-textarea"
+        "basic-autosize-textarea": "basic-web-components/basic-autosize-textarea",
+        "webcomponents.js": "webcomponents/webcomponents.js"
       },
     }
 
@@ -69,7 +74,6 @@ but those packages were deprecated in the transition to using npm.
 # Project contents
 
 The current release of Basic Web Components includes the following:
-
 
 ## Top-level components
 
@@ -98,20 +102,17 @@ other components.
 * [basic-spread-items](packages/basic-spread-items).
   Spreads out a set of items horizontally so they take equal space.
 
-
 ## Mixins
 
 Mixins are a core part of the Basic Web Components approach to creating
 functionally sophisticated components. The [basic-component-mixins](packages/basic-component-mixins)
 package includes a variety of mixins you can use in your own components.
 
-
 ## Older components
 
 The 0.6 release of Basic Web Components included more components which have not
 yet been rewritten in ES6. These components are still present in this repository
 for reference, and it is our intent to upgrade these when we can:
-
 
 * [basic-button](old/basic-button)
   A button with a simple generic style.
