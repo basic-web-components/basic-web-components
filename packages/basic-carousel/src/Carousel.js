@@ -1,4 +1,4 @@
-/*
+/**
  * Lets the user navigate laterally through a sequence of child elements.
  *
  * basic-carousel is an implementation of the carousel user interface pattern,
@@ -48,10 +48,6 @@
  *       flex: 1;
  *     }
  *
- * Alternatively, you can use a separate component,
- * [basic-carousel-fit](http://github.com/basic-web-components/basic-carousel-fit),
- * which is designed to automatically size itself to its largest child elements.
- *
  * The standard basic-carousel component supports navigation via the following
  * input methods:
  *
@@ -61,27 +57,27 @@
  * right.
  * * Trackpad. The user can swipe left or right on a trackpad to navigate.
  *
- * basic-carousel supports a variety of optional user interface accessories:
- * * [basic-arrow-direction](http://github.com/basic-web-components/basic-arrow-direction).
+ * Because carousels are used in a wide variety of circumstances, by default
+ * basic-carousel provides a minimal appearance and no separately interactive
+ * elements such as arrow buttons on the side or dots along the bottom. Those
+ * elements can be added by wrapping a basic-carousel in optional accessories:
+ *
+ * * [basic-arrow-selection](http://github.com/basic-web-components/packages/basic-arrow-selection).
  *   This adds prominent left and right arrow buttons on the side of the carousel.
- * * [basic-page-dots](http://github.com/basic-web-components/basic-page-dots).
+ * * [basic-page-dots](http://github.com/basic-web-components/packages/basic-page-dots).
  *   This adds a series of small dots below the carousel to indicate the user's
  *   current position in the sequence.
  *
  * See those components for more details, but in general you can construct a common
  * carousel with both arrow buttons and dots like so:
  *
- *     <basic-arrow-direction target="child">
- *       <basic-page-dots target="child">
+ *     <basic-arrow-selection>
+ *       <basic-page-dots>
  *         <basic-carousel>
- *           <img src="image1.jpg">
- *           <img src="image2.jpg">
- *           <img src="image3.jpg">
- *           <img src="image4.jpg">
- *           <img src="image5.jpg">
+ *           ... images, etc. ...
  *         </basic-carousel>
  *       </basic-page-dots>
- *     </basic-arrow-direction>
+ *     </basic-arrow-selection>
  *
  * For universal access, basic-carousel automatically adds a variety of
  * [ARIA](http://www.w3.org/WAI/intro/aria) properties to itself and to child
@@ -89,6 +85,17 @@
  * using assistive technologies.
  *
  * @class Carousel
+ * @mixes ChildrenContent
+ * @mixes CollectiveMember
+ * @mixes ContentItems
+ * @mixes DirectionSelection
+ * @mixes Generic
+ * @mixes ItemsSelection
+ * @mixes ItemsAccessible
+ * @mixes Keyboard
+ * @mixes KeyboardDirection
+ * @mixes SwipeDirection
+ * @mixes TrackpadDirection
  */
 
 
@@ -171,7 +178,6 @@ export default class Carousel extends base {
       </basic-sliding-viewport>
     `;
   }
-
 }
 
 

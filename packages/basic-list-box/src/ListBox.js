@@ -7,17 +7,15 @@
  *
  * Like other Basic Web Components, this can handle distributed content: you can
  * include a content element inside a basic-list-box, and the list will navigate
- * through the distributed content. Note: for the time being, if you do use basic-
- * list-box inside your own component, it appears that you'll need to wire up your
- * own keyboard navigation, and forward the list navigation keys to the basic-list-
- * box.
+ * through the distributed content.
  *
  * This component includes basic ARIA support to provide a reasonable default
- * experience, e.g., for screen readers. The list component itself will be assigned
- * an appropriate ARIA role (default is "listbox"). The ID of the selected item
- * will be reflected in an "aria-activedescendant" attribute applied to the list.
- * To support this feature, all items in the list need unique IDs. If an item does
- * not have an ID, basic-list-box will automatically assign a default ID.
+ * experience, e.g., for screen readers. The list component itself will be
+ * assigned an appropriate ARIA role (default is "listbox"). The ID of the
+ * selected item will be reflected in an "aria-activedescendant" attribute
+ * applied to the list. To support this feature, all items in the list need
+ * unique IDs. If an item does not have an ID, basic-list-box will automatically
+ * assign a default ID.
  *
  * The keyboard interaction model generally follows that of Microsoft Windows'
  * list boxes instead of those in OS X:
@@ -37,6 +35,20 @@
  * The user can also select an item by typing the beginning of an item's text.
  *
  * @class ListBox
+ * @mixes ChildrenContent
+ * @mixes ClickSelection
+ * @mixes CollectiveMember
+ * @mixes ContentItems
+ * @mixes DirectionSelection
+ * @mixes Generic
+ * @mixes ItemsSelection
+ * @mixes ItemsAccessible
+ * @mixes Keyboard
+ * @mixes KeyboardDirection
+ * @mixes KeyboardPagedSelection
+ * @mixes KeyboardPrefixSelection
+ * @mixes SelectionHighlight
+ * @mixes SelectionScroll
  */
 
 
@@ -126,8 +138,9 @@ export default class ListBox extends ElementBase.compose(
   /**
    * The text content of the selected item.
    *
-   * Setting this to text not found in any list item will set selectedItem to
-   * null.
+   * Setting this value to a string will attempt to select the first list item
+   * whose text content match that string. Setting this to a string not matching
+   * any list item will result in no selection.
    *
    * @property value
    * @type String
@@ -158,6 +171,12 @@ export default class ListBox extends ElementBase.compose(
     }
   }
 
+
+  /**
+   * Fires when the list's value property changes.
+   *
+   * @event value-changed
+   */
 }
 
 

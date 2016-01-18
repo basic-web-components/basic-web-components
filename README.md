@@ -16,9 +16,9 @@ Design goals for the overall project:
 * **Write in plain JavaScript ES6.** An ES5 version of each component is
   provided in its /dist folder, so you can use these in ES5 projects. If you are
   already using ES6, you can use the ES6 source directly.
-* **Don't be flashy.** These components are meant to serve as solid building
-  blocks for your applications and user experiences, not present a
-  heavily-styled or branded appearance of their own.
+* **Provide a minimalist appearance.** These components are meant to serve as
+  solid building blocks for your applications and user experiences, not present
+  a heavily styled or branded appearance of their own.
 * **Be recombinable.** Careful factoring of user interface concerns gives you
   components, helpers, base classes, and mixins that you can readily recombine
   to create solid custom components of your own. Composition is generally

@@ -8,6 +8,9 @@
  * class as a base class for your own elements, or easily create your own base
  * class by applying the same set of mixins.
  *
+ * The ElementBase base class does not register itself as a custom element with
+ * the browser, and hence cannot be independently instantiated.
+ *
  * @class ElementBase
  */
 
