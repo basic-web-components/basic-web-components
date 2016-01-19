@@ -9,7 +9,7 @@
   },
   "author": "info@component.kitchen",
   "dependencies": {
-    "babel-preset-es2015": "^6.0.2",
+    "babel-preset-es2015": "^6.3.13",
     "babelify": "^7.0.2",
     "chai": "^3.4.1",
     "grunt": "^0.4.5",
