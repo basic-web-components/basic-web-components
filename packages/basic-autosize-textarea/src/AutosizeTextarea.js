@@ -1,4 +1,4 @@
-/*
+/**
  * @class AutosizeTextarea
  * @classdesc A text area that makes itself big enough to show its content
  *
@@ -13,6 +13,7 @@
  * @mixes Generic
  * @mixes ChildrenContent
  */
+
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
