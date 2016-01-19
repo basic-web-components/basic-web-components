@@ -1,12 +1,15 @@
 <a name="SlidingViewport"></a>
 ## SlidingViewport
-Presents list items in a viewport such that only a single item is visible at a
-time. Navigating between items will be represented with a horizontal visual
+Presents list items in a viewport such that only a single item is
+visible at a time
+
+Navigating between items will be represented with a horizontal visual
 sliding effect.
 
-This component currently requires that you explicitly apply a size to it. For a
-variant which automatically sizes to its content, see the related component
-basic-sliding-viewport-fit.
+This component handles the rendering responsibilities for the basic-carousel
+component.
+
+This component currently requires that you explicitly apply a size to it.
 
 **Kind**: global class  
 <a name="position"></a>

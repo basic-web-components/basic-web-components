@@ -1,24 +1,22 @@
 <a name="ListBox"></a>
 ## ListBox
-A single-selection list box that supports selection highlighting (using the
-system highlight color) and keyboard navigation.
+A single-selection list box that supports selection highlighting
+(using the system highlight color) and keyboard navigation
 
 The user can select an item with the mouse/touch or keyboard: Up/Down, Page
 Up/Down, Home/End.
 
 Like other Basic Web Components, this can handle distributed content: you can
 include a content element inside a basic-list-box, and the list will navigate
-through the distributed content. Note: for the time being, if you do use basic-
-list-box inside your own component, it appears that you'll need to wire up your
-own keyboard navigation, and forward the list navigation keys to the basic-list-
-box.
+through the distributed content.
 
 This component includes basic ARIA support to provide a reasonable default
-experience, e.g., for screen readers. The list component itself will be assigned
-an appropriate ARIA role (default is "listbox"). The ID of the selected item
-will be reflected in an "aria-activedescendant" attribute applied to the list.
-To support this feature, all items in the list need unique IDs. If an item does
-not have an ID, basic-list-box will automatically assign a default ID.
+experience, e.g., for screen readers. The list component itself will be
+assigned an appropriate ARIA role (default is "listbox"). The ID of the
+selected item will be reflected in an "aria-activedescendant" attribute
+applied to the list. To support this feature, all items in the list need
+unique IDs. If an item does not have an ID, basic-list-box will automatically
+assign a default ID.
 
 The keyboard interaction model generally follows that of Microsoft Windows'
 list boxes instead of those in OS X:
@@ -38,12 +36,14 @@ the item into view.
 The user can also select an item by typing the beginning of an item's text.
 
 **Kind**: global class  
+**Mixes**: <code>ChildrenContent</code>, <code>ClickSelection</code>, <code>CollectiveMember</code>, <code>ContentItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>ItemsAccessible</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>KeyboardPagedSelection</code>, <code>KeyboardPrefixSelection</code>, <code>SelectionHighlight</code>, <code>SelectionScroll</code>  
 <a name="value"></a>
 ## value : <code>String</code>
 The text content of the selected item.
 
-Setting this to text not found in any list item will set selectedItem to
-null.
+Setting this value to a string will attempt to select the first list item
+whose text content match that string. Setting this to a string not matching
+any list item will result in no selection.
 
 **Kind**: global variable  
 **Properties**
@@ -52,3 +52,8 @@ null.
 | --- |
 | value | 
 
+<a name="event_value-changed"></a>
+## "value-changed"
+Fires when the list's value property changes.
+
+**Kind**: event emitted  

@@ -1,9 +1,12 @@
 <a name="SpreadItems"></a>
 ## SpreadItems
-Spreads out a set of items horizontally so they take equal space.
+Spreads out a set of items horizontally so they take equal space
 
-This component currently requires an explicit size by applied to it. For a
-variant that automatically sizes to fit the list items, see the related
-component basic-spread-fit.
+This component is used, for example, by the basic-sliding-viewport component
+to ensure that children of different size will take up the same amount of
+horizontal space.
+
+This component currently requires an explicit size by applied to it.
 
 **Kind**: global class  
+**Mixes**: <code>ChildrenContent</code>  
