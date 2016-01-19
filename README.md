@@ -12,9 +12,10 @@ Each component can be used as is, or as the foundation for new components.
 Design goals for the overall project:
 
 * **Leverage the browser platform as much as possible.** These components are
-  generally written as "close to the metal" as is possible in a web application.
-  These components are not built upon a monolithic framework, nor is any shared
-  runtime required to use these components.
+  generally written as "close to the metal" as is possible while allowing for
+  sharing code across components. These components are not built upon a
+  monolithic framework, nor is any shared runtime required to use these
+  components.
 * **Write in plain JavaScript ES6.** An ES5 version of each component is
   provided in its /dist folder, so you can use these in ES5 projects. If you are
   already using ES6, you can use the ES6 source directly.
@@ -38,6 +39,8 @@ Design goals for the overall project:
   components](https://github.com/webcomponents/gold-standard/wiki).** That
   standard sets a very high bar for component quality, attempting to make web
   components as flexible and reliable as the standard build-in HTML elements.
+* **Test on all the mainstream browsers.** This includes the latest versions of
+  Apple Safari and Mobile Safari, Google Chrome and Chrome for Android, Microsoft Edge, and Mozilla Firefox.
 
 
 # Repository organization
