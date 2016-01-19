@@ -22,4 +22,9 @@
     "grunt-shell": "^1.1.2",
     "webcomponents.js": "^0.7.2"
   }
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
 }
