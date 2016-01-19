@@ -1,7 +1,8 @@
 /**
- * Mixin that allows a component to support a "generic" style: a minimalist
- * style that can easily be removed to reset its visual appearance to a baseline
- * state.
+ * @class Generic
+ * @classdesc Mixin that allows a component to support a "generic" style: a
+ * minimalist style that can easily be removed to reset its visual appearance to
+ * a baseline state
  *
  * By default, a component should provide a minimal visual presentation that
  * allows the component to function. However, the more styling the component
@@ -22,6 +23,7 @@
  * This makes it easy to remove all default styling -- set the generic attribute
  * to false, and all default styling will be removed.
  */
+
 
 export default (base) => class Generic extends base {
 

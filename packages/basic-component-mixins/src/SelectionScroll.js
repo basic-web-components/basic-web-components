@@ -1,8 +1,8 @@
 /**
- * Mixin which scrolls a container to keep the selected item visible.
- *
- * @mixin SelectionScroll
+ * @class SelectionScroll
+ * @classdesc Mixin which scrolls a container to keep the selected item visible
  */
+
 
 export default (base) => class SelectionScroll extends base {
 

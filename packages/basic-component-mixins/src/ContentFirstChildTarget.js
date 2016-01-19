@@ -1,9 +1,9 @@
 /**
- * Mixin that defines the target of a component -- the element the component is
- * managing or somehow responsible for -- as its first child.
- *
- * @mixin ContentFirstChildTarget
+ * @class ContentFirstChildTarget
+ * @classdesc Mixin that defines the target of a component -- the element the
+ * component is managing or somehow responsible for -- as its first child
  */
+
 
 export default (base) => class ContentFirstChildTarget extends base {
 

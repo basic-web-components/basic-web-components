@@ -1,7 +1,9 @@
 /*
- * Component which adds prominent left and right arrow buttons to a wrapped
- * child such as a carousel. Clicking the left/right buttons selects the
- * previous/next item.
+ * @class ArrowSelection
+ * @classdesc Component which adds prominent left and right arrow buttons to a
+ * wrapped child such as a carousel
+ *
+ * Clicking the left/right buttons selects the previous/next item.
  *
  * Typical usage:
  *
@@ -16,7 +18,6 @@
  * movement is detected. To cause the buttons to always appear, apply the
  * 'showArrows' CSS class.
  *
- * @class ArrowSelection
  * @mixes ChildrenContent
  * @mixes CollectiveMember
  * @mixes ContentFirstChildTarget

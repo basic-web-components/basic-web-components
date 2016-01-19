@@ -1,5 +1,7 @@
 /**
- * Mixin to support Polymer-style automatic node finding.
+ * @class AutomaticNodeFinding
+ * @classdesc Mixin to create references to elements in a component's Shadow
+ * DOM subtree
  *
  * This adds a member on the component called `$` that can be used to reference
  * elements with IDs. E.g., if component's shadow contains an element
@@ -11,10 +13,10 @@
  * against having to query for an element each time the component wants to
  * inspect or manipulate it.
  *
+ * This mixin is inspired by Polymer's automatic node finding feature.
  * See https://www.polymer-project.org/1.0/docs/devguide/local-dom.html#node-finding.
- *
- * @mixin AutomaticNodeFinding
  */
+
 
 export default (base) => class AutomaticNodeFinding extends base {
 

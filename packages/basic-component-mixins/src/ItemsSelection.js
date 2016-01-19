@@ -1,7 +1,6 @@
 /**
- * Mixin which manages selection semantics for items in a list.
- *
- * @mixin ItemsSelection
+ * @class ItemsSelection
+ * @classdesc Mixin which manages selection semantics for items in a list
  */
 
 

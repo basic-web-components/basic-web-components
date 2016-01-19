@@ -1,9 +1,9 @@
 /**
- * Mixin which maps touch gestures (swipe left, swipe right) to direction
- * semantics (goRight, goLeft).
- *
- * @mixin SwipeDirection
+ * @class SwipeDirection
+ * @classdesc Mixin which maps touch gestures (swipe left, swipe right) to direction
+ * semantics (goRight, goLeft)
  */
+
 
 export default (base) => class SwipeDirection extends base {
 

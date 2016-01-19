@@ -1,13 +1,16 @@
 /**
- * Spreads out a set of items horizontally so they take equal space. This is
- * used, for example, by the basic-sliding-viewport component to ensure that
- * children of different size will take up the same amount of horizontal space.
+ * @class SpreadItems
+ * @classdesc Spreads out a set of items horizontally so they take equal space
+ *
+ * This component is used, for example, by the basic-sliding-viewport component
+ * to ensure that children of different size will take up the same amount of
+ * horizontal space.
  *
  * This component currently requires an explicit size by applied to it.
  *
- * @class basic-spread-items
  * @mixes ChildrenContent
  */
+
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';

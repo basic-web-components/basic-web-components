@@ -1,8 +1,7 @@
 /**
- * Mixin which maps direction keys (Left, Right, etc.) to direction semantics
- * (goLeft, goRight, etc.).
- *
- * @mixin KeyboardDirection
+ * @class KeyboardDirection
+ * @classdesc Mixin which maps direction keys (Left, Right, etc.) to direction
+ * semantics (goLeft, goRight, etc.)
  */
 
 

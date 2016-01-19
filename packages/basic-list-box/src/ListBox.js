@@ -1,6 +1,7 @@
 /**
- * A single-selection list box that supports selection highlighting (using the
- * system highlight color) and keyboard navigation.
+ * @class ListBox
+ * @classdesc A single-selection list box that supports selection highlighting
+ * (using the system highlight color) and keyboard navigation
  *
  * The user can select an item with the mouse/touch or keyboard: Up/Down, Page
  * Up/Down, Home/End.
@@ -34,7 +35,6 @@
  *
  * The user can also select an item by typing the beginning of an item's text.
  *
- * @class ListBox
  * @mixes ChildrenContent
  * @mixes ClickSelection
  * @mixes CollectiveMember

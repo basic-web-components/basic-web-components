@@ -1,14 +1,15 @@
 /**
- * Presents list items in a viewport such that only a single item is visible at
- * a time. Navigating between items will be represented with a horizontal visual
+ * @class SlidingViewport
+ * @classdesc Presents list items in a viewport such that only a single item is
+ * visible at a time
+ *
+ * Navigating between items will be represented with a horizontal visual
  * sliding effect.
  *
  * This component handles the rendering responsibilities for the basic-carousel
  * component.
  *
  * This component currently requires that you explicitly apply a size to it.
- *
- * @class SlidingViewport
  */
 
 

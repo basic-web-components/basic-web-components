@@ -1,6 +1,7 @@
 /**
- * Mixin which maps page keys (Page Up, Page Down) into operations that move
- * the selection by one page.
+ * @class KeyboardPagedSelection
+ * @classdesc Mixin which maps page keys (Page Up, Page Down) into operations
+ * that move the selection by one page
  *
  * The keyboard interaction model generally follows that of Microsoft Windows'
  * list boxes instead of those in OS X:
@@ -10,15 +11,14 @@
  *   keyboard users.
  *
  * * Pressing Page Up/Down will change the selection to the topmost/bottommost
- *   visible item if the selection is not already there. Thereafter, the key will
- *   move the selection up/down by a page, and (per the above point) make the
- *   selected item visible.
+ *   visible item if the selection is not already there. Thereafter, the key
+ *   will move the selection up/down by a page, and (per the above point) make
+ *   the selected item visible.
  *
  * To ensure the selected item is in view following use of Page Up/Down, use the
  * related SelectionScroll mixin.
- *
- * @mixin KeyboardPagedSelection
  */
+
 
 export default (base) => class KeyboardPagedSelection extends base {
 

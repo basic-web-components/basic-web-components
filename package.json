@@ -18,6 +18,7 @@
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-jsdoc-to-markdown": "^1.2.0",
     "grunt-mocha": "^0.4.15",
     "grunt-shell": "^1.1.2",
     "webcomponents.js": "^0.7.2"

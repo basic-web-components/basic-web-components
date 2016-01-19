@@ -1,10 +1,10 @@
 /**
- * Mixin that defines a component's content as its children. Changes in the
- * content will be tracked, and a contentChanged method will be invoked on the
- * component when its children change.
- *
- * @mixin ChildrenContent
+ * @class ChildrenContent
+ * @classdesc Mixin which defines a component's content as its children. Changes
+ * in the content will be tracked, and a contentChanged method will be invoked
+ * on the component when its children change.
  */
+
 
 // TODO: Don't respond to changes in attributes, or at least offer that as an
 // option.
@@ -41,7 +41,7 @@ export default (base) => class ChildrenContent extends base {
    * The flattened content of this component.
    *
    * @property content
-   * @type [Object]
+   * @type Array
    */
   get content() {
     return expandContentElements(this.children);

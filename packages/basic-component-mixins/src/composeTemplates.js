@@ -1,7 +1,9 @@
-/*
- * Given two templates, "fold" one inside the other. For now, this just entails
- * putting the first inside the location of the first <content> node in the
- * second template.
+/**
+ * @class composeTemplates
+ * @classdesc Given two templates, this "folds" one inside the other
+ *
+ * For now, the folding process just entails putting the first inside the
+ * location of the first <content> node in the second template.
  *
  * Example: if the first (sub) template is
  *
@@ -25,6 +27,8 @@
  *     </b>
  *   </template>
  */
+
+
 export default function composeTemplates(baseTemplate, mixinTemplate) {
 
   if (!baseTemplate) {

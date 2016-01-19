@@ -1,10 +1,9 @@
 /**
- * A group of elements that have been joined together for the purpose of
+ * @class Collective
+ * @classdesc A group of elements that have been joined together for the purpose of
  * accomplishing some collective behavior, e.g., keyboard handling.
  *
- * This isn't a mixin, but a class used by the CollectiveMember mixin.
- *
- * @class Collective
+ * This is not a mixin, but a class used by the CollectiveMember mixin.
  */
 
 
@@ -26,7 +25,7 @@ export default class Collective {
       // Assimilate an individual element.
       collectiveChanged = assimilateElement(this, target);
     }
-    
+
     if (collectiveChanged) {
       this.invokeMethod('collectiveChanged');
     }

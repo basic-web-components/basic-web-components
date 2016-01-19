@@ -1,5 +1,5 @@
-# basic-carousel
-
+<a name="Carousel"></a>
+## Carousel
 Lets the user navigate laterally through a sequence of child elements.
 
 basic-carousel is an implementation of the carousel user interface pattern,
@@ -12,11 +12,11 @@ basic-carousel uses its children as the elements the user will navigate through.
 In a typical use, a basic-carousel can be used to navigate between a sequence of
 images:
 
-     <basic-carousel>
-       <img src="image1.jpg">
-       <img src="image2.jpg">
-       <img src="image3.jpg">
-     </basic-carousel>
+    <basic-carousel>
+      <img src="image1.jpg">
+      <img src="image2.jpg">
+      <img src="image3.jpg">
+    </basic-carousel>
 
 The child elements can be of any type — they are not restricted to images.
 
@@ -56,19 +56,18 @@ which is designed to automatically size itself to its largest child elements.
 The standard basic-carousel component supports navigation via the following
 input methods:
 
- * Keyboard. When the carousel has focus, the user can press Left, Right, Home,
+* Keyboard. When the carousel has focus, the user can press Left, Right, Home,
 or End. These navigate to the expected element.
- * Touch. On mobile and other touch-enabled devices, the user can drag left or
+* Touch. On mobile and other touch-enabled devices, the user can drag left or
 right.
- * Trackpad. The user can swipe left or right on a trackpad to navigate.
+* Trackpad. The user can swipe left or right on a trackpad to navigate.
 
 basic-carousel supports a variety of optional user interface accessories:
-
- * [basic-arrow-direction](http://github.com/basic-web-components/basic-arrow-direction).
-   This adds prominent left and right arrow buttons on the side of the carousel.
- * [basic-page-dots](http://github.com/basic-web-components/basic-page-dots).
-   This adds a series of small dots below the carousel to indicate the user's
-   current position in the sequence.
+* [basic-arrow-direction](http://github.com/basic-web-components/basic-arrow-direction).
+  This adds prominent left and right arrow buttons on the side of the carousel.
+* [basic-page-dots](http://github.com/basic-web-components/basic-page-dots).
+  This adds a series of small dots below the carousel to indicate the user's
+  current position in the sequence.
 
 See those components for more details, but in general you can construct a common
 carousel with both arrow buttons and dots like so:
@@ -89,3 +88,5 @@ For universal access, basic-carousel automatically adds a variety of
 [ARIA](http://www.w3.org/WAI/intro/aria) properties to itself and to child
 elements. This helps users navigate the sequence of elements in the carousel
 using assistive technologies.
+
+**Kind**: global class  

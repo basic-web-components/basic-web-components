@@ -1,10 +1,9 @@
 /**
- * Mixin which manages the keydown handling for a component.
+ * @class Keyboard
+ * @classdesc Mixin which manages the keydown handling for a component
  *
  * TODO: Document collective behavior.
  * TODO: Provide baseline behavior outside of a collective.
- *
- * @mixin Keyboard
  */
 
 export default (base) => class Keyboard extends base {

@@ -1,5 +1,5 @@
-# basic-list-box
-
+<a name="ListBox"></a>
+## ListBox
 A single-selection list box that supports selection highlighting (using the
 system highlight color) and keyboard navigation.
 
@@ -36,3 +36,19 @@ Programmatically selecting an item (by setting the selected property) scrolls
 the item into view.
 
 The user can also select an item by typing the beginning of an item's text.
+
+**Kind**: global class  
+<a name="value"></a>
+## value : <code>String</code>
+The text content of the selected item.
+
+Setting this to text not found in any list item will set selectedItem to
+null.
+
+**Kind**: global variable  
+**Properties**
+
+| Name |
+| --- |
+| value | 
+

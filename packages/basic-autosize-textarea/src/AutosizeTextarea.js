@@ -1,15 +1,17 @@
 /*
- * A text area that makes itself big enough to show its content. This is useful
- * in situations where you want to ask the user to enter as much text as they
- * want, but don't want to take up a lot of room on the page.
+ * @class AutosizeTextarea
+ * @classdesc A text area that makes itself big enough to show its content
+ *
+ * This text input component is useful in situations where you want to ask the
+ * user to enter as much text as they want, but don't want to take up a lot of
+ * room on the page.
  *
  * The component works by copying the text to an invisible element which will
  * automatically grow in size; the expanding copy will expand the container,
  * which in turn will vertically stretch the text area to match.
  *
- * @class AutosizeTextarea
- * @mixes ChildrenContent
  * @mixes Generic
+ * @mixes ChildrenContent
  */
 
 import ElementBase from '../../basic-element-base/src/ElementBase';

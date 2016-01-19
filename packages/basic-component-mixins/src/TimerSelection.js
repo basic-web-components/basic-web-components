@@ -1,8 +1,7 @@
 /**
- * Mixin provides for automatic timed changes in selection, as in a
- * automated slideshow.
- *
- * @mixin TimerSelection
+ * @class TimerSelection
+ * @classdesc Mixin provides for automatic timed changes in selection, as in a
+ * automated slideshow
  */
 
 
