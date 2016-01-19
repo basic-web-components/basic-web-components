@@ -12,5 +12,8 @@
   ],
   "dependencies": {
     "basic-element-base": "^0.0.1"
+  },
+  "browserify": {
+    "transform": ["babelify"]
   }
 }

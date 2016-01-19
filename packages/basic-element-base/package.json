@@ -13,5 +13,8 @@
   ],
   "dependencies": {
     "basic-component-mixins": "^0.0.1"
+  },
+  "browserify": {
+    "transform": ["babelify"]
   }
 }

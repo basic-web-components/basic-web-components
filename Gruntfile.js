@@ -63,9 +63,7 @@ module.exports = function(grunt) {
       options: {
         browserifyOptions: {
           debug: true
-        },
-        ignore: false, // Don't ignore node_modules; i.e., process them too
-        transform: ['babelify']
+        }
       },
       buildFiles: {
         files: buildList
