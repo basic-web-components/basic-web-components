@@ -21,10 +21,8 @@
     "grunt-mocha": "^0.4.15",
     "grunt-shell": "^1.1.2",
     "webcomponents.js": "^0.7.2"
-  }
+  },
   "browserify": {
-    "transform": [
-      "babelify"
-    ]
+    "transform": ["babelify"]
   }
 }
