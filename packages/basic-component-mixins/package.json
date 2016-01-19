@@ -12,5 +12,8 @@
     "web-components"
   ],
   "dependencies": {
+  },
+  "browserify": {
+    "transform": ["babelify"]
   }
 }
