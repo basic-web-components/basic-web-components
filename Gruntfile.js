@@ -214,7 +214,7 @@ module.exports = function(grunt) {
   //
   // This task makes use of the buildList global array.
   //
-  grunt.registerTask('build', ['browserify:buildFiles', 'jsdoc2md:docs']);
+  grunt.registerTask('build', ['browserify:buildFiles', 'jsdoc2md:docs', 'jshint']);
 
   //
   // The docs task is callable from the command line and executes the jsdoc2md:docs task defined
