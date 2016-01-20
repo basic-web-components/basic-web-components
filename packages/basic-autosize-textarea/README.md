@@ -1,3 +1,17 @@
+<a name="AutosizeTextarea"></a>
+## AutosizeTextarea
+A text area that makes itself big enough to show its content
+
+This text input component is useful in situations where you want to ask the
+user to enter as much text as they want, but don't want to take up a lot of
+room on the page.
+
+The component works by copying the text to an invisible element which will
+automatically grow in size; the expanding copy will expand the container,
+which in turn will vertically stretch the text area to match.
+
+**Kind**: global class  
+**Mixes**: <code>Generic</code>, <code>ChildrenContent</code>  
 <a name="ariaLabel"></a>
 ## ariaLabel : <code>String</code>
 A description for the user of the element's purpose on the page. Setting
