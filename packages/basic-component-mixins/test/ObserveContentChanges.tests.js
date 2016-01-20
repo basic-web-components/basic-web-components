@@ -1,12 +1,15 @@
 import { assert } from 'chai';
+// import ChildrenContent from '../src/ChildrenContent';
 import ShadowTemplate from '../src/ShadowTemplate';
-import ChildrenContent from '../src/ChildrenContent';
+import ObserveContentChanges from '../src/ObserveContentChanges';
 
 
 /*
- * Simple element using the ChildrenContent mixin.
+ * Simple element using the ObserveContentChanges mixin.
  */
-class ContentTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
+class ObserveTest extends ObserveContentChanges(
+  ShadowTemplate(HTMLElement)
+) {
 
   contentChanged() {
     this._saveTextContent = this.textContent;
@@ -23,21 +26,21 @@ class ContentTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
   }
 
 }
-document.registerElement('content-test', ContentTest);
+document.registerElement('observe-test', ObserveTest);
 
 
 /*
  * Element containing an instance of the above, so we can test reprojection.
  */
-class ReprojectTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
+class ObserveReprojectTest extends ObserveContentChanges(ShadowTemplate(HTMLElement)) {
   get template() {
-    return `<content-test><content></content></content-test>`;
+    return `<observe-test><content></content></observe-test>`;
   }
 }
-document.registerElement('reproject-test', ReprojectTest);
+document.registerElement('observe-reproject-test', ObserveReprojectTest);
 
 
-describe("ChildrenContent mixin", () => {
+describe("ObserveContentChanges mixin", () => {
 
   let container;
 
@@ -49,42 +52,9 @@ describe("ChildrenContent mixin", () => {
     container.innerHTML = '';
   });
 
-  it("provides helpers to access content", () => {
-    let fixture = document.createElement('content-test');
-    let div1 = document.createElement('div');
-    let text = document.createTextNode(' ');
-    let div2 = document.createElement('div');
-    div1.textContent = 'Hello';
-    div2.textContent = 'World';
-    fixture.appendChild(div1);
-    fixture.appendChild(text);
-    fixture.appendChild(div2);
-    assert.equal(fixture.distributedTextContent, 'Hello World');
-    assert.equal(fixture.distributedChildren.length, 2);
-    assert.equal(fixture.distributedChildNodes.length, 3);
-    assert.equal(fixture.distributedChildNodes[2], div2);
-  });
-
-  it("provides helpers to access reprojected content", () => {
-    let fixture = document.createElement('reproject-test');
-    let div = document.createElement('div');
-    div.textContent = 'aardvark';
-    fixture.appendChild(div);
-    assert.equal(fixture.distributedTextContent, 'aardvark');
-    assert.equal(fixture.distributedChildren.length, 1);
-    assert.equal(fixture.distributedChildNodes.length, 1);
-    assert.equal(fixture.distributedChildNodes[0], div);
-    // Inner element should report same results.
-    let inner = fixture.shadowRoot.querySelector('content-test');
-    assert.equal(inner.distributedTextContent, 'aardvark');
-    assert.equal(inner.distributedChildren.length, 1);
-    assert.equal(inner.distributedChildNodes.length, 1);
-    assert.equal(inner.distributedChildNodes[0], div);
-  });
-
   it("makes initial call to contentChanged when component is created", done => {
-    container.innerHTML = `<content-test>beaver</content-test>`;
-    let fixture = container.querySelector('content-test');
+    container.innerHTML = `<observe-test>beaver</observe-test>`;
+    let fixture = container.querySelector('observe-test');
     // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
       // Yet another timeout because Edge seems to need two cycles to upgrade.
@@ -96,7 +66,7 @@ describe("ChildrenContent mixin", () => {
   });
 
   it("calls contentChanged when textContent changes", done => {
-    let fixture = document.createElement('content-test');
+    let fixture = document.createElement('observe-test');
     fixture.contentChangedHook = (element) => {
       assert.equal(fixture.textContent, 'chihuahua');
       done();
@@ -106,7 +76,7 @@ describe("ChildrenContent mixin", () => {
   });
 
   it("calls contentChanged when children change", done => {
-    let fixture = document.createElement('content-test');
+    let fixture = document.createElement('observe-test');
     fixture.contentChangedHook = () => {
       assert.equal(fixture.textContent, 'dingo');
       done();
@@ -119,8 +89,8 @@ describe("ChildrenContent mixin", () => {
 
   // TODO: Restore support for tracking changes in component host.
   it.skip("calls contentChanged when redistributed content changes", done => {
-    let fixture = document.createElement('reproject-test');
-    let contentTest = fixture.shadowRoot.querySelector('content-test');
+    let fixture = document.createElement('observe-reproject-test');
+    let contentTest = fixture.shadowRoot.querySelector('observe-test');
     container.appendChild(fixture);
     fixture.contentChangedHook = function(element) {
       if (element === contentTest) {
@@ -132,7 +102,7 @@ describe("ChildrenContent mixin", () => {
   });
 
   it("doesn't call contentChanged for changes in the component's shadow tree", done => {
-    let fixture = document.createElement('content-test');
+    let fixture = document.createElement('observe-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged to be invoked.
     Promise.resolve().then(() => {
@@ -157,7 +127,7 @@ describe("ChildrenContent mixin", () => {
   });
 
   it("doesn't call contentChanged when node is removed from shadow DOM", done => {
-    let fixture = document.createElement('content-test');
+    let fixture = document.createElement('observe-test');
     fixture.contentChangedHook = function() {
       assert.equal(fixture.textContent, 'gorilla');
       done();
@@ -174,7 +144,7 @@ describe("ChildrenContent mixin", () => {
   });
 
   it("*does* call contentChangend if node is removed from light DOM", done => {
-    let fixture = document.createElement('content-test');
+    let fixture = document.createElement('observe-test');
     let div = document.createElement('div');
     div.textContent = 'div';
     fixture.appendChild(div);
@@ -191,7 +161,7 @@ describe("ChildrenContent mixin", () => {
   // not component's own attributes) as content changes.
 
   it.skip("calls contentChanged when shadow element attributes change", done => {
-    let fixture = document.createElement('content-test');
+    let fixture = document.createElement('observe-test');
     let button = document.createElement('button');
     fixture.appendChild(button);
     container.appendChild(fixture);
@@ -203,7 +173,7 @@ describe("ChildrenContent mixin", () => {
   });
 
   it.skip("doesn't call contentChanged when element's own attributes change", done => {
-    let fixture = document.createElement('content-test');
+    let fixture = document.createElement('observe-test');
     fixture.contentChangedHook = function() {
       // Shouldn't get invoked.
       done(new Error("The contentChanged handler was invoked, but shouldn't have been."));

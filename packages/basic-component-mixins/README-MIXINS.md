@@ -89,7 +89,7 @@ The /src folder includes mixins for common web component features:
   Makes the items in a list accessible via ARIA.
 * [ItemsToSelection](src/ItemsSelection.js).
   Allows a set of items in a list to be selectable.
-* [CollectiveKeyboard](src/Keyboard.js).
+* [Keyboard](src/Keyboard.js).
   Lets a component handle keyboard events. Includes support for collective
   keyboard handling.
 * [KeyboardToDirection](src/KeyboardDirection.js).
@@ -100,6 +100,9 @@ The /src folder includes mixins for common web component features:
 * [KeyboardToPrefixSelection](src/KeyboardPrefixSelection.js).
   Translates prefix typing into selection semantics. This allows, e.g., a list
   box to allow selection by typing the start of the desired list item.
+* [ObserveContentChanges](src/ContentChanged.js).
+  Wires up mutation observers to report any changes in a component's content
+  (direct children, or nodes distributed to slots).
 * [SelectionHighlight](src/SelectionHighlight.js).
   Applies standard text highlight colors to the selected item in a list.
 * [SelectionInView](src/SelectionScroll.js).

@@ -15,13 +15,15 @@ import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember'
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 
 let base = ElementBase.compose(
   ChildrenContent,
   CollectiveMember,
   ContentItems,
   ItemsSelection,
-  ItemsAccessible
+  ItemsAccessible,
+  ObserveContentChanges
 );
 
 

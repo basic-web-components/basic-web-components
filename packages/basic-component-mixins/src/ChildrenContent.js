@@ -1,50 +1,22 @@
 /**
  * @class ChildrenContent
- * @classdesc Mixin which defines a component's content as its children. Changes
- * in the content will be tracked, and a contentChanged method will be invoked
- * on the component when its children change.
+ * @classdesc Mixin which defines a component's content as its children,
+ * including any nodes distributed to the component's slots.
  */
 
 
-// TODO: Don't respond to changes in attributes, or at least offer that as an
-// option.
-
 export default (base) => class ChildrenContent extends base {
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    observeContentChanges(this);
-
-    // Make an initial call to contentChanged() so that the component can do
-    // initialization that it normally does when content changes.
-    //
-    // This will invoke contentChanged() handlers in other mixins. In order that
-    // those mixins have a chance to complete their own initialization, we add
-    // the contentChanged() call to the microtask queue via a promise.
-    // See https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
-    Promise.resolve().then(() => this.contentChanged());
-  }
-
-  contentChanged() {
-    if (super.contentChanged) { super.contentChanged(); }
-    let event = new CustomEvent('content-changed');
-    this.dispatchEvent(event);
-  }
-
-  initialized() {
-    // Make an initial call to contentChanged() so that the component can do
-    // initialization that it normally does when content changes.
-    this.contentChanged();
-  }
-
   /**
-   * The flattened content of this component.
+   * The content of this component.
+   *
+   * This is a synonym for the distributedChildren property.
    *
    * @property content
    * @type Array
    */
   get content() {
-    return expandContentElements(this.children);
+    return this.distributedChildren;
   }
   set content(value) {
     if ('content' in base.prototype) { super.content = value; }
@@ -118,17 +90,4 @@ function expandContentElements(nodes, includeTextNodes) {
   });
   let flattened = [].concat(...expanded);
   return flattened;
-}
-
-
-function observeContentChanges(element) {
-  element._contentChangeObserver = new MutationObserver(() =>
-    element.contentChanged()
-  );
-  element._contentChangeObserver.observe(element, {
-    // attributes: true,
-    characterData: true,
-    childList: true,
-    subtree: true
-  });
 }

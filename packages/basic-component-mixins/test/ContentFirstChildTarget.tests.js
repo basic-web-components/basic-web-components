@@ -2,12 +2,11 @@ import { assert } from 'chai';
 import ChildrenContent from '../src/ChildrenContent';
 import CollectiveMember from '../src/CollectiveMember';
 import ContentFirstChildTarget from '../src/ContentFirstChildTarget';
+import ObserveContentChanges from '../src/ObserveContentChanges';
 
 
-class ContentFirstChildTargetTest extends ContentFirstChildTarget(
-  CollectiveMember(
-    ChildrenContent(HTMLElement)
-  )
+class ContentFirstChildTargetTest extends ObserveContentChanges(
+  ContentFirstChildTarget(CollectiveMember(ChildrenContent(HTMLElement)))
 ) {}
 document.registerElement('content-first-child-target-test', ContentFirstChildTargetTest);
 

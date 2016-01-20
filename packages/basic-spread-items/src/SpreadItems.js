@@ -14,8 +14,12 @@
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 
-export default class SpreadItems extends ElementBase.compose(ChildrenContent) {
+export default class SpreadItems extends ElementBase.compose(
+  ChildrenContent,
+  ObserveContentChanges
+) {
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
@@ -27,6 +31,8 @@ export default class SpreadItems extends ElementBase.compose(ChildrenContent) {
     return this.content;
   }
 
+  // TODO: Should also handle contentChanged(), but need to rationalize with
+  // invocation of itemsChanged in attachedCallback.
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
     let items = this.items;

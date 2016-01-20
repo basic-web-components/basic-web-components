@@ -30,6 +30,7 @@ import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
 import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
 
@@ -38,6 +39,7 @@ let base = ElementBase.compose(
   CollectiveMember,
   ContentFirstChildTarget,
   Keyboard,
+  ObserveContentChanges,
   TargetSelection
 );
 

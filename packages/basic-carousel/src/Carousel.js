@@ -110,6 +110,7 @@ import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
@@ -124,6 +125,7 @@ let base = ElementBase.compose(
   ItemsAccessible,
   Keyboard,
   KeyboardDirection,
+  ObserveContentChanges,
   SwipeDirection,
   TrackpadDirection
 );
