@@ -87,7 +87,7 @@
  * using assistive technologies.
  *
  * @mixes ChildrenContent
- * @mixes CollectiveMember
+ * @mixes TargetInCollective
  * @mixes ContentItems
  * @mixes DirectionSelection
  * @mixes Generic
@@ -102,7 +102,7 @@
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
-import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
+import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
@@ -117,7 +117,7 @@ import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirectio
 
 let base = ElementBase.compose(
   ChildrenContent,
-  CollectiveMember,
+  TargetInCollective,
   ContentItems,
   DirectionSelection,
   Generic,

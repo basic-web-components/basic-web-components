@@ -18,7 +18,7 @@
  * will select the corresponding list item.
  *
  * @mixes ChildrenContent
- * @mixes CollectiveMember
+ * @mixes TargetInCollective
  * @mixes ContentFirstChildTarget
  * @mixes Keyboard
  * @mixes TargetSelection
@@ -27,19 +27,19 @@
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
-import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
 
 let base = ElementBase.compose(
   ChildrenContent,
-  CollectiveMember,
   ContentFirstChildTarget,
   Keyboard,
   ObserveContentChanges,
+  TargetInCollective,
   TargetSelection
 );
 

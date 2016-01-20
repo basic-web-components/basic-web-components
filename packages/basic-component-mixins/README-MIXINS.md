@@ -70,9 +70,6 @@ The /src folder includes mixins for common web component features:
 * [Collective](src/Collective.js).
   Not a mixin itself, this class is used by the CollectiveMember mixin to track
   the components that should be treated as a unit for keyboard purposes.
-* [TargetToCollective](src/CollectiveMember.js).
-  Lets a component participate in the collective management of keyboard focus
-  and keyboard handling.
 * [Composable](src/Composable.js).
   Facilitates the application of a set of mixins.
 * [ContentFirstChildTarget](src/ContentFirstChildTarget.js).
@@ -115,12 +112,15 @@ The /src folder includes mixins for common web component features:
   into a Shadow DOM subtree when the component is instantiated.
 * [SwipeToDirection](src/SwipeDirection.js).
   Translates left/right touch swipe gestures into selection semantics.
-* [TargetToSelection](src/TargetSelection.js).
+* [TargetInCollective](src/CollectiveMember.js).
+  Adds a component's target element (e.g., the component's first child) to
+  the set of elements collectively handling the keyboard.
+* [TargetSelection](src/TargetSelection.js).
   Allows a component to track and manage selection for a separate target
   element.
-* [TimerToSelection](src/TimerSelection.js).
+* [TimerSelection](src/TimerSelection.js).
   Allows the selection to be updated on a timer.
-* [TrackpadToDirection](src/TrackpadDirection.js).
+* [TrackpadDirection](src/TrackpadDirection.js).
   Translates trackpad swipes or horizontal mouse wheel drags into direction
   semantics.
 * [composeTemplates](src/composeTemplates.js).

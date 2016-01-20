@@ -1,5 +1,5 @@
 /**
- * @class CollectiveMember
+ * @class TargetInCollective
  * @classdesc Mixin which allows a component to provide aggregate behavior with
  * other elements, e.g., for keyboard handling
  */
@@ -7,7 +7,7 @@
 
 import Collective from './Collective';
 
-export default (base) => class CollectiveMember extends base {
+export default (base) => class TargetInCollective extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }

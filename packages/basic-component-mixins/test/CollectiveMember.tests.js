@@ -1,12 +1,12 @@
 import { assert } from 'chai';
-import CollectiveMember from '../src/CollectiveMember';
+import TargetInCollective from '../src/TargetInCollective';
 
 
-class CollectiveMemberTest extends CollectiveMember(HTMLElement) {}
-document.registerElement('collective-member-test', CollectiveMemberTest);
+class TargetInCollectiveTest extends TargetInCollective(HTMLElement) {}
+document.registerElement('collective-member-test', TargetInCollectiveTest);
 
 
-describe("CollectiveMember mixin", () => {
+describe("TargetInCollective mixin", () => {
 
   it("assimilates the element indicated by its target property", () => {
     let element1 = document.createElement('collective-member-test');

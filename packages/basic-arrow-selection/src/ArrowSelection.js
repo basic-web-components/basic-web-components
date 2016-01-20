@@ -19,7 +19,7 @@
  * 'showArrows' CSS class.
  *
  * @mixes ChildrenContent
- * @mixes CollectiveMember
+ * @mixes TargetInCollective
  * @mixes ContentFirstChildTarget
  * @mixes ItemsSelection
  * @mixes Keyboard
@@ -28,23 +28,22 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
-import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
 
 let base = ElementBase.compose(
   ChildrenContent,
-  CollectiveMember,
   ContentFirstChildTarget,
   ItemsSelection,
   Keyboard,
   ObserveContentChanges,
+  TargetInCollective,
   TargetSelection
 );
 
