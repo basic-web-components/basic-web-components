@@ -1,10 +1,10 @@
 /**
- * @class SelectionScroll
+ * @class SelectionInView
  * @classdesc Mixin which scrolls a container to keep the selected item visible
  */
 
 
-export default (base) => class SelectionScroll extends base {
+export default (base) => class SelectionInView extends base {
 
   get selectedItem() {
     return super.selectedItem;

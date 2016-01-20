@@ -48,7 +48,7 @@
  * @mixes KeyboardPagedSelection
  * @mixes KeyboardPrefixSelection
  * @mixes SelectionHighlight
- * @mixes SelectionScroll
+ * @mixes SelectionInView
  */
 
 
@@ -67,7 +67,7 @@ import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPr
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
-import SelectionScroll from '../../basic-component-mixins/src/SelectionScroll';
+import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
 
 
 export default class ListBox extends ElementBase.compose(
@@ -85,7 +85,7 @@ export default class ListBox extends ElementBase.compose(
     ObserveContentChanges,
     SelectionAriaActive,
     SelectionHighlight,
-    SelectionScroll
+    SelectionInView
   ) {
 
   get scrollTarget() {

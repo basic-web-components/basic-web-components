@@ -16,7 +16,7 @@
  *   the selected item visible.
  *
  * To ensure the selected item is in view following use of Page Up/Down, use the
- * related SelectionScroll mixin.
+ * related SelectionInView mixin.
  */
 
 
