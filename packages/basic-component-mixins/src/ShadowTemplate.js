@@ -1,5 +1,5 @@
 /**
- * @class TemplateStamping
+ * @class ShadowTemplate
  * @classdesc Mixin for stamping a template into a Shadow DOM subtree upon
  * component instantiation
  *
@@ -17,7 +17,7 @@
 const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== 'undefined');
 
 
-export default (base) => class TemplateStamping extends base {
+export default (base) => class ShadowTemplate extends base {
 
   /*
    * If the component defines a template, a shadow root will be created on the

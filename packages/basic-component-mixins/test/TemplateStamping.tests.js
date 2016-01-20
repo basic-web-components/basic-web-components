@@ -1,9 +1,9 @@
 import { assert } from 'chai';
-import TemplateStamping from '../src/TemplateStamping';
+import ShadowTemplate from '../src/ShadowTemplate';
 
 
 /* Element with a simple template */
-class ElementWithStringTemplate extends TemplateStamping(HTMLElement) {
+class ElementWithStringTemplate extends ShadowTemplate(HTMLElement) {
   get template() {
     return "Hello";
   }
@@ -14,7 +14,7 @@ document.registerElement('element-with-string-template', ElementWithStringTempla
 /* Element with a real template */
 let template = document.createElement('template');
 template.content.textContent = "Hello";
-class ElementWithRealTemplate extends TemplateStamping(HTMLElement) {
+class ElementWithRealTemplate extends ShadowTemplate(HTMLElement) {
   get template() {
     return template;
   }
@@ -22,7 +22,7 @@ class ElementWithRealTemplate extends TemplateStamping(HTMLElement) {
 document.registerElement('element-with-real-template', ElementWithRealTemplate);
 
 
-describe("TemplateStamping mixin", () => {
+describe("ShadowTemplate mixin", () => {
 
   it("stamps string template into root", () => {
     let element = document.createElement('element-with-string-template');

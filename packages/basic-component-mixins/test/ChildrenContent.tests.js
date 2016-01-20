@@ -1,12 +1,12 @@
 import { assert } from 'chai';
-import TemplateStamping from '../src/TemplateStamping';
+import ShadowTemplate from '../src/ShadowTemplate';
 import ChildrenContent from '../src/ChildrenContent';
 
 
 /*
  * Simple element using the ChildrenContent mixin.
  */
-class ContentTest extends ChildrenContent(TemplateStamping(HTMLElement)) {
+class ContentTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
 
   contentChanged() {
     this._saveTextContent = this.textContent;
@@ -29,7 +29,7 @@ document.registerElement('content-test', ContentTest);
 /*
  * Element containing an instance of the above, so we can test reprojection.
  */
-class ReprojectTest extends ChildrenContent(TemplateStamping(HTMLElement)) {
+class ReprojectTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
   get template() {
     return `<content-test><content></content></content-test>`;
   }

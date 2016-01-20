@@ -1,9 +1,9 @@
 import { assert } from 'chai';
-import TemplateStamping from '../src/TemplateStamping';
+import ShadowTemplate from '../src/ShadowTemplate';
 import Generic from '../src/Generic';
 
 
-class GenericTest extends Generic(TemplateStamping(HTMLElement)) {
+class GenericTest extends Generic(ShadowTemplate(HTMLElement)) {
   get template() {
     return `
       <style>

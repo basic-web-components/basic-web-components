@@ -2,7 +2,7 @@
  * @class ElementBase
  * @classdesc A sample general-purpose base class for defining custom elements
  * that mixes in some common features: template stamping into a shadow root,
- * automatic node finding, and marshalling between attributes and properties
+ * shadow element references, and marshalling between attributes and properties
  *
  * This base class is not special in any way, and is defined only as a
  * convenient shorthand for applying the mixins listed above. You can use this
@@ -15,14 +15,14 @@
 
 
 import Composable from '../../basic-component-mixins/src/Composable';
-import TemplateStamping from '../../basic-component-mixins/src/TemplateStamping';
-import AutomaticNodeFinding from '../../basic-component-mixins/src/AutomaticNodeFinding';
+import ShadowTemplate from '../../basic-component-mixins/src/ShadowTemplate';
+import ShadowElementReferences from '../../basic-component-mixins/src/ShadowElementReferences';
 import AttributeMarshalling from '../../basic-component-mixins/src/AttributeMarshalling';
 
 
 export default class ElementBase extends Composable(HTMLElement).compose(
-  TemplateStamping,     // before node finding, so shadow root is populated
-  AutomaticNodeFinding, // before marshalling, so marshalled properties can use it
+  ShadowTemplate,          // before node finding, so shadow root is populated
+  ShadowElementReferences, // before marshalling, so properties can use refs
   AttributeMarshalling
 ) {
 

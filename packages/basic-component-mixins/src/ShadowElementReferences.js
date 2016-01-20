@@ -1,10 +1,10 @@
 /**
- * @class AutomaticNodeFinding
+ * @class ShadowElementReferences
  * @classdesc Mixin to create references to elements in a component's Shadow
  * DOM subtree
  *
  * This adds a member on the component called `$` that can be used to reference
- * elements with IDs. E.g., if component's shadow contains an element
+ * shadow elements with IDs. E.g., if component's shadow contains an element
  * `<button id="foo">`, then this mixin will create a member `this.$.foo` that
  * points to that button. Such references simplify a component's access to its
  * own elements.
@@ -18,7 +18,7 @@
  */
 
 
-export default (base) => class AutomaticNodeFinding extends base {
+export default (base) => class ShadowElementReferences extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }

@@ -65,7 +65,7 @@ function makeTemplate(htmlOrTemplate) {
 }
 
 
-// TODO: Share with TemplateStamping.
+// TODO: Share with ShadowTemplate.
 // Convert a plain string of HTML into a real template element.
 function createTemplateWithInnerHTML(innerHTML) {
   let template = document.createElement('template');
