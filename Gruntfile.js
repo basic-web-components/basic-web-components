@@ -8,6 +8,8 @@
  * promise-chain of tasks to improve readability of intent.
  */
 
+var fs = require('fs');
+
 //
 // allPackages is the global array of npm-publishable packages in this monorepo
 //
@@ -48,16 +50,30 @@ var buildList = buildBuildList();
 // Build the global docsList array for use in building the package's README.md documentation
 //
 function buildDocsList() {
-  var ary = [];
-  for (var i = 0; i < allPackages.length; i++) {
-    var obj = {src: 'packages/' + allPackages[i] + '/src/*.js', dest: 'packages/' + allPackages[i] + '/README.md'};
-    ary.push(obj);
-  }
+  var ary = allPackages.filter(function(item) {
+    return item != 'basic-component-mixins';
+  }).map(function(item) {
+    return {src: 'packages/' + item + '/src/*.js', dest: 'packages/' + item + '/README.md'};
+  });
 
-  return ary;
+  return ary.concat(buildMixinsDocsList());
 }
 var docsList = buildDocsList();
 
+//
+// Build the portion of docsList that represents the individual source files within
+// the basic-component-mixins directory.
+//
+function buildMixinsDocsList() {
+  return fs.readdirSync('packages/basic-component-mixins/src').filter(function(file) {
+    return file.indexOf('.js') == file.length - 3;
+  }).map(function(file) {
+    var fileRoot = file.replace('.js', '');
+    return {
+      src: 'packages/basic-component-mixins/src/' + file,
+      dest: 'packages/basic-component-mixins/docs/' + fileRoot + '.md' };
+  });
+}
 
 module.exports = function(grunt) {
 
