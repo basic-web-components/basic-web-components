@@ -1,6 +1,6 @@
 {
   "name": "basic-component-mixins",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Mixins applied toward the implementation of basic-web-components",
   "homepage": "https://component.kitchen",
   "license": "MIT",
