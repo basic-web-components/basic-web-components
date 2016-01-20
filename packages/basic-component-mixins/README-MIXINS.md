@@ -62,7 +62,7 @@ The /src folder includes mixins for common web component features:
   Marshall element attributes to component properties (and eventually vice
   versa). This includes mapping hyphenated `foo-bar` attribute references to
   camelCase `fooBar` property names.
-* [ChildrenToContent](src/ChildrenContent.js).
+* [ChildrenAsContent](src/ChildrenContent.js).
   Defines a component's content as its children. Often used in conjunction with
   the ContentItems mixin.
 * [ClickSelection](src/ClickSelection.js).
@@ -75,34 +75,35 @@ The /src folder includes mixins for common web component features:
   and keyboard handling.
 * [Composable](src/Composable.js).
   Facilitates the application of a set of mixins.
-* [ContentToTarget](src/ContentFirstChildTarget.js).
+* [ContentFirstChildTarget](src/ContentFirstChildTarget.js).
   Allows a component to take its first child as a target it wants to augment in
   some way.
-* [ContentToItems](src/ContentItems.js).
+* [ContentAsItems](src/ContentItems.js).
   Lets a component treat its content as items in a list.
 * [DirectionToSelection](src/DirectionSelection.js).
   Translates direction (up/down, left/right) semantics into selection semantics
   (select previous/next).
 * [Generic](src/Generic.js).
   Lets a component easily disable standard, optional styling.
-* [SelectionToAriaActive](src/ItemsAccessible.js).
-  Makes the items in a list accessible via ARIA.
-* [ItemsToSelection](src/ItemsSelection.js).
+* [ItemsSelection](src/ItemsSelection.js).
   Allows a set of items in a list to be selectable.
 * [Keyboard](src/Keyboard.js).
   Lets a component handle keyboard events. Includes support for collective
   keyboard handling.
-* [KeyboardToDirection](src/KeyboardDirection.js).
+* [KeyboardDirection](src/KeyboardDirection.js).
   Translates directional keys (e.g., Up/Down) into direction semantics
   (up/down).
-* [KeyboardToPagedSelection](src/KeyboardPagedSelection.js).
+* [KeyboardPagedSelection](src/KeyboardPagedSelection.js).
   Translates page keys (Page Up/Page Down) into selection semantics.
-* [KeyboardToPrefixSelection](src/KeyboardPrefixSelection.js).
+* [KeyboardPrefixSelection](src/KeyboardPrefixSelection.js).
   Translates prefix typing into selection semantics. This allows, e.g., a list
   box to allow selection by typing the start of the desired list item.
-* [ObserveContentChanges](src/ContentChanged.js).
+* [ObserveContentChanges](src/ObserveContentChanges.js).
   Wires up mutation observers to report any changes in a component's content
   (direct children, or nodes distributed to slots).
+* [SelectionAriaActive](src/SelectionAriaActive.js).
+  Treat the selected item in a list as the active item in ARIA accessibility
+  terms.
 * [SelectionHighlight](src/SelectionHighlight.js).
   Applies standard text highlight colors to the selected item in a list.
 * [SelectionInView](src/SelectionScroll.js).

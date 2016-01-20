@@ -1,7 +1,15 @@
 /**
- * @class ItemsAccessible
- * @classdesc Mixin which manages ARIA roles for a component that wants to act
- * as a list
+ * @class SelectionAriaActive
+ * @classdesc Mixin which treats the selected item in a list as the active item
+ * in ARIA accessibility terms
+ *
+ * Handling ARIA selection state properly is actually quite complex. Not only
+ * does the selected item need to be marked as selected; the other items should
+ * be marked as *not* selected. Additionally, the outermost element with the
+ * keyboard focus needs to have attributes set on it so that the selection is
+ * knowable at the list level. That in turn requires that all items in the list
+ * have ID attributes assigned to them. (To that end, this mixin will assign
+ * generated IDs to any item that doesn't already have an ID.)
  */
 
 
@@ -9,7 +17,7 @@
 let idCount = 0;
 
 
-export default (base) => class ItemsAccessible extends base {
+export default (base) => class SelectionAriaActive extends base {
 
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }

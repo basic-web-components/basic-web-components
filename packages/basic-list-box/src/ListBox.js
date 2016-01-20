@@ -42,7 +42,7 @@
  * @mixes DirectionSelection
  * @mixes Generic
  * @mixes ItemsSelection
- * @mixes ItemsAccessible
+ * @mixes SelectionAriaActive
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes KeyboardPagedSelection
@@ -60,12 +60,12 @@ import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
-import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
 import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPrefixSelection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
 import SelectionScroll from '../../basic-component-mixins/src/SelectionScroll';
 
@@ -78,12 +78,12 @@ export default class ListBox extends ElementBase.compose(
     DirectionSelection,
     Generic,
     ItemsSelection,
-    ItemsAccessible,
     Keyboard,
     KeyboardDirection,
     KeyboardPagedSelection,
     KeyboardPrefixSelection,
     ObserveContentChanges,
+    SelectionAriaActive,
     SelectionHighlight,
     SelectionScroll
   ) {

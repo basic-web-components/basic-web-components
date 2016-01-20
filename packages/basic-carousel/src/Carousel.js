@@ -92,7 +92,7 @@
  * @mixes DirectionSelection
  * @mixes Generic
  * @mixes ItemsSelection
- * @mixes ItemsAccessible
+ * @mixes SelectionAriaActive
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes SwipeDirection
@@ -106,11 +106,11 @@ import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember'
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
-import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
@@ -122,10 +122,10 @@ let base = ElementBase.compose(
   DirectionSelection,
   Generic,
   ItemsSelection,
-  ItemsAccessible,
   Keyboard,
   KeyboardDirection,
   ObserveContentChanges,
+  SelectionAriaActive,
   SwipeDirection,
   TrackpadDirection
 );

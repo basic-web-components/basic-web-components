@@ -13,17 +13,17 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
 import CollectiveMember from '../../basic-component-mixins/src/CollectiveMember';
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
-import ItemsAccessible from '../../basic-component-mixins/src/ItemsAccessible';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 
 let base = ElementBase.compose(
   ChildrenContent,
   CollectiveMember,
   ContentItems,
   ItemsSelection,
-  ItemsAccessible,
-  ObserveContentChanges
+  ObserveContentChanges,
+  SelectionAriaActive
 );
 
 
