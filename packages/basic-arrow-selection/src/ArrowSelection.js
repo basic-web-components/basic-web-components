@@ -1,4 +1,4 @@
-/*
+/**
  * @class ArrowSelection
  * @classdesc Component which adds prominent left and right arrow buttons to a
  * wrapped child such as a carousel
