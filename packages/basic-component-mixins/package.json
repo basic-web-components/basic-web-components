@@ -11,9 +11,10 @@
     "mixin",
     "web-components"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   }
 }

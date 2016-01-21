@@ -16,6 +16,8 @@
     "basic-component-mixins": "^0.0.3"
   },
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   }
 }
