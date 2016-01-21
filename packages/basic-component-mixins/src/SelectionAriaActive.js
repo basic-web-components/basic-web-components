@@ -102,12 +102,14 @@ export default (base) => class SelectionAriaActive extends base {
 // Return the first ARIA activedescendant defined by the collective.
 function getCollectiveAriaActiveDescendant(collective) {
   let descendants = collective.elements.map(element => element.getAttribute('aria-activedescendant'));
-  return descendants.find(descendant => descendant !== null);
+  let nonNullDescendants = descendants.filter(descendant => descendant !== null);
+  return nonNullDescendants[0];
 }
 
 
 // Return the first ARIA label defined by the collective.
 function getCollectiveAriaRole(collective) {
   let roles = collective.elements.map(element => element.getAttribute('role'));
-  return roles.find(role => role !== null);
+  let nonNullRoles = roles.filter(role => role !== null);
+  return nonNullRoles[0];
 }

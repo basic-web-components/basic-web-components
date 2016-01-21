@@ -78,7 +78,9 @@ function keydown(event) {
 // Return the first ARIA label defined by the collective.
 function getCollectiveAriaLabel(collective) {
   let labels = collective.elements.map(element => element.getAttribute('aria-label'));
-  return labels.find(label => label !== null);
+  // Would prefer to use Array.prototype.find here, but IE 11 doesn't have it.
+  let nonNullLabels = labels.filter(label => label != null);
+  return nonNullLabels[0];
 }
 
 
