@@ -58,75 +58,75 @@ offer by virtue of which mixins they incorporate into their base classes.
 
 The /src folder includes mixins for common web component features:
 
-* [AttributeMarshalling](src/AttributeMarshalling.js).
+* [AttributeMarshalling](docs/AttributeMarshalling.md).
   Marshall element attributes to component properties (and eventually vice
   versa). This includes mapping hyphenated `foo-bar` attribute references to
   camelCase `fooBar` property names.
-* [ClickSelection](src/ClickSelection.js).
+* [ClickSelection](docs/ClickSelection.md).
   Translates a click on a child element into a selection.
-* [Collective](src/Collective.js).
+* [Collective](docs/Collective.md).
   Not a mixin itself, this class is used by the CollectiveMember mixin to track
   the components that should be treated as a unit for keyboard purposes.
-* [Composable](src/Composable.js).
+* [Composable](docs/Composable.md).
   Facilitates the application of a set of mixins.
-* [ContentAsItems](src/ContentItems.js).
+* [ContentAsItems](docs/ContentItems.md).
   Lets a component treat its content as items in a list.
-* [ContentFirstChildTarget](src/ContentFirstChildTarget.js).
+* [ContentFirstChildTarget](docs/ContentFirstChildTarget.md).
   Allows a component to take its first child as a target it wants to augment in
   some way.
-* [DirectionToSelection](src/DirectionSelection.js).
+* [DirectionToSelection](docs/DirectionSelection.md).
   Translates direction (up/down, left/right) semantics into selection semantics
   (select previous/next).
-* [DistributedChildren](src/DistributedChildren.js).
+* [DistributedChildren](docs/DistributedChildren.md).
   Helpers to access the nodes distributed to a component as a flattened array
   or string.
-* [DistributedChildrenAsContent](src/DistributedChildrenAsContent.js).
+* [DistributedChildrenAsContent](docs/DistributedChildrenAsContent.md).
   Defines a component's content as its (flattened, distributed) children.
   Typically used in conjunction with the DistributedChildren mixin.
-* [Generic](src/Generic.js).
+* [Generic](docs/Generic.md).
   Lets a component easily disable standard, optional styling.
-* [ItemsSelection](src/ItemsSelection.js).
+* [ItemsSelection](docs/ItemsSelection.md).
   Allows a set of items in a list to be selectable.
-* [Keyboard](src/Keyboard.js).
+* [Keyboard](docs/Keyboard.md).
   Lets a component handle keyboard events. Includes support for collective
   keyboard handling.
-* [KeyboardDirection](src/KeyboardDirection.js).
+* [KeyboardDirection](docs/KeyboardDirection.md).
   Translates directional keys (e.g., Up/Down) into direction semantics
   (up/down).
-* [KeyboardPagedSelection](src/KeyboardPagedSelection.js).
+* [KeyboardPagedSelection](docs/KeyboardPagedSelection.md).
   Translates page keys (Page Up/Page Down) into selection semantics.
-* [KeyboardPrefixSelection](src/KeyboardPrefixSelection.js).
+* [KeyboardPrefixSelection](docs/KeyboardPrefixSelection.md).
   Translates prefix typing into selection semantics. This allows, e.g., a list
   box to allow selection by typing the start of the desired list item.
-* [ObserveContentChanges](src/ObserveContentChanges.js).
+* [ObserveContentChanges](docs/ObserveContentChanges.md).
   Wires up mutation observers to report any changes in a component's content
   (direct children, or nodes distributed to slots).
-* [SelectionAriaActive](src/SelectionAriaActive.js).
+* [SelectionAriaActive](docs/SelectionAriaActive.md).
   Treat the selected item in a list as the active item in ARIA accessibility
   terms.
-* [SelectionHighlight](src/SelectionHighlight.js).
+* [SelectionHighlight](docs/SelectionHighlight.md).
   Applies standard text highlight colors to the selected item in a list.
-* [SelectionInView](src/SelectionScroll.js).
+* [SelectionInView](docs/SelectionScroll.md).
   Scrolls the component to keep the selected item in view.
-* [ShadowElementReferences](src/ShadowElementReferences.js).
+* [ShadowElementReferences](docs/ShadowElementReferences.md).
   Lets a component easily access elements in its Shadow DOM subtree.
-* [ShadowTemplate](src/ShadowTemplate.js).
+* [ShadowTemplate](docs/ShadowTemplate.md).
   Makes it easy for a component to define template content that should be cloned
   into a Shadow DOM subtree when the component is instantiated.
-* [SwipeToDirection](src/SwipeDirection.js).
+* [SwipeToDirection](docs/SwipeDirection.md).
   Translates left/right touch swipe gestures into selection semantics.
-* [TargetInCollective](src/CollectiveMember.js).
+* [TargetInCollective](docs/CollectiveMember.md).
   Adds a component's target element (e.g., the component's first child) to
   the set of elements collectively handling the keyboard.
-* [TargetSelection](src/TargetSelection.js).
+* [TargetSelection](docs/TargetSelection.md).
   Allows a component to track and manage selection for a separate target
   element.
-* [TimerSelection](src/TimerSelection.js).
+* [TimerSelection](docs/TimerSelection.md).
   Allows the selection to be updated on a timer.
-* [TrackpadDirection](src/TrackpadDirection.js).
+* [TrackpadDirection](docs/TrackpadDirection.md).
   Translates trackpad swipes or horizontal mouse wheel drags into direction
   semantics.
-* [composeTemplates](src/composeTemplates.js).
+* [composeTemplates](docs/composeTemplates.md).
   Not a mixin, but a helper function for letting a component insert its template
   inside a template defined by a base class.
 
