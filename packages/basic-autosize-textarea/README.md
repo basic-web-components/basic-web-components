@@ -11,7 +11,7 @@ automatically grow in size; the expanding copy will expand the container,
 which in turn will vertically stretch the text area to match.
 
 **Kind**: global class  
-**Mixes**: <code>Generic</code>, <code>ChildrenContent</code>  
+**Mixes**: <code>Generic</code>, <code>DistributedChildrenAsContent</code>  
 <a name="ariaLabel"></a>
 ## ariaLabel : <code>String</code>
 A description for the user of the element's purpose on the page. Setting

@@ -9,4 +9,4 @@ horizontal space.
 This component currently requires an explicit size by applied to it.
 
 **Kind**: global class  
-**Mixes**: <code>ChildrenContent</code>  
+**Mixes**: <code>DistributedChildrenAsContent</code>  

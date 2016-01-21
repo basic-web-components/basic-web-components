@@ -18,4 +18,4 @@ Although the dots are quite small by default, clicking/tapping a dot will
 will select the corresponding list item.
 
 **Kind**: global class  
-**Mixes**: <code>ChildrenContent</code>, <code>CollectiveMember</code>, <code>ContentFirstChildTarget</code>, <code>Keyboard</code>, <code>TargetSelection</code>  
+**Mixes**: <code>DistributedChildrenAsContent</code>, <code>TargetInCollective</code>, <code>ContentFirstChildTarget</code>, <code>Keyboard</code>, <code>TargetSelection</code>  

@@ -19,4 +19,4 @@ movement is detected. To cause the buttons to always appear, apply the
 'showArrows' CSS class.
 
 **Kind**: global class  
-**Mixes**: <code>ChildrenContent</code>, <code>CollectiveMember</code>, <code>ContentFirstChildTarget</code>, <code>ItemsSelection</code>, <code>Keyboard</code>, <code>TargetSelection</code>  
+**Mixes**: <code>DistributedChildrenAsContent</code>, <code>TargetInCollective</code>, <code>ContentFirstChildTarget</code>, <code>ItemsSelection</code>, <code>Keyboard</code>, <code>TargetSelection</code>  

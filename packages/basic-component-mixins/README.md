@@ -1,532 +1,153 @@
-<a name="AttributeMarshalling"></a>
-## AttributeMarshalling
-Mixin which marshalls attributes to properties (and eventually
-vice versa)
+This package implements common web component features as mixins. It uses mixins
+to achieve the same results as a monolithic component framework, while
+permitting more flexibility and a pay-as-you-go approach to complexity and
+performance.
 
-This only supports string properties for now.
+Design goals:
 
-**Kind**: global class  
-<a name="AutomaticNodeFinding"></a>
-## AutomaticNodeFinding
-Mixin to create references to elements in a component's Shadow
-DOM subtree
+1. Have each web component mixins focus on solving a single, common task. They
+   should be well-factored. They should be able to be used on their own, or in
+   combination.
+2. Introduce as few new concepts as possible. Any developer who understands the
+   DOM API should find this architecture appealing, without having to learn many
+   proprietary concepts (beyond mixins, see below).
+3. Focus on native browser support for ES6 and web components. The architecture
+   should be useful in a production application today, but should also feel
+   correct in a future world in which native ES6 and web components are
+   everywhere.
 
-This adds a member on the component called `$` that can be used to reference
-elements with IDs. E.g., if component's shadow contains an element
-`<button id="foo">`, then this mixin will create a member `this.$.foo` that
-points to that button. Such references simplify a component's access to its
-own elements.
 
-This trades off a one-time cost of querying all elements in the shadow tree
-against having to query for an element each time the component wants to
-inspect or manipulate it.
+# Building
 
-This mixin is inspired by Polymer's automatic node finding feature.
-See https://www.polymer-project.org/1.0/docs/devguide/local-dom.html#node-finding.
+After cloning this repository:
 
-**Kind**: global class  
-<a name="ChildrenContent"></a>
-## ChildrenContent
-Mixin which defines a component's content as its children. Changes
-in the content will be tracked, and a contentChanged method will be invoked
-on the component when its children change.
+    > npm install
+    > grunt build
 
-**Kind**: global class  
-<a name="ClickSelection"></a>
-## ClickSelection
-Mixin which maps a click (actually, a mousedown) to selection
 
-If the user clicks an element, and the element is an item in the list, then
-the component's selectedIndex will be set to the index for that item.
+# Composing web component classes with mixins as functions
 
-**Kind**: global class  
-<a name="Collective"></a>
-## Collective
-A group of elements that have been joined together for the purpose of
-accomplishing some collective behavior, e.g., keyboard handling.
+Web components can be expressed as compositions of base classes and mixins.
+Mixins here are defined as a function that takes a base class and returns a
+subclass defining the new features:
 
-This is not a mixin, but a class used by the CollectiveMember mixin.
+    let MyMixin = (base) => class MyMixin extends base {
+      // Mixin defines properties and methods here.
+    };
 
-**Kind**: global class  
-<a name="CollectiveMember"></a>
-## CollectiveMember
-Mixin which allows a component to provide aggregate behavior with
-other elements, e.g., for keyboard handling
+The mixins in this package take care to ensure that base class properties and
+methods are not broken by the mixin. In particular, if a mixin wants to add a
+new property or method, it also invokes the base class' property or method. To
+do that consistently, these mixins follow standardized [Composition
+Rules](Composition Rules.md). If you are interested in creating your own
+component mixins, you may find it helpful to follow those guidelines to ensure
+that your mixins can interoperate cleanly with the ones in this package.
 
-**Kind**: global class  
-<a name="Composable"></a>
-## Composable
-Mixin to make a class more easily composable with other mixins
+A virtue of a functional mixin is that you do not need to use any library to
+apply it. This increases the chance that mixins can be shared across projects.
+If a common extension/mixin solution can be agreed upon, frameworks sharing that
+solution gain a certain degree of code sharing, interoperability, and can share
+conceptual materials. This reduces the learning curve for dealing with any one
+framework.
 
-The main contribution is the introduction of a `compose` method that applies
-a set of mixin functions and returns the resulting new class. This sugar
-can make the application of many mixins at once easier to read.
+Frameworks can still make their own decisions about which features they want to
+offer by virtue of which mixins they incorporate into their base classes.
 
-**Kind**: global class  
-<a name="ContentFirstChildTarget"></a>
-## ContentFirstChildTarget
-Mixin that defines the target of a component -- the element the
-component is managing or somehow responsible for -- as its first child
 
-**Kind**: global class  
-<a name="ContentItems"></a>
-## ContentItems
-Mixin which maps content semantics (children) to list item
-semantics
+# Web component mixins
 
-Items differ from children in several ways:
+The /src folder includes mixins for common web component features:
 
-* They can be referenced via index.
-* They can have a selection state.
-* Auxiliary invisible child elements are filtered out and not counted as
-  items. Auxiliary elements include link, script, style, and template
-  elements.
+* [AttributeMarshalling](src/AttributeMarshalling.js).
+  Marshall element attributes to component properties (and eventually vice
+  versa). This includes mapping hyphenated `foo-bar` attribute references to
+  camelCase `fooBar` property names.
+* [ClickSelection](src/ClickSelection.js).
+  Translates a click on a child element into a selection.
+* [Collective](src/Collective.js).
+  Not a mixin itself, this class is used by the CollectiveMember mixin to track
+  the components that should be treated as a unit for keyboard purposes.
+* [Composable](src/Composable.js).
+  Facilitates the application of a set of mixins.
+* [ContentAsItems](src/ContentItems.js).
+  Lets a component treat its content as items in a list.
+* [ContentFirstChildTarget](src/ContentFirstChildTarget.js).
+  Allows a component to take its first child as a target it wants to augment in
+  some way.
+* [DirectionToSelection](src/DirectionSelection.js).
+  Translates direction (up/down, left/right) semantics into selection semantics
+  (select previous/next).
+* [DistributedChildren](src/DistributedChildren.js).
+  Helpers to access the nodes distributed to a component as a flattened array
+  or string.
+* [DistributedChildrenAsContent](src/DistributedChildrenAsContent.js).
+  Defines a component's content as its (flattened, distributed) children.
+  Typically used in conjunction with the DistributedChildren mixin.
+* [Generic](src/Generic.js).
+  Lets a component easily disable standard, optional styling.
+* [ItemsSelection](src/ItemsSelection.js).
+  Allows a set of items in a list to be selectable.
+* [Keyboard](src/Keyboard.js).
+  Lets a component handle keyboard events. Includes support for collective
+  keyboard handling.
+* [KeyboardDirection](src/KeyboardDirection.js).
+  Translates directional keys (e.g., Up/Down) into direction semantics
+  (up/down).
+* [KeyboardPagedSelection](src/KeyboardPagedSelection.js).
+  Translates page keys (Page Up/Page Down) into selection semantics.
+* [KeyboardPrefixSelection](src/KeyboardPrefixSelection.js).
+  Translates prefix typing into selection semantics. This allows, e.g., a list
+  box to allow selection by typing the start of the desired list item.
+* [ObserveContentChanges](src/ObserveContentChanges.js).
+  Wires up mutation observers to report any changes in a component's content
+  (direct children, or nodes distributed to slots).
+* [SelectionAriaActive](src/SelectionAriaActive.js).
+  Treat the selected item in a list as the active item in ARIA accessibility
+  terms.
+* [SelectionHighlight](src/SelectionHighlight.js).
+  Applies standard text highlight colors to the selected item in a list.
+* [SelectionInView](src/SelectionScroll.js).
+  Scrolls the component to keep the selected item in view.
+* [ShadowElementReferences](src/ShadowElementReferences.js).
+  Lets a component easily access elements in its Shadow DOM subtree.
+* [ShadowTemplate](src/ShadowTemplate.js).
+  Makes it easy for a component to define template content that should be cloned
+  into a Shadow DOM subtree when the component is instantiated.
+* [SwipeToDirection](src/SwipeDirection.js).
+  Translates left/right touch swipe gestures into selection semantics.
+* [TargetInCollective](src/CollectiveMember.js).
+  Adds a component's target element (e.g., the component's first child) to
+  the set of elements collectively handling the keyboard.
+* [TargetSelection](src/TargetSelection.js).
+  Allows a component to track and manage selection for a separate target
+  element.
+* [TimerSelection](src/TimerSelection.js).
+  Allows the selection to be updated on a timer.
+* [TrackpadDirection](src/TrackpadDirection.js).
+  Translates trackpad swipes or horizontal mouse wheel drags into direction
+  semantics.
+* [composeTemplates](src/composeTemplates.js).
+  Not a mixin, but a helper function for letting a component insert its template
+  inside a template defined by a base class.
 
-**Kind**: global class  
-<a name="DirectionSelection"></a>
-## DirectionSelection
-Mixin which maps direction semantics (goLeft, goRight, etc.) to
-selection semantics (selectPrevious, selectNext, etc.)
 
-**Kind**: global class  
-<a name="Generic"></a>
-## Generic
-Mixin that allows a component to support a "generic" style: a
-minimalist style that can easily be removed to reset its visual appearance to
-a baseline state
+# Applying multiple mixins
 
-By default, a component should provide a minimal visual presentation that
-allows the component to function. However, the more styling the component
-provides by default, the harder it becomes to get the component to fit in
-in other settings. Each CSS rule has to be overridden. Worse, new CSS rules
-added to the default style won't be overridden by default, making it hard to
-know whether a new version of a component will still look okay.
+Since web components often include many mixins, a helper mixin called Composable
+provides syntactic sugar that allows multiple mixins to be applied in a single
+call. Instead of defining an element like:
 
-As a compromise, the simple Polymer behavior here defines a "generic"
-attribute. This attribute is normally set by default, and styles can be
-written that apply only when the generic attribute is set. This allows the
-construction of CSS rules that will only apply to generic components like
-
-    :host([generic=""]) {
+    class MyElement extends Mixin1(Mixin2(Mixin3(Mixin4(HTMLElement)))) {
       ...
     }
 
-This makes it easy to remove all default styling -- set the generic attribute
-to false, and all default styling will be removed.
+You can write:
 
-**Kind**: global class  
-<a name="ItemsAccessible"></a>
-## ItemsAccessible
-Mixin which manages ARIA roles for a component that wants to act
-as a list
-
-**Kind**: global class  
-<a name="ItemsSelection"></a>
-## ItemsSelection
-Mixin which manages selection semantics for items in a list
-
-**Kind**: global class  
-<a name="Keyboard"></a>
-## Keyboard
-Mixin which manages the keydown handling for a component
-
-TODO: Document collective behavior.
-TODO: Provide baseline behavior outside of a collective.
-
-**Kind**: global class  
-<a name="KeyboardDirection"></a>
-## KeyboardDirection
-Mixin which maps direction keys (Left, Right, etc.) to direction
-semantics (goLeft, goRight, etc.)
-
-**Kind**: global class  
-<a name="KeyboardPagedSelection"></a>
-## KeyboardPagedSelection
-Mixin which maps page keys (Page Up, Page Down) into operations
-that move the selection by one page
-
-The keyboard interaction model generally follows that of Microsoft Windows'
-list boxes instead of those in OS X:
-
-* The Page Up/Down and Home/End keys actually change the selection, rather
-  than just scrolling. The former behavior seems more generally useful for
-  keyboard users.
-
-* Pressing Page Up/Down will change the selection to the topmost/bottommost
-  visible item if the selection is not already there. Thereafter, the key
-  will move the selection up/down by a page, and (per the above point) make
-  the selected item visible.
-
-To ensure the selected item is in view following use of Page Up/Down, use the
-related SelectionScroll mixin.
-
-**Kind**: global class  
-<a name="KeyboardPrefixSelection"></a>
-## KeyboardPrefixSelection
-Mixin that handles list box-style prefix typing, in which the user
-can type a string to select the first item that begins with that string
-
-**Kind**: global class  
-<a name="SelectionHighlight"></a>
-## SelectionHighlight
-Mixin which applies standard highlight colors to a selected item
-
-**Kind**: global class  
-<a name="SelectionScroll"></a>
-## SelectionScroll
-Mixin which scrolls a container to keep the selected item visible
-
-**Kind**: global class  
-<a name="SwipeDirection"></a>
-## SwipeDirection
-Mixin which maps touch gestures (swipe left, swipe right) to direction
-semantics (goRight, goLeft)
-
-**Kind**: global class  
-<a name="TargetSelection"></a>
-## TargetSelection
-Mixin that allows a component to delegate its own selection
-semantics to a target element
-
-This is useful when defining components that act as optional decorators for a
-component that acts like a list.
-
-**Kind**: global class  
-<a name="TemplateStamping"></a>
-## TemplateStamping
-Mixin for stamping a template into a Shadow DOM subtree upon
-component instantiation
-
-If a component defines a template property (as a string or referencing a HTML
-template), when the component class is instantiated, a shadow root will be
-created on the instance, and the contents of the template will be cloned into
-the shadow root.
-
-For the time being, this extension retains support for Shadow DOM v0.
-That will eventually be deprecated as browsers implement Shadow DOM v1.
-
-**Kind**: global class  
-<a name="TimerSelection"></a>
-## TimerSelection
-Mixin provides for automatic timed changes in selection, as in a
-automated slideshow
-
-**Kind**: global class  
-<a name="TrackpadDirection"></a>
-## TrackpadDirection
-Mixin which maps a horizontal trackpad swipe gestures (or
-horizontal mouse wheel actions) to direction semantics
-
-To respond to the trackpad, we can listen to the DOM's "wheel" events. These
-events are fired as the user drags their fingers across a trackpad.
-Unfortunately, this scheme is missing a critical event — there is no event
-when the user *stops* a gestured on the trackpad.
-
-To complicate matters, the mainstream browsers continue to generate wheel
-events even after the user has stopped dragging their fingers. These fake
-events simulate the user gradually slowing down the drag until they come to a
-smooth stop. In some contexts, these fake wheel events might be helpful, but
-in trying to supply typical trackpad swipe navigation, these fake events get
-in the way.
-
-This component uses some heuristics to work around these problems, but the
-complex nature of the problem make it extremely difficult to achieve the same
-degree of trackpad responsiveness possible with native applications.
-
-**Kind**: global class  
-<a name="composeTemplates"></a>
-## composeTemplates
-Given two templates, this "folds" one inside the other
-
-For now, the folding process just entails putting the first inside the
-location of the first <content> node in the second template.
-
-Example: if the first (sub) template is
-
-  <template>
-    Hello, <slot></slot>.
-  </template>
-
-and the second (base) template is
-
-  <template>
-    <b>
-      <slot></slot>
-    </b>
-  </template>
-
-Then the returned folded template is
-
-  <template>
-    <b>
-      Hello, <slot></slot>.
-    </b>
-  </template>
-
-**Kind**: global class  
-<a name="undefinedcontent"></a>
-## undefinedcontent : <code>Array</code>
-The flattened content of this component.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| content | 
-
-<a name="undefineditems"></a>
-## undefineditems
-The current set of items in the list.
-
-**Kind**: global variable  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| items | <code>object</code> | 
-
-<a name="undefinedgeneric"></a>
-## undefinedgeneric : <code>Boolean</code>
-True if the component would like to receive generic styling.
-
-This property is true by default — set it to false to turn off all
-generic styles. This makes it easier to apply custom styling; you won't
-have to explicitly override styling you don't want.
-
-**Kind**: global variable  
-**Default**: <code>true</code>  
-**Properties**
-
-| Name |
-| --- |
-| generic | 
-
-<a name="undefinedselectedIndex"></a>
-## undefinedselectedIndex : <code>Number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| selectedIndex | 
-
-<a name="undefinedselectedItem"></a>
-## undefinedselectedItem : <code>Object</code>
-The currently selected item, or null if there is no selection.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| selectedItem | 
-
-<a name="undefinedselectionRequired"></a>
-## undefinedselectionRequired : <code>Boolean</code>
-True if the list should always have a selection (if it has items).
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| selectionRequired | 
-
-<a name="undefinedscrollTarget"></a>
-## undefinedscrollTarget
-The element that should be scrolled with the Page Up/Down keys.
-Default is the current element.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| scrollTarget | 
-
-<a name="undefinedscrollTarget"></a>
-## undefinedscrollTarget
-The element that should be scrolled with the Page Up/Down keys.
-Default is the current element.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| scrollTarget | 
-
-<a name="undefinedposition"></a>
-## undefinedposition : <code>Number</code>
-The distance the user has moved the first touchpoint since the beginning
-of a drag, expressed as a fraction of the element's width.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| position | 
-
-<a name="undefinedselectedIndex"></a>
-## undefinedselectedIndex : <code>Number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| selectedIndex | 
-
-<a name="undefinedselectedItem"></a>
-## undefinedselectedItem : <code>Object</code>
-The currently selected item, or null if there is no selection.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| selectedItem | 
-
-<a name="undefinedplaying"></a>
-## undefinedplaying : <code>Boolean</code>
-True if the selection is being automatically advanced.
-
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| playing | 
-
-<a name="undefinedcompose"></a>
-## undefinedcompose()
-Apply a set of mixin functions or mixin objects to the present class and
-return the new class.
-
-A call like
-
-    let MyClass = Mixin1(Mixin2(Mixin3(Mixin4(Mixin5(BaseClass)))));
-
-Can be converted to:
-
-    let MyClass = Composable(BaseClass).compose(
+    class MyElement extends Composable(HTMLElement).compose(
       Mixin1,
       Mixin2,
       Mixin3,
-      Mixin4,
-      Mixin5
-    );
-
-This function can also take mixin objects. A mixin object is just a
-shorthand for a mixin function that creates a new subclass with the given
-members. The mixin object's members are *not* copied directly onto the
-prototype of the base class, as with traditional mixins.
-
-**Kind**: global function  
-<a name="indexOfItem"></a>
-## indexOfItem(item) ⇒ <code>number</code>
-Returns the positional index for the indicated item.
-
-Because this acts like a getter, this does not invoke a base implementation.
-
-**Kind**: global function  
-**Returns**: <code>number</code> - The index of the item, or -1 if not found.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>object</code> | The item whose index is requested. |
-
-<a name="selectFirst"></a>
-## selectFirst()
-Select the first item in the list.
-
-**Kind**: global function  
-<a name="selectLast"></a>
-## selectLast()
-Select the last item in the list.
-
-**Kind**: global function  
-<a name="selectNext"></a>
-## selectNext()
-Select the next item in the list.
-
-**Kind**: global function  
-<a name="selectPrevious"></a>
-## selectPrevious()
-Select the previous item in the list.
-
-**Kind**: global function  
-<a name="pageDown"></a>
-## pageDown()
-Scroll down one page.
-
-**Kind**: global function  
-<a name="pageUp"></a>
-## pageUp()
-Scroll up one page.
-
-**Kind**: global function  
-<a name="selectItemWithTextPrefix"></a>
-## selectItemWithTextPrefix(prefix)
-Select the first item whose text content begins with the given prefix.
-
-**Kind**: global function  
-
-| Param | Description |
-| --- | --- |
-| prefix | [String] The string to search for |
-
-<a name="scrollItemIntoView"></a>
-## scrollItemIntoView()
-Scroll the given element completely into view, minimizing the degree of
-scrolling performed.
-
-Blink has a scrollIntoViewIfNeeded() function that almost the same thing,
-but unfortunately it's non-standard, and in any event often ends up
-scrolling more than is absolutely necessary.
-
-**Kind**: global function  
-<a name="play"></a>
-## play()
-Begin automatic progression of the selection.
-
-**Kind**: global function  
-<a name="pause"></a>
-## pause()
-Pause automatic progression of the selection.
-
-**Kind**: global function  
-<a name="event_items-changed"></a>
-## "items-changed"
-Fires when the items in the list change.
-
-**Kind**: event emitted  
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedItem property changes.
-
-**Kind**: event emitted  
-
-| Param | Description |
-| --- | --- |
-| detail.selectedItem | The new selected item. |
-| detail.previousItem | The previously selected item. |
-
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedIndex property changes.
-
-**Kind**: event emitted  
-
-| Param | Description |
-| --- | --- |
-| detail.selectedIndex | The new selected index. |
-
+      Mixin4
+    ) {
+      ...
+    }

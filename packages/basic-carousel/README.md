@@ -87,4 +87,4 @@ elements. This helps users navigate the sequence of elements in the carousel
 using assistive technologies.
 
 **Kind**: global class  
-**Mixes**: <code>ChildrenContent</code>, <code>CollectiveMember</code>, <code>ContentItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>ItemsAccessible</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>SwipeDirection</code>, <code>TrackpadDirection</code>  
+**Mixes**: <code>DistributedChildrenAsContent</code>, <code>TargetInCollective</code>, <code>ContentAsItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>SelectionAriaActive</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>SwipeDirection</code>, <code>TrackpadDirection</code>  

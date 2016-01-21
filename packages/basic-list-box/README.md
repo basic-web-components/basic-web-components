@@ -36,7 +36,7 @@ the item into view.
 The user can also select an item by typing the beginning of an item's text.
 
 **Kind**: global class  
-**Mixes**: <code>ChildrenContent</code>, <code>ClickSelection</code>, <code>CollectiveMember</code>, <code>ContentItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>ItemsAccessible</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>KeyboardPagedSelection</code>, <code>KeyboardPrefixSelection</code>, <code>SelectionHighlight</code>, <code>SelectionScroll</code>  
+**Mixes**: <code>DistributedChildrenAsContent</code>, <code>ClickSelection</code>, <code>TargetInCollective</code>, <code>ContentAsItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>SelectionAriaActive</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>KeyboardPagedSelection</code>, <code>KeyboardPrefixSelection</code>, <code>SelectionHighlight</code>, <code>SelectionInView</code>  
 <a name="value"></a>
 ## value : <code>String</code>
 The text content of the selected item.
