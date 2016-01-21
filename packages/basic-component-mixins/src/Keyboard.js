@@ -90,8 +90,10 @@ function isListeningToKeydown(element) {
 function startListeningToKeydown(element) {
   element._keydownListener = keydown.bind(element);
   element.addEventListener('keydown', element._keydownListener);
-  if (element.tabIndex < 0) {
-    element.setAttribute('tabIndex', 0);
+  // Set a default tab index of 0 (document order) if no tab index exists.
+  // MS Edge requires we explicitly check for presence of tabindex attribute.
+  if (element.getAttribute('tabindex') == null || element.tabIndex < 0) {
+    element.setAttribute('tabindex', '0');
   }
 }
 
@@ -99,5 +101,5 @@ function startListeningToKeydown(element) {
 function stopListeningToKeydown(element) {
   element.removeEventListener('keydown', element._keydownListener);
   element._keydownListener = null;
-  element.removeAttribute('tabIndex');
+  element.removeAttribute('tabindex');
 }
