@@ -1,7 +1,6 @@
 import { assert } from 'chai';
 import AttributeMarshalling from '../src/AttributeMarshalling';
 import ItemsSelection from '../src/ItemsSelection';
-import microtask from '../src/microtask';
 
 
 class ItemsSelectionTest extends ItemsSelection(AttributeMarshalling(HTMLElement)) {
@@ -9,7 +8,8 @@ class ItemsSelectionTest extends ItemsSelection(AttributeMarshalling(HTMLElement
     return this.items.indexOf(item);
   }
   get items() {
-    return [...this.children];
+    // Convert children to array in a way IE 11 can handle.
+    return Array.prototype.slice.call(this.children);
   }
 }
 document.registerElement('items-selection-test', ItemsSelectionTest);
