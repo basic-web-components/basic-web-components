@@ -69,7 +69,7 @@ The /src folder includes mixins for common web component features:
   the components that should be treated as a unit for keyboard purposes.
 * [Composable](docs/Composable.md).
   Facilitates the application of a set of mixins.
-* [ContentAsItems](docs/ContentItems.md).
+* [ContentAsItems](docs/ContentAsItems.md).
   Lets a component treat its content as items in a list.
 * [ContentFirstChildTarget](docs/ContentFirstChildTarget.md).
   Allows a component to take its first child as a target it wants to augment in
@@ -106,7 +106,7 @@ The /src folder includes mixins for common web component features:
   terms.
 * [SelectionHighlight](docs/SelectionHighlight.md).
   Applies standard text highlight colors to the selected item in a list.
-* [SelectionInView](docs/SelectionScroll.md).
+* [SelectionInView](docs/SelectionInView.md).
   Scrolls the component to keep the selected item in view.
 * [ShadowElementReferences](docs/ShadowElementReferences.md).
   Lets a component easily access elements in its Shadow DOM subtree.
@@ -115,7 +115,7 @@ The /src folder includes mixins for common web component features:
   into a Shadow DOM subtree when the component is instantiated.
 * [SwipeToDirection](docs/SwipeDirection.md).
   Translates left/right touch swipe gestures into selection semantics.
-* [TargetInCollective](docs/CollectiveMember.md).
+* [TargetInCollective](docs/TargetInCollective.md).
   Adds a component's target element (e.g., the component's first child) to
   the set of elements collectively handling the keyboard.
 * [TargetSelection](docs/TargetSelection.md).
