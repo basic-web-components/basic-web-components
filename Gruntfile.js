@@ -214,6 +214,7 @@ module.exports = function(grunt) {
     grunt.log.writeln('  grunt docs (builds all packages README.md files)');
     grunt.log.writeln('  grunt lint (runs jshint on all .js files)');
     grunt.log.writeln('  grunt npm-publish:package-name|* (publishes packages/package-name or all packages (packages/*) to npm)');
+    grunt.log.writeln('  grunt set-version:version (updates package.json version values and dependencies. Ex: grunt set-version:1.0.30)');
     grunt.log.writeln('  grunt watch (builds and watches changes to project files)');
   });
 
@@ -344,4 +345,37 @@ module.exports = function(grunt) {
       'shell:npm-owner-add:robbear:' + package]);
   });
 
+  //
+  // Update each of the package.json for allPackages, updating the version value and dependencies
+  // on basic-web-components. This mechanism ensures a common version for all items in the monorepo.
+  //
+  grunt.registerTask('set-version', function(versionString) {
+    if (!versionString || versionString == '') {
+      grunt.task.run('default');
+      return;
+    }
+
+    for (var i = 0; i < allPackages.length; i++) {
+      var filePath = './packages/' + allPackages[i] + '/package.json';
+      var packageJSON = require(filePath);
+      packageJSON = updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString);
+      fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
+    }
+  });
+
 };
+
+function updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString) {
+  var json = packageJSON;
+  json.version = versionString;
+
+  var dependencies = packageJSON.dependencies;
+  for (var packageName in dependencies) {
+    if (dependencies.hasOwnProperty(packageName) && (allPackages.indexOf(packageName) >= 0)) {
+      dependencies[packageName] = '^' + versionString;
+    }
+  }
+
+  json.dependencies = dependencies;
+  return json;
+}
