@@ -35,7 +35,7 @@
  *
  * The user can also select an item by typing the beginning of an item's text.
  *
- * @mixes ChildrenContent
+ * @mixes DistributedChildrenAsContent
  * @mixes ClickSelection
  * @mixes TargetInCollective
  * @mixes ContentItems
@@ -53,7 +53,7 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
@@ -71,7 +71,7 @@ import TargetInCollective from '../../basic-component-mixins/src/TargetInCollect
 
 
 export default class ListBox extends ElementBase.compose(
-  ChildrenContent,
+  DistributedChildrenAsContent,
   ClickSelection,
   ContentItems,
   DirectionSelection,

@@ -17,7 +17,7 @@
  * Although the dots are quite small by default, clicking/tapping a dot will
  * will select the corresponding list item.
  *
- * @mixes ChildrenContent
+ * @mixes DistributedChildrenAsContent
  * @mixes TargetInCollective
  * @mixes ContentFirstChildTarget
  * @mixes Keyboard
@@ -26,7 +26,7 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
@@ -35,7 +35,7 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
 
 let base = ElementBase.compose(
-  ChildrenContent,
+  DistributedChildrenAsContent,
   ContentFirstChildTarget,
   Keyboard,
   ObserveContentChanges,

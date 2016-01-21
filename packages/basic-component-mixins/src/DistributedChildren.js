@@ -1,26 +1,11 @@
 /**
- * @class ChildrenContent
- * @classdesc Mixin which defines a component's content as its children,
- * including any nodes distributed to the component's slots.
+ * @class DistributedChildren
+ * @classdesc Mixin which defines helpers for accessing a component's
+ * distributed children as a flattened array or string.
  */
 
 
-export default (base) => class ChildrenContent extends base {
-
-  /**
-   * The content of this component.
-   *
-   * This is a synonym for the distributedChildren property.
-   *
-   * @property content
-   * @type Array
-   */
-  get content() {
-    return this.distributedChildren;
-  }
-  set content(value) {
-    if ('content' in base.prototype) { super.content = value; }
-  }
+export default (base) => class DistributedChildren extends base {
 
   /*
    * Returns an in-order collection of children, expanding any content nodes.

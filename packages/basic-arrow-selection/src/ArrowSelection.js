@@ -18,7 +18,7 @@
  * movement is detected. To cause the buttons to always appear, apply the
  * 'showArrows' CSS class.
  *
- * @mixes ChildrenContent
+ * @mixes DistributedChildrenAsContent
  * @mixes TargetInCollective
  * @mixes ContentFirstChildTarget
  * @mixes ItemsSelection
@@ -28,7 +28,7 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
@@ -38,7 +38,7 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
 
 let base = ElementBase.compose(
-  ChildrenContent,
+  DistributedChildrenAsContent,
   ContentFirstChildTarget,
   ItemsSelection,
   Keyboard,

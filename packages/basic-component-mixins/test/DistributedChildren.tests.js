@@ -1,12 +1,12 @@
 import { assert } from 'chai';
-import ChildrenContent from '../src/ChildrenContent';
+import DistributedChildren from '../src/DistributedChildren';
 import ShadowTemplate from '../src/ShadowTemplate';
 
 
 /*
- * Simple element using the ChildrenContent mixin.
+ * Simple element using the DistributedChildren mixin.
  */
-class ContentTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
+class ChildrenTest extends DistributedChildren(ShadowTemplate(HTMLElement)) {
 
   contentChanged() {
     this._saveTextContent = this.textContent;
@@ -23,21 +23,21 @@ class ContentTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
   }
 
 }
-document.registerElement('content-test', ContentTest);
+document.registerElement('children-test', ChildrenTest);
 
 
 /*
  * Element containing an instance of the above, so we can test reprojection.
  */
-class ReprojectTest extends ChildrenContent(ShadowTemplate(HTMLElement)) {
+class ReprojectTest extends DistributedChildren(ShadowTemplate(HTMLElement)) {
   get template() {
-    return `<content-test><content></content></content-test>`;
+    return `<children-test><content></content></children-test>`;
   }
 }
 document.registerElement('reproject-test', ReprojectTest);
 
 
-describe("ChildrenContent mixin", () => {
+describe("DistributedChildren mixin", () => {
 
   let container;
 
@@ -49,8 +49,8 @@ describe("ChildrenContent mixin", () => {
     container.innerHTML = '';
   });
 
-  it("provides helpers to access content", () => {
-    let fixture = document.createElement('content-test');
+  it("provides helpers to access direct children", () => {
+    let fixture = document.createElement('children-test');
     let div1 = document.createElement('div');
     let text = document.createTextNode(' ');
     let div2 = document.createElement('div');
@@ -65,7 +65,7 @@ describe("ChildrenContent mixin", () => {
     assert.equal(fixture.distributedChildNodes[2], div2);
   });
 
-  it("provides helpers to access reprojected content", () => {
+  it("provides helpers to access reprojected children", () => {
     let fixture = document.createElement('reproject-test');
     let div = document.createElement('div');
     div.textContent = 'aardvark';
@@ -75,7 +75,7 @@ describe("ChildrenContent mixin", () => {
     assert.equal(fixture.distributedChildNodes.length, 1);
     assert.equal(fixture.distributedChildNodes[0], div);
     // Inner element should report same results.
-    let inner = fixture.shadowRoot.querySelector('content-test');
+    let inner = fixture.shadowRoot.querySelector('children-test');
     assert.equal(inner.distributedTextContent, 'aardvark');
     assert.equal(inner.distributedChildren.length, 1);
     assert.equal(inner.distributedChildNodes.length, 1);

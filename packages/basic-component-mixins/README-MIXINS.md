@@ -62,9 +62,6 @@ The /src folder includes mixins for common web component features:
   Marshall element attributes to component properties (and eventually vice
   versa). This includes mapping hyphenated `foo-bar` attribute references to
   camelCase `fooBar` property names.
-* [ChildrenAsContent](src/ChildrenContent.js).
-  Defines a component's content as its children. Often used in conjunction with
-  the ContentItems mixin.
 * [ClickSelection](src/ClickSelection.js).
   Translates a click on a child element into a selection.
 * [Collective](src/Collective.js).
@@ -80,6 +77,12 @@ The /src folder includes mixins for common web component features:
 * [DirectionToSelection](src/DirectionSelection.js).
   Translates direction (up/down, left/right) semantics into selection semantics
   (select previous/next).
+* [DistributedChildren](src/DistributedChildren.js).
+  Helpers to access the nodes distributed to a component as a flattened array
+  or string.
+* [DistributedChildrenAsContent](src/DistributedChildrenAsContent.js).
+  Defines a component's content as its (flattened, distributed) children.
+  Typically used in conjunction with the DistributedChildren mixin.
 * [Generic](src/Generic.js).
   Lets a component easily disable standard, optional styling.
 * [ItemsSelection](src/ItemsSelection.js).

@@ -1,9 +1,12 @@
 import { assert } from 'chai';
-import ChildrenContent from '../src/ChildrenContent';
+import DistributedChildren from '../src/DistributedChildren';
+import DistributedChildrenAsContent from '../src/DistributedChildrenAsContent';
 import ContentItems from '../src/ContentItems';
 
 
-class ContentItemsTest extends ContentItems(ChildrenContent(HTMLElement)) {}
+class ContentItemsTest extends ContentItems(DistributedChildrenAsContent(
+  DistributedChildren(HTMLElement)
+)) {}
 document.registerElement('content-items-test', ContentItemsTest);
 
 

@@ -86,7 +86,7 @@
  * elements. This helps users navigate the sequence of elements in the carousel
  * using assistive technologies.
  *
- * @mixes ChildrenContent
+ * @mixes DistributedChildrenAsContent
  * @mixes TargetInCollective
  * @mixes ContentItems
  * @mixes DirectionSelection
@@ -101,7 +101,7 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import ContentItems from '../../basic-component-mixins/src/ContentItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
@@ -116,7 +116,7 @@ import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
 let base = ElementBase.compose(
-  ChildrenContent,
+  DistributedChildrenAsContent,
   TargetInCollective,
   ContentItems,
   DirectionSelection,

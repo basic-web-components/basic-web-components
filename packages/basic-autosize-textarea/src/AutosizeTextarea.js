@@ -11,18 +11,18 @@
  * which in turn will vertically stretch the text area to match.
  *
  * @mixes Generic
- * @mixes ChildrenContent
+ * @mixes DistributedChildrenAsContent
  */
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 
 
 export default class AutosizeTextarea extends ElementBase.compose(
-  ChildrenContent,
+  DistributedChildrenAsContent,
   Generic,
   ObserveContentChanges
 ) {

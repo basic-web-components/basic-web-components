@@ -8,16 +8,16 @@
  *
  * This component currently requires an explicit size by applied to it.
  *
- * @mixes ChildrenContent
+ * @mixes DistributedChildrenAsContent
  */
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ChildrenContent from '../../basic-component-mixins/src/ChildrenContent';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 
 export default class SpreadItems extends ElementBase.compose(
-  ChildrenContent,
+  DistributedChildrenAsContent,
   ObserveContentChanges
 ) {
 

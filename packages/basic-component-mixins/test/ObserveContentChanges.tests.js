@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-// import ChildrenContent from '../src/ChildrenContent';
+// import DistributedChildrenAsContent from '../src/DistributedChildrenAsContent';
 import ShadowTemplate from '../src/ShadowTemplate';
 import ObserveContentChanges from '../src/ObserveContentChanges';
 
