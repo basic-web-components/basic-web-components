@@ -17,6 +17,9 @@
  */
 
 
+import microtask from './microtask';
+
+
 // TODO: Don't respond to changes in attributes, or at least offer that as an
 // option.
 
@@ -31,9 +34,8 @@ export default (base) => class ObserveContentChanges extends base {
     //
     // This will invoke contentChanged() handlers in other mixins. In order that
     // those mixins have a chance to complete their own initialization, we add
-    // the contentChanged() call to the microtask queue via a promise.
-    // See https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
-    Promise.resolve().then(() => this.contentChanged());
+    // the contentChanged() call to the microtask queue.
+    microtask(() => this.contentChanged());
   }
 
   contentChanged() {

@@ -1,6 +1,7 @@
 import { assert } from 'chai';
 import AttributeMarshalling from '../src/AttributeMarshalling';
 import ItemsSelection from '../src/ItemsSelection';
+import microtask from '../src/microtask';
 
 
 class ItemsSelectionTest extends ItemsSelection(AttributeMarshalling(HTMLElement)) {
@@ -50,8 +51,8 @@ describe("ItemsSelection mixin", () => {
         <div></div>
       </items-selection-test>
     `;
-    // Microtask gives polyfill time to upgrade element.
-    Promise.resolve().then(() => {
+    // Timeout gives polyfill time to upgrade element.
+    setTimeout(() => {
       let list = container.querySelector('items-selection-test');
       let item = list.children[0];
       assert.equal(list.selectedItem, item);

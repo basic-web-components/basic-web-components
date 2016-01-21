@@ -1,7 +1,7 @@
 import { assert } from 'chai';
-// import DistributedChildrenAsContent from '../src/DistributedChildrenAsContent';
-import ShadowTemplate from '../src/ShadowTemplate';
+import microtask from '../src/microtask';
 import ObserveContentChanges from '../src/ObserveContentChanges';
+import ShadowTemplate from '../src/ShadowTemplate';
 
 
 /*
@@ -105,7 +105,7 @@ describe("ObserveContentChanges mixin", () => {
     let fixture = document.createElement('observe-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged to be invoked.
-    Promise.resolve().then(() => {
+    microtask(() => {
       // Listen for future contentChanged invocations.
       fixture.contentChangedHook = function() {
         assert.equal(fixture.textContent, 'fox');

@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import AutosizeTextarea from '../src/AutosizeTextarea'; // jshint ignore:line
+import microtask from '../../basic-component-mixins/src/microtask';
 
 
 describe("AutosizeTextarea", () => {
@@ -45,7 +46,7 @@ describe("AutosizeTextarea", () => {
     container.appendChild(fixture);
     fixture.innerHTML = 'chihuahua';
     // Use microtask to wait for mutation observer to pick up change.
-    Promise.resolve().then(() => {
+    microtask(() => {
       assert.equal(fixture.value, 'chihuahua');
       done();
     });
