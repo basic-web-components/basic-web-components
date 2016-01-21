@@ -1,16 +1,16 @@
 import { assert } from 'chai';
 import DistributedChildren from '../src/DistributedChildren';
 import DistributedChildrenAsContent from '../src/DistributedChildrenAsContent';
-import ContentItems from '../src/ContentItems';
+import ContentAsItems from '../src/ContentAsItems';
 
 
-class ContentItemsTest extends ContentItems(DistributedChildrenAsContent(
+class ContentAsItemsTest extends ContentAsItems(DistributedChildrenAsContent(
   DistributedChildren(HTMLElement)
 )) {}
-document.registerElement('content-items-test', ContentItemsTest);
+document.registerElement('content-items-test', ContentAsItemsTest);
 
 
-describe("ContentItems mixin", () => {
+describe("ContentAsItems mixin", () => {
 
   it("returns contents as items", function() {
     let element = document.createElement('content-items-test');

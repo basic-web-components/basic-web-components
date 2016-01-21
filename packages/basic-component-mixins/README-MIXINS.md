@@ -69,11 +69,11 @@ The /src folder includes mixins for common web component features:
   the components that should be treated as a unit for keyboard purposes.
 * [Composable](src/Composable.js).
   Facilitates the application of a set of mixins.
+* [ContentAsItems](src/ContentItems.js).
+  Lets a component treat its content as items in a list.
 * [ContentFirstChildTarget](src/ContentFirstChildTarget.js).
   Allows a component to take its first child as a target it wants to augment in
   some way.
-* [ContentAsItems](src/ContentItems.js).
-  Lets a component treat its content as items in a list.
 * [DirectionToSelection](src/DirectionSelection.js).
   Translates direction (up/down, left/right) semantics into selection semantics
   (select previous/next).

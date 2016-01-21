@@ -11,7 +11,7 @@
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ContentItems from '../../basic-component-mixins/src/ContentItems';
+import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
@@ -19,7 +19,7 @@ import TargetInCollective from '../../basic-component-mixins/src/TargetInCollect
 
 let base = ElementBase.compose(
   DistributedChildrenAsContent,
-  ContentItems,
+  ContentAsItems,
   ItemsSelection,
   ObserveContentChanges,
   SelectionAriaActive,

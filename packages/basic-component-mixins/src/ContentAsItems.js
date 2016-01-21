@@ -1,19 +1,20 @@
 /**
- * @class ContentItems
+ * @class ContentAsItems
  * @classdesc Mixin which maps content semantics (children) to list item
  * semantics
  *
  * Items differ from children in several ways:
  *
- * * They can be referenced via index.
- * * They can have a selection state.
+ * * They are often referenced via index.
+ * * They may have a selection state.
+ * * It's common to do work to initialize the appearance or state of a new item.
  * * Auxiliary invisible child elements are filtered out and not counted as
  *   items. Auxiliary elements include link, script, style, and template
  *   elements.
  */
 
 
-export default (base) => class ContentItems extends base {
+export default (base) => class ContentAsItems extends base {
 
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }

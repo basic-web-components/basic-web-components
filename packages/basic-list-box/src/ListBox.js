@@ -38,7 +38,7 @@
  * @mixes DistributedChildrenAsContent
  * @mixes ClickSelection
  * @mixes TargetInCollective
- * @mixes ContentItems
+ * @mixes ContentAsItems
  * @mixes DirectionSelection
  * @mixes Generic
  * @mixes ItemsSelection
@@ -55,7 +55,7 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
-import ContentItems from '../../basic-component-mixins/src/ContentItems';
+import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
@@ -73,7 +73,7 @@ import TargetInCollective from '../../basic-component-mixins/src/TargetInCollect
 export default class ListBox extends ElementBase.compose(
   DistributedChildrenAsContent,
   ClickSelection,
-  ContentItems,
+  ContentAsItems,
   DirectionSelection,
   Generic,
   ItemsSelection,
