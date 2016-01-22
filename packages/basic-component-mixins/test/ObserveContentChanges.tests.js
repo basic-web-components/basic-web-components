@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import microtask from '../src/microtask';
+import microtask from '../src/lib/microtask';
 import ObserveContentChanges from '../src/ObserveContentChanges';
 import ShadowTemplate from '../src/ShadowTemplate';
 
