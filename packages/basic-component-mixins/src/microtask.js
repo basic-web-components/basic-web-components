@@ -39,7 +39,6 @@ export default function microtask(callback) {
 function executeCallbacks() {
   while (callbacks.length > 0) {
     let callback = callbacks.shift();
-    console.log(callback);
     callback();
   }
 }
