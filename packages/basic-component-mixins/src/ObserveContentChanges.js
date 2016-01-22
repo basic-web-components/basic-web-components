@@ -17,7 +17,7 @@
  */
 
 
-import microtask from './microtask';
+import microtask from './lib/microtask';
 
 
 // TODO: Don't respond to changes in attributes, or at least offer that as an

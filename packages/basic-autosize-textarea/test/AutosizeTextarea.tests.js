@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import AutosizeTextarea from '../src/AutosizeTextarea'; // jshint ignore:line
-import microtask from '../../basic-component-mixins/src/microtask';
+import microtask from '../../basic-component-mixins/src/lib/microtask';
 
 
 describe("AutosizeTextarea", () => {
