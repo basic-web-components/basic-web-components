@@ -20,35 +20,26 @@ export default (base) => class Keyboard extends base {
   collectiveChanged() {
     if (super.collectiveChanged) { super.collectiveChanged(); }
 
-    let outermostElement = this.collective.outermostElement;
-    if (outermostElement === this && !this.getAttribute('aria-label')) {
-      // Since we're handling the keyboard, see if we can adopt an ARIA label
-      // from an inner element of the collective.
+    if (this.collective.outermostElement !== this) {
+      // We're no longer the outermost element; stop listening.
+      if (isListeningToKeydown(this)) {
+        stopListeningToKeydown(this);
+      }
+      return;
+    }
+
+    if (!this.getAttribute('aria-label')) {
+      // Since we're going to handle the keyboard, see if we can adopt an ARIA
+      // label from an inner element of the collective.
       let label = getCollectiveAriaLabel(this.collective);
       if (label) {
         this.setAttribute('aria-label', label);
       }
     }
 
-    // Make sure only the outermost element in the collective is listening to
-    // the keyboard.
-    this.collective.elements.forEach(element => {
-
-      let shouldListen = (element === outermostElement);
-      let isListening = isListeningToKeydown(element);
-      if (isListening !== shouldListen) {
-        if (shouldListen) {
-          startListeningToKeydown(element);
-        } else {
-          stopListeningToKeydown(element);
-        }
-      }
-      if (!shouldListen && element.getAttribute('aria-label')) {
-        // Remove the ARIA label from inner element's not handling the keyboard.
-        element.removeAttribute('aria-label');
-      }
-
-    });
+    if (!isListeningToKeydown(this)) {
+      startListeningToKeydown(this);
+    }
   }
 
 };

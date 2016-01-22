@@ -101,10 +101,9 @@
 
 
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
@@ -113,13 +112,13 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
+import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
 let base = ElementBase.compose(
-  DistributedChildrenAsContent,
-  TargetInCollective,
   ContentAsItems,
   DirectionSelection,
+  DistributedChildrenAsContent,
   Generic,
   ItemsSelection,
   Keyboard,
@@ -127,6 +126,7 @@ let base = ElementBase.compose(
   ObserveContentChanges,
   SelectionAriaActive,
   SwipeDirection,
+  TargetInCollective,
   TrackpadDirection
 );
 
