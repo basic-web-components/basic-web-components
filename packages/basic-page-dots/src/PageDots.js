@@ -3,6 +3,9 @@
  * @classdesc Presents a set of small dots to show list item count and select
  * list items
  *
+ * You can see a [live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithDots.html)
+ * of this component applied to a carousel.
+ *
  * There will be one dot for each item, and the dot for the currently selected
  * item will be shown selected.
  *

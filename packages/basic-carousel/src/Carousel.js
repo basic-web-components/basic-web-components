@@ -9,6 +9,13 @@
  * which is shown at a time. The user can navigate to the next/previous element
  * with a variety of input methods.
  *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/)
+ *
+ * You can also view demos with optional
+ * [arrows](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithArrows.html),
+ * [dots](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithDots.html),
+ * or both [arrows and dots](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithArrowsAndDots.html).
+ *
  * basic-carousel uses its children as the elements the user will navigate through.
  * In a typical use, a basic-carousel can be used to navigate between a sequence of
  * images:
@@ -64,9 +71,9 @@
  * elements such as arrow buttons on the side or dots along the bottom. Those
  * elements can be added by wrapping a basic-carousel in optional accessories:
  *
- * * [basic-arrow-selection](http://github.com/basic-web-components/packages/basic-arrow-selection).
+ * * [basic-arrow-selection](http://github.com/basic-web-components/basic-web-components/packages/basic-arrow-selection).
  *   This adds prominent left and right arrow buttons on the side of the carousel.
- * * [basic-page-dots](http://github.com/basic-web-components/packages/basic-page-dots).
+ * * [basic-page-dots](http://github.com/basic-web-components/basic-web-components/packages/basic-page-dots).
  *   This adds a series of small dots below the carousel to indicate the user's
  *   current position in the sequence.
  *

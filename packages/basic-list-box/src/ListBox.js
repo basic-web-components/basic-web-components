@@ -3,6 +3,8 @@
  * @classdesc A single-selection list box that supports selection highlighting
  * (using the system highlight color) and keyboard navigation
  *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-list-box/)
+ *
  * The user can select an item with the mouse/touch or keyboard: Up/Down, Page
  * Up/Down, Home/End.
  *
