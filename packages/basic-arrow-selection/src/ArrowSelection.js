@@ -133,6 +133,7 @@ class ArrowSelection extends base {
       .navigationButton:hover:not(:disabled) {
         background: rgba(0, 0, 0, 0.5);
         color: rgba(0, 0, 0, 0.8);
+        cursor: pointer;
       }
       .navigationButton:active:not(:disabled) {
         background: rgba(0, 0, 0, 0.7);
