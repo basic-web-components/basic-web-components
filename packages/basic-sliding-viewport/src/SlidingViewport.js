@@ -3,8 +3,6 @@
  * @classdesc Presents list items in a viewport such that only a single item is
  * visible at a time
  *
- * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-sliding-viewport/)
- *
  * Navigating between items will be represented with a horizontal visual
  * sliding effect.
  *

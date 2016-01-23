@@ -2,6 +2,8 @@
  * @class AutosizeTextarea
  * @classdesc A text area that makes itself big enough to show its content
  *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-autosize-textarea/)
+ *
  * This text input component is useful in situations where you want to ask the
  * user to enter as much text as they want, but don't want to take up a lot of
  * room on the page.
