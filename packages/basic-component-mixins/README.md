@@ -1,19 +1,25 @@
-This package implements common web component features as mixins. It uses mixins
-to achieve the same results as a monolithic component framework, while
+# basic-component-mixins
+
+Mixins for creating web components in plain JavaScript (ES5 or ES6)
+
+[![npm version](https://img.shields.io/npm/v/basic-component-mixins.svg?style=flat)](https://www.npmjs.com/package/basic-component-mixins)
+
+This package implements common web component features as mixins. These mixins
+can let you achieve the same results as a monolithic component framework, while
 permitting more flexibility and a pay-as-you-go approach to complexity and
 performance.
 
 Design goals:
 
-1. Have each web component mixins focus on solving a single, common task. They
-   should be well-factored. They should be able to be used on their own, or in
+1. Each web component mixin focuses on solving a single, common task. They are
+   well-factored. They should be able to be used on their own, or in
    combination.
-2. Introduce as few new concepts as possible. Any developer who understands the
-   DOM API should find this architecture appealing, without having to learn many
-   proprietary concepts (beyond mixins, see below).
-3. Focus on native browser support for ES6 and web components. The architecture
-   should be useful in a production application today, but should also feel
-   correct in a future world in which native ES6 and web components are
+2. Introduce as few new concepts as possible. A developer who understands the
+   DOM API should find these mixins feel familiar, and not have to learn many
+   proprietary concepts (beyond functional mixins, see below).
+3. Anticipate native browser support for ES6 and web components. The
+   architecture should be useful in an ES5 application today, but should also
+   feel correct in a future world in which native ES6 and web components are
    everywhere.
 
 
