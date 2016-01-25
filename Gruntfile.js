@@ -81,13 +81,51 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jsdoc-to-markdown');
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-saucelabs');
   grunt.loadNpmTasks('grunt-shell');
 
+  //
+  // Browsers to use for testing via SauceLabs
+  var browsers = [
+    {
+      browserName: 'chrome',
+      platform: 'OS X 10.11',
+      version: '47.0'
+    },
+    {
+      browserName: 'firefox',
+      platform: 'OS X 10.11',
+      version: '41.0'
+    },
+    {
+      browserName: 'internet explorer',
+      platform: 'Windows 8.1',
+      version: '11.0'
+    },
+    {
+      browserName: 'MicrosoftEdge',
+      platform: 'Windows 10',
+      version: '20.10240'
+    }
+  ];
+
   grunt.initConfig({
+
+    //
+    // Used for SauceLabs testing
+    //
+    connect: {
+      server: {
+        options: {
+          base: '',
+          port: 9999
+        }
+      }
+    },
 
     clean: {
       build: 'build'
@@ -143,6 +181,26 @@ module.exports = function(grunt) {
           log: true,
           logErrors: true,
           run: true
+        }
+      }
+    },
+
+    //
+    // Set local environment variables, SAUCE_USERNAME and SAUCE_ACCESS_KEY, on your machine.
+    // You may need to request these values from the sponsors of the Basic Web Components project.
+    //
+    'saucelabs-mocha': {
+      all: {
+        options: {
+          urls: [
+            'http://127.0.0.1:9999/test/index-saucelabs.html'
+          ],
+          browsers: browsers,
+          testname: 'Basic Web Components Tests',
+          throttled: 3,
+          sauceConfig: {
+            'video-upload-on-pass': false
+          }
         }
       }
     },
@@ -218,6 +276,7 @@ module.exports = function(grunt) {
     grunt.log.writeln('  grunt lint (runs jshint on all .js files)');
     grunt.log.writeln('  grunt npm-publish:package-name|* (publishes packages/package-name or all packages (packages/*) to npm)');
     grunt.log.writeln('  grunt set-version:version (updates package.json version values and dependencies. Ex: grunt set-version:1.0.30)');
+    grunt.log.writeln('  grunt saucelabs (Runs SauceLabs tests. You must set environment variables SAUCE_USERNAME and SAUCE_ACCESS_KEY.)');
     grunt.log.writeln('  grunt watch (builds and watches changes to project files)');
   });
 
@@ -248,6 +307,11 @@ module.exports = function(grunt) {
   // in the Grunt config. This task looks for JavaScript warnings/errors.
   //
   grunt.registerTask('lint', ['jshint']);
+
+  //
+  // The saucelabs task is callable from the command line and executes unit tests on SauceLabs
+  //
+  grunt.registerTask('saucelabs', ['connect', 'saucelabs-mocha']);
 
   //
   // The test task is callable from the command line and executes the mocha task defined
