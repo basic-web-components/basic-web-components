@@ -4,42 +4,54 @@ Mixins for creating web components in plain JavaScript (ES5 or ES6)
 
 [![npm version](https://img.shields.io/npm/v/basic-component-mixins.svg?style=flat)](https://www.npmjs.com/package/basic-component-mixins)
 
-This package implements common web component features as mixins. These mixins
-can let you achieve the same results as a monolithic component framework, while
-permitting more flexibility and a pay-as-you-go approach to complexity and
-performance.
+This package implements common web component features as JavaScript mixins.
+These are designed for people who would like to create web components in plain
+JavaScript while avoiding much of the boilerplate that comes up in component
+creation. The mixins permit flexibility and a pay-as-you-go approach to
+complexity and performance.
 
 Design goals:
 
-1. Each web component mixin focuses on solving a single, common task. They are
-   well-factored. They should be able to be used on their own, or in
-   combination.
-2. Introduce as few new concepts as possible. A developer who understands the
-   DOM API should find these mixins feel familiar, and not have to learn many
-   proprietary concepts (beyond functional mixins, see below).
+1. **Focus each mixin on solving a single, common component task.**
+   Each mixin should be useful on its own, or in combination.
+2. **Introduce as few new concepts as possible.**
+   A developer who understands the DOM API should be able to work with these
+   mixins. They shouldn't have to learn many proprietary concepts (beyond
+   functional mixins, see below).
 3. Anticipate native browser support for ES6 and web components. The
    architecture should be useful in an ES5 application today, but should also
    feel correct in a future world in which native ES6 and web components are
    everywhere.
 
-
-# Building
-
-After cloning this repository:
-
-    > npm install
-    > grunt build
+All of the top-level Basic Web Components are constructed with these mixins. By
+design, most of those components are little more than combinations of these
+mixins. That factoring allows you to create your own web components in the
+likely event that your needs differ from those driving the design of the Basic
+Web Components. You can use these mixins without using those components.
 
 
-# Composing web component classes with mixins as functions
+# Mixins as functions
 
-Web components can be expressed as compositions of base classes and mixins.
-Mixins here are defined as a function that takes a base class and returns a
-subclass defining the new features:
+The mixins in this package all take the form of a function. Each function takes
+a base class and returns a subclass defining the desired features:
 
     let MyMixin = (base) => class MyMixin extends base {
       // Mixin defines properties and methods here.
+      greet() {
+        return "Hello";
+      }
     };
+
+    class MyBaseClass {}
+    let NewClass = MyMixin(MyBaseClass);
+
+    let obj = new NewClass();
+    obj.greet(); // "Hello"
+
+Many JavaScript mixin implementations destructively modify a class prototype,
+but mixins of the functional style shown above do not. Rather, functional mixins
+extend the prototype chain and return a new class. Such functions have been
+called "higher-order components", but we prefer the term "mixin" for brevity.
 
 The mixins in this package take care to ensure that base class properties and
 methods are not broken by the mixin. In particular, if a mixin wants to add a
@@ -49,20 +61,128 @@ Rules](Composition Rules.md). If you are interested in creating your own
 component mixins, you may find it helpful to follow those guidelines to ensure
 that your mixins can interoperate cleanly with the ones in this package.
 
-A virtue of a functional mixin is that you do not need to use any library to
-apply it. This increases the chance that mixins can be shared across projects.
-If a common extension/mixin solution can be agreed upon, frameworks sharing that
-solution gain a certain degree of code sharing, interoperability, and can share
-conceptual materials. This reduces the learning curve for dealing with any one
-framework.
+A core virtue of a functional mixin is that you do not need to use any library
+to apply it. This lets you use these mixins with any conventional means of
+defining JavaScript classes — you don't have to invoke a proprietary class
+factory, nor do you have to load a separate framework or runtime.
 
-Frameworks can still make their own decisions about which features they want to
-offer by virtue of which mixins they incorporate into their base classes.
+Because mixins define behavior through composition, you're not limited by the
+constraints of a single-inheritance class hierarchy. That said, you can still
+use a class hierarchy if you feel that's suitable for your application. For
+example, you can compose a set of mixins to create a custom base class from
+which your other classes derive. But the use of such a base class is not
+dictated here.
+
+
+# Using the mixins to create web components
+
+## Installation of the mixins package via npm
+
+Add a `dependencies` key for `basic-component-mixins` in your project's
+package.json file. Until native Shadow DOM support is available on all browsers
+you want to support, you'll want to include the [webcomponents.js
+polyfill](https://github.com/webcomponents/webcomponentsjs) as well:
+
+    {
+      ...
+      "dependencies": {
+        "basic-component-mixins": "^0.7.0",
+        "webcomponents.js": "^0.7.2"
+      },
+    }
+
+Then issue an `npm install` as usual.
+
+## ES6
+
+Your ES6 code can reference the mixin as a function exported by the
+corresponding file in this package's /src folder. You then apply the mixin to
+the element base class you'd like to use. This can be `HTMLElement`, or an
+element class of your own creation.
+
+As a very simple example, if you'd like to create a web component that puts the
+word "Hello" before its tag contents, you can use the ShadowTemplate mixin. This
+will look for a `template` property on the component, attach a new Shadow DOM
+subtree to the component, then copy the template into the shadow subtree.
+
+    import ShadowTemplate from 'basic-component-mixins/src/ShadowTemplate';
+
+    // Create a simple custom element that supports a template.
+    class GreetElement extends ShadowTemplate(HTMLElement) {
+      get template() {
+        return `
+          Hello, <slot></slot>.
+        `;
+      }
+    }
+
+    // Register the custom element with the browser.
+    document.registerElement('greet-element', GreetElement);
+
+# Hello
+
+Compile this source with your favorite ES6 processor (e.g.,
+[Babel](https://babeljs.org)), then load the result into a page.
+
+    <html>
+    <head>
+      <script src="node_modules/webcomponents.js/webcomponents.js"></script>
+      <script src="greet-element.js"></script>
+    </head>
+    <body>
+      <!-- Hello, world. -->
+      <greet-element>world</greet-element>
+    </body>
+    </html>
+
+
+## ES5
+
+This package's /dist folder contains a JavaScript file that defines all the
+mixins as globals available via `window.Basic`. For example, the ShadowTemplate
+mixin shown above is available as `window.Basic.ShadowTemplate`.
+
+You can create your custom element class by hand:
+
+    // greet-element.js
+
+    var GreetElement = Basic.ShadowTemplate(HTMLElement);
+    GreetElement.prototype.template = "Hello, <slot></slot>.";
+
+    document.registerElement('greet-element', GreetElement);
+
+You can also use Composable mixin to create the class:
+
+    // greet-element.js
+
+    var GreetElement = Basic.Composable(HTMLElement).compose(
+      ShadowTemplate,
+      {
+        template: 'Hello, <slot></slot>.'
+      }
+    );
+
+    document.registerElement('greet-element', GreetElement);
+
+Then load this script into your page:
+
+    <html>
+    <head>
+      <script src="node_modules/webcomponents.js/webcomponents.js"></script>
+      <script src="node_modules/basic-component-mixins/dist/basic-component-mixins.js"></script>
+      <script src="greet-element.js"></script>
+    </head>
+    <body>
+      <!-- Hello, world. -->
+      <greet-element>world</greet-element>
+    </body>
+    </html>
 
 
 # Web component mixins
 
-The /src folder includes mixins for common web component features:
+The /src folder includes the complete set of mixins, each of which address some
+common web component feature:
 
 * [AttributeMarshalling](docs/AttributeMarshalling.md).
   Marshall element attributes to component properties (and eventually vice

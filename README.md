@@ -1,53 +1,56 @@
-This is the consolidated repository for all components in the Basic Web
-Components project. This repo is intended for component development, and for
-running component demos locally.
-
-
-# Introduction
+# basic-web-components
 
 The Basic Web Components project seeks to provide a comprehensive set of solid,
 well-designed web components that implement very common user interface patterns.
 Each component can be used as is, or as the foundation for new components.
 
+
+# Introduction
+
 Design goals for the overall project:
 
-* **Leverage the browser platform as much as possible.** These components are
-  generally written as "close to the metal" as is possible while allowing for
-  sharing code across components. These components are not built upon a
-  monolithic framework, nor is any shared runtime required to use these
-  components.
+* **Usability excellence.**
+  All components are designed, first and foremost, with the end user in mind.
+  Each component tries to provide the best implementation possible of a very
+  common user interface pattern. If that pattern could meaningfully provide
+  keyboard support, then the component does so. If that pattern has
+  accessibility implications, then the component tries to address those to the
+  maximum extent possible. If the pattern should be responsive across display
+  sizes and input modalities, the component tries to do so.
+* **Provide good building blocks.**
+  The project's components are designed to be used as-is, without requiring
+  customization or further coding. But since no design can meet every situation,
+  you can readily recombine their constituent parts to create solid custom
+  components of your own. Composition is generally preferred over class
+  inheritance as a means of aggregating behavior; see the
+  [core-component-mixins](packages/core-component-mixins) package for details.
+* **Leverage the browser platform as much as possible.**
+  These components are generally written as "close to the metal" as is possible
+  while allowing for sharing code across components. These components are not
+  built upon a monolithic framework, nor is any shared runtime required to use
+  these components. At the same time, by virtue of being web components, these
+  user interface elements can interoperate with any front-end framework.
 * **Write in plain JavaScript ES6.** An ES5 version of each component is
   provided in its /dist folder, so you can use these in ES5 projects. If you are
   already using ES6, you can use the ES6 source directly.
-* **Functional completeness.** Each component tries to provide the best
-  implementation possible of a very common user interface pattern. If that
-  pattern could meaningfully provide keyboard support, then the component does
-  so. If that pattern has accessibility implications, then the component tries
-  to address those to the maximum extent possible. If the pattern should be
-  responsive across display sizes and input modalities, the component tries to
-  do so.
-* **Provide a minimalist appearance.** These components are meant to serve as
-  solid building blocks for your applications and user experiences, not present
-  a heavily styled or branded appearance of their own.
-* **Provide good building blocks.** Careful factoring of user interface concerns
-  gives you components, helpers, base classes, and mixins that you can readily
-  recombine to create solid custom components of your own. Composition is
-  generally preferred over class inheritance as a means of aggregating behavior;
-  see the [core-component-mixins](packages/core-component-mixins) package for
-  details.
+* **Provide a minimalist appearance.**
+  These components are meant to fit unobtrusively into your application, not
+  present heavily styled or branded appearances of their own.
 * **Aim for the [Gold Standard for web
   components](https://github.com/webcomponents/gold-standard/wiki).** That
   standard sets a very high bar for component quality, attempting to make web
   components as flexible and reliable as the standard build-in HTML elements.
-* **Test on all the mainstream browsers.** This includes the latest versions of
-  Apple Safari and Mobile Safari, Google Chrome and Chrome for Android, Microsoft Edge, and Mozilla Firefox.
+* **Work on all mainstream browsers.**
+  This includes the latest versions of Apple Safari and Mobile Safari, Google
+  Chrome and Chrome for Android, Microsoft Edge and Internet Explorer (version
+  11), and Mozilla Firefox.
 
 
 # Repository organization
 
-All work on Basic Web Components happens in this monorepo, which keeps all the
-source in a single place. This makes it easy to clone, develop in, and track
-issues and pull requests.
+All work on Basic Web Components happens in this monorepo, keeping all sources
+in a single place. This makes it easy to clone, develop in, and track issues and
+pull requests.
 
 The /packages folder contains the components and other cohesive units are
 registered with npm as separately installable packages. E.g., the source for the
@@ -58,17 +61,38 @@ basic-autosize-textarea component is found in /packages/basic-autosize-textarea.
 
 You can install the specific components you want via npm. To add a component
 like basic-autosize-textarea, add a line to the `dependencies` key in your
-project's package.json file. Until Shadow DOM
-you'll
-likely want to include the [webcomponents.js polyfill](https://github.com/webcomponents/webcomponentsjs) as well:
+project's package.json file. Until native Shadow DOM support is available on all
+browsers you want to support, you'll want to include the [webcomponents.js
+polyfill](https://github.com/webcomponents/webcomponentsjs) as well:
 
     {
       ...
       "dependencies": {
-        "basic-autosize-textarea": "basic-web-components/basic-autosize-textarea",
-        "webcomponents.js": "webcomponents/webcomponents.js"
+        "basic-autosize-textarea": "^0.7.0",
+        "webcomponents.js": "^0.7.2"
       },
     }
+
+Then issue an `npm install` as usual.
+
+Once the component's package is installed, you can use the component in HTML and
+JavaScript. In HTML, you can load the script defining the component from the
+package's /dist folder:
+
+    <html>
+    <head>
+      <script src="node_modules/webcomponents.js/webcomponents.js"></script>
+      <script src="node_modules/basic-autosize-textarea/dist/basic-autosize-textarea.js"></script>
+    </head>
+    <body>
+      <basic-autosize-textarea>Type all you want here!</basic-autosize-textarea>
+    </body>
+    </html>  
+
+If you're working in ES6, you can load a component with an `import` statement
+that references the component's ES6 .js file in the package's /src folder:
+
+    import AutosizeTextarea from 'basic-autosize-textarea/src/basic-autosize-textarea';
 
 For more information on each component's purpose and API, see the component's
 README file at the top level of its package folder.
