@@ -18,10 +18,10 @@ Design goals:
    A developer who understands the DOM API should be able to work with these
    mixins. They shouldn't have to learn many proprietary concepts (beyond
    functional mixins, see below).
-3. Anticipate native browser support for ES6 and web components. The
-   architecture should be useful in an ES5 application today, but should also
-   feel correct in a future world in which native ES6 and web components are
-   everywhere.
+3. **Anticipate native browser support for ES6 and web components.**
+   The architecture should be useful in an ES5 application today, but should
+   also feel correct in a future world in which native ES6 and web components
+   are everywhere.
 
 All of the top-level Basic Web Components are constructed with these mixins. By
 design, most of those components are little more than combinations of these
@@ -119,8 +119,6 @@ subtree to the component, then copy the template into the shadow subtree.
     // Register the custom element with the browser.
     document.registerElement('greet-element', GreetElement);
 
-# Hello
-
 Compile this source with your favorite ES6 processor (e.g.,
 [Babel](https://babeljs.org)), then load the result into a page.
 
@@ -164,7 +162,7 @@ You can also use Composable mixin to create the class:
 
     document.registerElement('greet-element', GreetElement);
 
-Then load this script into your page:
+Then load the script defining the element into your page:
 
     <html>
     <head>
