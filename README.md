@@ -464,3 +464,13 @@ plan/idea/questions by project member
   of the user’s vote.
 * Wizard.
   Steps the user through a task through a small set of pages.
+
+
+## Interoperability
+
+Thanks to use of the web component standards, these web components interoperate
+cleanly with other web components. For example, these Basic Web Components may
+used in combination with components created by frameworks such as Polymer,
+and Polymer features such as a data binding can be used on Basic Web Components.
+For a simple example, see
+[carousel-with-tabs](https://github.com/basic-web-components/carousel-with-tabs).
