@@ -12,11 +12,23 @@ Design goals for the overall project:
 * **Usability excellence.**
   All components are designed, first and foremost, with the end user in mind.
   Each component tries to provide the best implementation possible of a very
-  common user interface pattern. If that pattern could meaningfully provide
-  keyboard support, then the component does so. If that pattern has
-  accessibility implications, then the component tries to address those to the
-  maximum extent possible. If the pattern should be responsive across display
-  sizes and input modalities, the component tries to do so.
+  common user interface pattern. Using these in your application should improve
+  the overall usability of your application.
+* **Work in a wide variety of situations.**
+  By their nature, general-purpose components should work predictably and
+  reliably in a wide variety of contexts. In that regard, these components are
+  measured against [Gold Standard for web
+  components](https://github.com/webcomponents/gold-standard/wiki).** That
+  standard uses the built-in HTML elements as the quality bar to which these
+  components aspire.
+* **Completeness.**
+  In order to meet the above standard of quality, these components try to
+  support a complete range of input modalities (touch, mouse, keyboard,
+  trackpad, etc.) and responsive output. If the underlying user interface
+  pattern has accessibility implications, the component tries to address those
+  to the maximum extent possible. Because applications often have specific
+  needs, however, the components are also designed to be extensible, as
+  addressed by the next point.
 * **Provide good building blocks.**
   The project's components are designed to be used as-is, without requiring
   customization or further coding. But since no design can meet every situation,
@@ -36,10 +48,6 @@ Design goals for the overall project:
 * **Provide a minimalist appearance.**
   These components are meant to fit unobtrusively into your application, not
   present heavily styled or branded appearances of their own.
-* **Aim for the [Gold Standard for web
-  components](https://github.com/webcomponents/gold-standard/wiki).** That
-  standard sets a very high bar for component quality, attempting to make web
-  components as flexible and reliable as the standard build-in HTML elements.
 * **Work on all mainstream browsers.**
   This includes the latest versions of Apple Safari and Mobile Safari, Google
   Chrome and Chrome for Android, Microsoft Edge and Internet Explorer (version
