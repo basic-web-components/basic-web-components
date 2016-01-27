@@ -18,7 +18,7 @@ Design goals for the overall project:
   By their nature, general-purpose components should work predictably and
   reliably in a wide variety of contexts. In that regard, these components are
   measured against [Gold Standard for web
-  components](https://github.com/webcomponents/gold-standard/wiki).** That
+  components](https://github.com/webcomponents/gold-standard/wiki). That
   standard uses the built-in HTML elements as the quality bar to which these
   components aspire.
 * **Completeness.**
