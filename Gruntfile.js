@@ -193,7 +193,7 @@ module.exports = function(grunt) {
       all: {
         options: {
           urls: [
-            'http://127.0.0.1:9999/test/index-saucelabs.html'
+            'http://127.0.0.1:9999/test/saucelabs-tests.html'
           ],
           browsers: browsers,
           testname: 'Basic Web Components Tests',
