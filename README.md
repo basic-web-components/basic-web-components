@@ -35,7 +35,7 @@ Design goals for the overall project:
   you can readily recombine their constituent parts to create solid custom
   components of your own. Composition is generally preferred over class
   inheritance as a means of aggregating behavior; see the
-  [core-component-mixins](packages/core-component-mixins) package for details.
+  [basic-component-mixins](packages/basic-component-mixins) package for details.
 * **Leverage the browser platform as much as possible.**
   These components are generally written as "close to the metal" as is possible
   while allowing for sharing code across components. These components are not
