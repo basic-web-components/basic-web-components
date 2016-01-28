@@ -1,7 +1,13 @@
 /**
  * @class DistributedChildrenAsContent
  * @classdesc Mixin which defines a component's content as its children,
- * including any nodes distributed to the component's slots.
+ * expanding any nodes distributed to the component's slots.
+ *
+ * This mixin is intended for use with the DistributedChildren mixin. See that
+ * mixin for a discussion of how that works. This DistributedChildrenAsContent
+ * mixin provides an easy way of defining the "content" of a component as the
+ * component's distributed children. That in turn lets mixins like
+ * ContentAsItems manipulate the children as list items.
  */
 
 

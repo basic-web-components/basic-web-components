@@ -8,25 +8,55 @@ The standard DOM API provides several ways of accessing child content:
 Shadow DOM aware. This mixin defines variations of those functions that
 *are* Shadow DOM aware.
 
+Example: you create a component `<count-children>` that displays a number
+equal to the number of children placed inside that component. If someone
+instantiates your component like:
+
+    <count-children>
+      <div></div>
+      <div></div>
+      <div></div>
+    </count-children>
+
+Then the component should show "3", because there are three children. To
+calculate the number of children, the component can just calculate
+`this.children.length`. However, suppose someone instantiates your component
+inside one of their own components, and puts a `<slot>` element inside
+your component:
+
+    <count-children>
+      <slot></slot>
+    </count-children>
+
+If your component only looks at `this.children`, it will always see exactly
+one child — the `<slot>` element. But the user look at the page will *see*
+any nodes distributed to that slot. To match what the user sees, your
+component should expand any `<slot>` elements it contains.
+
+That is the problem this mixin solves. After applying this mixin, your
+component code has access to `this.distributedChildren`, whose `length` will
+return the total number of all children distributed to your component in the
+composed tree.
+
 Note: The latest Custom Elements API design calls for a new function,
-`getAssignedNodes` that takes an optional `deep` parameter. This mixin does
-not yet take advantage of that API, but should.
+`getAssignedNodes` that takes an optional `deep` parameter, that will solve
+this problem at the API level.
 
 **Kind**: global class  
-<a name="undefineddistributedChildren"></a>
-## undefineddistributedChildren() ⇒ <code>Array.&lt;HTMLElement&gt;</code>
+<a name="distributedChildren"></a>
+## distributedChildren() ⇒ <code>Array.&lt;HTMLElement&gt;</code>
 An in-order collection of children, expanding any slot elements. Like the
 standard children property, this skips text nodes.
 
 **Kind**: global function  
-<a name="undefineddistributedChildNodes"></a>
-## undefineddistributedChildNodes() ⇒ <code>Array.&lt;Node&gt;</code>
+<a name="distributedChildNodes"></a>
+## distributedChildNodes() ⇒ <code>Array.&lt;Node&gt;</code>
 An in-order collection of child nodes, expanding any slot elements. Like
 the standard childNodes property, this includes text nodes.
 
 **Kind**: global function  
-<a name="undefineddistributedTextContent"></a>
-## undefineddistributedTextContent() ⇒ <code>string</code>
+<a name="distributedTextContent"></a>
+## distributedTextContent() ⇒ <code>string</code>
 The concatenated text content of all child nodes, expanding any slot
 elements.
 
