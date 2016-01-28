@@ -1,6 +1,14 @@
 /**
  * @class SelectionInView
- * @classdesc Mixin which scrolls a container to keep the selected item visible
+ * @classdesc Mixin which scrolls a container to ensure that a newly-selected
+ * item is visible to the user.
+ *
+ * When the selected item in a list-like component changes, it's easier for the
+ * to confirm that the selection has changed to an appropriate item if the user
+ * can actually see that item.
+ *
+ * This mixin expects a `selectedItem` property to be set when the selection
+ * changes. You can supply that yourself, or use the ItemsSelection mixin.
  */
 
 
@@ -21,11 +29,12 @@ export default (base) => class SelectionInView extends base {
    * Scroll the given element completely into view, minimizing the degree of
    * scrolling performed.
    *
-   * Blink has a scrollIntoViewIfNeeded() function that almost the same thing,
-   * but unfortunately it's non-standard, and in any event often ends up
-   * scrolling more than is absolutely necessary.
+   * Blink has a `scrollIntoViewIfNeeded()`` function that does something
+   * similar, but unfortunately it's non-standard, and in any event often ends
+   * up scrolling more than is absolutely necessary.
    *
    * @method scrollItemIntoView
+   * @param {HTMLElement} item - the item to scroll into view.
    */
   scrollItemIntoView(item) {
     if (super.scrollItemIntoView) { super.scrollItemIntoView(); }
@@ -49,10 +58,12 @@ export default (base) => class SelectionInView extends base {
   }
 
   /**
-   * The element that should be scrolled with the Page Up/Down keys.
-   * Default is the current element.
+   * The element that should be scrolled to bring an item into view.
+   *
+   * The default value of this property is the element itself.
    *
    * @property scrollTarget
+   * @type {HTMLElement}
    */
   get scrollTarget() {
     // Prefer base result.

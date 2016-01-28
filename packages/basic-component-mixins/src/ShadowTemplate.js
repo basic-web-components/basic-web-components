@@ -1,15 +1,25 @@
 /**
  * @class ShadowTemplate
  * @classdesc Mixin for stamping a template into a Shadow DOM subtree upon
- * component instantiation
+ * component instantiation.
  *
- * If a component defines a template property (as a string or referencing a HTML
- * template), when the component class is instantiated, a shadow root will be
- * created on the instance, and the contents of the template will be cloned into
- * the shadow root.
+ * To use this mixin, define a `template` property as a string or HTML
+ * `<template>` element:
+ *
+ *     class MyElement extends ShadowTemplate(HTMLElement) {
+ *       get template() {
+ *         return `Hello, <em>world</em>.`;
+ *       }
+ *     }
+ *
+ * When your component class is instantiated, a shadow root will be created on
+ * the instance, and the contents of the template will be cloned into the shadow
+ * root. If your component does not define a `template` property, this mixin has
+ * no effect.
  *
  * For the time being, this extension retains support for Shadow DOM v0.
- * That will eventually be deprecated as browsers implement Shadow DOM v1.
+ * That will eventually be deprecated as browsers (and the Shadow DOM polyfill)
+ * implement Shadow DOM v1.
  */
 
 

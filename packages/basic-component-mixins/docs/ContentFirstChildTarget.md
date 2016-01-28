@@ -30,3 +30,9 @@ component participate in collective keyboard handling. *
 Gets/sets the current target of the component.
 
 **Kind**: global variable  
+**Properties**
+
+| Name |
+| --- |
+| target | 
+

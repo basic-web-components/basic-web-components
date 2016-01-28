@@ -38,9 +38,10 @@ export default (base) => class ContentFirstChildTarget extends base {
   }
 
   /**
-  * Gets/sets the current target of the component.
+   * Gets/sets the current target of the component.
    *
-   * @member {HTMLElement}
+   * @property target
+   * @type {HTMLElement}
    */
   get target() {
     return this._target;
