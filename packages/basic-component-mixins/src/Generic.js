@@ -11,17 +11,17 @@
  * added to the default style won't be overridden by default, making it hard to
  * know whether a new version of a component will still look okay.
  *
- * As a compromise, the simple Polymer behavior here defines a "generic"
- * attribute. This attribute is normally set by default, and styles can be
- * written that apply only when the generic attribute is set. This allows the
- * construction of CSS rules that will only apply to generic components like
+ * As a compromise, the mixin defines a `generic` attribute. This attribute is
+ * normally set by default, and styles can be written that apply only when the
+ * generic attribute is set. This allows the construction of CSS rules that will
+ * only apply to generic components like:
  *
  *     :host([generic=""]) {
- *       ...
+ *       ... Generic appearance defined here ...
  *     }
  *
- * This makes it easy to remove all default styling -- set the generic attribute
- * to false, and all default styling will be removed.
+ * This makes it easy to remove all default styling — set the `generic`
+ * attribute to false, and all default styling will be removed.
  */
 
 

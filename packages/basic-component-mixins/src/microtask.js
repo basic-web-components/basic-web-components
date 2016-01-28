@@ -24,9 +24,15 @@ let counter = 0;
 
 
 /**
- * @function microtask
+ * Add a callback to the microtask queue.
  *
- * Adds a function to the microtask queue.
+ * This uses a MutationObserver so that it works on IE 11.
+ *
+ * NOTE: IE 11 may actually use timeout timing with MutationObservers. This
+ * needs more investigation.
+ *
+ * @function microtask
+ * @param {function} callback
  */
 export default function microtask(callback) {
   callbacks.push(callback);

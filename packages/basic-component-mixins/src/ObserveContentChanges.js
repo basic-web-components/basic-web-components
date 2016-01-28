@@ -14,14 +14,19 @@
  *
  * For comparison, see Polymer's observeNodes API, which does solve the problem
  * of tracking changes in reprojected content.
+ *
+ * Note: The web platform team creating the specifications for web components
+ * plan to request that a new type of MutationObserver option be defined that
+ * lets a component monitor changes in distributed children. This mixin will be
+ * updated to take advantage of that MutationObserver option when that becomes
+ * available.
  */
 
 
+// TODO: Should this be renamed to something like distributedChildrenChanged?
+
 import microtask from './microtask';
 
-
-// TODO: Don't respond to changes in attributes, or at least offer that as an
-// option.
 
 export default (base) => class ObserveContentChanges extends base {
 
@@ -38,11 +43,28 @@ export default (base) => class ObserveContentChanges extends base {
     microtask(() => this.contentChanged());
   }
 
+  /**
+   * Invoked when the contents of the component (including distributed children)
+   * have changed.
+   *
+   * This method is also invoked when a component is first instantiated; the
+   * contents have essentially "changed" from being nothing. This allows the
+   * component to perform initial processing of its children.
+   *
+   * @method contentChanged
+   */
   contentChanged() {
     if (super.contentChanged) { super.contentChanged(); }
     let event = new CustomEvent('content-changed');
     this.dispatchEvent(event);
   }
+
+  /**
+   * This event is raised when the component's contents (including distributed
+   * children) have changed.
+   *
+   * @event content-changed
+   */
 
 };
 

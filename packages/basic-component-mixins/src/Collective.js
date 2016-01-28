@@ -14,6 +14,12 @@ export default class Collective {
     elements.forEach(element => this.assimilate(element));
   }
 
+  /**
+   * Add the indicated target to the collective.
+   *
+   * @method assimilate
+   * @param {(HTMLElement|Collective)} target - the element or collective to add
+   */
   assimilate(target) {
     let collectiveChanged;
     if (target instanceof Collective) {

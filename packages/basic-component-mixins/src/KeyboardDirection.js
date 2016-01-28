@@ -1,28 +1,77 @@
 /**
  * @class KeyboardDirection
  * @classdesc Mixin which maps direction keys (Left, Right, etc.) to direction
- * semantics (goLeft, goRight, etc.)
+ * semantics (go left, go right, etc.).
+ *
+ * This mixin expects the component to invoke a `keydown` method when a key is
+ * pressed. You can use the Keyboard mixin for that purpose, or wire up your
+ * own keyboard handling and call `keydown` yourself.
+ *
+ * This mixin calls methods such as `goLeft` and `goRight`. You can define what
+ * that means by implementing those methods yourself. If you want to use
+ * direction keys to navigate a selection, use this mixin with the
+ * DirectionSelection mixin.
  */
 
 
 export default (base) => class KeyboardDirection extends base {
 
-  // Default implementations. These will typically be handled by other mixins.
+  /**
+   * Invoked when the user wants to go/navigate down.
+   * The default implementation of this method does nothing.
+   *
+   * @method goDown
+   */
   goDown() {
     if (super.goDown) { return super.goDown(); }
   }
+
+  /**
+   * Invoked when the user wants to go/navigate to the end (e.g., of a list).
+   * The default implementation of this method does nothing.
+   *
+   * @method goEnd
+   */
   goEnd() {
     if (super.goEnd) { return super.goEnd(); }
   }
+
+  /**
+   * Invoked when the user wants to go/navigate left.
+   * The default implementation of this method does nothing.
+   *
+   * @method goLeft
+   */
   goLeft() {
     if (super.goLeft) { return super.goLeft(); }
   }
+
+  /**
+   * Invoked when the user wants to go/navigate right.
+   * The default implementation of this method does nothing.
+   *
+   * @method goRight
+   */
   goRight() {
     if (super.goRight) { return super.goRight(); }
   }
+
+  /**
+   * Invoked when the user wants to go/navigate to the start (e.g., of a list).
+   * The default implementation of this method does nothing.
+   *
+   * @method goStart
+   */
   goStart() {
     if (super.goStart) { return super.goStart(); }
   }
+
+  /**
+   * Invoked when the user wants to go/navigate up.
+   * The default implementation of this method does nothing.
+   *
+   * @method goUp
+   */
   goUp() {
     if (super.goUp) { return super.goUp(); }
   }

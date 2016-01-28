@@ -16,7 +16,6 @@
  *   items. Auxiliary elements include link, script, style, and template
  *   elements. This filtering ensures that those auxiliary elements can be used
  *   in markup inside of a list without being treated as list items.
- *
  */
 
 

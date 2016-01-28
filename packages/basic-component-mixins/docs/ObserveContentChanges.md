@@ -15,4 +15,26 @@ such reprojected nodes will not (yet) be detected by this mixin.
 For comparison, see Polymer's observeNodes API, which does solve the problem
 of tracking changes in reprojected content.
 
+Note: The web platform team creating the specifications for web components
+plan to request that a new type of MutationObserver option be defined that
+lets a component monitor changes in distributed children. This mixin will be
+updated to take advantage of that MutationObserver option when that becomes
+available.
+
 **Kind**: global class  
+<a name="contentChanged"></a>
+## contentChanged()
+Invoked when the contents of the component (including distributed children)
+have changed.
+
+This method is also invoked when a component is first instantiated; the
+contents have essentially "changed" from being nothing. This allows the
+component to perform initial processing of its children.
+
+**Kind**: global function  
+<a name="event_content-changed"></a>
+## "content-changed"
+This event is raised when the component's contents (including distributed
+children) have changed.
+
+**Kind**: event emitted  

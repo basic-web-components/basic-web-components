@@ -1,7 +1,7 @@
 /**
  * @class KeyboardPagedSelection
  * @classdesc Mixin which maps page keys (Page Up, Page Down) into operations
- * that move the selection by one page
+ * that move the selection by one page.
  *
  * The keyboard interaction model generally follows that of Microsoft Windows'
  * list boxes instead of those in OS X:
@@ -17,6 +17,10 @@
  *
  * To ensure the selected item is in view following use of Page Up/Down, use the
  * related SelectionInView mixin.
+ *
+ * This mixin expects the component to invoke a `keydown` method when a key is
+ * pressed. You can use the Keyboard mixin for that purpose, or wire up your
+ * own keyboard handling and call `keydown` yourself.
  */
 
 
@@ -61,6 +65,7 @@ export default (base) => class KeyboardPagedSelection extends base {
    * Default is the current element.
    *
    * @property scrollTarget
+   * @type {HTMLElement}
    */
   get scrollTarget() {
     // Prefer base result.
