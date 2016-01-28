@@ -176,7 +176,7 @@ module.exports = function(grunt) {
      */
     mocha: {
       test: {
-        src: 'test/**/*.html',
+        src: 'test/index.html',
         options: {
           log: true,
           logErrors: true,
