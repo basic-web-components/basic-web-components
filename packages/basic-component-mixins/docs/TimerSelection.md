@@ -1,11 +1,17 @@
 <a name="TimerSelection"></a>
 ## TimerSelection
 Mixin provides for automatic timed changes in selection, as in a
-automated slideshow
+automated slideshow.
+
+This mixin is useful for creating slideshow-like elements.
+
+This mixin expects the component to define an `items` property, as well as
+`selectFirst` and `selectNext` methods. You can implement those yourself, or
+use the ContentAsItems and ItemsSelection mixins.
 
 **Kind**: global class  
 <a name="undefinedplaying"></a>
-## undefinedplaying : <code>Boolean</code>
+## undefinedplaying : <code>boolean</code>
 True if the selection is being automatically advanced.
 
 **Kind**: global variable  

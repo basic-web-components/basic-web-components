@@ -18,8 +18,11 @@ Handling ARIA selection state properly is actually quite complex:
 
 This mixin tries to address all of the above requirements. To that end, this
 mixin will assign generated IDs to any item that doesn't already have an ID.
-It will also assign a default ARIA `role` attribute of "option" to any list
-item that does not already have a role specified.
+
+ARIA relies on elements to provide `role` attributes. This mixin will apply
+a default role of "listbox" on the outer list if it doesn't already have an
+explicit role. Similarly, this mixin will apply a default role of "option" to
+any list item that does not already have a role specified.
 
 This mixin expects a set of members that manage the state of the selection:
 `applySelection`, `itemAdded`, and `selectedIndex`. You can supply these

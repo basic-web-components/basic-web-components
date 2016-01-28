@@ -52,7 +52,7 @@ export default (base) => class DistributedChildren extends base {
    * An in-order collection of children, expanding any slot elements. Like the
    * standard children property, this skips text nodes.
    *
-   * @method distributedChildren
+   * @member distributedChildren
    * @returns {HTMLElement[]}
    */
   get distributedChildren() {
@@ -63,7 +63,7 @@ export default (base) => class DistributedChildren extends base {
    * An in-order collection of child nodes, expanding any slot elements. Like
    * the standard childNodes property, this includes text nodes.
    *
-   * @method distributedChildNodes
+   * @member distributedChildNodes
    * @returns {Node[]}
    */
   get distributedChildNodes() {
@@ -74,7 +74,7 @@ export default (base) => class DistributedChildren extends base {
    * The concatenated text content of all child nodes, expanding any slot
    * elements.
    *
-   * @method distributedTextContent
+   * @member distributedTextContent
    * @returns {string}
    */
   get distributedTextContent() {

@@ -1,15 +1,55 @@
 /**
- * @class Collective
- * @classdesc A group of elements that have been joined together for the purpose of
+ * A group of elements that have been associated for the purpose of
  * accomplishing some collective behavior, e.g., keyboard handling.
  *
- * This is not a mixin, but a class used by the TargetInCollective mixin.
+ * There are certain components that want to cooperatively handle the keyboard.
+ * For example, the basic-arrow-selection and basic-page-dots components are
+ * optional components that can augment the appearance and behavior of an inner
+ * basic-carousel, adding arrow buttons and dot buttons, respectively. When
+ * these components are nested together, they form an implicit unit called a
+ * *collective*:
+ *
+ *     <basic-arrow-selection>
+ *       <basic-page-dots>
+ *         <basic-carousel>
+ *           ... images, etc. ...
+ *         </basic-carousel>
+ *       </basic-page-dots>
+ *     </basic-arrow-selection>
+ *
+ * In this configuration, the three components will all have a `this.collective`
+ * reference that refers to a shared instance of the `Collective` class.
+ *
+ * The Keyboard mixin they use is sensitive to the presence of
+ * the collective. Among other things, it will ensure that only the outermost
+ * element above — the basic-arrow-selection — will be a tab stop that can
+ * receive the keyboard focus. This lets the user perceive the component
+ * arrangement above as a single unit. The Keyboard mixin will also give each
+ * element in the collective a chance to process any keyboard events. So, even
+ * though the basic-arrow-selection element will have the focus, the standard
+ * keyboard navigation provided by basic-carousel will continue to work.
+ *
+ * The SelectionAriaActive component also respects collectives when using the
+ * `aria-activedescendant` and `role` attributes. Those will be applied to the
+ * outermost element (basic-arrow-selection, above) so that ARIA can correctly
+ * understand the arrangement of the elements.
+ *
+ * You can put elements into collectives yourself, or you can use the
+ * TargetInCollective mixin.
  */
+class Collective {
 
-
-export default class Collective {
-
+  /**
+   * Create a collective.
+   *
+   * @param {HTMLELement[]} [elements] - Initial elements to add.
+   */
   constructor(...elements) {
+    /**
+     * The elements in the collective.
+     *
+     * @type {HTMLElement[]}
+     */
     this.elements = [];
     elements.forEach(element => this.assimilate(element));
   }
@@ -17,8 +57,15 @@ export default class Collective {
   /**
    * Add the indicated target to the collective.
    *
-   * @method assimilate
-   * @param {(HTMLElement|Collective)} target - the element or collective to add
+   * By convention, if two elements wants to participate in a collective, and
+   * one element is an ancestor of the other in the DOM, the ancestor should
+   * assimilate the descendant instead of the other way around.
+   *
+   * After assimilation, any element in the collective that defines a
+   * `collectiveChanged` method will have that method invoked. This allows
+   * the collective's elements to respond to changes in the collective.
+   *
+   * @param {(HTMLElement|Collective)} target - The element or collective to add.
    */
   assimilate(target) {
     let collectiveChanged;
@@ -37,6 +84,12 @@ export default class Collective {
     }
   }
 
+  /**
+   * Invoke a method on all elements in the collective.
+   *
+   * @param {string} method - The name of the method to invoke on all elements.
+   * @param {object[]} [args] - The arguments to the method
+   */
   invokeMethod(method, ...args) {
     // Invoke from innermost to outermost.
     let elements = this.elements;
@@ -48,6 +101,10 @@ export default class Collective {
     }
   }
 
+  /**
+   * The outermost element in the collective.
+   * By convention, this is the first element in the `elements` array.
+   */
   get outermostElement() {
     return this.elements[0];
   }
@@ -85,3 +142,6 @@ function assimilateElement(collective, element) {
   collective.elements.push(element);
   return true;
 }
+
+
+export default Collective;

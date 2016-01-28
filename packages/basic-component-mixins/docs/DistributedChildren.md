@@ -44,20 +44,20 @@ this problem at the API level.
 
 **Kind**: global class  
 <a name="distributedChildren"></a>
-## distributedChildren() ⇒ <code>Array.&lt;HTMLElement&gt;</code>
+## distributedChildren ⇒ <code>Array.&lt;HTMLElement&gt;</code>
 An in-order collection of children, expanding any slot elements. Like the
 standard children property, this skips text nodes.
 
-**Kind**: global function  
+**Kind**: global variable  
 <a name="distributedChildNodes"></a>
-## distributedChildNodes() ⇒ <code>Array.&lt;Node&gt;</code>
+## distributedChildNodes ⇒ <code>Array.&lt;Node&gt;</code>
 An in-order collection of child nodes, expanding any slot elements. Like
 the standard childNodes property, this includes text nodes.
 
-**Kind**: global function  
+**Kind**: global variable  
 <a name="distributedTextContent"></a>
-## distributedTextContent() ⇒ <code>string</code>
+## distributedTextContent ⇒ <code>string</code>
 The concatenated text content of all child nodes, expanding any slot
 elements.
 
-**Kind**: global function  
+**Kind**: global variable  
