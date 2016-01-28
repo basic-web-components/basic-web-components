@@ -272,6 +272,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', function() {
     grunt.log.writeln('grunt commands this project supports:\n');
     grunt.log.writeln('  grunt build (builds consolidated basic-web-components.js, all package distributions, all documentation, and all tests)');
+    grunt.log.writeln('  grunt devbuild (same as build minus building the documentation)');
     grunt.log.writeln('  grunt docs (builds all packages README.md files)');
     grunt.log.writeln('  grunt lint (runs jshint on all .js files)');
     grunt.log.writeln('  grunt npm-publish:package-name|* (publishes packages/package-name or all packages (packages/*) to npm)');
@@ -292,6 +293,13 @@ module.exports = function(grunt) {
   // This task makes use of the buildList global array.
   //
   grunt.registerTask('build', ['browserify:buildFiles', 'jsdoc2md:docs', 'jshint']);
+
+  //
+  // The devbuild task is callable from the command line and is similar to the build task but doesn't
+  // build the documentation files. This is meant as a quicker task for developers actively working
+  // on code.
+  //
+  grunt.registerTask('devbuild', ['browserify:buildFiles', 'jshint']);
 
   //
   // The docs task is callable from the command line and executes the jsdoc2md:docs task defined
