@@ -1,21 +1,38 @@
 /**
  * @class ContentAsItems
- * @classdesc Mixin which maps content semantics (children) to list item
- * semantics
+ * @classdesc Mixin which maps content semantics (elements) to list item
+ * semantics.
  *
- * Items differ from children in several ways:
+ * This mixin expects a component to provide a `content` property returning a
+ * raw set of elements. You can provide that yourself, or use the
+ * `DistributedChildrenAsContent` mixin.
+ *
+ * Items differ from element contents in several ways:
  *
  * * They are often referenced via index.
  * * They may have a selection state.
  * * It's common to do work to initialize the appearance or state of a new item.
  * * Auxiliary invisible child elements are filtered out and not counted as
  *   items. Auxiliary elements include link, script, style, and template
- *   elements.
+ *   elements. This filtering ensures that those auxiliary elements can be used
+ *   in markup inside of a list without being treated as list items.
+ *
  */
 
 
 export default (base) => class ContentAsItems extends base {
 
+  /**
+   * Apply the selection state to a single item.
+   *
+   * Invoke this method to signal that the selected state of the indicated item
+   * has changed. By default, this applies a `selected` CSS class if the item
+   * is selected, and removed it if not selected.
+   *
+   * @method applySelection
+   * @param {HTMLElement} item - The item whose selection state has changed.
+   * @param {boolean} selected - True if the item is selected, false if not.
+   */
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
     item.classList.toggle('selected', selected);
@@ -28,23 +45,51 @@ export default (base) => class ContentAsItems extends base {
   }
 
   /**
-   * Returns the positional index for the indicated item.
+   * Return the positional index for the indicated item.
    *
    * Because this acts like a getter, this does not invoke a base implementation.
    *
    * @method indexOfItem
-   * @param {object} item The item whose index is requested.
+   * @param {HTMLElement} item The item whose index is requested.
    * @returns {number} The index of the item, or -1 if not found.
    */
   indexOfItem(item) {
     return this.items.indexOf(item);
   }
 
-  // Default implementation does nothing.
+  /**
+   * This method is invoked whenever a new item is added to the list.
+   *
+   * The default implementation of this method does nothing. You can override
+   * this to perform per-item initialization.
+   *
+   * @method itemAdded
+   * @param {HTMLElement} item - The item that was added.
+   */
   itemAdded(item) {
     if (super.itemAdded) { super.itemAdded(item); }
   }
 
+  /**
+   * The current set of items in the list. See the top-level documentation for
+   * mixin for a description of how items differ from plain content.
+   *
+   * @member {HTMLElement[]}
+   */
+  get items() {
+    if (this._items == null) {
+      this._items = filterAuxiliaryElements(this.content);
+    }
+    return this._items;
+  }
+
+  /**
+   * This method is invoked when the underlying contents change. It is also
+   * invoked on component initialization – since the items have "changed" from
+   * being nothing.
+   *
+   * @method itemsChanged
+   */
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
 
@@ -59,19 +104,11 @@ export default (base) => class ContentAsItems extends base {
     this.dispatchEvent(new CustomEvent('items-changed'));
   }
 
-  /**
-   * The current set of items in the list.
+  /*
+   * @event items-changed
    *
-   * @property {object} items
+   * This event is raised when the set of items changes.
    */
-  // TODO: property notifications so elements can bind to this property
-  get items() {
-    if (this._items == null) {
-      this._items = filterAuxiliaryElements(this.content);
-    }
-    return this._items;
-  }
-
 };
 
 

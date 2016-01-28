@@ -1,30 +1,41 @@
 <a name="composeTemplates"></a>
-## composeTemplates
-Given two templates, this "folds" one inside the other
+## composeTemplates(baseTemplate, subTemplate)
+Given two templates, this "folds" one inside the other. This is
+is useful for defining a component that wants to fill in slots in the
+template of its base class.
 
 For now, the folding process just entails putting the first inside the
-location of the first <content> node in the second template.
+location of the first <slot> node in the second template.
 
-Example: if the first (sub) template is
+Example: if the first (base) template is
 
-  <template>
-    Hello, <slot></slot>.
-  </template>
+    <template>
+      <b>
+        <slot></slot>
+      </b>
+    </template>
 
-and the second (base) template is
+and the second (subclass) template is
 
-  <template>
-    <b>
-      <slot></slot>
-    </b>
-  </template>
-
-Then the returned folded template is
-
-  <template>
-    <b>
+    <template>
       Hello, <slot></slot>.
-    </b>
-  </template>
+    </template>
 
-**Kind**: global class  
+Then the result of calling `composeTemplates(first, second)` is
+
+    <template>
+      <b>
+        Hello, <slot></slot>.
+      </b>
+    </template>
+
+Note that this function is not a mixin, but a helper for creating web
+components.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| baseTemplate | <code>HTMLTemplate</code> &#124; <code>string</code> | The base class template. |
+| subTemplate | <code>HTMLTemplate</code> &#124; <code>string</code> | The subclass template. |
+
