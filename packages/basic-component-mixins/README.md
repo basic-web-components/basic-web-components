@@ -1,11 +1,11 @@
 # basic-component-mixins
 
-Mixins for creating web components in plain JavaScript (ES5 or ES6)
+Mixin library for creating web components in plain JavaScript (ES5 or ES6)
 
 [![npm version](https://img.shields.io/npm/v/basic-component-mixins.svg?style=flat)](https://www.npmjs.com/package/basic-component-mixins)
 
-This package implements common web component features as JavaScript mixins.
-These are designed for people who would like to create web components in plain
+This library implements common web component features as JavaScript mixins. It
+is designed for people who would like to create web components in plain
 JavaScript while avoiding much of the boilerplate that comes up in component
 creation. The mixins permit flexibility and a pay-as-you-go approach to
 complexity and performance.
@@ -24,8 +24,8 @@ Design goals:
    also feel correct in a future world in which native ES6 and web components
    are everywhere.
 
-All of the top-level Basic Web Components are constructed with these mixins. By
-design, most of those components are little more than combinations of these
+All of the top-level Basic Web Components are constructed with these mixins. In
+fact, by design, most of those components are little more than combinations of
 mixins. That factoring allows you to create your own web components in the
 likely event that your needs differ from those driving the design of the Basic
 Web Components. You can use these mixins without using those components.
@@ -35,7 +35,7 @@ Web Components. You can use these mixins without using those components.
 
 ## Mixins as functions
 
-The mixins in this package all take the form of a function. Each function takes
+The mixins in this library all take the form of a function. Each function takes
 a base class and returns a subclass defining the desired features:
 
     let MyMixin = (base) => class MyMixin extends base {

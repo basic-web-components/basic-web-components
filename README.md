@@ -154,7 +154,7 @@ other components.
 
 Mixins are a core part of the Basic Web Components approach to creating
 functionally sophisticated components. The [basic-component-mixins](packages/basic-component-mixins)
-package includes a variety of mixins you can use in your own components.
+library includes a variety of mixins you can use in your own components.
 
 ## Older components
 
