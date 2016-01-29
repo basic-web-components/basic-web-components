@@ -76,7 +76,7 @@ polyfill](https://github.com/webcomponents/webcomponentsjs) as well:
     {
       ...
       "dependencies": {
-        "basic-autosize-textarea": "^0.7.0",
+        "basic-autosize-textarea": "^0.7",
         "webcomponents.js": "^0.7.2"
       },
     }
@@ -104,6 +104,9 @@ that references the component's ES6 .js file in the package's /src folder:
 
 For more information on each component's purpose and API, see the component's
 README file at the top level of its package folder.
+
+A [sample-component](https://github.com/basic-web-components/sample-component)
+project demonstrates the use of npm to depend on a Basic Web Components package.
 
 Early versions of this library were distributed via the Bower package manager,
 but those packages were deprecated in the transition to using npm.

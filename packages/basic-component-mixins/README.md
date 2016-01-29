@@ -150,12 +150,17 @@ polyfill](https://github.com/webcomponents/webcomponentsjs) as well:
     {
       ...
       "dependencies": {
-        "basic-component-mixins": "^0.7.0",
+        "basic-component-mixins": "^0.7",
         "webcomponents.js": "^0.7.2"
       },
     }
 
 Then issue an `npm install` as usual.
+
+A [sample-component](https://github.com/basic-web-components/sample-component)
+project demonstrates the use of npm to depend on the basic-component-mixins
+package. It shows the creation of a simple component in both ES6 and ES5.
+
 
 ## ES6
 
