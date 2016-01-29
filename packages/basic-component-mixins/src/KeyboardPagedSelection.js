@@ -1,79 +1,77 @@
-/**
- * @class KeyboardPagedSelection
- * @classdesc Mixin which maps page keys (Page Up, Page Down) into operations
- * that move the selection by one page.
- *
- * The keyboard interaction model generally follows that of Microsoft Windows'
- * list boxes instead of those in OS X:
- *
- * * The Page Up/Down and Home/End keys actually change the selection, rather
- *   than just scrolling. The former behavior seems more generally useful for
- *   keyboard users.
- *
- * * Pressing Page Up/Down will change the selection to the topmost/bottommost
- *   visible item if the selection is not already there. Thereafter, the key
- *   will move the selection up/down by a page, and (per the above point) make
- *   the selected item visible.
- *
- * To ensure the selected item is in view following use of Page Up/Down, use the
- * related SelectionInView mixin.
- *
- * This mixin expects the component to invoke a `keydown` method when a key is
- * pressed. You can use the Keyboard mixin for that purpose, or wire up your
- * own keyboard handling and call `keydown` yourself.
- */
+/* Exported function extends a base class with KeyboardPagedSelection. */
+export default (base) => {
 
+  /**
+   * Mixin which maps page keys (Page Up, Page Down) into operations that move
+   * the selection by one page.
+   *
+   * The keyboard interaction model generally follows that of Microsoft Windows'
+   * list boxes instead of those in OS X:
+   *
+   * * The Page Up/Down and Home/End keys actually change the selection, rather
+   *   than just scrolling. The former behavior seems more generally useful for
+   *   keyboard users.
+   *
+   * * Pressing Page Up/Down will change the selection to the topmost/bottommost
+   *   visible item if the selection is not already there. Thereafter, the key
+   *   will move the selection up/down by a page, and (per the above point) make
+   *   the selected item visible.
+   *
+   * To ensure the selected item is in view following use of Page Up/Down, use
+   * the related SelectionInView mixin.
+   *
+   * This mixin expects the component to invoke a `keydown` method when a key is
+   * pressed. You can use the Keyboard mixin for that purpose, or wire up your
+   * own keyboard handling and call `keydown` yourself.
+   */
+  class KeyboardPagedSelection extends base {
 
-export default (base) => class KeyboardPagedSelection extends base {
-
-  keydown(event) {
-    let handled;
-    switch (event.keyCode) {
-      case 33: // Page Up
-        handled = this.pageUp();
-        break;
-      case 34: // Page Down
-        handled = this.pageDown();
-        break;
+    keydown(event) {
+      let handled;
+      switch (event.keyCode) {
+        case 33: // Page Up
+          handled = this.pageUp();
+          break;
+        case 34: // Page Down
+          handled = this.pageDown();
+          break;
+      }
+      // Prefer mixin result if it's defined, otherwise use base result.
+      return handled || (super.keydown && super.keydown(event));
     }
-    // Prefer mixin result if it's defined, otherwise use base result.
-    return handled || (super.keydown && super.keydown(event));
+
+    /**
+     * Scroll down one page.
+     */
+    pageDown() {
+      if (super.pageDown) { super.pageDown(); }
+      return scrollOnePage(this, true);
+    }
+
+    /**
+     * Scroll up one page.
+     */
+    pageUp() {
+      if (super.pageUp) { super.pageUp(); }
+      return scrollOnePage(this, false);
+    }
+
+    /**
+     * The element that should be scrolled with the Page Up/Down keys.
+     * Default is the current element.
+     *
+     * @type {HTMLElement}
+     */
+    get scrollTarget() {
+      // Prefer base result.
+      return 'scrollTarget' in base.prototype ? super.scrollTarget : this;
+    }
+    set scrollTarget(element) {
+      if ('scrollTarget' in base.prototype) { super.scrollTarget = element; }
+    }
   }
 
-  /**
-   * Scroll down one page.
-   *
-   * @method pageDown
-   */
-  pageDown() {
-    if (super.pageDown) { super.pageDown(); }
-    return scrollOnePage(this, true);
-  }
-
-  /**
-   * Scroll up one page.
-   *
-   * @method pageUp
-   */
-  pageUp() {
-    if (super.pageUp) { super.pageUp(); }
-    return scrollOnePage(this, false);
-  }
-
-  /**
-   * The element that should be scrolled with the Page Up/Down keys.
-   * Default is the current element.
-   *
-   * @property scrollTarget
-   * @type {HTMLElement}
-   */
-  get scrollTarget() {
-    // Prefer base result.
-    return 'scrollTarget' in base.prototype ? super.scrollTarget : this;
-  }
-  set scrollTarget(element) {
-    if ('scrollTarget' in base.prototype) { super.scrollTarget = element; }
-  }
+  return KeyboardPagedSelection;
 };
 
 

@@ -1,12 +1,12 @@
 <a name="ContentFirstChildTarget"></a>
 ## ContentFirstChildTarget
-Mixin that defines the target of a component — the element the
-component is managing or somehow responsible for — as its first child.
+Mixin that defines the target of a component — the element the component is
+managing or somehow responsible for — as its first child.
 
-Some components serve to decorate or modify other elements. A common pattern
-is to have one component wrap another, and have the outer, parent component
-implicitly modify the child. This mixin facilitates this by implicitly taking
-an element's first child as its "target".
+Some components serve to decorate or modify other elements. A common
+pattern is to have one component wrap another, and have the outer, parent
+component implicitly modify the child. This mixin facilitates this by
+implicitly taking an element's first child as its "target".
 
 Example:
 
@@ -25,14 +25,8 @@ This mixin can be combined with the TargetInCollective mixin to have a
 component participate in collective keyboard handling. *
 
 **Kind**: global class  
-<a name="undefinedtarget"></a>
-## undefinedtarget : <code>HTMLElement</code>
+<a name="ContentFirstChildTarget+target"></a>
+### contentFirstChildTarget.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| target | 
-
+**Kind**: instance property of <code>[ContentFirstChildTarget](#ContentFirstChildTarget)</code>  

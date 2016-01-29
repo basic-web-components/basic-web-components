@@ -1,7 +1,6 @@
 <a name="ShadowElementReferences"></a>
 ## ShadowElementReferences
-Mixin to create references to elements in a component's Shadow
-DOM subtree.
+Mixin to create references to elements in a component's Shadow DOM subtree.
 
 This adds a member on the component called `$` that can be used to reference
 shadow elements with IDs. E.g., if component's shadow contains an element

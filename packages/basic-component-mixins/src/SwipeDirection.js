@@ -1,111 +1,108 @@
-/**
- * @class SwipeDirection
- * @classdesc Mixin which maps touch gestures (swipe left, swipe right) to direction
- * semantics (go right, go left).
- *
- * By default, this mixin presents no user-visible effects; it just indicates a
- * direction in which the user is currently swiping or has finished swiping. To
- * map the direction to a change in selection, use the DirectionSelection mixin.
- */
+/* Exported function extends a base class with SwipeDirection. */
+export default (base) => {
 
+  /**
+   * Mixin which maps touch gestures (swipe left, swipe right) to direction
+   * semantics (go right, go left).
+   *
+   * By default, this mixin presents no user-visible effects; it just indicates a
+   * direction in which the user is currently swiping or has finished swiping. To
+   * map the direction to a change in selection, use the DirectionSelection mixin.
+   */
+  class SwipeDirection extends base {
 
-export default (base) => class SwipeDirection extends base {
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
+      this.position = 0;
 
-    this.position = 0;
+      // TODO: Touch events could be factored out into its own mixin.
 
-    // TODO: Touch events could be factored out into its own mixin.
-
-    // In all touch events, only handle single touches. We don't want to
-    // inadvertently do work when the user's trying to pinch-zoom for example.
-    // TODO: Even better approach than below would be to ignore touches after
-    // the first if the user has already begun a swipe.
-    this.addEventListener('touchstart', event => {
-      if (this._multiTouch) {
-        return;
-      } else if (event.touches.length === 1) {
-        touchStart(this, event);
-      } else {
-        this._multiTouch = true;
-      }
-    });
-    this.addEventListener('touchmove', event => {
-      if (!this._multiTouch && event.touches.length === 1) {
-        let handled = touchMove(this, event);
-        if (handled) {
-          event.preventDefault();
+      // In all touch events, only handle single touches. We don't want to
+      // inadvertently do work when the user's trying to pinch-zoom for example.
+      // TODO: Even better approach than below would be to ignore touches after
+      // the first if the user has already begun a swipe.
+      this.addEventListener('touchstart', event => {
+        if (this._multiTouch) {
+          return;
+        } else if (event.touches.length === 1) {
+          touchStart(this, event);
+        } else {
+          this._multiTouch = true;
         }
-      }
-    });
-    this.addEventListener('touchend', event => {
-      if (event.touches.length === 0) {
-        // All touches removed; gesture is complete.
-        if (!this._multiTouch) {
-          // Single-touch swipe has finished.
-          touchEnd(this, event);
+      });
+      this.addEventListener('touchmove', event => {
+        if (!this._multiTouch && event.touches.length === 1) {
+          let handled = touchMove(this, event);
+          if (handled) {
+            event.preventDefault();
+          }
         }
-        this._multiTouch = false;
-      }
-    });
+      });
+      this.addEventListener('touchend', event => {
+        if (event.touches.length === 0) {
+          // All touches removed; gesture is complete.
+          if (!this._multiTouch) {
+            // Single-touch swipe has finished.
+            touchEnd(this, event);
+          }
+          this._multiTouch = false;
+        }
+      });
+    }
+
+    /**
+     * Invoked when the user wants to go/navigate left.
+     * The default implementation of this method does nothing.
+     */
+    goLeft() {
+      if (super.goLeft) { return super.goLeft(); }
+    }
+
+    /**
+     * Invoked when the user wants to go/navigate right.
+     * The default implementation of this method does nothing.
+     */
+    goRight() {
+      if (super.goRight) { return super.goRight(); }
+    }
+
+    /**
+     * The distance the user has moved the first touchpoint since the beginning
+     * of a drag, expressed as a fraction of the element's width.
+     *
+     * @type number
+     */
+    get position() {
+      return this._position;
+    }
+    set position(position) {
+      if ('position' in base.prototype) { super.position = position; }
+      this._position = position;
+    }
+
+    /**
+     * Determine whether a transition should be shown during a swipe.
+     *
+     * Components like carousels often define animated CSS transitions for
+     * sliding effects. Such a transition should usually *not* be applied while
+     * the user is dragging, because a CSS animation will introduce a lag that
+     * makes the swipe feel sluggish. Instead, as long as the user is dragging
+     * with their finger down, the transition should be suppressed. When the
+     * user releases their finger, the transition can be restored, allowing the
+     * animation to show the carousel sliding into its final position.
+     *
+     * @param {boolean} value - true if a component-provided transition should
+     * be shown, false if not.
+     */
+    // TODO: Rename (and flip meaning) to something like dragging()?
+    showTransition(value) {
+      if (super.showTransition) { super.showTransition(value); }
+    }
+
   }
 
-  /**
-   * Invoked when the user wants to go/navigate left.
-   * The default implementation of this method does nothing.
-   *
-   * @method goLeft
-   */
-  goLeft() {
-    if (super.goLeft) { return super.goLeft(); }
-  }
-
-  /**
-   * Invoked when the user wants to go/navigate right.
-   * The default implementation of this method does nothing.
-   *
-   * @method goRight
-   */
-  goRight() {
-    if (super.goRight) { return super.goRight(); }
-  }
-
-  /**
-   * The distance the user has moved the first touchpoint since the beginning
-   * of a drag, expressed as a fraction of the element's width.
-   *
-   * @property position
-   * @type number
-   */
-  get position() {
-    return this._position;
-  }
-  set position(position) {
-    if ('position' in base.prototype) { super.position = position; }
-    this._position = position;
-  }
-
-  /**
-   * Determine whether a transition should be shown during a swipe.
-   *
-   * Components like carousels often define animated CSS transitions for sliding
-   * effects. Such a transition should usually *not* be applied while the user
-   * is dragging, because a CSS animation will introduce a lag that makes the
-   * swipe feel sluggish. Instead, as long as the user is dragging with their
-   * finger down, the transition should be suppressed. When the user releases
-   * their finger, the transition can be restored, allowing the animation to
-   * show the carousel sliding into its final position.
-   *
-   * @method showTransition
-   * @param {boolean} value - true if a component-provided transition should be
-   *        shown, false if not.
-   */
-  // TODO: Rename (and flip meaning) to something like dragging()?
-  showTransition(value) {
-    if (super.showTransition) { super.showTransition(value); }
-  }
-
+  return SwipeDirection;
 };
 
 

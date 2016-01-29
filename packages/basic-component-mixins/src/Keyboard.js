@@ -1,97 +1,99 @@
-/**
- * @class Keyboard
- * @classdesc Mixin which manages the keydown handling for a component.
- *
- * This mixin handles several keyboard-related features.
- *
- * First, it wires up a single keydown event handler that can be shared by
- * multiple mixins on a component. The event handler will invoke a `keydown`
- * method with the event object, and any mixin along the prototype chain that
- * wants to handle that method can do so.
- *
- * If a mixin wants to indicate that keyboard event has been handled, and that
- * other mixins should *not* handle it, the mixin's `keydown` handler should
- * return a value of true. The convention that seems to work well is that a
- * mixin should see if it wants to handle the event and, if not, then ask the
- * superclass to see if it wants to handle the event. This has the effect of
- * giving the mixin that was applied last the first chance at handling a
- * keyboard event.
- *
- * Example:
- *
- *     keydown(event) {
- *       let handled;
- *       switch (event.keyCode) {
- *         // Handle the keys you want, setting handled = true if appropriate.
- *       }
- *       // Prefer mixin result if it's defined, otherwise use base result.
- *       return handled || (super.keydown && super.keydown(event));
- *     }
- *
- * A second feature provided by this mixin is that it implicitly makes the
- * component a tab stop if it isn't already, by setting `tabIndex` to 0. This
- * has the effect of adding the component to the tab order in document order.
- *
- * Finally, this mixin is designed to work with Collective class via a mixin
- * like TargetInCollective. This allows a set of related component instances
- * to cooperatively handle the keyboard. See the Collective class for details.
- *
- * NOTE: For the time being, this mixin should be used with
- * TargetInCollective. The intention is to allow this mixin to be used without
- * requiring collective keyboard support, so that this mixin can be used on its
- * own.
- */
-
-
 // TODO: Provide baseline behavior for this mixin when used outside of a
 // collective.
 
-
-export default (base) => class Keyboard extends base {
+/* Exported function extends a base class with Keyboard. */
+export default (base) => {
 
   /**
-   * Handle the indicated keyboard event.
+   * Mixin which manages the keydown handling for a component.
    *
-   * The default implementation of this method does nothing. This will typically
-   * be handled by other mixins.
+   * This mixin handles several keyboard-related features.
    *
-   * @method keydown
-   * @param {KeyboardEvent} event - the keyboard event
-   * @return {boolean} true if the event was handled
+   * First, it wires up a single keydown event handler that can be shared by
+   * multiple mixins on a component. The event handler will invoke a `keydown`
+   * method with the event object, and any mixin along the prototype chain that
+   * wants to handle that method can do so.
+   *
+   * If a mixin wants to indicate that keyboard event has been handled, and that
+   * other mixins should *not* handle it, the mixin's `keydown` handler should
+   * return a value of true. The convention that seems to work well is that a
+   * mixin should see if it wants to handle the event and, if not, then ask the
+   * superclass to see if it wants to handle the event. This has the effect of
+   * giving the mixin that was applied last the first chance at handling a
+   * keyboard event.
+   *
+   * Example:
+   *
+   *     keydown(event) {
+   *       let handled;
+   *       switch (event.keyCode) {
+   *         // Handle the keys you want, setting handled = true if appropriate.
+   *       }
+   *       // Prefer mixin result if it's defined, otherwise use base result.
+   *       return handled || (super.keydown && super.keydown(event));
+   *     }
+   *
+   * A second feature provided by this mixin is that it implicitly makes the
+   * component a tab stop if it isn't already, by setting `tabIndex` to 0. This
+   * has the effect of adding the component to the tab order in document order.
+   *
+   * Finally, this mixin is designed to work with Collective class via a mixin
+   * like TargetInCollective. This allows a set of related component instances
+   * to cooperatively handle the keyboard. See the Collective class for details.
+   *
+   * NOTE: For the time being, this mixin should be used with
+   * TargetInCollective. The intention is to allow this mixin to be used without
+   * requiring collective keyboard support, so that this mixin can be used on
+   * its own.
    */
-  keydown(event) {
-    if (super.keydown) { return super.keydown(event); }
+  class Keyboard extends base {
+
+    /**
+     * Handle the indicated keyboard event.
+     *
+     * The default implementation of this method does nothing. This will
+     * typically be handled by other mixins.
+     *
+     * @param {KeyboardEvent} event - the keyboard event
+     * @return {boolean} true if the event was handled
+     */
+    keydown(event) {
+      if (super.keydown) { return super.keydown(event); }
+    }
+
+    /*
+     * If we're now the outermost element of the collective, set up to receive
+     * keyboard events. If we're no longer the outermost element, stop
+     * listening.
+     */
+    collectiveChanged() {
+      if (super.collectiveChanged) { super.collectiveChanged(); }
+
+      if (this.collective.outermostElement !== this) {
+        // We're no longer the outermost element; stop listening.
+        if (isListeningToKeydown(this)) {
+          stopListeningToKeydown(this);
+        }
+        return;
+      }
+
+      if (!this.getAttribute('aria-label')) {
+        // Since we're going to handle the keyboard, see if we can adopt an ARIA
+        // label from an inner element of the collective.
+        let label = getCollectiveAriaLabel(this.collective);
+        if (label) {
+          this.setAttribute('aria-label', label);
+        }
+      }
+
+      if (!isListeningToKeydown(this)) {
+        startListeningToKeydown(this);
+      }
+    }
+
   }
 
-  /*
-   * If we're now the outermost element of the collective, set up to receive
-   * keyboard events. If we're no longer the outermost element, stop listening.
-   */
-  collectiveChanged() {
-    if (super.collectiveChanged) { super.collectiveChanged(); }
-
-    if (this.collective.outermostElement !== this) {
-      // We're no longer the outermost element; stop listening.
-      if (isListeningToKeydown(this)) {
-        stopListeningToKeydown(this);
-      }
-      return;
-    }
-
-    if (!this.getAttribute('aria-label')) {
-      // Since we're going to handle the keyboard, see if we can adopt an ARIA
-      // label from an inner element of the collective.
-      let label = getCollectiveAriaLabel(this.collective);
-      if (label) {
-        this.setAttribute('aria-label', label);
-      }
-    }
-
-    if (!isListeningToKeydown(this)) {
-      startListeningToKeydown(this);
-    }
-  }
-
+  return Keyboard;
 };
 
 

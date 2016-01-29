@@ -38,18 +38,18 @@ to cooperatively handle the keyboard. See the Collective class for details.
 
 NOTE: For the time being, this mixin should be used with
 TargetInCollective. The intention is to allow this mixin to be used without
-requiring collective keyboard support, so that this mixin can be used on its
-own.
+requiring collective keyboard support, so that this mixin can be used on
+its own.
 
 **Kind**: global class  
-<a name="keydown"></a>
-## keydown(event) ⇒ <code>boolean</code>
+<a name="Keyboard+keydown"></a>
+### keyboard.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
 
-The default implementation of this method does nothing. This will typically
-be handled by other mixins.
+The default implementation of this method does nothing. This will
+typically be handled by other mixins.
 
-**Kind**: global function  
+**Kind**: instance method of <code>[Keyboard](#Keyboard)</code>  
 **Returns**: <code>boolean</code> - true if the event was handled  
 
 | Param | Type | Description |
