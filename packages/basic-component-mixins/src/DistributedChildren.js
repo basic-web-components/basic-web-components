@@ -35,8 +35,8 @@ export default (base) => {
    *     </count-children>
    *
    * If your component only looks at `this.children`, it will always see exactly
-   * one child — the `<slot>` element. But the user look at the page will *see*
-   * any nodes distributed to that slot. To match what the user sees, your
+   * one child — the `<slot>` element. But the user looking at the page will
+   * *see* any nodes distributed to that slot. To match what the user sees, your
    * component should expand any `<slot>` elements it contains.
    *
    * That is the problem this mixin solves. After applying this mixin, your
