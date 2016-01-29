@@ -28,7 +28,7 @@ The default value of this property is the element itself.
 Scroll the given element completely into view, minimizing the degree of
 scrolling performed.
 
-Blink has a `scrollIntoViewIfNeeded()`` function that does something
+Blink has a `scrollIntoViewIfNeeded()` function that does something
 similar, but unfortunately it's non-standard, and in any event often ends
 up scrolling more than is absolutely necessary.
 

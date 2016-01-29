@@ -2,10 +2,10 @@
 ## ShadowElementReferences
 Mixin to create references to elements in a component's Shadow DOM subtree.
 
-This adds a member on the component called `$` that can be used to reference
-shadow elements with IDs. E.g., if component's shadow contains an element
-`<button id="foo">`, then this mixin will create a member `this.$.foo` that
-points to that button.
+This adds a member on the component called `this.$` that can be used to
+reference shadow elements with IDs. E.g., if component's shadow contains an
+element `<button id="foo">`, then this mixin will create a member
+`this.$.foo` that points to that button.
 
 Such references simplify a component's access to its own elements. In
 exchange, this mixin trades off a one-time cost of querying all elements in
