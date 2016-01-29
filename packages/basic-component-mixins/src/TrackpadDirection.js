@@ -1,59 +1,80 @@
-/**
- * @class TrackpadDirection
- * @classdesc Mixin which maps a horizontal trackpad swipe gestures (or
- * horizontal mouse wheel actions) to direction semantics
- *
- * To respond to the trackpad, we can listen to the DOM's "wheel" events. These
- * events are fired as the user drags their fingers across a trackpad.
- * Unfortunately, this scheme is missing a critical event — there is no event
- * when the user *stops* a gestured on the trackpad.
- *
- * To complicate matters, the mainstream browsers continue to generate wheel
- * events even after the user has stopped dragging their fingers. These fake
- * events simulate the user gradually slowing down the drag until they come to a
- * smooth stop. In some contexts, these fake wheel events might be helpful, but
- * in trying to supply typical trackpad swipe navigation, these fake events get
- * in the way.
- *
- * This component uses some heuristics to work around these problems, but the
- * complex nature of the problem make it extremely difficult to achieve the same
- * degree of trackpad responsiveness possible with native applications.
- */
+/* Exported function extends a base class with TrackpadDirection. */
+export default (base) => {
 
+  /**
+   * Mixin which maps a horizontal trackpad swipe gestures (or horizontal mouse
+   * wheel actions) to direction semantics.
+   *
+   * You can use this mixin with a mixin like DirectionSelection to let the user
+   * change the selection with the trackpad or mouse wheel.
+   *
+   * To respond to the trackpad, we can listen to the DOM's "wheel" events.
+   * These events are fired as the user drags their fingers across a trackpad.
+   * Unfortunately, browsers are missing a critical event — there is no event
+   * when the user *stops* a gestured on the trackpad or mouse wheel.
+   *
+   * To make things worse, the mainstream browsers continue to generate fake
+   * wheel events even after the user has stopped dragging their fingers. These
+   * fake events simulate the user gradually slowing down the drag until they
+   * come to a smooth stop. In some contexts, these fake wheel events might be
+   * helpful, but in trying to supply typical trackpad swipe navigation, these
+   * fake events get in the way.
+   *
+   * This component uses heuristics to work around these problems, but the
+   * complex nature of the problem make it extremely difficult to achieve the
+   * same degree of trackpad responsiveness possible with native applications.
+   */
+  class TrackpadDirection extends base {
 
-export default (base) => class TrackpadDirection extends base {
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
+      this.addEventListener('wheel', event => {
+        let handled = wheel(this, event);
+        if (handled) {
+          event.preventDefault();
+        }
+      });
+      resetWheelTracking(this);
+    }
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    this.addEventListener('wheel', event => {
-      let handled = wheel(this, event);
-      if (handled) {
-        event.preventDefault();
-      }
-    });
-    resetWheelTracking(this);
+    /**
+     * Invoked when the user wants to go/navigate left.
+     * The default implementation of this method does nothing.
+     */
+    goLeft() {
+      if (super.goLeft) { return super.goLeft(); }
+    }
+
+    /**
+     * Invoked when the user wants to go/navigate right.
+     * The default implementation of this method does nothing.
+     */
+    goRight() {
+      if (super.goRight) { return super.goRight(); }
+    }
+
+    /**
+     * The distance the user has moved the first touchpoint since the beginning
+     * of a trackpad/wheel operation, expressed as a fraction of the element's
+     * width.
+     *
+     * @type number
+     */
+    get position() {
+      return super.position;
+    }
+    set position(position) {
+      if ('position' in base.prototype) { super.position = position; }
+    }
+
+    // Default implementation
+    showTransition(value) {
+      if (super.showTransition) { super.showTransition(value); }
+    }
+
   }
 
-  // Default implementations
-  goLeft() {
-    if (super.goLeft) { return super.goLeft(); }
-  }
-  goRight() {
-    if (super.goRight) { return super.goRight(); }
-  }
-
-  get position() {
-    return super.position;
-  }
-  set position(position) {
-    if ('position' in base.prototype) { super.position = position; }
-  }
-
-  // Default implementation
-  showTransition(value) {
-    if (super.showTransition) { super.showTransition(value); }
-  }
-
+  return TrackpadDirection;
 };
 
 

@@ -257,6 +257,9 @@ common web component feature:
   the components that should be treated as a unit for keyboard purposes.
 * [Composable](docs/Composable.md).
   Facilitates the application of a set of mixins.
+* [composeTemplates](docs/composeTemplates.md).
+  Not a mixin, but a helper function for letting a component insert its template
+  inside a template defined by a base class.
 * [ContentAsItems](docs/ContentAsItems.md).
   Lets a component treat its content as items in a list.
 * [ContentFirstChildTarget](docs/ContentFirstChildTarget.md).
@@ -314,9 +317,6 @@ common web component feature:
 * [TrackpadDirection](docs/TrackpadDirection.md).
   Translates trackpad swipes or horizontal mouse wheel drags into direction
   semantics.
-* [composeTemplates](docs/composeTemplates.md).
-  Not a mixin, but a helper function for letting a component insert its template
-  inside a template defined by a base class.
 
 
 # Applying multiple mixins

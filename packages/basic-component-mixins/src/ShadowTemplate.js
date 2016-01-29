@@ -1,57 +1,70 @@
-/**
- * @class ShadowTemplate
- * @classdesc Mixin for stamping a template into a Shadow DOM subtree upon
- * component instantiation
- *
- * If a component defines a template property (as a string or referencing a HTML
- * template), when the component class is instantiated, a shadow root will be
- * created on the instance, and the contents of the template will be cloned into
- * the shadow root.
- *
- * For the time being, this extension retains support for Shadow DOM v0.
- * That will eventually be deprecated as browsers implement Shadow DOM v1.
- */
-
-
 // Feature detection for old Shadow DOM v0.
 const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== 'undefined');
 
 
-export default (base) => class ShadowTemplate extends base {
+/* Exported function extends a base class with ShadowTemplate. */
+export default (base) => {
 
-  /*
-   * If the component defines a template, a shadow root will be created on the
-   * component instance, and the template stamped into it.
+  /**
+   * Mixin for stamping a template into a Shadow DOM subtree upon component
+   * instantiation.
+   *
+   * To use this mixin, define a `template` property as a string or HTML
+   * `<template>` element:
+   *
+   *     class MyElement extends ShadowTemplate(HTMLElement) {
+   *       get template() {
+   *         return `Hello, <em>world</em>.`;
+   *       }
+   *     }
+   *
+   * When your component class is instantiated, a shadow root will be created on
+   * the instance, and the contents of the template will be cloned into the
+   * shadow root. If your component does not define a `template` property, this
+   * mixin has no effect.
+   *
+   * For the time being, this extension retains support for Shadow DOM v0. That
+   * will eventually be deprecated as browsers (and the Shadow DOM polyfill)
+   * implement Shadow DOM v1.
    */
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    let template = this.template;
-    // TODO: Save the processed template with the component's class prototype
-    // so it doesn't need to be processed with every instantiation.
-    if (template) {
+  class ShadowTemplate extends base {
 
-      if (typeof template === 'string') {
-        // Upgrade plain string to real template.
-        template = createTemplateWithInnerHTML(template);
+    /*
+     * If the component defines a template, a shadow root will be created on the
+     * component instance, and the template stamped into it.
+     */
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
+      let template = this.template;
+      // TODO: Save the processed template with the component's class prototype
+      // so it doesn't need to be processed with every instantiation.
+      if (template) {
+
+        if (typeof template === 'string') {
+          // Upgrade plain string to real template.
+          template = createTemplateWithInnerHTML(template);
+        }
+
+        if (USING_SHADOW_DOM_V0) {
+          polyfillSlotWithContent(template);
+        }
+
+        if (window.ShadowDOMPolyfill) {
+          shimTemplateStyles(template, this.localName);
+        }
+
+        // this.log("cloning template into shadow root");
+        let root = USING_SHADOW_DOM_V0 ?
+          this.createShadowRoot() :             // Shadow DOM v0
+          this.attachShadow({ mode: 'open' });  // Shadow DOM v1
+        let clone = document.importNode(template.content, true);
+        root.appendChild(clone);
       }
-
-      if (USING_SHADOW_DOM_V0) {
-        polyfillSlotWithContent(template);
-      }
-
-      if (window.ShadowDOMPolyfill) {
-        shimTemplateStyles(template, this.localName);
-      }
-
-      // this.log("cloning template into shadow root");
-      let root = USING_SHADOW_DOM_V0 ?
-        this.createShadowRoot() :             // Shadow DOM v0
-        this.attachShadow({ mode: 'open' });  // Shadow DOM v1
-      let clone = document.importNode(template.content, true);
-      root.appendChild(clone);
     }
+
   }
 
+  return ShadowTemplate;
 };
 
 

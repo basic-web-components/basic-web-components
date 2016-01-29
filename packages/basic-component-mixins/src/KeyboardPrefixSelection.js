@@ -1,66 +1,101 @@
-/**
- * @class KeyboardPrefixSelection
- * @classdesc Mixin that handles list box-style prefix typing, in which the user
- * can type a string to select the first item that begins with that string
- */
+// TODO: If the selection is changed by some other means (e.g., arrow keys)
+// other than prefix typing, then that act should reset the prefix.
 
-
-// TODO: If the selection is changed by some other means (e.g., arrow keys) other
-// than prefix typing, then that act should reset the prefix.
-
-export default (base) => class KeyboardPrefixSelection extends base {
-
-  // itemsChanged() {
-  //   this._itemTextContents = null;
-  //   resetTypedPrefix(this);
-  // }
-
-  keydown(event) {
-    let handled;
-    let resetPrefix = true;
-
-    switch (event.keyCode) {
-      case 8: // Backspace
-        handleBackspace(this);
-        handled = true;
-        resetPrefix = false;
-        break;
-      case 27: // Escape
-        handled = true;
-        break;
-      default:
-        if (!event.ctrlKey && !event.metaKey && !event.altKey &&
-            event.which !== 32 /* Space */) {
-          handlePlainCharacter(this, String.fromCharCode(event.which));
-        }
-        resetPrefix = false;
-    }
-
-    if (resetPrefix) {
-      resetTypedPrefix(this);
-    }
-
-    // Prefer mixin result if it's defined, otherwise use base result.
-    return handled || (super.keydown && super.keydown(event));
-  }
+/* Exported function extends a base class with KeyboardPrefixSelection. */
+export default (base) => {
 
   /**
-   * Select the first item whose text content begins with the given prefix.
+   * Mixin that handles list box-style prefix typing, in which the user can type
+   * a string to select the first item that begins with that string.
    *
-   * @method selectItemWithTextPrefix
-   * @param prefix [String] The string to search for
+   * Example: suppose a component using this mixin has the following items:
+   *
+   *     <sample-list-component>
+   *       <div>Apple</div>
+   *       <div>Apricot</div>
+   *       <div>Banana</div>
+   *       <div>Blackberry</div>
+   *       <div>Blueberry</div>
+   *       <div>Cantaloupe</div>
+   *       <div>Cherry</div>
+   *       <div>Lemon</div>
+   *       <div>Lime</div>
+   *     </sample-list-component>
+   *
+   * If this component receives the focus, and the user presses the "b" or "B"
+   * key, the "Banana" item will be selected, because it's the first item that
+   * matches the prefix "b". (Matching is case-insensitive.) If the user now
+   * presses the "l" or "L" key quickly, the prefix to match becomes "bl", so
+   * "Blackberry" will be selected.
+   *
+   * The prefix typing feature has a one second timeout — the prefix to match
+   * will be reset after a second has passed since the user last typed a key.
+   * If, in the above example, the user waits a second between typing "b" and
+   * "l", the prefix will become "l", so "Lemon" would be selected.
+   *
+   * This mixin expects the component to invoke a `keydown` method when a key is
+   * pressed. You can use the Keyboard mixin for that purpose, or wire up your
+   * own keyboard handling and call `keydown` yourself.
+   *
+   * This mixin also expects the component to provide an `items` property. The
+   * `textContent` of those items will be used for purposes of prefix matching.
    */
-  selectItemWithTextPrefix(prefix) {
-    if (super.selectItemWithTextPrefix) { super.selectItemWithTextPrefix(prefix); }
-    if (prefix == null || prefix.length === 0) {
-      return;
+  class KeyboardPrefixSelection extends base {
+
+    // TODO: If the set of items is changed, reset the prefix.
+    // itemsChanged() {
+    //   this._itemTextContents = null;
+    //   resetTypedPrefix(this);
+    // }
+
+    keydown(event) {
+      let handled;
+      let resetPrefix = true;
+
+      switch (event.keyCode) {
+        case 8: // Backspace
+          handleBackspace(this);
+          handled = true;
+          resetPrefix = false;
+          break;
+        case 27: // Escape
+          handled = true;
+          break;
+        default:
+          if (!event.ctrlKey && !event.metaKey && !event.altKey &&
+              event.which !== 32 /* Space */) {
+            handlePlainCharacter(this, String.fromCharCode(event.which));
+          }
+          resetPrefix = false;
+      }
+
+      if (resetPrefix) {
+        resetTypedPrefix(this);
+      }
+
+      // Prefer mixin result if it's defined, otherwise use base result.
+      return handled || (super.keydown && super.keydown(event));
     }
-    let index = getIndexOfItemWithTextPrefix(this, prefix);
-    if (index >= 0) {
-      this.selectedIndex = index;
+
+    /**
+     * Select the first item whose text content begins with the given prefix.
+     *
+     * @param prefix [String] The prefix string to search for
+     */
+    selectItemWithTextPrefix(prefix) {
+      if (super.selectItemWithTextPrefix) { super.selectItemWithTextPrefix(prefix); }
+      if (prefix == null || prefix.length === 0) {
+        return;
+      }
+      let index = getIndexOfItemWithTextPrefix(this, prefix);
+      if (index >= 0) {
+        this.selectedIndex = index;
+      }
     }
+
   }
 
+  return KeyboardPrefixSelection;
 };
 
 

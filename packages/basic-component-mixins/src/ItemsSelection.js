@@ -1,205 +1,245 @@
-/**
- * @class ItemsSelection
- * @classdesc Mixin which manages selection semantics for items in a list
- */
+/* Exported function extends a base class with ItemsSelection. */
+export default (base) => {
 
+  /**
+   * Mixin which manages single-selection semantics for items in a list.
+   *
+   * This mixin expects a component to provide an `items` array of all elements
+   * in the list. A standard way to do that with is the ContentAsItems mixin,
+   * which takes a component's content (typically its distributed children) as
+   * the set of list items; see that mixin for details.
+   *
+   * This mixin tracks a single selected item in the list, and provides means to
+   * get and set that state by item position (`selectedIndex`) or item identity
+   * (`selectedItem`). The selection can be moved in the list via the methods
+   * `selectFirst`, `selectLast`, `selectNext`, and `selectPrevious`.
+   *
+   * This mixin does not produce any user-visible effects to represent
+   * selection. Other mixins, such as SelectionAriaActive, SelectionHighlight
+   * and SelectionInView, modify the selected item in common ways to let the
+   * user know a given item is selected or not selected.
+   */
+  class ItemsSelection extends base {
 
-/**
- * Fires when the selectedItem property changes.
- *
- * @event selected-item-changed
- * @param detail.selectedItem The new selected item.
- * @param detail.previousItem The previously selected item.
- */
+    /**
+     * Apply the indicate selection state to the item.
+     *
+     * The default implementation of this method does nothing. User-visible
+     * effects will typically be handled by other mixins.
+     *
+     * @param {HTMLElement} item - the item being selected/deselected
+     * @param {boolean} selected - true if the item is selected, false if not
+     */
+    applySelection(item, selected) {
+      if (super.applySelection) { super.applySelection(item, selected); }
+    }
 
-/**
- * Fires when the selectedIndex property changes.
- *
- * @event selected-item-changed
- * @param detail.selectedIndex The new selected index.
- */
+    /**
+     * True if the selection can be moved to the next item, false if not (the
+     * selected item is the last item in the list).
+     *
+     * @type {boolean}
+     */
+    get canSelectNext() {
+      return this._canSelectNext;
+    }
+    set canSelectNext(canSelectNext) {
+      if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
+      this._canSelectNext = canSelectNext;
+    }
 
-export default (base) => class ItemsSelection extends base {
+    /**
+     * True if the selection can be moved to the previous item, false if not
+     * (the selected item is the first one in the list).
+     *
+     * @type {boolean}
+     */
+    get canSelectPrevious() {
+      return this._canSelectPrevious;
+    }
+    set canSelectPrevious(canSelectPrevious) {
+      if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
+      this._canSelectPrevious = canSelectPrevious;
+    }
 
-  // Default implementation. This will typically be handled by other mixins.
-  applySelection(item, selected) {
-    if (super.applySelection) { super.applySelection(item, selected); }
-  }
+    /**
+     * Handle a new item being added to the list.
+     *
+     * The default implementation of this method simply sets the item's
+     * selection state to false.
+     *
+     * @param {HTMLElement} item - the item being added
+     */
+    itemAdded(item) {
+      if (super.itemAdded) { super.itemAdded(item); }
+      this.applySelection(item, item === this.selectedItem);
+    }
 
-  get canSelectNext() {
-    return this._canSelectNext;
-  }
-  set canSelectNext(canSelectNext) {
-    if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
-    this._canSelectNext = canSelectNext;
-  }
-
-  get canSelectPrevious() {
-    return this._canSelectPrevious;
-  }
-  set canSelectPrevious(canSelectPrevious) {
-    if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
-    this._canSelectPrevious = canSelectPrevious;
-  }
-
-  itemAdded(item) {
-    if (super.itemAdded) { super.itemAdded(item); }
-    this.applySelection(item, item === this.selectedItem);
-  }
-
-  itemsChanged() {
-    if (super.itemsChanged) { super.itemsChanged(); }
-    let index = this.items.indexOf(this.selectedItem);
-    if (index < 0) {
-      // Selected item is no longer in the current set of items.
-      this.selectedItem = null;
-      if (this.selectionRequired) {
-        // Ensure selection, but do this in the next tick to give other
-        // mixins a chance to do their own itemsChanged work.
-        setTimeout(function() {
-          ensureSelection(this);
-        }.bind(this));
+    itemsChanged() {
+      if (super.itemsChanged) { super.itemsChanged(); }
+      let index = this.items.indexOf(this.selectedItem);
+      if (index < 0) {
+        // Selected item is no longer in the current set of items.
+        this.selectedItem = null;
+        if (this.selectionRequired) {
+          // Ensure selection, but do this in the next tick to give other
+          // mixins a chance to do their own itemsChanged work.
+          setTimeout(function() {
+            ensureSelection(this);
+          }.bind(this));
+        }
       }
+
+      // The change in items may have affected which navigations are possible.
+      updatePossibleNavigations(this, index);
     }
 
-    // The change in items may have affected which navigations are possible.
-    updatePossibleNavigations(this, index);
-  }
+    /**
+     * The index of the item which is currently selected, or -1 if there is no
+     * selection.
+     *
+     * Setting the index to -1 deselects any current-selected item.
+     *
+     * @type {number}
+     */
+    get selectedIndex() {
+      let selectedItem = this.selectedItem;
 
-  /**
-   * The index of the item which is currently selected, or -1 if there is no
-   * selection.
-   *
-   * @property selectedIndex
-   * @type Number
-   */
-  get selectedIndex() {
-    let selectedItem = this.selectedItem;
-
-    if (selectedItem == null) {
-      return -1;
-    }
-
-    // TODO: Memoize
-    let index = this.indexOfItem(selectedItem);
-
-    // If index = -1, selection wasn't found. Most likely cause is that the
-    // DOM was manipulated from underneath us.
-    // TODO: Once we track content changes, turn this into an exception.
-    return index;
-  }
-  set selectedIndex(index) {
-    if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
-    let items = this.items;
-    let item;
-    if (index < 0 || items.length === 0) {
-      item = null;
-    } else {
-      item = items[index];
-    }
-    this.selectedItem = item;
-
-    let event = new CustomEvent('selected-index-changed', {
-      detail: {
-        selectedIndex: index,
-        value: index // for Polymer binding
+      if (selectedItem == null) {
+        return -1;
       }
-    });
-    this.dispatchEvent(event);
-  }
 
-  /**
-   * The currently selected item, or null if there is no selection.
-   *
-   * @property selectedItem
-   * @type Object
-   */
-  // TODO: Confirm item is in items before selecting.
-  get selectedItem() {
-    return this._selectedItem || null;
-  }
-  set selectedItem(item) {
-    if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-    let previousItem = this._selectedItem;
-    if (previousItem) {
-      // Remove previous selection.
-      this.applySelection(previousItem, false);
+      // TODO: Memoize
+      let index = this.indexOfItem(selectedItem);
+
+      // If index = -1, selection wasn't found. Most likely cause is that the
+      // DOM was manipulated from underneath us.
+      // TODO: Once we track content changes, turn this into an exception.
+      return index;
     }
-    this._selectedItem = item;
-    if (item) {
-      this.applySelection(item, true);
-    }
-
-    // TODO: Rationalize with selectedIndex so we're not recalculating item
-    // or index in each setter.
-    let index = this.indexOfItem(item);
-    updatePossibleNavigations(this, index);
-
-    let event = new CustomEvent('selected-item-changed', {
-      detail: {
-        selectedItem: item,
-        previousItem: previousItem,
-        value: item // for Polymer binding
+    set selectedIndex(index) {
+      if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
+      let items = this.items;
+      let item;
+      if (index < 0 || items.length === 0) {
+        item = null;
+      } else {
+        item = items[index];
       }
-    });
-    this.dispatchEvent(event);
+      this.selectedItem = item;
+
+      let event = new CustomEvent('selected-index-changed', {
+        detail: {
+          selectedIndex: index,
+          value: index // for Polymer binding
+        }
+      });
+      this.dispatchEvent(event);
+    }
+
+    /**
+     * The currently selected item, or null if there is no selection.
+     *
+     * Setting this property to null deselects any currently-selected item.
+     *
+     * @type {object}
+     */
+    get selectedItem() {
+      return this._selectedItem || null;
+    }
+    set selectedItem(item) {
+      if ('selectedItem' in base.prototype) { super.selectedItem = item; }
+      let previousItem = this._selectedItem;
+      if (previousItem) {
+        // Remove previous selection.
+        this.applySelection(previousItem, false);
+      }
+
+      // TODO: Confirm item is actually in the list before selecting.
+      this._selectedItem = item;
+      if (item) {
+        this.applySelection(item, true);
+      }
+
+      // TODO: Rationalize with selectedIndex so we're not recalculating item
+      // or index in each setter.
+      let index = this.indexOfItem(item);
+      updatePossibleNavigations(this, index);
+
+      let event = new CustomEvent('selected-item-changed', {
+        detail: {
+          selectedItem: item,
+          previousItem: previousItem,
+          value: item // for Polymer binding
+        }
+      });
+      this.dispatchEvent(event);
+    }
+
+    /**
+     * Select the first item in the list.
+     */
+    selectFirst() {
+      if (super.selectFirst) { super.selectFirst(); }
+      return selectIndex(this, 0);
+    }
+
+    /**
+     * True if the list should always have a selection (if it has items).
+     *
+     * @type {boolean}
+     */
+    get selectionRequired() {
+      return this._selectionRequired;
+    }
+    set selectionRequired(selectionRequired) {
+      if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
+      this._selectionRequired = selectionRequired;
+      ensureSelection(this);
+    }
+
+    /**
+     * Select the last item in the list.
+     */
+    selectLast() {
+      if (super.selectLast) { super.selectLast(); }
+      return selectIndex(this, this.items.length - 1);
+    }
+
+    /**
+     * Select the next item in the list.
+     */
+    selectNext() {
+      if (super.selectNext) { super.selectNext(); }
+      return selectIndex(this, this.selectedIndex + 1);
+    }
+
+    /**
+     * Select the previous item in the list.
+     */
+    selectPrevious() {
+      if (super.selectPrevious) { super.selectPrevious(); }
+      return selectIndex(this, this.selectedIndex - 1);
+    }
+
+    /**
+     * Fires when the selectedItem property changes.
+     *
+     * @event selected-item-changed
+     * @param {HTMLElement} detail.selectedItem The new selected item.
+     * @param {HTMLElement} detail.previousItem The previously selected item.
+     */
+
+    /**
+     * Fires when the selectedIndex property changes.
+     *
+     * @event selected-item-changed
+     * @param {number} detail.selectedIndex The new selected index.
+     */
+
   }
 
-  /**
-   * Select the first item in the list.
-   *
-   * @method selectFirst
-   */
-  selectFirst() {
-    if (super.selectFirst) { super.selectFirst(); }
-    return selectIndex(this, 0);
-  }
-
-  /**
-   * True if the list should always have a selection (if it has items).
-   *
-   * @property selectionRequired
-   * @type Boolean
-   */
-  get selectionRequired() {
-    return this._selectionRequired;
-  }
-  set selectionRequired(selectionRequired) {
-    if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
-    this._selectionRequired = selectionRequired;
-    ensureSelection(this);
-  }
-
-  /**
-   * Select the last item in the list.
-   *
-   * @method selectLast
-   */
-  selectLast() {
-    if (super.selectLast) { super.selectLast(); }
-    return selectIndex(this, this.items.length - 1);
-  }
-
-  /**
-   * Select the next item in the list.
-   *
-   * @method selectNext
-   */
-  selectNext() {
-    if (super.selectNext) { super.selectNext(); }
-    return selectIndex(this, this.selectedIndex + 1);
-  }
-
-  /**
-   * Select the previous item in the list.
-   *
-   * @method selectPrevious
-   */
-  selectPrevious() {
-    if (super.selectPrevious) { super.selectPrevious(); }
-    return selectIndex(this, this.selectedIndex - 1);
-  }
-
+  return ItemsSelection;
 };
 
 

@@ -1,7 +1,15 @@
-<a name="microtask
+<a name="microtask"></a>
+## microtask(callback)
+Add a callback to the microtask queue.
 
-Adds a function to the microtask queue."></a>
-## microtask
+This uses a MutationObserver so that it works on IE 11.
 
-Adds a function to the microtask queue.()
+NOTE: IE 11 may actually use timeout timing with MutationObservers. This
+needs more investigation.
+
 **Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| callback | <code>function</code> | 
+
