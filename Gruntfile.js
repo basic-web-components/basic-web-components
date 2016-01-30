@@ -162,6 +162,7 @@ module.exports = function(grunt) {
       all: [
         'packages/**/*.js',
         '!packages/**/dist/*',
+        '!packages/**/lib/*',
         'test/**/*.js'
       ],
       options: {
