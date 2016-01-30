@@ -1,7 +1,7 @@
 <a name="ListBox"></a>
 ## ListBox
-A single-selection list box that supports selection highlighting
-(using the system highlight color) and keyboard navigation
+A single-selection list box that supports selection highlighting (using the
+system highlight color) and keyboard navigation.
 
 [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-list-box/)
 
@@ -24,13 +24,13 @@ The keyboard interaction model generally follows that of Microsoft Windows'
 list boxes instead of those in OS X:
 
 * The Page Up/Down and Home/End keys actually move the selection, rather than
-  just scrolling the list. The former behavior seems more generally useful for
-  keyboard users.
+  just scrolling the list. The former behavior seems more generally useful
+  for keyboard users.
 
 * Pressing Page Up/Down will move the selection to the topmost/bottommost
-  visible item if the selection is not already there. Thereafter, the key will
-  move the selection up/down by a page, and (per the above point) make the
-  selected item visible.
+  visible item if the selection is not already there. Thereafter, the key
+  will move the selection up/down by a page, and (per the above point) make
+  the selected item visible.
 
 Programmatically selecting an item (by setting the selected property) scrolls
 the item into view.
@@ -39,21 +39,15 @@ The user can also select an item by typing the beginning of an item's text.
 
 **Kind**: global class  
 **Mixes**: <code>DistributedChildrenAsContent</code>, <code>ClickSelection</code>, <code>TargetInCollective</code>, <code>ContentAsItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>SelectionAriaActive</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>KeyboardPagedSelection</code>, <code>KeyboardPrefixSelection</code>, <code>SelectionHighlight</code>, <code>SelectionInView</code>  
-<a name="value"></a>
-## value : <code>String</code>
+<a name="ListBox+value"></a>
+### listBox.value : <code>string</code>
 The text content of the selected item.
 
 Setting this value to a string will attempt to select the first list item
 whose text content match that string. Setting this to a string not matching
 any list item will result in no selection.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| value | 
-
+**Kind**: instance property of <code>[ListBox](#ListBox)</code>  
 <a name="event_value-changed"></a>
 ## "value-changed"
 Fires when the list's value property changes.

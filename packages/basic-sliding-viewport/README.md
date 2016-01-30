@@ -1,7 +1,7 @@
 <a name="SlidingViewport"></a>
 ## SlidingViewport
-Presents list items in a viewport such that only a single item is
-visible at a time
+Presents list items in a viewport such that only a single item is visible at
+a time.
 
 Navigating between items will be represented with a horizontal visual
 sliding effect.
@@ -12,8 +12,8 @@ component.
 This component currently requires that you explicitly apply a size to it.
 
 **Kind**: global class  
-<a name="position"></a>
-## position : <code>Number</code>
+<a name="SlidingViewport+position"></a>
+### slidingViewport.position : <code>number</code>
 The fractional position of the element's moving surface while it is being
 moved (dragged/scrolled/etc.).
 
@@ -22,10 +22,4 @@ positive, the surface is being moved to the left; if negative, the surface
 is being moved to the right. E.g., a value of 0.5 indicates the surface has
 moved half the element's width to the left.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| position | 
-
+**Kind**: instance property of <code>[SlidingViewport](#SlidingViewport)</code>  

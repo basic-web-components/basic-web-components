@@ -1,6 +1,10 @@
+import ElementBase from '../../basic-element-base/src/ElementBase';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+
+
 /**
- * @class SpreadItems
- * @classdesc Spreads out a set of items horizontally so they take equal space
+ * Spreads out a set of items horizontally so they take equal space.
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-spread-items/)
  *
@@ -12,13 +16,7 @@
  *
  * @mixes DistributedChildrenAsContent
  */
-
-
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
-
-export default class SpreadItems extends ElementBase.compose(
+class SpreadItems extends ElementBase.compose(
   DistributedChildrenAsContent,
   ObserveContentChanges
 ) {
@@ -81,3 +79,4 @@ export default class SpreadItems extends ElementBase.compose(
 
 
 document.registerElement('basic-spread-items', SpreadItems);
+export default SpreadItems;

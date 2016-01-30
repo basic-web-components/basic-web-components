@@ -1,7 +1,24 @@
+import ElementBase from '../../basic-element-base/src/ElementBase';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
+import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
+import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
+import Generic from '../../basic-component-mixins/src/Generic';
+import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
+import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPrefixSelection';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
+import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
+import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
+import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
+
+
 /**
- * @class ListBox
- * @classdesc A single-selection list box that supports selection highlighting
- * (using the system highlight color) and keyboard navigation
+ * A single-selection list box that supports selection highlighting (using the
+ * system highlight color) and keyboard navigation.
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-list-box/)
  *
@@ -24,13 +41,13 @@
  * list boxes instead of those in OS X:
  *
  * * The Page Up/Down and Home/End keys actually move the selection, rather than
- *   just scrolling the list. The former behavior seems more generally useful for
- *   keyboard users.
+ *   just scrolling the list. The former behavior seems more generally useful
+ *   for keyboard users.
  *
  * * Pressing Page Up/Down will move the selection to the topmost/bottommost
- *   visible item if the selection is not already there. Thereafter, the key will
- *   move the selection up/down by a page, and (per the above point) make the
- *   selected item visible.
+ *   visible item if the selection is not already there. Thereafter, the key
+ *   will move the selection up/down by a page, and (per the above point) make
+ *   the selected item visible.
  *
  * Programmatically selecting an item (by setting the selected property) scrolls
  * the item into view.
@@ -52,27 +69,7 @@
  * @mixes SelectionHighlight
  * @mixes SelectionInView
  */
-
-
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
-import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
-import Generic from '../../basic-component-mixins/src/Generic';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
-import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
-import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPrefixSelection';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
-import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
-import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-
-
-export default class ListBox extends ElementBase.compose(
+class ListBox extends ElementBase.compose(
   DistributedChildrenAsContent,
   ClickSelection,
   ContentAsItems,
@@ -146,8 +143,7 @@ export default class ListBox extends ElementBase.compose(
    * whose text content match that string. Setting this to a string not matching
    * any list item will result in no selection.
    *
-   * @property value
-   * @type String
+   * @type {string}
    */
   get value() {
     return this.selectedItem == null || this.selectedItem.textContent == null ?
@@ -185,3 +181,4 @@ export default class ListBox extends ElementBase.compose(
 
 
 document.registerElement('basic-list-box', ListBox);
+export default ListBox;

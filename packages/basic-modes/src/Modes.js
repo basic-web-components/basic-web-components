@@ -1,14 +1,3 @@
-/**
- * @class Modes
- * @classdesc Shows exactly one child element at a time
- *
- * This can be useful, for example, if a given UI element has multiple modes
- * that present substantially different elements.
- *
- * This component doesn't provide any UI for changing which mode is shown.
- */
-
-
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
@@ -27,7 +16,15 @@ let base = ElementBase.compose(
 );
 
 
-export default class Modes extends base {
+/**
+ * Shows exactly one child element at a time.
+ *
+ * This can be useful, for example, if a given UI element has multiple modes
+ * that present substantially different elements.
+ *
+ * This component doesn't provide any UI for changing which mode is shown.
+ */
+class Modes extends base {
 
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
@@ -51,3 +48,4 @@ export default class Modes extends base {
 
 
 document.registerElement('basic-modes', Modes);
+export default Modes;

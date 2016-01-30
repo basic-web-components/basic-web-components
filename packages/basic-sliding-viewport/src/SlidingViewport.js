@@ -1,7 +1,11 @@
+import ElementBase from '../../basic-element-base/src/ElementBase';
+import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
+
+let base = ElementBase;
+
 /**
- * @class SlidingViewport
- * @classdesc Presents list items in a viewport such that only a single item is
- * visible at a time
+ * Presents list items in a viewport such that only a single item is visible at
+ * a time.
  *
  * Navigating between items will be represented with a horizontal visual
  * sliding effect.
@@ -11,14 +15,7 @@
  *
  * This component currently requires that you explicitly apply a size to it.
  */
-
-
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
-
-let base = ElementBase;
-
-export default class SlidingViewport extends base {
+class SlidingViewport extends base {
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
@@ -53,8 +50,7 @@ export default class SlidingViewport extends base {
    * is being moved to the right. E.g., a value of 0.5 indicates the surface has
    * moved half the element's width to the left.
    *
-   * @property position
-   * @type Number
+   * @type {number}
    */
   get position() {
     return this._position;
@@ -187,3 +183,4 @@ function damping(x) {
 
 
 document.registerElement('basic-sliding-viewport', SlidingViewport);
+export default SlidingViewport;

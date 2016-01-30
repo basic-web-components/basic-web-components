@@ -1,7 +1,7 @@
 <a name="ArrowSelection"></a>
 ## ArrowSelection
-Component which adds prominent left and right arrow buttons to a
-wrapped child such as a carousel
+Component which adds prominent left and right arrow buttons to a wrapped
+child such as a carousel.
 
 You can see a [live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithArrows.html)
 of this component applied to a carousel.

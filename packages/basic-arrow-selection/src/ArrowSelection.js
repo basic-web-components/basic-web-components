@@ -1,7 +1,26 @@
+import ElementBase from '../../basic-element-base/src/ElementBase';
+import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
+import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
+
+
+let base = ElementBase.compose(
+  ContentFirstChildTarget,
+  DistributedChildrenAsContent,
+  ItemsSelection,
+  Keyboard,
+  ObserveContentChanges,
+  TargetInCollective,
+  TargetSelection
+);
+
 /**
- * @class ArrowSelection
- * @classdesc Component which adds prominent left and right arrow buttons to a
- * wrapped child such as a carousel
+ * Component which adds prominent left and right arrow buttons to a wrapped
+ * child such as a carousel.
  *
  * You can see a [live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithArrows.html)
  * of this component applied to a carousel.
@@ -28,29 +47,7 @@
  * @mixes Keyboard
  * @mixes TargetSelection
  */
-
-
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
-
-
-let base = ElementBase.compose(
-  ContentFirstChildTarget,
-  DistributedChildrenAsContent,
-  ItemsSelection,
-  Keyboard,
-  ObserveContentChanges,
-  TargetInCollective,
-  TargetSelection
-);
-
-export default class ArrowSelection extends base {
+class ArrowSelection extends base {
 
   get canSelectNext() {
     return super.canSelectNext;
@@ -285,3 +282,4 @@ function showArrows(element) {
 
 
 document.registerElement('basic-arrow-selection', ArrowSelection);
+export default ArrowSelection;

@@ -1,6 +1,6 @@
 <a name="SpreadItems"></a>
 ## SpreadItems
-Spreads out a set of items horizontally so they take equal space
+Spreads out a set of items horizontally so they take equal space.
 
 [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-spread-items/)
 

@@ -1,7 +1,23 @@
+import ElementBase from '../../basic-element-base/src/ElementBase';
+import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
+import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
+
+
+let base = ElementBase.compose(
+  ContentFirstChildTarget,
+  DistributedChildrenAsContent,
+  Keyboard,
+  ObserveContentChanges,
+  TargetInCollective,
+  TargetSelection
+);
+
 /**
- * @class PageDots
- * @classdesc Presents a set of small dots to show list item count and select
- * list items
+ * Presents a set of small dots to show list item count and select list items.
  *
  * You can see a [live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithDots.html)
  * of this component applied to a carousel.
@@ -26,27 +42,7 @@
  * @mixes Keyboard
  * @mixes TargetSelection
  */
-
-
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
-
-
-let base = ElementBase.compose(
-  ContentFirstChildTarget,
-  DistributedChildrenAsContent,
-  Keyboard,
-  ObserveContentChanges,
-  TargetInCollective,
-  TargetSelection
-);
-
-export default class PageDots extends base {
+class PageDots extends base {
 
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
@@ -185,3 +181,4 @@ function createDots(element) {
 
 
 document.registerElement('basic-page-dots', PageDots);
+export default PageDots;

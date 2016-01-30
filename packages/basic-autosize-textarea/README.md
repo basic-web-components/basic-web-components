@@ -1,6 +1,6 @@
 <a name="AutosizeTextarea"></a>
 ## AutosizeTextarea
-A text area that makes itself big enough to show its content
+A text area that makes itself big enough to show its content.
 
 [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-autosize-textarea/)
 
@@ -14,22 +14,26 @@ which in turn will vertically stretch the text area to match.
 
 **Kind**: global class  
 **Mixes**: <code>Generic</code>, <code>DistributedChildrenAsContent</code>  
-<a name="ariaLabel"></a>
-## ariaLabel : <code>String</code>
+
+* [AutosizeTextarea](#AutosizeTextarea)
+    * [.ariaLabel](#AutosizeTextarea+ariaLabel) : <code>string</code>
+    * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>
+    * [.placeholder](#AutosizeTextarea+placeholder) : <code>string</code>
+    * [.selectionEnd](#AutosizeTextarea+selectionEnd) : <code>number</code>
+    * [.selectionStart](#AutosizeTextarea+selectionStart) : <code>number</code>
+    * [.value](#AutosizeTextarea+value) : <code>string</code>
+    * [.autoSize()](#AutosizeTextarea+autoSize)
+
+<a name="AutosizeTextarea+ariaLabel"></a>
+### autosizeTextarea.ariaLabel : <code>string</code>
 A description for the user of the element's purpose on the page. Setting
 this applies the label to the inner textarea, ensuring that screen readers
 and other assistive technologies will provide a meaningful description to
 the user.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| ariaLabel | 
-
-<a name="minimumRows"></a>
-## minimumRows : <code>Number</code>
+**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+<a name="AutosizeTextarea+minimumRows"></a>
+### autosizeTextarea.minimumRows : <code>number</code>
 Determines the minimum number of rows shown. This is similar to the rows
 attribute on a standard textarea, but because this element can grow, is
 expressed as a minimum rather than a fixed number.
@@ -48,69 +52,39 @@ the text box will grow when they type. By setting this to a value like,
 say, 10 rows, you can signal that you're fully expecting them to enter more
 text.
 
-**Kind**: global variable  
+**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
 **Default**: <code>1</code>  
-**Properties**
-
-| Name |
-| --- |
-| minimumRows | 
-
-<a name="placeholder"></a>
-## placeholder : <code>String</code>
+<a name="AutosizeTextarea+placeholder"></a>
+### autosizeTextarea.placeholder : <code>string</code>
 A prompt shown when the field is empty to indicate what the user should
 enter.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| placeholder | 
-
-<a name="selectionEnd"></a>
-## selectionEnd : <code>Number</code>
+**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+<a name="AutosizeTextarea+selectionEnd"></a>
+### autosizeTextarea.selectionEnd : <code>number</code>
 The position of the end of the selection, if a selection exists.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| selectionEnd | 
-
-<a name="selectionStart"></a>
-## selectionStart : <code>Number</code>
+**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+<a name="AutosizeTextarea+selectionStart"></a>
+### autosizeTextarea.selectionStart : <code>number</code>
 The position of the start of the selection, if a selection exists.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| selectionStart | 
-
-<a name="value"></a>
-## value : <code>string</code>
+**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+<a name="AutosizeTextarea+value"></a>
+### autosizeTextarea.value : <code>string</code>
 The text currently shown in the textarea.
 
 Note that the text shown in the textarea can also be updated by changing
 the element's innerHTML/textContent. However, if the value property is
 explicitly set, that will override the innerHTML/textContent.
 
-**Kind**: global variable  
-**Properties**
-
-| Name |
-| --- |
-| value | 
-
-<a name="autoSize"></a>
-## autoSize()
+**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+<a name="AutosizeTextarea+autoSize"></a>
+### autosizeTextarea.autoSize()
 Resize the element such that the textarea can exactly contain its content.
 By default, this method is invoked whenever the text content changes.
 
-**Kind**: global function  
+**Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
 <a name="event_change"></a>
 ## "change"
 Fires when the user types in the textarea.

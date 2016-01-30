@@ -1,7 +1,6 @@
 <a name="PageDots"></a>
 ## PageDots
-Presents a set of small dots to show list item count and select
-list items
+Presents a set of small dots to show list item count and select list items.
 
 You can see a [live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithDots.html)
 of this component applied to a carousel.

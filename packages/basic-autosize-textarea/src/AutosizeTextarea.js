@@ -1,6 +1,11 @@
+import ElementBase from '../../basic-element-base/src/ElementBase';
+import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import Generic from '../../basic-component-mixins/src/Generic';
+import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+
+
 /**
- * @class AutosizeTextarea
- * @classdesc A text area that makes itself big enough to show its content
+ * A text area that makes itself big enough to show its content.
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-autosize-textarea/)
  *
@@ -15,15 +20,7 @@
  * @mixes Generic
  * @mixes DistributedChildrenAsContent
  */
-
-
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import Generic from '../../basic-component-mixins/src/Generic';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
-
-
-export default class AutosizeTextarea extends ElementBase.compose(
+class AutosizeTextarea extends ElementBase.compose(
   DistributedChildrenAsContent,
   Generic,
   ObserveContentChanges
@@ -35,8 +32,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
    * and other assistive technologies will provide a meaningful description to
    * the user.
    *
-   * @property ariaLabel
-   * @type String
+   * @type {string}
    */
   get ariaLabel() {
     return this.$.textBox.getAttribute('aria-label');
@@ -47,12 +43,12 @@ export default class AutosizeTextarea extends ElementBase.compose(
   }
 
   // Normally the value of the element is set and read through its value
-  // attribute. As a convenience, and to mirror standard textarea behavior,
-  // it is possible to set the content of the textarea by including text between
-  // the opening and closing tag. This works only in one direction: setting
-  // the tag content updates the textarea, but user edits in the textarea are
-  // not reflected in the tag content. We capture the value of the initial text content
-  // in order to set the value property during the create event.
+  // attribute. As a convenience, and to mirror standard textarea behavior, it
+  // is possible to set the content of the textarea by including text between
+  // the opening and closing tag. This works only in one direction: setting the
+  // tag content updates the textarea, but user edits in the textarea are not
+  // reflected in the tag content. We capture the value of the initial text
+  // content in order to set the value property during the create event.
   // TODO: Normalize indentation in the text content. Users will often want to
   // indent the markup so that it looks pretty. We should detect the indentation
   // level and remove any indentation whitespace
@@ -67,8 +63,6 @@ export default class AutosizeTextarea extends ElementBase.compose(
   /**
    * Resize the element such that the textarea can exactly contain its content.
    * By default, this method is invoked whenever the text content changes.
-   *
-   * @method autoSize
    */
   autoSize() {
     // If we had speculatively added an extra line because of an Enter keypress,
@@ -134,8 +128,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
    * say, 10 rows, you can signal that you're fully expecting them to enter more
    * text.
    *
-   * @property minimumRows
-   * @type Number
+   * @type {number}
    * @default 1
    */
   get minimumRows() {
@@ -152,8 +145,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
    * A prompt shown when the field is empty to indicate what the user should
    * enter.
    *
-   * @property placeholder
-   * @type String
+   * @type {string}
    */
   get placeholder() {
     return this.$.textBox.getAttribute('placeholder');
@@ -166,8 +158,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
   /**
    * The position of the end of the selection, if a selection exists.
    *
-   * @property selectionEnd
-   * @type Number
+   * @type {number}
    */
   get selectionEnd() {
     return this.$.textBox.selectionEnd;
@@ -179,8 +170,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
   /**
    * The position of the start of the selection, if a selection exists.
    *
-   * @property selectionStart
-   * @type Number
+   * @type {number}
    */
   get selectionStart() {
     return this.$.textBox.selectionStart;
@@ -270,8 +260,7 @@ export default class AutosizeTextarea extends ElementBase.compose(
    * the element's innerHTML/textContent. However, if the value property is
    * explicitly set, that will override the innerHTML/textContent.
    *
-   * @property value
-   * @type string
+   * @type {string}
    */
   get value() {
     return this.$.textBox.value;
@@ -410,3 +399,4 @@ function valueChanged(element) {
 
 
 document.registerElement('basic-autosize-textarea', AutosizeTextarea);
+export default AutosizeTextarea;
