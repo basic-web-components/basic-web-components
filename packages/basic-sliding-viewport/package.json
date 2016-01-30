@@ -1,6 +1,6 @@
 {
   "name": "basic-sliding-viewport",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Presents list items in a viewport such that only a single item is visible at a time. Navigating between items will be represented with a horizontal visual sliding effect.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "web-components"
   ],
   "dependencies": {
-    "basic-element-base": "^0.7.0"
+    "basic-element-base": "^0.7.1"
   },
   "browserify": {
     "transform": [
