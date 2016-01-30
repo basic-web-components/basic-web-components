@@ -223,7 +223,7 @@ You can also use Composable mixin to create the class:
     // greet-element.js
 
     var GreetElement = Basic.Composable(HTMLElement).compose(
-      ShadowTemplate,
+      Basic.ShadowTemplate,
       {
         template: 'Hello, <slot></slot>.'
       }
