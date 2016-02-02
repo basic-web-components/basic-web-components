@@ -280,8 +280,9 @@ plan/idea/questions by project member
 * Content with banner(s).
   Such as toolbar (on top) or status bar (on the bottom).
 * Content with sidebar(s) on the left and/or right side.
-* Date combo box.
-  Lets the user type a date or choose one from a dropdown calendar.
+* Date combo box / date picker.
+  On desktop, lets the user type a date or choose one from a dropdown calendar.
+  On mobile, opens a half-screen or full-screen date picker.
 * Date range calendar.
   Lets the user select a date range, typically in the near future.
 * Date text box.
@@ -444,8 +445,9 @@ plan/idea/questions by project member
 * Time ago.
   Shows the amount of time elapsed since a given reference date/time using
   culturally-relevant language.
-* Time combo box.
-  Lets the user type a time or choose one from a dropdown time picker.
+* Time combo box / time picker
+  On desktop, lets the user type a time or choose one from a dropdown time
+  picker. On mobile, opens a half-screen or full-screen time picker.
 * Timeline.
   Positions items on a horizontal time axis.
 * Toggle button.
