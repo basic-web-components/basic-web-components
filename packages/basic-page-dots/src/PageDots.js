@@ -112,6 +112,7 @@ class PageDots extends base {
         border-radius: 7px;
         box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
         box-sizing: border-box;
+        cursor: pointer;
         height: 8px;
         margin: 7px 5px;
         padding: 0;
