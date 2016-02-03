@@ -226,6 +226,13 @@ the collection? If one of these interests you, feel free to run your
 plan/idea/questions by project member
 [Jan Miksovsky](https://github.com/JanMiksovsky).
 
+We welcome new ideas. Please keep in mind that our goal is to provide great
+implementations of the patterns people are already doing — the basic elements of
+user interface design — not to design or promote user interface innovations. If
+someone invents a great new user interface solution, we probably won't include
+an implementation of that idea right away until a large number of
+sites/applications have adopted it (or are interested in adopting it).
+
 * Accordion.
   A list that can have a single item or multiple items expanded to show more
   detail.
