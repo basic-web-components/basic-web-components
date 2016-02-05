@@ -11,7 +11,8 @@
     "web-components"
   ],
   "dependencies": {
-    "basic-element-base": "^0.7.1"
+    "basic-element-base": "^0.7.1",
+    "basic-spread-items": "^0.7.1"
   },
   "browserify": {
     "transform": [

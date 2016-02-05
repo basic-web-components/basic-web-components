@@ -12,7 +12,8 @@
   ],
   "dependencies": {
     "basic-element-base": "^0.7.1",
-    "basic-component-mixins": "^0.7.1"
+    "basic-component-mixins": "^0.7.1",
+    "basic-sliding-viewport": "^0.7.1"
   },
   "browserify": {
     "transform": [
