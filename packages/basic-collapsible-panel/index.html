@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>basic-collapsible-panel</title>
+
+  <script src="../basic-component-demos/lib/webcomponents.js"></script>
+  <script src="./dist/basic-collapsible-panel.js"></script>
+  <link rel="stylesheet" href="../basic-component-demos/demos.css">
+
+  <script>
+  window.addEventListener('load', function() {
+    var toggleButton = document.querySelector('#toggleButton');
+    var collapsiblePanel = document.querySelector('#collapsiblePanel');
+    toggleButton.addEventListener('click', function() {
+      collapsiblePanel.toggle();
+    });
+  });
+  </script>
+
+</head>
+
+<body>
+  <button id="toggleButton">Toggle</button>
+  <basic-collapsible-panel id="collapsiblePanel">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget sem
+    nulla. Morbi sodales est vitae urna accumsan maximus. Nunc cursus vel justo
+    ut dignissim. Nulla sollicitudin vestibulum rhoncus. Nunc ornare egestas
+    ligula, et facilisis est rhoncus sit amet. Fusce sed enim mi. Duis aliquam
+    diam nec magna cursus, in pharetra ligula maximus. Curabitur a facilisis
+    nisl, in laoreet lorem. Etiam ut dolor dapibus est porttitor hendrerit.
+    Pellentesque a libero a magna maximus laoreet. Ut sed consectetur ipsum.
+    Maecenas felis nibh, hendrerit ac lorem porta, lobortis sagittis massa.
+    Mauris sed cursus diam, quis lacinia sem. Etiam id luctus orci, nec luctus
+    eros. Aliquam risus felis, porta et porttitor quis, blandit nec augue. Sed
+    tristique semper velit, ac aliquet lacus venenatis non. Aliquam at
+    vestibulum lorem. Maecenas non orci a libero imperdiet volutpat malesuada
+    malesuada libero. Phasellus vitae congue leo. Maecenas cursus rhoncus
+    efficitur. Cras porta blandit est ac interdum. Mauris porttitor tortor quis
+    nisl porttitor, sit amet dapibus massa scelerisque. Nullam at ex vehicula,
+    aliquam enim eu, elementum purus.
+  </basic-collapsible-panel>
+</body>
+
+</html>

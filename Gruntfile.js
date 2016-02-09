@@ -17,6 +17,7 @@ var allPackages = [
   'basic-arrow-selection',
   'basic-autosize-textarea',
   'basic-carousel',
+  'basic-collapsible-panel',
   'basic-component-mixins',
   'basic-element-base',
   'basic-list-box',
