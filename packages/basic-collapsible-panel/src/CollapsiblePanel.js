@@ -24,6 +24,11 @@ class CollapsiblePanel extends Collapsible(ElementBase) {
         // the element will reflow correctly, e.g., on window resize.
         this.$.overflow.style.height = '';
       }
+      // Ensure the animation only plays once. For some reason, Safari will show
+      // the animation twice without this line, even though the render function
+      // explicitly removes this class when it sets the old height. Neither
+      // Chrome nor Firefox seem to need this line.
+      this.classList.remove('showTransition');
     });
   }
 
