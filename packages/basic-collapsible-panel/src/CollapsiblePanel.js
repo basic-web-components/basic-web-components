@@ -63,10 +63,6 @@ class CollapsiblePanel extends Collapsible(ElementBase) {
       :host(.showTransition) #overflow {
         transition: height 0.2s;
       }
-
-      ::content > *:first-child {
-        margin-top: 0;
-      }
       </style>
 
       <div id="overflow">
