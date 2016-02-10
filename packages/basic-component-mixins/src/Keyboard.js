@@ -37,16 +37,19 @@ export default (base) => {
    * component a tab stop if it isn't already, by setting `tabIndex` to 0. This
    * has the effect of adding the component to the tab order in document order.
    *
-   * Finally, this mixin is designed to work with Collective class via a mixin
-   * like TargetInCollective. This allows a set of related component instances
-   * to cooperatively handle the keyboard. See the Collective class for details.
-   *
-   * NOTE: For the time being, this mixin should be used with
-   * TargetInCollective. The intention is to allow this mixin to be used without
-   * requiring collective keyboard support, so that this mixin can be used on
-   * its own.
+   * Finally, this mixin is designed to work with the optional Collective class
+   * via a mixin like TargetInCollective. This allows a set of related component
+   * instances to cooperatively handle the keyboard. See the Collective class
+   * for details.
    */
   class Keyboard extends base {
+
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
+
+      // Assume this component is going to handle the keyboard on its own.
+      startListeningToKeydown(this);
+    }
 
     /**
      * Handle the indicated keyboard event.
@@ -97,18 +100,28 @@ export default (base) => {
 };
 
 
+// Fire the keydown() method on the element or (if it belongs to a collective)
+// all elements in the collective.
+//
+// Note: the value of 'this' is bound to the element which received the event.
 function keydown(event) {
 
-  // Give collective elements a shot at the event, working from innermost to
-  // outermost (this element).
-  let handled;
-  let elements = this.collective.elements;
-  for (let i = elements.length - 1; i >= 0; i--) {
-    let element = elements[i];
-    handled = element.keydown && element.keydown(event);
-    if (handled) {
-      break;
+  let handled = false;
+
+  if (this.collective) {
+    // Give collective elements a shot at the event, working from innermost to
+    // outermost (this element).
+    let elements = this.collective.elements;
+    for (let i = elements.length - 1; i >= 0; i--) {
+      let element = elements[i];
+      handled = element.keydown && element.keydown(event);
+      if (handled) {
+        break;
+      }
     }
+  } else {
+    // Component is handling the keyboard on its own.
+    handled = this.keydown(event);
   }
 
   if (handled) {
