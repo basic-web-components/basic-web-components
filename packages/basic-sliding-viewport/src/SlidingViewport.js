@@ -85,7 +85,12 @@ class SlidingViewport extends base {
 
   showTransition(show) {
     if (super.showTransition) { super.showTransition(show); }
-    this.classList.toggle('showTransition', show);
+    // Would like to use classList.toggle() here, but IE 11 doesn't have it.
+    if (show) {
+      this.classList.add('showTransition');
+    } else {
+      this.classList.remove('showTransition');
+    }
   }
 
   get template() {

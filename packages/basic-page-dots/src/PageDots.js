@@ -53,7 +53,12 @@ class PageDots extends base {
     if (dots && dots.length > index) {
       let dot = this.dots[index];
       if (dot) {
-        dot.classList.toggle('selected', selected);
+        // Would like to use classList.toggle() here, but IE 11 doesn't have it.
+        if (selected) {
+          dot.classList.add('selected');
+        } else {
+          dot.classList.remove('selected');
+        }
       }
     }
   }
@@ -83,7 +88,12 @@ class PageDots extends base {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
     let selectedIndex = this.selectedIndex;
     this.dots.forEach((dot, i) => {
-      dot.classList.toggle('selected', i === selectedIndex);
+      // Would like to use classList.toggle() here, but IE 11 doesn't have it.
+      if (i === selectedIndex) {
+        dot.classList.add('selected');
+      } else {
+        dot.classList.remove('selected');
+      }
     });
   }
 

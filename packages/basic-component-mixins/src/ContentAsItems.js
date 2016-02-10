@@ -33,7 +33,12 @@ export default (base) => {
      */
     applySelection(item, selected) {
       if (super.applySelection) { super.applySelection(item, selected); }
-      item.classList.toggle('selected', selected);
+      // Would like to use classList.toggle() here, but IE 11 doesn't have it.
+      if (selected) {
+        item.classList.add('selected');
+      } else {
+        item.classList.remove('selected');
+      }
     }
 
     contentChanged() {

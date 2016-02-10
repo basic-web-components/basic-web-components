@@ -70,7 +70,12 @@ export default (base) => {
      *        false if it's being expanded.
      */
     render(collapsing) {
-      this.classList.toggle('basic-collapsed', collapsing);
+      // Would like to use classList.toggle() here, but IE 11 doesn't have it.
+      if (collapsing) {
+        this.classList.add('basic-collapsed');
+      } else {
+        this.classList.remove('basic-collapsed');
+      }
       this.setAttribute('aria-expanded', !collapsing);
     }
 
