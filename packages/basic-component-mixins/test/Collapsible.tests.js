@@ -45,14 +45,18 @@ describe("Collapsible", () => {
     assert(!element.collapsed);
   });
 
-  it("renders state as a CSS class and ARIA attribute", function() {
+  it("renders state as a CSS class and ARIA attribute", done => {
     let element = document.createElement('collapsible-test');
     container.appendChild(element);
-    assert(!element.classList.contains('basic-collapsed'));
-    assert.equal(element.getAttribute('aria-expanded'), 'true');
-    element.collapse();
-    assert(element.classList.contains('basic-collapsed'));
-    assert.equal(element.getAttribute('aria-expanded'), 'false');
+    // Timeout gives polyfill time to upgrade element.
+    setTimeout(() => {
+      assert(!element.classList.contains('basic-collapsed'));
+      assert.equal(element.getAttribute('aria-expanded'), 'true');
+      element.collapse();
+      assert(element.classList.contains('basic-collapsed'));
+      assert.equal(element.getAttribute('aria-expanded'), 'false');
+      done();
+    });
   });
 
 });

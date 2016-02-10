@@ -33,6 +33,8 @@ describe("Keyboard mixin", () => {
     };
     container.appendChild(fixture);
     var event = new KeyboardEvent('keydown');
+    // HACK: Polyfill fails to wrap the event on its own.
+    event = wrap(event);
     Object.defineProperties(event, {
       key: { value: 'Enter' },
       keyCode: { value: 13 },
