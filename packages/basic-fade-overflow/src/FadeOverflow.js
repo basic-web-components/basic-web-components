@@ -62,6 +62,19 @@ class FadeOverflow extends ElementBase {
     this.fadeColor = findBackgroundColor(this);
   }
 
+  /**
+   * True if the component should show the fade to the background color.
+   *
+   * @type {boolean}
+   * @default true
+   */
+  get showFade() {
+    return this.$.fade.style.display !== 'none';
+  }
+  set showFade(value) {
+    this.$.fade.style.display = value ? '' : 'none';
+  }
+
   get template() {
     return `
       <style>
