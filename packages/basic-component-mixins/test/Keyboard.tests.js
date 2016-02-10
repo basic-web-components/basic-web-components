@@ -32,9 +32,26 @@ describe("Keyboard mixin", () => {
       done();
     };
     container.appendChild(fixture);
-    var event = new KeyboardEvent('keydown');
+    let event;
+    try {
+      event = new window.KeyboardEvent('keydown');
+    } catch (e) {
+      // Stupid IE 11 doesn't support the KeyboardEvent constructor.
+      event = document.createEvent('KeyboardEvent');
+      event.initKeyboardEvent(
+        'keydown',
+        true, // bubbles
+        true, // cancelable
+        window, // view
+        'Enter', // key
+        0, // location
+        '', // modifiers
+        false, // repeat
+        '' // locale
+      );
+    }
     // HACK: Polyfill fails to wrap the event on its own.
-    event = wrap(event);
+    event = window.wrap(event);
     Object.defineProperties(event, {
       key: { value: 'Enter' },
       keyCode: { value: 13 },
