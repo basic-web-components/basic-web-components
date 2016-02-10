@@ -20,6 +20,7 @@ var allPackages = [
   'basic-collapsible-panel',
   'basic-component-mixins',
   'basic-element-base',
+  'basic-fade-overflow',
   'basic-list-box',
   'basic-modes',
   'basic-page-dots',

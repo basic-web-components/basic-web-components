@@ -1,0 +1,23 @@
+{
+  "name": "basic-fade-overflow",
+  "version": "0.7.1",
+  "description": "Fade out content that overflows so the user knows there's more.",
+  "homepage": "https://component.kitchen",
+  "license": "MIT",
+  "repository": "https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-fade-overflow",
+  "keywords": [
+    "basic-web-components",
+    "es6",
+    "web-components"
+  ],
+  "main": "src/FadeOverflow.js",
+  "dependencies": {
+    "basic-element-base": "^0.7.1",
+    "basic-component-mixins": "^0.7.1"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
