@@ -257,6 +257,8 @@ common web component feature:
   camelCase `fooBar` property names.
 * [ClickSelection](docs/ClickSelection.md).
   Translates a click on a child element into a selection.
+* [Collapsible](docs/Collapsible.md).
+  Adds collapse/expand semantics.
 * [Collective](docs/Collective.md).
   Not a mixin itself, this class is used by the CollectiveMember mixin to track
   the components that should be treated as a unit for keyboard purposes.
