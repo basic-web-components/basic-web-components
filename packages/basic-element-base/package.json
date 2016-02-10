@@ -11,6 +11,7 @@
     "mixin",
     "web-components"
   ],
+  "main": "src/ElementBase.js",
   "dependencies": {
     "basic-component-mixins": "^0.7.1"
   },

@@ -10,6 +10,7 @@
     "es6",
     "web-components"
   ],
+  "main": "src/SlidingViewport.js",
   "dependencies": {
     "basic-element-base": "^0.7.1",
     "basic-spread-items": "^0.7.1"

@@ -11,6 +11,7 @@
     "mixin",
     "web-components"
   ],
+  "main": "src/ArrowSelection.js",
   "dependencies": {
     "basic-element-base": "^0.7.1",
     "basic-component-mixins": "^0.7.1"
