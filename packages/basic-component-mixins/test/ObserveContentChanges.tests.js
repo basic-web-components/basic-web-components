@@ -67,24 +67,30 @@ describe("ObserveContentChanges mixin", () => {
 
   it("calls contentChanged when textContent changes", done => {
     let fixture = document.createElement('observe-test');
-    fixture.contentChangedHook = (element) => {
-      assert.equal(fixture.textContent, 'chihuahua');
-      done();
-    };
     container.appendChild(fixture);
-    fixture.textContent = 'chihuahua';
+    // Wait for initial contentChanged call to complete.
+    microtask(() => {
+      fixture.contentChangedHook = (element) => {
+        assert.equal(fixture.textContent, 'chihuahua');
+        done();
+      };
+      fixture.textContent = 'chihuahua';
+    });
   });
 
   it("calls contentChanged when children change", done => {
     let fixture = document.createElement('observe-test');
-    fixture.contentChangedHook = () => {
-      assert.equal(fixture.textContent, 'dingo');
-      done();
-    };
     container.appendChild(fixture);
-    let div = document.createElement('div');
-    div.textContent = 'dingo';
-    fixture.appendChild(div);
+    // Wait for initial contentChanged call to complete.
+    microtask(() => {
+      fixture.contentChangedHook = () => {
+        assert.equal(fixture.textContent, 'dingo');
+        done();
+      };
+      let div = document.createElement('div');
+      div.textContent = 'dingo';
+      fixture.appendChild(div);
+    });
   });
 
   // TODO: Restore support for tracking changes in component host.
@@ -92,19 +98,22 @@ describe("ObserveContentChanges mixin", () => {
     let fixture = document.createElement('observe-reproject-test');
     let contentTest = fixture.shadowRoot.querySelector('observe-test');
     container.appendChild(fixture);
-    fixture.contentChangedHook = function(element) {
-      if (element === contentTest) {
-        assert.equal(element.textContent, 'echidna');
-        done();
-      }
-    };
-    fixture.textContent = 'echidna';
+    // Wait for initial contentChanged call to complete.
+    microtask(() => {
+      fixture.contentChangedHook = function(element) {
+        if (element === contentTest) {
+          assert.equal(element.textContent, 'echidna');
+          done();
+        }
+      };
+      fixture.textContent = 'echidna';
+    });
   });
 
   it("doesn't call contentChanged for changes in the component's shadow tree", done => {
     let fixture = document.createElement('observe-test');
     container.appendChild(fixture);
-    // Wait for initial contentChanged to be invoked.
+    // Wait for initial contentChanged call to complete.
     microtask(() => {
       // Listen for future contentChanged invocations.
       fixture.contentChangedHook = function() {
@@ -128,19 +137,24 @@ describe("ObserveContentChanges mixin", () => {
 
   it("doesn't call contentChanged when node is removed from shadow DOM", done => {
     let fixture = document.createElement('observe-test');
-    fixture.contentChangedHook = function() {
-      assert.equal(fixture.textContent, 'gorilla');
-      done();
-    };
     container.appendChild(fixture);
+    // Wait for initial contentChanged call to complete.
+    microtask(() => {
 
-    // Remove an element from the shadow, which shouldn't trigger contentChanged.
-    let shadowElement = fixture.shadowRoot.querySelector('#static');
-    shadowElement.remove();
+      fixture.contentChangedHook = function() {
+        assert.equal(fixture.textContent, 'gorilla');
+        done();
+      };
 
-    // Now add an element to the light DOM, which we do expect to trigger
-    // contentChanged.
-    fixture.textContent = 'gorilla';
+      // Remove an element from the shadow, which shouldn't trigger contentChanged.
+      let shadowElement = fixture.shadowRoot.querySelector('#static');
+      shadowElement.remove();
+
+      // Now add an element to the light DOM, which we do expect to trigger
+      // contentChanged.
+      fixture.textContent = 'gorilla';
+
+    });
   });
 
   it("*does* call contentChangend if node is removed from light DOM", done => {
@@ -149,17 +163,19 @@ describe("ObserveContentChanges mixin", () => {
     div.textContent = 'div';
     fixture.appendChild(div);
     container.appendChild(fixture);
-    fixture.contentChangedHook = function() {
-      assert.equal(fixture.childNodes.length, 0);
-      done();
-    };
-    // Remove a light DOM child, which should trigger contentChanged.
-    fixture.removeChild(div);
+    // Wait for initial contentChanged call to complete.
+    microtask(() => {
+      fixture.contentChangedHook = function() {
+        assert.equal(fixture.childNodes.length, 0);
+        done();
+      };
+      // Remove a light DOM child, which should trigger contentChanged.
+      fixture.removeChild(div);
+    });
   });
 
   // TODO: Restore ability to treat changes in shadow element attributes (but
   // not component's own attributes) as content changes.
-
   it.skip("calls contentChanged when shadow element attributes change", done => {
     let fixture = document.createElement('observe-test');
     let button = document.createElement('button');
@@ -172,15 +188,18 @@ describe("ObserveContentChanges mixin", () => {
     button.setAttribute('disabled', '');
   });
 
-  it.skip("doesn't call contentChanged when element's own attributes change", done => {
+  it("doesn't call contentChanged when element's own attributes change", done => {
     let fixture = document.createElement('observe-test');
-    fixture.contentChangedHook = function() {
-      // Shouldn't get invoked.
-      done(new Error("The contentChanged handler was invoked, but shouldn't have been."));
-    };
     container.appendChild(fixture);
-    fixture.sampleAttribute = 'hedgehog';
-    setTimeout(done);
+    // Wait for initial contentChanged call to complete.
+    microtask(() => {
+      fixture.contentChangedHook = function() {
+        // Shouldn't get invoked.
+        done(new Error("The contentChanged handler was invoked, but shouldn't have been."));
+      };
+      fixture.sampleAttribute = 'hedgehog';
+      microtask(() => done());
+    });
   });
 
 });
