@@ -1,6 +1,6 @@
 {
   "name": "basic-list-box",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "A single-selection list box that supports selection highlighting (using the system highlight color) and keyboard navigation.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -12,8 +12,8 @@
   ],
   "main": "src/ListBox.js",
   "dependencies": {
-    "basic-element-base": "^0.7.1",
-    "basic-component-mixins": "^0.7.1"
+    "basic-element-base": "^0.7.2",
+    "basic-component-mixins": "^0.7.2"
   },
   "browserify": {
     "transform": [
