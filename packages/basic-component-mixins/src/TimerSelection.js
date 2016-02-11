@@ -85,7 +85,9 @@ function clearTimer(element) {
 }
 
 function setTimer(element) {
-  element._timeout = setTimeout(selectNextWithWrap.bind(this), 2000);
+  element._timeout = setTimeout(() => {
+    selectNextWithWrap(element);
+  }, 2000);
 }
 
 // Select the next item, wrapping to first item if necessary.
