@@ -1,25 +1,25 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import Collapsible from '../../basic-component-mixins/src/Collapsible';
+import OpenClose from '../../basic-component-mixins/src/OpenClose';
 
 
 /**
  * A panel which can be expanded/collapsed with an animated transition.
  *
- * This component combines the Collapsible mixin and a simple CSS height
+ * This component combines the OpenClose mixin and a simple CSS height
  * animation.
  *
  * This component handles only the duties of collapsing and expanding. It does
  * not provide a user interface for the user to trigger the change in state;
  * you must provide that user interface yourself.
  *
- * @mixes Collapsible
+ * @mixes OpenClose
  */
-class CollapsiblePanel extends Collapsible(ElementBase) {
+class CollapsiblePanel extends OpenClose(ElementBase) {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.$.overflow.addEventListener('transitionend', () => {
-      if (!this.collapsed) {
+      if (!this.closed) {
         // Remove the hard-coded height we applied for the transition so that
         // the element will reflow correctly, e.g., on window resize.
         this.$.overflow.style.height = '';
@@ -32,19 +32,19 @@ class CollapsiblePanel extends Collapsible(ElementBase) {
     });
   }
 
-  render(collapsing) {
-    super.render(collapsing);
+  render(closing) {
+    super.render(closing);
 
     let naturalHeight = this.$.container.getBoundingClientRect().height;
     if (naturalHeight === 0) {
       // Most likely haven't had a chance to render yet.
-      this.$.overflow.style.height = collapsing ? 0 : '';
+      this.$.overflow.style.height = closing ? 0 : '';
       return;
     }
 
     // Without animating, set starting height of transition.
     this.classList.remove('showTransition');
-    let oldHeight = collapsing ? naturalHeight : 0;
+    let oldHeight = closing ? naturalHeight : 0;
     this.$.overflow.style.height = oldHeight + 'px';
 
     // Force a relayout so that the starting height is applied.
@@ -53,7 +53,7 @@ class CollapsiblePanel extends Collapsible(ElementBase) {
 
     // Turn animation on, and ending height of transition.
     this.classList.add('showTransition');
-    let newHeight = collapsing ? 0 : naturalHeight;
+    let newHeight = closing ? 0 : naturalHeight;
     this.$.overflow.style.height = newHeight + 'px';
   }
 

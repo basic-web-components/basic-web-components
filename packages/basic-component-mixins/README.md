@@ -257,8 +257,6 @@ common web component feature:
   camelCase `fooBar` property names.
 * [ClickSelection](docs/ClickSelection.md).
   Translates a click on a child element into a selection.
-* [Collapsible](docs/Collapsible.md).
-  Adds collapse/expand semantics.
 * [Collective](docs/Collective.md).
   Not a mixin itself, this class is used by the CollectiveMember mixin to track
   the components that should be treated as a unit for keyboard purposes.
@@ -299,6 +297,8 @@ common web component feature:
 * [ObserveContentChanges](docs/ObserveContentChanges.md).
   Wires up mutation observers to report any changes in a component's content
   (direct children, or nodes distributed to slots).
+* [OpenClose](docs/OpenClose.md).
+  Adds open/close semantics.
 * [SelectionAriaActive](docs/SelectionAriaActive.md).
   Treat the selected item in a list as the active item in ARIA accessibility
   terms.
