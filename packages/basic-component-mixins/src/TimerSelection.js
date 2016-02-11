@@ -48,7 +48,7 @@ export default (base) => {
       if (playing && !this._playing) {
         this.play();
       } else if (!playing && this._playing) {
-          this.pause();
+        this.pause();
       }
     }
 
