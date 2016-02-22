@@ -22,33 +22,62 @@ export default (base) => {
       // inadvertently do work when the user's trying to pinch-zoom for example.
       // TODO: Even better approach than below would be to ignore touches after
       // the first if the user has already begun a swipe.
-      this.addEventListener('touchstart', event => {
-        if (this._multiTouch) {
-          return;
-        } else if (event.touches.length === 1) {
-          touchStart(this, event);
-        } else {
-          this._multiTouch = true;
-        }
-      });
-      this.addEventListener('touchmove', event => {
-        if (!this._multiTouch && event.touches.length === 1) {
-          let handled = touchMove(this, event);
-          if (handled) {
-            event.preventDefault();
+      if (window.PointerEvent) {
+        // Prefer listening to standard pointer events.
+        this.addEventListener('pointerdown', event => {
+          if (isEventForPenOrPrimaryTouch(event)) {
+            touchStart(this, event.clientX, event.clientY);
           }
-        }
-      });
-      this.addEventListener('touchend', event => {
-        if (event.touches.length === 0) {
-          // All touches removed; gesture is complete.
-          if (!this._multiTouch) {
-            // Single-touch swipe has finished.
-            touchEnd(this, event);
+        });
+        this.addEventListener('pointermove', event => {
+          if (isEventForPenOrPrimaryTouch(event)) {
+            let handled = touchMove(this, event.clientX, event.clientY);
+            if (handled) {
+              event.preventDefault();
+            }
           }
-          this._multiTouch = false;
-        }
-      });
+        });
+        this.addEventListener('pointerup', event => {
+          if (isEventForPenOrPrimaryTouch(event)) {
+            touchEnd(this, event.clientX, event.clientY);
+          }
+        });
+      } else {
+        // Pointer events not supported -- listen to older touch events.
+        this.addEventListener('touchstart', event => {
+          if (this._multiTouch) {
+            return;
+          } else if (event.touches.length === 1) {
+            let clientX = event.changedTouches[0].clientX;
+            let clientY = event.changedTouches[0].clientY;
+            touchStart(this, clientX, clientY);
+          } else {
+            this._multiTouch = true;
+          }
+        });
+        this.addEventListener('touchmove', event => {
+          if (!this._multiTouch && event.touches.length === 1) {
+            let clientX = event.changedTouches[0].clientX;
+            let clientY = event.changedTouches[0].clientY;
+            let handled = touchMove(this, clientX, clientY);
+            if (handled) {
+              event.preventDefault();
+            }
+          }
+        });
+        this.addEventListener('touchend', event => {
+          if (event.touches.length === 0) {
+            // All touches removed; gesture is complete.
+            if (!this._multiTouch) {
+              // Single-touch swipe has finished.
+              let clientX = event.changedTouches[0].clientX;
+              let clientY = event.changedTouches[0].clientY;
+              touchEnd(this, clientX, clientY);
+            }
+            this._multiTouch = false;
+          }
+        });
+      }
     }
 
     /**
@@ -106,27 +135,30 @@ export default (base) => {
 };
 
 
-function touchStart(element, event) {
+// Return true if the pointer event is for the pen, or the primary touch point.
+function isEventForPenOrPrimaryTouch(event) {
+  return event.pointerType === 'pen'
+      || (event.pointerType === 'touch' && event.isPrimary);
+}
+
+
+function touchStart(element, clientX, clientY) {
   element.showTransition(false);
-  let x = event.changedTouches[0].clientX;
-  let y = event.changedTouches[0].clientY;
-  element._startX = x;
-  element._previousX = x;
-  element._previousY = y;
+  element._startX = clientX;
+  element._previousX = clientX;
+  element._previousY = clientY;
   element._deltaX = 0;
   element._deltaY = 0;
 }
 
-function touchMove(element, event) {
-  let x = event.changedTouches[0].clientX;
-  let y = event.changedTouches[0].clientY;
-  element._deltaX = x - element._previousX;
-  element._deltaY = y - element._previousY;
-  element._previousX = x;
-  element._previousY = y;
+function touchMove(element, clientX, clientY) {
+  element._deltaX = clientX - element._previousX;
+  element._deltaY = clientY - element._previousY;
+  element._previousX = clientX;
+  element._previousY = clientY;
   if (Math.abs(element._deltaX) > Math.abs(element._deltaY)) {
     // Move was mostly horizontal.
-    trackTo(element, x);
+    trackTo(element, clientX);
     // Indicate that the event was handled. It'd be nicer if we didn't have
     // to do this so that, e.g., a user could be swiping left and right
     // while simultaneously scrolling up and down. (Native touch apps can do
@@ -141,9 +173,8 @@ function touchMove(element, event) {
   }
 }
 
-function touchEnd(element, event) {
+function touchEnd(element, clientX, clientY) {
   element.showTransition(true);
-  let x = event.changedTouches[0].clientX;
   if (element._deltaX >= 20) {
     // Finished going right at high speed.
     // console.log("flick right " + element._deltaX);
@@ -155,7 +186,7 @@ function touchEnd(element, event) {
   } else {
     // Finished at low speed.
     // console.log("slow drag " + element._deltaX);
-    trackTo(element, x);
+    trackTo(element, clientX);
     let position = element.position;
     if (position >= 0.5) {
       element.goRight();
