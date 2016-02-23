@@ -137,8 +137,8 @@ export default (base) => {
 
 // Return true if the pointer event is for the pen, or the primary touch point.
 function isEventForPenOrPrimaryTouch(event) {
-  return event.pointerType === 'pen'
-      || (event.pointerType === 'touch' && event.isPrimary);
+  return event.pointerType === 'pen' ||
+      (event.pointerType === 'touch' && event.isPrimary);
 }
 
 

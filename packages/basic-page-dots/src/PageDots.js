@@ -84,6 +84,24 @@ class PageDots extends base {
     this.selectedItemChanged();  // In case position of selected item moved.
   }
 
+  /**
+   * The distance the user has moved the first touchpoint since the beginning
+   * of a drag, expressed as a fraction of the element's width.
+   *
+   * @type number
+   */
+  get position() {
+    return this.target && this.target.position;
+  }
+  set position(value) {
+    if ('position' in base.prototype) { super.position = value; }
+    if (this.target && this.target.position !== value) {
+      this.target.position = value;
+    } else {
+      renderTransition(this, this.selectedIndex, value);
+    }
+  }
+
   selectedItemChanged() {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
     let selectedIndex = this.selectedIndex;
@@ -94,6 +112,19 @@ class PageDots extends base {
       } else {
         dot.classList.remove('selected');
       }
+    });
+  }
+
+  get target() {
+    return super.target;
+  }
+  set target(element) {
+    if ('target' in base.prototype) { super.target = element; }
+    if (this._positionChangedListener) {
+      this.removeEventListener('position-changed', this._positionChangedListener);
+    }
+    this._positionChangedListener = element.addEventListener('position-changed', event => {
+      this.position = element.position;
     });
   }
 
@@ -118,13 +149,14 @@ class PageDots extends base {
       }
 
       .dot {
-        background: rgba(255, 255, 255, 0.4);
+        background: rgb(255, 255, 255);
         border-radius: 7px;
         box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
         box-sizing: border-box;
         cursor: pointer;
         height: 8px;
         margin: 7px 5px;
+        opacity: 0.4;
         padding: 0;
         transition: background 0.2s box-shadow 0.2s;
         width: 8px;
@@ -136,7 +168,7 @@ class PageDots extends base {
       }
 
       .dot.selected {
-        background: rgba(255, 255, 255, 0.95);
+        opacity: 0.95;
       }
 
       @media (min-width: 768px) {
@@ -188,6 +220,38 @@ function createDots(element) {
       dotContainer.appendChild(dot);
     }
   }
+}
+
+
+function renderTransition(element, selectedIndex, position) {
+  let dots = element.dots;
+  if (!dots || dots.length === 0) {
+    return;
+  }
+  let opacityMinimum = 0.4;
+  let opacityMaximum = 0.95;
+  let opacityRange = opacityMaximum - opacityMinimum;
+  let fractionalIndex = selectedIndex + position;
+  let leftIndex = Math.floor(fractionalIndex);
+  let rightIndex = Math.ceil(fractionalIndex);
+  let awayIndex = position >= 0 ? leftIndex : rightIndex;
+  let towardIndex = position >= 0 ? rightIndex : leftIndex;
+  let progress = position - Math.trunc(position);
+  let opacityProgressThroughRange = Math.abs(progress) * opacityRange;
+  dots.forEach((dot, index) => {
+    let dotOpacity;
+    if (position === 0) {
+      // Remove explicit opacity and rely on styling.
+      dotOpacity = '';
+    } else if (index === awayIndex) {
+      dotOpacity = opacityMaximum - opacityProgressThroughRange;
+    } else if (index === towardIndex) {
+      dotOpacity = opacityMinimum + opacityProgressThroughRange;
+    } else {
+      dotOpacity = opacityMinimum;
+    }
+    dot.style.opacity = dotOpacity;
+  });
 }
 
 

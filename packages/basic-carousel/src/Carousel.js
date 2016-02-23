@@ -149,6 +149,8 @@ class Carousel extends base {
   set position(value) {
     if ('position' in base.prototype) { super.position = value; }
     this.$.viewport.position = value;
+    let event = new CustomEvent('position-changed');
+    this.dispatchEvent(event);
   }
 
   get selectedItem() {
