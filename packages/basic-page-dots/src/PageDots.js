@@ -100,6 +100,7 @@ class PageDots extends base {
     } else {
       renderTransition(this, this.selectedIndex, value);
     }
+    this.dispatchEvent(new CustomEvent('position-changed'));
   }
 
   selectedItemChanged() {

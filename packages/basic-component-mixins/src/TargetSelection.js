@@ -115,6 +115,7 @@ export default (base) => {
 
     selectedItemChanged() {
       if (super.selectedItemChanged) { super.selectedItemChanged(); }
+      this.dispatchEvent(new CustomEvent('selected-item-changed'));
     }
 
     /**
