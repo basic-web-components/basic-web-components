@@ -1,4 +1,4 @@
-import AttributeMarshalling from '../../basic-component-mixins/src/AttributeMarshalling';
+import ElementBase from '../../basic-element-base/src/ElementBase';
 
 
 // Feature detection for old Shadow DOM v0.
@@ -46,31 +46,41 @@ const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== '
  * will be an instance of your custom class, with whatever behavior you've
  * defined for it.
  */
-class WrappedStandardElement extends AttributeMarshalling(HTMLElement) {
+class WrappedStandardElement extends ElementBase {
 
-  createdCallback() {
-    // Create shadow first, before invoking super. The super implementation will
-    // implicitly invoke the attributeChangedCallback. For attributes that
-    // correspond to delegated properties, those property setters will need the
-    // shadow tree and its inner element to already be created.
-    let root = USING_SHADOW_DOM_V0 ?
-    this.createShadowRoot() :             // Shadow DOM v0
-    this.attachShadow({ mode: 'open' });  // Shadow DOM v1
+  /**
+   * Returns a reference to the inner standard HTML element.
+   *
+   * @type {HTMLElement}
+   */
+  get inner() {
+    return this.$.inner;
+  }
 
-    // Add styling
-    let style = document.createElement('style');
-    style.textContent = `{ display: inline-block; }`;
-    root.appendChild(style);
-
-    // Add instance of wrapped standard element.
-    this.inner = document.createElement(this.extends);
-    // TOOD: Use slot instead of content.
-    let slot = document.createElement('content');
-    this.inner.appendChild(slot);
-    root.appendChild(this.inner);
-
-    // Now that we've got the inner element set up, invoke super.
-    if (super.createdCallback) { super.createdCallback(); }
+  /**
+   * The template copied into the shadow tree of new instances of this element.
+   *
+   * The default value of this property is a template that includes an instance
+   * the standard element being wrapped, with a `<slot>` element inside that
+   * to pick up the element's light DOM content. For example, if you wrap an
+   * `<a>` element, then the template will look like:
+   *
+   *     <template>
+   *       <a id="inner">
+   *         <slot></slot>
+   *       </a>
+   *     </template>
+   *
+   * If you'd like the template to include other elements, then override this
+   * property and return a template of your own. The template should include an
+   * instance of the standard HTML element you are wrapping, and the ID of that
+   * element should be "inner".
+   *
+   * @type {(string|HTMLTemplateElement)}
+   */
+  get template() {
+    // TODO: Use slot instead of content.
+    return `<${this.extends} id="inner"><content></content></${this.extends}`;
   }
 
   /**
