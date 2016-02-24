@@ -49,17 +49,28 @@ const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== '
 class WrappedStandardElement extends AttributeMarshalling(HTMLElement) {
 
   createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
+    // Create shadow first, before invoking super. The super implementation will
+    // implicitly invoke the attributeChangedCallback. For attributes that
+    // correspond to delegated properties, those property setters will need the
+    // shadow tree and its inner element to already be created.
+    let root = USING_SHADOW_DOM_V0 ?
+    this.createShadowRoot() :             // Shadow DOM v0
+    this.attachShadow({ mode: 'open' });  // Shadow DOM v1
 
+    // Add styling
+    let style = document.createElement('style');
+    style.textContent = `{ display: inline-block; }`;
+    root.appendChild(style);
+
+    // Add instance of wrapped standard element.
     this.inner = document.createElement(this.extends);
     // TOOD: Use slot instead of content.
     let slot = document.createElement('content');
     this.inner.appendChild(slot);
-
-    let root = USING_SHADOW_DOM_V0 ?
-      this.createShadowRoot() :             // Shadow DOM v0
-      this.attachShadow({ mode: 'open' });  // Shadow DOM v1
     root.appendChild(this.inner);
+
+    // Now that we've got the inner element set up, invoke super.
+    if (super.createdCallback) { super.createdCallback(); }
   }
 
   /**

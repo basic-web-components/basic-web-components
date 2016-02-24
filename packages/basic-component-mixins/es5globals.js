@@ -1,8 +1,6 @@
 /*
  * This file is transpiled to create an ES5-compatible distribution in which
- * the mixins and helpers are available via the window.Basic global.
- * E.g., the AttributeMarshalling mixin is available as
- * window.Basic.AttributeMarshalling.
+ * the package's main feature(s) are available via the window.Basic global.
  */
 
 import AttributeMarshalling from './src/AttributeMarshalling';

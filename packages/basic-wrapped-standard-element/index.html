@@ -7,32 +7,25 @@
   <title>basic-arrow-selection</title>
 
   <script src="../basic-component-demos/lib/webcomponents.js"></script>
-  <script src="./dist/basic-arrow-selection.js"></script>
+  <script src="./dist/basic-wrapped-standard-element.js"></script>
   <link rel="stylesheet" href="../basic-component-demos/demos.css">
 
-  <style>
-  html {
-    height: 100%;
-  }
-
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: -webkit-flex;
-    display: flex;
-  }
-
-  basic-arrow-selection {
-    -webkit-flex: 1;
-    flex: 1;
-  }
-  </style>
+  <script>
+  var WrappedA = Basic.WrappedStandardElement.wrap('a');
+  document.registerElement('wrapped-a', WrappedA);
+  </script>
 
 </head>
 
 <body>
-  <basic-arrow-selection></basic-arrow-selection>
+  <p>
+    <a href="http://example.com">This is a standard anchor element</a>
+  </p>
+  <p>
+    <wrapped-a href="http://example.com">This is a wrapped anchor element</wrapped-a>.
+    It should generally look and work the same as a native anchor element, but
+    could be extended with custom behavior.
+  </p>
 </body>
 
 </html>

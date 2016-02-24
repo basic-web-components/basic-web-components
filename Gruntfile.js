@@ -44,8 +44,9 @@ function buildBuildList() {
   for (var i = 0; i < allPackages.length; i++) {
     obj['packages/' + allPackages[i] + '/dist/' + allPackages[i] + '.js'] = ['packages/' + allPackages[i] + '/src/*.js'];
   }
-  // Special case: the mixins dist get built from its es5globals file.
+  // Special cases: dist gets built from the es5globals file.
   obj['packages/basic-component-mixins/dist/basic-component-mixins.js'] = 'packages/basic-component-mixins/es5globals.js';
+  obj['packages/basic-wrapped-standard-element/dist/basic-wrapped-standard-element.js'] = 'packages/basic-wrapped-standard-element/es5globals.js';
 
   return obj;
 }
