@@ -29,22 +29,6 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
   ObserveContentChanges
 ) {
 
-  /**
-   * A description for the user of the element's purpose on the page. Setting
-   * this applies the label to the inner textarea, ensuring that screen readers
-   * and other assistive technologies will provide a meaningful description to
-   * the user.
-   *
-   * @type {string}
-   */
-  get ariaLabel() {
-    return this.inner.getAttribute('aria-label');
-  }
-  set ariaLabel(label) {
-    // Propagate the ARIA label to the inner textarea.
-    this.inner.setAttribute('aria-label', label);
-  }
-
   // Normally the value of the element is set and read through its value
   // attribute. As a convenience, and to mirror standard textarea behavior, it
   // is possible to set the content of the textarea by including text between
