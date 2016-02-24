@@ -45,9 +45,12 @@ export default (base) => {
     applySelection(item, selected) {
       if (super.applySelection) { super.applySelection(item, selected); }
       item.setAttribute('aria-selected', selected);
-      let itemId = item.getAttribute('id');
+      let itemId = item.id;
       if (itemId) {
-        this.collective.outermostElement.setAttribute('aria-activedescendant', itemId);
+        let outermost = this.collective ?
+          this.collective.outermostElement :
+          this;
+        outermost.setAttribute('aria-activedescendant', itemId);
       }
     }
 
@@ -82,18 +85,9 @@ export default (base) => {
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-
-      // Determine a base item ID based on this component's host's own ID. This
-      // will be combined with a unique integer to assign IDs to items that
-      // don't have an explicit ID. If the basic-list-box has ID "foo", then its
-      // items will have IDs that look like "_fooOption1". If the list has no ID
-      // itself, its items will get IDs that look like "_option1". Item IDs are
-      // prefixed with an underscore to differentiate them from
-      // manually-assigned IDs, and to minimize the potential for ID conflicts.
-      let elementId = this.getAttribute( "id" );
-      this.itemBaseId = elementId ?
-          "_" + elementId + "Option" :
-          "_option";
+      if (!this.getAttribute('role')) {
+        this.setAttribute('role', 'listbox');
+      }
     }
 
     itemAdded(item) {
@@ -103,8 +97,19 @@ export default (base) => {
 
       // Ensure each item has an ID so we can set aria-activedescendant on the
       // overall list whenever the selection changes.
-      if (!item.getAttribute('id')) {
-        item.setAttribute('id', this.itemBaseId + idCount++);
+      //
+      // The ID will take the form of a base ID plus a unique integer. The base
+      // ID will be incorporate the component's own ID. E.g., if a component has
+      // ID "foo", then its items will have IDs that look like "_fooOption1". If
+      // the compnent has no ID itself, its items will get IDs that look like
+      // "_option1". Item IDs are prefixed with an underscore to differentiate
+      // them from manually-assigned IDs, and to minimize the potential for ID
+      // conflicts.
+      if (!item.id) {
+        let baseId = this.id ?
+            "_" + this.id + "Option" :
+            "_option";
+        item.id = baseId + idCount++;
       }
     }
 
@@ -114,8 +119,11 @@ export default (base) => {
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       // Catch the case where the selection is removed.
-      if (item == null && this.collective) {
-        this.collective.outermostElement.removeAttribute('aria-activedescendant');
+      if (item == null) {
+        let outermost = this.collective ?
+          this.collective.outermostElement :
+          this;
+        outermost.removeAttribute('aria-activedescendant');
       }
     }
 
