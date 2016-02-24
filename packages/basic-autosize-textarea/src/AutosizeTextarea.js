@@ -1,4 +1,4 @@
-import ElementBase from '../../basic-element-base/src/ElementBase';
+import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
@@ -17,10 +17,13 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
  * automatically grow in size; the expanding copy will expand the container,
  * which in turn will vertically stretch the text area to match.
  *
+ * This component generally exposes all the same attributes/properties as a
+ * standard HTML `<textarea>`.
+ *
  * @mixes Generic
  * @mixes DistributedChildrenAsContent
  */
-class AutosizeTextarea extends ElementBase.compose(
+class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
   DistributedChildrenAsContent,
   Generic,
   ObserveContentChanges
@@ -35,11 +38,11 @@ class AutosizeTextarea extends ElementBase.compose(
    * @type {string}
    */
   get ariaLabel() {
-    return this.$.textBox.getAttribute('aria-label');
+    return this.inner.getAttribute('aria-label');
   }
   set ariaLabel(label) {
     // Propagate the ARIA label to the inner textarea.
-    this.$.textBox.setAttribute('aria-label', label);
+    this.inner.setAttribute('aria-label', label);
   }
 
   // Normally the value of the element is set and read through its value
@@ -82,7 +85,7 @@ class AutosizeTextarea extends ElementBase.compose(
     if (super.contentChanged) { super.contentChanged(); }
     if (this._valueTracksContent) {
       let text = getTextContent(this);
-      this.$.textBox.value = unescapeHtml(text);
+      this.inner.value = unescapeHtml(text);
       valueChanged(this);
     }
   }
@@ -90,15 +93,15 @@ class AutosizeTextarea extends ElementBase.compose(
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
 
-    this.$.textBox.addEventListener('change', event => {
+    this.inner.addEventListener('change', event => {
       // Raise our own change event (since change events aren't automatically
       // retargetted).
       this.dispatchEvent(new CustomEvent('change'));
     });
-    this.$.textBox.addEventListener('input', event => {
+    this.inner.addEventListener('input', event => {
       valueChanged(this);
     });
-    this.$.textBox.addEventListener('keypress', event => {
+    this.inner.addEventListener('keypress', event => {
       keypress(this, event);
     });
 
@@ -141,44 +144,6 @@ class AutosizeTextarea extends ElementBase.compose(
     }
   }
 
-  /**
-   * A prompt shown when the field is empty to indicate what the user should
-   * enter.
-   *
-   * @type {string}
-   */
-  get placeholder() {
-    return this.$.textBox.getAttribute('placeholder');
-  }
-  set placeholder(value) {
-    // Propagate the placeholder to the inner textarea.
-    this.$.textBox.setAttribute('placeholder', value);
-  }
-
-  /**
-   * The position of the end of the selection, if a selection exists.
-   *
-   * @type {number}
-   */
-  get selectionEnd() {
-    return this.$.textBox.selectionEnd;
-  }
-  set selectionEnd(value) {
-    this.$.textBox.selectionEnd = value;
-  }
-
-  /**
-   * The position of the start of the selection, if a selection exists.
-   *
-   * @type {number}
-   */
-  get selectionStart() {
-    return this.$.textBox.selectionStart;
-  }
-  set selectionStart(value) {
-    this.$.textBox.selectionStart = value;
-  }
-
   get template() {
     return `
       <style>
@@ -194,7 +159,7 @@ class AutosizeTextarea extends ElementBase.compose(
        * Ensure both the text area and copy end up with the element's own font
        * metrics, so that text will lay out the same in both of them.
        */
-      #textBox,
+      #inner,
       #copyContainer {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
@@ -206,7 +171,7 @@ class AutosizeTextarea extends ElementBase.compose(
         margin: 0;
       }
 
-      #textBox {
+      #inner {
         height: 100%;
         overflow: hidden;
         position: absolute;
@@ -244,7 +209,7 @@ class AutosizeTextarea extends ElementBase.compose(
       need its light DOM content, and will throw it away.
       -->
       <div id="autoSizeContainer">
-        <textarea id="textBox"></textarea>
+        <textarea id="inner"></textarea>
         <div id="copyContainer"><span id="textCopy"></span><span id="extraSpace">&thinsp;</span><div id="extraLine">&nbsp;</div></div>
       </div>
       <div id="contentContainer">
@@ -263,12 +228,12 @@ class AutosizeTextarea extends ElementBase.compose(
    * @type {string}
    */
   get value() {
-    return this.$.textBox.value;
+    return this.inner.value;
   }
   set value(text) {
     // Explicitly setting value breaks automatic update of value from content.
     this._valueTracksContent = false;
-    this.$.textBox.value = text;
+    this.inner.value = text;
     valueChanged(this);
   }
 
@@ -315,7 +280,7 @@ function initializeWhenRendered(element) {
   // padding, and other relevant characteristics as the original text area.
   // Since those aspects are affected by CSS, we have to wait until the
   // element is in the document before we can update the text copy.
-  let textBoxStyle = getComputedStyle(element.$.textBox);
+  let textBoxStyle = getComputedStyle(element.inner);
   let copyContainerStyle = element.$.copyContainer.style;
   copyContainerStyle.borderBottomStyle  = textBoxStyle.borderBottomStyle;
   copyContainerStyle.borderBottomWidth  = textBoxStyle.borderBottomWidth;
