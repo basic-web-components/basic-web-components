@@ -1,13 +1,10 @@
 import { assert } from 'chai';
-import ContentAsItems from '../src/ContentAsItems';
 import SelectionAriaActive from '../src/SelectionAriaActive';
 import ItemsSelection from '../src/ItemsSelection';
 
 
-class SelectionAriaActiveTest extends SelectionAriaActive(
-  ItemsSelection(ContentAsItems(HTMLElement))
-) {
-  get content() {
+class SelectionAriaActiveTest extends SelectionAriaActive(ItemsSelection(HTMLElement)) {
+  get items() {
     // Convert children to array in a way IE 11 can handle.
     return Array.prototype.slice.call(this.children);
   }
@@ -26,7 +23,9 @@ describe("SelectionAriaActive mixin", () => {
     let item2 = document.createElement('div');
     // Leave item2 without an ID.
     list.appendChild(item2);
-    list.contentChanged(); // Force change notification
+    // Initialize items
+    list.itemAdded(item1);
+    list.itemAdded(item2);
     assert.equal(list.getAttribute('role'), 'listbox'); // default role
     assert.equal(item1.id, 'explicitID'); // unchanged
     assert.equal(item1.getAttribute('role'), 'option'); // default role
@@ -40,7 +39,9 @@ describe("SelectionAriaActive mixin", () => {
     list.appendChild(item1);
     let item2 = document.createElement('div');
     list.appendChild(item2);
-    list.contentChanged(); // Force change notification
+    // Initialize items
+    list.itemAdded(item1);
+    list.itemAdded(item2);
     list.selectedItem = item1;
     assert.equal(list.getAttribute('aria-activedescendant'), item1.id);
     assert.equal(item1.getAttribute('aria-selected'), 'true');

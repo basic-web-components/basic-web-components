@@ -46,7 +46,7 @@ class PageDots extends base {
 
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
-    let index = this.indexOfItem(item);
+    let index = this.items.indexOf(item);
     // See if the corresponding dot has already been created.
     // If not, the correct dot will be selected when it gets created.
     let dots = this.dots;

@@ -110,7 +110,7 @@ export default (base) => {
       }
 
       // TODO: Memoize
-      let index = this.indexOfItem(selectedItem);
+      let index = this.items.indexOf(selectedItem);
 
       // If index = -1, selection wasn't found. Most likely cause is that the
       // DOM was manipulated from underneath us.
@@ -163,7 +163,7 @@ export default (base) => {
 
       // TODO: Rationalize with selectedIndex so we're not recalculating item
       // or index in each setter.
-      let index = this.indexOfItem(item);
+      let index = this.items.indexOf(item);
       updatePossibleNavigations(this, index);
 
       let event = new CustomEvent('selected-item-changed', {

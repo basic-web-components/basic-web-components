@@ -28,29 +28,6 @@ export default (base) => {
    */
   class TargetSelection extends base {
 
-    // attachedCallback() {
-    //   // Apply any selection made before assimilation.
-    //   if (this._prematureSelectedIndex
-    //       && 'selectedIndex' in this && this.selectedIndex === -1) {
-    //     this.selectedIndex = this._prematureSelectedIndex;
-    //     this._prematureSelectedIndex = null;
-    //   }
-    // }
-
-    /**
-     * Return the positional index for the indicated item.
-     *
-     * @param {HTMLElement} item The item whose index is requested.
-     * @returns {number} The index of the item, or -1 if not found.
-     */
-    indexOfItem(item) {
-      if (super.indexOfItem) { super.indexOfItem(item); }
-      let target = this.target;
-      return target ?
-        target.indexOfItem(item) :
-        -1;
-    }
-
     /**
      * The current set of items in the list.
      *
@@ -84,12 +61,6 @@ export default (base) => {
     }
     set selectedIndex(index) {
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
-      // if ('selectedIndex' in this {
-      //   this.selectedIndex = index;
-      // } else {
-      //   // Selection is being made before the collective supports it.
-      //   this._prematureSelectedIndex = index;
-      // }
       let target = this.target;
       if (target && target.selectedIndex !== index) {
         target.selectedIndex = index;

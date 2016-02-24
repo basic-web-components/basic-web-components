@@ -7,10 +7,10 @@ export default (base) => {
    * This simple mixin is useful in list box-like elements, where a click on a
    * list item implicitly selects it.
    *
-   * This mixin expects the component to provide a method `indexOfItem(item)`.
-   * You can provide that method yourself, or use the ContentAsItems mixin.
-   * This mixin also expects the component to define a `selectedIndex`
-   * property. You can provide that yourself, or use the ItemsSelection mixin.
+   * This mixin expects the component to provide an `items` property. You can
+   * provide that property yourself, or use the ContentAsItems mixin. This mixin
+   * also expects the component to define a `selectedIndex` property. You can
+   * provide that yourself, or use the ItemsSelection mixin.
    */
   class ClickSelection extends base {
 
@@ -51,7 +51,7 @@ export default (base) => {
 // in which case the element that was tapped isn't an item (and should be
 // ignored).
 function selectTarget(element, target) {
-  let index = element.indexOfItem && element.indexOfItem(target);
+  let index = element.items && element.items.indexOf(target);
   if (index >= 0) {
     element.selectedIndex = index;
   }
