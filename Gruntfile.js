@@ -25,7 +25,8 @@ var allPackages = [
   'basic-modes',
   'basic-page-dots',
   'basic-sliding-viewport',
-  'basic-spread-items'
+  'basic-spread-items',
+  'basic-wrapped-standard-element'
 ];
 
 // Global array used for reporting successful npm publish tasks

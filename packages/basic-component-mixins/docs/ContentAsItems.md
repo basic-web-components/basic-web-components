@@ -22,7 +22,6 @@ Items differ from element contents in several ways:
 * [ContentAsItems](#ContentAsItems)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.applySelection(item, selected)](#ContentAsItems+applySelection)
-    * [.indexOfItem(item)](#ContentAsItems+indexOfItem) ⇒ <code>number</code>
     * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
 
@@ -46,19 +45,6 @@ is selected, and removed it if not selected.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
-
-<a name="ContentAsItems+indexOfItem"></a>
-### contentAsItems.indexOfItem(item) ⇒ <code>number</code>
-Return the positional index for the indicated item.
-
-Because this acts like a getter, this does not invoke a base implementation.
-
-**Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>  
-**Returns**: <code>number</code> - The index of the item, or -1 if not found.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item whose index is requested. |
 
 <a name="ContentAsItems+itemAdded"></a>
 ### contentAsItems.itemAdded(item)

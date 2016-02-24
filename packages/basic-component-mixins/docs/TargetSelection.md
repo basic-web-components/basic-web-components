@@ -31,7 +31,6 @@ child as the target. This is what basic-arrow-selection (above) does.
     * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
-    * [.indexOfItem(item)](#TargetSelection+indexOfItem) ⇒ <code>number</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
 
 <a name="TargetSelection+items"></a>
@@ -56,17 +55,6 @@ Gets/sets the target element to which this component will delegate
 selection actions.
 
 **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>  
-<a name="TargetSelection+indexOfItem"></a>
-### targetSelection.indexOfItem(item) ⇒ <code>number</code>
-Return the positional index for the indicated item.
-
-**Kind**: instance method of <code>[TargetSelection](#TargetSelection)</code>  
-**Returns**: <code>number</code> - The index of the item, or -1 if not found.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item whose index is requested. |
-
 <a name="TargetSelection+itemsChanged"></a>
 ### targetSelection.itemsChanged()
 This method is invoked when the underlying contents change. It is also

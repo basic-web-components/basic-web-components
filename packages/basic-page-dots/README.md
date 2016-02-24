@@ -21,3 +21,9 @@ will select the corresponding list item.
 
 **Kind**: global class  
 **Mixes**: <code>DistributedChildrenAsContent</code>, <code>TargetInCollective</code>, <code>ContentFirstChildTarget</code>, <code>Keyboard</code>, <code>TargetSelection</code>  
+<a name="PageDots+position"></a>
+### pageDots.position : <code>number</code>
+The distance the user has moved the first touchpoint since the beginning
+of a drag, expressed as a fraction of the element's width.
+
+**Kind**: instance property of <code>[PageDots](#PageDots)</code>  
