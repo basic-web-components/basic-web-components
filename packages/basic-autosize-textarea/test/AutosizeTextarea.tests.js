@@ -38,7 +38,7 @@ describe("AutosizeTextarea", () => {
   it("applies its value to the inner textarea", () => {
     let fixture = document.createElement('basic-autosize-textarea');
     fixture.value = 'beaver';
-    assert(fixture.$.textBox.value, 'beaver');
+    assert(fixture.inner.value, 'beaver');
   });
 
   it("updates value when innerHTML changes", done => {
@@ -137,7 +137,7 @@ describe("AutosizeTextarea", () => {
   it("applies its placeholder property to the inner textarea", () => {
     let fixture = document.createElement('basic-autosize-textarea');
     fixture.placeholder = 'Placeholder';
-    assert.equal(fixture.$.textBox.placeholder, 'Placeholder');
+    assert.equal(fixture.inner.placeholder, 'Placeholder');
     assert.notEqual(fixture.value, 'Placeholder');
   });
 
