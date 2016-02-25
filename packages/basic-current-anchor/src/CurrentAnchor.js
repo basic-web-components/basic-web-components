@@ -5,43 +5,29 @@ import WrappedStandardElement from '../../basic-wrapped-standard-element/src/Wra
  * An anchor (link) that highlights itself when its destination matches the
  * current location.
  *
- * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-activating-anchor/)
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-current-anchor/)
  *
  * Such a link commonly appears in toolbars, side bars, and other navigation
  * elements. In these situations, you generally want the user to understand what
  * page or area the user is already on.
  *
+ * When the link is current — when it points to the current location — the
+ * link will have the CSS `current` class applied to it, and its `current`
+ * property will be true.
+ *
  * Note: one limitation of this component is that, by default, the link does
- * *not* show the standard link color (usually blue). However, in navigation
- * elements like toolbars, you often will want to explicitly specific link
- * colors anyway, e.g., to reflect your application's visual style and brand.
+ * *not* show the standard link color (usually blue) and text decoration
+ * (underline). However, in navigation elements like toolbars, you often will
+ * want to explicitly specific link colors anyway, e.g., to reflect your
+ * application's visual style and brand.
  */
-class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
-
-  /**
-   * True if the link's destination matches the current page location.
-   *
-   * If this is true, the element will have an `active` CSS class applied to it.
-   *
-   * @type {boolean}
-   */
-  get active() {
-    return this.classList.contains('active');
-  }
-  set active(value) {
-    // Would like to use classList.toggle() here, but IE 11 doesn't have it.
-    if (value) {
-      this.classList.add('active');
-    } else {
-      this.classList.remove('active');
-    }
-  }
+class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 
   /**
    * True if the link points to an area within a site, not just a single page.
    *
-   * If true, the matching rule to determine whether the link is active changes:
-   * an area link is considered to be active if the link's destination forms a
+   * If true, the matching rule to determine whether the link is current changes:
+   * an area link is considered to be current if the link's destination forms a
    * prefix of the current location (instead of matching the complete URL).
    *
    * @type {boolean}
@@ -70,6 +56,26 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
     }
   }
 
+  /**
+   * True if the link's destination matches the current page location.
+   *
+   * If this is true, the element will have an `current` CSS class applied to it.
+   *
+   * @type {boolean}
+   */
+  get current() {
+    return this.classList.contains('current');
+  }
+  set current(value) {
+    // Would like to use classList.toggle() here, but IE 11 doesn't have it.
+    if (value) {
+      this.classList.add('current');
+    } else {
+      this.classList.remove('current');
+    }
+    this.dispatchEvent(new CustomEvent('current-changed'));
+  }
+
   // Augment href implementation so that changing href checks the active status.
   get href() {
     return super.href;
@@ -80,12 +86,13 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
   }
 
   get template() {
-    // Specify color:inherit so that color can be specified from the outside
-    // without having to define a CSS variable.
+    // Reset styles so that color can be specified from the outside without
+    // having to define a CSS variable.
     return `
       <style>
       #inner {
         color: inherit;
+        text-decoration: inherit;
       }
       </style>
       <a id="inner"><slot></slot></a>`;
@@ -94,11 +101,11 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
 }
 
 
-// Update the active status of the element based on the current location.
+// Update the current status of the element based on the current location.
 function refresh(element) {
-  let current = window.location.href;
+  let url = window.location.href;
   let match;
-  if (element.areaLink && element.href.length < current.length) {
+  if (element.areaLink && element.href.length < url.length) {
     // Match prefix
     let prefix = element.href;
     // If prefix doesn't end in slash, add a slash.
@@ -106,13 +113,13 @@ function refresh(element) {
     if (prefix.substr(-1) !== '/') {
       prefix += '/';
     }
-    match = (current.substr(0, prefix.length) === prefix);
+    match = (url.substr(0, prefix.length) === prefix);
   } else {
     // Match whole path
-    match = (current === element.href);
+    match = (url === element.href);
   }
-  element.active = match;
+  element.current = match;
 }
 
 
-document.registerElement('basic-activating-anchor', ActivatingAnchor);
+document.registerElement('basic-current-anchor', CurrentAnchor);

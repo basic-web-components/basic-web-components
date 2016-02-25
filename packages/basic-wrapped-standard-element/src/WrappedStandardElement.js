@@ -11,6 +11,11 @@ const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== '
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-wrapped-standard-element/)
  *
+ * See also [basic-autosize-textarea](../basic-autosize-textarea) and
+ * [basic-current-anchor](../basic-current-anchor). The former uses
+ * WrappedStandardElement to wrap a standard `<textarea>` and `<a>`,
+ * respectively.
+ *
  * The Custom Elements spec does not currently (as of March 2016) allow you to
  * extend the behavior of a standard HTML element like `<a>` or `<button>`.
  * As a partial workaround, the WrappedStandardElement class can create a class

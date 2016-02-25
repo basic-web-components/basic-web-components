@@ -3,6 +3,13 @@
 Wraps a standard HTML element so that the standard behavior can then be
 extended.
 
+[Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-wrapped-standard-element/)
+
+See also [basic-autosize-textarea](../basic-autosize-textarea) and
+[basic-current-anchor](../basic-current-anchor). The former uses
+WrappedStandardElement to wrap a standard `<textarea>` and `<a>`,
+respectively.
+
 The Custom Elements spec does not currently (as of March 2016) allow you to
 extend the behavior of a standard HTML element like `<a>` or `<button>`.
 As a partial workaround, the WrappedStandardElement class can create a class
@@ -39,6 +46,13 @@ like a normal link, just as if you had written
 `<a href="http://example.com/">Click here</a>`. However, the actual element
 will be an instance of your custom class, with whatever behavior you've
 defined for it.
+
+Wrapped elements should raise the same events as the original standard
+elements. E.g., if you wrap an `<img>` element, the wrapped result will raise
+the standard `load` event as expected.
+
+Some elements, such as `<body>`, `<html>`, and `<style>` cannot be wrapped
+and still achieve their standard behavior.
 
 **Kind**: global class  
 

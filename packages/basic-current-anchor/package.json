@@ -1,5 +1,5 @@
 {
-  "name": "basic-activating-anchor",
+  "name": "basic-current-anchor",
   "version": "0.7.2",
   "description": "An anchor (link) that highlights itself when its destination matches the current location.",
   "homepage": "https://component.kitchen",
@@ -11,7 +11,7 @@
     "mixin",
     "web-components"
   ],
-  "main": "src/ActivatingAnchor.js",
+  "main": "src/CurrentAnchor.js",
   "dependencies": {
     "basic-wrapped-standard-element": "^0.7.2"
   },

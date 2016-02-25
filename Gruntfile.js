@@ -14,7 +14,7 @@ var fs = require('fs');
 // allPackages is the global array of npm-publishable packages in this monorepo
 //
 var allPackages = [
-  'basic-activating-anchor',
+  'basic-current-anchor',
   'basic-arrow-selection',
   'basic-autosize-textarea',
   'basic-carousel',
