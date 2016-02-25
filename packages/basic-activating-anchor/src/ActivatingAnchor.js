@@ -95,9 +95,21 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
 // Update the active status of the element based on the current location.
 function refresh(element) {
   let current = window.location.href;
-  element.active = element.areaLink ?
-    (current.substr(0, element.href.length) === element.href) : // Match prefix
-    (current === element.href); // Match whole path
+  let match;
+  if (element.areaLink && element.href.length < current.length) {
+    // Match prefix
+    let prefix = element.href;
+    // If prefix doesn't end in slash, add a slash.
+    // We want to avoid matching in the middle of a folder name.
+    if (prefix.substr(-1) !== '/') {
+      prefix += '/';
+    }
+    match = (current.substr(0, prefix.length) === prefix);
+  } else {
+    // Match whole path
+    match = (current === element.href);
+  }
+  element.active = match;
 }
 
 
