@@ -77,11 +77,6 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
 
-    this.inner.addEventListener('change', event => {
-      // Raise our own change event (since change events aren't automatically
-      // retargetted).
-      this.dispatchEvent(new CustomEvent('change'));
-    });
     this.inner.addEventListener('input', event => {
       valueChanged(this);
     });

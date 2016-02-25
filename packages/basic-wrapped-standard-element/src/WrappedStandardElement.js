@@ -47,6 +47,13 @@ const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== '
  * `<a href="http://example.com/">Click here</a>`. However, the actual element
  * will be an instance of your custom class, with whatever behavior you've
  * defined for it.
+ *
+ * Wrapped elements should raise the same events as the original standard
+ * elements. E.g., if you wrap an `<img>` element, the wrapped result will raise
+ * the standard `load` event as expected.
+ *
+ * Some elements, such as `<body>`, `<html>`, and `<style>` cannot be wrapped
+ * and still achieve their standard behavior.
  */
 class WrappedStandardElement extends ElementBase {
 
@@ -65,6 +72,24 @@ class WrappedStandardElement extends ElementBase {
     // Propagate the ARIA label to the inner textarea.
     this.inner.setAttribute('aria-label', label);
   }
+
+
+  createdCallback() {
+    if (super.createdCallback) { super.createdCallback(); }
+
+    // Listen for any events raised by the inner element which will not
+    // automatically be retargetted across the Shadow DOM boundary.
+    let eventNames = nonRetargettedEventsForElement[this.extends] || [];
+    eventNames.forEach(eventName => {
+      this.inner.addEventListener(eventName, realEvent => {
+        let event = new Event(eventName, {
+          bubbles: eventBubbles[eventName] || false
+        });
+        this.dispatchEvent(event);
+      });
+    });
+  }
+
 
   /**
    * Returns a reference to the inner standard HTML element.
@@ -134,6 +159,66 @@ class WrappedStandardElement extends ElementBase {
   }
 
 }
+
+
+/*
+ * Events which are spec'ed to NOT get retargetted across a Shadow DOM
+ * boundary, organized by which element(s) raise the events. To properly
+ * simulate these, we will need to listen for the real events, then re-raise
+ * a simulation of the original event.
+ *
+ * See https://www.w3.org/TR/shadow-dom/#h-events-that-are-not-leaked-into-ancestor-trees
+ *
+ * The list below is reasonably complete. It omits elements that cannot be
+ * wrapped (see class notes above). Also, we haven't actually tried wrapping
+ * every element in this list; some of the more obscure ones might not actually
+ * work as expected, but it was easier to include them for completeness than
+ * to actually verify whether or not the element can be wrapped.
+ */
+const nonRetargettedEventsForElement = {
+  address: ['scroll'],
+  blockquote: ['scroll'],
+  caption: ['scroll'],
+  center: ['scroll'],
+  dd: ['scroll'],
+  dir: ['scroll'],
+  div: ['scroll'],
+  dl: ['scroll'],
+  dt: ['scroll'],
+  fieldset: ['scroll'],
+  form: ['reset', 'scroll'],
+  frame: ['load'],
+  h1: ['scroll'],
+  h2: ['scroll'],
+  h3: ['scroll'],
+  h4: ['scroll'],
+  h5: ['scroll'],
+  h6: ['scroll'],
+  iframe: ['load'],
+  img: ['abort', 'error', 'load'],
+  input: ['abort', 'change', 'error', 'select', 'load'],
+  keygen: ['reset', 'select'],
+  li: ['scroll'],
+  link: ['load'],
+  menu: ['scroll'],
+  object: ['error', 'scroll'],
+  ol: ['scroll'],
+  p: ['scroll'],
+  script: ['error', 'load'],
+  select: ['change', 'scroll'],
+  tbody: ['scroll'],
+  tfoot: ['scroll'],
+  thead: ['scroll'],
+  textarea: ['change', 'select', 'scroll']
+};
+
+
+// Keep track of which re-raised events should bubble.
+const eventBubbles = {
+  abort: true,
+  change: true,
+  reset: true
+};
 
 
 function createPropertyDelegate(name, descriptor) {
