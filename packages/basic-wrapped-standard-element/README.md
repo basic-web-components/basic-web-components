@@ -41,6 +41,49 @@ will be an instance of your custom class, with whatever behavior you've
 defined for it.
 
 **Kind**: global class  
+
+* [WrappedStandardElement](#WrappedStandardElement)
+    * _instance_
+        * [.ariaLabel](#WrappedStandardElement+ariaLabel) : <code>string</code>
+        * [.inner](#WrappedStandardElement+inner) : <code>HTMLElement</code>
+        * [.template](#WrappedStandardElement+template) : <code>string</code> &#124; <code>HTMLTemplateElement</code>
+    * _static_
+        * [.wrap(extendsTag)](#WrappedStandardElement.wrap)
+
+<a name="WrappedStandardElement+ariaLabel"></a>
+### wrappedStandardElement.ariaLabel : <code>string</code>
+A description for the user of the element's purpose on the page. Setting
+this applies the label to the inner element, ensuring that screen readers
+and other assistive technologies will provide a meaningful description to
+the user.
+
+**Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>  
+<a name="WrappedStandardElement+inner"></a>
+### wrappedStandardElement.inner : <code>HTMLElement</code>
+Returns a reference to the inner standard HTML element.
+
+**Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>  
+<a name="WrappedStandardElement+template"></a>
+### wrappedStandardElement.template : <code>string</code> &#124; <code>HTMLTemplateElement</code>
+The template copied into the shadow tree of new instances of this element.
+
+The default value of this property is a template that includes an instance
+the standard element being wrapped, with a `<slot>` element inside that
+to pick up the element's light DOM content. For example, if you wrap an
+`<a>` element, then the template will look like:
+
+    <template>
+      <a id="inner">
+        <slot></slot>
+      </a>
+    </template>
+
+If you'd like the template to include other elements, then override this
+property and return a template of your own. The template should include an
+instance of the standard HTML element you are wrapping, and the ID of that
+element should be "inner".
+
+**Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>  
 <a name="WrappedStandardElement.wrap"></a>
 ### WrappedStandardElement.wrap(extendsTag)
 Creates a class that wraps a standard HTML element.

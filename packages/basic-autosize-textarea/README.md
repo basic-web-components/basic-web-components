@@ -12,26 +12,17 @@ The component works by copying the text to an invisible element which will
 automatically grow in size; the expanding copy will expand the container,
 which in turn will vertically stretch the text area to match.
 
+This component generally exposes all the same attributes/properties as a
+standard HTML `<textarea>`.
+
 **Kind**: global class  
 **Mixes**: <code>Generic</code>, <code>DistributedChildrenAsContent</code>  
 
 * [AutosizeTextarea](#AutosizeTextarea)
-    * [.ariaLabel](#AutosizeTextarea+ariaLabel) : <code>string</code>
     * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>
-    * [.placeholder](#AutosizeTextarea+placeholder) : <code>string</code>
-    * [.selectionEnd](#AutosizeTextarea+selectionEnd) : <code>number</code>
-    * [.selectionStart](#AutosizeTextarea+selectionStart) : <code>number</code>
     * [.value](#AutosizeTextarea+value) : <code>string</code>
     * [.autoSize()](#AutosizeTextarea+autoSize)
 
-<a name="AutosizeTextarea+ariaLabel"></a>
-### autosizeTextarea.ariaLabel : <code>string</code>
-A description for the user of the element's purpose on the page. Setting
-this applies the label to the inner textarea, ensuring that screen readers
-and other assistive technologies will provide a meaningful description to
-the user.
-
-**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
 <a name="AutosizeTextarea+minimumRows"></a>
 ### autosizeTextarea.minimumRows : <code>number</code>
 Determines the minimum number of rows shown. This is similar to the rows
@@ -54,22 +45,6 @@ text.
 
 **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
 **Default**: <code>1</code>  
-<a name="AutosizeTextarea+placeholder"></a>
-### autosizeTextarea.placeholder : <code>string</code>
-A prompt shown when the field is empty to indicate what the user should
-enter.
-
-**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
-<a name="AutosizeTextarea+selectionEnd"></a>
-### autosizeTextarea.selectionEnd : <code>number</code>
-The position of the end of the selection, if a selection exists.
-
-**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
-<a name="AutosizeTextarea+selectionStart"></a>
-### autosizeTextarea.selectionStart : <code>number</code>
-The position of the start of the selection, if a selection exists.
-
-**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
 <a name="AutosizeTextarea+value"></a>
 ### autosizeTextarea.value : <code>string</code>
 The text currently shown in the textarea.
