@@ -9,6 +9,8 @@ const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== '
  * Wraps a standard HTML element so that the standard behavior can then be
  * extended.
  *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-wrapped-standard-element/)
+ *
  * The Custom Elements spec does not currently (as of March 2016) allow you to
  * extend the behavior of a standard HTML element like `<a>` or `<button>`.
  * As a partial workaround, the WrappedStandardElement class can create a class

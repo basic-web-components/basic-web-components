@@ -5,6 +5,8 @@ import WrappedStandardElement from '../../basic-wrapped-standard-element/src/Wra
  * An anchor (link) that highlights itself when its destination matches the
  * current location.
  *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-activating-anchor/)
+ *
  * Such a link commonly appears in toolbars, side bars, and other navigation
  * elements. In these situations, you generally want the user to understand what
  * page or area the user is already on.
