@@ -36,7 +36,13 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
     this._areaLink = false;
   }
 
-  // TODO: href setter invokes refresh
+  get href() {
+    return super.href;
+  }
+  set href(value) {
+    super.href = value;
+    this.refresh();
+  }
 
   refresh() {
     let current = window.location.href;
