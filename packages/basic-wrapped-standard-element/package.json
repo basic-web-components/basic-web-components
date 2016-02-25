@@ -13,7 +13,7 @@
   ],
   "main": "src/WrappedStandardElement.js",
   "dependencies": {
-    "basic-component-mixins": "^0.7.2"
+    "basic-element-base": "^0.7.2"
   },
   "browserify": {
     "transform": [
