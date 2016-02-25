@@ -19,7 +19,8 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
     return this._areaLink;
   }
   set areaLink(value) {
-    this._areaLink = value;
+    // Cast boolean or string values to boolean.
+    this._areaLink = (String(value) === 'true');
     refresh(this);
   }
 
@@ -33,7 +34,9 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
     window.addEventListener('popstate', event => {
       refresh(this);
     });
-    this._areaLink = false;
+    if (typeof this._areaLink === 'undefined') {
+      this._areaLink = false;
+    }
   }
 
   get href() {

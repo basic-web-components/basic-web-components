@@ -10,6 +10,7 @@ body {
   padding: 25px;
 }
 
-p {
+p,
+li {
   max-width: 800px;
 }

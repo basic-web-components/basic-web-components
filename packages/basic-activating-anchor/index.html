@@ -19,9 +19,44 @@
 </head>
 
 <body>
-  <basic-activating-anchor href="#one">One</basic-activating-anchor>
-  <basic-activating-anchor href="#two">Two</basic-activating-anchor>
-  <basic-activating-anchor href="#three">Three</basic-activating-anchor>
+  <p>
+    The links on this page highlight themselves as appropriate. They will appear
+    active (bold) when the current page address matches their link destination.
+    As an example, the links below navigate to anchors within the page. As you
+    navigate (by clicking, editing the address bar, going back/forward), the
+    links will update their own active state.
+  </p>
+  <ul>
+    <li>
+      <basic-activating-anchor href="#one">One</basic-activating-anchor>
+    </li>
+    <li>
+      <basic-activating-anchor href="#two">Two</basic-activating-anchor>
+    </li>
+    <li>
+      <basic-activating-anchor href="#three">Three</basic-activating-anchor>
+    </li>
+  </ul>
+  <p>
+    A link of this type can also represent an area within a site, not just a
+    single page. Such a link will be active whenever the user is at a
+    destination at or below the point in the navigational hierarchy indicated
+    by the link's destination.
+  </p>
+  <ul>
+    <li>
+      <basic-activating-anchor href="./">Page link</basic-activating-anchor>.
+      The link only appears active when the current page address matches the
+      link destination. In this demo, it will only appear active if there is
+      no "#" hash anchor in the address bar.
+    </li>
+    <li>
+      <basic-activating-anchor href="./" area-link='true'>Area link</basic-activating-anchor>.
+      The link goes to the same destination as the page link above, but appears
+      active whenever the current page address matches the prefix indicated by
+      the link destination. In this demo, it will always show as active.
+    </li>
+  </ul>
 </body>
 
 </html>
