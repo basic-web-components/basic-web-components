@@ -20,18 +20,18 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
   }
   set areaLink(value) {
     this._areaLink = value;
-    this.refresh();
+    refresh(this);
   }
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
-    this.refresh();
+    refresh(this);
   }
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     window.addEventListener('popstate', event => {
-      this.refresh();
+      refresh(this);
     });
     this._areaLink = false;
   }
@@ -41,16 +41,18 @@ class ActivatingAnchor extends WrappedStandardElement.wrap('a') {
   }
   set href(value) {
     super.href = value;
-    this.refresh();
+    refresh(this);
   }
 
-  refresh() {
-    let current = window.location.href;
-    this.active = this.areaLink ?
-      (current.substr(0, this.href.length) === this.href) : // Match prefix
-      (current === this.href);                              // Match whole path
-  }
+}
 
+
+// Update the active status of the element based on the current location.
+function refresh(element) {
+  let current = window.location.href;
+  element.active = element.areaLink ?
+    (current.substr(0, element.href.length) === element.href) : // Match prefix
+    (current === element.href); // Match whole path
 }
 
 
