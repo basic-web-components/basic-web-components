@@ -48,10 +48,20 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
+
     window.addEventListener('popstate', event => {
       refresh(this);
     });
+
+    // Stupid Edge/IE "support" popstate, but don't fire it on hashchange.
+    // So we have to listen for hashchange as well, with the result that a
+    // standards-compliant browser may end up refreshing the link twice.
+    window.addEventListener('hashchange', event => {
+      refresh(this);
+    });
+
     if (typeof this._areaLink === 'undefined') {
+      // areaLink is false by default.
       this._areaLink = false;
     }
   }
