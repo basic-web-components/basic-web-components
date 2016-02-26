@@ -83,8 +83,13 @@ class WrappedStandardElement extends ElementBase {
     if (super.createdCallback) { super.createdCallback(); }
 
     // Listen for any events raised by the inner element which will not
-    // automatically be retargetted across the Shadow DOM boundary.
-    let eventNames = nonRetargettedEventsForElement[this.extends] || [];
+    // automatically be retargetted across the Shadow DOM boundary, and re-raise
+    // those events when they happen.
+    //
+    // Note: It's unclear why we need to do this in the Shadow DOM polyfill.
+    // In theory, events in the light DOM should bubble as normal. But this
+    // code appears to be required in the polyfill case as well.
+    let eventNames = reraiseEvents[this.extends] || [];
     eventNames.forEach(eventName => {
       this.inner.addEventListener(eventName, realEvent => {
         let event = new Event(eventName, {
@@ -167,12 +172,19 @@ class WrappedStandardElement extends ElementBase {
 
 
 /*
- * Events which are spec'ed to NOT get retargetted across a Shadow DOM
- * boundary, organized by which element(s) raise the events. To properly
- * simulate these, we will need to listen for the real events, then re-raise
- * a simulation of the original event.
+ * A set of events which, if fired by the inner standard element, should be
+ * re-raised by the custom element. (We only need to do that under native
+ * Shadow DOM, not the polyfill.)
  *
- * See https://www.w3.org/TR/shadow-dom/#h-events-that-are-not-leaked-into-ancestor-trees
+ * These are events which are spec'ed to NOT get retargetted across a Shadow DOM
+ * boundary, organized by which element(s) raise the events. To properly
+ * simulate these, we will need to listen for the real events, then re-raise a
+ * simulation of the original event. For more information, see
+ * https://www.w3.org/TR/shadow-dom/#h-events-that-are-not-leaked-into-ancestor-trees.
+ *
+ * It appears that we do *not* need to re-raise the non-bubbling "focus" and
+ * "blur" events. These appear to be automatically re-raised as expected -- but
+ * it's not clear why that happens.
  *
  * The list below is reasonably complete. It omits elements that cannot be
  * wrapped (see class notes above). Also, we haven't actually tried wrapping
@@ -180,7 +192,7 @@ class WrappedStandardElement extends ElementBase {
  * work as expected, but it was easier to include them for completeness than
  * to actually verify whether or not the element can be wrapped.
  */
-const nonRetargettedEventsForElement = {
+const reraiseEvents = {
   address: ['scroll'],
   blockquote: ['scroll'],
   caption: ['scroll'],
