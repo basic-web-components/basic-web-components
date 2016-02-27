@@ -115,12 +115,12 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 function refresh(element) {
   let url = window.location.href;
   let match;
-  if (element.areaLink && element.href.length < url.length) {
+  if (element.areaLink) {
     // Match prefix
     let prefix = element.href;
     // If prefix doesn't end in slash, add a slash.
     // We want to avoid matching in the middle of a folder name.
-    if (prefix.substr(-1) !== '/') {
+    if (prefix.length < url.length && prefix.substr(-1) !== '/') {
       prefix += '/';
     }
     match = (url.substr(0, prefix.length) === prefix);

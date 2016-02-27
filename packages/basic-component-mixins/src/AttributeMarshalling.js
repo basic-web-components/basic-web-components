@@ -60,7 +60,8 @@ export default (base) => {
      */
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-      [].forEach.call(this.attributes, attribute => {
+      let attributes = [].slice.call(this.attributes); // To array for IE
+      attributes.forEach(attribute => {
         this.attributeChangedCallback(attribute.name, undefined, attribute.value);
       });
     }
