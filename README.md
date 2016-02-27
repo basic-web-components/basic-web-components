@@ -129,6 +129,9 @@ The current release of Basic Web Components includes the following:
   A text area that expands to contain its text.
 * [basic-carousel](packages/basic-carousel).
   Lets the user navigate laterally through a sequence of child elements.
+* [basic-current-anchor](packages/basic-current-anchor).
+  An anchor (link) that highlights itself when its destination matches the
+  current location.
 * [basic-list-box](packages/basic-list-box).
   A single-selection list box that supports selection highlighting (using the
   system highlight color) and keyboard navigation.
@@ -149,6 +152,9 @@ other components.
   time.
 * [basic-spread-items](packages/basic-spread-items).
   Spreads out a set of items horizontally so they take equal space.
+* [basic-wrapped-standard-element](packages/basic-wrapped-standard-element).
+  Wraps a standard HTML element so that the standard behavior can then be
+  extended.
 
 ## Mixins
 
