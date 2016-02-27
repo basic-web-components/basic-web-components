@@ -1,8 +1,71 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 
 
-// Feature detection for old Shadow DOM v0.
-const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== 'undefined');
+/*
+ * A set of events which, if fired by the inner standard element, should be
+ * re-raised by the custom element. (We only need to do that under native
+ * Shadow DOM, not the polyfill.)
+ *
+ * These are events which are spec'ed to NOT get retargetted across a Shadow DOM
+ * boundary, organized by which element(s) raise the events. To properly
+ * simulate these, we will need to listen for the real events, then re-raise a
+ * simulation of the original event. For more information, see
+ * https://www.w3.org/TR/shadow-dom/#h-events-that-are-not-leaked-into-ancestor-trees.
+ *
+ * It appears that we do *not* need to re-raise the non-bubbling "focus" and
+ * "blur" events. These appear to be automatically re-raised as expected -- but
+ * it's not clear why that happens.
+ *
+ * The list below is reasonably complete. It omits elements that cannot be
+ * wrapped (see class notes above). Also, we haven't actually tried wrapping
+ * every element in this list; some of the more obscure ones might not actually
+ * work as expected, but it was easier to include them for completeness than
+ * to actually verify whether or not the element can be wrapped.
+ */
+const reraiseEvents = {
+  address: ['scroll'],
+  blockquote: ['scroll'],
+  caption: ['scroll'],
+  center: ['scroll'],
+  dd: ['scroll'],
+  dir: ['scroll'],
+  div: ['scroll'],
+  dl: ['scroll'],
+  dt: ['scroll'],
+  fieldset: ['scroll'],
+  form: ['reset', 'scroll'],
+  frame: ['load'],
+  h1: ['scroll'],
+  h2: ['scroll'],
+  h3: ['scroll'],
+  h4: ['scroll'],
+  h5: ['scroll'],
+  h6: ['scroll'],
+  iframe: ['load'],
+  img: ['abort', 'error', 'load'],
+  input: ['abort', 'change', 'error', 'select', 'load'],
+  keygen: ['reset', 'select'],
+  li: ['scroll'],
+  link: ['load'],
+  menu: ['scroll'],
+  object: ['error', 'scroll'],
+  ol: ['scroll'],
+  p: ['scroll'],
+  script: ['error', 'load'],
+  select: ['change', 'scroll'],
+  tbody: ['scroll'],
+  tfoot: ['scroll'],
+  thead: ['scroll'],
+  textarea: ['change', 'select', 'scroll']
+};
+
+
+// Keep track of which re-raised events should bubble.
+const eventBubbles = {
+  abort: true,
+  change: true,
+  reset: true
+};
 
 
 /**
@@ -171,73 +234,6 @@ class WrappedStandardElement extends ElementBase {
 }
 
 
-/*
- * A set of events which, if fired by the inner standard element, should be
- * re-raised by the custom element. (We only need to do that under native
- * Shadow DOM, not the polyfill.)
- *
- * These are events which are spec'ed to NOT get retargetted across a Shadow DOM
- * boundary, organized by which element(s) raise the events. To properly
- * simulate these, we will need to listen for the real events, then re-raise a
- * simulation of the original event. For more information, see
- * https://www.w3.org/TR/shadow-dom/#h-events-that-are-not-leaked-into-ancestor-trees.
- *
- * It appears that we do *not* need to re-raise the non-bubbling "focus" and
- * "blur" events. These appear to be automatically re-raised as expected -- but
- * it's not clear why that happens.
- *
- * The list below is reasonably complete. It omits elements that cannot be
- * wrapped (see class notes above). Also, we haven't actually tried wrapping
- * every element in this list; some of the more obscure ones might not actually
- * work as expected, but it was easier to include them for completeness than
- * to actually verify whether or not the element can be wrapped.
- */
-const reraiseEvents = {
-  address: ['scroll'],
-  blockquote: ['scroll'],
-  caption: ['scroll'],
-  center: ['scroll'],
-  dd: ['scroll'],
-  dir: ['scroll'],
-  div: ['scroll'],
-  dl: ['scroll'],
-  dt: ['scroll'],
-  fieldset: ['scroll'],
-  form: ['reset', 'scroll'],
-  frame: ['load'],
-  h1: ['scroll'],
-  h2: ['scroll'],
-  h3: ['scroll'],
-  h4: ['scroll'],
-  h5: ['scroll'],
-  h6: ['scroll'],
-  iframe: ['load'],
-  img: ['abort', 'error', 'load'],
-  input: ['abort', 'change', 'error', 'select', 'load'],
-  keygen: ['reset', 'select'],
-  li: ['scroll'],
-  link: ['load'],
-  menu: ['scroll'],
-  object: ['error', 'scroll'],
-  ol: ['scroll'],
-  p: ['scroll'],
-  script: ['error', 'load'],
-  select: ['change', 'scroll'],
-  tbody: ['scroll'],
-  tfoot: ['scroll'],
-  thead: ['scroll'],
-  textarea: ['change', 'select', 'scroll']
-};
-
-
-// Keep track of which re-raised events should bubble.
-const eventBubbles = {
-  abort: true,
-  change: true,
-  reset: true
-};
-
-
 function createPropertyDelegate(name, descriptor) {
   let delegate = {
     configurable: descriptor.configurable,
@@ -246,12 +242,12 @@ function createPropertyDelegate(name, descriptor) {
   if (descriptor.get) {
     delegate.get = function() {
       return this.inner[name];
-    }
+    };
   }
   if (descriptor.set) {
     delegate.set = function(value) {
       this.inner[name] = value;
-    }
+    };
   }
   if (descriptor.writable) {
     delegate.writable = descriptor.writable;

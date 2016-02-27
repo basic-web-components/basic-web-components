@@ -39,7 +39,7 @@ describe("WrappedStandardElement", () => {
     let element = document.createElement('wrapped-a');
     element.setAttribute('href', 'http://example.com/');
     assert.equal(element.inner.href, 'http://example.com/');
-  })
+  });
 
   it("re-raises events not automatically retargetted by Shadow DOM", done => {
     let element = document.createElement('wrapped-iframe');

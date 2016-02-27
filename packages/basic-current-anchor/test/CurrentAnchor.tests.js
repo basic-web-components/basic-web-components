@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import CurrentAnchor from '../src/CurrentAnchor';
+import CurrentAnchor from '../src/CurrentAnchor'; // jshint ignore:line
 
 
 describe("CurrentAnchor", () => {
