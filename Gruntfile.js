@@ -11,15 +11,17 @@
 var fs = require('fs');
 
 //
-// allPackages is the global array of npm-publishable packages in this monorepo
+// allPackages is the global array of npm-publishable packages in this monorepo.
+// This is all folders inside the /packages folder, not including the folder
+// /packages/boilerplate.
 //
 var allPackages = [
-  'basic-current-anchor',
   'basic-arrow-selection',
   'basic-autosize-textarea',
   'basic-carousel',
   'basic-collapsible-panel',
   'basic-component-mixins',
+  'basic-current-anchor',
   'basic-element-base',
   'basic-fade-overflow',
   'basic-list-box',
