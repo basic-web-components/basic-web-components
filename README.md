@@ -129,6 +129,8 @@ The current release of Basic Web Components includes the following:
   A text area that expands to contain its text.
 * [basic-carousel](packages/basic-carousel).
   Lets the user navigate laterally through a sequence of child elements.
+* [basic-collapsible-panel](packages/basic-collapsible-panel).
+  A panel which can be expanded/collapsed with an animated transition.
 * [basic-current-anchor](packages/basic-current-anchor).
   An anchor (link) that highlights itself when its destination matches the
   current location.
