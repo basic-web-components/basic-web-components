@@ -16,6 +16,7 @@ var fs = require('fs');
 // /packages/boilerplate.
 //
 var allPackages = [
+  'basic-array-to-list',
   'basic-arrow-selection',
   'basic-autosize-textarea',
   'basic-carousel',
@@ -39,14 +40,23 @@ var updatedPublishList = [];
 // Build the global buildList object for use in browserify:components
 //
 function buildBuildList() {
+
+  var srcFiles = allPackages.map(function(package) {
+    return 'packages/' + package + '/src/*.js';
+  });
+  var testFiles = allPackages.map(function(package) {
+    return 'packages/' + package + '/test/*.js';
+  });
+
   var obj = {
-    'build/basic-web-components.js': ['packages/*/src/*.js'],
-    'build/tests.js': ['packages/*/test/*.js']
+    'build/basic-web-components.js': srcFiles,
+    'build/tests.js': testFiles
   };
 
-  for (var i = 0; i < allPackages.length; i++) {
-    obj['packages/' + allPackages[i] + '/dist/' + allPackages[i] + '.js'] = ['packages/' + allPackages[i] + '/src/*.js'];
-  }
+  allPackages.forEach(function(package) {
+    obj['packages/' + package + '/dist/' + package + '.js'] = ['packages/' + package + '/src/*.js'];
+  });
+
   // Special cases: dist gets built from the es5globals file.
   obj['packages/basic-component-mixins/dist/basic-component-mixins.js'] = 'packages/basic-component-mixins/es5globals.js';
   obj['packages/basic-wrapped-standard-element/dist/basic-wrapped-standard-element.js'] = 'packages/basic-wrapped-standard-element/es5globals.js';
