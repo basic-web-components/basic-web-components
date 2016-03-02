@@ -34,7 +34,7 @@ describe("renderArrayAsElements", () => {
     element.items = items;
     let childNodes = element.childNodes;
     assert.equal(childNodes.length, 3);
-    childNodes.forEach((element, index) => {
+    [].slice.call(childNodes).forEach((element, index) => {
       assert.equal(element.localName, 'div');
       assert.equal(element.textContent, items[index]);
     });
