@@ -16,7 +16,6 @@ var fs = require('fs');
 // /packages/boilerplate.
 //
 var allPackages = [
-  'basic-array-to-list',
   'basic-arrow-selection',
   'basic-autosize-textarea',
   'basic-carousel',

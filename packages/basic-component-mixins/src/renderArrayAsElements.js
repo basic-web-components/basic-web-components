@@ -6,7 +6,7 @@
  * @param {function} renderItem - returns a new element for an item, or
  *                                repurposes an existing element for an item
  */
-export default function renderArrayAsElements(items, container, renderItem) {
+function renderArrayAsElements(items, container, renderItem) {
   // Create a new set of elements for the current items.
   items.forEach((item, index) => {
     let oldElement = container.childNodes[index];
@@ -23,3 +23,5 @@ export default function renderArrayAsElements(items, container, renderItem) {
     container.removeChild(container.childNodes[items.length]);
   }
 }
+
+export default renderArrayAsElements;
