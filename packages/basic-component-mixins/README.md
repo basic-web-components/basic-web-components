@@ -246,10 +246,10 @@ Then load the script defining the element into your page:
     </html>
 
 
-# Web component mixins
+# Web component mixins and helpers
 
-The /src folder includes the complete set of mixins, each of which address some
-common web component feature:
+The /src folder includes the complete set of mixins/helpers, each of which
+address some common web component feature:
 
 * [AttributeMarshalling](docs/AttributeMarshalling.md).
   Marshall element attributes to component properties (and eventually vice
@@ -299,6 +299,8 @@ common web component feature:
   (direct children, or nodes distributed to slots).
 * [OpenClose](docs/OpenClose.md).
   Adds open/close semantics.
+* [renderArrayAsElements](docs/renderArrayAsElements.md).
+  Helper function for rendering an array of items as elements.
 * [SelectionAriaActive](docs/SelectionAriaActive.md).
   Treat the selected item in a list as the active item in ARIA accessibility
   terms.
