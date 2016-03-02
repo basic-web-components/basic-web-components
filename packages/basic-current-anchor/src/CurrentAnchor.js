@@ -1,4 +1,5 @@
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
+import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 /**
@@ -77,12 +78,7 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     return this.classList.contains('current');
   }
   set current(value) {
-    // Would like to use classList.toggle() here, but IE 11 doesn't have it.
-    if (value) {
-      this.classList.add('current');
-    } else {
-      this.classList.remove('current');
-    }
+    toggleClass(this, 'current', value);
     this.dispatchEvent(new CustomEvent('current-changed'));
   }
 

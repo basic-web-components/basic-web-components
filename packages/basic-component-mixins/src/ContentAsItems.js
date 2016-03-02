@@ -1,3 +1,6 @@
+import toggleClass from '../../basic-component-mixins/src/toggleClass';
+
+
 /* Exported function extends a base class with ContentAsItems. */
 export default (base) => {
 
@@ -33,12 +36,7 @@ export default (base) => {
      */
     applySelection(item, selected) {
       if (super.applySelection) { super.applySelection(item, selected); }
-      // Would like to use classList.toggle() here, but IE 11 doesn't have it.
-      if (selected) {
-        item.classList.add('selected');
-      } else {
-        item.classList.remove('selected');
-      }
+      toggleClass(item, 'selected', selected);
     }
 
     contentChanged() {

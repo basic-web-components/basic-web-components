@@ -1,3 +1,6 @@
+import toggleClass from '../../basic-component-mixins/src/toggleClass';
+
+
 /* Exported function extends a base class with OpenClose. */
 export default (base) => {
 
@@ -70,14 +73,8 @@ export default (base) => {
      *        false if it's being opened.
      */
     render(closing) {
-      // Would like to use classList.toggle() here, but IE 11 doesn't have it.
-      if (closing) {
-        this.classList.add('basic-closed');
-        this.classList.remove('basic-opened');
-      } else {
-        this.classList.remove('basic-closed');
-        this.classList.add('basic-opened');
-      }
+      toggleClass(this, 'basic-closed', closing);
+      toggleClass(this, 'basic-opened', !closing);
       this.setAttribute('aria-expanded', !closing);
     }
 

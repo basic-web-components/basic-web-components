@@ -1,5 +1,7 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
+import toggleClass from '../../basic-component-mixins/src/toggleClass';
+
 
 let base = ElementBase;
 
@@ -85,12 +87,7 @@ class SlidingViewport extends base {
 
   showTransition(show) {
     if (super.showTransition) { super.showTransition(show); }
-    // Would like to use classList.toggle() here, but IE 11 doesn't have it.
-    if (show) {
-      this.classList.add('showTransition');
-    } else {
-      this.classList.remove('showTransition');
-    }
+    toggleClass(this, 'showTransition', show);
   }
 
   get template() {
