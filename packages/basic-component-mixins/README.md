@@ -246,10 +246,10 @@ Then load the script defining the element into your page:
     </html>
 
 
-# Web component mixins and helpers
+# Web component mixins
 
-The /src folder includes the complete set of mixins/helpers, each of which
-address some common web component feature:
+The /src folder includes the complete set of mixins, each of which address some
+common web component feature:
 
 * [AttributeMarshalling](docs/AttributeMarshalling.md).
   Marshall element attributes to component properties (and eventually vice
@@ -257,14 +257,8 @@ address some common web component feature:
   camelCase `fooBar` property names.
 * [ClickSelection](docs/ClickSelection.md).
   Translates a click on a child element into a selection.
-* [Collective](docs/Collective.md).
-  Not a mixin itself, this class is used by the CollectiveMember mixin to track
-  the components that should be treated as a unit for keyboard purposes.
 * [Composable](docs/Composable.md).
   Facilitates the application of a set of mixins.
-* [composeTemplates](docs/composeTemplates.md).
-  Not a mixin, but a helper function for letting a component insert its template
-  inside a template defined by a base class.
 * [ContentAsItems](docs/ContentAsItems.md).
   Lets a component treat its content as items in a list.
 * [ContentFirstChildTarget](docs/ContentFirstChildTarget.md).
@@ -299,8 +293,6 @@ address some common web component feature:
   (direct children, or nodes distributed to slots).
 * [OpenClose](docs/OpenClose.md).
   Adds open/close semantics.
-* [renderArrayAsElements](docs/renderArrayAsElements.md).
-  Helper function for rendering an array of items as elements.
 * [SelectionAriaActive](docs/SelectionAriaActive.md).
   Treat the selected item in a list as the active item in ARIA accessibility
   terms.
@@ -326,6 +318,25 @@ address some common web component feature:
 * [TrackpadDirection](docs/TrackpadDirection.md).
   Translates trackpad swipes or horizontal mouse wheel drags into direction
   semantics.
+
+
+# Web component helpers
+
+The /src folder also defines a handful of helper classes and functions that can
+be useful in defining web components.
+
+* [Collective](docs/Collective.md).
+  A class is used by the CollectiveMember mixin to track the components that
+  should be treated as a unit for keyboard purposes.
+* [composeTemplates](docs/composeTemplates.md).
+  Not a mixin, but a helper function for letting a component insert its template
+  inside a template defined by a base class.
+* [microtask](docs/microtask.md).
+  Permits creation of microtasks in IE 11.
+* [renderArrayAsElements](docs/renderArrayAsElements.md).
+  Renders an array of items as elements.
+* [toggleClass](docs/toggleClass).
+  Permits use of a concise function for adding/removing a CSS class in IE 11.
 
 
 # Applying multiple mixins

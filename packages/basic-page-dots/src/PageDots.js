@@ -6,6 +6,7 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
+import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 let base = ElementBase.compose(
@@ -54,12 +55,7 @@ class PageDots extends base {
     if (dots && dots.length > index) {
       let dot = this.dots[index];
       if (dot) {
-        // Would like to use classList.toggle() here, but IE 11 doesn't have it.
-        if (selected) {
-          dot.classList.add('selected');
-        } else {
-          dot.classList.remove('selected');
-        }
+        toggleClass(dot, 'selected', selected);
       }
     }
   }
@@ -119,12 +115,7 @@ class PageDots extends base {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
     let selectedIndex = this.selectedIndex;
     this.dots.forEach((dot, i) => {
-      // Would like to use classList.toggle() here, but IE 11 doesn't have it.
-      if (i === selectedIndex) {
-        dot.classList.add('selected');
-      } else {
-        dot.classList.remove('selected');
-      }
+      toggleClass(dot, 'selected', i === selectedIndex);
     });
   }
 
