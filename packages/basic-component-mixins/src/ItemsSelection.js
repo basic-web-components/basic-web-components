@@ -1,3 +1,5 @@
+import microtask from './microtask';
+
 /* Exported function extends a base class with ItemsSelection. */
 export default (base) => {
 
@@ -77,21 +79,17 @@ export default (base) => {
 
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
-      let index = this.items.indexOf(this.selectedItem);
-      if (index < 0) {
-        // Selected item is no longer in the current set of items.
-        this.selectedItem = null;
-        if (this.selectionRequired) {
-          // Ensure selection, but do this in the next tick to give other
-          // mixins a chance to do their own itemsChanged work.
-          setTimeout(function() {
-            ensureSelection(this);
-          }.bind(this));
-        }
+
+      if (this.selectionRequired) {
+        // Ensure selection, but do this in the next tick to give other mixins a
+        // chance to do their own itemsChanged work.
+        microtask(() => {
+          ensureSelection(this);
+        });
       }
 
       // The change in items may have affected which navigations are possible.
-      updatePossibleNavigations(this, index);
+      updatePossibleNavigations(this);
     }
 
     /**
@@ -105,17 +103,13 @@ export default (base) => {
     get selectedIndex() {
       let selectedItem = this.selectedItem;
 
-      if (selectedItem == null) {
-        return -1;
-      }
-
+      // TODO: If selection wasn't found, most likely cause is that the DOM was
+      // manipulated from underneath us. Once we track content changes, turn
+      // this into a warning.
       // TODO: Memoize
-      let index = this.items.indexOf(selectedItem);
-
-      // If index = -1, selection wasn't found. Most likely cause is that the
-      // DOM was manipulated from underneath us.
-      // TODO: Once we track content changes, turn this into an exception.
-      return index;
+      return selectedItem ?
+        this.items.indexOf(selectedItem) :
+        -1;
     }
     set selectedIndex(index) {
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
@@ -151,6 +145,10 @@ export default (base) => {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       let previousItem = this._selectedItem;
       if (previousItem) {
+        if (item === previousItem) {
+          // The indicated item is already the selected item.
+          return;
+        }
         // Remove previous selection.
         this.applySelection(previousItem, false);
       }
@@ -163,8 +161,7 @@ export default (base) => {
 
       // TODO: Rationalize with selectedIndex so we're not recalculating item
       // or index in each setter.
-      let index = this.items.indexOf(item);
-      updatePossibleNavigations(this, index);
+      updatePossibleNavigations(this);
 
       let event = new CustomEvent('selected-item-changed', {
         detail: {
@@ -195,7 +192,9 @@ export default (base) => {
     set selectionRequired(selectionRequired) {
       if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
       this._selectionRequired = selectionRequired;
-      ensureSelection(this);
+      if (selectionRequired) {
+        ensureSelection(this);
+      }
     }
 
     /**
@@ -244,11 +243,20 @@ export default (base) => {
 
 
 // If no item is selected, select a default item.
-// TODO: If the previously-selected item has been deleted, try to select an
-// item adjacent to the position it held.
 function ensureSelection(element) {
-  if (!element.selectedItem && element.items && element.items.length > 0) {
-    element.selectedIndex = 0;
+  let index = element.selectedIndex;
+  if (index < 0) {
+    // Selected item is no longer in the current set of items.
+    if (element.items && element.items.length > 0) {
+      // Select the first item.
+      // TODO: If the previously-selected item has been deleted, try to select
+      // an item adjacent to the position it held.
+      element.selectedIndex = 0;
+    } else {
+      // No items for us to select, but we can at least signal that there's no
+      // longer a selection.
+      this.selectedItem = null;
+    }
   }
 }
 
@@ -267,22 +275,26 @@ function selectIndex(element, index) {
 
 // Following a change in selection, report whether it's now possible to
 // go next/previous from the given index.
-function updatePossibleNavigations(element, index) {
+function updatePossibleNavigations(element) {
   let canSelectNext;
   let canSelectPrevious;
   let items = element.items;
   if (items == null || items.length === 0) {
+    // No items to select.
     canSelectNext = false;
     canSelectPrevious = false;
-  } else if (items.length === 1) {
-    // Special case. If there's no selection, we declare that it's always
-    // possible to go next/previous to create a selection.
-    canSelectNext = true;
-    canSelectPrevious = true;
   } else {
-    // Normal case: we have an index in a list that has items.
-    canSelectPrevious = (index > 0);
-    canSelectNext = (index < items.length - 1);
+    let index = element.selectedIndex;
+    if (index < 0 && items.length > 0) {
+      // Special case. If there are items but no selection, declare that it's
+      // always possible to go next/previous to create a selection.
+      canSelectNext = true;
+      canSelectPrevious = true;
+    } else {
+      // Normal case: we have an index in a list that has items.
+      canSelectPrevious = (index > 0);
+      canSelectNext = (index < items.length - 1);
+    }
   }
   element.canSelectNext = canSelectNext;
   element.canSelectPrevious = canSelectPrevious;
