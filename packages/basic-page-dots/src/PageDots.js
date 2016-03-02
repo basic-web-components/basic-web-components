@@ -3,6 +3,7 @@ import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFir
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
@@ -80,7 +81,17 @@ class PageDots extends base {
 
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
-    createDots(this);
+    renderArrayAsElements(this.items, this.$.dots, (item, element) => {
+      // We don't use the item parameter, because any item will produce an
+      // identical corresponding dot.
+      if (!element) {
+        element = document.createElement('div');
+        element.classList.add('dot');
+        element.classList.add('style-scope');
+        element.classList.add('basic-page-dots');
+      }
+      return element;
+    });
     this.selectedItemChanged();  // In case position of selected item moved.
   }
 
@@ -180,47 +191,11 @@ class PageDots extends base {
       }
       </style>
 
-      <!--
-      REVIEW: These dots aren't buttons, because they're never meant to be used
-      on their own. There should always be some other, more accessible, way to
-      navigate the content.
-      -->
-      <!-- TODO: Replace with something that's basically a list box -->
       <div id="dots"></div>
       <slot></slot>
     `;
   }
 
-}
-
-
-function createDot() {
-  let dot = document.createElement('div');
-  dot.classList.add('dot');
-  dot.classList.add('style-scope');
-  dot.classList.add('basic-page-dots');
-  return dot;
-}
-
-
-function createDots(element) {
-  let newDotCount = element.items.length;
-  let dotContainer = element.$.dots;
-  let existingDotCount = dotContainer.children.length;
-  if (newDotCount === existingDotCount) {
-    return;
-  } else if (existingDotCount > newDotCount) {
-    // Remove extra dots.
-    while (dotContainer.children.length > newDotCount) {
-      dotContainer.removeChild(dotContainer.children[0]);
-    }
-  } else {
-    // Create needed dots.
-    for (let i = existingDotCount; i < newDotCount; i++) {
-      let dot = createDot();
-      dotContainer.appendChild(dot);
-    }
-  }
 }
 
 
