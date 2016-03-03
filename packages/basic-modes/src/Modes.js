@@ -30,6 +30,7 @@ class Modes extends base {
     if (super.applySelection) { super.applySelection(item, selected); }
     // item.style.visibility = selected ? 'visible' : 'hidden';
     item.style.display = selected ? '' : 'none';
+    item.setAttribute('aria-hidden', !selected);
   }
 
   attachedCallback() {

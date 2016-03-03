@@ -93,7 +93,10 @@ export default (base) => {
     itemAdded(item) {
       if (super.itemAdded) { super.itemAdded(item); }
 
-      item.setAttribute('role', 'option');
+      if (!this.getAttribute('role')) {
+        // Assign a default ARIA role.
+        item.setAttribute('role', 'option');
+      }
 
       // Ensure each item has an ID so we can set aria-activedescendant on the
       // overall list whenever the selection changes.

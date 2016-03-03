@@ -8,6 +8,10 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
+// Used to assign unique IDs to tabs for ARIA purposes.
+let idCount = 0;
+
+
 let base = ElementBase.compose(
   ContentFirstChildTarget,
   DistributedChildrenAsContent,
@@ -45,6 +49,10 @@ class TabStrip extends base {
         this.selectedIndex = tabIndex;
       }
     });
+    if (!this.getAttribute('role')) {
+      // Assign a default ARIA role.
+      this.setAttribute('role', 'tablist');
+    }
   }
 
   get tabs() {
@@ -53,16 +61,39 @@ class TabStrip extends base {
 
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
+
+    let baseId = this.id ?
+    "_" + this.id + "Panel" :
+    "_panel";
+
+    // Confirm that items have at least a default role and ID for ARIA purposes.
+    this.items.forEach(item => {
+      if (!item.getAttribute('role')) {
+        item.setAttribute('role', 'tabpanel');
+      }
+      if (!item.id) {
+        item.id = baseId + idCount++;
+      }
+    });
+
+    // Create tabs.
     renderArrayAsElements(this.items, this.$.tabs, (item, element) => {
       if (!element) {
         element = document.createElement('button');
         element.classList.add('tab');
         element.classList.add('style-scope');
         element.classList.add('basic-tab-strip');
+        element.setAttribute('role', 'tab');
         return element;
       }
+      element.id = item.id + '_tab';
       element.textContent = item.getAttribute('aria-label');
+
+      // Point tab and panel at each other.
+      element.setAttribute('aria-controls', item.id);
+      item.setAttribute('aria-labelledby', element.id);
     });
+
     this.selectedItemChanged();  // In case position of selected item moved.
   }
 
