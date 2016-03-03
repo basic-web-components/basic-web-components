@@ -29,7 +29,7 @@ class Modes extends base {
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
     // item.style.visibility = selected ? 'visible' : 'hidden';
-    item.style.display = selected ? 'inherit' : 'none';
+    item.style.display = selected ? '' : 'none';
   }
 
   attachedCallback() {

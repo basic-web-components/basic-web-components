@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-tab-strip</title>
+
+  <script src="../demos/lib/webcomponents.js"></script>
+  <script src="./dist/basic-tab-strip.js"></script>
+  <script src="../basic-modes/dist/basic-modes.js"></script>
+  <link rel="stylesheet" href="../demos/demos.css">
+
+  <style>
+  basic-tab-strip {
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 300px;
+    max-width: 100%;
+    width: 400px;
+  }
+
+  basic-modes > div {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  </style>
+
+</head>
+
+<body>
+  <basic-tab-strip>
+    <basic-modes aria-label="Panels">
+      <div aria-label="One">Page one</div>
+      <div aria-label="Two">Page two</div>
+      <div aria-label="Three">Page three</div>
+    </basic-modes>
+  </basic-tab-strip>
+</body>
+
+</html>

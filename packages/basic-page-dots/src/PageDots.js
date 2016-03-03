@@ -81,7 +81,6 @@ class PageDots extends base {
       // We don't use the item parameter, because any item will produce an
       // identical corresponding dot.
       if (!element) {
-        this.log("creating dot");
         element = document.createElement('div');
         element.classList.add('dot');
         element.classList.add('style-scope');
