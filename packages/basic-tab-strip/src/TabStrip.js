@@ -1,26 +1,18 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
-import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 let base = ElementBase.compose(
   ContentFirstChildTarget,
-  DirectionSelection,
   DistributedChildrenAsContent,
   ItemsSelection,
-  Keyboard,
-  KeyboardDirection,
   ObserveContentChanges,
-  TargetInCollective,
   TargetSelection
 );
 
@@ -63,10 +55,10 @@ class TabStrip extends base {
     if (super.itemsChanged) { super.itemsChanged(); }
     renderArrayAsElements(this.items, this.$.tabs, (item, element) => {
       if (!element) {
-        element = document.createElement('div');
+        element = document.createElement('button');
         element.classList.add('tab');
         element.classList.add('style-scope');
-        element.classList.add('basic-page-tabs');
+        element.classList.add('basic-tab-strip');
         return element;
       }
       element.textContent = item.getAttribute('aria-label');
@@ -115,6 +107,8 @@ class TabStrip extends base {
         border-radius: 0.25em 0.25em 0 0;
         cursor: pointer;
         display: inline-block;
+        font-family: inherit;
+        font-size: inherit;
         padding: 0.5em 0.75em;
         position: relative;
         margin-bottom: -1px;
