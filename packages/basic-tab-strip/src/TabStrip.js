@@ -4,6 +4,7 @@ import DirectionSelection from '../../basic-component-mixins/src/DirectionSelect
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
@@ -15,6 +16,7 @@ let base = ElementBase.compose(
   ContentFirstChildTarget,
   DirectionSelection,
   DistributedChildrenAsContent,
+  ItemsSelection,
   Keyboard,
   KeyboardDirection,
   ObserveContentChanges,
