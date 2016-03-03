@@ -6,5 +6,3 @@ project:
 * Copy this folder.
 * Replace instances of CLASS NAME GOES HERE and ELEMENT NAME GOES HERE with a
   class name (e.g., FooBar) and element name (basic-foo-bar) respectively.
-* Update the Gruntfile to include your new folder name in the list of component
-  packages.

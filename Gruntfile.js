@@ -9,28 +9,18 @@
  */
 
 var fs = require('fs');
+var path = require('path');
 
 //
 // allPackages is the global array of npm-publishable packages in this monorepo.
-// This is all folders inside the /packages folder, not including the folder
-// /packages/boilerplate.
-//
-var allPackages = [
-  'basic-arrow-selection',
-  'basic-autosize-textarea',
-  'basic-carousel',
-  'basic-collapsible-panel',
-  'basic-component-mixins',
-  'basic-current-anchor',
-  'basic-element-base',
-  'basic-fade-overflow',
-  'basic-list-box',
-  'basic-modes',
-  'basic-page-dots',
-  'basic-sliding-viewport',
-  'basic-spread-items',
-  'basic-wrapped-standard-element'
-];
+// This is all folders inside the /packages folder that start with the prefix
+// "basic-".
+var PACKAGE_FOLDER = 'packages';
+var allPackages = fs.readdirSync(PACKAGE_FOLDER).filter(function(fileName) {
+  var filePath = path.join(PACKAGE_FOLDER, fileName);
+  var stat = fs.statSync(filePath);
+  return stat && stat.isDirectory() && fileName.startsWith('basic-');
+});
 
 // Global array used for reporting successful npm publish tasks
 var updatedPublishList = [];
