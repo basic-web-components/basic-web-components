@@ -68,7 +68,7 @@ class TabStrip extends base {
       // Assign a default ARIA role.
       this.setAttribute('role', 'tablist');
     }
-    
+
     this.navigationAxis = 'horizontal';
   }
 
@@ -144,7 +144,16 @@ class TabStrip extends base {
       }
 
       #tabs {
+        /*
+         * Avoid having tab container stretch across. User won't be able to see
+         * it, but since it handles the keyboard, in Mobile Safari a tap on the
+         * container background will cause the region to flash. Aligning the
+         * region collapses it down to hold its contents.
+         */
+        -webkit-align-self: flex-start;
+        align-self: flex-start;
         /* For IE bug (clicking tab produces gap between tab and page). */
+        -webkit-display: flex;
         display: flex;
       }
 
