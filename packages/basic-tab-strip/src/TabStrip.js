@@ -116,6 +116,11 @@ class TabStrip extends base {
         position: relative;
       }
 
+      #tabs {
+        /* For IE bug (clicking tab produces gap between tab and page). */
+        display: flex;
+      }
+
       #pages {
         background: white;
         border: 1px solid #ccc;
