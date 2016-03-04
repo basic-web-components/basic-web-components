@@ -35,7 +35,7 @@ class TabStrip extends base {
     if (tabs && tabs.length > index) {
       let tab = this.tabs[index];
       if (tab) {
-        toggleClass(tab, 'selected', selected);
+        applySelectionToTab(tab, selected);
       }
     }
   }
@@ -101,7 +101,7 @@ class TabStrip extends base {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
     let selectedIndex = this.selectedIndex;
     this.tabs.forEach((tab, i) => {
-      toggleClass(tab, 'selected', i === selectedIndex);
+      applySelectionToTab(tab, i === selectedIndex);
     });
   }
 
@@ -165,6 +165,12 @@ class TabStrip extends base {
     `;
   }
 
+}
+
+
+function applySelectionToTab(tab, selected) {
+  toggleClass(tab, 'selected', selected);
+  tab.setAttribute('aria-selected', selected);
 }
 
 
