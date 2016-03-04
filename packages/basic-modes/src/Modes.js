@@ -28,22 +28,13 @@ class Modes extends base {
 
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
-    // item.style.visibility = selected ? 'visible' : 'hidden';
     item.style.display = selected ? '' : 'none';
     item.setAttribute('aria-hidden', !selected);
   }
 
   attachedCallback() {
-    // HACK
-    this.itemsChanged();
     this.selectionRequired = true;
   }
-
-  // itemAdded(item) {
-  //   if (super.itemAdded) { super.itemAdded(item); }
-  //   item.style.position = 'absolute';
-  //   item.style.top = 0;
-  // }
 
 }
 

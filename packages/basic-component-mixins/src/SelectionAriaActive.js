@@ -78,7 +78,7 @@ export default (base) => {
       this.collective.elements.forEach(element => {
         if (element !== outermostElement) {
           element.removeAttribute('aria-activedescendant');
-          element.removeAttribute('role');
+          element.setAttribute('role', 'none');
         }
       });
     }
