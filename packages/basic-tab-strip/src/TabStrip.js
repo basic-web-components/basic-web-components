@@ -155,6 +155,11 @@ class TabStrip extends base {
         /* For IE bug (clicking tab produces gap between tab and page). */
         -webkit-display: flex;
         display: flex;
+        /*
+         * Try to obtain fast-tap behavior on all tabs.
+         * See https://webkit.org/blog/5610/more-responsive-tapping-on-ios/.
+         */
+        touch-action: manipulation;
       }
 
       #pages {
