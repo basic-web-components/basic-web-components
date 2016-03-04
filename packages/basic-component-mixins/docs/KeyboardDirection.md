@@ -15,6 +15,7 @@ DirectionSelection mixin.
 **Kind**: global class  
 
 * [KeyboardDirection](#KeyboardDirection)
+    * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
     * [.goLeft()](#KeyboardDirection+goLeft)
@@ -22,6 +23,16 @@ DirectionSelection mixin.
     * [.goStart()](#KeyboardDirection+goStart)
     * [.goUp()](#KeyboardDirection+goUp)
 
+<a name="KeyboardDirection+navigationAxis"></a>
+### keyboardDirection.navigationAxis : <code>string</code>
+Indicates the direction of permitted navigation with the keyboard.
+
+Accepted values are "horizontal", "vertical", or "both" (the default).
+If this property is "horizontal", the Up Arrow and Down Arrow keys will
+be ignored. Conversely, if this is "vertical", the Left Arrow and Right
+Arrow keys will be ignored.
+
+**Kind**: instance property of <code>[KeyboardDirection](#KeyboardDirection)</code>  
 <a name="KeyboardDirection+goDown"></a>
 ### keyboardDirection.goDown()
 Invoked when the user wants to go/navigate down.

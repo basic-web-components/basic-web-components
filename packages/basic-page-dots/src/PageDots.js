@@ -64,6 +64,7 @@ class PageDots extends base {
 
   createdCallback() {
     super.createdCallback();
+
     this.$.dots.addEventListener('click', event => {
       let dot = event.target;
       let dotIndex = this.dots.indexOf(dot);
@@ -71,6 +72,8 @@ class PageDots extends base {
         this.selectedIndex = dotIndex;
       }
     });
+
+    this.navigationAxis = 'horizontal';
   }
 
   get dots() {

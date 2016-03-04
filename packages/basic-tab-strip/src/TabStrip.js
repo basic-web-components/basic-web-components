@@ -68,6 +68,8 @@ class TabStrip extends base {
       // Assign a default ARIA role.
       this.setAttribute('role', 'tablist');
     }
+    
+    this.navigationAxis = 'horizontal';
   }
 
   get tabs() {

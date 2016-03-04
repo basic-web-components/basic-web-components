@@ -64,8 +64,30 @@ export default (base) => {
       if (super.goUp) { return super.goUp(); }
     }
 
+    /**
+     * Indicates the direction of permitted navigation with the keyboard.
+     *
+     * Accepted values are "horizontal", "vertical", or "both" (the default).
+     * If this property is "horizontal", the Up Arrow and Down Arrow keys will
+     * be ignored. Conversely, if this is "vertical", the Left Arrow and Right
+     * Arrow keys will be ignored.
+     *
+     * @type {string}
+     */
+    get navigationAxis() {
+      return this._navigationAxis || 'both';
+    }
+    set navigationAxis(value) {
+      this._navigationAxis = value;
+    }
+
     keydown(event) {
       let handled;
+
+      let axis = this.navigationAxis;
+      let horizontal = (axis === 'horizontal' || axis === 'both');
+      let vertical = (axis === 'vertical' || axis === 'both');
+
       // Ignore Left/Right keys when metaKey or altKey modifier is also pressed,
       // as the user may be trying to navigate back or forward in the browser.
       switch (event.keyCode) {
@@ -76,20 +98,24 @@ export default (base) => {
           handled = this.goStart();
           break;
         case 37: // Left
-          if (!event.metaKey && !event.altKey) {
+          if (horizontal && !event.metaKey && !event.altKey) {
             handled = this.goLeft();
           }
           break;
         case 38: // Up
-          handled = event.altKey ? this.goStart() : this.goUp();
+          if (vertical) {
+            handled = event.altKey ? this.goStart() : this.goUp();
+          }
           break;
         case 39: // Right
-          if (!event.metaKey && !event.altKey) {
+          if (horizontal && !event.metaKey && !event.altKey) {
             handled = this.goRight();
           }
           break;
         case 40: // Down
-          handled = event.altKey ? this.goEnd() : this.goDown();
+          if (vertical) {
+            handled = event.altKey ? this.goEnd() : this.goDown();
+          }
           break;
       }
       // Prefer mixin result if it's defined, otherwise use base result.

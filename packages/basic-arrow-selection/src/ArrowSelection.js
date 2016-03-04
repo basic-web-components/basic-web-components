@@ -93,6 +93,8 @@ class ArrowSelection extends base {
         showArrows(this);
       }
     }
+
+    this.navigationAxis = 'horizontal';
   }
 
   selectedItemChanged() {

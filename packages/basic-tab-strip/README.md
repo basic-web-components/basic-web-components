@@ -1,5 +1,5 @@
-<a name="ClassNameGoesHere"></a>
-## ClassNameGoesHere
-CLASS DOCUMENTATION GOES HERE
+<a name="TabStrip"></a>
+## TabStrip
+A horizontal strip of tabs.
 
 **Kind**: global class  

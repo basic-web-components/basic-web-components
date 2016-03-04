@@ -87,6 +87,11 @@ class ListBox extends ElementBase.compose(
   TargetInCollective
 ) {
 
+  createdCallback() {
+    if (super.createdCallback) { super.createdCallback(); }
+    this.navigationAxis = 'vertical';
+  }
+
   get scrollTarget() {
     return this.$.itemsContainer;
   }

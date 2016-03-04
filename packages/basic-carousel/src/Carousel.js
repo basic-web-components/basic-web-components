@@ -136,6 +136,11 @@ let base = ElementBase.compose(
  */
 class Carousel extends base {
 
+  createdCallback() {
+    if (super.createdCallback) { super.createdCallback(); }
+    this.navigationAxis = 'horizontal';
+  }
+
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
     // HACK
