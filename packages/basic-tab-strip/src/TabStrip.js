@@ -142,8 +142,7 @@ class TabStrip extends base {
         font-size: inherit;
         padding: 0.5em 0.75em;
         position: relative;
-        margin-bottom: -1px;
-        margin-right: 0.2em;
+        margin: 0 0.2em -1px 0;
         transition: border-color 0.25s;
       }
 
