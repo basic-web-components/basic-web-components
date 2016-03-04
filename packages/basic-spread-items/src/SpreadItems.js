@@ -64,7 +64,9 @@ class SpreadItems extends ElementBase.compose(
         touch-action: none;
         height: 100%;
         -webkit-user-drag: none;
+        -webkit-user-select: none;
         -moz-user-select: none;
+        -ms-user-select: none;
         user-select: none;
       }
       </style>

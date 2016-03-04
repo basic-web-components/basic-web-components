@@ -131,6 +131,7 @@ class ListBox extends ElementBase.compose(
         padding: 0.25em;
         -webkit-user-select: none;
         -moz-user-select: none;
+        -ms-user-select: none;
         user-select: none;
       }
       </style>

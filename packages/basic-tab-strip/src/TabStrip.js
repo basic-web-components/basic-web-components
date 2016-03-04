@@ -27,6 +27,20 @@ let base = ElementBase.compose(
 
 /**
  * A horizontal strip of tabs.
+ *
+ * The component creates a tab to represent each of its light DOM children —
+ * the panels (a.k.a pages) that will be shown or hidden when the user selects
+ * a tab.
+ *
+ * The user can select a tab with the mouse or touch, as well as by through the
+ * keyboard. Each tab appears as a separate button in the tab order.
+ * Additionally, if the focus is currently on a tab, the user can quickly
+ * navigate between tabs with the left and right arrow keys.
+ *
+ * By default, the tabs are shown grouped to the left, where each tab is only
+ * as big as necessary. You can apply the `spread` CSS class to a
+ * basic-tab-strip element for a variant appearance in which the available width
+ * of the element is divided up equally among tabs.
  */
 class TabStrip extends base {
 
@@ -153,7 +167,7 @@ class TabStrip extends base {
         -webkit-align-self: flex-start;
         align-self: flex-start;
         /* For IE bug (clicking tab produces gap between tab and page). */
-        -webkit-display: flex;
+        display: -webkit-flex;
         display: flex;
         /*
          * Try to obtain fast-tap behavior on all tabs.
@@ -188,8 +202,11 @@ class TabStrip extends base {
         font-size: inherit;
         padding: 0.5em 0.75em;
         position: relative;
-        margin: 0 0.2em -1px 0;
+        margin: 0 0 -1px 0;
         transition: border-color 0.25s;
+      }
+      .tab:not(:last-child) {
+        margin-right: 0.2em;
       }
 
       .tab:hover {
@@ -200,6 +217,15 @@ class TabStrip extends base {
         border-color: #ccc;
         border-bottom-color: transparent;
         opacity: 1;
+      }
+
+      /* Spread variant */
+      :host(.spread) #tabs {
+        align-items: stretch;
+        align-self: initial;
+      }
+      :host(.spread) .tab {
+        flex: 1;
       }
       </style>
 
