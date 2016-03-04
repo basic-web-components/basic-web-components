@@ -1,7 +1,9 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
+import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
@@ -14,8 +16,10 @@ let idCount = 0;
 
 let base = ElementBase.compose(
   ContentFirstChildTarget,
+  DirectionSelection,
   DistributedChildrenAsContent,
   ItemsSelection,
+  KeyboardDirection,
   ObserveContentChanges,
   TargetSelection
 );
@@ -42,6 +46,7 @@ class TabStrip extends base {
 
   createdCallback() {
     super.createdCallback();
+
     this.$.tabs.addEventListener('click', event => {
       let tab = event.target;
       let tabIndex = this.tabs.indexOf(tab);
@@ -49,6 +54,16 @@ class TabStrip extends base {
         this.selectedIndex = tabIndex;
       }
     });
+
+    // Listen to keydown events on the tabs, not on pages.
+    this.$.tabs.addEventListener('keydown', event => {
+      let handled = this.keydown(event);
+      if (handled) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    });
+
     if (!this.getAttribute('role')) {
       // Assign a default ARIA role.
       this.setAttribute('role', 'tablist');
@@ -95,6 +110,16 @@ class TabStrip extends base {
     });
 
     this.selectedItemChanged();  // In case position of selected item moved.
+  }
+
+  keydown(event) {
+    let handled = super.keydown(event);
+    if (handled) {
+      // If the event resulted in a change of selection, move the focus to the
+      // newly-selected tab.
+      this.tabs[this.selectedIndex].focus();
+    }
+    return handled;
   }
 
   selectedItemChanged() {
