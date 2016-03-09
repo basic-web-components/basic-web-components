@@ -34,13 +34,13 @@
   </style>
 
   <script>
-  window.addEventListener('load', function() {
-    var spreadCheckbox = document.querySelector('#spreadCheckbox');
-    var tabStrip = document.querySelector('basic-tab-strip');
-    spreadCheckbox.addEventListener('click', function() {
-      tabStrip.classList.toggle('spread');
-    });
-  });
+  function spreadChange() {
+    document.querySelector('basic-tab-strip').classList.toggle('spread');
+  }
+
+  function tabPositionChange(event) {
+    document.querySelector('basic-tab-strip').tabPosition = event.target.value;
+  }
   </script>
 
 </head>
@@ -54,7 +54,15 @@
     </basic-modes>
   </basic-tab-strip>
   <p>
-    <label><input id="spreadCheckbox" type="checkbox">Spread tabs out</label>
+    <label><input id="spreadCheckbox" type="checkbox" onchange="spreadChange()">Spread tabs out</label>
+  </p>
+  <p>
+    Show tabs on: <select id="tabPosition" onchange="tabPositionChange(event)">
+      <option value="top">Top</option>
+      <option value="left">Left</option>
+      <option value="right">Right</option>
+      <option value="bottom">Bottom</option>
+    </select>
   </p>
 </body>
 

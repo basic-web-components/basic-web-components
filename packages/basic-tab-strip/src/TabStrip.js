@@ -83,7 +83,9 @@ class TabStrip extends base {
       this.setAttribute('role', 'tablist');
     }
 
-    this.navigationAxis = 'horizontal';
+    if (!this.tabPosition) {
+      this.tabPosition = 'top';
+    }
   }
 
   get tabs() {
@@ -146,6 +148,28 @@ class TabStrip extends base {
     });
   }
 
+  get tabPosition() {
+    return this._tabPosition;
+  }
+  set tabPosition(position) {
+    this._tabPosition = position;
+
+    if (this.getAttribute('tab-position') !== position) {
+      this.setAttribute('tab-position', position);
+      return;
+    }
+
+    // Physically reorder the tabs and pages to reflect the desired arrangement.
+    let lastElement = (position === 'top' || position === 'left') ?
+      this.$.pages :
+      this.$.tabs;
+    this.shadowRoot.appendChild(lastElement);
+
+    this.navigationAxis = (position === 'top' || position === 'bottom') ?
+      'horizontal' :
+      'vertical';
+  }
+
   get template() {
     return `
       <style>
@@ -195,28 +219,80 @@ class TabStrip extends base {
       .tab {
         background: white;
         border: 1px solid #ccc;
-        border-radius: 0.25em 0.25em 0 0;
         cursor: pointer;
         display: inline-block;
         font-family: inherit;
         font-size: inherit;
+        margin: 0;
         padding: 0.5em 0.75em;
         position: relative;
-        margin: 0 0 -1px 0;
         transition: border-color 0.25s;
       }
-      .tab:not(:last-child) {
+      .tab.selected {
+        border-color: #ccc;
+        opacity: 1;
+      }
+
+      /* Top/bottom positions */
+      :host([tab-position="top"]) .tab:not(:last-child),
+      :host([tab-position="bottom"]) .tab:not(:last-child) {
         margin-right: 0.2em;
+      }
+
+      /* Top position */
+      :host([tab-position="top"]) .tab {
+        border-radius: 0.25em 0.25em 0 0;
+        margin-bottom: -1px;
+      }
+      :host([tab-position="top"]) .tab.selected {
+        border-bottom-color: transparent;
+      }
+
+      /* Bottom position */
+      :host([tab-position="bottom"]) .tab {
+        border-radius: 0 0 0.25em 0.25em;
+        margin-top: -1px;
+      }
+      :host([tab-position="bottom"]) .tab.selected {
+        border-top-color: transparent;
+      }
+
+      /* Left/right positions */
+      :host([tab-position="left"]),
+      :host([tab-position="right"]) {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+      }
+      :host([tab-position="left"]) #tabs,
+      :host([tab-position="right"]) #tabs {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+      :host([tab-position="left"]) .tab:not(:last-child),
+      :host([tab-position="right"]) .tab:not(:last-child) {
+        margin-bottom: 0.2em;
+      }
+
+      /* Left position */
+      :host([tab-position="left"]) .tab {
+        border-radius: 0.25em 0 0 0.25em;
+        margin-right: -1px;
+      }
+      :host([tab-position="left"]) .tab.selected {
+        border-right-color: transparent;
+      }
+
+      /* Right position */
+      :host([tab-position="right"]) .tab {
+        border-radius: 0 0.25em 0.25em 0;
+        margin-left: -1px;
+      }
+      :host([tab-position="right"]) .tab.selected {
+        border-left-color: transparent;
       }
 
       .tab:hover {
         background-color: #eee;
-      }
-
-      .tab.selected {
-        border-color: #ccc;
-        border-bottom-color: transparent;
-        opacity: 1;
       }
 
       /* Spread variant */
