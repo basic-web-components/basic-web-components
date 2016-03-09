@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-tabs</title>
+
+  <script src="../demos/lib/webcomponents.js"></script>
+  <script src="./dist/basic-tabs.js"></script>
+  <link rel="stylesheet" href="../demos/demos.css">
+
+  <style>
+  basic-tabs > div {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+    height: 300px;
+    -webkit-justify-content: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 400px;
+  }
+  </style>
+
+</head>
+
+<body>
+  <basic-tabs aria-label="Panels">
+    <div aria-label="One">Page one</div>
+    <div aria-label="Two">Page two</div>
+    <div aria-label="Three">Page three</div>
+  </basic-tabs>
+</body>
+
+</html>
