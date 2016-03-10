@@ -40,6 +40,7 @@ describe("Generic mixin", function() {
     let fixture = document.createElement('generic-test');
     container.appendChild(fixture);
     assert(fixture.generic);
+    assert.equal(fixture.getAttribute('generic'), '');
     let display = getComputedStyle(fixture).display;
     assert.equal(display, 'block');
   });
@@ -48,8 +49,10 @@ describe("Generic mixin", function() {
     let fixture = document.createElement('generic-test');
     container.appendChild(fixture);
     fixture.generic = false;
+    assert.equal(fixture.getAttribute('generic'), 'false');
     assert.equal(getComputedStyle(fixture).display, 'inline-block');
     fixture.generic = true;
+    assert.equal(fixture.getAttribute('generic'), '');
     assert.equal(getComputedStyle(fixture).display, 'block');
   });
 

@@ -1,4 +1,5 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
+import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Modes from '../../basic-modes/src/Modes'; // jshint ignore:line
 import TabStrip from '../../basic-tab-strip/src/TabStrip'; // jshint ignore:line
@@ -18,9 +19,19 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
  * @mixes TargetSelection
  */
 class Tabs extends ElementBase.compose(
+  Generic,
   ItemsSelection,
   TargetSelection
 ) {
+
+  get generic() {
+    return super.generic;
+  }
+  set generic(value) {
+    super.generic = value;
+    // Forward the generic value to the tab strip.
+    this.$.tabStrip.generic = value;
+  }
 
   /**
    * The position of the tab strip relative to the element's children. Valid
