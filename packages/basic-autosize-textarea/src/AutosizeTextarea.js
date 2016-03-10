@@ -22,6 +22,7 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
  *
  * @mixes Generic
  * @mixes DistributedChildrenAsContent
+ * @mixes ObserveContentChanges
  */
 class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
   DistributedChildrenAsContent,

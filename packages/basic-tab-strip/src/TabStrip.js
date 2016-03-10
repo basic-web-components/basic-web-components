@@ -41,6 +41,15 @@ let base = ElementBase.compose(
  * as big as necessary. You can apply the `spread` CSS class to a
  * basic-tab-strip element for a variant appearance in which the available width
  * of the element is divided up equally among tabs.
+ *
+ * @extends ElementBase
+ * @mixes ContentFirstChildTarget
+ * @mixes DirectionSelection
+ * @mixes DistributedChildrenAsContent
+ * @mixes ItemsSelection
+ * @mixes KeyboardDirection
+ * @mixes ObserveContentChanges
+ * @mixes TargetSelection
  */
 class TabStrip extends base {
 
@@ -148,6 +157,13 @@ class TabStrip extends base {
     });
   }
 
+  /**
+   * The position of the tab strip relative to the element's children. Valid
+   * values are "top", "left", "right", and "bottom".
+   *
+   * @default "top"
+   * @type {string}
+   */
   get tabPosition() {
     return this._tabPosition;
   }

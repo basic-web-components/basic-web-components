@@ -122,16 +122,18 @@ let base = ElementBase.compose(
  * elements. This helps users navigate the sequence of elements in the carousel
  * using assistive technologies.
  *
- * @mixes DistributedChildrenAsContent
- * @mixes TargetInCollective
+ * @extends ElementBase
  * @mixes ContentAsItems
  * @mixes DirectionSelection
+ * @mixes DistributedChildrenAsContent
  * @mixes Generic
  * @mixes ItemsSelection
- * @mixes SelectionAriaActive
  * @mixes Keyboard
  * @mixes KeyboardDirection
+ * @mixes ObserveContentChanges
+ * @mixes SelectionAriaActive
  * @mixes SwipeDirection
+ * @mixes TargetInCollective
  * @mixes TrackpadDirection
  */
 class Carousel extends base {

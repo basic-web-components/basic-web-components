@@ -1,5 +1,5 @@
 <a name="SpreadItems"></a>
-## SpreadItems
+## SpreadItems ⇐ <code>ElementBase</code>
 Spreads out a set of items horizontally so they take equal space.
 
 [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-spread-items/)
@@ -11,4 +11,5 @@ horizontal space.
 This component currently requires an explicit size by applied to it.
 
 **Kind**: global class  
-**Mixes**: <code>DistributedChildrenAsContent</code>  
+**Extends:** <code>ElementBase</code>  
+**Mixes**: <code>DistributedChildrenAsContent</code>, <code>ObserveContentChanges</code>  

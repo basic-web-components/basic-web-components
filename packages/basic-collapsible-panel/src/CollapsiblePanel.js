@@ -12,6 +12,7 @@ import OpenClose from '../../basic-component-mixins/src/OpenClose';
  * not provide a user interface for the user to trigger the change in state;
  * you must provide that user interface yourself.
  *
+ * @extends ElementBase
  * @mixes OpenClose
  */
 class CollapsiblePanel extends OpenClose(ElementBase) {

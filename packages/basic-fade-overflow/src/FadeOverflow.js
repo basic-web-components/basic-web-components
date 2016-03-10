@@ -12,6 +12,8 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
  *
  * The component currently always displays the fade, even if the component's
  * content is short enough to fit completely in view.
+ *
+ * @extends ElementBase
  */
 class FadeOverflow extends ElementBase {
 

@@ -14,3 +14,4 @@ The ElementBase base class does not register itself as a custom element with
 the browser, and hence cannot be independently instantiated.
 
 **Kind**: global class  
+**Mixes**: <code>AttributeMarshalling</code>, <code>Composable</code>, <code>DistributedChildren</code>, <code>ShadowElementReferences</code>, <code>ShadowTemplate</code>  

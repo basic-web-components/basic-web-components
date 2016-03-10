@@ -1,5 +1,5 @@
 <a name="ListBox"></a>
-## ListBox
+## ListBox ⇐ <code>ElementBase</code>
 A single-selection list box that supports selection highlighting (using the
 system highlight color) and keyboard navigation.
 
@@ -38,7 +38,8 @@ the item into view.
 The user can also select an item by typing the beginning of an item's text.
 
 **Kind**: global class  
-**Mixes**: <code>DistributedChildrenAsContent</code>, <code>ClickSelection</code>, <code>TargetInCollective</code>, <code>ContentAsItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>SelectionAriaActive</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>KeyboardPagedSelection</code>, <code>KeyboardPrefixSelection</code>, <code>SelectionHighlight</code>, <code>SelectionInView</code>  
+**Extends:** <code>ElementBase</code>  
+**Mixes**: <code>ClickSelection</code>, <code>ContentAsItems</code>, <code>DirectionSelection</code>, <code>DistributedChildrenAsContent</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>KeyboardPagedSelection</code>, <code>KeyboardPrefixSelection</code>, <code>ObserveContentChanges</code>, <code>SelectionAriaActive</code>, <code>SelectionHighlight</code>, <code>SelectionInView</code>, <code>TargetInCollective</code>  
 <a name="ListBox+value"></a>
 ### listBox.value : <code>string</code>
 The text content of the selected item.

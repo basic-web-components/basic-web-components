@@ -7,8 +7,8 @@ import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaA
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 
 let base = ElementBase.compose(
-  DistributedChildrenAsContent,
   ContentAsItems,
+  DistributedChildrenAsContent,
   ItemsSelection,
   ObserveContentChanges,
   SelectionAriaActive,
@@ -23,6 +23,14 @@ let base = ElementBase.compose(
  * that present substantially different elements.
  *
  * This component doesn't provide any UI for changing which mode is shown.
+ *
+ * @extends ElementBase
+ * @mixes ContentAsItems
+ * @mixes DistributedChildrenAsContent
+ * @mixes ItemsSelection
+ * @mixes ObserveContentChanges
+ * @mixes SelectionAriaActive
+ * @mixes TargetInCollective
  */
 class Modes extends base {
 

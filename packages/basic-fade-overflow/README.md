@@ -1,5 +1,5 @@
 <a name="FadeOverflow"></a>
-## FadeOverflow
+## FadeOverflow ⇐ <code>ElementBase</code>
 Fade out content that overflows so the user knows there's more.
 
 This component doesn't handle interactivity.
@@ -12,8 +12,9 @@ The component currently always displays the fade, even if the component's
 content is short enough to fit completely in view.
 
 **Kind**: global class  
+**Extends:** <code>ElementBase</code>  
 
-* [FadeOverflow](#FadeOverflow)
+* [FadeOverflow](#FadeOverflow) ⇐ <code>ElementBase</code>
     * [.fadeColor](#FadeOverflow+fadeColor)
     * [.showFade](#FadeOverflow+showFade) : <code>boolean</code>
     * [.refresh()](#FadeOverflow+refresh)

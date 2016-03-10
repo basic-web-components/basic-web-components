@@ -18,6 +18,12 @@ import DistributedChildren from '../../basic-component-mixins/src/DistributedChi
  *
  * The ElementBase base class does not register itself as a custom element with
  * the browser, and hence cannot be independently instantiated.
+ *
+ * @mixes AttributeMarshalling 
+ * @mixes Composable
+ * @mixes DistributedChildren
+ * @mixes ShadowElementReferences
+ * @mixes ShadowTemplate
  */
 class ElementBase extends Composable(HTMLElement).compose(
   ShadowTemplate,          // before node finding, so shadow root is populated

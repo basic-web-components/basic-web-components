@@ -54,26 +54,28 @@ import TargetInCollective from '../../basic-component-mixins/src/TargetInCollect
  *
  * The user can also select an item by typing the beginning of an item's text.
  *
- * @mixes DistributedChildrenAsContent
+ * @extends ElementBase
  * @mixes ClickSelection
- * @mixes TargetInCollective
  * @mixes ContentAsItems
  * @mixes DirectionSelection
+ * @mixes DistributedChildrenAsContent
  * @mixes Generic
  * @mixes ItemsSelection
- * @mixes SelectionAriaActive
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes KeyboardPagedSelection
  * @mixes KeyboardPrefixSelection
+ * @mixes ObserveContentChanges
+ * @mixes SelectionAriaActive
  * @mixes SelectionHighlight
  * @mixes SelectionInView
+ * @mixes TargetInCollective
  */
 class ListBox extends ElementBase.compose(
-  DistributedChildrenAsContent,
   ClickSelection,
   ContentAsItems,
   DirectionSelection,
+  DistributedChildrenAsContent,
   Generic,
   ItemsSelection,
   Keyboard,

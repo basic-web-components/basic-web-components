@@ -1,5 +1,5 @@
 <a name="WrappedStandardElement"></a>
-## WrappedStandardElement
+## WrappedStandardElement ⇐ <code>ElementBase</code>
 Wraps a standard HTML element so that the standard behavior can then be
 extended.
 
@@ -55,8 +55,9 @@ Some elements, such as `<body>`, `<html>`, and `<style>` cannot be wrapped
 and still achieve their standard behavior.
 
 **Kind**: global class  
+**Extends:** <code>ElementBase</code>  
 
-* [WrappedStandardElement](#WrappedStandardElement)
+* [WrappedStandardElement](#WrappedStandardElement) ⇐ <code>ElementBase</code>
     * _instance_
         * [.ariaLabel](#WrappedStandardElement+ariaLabel) : <code>string</code>
         * [.inner](#WrappedStandardElement+inner) : <code>HTMLElement</code>

@@ -16,6 +16,8 @@ let base = ElementBase;
  * component.
  *
  * This component currently requires that you explicitly apply a size to it.
+ *
+ * @extends ElementBase
  */
 class SlidingViewport extends base {
 

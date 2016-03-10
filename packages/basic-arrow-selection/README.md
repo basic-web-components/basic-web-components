@@ -1,5 +1,5 @@
 <a name="ArrowSelection"></a>
-## ArrowSelection
+## ArrowSelection ⇐ <code>ElementBase</code>
 Component which adds prominent left and right arrow buttons to a wrapped
 child such as a carousel.
 
@@ -22,4 +22,5 @@ movement is detected. To cause the buttons to always appear, apply the
 'showArrows' CSS class.
 
 **Kind**: global class  
-**Mixes**: <code>DistributedChildrenAsContent</code>, <code>TargetInCollective</code>, <code>ContentFirstChildTarget</code>, <code>ItemsSelection</code>, <code>Keyboard</code>, <code>TargetSelection</code>  
+**Extends:** <code>ElementBase</code>  
+**Mixes**: <code>ContentFirstChildTarget</code>, <code>DirectionSelection</code>, <code>DistributedChildrenAsContent</code>, <code>ItemsSelection</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>TargetInCollective</code>, <code>TargetInCollective</code>, <code>TargetSelection</code>  

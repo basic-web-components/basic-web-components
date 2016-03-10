@@ -16,7 +16,7 @@ This component generally exposes all the same attributes/properties as a
 standard HTML `<textarea>`.
 
 **Kind**: global class  
-**Mixes**: <code>Generic</code>, <code>DistributedChildrenAsContent</code>  
+**Mixes**: <code>Generic</code>, <code>DistributedChildrenAsContent</code>, <code>ObserveContentChanges</code>  
 
 * [AutosizeTextarea](#AutosizeTextarea)
     * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>

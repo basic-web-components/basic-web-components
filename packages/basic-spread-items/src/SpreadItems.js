@@ -14,7 +14,9 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
  *
  * This component currently requires an explicit size by applied to it.
  *
+ * @extends ElementBase
  * @mixes DistributedChildrenAsContent
+ * @mixes ObserveContentChanges
  */
 class SpreadItems extends ElementBase.compose(
   DistributedChildrenAsContent,

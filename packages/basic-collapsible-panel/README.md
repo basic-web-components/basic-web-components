@@ -1,5 +1,5 @@
 <a name="CollapsiblePanel"></a>
-## CollapsiblePanel
+## CollapsiblePanel ⇐ <code>ElementBase</code>
 A panel which can be expanded/collapsed with an animated transition.
 
 This component combines the OpenClose mixin and a simple CSS height
@@ -10,4 +10,5 @@ not provide a user interface for the user to trigger the change in state;
 you must provide that user interface yourself.
 
 **Kind**: global class  
+**Extends:** <code>ElementBase</code>  
 **Mixes**: <code>OpenClose</code>  

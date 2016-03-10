@@ -20,3 +20,9 @@ node finding](https://www.polymer-project.org/1.0/docs/devguide/local-dom.html#n
 feature.
 
 **Kind**: global class  
+<a name="$"></a>
+## $ : <code>object</code>
+The collection of references to the elements with IDs in a component's
+Shadow DOM subtree.
+
+**Kind**: global variable  

@@ -41,6 +41,13 @@ export default (base) => {
       }
     }
 
+    /**
+     * The collection of references to the elements with IDs in a component's
+     * Shadow DOM subtree.
+     *
+     * @type {object}
+     * @member $
+     */
   }
 
   return ShadowElementReferences;

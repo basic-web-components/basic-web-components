@@ -1,5 +1,5 @@
 <a name="Carousel"></a>
-## Carousel
+## Carousel ⇐ <code>ElementBase</code>
 Lets the user navigate laterally through a sequence of child elements.
 
 basic-carousel is an implementation of the carousel user interface pattern,
@@ -93,4 +93,5 @@ elements. This helps users navigate the sequence of elements in the carousel
 using assistive technologies.
 
 **Kind**: global class  
-**Mixes**: <code>DistributedChildrenAsContent</code>, <code>TargetInCollective</code>, <code>ContentAsItems</code>, <code>DirectionSelection</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>SelectionAriaActive</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>SwipeDirection</code>, <code>TrackpadDirection</code>  
+**Extends:** <code>ElementBase</code>  
+**Mixes**: <code>ContentAsItems</code>, <code>DirectionSelection</code>, <code>DistributedChildrenAsContent</code>, <code>Generic</code>, <code>ItemsSelection</code>, <code>Keyboard</code>, <code>KeyboardDirection</code>, <code>ObserveContentChanges</code>, <code>SelectionAriaActive</code>, <code>SwipeDirection</code>, <code>TargetInCollective</code>, <code>TrackpadDirection</code>  

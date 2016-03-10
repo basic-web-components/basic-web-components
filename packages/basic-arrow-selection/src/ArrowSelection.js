@@ -44,11 +44,15 @@ let base = ElementBase.compose(
  * movement is detected. To cause the buttons to always appear, apply the
  * 'showArrows' CSS class.
  *
- * @mixes DistributedChildrenAsContent
- * @mixes TargetInCollective
+ * @extends ElementBase
  * @mixes ContentFirstChildTarget
+ * @mixes DirectionSelection
+ * @mixes DistributedChildrenAsContent
  * @mixes ItemsSelection
  * @mixes Keyboard
+ * @mixes KeyboardDirection
+ * @mixes TargetInCollective
+ * @mixes TargetInCollective
  * @mixes TargetSelection
  */
 class ArrowSelection extends base {

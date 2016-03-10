@@ -12,12 +12,23 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
  * and a [basic-modes](../basic-modes/) element. If you'd like to create
  * something more complex than this arrangement, you can use either of those
  * elements on its own.
+ *
+ * @extends ElementBase
+ * @mixes ItemsSelection
+ * @mixes TargetSelection
  */
 class Tabs extends ElementBase.compose(
   ItemsSelection,
   TargetSelection
 ) {
 
+  /**
+   * The position of the tab strip relative to the element's children. Valid
+   * values are "top", "left", "right", and "bottom".
+   *
+   * @default "top"
+   * @type {string}
+   */
   get tabPosition() {
     return this.$.tabStrip.tabPosition;
   }

@@ -40,10 +40,13 @@ let base = ElementBase.compose(
  * Although the dots are quite small by default, clicking/tapping a dot will
  * will select the corresponding list item.
  *
- * @mixes DistributedChildrenAsContent
- * @mixes TargetInCollective
+ * @extends ElementBase
  * @mixes ContentFirstChildTarget
+ * @mixes DistributedChildrenAsContent
+ * @mixes ItemsSelection
  * @mixes Keyboard
+ * @mixes ObserveContentChanges
+ * @mixes TargetInCollective
  * @mixes TargetSelection
  */
 class PageDots extends base {
