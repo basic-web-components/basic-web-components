@@ -70,6 +70,11 @@ class Tabs extends ElementBase.compose(
         -webkit-flex-direction: column;
         flex-direction: column;
       }
+
+      #tabStrip {
+        -webkit-flex: 1;
+        flex: 1;
+      }
       </style>
 
       <basic-tab-strip id="tabStrip">

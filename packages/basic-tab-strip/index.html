@@ -13,7 +13,6 @@
 
   <style>
   basic-tab-strip {
-    box-sizing: border-box;
     display: -webkit-flex;
     display: flex;
     height: 300px;
@@ -65,7 +64,7 @@
     <label><input id="spreadCheckbox" type="checkbox" onchange="spreadChange()">Spread tabs out</label>
   </p>
   <p>
-    Show tabs on: <select id="tabPosition" onchange="tabPositionChange(event)">
+    Show tabs on: <select id="tabPosition" onchange="tabPositionChange(event)" value="top">
       <option value="top">Top</option>
       <option value="left">Left</option>
       <option value="right">Right</option>

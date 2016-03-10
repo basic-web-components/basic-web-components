@@ -305,6 +305,7 @@ class TabStrip extends base {
       :host([generic=""]) #pages {
         background: white;
         border: 1px solid #ccc;
+        box-sizing: border-box;
       }
 
       :host([generic=""]) .tab {
