@@ -88,7 +88,7 @@ export default (base) => {
     itemAdded(item) {
       if (super.itemAdded) { super.itemAdded(item); }
 
-      if (!this.getAttribute('role')) {
+      if (!item.getAttribute('role')) {
         // Assign a default ARIA role.
         item.setAttribute('role', 'option');
       }
