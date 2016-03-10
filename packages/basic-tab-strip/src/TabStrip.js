@@ -196,10 +196,19 @@ class TabStrip extends base {
     }
 
     // Physically reorder the tabs and pages to reflect the desired arrangement.
+    // We could change the visual appearance by reversing the order of the flex
+    // box, but then the visual order wouldn't reflect the document order, which
+    // determines focus order. That would surprise a user trying to tab through
+    // the controls.
+    let firstElement = (position === 'top' || position === 'left') ?
+      this.$.tabs :
+      this.$.pages;
     let lastElement = (position === 'top' || position === 'left') ?
       this.$.pages :
       this.$.tabs;
-    this.shadowRoot.appendChild(lastElement);
+    if (firstElement.nextSibling !== lastElement) {
+      this.shadowRoot.insertBefore(firstElement, lastElement);
+    }
 
     this.navigationAxis = (position === 'top' || position === 'bottom') ?
       'horizontal' :
