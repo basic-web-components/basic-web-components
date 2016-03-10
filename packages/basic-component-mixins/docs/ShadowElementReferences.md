@@ -13,7 +13,8 @@ the shadow tree instead of paying an ongoing cost to query for an element
 each time the component wants to inspect or manipulate it.
 
 This mixin expects the component to define a Shadow DOM subtree. You can
-create that tree yourself, or make use of the ShadowTemplate mixin.
+create that tree yourself, or make use of the
+[ShadowTemplate](ShadowTemplate.md) mixin.
 
 This mixin is inspired by Polymer's [automatic
 node finding](https://www.polymer-project.org/1.0/docs/devguide/local-dom.html#node-finding)

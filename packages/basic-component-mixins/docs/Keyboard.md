@@ -32,10 +32,11 @@ A second feature provided by this mixin is that it implicitly makes the
 component a tab stop if it isn't already, by setting `tabIndex` to 0. This
 has the effect of adding the component to the tab order in document order.
 
-Finally, this mixin is designed to work with the optional Collective class
-via a mixin like TargetInCollective. This allows a set of related component
-instances to cooperatively handle the keyboard. See the Collective class
-for details.
+Finally, this mixin is designed to work with the optional
+[Collective](Collective.md) class via a mixin like
+[TargetInCollective](TargetInCollective.md). This allows a set of related
+component instances to cooperatively handle the keyboard. See the
+Collective class for details.
 
 **Kind**: global class  
 <a name="Keyboard+keydown"></a>

@@ -29,8 +29,8 @@ If, in the above example, the user waits a second between typing "b" and
 "l", the prefix will become "l", so "Lemon" would be selected.
 
 This mixin expects the component to invoke a `keydown` method when a key is
-pressed. You can use the Keyboard mixin for that purpose, or wire up your
-own keyboard handling and call `keydown` yourself.
+pressed. You can use the [Keyboard](Keyboard.md) mixin for that purpose, or
+wire up your own keyboard handling and call `keydown` yourself.
 
 This mixin also expects the component to provide an `items` property. The
 `textContent` of those items will be used for purposes of prefix matching.

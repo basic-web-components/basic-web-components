@@ -8,7 +8,7 @@ respect operating system defaults and user preferences, and hence are good
 default values for highlight colors.
 
 This mixin expects an `applySelection` method to be called on an item when
-its selected state changes. You can use the ItemsSelection mixin for that
-purpose.
+its selected state changes. You can use the
+[ItemsSelection](ItemsSelection.md) mixin for that purpose.
 
 **Kind**: global class  

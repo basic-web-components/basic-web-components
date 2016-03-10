@@ -16,15 +16,16 @@ export default (base) => {
    *       </basic-carousel>
    *     </basic-arrow-selection>
    *
-   * Because basic-arrow-selection uses the TargetSelection mixin, it exposes
-   * members to access a selection: `selectNext`, `selectPrevious`,
-   * `selectedIndex`, etc. These are all delegated to the child component (here,
-   * a basic-carousel).
+   * Because basic-arrow-selection uses the
+   * [TargetSelection](TargetSelection.md) mixin, it exposes members to access a
+   * selection: `selectNext`, `selectPrevious`, `selectedIndex`, etc. These are
+   * all delegated to the child component (here, a basic-carousel).
    *
    * This mixin expects a `target` property to be set to the element actually
    * managing the selection. You can set that property yourself, or you can use
-   * the ContentFirstChildTarget mixin to implicitly take the component's first
-   * child as the target. This is what basic-arrow-selection (above) does.
+   * the [ContentFirstChildTarget](ContentFirstChildTarget.md) mixin to
+   * implicitly take the component's first child as the target. This is what
+   * basic-arrow-selection (above) does.
    */
   class TargetSelection extends base {
 

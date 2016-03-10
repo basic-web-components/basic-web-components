@@ -5,7 +5,8 @@ semantics (go right, go left).
 
 By default, this mixin presents no user-visible effects; it just indicates a
 direction in which the user is currently swiping or has finished swiping. To
-map the direction to a change in selection, use the DirectionSelection mixin.
+map the direction to a change in selection, use the
+[DirectionSelection](DirectionSelection.md) mixin.
 
 **Kind**: global class  
 

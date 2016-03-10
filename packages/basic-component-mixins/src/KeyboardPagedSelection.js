@@ -18,11 +18,11 @@ export default (base) => {
    *   the selected item visible.
    *
    * To ensure the selected item is in view following use of Page Up/Down, use
-   * the related SelectionInView mixin.
+   * the related [SelectionInView](SelectionInView.md) mixin.
    *
    * This mixin expects the component to invoke a `keydown` method when a key is
-   * pressed. You can use the Keyboard mixin for that purpose, or wire up your
-   * own keyboard handling and call `keydown` yourself.
+   * pressed. You can use the [Keyboard](Keyboard.md) mixin for that purpose, or
+   * wire up your own keyboard handling and call `keydown` yourself.
    */
   class KeyboardPagedSelection extends base {
 

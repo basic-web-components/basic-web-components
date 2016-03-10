@@ -12,7 +12,7 @@ export default (base) => {
    * This mixin calls methods such as `goLeft` and `goRight`. You can define
    * what that means by implementing those methods yourself. If you want to use
    * direction keys to navigate a selection, use this mixin with the
-   * DirectionSelection mixin.
+   * [DirectionSelection](DirectionSelection.md) mixin.
    */
   class KeyboardDirection extends base {
 

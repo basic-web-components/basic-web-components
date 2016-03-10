@@ -13,8 +13,8 @@ get and set that state by item position (`selectedIndex`) or item identity
 `selectFirst`, `selectLast`, `selectNext`, and `selectPrevious`.
 
 This mixin does not produce any user-visible effects to represent
-selection. Other mixins, such as SelectionAriaActive, SelectionHighlight
-and SelectionInView, modify the selected item in common ways to let the
+selection. Other mixins, such as [SelectionAriaActive](SelectionAriaActive.md), [SelectionHighlight](SelectionHighlight.md)
+and [SelectionInView](SelectionInView.md), modify the selected item in common ways to let the
 user know a given item is selected or not selected.
 
 **Kind**: global class  

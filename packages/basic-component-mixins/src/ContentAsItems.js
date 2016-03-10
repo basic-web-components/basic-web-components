@@ -9,7 +9,7 @@ export default (base) => {
    *
    * This mixin expects a component to provide a `content` property returning a
    * raw set of elements. You can provide that yourself, or use the
-   * `DistributedChildrenAsContent` mixin.
+   * [DistributedChildrenAsContent](DistributedChildrenAsContent.md) mixin.
    *
    * Items differ from element contents in several ways:
    *

@@ -18,11 +18,12 @@ If `outer-element` uses this mixin, then its `target` property will be
 set to point to the `inner-element`, because that is its first child.
 
 This mixin expects a `content` property that returns the element's content.
-You can implement that yourself, or use the DistributedChildrenAsContent
-mixin.
+You can implement that yourself, or use the
+[DistributedChildrenAsContent](DistributedChildrenAsContent.md) mixin.
 
-This mixin can be combined with the TargetInCollective mixin to have a
-component participate in collective keyboard handling. *
+This mixin can be combined with the
+[TargetInCollective](TargetInCollective.md) mixin to have a component
+participate in collective keyboard handling.
 
 **Kind**: global class  
 <a name="ContentFirstChildTarget+target"></a>

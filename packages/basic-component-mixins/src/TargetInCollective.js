@@ -9,11 +9,12 @@ export default (base) => {
    * elements, e.g., for keyboard handling.
    *
    * This mixin implicitly creates a collective for a component so that it can
-   * participate in collective keyboard handling. See the Collective class for
-   * details.
+   * participate in collective keyboard handling. See the
+   * [Collective](Collective.md) class for details.
    *
-   * You can use this mixin in conjunction with ContentFirstChildTarget to
-   * automatically have the component's collective extended to its first child.
+   * You can use this mixin in conjunction with
+   * [ContentFirstChildTarget](ContentFirstChildTarget.md) to automatically have
+   * the component's collective extended to its first child.
    */
   class TargetInCollective extends base {
 

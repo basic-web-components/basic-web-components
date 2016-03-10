@@ -8,7 +8,8 @@ export default (base) => {
    *
    * This mixin expects the component to define an `items` property, as well as
    * `selectFirst` and `selectNext` methods. You can implement those yourself,
-   * or use the ContentAsItems and ItemsSelection mixins.
+   * or use the [ContentAsItems](ContentAsItems.md) and
+   * [ItemsSelection](ItemsSelection.md) mixins.
    */
   class TimerSelection extends base {
 
