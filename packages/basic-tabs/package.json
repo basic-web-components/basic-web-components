@@ -1,6 +1,6 @@
 {
   "name": "basic-tabs",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "A set of pages with a tab strip governing which page is shown.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -12,9 +12,9 @@
   ],
   "main": "src/Tabs.js",
   "dependencies": {
-    "basic-element-base": "^0.7.3",
-    "basic-modes": "^0.7.3",
-    "basic-tab-strip": "^0.7.3"
+    "basic-element-base": "^0.7.4",
+    "basic-modes": "^0.7.4",
+    "basic-tab-strip": "^0.7.4"
   },
   "browserify": {
     "transform": [
