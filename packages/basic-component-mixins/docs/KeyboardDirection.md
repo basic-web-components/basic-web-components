@@ -4,8 +4,8 @@ Mixin which maps direction keys (Left, Right, etc.) to direction semantics
 (go left, go right, etc.).
 
 This mixin expects the component to invoke a `keydown` method when a key is
-pressed. You can use the Keyboard mixin for that purpose, or wire up your
-own keyboard handling and call `keydown` yourself.
+pressed. You can use the [Keyboard](Keyboard.md) mixin for that purpose, or
+wire up your own keyboard handling and call `keydown` yourself.
 
 This mixin calls methods such as `goLeft` and `goRight`. You can define
 what that means by implementing those methods yourself. If you want to use

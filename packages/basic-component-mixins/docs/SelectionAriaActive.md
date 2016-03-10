@@ -27,11 +27,6 @@ to any list item that does not already have a role specified.
 
 This mixin expects a set of members that manage the state of the selection:
 `applySelection`, `itemAdded`, and `selectedIndex`. You can supply these
-yourself, or do so via the ItemsSelection mixin.
-
-NOTE: For the time being, this mixin should be used with the
-TargetInCollective mixin. The intention is to eventually allow this mixin
-to be used without requiring collective keyboard support, so that this
-mixin can be used on its own.
+yourself, or do so via the [ItemsSelection](ItemsSelection.md) mixin.
 
 **Kind**: global class  

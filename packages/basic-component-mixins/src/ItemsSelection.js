@@ -7,9 +7,10 @@ export default (base) => {
    * Mixin which manages single-selection semantics for items in a list.
    *
    * This mixin expects a component to provide an `items` array of all elements
-   * in the list. A standard way to do that with is the ContentAsItems mixin,
-   * which takes a component's content (typically its distributed children) as
-   * the set of list items; see that mixin for details.
+   * in the list. A standard way to do that with is the
+   * [ContentAsItems](ContentAsItems.md) mixin, which takes a component's
+   * content (typically its distributed children) as the set of list items; see
+   * that mixin for details.
    *
    * This mixin tracks a single selected item in the list, and provides means to
    * get and set that state by item position (`selectedIndex`) or item identity
@@ -17,9 +18,11 @@ export default (base) => {
    * `selectFirst`, `selectLast`, `selectNext`, and `selectPrevious`.
    *
    * This mixin does not produce any user-visible effects to represent
-   * selection. Other mixins, such as [SelectionAriaActive](SelectionAriaActive.md), [SelectionHighlight](SelectionHighlight.md)
-   * and [SelectionInView](SelectionInView.md), modify the selected item in common ways to let the
-   * user know a given item is selected or not selected.
+   * selection. Other mixins, such as
+   * [SelectionAriaActive](SelectionAriaActive.md),
+   * [SelectionHighlight](SelectionHighlight.md) and
+   * [SelectionInView](SelectionInView.md), modify the selected item in common
+   * ways to let the user know a given item is selected or not selected.
    */
   class ItemsSelection extends base {
 

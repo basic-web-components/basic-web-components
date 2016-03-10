@@ -10,7 +10,8 @@ export default (base) => {
    * user can actually see that item.
    *
    * This mixin expects a `selectedItem` property to be set when the selection
-   * changes. You can supply that yourself, or use the ItemsSelection mixin.
+   * changes. You can supply that yourself, or use the
+   * [ItemsSelection](ItemsSelection.md) mixin.
    */
   class SelectionInView extends base {
 
