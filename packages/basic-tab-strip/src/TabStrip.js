@@ -34,6 +34,11 @@ let base = ElementBase.compose(
  * The tab name is obtained by examining the children for an `aria-label`
  * property.
  *
+ * Use tabs when you want to provide a large set of options or elements than
+ * can comfortably fit inline, the options can be coherently grouped into pages,
+ * and you want to avoid making the user navigate to a separate page. Tabs work
+ * best if you only have a small handful of pages, say 2–7.
+ *
  * The basic-tab-strip component does not define how a selected child is
  * represented. If you're looking for the standard behavior of just showing only
  * the selected child, you can use this component in combination with the
@@ -60,6 +65,10 @@ let base = ElementBase.compose(
  * as big as necessary. You can apply the `spread` CSS class to a
  * basic-tab-strip element for a variant appearance in which the available width
  * of the element is divided up equally among tabs.
+ *
+ * The generic default styling of the tab strip will present the classic
+ * skeumorphic look of rounded tabs attached to a surface. You can remove this
+ * styling by setting the `generic` property/attribute to false.
  *
  * @extends ElementBase
  * @mixes ContentFirstChildTarget
