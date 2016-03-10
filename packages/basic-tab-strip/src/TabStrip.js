@@ -217,15 +217,13 @@ class TabStrip extends base {
         position: relative;
       }
 
+      /*
+       * Avoid having tab container stretch across. User won't be able to see
+       * it, but since it handles the keyboard, in Mobile Safari a tap on the
+       * container background will cause the region to flash. Aligning the
+       * region collapses it down to hold its contents.
+       */
       #tabs {
-        /*
-         * Avoid having tab container stretch across. User won't be able to see
-         * it, but since it handles the keyboard, in Mobile Safari a tap on the
-         * container background will cause the region to flash. Aligning the
-         * region collapses it down to hold its contents.
-         */
-        -webkit-align-self: flex-start;
-        align-self: flex-start;
         /* For IE bug (clicking tab produces gap between tab and page). */
         display: -webkit-flex;
         display: flex;
@@ -234,6 +232,10 @@ class TabStrip extends base {
          * See https://webkit.org/blog/5610/more-responsive-tapping-on-ios/.
          */
         touch-action: manipulation;
+      }
+      :host(:not(.spread)) #tabs {
+        -webkit-align-self: flex-start;
+        align-self: flex-start;
       }
 
       #pages {
@@ -274,8 +276,8 @@ class TabStrip extends base {
 
       /* Spread variant */
       :host(.spread) #tabs {
+        -webkit-align-items: stretch;
         align-items: stretch;
-        align-self: initial;
       }
       :host(.spread) .tab {
         flex: 1;
