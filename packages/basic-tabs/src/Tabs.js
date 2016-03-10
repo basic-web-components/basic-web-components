@@ -14,6 +14,16 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
  * something more complex than this arrangement, you can use either of those
  * elements on its own.
  *
+ * Since this component uses basic-tab-strip internally, it obtains the names of
+ * the individual tabs the same way: from a child's `aria-label` property.
+ * Example:
+ *
+ *     <basic-tabs>
+ *       <div aria-label="One">Page one</div>
+ *       <div aria-label="Two">Page two</div>
+ *       <div aria-label="Three">Page three</div>
+ *     </basic-tabs>
+ *
  * @extends ElementBase
  * @mixes ItemsSelection
  * @mixes TargetSelection

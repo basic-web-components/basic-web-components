@@ -2,7 +2,7 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 
 
 /**
- * Fade out content that overflows so the user knows there's more.
+ * Fades out content that overflows so the user knows there's more.
  *
  * This component doesn't handle interactivity.
  *

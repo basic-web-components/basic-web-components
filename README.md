@@ -137,6 +137,8 @@ The current release of Basic Web Components includes the following:
 * [basic-list-box](packages/basic-list-box).
   A single-selection list box that supports selection highlighting (using the
   system highlight color) and keyboard navigation.
+* [basic-tabs](packages/basic-tabs).
+  A set of pages with a tab strip governing which page is shown.
 
 ## Helper components
 
@@ -147,6 +149,8 @@ other components.
   Adds arrow buttons to the side of a carousel.
 * [basic-element-base](packages/basic-element-base).
   A simple base class for a component that includes the most common mixins.
+* [basic-fade-overflow](old/basic-fade-overflow).
+  Fades out content that overflows so the user knows there's more.
 * [basic-page-dots](packages/basic-page-dots).
   Adds a row of small dots to the bottom of a carousel.
 * [basic-sliding-viewport](packages/basic-sliding-viewport).
@@ -154,6 +158,8 @@ other components.
   time.
 * [basic-spread-items](packages/basic-spread-items).
   Spreads out a set of items horizontally so they take equal space.
+* [basic-tab-strip](packages/basic-tab-strip).
+  A strip of tabs for selecting one of the component's children.
 * [basic-wrapped-standard-element](packages/basic-wrapped-standard-element).
   Wraps a standard HTML element so that the standard behavior can then be
   extended.
@@ -193,8 +199,6 @@ repository for reference, and it is our intent to upgrade these when we can:
 * [basic-days-of-week](old/basic-days-of-week).
   Shows the names of the seven days of the week using a given culture’s day
   names in short/abbreviated/full format.
-* [basic-fade-overflow](old/basic-fade-overflow).
-  Fade out content that overflows so the user knows there's more.
 * [basic-framed-content](old/basic-framed-content).
   Allows communication outside of a framed page.
 * [basic-month-and-year](old/basic-month-and-year).
