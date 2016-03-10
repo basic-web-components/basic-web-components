@@ -46,6 +46,8 @@ class Tabs extends ElementBase.compose(
       :host {
         display: -webkit-inline-flex;
         display: inline-flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
       }
       </style>
 

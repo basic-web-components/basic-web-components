@@ -223,6 +223,8 @@ class TabStrip extends base {
         display: flex;
         -webkit-flex: 1;
         flex: 1;
+        -webkit-flex-direction: column;
+        flex-direction: column;
       }
 
       #pages ::content > * {
