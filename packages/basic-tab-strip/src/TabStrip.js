@@ -1,5 +1,6 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
+import CustomStyle from '../../basic-component-mixins/src/CustomStyle';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
@@ -17,6 +18,7 @@ let idCount = 0;
 
 let base = ElementBase.compose(
   ContentFirstChildTarget,
+  CustomStyle,
   DirectionSelection,
   DistributedChildrenAsContent,
   Generic,
@@ -273,11 +275,24 @@ class TabStrip extends base {
       }
 
       .tab {
+        background-color: var(--basic-tab-background-color, buttonface);
+        border: var(--basic-tab-border, none);
+        color: var(--basic-tab-color, inherit);
         cursor: pointer;
         display: inline-block;
         font-family: inherit;
         font-size: inherit;
+        padding: var(--basic-tab-padding, 2px 6px);
         position: relative;
+      }
+
+      .tab:focus {
+        z-index: 1;
+      }
+
+      .tab.selected {
+        font-weight: var(--basic-tab-selected-font-weight, normal);
+        color: var(--basic-tab-selected-color, buttontext);
       }
 
       /* Left/right positions */

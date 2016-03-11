@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>basic-tab-strip</title>
+
+  <script src="../demos/lib/webcomponents.js"></script>
+  <script src="./dist/basic-tabs.js"></script>
+  <link rel="stylesheet" href="../demos/demos.css">
+
+  <style>
+  body {
+    background: #444;
+    color: red;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  basic-tabs {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  .panel {
+    -webkit-align-items: center;
+    align-items: center;
+    color: white;
+    display: -webkit-flex;
+    display: flex;
+    font-size: larger;
+    font-weight: bold;
+    -webkit-flex: 1;
+    flex: 1;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  :root {
+    --basic-tab-background-color: black;
+    --basic-tab-border: none;
+    --basic-tab-color: #ddd;
+    --basic-tab-padding: 1em;
+    --basic-tab-selected-font-weight: bold;
+    --basic-tab-selected-color: white;
+  }
+  </style>
+
+</head>
+
+<body>
+  <basic-tabs class="spread" tab-position="bottom" generic="false">
+    <div class="panel" aria-label="One">Page one</div>
+    <div class="panel" aria-label="Two">Page two</div>
+    <div class="panel" aria-label="Three">Page three</div>
+  </basic-tabs>
+</body>
+
+</html>
