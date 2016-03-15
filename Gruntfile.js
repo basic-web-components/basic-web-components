@@ -10,6 +10,10 @@
 
 var fs = require('fs');
 var path = require('path');
+var jsDocParse = require('jsdoc-parse');
+var jsdoc2md = require("jsdoc-to-markdown");
+var dmd = require('dmd');
+var Readable = require('stream').Readable;
 
 //
 // allPackages is the global array of npm-publishable packages in this monorepo.
@@ -443,6 +447,54 @@ module.exports = function(grunt) {
       packageJSON = updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString);
       fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
     }
+  });
+
+  //
+  // Experimental jsdoc parsing
+  //
+  grunt.registerTask('doctest', function() {
+    var done = this.async();
+
+    // Start by parsing the jsdoc into a stream which will contain
+    // the jsdoc represented in JSON
+    var stream = jsDocParse({src: 'packages/basic-list-box/src/ListBox.js'});
+
+    // Convert the stream to jsdoc JSON
+    var string = '';
+    stream.setEncoding('utf8');
+    stream.on('data', function(chunk) {
+      string += chunk;
+    })
+    .on('end', function() {
+      var json = JSON.parse(string);
+
+      // Now that we have the jsdoc JSON, we can manipulate it, such as
+      // adding JSON items from the parsing of mixin docs. We do that here.
+      // ...
+      // Modify the json
+      // ...
+
+      // Create a new readable stream, holding the stringified JSON
+      string = '';
+      var s = new Readable();
+      s._read = function noop() {};
+      s.push(JSON.stringify(json));
+      s.push(null);
+
+      // Use dmd to create the markdown string which we will
+      // write to an output .md file (NYI)
+      var dmdStream = dmd({"global-index-format": "none"});
+      s.pipe(dmdStream);
+      dmdStream.setEncoding('utf8');
+      dmdStream.on('data', function(data) {
+        string += data;
+      })
+      .on('end', function() {
+        // string now holds the markdown text
+        console.log(string);
+        done();
+      });
+    });
   });
 
 };
