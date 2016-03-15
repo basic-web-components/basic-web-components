@@ -455,9 +455,26 @@ module.exports = function(grunt) {
   grunt.registerTask('doctest', function() {
     var done = this.async();
 
+    parseScriptToJSDocJSON('packages/basic-list-box/src/ListBox.js')
+    .then(function(json) {
+      return parseJSONToMarkdown(json);
+    })
+    .then(function(string) {
+      console.log(string);
+      done();
+    })
+    .catch(function(err) {
+      console.dir(err);
+      done();
+    });
+  });
+};
+
+function parseScriptToJSDocJSON(src) {
+  var promise = new Promise(function(resolve, reject) {
     // Start by parsing the jsdoc into a stream which will contain
     // the jsdoc represented in JSON
-    var stream = jsDocParse({src: 'packages/basic-list-box/src/ListBox.js'});
+    var stream = jsDocParse({src: src});
 
     // Convert the stream to jsdoc JSON
     var string = '';
@@ -467,37 +484,44 @@ module.exports = function(grunt) {
     })
     .on('end', function() {
       var json = JSON.parse(string);
-
-      // Now that we have the jsdoc JSON, we can manipulate it, such as
-      // adding JSON items from the parsing of mixin docs. We do that here.
-      // ...
-      // Modify the json
-      // ...
-
-      // Create a new readable stream, holding the stringified JSON
-      string = '';
-      var s = new Readable();
-      s._read = function noop() {};
-      s.push(JSON.stringify(json));
-      s.push(null);
-
-      // Use dmd to create the markdown string which we will
-      // write to an output .md file (NYI)
-      var dmdStream = dmd({"global-index-format": "none"});
-      s.pipe(dmdStream);
-      dmdStream.setEncoding('utf8');
-      dmdStream.on('data', function(data) {
-        string += data;
-      })
-      .on('end', function() {
-        // string now holds the markdown text
-        console.log(string);
-        done();
-      });
+      resolve(json);
+    })
+    .on('error', function(err) {
+      reject(err);
     });
   });
 
-};
+  return promise;
+}
+
+function parseJSONToMarkdown(json) {
+  var promise = new Promise(function(resolve, reject) {
+    // Create a new readable stream, holding the stringified JSON
+    var string = '';
+    var s = new Readable();
+    s._read = function noop() {};
+    s.push(JSON.stringify(json));
+    s.push(null);
+
+    // Use dmd to create the markdown string which we will
+    // write to an output .md file (NYI)
+    var dmdStream = dmd({"global-index-format": "none"});
+    s.pipe(dmdStream);
+    dmdStream.setEncoding('utf8');
+    dmdStream.on('data', function(data) {
+      string += data;
+    })
+    .on('end', function() {
+      // string now holds the markdown text
+      resolve(string);
+    })
+    .on('error', function(err) {
+      reject(err);
+    });
+  });
+
+  return promise;
+}
 
 function updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString) {
   var json = packageJSON;
