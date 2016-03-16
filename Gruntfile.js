@@ -14,6 +14,7 @@ var jsDocParse = require('jsdoc-parse');
 var jsdoc2md = require("jsdoc-to-markdown");
 var dmd = require('dmd');
 var Readable = require('stream').Readable;
+var promiseBatcher = require('./grunt/promise-batcher');
 
 //
 // allPackages is the global array of npm-publishable packages in this monorepo.
@@ -455,20 +456,35 @@ module.exports = function(grunt) {
   grunt.registerTask('doctest', function() {
     var done = this.async();
 
-    parseScriptToJSDocJSON('packages/basic-list-box/src/ListBox.js')
-    .then(function(json) {
-      return parseJSONToMarkdown(json);
-    })
-    .then(function(string) {
-      console.log(string);
-      done();
-    })
-    .catch(function(err) {
-      console.dir(err);
+    promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
+    .then(function() {
       done();
     });
   });
 };
+
+function buildMarkdownDoc(docItem, grunt) {
+  grunt.log.writeln('Building ' + docItem.dest);
+
+  return parseScriptToJSDocJSON(docItem.src)
+  .then(function (json) {
+    return parseJSONToMarkdown(json);
+  })
+  .then(function (string) {
+    // Write to docItem.dest
+    return new Promise(function(resolve, reject) {
+      fs.writeFile(docItem.dest, string, 'utf-8', function (err) {
+        if (err) {
+          return reject(err);
+        }
+        resolve();
+      });
+    });
+  })
+  .catch(function (err) {
+    console.dir(err);
+  });
+}
 
 function parseScriptToJSDocJSON(src) {
   var promise = new Promise(function(resolve, reject) {
