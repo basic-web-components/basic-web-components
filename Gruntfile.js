@@ -456,6 +456,9 @@ module.exports = function(grunt) {
   grunt.registerTask('doctest', function() {
     var done = this.async();
 
+    // BUGBUG: for testing purposes
+    docsList = [{src: 'packages/basic-list-box/src/*.js', dest: 'packages/basic-list-box/README.md'}];
+
     promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
     .then(function() {
       done();
@@ -464,13 +467,16 @@ module.exports = function(grunt) {
 };
 
 function buildMarkdownDoc(docItem, grunt) {
-  grunt.log.writeln('Building ' + docItem.dest);
+  grunt.log.writeln('Building ' + docItem.dest + ' from ' + docItem.src);
 
-  return parseScriptToJSDocJSON(docItem.src)
-  .then(function (json) {
-    return parseJSONToMarkdown(json);
+  return parseScriptToJSDocJSON(docItem.src, grunt)
+  .then(function(json) {
+    return mergeMixinDocs(json, grunt)
   })
-  .then(function (string) {
+  .then(function(json) {
+    return parseJSONToMarkdown(json, grunt);
+  })
+  .then(function(string) {
     // Write to docItem.dest
     return new Promise(function(resolve, reject) {
       fs.writeFile(docItem.dest, string, 'utf-8', function (err) {
@@ -481,12 +487,12 @@ function buildMarkdownDoc(docItem, grunt) {
       });
     });
   })
-  .catch(function (err) {
-    console.dir(err);
+  .catch(function(err) {
+    grunt.error.writeln(err);
   });
 }
 
-function parseScriptToJSDocJSON(src) {
+function parseScriptToJSDocJSON(src, grunt) {
   var promise = new Promise(function(resolve, reject) {
     // Start by parsing the jsdoc into a stream which will contain
     // the jsdoc represented in JSON
@@ -510,7 +516,7 @@ function parseScriptToJSDocJSON(src) {
   return promise;
 }
 
-function parseJSONToMarkdown(json) {
+function parseJSONToMarkdown(json, grunt) {
   var promise = new Promise(function(resolve, reject) {
     // Create a new readable stream, holding the stringified JSON
     var string = '';
@@ -537,6 +543,25 @@ function parseJSONToMarkdown(json) {
   });
 
   return promise;
+}
+
+function mergeMixinDocs(json, grunt) {
+  var mixins = json[0].mixes.map(function(mixin) {
+    return 'packages/basic-component-mixins/src/' + mixin + '.js';
+  });
+
+  var params = {grunt: grunt, bag: {}};
+  return promiseBatcher.batch(1, mixins, params, mergeMixinIntoBag)
+  .then(function(jsonBag) {
+    return json;
+  });
+}
+
+function mergeMixinIntoBag(mixinPath, params) {
+  return parseScriptToJSDocJSON(mixinPath, params.grunt)
+  .then(function(json) {
+    return params.jsonBag;
+  })
 }
 
 function updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString) {

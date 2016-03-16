@@ -29,13 +29,9 @@ function startAtIndex(index, batchSize, array, paramsObj, fn) {
   }
 
   return Promise.all(promises)
-    .then(function() {
-      return startAtIndex(index + batchSize, batchSize, array, paramsObj, fn);
-    });
-}
-
-function setLoggerLevel(level) {
-  logger.level(level);
+  .then(function() {
+    return startAtIndex(index + batchSize, batchSize, array, paramsObj, fn);
+  });
 }
 
 module.exports = {
