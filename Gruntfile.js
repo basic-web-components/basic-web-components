@@ -474,6 +474,7 @@ function buildMarkdownDoc(docItem, grunt) {
     return mergeMixinDocs(json, grunt)
   })
   .then(function(json) {
+    //console.dir(json);
     return parseJSONToMarkdown(json, grunt);
   })
   .then(function(string) {
@@ -550,18 +551,25 @@ function mergeMixinDocs(json, grunt) {
     return 'packages/basic-component-mixins/src/' + mixin + '.js';
   });
 
-  var params = {grunt: grunt, bag: {}};
+  var params = {grunt: grunt, json: json, hostid: json[0].id, nextOrderVal: json.length};
   return promiseBatcher.batch(1, mixins, params, mergeMixinIntoBag)
-  .then(function(jsonBag) {
-    return json;
+  .then(function() {
+    return params.json;
   });
 }
 
 function mergeMixinIntoBag(mixinPath, params) {
   return parseScriptToJSDocJSON(mixinPath, params.grunt)
   .then(function(json) {
-    return params.jsonBag;
-  })
+    for (var i = 1; i < json.length; i++) {
+      if (json[i].memberof != null && json[i].memberof != undefined) {
+        json[i].memberof = params.hostid;
+      }
+      json[i].order = params.nextOrderVal;
+      params.nextOrderVal++;
+      params.json.push(json[i]);
+    }
+  });
 }
 
 function updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString) {
