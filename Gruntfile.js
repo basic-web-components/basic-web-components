@@ -528,7 +528,8 @@ function parseJSONToMarkdown(json, grunt) {
 
     // Use dmd to create the markdown string which we will
     // write to an output .md file (NYI)
-    var dmdStream = dmd({"global-index-format": "none"});
+    var partials = ['./grunt/templates/main.hbs', './grunt/templates/scope.hbs'];
+    var dmdStream = dmd({partial: partials, 'global-index-format': "none"});
     s.pipe(dmdStream);
     dmdStream.setEncoding('utf8');
     dmdStream.on('data', function(data) {
@@ -551,7 +552,7 @@ function mergeMixinDocs(json, grunt) {
     return 'packages/basic-component-mixins/src/' + mixin + '.js';
   });
 
-  var params = {grunt: grunt, json: json, hostid: json[0].id, nextOrderVal: json.length};
+  var params = {grunt: grunt, json: json, hostid: json[0].id};
   return promiseBatcher.batch(1, mixins, params, mergeMixinIntoBag)
   .then(function() {
     return params.json;
@@ -562,11 +563,10 @@ function mergeMixinIntoBag(mixinPath, params) {
   return parseScriptToJSDocJSON(mixinPath, params.grunt)
   .then(function(json) {
     for (var i = 1; i < json.length; i++) {
-      if (json[i].memberof != null && json[i].memberof != undefined) {
+      if (json[i].memberof != null && json[i].memberof != params.hostid) {
+        json[i].originalmemberof = json[i].memberof;
         json[i].memberof = params.hostid;
       }
-      json[i].order = params.nextOrderVal;
-      params.nextOrderVal++;
       params.json.push(json[i]);
     }
   });
