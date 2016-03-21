@@ -56,34 +56,42 @@ styling by setting the `generic` property/attribute to false.
   
 
 * [TabStrip](#TabStrip) ⇐ <code>ElementBase</code>
-    * [.tabPosition](#TabStrip+tabPosition) : <code>string</code>
-    * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.generic](#Generic+generic) : <code>Boolean</code>
-    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
-    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
-    * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectLast()](#ItemsSelection+selectLast)
-    * [.selectNext()](#ItemsSelection+selectNext)
-    * [.selectPrevious()](#ItemsSelection+selectPrevious)
-    * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
-    * [.goDown()](#KeyboardDirection+goDown)
-    * [.goEnd()](#KeyboardDirection+goEnd)
-    * [.goLeft()](#KeyboardDirection+goLeft)
-    * [.goRight()](#KeyboardDirection+goRight)
-    * [.goStart()](#KeyboardDirection+goStart)
-    * [.goUp()](#KeyboardDirection+goUp)
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
-    * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
-    * [.target](#TargetSelection+target) : <code>HTMLElement</code>
-    * [.itemsChanged()](#TargetSelection+itemsChanged)
+    * _instance_
+        * [.tabPosition](#TabStrip+tabPosition) : <code>string</code>
+        * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
+        * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.generic](#Generic+generic) : <code>Boolean</code>
+        * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
+        * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+        * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+        * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
+        * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+        * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+        * [.itemAdded(item)](#ItemsSelection+itemAdded)
+        * [.selectFirst()](#ItemsSelection+selectFirst)
+        * [.selectLast()](#ItemsSelection+selectLast)
+        * [.selectNext()](#ItemsSelection+selectNext)
+        * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * _static_
+        * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
+        * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
+    * _instance_
+        * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
+        * [.goDown()](#KeyboardDirection+goDown)
+        * [.goEnd()](#KeyboardDirection+goEnd)
+        * [.goLeft()](#KeyboardDirection+goLeft)
+        * [.goRight()](#KeyboardDirection+goRight)
+        * [.goStart()](#KeyboardDirection+goStart)
+        * [.goUp()](#KeyboardDirection+goUp)
+        * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _static_
+        * ["content-changed"](#ObserveContentChanges.event_content-changed)
+    * _instance_
+        * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
+        * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
+        * [.target](#TargetSelection+target) : <code>HTMLElement</code>
+        * [.itemsChanged()](#TargetSelection+itemsChanged)
 
 <a name="TabStrip+tabPosition"></a>
 ### tabStrip.tabPosition : <code>string</code>
@@ -192,6 +200,27 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection.event_selected-item-changed"></a>
+### "selected-item-changed"
+Fires when the selectedItem property changes.
+
+  **Kind**: event emitted by <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
+| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
+
+<a name="ItemsSelection.event_selected-index-changed"></a>
+### "selected-index-changed"
+Fires when the selectedIndex property changes.
+
+  **Kind**: event emitted by <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedIndex | <code>number</code> | The new selected index. |
+
 <a name="KeyboardDirection+navigationAxis"></a>
 ### tabStrip.navigationAxis : <code>string</code>
 Indicates the direction of permitted navigation with the keyboard.
@@ -248,6 +277,12 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
+<a name="ObserveContentChanges.event_content-changed"></a>
+### "content-changed"
+This event is raised when the component's contents (including distributed
+children) have changed.
+
+  **Kind**: event emitted by <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="TargetSelection+items"></a>
 ### tabStrip.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list.
@@ -277,30 +312,3 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedItem property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
-| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
-
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedIndex property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedIndex | <code>number</code> | The new selected index. |
-
-<a name="event_content-changed"></a>
-## "content-changed"
-This event is raised when the component's contents (including distributed
-children) have changed.
-
-  **Kind**: event emitted

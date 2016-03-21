@@ -60,6 +60,7 @@ export default (base) => {
      * This event is raised when the component's contents (including distributed
      * children) have changed.
      *
+     * @memberof ObserveContentChanges
      * @event content-changed
      */
   }

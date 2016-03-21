@@ -18,8 +18,11 @@ This component currently requires an explicit size by applied to it.
   
 
 * [SpreadItems](#SpreadItems) ⇐ <code>ElementBase</code>
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _instance_
+        * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _static_
+        * ["content-changed"](#ObserveContentChanges.event_content-changed)
 
 <a name="DistributedChildrenAsContent+content"></a>
 ### spreadItems.content : <code>Array.&lt;HTMLElement&gt;</code>
@@ -37,9 +40,9 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[SpreadItems](#SpreadItems)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
-<a name="event_content-changed"></a>
-## "content-changed"
+<a name="ObserveContentChanges.event_content-changed"></a>
+### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted
+  **Kind**: event emitted by <code>[SpreadItems](#SpreadItems)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.

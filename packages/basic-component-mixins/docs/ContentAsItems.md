@@ -21,10 +21,13 @@ Items differ from element contents in several ways:
   **Kind**: global class
 
 * [ContentAsItems](#ContentAsItems)
-    * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
-    * [.itemsChanged()](#ContentAsItems+itemsChanged)
+    * _instance_
+        * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+        * [.itemAdded(item)](#ContentAsItems+itemAdded)
+        * [.itemsChanged()](#ContentAsItems+itemsChanged)
+    * _static_
+        * ["items-changed"](#ContentAsItems.event_items-changed)
 
 <a name="ContentAsItems+items"></a>
 ### contentAsItems.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -67,8 +70,8 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>
-<a name="event_items-changed"></a>
-## "items-changed"
+<a name="ContentAsItems.event_items-changed"></a>
+### "items-changed"
 Fires when the items in the list change.
 
-  **Kind**: event emitted
+  **Kind**: event emitted by <code>[ContentAsItems](#ContentAsItems)</code>

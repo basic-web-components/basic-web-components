@@ -110,40 +110,51 @@ using assistive technologies.
   
 
 * [Carousel](#Carousel) ⇐ <code>ElementBase</code>
-    * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
-    * [.itemsChanged()](#ContentAsItems+itemsChanged)
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.generic](#Generic+generic) : <code>Boolean</code>
-    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
-    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
-    * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectLast()](#ItemsSelection+selectLast)
-    * [.selectNext()](#ItemsSelection+selectNext)
-    * [.selectPrevious()](#ItemsSelection+selectPrevious)
-    * [.keydown(event)](#Keyboard+keydown) ⇒ <code>boolean</code>
-    * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
-    * [.goDown()](#KeyboardDirection+goDown)
-    * [.goEnd()](#KeyboardDirection+goEnd)
-    * [.goLeft()](#KeyboardDirection+goLeft)
-    * [.goRight()](#KeyboardDirection+goRight)
-    * [.goStart()](#KeyboardDirection+goStart)
-    * [.goUp()](#KeyboardDirection+goUp)
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
-    * [.position](#SwipeDirection+position) : <code>number</code>
-    * [.goLeft()](#SwipeDirection+goLeft)
-    * [.goRight()](#SwipeDirection+goRight)
-    * [.showTransition(value)](#SwipeDirection+showTransition)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
-    * [.position](#TrackpadDirection+position) : <code>number</code>
-    * [.goLeft()](#TrackpadDirection+goLeft)
-    * [.goRight()](#TrackpadDirection+goRight)
+    * _instance_
+        * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+        * [.itemAdded(item)](#ContentAsItems+itemAdded)
+        * [.itemsChanged()](#ContentAsItems+itemsChanged)
+    * _static_
+        * ["items-changed"](#ContentAsItems.event_items-changed)
+    * _instance_
+        * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.generic](#Generic+generic) : <code>Boolean</code>
+        * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
+        * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+        * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+        * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
+        * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+        * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+        * [.itemAdded(item)](#ItemsSelection+itemAdded)
+        * [.selectFirst()](#ItemsSelection+selectFirst)
+        * [.selectLast()](#ItemsSelection+selectLast)
+        * [.selectNext()](#ItemsSelection+selectNext)
+        * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * _static_
+        * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
+        * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
+    * _instance_
+        * [.keydown(event)](#Keyboard+keydown) ⇒ <code>boolean</code>
+        * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
+        * [.goDown()](#KeyboardDirection+goDown)
+        * [.goEnd()](#KeyboardDirection+goEnd)
+        * [.goLeft()](#KeyboardDirection+goLeft)
+        * [.goRight()](#KeyboardDirection+goRight)
+        * [.goStart()](#KeyboardDirection+goStart)
+        * [.goUp()](#KeyboardDirection+goUp)
+        * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _static_
+        * ["content-changed"](#ObserveContentChanges.event_content-changed)
+    * _instance_
+        * [.position](#SwipeDirection+position) : <code>number</code>
+        * [.goLeft()](#SwipeDirection+goLeft)
+        * [.goRight()](#SwipeDirection+goRight)
+        * [.showTransition(value)](#SwipeDirection+showTransition)
+        * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
+        * [.position](#TrackpadDirection+position) : <code>number</code>
+        * [.goLeft()](#TrackpadDirection+goLeft)
+        * [.goRight()](#TrackpadDirection+goRight)
 
 <a name="ContentAsItems+items"></a>
 ### carousel.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -186,6 +197,11 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+<a name="ContentAsItems.event_items-changed"></a>
+### "items-changed"
+Fires when the items in the list change.
+
+  **Kind**: event emitted by <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="DistributedChildrenAsContent+content"></a>
 ### carousel.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
@@ -281,6 +297,27 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection.event_selected-item-changed"></a>
+### "selected-item-changed"
+Fires when the selectedItem property changes.
+
+  **Kind**: event emitted by <code>[Carousel](#Carousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
+| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
+
+<a name="ItemsSelection.event_selected-index-changed"></a>
+### "selected-index-changed"
+Fires when the selectedIndex property changes.
+
+  **Kind**: event emitted by <code>[Carousel](#Carousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedIndex | <code>number</code> | The new selected index. |
+
 <a name="Keyboard+keydown"></a>
 ### carousel.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
@@ -351,6 +388,12 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
+<a name="ObserveContentChanges.event_content-changed"></a>
+### "content-changed"
+This event is raised when the component's contents (including distributed
+children) have changed.
+
+  **Kind**: event emitted by <code>[Carousel](#Carousel)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="SwipeDirection+position"></a>
 ### carousel.position : <code>number</code>
 The distance the user has moved the first touchpoint since the beginning
@@ -419,35 +462,3 @@ Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
-<a name="event_items-changed"></a>
-## "items-changed"
-Fires when the items in the list change.
-
-  **Kind**: event emitted
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedItem property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
-| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
-
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedIndex property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedIndex | <code>number</code> | The new selected index. |
-
-<a name="event_content-changed"></a>
-## "content-changed"
-This event is raised when the component's contents (including distributed
-children) have changed.
-
-  **Kind**: event emitted

@@ -220,6 +220,7 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
   /**
    * Fires when the user types in the textarea.
    *
+   * @memberof AutosizeTextarea
    * @event change
    */
 }

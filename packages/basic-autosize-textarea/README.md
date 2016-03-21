@@ -23,12 +23,18 @@ standard HTML `<textarea>`.
   
 
 * [AutosizeTextarea](#AutosizeTextarea)
-    * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>
-    * [.value](#AutosizeTextarea+value) : <code>string</code>
-    * [.autoSize()](#AutosizeTextarea+autoSize)
-    * [.generic](#Generic+generic) : <code>Boolean</code>
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _instance_
+        * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>
+        * [.value](#AutosizeTextarea+value) : <code>string</code>
+        * [.autoSize()](#AutosizeTextarea+autoSize)
+    * _static_
+        * ["change"](#AutosizeTextarea.event_change)
+    * _instance_
+        * [.generic](#Generic+generic) : <code>Boolean</code>
+        * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _static_
+        * ["content-changed"](#ObserveContentChanges.event_content-changed)
 
 <a name="AutosizeTextarea+minimumRows"></a>
 ### autosizeTextarea.minimumRows : <code>number</code>
@@ -67,6 +73,11 @@ Resize the element such that the textarea can exactly contain its content.
 By default, this method is invoked whenever the text content changes.
 
   **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>
+<a name="AutosizeTextarea.event_change"></a>
+### "change"
+Fires when the user types in the textarea.
+
+  **Kind**: event emitted by <code>[AutosizeTextarea](#AutosizeTextarea)</code>
 <a name="Generic+generic"></a>
 ### autosizeTextarea.generic : <code>Boolean</code>
 True if the component would like to receive generic styling.
@@ -93,14 +104,9 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
-<a name="event_change"></a>
-## "change"
-Fires when the user types in the textarea.
-
-  **Kind**: event emitted
-<a name="event_content-changed"></a>
-## "content-changed"
+<a name="ObserveContentChanges.event_content-changed"></a>
+### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted
+  **Kind**: event emitted by <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.

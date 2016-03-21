@@ -25,23 +25,28 @@ Example:
   
 
 * [Tabs](#Tabs) ⇐ <code>ElementBase</code>
-    * [.tabPosition](#Tabs+tabPosition) : <code>string</code>
-    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
-    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
-    * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectLast()](#ItemsSelection+selectLast)
-    * [.selectNext()](#ItemsSelection+selectNext)
-    * [.selectPrevious()](#ItemsSelection+selectPrevious)
-    * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
-    * [.target](#TargetSelection+target) : <code>HTMLElement</code>
-    * [.itemsChanged()](#TargetSelection+itemsChanged)
+    * _instance_
+        * [.tabPosition](#Tabs+tabPosition) : <code>string</code>
+        * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
+        * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+        * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+        * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
+        * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+        * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+        * [.itemAdded(item)](#ItemsSelection+itemAdded)
+        * [.selectFirst()](#ItemsSelection+selectFirst)
+        * [.selectLast()](#ItemsSelection+selectLast)
+        * [.selectNext()](#ItemsSelection+selectNext)
+        * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * _static_
+        * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
+        * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
+    * _instance_
+        * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
+        * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
+        * [.target](#TargetSelection+target) : <code>HTMLElement</code>
+        * [.itemsChanged()](#TargetSelection+itemsChanged)
 
 <a name="Tabs+tabPosition"></a>
 ### tabs.tabPosition : <code>string</code>
@@ -129,6 +134,27 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection.event_selected-item-changed"></a>
+### "selected-item-changed"
+Fires when the selectedItem property changes.
+
+  **Kind**: event emitted by <code>[Tabs](#Tabs)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
+| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
+
+<a name="ItemsSelection.event_selected-index-changed"></a>
+### "selected-index-changed"
+Fires when the selectedIndex property changes.
+
+  **Kind**: event emitted by <code>[Tabs](#Tabs)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedIndex | <code>number</code> | The new selected index. |
+
 <a name="TargetSelection+items"></a>
 ### tabs.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list.
@@ -158,24 +184,3 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedItem property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
-| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
-
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedIndex property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedIndex | <code>number</code> | The new selected index. |
-

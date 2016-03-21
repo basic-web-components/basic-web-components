@@ -24,17 +24,21 @@ ways to let the user know a given item is selected or not selected.
   **Kind**: global class
 
 * [ItemsSelection](#ItemsSelection)
-    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
-    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
-    * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectLast()](#ItemsSelection+selectLast)
-    * [.selectNext()](#ItemsSelection+selectNext)
-    * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * _instance_
+        * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
+        * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+        * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+        * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
+        * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+        * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+        * [.itemAdded(item)](#ItemsSelection+itemAdded)
+        * [.selectFirst()](#ItemsSelection+selectFirst)
+        * [.selectLast()](#ItemsSelection+selectLast)
+        * [.selectNext()](#ItemsSelection+selectNext)
+        * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * _static_
+        * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
+        * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
 
 <a name="ItemsSelection+canSelectNext"></a>
 ### itemsSelection.canSelectNext : <code>boolean</code>
@@ -115,22 +119,22 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
+<a name="ItemsSelection.event_selected-item-changed"></a>
+### "selected-item-changed"
 Fires when the selectedItem property changes.
 
-  **Kind**: event emitted
+  **Kind**: event emitted by <code>[ItemsSelection](#ItemsSelection)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
+<a name="ItemsSelection.event_selected-index-changed"></a>
+### "selected-index-changed"
 Fires when the selectedIndex property changes.
 
-  **Kind**: event emitted
+  **Kind**: event emitted by <code>[ItemsSelection](#ItemsSelection)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |

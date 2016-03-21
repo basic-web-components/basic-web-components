@@ -183,6 +183,7 @@ class ListBox extends ElementBase.compose(
   /**
    * Fires when the list's value property changes.
    *
+   * @memberof ListBox
    * @event value-changed
    */
 }

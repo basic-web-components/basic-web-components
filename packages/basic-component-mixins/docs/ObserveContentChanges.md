@@ -23,6 +23,13 @@ be updated to take advantage of that MutationObserver option when that
 becomes available.
 
   **Kind**: global class
+
+* [ObserveContentChanges](#ObserveContentChanges)
+    * _instance_
+        * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _static_
+        * ["content-changed"](#ObserveContentChanges.event_content-changed)
+
 <a name="ObserveContentChanges+contentChanged"></a>
 ### observeContentChanges.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -33,9 +40,9 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[ObserveContentChanges](#ObserveContentChanges)</code>
-<a name="event_content-changed"></a>
-## "content-changed"
+<a name="ObserveContentChanges.event_content-changed"></a>
+### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted
+  **Kind**: event emitted by <code>[ObserveContentChanges](#ObserveContentChanges)</code>

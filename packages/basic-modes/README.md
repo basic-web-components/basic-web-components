@@ -19,24 +19,35 @@ This component doesn't provide any UI for changing which mode is shown.
   
 
 * [Modes](#Modes) ⇐ <code>ElementBase</code>
-    * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
-    * [.itemsChanged()](#ContentAsItems+itemsChanged)
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
-    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
-    * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectLast()](#ItemsSelection+selectLast)
-    * [.selectNext()](#ItemsSelection+selectNext)
-    * [.selectPrevious()](#ItemsSelection+selectPrevious)
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
+    * _instance_
+        * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+        * [.itemAdded(item)](#ContentAsItems+itemAdded)
+        * [.itemsChanged()](#ContentAsItems+itemsChanged)
+    * _static_
+        * ["items-changed"](#ContentAsItems.event_items-changed)
+    * _instance_
+        * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
+        * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+        * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+        * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
+        * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+        * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+        * [.itemAdded(item)](#ItemsSelection+itemAdded)
+        * [.selectFirst()](#ItemsSelection+selectFirst)
+        * [.selectLast()](#ItemsSelection+selectLast)
+        * [.selectNext()](#ItemsSelection+selectNext)
+        * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * _static_
+        * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
+        * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
+    * _instance_
+        * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * _static_
+        * ["content-changed"](#ObserveContentChanges.event_content-changed)
+    * _instance_
+        * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
 
 <a name="ContentAsItems+items"></a>
 ### modes.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -79,6 +90,11 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+<a name="ContentAsItems.event_items-changed"></a>
+### "items-changed"
+Fires when the items in the list change.
+
+  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="DistributedChildrenAsContent+content"></a>
 ### modes.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
@@ -164,6 +180,27 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection.event_selected-item-changed"></a>
+### "selected-item-changed"
+Fires when the selectedItem property changes.
+
+  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
+| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
+
+<a name="ItemsSelection.event_selected-index-changed"></a>
+### "selected-index-changed"
+Fires when the selectedIndex property changes.
+
+  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedIndex | <code>number</code> | The new selected index. |
+
 <a name="ObserveContentChanges+contentChanged"></a>
 ### modes.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -174,6 +211,12 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
+<a name="ObserveContentChanges.event_content-changed"></a>
+### "content-changed"
+This event is raised when the component's contents (including distributed
+children) have changed.
+
+  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 ### modes.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
@@ -187,35 +230,3 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
-<a name="event_items-changed"></a>
-## "items-changed"
-Fires when the items in the list change.
-
-  **Kind**: event emitted
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedItem property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
-| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
-
-<a name="event_selected-item-changed"></a>
-## "selected-item-changed"
-Fires when the selectedIndex property changes.
-
-  **Kind**: event emitted
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedIndex | <code>number</code> | The new selected index. |
-
-<a name="event_content-changed"></a>
-## "content-changed"
-This event is raised when the component's contents (including distributed
-children) have changed.
-
-  **Kind**: event emitted
