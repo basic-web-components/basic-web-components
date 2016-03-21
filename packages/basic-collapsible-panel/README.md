@@ -1,9 +1,3 @@
-# A Module
-This is the readme for a module.
-
-## Install
-Install it using the power of thought. While body-popping.
-
 # API Documentation
 <a name="CollapsiblePanel"></a>
 ## CollapsiblePanel ⇐ <code>ElementBase</code>
