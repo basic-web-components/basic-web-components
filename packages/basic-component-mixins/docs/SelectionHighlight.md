@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="SelectionHighlight"></a>
 ## SelectionHighlight
 Mixin which applies standard highlight colors to a selected item.
@@ -11,4 +18,4 @@ This mixin expects an `applySelection` method to be called on an item when
 its selected state changes. You can use the
 [ItemsSelection](ItemsSelection.md) mixin for that purpose.
 
-**Kind**: global class  
+  **Kind**: global class

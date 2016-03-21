@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="Collective"></a>
 ## Collective
 A group of elements that have been associated for the purpose of
@@ -38,7 +45,7 @@ so that ARIA can correctly understand the arrangement of the elements.
 You can put elements into collectives yourself, or you can use the
 [TargetInCollective](TargetInCollective.md) mixin.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [Collective](#Collective)
     * [new Collective([elements])](#new_Collective_new)
@@ -60,13 +67,13 @@ Create a collective.
 ### collective.elements : <code>Array.&lt;HTMLElement&gt;</code>
 The elements in the collective.
 
-**Kind**: instance property of <code>[Collective](#Collective)</code>  
+  **Kind**: instance property of <code>[Collective](#Collective)</code>
 <a name="Collective+outermostElement"></a>
 ### collective.outermostElement
 The outermost element in the collective.
 By convention, this is the first element in the `elements` array.
 
-**Kind**: instance property of <code>[Collective](#Collective)</code>  
+  **Kind**: instance property of <code>[Collective](#Collective)</code>
 <a name="Collective+assimilate"></a>
 ### collective.assimilate(target)
 Add the indicated target to the collective.
@@ -79,7 +86,7 @@ After assimilation, any element in the collective that defines a
 `collectiveChanged` method will have that method invoked. This allows
 the collective's elements to respond to changes in the collective.
 
-**Kind**: instance method of <code>[Collective](#Collective)</code>  
+  **Kind**: instance method of <code>[Collective](#Collective)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -89,7 +96,7 @@ the collective's elements to respond to changes in the collective.
 ### collective.invokeMethod(method, [args])
 Invoke a method on all elements in the collective.
 
-**Kind**: instance method of <code>[Collective](#Collective)</code>  
+  **Kind**: instance method of <code>[Collective](#Collective)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |

@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="renderArrayAsElements"></a>
 ## renderArrayAsElements(items, container, renderItem)
 Helper function for rendering an array of items as elements.
@@ -36,7 +43,7 @@ of the `container` element:
       return element;
     });
 
-**Kind**: global function  
+  **Kind**: global function
 
 | Param | Type | Description |
 | --- | --- | --- |

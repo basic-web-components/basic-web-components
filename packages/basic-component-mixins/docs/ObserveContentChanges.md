@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="ObserveContentChanges"></a>
 ## ObserveContentChanges
 Mixin which wires up mutation observers to report any changes in a
@@ -21,7 +28,7 @@ lets a component monitor changes in distributed children. This mixin will
 be updated to take advantage of that MutationObserver option when that
 becomes available.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="ObserveContentChanges+contentChanged"></a>
 ### observeContentChanges.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -31,10 +38,10 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-**Kind**: instance method of <code>[ObserveContentChanges](#ObserveContentChanges)</code>  
+  **Kind**: instance method of <code>[ObserveContentChanges](#ObserveContentChanges)</code>
 <a name="event_content-changed"></a>
 ## "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-**Kind**: event emitted  
+  **Kind**: event emitted

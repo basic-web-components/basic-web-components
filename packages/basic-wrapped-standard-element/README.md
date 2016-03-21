@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="WrappedStandardElement"></a>
 ## WrappedStandardElement ⇐ <code>ElementBase</code>
 Wraps a standard HTML element so that the standard behavior can then be
@@ -54,7 +61,7 @@ the standard `load` event as expected.
 Some elements, such as `<body>`, `<html>`, and `<style>` cannot be wrapped
 and still achieve their standard behavior.
 
-**Kind**: global class  
+  **Kind**: global class
 **Extends:** <code>ElementBase</code>  
 
 * [WrappedStandardElement](#WrappedStandardElement) ⇐ <code>ElementBase</code>
@@ -72,12 +79,12 @@ this applies the label to the inner element, ensuring that screen readers
 and other assistive technologies will provide a meaningful description to
 the user.
 
-**Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>  
+  **Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>
 <a name="WrappedStandardElement+inner"></a>
 ### wrappedStandardElement.inner : <code>HTMLElement</code>
 Returns a reference to the inner standard HTML element.
 
-**Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>  
+  **Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>
 <a name="WrappedStandardElement+template"></a>
 ### wrappedStandardElement.template : <code>string</code> &#124; <code>HTMLTemplateElement</code>
 The template copied into the shadow tree of new instances of this element.
@@ -98,7 +105,7 @@ property and return a template of your own. The template should include an
 instance of the standard HTML element you are wrapping, and the ID of that
 element should be "inner".
 
-**Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>  
+  **Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>
 <a name="WrappedStandardElement.wrap"></a>
 ### WrappedStandardElement.wrap(extendsTag)
 Creates a class that wraps a standard HTML element.
@@ -109,7 +116,7 @@ the standard class being wrapped. E.g., if you call
 will include an anchor element, but the class will *not* inherit from
 HTMLAnchorElement.
 
-**Kind**: static method of <code>[WrappedStandardElement](#WrappedStandardElement)</code>  
+  **Kind**: static method of <code>[WrappedStandardElement](#WrappedStandardElement)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |

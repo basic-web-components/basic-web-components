@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="Keyboard"></a>
 ## Keyboard
 Mixin which manages the keydown handling for a component.
@@ -38,7 +45,7 @@ Finally, this mixin is designed to work with the optional
 component instances to cooperatively handle the keyboard. See the
 Collective class for details.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="Keyboard+keydown"></a>
 ### keyboard.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
@@ -46,7 +53,7 @@ Handle the indicated keyboard event.
 The default implementation of this method does nothing. This will
 typically be handled by other mixins.
 
-**Kind**: instance method of <code>[Keyboard](#Keyboard)</code>  
+  **Kind**: instance method of <code>[Keyboard](#Keyboard)</code>
 **Returns**: <code>boolean</code> - true if the event was handled  
 
 | Param | Type | Description |

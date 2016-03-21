@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="ContentAsItems"></a>
 ## ContentAsItems
 Mixin which maps content semantics (elements) to list item semantics.
@@ -17,7 +24,7 @@ Items differ from element contents in several ways:
   elements. This filtering ensures that those auxiliary elements can be
   used in markup inside of a list without being treated as list items.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [ContentAsItems](#ContentAsItems)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -30,7 +37,7 @@ Items differ from element contents in several ways:
 The current set of items in the list. See the top-level documentation for
 mixin for a description of how items differ from plain content.
 
-**Kind**: instance property of <code>[ContentAsItems](#ContentAsItems)</code>  
+  **Kind**: instance property of <code>[ContentAsItems](#ContentAsItems)</code>
 <a name="ContentAsItems+applySelection"></a>
 ### contentAsItems.applySelection(item, selected)
 Apply the selection state to a single item.
@@ -39,7 +46,7 @@ Invoke this method to signal that the selected state of the indicated item
 has changed. By default, this applies a `selected` CSS class if the item
 is selected, and removed it if not selected.
 
-**Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>  
+  **Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -53,7 +60,7 @@ This method is invoked whenever a new item is added to the list.
 The default implementation of this method does nothing. You can override
 this to perform per-item initialization.
 
-**Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>  
+  **Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -65,9 +72,9 @@ This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-**Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>  
+  **Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>
 <a name="event_items-changed"></a>
 ## "items-changed"
 Fires when the items in the list change.
 
-**Kind**: event emitted  
+  **Kind**: event emitted

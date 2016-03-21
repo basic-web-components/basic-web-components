@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="SelectionAriaActive"></a>
 ## SelectionAriaActive
 Mixin which treats the selected item in a list as the active item in ARIA
@@ -29,4 +36,4 @@ This mixin expects a set of members that manage the state of the selection:
 `applySelection`, `itemAdded`, and `selectedIndex`. You can supply these
 yourself, or do so via the [ItemsSelection](ItemsSelection.md) mixin.
 
-**Kind**: global class  
+  **Kind**: global class

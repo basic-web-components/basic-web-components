@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="SpreadItems"></a>
 ## SpreadItems ⇐ <code>ElementBase</code>
 Spreads out a set of items horizontally so they take equal space.
@@ -10,6 +17,33 @@ horizontal space.
 
 This component currently requires an explicit size by applied to it.
 
-**Kind**: global class  
+  **Kind**: global class
 **Extends:** <code>ElementBase</code>  
 **Mixes**: <code>DistributedChildrenAsContent</code>, <code>ObserveContentChanges</code>  
+
+* [SpreadItems](#SpreadItems) ⇐ <code>ElementBase</code>
+    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * [.contentChanged()](#ObserveContentChanges+contentChanged)
+
+<a name="DistributedChildrenAsContent+content"></a>
+### spreadItems.content : <code>Array.&lt;HTMLElement&gt;</code>
+The content of this component, defined to be the flattened array of
+children distributed to the component.
+
+  **Kind**: instance property of <code>[SpreadItems](#SpreadItems)</code>. Defined by <code>DistributedChildrenAsContent</code> mixin.
+<a name="ObserveContentChanges+contentChanged"></a>
+### spreadItems.contentChanged()
+Invoked when the contents of the component (including distributed
+children) have changed.
+
+This method is also invoked when a component is first instantiated; the
+contents have essentially "changed" from being nothing. This allows the
+component to perform initial processing of its children.
+
+  **Kind**: instance method of <code>[SpreadItems](#SpreadItems)</code>. Defined by <code>ObserveContentChanges</code> mixin.
+<a name="event_content-changed"></a>
+## "content-changed"
+This event is raised when the component's contents (including distributed
+children) have changed.
+
+  **Kind**: event emitted

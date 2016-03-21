@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="Tabs"></a>
 ## Tabs ⇐ <code>ElementBase</code>
 A set of pages with a tab strip governing which page is shown.
@@ -17,13 +24,162 @@ Example:
       <div aria-label="Three">Page three</div>
     </basic-tabs>
 
-**Kind**: global class  
+  **Kind**: global class
 **Extends:** <code>ElementBase</code>  
 **Mixes**: <code>ItemsSelection</code>, <code>TargetSelection</code>  
+
+* [Tabs](#Tabs) ⇐ <code>ElementBase</code>
+    * [.tabPosition](#Tabs+tabPosition) : <code>string</code>
+    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
+    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
+    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+    * [.itemAdded(item)](#ItemsSelection+itemAdded)
+    * [.selectFirst()](#ItemsSelection+selectFirst)
+    * [.selectLast()](#ItemsSelection+selectLast)
+    * [.selectNext()](#ItemsSelection+selectNext)
+    * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
+    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
+    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
+    * [.target](#TargetSelection+target) : <code>HTMLElement</code>
+    * [.itemsChanged()](#TargetSelection+itemsChanged)
+
 <a name="Tabs+tabPosition"></a>
 ### tabs.tabPosition : <code>string</code>
 The position of the tab strip relative to the element's children. Valid
 values are "top", "left", "right", and "bottom".
 
-**Kind**: instance property of <code>[Tabs](#Tabs)</code>  
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>
 **Default**: <code>&quot;\&quot;top\&quot;&quot;</code>  
+<a name="ItemsSelection+canSelectNext"></a>
+### tabs.canSelectNext : <code>boolean</code>
+True if the selection can be moved to the next item, false if not (the
+selected item is the last item in the list).
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+canSelectPrevious"></a>
+### tabs.canSelectPrevious : <code>boolean</code>
+True if the selection can be moved to the previous item, false if not
+(the selected item is the first one in the list).
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+selectedIndex"></a>
+### tabs.selectedIndex : <code>number</code>
+The index of the item which is currently selected, or -1 if there is no
+selection.
+
+Setting the index to -1 deselects any current-selected item.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+selectedItem"></a>
+### tabs.selectedItem : <code>object</code>
+The currently selected item, or null if there is no selection.
+
+Setting this property to null deselects any currently-selected item.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+selectionRequired"></a>
+### tabs.selectionRequired : <code>boolean</code>
+True if the list should always have a selection (if it has items).
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+applySelection"></a>
+### tabs.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
+
+<a name="ItemsSelection+itemAdded"></a>
+### tabs.itemAdded(item)
+Handle a new item being added to the list.
+
+The default implementation of this method simply sets the item's
+selection state to false.
+
+  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being added |
+
+<a name="ItemsSelection+selectFirst"></a>
+### tabs.selectFirst()
+Select the first item in the list.
+
+  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+selectLast"></a>
+### tabs.selectLast()
+Select the last item in the list.
+
+  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+selectNext"></a>
+### tabs.selectNext()
+Select the next item in the list.
+
+  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="ItemsSelection+selectPrevious"></a>
+### tabs.selectPrevious()
+Select the previous item in the list.
+
+  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>ItemsSelection</code> mixin.
+<a name="TargetSelection+items"></a>
+### tabs.items : <code>Array.&lt;HTMLElement&gt;</code>
+The current set of items in the list.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>TargetSelection</code> mixin.
+<a name="TargetSelection+selectedIndex"></a>
+### tabs.selectedIndex : <code>number</code>
+The index of the item which is currently selected, or -1 if there is no
+selection.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>TargetSelection</code> mixin.
+<a name="TargetSelection+selectedItem"></a>
+### tabs.selectedItem : <code>HTMLElement</code>
+The currently selected item, or null if there is no selection.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>TargetSelection</code> mixin.
+<a name="TargetSelection+target"></a>
+### tabs.target : <code>HTMLElement</code>
+Gets/sets the target element to which this component will delegate
+selection actions.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>TargetSelection</code> mixin.
+<a name="TargetSelection+itemsChanged"></a>
+### tabs.itemsChanged()
+This method is invoked when the underlying contents change. It is also
+invoked on component initialization – since the items have "changed" from
+being nothing.
+
+  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>TargetSelection</code> mixin.
+<a name="event_selected-item-changed"></a>
+## "selected-item-changed"
+Fires when the selectedItem property changes.
+
+  **Kind**: event emitted
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
+| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
+
+<a name="event_selected-item-changed"></a>
+## "selected-item-changed"
+Fires when the selectedIndex property changes.
+
+  **Kind**: event emitted
+
+| Param | Type | Description |
+| --- | --- | --- |
+| detail.selectedIndex | <code>number</code> | The new selected index. |
+

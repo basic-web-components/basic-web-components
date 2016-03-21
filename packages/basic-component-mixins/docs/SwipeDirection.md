@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="SwipeDirection"></a>
 ## SwipeDirection
 Mixin which maps touch gestures (swipe left, swipe right) to direction
@@ -8,7 +15,7 @@ direction in which the user is currently swiping or has finished swiping. To
 map the direction to a change in selection, use the
 [DirectionSelection](DirectionSelection.md) mixin.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [SwipeDirection](#SwipeDirection)
     * [.position](#SwipeDirection+position) : <code>number</code>
@@ -21,19 +28,19 @@ map the direction to a change in selection, use the
 The distance the user has moved the first touchpoint since the beginning
 of a drag, expressed as a fraction of the element's width.
 
-**Kind**: instance property of <code>[SwipeDirection](#SwipeDirection)</code>  
+  **Kind**: instance property of <code>[SwipeDirection](#SwipeDirection)</code>
 <a name="SwipeDirection+goLeft"></a>
 ### swipeDirection.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>  
+  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
 <a name="SwipeDirection+goRight"></a>
 ### swipeDirection.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>  
+  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
 <a name="SwipeDirection+showTransition"></a>
 ### swipeDirection.showTransition(value)
 Determine whether a transition should be shown during a swipe.
@@ -46,7 +53,7 @@ with their finger down, the transition should be suppressed. When the
 user releases their finger, the transition can be restored, allowing the
 animation to show the carousel sliding into its final position.
 
-**Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>  
+  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |

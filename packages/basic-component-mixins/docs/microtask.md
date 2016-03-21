@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="microtask"></a>
 ## microtask(callback)
 Add a callback to the microtask queue.
@@ -7,7 +14,7 @@ This uses a MutationObserver so that it works on IE 11.
 NOTE: IE 11 may actually use timeout timing with MutationObservers. This
 needs more investigation.
 
-**Kind**: global function  
+  **Kind**: global function
 
 | Param | Type |
 | --- | --- |

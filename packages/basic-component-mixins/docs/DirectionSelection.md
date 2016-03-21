@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="DirectionSelection"></a>
 ## DirectionSelection
 Mixin which maps direction semantics (goLeft, goRight, etc.) to selection
@@ -8,4 +15,4 @@ This mixin can be used in conjunction with the
 to directions) and a mixin that handles selection like
 [ItemsSelection](ItemsSelection.md).
 
-**Kind**: global class  
+  **Kind**: global class

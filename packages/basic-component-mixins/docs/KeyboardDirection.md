@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="KeyboardDirection"></a>
 ## KeyboardDirection
 Mixin which maps direction keys (Left, Right, etc.) to direction semantics
@@ -12,7 +19,7 @@ what that means by implementing those methods yourself. If you want to use
 direction keys to navigate a selection, use this mixin with the
 [DirectionSelection](DirectionSelection.md) mixin.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [KeyboardDirection](#KeyboardDirection)
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
@@ -32,40 +39,40 @@ If this property is "horizontal", the Up Arrow and Down Arrow keys will
 be ignored. Conversely, if this is "vertical", the Left Arrow and Right
 Arrow keys will be ignored.
 
-**Kind**: instance property of <code>[KeyboardDirection](#KeyboardDirection)</code>  
+  **Kind**: instance property of <code>[KeyboardDirection](#KeyboardDirection)</code>
 <a name="KeyboardDirection+goDown"></a>
 ### keyboardDirection.goDown()
 Invoked when the user wants to go/navigate down.
 The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>  
+  **Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>
 <a name="KeyboardDirection+goEnd"></a>
 ### keyboardDirection.goEnd()
 Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>  
+  **Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>
 <a name="KeyboardDirection+goLeft"></a>
 ### keyboardDirection.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>  
+  **Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>
 <a name="KeyboardDirection+goRight"></a>
 ### keyboardDirection.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>  
+  **Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>
 <a name="KeyboardDirection+goStart"></a>
 ### keyboardDirection.goStart()
 Invoked when the user wants to go/navigate to the start (e.g., of a
 list). The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>  
+  **Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>
 <a name="KeyboardDirection+goUp"></a>
 ### keyboardDirection.goUp()
 Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
-**Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>  
+  **Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>

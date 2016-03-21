@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="ElementBase"></a>
 ## ElementBase
 A sample general-purpose base class for defining custom elements that mixes
@@ -13,5 +20,71 @@ class by applying the same set of mixins.
 The ElementBase base class does not register itself as a custom element with
 the browser, and hence cannot be independently instantiated.
 
-**Kind**: global class  
+  **Kind**: global class
 **Mixes**: <code>AttributeMarshalling</code>, <code>Composable</code>, <code>DistributedChildren</code>, <code>ShadowElementReferences</code>, <code>ShadowTemplate</code>  
+
+* [ElementBase](#ElementBase)
+    * _static_
+        * [.compose(...mixins)](#Composable.compose)
+    * _instance_
+        * [.distributedChildren](#DistributedChildren+distributedChildren) : <code>Array.&lt;HTMLElement&gt;</code>
+        * [.distributedChildNodes](#DistributedChildren+distributedChildNodes) : <code>Array.&lt;Node&gt;</code>
+        * [.distributedTextContent](#DistributedChildren+distributedTextContent) : <code>string</code>
+
+<a name="Composable.compose"></a>
+### ElementBase.compose(...mixins)
+Apply a set of mixin functions or mixin objects to the present class and
+return the new class.
+
+Instead of writing:
+
+    let MyClass = Mixin1(Mixin2(Mixin3(Mixin4(Mixin5(BaseClass)))));
+
+You can write:
+
+    let MyClass = Composable(BaseClass).compose(
+      Mixin1,
+      Mixin2,
+      Mixin3,
+      Mixin4,
+      Mixin5
+    );
+
+This function can also take mixin objects. A mixin object is just a
+shorthand for a mixin function that creates a new subclass with the given
+members. The mixin object's members are *not* copied directly onto the
+prototype of the base class, as with traditional mixins.
+
+In addition to providing syntactic sugar, this mixin can be used to
+define a class in ES5, which lacks ES6's `class` keyword.
+
+  **Kind**: static method of <code>[ElementBase](#ElementBase)</code>. Defined by <code>Composable</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| ...mixins | <code>mixins</code> | A set of mixin functions or objects to apply. |
+
+<a name="DistributedChildren+distributedChildren"></a>
+### elementBase.distributedChildren : <code>Array.&lt;HTMLElement&gt;</code>
+An in-order collection of children, expanding any slot elements. Like the
+standard children property, this skips text nodes.
+
+  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>DistributedChildren</code> mixin.
+<a name="DistributedChildren+distributedChildNodes"></a>
+### elementBase.distributedChildNodes : <code>Array.&lt;Node&gt;</code>
+An in-order collection of child nodes, expanding any slot elements. Like
+the standard childNodes property, this includes text nodes.
+
+  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>DistributedChildren</code> mixin.
+<a name="DistributedChildren+distributedTextContent"></a>
+### elementBase.distributedTextContent : <code>string</code>
+The concatenated text content of all child nodes, expanding any slot
+elements.
+
+  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>DistributedChildren</code> mixin.
+<a name="$"></a>
+## $ : <code>object</code>
+The collection of references to the elements with IDs in a component's
+Shadow DOM subtree.
+
+  **Kind**: global variable

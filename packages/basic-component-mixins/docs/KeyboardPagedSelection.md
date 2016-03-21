@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="KeyboardPagedSelection"></a>
 ## KeyboardPagedSelection
 Mixin which maps page keys (Page Up, Page Down) into operations that move
@@ -22,7 +29,7 @@ This mixin expects the component to invoke a `keydown` method when a key is
 pressed. You can use the [Keyboard](Keyboard.md) mixin for that purpose, or
 wire up your own keyboard handling and call `keydown` yourself.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [KeyboardPagedSelection](#KeyboardPagedSelection)
     * [.scrollTarget](#KeyboardPagedSelection+scrollTarget) : <code>HTMLElement</code>
@@ -34,14 +41,14 @@ wire up your own keyboard handling and call `keydown` yourself.
 The element that should be scrolled with the Page Up/Down keys.
 Default is the current element.
 
-**Kind**: instance property of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>  
+  **Kind**: instance property of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>
 <a name="KeyboardPagedSelection+pageDown"></a>
 ### keyboardPagedSelection.pageDown()
 Scroll down one page.
 
-**Kind**: instance method of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>  
+  **Kind**: instance method of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>
 <a name="KeyboardPagedSelection+pageUp"></a>
 ### keyboardPagedSelection.pageUp()
 Scroll up one page.
 
-**Kind**: instance method of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>  
+  **Kind**: instance method of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>

@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="AutosizeTextarea"></a>
 ## AutosizeTextarea
 A text area that makes itself big enough to show its content.
@@ -15,13 +22,16 @@ which in turn will vertically stretch the text area to match.
 This component generally exposes all the same attributes/properties as a
 standard HTML `<textarea>`.
 
-**Kind**: global class  
+  **Kind**: global class
 **Mixes**: <code>Generic</code>, <code>DistributedChildrenAsContent</code>, <code>ObserveContentChanges</code>  
 
 * [AutosizeTextarea](#AutosizeTextarea)
     * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>
     * [.value](#AutosizeTextarea+value) : <code>string</code>
     * [.autoSize()](#AutosizeTextarea+autoSize)
+    * [.generic](#Generic+generic) : <code>Boolean</code>
+    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * [.contentChanged()](#ObserveContentChanges+contentChanged)
 
 <a name="AutosizeTextarea+minimumRows"></a>
 ### autosizeTextarea.minimumRows : <code>number</code>
@@ -43,7 +53,7 @@ the text box will grow when they type. By setting this to a value like,
 say, 10 rows, you can signal that you're fully expecting them to enter more
 text.
 
-**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>
 **Default**: <code>1</code>  
 <a name="AutosizeTextarea+value"></a>
 ### autosizeTextarea.value : <code>string</code>
@@ -53,15 +63,47 @@ Note that the text shown in the textarea can also be updated by changing
 the element's innerHTML/textContent. However, if the value property is
 explicitly set, that will override the innerHTML/textContent.
 
-**Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>
 <a name="AutosizeTextarea+autoSize"></a>
 ### autosizeTextarea.autoSize()
 Resize the element such that the textarea can exactly contain its content.
 By default, this method is invoked whenever the text content changes.
 
-**Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>  
+  **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>
+<a name="Generic+generic"></a>
+### autosizeTextarea.generic : <code>Boolean</code>
+True if the component would like to receive generic styling.
+
+This property is true by default — set it to false to turn off all
+generic styles. This makes it easier to apply custom styling; you won't
+have to explicitly override styling you don't want.
+
+  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>Generic</code> mixin.
+**Default**: <code>true</code>  
+<a name="DistributedChildrenAsContent+content"></a>
+### autosizeTextarea.content : <code>Array.&lt;HTMLElement&gt;</code>
+The content of this component, defined to be the flattened array of
+children distributed to the component.
+
+  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>DistributedChildrenAsContent</code> mixin.
+<a name="ObserveContentChanges+contentChanged"></a>
+### autosizeTextarea.contentChanged()
+Invoked when the contents of the component (including distributed
+children) have changed.
+
+This method is also invoked when a component is first instantiated; the
+contents have essentially "changed" from being nothing. This allows the
+component to perform initial processing of its children.
+
+  **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>ObserveContentChanges</code> mixin.
 <a name="event_change"></a>
 ## "change"
 Fires when the user types in the textarea.
 
-**Kind**: event emitted  
+  **Kind**: event emitted
+<a name="event_content-changed"></a>
+## "content-changed"
+This event is raised when the component's contents (including distributed
+children) have changed.
+
+  **Kind**: event emitted

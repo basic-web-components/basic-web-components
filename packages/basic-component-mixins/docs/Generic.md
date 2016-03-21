@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="Generic"></a>
 ## Generic
 Mixin which allows a component to support a "generic" style: a minimalist
@@ -23,7 +30,7 @@ will only apply to generic components like:
 This makes it easy to remove all default styling — set the `generic`
 attribute to false, and all default styling will be removed.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="Generic+generic"></a>
 ### generic.generic : <code>Boolean</code>
 True if the component would like to receive generic styling.
@@ -32,5 +39,5 @@ This property is true by default — set it to false to turn off all
 generic styles. This makes it easier to apply custom styling; you won't
 have to explicitly override styling you don't want.
 
-**Kind**: instance property of <code>[Generic](#Generic)</code>  
+  **Kind**: instance property of <code>[Generic](#Generic)</code>
 **Default**: <code>true</code>  

@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="ShadowElementReferences"></a>
 ## ShadowElementReferences
 Mixin to create references to elements in a component's Shadow DOM subtree.
@@ -20,10 +27,10 @@ This mixin is inspired by Polymer's [automatic
 node finding](https://www.polymer-project.org/1.0/docs/devguide/local-dom.html#node-finding)
 feature.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="$"></a>
 ## $ : <code>object</code>
 The collection of references to the elements with IDs in a component's
 Shadow DOM subtree.
 
-**Kind**: global variable  
+  **Kind**: global variable

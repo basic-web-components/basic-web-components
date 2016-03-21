@@ -457,11 +457,14 @@ module.exports = function(grunt) {
     var done = this.async();
 
     // BUGBUG: for testing purposes
-    docsList = [{src: 'packages/basic-list-box/src/*.js', dest: 'packages/basic-list-box/README.md'}];
+    //docsList = [{src: 'packages/basic-list-box/src/*.js', dest: 'packages/basic-list-box/README.md'}];
 
     promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
     .then(function() {
       done();
+    })
+    .catch(function(err) {
+      grunt.log.error(err);
     });
   });
 };
@@ -471,7 +474,7 @@ function buildMarkdownDoc(docItem, grunt) {
 
   return parseScriptToJSDocJSON(docItem.src, grunt)
   .then(function(json) {
-    return mergeMixinDocs(json, grunt)
+    return mergeMixinDocs(json, grunt);
   })
   .then(function(json) {
     //console.dir(json);
@@ -487,9 +490,6 @@ function buildMarkdownDoc(docItem, grunt) {
         resolve();
       });
     });
-  })
-  .catch(function(err) {
-    grunt.error.writeln(err);
   });
 }
 
@@ -548,6 +548,10 @@ function parseJSONToMarkdown(json, grunt) {
 }
 
 function mergeMixinDocs(json, grunt) {
+  if (json[0].mixes == null || json[0].mixes == undefined) {
+    return json;
+  }
+
   var mixins = json[0].mixes.map(function(mixin) {
     return 'packages/basic-component-mixins/src/' + mixin + '.js';
   });

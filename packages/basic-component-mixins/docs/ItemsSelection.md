@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="ItemsSelection"></a>
 ## ItemsSelection
 Mixin which manages single-selection semantics for items in a list.
@@ -20,7 +27,7 @@ selection. Other mixins, such as
 [SelectionInView](SelectionInView.md), modify the selected item in common
 ways to let the user know a given item is selected or not selected.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [ItemsSelection](#ItemsSelection)
     * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
@@ -40,13 +47,13 @@ ways to let the user know a given item is selected or not selected.
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
-**Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+canSelectPrevious"></a>
 ### itemsSelection.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
-**Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+selectedIndex"></a>
 ### itemsSelection.selectedIndex : <code>number</code>
 The index of the item which is currently selected, or -1 if there is no
@@ -54,19 +61,19 @@ selection.
 
 Setting the index to -1 deselects any current-selected item.
 
-**Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+selectedItem"></a>
 ### itemsSelection.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
 
 Setting this property to null deselects any currently-selected item.
 
-**Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+selectionRequired"></a>
 ### itemsSelection.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
-**Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+applySelection"></a>
 ### itemsSelection.applySelection(item, selected)
 Apply the indicate selection state to the item.
@@ -74,7 +81,7 @@ Apply the indicate selection state to the item.
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-**Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -88,7 +95,7 @@ Handle a new item being added to the list.
 The default implementation of this method simply sets the item's
 selection state to false.
 
-**Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -98,27 +105,27 @@ selection state to false.
 ### itemsSelection.selectFirst()
 Select the first item in the list.
 
-**Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+selectLast"></a>
 ### itemsSelection.selectLast()
 Select the last item in the list.
 
-**Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+selectNext"></a>
 ### itemsSelection.selectNext()
 Select the next item in the list.
 
-**Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+selectPrevious"></a>
 ### itemsSelection.selectPrevious()
 Select the previous item in the list.
 
-**Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>  
+  **Kind**: instance method of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="event_selected-item-changed"></a>
 ## "selected-item-changed"
 Fires when the selectedItem property changes.
 
-**Kind**: event emitted  
+  **Kind**: event emitted
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -129,7 +136,7 @@ Fires when the selectedItem property changes.
 ## "selected-item-changed"
 Fires when the selectedIndex property changes.
 
-**Kind**: event emitted  
+  **Kind**: event emitted
 
 | Param | Type | Description |
 | --- | --- | --- |

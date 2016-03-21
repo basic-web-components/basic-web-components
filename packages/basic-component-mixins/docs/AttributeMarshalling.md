@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="AttributeMarshalling"></a>
 ## AttributeMarshalling
 Mixin which marshalls attributes to properties (and eventually vice versa).
@@ -34,4 +41,4 @@ For the time being, this mixin only supports string-valued properties.
 If you'd like to convert string attributes to other types (numbers,
 booleans), you need to implement `attributeChangedCallback` yourself.
 
-**Kind**: global class  
+  **Kind**: global class

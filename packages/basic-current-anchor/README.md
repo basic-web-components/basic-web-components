@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="CurrentAnchor"></a>
 ## CurrentAnchor
 An anchor (link) that highlights itself when its destination matches the
@@ -19,7 +26,7 @@ Note: one limitation of this component is that, by default, the link does
 want to explicitly specific link colors anyway, e.g., to reflect your
 application's visual style and brand.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [CurrentAnchor](#CurrentAnchor)
     * [.areaLink](#CurrentAnchor+areaLink) : <code>boolean</code>
@@ -33,11 +40,11 @@ If true, the matching rule to determine whether the link is current changes:
 an area link is considered to be current if the link's destination forms a
 prefix of the current location (instead of matching the complete URL).
 
-**Kind**: instance property of <code>[CurrentAnchor](#CurrentAnchor)</code>  
+  **Kind**: instance property of <code>[CurrentAnchor](#CurrentAnchor)</code>
 <a name="CurrentAnchor+current"></a>
 ### currentAnchor.current : <code>boolean</code>
 True if the link's destination matches the current page location.
 
 If this is true, the element will have an `current` CSS class applied to it.
 
-**Kind**: instance property of <code>[CurrentAnchor](#CurrentAnchor)</code>  
+  **Kind**: instance property of <code>[CurrentAnchor](#CurrentAnchor)</code>

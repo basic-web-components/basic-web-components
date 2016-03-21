@@ -1,3 +1,10 @@
+# A Module
+This is the readme for a module.
+
+## Install
+Install it using the power of thought. While body-popping.
+
+# API Documentation
 <a name="FadeOverflow"></a>
 ## FadeOverflow ⇐ <code>ElementBase</code>
 Fades out content that overflows so the user knows there's more.
@@ -11,7 +18,7 @@ which case you can explicitly set the fadeColor attribute.
 The component currently always displays the fade, even if the component's
 content is short enough to fit completely in view.
 
-**Kind**: global class  
+  **Kind**: global class
 **Extends:** <code>ElementBase</code>  
 
 * [FadeOverflow](#FadeOverflow) ⇐ <code>ElementBase</code>
@@ -28,14 +35,14 @@ best to infer the background color, but in some situations, that may not
 work. In those cases, you can manually identify the background color.
 This should be a solid color.
 
-**Kind**: instance property of <code>[FadeOverflow](#FadeOverflow)</code>  
+  **Kind**: instance property of <code>[FadeOverflow](#FadeOverflow)</code>
 **Default**: <code>white</code>  
 **Attribute**: fadeColor  
 <a name="FadeOverflow+showFade"></a>
 ### fadeOverflow.showFade : <code>boolean</code>
 True if the component should show the fade to the background color.
 
-**Kind**: instance property of <code>[FadeOverflow](#FadeOverflow)</code>  
+  **Kind**: instance property of <code>[FadeOverflow](#FadeOverflow)</code>
 **Default**: <code>true</code>  
 <a name="FadeOverflow+refresh"></a>
 ### fadeOverflow.refresh()
@@ -43,4 +50,4 @@ Infer the fade color from background color. If you have programmatically
 changed the color behind the component, you can invoke this method to have
 the component try to pick up the new background color.
 
-**Kind**: instance method of <code>[FadeOverflow](#FadeOverflow)</code>  
+  **Kind**: instance method of <code>[FadeOverflow](#FadeOverflow)</code>
