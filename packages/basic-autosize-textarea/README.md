@@ -17,7 +17,10 @@ This component generally exposes all the same attributes/properties as a
 standard HTML `<textarea>`.
 
   **Kind**: global class
-**Mixes**: <code>Generic</code>, <code>DistributedChildrenAsContent</code>, <code>ObserveContentChanges</code>  
+**Mixes**: <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
+  , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
+  , <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code>
+  
 
 * [AutosizeTextarea](#AutosizeTextarea)
     * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>
@@ -72,14 +75,14 @@ This property is true by default — set it to false to turn off all
 generic styles. This makes it easier to apply custom styling; you won't
 have to explicitly override styling you don't want.
 
-  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>Generic</code> mixin.
+  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[Generic](../basic-component-mixins/docs/Generic.md)</code> mixin.
 **Default**: <code>true</code>  
 <a name="DistributedChildrenAsContent+content"></a>
 ### autosizeTextarea.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
-  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>DistributedChildrenAsContent</code> mixin.
+  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="ObserveContentChanges+contentChanged"></a>
 ### autosizeTextarea.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -89,7 +92,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>ObserveContentChanges</code> mixin.
+  **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="event_change"></a>
 ## "change"
 Fires when the user types in the textarea.

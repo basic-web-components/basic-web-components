@@ -528,7 +528,11 @@ function parseJSONToMarkdown(json, grunt) {
 
     // Use dmd to create the markdown string which we will
     // write to an output .md file (NYI)
-    var partials = ['./grunt/templates/main.hbs', './grunt/templates/scope.hbs'];
+    var partials = [
+      './grunt/templates/main.hbs',
+      './grunt/templates/scope.hbs',
+      './grunt/templates/mixes.hbs',
+      './grunt/templates/mixin-linked-type-list.hbs'];
     var dmdStream = dmd({partial: partials, 'global-index-format': "none"});
     s.pipe(dmdStream);
     dmdStream.setEncoding('utf8');

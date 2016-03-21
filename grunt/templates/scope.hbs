@@ -2,7 +2,7 @@
   **Kind**: {{#if (equal kind "event") ~}}
     event emitted{{#if memberof}} by {{>link to=memberof}}{{/if}}
     {{else~}}
-    {{scope}} {{#if virtual}}abstract {{/if}}{{kindInThisContext}}{{#if memberof}} of {{#if originalmemberof}}{{>link to=memberof}}. Defined by {{>link to=originalmemberof}} mixin.{{else~}}
+    {{scope}} {{#if virtual}}abstract {{/if}}{{kindInThisContext}}{{#if memberof}} of {{#if originalmemberof}}{{>link to=memberof}}. Defined by <code>[{{originalmemberof}}](../basic-component-mixins/docs/{{originalmemberof}}.md)</code> mixin.{{else~}}
     {{>link to=memberof}}{{/if}}{{/if}}
   {{/if~}}
   {{else~}}

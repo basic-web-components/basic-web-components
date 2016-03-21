@@ -15,7 +15,12 @@ The ElementBase base class does not register itself as a custom element with
 the browser, and hence cannot be independently instantiated.
 
   **Kind**: global class
-**Mixes**: <code>AttributeMarshalling</code>, <code>Composable</code>, <code>DistributedChildren</code>, <code>ShadowElementReferences</code>, <code>ShadowTemplate</code>  
+**Mixes**: <code>[AttributeMarshalling](../basic-component-mixins/docs/AttributeMarshalling.md)</code>
+  , <code>[Composable](../basic-component-mixins/docs/Composable.md)</code>
+  , <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code>
+  , <code>[ShadowElementReferences](../basic-component-mixins/docs/ShadowElementReferences.md)</code>
+  , <code>[ShadowTemplate](../basic-component-mixins/docs/ShadowTemplate.md)</code>
+  
 
 * [ElementBase](#ElementBase)
     * _static_
@@ -52,7 +57,7 @@ prototype of the base class, as with traditional mixins.
 In addition to providing syntactic sugar, this mixin can be used to
 define a class in ES5, which lacks ES6's `class` keyword.
 
-  **Kind**: static method of <code>[ElementBase](#ElementBase)</code>. Defined by <code>Composable</code> mixin.
+  **Kind**: static method of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[Composable](../basic-component-mixins/docs/Composable.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -63,19 +68,19 @@ define a class in ES5, which lacks ES6's `class` keyword.
 An in-order collection of children, expanding any slot elements. Like the
 standard children property, this skips text nodes.
 
-  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>DistributedChildren</code> mixin.
+  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code> mixin.
 <a name="DistributedChildren+distributedChildNodes"></a>
 ### elementBase.distributedChildNodes : <code>Array.&lt;Node&gt;</code>
 An in-order collection of child nodes, expanding any slot elements. Like
 the standard childNodes property, this includes text nodes.
 
-  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>DistributedChildren</code> mixin.
+  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code> mixin.
 <a name="DistributedChildren+distributedTextContent"></a>
 ### elementBase.distributedTextContent : <code>string</code>
 The concatenated text content of all child nodes, expanding any slot
 elements.
 
-  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>DistributedChildren</code> mixin.
+  **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code> mixin.
 <a name="$"></a>
 ## $ : <code>object</code>
 The collection of references to the elements with IDs in a component's
