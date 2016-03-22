@@ -26,16 +26,10 @@ wire up your own keyboard handling and call `keydown` yourself.
   **Kind**: global class
 
 * [KeyboardPagedSelection](#KeyboardPagedSelection)
-    * [.scrollTarget](#KeyboardPagedSelection+scrollTarget) : <code>HTMLElement</code>
     * [.pageDown()](#KeyboardPagedSelection+pageDown)
     * [.pageUp()](#KeyboardPagedSelection+pageUp)
+    * [.scrollTarget](#KeyboardPagedSelection+scrollTarget) : <code>HTMLElement</code>
 
-<a name="KeyboardPagedSelection+scrollTarget"></a>
-### keyboardPagedSelection.scrollTarget : <code>HTMLElement</code>
-The element that should be scrolled with the Page Up/Down keys.
-Default is the current element.
-
-  **Kind**: instance property of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>
 <a name="KeyboardPagedSelection+pageDown"></a>
 ### keyboardPagedSelection.pageDown()
 Scroll down one page.
@@ -46,3 +40,9 @@ Scroll down one page.
 Scroll up one page.
 
   **Kind**: instance method of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>
+<a name="KeyboardPagedSelection+scrollTarget"></a>
+### keyboardPagedSelection.scrollTarget : <code>HTMLElement</code>
+The element that should be scrolled with the Page Up/Down keys.
+Default is the current element.
+
+  **Kind**: instance property of <code>[KeyboardPagedSelection](#KeyboardPagedSelection)</code>

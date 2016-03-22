@@ -16,24 +16,14 @@ direction keys to navigate a selection, use this mixin with the
   **Kind**: global class
 
 * [KeyboardDirection](#KeyboardDirection)
-    * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
     * [.goLeft()](#KeyboardDirection+goLeft)
     * [.goRight()](#KeyboardDirection+goRight)
     * [.goStart()](#KeyboardDirection+goStart)
     * [.goUp()](#KeyboardDirection+goUp)
+    * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
 
-<a name="KeyboardDirection+navigationAxis"></a>
-### keyboardDirection.navigationAxis : <code>string</code>
-Indicates the direction of permitted navigation with the keyboard.
-
-Accepted values are "horizontal", "vertical", or "both" (the default).
-If this property is "horizontal", the Up Arrow and Down Arrow keys will
-be ignored. Conversely, if this is "vertical", the Left Arrow and Right
-Arrow keys will be ignored.
-
-  **Kind**: instance property of <code>[KeyboardDirection](#KeyboardDirection)</code>
 <a name="KeyboardDirection+goDown"></a>
 ### keyboardDirection.goDown()
 Invoked when the user wants to go/navigate down.
@@ -70,3 +60,13 @@ Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[KeyboardDirection](#KeyboardDirection)</code>
+<a name="KeyboardDirection+navigationAxis"></a>
+### keyboardDirection.navigationAxis : <code>string</code>
+Indicates the direction of permitted navigation with the keyboard.
+
+Accepted values are "horizontal", "vertical", or "both" (the default).
+If this property is "horizontal", the Up Arrow and Down Arrow keys will
+be ignored. Conversely, if this is "vertical", the Left Arrow and Right
+Arrow keys will be ignored.
+
+  **Kind**: instance property of <code>[KeyboardDirection](#KeyboardDirection)</code>

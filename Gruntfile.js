@@ -160,15 +160,6 @@ module.exports = function(grunt) {
       }
     },
 
-    jsdoc2md: {
-      docs: {
-        options: {
-          "global-index-format": "none"
-        },
-        files: docsList
-      }
-    },
-
     jshint: {
       all: [
         'packages/**/*.js',
@@ -300,11 +291,11 @@ module.exports = function(grunt) {
   // JavaScript file(s) from the package's dist folder without the need for Babel in an ES5
   // ecosystem.
   //
-  // Note that this task also builds each package's README.md file via the jsdocs2md:docs task.
+  // Note that this task also builds each package's README.md file via the docs task.
   //
   // This task makes use of the buildList global array.
   //
-  grunt.registerTask('build', ['browserify:buildFiles', 'jsdoc2md:docs', 'jshint']);
+  grunt.registerTask('build', ['browserify:buildFiles', 'docs', 'jshint']);
 
   //
   // The devbuild task is callable from the command line and is similar to the build task but doesn't
@@ -314,13 +305,25 @@ module.exports = function(grunt) {
   grunt.registerTask('devbuild', ['browserify:buildFiles', 'jshint']);
 
   //
-  // The docs task is callable from the command line and executes the jsdoc2md:docs task defined
-  // in the Grunt config. This task builds each package's README.md file from jsdoc tags in the
-  // package's src JavaScript files.
+  // The docs task is callable from the command line. This task builds each package's
+  // README.md file from jsdoc tags in the package's src JavaScript files.
   //
   // This task makes use of the docsList global array.
   //
-  grunt.registerTask('docs', ['jsdoc2md:docs']);
+  grunt.registerTask('docs', function() {
+    var done = this.async();
+
+    // BUGBUG: for testing purposes
+    //docsList = [{src: 'packages/basic-list-box/src/*.js', dest: 'packages/basic-list-box/README.md'}];
+
+    promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
+    .then(function() {
+      done();
+    })
+    .catch(function(err) {
+      grunt.log.error(err);
+    });
+  });
 
   //
   // The lint task is callable from the command line and executes the jshint task defined
@@ -449,24 +452,6 @@ module.exports = function(grunt) {
       fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
     }
   });
-
-  //
-  // Experimental jsdoc parsing
-  //
-  grunt.registerTask('doctest', function() {
-    var done = this.async();
-
-    // BUGBUG: for testing purposes
-    //docsList = [{src: 'packages/basic-list-box/src/*.js', dest: 'packages/basic-list-box/README.md'}];
-
-    promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
-    .then(function() {
-      done();
-    })
-    .catch(function(err) {
-      grunt.log.error(err);
-    });
-  });
 };
 
 function buildMarkdownDoc(docItem, grunt) {
@@ -477,11 +462,25 @@ function buildMarkdownDoc(docItem, grunt) {
     return mergeMixinDocs(json, grunt);
   })
   .then(function(json) {
-    //console.dir(json);
+    // Sort the array, leaving the order:0 item alone at the
+    // front of the list (the class identifier section)
+    json.sort(function(a, b) {
+      if (a.order == 0) return -1;
+      if (b.order == 0) return 1;
+
+      return a.name.localeCompare(b.name);
+    });
+
+    // Set the order value
+    json.map(function(item, index) {
+      item.order = index;
+    });
+
+    // Convert the JSON to Markdown
     return parseJSONToMarkdown(json, grunt);
   })
   .then(function(string) {
-    // Write to docItem.dest
+    // Write to the output markdown file
     return new Promise(function(resolve, reject) {
       fs.writeFile(docItem.dest, string, 'utf-8', function (err) {
         if (err) {
@@ -533,7 +532,7 @@ function parseJSONToMarkdown(json, grunt) {
       './grunt/templates/scope.hbs',
       './grunt/templates/mixes.hbs',
       './grunt/templates/mixin-linked-type-list.hbs'];
-    var dmdStream = dmd({partial: partials, 'global-index-format': "none"});
+    var dmdStream = dmd({partial: partials, 'global-index-format': 'none', 'group-by': ['none']});
     s.pipe(dmdStream);
     dmdStream.setEncoding('utf8');
     dmdStream.on('data', function(data) {

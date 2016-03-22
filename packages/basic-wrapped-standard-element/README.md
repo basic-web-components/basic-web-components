@@ -59,12 +59,10 @@ and still achieve their standard behavior.
 **Extends:** <code>ElementBase</code>  
 
 * [WrappedStandardElement](#WrappedStandardElement) ⇐ <code>ElementBase</code>
-    * _instance_
-        * [.ariaLabel](#WrappedStandardElement+ariaLabel) : <code>string</code>
-        * [.inner](#WrappedStandardElement+inner) : <code>HTMLElement</code>
-        * [.template](#WrappedStandardElement+template) : <code>string</code> &#124; <code>HTMLTemplateElement</code>
-    * _static_
-        * [.wrap(extendsTag)](#WrappedStandardElement.wrap)
+    * [.ariaLabel](#WrappedStandardElement+ariaLabel) : <code>string</code>
+    * [.inner](#WrappedStandardElement+inner) : <code>HTMLElement</code>
+    * [.template](#WrappedStandardElement+template) : <code>string</code> &#124; <code>HTMLTemplateElement</code>
+    * [.wrap(extendsTag)](#WrappedStandardElement.wrap)
 
 <a name="WrappedStandardElement+ariaLabel"></a>
 ### wrappedStandardElement.ariaLabel : <code>string</code>

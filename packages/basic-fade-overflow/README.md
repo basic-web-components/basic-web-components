@@ -17,8 +17,8 @@ content is short enough to fit completely in view.
 
 * [FadeOverflow](#FadeOverflow) ⇐ <code>ElementBase</code>
     * [.fadeColor](#FadeOverflow+fadeColor)
-    * [.showFade](#FadeOverflow+showFade) : <code>boolean</code>
     * [.refresh()](#FadeOverflow+refresh)
+    * [.showFade](#FadeOverflow+showFade) : <code>boolean</code>
 
 <a name="FadeOverflow+fadeColor"></a>
 ### fadeOverflow.fadeColor
@@ -32,12 +32,6 @@ This should be a solid color.
   **Kind**: instance property of <code>[FadeOverflow](#FadeOverflow)</code>
 **Default**: <code>white</code>  
 **Attribute**: fadeColor  
-<a name="FadeOverflow+showFade"></a>
-### fadeOverflow.showFade : <code>boolean</code>
-True if the component should show the fade to the background color.
-
-  **Kind**: instance property of <code>[FadeOverflow](#FadeOverflow)</code>
-**Default**: <code>true</code>  
 <a name="FadeOverflow+refresh"></a>
 ### fadeOverflow.refresh()
 Infer the fade color from background color. If you have programmatically
@@ -45,3 +39,9 @@ changed the color behind the component, you can invoke this method to have
 the component try to pick up the new background color.
 
   **Kind**: instance method of <code>[FadeOverflow](#FadeOverflow)</code>
+<a name="FadeOverflow+showFade"></a>
+### fadeOverflow.showFade : <code>boolean</code>
+True if the component should show the fade to the background color.
+
+  **Kind**: instance property of <code>[FadeOverflow](#FadeOverflow)</code>
+**Default**: <code>true</code>  

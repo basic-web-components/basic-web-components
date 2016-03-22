@@ -46,20 +46,20 @@ this problem at the API level.
   **Kind**: global class
 
 * [DistributedChildren](#DistributedChildren)
-    * [.distributedChildren](#DistributedChildren+distributedChildren) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.distributedChildNodes](#DistributedChildren+distributedChildNodes) : <code>Array.&lt;Node&gt;</code>
+    * [.distributedChildren](#DistributedChildren+distributedChildren) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.distributedTextContent](#DistributedChildren+distributedTextContent) : <code>string</code>
 
-<a name="DistributedChildren+distributedChildren"></a>
-### distributedChildren.distributedChildren : <code>Array.&lt;HTMLElement&gt;</code>
-An in-order collection of children, expanding any slot elements. Like the
-standard children property, this skips text nodes.
-
-  **Kind**: instance property of <code>[DistributedChildren](#DistributedChildren)</code>
 <a name="DistributedChildren+distributedChildNodes"></a>
 ### distributedChildren.distributedChildNodes : <code>Array.&lt;Node&gt;</code>
 An in-order collection of child nodes, expanding any slot elements. Like
 the standard childNodes property, this includes text nodes.
+
+  **Kind**: instance property of <code>[DistributedChildren](#DistributedChildren)</code>
+<a name="DistributedChildren+distributedChildren"></a>
+### distributedChildren.distributedChildren : <code>Array.&lt;HTMLElement&gt;</code>
+An in-order collection of children, expanding any slot elements. Like the
+standard children property, this skips text nodes.
 
   **Kind**: instance property of <code>[DistributedChildren](#DistributedChildren)</code>
 <a name="DistributedChildren+distributedTextContent"></a>

@@ -15,16 +15,9 @@ changes. You can supply that yourself, or use the
   **Kind**: global class
 
 * [SelectionInView](#SelectionInView)
-    * [.scrollTarget](#SelectionInView+scrollTarget) : <code>HTMLElement</code>
     * [.scrollItemIntoView(item)](#SelectionInView+scrollItemIntoView)
+    * [.scrollTarget](#SelectionInView+scrollTarget) : <code>HTMLElement</code>
 
-<a name="SelectionInView+scrollTarget"></a>
-### selectionInView.scrollTarget : <code>HTMLElement</code>
-The element that should be scrolled to bring an item into view.
-
-The default value of this property is the element itself.
-
-  **Kind**: instance property of <code>[SelectionInView](#SelectionInView)</code>
 <a name="SelectionInView+scrollItemIntoView"></a>
 ### selectionInView.scrollItemIntoView(item)
 Scroll the given element completely into view, minimizing the degree of
@@ -40,3 +33,10 @@ up scrolling more than is absolutely necessary.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item to scroll into view. |
 
+<a name="SelectionInView+scrollTarget"></a>
+### selectionInView.scrollTarget : <code>HTMLElement</code>
+The element that should be scrolled to bring an item into view.
+
+The default value of this property is the element itself.
+
+  **Kind**: instance property of <code>[SelectionInView](#SelectionInView)</code>

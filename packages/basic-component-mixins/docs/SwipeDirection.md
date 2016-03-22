@@ -12,17 +12,11 @@ map the direction to a change in selection, use the
   **Kind**: global class
 
 * [SwipeDirection](#SwipeDirection)
-    * [.position](#SwipeDirection+position) : <code>number</code>
     * [.goLeft()](#SwipeDirection+goLeft)
     * [.goRight()](#SwipeDirection+goRight)
+    * [.position](#SwipeDirection+position) : <code>number</code>
     * [.showTransition(value)](#SwipeDirection+showTransition)
 
-<a name="SwipeDirection+position"></a>
-### swipeDirection.position : <code>number</code>
-The distance the user has moved the first touchpoint since the beginning
-of a drag, expressed as a fraction of the element's width.
-
-  **Kind**: instance property of <code>[SwipeDirection](#SwipeDirection)</code>
 <a name="SwipeDirection+goLeft"></a>
 ### swipeDirection.goLeft()
 Invoked when the user wants to go/navigate left.
@@ -35,6 +29,12 @@ Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
+<a name="SwipeDirection+position"></a>
+### swipeDirection.position : <code>number</code>
+The distance the user has moved the first touchpoint since the beginning
+of a drag, expressed as a fraction of the element's width.
+
+  **Kind**: instance property of <code>[SwipeDirection](#SwipeDirection)</code>
 <a name="SwipeDirection+showTransition"></a>
 ### swipeDirection.showTransition(value)
 Determine whether a transition should be shown during a swipe.

@@ -16,18 +16,12 @@ you must provide that user interface yourself.
   
 
 * [CollapsiblePanel](#CollapsiblePanel) ⇐ <code>ElementBase</code>
-    * [.closed](#OpenClose+closed) : <code>boolean</code>
     * [.close()](#OpenClose+close)
+    * [.closed](#OpenClose+closed) : <code>boolean</code>
     * [.open()](#OpenClose+open)
     * [.render(closing)](#OpenClose+render)
     * [.toggle()](#OpenClose+toggle)
 
-<a name="OpenClose+closed"></a>
-### collapsiblePanel.closed : <code>boolean</code>
-True if the component is curently closed.
-
-  **Kind**: instance property of <code>[CollapsiblePanel](#CollapsiblePanel)</code>. Defined by <code>[OpenClose](../basic-component-mixins/docs/OpenClose.md)</code> mixin.
-**Default**: <code>false</code>  
 <a name="OpenClose+close"></a>
 ### collapsiblePanel.close()
 Close the component.
@@ -35,6 +29,12 @@ Close the component.
 This is equivalent to setting the `closed` property to true.
 
   **Kind**: instance method of <code>[CollapsiblePanel](#CollapsiblePanel)</code>. Defined by <code>[OpenClose](../basic-component-mixins/docs/OpenClose.md)</code> mixin.
+<a name="OpenClose+closed"></a>
+### collapsiblePanel.closed : <code>boolean</code>
+True if the component is curently closed.
+
+  **Kind**: instance property of <code>[CollapsiblePanel](#CollapsiblePanel)</code>. Defined by <code>[OpenClose](../basic-component-mixins/docs/OpenClose.md)</code> mixin.
+**Default**: <code>false</code>  
 <a name="OpenClose+open"></a>
 ### collapsiblePanel.open()
 Open the component.
