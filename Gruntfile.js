@@ -11,7 +11,6 @@
 var fs = require('fs');
 var path = require('path');
 var jsDocParse = require('jsdoc-parse');
-var jsdoc2md = require("jsdoc-to-markdown");
 var dmd = require('dmd');
 var Readable = require('stream').Readable;
 var promiseBatcher = require('./grunt/promise-batcher');
@@ -312,9 +311,6 @@ module.exports = function(grunt) {
   //
   grunt.registerTask('docs', function() {
     var done = this.async();
-
-    // BUGBUG: for testing purposes
-    //docsList = [{src: 'packages/basic-list-box/src/*.js', dest: 'packages/basic-list-box/README.md'}];
 
     promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
     .then(function() {
