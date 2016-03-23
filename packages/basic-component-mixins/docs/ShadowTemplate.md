@@ -1,3 +1,4 @@
+# API Documentation
 <a name="ShadowTemplate"></a>
 ## ShadowTemplate
 Mixin for stamping a template into a Shadow DOM subtree upon component
@@ -21,4 +22,4 @@ For the time being, this extension retains support for Shadow DOM v0. That
 will eventually be deprecated as browsers (and the Shadow DOM polyfill)
 implement Shadow DOM v1.
 
-**Kind**: global class  
+  **Kind**: global class

@@ -1,3 +1,4 @@
+# API Documentation
 <a name="ContentFirstChildTarget"></a>
 ## ContentFirstChildTarget
 Mixin that defines the target of a component — the element the component is
@@ -25,9 +26,9 @@ This mixin can be combined with the
 [TargetInCollective](TargetInCollective.md) mixin to have a component
 participate in collective keyboard handling.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="ContentFirstChildTarget+target"></a>
 ### contentFirstChildTarget.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
 
-**Kind**: instance property of <code>[ContentFirstChildTarget](#ContentFirstChildTarget)</code>  
+  **Kind**: instance property of <code>[ContentFirstChildTarget](#ContentFirstChildTarget)</code>

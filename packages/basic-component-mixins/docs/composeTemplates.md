@@ -1,3 +1,4 @@
+# API Documentation
 <a name="composeTemplates"></a>
 ## composeTemplates(baseTemplate, subTemplate)
 Given two templates, this "folds" one inside the other. This is
@@ -32,7 +33,7 @@ Then the result of calling `composeTemplates(first, second)` is
 Note that this function is not a mixin, but a helper for creating web
 components.
 
-**Kind**: global function  
+  **Kind**: global function
 
 | Param | Type | Description |
 | --- | --- | --- |

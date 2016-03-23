@@ -227,6 +227,7 @@ export default (base) => {
     /**
      * Fires when the selectedItem property changes.
      *
+     * @memberof ItemsSelection
      * @event selected-item-changed
      * @param {HTMLElement} detail.selectedItem The new selected item.
      * @param {HTMLElement} detail.previousItem The previously selected item.
@@ -235,7 +236,8 @@ export default (base) => {
     /**
      * Fires when the selectedIndex property changes.
      *
-     * @event selected-item-changed
+     * @memberof ItemsSelection
+     * @event selected-index-changed
      * @param {number} detail.selectedIndex The new selected index.
      */
 

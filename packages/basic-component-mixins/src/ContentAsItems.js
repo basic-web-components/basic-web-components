@@ -118,5 +118,6 @@ function filterAuxiliaryElements(items) {
 /**
  * Fires when the items in the list change.
  *
+ * @memberof ContentAsItems
  * @event items-changed
  */

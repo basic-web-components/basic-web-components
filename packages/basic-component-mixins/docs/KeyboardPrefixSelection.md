@@ -1,3 +1,4 @@
+# API Documentation
 <a name="KeyboardPrefixSelection"></a>
 ## KeyboardPrefixSelection
 Mixin that handles list box-style prefix typing, in which the user can type
@@ -35,12 +36,12 @@ wire up your own keyboard handling and call `keydown` yourself.
 This mixin also expects the component to provide an `items` property. The
 `textContent` of those items will be used for purposes of prefix matching.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="KeyboardPrefixSelection+selectItemWithTextPrefix"></a>
 ### keyboardPrefixSelection.selectItemWithTextPrefix(prefix)
 Select the first item whose text content begins with the given prefix.
 
-**Kind**: instance method of <code>[KeyboardPrefixSelection](#KeyboardPrefixSelection)</code>  
+  **Kind**: instance method of <code>[KeyboardPrefixSelection](#KeyboardPrefixSelection)</code>
 
 | Param | Description |
 | --- | --- |

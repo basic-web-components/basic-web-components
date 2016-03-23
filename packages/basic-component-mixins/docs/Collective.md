@@ -1,3 +1,4 @@
+# API Documentation
 <a name="Collective"></a>
 ## Collective
 A group of elements that have been associated for the purpose of
@@ -38,14 +39,32 @@ so that ARIA can correctly understand the arrangement of the elements.
 You can put elements into collectives yourself, or you can use the
 [TargetInCollective](TargetInCollective.md) mixin.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [Collective](#Collective)
+    * [.assimilate(target)](#Collective+assimilate)
     * [new Collective([elements])](#new_Collective_new)
     * [.elements](#Collective+elements) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.outermostElement](#Collective+outermostElement)
-    * [.assimilate(target)](#Collective+assimilate)
     * [.invokeMethod(method, [args])](#Collective+invokeMethod)
+    * [.outermostElement](#Collective+outermostElement)
+
+<a name="Collective+assimilate"></a>
+### collective.assimilate(target)
+Add the indicated target to the collective.
+
+By convention, if two elements wants to participate in a collective, and
+one element is an ancestor of the other in the DOM, the ancestor should
+assimilate the descendant instead of the other way around.
+
+After assimilation, any element in the collective that defines a
+`collectiveChanged` method will have that method invoked. This allows
+the collective's elements to respond to changes in the collective.
+
+  **Kind**: instance method of <code>[Collective](#Collective)</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| target | <code>HTMLElement</code> &#124; <code>[Collective](#Collective)</code> | The element or collective to add. |
 
 <a name="new_Collective_new"></a>
 ### new Collective([elements])
@@ -60,39 +79,21 @@ Create a collective.
 ### collective.elements : <code>Array.&lt;HTMLElement&gt;</code>
 The elements in the collective.
 
-**Kind**: instance property of <code>[Collective](#Collective)</code>  
-<a name="Collective+outermostElement"></a>
-### collective.outermostElement
-The outermost element in the collective.
-By convention, this is the first element in the `elements` array.
-
-**Kind**: instance property of <code>[Collective](#Collective)</code>  
-<a name="Collective+assimilate"></a>
-### collective.assimilate(target)
-Add the indicated target to the collective.
-
-By convention, if two elements wants to participate in a collective, and
-one element is an ancestor of the other in the DOM, the ancestor should
-assimilate the descendant instead of the other way around.
-
-After assimilation, any element in the collective that defines a
-`collectiveChanged` method will have that method invoked. This allows
-the collective's elements to respond to changes in the collective.
-
-**Kind**: instance method of <code>[Collective](#Collective)</code>  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| target | <code>HTMLElement</code> &#124; <code>[Collective](#Collective)</code> | The element or collective to add. |
-
+  **Kind**: instance property of <code>[Collective](#Collective)</code>
 <a name="Collective+invokeMethod"></a>
 ### collective.invokeMethod(method, [args])
 Invoke a method on all elements in the collective.
 
-**Kind**: instance method of <code>[Collective](#Collective)</code>  
+  **Kind**: instance method of <code>[Collective](#Collective)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
 | method | <code>string</code> | The name of the method to invoke on all elements. |
 | [args] | <code>Array.&lt;object&gt;</code> | The arguments to the method |
 
+<a name="Collective+outermostElement"></a>
+### collective.outermostElement
+The outermost element in the collective.
+By convention, this is the first element in the `elements` array.
+
+  **Kind**: instance property of <code>[Collective](#Collective)</code>

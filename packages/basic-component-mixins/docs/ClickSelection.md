@@ -1,3 +1,4 @@
+# API Documentation
 <a name="ClickSelection"></a>
 ## ClickSelection
 Mixin which maps a click (actually, a mousedown) to a selection.
@@ -11,4 +12,4 @@ provide that property yourself, or use the
 component to define a `selectedIndex` property. You can provide that
 yourself, or use the [ItemsSelection](ItemsSelection.md) mixin.
 
-**Kind**: global class  
+  **Kind**: global class

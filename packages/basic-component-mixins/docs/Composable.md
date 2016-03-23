@@ -1,3 +1,4 @@
+# API Documentation
 <a name="Composable"></a>
 ## Composable
 Mixin to make a class more easily composable with other mixins.
@@ -6,7 +7,7 @@ This mixin contributes a `compose` method that applies a set of mixin
 functions and returns the resulting new class. This sugar can make the
 application of many mixins at once easier to read.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="Composable.compose"></a>
 ### Composable.compose(...mixins)
 Apply a set of mixin functions or mixin objects to the present class and
@@ -34,7 +35,7 @@ prototype of the base class, as with traditional mixins.
 In addition to providing syntactic sugar, this mixin can be used to
 define a class in ES5, which lacks ES6's `class` keyword.
 
-**Kind**: static method of <code>[Composable](#Composable)</code>  
+  **Kind**: static method of <code>[Composable](#Composable)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |

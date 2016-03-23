@@ -1,3 +1,4 @@
+# API Documentation
 <a name="toggleClass"></a>
 ## toggleClass(element, className, [force])
 Helper function for standard classList.toggle() behavior on old browsers,
@@ -15,7 +16,7 @@ Unfortunately, IE 11 does not support the Boolean parameter to
 `toggle()`, including support for the Boolean parameter, so that it can be
 used even on IE 11.
 
-**Kind**: global function  
+  **Kind**: global function
 
 | Param | Type | Description |
 | --- | --- | --- |

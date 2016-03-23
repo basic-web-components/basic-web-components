@@ -1,49 +1,54 @@
 /*
  * Grunt configuration.
  *
- * Note: this file is in ES5. The rest of this project is ES6.
- *
  * Note to contributors: Consider modifications to the npm publish mechanism,
  * including replacing the use of global variables and, potentially, utilizing a
  * promise-chain of tasks to improve readability of intent.
  */
 
-var fs = require('fs');
-var path = require('path');
+/*jslint node: true */
+'use strict';
+
+let fs = require('fs');
+let path = require('path');
+let jsDocParse = require('jsdoc-parse');
+let dmd = require('dmd');
+let Readable = require('stream').Readable;
+let promiseBatcher = require('./grunt/promise-batcher');
 
 //
 // allPackages is the global array of npm-publishable packages in this monorepo.
 // This is all folders inside the /packages folder that start with the prefix
 // "basic-".
-var PACKAGE_FOLDER = 'packages';
-var allPackages = fs.readdirSync(PACKAGE_FOLDER).filter(function(fileName) {
-  var filePath = path.join(PACKAGE_FOLDER, fileName);
-  var stat = fs.statSync(filePath);
+const PACKAGE_FOLDER = 'packages';
+const allPackages = fs.readdirSync(PACKAGE_FOLDER).filter(fileName => {
+  let filePath = path.join(PACKAGE_FOLDER, fileName);
+  let stat = fs.statSync(filePath);
   return stat && stat.isDirectory() && fileName.startsWith('basic-');
 });
 
 // Global array used for reporting successful npm publish tasks
-var updatedPublishList = [];
+let updatedPublishList = [];
 
 //
 // Build the global buildList object for use in browserify:components
 //
 function buildBuildList() {
 
-  var srcFiles = allPackages.map(function(package) {
-    return 'packages/' + package + '/src/*.js';
+  let srcFiles = allPackages.map(pkg => {
+    return 'packages/' + pkg + '/src/*.js';
   });
-  var testFiles = allPackages.map(function(package) {
-    return 'packages/' + package + '/test/*.js';
+  let testFiles = allPackages.map(pkg => {
+    return 'packages/' + pkg + '/test/*.js';
   });
 
-  var obj = {
+  let obj = {
     'build/basic-web-components.js': srcFiles,
     'build/tests.js': testFiles
   };
 
-  allPackages.forEach(function(package) {
-    obj['packages/' + package + '/dist/' + package + '.js'] = ['packages/' + package + '/src/*.js'];
+  allPackages.forEach(pkg => {
+    obj['packages/' + pkg + '/dist/' + pkg + '.js'] = ['packages/' + pkg + '/src/*.js'];
   });
 
   // Special cases: dist gets built from the es5globals file.
@@ -52,31 +57,31 @@ function buildBuildList() {
 
   return obj;
 }
-var buildList = buildBuildList();
+const buildList = buildBuildList();
 
 //
 // Build the global docsList array for use in building the package's README.md documentation
 //
 function buildDocsList() {
-  var ary = allPackages.filter(function(item) {
+  let ary = allPackages.filter(item => {
     return item != 'basic-component-mixins';
-  }).map(function(item) {
+  }).map(item => {
     return {src: 'packages/' + item + '/src/*.js', dest: 'packages/' + item + '/README.md'};
   });
 
   return ary.concat(buildMixinsDocsList());
 }
-var docsList = buildDocsList();
+const docsList = buildDocsList();
 
 //
 // Build the portion of docsList that represents the individual source files within
 // the basic-component-mixins directory.
 //
 function buildMixinsDocsList() {
-  return fs.readdirSync('packages/basic-component-mixins/src').filter(function(file) {
+  return fs.readdirSync('packages/basic-component-mixins/src').filter(file => {
     return file.indexOf('.js') == file.length - 3;
-  }).map(function(file) {
-    var fileRoot = file.replace('.js', '');
+  }).map(file => {
+    let fileRoot = file.replace('.js', '');
     return {
       src: 'packages/basic-component-mixins/src/' + file,
       dest: 'packages/basic-component-mixins/docs/' + fileRoot + '.md' };
@@ -96,7 +101,7 @@ module.exports = function(grunt) {
 
   //
   // Browsers to use for testing via SauceLabs
-  var browsers = [
+  const browsers = [
     {
       browserName: 'chrome',
       platform: 'OS X 10.11',
@@ -155,17 +160,9 @@ module.exports = function(grunt) {
       }
     },
 
-    jsdoc2md: {
-      docs: {
-        options: {
-          "global-index-format": "none"
-        },
-        files: docsList
-      }
-    },
-
     jshint: {
       all: [
+        'Gruntfile.js',
         'packages/**/*.js',
         '!packages/**/dist/*',
         '!packages/**/lib/*',
@@ -220,11 +217,11 @@ module.exports = function(grunt) {
     //
     shell: {
       'npm-publish': {
-        command: function(package) {
-          if (!package || package.length < 1) {
+        command: function(pkg) {
+          if (!pkg || pkg.length < 1) {
             return '';
           }
-          return 'npm publish packages/' + package;
+          return 'npm publish packages/' + pkg;
         },
         options: {
           stderr: false,
@@ -234,7 +231,7 @@ module.exports = function(grunt) {
                 grunt.log.error('Package not published for unexpected reasons: ' + err);
             }
             else if (stdout && stdout.length > 0) {
-              var output = stdout.trim();
+              let output = stdout.trim();
               grunt.log.writeln(output);
               updatedPublishList.push(output);
             }
@@ -246,11 +243,11 @@ module.exports = function(grunt) {
       },
 
       'npm-owner-add': {
-        command: function(owner, package) {
-          if (!package || package.length < 1 || !owner || owner.length < 1) {
+        command: function(owner, pkg) {
+          if (!pkg || pkg.length < 1 || !owner || owner.length < 1) {
             return '';
           }
-          return 'npm owner add ' + owner + ' ' + package;
+          return 'npm owner add ' + owner + ' ' + pkg;
         },
         options: {
           stderr: false,
@@ -260,7 +257,7 @@ module.exports = function(grunt) {
               grunt.log.error('Package owner not updated for unexpected reasons: ' + err);
             }
             else if (stdout && stdout.length > 0) {
-              var output = stdout.trim();
+              let output = stdout.trim();
               grunt.log.writeln(output);
             }
             if (cb) {
@@ -295,11 +292,11 @@ module.exports = function(grunt) {
   // JavaScript file(s) from the package's dist folder without the need for Babel in an ES5
   // ecosystem.
   //
-  // Note that this task also builds each package's README.md file via the jsdocs2md:docs task.
+  // Note that this task also builds each package's README.md file via the docs task.
   //
   // This task makes use of the buildList global array.
   //
-  grunt.registerTask('build', ['browserify:buildFiles', 'jsdoc2md:docs', 'jshint']);
+  grunt.registerTask('build', ['browserify:buildFiles', 'docs', 'jshint']);
 
   //
   // The devbuild task is callable from the command line and is similar to the build task but doesn't
@@ -309,13 +306,22 @@ module.exports = function(grunt) {
   grunt.registerTask('devbuild', ['browserify:buildFiles', 'jshint']);
 
   //
-  // The docs task is callable from the command line and executes the jsdoc2md:docs task defined
-  // in the Grunt config. This task builds each package's README.md file from jsdoc tags in the
-  // package's src JavaScript files.
+  // The docs task is callable from the command line. This task builds each package's
+  // README.md file from jsdoc tags in the package's src JavaScript files.
   //
   // This task makes use of the docsList global array.
   //
-  grunt.registerTask('docs', ['jsdoc2md:docs']);
+  grunt.registerTask('docs', function() {
+    let done = this.async();
+
+    promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
+    .then(() => {
+      done();
+    })
+    .catch(err => {
+      grunt.log.error(err);
+    });
+  });
 
   //
   // The lint task is callable from the command line and executes the jshint task defined
@@ -359,25 +365,25 @@ module.exports = function(grunt) {
   // packages during the npm-publish run. At the completion of the task, the contents of the
   // updatedPublishList array are printed to the console as a summary.
   //
-  grunt.registerTask('npm-publish', function(package) {
+  grunt.registerTask('npm-publish', function(pkg) {
     updatedPublishList = [];
 
     // Handle an improperly specified command line invocation where no package is specified
-    if (!package || package.length < 1) {
+    if (!pkg || pkg.length < 1) {
       return grunt.log.error('No package specified');
     }
 
     // We'll always assume we have an array of packages to publish, with the degenerate
     // case being a single package.
-    var packages = [];
+    let packages = [];
 
     // If the command line specifies "*", then set the array of packages to the global array, allPackages.
     // Otherwise, just push the single specified package name.
-    if (package == '*') {
+    if (pkg == '*') {
       packages = allPackages;
     }
     else {
-      packages.push(package);
+      packages.push(pkg);
     }
 
     // For each of the packages in the array, call the Grunt config-based shell task, shell:npm-publish
@@ -386,7 +392,7 @@ module.exports = function(grunt) {
     //
     // Note that grunt.task.run adds tasks to Grunt's task queue in the order in which they're
     // specified, with the subsequent async operations executed sequentially in that order.
-    for (var i = 0; i < packages.length; i++) {
+    for (let i = 0; i < packages.length; i++) {
       grunt.task.run(['shell:npm-publish:' + packages[i], 'npm-addowners:' + packages[i]]);
     }
 
@@ -407,7 +413,7 @@ module.exports = function(grunt) {
     }
 
     grunt.log.writeln('Successfully published the following:');
-    for (var i = 0; i < updatedPublishList.length; i++) {
+    for (let i = 0; i < updatedPublishList.length; i++) {
       grunt.log.writeln(updatedPublishList[i]);
     }
   });
@@ -417,14 +423,14 @@ module.exports = function(grunt) {
   // npm account ownership to the specified package. This task should not be
   // called from the command line.
   //
-  grunt.registerTask('npm-addowners', function(package) {
-    if (!package || package.length < 1) {
+  grunt.registerTask('npm-addowners', function(pkg) {
+    if (!pkg || pkg.length < 1) {
       return grunt.log.error('No package specified');
     }
 
     grunt.task.run([
-      'shell:npm-owner-add:jan.miksovsky:' + package,
-      'shell:npm-owner-add:robbear:' + package]);
+      'shell:npm-owner-add:jan.miksovsky:' + pkg,
+      'shell:npm-owner-add:robbear:' + pkg]);
   });
 
   //
@@ -432,27 +438,147 @@ module.exports = function(grunt) {
   // on basic-web-components. This mechanism ensures a common version for all items in the monorepo.
   //
   grunt.registerTask('set-version', function(versionString) {
-    if (!versionString || versionString == '') {
+    if (!versionString || versionString === '') {
       grunt.task.run('default');
       return;
     }
 
-    for (var i = 0; i < allPackages.length; i++) {
-      var filePath = './packages/' + allPackages[i] + '/package.json';
-      var packageJSON = require(filePath);
+    for (let i = 0; i < allPackages.length; i++) {
+      let filePath = './packages/' + allPackages[i] + '/package.json';
+      let packageJSON = require(filePath);
       packageJSON = updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString);
       fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
     }
   });
-
 };
 
+function buildMarkdownDoc(docItem, grunt) {
+  grunt.log.writeln('Building ' + docItem.dest + ' from ' + docItem.src);
+
+  return parseScriptToJSDocJSON(docItem.src)
+  .then(json => {
+    return mergeMixinDocs(json, grunt);
+  })
+  .then(json => {
+    // Sort the array, leaving the order:0 item alone at the
+    // front of the list (the class identifier section)
+    json.sort((a, b) => {
+      if (a.order === 0) { return -1; }
+      if (b.order === 0) { return 1; }
+
+      return a.name.localeCompare(b.name);
+    });
+
+    // Set the order value
+    json.map((item, index) => {
+      item.order = index;
+    });
+
+    // Convert the JSON to Markdown
+    return parseJSONToMarkdown(json, grunt);
+  })
+  .then(function(string) {
+    // Write to the output markdown file
+    return new Promise(function(resolve, reject) {
+      fs.writeFile(docItem.dest, string, 'utf-8', function (err) {
+        if (err) {
+          return reject(err);
+        }
+        resolve();
+      });
+    });
+  });
+}
+
+function parseScriptToJSDocJSON(src) {
+  return new Promise((resolve, reject) => {
+    // Start by parsing the jsdoc into a stream which will contain
+    // the jsdoc represented in JSON
+    let stream = jsDocParse({src: src});
+
+    // Convert the stream to jsdoc JSON
+    let string = '';
+    stream.setEncoding('utf8');
+    stream.on('data', chunk => {
+      string += chunk;
+    })
+    .on('end', () => {
+      let json = JSON.parse(string);
+      resolve(json);
+    })
+    .on('error', err => {
+      reject(err);
+    });
+  });
+}
+
+function parseJSONToMarkdown(json, grunt) {
+  return new Promise(function(resolve, reject) {
+    // Create a new readable stream, holding the stringified JSON
+    let string = '';
+    let s = new Readable();
+    s._read = function noop() {};
+    s.push(JSON.stringify(json));
+    s.push(null);
+
+    // Use dmd to create the markdown string which we will
+    // write to an output .md file (NYI)
+    const partials = [
+      './grunt/templates/main.hbs',
+      './grunt/templates/scope.hbs',
+      './grunt/templates/mixes.hbs',
+      './grunt/templates/mixin-linked-type-list.hbs'];
+    let dmdStream = dmd({partial: partials, 'global-index-format': 'none', 'group-by': ['none']});
+    s.pipe(dmdStream);
+    dmdStream.setEncoding('utf8');
+    dmdStream.on('data', data => {
+      string += data;
+    })
+    .on('end', () => {
+      // string now holds the markdown text
+      resolve(string);
+    })
+    .on('error', err => {
+      reject(err);
+    });
+  });
+}
+
+function mergeMixinDocs(json, grunt) {
+  if (json[0].mixes == null || json[0].mixes === undefined) {
+    return json;
+  }
+
+  let mixins = json[0].mixes.map(mixin => {
+    return 'packages/basic-component-mixins/src/' + mixin + '.js';
+  });
+
+  let params = {grunt: grunt, json: json, hostid: json[0].id};
+  return promiseBatcher.batch(1, mixins, params, mergeMixinIntoBag)
+  .then(() => {
+    return params.json;
+  });
+}
+
+function mergeMixinIntoBag(mixinPath, params) {
+  return parseScriptToJSDocJSON(mixinPath)
+  .then(json => {
+    for (let i = 1; i < json.length; i++) {
+      if (json[i].memberof != null && json[i].memberof != params.hostid) {
+        json[i].originalmemberof = json[i].memberof;
+        json[i].memberof = params.hostid;
+      }
+      params.json.push(json[i]);
+    }
+  });
+}
+
 function updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString) {
-  var json = packageJSON;
+  let json = packageJSON;
   json.version = versionString;
 
-  var dependencies = packageJSON.dependencies;
-  for (var packageName in dependencies) {
+  let dependencies = packageJSON.dependencies;
+  for (let packageName in dependencies) {
     if (dependencies.hasOwnProperty(packageName) && (allPackages.indexOf(packageName) >= 0)) {
       dependencies[packageName] = '^' + versionString;
     }

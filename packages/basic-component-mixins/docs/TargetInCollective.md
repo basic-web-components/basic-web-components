@@ -1,3 +1,4 @@
+# API Documentation
 <a name="TargetInCollective"></a>
 ## TargetInCollective
 Mixin which allows a component to provide aggregate behavior with other
@@ -11,7 +12,7 @@ You can use this mixin in conjunction with
 [ContentFirstChildTarget](ContentFirstChildTarget.md) to automatically have
 the component's collective extended to its first child.
 
-**Kind**: global class  
+  **Kind**: global class
 <a name="TargetInCollective+target"></a>
 ### targetInCollective.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
@@ -24,4 +25,4 @@ You can set this property yourself, or you can use the
 ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
-**Kind**: instance property of <code>[TargetInCollective](#TargetInCollective)</code>  
+  **Kind**: instance property of <code>[TargetInCollective](#TargetInCollective)</code>

@@ -1,3 +1,4 @@
+# API Documentation
 <a name="TargetSelection"></a>
 ## TargetSelection
 Mixin which allows a component to delegate its own selection semantics to a
@@ -25,41 +26,41 @@ the [ContentFirstChildTarget](ContentFirstChildTarget.md) mixin to
 implicitly take the component's first child as the target. This is what
 basic-arrow-selection (above) does.
 
-**Kind**: global class  
+  **Kind**: global class
 
 * [TargetSelection](#TargetSelection)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
+    * [.itemsChanged()](#TargetSelection+itemsChanged)
     * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
-    * [.itemsChanged()](#TargetSelection+itemsChanged)
 
 <a name="TargetSelection+items"></a>
 ### targetSelection.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list.
 
-**Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>  
-<a name="TargetSelection+selectedIndex"></a>
-### targetSelection.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-**Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>  
-<a name="TargetSelection+selectedItem"></a>
-### targetSelection.selectedItem : <code>HTMLElement</code>
-The currently selected item, or null if there is no selection.
-
-**Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>  
-<a name="TargetSelection+target"></a>
-### targetSelection.target : <code>HTMLElement</code>
-Gets/sets the target element to which this component will delegate
-selection actions.
-
-**Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>  
+  **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>
 <a name="TargetSelection+itemsChanged"></a>
 ### targetSelection.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-**Kind**: instance method of <code>[TargetSelection](#TargetSelection)</code>  
+  **Kind**: instance method of <code>[TargetSelection](#TargetSelection)</code>
+<a name="TargetSelection+selectedIndex"></a>
+### targetSelection.selectedIndex : <code>number</code>
+The index of the item which is currently selected, or -1 if there is no
+selection.
+
+  **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>
+<a name="TargetSelection+selectedItem"></a>
+### targetSelection.selectedItem : <code>HTMLElement</code>
+The currently selected item, or null if there is no selection.
+
+  **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>
+<a name="TargetSelection+target"></a>
+### targetSelection.target : <code>HTMLElement</code>
+Gets/sets the target element to which this component will delegate
+selection actions.
+
+  **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>
