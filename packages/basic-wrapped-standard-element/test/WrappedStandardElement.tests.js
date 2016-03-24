@@ -8,6 +8,9 @@ document.registerElement('wrapped-a', WrappedA);
 let WrappedIframe = WrappedStandardElement.wrap('iframe');
 document.registerElement('wrapped-iframe', WrappedIframe);
 
+let WrappedDiv = WrappedStandardElement.wrap('div');
+document.registerElement('wrapped-div', WrappedDiv);
+
 
 describe("WrappedStandardElement", () => {
 
@@ -48,6 +51,15 @@ describe("WrappedStandardElement", () => {
       done();
     });
     element.src = '../README.md'; // Load any local file to trigger the load event.
+  });
+
+  it("chooses an appropriate :host display style based on the wrapped element", () => {
+    let wrappedA = document.createElement('wrapped-a');
+    container.appendChild(wrappedA);
+    let wrappedDiv = document.createElement('wrapped-div');
+    container.appendChild(wrappedDiv);
+    assert.equal(getComputedStyle(wrappedA).display, 'inline-block');
+    assert.equal(getComputedStyle(wrappedDiv).display, 'block');
   });
 
 });

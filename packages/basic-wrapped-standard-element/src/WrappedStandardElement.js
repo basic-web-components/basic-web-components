@@ -68,6 +68,47 @@ const eventBubbles = {
 };
 
 
+// Elements which are display: block by default.
+// Source: https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+const blockElements = [
+  'address',
+  'article',
+  'aside',
+  'blockquote',
+  'canvas',
+  'dd',
+  'div',
+  'dl',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'header',
+  'hgroup',
+  'hr',
+  'li',
+  'main',
+  'nav',
+  'noscript',
+  'ol',
+  'output',
+  'p',
+  'pre',
+  'section',
+  'table',
+  'tfoot',
+  'ul',
+  'video'
+];
+
+
 /**
  * Wraps a standard HTML element so that the standard behavior can then be
  * extended.
@@ -184,10 +225,15 @@ class WrappedStandardElement extends ElementBase {
    * `<a>` element, then the template will look like:
    *
    *     <template>
+   *       <style>:host { display: block; }</style>
    *       <a id="inner">
    *         <slot></slot>
    *       </a>
    *     </template>
+   *
+   * The `display` styling applied to the host will be `block` for elements that
+   * are block elements by default, and `inline-block` (not `inline`) for other
+   * elements.
    *
    * If you'd like the template to include other elements, then override this
    * property and return a template of your own. The template should include an
@@ -197,8 +243,11 @@ class WrappedStandardElement extends ElementBase {
    * @type {(string|HTMLTemplateElement)}
    */
   get template() {
+    let display = blockElements.indexOf(this.extends) >= 0 ?
+      'block' :
+      'inline-block';
     // TODO: Use slot instead of content.
-    return `<${this.extends} id="inner"><content></content></${this.extends}`;
+    return `<style>:host { display: ${display}}</style><${this.extends} id="inner"><content></content></${this.extends}`;
   }
 
   /**
