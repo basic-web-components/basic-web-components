@@ -96,8 +96,13 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     // having to define a CSS variable.
     return `
       <style>
+      :host {
+        display: inline-block;
+      }
+
       #inner {
         color: inherit;
+        display: inline-block;
         text-decoration: inherit;
       }
       </style>
