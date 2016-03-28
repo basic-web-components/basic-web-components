@@ -1,6 +1,6 @@
 {
   "name": "basic-carousel",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Lets the user navigate laterally through a sequence of child elements.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -12,9 +12,9 @@
   ],
   "main": "src/Carousel.js",
   "dependencies": {
-    "basic-element-base": "^0.7.4",
-    "basic-component-mixins": "^0.7.4",
-    "basic-sliding-viewport": "^0.7.4"
+    "basic-element-base": "^0.7.5",
+    "basic-component-mixins": "^0.7.5",
+    "basic-sliding-viewport": "^0.7.5"
   },
   "browserify": {
     "transform": [
