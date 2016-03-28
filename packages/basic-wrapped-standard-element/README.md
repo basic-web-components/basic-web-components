@@ -87,10 +87,15 @@ to pick up the element's light DOM content. For example, if you wrap an
 `<a>` element, then the template will look like:
 
     <template>
+      <style>:host { display: block; }</style>
       <a id="inner">
         <slot></slot>
       </a>
     </template>
+
+The `display` styling applied to the host will be `block` for elements that
+are block elements by default, and `inline-block` (not `inline`) for other
+elements.
 
 If you'd like the template to include other elements, then override this
 property and return a template of your own. The template should include an
