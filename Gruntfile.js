@@ -14,7 +14,6 @@ let path = require('path');
 let jsDocParse = require('jsdoc-parse');
 let dmd = require('dmd');
 let Readable = require('stream').Readable;
-let promiseBatcher = require('./grunt/promise-batcher');
 
 //
 // allPackages is the global array of npm-publishable packages in this monorepo.
@@ -313,14 +312,13 @@ module.exports = function(grunt) {
   //
   grunt.registerTask('docs', function() {
     let done = this.async();
-
-    promiseBatcher.batch(1, docsList, grunt, buildMarkdownDoc)
-    .then(() => {
-      done();
-    })
-    .catch(err => {
-      grunt.log.error(err);
-    });
+    return mapAndChain(docsList, doc => buildMarkdownDoc(doc, grunt))
+    .then(() =>
+      done()
+    )
+    .catch(err =>
+      grunt.log.error(err)
+    );
   });
 
   //
@@ -544,31 +542,31 @@ function parseJSONToMarkdown(json, grunt) {
   });
 }
 
-function mergeMixinDocs(json, grunt) {
-  if (json[0].mixes == null || json[0].mixes === undefined) {
-    return json;
+function mergeMixinDocs(componentJson, grunt) {
+  if (componentJson[0].mixes == null || componentJson[0].mixes === undefined) {
+    return componentJson;
   }
 
-  let mixins = json[0].mixes.map(mixin => {
+  let mixins = componentJson[0].mixes.map(mixin => {
     return 'packages/basic-component-mixins/src/' + mixin + '.js';
   });
 
-  let params = {grunt: grunt, json: json, hostid: json[0].id};
-  return promiseBatcher.batch(1, mixins, params, mergeMixinIntoBag)
-  .then(() => {
-    return params.json;
-  });
+  let hostId = componentJson[0].id;
+  return mapAndChain(mixins, mixin => mergeMixinIntoBag(mixin, componentJson, hostId))
+  .then(() =>
+    componentJson
+  );
 }
 
-function mergeMixinIntoBag(mixinPath, params) {
+function mergeMixinIntoBag(mixinPath, componentJson, hostId) {
   return parseScriptToJSDocJSON(mixinPath)
-  .then(json => {
-    for (let i = 1; i < json.length; i++) {
-      if (json[i].memberof != null && json[i].memberof != params.hostid) {
-        json[i].originalmemberof = json[i].memberof;
-        json[i].memberof = params.hostid;
+  .then(mixinJson => {
+    for (let i = 1; i < mixinJson.length; i++) {
+      if (mixinJson[i].memberof != null && mixinJson[i].memberof != hostId) {
+        mixinJson[i].originalmemberof = mixinJson[i].memberof;
+        mixinJson[i].memberof = hostId;
       }
-      params.json.push(json[i]);
+      componentJson.push(mixinJson[i]);
     }
   });
 }
@@ -586,4 +584,14 @@ function updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versi
 
   json.dependencies = dependencies;
   return json;
+}
+
+// Apply the given promise-returning function to each member of the array.
+// Ensure each promise completes before starting the next one to avoid
+// spinning up too many file operations at once. This is effectively like
+// Promise.all(), while ensuring that the items are processed in a completely
+// sequential order.
+function mapAndChain(array, promiseFn) {
+  // Start the promise chain with a resolved promise.
+  return array.reduce((chain, item) => chain.then(() => promiseFn(item)), Promise.resolve());
 }
