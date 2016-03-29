@@ -13,9 +13,9 @@ export default (base) => {
      * Replaces a call to super, where the call order of mixins implementing the
      * method may be called.
      */
-    orderedSuper(fnName, arrayMixins) {
+    orderedSuper(arrayMixins, fnName, ...args) {
       arrayMixins.forEach(mixin => {
-        walkChain(this, mixin, fnName);
+        walkChain(this, mixin, fnName, ...args);
       });
     }
   }
@@ -23,7 +23,7 @@ export default (base) => {
   return OrderedSuper;
 };
 
-function walkChain(obj, mixin, fnName) {
+function walkChain(obj, mixin, fnName, ...args) {
   let proto = Object.getPrototypeOf(obj);
   let callingProto = null;
   let nextProto = null;
@@ -50,9 +50,8 @@ function walkChain(obj, mixin, fnName) {
   }
 
   if (callingProto) {
-    // BUGBUG - need to handle parameters
     let fn = callingProto[fnName].bind(obj);
-    fn();
+    fn(...args);
   }
 
   if (nextProto && savedFn) {
