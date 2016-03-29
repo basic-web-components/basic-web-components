@@ -434,6 +434,7 @@ module.exports = function(grunt) {
   //
   // Update each of the package.json for allPackages, updating the version value and dependencies
   // on basic-web-components. This mechanism ensures a common version for all items in the monorepo.
+  // This task also updates the version of the root package.json.
   //
   grunt.registerTask('set-version', function(versionString) {
     if (!versionString || versionString === '') {
@@ -447,6 +448,11 @@ module.exports = function(grunt) {
       packageJSON = updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString);
       fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
     }
+
+    let filePath = './package.json';
+    let packageJSON = require(filePath);
+    packageJSON.version = versionString;
+    fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
   });
 };
 
