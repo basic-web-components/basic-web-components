@@ -26,6 +26,8 @@
     "webcomponents.js": "^0.7.2"
   },
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   }
 }
