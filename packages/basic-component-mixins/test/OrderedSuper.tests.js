@@ -64,28 +64,15 @@ let MixinC = (base) => {
 class TestElement1 extends Composable(HTMLElement).compose(OrderedSuper, MixinA, MixinB, MixinC) {
   method1(arg1, arg2) {
     if (super.method1) { super.method1(arg1, arg2); }
-    testArray.push(`TestElement1.method1: arg1=${arg1}, arg2=${arg2}`);
-  }
-
-  method2(arg1, arg2) {
-    if (super.method2) { super.method2(arg1, arg2); }
-    testArray.push(`TestElement1.method2: arg1=${arg1}, arg2=${arg2}`);
-  }
-}
-document.registerElement('test-element1', TestElement1);
-
-class TestElement2 extends Composable(HTMLElement).compose(OrderedSuper, MixinA, MixinB, MixinC) {
-  method1(arg1, arg2) {
-    this.orderedSuper(mixinOrderArray, 'method1', arg1, arg2);
-    testArray.push(`TestElement2.method1: arg1=${arg1}, arg2=${arg2}`);
+    testArray.push(`TestElement.method1: arg1=${arg1}, arg2=${arg2}`);
   }
 
   method2(arg1, arg2) {
     this.orderedSuper(mixinOrderArray, 'method2', arg1, arg2);
-    testArray.push(`TestElement2.method2: arg1=${arg1}, arg2=${arg2}`);
+    testArray.push(`TestElement.method2: arg1=${arg1}, arg2=${arg2}`);
   }
 }
-document.registerElement('test-element2', TestElement2);
+document.registerElement('test-element', TestElement1);
 
 describe('OrderedSuper mixin', () => {
 
@@ -95,9 +82,9 @@ describe('OrderedSuper mixin', () => {
       'MixinA.method1: arg1=foo, arg2=bar',
       'MixinB.method1: arg1=foo, arg2=bar',
       'MixinC.method1: arg1=foo, arg2=bar',
-      'TestElement1.method1: arg1=foo, arg2=bar'];
+      'TestElement.method1: arg1=foo, arg2=bar'];
 
-    let element = document.createElement('test-element1');
+    let element = document.createElement('test-element');
     //let t1 = performance.now();
     element.method1('foo', 'bar');
     //let t2 = performance.now();
@@ -110,14 +97,14 @@ describe('OrderedSuper mixin', () => {
     mixinOrderArray = ['MixinB','MixinC', 'MixinA'];
 
     let expectedArray = [
-      'MixinB.method1: arg1=foo, arg2=bar',
-      'MixinC.method1: arg1=foo, arg2=bar',
-      'MixinA.method1: arg1=foo, arg2=bar',
-      'TestElement2.method1: arg1=foo, arg2=bar'];
+      'MixinB.method2: arg1=foo, arg2=bar',
+      'MixinC.method2: arg1=foo, arg2=bar',
+      'MixinA.method2: arg1=foo, arg2=bar',
+      'TestElement.method2: arg1=foo, arg2=bar'];
 
-    let element = document.createElement('test-element2');
+    let element = document.createElement('test-element');
     //let t1 = performance.now();
-    element.method1('foo', 'bar');
+    element.method2('foo', 'bar');
     //let t2 = performance.now();
     //console.log(`Performance: ${t2 - t1} milliseconds`);
     assert(arraysAreEqual(testArray, expectedArray));
