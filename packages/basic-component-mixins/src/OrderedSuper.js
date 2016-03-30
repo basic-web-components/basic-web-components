@@ -14,8 +14,10 @@ export default (base) => {
      * method may be called.
      */
     orderedSuper(arrayMixins, fnName, ...args) {
+      this.methodNodes = {};
+      walkChainAndCollectNodes(this, fnName);
       arrayMixins.forEach(mixin => {
-        walkChain(this, mixin, fnName, ...args);
+        executeMethod(this, mixin, fnName, ...args);
       });
     }
   }
@@ -23,38 +25,48 @@ export default (base) => {
   return OrderedSuper;
 };
 
-function walkChain(obj, mixin, fnName, ...args) {
-  let proto = Object.getPrototypeOf(obj);
-  let callingProto = null;
-  let nextProto = null;
+function executeMethod(obj, mixinName, fnName, ...args) {
+  let methodNode = obj.methodNodes[mixinName];
+  if (methodNode == null) {
+    return;
+  }
 
-  while (proto != null && (callingProto == null || nextProto == null)) {
+  let hasProtoNext = methodNode.protoNext != null;
+  let savedFn = null;
+  if (hasProtoNext) {
+    savedFn = methodNode.protoNext[fnName];
+    methodNode.protoNext[fnName] = function() {};
+  }
+
+  let fn = methodNode.proto[fnName].bind(obj);
+  fn(...args);
+
+  if (hasProtoNext) {
+    methodNode.protoNext[fnName] = savedFn;
+  }
+}
+
+function walkChainAndCollectNodes(obj, fnName) {
+  let proto = Object.getPrototypeOf(obj);
+  let methodNodePrev = null;
+
+  while (proto != null) {
     proto = Object.getPrototypeOf(proto);
     if (proto != null &&
       proto.constructor != null &&
-      proto.constructor !== undefined) {
+      proto.constructor !== undefined &&
+      proto[fnName] != null &&
+      proto[fnName] !== undefined) {
 
-      if (proto.constructor.name === mixin) {
-        callingProto = proto;
+      let methodNodeCurrent = obj.methodNodes[proto.constructor.name] = {
+        proto: proto,
+        protoNext: null
+      };
+
+      if (methodNodePrev) {
+        methodNodePrev.protoNext = proto;
       }
-      else if (callingProto != null && proto[fnName] != null && proto[fnName] !== undefined) {
-        nextProto = proto;
-      }
+      methodNodePrev = methodNodeCurrent;
     }
-  }
-
-  let savedFn = null;
-  if (nextProto) {
-    savedFn = nextProto[fnName];
-    nextProto[fnName] = function() {};
-  }
-
-  if (callingProto) {
-    let fn = callingProto[fnName].bind(obj);
-    fn(...args);
-  }
-
-  if (nextProto && savedFn) {
-    nextProto[fnName] = savedFn;
   }
 }
