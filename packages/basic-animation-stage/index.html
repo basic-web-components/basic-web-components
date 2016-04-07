@@ -7,14 +7,46 @@
   <title>basic-animation-stage</title>
 
   <script src="../demos/lib/webcomponents.js"></script>
+  <script src="../basic-arrow-selection/dist/basic-arrow-selection.js"></script>
   <script src="./dist/basic-animation-stage.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
+
+  <style>
+  basic-arrow-selection {
+    margin-left: 200px;
+  }
+
+  basic-animation-stage {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 200px;
+    position: relative;
+    width: 200px;
+  }
+
+  .box {
+    background: gray;
+    display: inline-block;
+    height: 200px;
+    opacity: 0.8;
+    position: absolute;
+    width: 200px;
+  }
+  </style>
 
 </head>
 
 <body>
-  <basic-animation-stage>
-  </basic-animation-stage>
+  <basic-arrow-selection>
+    <basic-animation-stage>
+      <div class="box">One</div>
+      <div class="box">Two</div>
+      <div class="box">Three</div>
+      <div class="box">Four</div>
+      <div class="box">Five</div>
+    </basic-animation-stage>
+  </basic-arrow-selection>
 </body>
 
 </html>
