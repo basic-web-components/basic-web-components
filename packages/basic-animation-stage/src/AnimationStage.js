@@ -28,17 +28,17 @@ class AnimationStage extends base {
   get animations() {
     let forward = {
       cross: [
-        { opacity: 0.8, transform: 'translateX(100%)' },
-        { opacity: 1.0, transform: 'translateX(0)' },
-        { opacity: 1.0, transform: 'translateX(-100%)' }
+        { transform: 'translateX(100%)' },
+        { transform: 'translateX(0)' },
+        { transform: 'translateX(-100%)' }
       ],
       enter: [
-        { opacity: 0.8, transform: 'translateX(100%)' },
-        { opacity: 1.0, transform: 'translateX(0)' },
+        { transform: 'translateX(100%)' },
+        { transform: 'translateX(0)' },
       ],
       exit: [
-        { opacity: 1.0, transform: 'translateX(0)' },
-        { opacity: 0.8, transform: 'translateX(-100%)' }
+        { transform: 'translateX(0)' },
+        { transform: 'translateX(-100%)' }
       ]
     };
     let backward = {
@@ -54,8 +54,8 @@ class AnimationStage extends base {
   }
 
   // position is between -1 (previous) and 1 (next). 0 = current item.
-  animateItem(item, animation, delay) {
-    let duration = (animation.length - 1) * this.animationDuration;
+  animateItem(item, animation, delay, animationDuration) {
+    let duration = (animation.length - 1) * animationDuration;
     let animationOptions = {
       delay: delay,
       duration: duration,
@@ -72,61 +72,34 @@ class AnimationStage extends base {
     let duration = this.animationDuration;
     fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
     let items = this.items;
-    // Old selected item moves off stage.
     let intermediaryCount = 0;
     if (fromIndex >= 0) {
       console.log(`${fromIndex}: 0`);
-      this.animateItem(items[fromIndex], animations.exit, 0);
-      // Intermediary items enter and then immediately exit stage.
       intermediaryCount = fromIndex === toIndex ?
         0 :
         Math.abs(toIndex - fromIndex) - 1;
       let intermediaryStep = Math.sign(toIndex - fromIndex);
+      duration = duration / (intermediaryCount + 1);
+
+      // Old selected item moves off stage.
+      this.animateItem(items[fromIndex], animations.exit, 0, duration);
+
+      // Intermediary items cross stage (enter and then immediately exit).
       for (let i = 0; i < intermediaryCount; i++) {
         let index = fromIndex + intermediaryStep * (i + 1);
         console.log(`${index}: ${i * duration}`);
-        this.animateItem(items[index], animations.cross, i * duration);
+        this.animateItem(items[index], animations.cross, i * duration, duration);
       }
     }
     // New selected item moves on stage.
     console.log(`${toIndex}: ${duration * intermediaryCount}`);
-    this.animateItem(items[toIndex], animations.enter, duration * intermediaryCount);
+    this.animateItem(items[toIndex], animations.enter, duration * intermediaryCount, duration);
   }
-
-  // applySelection(item, selected) {
-  //   let index = this.items.indexOf(item);
-  //   let selectedIndex = this.selectedIndex; // Too expensive?
-  //   let fraction;
-  //   if (selected) {
-  //     fraction = 0.5;
-  //   } else {
-  //     fraction = index > selectedIndex ?
-  //       0 :
-  //       1;
-  //   }
-  //   console.log(`${item.textContent} selected: ${selected}, index: ${index} (current: ${selectedIndex}), ${fraction}`);
-  //   animateItem(this, item, fraction);
-  // }
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
     this.selectionRequired = true;
   }
-  //
-  // itemsChanged() {
-  //   console.log("itemsChanged");
-  //   console.log("Resetting players");
-  //   this._players = null;
-  //   if (super.itemsChanged) { super.itemsChanged(); }
-  // }
-  //
-  // get players() {
-  //   if (!this._players && this.items) {
-  //     console.log("Creating players");
-  //     this._players = new Array(this.items.length);
-  //   }
-  //   return this._players;
-  // }
 
 }
 

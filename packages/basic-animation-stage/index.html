@@ -26,10 +26,16 @@
   }
 
   .box {
-    background: gray;
-    display: inline-block;
+    -webkit-align-items: center;
+    align-items: center;
+    background: #ddd;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
     height: 200px;
-    opacity: 0.8;
+    -webkit-justify-content: center;
+    justify-content: center;
     position: absolute;
     width: 200px;
   }
@@ -40,11 +46,11 @@
 <body>
   <basic-arrow-selection>
     <basic-animation-stage>
-      <div class="box">One</div>
-      <div class="box">Two</div>
-      <div class="box">Three</div>
-      <div class="box">Four</div>
-      <div class="box">Five</div>
+      <div class="box"><div>One</div></div>
+      <div class="box"><div>Two</div></div>
+      <div class="box"><div>Three</div></div>
+      <div class="box"><div>Four</div></div>
+      <div class="box"><div>Five</div></div>
     </basic-animation-stage>
   </basic-arrow-selection>
 </body>
