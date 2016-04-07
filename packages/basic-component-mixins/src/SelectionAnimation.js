@@ -21,23 +21,13 @@ export default (base) => {
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       let index = this.items.indexOf(item);
-      animateSelection(this, this._previousSelectedIndex, index);
+      this.animateSelection(this._previousSelectedIndex, index);
       this._previousSelectedIndex = index;
     }
   }
 
   return SelectionAnimation;
 };
-
-
-function animateSelection(element, fromIndex, toIndex) {
-  console.log(`animating from ${fromIndex} to ${toIndex}`);
-  let animateForward = fromIndex === null || toIndex > fromIndex;
-  if (fromIndex >= 0) {
-    element.animateItem(element.items[fromIndex], 0, animateForward ? 1 : -1);
-  }
-  element.animateItem(element.items[toIndex], animateForward ? -1 : 1, 0);
-}
 
 
 // complete = portion (between 0 and 1) of the way through animation.

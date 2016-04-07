@@ -5,6 +5,7 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
+import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 
 
 let base = ElementBase.compose(
@@ -13,7 +14,8 @@ let base = ElementBase.compose(
   DistributedChildrenAsContent,
   ItemsSelection,
   ObserveContentChanges,
-  SelectionAnimation
+  SelectionAnimation,
+  SelectionAriaActive
 );
 
 /**
@@ -23,32 +25,72 @@ let base = ElementBase.compose(
  */
 class AnimationStage extends base {
 
-  get animation() {
-    return [
-      { opacity: 0.8, transform: 'translateX(100%)' },
-      { opacity: 1.0, transform: 'translateX(0)' },
-      { opacity: 0.8, transform: 'translateX(-100%)' }
-    ];
+  get animations() {
+    let forward = {
+      cross: [
+        { opacity: 0.8, transform: 'translateX(100%)' },
+        { opacity: 1.0, transform: 'translateX(0)' },
+        { opacity: 1.0, transform: 'translateX(-100%)' }
+      ],
+      enter: [
+        { opacity: 0.8, transform: 'translateX(100%)' },
+        { opacity: 1.0, transform: 'translateX(0)' },
+      ],
+      exit: [
+        { opacity: 1.0, transform: 'translateX(0)' },
+        { opacity: 0.8, transform: 'translateX(-100%)' }
+      ]
+    };
+    let backward = {
+      cross: forward.cross.slice().reverse(),
+      enter: forward.exit.slice().reverse(),
+      exit: forward.enter.slice().reverse()
+    };
+    return { forward, backward };
   }
 
   get animationDuration() {
     return 200;
   }
 
-
   // position is between -1 (previous) and 1 (next). 0 = current item.
-  animateItem(item, startPosition, endPosition) {
-    let animation = [
-      this.animation[startPosition + 1],
-      this.animation[endPosition + 1]
-    ];
-    console.log(animation);
+  animateItem(item, animation, delay) {
+    let duration = (animation.length - 1) * this.animationDuration;
     let animationOptions = {
-      duration: this.animationDuration,
-      easing: 'ease-in-out',
+      delay: delay,
+      duration: duration,
+      // easing: 'ease-in-out',
       fill: 'both'
     };
     item.animate(animation, animationOptions);
+  }
+
+  animateSelection(fromIndex, toIndex) {
+    console.log(`animating from ${fromIndex} to ${toIndex}`);
+    let forward = fromIndex == null || toIndex > fromIndex;
+    let animations = this.animations[forward ? 'forward' : 'backward'];
+    let duration = this.animationDuration;
+    fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
+    let items = this.items;
+    // Old selected item moves off stage.
+    let intermediaryCount = 0;
+    if (fromIndex >= 0) {
+      console.log(`${fromIndex}: 0`);
+      this.animateItem(items[fromIndex], animations.exit, 0);
+      // Intermediary items enter and then immediately exit stage.
+      intermediaryCount = fromIndex === toIndex ?
+        0 :
+        Math.abs(toIndex - fromIndex) - 1;
+      let intermediaryStep = Math.sign(toIndex - fromIndex);
+      for (let i = 0; i < intermediaryCount; i++) {
+        let index = fromIndex + intermediaryStep * (i + 1);
+        console.log(`${index}: ${i * duration}`);
+        this.animateItem(items[index], animations.cross, i * duration);
+      }
+    }
+    // New selected item moves on stage.
+    console.log(`${toIndex}: ${duration * intermediaryCount}`);
+    this.animateItem(items[toIndex], animations.enter, duration * intermediaryCount);
   }
 
   // applySelection(item, selected) {
