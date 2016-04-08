@@ -75,7 +75,8 @@ class AnimationStage extends base {
       intermediaryCount = fromIndex === toIndex ?
         0 :
         Math.abs(toIndex - fromIndex) - 1;
-      let intermediaryStep = Math.sign(toIndex - fromIndex);
+      // Stupid Edge/IE doesn't support Math.sign. Sheesh.
+      let intermediaryStep = (toIndex - fromIndex > 0) ? 1 : -1;
       duration = duration / (intermediaryCount + 1);
 
       // Old selected item moves off stage.
@@ -98,17 +99,16 @@ class AnimationStage extends base {
 
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
-    // Give items initial position.
-    // Do this by animating them a single frame from the forward/enter animation.
+    // Give items initial position by moving them on/off stage with 0 duration.
     let enterAnimation = this.animations.forward.enter;
-    let offStageFrame = enterAnimation[0];
-    let onStageFrame = enterAnimation[enterAnimation.length - 1];
+    let exitAnimation = this.animations.backward.exit;
     let selectedItem = this.selectedItem;
     this.items.forEach(item => {
       let animation = item === selectedItem ?
-        [onStageFrame] :
-        [offStageFrame];
+        enterAnimation :
+        exitAnimation;
       item.animate(animation, {
+        duration: 0,
         fill: 'both'
       });
     });

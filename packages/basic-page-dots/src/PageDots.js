@@ -1,8 +1,10 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
+import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
+import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
@@ -12,9 +14,11 @@ import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 let base = ElementBase.compose(
   ContentFirstChildTarget,
+  DirectionSelection,
   DistributedChildrenAsContent,
   ItemsSelection,
   Keyboard,
+  KeyboardDirection,
   ObserveContentChanges,
   TargetInCollective,
   TargetSelection
