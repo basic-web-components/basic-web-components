@@ -53,7 +53,6 @@ class AnimationStage extends base {
     return 200;
   }
 
-  // position is between -1 (previous) and 1 (next). 0 = current item.
   animateItem(item, animation, delay, animationDuration) {
     let duration = (animation.length - 1) * animationDuration;
     let animationOptions = {
@@ -66,7 +65,6 @@ class AnimationStage extends base {
   }
 
   animateSelection(fromIndex, toIndex) {
-    console.log(`animating from ${fromIndex} to ${toIndex}`);
     let forward = fromIndex == null || toIndex > fromIndex;
     let animations = this.animations[forward ? 'forward' : 'backward'];
     let duration = this.animationDuration;
@@ -74,7 +72,6 @@ class AnimationStage extends base {
     let items = this.items;
     let intermediaryCount = 0;
     if (fromIndex >= 0) {
-      console.log(`${fromIndex}: 0`);
       intermediaryCount = fromIndex === toIndex ?
         0 :
         Math.abs(toIndex - fromIndex) - 1;
@@ -87,18 +84,34 @@ class AnimationStage extends base {
       // Intermediary items cross stage (enter and then immediately exit).
       for (let i = 0; i < intermediaryCount; i++) {
         let index = fromIndex + intermediaryStep * (i + 1);
-        console.log(`${index}: ${i * duration}`);
         this.animateItem(items[index], animations.cross, i * duration, duration);
       }
     }
     // New selected item moves on stage.
-    console.log(`${toIndex}: ${duration * intermediaryCount}`);
     this.animateItem(items[toIndex], animations.enter, duration * intermediaryCount, duration);
   }
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
     this.selectionRequired = true;
+  }
+
+  itemsChanged() {
+    if (super.itemsChanged) { super.itemsChanged(); }
+    // Give items initial position.
+    // Do this by animating them a single frame from the forward/enter animation.
+    let enterAnimation = this.animations.forward.enter;
+    let offStageFrame = enterAnimation[0];
+    let onStageFrame = enterAnimation[enterAnimation.length - 1];
+    let selectedItem = this.selectedItem;
+    this.items.forEach(item => {
+      let animation = item === selectedItem ?
+        [onStageFrame] :
+        [offStageFrame];
+      item.animate(animation, {
+        fill: 'both'
+      });
+    });
   }
 
 }
