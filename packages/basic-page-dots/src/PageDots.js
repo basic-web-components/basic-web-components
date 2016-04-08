@@ -163,6 +163,15 @@ class PageDots extends base {
         z-index: 1;
       }
 
+      #container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex: 1;
+        flex: 1;
+        position: relative;
+        z-index: 0;
+      }
+
       .dot {
         background: rgb(255, 255, 255);
         border-radius: 7px;
@@ -195,7 +204,9 @@ class PageDots extends base {
       </style>
 
       <div id="dots"></div>
-      <slot></slot>
+      <div id="container">
+        <slot></slot>
+      </div>
     `;
   }
 
