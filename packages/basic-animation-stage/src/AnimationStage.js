@@ -32,16 +32,16 @@ class AnimationStage extends base {
 
   get animationForward() {
     // Standard carousel animation
-    // return [
-    //   { transform: 'translateX(100%)' },
-    //   { transform: 'translateX(-100%)' }
-    // ];
-    // Google Photos-style animation
     return [
-      { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: -1 },
-      { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
-      { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: -1 }
+      { transform: 'translateX(100%)' },
+      { transform: 'translateX(-100%)' }
     ];
+    // Google Photos-style animation
+    // return [
+    //   { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: -1 },
+    //   { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
+    //   { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: -1 }
+    // ];
   }
 
   get animationDuration() {
@@ -80,6 +80,7 @@ class AnimationStage extends base {
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
+    this.selectionWraps = true;
     this.selectionRequired = true;
   }
 

@@ -91,6 +91,24 @@ export default (base) => {
     }
 
     /**
+     * True if selection navigations wrap from last to first, and vice versa.
+     *
+     * @type {boolean}
+     * @default {false}
+     */
+    get selectionWraps() {
+      let target = this.target;
+      return target && target.selectionWraps;
+    }
+    set selectionWraps(value) {
+      if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
+      let target = this.target;
+      if( target) {
+        target.selectionWraps = value;
+      }
+    }
+
+    /**
      * Gets/sets the target element to which this component will delegate
      * selection actions.
      *

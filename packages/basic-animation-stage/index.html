@@ -8,6 +8,7 @@
 
   <script src="../demos/lib/web-animations.min.js"></script>
   <script src="../demos/lib/webcomponents.js"></script>
+  <script src="../basic-arrow-selection/dist/basic-arrow-selection.js"></script>
   <script src="../basic-page-dots/dist/basic-page-dots.js"></script>
   <script src="./dist/basic-animation-stage.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
@@ -18,7 +19,7 @@
   }
 
   basic-animation-stage {
-    background: #eee;
+    /*background: #eee;*/
     display: inline-block;
     height: 200px;
     overflow: hidden;
@@ -45,15 +46,17 @@
 </head>
 
 <body>
-  <basic-page-dots>
-    <basic-animation-stage>
-      <div class="box"><div>One</div></div>
-      <div class="box"><div>Two</div></div>
-      <div class="box"><div>Three</div></div>
-      <div class="box"><div>Four</div></div>
-      <div class="box"><div>Five</div></div>
-    </basic-animation-stage>
-  </basic-page-dots>
+  <basic-arrow-selection>
+    <basic-page-dots>
+      <basic-animation-stage>
+        <div class="box"><div>One</div></div>
+        <div class="box"><div>Two</div></div>
+        <div class="box"><div>Three</div></div>
+        <div class="box"><div>Four</div></div>
+        <div class="box"><div>Five</div></div>
+      </basic-animation-stage>
+    </basic-page-dots>
+  </basic-arrow-selection>
 </body>
 
 </html>

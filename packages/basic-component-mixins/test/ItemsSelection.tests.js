@@ -69,6 +69,26 @@ describe("ItemsSelection mixin", () => {
     element.selectedIndex = 1;
   });
 
+  it("can advance the selection to the next item", () => {
+    let element = createSampleElement();
+    assert.equal(element.selectedIndex, -1);
+    element.selectNext();
+    assert.equal(element.selectedIndex, 0);
+    element.selectNext();
+    element.selectNext();
+    assert.equal(element.selectedIndex, 2);
+    element.selectNext(); // Moving past last item should have no effect.
+    assert.equal(element.selectedIndex, 2);
+  });
+
+  it("can wrap the selection from the last to the first item", () => {
+    let element = createSampleElement();
+    element.selectionWraps = true;
+    element.selectedIndex = 2;
+    element.selectNext();
+    assert.equal(element.selectedIndex, 0);
+  });
+
 });
 
 function createSampleElement() {

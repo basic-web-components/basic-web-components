@@ -96,10 +96,11 @@ export default (base) => {
     }
 
     /**
-     * The index of the item which is currently selected, or -1 if there is no
-     * selection.
+     * The index of the item which is currently selected.
      *
-     * Setting the index to -1 deselects any current-selected item.
+     * If `selectionWraps` is false, the index is -1 if there is no selection.
+     * In that case, setting the index to -1 will deselect any
+     * currently-selected item.
      *
      * @type {number}
      */
@@ -225,6 +226,21 @@ export default (base) => {
     }
 
     /**
+     * True if selection navigations wrap from last to first, and vice versa.
+     *
+     * @type {boolean}
+     * @default {false}
+     */
+    get selectionWraps() {
+      return this._selectionWraps || false;
+    }
+    set selectionWraps(value) {
+      if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
+      this._selectionWraps = value;
+      updatePossibleNavigations(this);
+    }
+
+    /**
      * Fires when the selectedItem property changes.
      *
      * @memberof ItemsSelection
@@ -268,7 +284,16 @@ function ensureSelection(element) {
 // Ensure the given index is within bounds, and select it if it's not already
 // selected.
 function selectIndex(element, index) {
-  let boundedIndex = Math.max(Math.min(index, element.items.length - 1), 0);
+  let count = element.items.length;
+  let boundedIndex;
+  if (element.selectionWraps) {
+    // JavaScript mod doesn't handle negative numbers the way we want to wrap.
+    // See http://stackoverflow.com/a/18618250/76472
+    boundedIndex = ((index % count) + count) % count;
+  } else {
+    // Keep index within bounds of array.
+    boundedIndex = Math.max(Math.min(index, count - 1), 0);
+  }
   let previousIndex = element.selectedIndex;
   if (previousIndex !== boundedIndex) {
     element.selectedIndex = boundedIndex;
@@ -288,6 +313,10 @@ function updatePossibleNavigations(element) {
     // No items to select.
     canSelectNext = false;
     canSelectPrevious = false;
+  } if (element.selectionWraps) {
+    // Since there are items, can always go next/previous.
+    canSelectNext = true;
+    canSelectPrevious = true;
   } else {
     let index = element.selectedIndex;
     if (index < 0 && items.length > 0) {
