@@ -25,40 +25,28 @@ let base = ElementBase.compose(
  */
 class AnimationStage extends base {
 
-  get animations() {
-    let forward = {
-      cross: [
-        { transform: 'translateX(100%)' },
-        { transform: 'translateX(0)' },
-        { transform: 'translateX(-100%)' }
-      ],
-      enter: [
-        { transform: 'translateX(100%)' },
-        { transform: 'translateX(0)' },
-      ],
-      exit: [
-        { transform: 'translateX(0)' },
-        { transform: 'translateX(-100%)' }
-      ]
-    };
-    let backward = {
-      cross: forward.cross.slice().reverse(),
-      enter: forward.exit.slice().reverse(),
-      exit: forward.enter.slice().reverse()
-    };
-    return { forward, backward };
+  // Default plays forward animation in reverse.
+  get animationBackward() {
+    return this.animationForward.slice().reverse();
+  }
+
+  get animationForward() {
+    return [
+      { transform: 'translateX(100%)' },
+      // { transform: 'translateX(0)' },
+      { transform: 'translateX(-100%)' }
+    ];
   }
 
   get animationDuration() {
-    return 200;
+    return 500;
   }
 
-  animateItem(item, animation, delay, animationDuration) {
-    let duration = (animation.length - 1) * animationDuration;
+  animateItem(item, animation, duration, delay, endDelay) {
     let animationOptions = {
       delay: delay,
+      endDelay: endDelay || 0,
       duration: duration,
-      // easing: 'ease-in-out',
       fill: 'both'
     };
     item.animate(animation, animationOptions);
@@ -66,30 +54,22 @@ class AnimationStage extends base {
 
   animateSelection(fromIndex, toIndex) {
     let forward = fromIndex == null || toIndex > fromIndex;
-    let animations = this.animations[forward ? 'forward' : 'backward'];
-    let duration = this.animationDuration;
+    let animation = forward ? this.animationForward : this.animationBackward;
     fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
     let items = this.items;
-    let intermediaryCount = 0;
-    if (fromIndex >= 0) {
-      intermediaryCount = fromIndex === toIndex ?
-        0 :
-        Math.abs(toIndex - fromIndex) - 1;
-      // Stupid Edge/IE doesn't support Math.sign. Sheesh.
-      let intermediaryStep = (toIndex - fromIndex > 0) ? 1 : -1;
-      duration = duration / (intermediaryCount + 1);
-
-      // Old selected item moves off stage.
-      this.animateItem(items[fromIndex], animations.exit, 0, duration);
-
-      // Intermediary items cross stage (enter and then immediately exit).
-      for (let i = 0; i < intermediaryCount; i++) {
-        let index = fromIndex + intermediaryStep * (i + 1);
-        this.animateItem(items[index], animations.cross, i * duration, duration);
-      }
+    // Stupid Edge/IE doesn't support Math.sign. Sheesh.
+    let indexStep = (toIndex - fromIndex > 0) ? 1 : -1;
+    let count = Math.abs(toIndex - fromIndex) + 1;
+    let duration = this.animationDuration / (count + 1);
+    let index = fromIndex;
+    for (let i = 0; i < count; i++) {
+      let delay = (i - 1) * duration/2;
+      let endDelay = index === toIndex ?
+        -duration/2 :   // Stop halfway through.
+        0;              // Play full animation.
+      this.animateItem(items[index], animation, duration, delay, endDelay);
+      index += indexStep;
     }
-    // New selected item moves on stage.
-    this.animateItem(items[toIndex], animations.enter, duration * intermediaryCount, duration);
   }
 
   attachedCallback() {
@@ -99,16 +79,22 @@ class AnimationStage extends base {
 
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
-    // Give items initial position by moving them on/off stage with 0 duration.
-    let enterAnimation = this.animations.forward.enter;
-    let exitAnimation = this.animations.backward.exit;
+    // Give items their initial position
+    // We do this by playing the animation with the delay and endDelay equal.
+    // This has the effect of placing them instantenously at a specific point in
+    // the animation.
+    let animation = this.animationBackward;
+    let duration = this.animationDuration;
     let selectedItem = this.selectedItem;
     this.items.forEach(item => {
-      let animation = item === selectedItem ?
-        enterAnimation :
-        exitAnimation;
+      let fraction = item === selectedItem ?
+        0.5 :   // Selected item shown halfway through animation: center stage.
+        1;      // Other items shown all the way backward, waiting to enter.
+      let delay = -fraction*duration;
       item.animate(animation, {
-        duration: 0,
+        duration: duration,
+        delay: delay,
+        endDelay: delay,
         fill: 'both'
       });
     });
