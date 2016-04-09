@@ -59,22 +59,41 @@ class AnimationStage extends base {
   }
 
   animateSelection(fromIndex, toIndex) {
-    let forward = fromIndex == null || toIndex > fromIndex;
-    let animation = forward ? this.animationForward : this.animationBackward;
+
+    // Figure out which direction we're going and how many steps that will take.
+    // To go from item 3 to item 4 is 1 step.
     fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
     let items = this.items;
-    // Stupid Edge/IE doesn't support Math.sign. Sheesh.
-    let indexStep = (toIndex - fromIndex > 0) ? 1 : -1;
-    let count = Math.abs(toIndex - fromIndex) + 1;
-    let duration = this.animationDuration / (count + 1);
+    let itemCount = items.length;
+    let forward = toIndex > fromIndex;
+    let steps = Math.abs(toIndex - fromIndex);
+    let wrapSteps = itemCount - steps;
+    if (this.selectionWraps && wrapSteps < steps) {
+      // Takes fewer steps to get there if we wrap around the other direction.
+      steps = wrapSteps;
+      forward = !forward;
+    }
+
+    // We'll need to animate one more item than the number of steps we take.
+    // That is, to go 1 step, we're animating 2 items: the one leaving, and the
+    // one entering.
+    let animateCount = steps + 1;
+
+    let animation = forward ? this.animationForward : this.animationBackward;
+    let indexStep = forward ? 1 : -1;
+    let duration = this.animationDuration / animateCount;
+
     let index = fromIndex;
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < animateCount; i++) {
       let delay = (i - 1) * duration/2;
       let endDelay = index === toIndex ?
         -duration/2 :   // Stop halfway through.
         0;              // Play full animation.
       this.animateItem(items[index], animation, duration, delay, endDelay);
       index += indexStep;
+      // Ensure we stay in bounds, handling possibility of negative mod.
+      // See http://stackoverflow.com/a/18618250/76472
+      index = ((index % itemCount) + itemCount) % itemCount;
     }
   }
 
