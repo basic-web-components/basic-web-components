@@ -25,29 +25,50 @@ let base = ElementBase.compose(
  */
 class AnimationStage extends base {
 
-  // Default plays forward animation in reverse.
+  /**
+   * The animation that plays for an item when moving backward in the sequence.
+   *
+   * See the `animationForward` property for details.
+   *
+   * If no `animationBackward` property is defined, this animation will default
+   * to the reverse of the `animationForward` animation.
+   *
+   * @type {cssRules[]}
+   */
   get animationBackward() {
-    return this.animationForward.slice().reverse();
+    return this._animationBackward || this.animationForward.slice().reverse();
+  }
+  set animationBackward(animation) {
+    this._animationBackward = animation;
   }
 
+  /**
+   * The animation that plays for an item when moving forward in the sequence.
+   *
+   * This is an array of CSS rules that will be applied. The format is the same
+   * as that for the
+   * [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/animation).
+   *
+   * The animation represents the state of the next item as it moves from
+   * completely unselected (off stage, usually right), to selected (center
+   * stage), to completely unselected (off stage, usually left). The center time
+   * of the animation should correspond to the item's quiscent selected state,
+   * typically in the center of the stage and at the item's largest size.
+   *
+   * The default forward animation is a smooth slide at full size from right to
+   * left.
+   *
+   * @type {cssRules[]}
+   */
   get animationForward() {
-    // Standard carousel animation
-    // return [
-    //   { transform: 'translateX(100%)' },
-    //   { transform: 'translateX(-100%)' }
-    // ];
-    // Carousel variant with a bit of off stage elements showing
-    return [
-      { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
-      { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
-      { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
+    // Standard animation slides left/right, keeps adjacent items out of view.
+    return this._animationForward || [
+      { transform: 'translateX(100%)' },
+      { transform: 'translateX(-100%)' }
     ];
-    // Google Photos-style animation
-    // return [
-    //   { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: -1 },
-    //   { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
-    //   { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: -1 }
-    // ];
+  }
+  set animationForward(animation) {
+    this._animationForward = animation;
   }
 
   get animationDuration() {
