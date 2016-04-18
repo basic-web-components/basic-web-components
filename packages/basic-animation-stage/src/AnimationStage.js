@@ -32,9 +32,15 @@ class AnimationStage extends base {
 
   get animationForward() {
     // Standard carousel animation
+    // return [
+    //   { transform: 'translateX(100%)' },
+    //   { transform: 'translateX(-100%)' }
+    // ];
+    // Carousel variant with a bit of off stage elements showing
     return [
-      { transform: 'translateX(100%)' },
-      { transform: 'translateX(-100%)' }
+      { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
+      { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
+      { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
     ];
     // Google Photos-style animation
     // return [
@@ -67,9 +73,15 @@ class AnimationStage extends base {
     let itemCount = items.length;
     let forward = toIndex > fromIndex;
     let steps = Math.abs(toIndex - fromIndex);
+    // let wrapSteps = itemCount - steps;
+    // if (this.selectionWraps && wrapSteps < steps) {
+    //   // Takes fewer steps to get there if we wrap around the other direction.
+    //   steps = wrapSteps;
+    //   forward = !forward;
+    // }
     let wrapSteps = itemCount - steps;
-    if (this.selectionWraps && wrapSteps < steps) {
-      // Takes fewer steps to get there if we wrap around the other direction.
+    if (this.selectionWraps && wrapSteps === 1) {
+      // Special case: wrap from first to last item or vice versa.
       steps = wrapSteps;
       forward = !forward;
     }
