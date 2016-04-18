@@ -30,16 +30,21 @@
   .box {
     -webkit-align-items: center;
     align-items: center;
-    background: #ddd;
-    border: 1px solid #ccc;
     box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.75);
     display: -webkit-flex;
     display: flex;
+    font-weight: bold;
+    font-size: 24px;
     height: 200px;
     -webkit-justify-content: center;
     justify-content: center;
     position: absolute;
     width: 200px;
+  }
+
+  .lightText {
+    color: rgba(255, 255, 255, 0.75);
   }
   </style>
 
@@ -52,7 +57,7 @@
       switch (animationSelector.value) {
 
         case 'showAdjacent':
-        // Carousel variant with a bit of off stage elements showing
+          // Carousel variant with a bit of off stage elements showing
           animation = [
             { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
             { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
@@ -60,12 +65,21 @@
           ];
           break;
 
-        case 'uncoverWithFade':
-        // Google Photos-style animation
+        case 'reveal':
+          // Reveal, as if sliding the top card off a deck of cards.
           animation = [
-            { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: -1 },
+            { transform: 'translateX(0%)', zIndex: 0 },
+            { transform: 'translateX(0%)', zIndex: 1 },
+            { transform: 'translateX(-100%)', zIndex: 2 }
+          ];
+          break;
+
+        case 'revealWithFade':
+          // Google Photos-style animation
+          animation = [
+            { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: 0 },
             { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
-            { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: -1 }
+            { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: 2 }
           ];
           break;
 
@@ -85,17 +99,18 @@
     <select id="animationSelector" value="default">
       <option value="default">Slide (default)</option>
       <option value="showAdjacent">Show bit of adjacent items</option>
-      <option value="uncoverWithFade">Uncover with fade</option>
+      <option value="reveal">Reveal</option>
+      <option value="revealWithFade">Reveal with fade</option>
     </select>
   </p>
   <basic-arrow-selection>
     <basic-page-dots>
       <basic-animation-stage id="stage">
-        <div class="box"><div>One</div></div>
-        <div class="box"><div>Two</div></div>
-        <div class="box"><div>Three</div></div>
-        <div class="box"><div>Four</div></div>
-        <div class="box"><div>Five</div></div>
+        <div class="box lightText" style="background: #53777a;"><div>One</div></div>
+        <div class="box" style="background: #d95b43"><div>Two</div></div>
+        <div class="box" style="background: #c02942"><div>Three</div></div>
+        <div class="box" style="background: #ecd078"><div>Four</div></div>
+        <div class="box lightText" style="background: #542437;"><div>Five</div></div>
       </basic-animation-stage>
     </basic-page-dots>
   </basic-arrow-selection>

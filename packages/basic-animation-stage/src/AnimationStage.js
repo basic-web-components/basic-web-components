@@ -74,7 +74,7 @@ class AnimationStage extends base {
   }
 
   get animationDuration() {
-    return 1000; // 250;
+    return 1000; // 500;
   }
 
   animateItem(item, animation, duration, delay, endDelay) {
@@ -132,6 +132,18 @@ class AnimationStage extends base {
 }
 
 
+// Apply the animation to the item at the indicated time.
+function applyAnimationFrame(animation, duration, item, time) {
+  let delay = -time;
+  let endDelay = -(duration - time);
+  item.animate(animation, {
+    duration: duration,
+    delay: delay,
+    endDelay: endDelay,
+    fill: 'both'
+  });
+}
+
 // Give items their initial position
 function initialPositions(element) {
   // We play the animation with the delay and endDelay set so that only a single
@@ -153,18 +165,6 @@ function initialPositions(element) {
         1;    // Offstage previous
     let time = fraction*duration;
     applyAnimationFrame(animation, duration, item, time);
-  });
-}
-
-// Apply the animation to the item at the indicated time.
-function applyAnimationFrame(animation, duration, item, time) {
-  let delay = -time;
-  let endDelay = -(duration - time);
-  item.animate(animation, {
-    duration: duration,
-    delay: delay,
-    endDelay: endDelay,
-    fill: 'both'
   });
 }
 
