@@ -89,25 +89,17 @@ class AnimationStage extends base {
 
   animateSelection(fromIndex, toIndex) {
 
-    // Figure out which direction we're going and how many steps that will take.
-    // To go from item 3 to item 4 is 1 step.
     fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
     let items = this.items;
     let itemCount = items.length;
-    let forward = toIndex > fromIndex;
-    let steps = Math.abs(toIndex - fromIndex);
-    let wrapSteps = itemCount - steps;
-    if (this.selectionWraps && wrapSteps === 1) {
-      // Special case: wrap from first to last item or vice versa.
-      steps = wrapSteps;
-      forward = !forward;
-    }
+    let steps = stepsToIndex(itemCount, this.selectionWraps, fromIndex, toIndex);
 
     // We'll need to animate one more item than the number of steps we take.
     // That is, to go 1 step, we're animating 2 items: the one leaving, and the
     // one entering.
-    let animateCount = steps + 1;
+    let animateCount = Math.abs(steps) + 1;
 
+    let forward = steps >= 0;
     let animation = forward ? this.animationForward : this.animationBackward;
     let indexStep = forward ? 1 : -1;
     let duration = this.animationDuration / animateCount;
@@ -137,10 +129,6 @@ class AnimationStage extends base {
     initialPositions(this);
   }
 
-  test(time) {
-    applyAnimationFrame(this.animationForward, this.animationDuration, this.items[0], time);
-  }
-
 }
 
 
@@ -151,10 +139,16 @@ function initialPositions(element) {
   let animation = element.animationForward;
   let duration = element.animationDuration;
   let selectedIndex = element.selectedIndex;
+  let itemCount = element.items.length;
+  let allowWrap = element.selectionWraps;
   element.items.forEach((item, index) => {
-    let fraction = index === selectedIndex ?
+    // We want to position items with respect to the selected item, so for
+    // each item we calculate how many steps it would take to get from the
+    // selected item to that item.
+    let steps = stepsToIndex(itemCount, allowWrap, selectedIndex, index);
+    let fraction = steps === 0 ?
       0.5 :   // Selected item shown halfway through animation: center stage.
-      index > selectedIndex ?
+      steps > 0 ?
         0:    // Offstage next
         1;    // Offstage previous
     let time = fraction*duration;
@@ -172,6 +166,23 @@ function applyAnimationFrame(animation, duration, item, time) {
     endDelay: endDelay,
     fill: 'both'
   });
+}
+
+// Figure out how many steps it will take to go from fromIndex to toIndex.
+// To go from item 3 to item 4 is one step.
+// If wrapping is allowed, then going from the last item to the first will take
+// one step (forward), and going from the first item to the last will take one
+// step (backward).
+function stepsToIndex(length, allowWrap, fromIndex, toIndex) {
+  let steps = toIndex - fromIndex;
+  let wrapSteps = length - Math.abs(steps);
+  if (allowWrap && wrapSteps === 1) {
+    // Special case
+    steps = steps < 0 ?
+      1 : // Wrap forward from last item to first.
+      -1; // Wrap backward from first item to last.
+  }
+  return steps;
 }
 
 
