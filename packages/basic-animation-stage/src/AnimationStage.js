@@ -40,6 +40,7 @@ class AnimationStage extends base {
   }
   set animationBackward(animation) {
     this._animationBackward = animation;
+    initialPositions(this);
   }
 
   /**
@@ -69,6 +70,7 @@ class AnimationStage extends base {
   }
   set animationForward(animation) {
     this._animationForward = animation;
+    initialPositions(this);
   }
 
   get animationDuration() {
@@ -94,12 +96,6 @@ class AnimationStage extends base {
     let itemCount = items.length;
     let forward = toIndex > fromIndex;
     let steps = Math.abs(toIndex - fromIndex);
-    // let wrapSteps = itemCount - steps;
-    // if (this.selectionWraps && wrapSteps < steps) {
-    //   // Takes fewer steps to get there if we wrap around the other direction.
-    //   steps = wrapSteps;
-    //   forward = !forward;
-    // }
     let wrapSteps = itemCount - steps;
     if (this.selectionWraps && wrapSteps === 1) {
       // Special case: wrap from first to last item or vice versa.
@@ -138,27 +134,44 @@ class AnimationStage extends base {
 
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
-    // Give items their initial position
-    // We do this by playing the animation with the delay and endDelay equal.
-    // This has the effect of placing them instantenously at a specific point in
-    // the animation.
-    let animation = this.animationBackward;
-    let duration = this.animationDuration;
-    let selectedItem = this.selectedItem;
-    this.items.forEach(item => {
-      let fraction = item === selectedItem ?
-        0.5 :   // Selected item shown halfway through animation: center stage.
-        1;      // Other items shown all the way backward, waiting to enter.
-      let delay = -fraction*duration;
-      item.animate(animation, {
-        duration: duration,
-        delay: delay,
-        endDelay: delay,
-        fill: 'both'
-      });
-    });
+    initialPositions(this);
   }
 
+  test(time) {
+    applyAnimationFrame(this.animationForward, this.animationDuration, this.items[0], time);
+  }
+
+}
+
+
+// Give items their initial position
+function initialPositions(element) {
+  // We play the animation with the delay and endDelay set so that only a single
+  // frame of the animation will play;
+  let animation = element.animationForward;
+  let duration = element.animationDuration;
+  let selectedIndex = element.selectedIndex;
+  element.items.forEach((item, index) => {
+    let fraction = index === selectedIndex ?
+      0.5 :   // Selected item shown halfway through animation: center stage.
+      index > selectedIndex ?
+        0:    // Offstage next
+        1;    // Offstage previous
+    let time = fraction*duration;
+    applyAnimationFrame(animation, duration, item, time);
+  });
+}
+
+// Apply the animation to the item at the indicated time.
+function applyAnimationFrame(animation, duration, item, time) {
+  let delay = -time;
+  let endDelay = -(duration - time);
+  item.animate(animation, {
+    duration: duration,
+    delay: delay,
+    endDelay: endDelay,
+    fill: 'both'
+  });
 }
 
 
