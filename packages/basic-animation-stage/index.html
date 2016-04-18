@@ -53,15 +53,16 @@
     var animationSelector = document.querySelector('#animationSelector');
     var stage = document.querySelector('#stage');
     animationSelector.addEventListener('change', () => {
-      let animation;
+      var animation;
+      resetStylesOnItems(stage);
       switch (animationSelector.value) {
 
-        case 'showAdjacent':
-          // Carousel variant with a bit of off stage elements showing
+        case 'fade':
+          // Simple crossfade.
           animation = [
-            { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
-            { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
-            { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
+            { opacity: 0 },
+            { opacity: 1 },
+            { opacity: 0 }
           ];
           break;
 
@@ -83,6 +84,15 @@
           ];
           break;
 
+        case 'showAdjacent':
+          // Carousel variant with a bit of off stage elements showing
+          animation = [
+            { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
+            { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
+            { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
+          ];
+          break;
+
         default:
           animation = Object.getPrototypeOf(stage).animationForward;
           break;
@@ -90,6 +100,18 @@
       stage.animationForward = animation;
     });
   });
+
+  // Clear any animated properties left on child elements by previous effects.
+  function resetStylesOnItems(element) {
+    [].forEach.call(element.children, function(child) {
+      var animation = {
+        opacity: 1,
+        transform: 'translateX(0%)',
+        zIndex: 0
+      }
+      child.animate(animation, { duration: 0, fill: 'both' });
+    });
+  }
   </script>
 
 </head>
@@ -99,6 +121,7 @@
     <select id="animationSelector" value="default">
       <option value="default">Slide (default)</option>
       <option value="showAdjacent">Show bit of adjacent items</option>
+      <option value="fade">Fade</option>
       <option value="reveal">Reveal</option>
       <option value="revealWithFade">Reveal with fade</option>
     </select>
