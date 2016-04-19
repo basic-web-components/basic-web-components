@@ -26,14 +26,21 @@ export default (base) => {
       let steps = stepsToIndex(itemCount, this.selectionWraps, fromIndex, toIndex);
 
       // We'll need to animate one more item than the number of steps we take.
-      // That is, to go 1 step, we're animating 2 items: the one leaving, and the
-      // one entering.
+      // That is, to go 1 step, we're animating 2 items: the one leaving the
+      // stage, and the one taking center stage.
       let animateCount = Math.abs(steps) + 1;
 
       let forward = steps >= 0;
       let animation = forward ? this.animationForward : this.animationBackward;
       let indexStep = forward ? 1 : -1;
       let duration = this.animationDuration / animateCount;
+
+      // Ensure the next item in the direction we've been traveling is in
+      // position to enter the stage from the anticipated direction. We do this
+      // first, so that if the item ends up being animated, the animation will
+      // take precedence.
+      let nextUpIndex = keepIndexWithinBounds(itemCount, fromIndex + indexStep * animateCount);
+      applyAnimationFrame(animation, duration, items[nextUpIndex], 0);
 
       let index = fromIndex;
       for (let i = 0; i < animateCount; i++) {
@@ -42,10 +49,7 @@ export default (base) => {
           -duration/2 :   // Stop halfway through.
           0;              // Play full animation.
         this.animateItem(items[index], animation, duration, delay, endDelay);
-        index += indexStep;
-        // Ensure we stay in bounds, handling possibility of negative mod.
-        // See http://stackoverflow.com/a/18618250/76472
-        index = ((index % itemCount) + itemCount) % itemCount;
+        index = keepIndexWithinBounds(itemCount, index + indexStep);
       }
     }
 
@@ -108,7 +112,11 @@ export default (base) => {
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       let index = this.items.indexOf(item);
-      this.animateSelection(this._previousSelectedIndex, index);
+      if (this._previousSelectedIndex == null) {
+        this.resetItemPositions();
+      } else {
+        this.animateSelection(this._previousSelectedIndex, index);
+      }
       this._previousSelectedIndex = index;
     }
   }
@@ -127,6 +135,13 @@ function applyAnimationFrame(animation, duration, item, time) {
     endDelay: endDelay,
     fill: 'both'
   });
+}
+
+// Return the index, ensuring it stays between 0 and the given length.
+function keepIndexWithinBounds(length, index) {
+  // Handle possibility of negative mod.
+  // See http://stackoverflow.com/a/18618250/76472
+  return ((index % length) + length) % length;
 }
 
 // Figure out how many steps it will take to go from fromIndex to toIndex.
