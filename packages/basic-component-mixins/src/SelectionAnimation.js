@@ -76,12 +76,36 @@ export default (base) => {
       this.resetItemPositions();
     }
 
-    // get position() {
-    //   return super.position;
-    // }
-    // set position(index) {
-    //   if ('position' in base.prototype) { super.position = index; }
-    // }
+    get position() {
+      return super.position;
+    }
+    set position(position) {
+      if ('position' in base.prototype) { super.position = position; }
+      let selectedIndex = this.selectedIndex;
+      if (selectedIndex < 0) {
+        return;
+      }
+      let indexBase = selectedIndex + Math.trunc(position);
+      let positionFraction = position - Math.trunc(position);
+      let animation = this.animationForward;
+      let duration = this.animationDuration;
+      let items = this.items;
+      let itemCount = items.length;
+      console.log(`${position} ${indexBase}`);
+      // TODO: Handle case where there are fewer than 3 items.
+      for (let i = -1; i <= 1; i++) {
+        // We want
+        // position   fraction
+        // -1         0
+        // 0          .5
+        // 1          1
+        // We also need to offset relative to the selected index.
+        let fraction = (-i + positionFraction + 1) / 2;
+        let time = fraction * duration;
+        let index = keepIndexWithinBounds(itemCount, indexBase + i);
+        applyAnimationFrame(animation, duration, items[index], time);
+      }
+    }
 
     // Move items to their initial positions, based on their spatial relationship
     // to the selected item.

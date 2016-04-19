@@ -14,12 +14,7 @@
   <link rel="stylesheet" href="../demos/demos.css">
 
   <style>
-  basic-page-dots {
-    /*margin-left: 200px;*/
-  }
-
   basic-animation-stage {
-    /*background: #eee;*/
     display: inline-block;
     height: 200px;
     overflow: hidden;
@@ -49,10 +44,10 @@
   </style>
 
   <script>
-  window.addEventListener('load', () => {
+  window.addEventListener('load', function() {
     var animationSelector = document.querySelector('#animationSelector');
     var stage = document.querySelector('#stage');
-    animationSelector.addEventListener('change', () => {
+    animationSelector.addEventListener('change', function() {
       var animation;
       resetStylesOnItems(stage);
       switch (animationSelector.value) {
@@ -103,12 +98,19 @@
 
   // Clear any animated properties left on child elements by previous effects.
   function resetStylesOnItems(element) {
+    var resetState = {
+      opacity: 1,
+      transform: 'translateX(0%)',
+      zIndex: 0
+    };
     [].forEach.call(element.children, function(child) {
-      var animation = {
-        opacity: 1,
-        transform: 'translateX(0%)',
-        zIndex: 0
-      }
+      var style = getComputedStyle(child);
+      var currentState = {
+        opacity: style.opacity,
+        transform: style.transform,
+        zIndex: style.zIndex
+      };
+      var animation = [currentState, resetState];
       child.animate(animation, { duration: 0, fill: 'both' });
     });
   }
