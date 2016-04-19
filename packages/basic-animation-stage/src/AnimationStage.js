@@ -51,14 +51,13 @@ class AnimationStage extends base {
    */
   get animationForward() {
     // Standard animation slides left/right, keeps adjacent items out of view.
-    return this._animationForward || [
+    return super.animationForward || [
       { transform: 'translateX(100%)' },
       { transform: 'translateX(-100%)' }
     ];
   }
   set animationForward(animation) {
-    this._animationForward = animation;
-    this.resetItemPositions();
+    if ('animationForward' in base.prototype) { super.animationForward = animation; }
   }
 
   attachedCallback() {

@@ -40,7 +40,7 @@ export default (base) => {
       // first, so that if the item ends up being animated, the animation will
       // take precedence.
       let nextUpIndex = keepIndexWithinBounds(itemCount, fromIndex + indexStep * animateCount);
-      applyAnimationFrame(animation, duration, items[nextUpIndex], 0);
+      setPlayerFraction(this._players[nextUpIndex], 0);
 
       let index = fromIndex;
       for (let i = 0; i < animateCount; i++) {
@@ -48,7 +48,7 @@ export default (base) => {
         let endDelay = index === toIndex ?
           -duration/2 :   // Stop halfway through.
           0;              // Play full animation.
-        this.animateItem(items[index], animation, duration, delay, endDelay);
+        // this.animateItem(items[index], animation, duration, delay, endDelay);
         index = keepIndexWithinBounds(itemCount, index + indexStep);
       }
     }
@@ -68,11 +68,21 @@ export default (base) => {
     }
     set animationBackward(animation) {
       this._animationBackward = animation;
+    }
+
+    get animationForward() {
+      return this._animationForward || super.animationForward;
+    }
+    set animationForward(animation) {
+      if ('animationForward' in base.prototype) { super.animationForward = animation; }
+      this._animationForward = animation;
+      createPlayers(this);
       this.resetItemPositions();
     }
 
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
+      createPlayers(this);
       this.resetItemPositions();
     }
 
@@ -87,8 +97,6 @@ export default (base) => {
       }
       let indexBase = selectedIndex + Math.trunc(position);
       let positionFraction = position - Math.trunc(position);
-      let animation = this.animationForward;
-      let duration = this.animationDuration;
       let items = this.items;
       let itemCount = items.length;
       console.log(`${position} ${indexBase}`);
@@ -101,17 +109,19 @@ export default (base) => {
         // 1          1
         // We also need to offset relative to the selected index.
         let fraction = (-i + positionFraction + 1) / 2;
-        let time = fraction * duration;
         let index = keepIndexWithinBounds(itemCount, indexBase + i);
-        applyAnimationFrame(animation, duration, items[index], time);
+        setPlayerFraction(this._players[index], fraction);
       }
     }
 
     // Move items to their initial positions, based on their spatial relationship
     // to the selected item.
     resetItemPositions() {
-      let animation = this.animationForward;
-      let duration = this.animationDuration;
+      let players = this._players;
+      if (players == null) {
+        // Players not set up yet.
+        return;
+      }
       let selectedIndex = this.selectedIndex;
       let itemCount = this.items.length;
       let allowWrap = this.selectionWraps;
@@ -125,8 +135,7 @@ export default (base) => {
           steps > 0 ?
             0:    // Offstage next
             1;    // Offstage previous
-        let time = fraction*duration;
-        applyAnimationFrame(animation, duration, item, time);
+        setPlayerFraction(players[index], fraction);
       });
     }
 
@@ -139,7 +148,7 @@ export default (base) => {
       if (this._previousSelectedIndex == null) {
         this.resetItemPositions();
       } else {
-        this.animateSelection(this._previousSelectedIndex, index);
+        // this.animateSelection(this._previousSelectedIndex, index);
       }
       this._previousSelectedIndex = index;
     }
@@ -149,15 +158,13 @@ export default (base) => {
 };
 
 
-// Apply the animation to the item at the indicated time.
-function applyAnimationFrame(animation, duration, item, time) {
-  let delay = -time;
-  let endDelay = -(duration - time);
-  item.animate(animation, {
-    duration: duration,
-    delay: delay,
-    endDelay: endDelay,
-    fill: 'both'
+function createPlayers(element) {
+  let animation = element.animationForward;
+  let duration = element.animationDuration;
+  element._players = element.items.map(item => {
+    let player = item.animate(animation, { duration, fill: 'both' });
+    player.pause();
+    return player;
   });
 }
 
@@ -166,6 +173,16 @@ function keepIndexWithinBounds(length, index) {
   // Handle possibility of negative mod.
   // See http://stackoverflow.com/a/18618250/76472
   return ((index % length) + length) % length;
+}
+
+// Pause the indicated player and have it show the animation at the given
+// fraction (between 0 and 1) of the way through the animation.
+function setPlayerFraction(player, fraction) {
+  player.pause();
+  let duration = player.effect ?
+    player.effect.timing.duration :
+    player._effect._totalDuration;  // for Web Animations polyfill
+  player.currentTime = fraction * duration;
 }
 
 // Figure out how many steps it will take to go from fromIndex to toIndex.
