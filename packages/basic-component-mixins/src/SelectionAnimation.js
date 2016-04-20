@@ -20,6 +20,9 @@ export default (base) => {
 
     animateSelection(fromIndex, toIndex) {
 
+      // Existing players will need to be recreated next time they're needed.
+      this._players = null;
+
       fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
       let items = this.items;
       let itemCount = items.length;
@@ -40,7 +43,7 @@ export default (base) => {
       // first, so that if the item ends up being animated, the animation will
       // take precedence.
       let nextUpIndex = keepIndexWithinBounds(itemCount, fromIndex + indexStep * animateCount);
-      setPlayerFraction(this._players[nextUpIndex], 0);
+      // setPlayerFraction(this._players[nextUpIndex], 0);
 
       let index = fromIndex;
       for (let i = 0; i < animateCount; i++) {
@@ -48,7 +51,7 @@ export default (base) => {
         let endDelay = index === toIndex ?
           -duration/2 :   // Stop halfway through.
           0;              // Play full animation.
-        // this.animateItem(items[index], animation, duration, delay, endDelay);
+        this.animateItem(items[index], animation, duration, delay, endDelay);
         index = keepIndexWithinBounds(itemCount, index + indexStep);
       }
     }
@@ -76,13 +79,11 @@ export default (base) => {
     set animationForward(animation) {
       if ('animationForward' in base.prototype) { super.animationForward = animation; }
       this._animationForward = animation;
-      createPlayers(this);
       this.resetItemPositions();
     }
 
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
-      createPlayers(this);
       this.resetItemPositions();
     }
 
@@ -91,6 +92,9 @@ export default (base) => {
     }
     set position(position) {
       if ('position' in base.prototype) { super.position = position; }
+      if (this._players == null) {
+        createPlayers(this);
+      }
       let selectedIndex = this.selectedIndex;
       if (selectedIndex < 0) {
         return;
@@ -99,7 +103,6 @@ export default (base) => {
       let positionFraction = position - Math.trunc(position);
       let items = this.items;
       let itemCount = items.length;
-      console.log(`${position} ${indexBase}`);
       // TODO: Handle case where there are fewer than 3 items.
       for (let i = -1; i <= 1; i++) {
         // We want
@@ -117,11 +120,10 @@ export default (base) => {
     // Move items to their initial positions, based on their spatial relationship
     // to the selected item.
     resetItemPositions() {
-      let players = this._players;
-      if (players == null) {
-        // Players not set up yet.
-        return;
+      if (this._players == null) {
+        createPlayers(this);
       }
+      let players = this._players;
       let selectedIndex = this.selectedIndex;
       let itemCount = this.items.length;
       let allowWrap = this.selectionWraps;
@@ -148,7 +150,7 @@ export default (base) => {
       if (this._previousSelectedIndex == null) {
         this.resetItemPositions();
       } else {
-        // this.animateSelection(this._previousSelectedIndex, index);
+        this.animateSelection(this._previousSelectedIndex, index);
       }
       this._previousSelectedIndex = index;
     }
