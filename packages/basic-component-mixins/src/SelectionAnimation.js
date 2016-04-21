@@ -21,7 +21,7 @@ export default (base) => {
     animateSelection(fromIndex, toIndex) {
 
       // Existing players will need to be recreated next time they're needed.
-      this._players = null;
+      resetPlayers(this);
 
       fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
       let items = this.items;
@@ -84,6 +84,7 @@ export default (base) => {
 
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
+      resetPlayers(this);
       this.resetItemPositions();
     }
 
@@ -92,9 +93,6 @@ export default (base) => {
     }
     set position(position) {
       if ('position' in base.prototype) { super.position = position; }
-      if (this._players == null) {
-        createPlayers(this);
-      }
       let selectedIndex = this.selectedIndex;
       if (selectedIndex < 0) {
         return;
@@ -113,17 +111,13 @@ export default (base) => {
         // We also need to offset relative to the selected index.
         let fraction = (-i + positionFraction + 1) / 2;
         let index = keepIndexWithinBounds(itemCount, indexBase + i);
-        setPlayerFraction(this._players[index], fraction);
+        setPlayerFraction(this, index, fraction);
       }
     }
 
     // Move items to their initial positions, based on their spatial relationship
     // to the selected item.
     resetItemPositions() {
-      if (this._players == null) {
-        createPlayers(this);
-      }
-      let players = this._players;
       let selectedIndex = this.selectedIndex;
       let itemCount = this.items.length;
       let allowWrap = this.selectionWraps;
@@ -137,7 +131,7 @@ export default (base) => {
           steps > 0 ?
             0:    // Offstage next
             1;    // Offstage previous
-        setPlayerFraction(players[index], fraction);
+        setPlayerFraction(this, index, fraction);
       });
     }
 
@@ -160,14 +154,22 @@ export default (base) => {
 };
 
 
-function createPlayers(element) {
-  let animation = element.animationForward;
-  let duration = element.animationDuration;
-  element._players = element.items.map(item => {
-    let player = item.animate(animation, { duration, fill: 'both' });
+function getPlayer(element, index) {
+  if (element._players == null) {
+    // Not ready yet;
+    return null;
+  }
+  let player = element._players[index];
+  if (!player) {
+    let item = element.items[index];
+    player = item.animate(element.animationForward, {
+      duration: element.animationDuration,
+      fill: 'both'
+    });
     player.pause();
-    return player;
-  });
+    element._players[index] = player;
+  }
+  return player;
 }
 
 // Return the index, ensuring it stays between 0 and the given length.
@@ -177,14 +179,20 @@ function keepIndexWithinBounds(length, index) {
   return ((index % length) + length) % length;
 }
 
+function resetPlayers(element) {
+  element._players = new Array(element.items.length);
+}
+
 // Pause the indicated player and have it show the animation at the given
 // fraction (between 0 and 1) of the way through the animation.
-function setPlayerFraction(player, fraction) {
-  player.pause();
-  let duration = player.effect ?
+function setPlayerFraction(element, index, fraction) {
+  let player = getPlayer(element, index);
+  if (player) {
+    let duration = player.effect ?
     player.effect.timing.duration :
     player._effect._totalDuration;  // for Web Animations polyfill
-  player.currentTime = fraction * duration;
+    player.currentTime = fraction * duration;
+  }
 }
 
 // Figure out how many steps it will take to go from fromIndex to toIndex.
