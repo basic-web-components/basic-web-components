@@ -18,15 +18,15 @@ export default (base) => {
       item.animate(animation, animationOptions);
     }
 
-    animateSelection(fromIndex, toIndex) {
+    animateSelection(fromIndex, toIndex, position=0) {
 
-      if (this._players) {
-        this._players.forEach((player, index) => {
-          if (player) {
-            console.log(`player ${index} exists`);
-          }
-        });
-      }
+      // if (this._players) {
+      //   this._players.forEach((player, index) => {
+      //     if (player) {
+      //       console.log(`player ${index} exists`);
+      //     }
+      //   });
+      // }
 
       // Existing players will need to be recreated next time they're needed.
       // resetPlayers(this);
@@ -38,16 +38,15 @@ export default (base) => {
       // We'll need to animate one more item than the number of steps we take.
       // That is, to go 1 step, we're animating 2 items: the one leaving the
       // stage, and the one taking center stage.
-      let animateCount = Math.abs(steps) + 1;
+      let animateCount = Math.abs(steps) + 1 + Math.ceil(Math.abs(position));
 
-      let forward = steps >= 0;
+      let forward = (steps - position) >= 0;
       let animation = forward ? this.animationForward : this.animationBackward;
       let indexStep = forward ? 1 : -1;
       let duration = this.animationDuration / animateCount;
 
       // Adjust starting point of animation based on whether we were in the
       // middle of a user-controlled drag.
-      let position = this.position;
       let startDelay = position === 0 ?
         0 :
         -Math.abs(position) * duration / 2;
@@ -57,12 +56,13 @@ export default (base) => {
       // first, so that if the item ends up being animated, the animation will
       // take precedence.
       let nextUpIndex = keepIndexWithinBounds(itemCount, fromIndex + indexStep * animateCount);
-      setPlayerFraction(this, nextUpIndex, 0);
+      // setPlayerFraction(this, nextUpIndex, 0);
 
+      console.log(`animateSelection: steps ${steps}, animateCount ${animateCount}, fromIndex ${fromIndex}`);
       let index = fromIndex;
       for (let i = 0; i < animateCount; i++) {
         if (this._players && this._players[index]) {
-          console.log(`resetting player ${index}`);
+          // console.log(`resetting player ${index}`);
           this._players[index] = null;
         } else {
         }
@@ -98,7 +98,8 @@ export default (base) => {
     set animationForward(animation) {
       if ('animationForward' in base.prototype) { super.animationForward = animation; }
       this._animationForward = animation;
-      this.resetItemPositions();
+      resetPlayers(this);
+      this.update();
     }
 
     createdCallback() {
@@ -109,7 +110,7 @@ export default (base) => {
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
       resetPlayers(this);
-      this.resetItemPositions();
+      this.update();
     }
 
     get position() {
@@ -117,49 +118,35 @@ export default (base) => {
     }
     set position(position) {
       if ('position' in base.prototype) { super.position = position; }
-      let selectedIndex = this.selectedIndex;
-      console.log(`position ${position}, selectedIndex ${selectedIndex}`);
-      if (selectedIndex >= 0) {
-        if (this._showTransition && this._previousSelectedIndex != null) {
-          this.animateSelection(this._previousSelectedIndex, selectedIndex);
-        } else {
-          this.snapSelection(selectedIndex);
-        }
-      }
+      this.update(this.selectedIndex, position);
     }
 
-    // Move items to their initial positions, based on their spatial relationship
-    // to the selected item.
-    resetItemPositions() {
-      let selectedIndex = this.selectedIndex;
-      let itemCount = this.items.length;
-      let allowWrap = this.selectionWraps;
-      this.items.forEach((item, index) => {
-        // We want to position items with respect to the selected item, so for
-        // each item we calculate how many steps it would take to get from the
-        // selected item to that item.
-        let steps = stepsToIndex(itemCount, allowWrap, selectedIndex, index);
-        let fraction = steps === 0 ?
-          0.5 :   // Halfway through animation, i.e., center stage.
-          steps > 0 ?
-            0:    // Offstage next
-            1;    // Offstage previous
-        setPlayerFraction(this, index, fraction);
-      });
-    }
+    // // Move items to their initial positions, based on their spatial relationship
+    // // to the selected item.
+    // resetItemPositions() {
+    //   let selectedIndex = this.selectedIndex;
+    //   let itemCount = this.items.length;
+    //   let allowWrap = this.selectionWraps;
+    //   this.items.forEach((item, index) => {
+    //     // We want to position items with respect to the selected item, so for
+    //     // each item we calculate how many steps it would take to get from the
+    //     // selected item to that item.
+    //     let steps = stepsToIndex(itemCount, allowWrap, selectedIndex, index);
+    //     let fraction = steps === 0 ?
+    //       0.5 :   // Halfway through animation, i.e., center stage.
+    //       steps > 0 ?
+    //         0:    // Offstage next
+    //         1;    // Offstage previous
+    //     setPlayerFraction(this, index, fraction);
+    //   });
+    // }
 
     get selectedItem() {
       return super.selectedItem;
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      let index = this.items.indexOf(item);
-      if (this._showTransition && this._previousSelectedIndex != null) {
-        this.animateSelection(this._previousSelectedIndex, index);
-      } else {
-        this.resetItemPositions();
-      }
-      this._previousSelectedIndex = index;
+      this.update();
     }
 
     // TODO: Make this a getter/setter property.
@@ -168,24 +155,51 @@ export default (base) => {
       this._showTransition = show;
     }
 
-    snapSelection(toIndex) {
-      let position = this.position;
-      let indexBase = toIndex + Math.trunc(position);
-      let positionFraction = position - Math.trunc(position);
+    showSelection(toIndex) {
       let items = this.items;
       let itemCount = items.length;
+      let allowWrap = this.selectionWraps;
+      toIndex = keepIndexWithinBounds(itemCount, toIndex);
+      let indexBase = Math.trunc(toIndex);
+      let selectionFraction = toIndex - indexBase;
       // TODO: Handle case where there are fewer than 3 items.
-      for (let i = -1; i <= 1; i++) {
-        // We want
-        // position   fraction
-        // -1         0
-        // 0          .5
-        // 1          1
-        // We also need to offset relative to the selected index.
-        let fraction = (-i + positionFraction + 1) / 2;
-        let index = keepIndexWithinBounds(itemCount, indexBase + i);
-        setPlayerFraction(this, index, fraction);
+      console.log(`showSelection: indexBase ${indexBase}, selectionFraction ${selectionFraction}`);
+      items.forEach((item, index) => {
+        let steps = stepsToIndex(itemCount, allowWrap, indexBase, index);
+        if (Math.abs(steps - Math.round(selectionFraction)) <= 1) {
+          item.style.display = '';
+          // We want
+          // steps      animation fraction
+          // -1         1
+          // 0          .5
+          // 1          0
+          // We also want to factor in the selection fraction.
+          let animationFraction = (1 - steps + selectionFraction) / 2;
+          setPlayerFraction(this, index, animationFraction);
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      // for (let i = -1; i <= 1; i++) {
+      //   let index = keepIndexWithinBounds(itemCount, indexBase + i);
+      //   setPlayerFraction(this, index, fraction);
+      // }
+    }
+
+    update(selectedIndex=this.selectedIndex, selectionFraction=this.position) {
+      if (selectedIndex < 0) {
+        // TODO: Handle no selection.
+        return;
       }
+      selectedIndex += selectionFraction;
+      // if (this._showTransition && this._previousSelectedIndex != null) {
+      //   console.log(`update: calling animateSelection`);
+      //   this.animateSelection(this._previousSelectedIndex, selectedIndex);
+      // } else {
+      //   console.log(`update: calling showSelection`);
+        this.showSelection(selectedIndex);
+      // }
+      this._previousSelectedIndex = selectedIndex;
     }
   }
 

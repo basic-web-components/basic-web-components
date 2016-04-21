@@ -45,57 +45,65 @@
   </style>
 
   <script>
+  var animationSelector;
+  var stage;
+
   window.addEventListener('load', function() {
-    var animationSelector = document.querySelector('#animationSelector');
-    var stage = document.querySelector('#stage');
+    animationSelector = document.querySelector('#animationSelector');
+    stage = document.querySelector('#stage');
     animationSelector.addEventListener('change', function() {
-      var animation;
-      resetStylesOnItems(stage);
-      switch (animationSelector.value) {
-
-        case 'fade':
-          // Simple crossfade.
-          animation = [
-            { opacity: 0 },
-            { opacity: 1 },
-            { opacity: 0 }
-          ];
-          break;
-
-        case 'reveal':
-          // Reveal, as if sliding the top card off a deck of cards.
-          animation = [
-            { transform: 'translateX(0%)', zIndex: 0 },
-            { transform: 'translateX(0%)', zIndex: 1 },
-            { transform: 'translateX(-100%)', zIndex: 2 }
-          ];
-          break;
-
-        case 'revealWithFade':
-          // Google Photos-style animation
-          animation = [
-            { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: 0 },
-            { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
-            { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: 2 }
-          ];
-          break;
-
-        case 'showAdjacent':
-          // Carousel variant with a bit of off stage elements showing
-          animation = [
-            { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
-            { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
-            { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
-          ];
-          break;
-
-        default:
-          animation = Object.getPrototypeOf(stage).animationForward;
-          break;
-      }
-      stage.animationForward = animation;
+      updateAnimation();
     });
+    updateAnimation();
   });
+
+  function updateAnimation() {
+    var animation;
+    resetStylesOnItems(stage);
+    switch (animationSelector.value) {
+
+      case 'fade':
+        // Simple crossfade.
+        animation = [
+          { opacity: 0 },
+          { opacity: 1 },
+          { opacity: 0 }
+        ];
+        break;
+
+      case 'reveal':
+        // Reveal, as if sliding the top card off a deck of cards.
+        animation = [
+          { transform: 'translateX(0%)', zIndex: 0 },
+          { transform: 'translateX(0%)', zIndex: 1 },
+          { transform: 'translateX(-100%)', zIndex: 2 }
+        ];
+        break;
+
+      case 'revealWithFade':
+        // Google Photos-style animation
+        animation = [
+          { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: 0 },
+          { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
+          { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: 2 }
+        ];
+        break;
+
+      case 'showAdjacent':
+        // Carousel variant with a bit of off stage elements showing
+        animation = [
+          { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
+          { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
+          { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
+        ];
+        break;
+
+      default:
+        animation = Object.getPrototypeOf(stage).animationForward;
+        break;
+    }
+    stage.animationForward = animation;
+  }
 
   // Clear any animated properties left on child elements by previous effects.
   function resetStylesOnItems(element) {
@@ -121,9 +129,9 @@
 
 <body>
   <p>
-    <select id="animationSelector" value="default">
+    <select id="animationSelector">
       <option value="default">Slide (default)</option>
-      <option value="showAdjacent">Show bit of adjacent items</option>
+      <option value="showAdjacent" selected>Show bit of adjacent items</option>
       <option value="fade">Fade</option>
       <option value="reveal">Reveal</option>
       <option value="revealWithFade">Reveal with fade</option>
