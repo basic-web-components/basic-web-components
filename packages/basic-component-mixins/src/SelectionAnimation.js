@@ -20,10 +20,17 @@ export default (base) => {
 
     animateSelection(fromIndex, toIndex) {
 
-      // Existing players will need to be recreated next time they're needed.
-      resetPlayers(this);
+      if (this._players) {
+        this._players.forEach((player, index) => {
+          if (player) {
+            console.log(`player ${index} exists`);
+          }
+        });
+      }
 
-      fromIndex = fromIndex >= 0 ? fromIndex : toIndex;
+      // Existing players will need to be recreated next time they're needed.
+      // resetPlayers(this);
+
       let items = this.items;
       let itemCount = items.length;
       let steps = stepsToIndex(itemCount, this.selectionWraps, fromIndex, toIndex);
@@ -38,16 +45,28 @@ export default (base) => {
       let indexStep = forward ? 1 : -1;
       let duration = this.animationDuration / animateCount;
 
+      // Adjust starting point of animation based on whether we were in the
+      // middle of a user-controlled drag.
+      let position = this.position;
+      let startDelay = position === 0 ?
+        0 :
+        -Math.abs(position) * duration / 2;
+
       // Ensure the next item in the direction we've been traveling is in
       // position to enter the stage from the anticipated direction. We do this
       // first, so that if the item ends up being animated, the animation will
       // take precedence.
       let nextUpIndex = keepIndexWithinBounds(itemCount, fromIndex + indexStep * animateCount);
-      // setPlayerFraction(this._players[nextUpIndex], 0);
+      setPlayerFraction(this, nextUpIndex, 0);
 
       let index = fromIndex;
       for (let i = 0; i < animateCount; i++) {
-        let delay = (i - 1) * duration/2;
+        if (this._players && this._players[index]) {
+          console.log(`resetting player ${index}`);
+          this._players[index] = null;
+        } else {
+        }
+        let delay = startDelay + (i - 1) * duration/2;
         let endDelay = index === toIndex ?
           -duration/2 :   // Stop halfway through.
           0;              // Play full animation.
@@ -82,6 +101,11 @@ export default (base) => {
       this.resetItemPositions();
     }
 
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
+      this._showTransition = true;
+    }
+
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
       resetPlayers(this);
@@ -94,24 +118,13 @@ export default (base) => {
     set position(position) {
       if ('position' in base.prototype) { super.position = position; }
       let selectedIndex = this.selectedIndex;
-      if (selectedIndex < 0) {
-        return;
-      }
-      let indexBase = selectedIndex + Math.trunc(position);
-      let positionFraction = position - Math.trunc(position);
-      let items = this.items;
-      let itemCount = items.length;
-      // TODO: Handle case where there are fewer than 3 items.
-      for (let i = -1; i <= 1; i++) {
-        // We want
-        // position   fraction
-        // -1         0
-        // 0          .5
-        // 1          1
-        // We also need to offset relative to the selected index.
-        let fraction = (-i + positionFraction + 1) / 2;
-        let index = keepIndexWithinBounds(itemCount, indexBase + i);
-        setPlayerFraction(this, index, fraction);
+      console.log(`position ${position}, selectedIndex ${selectedIndex}`);
+      if (selectedIndex >= 0) {
+        if (this._showTransition && this._previousSelectedIndex != null) {
+          this.animateSelection(this._previousSelectedIndex, selectedIndex);
+        } else {
+          this.snapSelection(selectedIndex);
+        }
       }
     }
 
@@ -141,12 +154,38 @@ export default (base) => {
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       let index = this.items.indexOf(item);
-      if (this._previousSelectedIndex == null) {
-        this.resetItemPositions();
-      } else {
+      if (this._showTransition && this._previousSelectedIndex != null) {
         this.animateSelection(this._previousSelectedIndex, index);
+      } else {
+        this.resetItemPositions();
       }
       this._previousSelectedIndex = index;
+    }
+
+    // TODO: Make this a getter/setter property.
+    showTransition(show) {
+      if (super.showTransition) { super.showTransition(show); }
+      this._showTransition = show;
+    }
+
+    snapSelection(toIndex) {
+      let position = this.position;
+      let indexBase = toIndex + Math.trunc(position);
+      let positionFraction = position - Math.trunc(position);
+      let items = this.items;
+      let itemCount = items.length;
+      // TODO: Handle case where there are fewer than 3 items.
+      for (let i = -1; i <= 1; i++) {
+        // We want
+        // position   fraction
+        // -1         0
+        // 0          .5
+        // 1          1
+        // We also need to offset relative to the selected index.
+        let fraction = (-i + positionFraction + 1) / 2;
+        let index = keepIndexWithinBounds(itemCount, indexBase + i);
+        setPlayerFraction(this, index, fraction);
+      }
     }
   }
 
@@ -172,6 +211,21 @@ function getPlayer(element, index) {
   return player;
 }
 
+// Return a modification of the given animation, where the values in the first
+// key frame are replaced with the current values of the corresponding
+// properties on the indicated target.
+// function incrementalAnimation(animation, target) {
+//   let firstFrame = animation[0];
+//   let newFrame = {};
+//   let style = getComputedStyle(target);
+//   Object.keys(firstFrame).forEach(property => {
+//     newFrame[property] = style[property];
+//   });
+//   let newAnimation = animation.slice();
+//   newAnimation[0] = newFrame;
+//   return newAnimation;
+// }
+
 // Return the index, ensuring it stays between 0 and the given length.
 function keepIndexWithinBounds(length, index) {
   // Handle possibility of negative mod.
@@ -180,17 +234,17 @@ function keepIndexWithinBounds(length, index) {
 }
 
 function resetPlayers(element) {
+  console.log(`resetting players`);
   element._players = new Array(element.items.length);
 }
 
 // Pause the indicated player and have it show the animation at the given
 // fraction (between 0 and 1) of the way through the animation.
 function setPlayerFraction(element, index, fraction) {
+  console.log(`setting ${index} to ${fraction}`);
   let player = getPlayer(element, index);
   if (player) {
-    let duration = player.effect ?
-    player.effect.timing.duration :
-    player._effect._totalDuration;  // for Web Animations polyfill
+    let duration = element.animationDuration;
     player.currentTime = fraction * duration;
   }
 }
