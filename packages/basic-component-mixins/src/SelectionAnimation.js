@@ -121,26 +121,6 @@ export default (base) => {
       this.update(this.selectedIndex, position);
     }
 
-    // // Move items to their initial positions, based on their spatial relationship
-    // // to the selected item.
-    // resetItemPositions() {
-    //   let selectedIndex = this.selectedIndex;
-    //   let itemCount = this.items.length;
-    //   let allowWrap = this.selectionWraps;
-    //   this.items.forEach((item, index) => {
-    //     // We want to position items with respect to the selected item, so for
-    //     // each item we calculate how many steps it would take to get from the
-    //     // selected item to that item.
-    //     let steps = stepsToIndex(itemCount, allowWrap, selectedIndex, index);
-    //     let fraction = steps === 0 ?
-    //       0.5 :   // Halfway through animation, i.e., center stage.
-    //       steps > 0 ?
-    //         0:    // Offstage next
-    //         1;    // Offstage previous
-    //     setPlayerFraction(this, index, fraction);
-    //   });
-    // }
-
     get selectedItem() {
       return super.selectedItem;
     }
@@ -180,10 +160,6 @@ export default (base) => {
           item.style.display = 'none';
         }
       });
-      // for (let i = -1; i <= 1; i++) {
-      //   let index = keepIndexWithinBounds(itemCount, indexBase + i);
-      //   setPlayerFraction(this, index, fraction);
-      // }
     }
 
     update(selectedIndex=this.selectedIndex, selectionFraction=this.position) {
