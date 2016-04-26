@@ -15,10 +15,10 @@ export default (base) => {
         duration: duration,
         fill: 'both'
       };
-      item.animate(animation, animationOptions);
+      return item.animate(animation, animationOptions);
     }
 
-    animateSelection(fromIndex, toIndex, position=0) {
+    animateSelection(fromIndex, toIndex) {
 
       // if (this._players) {
       //   this._players.forEach((player, index) => {
@@ -28,54 +28,68 @@ export default (base) => {
       //   });
       // }
 
-      // Existing players will need to be recreated next time they're needed.
-      // resetPlayers(this);
-
       let items = this.items;
       let itemCount = items.length;
 
-      let { wholeFrom, fromFraction } = getNumericParts(itemCount, fromIndex);
-      let { wholeTo, toFraction } = getNumericParts(itemCount, toIndex);
+      let { whole: wholeFrom, fraction: fromFraction } = getNumericParts(itemCount, fromIndex);
+      let wholeTo = getNumericParts(itemCount, toIndex).whole;
 
       let steps = stepsToIndex(itemCount, this.selectionWraps, fromIndex, toIndex);
 
       // We'll need to animate one more item than the number of steps we take.
-      // That is, to go 1 step, we're animating 2 items: the one leaving the
-      // stage, and the one taking center stage.
-      let animateCount = Math.abs(steps) + 1 + Math.ceil(Math.abs(position));
+      // That is, to go 1 step, we're animating 3 items: the one leaving the
+      // stage, the one taking center stage, and the one preparing to enter the
+      // stage.
+      let animateCount = Math.ceil(Math.abs(steps)) + 1;
 
-      let forward = (steps - position) >= 0;
+      let forward = steps >= 0;
       let animation = forward ? this.animationForward : this.animationBackward;
       let indexStep = forward ? 1 : -1;
       let duration = this.animationDuration / animateCount;
 
       // Adjust starting point of animation based on whether we were in the
       // middle of a user-controlled drag.
-      let startDelay = position === 0 ?
+      let startDelay = fromFraction === 0 ?
         0 :
-        -Math.abs(position) * duration / 2;
+        -Math.abs(fromFraction) * duration / 2;
 
       // Ensure the next item in the direction we've been traveling is in
       // position to enter the stage from the anticipated direction. We do this
       // first, so that if the item ends up being animated, the animation will
       // take precedence.
-      let nextUpIndex = keepIndexWithinBounds(itemCount, fromIndex + indexStep * animateCount);
+      // let nextUpIndex = keepIndexWithinBounds(itemCount, wholeFrom + indexStep * animateCount);
       // setPlayerFraction(this, nextUpIndex, 0);
 
-      console.log(`animateSelection: steps ${steps}, animateCount ${animateCount}, fromIndex ${fromIndex}`);
-      let index = fromIndex;
-      for (let i = 0; i < animateCount; i++) {
-        if (this._players && this._players[index]) {
-          // console.log(`resetting player ${index}`);
-          this._players[index] = null;
+      let itemIndex = wholeFrom;
+      console.log(`animateSelection: steps ${steps}, animateCount ${animateCount}, from ${itemIndex}`);
+      for (let i = 0; i < itemCount; i++) {
+        itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
+        let item = items[itemIndex];
+        if (i < animateCount) {
+          showItem(item, true);
+          if (this._players && this._players[itemIndex]) {
+            // console.log(`resetting player ${itemIndex}`);
+            this._players[itemIndex] = null;
+          }
+          let delay = startDelay + (i - 1) * duration/2;
+          let endDelay = itemIndex === wholeTo ?
+            -duration/2 :   // Stop halfway through.
+            0;              // Play animation until end.
+          let player = this.animateItem(item, animation, duration, delay, endDelay);
+          if (i === animateCount - 1) {
+            // When last animation completes, show next item in the direction
+            // we're going.
+            let nextUpIndex = keepIndexWithinBounds(itemCount, itemIndex + indexStep);
+            let fraction = forward ? 0 : 1;
+            player.onfinish = event => {
+              setPlayerFraction(this, nextUpIndex, fraction);
+              showItem(items[nextUpIndex], true);
+            };
+          }
         } else {
+          showItem(item, false);
         }
-        let delay = startDelay + (i - 1) * duration/2;
-        let endDelay = index === toIndex ?
-          -duration/2 :   // Stop halfway through.
-          0;              // Play full animation.
-        this.animateItem(items[index], animation, duration, delay, endDelay);
-        index = keepIndexWithinBounds(itemCount, index + indexStep);
+        itemIndex += indexStep;
       }
     }
 
@@ -143,13 +157,13 @@ export default (base) => {
       let items = this.items;
       let itemCount = items.length;
       let allowWrap = this.selectionWraps;
-      let { wholeTo, toFraction } = getNumericParts(itemCount, toIndex);
+      let { whole: wholeTo, fraction: toFraction } = getNumericParts(itemCount, toIndex);
       // TODO: Handle case where there are fewer than 3 items.
       console.log(`showSelection: wholeTo ${wholeTo}, toFraction ${toFraction}`);
       items.forEach((item, itemIndex) => {
         let steps = stepsToIndex(itemCount, allowWrap, wholeTo, itemIndex);
         if (Math.abs(steps - Math.round(toFraction)) <= 1) {
-          item.style.display = '';
+          showItem(item, true);
           // We want
           // steps      animation fraction
           // -1         1
@@ -159,7 +173,7 @@ export default (base) => {
           let animationFraction = (1 - steps + toFraction) / 2;
           setPlayerFraction(this, itemIndex, animationFraction);
         } else {
-          item.style.display = 'none';
+          showItem(item, false);
         }
       });
     }
@@ -170,13 +184,14 @@ export default (base) => {
         return;
       }
       selectedIndex += selectionFraction;
-      // if (this._showTransition && this._previousSelectedIndex != null) {
-      //   console.log(`update: calling animateSelection`);
-      //   this.animateSelection(this._previousSelectedIndex, selectedIndex);
-      // } else {
-      //   console.log(`update: calling showSelection`);
+      if (this._showTransition && this._previousSelectedIndex != null &&
+          this._previousSelectedIndex !== selectedIndex) {
+        console.log(`update: calling animateSelection`);
+        this.animateSelection(this._previousSelectedIndex, selectedIndex);
+      } else {
+        console.log(`update: calling showSelection`);
         this.showSelection(selectedIndex);
-      // }
+      }
       this._previousSelectedIndex = selectedIndex;
     }
   }
@@ -248,6 +263,10 @@ function setPlayerFraction(element, index, fraction) {
   }
 }
 
+function showItem(item, flag) {
+  item.style.display = flag ? '' : 'none';
+}
+
 // Figure out how many steps it will take to go from fromIndex to toIndex.
 // To go from item 3 to item 4 is one step.
 // If wrapping is allowed, then going from the last item to the first will take
@@ -256,7 +275,7 @@ function setPlayerFraction(element, index, fraction) {
 function stepsToIndex(length, allowWrap, fromIndex, toIndex) {
   let steps = toIndex - fromIndex;
   let wrapSteps = length - Math.abs(steps);
-  if (allowWrap && wrapSteps === 1) {
+  if (allowWrap && wrapSteps <= 1) {
     // Special case
     steps = steps < 0 ?
       1 : // Wrap forward from last item to first.
