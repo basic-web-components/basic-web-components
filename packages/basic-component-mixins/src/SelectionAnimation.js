@@ -33,6 +33,10 @@ export default (base) => {
 
       let items = this.items;
       let itemCount = items.length;
+
+      let { wholeFrom, fromFraction } = getNumericParts(itemCount, fromIndex);
+      let { wholeTo, toFraction } = getNumericParts(itemCount, toIndex);
+
       let steps = stepsToIndex(itemCount, this.selectionWraps, fromIndex, toIndex);
 
       // We'll need to animate one more item than the number of steps we take.
@@ -139,14 +143,12 @@ export default (base) => {
       let items = this.items;
       let itemCount = items.length;
       let allowWrap = this.selectionWraps;
-      toIndex = keepIndexWithinBounds(itemCount, toIndex);
-      let indexBase = Math.trunc(toIndex);
-      let selectionFraction = toIndex - indexBase;
+      let { wholeTo, toFraction } = getNumericParts(itemCount, toIndex);
       // TODO: Handle case where there are fewer than 3 items.
-      console.log(`showSelection: indexBase ${indexBase}, selectionFraction ${selectionFraction}`);
-      items.forEach((item, index) => {
-        let steps = stepsToIndex(itemCount, allowWrap, indexBase, index);
-        if (Math.abs(steps - Math.round(selectionFraction)) <= 1) {
+      console.log(`showSelection: wholeTo ${wholeTo}, toFraction ${toFraction}`);
+      items.forEach((item, itemIndex) => {
+        let steps = stepsToIndex(itemCount, allowWrap, wholeTo, itemIndex);
+        if (Math.abs(steps - Math.round(toFraction)) <= 1) {
           item.style.display = '';
           // We want
           // steps      animation fraction
@@ -154,8 +156,8 @@ export default (base) => {
           // 0          .5
           // 1          0
           // We also want to factor in the selection fraction.
-          let animationFraction = (1 - steps + selectionFraction) / 2;
-          setPlayerFraction(this, index, animationFraction);
+          let animationFraction = (1 - steps + toFraction) / 2;
+          setPlayerFraction(this, itemIndex, animationFraction);
         } else {
           item.style.display = 'none';
         }
@@ -182,6 +184,13 @@ export default (base) => {
   return SelectionAnimation;
 };
 
+
+function getNumericParts(bound, n) {
+  n = keepIndexWithinBounds(bound, n);
+  let whole = Math.trunc(n);
+  let fraction = n - whole;
+  return { whole, fraction };
+}
 
 function getPlayer(element, index) {
   if (element._players == null) {

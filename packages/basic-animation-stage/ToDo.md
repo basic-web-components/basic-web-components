@@ -12,6 +12,8 @@
 * Rename position -> selectionFraction
   Push this change into SwipeDirection, TrackpadDirection, SlidingViewport,
   PageDots.
+* Allow component to indicate how many items should be visible on either side of
+  selection. Perhaps null or -1 means: show everything.
 
 
 Scenarios
