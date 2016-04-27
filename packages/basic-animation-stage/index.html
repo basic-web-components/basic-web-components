@@ -45,6 +45,43 @@
   </style>
 
   <script>
+  var animationEffects = {
+
+    // Simple crossfade.
+    fade: [
+      { opacity: 0 },
+      { opacity: 1 },
+      { opacity: 0 }
+    ],
+
+    // Reveal, as if sliding the top card off a deck of cards.
+    reveal: [
+      { transform: 'translateX(0%)', zIndex: 0 },
+      { transform: 'translateX(0%)', zIndex: 1 },
+      { transform: 'translateX(-100%)', zIndex: 2 }
+    ],
+
+    // Google Photos-style animation
+    revealWithFade: [
+      { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: 0 },
+      { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
+      { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: 2 }
+    ],
+
+    // Carousel variant with a bit of off stage elements showing
+    showAdjacent: [
+      { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
+      { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
+      { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
+    ],
+
+    // Standard slide, plus a gap between
+    slideWithGap: [
+      { transform: 'translateX(110%)' },
+      { transform: 'translateX(-110%)' }
+    ]
+  };
+
   var animationSelector;
   var stage;
 
@@ -60,49 +97,8 @@
   function updateAnimation() {
     var animation;
     resetStylesOnItems(stage);
-    switch (animationSelector.value) {
-
-      case 'fade':
-        // Simple crossfade.
-        animation = [
-          { opacity: 0 },
-          { opacity: 1 },
-          { opacity: 0 }
-        ];
-        break;
-
-      case 'reveal':
-        // Reveal, as if sliding the top card off a deck of cards.
-        animation = [
-          { transform: 'translateX(0%)', zIndex: 0 },
-          { transform: 'translateX(0%)', zIndex: 1 },
-          { transform: 'translateX(-100%)', zIndex: 2 }
-        ];
-        break;
-
-      case 'revealWithFade':
-        // Google Photos-style animation
-        animation = [
-          { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: 0 },
-          { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
-          { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: 2 }
-        ];
-        break;
-
-      case 'showAdjacent':
-        // Carousel variant with a bit of off stage elements showing
-        animation = [
-          { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
-          { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
-          { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
-        ];
-        break;
-
-      default:
-        animation = Object.getPrototypeOf(stage).animationForward;
-        break;
-    }
-    stage.animationForward = animation;
+    var defaultAnimation = Object.getPrototypeOf(stage).animationForward;
+    stage.animationForward = animationEffects[animationSelector.value] || defaultAnimation;
   }
 
   // Clear any animated properties left on child elements by previous effects.
@@ -130,7 +126,8 @@
 <body>
   <p>
     <select id="animationSelector">
-      <option value="default">Slide (default)</option>
+      <option value="slide">Slide (default)</option>
+      <option value="slideWithGap">Slide with gap</option>
       <option value="showAdjacent" selected>Show bit of adjacent items</option>
       <option value="fade">Fade</option>
       <option value="reveal">Reveal</option>

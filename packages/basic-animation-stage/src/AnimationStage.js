@@ -28,7 +28,7 @@ let base = ElementBase.compose(
 class AnimationStage extends base {
 
   get animationDuration() {
-    return 2000;
+    return 1000;
   }
 
   /**
