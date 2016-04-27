@@ -20,14 +20,6 @@ export default (base) => {
 
     animateSelection(fromIndex, toIndex) {
 
-      // if (this._players) {
-      //   this._players.forEach((player, index) => {
-      //     if (player) {
-      //       console.log(`player ${index} exists`);
-      //     }
-      //   });
-      // }
-
       let items = this.items;
       let itemCount = items.length;
 
@@ -37,9 +29,8 @@ export default (base) => {
       let steps = stepsToIndex(itemCount, this.selectionWraps, fromIndex, toIndex);
 
       // We'll need to animate one more item than the number of steps we take.
-      // That is, to go 1 step, we're animating 3 items: the one leaving the
-      // stage, the one taking center stage, and the one preparing to enter the
-      // stage.
+      // That is, to go 1 step, we're animating 2 items: the one leaving the
+      // stage, and the one taking center stage.
       let animateCount = Math.ceil(Math.abs(steps)) + 1;
 
       let forward = steps >= 0;
@@ -51,17 +42,16 @@ export default (base) => {
       // middle of a user-controlled drag.
       let startDelay = fromFraction === 0 ?
         0 :
-        -Math.abs(fromFraction) * duration / 2;
-
-      // Ensure the next item in the direction we've been traveling is in
-      // position to enter the stage from the anticipated direction. We do this
-      // first, so that if the item ends up being animated, the animation will
-      // take precedence.
-      // let nextUpIndex = keepIndexWithinBounds(itemCount, wholeFrom + indexStep * animateCount);
-      // setPlayerFraction(this, nextUpIndex, 0);
+        forward ?
+          -animationFractionFromSelectionFraction(fromFraction, duration) :
+          -animationFractionFromSelectionFraction(1 - fromFraction, duration);
 
       let itemIndex = wholeFrom;
-      console.log(`animateSelection: steps ${steps}, animateCount ${animateCount}, from ${itemIndex}`);
+      if (!forward && fromFraction > 0) {
+        itemIndex += 1;
+      }
+      console.log(`animateSelection: steps ${steps}, animateCount ${animateCount}, fromIndex ${fromIndex}`);
+      this._animatingSelection = true;
       for (let i = 0; i < itemCount; i++) {
         itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
         let item = items[itemIndex];
@@ -71,6 +61,8 @@ export default (base) => {
             // console.log(`resetting player ${itemIndex}`);
             this._players[itemIndex] = null;
           }
+          // Note that delay for first item will be negative. That will cause
+          // the animation to start halfway through, which is what we want.
           let delay = startDelay + (i - 1) * duration/2;
           let endDelay = itemIndex === wholeTo ?
             -duration/2 :   // Stop halfway through.
@@ -82,8 +74,10 @@ export default (base) => {
             let nextUpIndex = keepIndexWithinBounds(itemCount, itemIndex + indexStep);
             let fraction = forward ? 0 : 1;
             player.onfinish = event => {
+              console.log(`animation complete`);
               setPlayerFraction(this, nextUpIndex, fraction);
               showItem(items[nextUpIndex], true);
+              this._animatingSelection = false;
             };
           }
         } else {
@@ -136,6 +130,7 @@ export default (base) => {
     }
     set position(position) {
       if ('position' in base.prototype) { super.position = position; }
+      console.log(`set position ${position}`);
       this.update(this.selectedIndex, position);
     }
 
@@ -144,7 +139,8 @@ export default (base) => {
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      this.update();
+      console.log(`set selectedItem ${this.selectedIndex}`);
+      this.update(this.selectedIndex, 0);
     }
 
     // TODO: Make this a getter/setter property.
@@ -183,13 +179,19 @@ export default (base) => {
         // TODO: Handle no selection.
         return;
       }
+      if (selectionFraction === 0 && this._animatingSelection) {
+        // Currently animation to fraction 0. During that process, ignore
+        // attempts to update ot fraction 0.
+        console.log(`update: animating; ignored attempt to update to fraction 0.`)
+        return;
+      }
       selectedIndex += selectionFraction;
       if (this._showTransition && this._previousSelectedIndex != null &&
           this._previousSelectedIndex !== selectedIndex) {
-        console.log(`update: calling animateSelection`);
+        console.log(`update: calling animateSelection from ${this._previousSelectedIndex} to ${selectedIndex}`);
         this.animateSelection(this._previousSelectedIndex, selectedIndex);
       } else {
-        console.log(`update: calling showSelection`);
+        console.log(`update: calling showSelection to ${selectedIndex}`);
         this.showSelection(selectedIndex);
       }
       this._previousSelectedIndex = selectedIndex;
@@ -199,6 +201,10 @@ export default (base) => {
   return SelectionAnimation;
 };
 
+
+function animationFractionFromSelectionFraction(selectionFraction, duration) {
+  return selectionFraction * duration / 2;
+}
 
 function getNumericParts(bound, n) {
   n = keepIndexWithinBounds(bound, n);
@@ -255,7 +261,7 @@ function resetPlayers(element) {
 // Pause the indicated player and have it show the animation at the given
 // fraction (between 0 and 1) of the way through the animation.
 function setPlayerFraction(element, index, fraction) {
-  console.log(`setting ${index} to ${fraction}`);
+  // console.log(`setting ${index} to ${fraction}`);
   let player = getPlayer(element, index);
   if (player) {
     let duration = element.animationDuration;
