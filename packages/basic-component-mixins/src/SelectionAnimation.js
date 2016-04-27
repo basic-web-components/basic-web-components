@@ -55,29 +55,31 @@ export default (base) => {
       for (let i = 0; i < itemCount; i++) {
         itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
         let item = items[itemIndex];
+        if (this._players && this._players[itemIndex]) {
+          // console.log(`resetting player ${itemIndex}`);
+          this._players[itemIndex].cancel();
+          this._players[itemIndex] = null;
+        }
         if (i < animateCount) {
           showItem(item, true);
-          if (this._players && this._players[itemIndex]) {
-            // console.log(`resetting player ${itemIndex}`);
-            this._players[itemIndex] = null;
-          }
           // Note that delay for first item will be negative. That will cause
           // the animation to start halfway through, which is what we want.
           let delay = startDelay + (i - 1) * duration/2;
           let endDelay = itemIndex === wholeTo ?
             -duration/2 :   // Stop halfway through.
             0;              // Play animation until end.
-          let player = this.animateItem(item, animation, duration, delay, endDelay);
+          this._players[itemIndex] = this.animateItem(item, animation, duration, delay, endDelay);
           if (i === animateCount - 1) {
             // When last animation completes, show next item in the direction
             // we're going.
             let nextUpIndex = keepIndexWithinBounds(itemCount, itemIndex + indexStep);
             let fraction = forward ? 0 : 1;
-            player.onfinish = event => {
+            this._players[itemIndex].onfinish = event => {
               console.log(`animation complete`);
               setPlayerFraction(this, nextUpIndex, fraction);
               showItem(items[nextUpIndex], true);
               this._animatingSelection = false;
+              resetPlayers(this);
             };
           }
         } else {
@@ -179,18 +181,18 @@ export default (base) => {
         // TODO: Handle no selection.
         return;
       }
-      if (selectionFraction === 0 && this._animatingSelection) {
-        // Currently animation to fraction 0. During that process, ignore
-        // attempts to update ot fraction 0.
-        console.log(`update: animating; ignored attempt to update to fraction 0.`)
-        return;
-      }
       selectedIndex += selectionFraction;
       if (this._showTransition && this._previousSelectedIndex != null &&
           this._previousSelectedIndex !== selectedIndex) {
         console.log(`update: calling animateSelection from ${this._previousSelectedIndex} to ${selectedIndex}`);
         this.animateSelection(this._previousSelectedIndex, selectedIndex);
       } else {
+        if (selectionFraction === 0 && this._animatingSelection) {
+          // Currently animation to fraction 0. During that process, ignore
+          // attempts to update ot fraction 0.
+          console.log(`update: animating; ignored attempt to update to fraction 0.`);
+          return;
+        }
         console.log(`update: calling showSelection to ${selectedIndex}`);
         this.showSelection(selectedIndex);
       }
