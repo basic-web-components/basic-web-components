@@ -11,6 +11,7 @@
   selection. Perhaps null or -1 means: show everything.
 * Docs
 * Hide helper methods instead of exposing on class.
+* Edge/IE
 
 
 Scenarios

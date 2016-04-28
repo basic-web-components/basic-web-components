@@ -39,7 +39,6 @@ class AnimationStage extends base {
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
-    this.selectionWraps = true;
     this.selectionRequired = true;
   }
 
