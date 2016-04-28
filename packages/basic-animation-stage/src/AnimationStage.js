@@ -7,6 +7,7 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
+import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
 
 let base = ElementBase.compose(
@@ -17,7 +18,8 @@ let base = ElementBase.compose(
   ObserveContentChanges,
   SelectionAnimation,
   SelectionAriaActive,
-  SwipeDirection
+  SwipeDirection,
+  TrackpadDirection
 );
 
 /**
