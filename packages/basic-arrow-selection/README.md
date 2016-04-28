@@ -59,13 +59,15 @@ movement is detected. To cause the buttons to always appear, apply the
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
+    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
 
 <a name="ItemsSelection+applySelection"></a>
 ### arrowSelection.applySelection(item, selected)
@@ -213,10 +215,11 @@ selection.
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedIndex"></a>
 ### arrowSelection.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
+The index of the item which is currently selected.
 
-Setting the index to -1 deselects any current-selected item.
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="TargetSelection+selectedItem"></a>
@@ -241,6 +244,18 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection+selectionWraps"></a>
+### arrowSelection.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
+<a name="TargetSelection+selectionWraps"></a>
+### arrowSelection.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### arrowSelection.selectLast()
 Select the last item in the list.
@@ -269,17 +284,6 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
-<a name="ContentFirstChildTarget+target"></a>
-### arrowSelection.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
-<a name="TargetSelection+target"></a>
-### arrowSelection.target : <code>HTMLElement</code>
-Gets/sets the target element to which this component will delegate
-selection actions.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 ### arrowSelection.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
@@ -293,3 +297,14 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
+<a name="ContentFirstChildTarget+target"></a>
+### arrowSelection.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
+<a name="TargetSelection+target"></a>
+### arrowSelection.target : <code>HTMLElement</code>
+Gets/sets the target element to which this component will delegate
+selection actions.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.

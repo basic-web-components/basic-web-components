@@ -75,12 +75,14 @@ styling by setting the `generic` property/attribute to false.
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
     * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
     * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
+    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
@@ -238,20 +240,21 @@ Fires when the selectedItem property changes.
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
-<a name="ItemsSelection+selectedIndex"></a>
-### tabStrip.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-Setting the index to -1 deselects any current-selected item.
-
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="TargetSelection+selectedIndex"></a>
 ### tabStrip.selectedIndex : <code>number</code>
 The index of the item which is currently selected, or -1 if there is no
 selection.
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="ItemsSelection+selectedIndex"></a>
+### tabStrip.selectedIndex : <code>number</code>
+The index of the item which is currently selected.
+
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
+
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="TargetSelection+selectedItem"></a>
 ### tabStrip.selectedItem : <code>HTMLElement</code>
 The currently selected item, or null if there is no selection.
@@ -274,6 +277,18 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection+selectionWraps"></a>
+### tabStrip.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
+<a name="TargetSelection+selectionWraps"></a>
+### tabStrip.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### tabStrip.selectLast()
 Select the last item in the list.

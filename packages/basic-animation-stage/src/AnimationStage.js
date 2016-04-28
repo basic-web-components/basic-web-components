@@ -24,41 +24,16 @@ let base = ElementBase.compose(
  * Shows animated transitions entering and leaving the viewport.
  *
  * @extends ElementBase
+ * @mixes ContentAsItems
+ * @mixes DirectionSelection
+ * @mixes DistributedChildrenAsContent
+ * @mixes ItemsSelection
+ * @mixes ObserveContentChanges
+ * @mixes SelectionAnimation
+ * @mixes SelectionAriaActive
+ * @mixes SwipeDirection
  */
 class AnimationStage extends base {
-
-  get animationDuration() {
-    return 1000;
-  }
-
-  /**
-   * The animation that plays for an item when moving forward in the sequence.
-   *
-   * This is an array of CSS rules that will be applied. The format is the same
-   * as that for the
-   * [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/animation).
-   *
-   * The animation represents the state of the next item as it moves from
-   * completely unselected (off stage, usually right), to selected (center
-   * stage), to completely unselected (off stage, usually left). The center time
-   * of the animation should correspond to the item's quiscent selected state,
-   * typically in the center of the stage and at the item's largest size.
-   *
-   * The default forward animation is a smooth slide at full size from right to
-   * left.
-   *
-   * @type {cssRules[]}
-   */
-  get animationForward() {
-    // Standard animation slides left/right, keeps adjacent items out of view.
-    return super.animationForward || [
-      { transform: 'translateX(100%)' },
-      { transform: 'translateX(-100%)' }
-    ];
-  }
-  set animationForward(animation) {
-    if ('animationForward' in base.prototype) { super.animationForward = animation; }
-  }
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }

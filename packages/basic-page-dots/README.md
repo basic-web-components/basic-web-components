@@ -45,17 +45,19 @@ will select the corresponding list item.
     * [.position](#PageDots+position) : <code>number</code>
     * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
     * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
-    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
+    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
 
 <a name="ItemsSelection+applySelection"></a>
@@ -172,20 +174,21 @@ Fires when the selectedItem property changes.
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
+<a name="ItemsSelection+selectedIndex"></a>
+### pageDots.selectedIndex : <code>number</code>
+The index of the item which is currently selected.
+
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="TargetSelection+selectedIndex"></a>
 ### pageDots.selectedIndex : <code>number</code>
 The index of the item which is currently selected, or -1 if there is no
 selection.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="ItemsSelection+selectedIndex"></a>
-### pageDots.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-Setting the index to -1 deselects any current-selected item.
-
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedItem"></a>
 ### pageDots.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
@@ -208,6 +211,18 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection+selectionWraps"></a>
+### pageDots.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
+<a name="TargetSelection+selectionWraps"></a>
+### pageDots.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### pageDots.selectLast()
 Select the last item in the list.
@@ -223,6 +238,11 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ContentFirstChildTarget+target"></a>
+### pageDots.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 ### pageDots.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
@@ -236,11 +256,6 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
-<a name="ContentFirstChildTarget+target"></a>
-### pageDots.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
 <a name="TargetSelection+target"></a>
 ### pageDots.target : <code>HTMLElement</code>
 Gets/sets the target element to which this component will delegate

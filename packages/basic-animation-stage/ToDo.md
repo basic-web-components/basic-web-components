@@ -1,19 +1,16 @@
-* Update animateSelection to handle fractional parameters.
-  showSelection now handles fraction parameter; need to apply same idea to
-  animateSelection.
 * Once dust settles, need an edit pass to give functions better names, refactor
   if necessary, and add comments.
 * Ensure that selectionWraps=false works as expected, including dragging past
   ends of array.
 * Reconsider TargetSelection and updatePossibleNavigations/selectionWraps.
   Should be able to toggle ArrowSelection.selectionWraps and see buttons update
-* Use single forward animation
-  Rename animationForward -> selectionAnimation, remove animationBackward
 * Rename position -> selectionFraction
   Push this change into SwipeDirection, TrackpadDirection, SlidingViewport,
   PageDots.
 * Allow component to indicate how many items should be visible on either side of
   selection. Perhaps null or -1 means: show everything.
+* Docs
+* Hide helper methods instead of exposing on class.
 
 
 Scenarios

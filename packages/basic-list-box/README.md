@@ -58,8 +58,8 @@ The user can also select an item by typing the beginning of an item's text.
   
 
 * [ListBox](#ListBox) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
     * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
     * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -90,6 +90,7 @@ The user can also select an item by typing the beginning of an item's text.
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
     * [.selectItemWithTextPrefix(prefix)](#KeyboardPrefixSelection+selectItemWithTextPrefix)
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
@@ -97,20 +98,6 @@ The user can also select an item by typing the beginning of an item's text.
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.value](#ListBox+value) : <code>string</code>
     * ["value-changed"](#ListBox.event_value-changed)
-
-<a name="ItemsSelection+applySelection"></a>
-### listBox.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ContentAsItems+applySelection"></a>
 ### listBox.applySelection(item, selected)
@@ -126,6 +113,20 @@ is selected, and removed it if not selected.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
+
+<a name="ItemsSelection+applySelection"></a>
+### listBox.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ItemsSelection+canSelectNext"></a>
 ### listBox.canSelectNext : <code>boolean</code>
@@ -336,10 +337,11 @@ Fires when the selectedItem property changes.
 
 <a name="ItemsSelection+selectedIndex"></a>
 ### listBox.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
+The index of the item which is currently selected.
 
-Setting the index to -1 deselects any current-selected item.
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedItem"></a>
@@ -359,6 +361,12 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection+selectionWraps"></a>
+### listBox.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="KeyboardPrefixSelection+selectItemWithTextPrefix"></a>
 ### listBox.selectItemWithTextPrefix(prefix)
 Select the first item whose text content begins with the given prefix.

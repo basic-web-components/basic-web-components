@@ -45,7 +45,7 @@
   </style>
 
   <script>
-  var animationEffects = {
+  var effectKeyframes = {
 
     // Simple crossfade.
     fade: [
@@ -82,13 +82,13 @@
     ]
   };
 
-  var animationSelector;
+  var effectSelector;
   var stage;
 
   window.addEventListener('load', function() {
-    animationSelector = document.querySelector('#animationSelector');
+    effectSelector = document.querySelector('#effectSelector');
     stage = document.querySelector('#stage');
-    animationSelector.addEventListener('change', function() {
+    effectSelector.addEventListener('change', function() {
       updateAnimation();
     });
     updateAnimation();
@@ -97,8 +97,8 @@
   function updateAnimation() {
     var animation;
     resetStylesOnItems(stage);
-    var defaultAnimation = Object.getPrototypeOf(stage).animationForward;
-    stage.animationForward = animationEffects[animationSelector.value] || defaultAnimation;
+    var defaultKeyframes = Object.getPrototypeOf(stage).selectionAnimationKeyframes;
+    stage.selectionAnimationKeyframes = effectKeyframes[effectSelector.value] || defaultKeyframes;
   }
 
   // Clear any animated properties left on child elements by previous effects.
@@ -125,7 +125,7 @@
 
 <body>
   <p>
-    <select id="animationSelector">
+    <select id="effectSelector">
       <option value="slide">Slide (default)</option>
       <option value="slideWithGap">Slide with gap</option>
       <option value="showAdjacent" selected>Show bit of adjacent items</option>

@@ -34,6 +34,7 @@ ways to let the user know a given item is selected or not selected.
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
@@ -100,10 +101,11 @@ Fires when the selectedItem property changes.
 
 <a name="ItemsSelection+selectedIndex"></a>
 ### itemsSelection.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
+The index of the item which is currently selected.
 
-Setting the index to -1 deselects any current-selected item.
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
 
   **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
 <a name="ItemsSelection+selectedItem"></a>
@@ -123,6 +125,12 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
+<a name="ItemsSelection+selectionWraps"></a>
+### itemsSelection.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
+**Default**: <code>{false}</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### itemsSelection.selectLast()
 Select the last item in the list.

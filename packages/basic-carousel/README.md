@@ -121,8 +121,8 @@ using assistive technologies.
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
     * [.goLeft()](#SwipeDirection+goLeft)
-    * [.goLeft()](#TrackpadDirection+goLeft)
     * [.goLeft()](#KeyboardDirection+goLeft)
+    * [.goLeft()](#TrackpadDirection+goLeft)
     * [.goRight()](#TrackpadDirection+goRight)
     * [.goRight()](#KeyboardDirection+goRight)
     * [.goRight()](#SwipeDirection+goRight)
@@ -143,6 +143,7 @@ using assistive technologies.
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
@@ -240,18 +241,18 @@ Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-<a name="TrackpadDirection+goLeft"></a>
-### carousel.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="KeyboardDirection+goLeft"></a>
 ### carousel.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
+<a name="TrackpadDirection+goLeft"></a>
+### carousel.goLeft()
+Invoked when the user wants to go/navigate left.
+The default implementation of this method does nothing.
+
+  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="TrackpadDirection+goRight"></a>
 ### carousel.goRight()
 Invoked when the user wants to go/navigate right.
@@ -386,10 +387,11 @@ Fires when the selectedItem property changes.
 
 <a name="ItemsSelection+selectedIndex"></a>
 ### carousel.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
+The index of the item which is currently selected.
 
-Setting the index to -1 deselects any current-selected item.
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
 
   **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedItem"></a>
@@ -409,6 +411,12 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection+selectionWraps"></a>
+### carousel.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### carousel.selectLast()
 Select the last item in the list.

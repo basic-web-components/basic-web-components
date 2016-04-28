@@ -37,6 +37,7 @@ This component doesn't provide any UI for changing which mode is shown.
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
@@ -172,10 +173,11 @@ Fires when the selectedItem property changes.
 
 <a name="ItemsSelection+selectedIndex"></a>
 ### modes.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
+The index of the item which is currently selected.
 
-Setting the index to -1 deselects any current-selected item.
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
 
   **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedItem"></a>
@@ -195,6 +197,12 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ItemsSelection+selectionWraps"></a>
+### modes.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### modes.selectLast()
 Select the last item in the list.

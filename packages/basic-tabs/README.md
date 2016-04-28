@@ -35,10 +35,12 @@ Example:
     * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
     * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
+    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
@@ -125,17 +127,13 @@ selection.
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedIndex"></a>
 ### tabs.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
+The index of the item which is currently selected.
 
-Setting the index to -1 deselects any current-selected item.
+If `selectionWraps` is false, the index is -1 if there is no selection.
+In that case, setting the index to -1 will deselect any
+currently-selected item.
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="TargetSelection+selectedItem"></a>
-### tabs.selectedItem : <code>HTMLElement</code>
-The currently selected item, or null if there is no selection.
-
-  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedItem"></a>
 ### tabs.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
@@ -143,6 +141,11 @@ The currently selected item, or null if there is no selection.
 Setting this property to null deselects any currently-selected item.
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="TargetSelection+selectedItem"></a>
+### tabs.selectedItem : <code>HTMLElement</code>
+The currently selected item, or null if there is no selection.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="ItemsSelection+selectFirst"></a>
 ### tabs.selectFirst()
 Select the first item in the list.
@@ -153,6 +156,18 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="TargetSelection+selectionWraps"></a>
+### tabs.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
+<a name="ItemsSelection+selectionWraps"></a>
+### tabs.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### tabs.selectLast()
 Select the last item in the list.

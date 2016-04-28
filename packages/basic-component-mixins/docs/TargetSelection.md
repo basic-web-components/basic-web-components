@@ -33,6 +33,7 @@ basic-arrow-selection (above) does.
     * [.itemsChanged()](#TargetSelection+itemsChanged)
     * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
 
 <a name="TargetSelection+items"></a>
@@ -58,6 +59,12 @@ selection.
 The currently selected item, or null if there is no selection.
 
   **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>
+<a name="TargetSelection+selectionWraps"></a>
+### targetSelection.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>
+**Default**: <code>{false}</code>  
 <a name="TargetSelection+target"></a>
 ### targetSelection.target : <code>HTMLElement</code>
 Gets/sets the target element to which this component will delegate

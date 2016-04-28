@@ -4,19 +4,9 @@ export default (base) => {
   /**
    * Animates selection
    *
-   * Expects: selectedItem, animation, animationDuration properties
+   * Expects: selectedItem property.
    */
   class SelectionAnimation extends base {
-
-    animateItem(item, animation, duration, delay, endDelay) {
-      let animationOptions = {
-        delay: delay,
-        endDelay: endDelay || 0,
-        duration: duration,
-        fill: 'both'
-      };
-      return item.animate(animation, animationOptions);
-    }
 
     animateSelection(fromIndex, toIndex) {
 
@@ -34,9 +24,10 @@ export default (base) => {
       let animateCount = Math.ceil(Math.abs(steps)) + 1;
 
       let forward = steps >= 0;
-      let animation = forward ? this.animationForward : this.animationBackward;
+      let keyframes = this.selectionAnimationKeyframes;
+      let direction = forward ? 'normal': 'reverse';
       let indexStep = forward ? 1 : -1;
-      let duration = this.animationDuration / animateCount;
+      let duration = this.selectionAnimationDuration / animateCount;
 
       // Adjust starting point of animation based on whether we were in the
       // middle of a user-controlled drag.
@@ -68,7 +59,15 @@ export default (base) => {
           let endDelay = itemIndex === wholeTo ?
             -duration/2 :   // Stop halfway through.
             0;              // Play animation until end.
-          this._players[itemIndex] = this.animateItem(item, animation, duration, delay, endDelay);
+
+          this._players[itemIndex] = item.animate(keyframes, {
+            delay: delay,
+            direction: direction,
+            duration: duration,
+            endDelay: endDelay,
+            fill: 'both'
+          });
+
           if (i === animateCount - 1) {
             // When last animation completes, show next item in the direction
             // we're going.
@@ -87,33 +86,6 @@ export default (base) => {
         }
         itemIndex += indexStep;
       }
-    }
-
-    /**
-     * The animation that plays for an item when moving backward in the sequence.
-     *
-     * See the `animationForward` property for details.
-     *
-     * If no `animationBackward` property is defined, this animation will default
-     * to the reverse of the `animationForward` animation.
-     *
-     * @type {cssRules[]}
-     */
-    get animationBackward() {
-      return this._animationBackward || this.animationForward.slice().reverse();
-    }
-    set animationBackward(animation) {
-      this._animationBackward = animation;
-    }
-
-    get animationForward() {
-      return this._animationForward || super.animationForward;
-    }
-    set animationForward(animation) {
-      if ('animationForward' in base.prototype) { super.animationForward = animation; }
-      this._animationForward = animation;
-      resetPlayers(this);
-      this.update();
     }
 
     createdCallback() {
@@ -143,6 +115,62 @@ export default (base) => {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       console.log(`set selectedItem ${this.selectedIndex}`);
       this.update(this.selectedIndex, 0);
+    }
+
+    /**
+     * The duration of a selection animation in milliseconds.
+     *
+     * This measures the amount of time required for an item to move from
+     * completely unselected (offstage, usually right) to selected (center
+     * stage), to completely unselected (offstage, usually left).
+     *
+     * The default value is 1000 milliseconds (1 second).
+     *
+     * @type {integer}
+     * @default 1000
+     */
+    get selectionAnimationDuration() {
+      return this._selectionAnimationDuration || 1000;
+    }
+    set selectionAnimationDuration(value) {
+      if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
+      this._selectionAnimationDuration = value;
+    }
+
+    /**
+     * The keyframes that define an animation that plays for an item when moving
+     * forward in the sequence.
+     *
+     * This is an array of CSS rules that will be applied. These are used as
+     * [keyframes](http://w3c.github.io/web-animations/#keyframes-section)
+     * to animate the item with the
+     * [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/animation).
+     *
+     * The animation represents the state of the next item as it moves from
+     * completely unselected (offstage, usually right), to selected (center
+     * stage), to completely unselected (offstage, usually left). The center time
+     * of the animation should correspond to the item's quiscent selected state,
+     * typically in the center of the stage and at the item's largest size.
+     *
+     * The default forward animation is a smooth slide at full size from right to
+     * left.
+     *
+     * When moving the selection backward, this animation is played in reverse.
+     *
+     * @type {cssRules[]}
+     */
+    get selectionAnimationKeyframes() {
+      // Standard animation slides left/right, keeps adjacent items out of view.
+      return this._selectionAnimationKeyframes || [
+        { transform: 'translateX(100%)' },
+        { transform: 'translateX(-100%)' }
+      ];
+    }
+    set selectionAnimationKeyframes(value) {
+      if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
+      this._selectionAnimationKeyframes = value;
+      resetPlayers(this);
+      this.update();
     }
 
     // TODO: Make this a getter/setter property.
@@ -223,8 +251,8 @@ function getPlayer(element, index) {
   let player = element._players[index];
   if (!player) {
     let item = element.items[index];
-    player = item.animate(element.animationForward, {
-      duration: element.animationDuration,
+    player = item.animate(element.selectionAnimationKeyframes, {
+      duration: element.selectionAnimationDuration,
       fill: 'both'
     });
     player.pause();
@@ -232,21 +260,6 @@ function getPlayer(element, index) {
   }
   return player;
 }
-
-// Return a modification of the given animation, where the values in the first
-// key frame are replaced with the current values of the corresponding
-// properties on the indicated target.
-// function incrementalAnimation(animation, target) {
-//   let firstFrame = animation[0];
-//   let newFrame = {};
-//   let style = getComputedStyle(target);
-//   Object.keys(firstFrame).forEach(property => {
-//     newFrame[property] = style[property];
-//   });
-//   let newAnimation = animation.slice();
-//   newAnimation[0] = newFrame;
-//   return newAnimation;
-// }
 
 // Return the index, ensuring it stays between 0 and the given length.
 function keepIndexWithinBounds(length, index) {
@@ -266,7 +279,7 @@ function setPlayerFraction(element, index, fraction) {
   // console.log(`setting ${index} to ${fraction}`);
   let player = getPlayer(element, index);
   if (player) {
-    let duration = element.animationDuration;
+    let duration = element.selectionAnimationDuration;
     player.currentTime = fraction * duration;
   }
 }
