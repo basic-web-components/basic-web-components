@@ -21,3 +21,17 @@ Scenarios
 2. Animate on selectedIndex change. Complete any animation/swipe in progress.
 3. Swipe/drag. (Complete any animation in progress?)
 4. Swipe/drag that doesn't change selection, and just restores position=0.
+
+
+
+Current question: Should totalSteps be forced to an integer?
+
+total   steps   show?   total-steps   position
+1       0       true    1             1
+1       1       true    0             0
+1       2       false   -1            -1
+1       -1      false   2             2
+-1      0       true    -1            1
+-1      -1      true    0             0
+-1      -2      false   1             -1
+-1      1       false   -2            2

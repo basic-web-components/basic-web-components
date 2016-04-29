@@ -49,11 +49,9 @@ describe("SelectionAnimation mixin", () => {
     assert.deepEqual(fractions(-0.5), [ 0.25,  null,  null,  null,  0.75]);
   });
 
-  it("calculates animation timings between two selection indices", () => {
+  it("timings to animate selectNext from 0 to 1", () => {
     test.selectionWraps = false;
-    let timings = test._effectTimingsForSelectionAnimation.bind(test);
-    console.log(timings(0, 1));
-    assert.deepEqual(timings(0, 1), [
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(0, 1), [
       { duration: 500, direction: 'normal', fill: 'both', delay: -250, endDelay: 0 },
       { duration: 500, direction: 'normal', fill: 'both', delay: 0, endDelay: -250 },
       null,
@@ -61,5 +59,54 @@ describe("SelectionAnimation mixin", () => {
       null
     ]);
   });
+
+  it("timings to animate selection forward after releasing drag from 0.5 to 1", () => {
+    test.selectionWraps = false;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(0.5, 1), [
+      { duration: 500, direction: 'normal', fill: 'both', delay: -375, endDelay: 0 },
+      { duration: 500, direction: 'normal', fill: 'both', delay: -125, endDelay: -250 },
+      null,
+      null,
+      null
+    ]);
+  });
+
+    // assert.deepEqual(timings(0.5, 0), []);
+    // assert.deepEqual(timings(4.5, 4), []);
+
+  it("timings to animate direct forward jump of selection from 0 to 2", () => {
+    test.selectionWraps = false;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(0, 2), [
+      { duration: 250, direction: 'normal', fill: 'both', delay: -125, endDelay: 0 },
+      { duration: 250, direction: 'normal', fill: 'both', delay: 0, endDelay: 0 },
+      { duration: 250, direction: 'normal', fill: 'both', delay: 125, endDelay: -125 },
+      null,
+      null
+    ]);
+  });
+
+  it("timings to animate selectPrevious from 1 to 0", () => {
+    test.selectionWraps = false;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(1, 0), [
+      { duration: 500, direction: 'reverse', fill: 'both', delay: 0, endDelay: -250 },
+      { duration: 500, direction: 'reverse', fill: 'both', delay: -250, endDelay: 0 },
+      null,
+      null,
+      null
+    ]);
+  });
+
+  it("timings to animate selection forward after releasing drag from -0.5 to 0", () => {
+    test.selectionWraps = false;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(-0.5, 0), [
+      { duration: 500, direction: 'normal', fill: 'both', delay: -125, endDelay: -250 },
+      null,
+      null,
+      null,
+      null
+    ]);
+  });
+
+  // selectionDrags = true;
 
 });

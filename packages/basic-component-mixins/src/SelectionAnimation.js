@@ -49,56 +49,44 @@ export default (base) => {
 
       let { whole: wholeFrom, fraction: fromFraction } = getNumericParts(itemCount, fromIndex);
       let wholeTo = getNumericParts(itemCount, toIndex).whole;
-
-      let steps = stepsToIndex(itemCount, this.selectionWraps, fromIndex, toIndex);
-
-      // We'll need to animate one more item than the number of steps we take.
-      // That is, to go 1 step, we're animating 2 items: the one leaving the
-      // stage, and the one taking center stage.
-      let animateCount = Math.ceil(Math.abs(steps)) + 1;
-
-      let forward = steps >= 0;
+      let selectionWraps = this.selectionWraps;
+      let totalSteps = stepsToIndex(itemCount, selectionWraps, fromIndex, toIndex);
+      let forward = totalSteps >= 0;
       let direction = forward ? 'normal': 'reverse';
       let fill = 'both';
-      let indexStep = forward ? 1 : -1;
-      let duration = this.selectionAnimationDuration / animateCount;
-      let selectionWraps = this.selectionWraps;
+      let duration = this.selectionAnimationDuration / Math.abs(totalSteps);
 
       // Adjust starting point of animation based on whether we were in the
       // middle of a user-controlled drag.
-      let startDelay = fromFraction === 0 ?
+      let animationFraction = fromFraction === 0 ?
         0 :
         forward ?
-          -animationFractionFromSelectionFraction(fromFraction, duration) :
-          -animationFractionFromSelectionFraction(1 - fromFraction, duration);
+          animationFractionFromSelectionFraction(fromFraction, duration) :
+          animationFractionFromSelectionFraction(1 - fromFraction, duration);
+      let startDelay = -animationFraction;
 
-      let itemIndex = wholeFrom;
-      if (!forward && fromFraction > 0) {
-        itemIndex += 1;
-      }
-
-      let timings = new Array(itemCount);
-      for (let i = 0; i < itemCount; i++) {
-        let timing;
-        let animateItem = i < animateCount &&
-            (isItemIndexInBounds(this, itemIndex) || selectionWraps);
-        itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
-        if (animateItem) {
+      let timings = items.map((item, itemIndex) => {
+        let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toIndex);
+        // If we include this item in the staggered sequence of animations we're
+        // creating, where would the item appear in the sequence?
+        let positionInSequence = totalSteps - steps;
+        if (totalSteps < 0) {
+          positionInSequence = -positionInSequence;
+        }
+        // So, is this item really included in the sequence?
+        if (positionInSequence >= 0 && positionInSequence <= Math.abs(totalSteps)) {
           // Note that delay for first item will be negative. That will cause
           // the animation to start halfway through, which is what we want.
-          let delay = startDelay + (i - 1) * duration/2;
+          let delay = startDelay + (positionInSequence - 1) * duration/2;
           let endDelay = itemIndex === wholeTo ?
-          -duration/2 :   // Stop halfway through.
-          0;              // Play animation until end.
-
-          timing = { duration, direction, fill, delay, endDelay };
+            -duration/2 :   // Stop halfway through.
+            0;              // Play animation until end.
+          return { duration, direction, fill, delay, endDelay };
         } else {
-          timing = null;
+          return null;
         }
-        timings[itemIndex] = timing;
-        itemIndex += indexStep;
-      }
-
+      });
+      console.log(timings);
       return timings;
     }
 
@@ -134,17 +122,16 @@ export default (base) => {
     /**
      * The duration of a selection animation in milliseconds.
      *
-     * This measures the amount of time required for an item to move from
-     * completely unselected (offstage, usually right) to selected (center
-     * stage), to completely unselected (offstage, usually left).
+     * This measures the amount of time required for an item to move one step
+     * from unselected to selected or vice versa.
      *
-     * The default value is 1000 milliseconds (1 second).
+     * The default value is 500 milliseconds (half a second).
      *
      * @type {integer}
-     * @default 1000
+     * @default 500
      */
     get selectionAnimationDuration() {
-      return this._selectionAnimationDuration || 1000;
+      return this._selectionAnimationDuration || 500;
     }
     set selectionAnimationDuration(value) {
       if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
@@ -249,8 +236,8 @@ export default (base) => {
       let { whole: wholeIndex, fraction: indexFraction } = getNumericParts(itemCount, selectionIndex);
       return items.map((item, itemIndex) => {
         let steps = stepsToIndex(itemCount, true, wholeIndex, itemIndex);
-        let isOneStepAway = Math.abs(steps - Math.round(indexFraction)) <= 1;
-        if (isOneStepAway &&
+        let oneStepOrLessAway = Math.abs(steps - Math.round(indexFraction)) <= 1;
+        if (oneStepOrLessAway &&
             (selectionWraps || isItemIndexInBounds(this, selectionIndex + steps))) {
           // We want:
           // steps      animation fraction
