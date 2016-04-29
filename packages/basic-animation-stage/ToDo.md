@@ -12,6 +12,8 @@
 * Docs
 * Hide helper methods instead of exposing on class.
 * Edge/IE
+* Damping
+* Redefine/recalculate selectionAnimationDuration to match reality.
 
 
 Scenarios

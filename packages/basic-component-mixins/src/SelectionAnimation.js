@@ -10,9 +10,56 @@ export default (base) => {
 
     animateSelection(fromIndex, toIndex) {
 
+      console.log(`animateSelection: from ${fromIndex} to ${toIndex}`);
       resetAnimations(this);
-
       let items = this.items;
+      let keyframes = this.selectionAnimationKeyframes;
+      this._animatingSelection = true;
+      let timings = this._effectTimingsForSelectionAnimation(fromIndex, toIndex);
+      let lastAnimationDetails;
+
+      timings.forEach((timing, index) => {
+        let item = items[index];
+        if (timing) {
+          showItem(item, true);
+          let animation = item.animate(keyframes, timing);
+
+          // Figure out whether this animation will be the last one to end
+          // (possibly concurrent with another animation).
+          let endTime = timing.delay + timing.duration + timing.endDelay;
+          if (lastAnimationDetails == null || endTime > lastAnimationDetails.endTime) {
+            lastAnimationDetails = { animation, endTime, timing };
+          }
+        } else {
+          showItem(item, false);
+        }
+      });
+
+      if (lastAnimationDetails) {
+        // When the last animation completes, show the next item in the
+        // direction we're going. This waiting is a hack to avoid having static
+        // items higher in the natural z-order obscure items during animation.
+        let forward = lastAnimationDetails.timing.direction === 'normal';
+        let nextUpIndex = getNumericParts(items.length, toIndex).whole + (forward ? 1 : - 1);
+        if (isItemIndexInBounds(this, nextUpIndex) || this.selectionWraps) {
+          nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
+          let nextUpItem = items[nextUpIndex];
+          let animationFraction = forward ? 0 : 1;
+          lastAnimationDetails.animation.onfinish = event => {
+            console.log(`animation complete`);
+            setAnimationFraction(this, nextUpIndex, animationFraction);
+            showItem(nextUpItem, true);
+            this._animatingSelection = false;
+          };
+        }
+      }
+    }
+
+    _effectTimingsForSelectionAnimation(fromIndex, toIndex) {
+      let items = this.items;
+      if (!items) {
+        return;
+      }
       let itemCount = items.length;
 
       let { whole: wholeFrom, fraction: fromFraction } = getNumericParts(itemCount, fromIndex);
@@ -26,8 +73,8 @@ export default (base) => {
       let animateCount = Math.ceil(Math.abs(steps)) + 1;
 
       let forward = steps >= 0;
-      let keyframes = this.selectionAnimationKeyframes;
       let direction = forward ? 'normal': 'reverse';
+      let fill = 'both';
       let indexStep = forward ? 1 : -1;
       let duration = this.selectionAnimationDuration / animateCount;
       let selectionWraps = this.selectionWraps;
@@ -44,54 +91,30 @@ export default (base) => {
       if (!forward && fromFraction > 0) {
         itemIndex += 1;
       }
-      console.log(`animateSelection: steps ${steps}, animateCount ${animateCount}, fromIndex ${fromIndex}`);
-      this._animatingSelection = true;
-      // for (let i = 0; i < itemCount; i++) {
-      this.items.forEach((item, itemIndex) => {
-        // let animateItem = i < animateCount &&
-        //     (isItemIndexInBounds(this, itemIndex) || selectionWraps);
-        // itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
-        // let item = items[itemIndex];
-        let timing = this._itemAnimationEffectTimingToSelectionIndex(itemIndex, toIndex);
-        // if (animateItem) {
-        if (timing) {
-          showItem(item, true);
+
+      let timings = new Array(itemCount);
+      for (let i = 0; i < itemCount; i++) {
+        let timing;
+        let animateItem = i < animateCount &&
+            (isItemIndexInBounds(this, itemIndex) || selectionWraps);
+        itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
+        if (animateItem) {
           // Note that delay for first item will be negative. That will cause
           // the animation to start halfway through, which is what we want.
-          // let delay = startDelay + (i - 1) * duration/2;
-          // let endDelay = itemIndex === wholeTo ?
-          //   -duration/2 :   // Stop halfway through.
-          //   0;              // Play animation until end.
-          timing.delay = startDelay + (i - 1) * duration/2;
-          timing.endDelay = itemIndex === wholeTo ?
-            -duration/2 :   // Stop halfway through.
-            0;              // Play animation until end.
+          let delay = startDelay + (i - 1) * duration/2;
+          let endDelay = itemIndex === wholeTo ?
+          -duration/2 :   // Stop halfway through.
+          0;              // Play animation until end.
 
-          this._animations[itemIndex] = item.animate(keyframes, timing);
-
-          // if (i === animateCount - 1) {
-          //   // Last item to animate. When the animation completes, show next
-          //   // item in the direction we're going. This waiting is a hack to
-          //   // avoid having static items higher in the natural z-order obscure
-          //   // items during animation.
-          //   let nextUpIndex = itemIndex + indexStep;
-          //   if (isItemIndexInBounds(this, nextUpIndex) || selectionWraps) {
-          //     nextUpIndex = keepIndexWithinBounds(itemCount, nextUpIndex);
-          //     let fraction = forward ? 0 : 1;
-          //     this._animations[itemIndex].onfinish = event => {
-          //       console.log(`animation complete`);
-          //       setAnimationFraction(this, nextUpIndex, fraction);
-          //       showItem(items[nextUpIndex], true);
-          //       this._animatingSelection = false;
-          //       resetAnimations(this);
-          //     };
-          //   }
-          // }
+          timing = { duration, direction, fill, delay, endDelay };
         } else {
-          showItem(item, false);
+          timing = null;
         }
+        timings[itemIndex] = timing;
         itemIndex += indexStep;
-      });
+      }
+
+      return timings;
     }
 
     createdCallback() {
@@ -207,6 +230,29 @@ export default (base) => {
       });
     }
 
+    update(selectedIndex=this.selectedIndex, selectionFraction=this.position) {
+      if (selectedIndex < 0) {
+        // TODO: Handle no selection.
+        return;
+      }
+      selectedIndex += selectionFraction;
+      if (this._showTransition && this._previousSelectedIndex != null &&
+          this._previousSelectedIndex !== selectedIndex) {
+        console.log(`update: calling animateSelection from ${this._previousSelectedIndex} to ${selectedIndex}`);
+        this.animateSelection(this._previousSelectedIndex, selectedIndex);
+      } else {
+        if (selectionFraction === 0 && this._animatingSelection) {
+          // Currently animation to fraction 0. During that process, ignore
+          // attempts to update to fraction 0.
+          console.log(`update: animating; ignored attempt to update to fraction 0.`);
+          return;
+        }
+        console.log(`update: calling showSelection to ${selectedIndex}`);
+        this.showSelection(selectedIndex);
+      }
+      this._previousSelectedIndex = selectedIndex;
+    }
+
     // TODO: Handle case where there are fewer than 3 items.
     _animationFractionsAtSelectionIndex(selectionIndex) {
       let items = this.items;
@@ -233,31 +279,6 @@ export default (base) => {
           return null;
         }
       });
-    }
-
-    _animationEffectTimingsForAnimations(itemIndex, fromIndex, toIndex) {}
-
-    update(selectedIndex=this.selectedIndex, selectionFraction=this.position) {
-      if (selectedIndex < 0) {
-        // TODO: Handle no selection.
-        return;
-      }
-      selectedIndex += selectionFraction;
-      // if (this._showTransition && this._previousSelectedIndex != null &&
-      //     this._previousSelectedIndex !== selectedIndex) {
-      //   console.log(`update: calling animateSelection from ${this._previousSelectedIndex} to ${selectedIndex}`);
-      //   this.animateSelection(this._previousSelectedIndex, selectedIndex);
-      // } else {
-        if (selectionFraction === 0 && this._animatingSelection) {
-          // Currently animation to fraction 0. During that process, ignore
-          // attempts to update to fraction 0.
-          console.log(`update: animating; ignored attempt to update to fraction 0.`);
-          return;
-        }
-        console.log(`update: calling showSelection to ${selectedIndex}`);
-        this.showSelection(selectedIndex);
-      // }
-      this._previousSelectedIndex = selectedIndex;
     }
   }
 
