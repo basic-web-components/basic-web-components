@@ -36,22 +36,7 @@ export default (base) => {
       });
 
       if (lastAnimationDetails) {
-        // When the last animation completes, show the next item in the
-        // direction we're going. This waiting is a hack to avoid having static
-        // items higher in the natural z-order obscure items during animation.
-        let forward = lastAnimationDetails.timing.direction === 'normal';
-        let nextUpIndex = getNumericParts(items.length, toIndex).whole + (forward ? 1 : - 1);
-        if (isItemIndexInBounds(this, nextUpIndex) || this.selectionWraps) {
-          nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
-          let nextUpItem = items[nextUpIndex];
-          let animationFraction = forward ? 0 : 1;
-          lastAnimationDetails.animation.onfinish = event => {
-            console.log(`animation complete`);
-            setAnimationFraction(this, nextUpIndex, animationFraction);
-            showItem(nextUpItem, true);
-            this._animatingSelection = false;
-          };
-        }
+        displayNextItemWhenAnimationCompletes(this, lastAnimationDetails, toIndex);
       }
     }
 
@@ -288,6 +273,26 @@ export default (base) => {
 
 function animationFractionFromSelectionFraction(selectionFraction, duration) {
   return selectionFraction * duration / 2;
+}
+
+function displayNextItemWhenAnimationCompletes(element, animationDetails, toIndex) {
+  // When the last animation completes, show the next item in the
+  // direction we're going. This waiting is a hack to avoid having static
+  // items higher in the natural z-order obscure items during animation.
+  let forward = animationDetails.timing.direction === 'normal';
+  let items = element.items;
+  let nextUpIndex = getNumericParts(items.length, toIndex).whole + (forward ? 1 : - 1);
+  if (isItemIndexInBounds(element, nextUpIndex) || element.selectionWraps) {
+    nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
+    let nextUpItem = items[nextUpIndex];
+    let animationFraction = forward ? 0 : 1;
+    animationDetails.animation.onfinish = event => {
+      console.log(`animation complete`);
+      setAnimationFraction(element, nextUpIndex, animationFraction);
+      showItem(nextUpItem, true);
+      element._animatingSelection = false;
+    };
+  }
 }
 
 function getNumericParts(bound, n) {
