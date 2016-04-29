@@ -10,7 +10,7 @@ export default (base) => {
 
     animateSelection(fromIndex, toIndex) {
 
-      resetPlayers(this);
+      resetAnimations(this);
 
       let items = this.items;
       let itemCount = items.length;
@@ -46,56 +46,52 @@ export default (base) => {
       }
       console.log(`animateSelection: steps ${steps}, animateCount ${animateCount}, fromIndex ${fromIndex}`);
       this._animatingSelection = true;
-      for (let i = 0; i < itemCount; i++) {
-        let animateItem = i < animateCount &&
-            (isIndexInBounds(this, itemIndex) || selectionWraps);
-        itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
-        let item = items[itemIndex];
-        if (animateItem) {
-          // if (this._players && this._players[itemIndex]) {
-          //   // console.log(`resetting player ${itemIndex}`);
-          //   this._players[itemIndex].cancel();
-          //   this._players[itemIndex] = null;
-          // }
+      // for (let i = 0; i < itemCount; i++) {
+      this.items.forEach((item, itemIndex) => {
+        // let animateItem = i < animateCount &&
+        //     (isItemIndexInBounds(this, itemIndex) || selectionWraps);
+        // itemIndex = keepIndexWithinBounds(itemCount, itemIndex);
+        // let item = items[itemIndex];
+        let timing = this._itemAnimationEffectTimingToSelectionIndex(itemIndex, toIndex);
+        // if (animateItem) {
+        if (timing) {
           showItem(item, true);
           // Note that delay for first item will be negative. That will cause
           // the animation to start halfway through, which is what we want.
-          let delay = startDelay + (i - 1) * duration/2;
-          let endDelay = itemIndex === wholeTo ?
+          // let delay = startDelay + (i - 1) * duration/2;
+          // let endDelay = itemIndex === wholeTo ?
+          //   -duration/2 :   // Stop halfway through.
+          //   0;              // Play animation until end.
+          timing.delay = startDelay + (i - 1) * duration/2;
+          timing.endDelay = itemIndex === wholeTo ?
             -duration/2 :   // Stop halfway through.
             0;              // Play animation until end.
 
-          this._players[itemIndex] = item.animate(keyframes, {
-            delay: delay,
-            direction: direction,
-            duration: duration,
-            endDelay: endDelay,
-            fill: 'both'
-          });
+          this._animations[itemIndex] = item.animate(keyframes, timing);
 
-          if (i === animateCount - 1) {
-            // Last item to animate. When the animation completes, show next
-            // item in the direction we're going. This waiting is a hack to
-            // avoid having static items higher in the natural z-order obscure
-            // items during animation.
-            let nextUpIndex = itemIndex + indexStep;
-            if (isIndexInBounds(this, nextUpIndex) || selectionWraps) {
-              nextUpIndex = keepIndexWithinBounds(itemCount, nextUpIndex);
-              let fraction = forward ? 0 : 1;
-              this._players[itemIndex].onfinish = event => {
-                console.log(`animation complete`);
-                setPlayerFraction(this, nextUpIndex, fraction);
-                showItem(items[nextUpIndex], true);
-                this._animatingSelection = false;
-                resetPlayers(this);
-              };
-            }
-          }
+          // if (i === animateCount - 1) {
+          //   // Last item to animate. When the animation completes, show next
+          //   // item in the direction we're going. This waiting is a hack to
+          //   // avoid having static items higher in the natural z-order obscure
+          //   // items during animation.
+          //   let nextUpIndex = itemIndex + indexStep;
+          //   if (isItemIndexInBounds(this, nextUpIndex) || selectionWraps) {
+          //     nextUpIndex = keepIndexWithinBounds(itemCount, nextUpIndex);
+          //     let fraction = forward ? 0 : 1;
+          //     this._animations[itemIndex].onfinish = event => {
+          //       console.log(`animation complete`);
+          //       setAnimationFraction(this, nextUpIndex, fraction);
+          //       showItem(items[nextUpIndex], true);
+          //       this._animatingSelection = false;
+          //       resetAnimations(this);
+          //     };
+          //   }
+          // }
         } else {
           showItem(item, false);
         }
         itemIndex += indexStep;
-      }
+      });
     }
 
     createdCallback() {
@@ -105,7 +101,7 @@ export default (base) => {
 
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
-      resetPlayers(this);
+      resetAnimations(this);
       this.update();
     }
 
@@ -179,7 +175,7 @@ export default (base) => {
     set selectionAnimationKeyframes(value) {
       if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
       this._selectionAnimationKeyframes = value;
-      resetPlayers(this);
+      resetAnimations(this);
       this.update();
     }
 
@@ -188,7 +184,7 @@ export default (base) => {
     }
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
-      resetPlayers(this);
+      resetAnimations(this);
       this.update();
     }
 
@@ -199,31 +195,47 @@ export default (base) => {
     }
 
     showSelection(toIndex) {
-      let items = this.items;
-      let itemCount = items.length;
-      let selectionWraps = this.selectionWraps;
-      let { whole: wholeTo, fraction: toFraction } = getNumericParts(itemCount, toIndex);
-      // TODO: Handle case where there are fewer than 3 items.
-      console.log(`showSelection: wholeTo ${wholeTo}, toFraction ${toFraction}`);
-      items.forEach((item, itemIndex) => {
-        let steps = stepsToIndex(itemCount, true, wholeTo, itemIndex);
-        let isOneStepAway = Math.abs(steps - Math.round(toFraction)) <= 1;
-        if (isOneStepAway &&
-            (selectionWraps || isIndexInBounds(this, toIndex + steps))) {
+      let animationFractions = this._animationFractionsAtSelectionIndex(toIndex);
+      animationFractions.map((animationFraction, index) => {
+        let item = this.items[index];
+        if (animationFraction != null) {
           showItem(item, true);
-          // We want
-          // steps      animation fraction
-          // -1         1
-          // 0          .5
-          // 1          0
-          // We also want to factor in the selection fraction.
-          let animationFraction = (1 - steps + toFraction) / 2;
-          setPlayerFraction(this, itemIndex, animationFraction);
+          setAnimationFraction(this, index, animationFraction);
         } else {
           showItem(item, false);
         }
       });
     }
+
+    // TODO: Handle case where there are fewer than 3 items.
+    _animationFractionsAtSelectionIndex(selectionIndex) {
+      let items = this.items;
+      if (!items) {
+        return;
+      }
+      let itemCount = items.length;
+      let selectionWraps = this.selectionWraps;
+      let { whole: wholeIndex, fraction: indexFraction } = getNumericParts(itemCount, selectionIndex);
+      return items.map((item, itemIndex) => {
+        let steps = stepsToIndex(itemCount, true, wholeIndex, itemIndex);
+        let isOneStepAway = Math.abs(steps - Math.round(indexFraction)) <= 1;
+        if (isOneStepAway &&
+            (selectionWraps || isItemIndexInBounds(this, selectionIndex + steps))) {
+          // We want:
+          // steps      animation fraction
+          // -1         1     (stage right)
+          //  0         0.5   (center stage)
+          //  1         0     (stage left)
+          // We also want to factor in the selection fraction.
+          let animationFraction = (1 - steps + indexFraction) / 2;
+          return animationFraction;
+        } else {
+          return null;
+        }
+      });
+    }
+
+    _animationEffectTimingsForAnimations(itemIndex, fromIndex, toIndex) {}
 
     update(selectedIndex=this.selectedIndex, selectionFraction=this.position) {
       if (selectedIndex < 0) {
@@ -231,11 +243,11 @@ export default (base) => {
         return;
       }
       selectedIndex += selectionFraction;
-      if (this._showTransition && this._previousSelectedIndex != null &&
-          this._previousSelectedIndex !== selectedIndex) {
-        console.log(`update: calling animateSelection from ${this._previousSelectedIndex} to ${selectedIndex}`);
-        this.animateSelection(this._previousSelectedIndex, selectedIndex);
-      } else {
+      // if (this._showTransition && this._previousSelectedIndex != null &&
+      //     this._previousSelectedIndex !== selectedIndex) {
+      //   console.log(`update: calling animateSelection from ${this._previousSelectedIndex} to ${selectedIndex}`);
+      //   this.animateSelection(this._previousSelectedIndex, selectedIndex);
+      // } else {
         if (selectionFraction === 0 && this._animatingSelection) {
           // Currently animation to fraction 0. During that process, ignore
           // attempts to update to fraction 0.
@@ -244,7 +256,7 @@ export default (base) => {
         }
         console.log(`update: calling showSelection to ${selectedIndex}`);
         this.showSelection(selectedIndex);
-      }
+      // }
       this._previousSelectedIndex = selectedIndex;
     }
   }
@@ -264,25 +276,25 @@ function getNumericParts(bound, n) {
   return { whole, fraction };
 }
 
-function getPlayer(element, index) {
-  if (element._players == null) {
+function getAnimationForItemIndex(element, index) {
+  if (element._animations == null) {
     // Not ready yet;
     return null;
   }
-  let player = element._players[index];
-  if (!player) {
+  let animation = element._animations[index];
+  if (!animation) {
     let item = element.items[index];
-    player = item.animate(element.selectionAnimationKeyframes, {
+    animation = item.animate(element.selectionAnimationKeyframes, {
       duration: element.selectionAnimationDuration,
       fill: 'both'
     });
-    player.pause();
-    element._players[index] = player;
+    animation.pause();
+    element._animations[index] = animation;
   }
-  return player;
+  return animation;
 }
 
-function isIndexInBounds(element, index) {
+function isItemIndexInBounds(element, index) {
   return index >= 0 && element.items && index < element.items.length;
 }
 
@@ -293,22 +305,21 @@ function keepIndexWithinBounds(length, index) {
   return ((index % length) + length) % length;
 }
 
-function resetPlayers(element) {
-  console.log(`resetting players`);
+function resetAnimations(element) {
+  console.log(`resetting animations`);
   // Cancel any pending animations.
-  // let animations = element._players || [];
+  // let animations = element._animations || [];
   // animations.forEach(animation => animation && animation.cancel() );
-  element._players = new Array(element.items.length);
+  element._animations = new Array(element.items.length);
 }
 
-// Pause the indicated player and have it show the animation at the given
+// Pause the indicated animation and have it show the animation at the given
 // fraction (between 0 and 1) of the way through the animation.
-function setPlayerFraction(element, index, fraction) {
-  // console.log(`setting ${index} to ${fraction}`);
-  let player = getPlayer(element, index);
-  if (player) {
+function setAnimationFraction(element, itemIndex, fraction) {
+  let animation = getAnimationForItemIndex(element, itemIndex);
+  if (animation) {
     let duration = element.selectionAnimationDuration;
-    player.currentTime = fraction * duration;
+    animation.currentTime = fraction * duration;
   }
 }
 
