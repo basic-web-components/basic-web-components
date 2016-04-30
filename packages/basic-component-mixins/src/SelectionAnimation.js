@@ -41,29 +41,19 @@ export default (base) => {
     }
 
     _effectTimingsForSelectionAnimation(fromIndex, toIndex) {
+
       let items = this.items;
       if (!items) {
         return;
       }
       let itemCount = items.length;
-
-      let { whole: wholeFrom, fraction: fromFraction } = getNumericParts(itemCount, fromIndex);
       let wholeTo = getNumericParts(itemCount, toIndex).whole;
       let selectionWraps = this.selectionWraps;
       let totalSteps = stepsToIndex(itemCount, selectionWraps, fromIndex, toIndex);
-      let forward = totalSteps >= 0;
-      let direction = forward ? 'normal': 'reverse';
+      let direction = totalSteps >= 0 ? 'normal': 'reverse';
       let fill = 'both';
-      let duration = this.selectionAnimationDuration / Math.abs(totalSteps);
-
-      // Adjust starting point of animation based on whether we were in the
-      // middle of a user-controlled drag.
-      let animationFraction = fromFraction === 0 ?
-        0 :
-        forward ?
-          animationFractionFromSelectionFraction(fromFraction, duration) :
-          animationFractionFromSelectionFraction(1 - fromFraction, duration);
-      let startDelay = -animationFraction;
+      let totalDuration = this.selectionAnimationDuration;
+      let stepDuration = totalDuration * 2 / Math.ceil(Math.abs(totalSteps));
 
       let timings = items.map((item, itemIndex) => {
         let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toIndex);
@@ -74,18 +64,19 @@ export default (base) => {
           positionInSequence = -positionInSequence;
         }
         // So, is this item really included in the sequence?
-        if (positionInSequence >= 0 && positionInSequence <= Math.abs(totalSteps)) {
+        if (Math.ceil(positionInSequence) >= 0 && positionInSequence <= Math.abs(totalSteps)) {
           // Note that delay for first item will be negative. That will cause
           // the animation to start halfway through, which is what we want.
-          let delay = startDelay + (positionInSequence - 1) * duration/2;
+          let delay = stepDuration * (positionInSequence - 1)/2;
           let endDelay = itemIndex === wholeTo ?
-            -duration/2 :   // Stop halfway through.
+            -stepDuration/2 :   // Stop halfway through.
             0;              // Play animation until end.
-          return { duration, direction, fill, delay, endDelay };
+          return { duration: stepDuration, direction, fill, delay, endDelay };
         } else {
           return null;
         }
       });
+      
       console.log(timings);
       return timings;
     }
