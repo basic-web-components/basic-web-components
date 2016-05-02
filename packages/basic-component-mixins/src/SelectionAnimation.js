@@ -113,16 +113,17 @@ export default (base) => {
     /**
      * The duration of a selection animation in milliseconds.
      *
-     * This measures the amount of time required for an item to move one step
-     * from unselected to selected or vice versa.
+     * This measures the amount of time required for a selection animation to
+     * complete. This number remains constant, even if the number of items being
+     * animated increases.
      *
-     * The default value is 500 milliseconds (half a second).
+     * The default value is 250 milliseconds (a quarter a second).
      *
      * @type {integer}
-     * @default 500
+     * @default 250
      */
     get selectionAnimationDuration() {
-      return this._selectionAnimationDuration || 500;
+      return this._selectionAnimationDuration || 250;
     }
     set selectionAnimationDuration(value) {
       if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
@@ -248,10 +249,6 @@ export default (base) => {
   return SelectionAnimation;
 };
 
-
-function animationFractionFromSelectionFraction(selectionFraction, duration) {
-  return selectionFraction * duration / 2;
-}
 
 function displayNextItemWhenAnimationCompletes(element, animationDetails, toIndex) {
   // When the last animation completes, show the next item in the
