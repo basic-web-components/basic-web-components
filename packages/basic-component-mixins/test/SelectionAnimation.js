@@ -137,6 +137,37 @@ describe("SelectionAnimation mixin", () => {
     ]);
   });
 
-  // selectionDrags = true;
+  it("timings to animate selectNext from 4 to 0 (with wrap)", () => {
+    test.selectionWraps = true;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(4, 0), [
+      { duration: 1000, direction: 'normal', fill: 'both', delay: 0, endDelay: -500 },
+      null,
+      null,
+      null,
+      { duration: 1000, direction: 'normal', fill: 'both', delay: -500, endDelay: 0 }
+    ]);
+  });
+
+  it("timings to animate selectPrevious from 0 to 4 (with wrap)", () => {
+    test.selectionWraps = true;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(0, 4), [
+      { duration: 1000, direction: 'reverse', fill: 'both', delay: -500, endDelay: 0 },
+      null,
+      null,
+      null,
+      { duration: 1000, direction: 'reverse', fill: 'both', delay: 0, endDelay: -500 }
+    ]);
+  });
+
+  it("timings to animate selection forward after releasing drag from -0.5 to 0 (with wrap)", () => {
+    test.selectionWraps = true;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(-0.5, 0), [
+      { duration: 1000, direction: 'normal', fill: 'both', delay: -250, endDelay: -500 },
+      null,
+      null,
+      null,
+      { duration: 1000, direction: 'normal', fill: 'both', delay: -750, endDelay: 0 }
+    ]);
+  });
 
 });

@@ -76,8 +76,8 @@ export default (base) => {
           return null;
         }
       });
-      
-      console.log(timings);
+
+      // console.log(timings);
       return timings;
     }
 
