@@ -213,19 +213,32 @@ class PageDots extends base {
 }
 
 
+// Return the index, ensuring it stays between 0 and the given length.
+function keepIndexWithinBounds(length, index) {
+  // Handle possibility of negative mod.
+  // See http://stackoverflow.com/a/18618250/76472
+  return ((index % length) + length) % length;
+}
+
 function renderTransition(element, selectedIndex, position) {
   let dots = element.dots;
   if (!dots || dots.length === 0) {
     return;
   }
+  let dotCount = dots.length;
   let opacityMinimum = 0.4;
   let opacityMaximum = 0.95;
   let opacityRange = opacityMaximum - opacityMinimum;
   let fractionalIndex = selectedIndex + position;
   let leftIndex = Math.floor(fractionalIndex);
   let rightIndex = Math.ceil(fractionalIndex);
+  let selectionWraps = element.selectionWraps;
   let awayIndex = position >= 0 ? leftIndex : rightIndex;
   let towardIndex = position >= 0 ? rightIndex : leftIndex;
+  if (selectionWraps) {
+    awayIndex = keepIndexWithinBounds(dotCount, awayIndex);
+    towardIndex = keepIndexWithinBounds(dotCount, towardIndex);
+  }
   let progress = position - Math.trunc(position);
   let opacityProgressThroughRange = Math.abs(progress) * opacityRange;
   dots.forEach((dot, index) => {

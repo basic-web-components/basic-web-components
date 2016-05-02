@@ -42,6 +42,15 @@ class AnimationStage extends base {
     this.selectionRequired = true;
   }
 
+  get position() {
+    return super.position;
+  }
+  set position(value) {
+    if ('position' in base.prototype) { super.position = value; }
+    let event = new CustomEvent('position-changed');
+    this.dispatchEvent(event);
+  }
+
 }
 
 

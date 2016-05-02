@@ -8,6 +8,8 @@ export default (base) => {
    */
   class SelectionAnimation extends base {
 
+    // Smoothly animate the selection between the indicated "from" and "to"
+    // indices.
     animateSelection(fromIndex, toIndex) {
 
       console.log(`animateSelection: from ${fromIndex} to ${toIndex}`);
@@ -46,47 +48,6 @@ export default (base) => {
         // Shouldn't happen -- we should always have at least one animation.
         this._animatingSelection = false;
       }
-    }
-
-    _effectTimingsForSelectionAnimation(fromIndex, toIndex) {
-
-      let items = this.items;
-      if (!items) {
-        return;
-      }
-      let itemCount = items.length;
-      let wholeTo = getNumericParts(itemCount, toIndex).whole;
-      let selectionWraps = this.selectionWraps;
-      let totalSteps = stepsToIndex(itemCount, selectionWraps, fromIndex, toIndex);
-      let direction = totalSteps >= 0 ? 'normal': 'reverse';
-      let fill = 'both';
-      let totalDuration = this.selectionAnimationDuration;
-      let stepDuration = totalDuration * 2 / Math.ceil(Math.abs(totalSteps));
-
-      let timings = items.map((item, itemIndex) => {
-        let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toIndex);
-        // If we include this item in the staggered sequence of animations we're
-        // creating, where would the item appear in the sequence?
-        let positionInSequence = totalSteps - steps;
-        if (totalSteps < 0) {
-          positionInSequence = -positionInSequence;
-        }
-        // So, is this item really included in the sequence?
-        if (Math.ceil(positionInSequence) >= 0 && positionInSequence <= Math.abs(totalSteps)) {
-          // Note that delay for first item will be negative. That will cause
-          // the animation to start halfway through, which is what we want.
-          let delay = stepDuration * (positionInSequence - 1)/2;
-          let endDelay = itemIndex === wholeTo ?
-            -stepDuration/2 :   // Stop halfway through.
-            0;              // Play animation until end.
-          return { duration: stepDuration, direction, fill, delay, endDelay };
-        } else {
-          return null;
-        }
-      });
-
-      console.log(timings);
-      return timings;
     }
 
     createdCallback() {
@@ -251,6 +212,47 @@ export default (base) => {
           return null;
         }
       });
+    }
+
+    _effectTimingsForSelectionAnimation(fromIndex, toIndex) {
+
+      let items = this.items;
+      if (!items) {
+        return;
+      }
+      let itemCount = items.length;
+      let wholeTo = getNumericParts(itemCount, toIndex).whole;
+      let selectionWraps = this.selectionWraps;
+      let totalSteps = stepsToIndex(itemCount, selectionWraps, fromIndex, toIndex);
+      let direction = totalSteps >= 0 ? 'normal': 'reverse';
+      let fill = 'both';
+      let totalDuration = this.selectionAnimationDuration;
+      let stepDuration = totalDuration * 2 / Math.ceil(Math.abs(totalSteps));
+
+      let timings = items.map((item, itemIndex) => {
+        let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toIndex);
+        // If we include this item in the staggered sequence of animations we're
+        // creating, where would the item appear in the sequence?
+        let positionInSequence = totalSteps - steps;
+        if (totalSteps < 0) {
+          positionInSequence = -positionInSequence;
+        }
+        // So, is this item really included in the sequence?
+        if (Math.ceil(positionInSequence) >= 0 && positionInSequence <= Math.abs(totalSteps)) {
+          // Note that delay for first item will be negative. That will cause
+          // the animation to start halfway through, which is what we want.
+          let delay = stepDuration * (positionInSequence - 1)/2;
+          let endDelay = itemIndex === wholeTo ?
+            -stepDuration/2 :   // Stop halfway through.
+            0;              // Play animation until end.
+          return { duration: stepDuration, direction, fill, delay, endDelay };
+        } else {
+          return null;
+        }
+      });
+
+      console.log(timings);
+      return timings;
     }
   }
 

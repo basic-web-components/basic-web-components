@@ -7,20 +7,23 @@
   <title>basic-animation-stage</title>
 
   <script src="../demos/lib/web-animations.min.js"></script>
-  <!-- <script src="../../../web-animations-js/web-animations.dev.js"></script> -->
   <script src="../demos/lib/webcomponents.js"></script>
-  <script src="../basic-arrow-selection/dist/basic-arrow-selection.js"></script>
   <script src="../basic-page-dots/dist/basic-page-dots.js"></script>
   <script src="./dist/basic-animation-stage.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
 
   <style>
+  body, select {
+    background: black;
+    color: white;
+  }
+
   basic-animation-stage {
     display: inline-block;
-    height: 200px;
+    height: 250px;
     overflow: hidden;
     position: relative;
-    width: 200px;
+    width: 250px;
   }
 
   .box {
@@ -32,11 +35,11 @@
     display: flex;
     font-weight: bold;
     font-size: 24px;
-    height: 200px;
+    height: 250px;
     -webkit-justify-content: center;
     justify-content: center;
     position: absolute;
-    width: 200px;
+    width: 250px;
   }
 
   .lightText {
@@ -125,7 +128,7 @@
 
 <body>
   <p>
-    <select id="effectSelector">
+    Effect: <select id="effectSelector">
       <option value="slide">Slide (default)</option>
       <option value="slideWithGap">Slide with gap</option>
       <option value="showAdjacent" selected>Show bit of adjacent items</option>
@@ -134,17 +137,15 @@
       <option value="revealWithFade">Reveal with fade</option>
     </select>
   </p>
-  <basic-arrow-selection>
-    <basic-page-dots>
-      <basic-animation-stage id="stage" selection-wraps="true" aria-label="Pages">
-        <div class="box lightText" style="background: #53777a;"><div>One</div></div>
-        <div class="box" style="background: #d95b43"><div>Two</div></div>
-        <div class="box" style="background: #c02942"><div>Three</div></div>
-        <div class="box" style="background: #ecd078"><div>Four</div></div>
-        <div class="box lightText" style="background: #542437;"><div>Five</div></div>
-      </basic-animation-stage>
-    </basic-page-dots>
-  </basic-arrow-selection>
+  <basic-page-dots>
+    <basic-animation-stage id="stage" selection-wraps="true" aria-label="Pages">
+      <div class="box lightText" style="background: #53777a;"><div>One</div></div>
+      <div class="box" style="background: #d95b43"><div>Two</div></div>
+      <div class="box" style="background: #c02942"><div>Three</div></div>
+      <div class="box" style="background: #ecd078"><div>Four</div></div>
+      <div class="box lightText" style="background: #542437;"><div>Five</div></div>
+    </basic-animation-stage>
+  </basic-page-dots>
 </body>
 
 </html>
