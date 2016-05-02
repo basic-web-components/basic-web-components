@@ -12,6 +12,13 @@ export default (base) => {
 
       console.log(`animateSelection: from ${fromIndex} to ${toIndex}`);
       resetAnimations(this);
+      if (this._lastSelectionAnimation) {
+        // Cancel an animation in progress so that its finished promise doesn't
+        // resolve.
+        console.log(`cancelling selection animation`);
+        this._lastSelectionAnimation.onfinish = null;
+        this._lastSelectionAnimation = null;
+      }
       let items = this.items;
       let keyframes = this.selectionAnimationKeyframes;
       this._animatingSelection = true;
@@ -31,6 +38,7 @@ export default (base) => {
             lastAnimationDetails = { animation, endTime, timing };
           }
         } else {
+          console.log(`hiding ${index}`);
           showItem(item, false);
         }
       });
@@ -261,12 +269,16 @@ function displayNextItemWhenAnimationCompletes(element, animationDetails, toInde
     nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
     let nextUpItem = items[nextUpIndex];
     let animationFraction = forward ? 0 : 1;
-    animationDetails.animation.onfinish = event => {
-      console.log(`animation complete`);
+    element._lastSelectionAnimation = animationDetails.animation;
+    element._lastSelectionAnimation.onfinish = event => {
+      console.log(`animation complete, showing ${nextUpIndex}`);
       setAnimationFraction(element, nextUpIndex, animationFraction);
       showItem(nextUpItem, true);
       element._animatingSelection = false;
+      element._lastSelectionAnimation = null;
     };
+  } else {
+    element._lastSelectionAnimation = null;
   }
 }
 
@@ -310,8 +322,21 @@ function resetAnimations(element) {
   console.log(`resetting animations`);
   // Cancel any pending animations.
   // let animations = element._animations || [];
-  // animations.forEach(animation => animation && animation.cancel() );
-  element._animations = new Array(element.items.length);
+  // animations.forEach((animation, animationIndex) => {
+  //   if (animation) {
+  //     // if (animation.onfinish) {
+  //     //   console.log(`cancelling onfinish`);
+  //     //   animation.onfinish = null;
+  //     // }
+  //     console.log(`cancelling ${animationIndex}, playState ${animation.playState}`);
+  //     animation.cancel();
+  //     animations[animationIndex] = null;
+  //   }
+  // });
+  // let itemCount = element.items.length || 0;
+  // if (!element._animations || element._animations.length !== itemCount) {
+    element._animations = new Array(element.items.length);
+  // }
 }
 
 // Pause the indicated animation and have it show the animation at the given

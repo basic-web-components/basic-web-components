@@ -1,7 +1,6 @@
+* Handle selection that starts before current animation completes.
 * Once dust settles, need an edit pass to give functions better names, refactor
   if necessary, and add comments.
-* Ensure that selectionWraps=false works as expected, including dragging past
-  ends of array.
 * Reconsider TargetSelection and updatePossibleNavigations/selectionWraps.
   Should be able to toggle ArrowSelection.selectionWraps and see buttons update
 * Rename position -> selectionFraction. Push this change into SwipeDirection,
@@ -10,7 +9,6 @@
 * Hide helper methods instead of exposing on class.
 * Edge/IE
 * Damping. Push this into SwipeDirection? Or factor into its own module.
-* Speed up default duration to 250 ms.
 
 
 Scenarios
