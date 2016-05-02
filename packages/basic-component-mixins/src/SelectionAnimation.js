@@ -13,9 +13,7 @@ export default (base) => {
       console.log(`animateSelection: from ${fromIndex} to ${toIndex}`);
       resetAnimations(this);
       if (this._lastSelectionAnimation) {
-        // Cancel an animation in progress so that its finished promise doesn't
-        // resolve.
-        console.log(`cancelling selection animation`);
+        // Cancel the effects of the last selection animation.
         this._lastSelectionAnimation.onfinish = null;
         this._lastSelectionAnimation = null;
       }
@@ -38,13 +36,15 @@ export default (base) => {
             lastAnimationDetails = { animation, endTime, timing };
           }
         } else {
-          console.log(`hiding ${index}`);
           showItem(item, false);
         }
       });
 
       if (lastAnimationDetails) {
         displayNextItemWhenAnimationCompletes(this, lastAnimationDetails, toIndex);
+      } else {
+        // Shouldn't happen -- we should always have at least one animation.
+        this._animatingSelection = false;
       }
     }
 
@@ -85,7 +85,7 @@ export default (base) => {
         }
       });
 
-      // console.log(timings);
+      console.log(timings);
       return timings;
     }
 
@@ -265,21 +265,19 @@ function displayNextItemWhenAnimationCompletes(element, animationDetails, toInde
   let forward = animationDetails.timing.direction === 'normal';
   let items = element.items;
   let nextUpIndex = getNumericParts(items.length, toIndex).whole + (forward ? 1 : - 1);
-  if (isItemIndexInBounds(element, nextUpIndex) || element.selectionWraps) {
-    nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
-    let nextUpItem = items[nextUpIndex];
-    let animationFraction = forward ? 0 : 1;
-    element._lastSelectionAnimation = animationDetails.animation;
-    element._lastSelectionAnimation.onfinish = event => {
-      console.log(`animation complete, showing ${nextUpIndex}`);
+  element._lastSelectionAnimation = animationDetails.animation;
+  element._lastSelectionAnimation.onfinish = event => {
+    console.log(`animation complete, showing ${nextUpIndex}`);
+    if (isItemIndexInBounds(element, nextUpIndex) || element.selectionWraps) {
+      nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
+      let nextUpItem = items[nextUpIndex];
+      let animationFraction = forward ? 0 : 1;
       setAnimationFraction(element, nextUpIndex, animationFraction);
       showItem(nextUpItem, true);
-      element._animatingSelection = false;
-      element._lastSelectionAnimation = null;
-    };
-  } else {
+    }
+    element._animatingSelection = false;
     element._lastSelectionAnimation = null;
-  }
+  };
 }
 
 function getNumericParts(bound, n) {
@@ -320,23 +318,7 @@ function keepIndexWithinBounds(length, index) {
 
 function resetAnimations(element) {
   console.log(`resetting animations`);
-  // Cancel any pending animations.
-  // let animations = element._animations || [];
-  // animations.forEach((animation, animationIndex) => {
-  //   if (animation) {
-  //     // if (animation.onfinish) {
-  //     //   console.log(`cancelling onfinish`);
-  //     //   animation.onfinish = null;
-  //     // }
-  //     console.log(`cancelling ${animationIndex}, playState ${animation.playState}`);
-  //     animation.cancel();
-  //     animations[animationIndex] = null;
-  //   }
-  // });
-  // let itemCount = element.items.length || 0;
-  // if (!element._animations || element._animations.length !== itemCount) {
-    element._animations = new Array(element.items.length);
-  // }
+  element._animations = new Array(element.items.length);
 }
 
 // Pause the indicated animation and have it show the animation at the given
@@ -360,12 +342,14 @@ function showItem(item, flag) {
 // step (backward).
 function stepsToIndex(length, allowWrap, fromIndex, toIndex) {
   let steps = toIndex - fromIndex;
-  let wrapSteps = length - Math.abs(steps);
-  if (allowWrap && wrapSteps <= 1) {
-    // Special case
-    steps = steps < 0 ?
-      1 : // Wrap forward from last item to first.
-      -1; // Wrap backward from first item to last.
+  if (allowWrap) {
+    let wrapSteps = length - Math.abs(steps);
+    if (wrapSteps <= 1) {
+      // Special case
+      steps = steps < 0 ?
+        wrapSteps :   // Wrap forward from last item to first.
+        -wrapSteps;   // Wrap backward from first item to last.
+    }
   }
   return steps;
 }

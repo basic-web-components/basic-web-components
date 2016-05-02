@@ -8,7 +8,9 @@
 * Docs
 * Hide helper methods instead of exposing on class.
 * Edge/IE
+* Remove console.log statements.
 * Damping. Push this into SwipeDirection? Or factor into its own module.
+* Factor transition keyframes into a module.
 
 
 Scenarios

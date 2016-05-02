@@ -159,6 +159,17 @@ describe("SelectionAnimation mixin", () => {
     ]);
   });
 
+  it("timings to animate selection forward after releasing drag from 4.5 to 0 (with wrap)", () => {
+    test.selectionWraps = true;
+    assert.deepEqual(test._effectTimingsForSelectionAnimation(4.5, 0), [
+      { duration: 500, direction: 'normal', fill: 'both', delay: -125, endDelay: -250 },
+      null,
+      null,
+      null,
+      { duration: 500, direction: 'normal', fill: 'both', delay: -375, endDelay: 0 }
+    ]);
+  });
+
   it("timings to animate selection forward after releasing drag from -0.5 to 0 (with wrap)", () => {
     test.selectionWraps = true;
     assert.deepEqual(test._effectTimingsForSelectionAnimation(-0.5, 0), [
