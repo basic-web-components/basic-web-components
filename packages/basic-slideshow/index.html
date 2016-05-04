@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>basic-slideshow</title>
+
+  <script src="../demos/lib/webcomponents.js"></script>
+  <script src="./dist/basic-slideshow.js"></script>
+  <link rel="stylesheet" href="../demos/demos.css">
+
+  <style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    background: black;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  basic-slideshow {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  basic-slideshow > * {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    -webkit-justify-content: center;
+    justify-content: center;
+    object-fit: contain;
+    position: absolute;
+    width: 100%;
+  }
+  </style>
+
+</head>
+
+<body>
+  <basic-slideshow aria-label="Nature scenes">
+    <img src="../demos/resources/images/image1.jpg" alt="Lake">
+    <img src="../demos/resources/images/image2.jpg" alt="Horses">
+    <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+    <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+    <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+  </basic-slideshow>
+</body>
+
+</html>
