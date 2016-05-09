@@ -1,16 +1,48 @@
+import createSymbol from './createSymbol';
+
+
+// Symbols for hanging data off an element.
+const animatingSelectionSymbol = createSymbol('animatingSelection');
+const animationSymbol = createSymbol('animations');
+const lastAnimationSymbol = createSymbol('lastAnimation');
+const previousSelectionIndexSymbol = createSymbol('previousSelectionIndex');
+const showTransitionSymbol = createSymbol('showTransition');
+const selectionAnimationDurationSymbol = createSymbol('selectionAnimationDuration');
+const selectionAnimationKeyframesSymbol = createSymbol('selectionAnimationKeyframes');
+
+
 /* Exported function extends a base class with SelectionAnimation. */
 export default function mixin(base) {
 
   /**
-   * Animates selection
+   * Mixin which plays animations between selection states.
    *
-   * Expects: selectedItem, position properties.
+   * This mixin can be used by components that want to provide visible
+   * animations when changing the selection. For example, a carousel component
+   * may want to define a sliding animation effect shown when moving between
+   * items.
+   *
+   * The animation is defined by a `selectionAnimationKeyframes` property; see
+   * that property for details on how to define these keyframes. This animation
+   * will be used in two ways. First, when moving strictly between items, the
+   * animation will play smoothly to show the selection changing. Second, the
+   * animation can be used to render the selection at a fixed point in the
+   * transition between states. E.g., if the user pauses halfway through
+   * dragging an element using the [SwipeDirection](SwipeDirection.md) or
+   * [TrackpadDirection](TrackpadDirection.md) mixins, then the selection
+   * animation will be shown at the point exactly halfway through.
+   *
+   * This mixin expects a component to provide an `items` array of all elements
+   * in the list, which can be provided via the
+   * [ContentAsItems](ContentAsItems.md) mixin. This mixin also expects
+   * `selectedIndex` and `selectedItem` properties, which can be provided via
+   * the [ItemsSelection](ItemsSelection.md) mixin.
    */
   class SelectionAnimation extends base {
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-      this._showTransition = true;
+      this[showTransitionSymbol] = true;
     }
 
     itemsChanged() {
@@ -48,11 +80,11 @@ export default function mixin(base) {
      * @default 250
      */
     get selectionAnimationDuration() {
-      return this._selectionAnimationDuration || 250;
+      return this[selectionAnimationDurationSymbol] || 250;
     }
     set selectionAnimationDuration(value) {
       if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
-      this._selectionAnimationDuration = value;
+      this[selectionAnimationDurationSymbol] = value;
     }
 
     /**
@@ -79,14 +111,14 @@ export default function mixin(base) {
      */
     get selectionAnimationKeyframes() {
       // Standard animation slides left/right, keeps adjacent items out of view.
-      return this._selectionAnimationKeyframes || [
+      return this[selectionAnimationKeyframesSymbol] || [
         { transform: 'translateX(100%)' },
         { transform: 'translateX(-100%)' }
       ];
     }
     set selectionAnimationKeyframes(value) {
       if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
-      this._selectionAnimationKeyframes = value;
+      this[selectionAnimationKeyframesSymbol] = value;
       resetAnimations(this);
       renderSelection(this);
     }
@@ -103,7 +135,7 @@ export default function mixin(base) {
     // TODO: Make this a getter/setter property.
     showTransition(show) {
       if (super.showTransition) { super.showTransition(show); }
-      this._showTransition = show;
+      this[showTransitionSymbol] = show;
     }
   }
 
@@ -116,6 +148,19 @@ export default function mixin(base) {
 // they don't end up getting exposed on actual element instances.
 mixin.helpers = {
 
+  /*
+   * Calculate the animation fractions for an element's items at the given
+   * selection index. This is used when rendering the element's selection state
+   * instantaneously.
+   *
+   * This function considers the selectedIndex parameter, which can be a whole
+   * or fractional number, and determines which items will be visible at that
+   * index. This function then calculates a corresponding animation fraction: a
+   * number between 0 and 1 indicating how far through the selection animation
+   * an item should be shown, or null if the item should not be visible at that
+   * selection index. These fractions are returned as an array, where the
+   * animation fraction at position N corresponds to how item N should be shown.
+   */
   // TODO: Handle case where there are fewer than 3 items.
   animationFractionsAtSelectionIndex(element, selectionIndex) {
     let items = element.items;
@@ -144,6 +189,14 @@ mixin.helpers = {
     });
   },
 
+  /*
+   * Calculate the animation timings that should be used to smoothly animate the
+   * element's items from one selection state to another.
+   *
+   * This returns an array of timings, where the timing at position N should be
+   * used to animate item N. If an item's timing is null, then that item should
+   * not take place in the animation, and should be hidden instead.
+   */
   effectTimingsForSelectionAnimation(element, fromIndex, toIndex) {
 
     let items = element.items;
@@ -196,17 +249,21 @@ mixin.helpers = {
 function animateSelection(element, fromIndex, toIndex) {
 
   resetAnimations(element);
-  if (element._lastSelectionAnimation) {
+
+  if (element[lastAnimationSymbol]) {
     // Cancel the effects of the last selection animation.
-    element._lastSelectionAnimation.onfinish = null;
-    element._lastSelectionAnimation = null;
+    element[lastAnimationSymbol].onfinish = null;
+    element[lastAnimationSymbol] = null;
   }
+
+  // Calculate the animation timings.
   let items = element.items;
   let keyframes = element.selectionAnimationKeyframes;
-  element._animatingSelection = true;
+  element[animatingSelectionSymbol] = true;
   let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromIndex, toIndex);
   let lastAnimationDetails;
 
+  // Play the animations using those timings.
   timings.forEach((timing, index) => {
     let item = items[index];
     if (timing) {
@@ -220,6 +277,7 @@ function animateSelection(element, fromIndex, toIndex) {
         lastAnimationDetails = { animation, endTime, timing };
       }
     } else {
+      // This item doesn't participate in the animation.
       showItem(item, false);
     }
   });
@@ -228,7 +286,7 @@ function animateSelection(element, fromIndex, toIndex) {
     displayNextItemWhenAnimationCompletes(element, lastAnimationDetails, toIndex);
   } else {
     // Shouldn't happen -- we should always have at least one animation.
-    element._animatingSelection = false;
+    element[animatingSelectionSymbol] = false;
   }
 }
 
@@ -241,8 +299,8 @@ function displayNextItemWhenAnimationCompletes(element, animationDetails, toInde
   let forward = animationDetails.timing.direction === 'normal';
   let items = element.items;
   let nextUpIndex = getNumericParts(items.length, toIndex).whole + (forward ? 1 : - 1);
-  element._lastSelectionAnimation = animationDetails.animation;
-  element._lastSelectionAnimation.onfinish = event => {
+  element[lastAnimationSymbol] = animationDetails.animation;
+  element[lastAnimationSymbol].onfinish = event => {
     if (isItemIndexInBounds(element, nextUpIndex) || element.selectionWraps) {
       nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
       let nextUpItem = items[nextUpIndex];
@@ -250,8 +308,8 @@ function displayNextItemWhenAnimationCompletes(element, animationDetails, toInde
       setAnimationFraction(element, nextUpIndex, animationFraction);
       showItem(nextUpItem, true);
     }
-    element._animatingSelection = false;
-    element._lastSelectionAnimation = null;
+    element[animatingSelectionSymbol] = false;
+    element[lastAnimationSymbol] = null;
   };
 }
 
@@ -263,11 +321,11 @@ function getNumericParts(bound, n) {
 }
 
 function getAnimationForItemIndex(element, index) {
-  if (element._animations == null) {
+  if (element[animationSymbol] == null) {
     // Not ready yet;
     return null;
   }
-  let animation = element._animations[index];
+  let animation = element[animationSymbol][index];
   if (!animation) {
     let item = element.items[index];
     animation = item.animate(element.selectionAnimationKeyframes, {
@@ -275,7 +333,7 @@ function getAnimationForItemIndex(element, index) {
       fill: 'both'
     });
     animation.pause();
-    element._animations[index] = animation;
+    element[animationSymbol][index] = animation;
   }
   return animation;
 }
@@ -303,25 +361,25 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selection
     return;
   }
   selectedIndex += selectionFraction;
-  if (element._showTransition && element._previousSelectedIndex != null &&
-      element._previousSelectedIndex !== selectedIndex) {
-    animateSelection(element, element._previousSelectedIndex, selectedIndex);
+  if (element[showTransitionSymbol] && element[previousSelectionIndexSymbol] != null &&
+      element[previousSelectionIndexSymbol] !== selectedIndex) {
+    animateSelection(element, element[previousSelectionIndexSymbol], selectedIndex);
   } else {
-    if (selectionFraction === 0 && element._animatingSelection) {
-      // Currently animation to fraction 0. During that process, ignore
-      // attempts to renderSelection to fraction 0.
+    if (selectionFraction === 0 && element[animatingSelectionSymbol]) {
+      // Already in process of animating to fraction 0. During that process,
+      // ignore subsequent attempts to renderSelection to fraction 0.
       return;
     }
-    renderSelectionAtIndex(element, selectedIndex);
+    renderSelectionInstantly(element, selectedIndex);
   }
-  element._previousSelectedIndex = selectedIndex;
+  element[previousSelectionIndexSymbol] = selectedIndex;
 }
 
 /*
- * Instantenously render the element at the given whole or fractional selection
- * index.
+ * Instantly render (don't animate) the element's items at the given whole or
+ * fractional selection index.
  */
-function renderSelectionAtIndex(element, toIndex) {
+function renderSelectionInstantly(element, toIndex) {
   let animationFractions = mixin.helpers.animationFractionsAtSelectionIndex(element, toIndex);
   animationFractions.map((animationFraction, index) => {
     let item = element.items[index];
@@ -335,11 +393,13 @@ function renderSelectionAtIndex(element, toIndex) {
 }
 
 function resetAnimations(element) {
-  element._animations = new Array(element.items.length);
+  element[animationSymbol] = new Array(element.items.length);
 }
 
-// Pause the indicated animation and have it show the animation at the given
-// fraction (between 0 and 1) of the way through the animation.
+/*
+ * Pause the indicated animation and have it show the animation at the given
+ * fraction (between 0 and 1) of the way through the animation.
+ */
 function setAnimationFraction(element, itemIndex, fraction) {
   let animation = getAnimationForItemIndex(element, itemIndex);
   if (animation) {
@@ -352,11 +412,14 @@ function showItem(item, flag) {
   item.style.display = flag ? '' : 'none';
 }
 
-// Figure out how many steps it will take to go from fromIndex to toIndex.
-// To go from item 3 to item 4 is one step.
-// If wrapping is allowed, then going from the last item to the first will take
-// one step (forward), and going from the first item to the last will take one
-// step (backward).
+/*
+ * Figure out how many steps it will take to go from fromIndex to toIndex. To go
+ * from item 3 to item 4 is one step.
+ *
+ * If wrapping is allowed, then going from the last item to the first will take
+ * one step (forward), and going from the first item to the last will take one
+ * step (backward).
+ */
 function stepsToIndex(length, allowWrap, fromIndex, toIndex) {
   let steps = toIndex - fromIndex;
   if (allowWrap) {

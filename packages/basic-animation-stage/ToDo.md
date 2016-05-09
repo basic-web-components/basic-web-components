@@ -12,6 +12,7 @@
 * Damping. Push this into SwipeDirection? Or factor into its own module.
 * Make showTransition a getter/setter property.
 * Factor transition keyframes into a module.
+* Handle < 3 items.
 
 
 Scenarios
