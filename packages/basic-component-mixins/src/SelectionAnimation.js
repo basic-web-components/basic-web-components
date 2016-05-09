@@ -16,7 +16,7 @@ export default function mixin(base) {
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
       resetAnimations(this);
-      update(this);
+      renderSelection(this);
     }
 
     get position() {
@@ -24,8 +24,7 @@ export default function mixin(base) {
     }
     set position(position) {
       if ('position' in base.prototype) { super.position = position; }
-      console.log(`set position ${position}`);
-      update(this, this.selectedIndex, position);
+      renderSelection(this, this.selectedIndex, position);
     }
 
     get selectedItem() {
@@ -33,8 +32,7 @@ export default function mixin(base) {
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      console.log(`set selectedItem ${this.selectedIndex}`);
-      update(this, this.selectedIndex, 0);
+      renderSelection(this, this.selectedIndex, 0);
     }
 
     /**
@@ -90,7 +88,7 @@ export default function mixin(base) {
       if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
       this._selectionAnimationKeyframes = value;
       resetAnimations(this);
-      update(this);
+      renderSelection(this);
     }
 
     get selectionWraps() {
@@ -99,7 +97,7 @@ export default function mixin(base) {
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
       resetAnimations(this);
-      update(this);
+      renderSelection(this);
     }
 
     // TODO: Make this a getter/setter property.
@@ -183,19 +181,20 @@ mixin.helpers = {
       }
     });
 
-    console.log(timings);
     return timings;
   }
 
 };
 
 
-
-// Smoothly animate the selection between the indicated "from" and "to"
-// indices.
+/*
+ * Smoothly animate the selection between the indicated "from" and "to"
+ * indices. The former can be a fraction, e.g., when the user releases a finger
+ * to complete a touch drag, and the selection will snap to the closest whole
+ * index.
+ */
 function animateSelection(element, fromIndex, toIndex) {
 
-  console.log(`animateSelection: from ${fromIndex} to ${toIndex}`);
   resetAnimations(element);
   if (element._lastSelectionAnimation) {
     // Cancel the effects of the last selection animation.
@@ -233,16 +232,17 @@ function animateSelection(element, fromIndex, toIndex) {
   }
 }
 
+/*
+ * When the last animation completes, show the next item in the direction we're
+ * going. This waiting is a hack to avoid having static items higher in the
+ * natural z-order obscure items during animation.
+ */
 function displayNextItemWhenAnimationCompletes(element, animationDetails, toIndex) {
-  // When the last animation completes, show the next item in the
-  // direction we're going. This waiting is a hack to avoid having static
-  // items higher in the natural z-order obscure items during animation.
   let forward = animationDetails.timing.direction === 'normal';
   let items = element.items;
   let nextUpIndex = getNumericParts(items.length, toIndex).whole + (forward ? 1 : - 1);
   element._lastSelectionAnimation = animationDetails.animation;
   element._lastSelectionAnimation.onfinish = event => {
-    console.log(`animation complete, showing ${nextUpIndex}`);
     if (isItemIndexInBounds(element, nextUpIndex) || element.selectionWraps) {
       nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
       let nextUpItem = items[nextUpIndex];
@@ -291,8 +291,50 @@ function keepIndexWithinBounds(length, index) {
   return ((index % length) + length) % length;
 }
 
+/*
+ * Render the selection state of the element.
+ * This can be used to re-render a previous selection state (if the
+ * selectedIndex param is omitted), render the selection instantly at a given
+ * whole or fractional selection index, or animate to a given selection index.
+ */
+function renderSelection(element, selectedIndex=element.selectedIndex, selectionFraction=element.position) {
+  if (selectedIndex < 0) {
+    // TODO: Handle no selection.
+    return;
+  }
+  selectedIndex += selectionFraction;
+  if (element._showTransition && element._previousSelectedIndex != null &&
+      element._previousSelectedIndex !== selectedIndex) {
+    animateSelection(element, element._previousSelectedIndex, selectedIndex);
+  } else {
+    if (selectionFraction === 0 && element._animatingSelection) {
+      // Currently animation to fraction 0. During that process, ignore
+      // attempts to renderSelection to fraction 0.
+      return;
+    }
+    renderSelectionAtIndex(element, selectedIndex);
+  }
+  element._previousSelectedIndex = selectedIndex;
+}
+
+/*
+ * Instantenously render the element at the given whole or fractional selection
+ * index.
+ */
+function renderSelectionAtIndex(element, toIndex) {
+  let animationFractions = mixin.helpers.animationFractionsAtSelectionIndex(element, toIndex);
+  animationFractions.map((animationFraction, index) => {
+    let item = element.items[index];
+    if (animationFraction != null) {
+      showItem(item, true);
+      setAnimationFraction(element, index, animationFraction);
+    } else {
+      showItem(item, false);
+    }
+  });
+}
+
 function resetAnimations(element) {
-  console.log(`resetting animations`);
   element._animations = new Array(element.items.length);
 }
 
@@ -308,19 +350,6 @@ function setAnimationFraction(element, itemIndex, fraction) {
 
 function showItem(item, flag) {
   item.style.display = flag ? '' : 'none';
-}
-
-function showSelection(element, toIndex) {
-  let animationFractions = mixin.helpers.animationFractionsAtSelectionIndex(element, toIndex);
-  animationFractions.map((animationFraction, index) => {
-    let item = element.items[index];
-    if (animationFraction != null) {
-      showItem(item, true);
-      setAnimationFraction(element, index, animationFraction);
-    } else {
-      showItem(item, false);
-    }
-  });
 }
 
 // Figure out how many steps it will take to go from fromIndex to toIndex.
@@ -340,27 +369,4 @@ function stepsToIndex(length, allowWrap, fromIndex, toIndex) {
     }
   }
   return steps;
-}
-
-function update(element, selectedIndex=element.selectedIndex, selectionFraction=element.position) {
-  if (selectedIndex < 0) {
-    // TODO: Handle no selection.
-    return;
-  }
-  selectedIndex += selectionFraction;
-  if (element._showTransition && element._previousSelectedIndex != null &&
-      element._previousSelectedIndex !== selectedIndex) {
-    console.log(`update: calling animateSelection from ${element._previousSelectedIndex} to ${selectedIndex}`);
-    animateSelection(element, element._previousSelectedIndex, selectedIndex);
-  } else {
-    if (selectionFraction === 0 && element._animatingSelection) {
-      // Currently animation to fraction 0. During that process, ignore
-      // attempts to update to fraction 0.
-      console.log(`update: animating; ignored attempt to update to fraction 0.`);
-      return;
-    }
-    console.log(`update: calling showSelection to ${selectedIndex}`);
-    showSelection(element, selectedIndex);
-  }
-  element._previousSelectedIndex = selectedIndex;
 }
