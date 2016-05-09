@@ -1,4 +1,4 @@
-* Handle selection that starts before current animation completes.
+* Full page demo
 * Once dust settles, need an edit pass to give functions better names, refactor
   if necessary, and add comments.
 * Reconsider TargetSelection and updatePossibleNavigations/selectionWraps.
@@ -10,6 +10,7 @@
 * Edge/IE
 * Remove console.log statements.
 * Damping. Push this into SwipeDirection? Or factor into its own module.
+* Make showTransition a getter/setter property.
 * Factor transition keyframes into a module.
 
 

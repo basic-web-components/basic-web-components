@@ -1,54 +1,12 @@
 /* Exported function extends a base class with SelectionAnimation. */
-export default (base) => {
+export default function mixin(base) {
 
   /**
    * Animates selection
    *
-   * Expects: selectedItem property.
+   * Expects: selectedItem, position properties.
    */
   class SelectionAnimation extends base {
-
-    // Smoothly animate the selection between the indicated "from" and "to"
-    // indices.
-    animateSelection(fromIndex, toIndex) {
-
-      console.log(`animateSelection: from ${fromIndex} to ${toIndex}`);
-      resetAnimations(this);
-      if (this._lastSelectionAnimation) {
-        // Cancel the effects of the last selection animation.
-        this._lastSelectionAnimation.onfinish = null;
-        this._lastSelectionAnimation = null;
-      }
-      let items = this.items;
-      let keyframes = this.selectionAnimationKeyframes;
-      this._animatingSelection = true;
-      let timings = this._effectTimingsForSelectionAnimation(fromIndex, toIndex);
-      let lastAnimationDetails;
-
-      timings.forEach((timing, index) => {
-        let item = items[index];
-        if (timing) {
-          showItem(item, true);
-          let animation = item.animate(keyframes, timing);
-
-          // Figure out whether this animation will be the last one to end
-          // (possibly concurrent with another animation).
-          let endTime = timing.delay + timing.duration + timing.endDelay;
-          if (lastAnimationDetails == null || endTime > lastAnimationDetails.endTime) {
-            lastAnimationDetails = { animation, endTime, timing };
-          }
-        } else {
-          showItem(item, false);
-        }
-      });
-
-      if (lastAnimationDetails) {
-        displayNextItemWhenAnimationCompletes(this, lastAnimationDetails, toIndex);
-      } else {
-        // Shouldn't happen -- we should always have at least one animation.
-        this._animatingSelection = false;
-      }
-    }
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
@@ -58,7 +16,7 @@ export default (base) => {
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
       resetAnimations(this);
-      this.update();
+      update(this);
     }
 
     get position() {
@@ -67,7 +25,7 @@ export default (base) => {
     set position(position) {
       if ('position' in base.prototype) { super.position = position; }
       console.log(`set position ${position}`);
-      this.update(this.selectedIndex, position);
+      update(this, this.selectedIndex, position);
     }
 
     get selectedItem() {
@@ -76,7 +34,7 @@ export default (base) => {
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       console.log(`set selectedItem ${this.selectedIndex}`);
-      this.update(this.selectedIndex, 0);
+      update(this, this.selectedIndex, 0);
     }
 
     /**
@@ -132,7 +90,7 @@ export default (base) => {
       if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
       this._selectionAnimationKeyframes = value;
       resetAnimations(this);
-      this.update();
+      update(this);
     }
 
     get selectionWraps() {
@@ -141,7 +99,7 @@ export default (base) => {
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
       resetAnimations(this);
-      this.update();
+      update(this);
     }
 
     // TODO: Make this a getter/setter property.
@@ -149,116 +107,131 @@ export default (base) => {
       if (super.showTransition) { super.showTransition(show); }
       this._showTransition = show;
     }
-
-    showSelection(toIndex) {
-      let animationFractions = this._animationFractionsAtSelectionIndex(toIndex);
-      animationFractions.map((animationFraction, index) => {
-        let item = this.items[index];
-        if (animationFraction != null) {
-          showItem(item, true);
-          setAnimationFraction(this, index, animationFraction);
-        } else {
-          showItem(item, false);
-        }
-      });
-    }
-
-    update(selectedIndex=this.selectedIndex, selectionFraction=this.position) {
-      if (selectedIndex < 0) {
-        // TODO: Handle no selection.
-        return;
-      }
-      selectedIndex += selectionFraction;
-      if (this._showTransition && this._previousSelectedIndex != null &&
-          this._previousSelectedIndex !== selectedIndex) {
-        console.log(`update: calling animateSelection from ${this._previousSelectedIndex} to ${selectedIndex}`);
-        this.animateSelection(this._previousSelectedIndex, selectedIndex);
-      } else {
-        if (selectionFraction === 0 && this._animatingSelection) {
-          // Currently animation to fraction 0. During that process, ignore
-          // attempts to update to fraction 0.
-          console.log(`update: animating; ignored attempt to update to fraction 0.`);
-          return;
-        }
-        console.log(`update: calling showSelection to ${selectedIndex}`);
-        this.showSelection(selectedIndex);
-      }
-      this._previousSelectedIndex = selectedIndex;
-    }
-
-    // TODO: Handle case where there are fewer than 3 items.
-    _animationFractionsAtSelectionIndex(selectionIndex) {
-      let items = this.items;
-      if (!items) {
-        return;
-      }
-      let itemCount = items.length;
-      let selectionWraps = this.selectionWraps;
-      let { whole: wholeIndex, fraction: indexFraction } = getNumericParts(itemCount, selectionIndex);
-      return items.map((item, itemIndex) => {
-        let steps = stepsToIndex(itemCount, true, wholeIndex, itemIndex);
-        let oneStepOrLessAway = Math.abs(steps - Math.round(indexFraction)) <= 1;
-        if (oneStepOrLessAway &&
-            (selectionWraps || isItemIndexInBounds(this, selectionIndex + steps))) {
-          // We want:
-          // steps      animation fraction
-          // -1         1     (stage right)
-          //  0         0.5   (center stage)
-          //  1         0     (stage left)
-          // We also want to factor in the selection fraction.
-          let animationFraction = (1 - steps + indexFraction) / 2;
-          return animationFraction;
-        } else {
-          return null;
-        }
-      });
-    }
-
-    _effectTimingsForSelectionAnimation(fromIndex, toIndex) {
-
-      let items = this.items;
-      if (!items) {
-        return;
-      }
-      let itemCount = items.length;
-      let wholeTo = getNumericParts(itemCount, toIndex).whole;
-      let selectionWraps = this.selectionWraps;
-      let totalSteps = stepsToIndex(itemCount, selectionWraps, fromIndex, toIndex);
-      let direction = totalSteps >= 0 ? 'normal': 'reverse';
-      let fill = 'both';
-      let totalDuration = this.selectionAnimationDuration;
-      let stepDuration = totalDuration * 2 / Math.ceil(Math.abs(totalSteps));
-
-      let timings = items.map((item, itemIndex) => {
-        let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toIndex);
-        // If we include this item in the staggered sequence of animations we're
-        // creating, where would the item appear in the sequence?
-        let positionInSequence = totalSteps - steps;
-        if (totalSteps < 0) {
-          positionInSequence = -positionInSequence;
-        }
-        // So, is this item really included in the sequence?
-        if (Math.ceil(positionInSequence) >= 0 && positionInSequence <= Math.abs(totalSteps)) {
-          // Note that delay for first item will be negative. That will cause
-          // the animation to start halfway through, which is what we want.
-          let delay = stepDuration * (positionInSequence - 1)/2;
-          let endDelay = itemIndex === wholeTo ?
-            -stepDuration/2 :   // Stop halfway through.
-            0;              // Play animation until end.
-          return { duration: stepDuration, direction, fill, delay, endDelay };
-        } else {
-          return null;
-        }
-      });
-
-      console.log(timings);
-      return timings;
-    }
   }
 
   return SelectionAnimation;
+}
+
+
+// We expose helpers on the mixin function that we want to be able to unit test.
+// Since these are on the function, not on the class emitted by the function,
+// they don't end up getting exposed on actual element instances.
+mixin.helpers = {
+
+  // TODO: Handle case where there are fewer than 3 items.
+  animationFractionsAtSelectionIndex(element, selectionIndex) {
+    let items = element.items;
+    if (!items) {
+      return;
+    }
+    let itemCount = items.length;
+    let selectionWraps = element.selectionWraps;
+    let { whole: wholeIndex, fraction: indexFraction } = getNumericParts(itemCount, selectionIndex);
+    return items.map((item, itemIndex) => {
+      let steps = stepsToIndex(itemCount, true, wholeIndex, itemIndex);
+      let oneStepOrLessAway = Math.abs(steps - Math.round(indexFraction)) <= 1;
+      if (oneStepOrLessAway &&
+          (selectionWraps || isItemIndexInBounds(element, selectionIndex + steps))) {
+        // We want:
+        // steps      animation fraction
+        // -1         1     (stage right)
+        //  0         0.5   (center stage)
+        //  1         0     (stage left)
+        // We also want to factor in the selection fraction.
+        let animationFraction = (1 - steps + indexFraction) / 2;
+        return animationFraction;
+      } else {
+        return null;
+      }
+    });
+  },
+
+  effectTimingsForSelectionAnimation(element, fromIndex, toIndex) {
+
+    let items = element.items;
+    if (!items) {
+      return;
+    }
+    let itemCount = items.length;
+    let wholeTo = getNumericParts(itemCount, toIndex).whole;
+    let selectionWraps = element.selectionWraps;
+    let totalSteps = stepsToIndex(itemCount, selectionWraps, fromIndex, toIndex);
+    let direction = totalSteps >= 0 ? 'normal': 'reverse';
+    let fill = 'both';
+    let totalDuration = element.selectionAnimationDuration;
+    let stepDuration = totalDuration * 2 / Math.ceil(Math.abs(totalSteps));
+
+    let timings = items.map((item, itemIndex) => {
+      let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toIndex);
+      // If we include this item in the staggered sequence of animations we're
+      // creating, where would the item appear in the sequence?
+      let positionInSequence = totalSteps - steps;
+      if (totalSteps < 0) {
+        positionInSequence = -positionInSequence;
+      }
+      // So, is this item really included in the sequence?
+      if (Math.ceil(positionInSequence) >= 0 && positionInSequence <= Math.abs(totalSteps)) {
+        // Note that delay for first item will be negative. That will cause
+        // the animation to start halfway through, which is what we want.
+        let delay = stepDuration * (positionInSequence - 1)/2;
+        let endDelay = itemIndex === wholeTo ?
+          -stepDuration/2 :   // Stop halfway through.
+          0;              // Play animation until end.
+        return { duration: stepDuration, direction, fill, delay, endDelay };
+      } else {
+        return null;
+      }
+    });
+
+    console.log(timings);
+    return timings;
+  }
+
 };
 
+
+
+// Smoothly animate the selection between the indicated "from" and "to"
+// indices.
+function animateSelection(element, fromIndex, toIndex) {
+
+  console.log(`animateSelection: from ${fromIndex} to ${toIndex}`);
+  resetAnimations(element);
+  if (element._lastSelectionAnimation) {
+    // Cancel the effects of the last selection animation.
+    element._lastSelectionAnimation.onfinish = null;
+    element._lastSelectionAnimation = null;
+  }
+  let items = element.items;
+  let keyframes = element.selectionAnimationKeyframes;
+  element._animatingSelection = true;
+  let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromIndex, toIndex);
+  let lastAnimationDetails;
+
+  timings.forEach((timing, index) => {
+    let item = items[index];
+    if (timing) {
+      showItem(item, true);
+      let animation = item.animate(keyframes, timing);
+
+      // Figure out whether this animation will be the last one to end
+      // (possibly concurrent with another animation).
+      let endTime = timing.delay + timing.duration + timing.endDelay;
+      if (lastAnimationDetails == null || endTime > lastAnimationDetails.endTime) {
+        lastAnimationDetails = { animation, endTime, timing };
+      }
+    } else {
+      showItem(item, false);
+    }
+  });
+
+  if (lastAnimationDetails) {
+    displayNextItemWhenAnimationCompletes(element, lastAnimationDetails, toIndex);
+  } else {
+    // Shouldn't happen -- we should always have at least one animation.
+    element._animatingSelection = false;
+  }
+}
 
 function displayNextItemWhenAnimationCompletes(element, animationDetails, toIndex) {
   // When the last animation completes, show the next item in the
@@ -337,6 +310,19 @@ function showItem(item, flag) {
   item.style.display = flag ? '' : 'none';
 }
 
+function showSelection(element, toIndex) {
+  let animationFractions = mixin.helpers.animationFractionsAtSelectionIndex(element, toIndex);
+  animationFractions.map((animationFraction, index) => {
+    let item = element.items[index];
+    if (animationFraction != null) {
+      showItem(item, true);
+      setAnimationFraction(element, index, animationFraction);
+    } else {
+      showItem(item, false);
+    }
+  });
+}
+
 // Figure out how many steps it will take to go from fromIndex to toIndex.
 // To go from item 3 to item 4 is one step.
 // If wrapping is allowed, then going from the last item to the first will take
@@ -354,4 +340,27 @@ function stepsToIndex(length, allowWrap, fromIndex, toIndex) {
     }
   }
   return steps;
+}
+
+function update(element, selectedIndex=element.selectedIndex, selectionFraction=element.position) {
+  if (selectedIndex < 0) {
+    // TODO: Handle no selection.
+    return;
+  }
+  selectedIndex += selectionFraction;
+  if (element._showTransition && element._previousSelectedIndex != null &&
+      element._previousSelectedIndex !== selectedIndex) {
+    console.log(`update: calling animateSelection from ${element._previousSelectedIndex} to ${selectedIndex}`);
+    animateSelection(element, element._previousSelectedIndex, selectedIndex);
+  } else {
+    if (selectionFraction === 0 && element._animatingSelection) {
+      // Currently animation to fraction 0. During that process, ignore
+      // attempts to update to fraction 0.
+      console.log(`update: animating; ignored attempt to update to fraction 0.`);
+      return;
+    }
+    console.log(`update: calling showSelection to ${selectedIndex}`);
+    showSelection(element, selectedIndex);
+  }
+  element._previousSelectedIndex = selectedIndex;
 }
