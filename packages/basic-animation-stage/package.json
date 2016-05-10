@@ -1,6 +1,6 @@
 {
   "name": "basic-animation-stage",
-  "version": "0.7.3",
+  "version": "0.7.5",
   "description": "Shows animated transitions entering and leaving the viewport.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -12,8 +12,8 @@
   ],
   "main": "src/AnimationStage.js",
   "dependencies": {
-    "basic-element-base": "^0.7.3",
-    "basic-component-mixins": "^0.7.3"
+    "basic-element-base": "^0.7.5",
+    "basic-component-mixins": "^0.7.5"
   },
   "browserify": {
     "transform": [
