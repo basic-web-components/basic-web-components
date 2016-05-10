@@ -64,6 +64,8 @@
     display: flex;
     -webkit-flex: 1;
     flex: 1;
+    -webkit-flex-direction: column;
+    flex-direction: column;
     -webkit-justify-content: center;
     justify-content: center;
     padding: 0.5em;
@@ -78,24 +80,26 @@
   </style>
 
   <script>
-  var effectSelector;
   var stage;
 
   window.addEventListener('load', function() {
-    effectSelector = document.querySelector('#effectSelector');
     stage = document.querySelector('#stage');
+    let checkboxSelectionWraps = document.querySelector('#checkboxSelectionWraps');
+    checkboxSelectionWraps.addEventListener('change', function() {
+      stage.selectionWraps = checkboxSelectionWraps.checked;
+    })
+    effectSelector = document.querySelector('#effectSelector');
     effectSelector.addEventListener('change', function() {
-      updateAnimation();
+      setAnimationEffect(effectSelector.value);
     });
-    updateAnimation();
+    setAnimationEffect(effectSelector.value);
   });
 
-  function updateAnimation() {
-    var animation;
+  function setAnimationEffect(effectName) {
     resetStylesOnItems(stage);
     var defaultKeyframes = Object.getPrototypeOf(stage).selectionAnimationKeyframes;
     var standardEffectKeyframes = Basic.SelectionAnimation.standardEffectKeyframes;
-    stage.selectionAnimationKeyframes = standardEffectKeyframes[effectSelector.value] || defaultKeyframes;
+    stage.selectionAnimationKeyframes = standardEffectKeyframes[effectName] || defaultKeyframes;
   }
 
   // Clear any animated properties left on child elements by previous effects.
@@ -132,14 +136,19 @@
   </basic-page-dots>
   <div id="options">
     <div>
-      Effect: <select id="effectSelector">
-        <option value="slide">Slide (default)</option>
-        <option value="slideWithGap">Slide with gap</option>
-        <option value="showAdjacent" selected>Show bit of adjacent items</option>
-        <option value="fade">Fade</option>
-        <option value="reveal">Reveal</option>
-        <option value="revealWithFade">Reveal with fade</option>
-      </select>
+      <p>
+        Effect: <select id="effectSelector">
+          <option value="slide">Slide (default)</option>
+          <option value="slideWithGap">Slide with gap</option>
+          <option value="showAdjacent" selected>Show bit of adjacent items</option>
+          <option value="fade">Fade</option>
+          <option value="reveal">Reveal</option>
+          <option value="revealWithFade">Reveal with fade</option>
+        </select>
+      </p>
+      <p>
+        <label><input type="checkbox" id="checkboxSelectionWraps" checked> Wrap items</label>
+      </p>
     </div>
   </div>
 </body>
