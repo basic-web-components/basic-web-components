@@ -13,17 +13,27 @@
   <link rel="stylesheet" href="../demos/demos.css">
 
   <style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    padding: 0;
+  }
+
   body, select {
     background: black;
     color: white;
   }
 
   basic-animation-stage {
-    display: inline-block;
-    height: 250px;
+    height: 100vmin;
     overflow: hidden;
     position: relative;
-    width: 250px;
+    width: 100vmin;
   }
 
   .box {
@@ -35,15 +45,34 @@
     display: flex;
     font-weight: bold;
     font-size: 24px;
-    height: 250px;
+    height: 100vmin;
     -webkit-justify-content: center;
     justify-content: center;
     position: absolute;
-    width: 250px;
+    width: 100vmin;
   }
 
   .lightText {
     color: rgba(255, 255, 255, 0.75);
+  }
+
+  #options {
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: 0.5em;
+  }
+
+  @media all and (orientation: portrait) {
+    body {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
   }
   </style>
 
@@ -127,16 +156,6 @@
 </head>
 
 <body>
-  <p>
-    Effect: <select id="effectSelector">
-      <option value="slide">Slide (default)</option>
-      <option value="slideWithGap">Slide with gap</option>
-      <option value="showAdjacent" selected>Show bit of adjacent items</option>
-      <option value="fade">Fade</option>
-      <option value="reveal">Reveal</option>
-      <option value="revealWithFade">Reveal with fade</option>
-    </select>
-  </p>
   <basic-page-dots>
     <basic-animation-stage id="stage" selection-wraps="true" aria-label="Pages">
       <div class="box lightText" style="background: #53777a;"><div>One</div></div>
@@ -146,6 +165,18 @@
       <div class="box lightText" style="background: #542437;"><div>Five</div></div>
     </basic-animation-stage>
   </basic-page-dots>
+  <div id="options">
+    <div>
+      Effect: <select id="effectSelector">
+        <option value="slide">Slide (default)</option>
+        <option value="slideWithGap">Slide with gap</option>
+        <option value="showAdjacent" selected>Show bit of adjacent items</option>
+        <option value="fade">Fade</option>
+        <option value="reveal">Reveal</option>
+        <option value="revealWithFade">Reveal with fade</option>
+      </select>
+    </div>
+  </div>
 </body>
 
 </html>
