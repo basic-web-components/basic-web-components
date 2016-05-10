@@ -51,14 +51,6 @@ export default function mixin(base) {
       renderSelection(this);
     }
 
-    get position() {
-      return super.position;
-    }
-    set position(position) {
-      if ('position' in base.prototype) { super.position = position; }
-      renderSelection(this, this.selectedIndex, position);
-    }
-
     get selectedItem() {
       return super.selectedItem;
     }
@@ -118,6 +110,14 @@ export default function mixin(base) {
       this[selectionAnimationKeyframesSymbol] = value;
       resetAnimations(this);
       renderSelection(this);
+    }
+
+    get selectionFraction() {
+      return super.selectionFraction;
+    }
+    set selectionFraction(value) {
+      if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
+      renderSelection(this, this.selectedIndex, value);
     }
 
     get selectionWraps() {
@@ -409,7 +409,7 @@ function keepIndexWithinBounds(length, index) {
  *    selection, we'll just be restoring the selectionFraction to 0.
  *
  */
-function renderSelection(element, selectedIndex=element.selectedIndex, selectionFraction=element.position) {
+function renderSelection(element, selectedIndex=element.selectedIndex, selectionFraction=element.selectionFraction) {
   if (selectedIndex < 0) {
     // TODO: Handle no selection.
     return;

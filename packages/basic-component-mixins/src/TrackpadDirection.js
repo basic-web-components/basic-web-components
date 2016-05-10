@@ -54,6 +54,11 @@ export default (base) => {
       if (super.goRight) { return super.goRight(); }
     }
 
+    // Default implementation
+    showTransition(value) {
+      if (super.showTransition) { super.showTransition(value); }
+    }
+
     /**
      * The distance the user has moved the first touchpoint since the beginning
      * of a trackpad/wheel operation, expressed as a fraction of the element's
@@ -61,16 +66,11 @@ export default (base) => {
      *
      * @type number
      */
-    get position() {
-      return super.position;
+    get travelFraction() {
+      return super.travelFraction;
     }
-    set position(position) {
-      if ('position' in base.prototype) { super.position = position; }
-    }
-
-    // Default implementation
-    showTransition(value) {
-      if (super.showTransition) { super.showTransition(value); }
+    set travelFraction(value) {
+      if ('travelFraction' in base.prototype) { super.travelFraction = value; }
     }
 
   }
@@ -89,7 +89,7 @@ const WHEEL_TIME = 100;
 
 // Following a navigation, partially reset our wheel tracking.
 function postNavigate(element) {
-  element.position = 0;
+  element.travelFraction = 0;
   element._wheelDistance = 0;
   element._postNavigateDelayComplete = true;
   element._absorbDeceleration = true;
@@ -100,7 +100,7 @@ function postNavigate(element) {
 
 // Reset all state related to the tracking of the wheel.
 function resetWheelTracking(element) {
-  element.position = 0;
+  element.travelFraction = 0;
   element._wheelDistance = 0;
   element._lastDeltaX = 0;
   element._absorbDeceleration = false;
@@ -181,23 +181,23 @@ function wheel(element, event) {
 
   element._wheelDistance += deltaX;
 
-  // Update the position of the items being navigated.
+  // Update the travel fraction of the element being navigated.
   let width = element.offsetWidth;
-  let position = width > 0 ?
+  let travelFraction = width > 0 ?
     element._wheelDistance / width :
     0;
   element.showTransition(false);
-  position = sign(position) * Math.min(Math.abs(position), 1);
-  element.position = position;
+  travelFraction = sign(travelFraction) * Math.min(Math.abs(travelFraction), 1);
+  element.travelFraction = travelFraction;
 
   // If the user has dragged enough to reach the previous/next item, then
   // complete a navigation to that item.
-  if (position === 1) {
+  if (travelFraction === 1) {
     // console.log("goRight");
     element.showTransition(true);
     element.goRight();
     postNavigate(element);
-  } else if (position === -1) {
+  } else if (travelFraction === -1) {
     // console.log("goLeft");
     element.showTransition(true);
     element.goLeft();
@@ -214,11 +214,11 @@ function wheelTimedOut(element) {
 
   // Snap to the closest item.
   element.showTransition(true);
-  let position = element.position;
-  if (position >= 0.5) {
+  let travelFraction = element.travelFraction;
+  if (travelFraction >= 0.5) {
     // console.log("snap right");
     element.goRight();
-  } else if (position <= -0.5) {
+  } else if (travelFraction <= -0.5) {
     // console.log("snap left");
     element.goLeft();
   }

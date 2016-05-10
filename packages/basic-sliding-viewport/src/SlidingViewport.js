@@ -29,7 +29,7 @@ class SlidingViewport extends base {
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.classList.add('showTransition');
-    this.position = 0;
+    this.selectionFraction = 0;
   }
 
   get content() {
@@ -56,12 +56,12 @@ class SlidingViewport extends base {
    *
    * @type {number}
    */
-  get position() {
-    return this._position;
+  get selectionFraction() {
+    return this._selectionFraction;
   }
-  set position(position) {
-    if ('position' in base.prototype) { super.position = position; }
-    this._position = position;
+  set selectionFraction(value) {
+    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
+    this._selectionFraction = value;
     this.render();
   }
 
@@ -142,19 +142,19 @@ function renderSelection() {
     index = 0;
   }
 
-  let position = this.position || 0;
-  let dampenedPosition;
-  if (index === 0 && position < 0) {
+  let selectionFraction = this.selectionFraction || 0;
+  let dampedFraction;
+  if (index === 0 && selectionFraction < 0) {
     // Apply tension from the left edge.
-    dampenedPosition = -damping(-position);
-  } else if (index === count - 1 && position > 0) {
+    dampedFraction = -damping(-selectionFraction);
+  } else if (index === count - 1 && selectionFraction > 0) {
     // Apply tension from the right edge.
-    dampenedPosition = damping(position);
+    dampedFraction = damping(selectionFraction);
   } else {
     // No damping required.
-    dampenedPosition = position;
+    dampedFraction = selectionFraction;
   }
-  let fractionalIndex = index + dampenedPosition;
+  let fractionalIndex = index + dampedFraction;
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
   let left = -fractionalIndex * 100;

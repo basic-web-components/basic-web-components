@@ -15,7 +15,7 @@ export default (base) => {
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
 
-      this.position = 0;
+      this.travelFraction = 0;
 
       // TODO: Touch events could be factored out into its own mixin.
 
@@ -98,20 +98,6 @@ export default (base) => {
     }
 
     /**
-     * The distance the user has moved the first touchpoint since the beginning
-     * of a drag, expressed as a fraction of the element's width.
-     *
-     * @type number
-     */
-    get position() {
-      return this._position;
-    }
-    set position(position) {
-      if ('position' in base.prototype) { super.position = position; }
-      this._position = position;
-    }
-
-    /**
      * Determine whether a transition should be shown during a swipe.
      *
      * Components like carousels often define animated CSS transitions for
@@ -128,6 +114,20 @@ export default (base) => {
     // TODO: Rename (and flip meaning) to something like dragging()?
     showTransition(value) {
       if (super.showTransition) { super.showTransition(value); }
+    }
+
+    /**
+     * The distance the first touchpoint has traveled since the beginning of a
+     * drag, expressed as a fraction of the element's width.
+     *
+     * @type number
+     */
+    get travelFraction() {
+      return this._travelFraction;
+    }
+    set travelFraction(value) {
+      if ('travelFraction' in base.prototype) { super.travelFraction = value; }
+      this._travelFraction = value;
     }
 
   }
@@ -188,14 +188,14 @@ function touchEnd(element, clientX, clientY) {
     // Finished at low speed.
     // console.log("slow drag " + element._deltaX);
     trackTo(element, clientX);
-    let position = element.position;
-    if (position >= 0.5) {
+    let travelFraction = element.travelFraction;
+    if (travelFraction >= 0.5) {
       element.goRight();
-    } else if (position <= -0.5) {
+    } else if (travelFraction <= -0.5) {
       element.goLeft();
     }
   }
-  element.position = 0;
+  element.travelFraction = 0;
   element._deltaX = null;
   element._deltaY = null;
 }
@@ -206,5 +206,5 @@ function trackTo(element, x) {
   let fraction = width > 0 ?
     dragDistance / width :
     0;
-  element.position = fraction;
+  element.travelFraction = fraction;
 }

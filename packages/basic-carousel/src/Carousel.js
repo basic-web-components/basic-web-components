@@ -150,22 +150,22 @@ class Carousel extends base {
     this.selectionRequired = true;
   }
 
-  get position() {
-    return this.$.viewport.position;
-  }
-  set position(value) {
-    if ('position' in base.prototype) { super.position = value; }
-    this.$.viewport.position = value;
-    let event = new CustomEvent('position-changed');
-    this.dispatchEvent(event);
-  }
-
   get selectedItem() {
     return super.selectedItem;
   }
   set selectedItem(item) {
     if ('selectedItem' in base.prototype) { super.selectedItem = item; }
     this.$.viewport.selectedItem = item;
+  }
+
+  get selectionFraction() {
+    return this.$.viewport.selectionFraction;
+  }
+  set selectionFraction(value) {
+    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
+    this.$.viewport.selectionFraction = value;
+    let event = new CustomEvent('selection-fraction-changed');
+    this.dispatchEvent(event);
   }
 
   showTransition(show) {

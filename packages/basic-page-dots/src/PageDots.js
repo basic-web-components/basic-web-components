@@ -46,9 +46,11 @@ let base = ElementBase.compose(
  *
  * @extends ElementBase
  * @mixes ContentFirstChildTarget
+ * @mixes DirectionSelection
  * @mixes DistributedChildrenAsContent
  * @mixes ItemsSelection
  * @mixes Keyboard
+ * @mixes KeyboardDirection
  * @mixes ObserveContentChanges
  * @mixes TargetInCollective
  * @mixes TargetSelection
@@ -103,25 +105,6 @@ class PageDots extends base {
     this.selectedItemChanged();  // In case position of selected item moved.
   }
 
-  /**
-   * The distance the user has moved the first touchpoint since the beginning
-   * of a drag, expressed as a fraction of the element's width.
-   *
-   * @type number
-   */
-  get position() {
-    return this.target && this.target.position;
-  }
-  set position(value) {
-    if ('position' in base.prototype) { super.position = value; }
-    if (this.target && this.target.position !== value) {
-      this.target.position = value;
-    } else {
-      renderTransition(this, this.selectedIndex, value);
-    }
-    this.dispatchEvent(new CustomEvent('position-changed'));
-  }
-
   selectedItemChanged() {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
     let selectedIndex = this.selectedIndex;
@@ -130,16 +113,35 @@ class PageDots extends base {
     });
   }
 
+  /**
+   * The distance the user has moved the first touchpoint since the beginning
+   * of a drag, expressed as a fraction of the element's width.
+   *
+   * @type number
+   */
+  get selectionFraction() {
+    return this.target && this.target.selectionFraction;
+  }
+  set selectionFraction(value) {
+    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
+    if (this.target && this.target.selectionFraction !== value) {
+      this.target.selectionFraction = value;
+    } else {
+      renderTransition(this, this.selectedIndex, value);
+    }
+    this.dispatchEvent(new CustomEvent('selection-fraction-changed'));
+  }
+
   get target() {
     return super.target;
   }
   set target(element) {
     if ('target' in base.prototype) { super.target = element; }
-    if (this._positionChangedListener) {
-      this.removeEventListener('position-changed', this._positionChangedListener);
+    if (this._selectionFractionChangedListener) {
+      this.removeEventListener('selection-fraction-changed', this._selectionFractionChangedListener);
     }
-    this._positionChangedListener = element.addEventListener('position-changed', event => {
-      this.position = element.position;
+    this._selectionFractionChangedListener = element.addEventListener('selection-fraction-changed', event => {
+      this.selectionFraction = element.selectionFraction;
     });
   }
 

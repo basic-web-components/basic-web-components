@@ -42,18 +42,41 @@ export default (base) => {
       return this.selectPrevious();
     }
 
-    // Default implementations. These will typically be handled by other mixins.
+    // Default implementation. This will typically be handled by other mixins.
     selectFirst() {
       if (super.selectFirst) { return super.selectFirst(); }
     }
+
+    // Default implementation. This will typically be handled by other mixins.
+    get selectionFraction() {
+      return super.selectionFraction;
+    }
+    set selectionFraction(value) {
+      if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
+    }
+
+    // Default implementation. This will typically be handled by other mixins.
     selectLast() {
       if (super.selectLast) { return super.selectLast(); }
     }
+
+    // Default implementation. This will typically be handled by other mixins.
     selectNext() {
       if (super.selectNext) { return super.selectNext(); }
     }
+
+    // Default implementation. This will typically be handled by other mixins.
     selectPrevious() {
       if (super.selectPrevious) { return super.selectPrevious(); }
+    }
+
+    // Map drag travel fraction to selection fraction.
+    get travelFraction() {
+      return super.travelFraction;
+    }
+    set travelFraction(value) {
+      if ('travelFraction' in base.prototype) { super.travelFraction = value; }
+      this.selectionFraction = value;
     }
 
   }

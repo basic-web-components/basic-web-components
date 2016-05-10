@@ -42,12 +42,13 @@ class AnimationStage extends base {
     this.selectionRequired = true;
   }
 
-  get position() {
-    return super.position;
+  get selectionFraction() {
+    return this._selectionFraction;
   }
-  set position(value) {
-    if ('position' in base.prototype) { super.position = value; }
-    let event = new CustomEvent('position-changed');
+  set selectionFraction(value) {
+    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
+    this._selectionFraction = value;
+    let event = new CustomEvent('selection-fraction-changed');
     this.dispatchEvent(event);
   }
 
