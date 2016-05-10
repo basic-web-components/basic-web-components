@@ -9,6 +9,7 @@
   <script src="../demos/lib/web-animations.min.js"></script>
   <script src="../demos/lib/webcomponents.js"></script>
   <script src="../basic-page-dots/dist/basic-page-dots.js"></script>
+  <script src="../basic-component-mixins/dist/basic-component-mixins.js"></script>
   <script src="./dist/basic-animation-stage.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
 
@@ -77,43 +78,6 @@
   </style>
 
   <script>
-  var effectKeyframes = {
-
-    // Simple crossfade.
-    fade: [
-      { opacity: 0 },
-      { opacity: 1 },
-      { opacity: 0 }
-    ],
-
-    // Reveal, as if sliding the top card off a deck of cards.
-    reveal: [
-      { transform: 'translateX(0%)', zIndex: 0 },
-      { transform: 'translateX(0%)', zIndex: 1 },
-      { transform: 'translateX(-100%)', zIndex: 2 }
-    ],
-
-    // Google Photos-style animation
-    revealWithFade: [
-      { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: 0 },
-      { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
-      { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: 2 }
-    ],
-
-    // Carousel variant with a bit of off stage elements showing
-    showAdjacent: [
-      { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
-      { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
-      { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
-    ],
-
-    // Standard slide, plus a gap between
-    slideWithGap: [
-      { transform: 'translateX(110%)' },
-      { transform: 'translateX(-110%)' }
-    ]
-  };
-
   var effectSelector;
   var stage;
 
@@ -130,7 +94,8 @@
     var animation;
     resetStylesOnItems(stage);
     var defaultKeyframes = Object.getPrototypeOf(stage).selectionAnimationKeyframes;
-    stage.selectionAnimationKeyframes = effectKeyframes[effectSelector.value] || defaultKeyframes;
+    var standardEffectKeyframes = Basic.SelectionAnimation.standardEffectKeyframes;
+    stage.selectionAnimationKeyframes = standardEffectKeyframes[effectSelector.value] || defaultKeyframes;
   }
 
   // Clear any animated properties left on child elements by previous effects.

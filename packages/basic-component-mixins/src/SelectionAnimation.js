@@ -111,10 +111,7 @@ export default function mixin(base) {
      */
     get selectionAnimationKeyframes() {
       // Standard animation slides left/right, keeps adjacent items out of view.
-      return this[selectionAnimationKeyframesSymbol] || [
-        { transform: 'translateX(100%)' },
-        { transform: 'translateX(-100%)' }
-      ];
+      return this[selectionAnimationKeyframesSymbol] || mixin.standardEffectKeyframes.slide;
     }
     set selectionAnimationKeyframes(value) {
       if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
@@ -236,6 +233,52 @@ mixin.helpers = {
 
     return timings;
   }
+
+};
+
+
+// Keyframes for standard selection animation effects.
+mixin.standardEffectKeyframes = {
+
+  // Simple crossfade
+  fade: [
+    { opacity: 0 },
+    { opacity: 1 },
+    { opacity: 0 }
+  ],
+
+  // Reveal, as if sliding the top card off a deck of cards
+  reveal: [
+    { transform: 'translateX(0%)', zIndex: 0 },
+    { transform: 'translateX(0%)', zIndex: 1 },
+    { transform: 'translateX(-100%)', zIndex: 2 }
+  ],
+
+  // Google Photos-style reveal-with-fade animation
+  revealWithFade: [
+    { transform: 'translateX(0%) scale(0.75)', opacity: 0, zIndex: 0 },
+    { transform: 'translateX(0%) scale(1.0)', opacity: 1, zIndex: 1 },
+    { transform: 'translateX(-100%) scale(1.0)', opacity: 1, zIndex: 2 }
+  ],
+
+  // Carousel variant with a bit of off-stage elements showing
+  showAdjacent: [
+    { transform: 'translateX(78%) scale(0.7)', zIndex: 0 },
+    { transform: 'translateX(0%) scale(0.82)', zIndex: 1 },
+    { transform: 'translateX(-78%) scale(0.7)', zIndex: 0 }
+  ],
+
+  // Simple slide
+  slide: [
+    { transform: 'translateX(100%)' },
+    { transform: 'translateX(-100%)' }
+  ],
+
+  // Slide, with a gap between
+  slideWithGap: [
+    { transform: 'translateX(110%)' },
+    { transform: 'translateX(-110%)' }
+  ]
 
 };
 
