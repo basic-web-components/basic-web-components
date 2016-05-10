@@ -1,6 +1,6 @@
 {
   "name": "basic-page-dots",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Presents a set of small dots to show list item count and select list items. There will be one dot for each item, and the dot for the currently selected item will be shown selected.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -12,8 +12,8 @@
   ],
   "main": "src/PageDots.js",
   "dependencies": {
-    "basic-element-base": "^0.7.4",
-    "basic-component-mixins": "^0.7.4"
+    "basic-element-base": "^0.7.5",
+    "basic-component-mixins": "^0.7.5"
   },
   "browserify": {
     "transform": [

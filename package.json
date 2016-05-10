@@ -1,6 +1,6 @@
 {
   "name": "basic-web-components",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Basic Web Components",
   "license": "MIT",
   "repository": {
@@ -27,6 +27,8 @@
     "webcomponents.js": "^0.7.22"
   },
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   }
 }

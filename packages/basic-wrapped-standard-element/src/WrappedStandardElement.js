@@ -222,10 +222,14 @@ class WrappedStandardElement extends ElementBase {
    * The default value of this property is a template that includes an instance
    * the standard element being wrapped, with a `<slot>` element inside that
    * to pick up the element's light DOM content. For example, if you wrap an
-   * `<a>` element, then the template will look like:
+   * `<a>` element, then the default template will look like:
    *
    *     <template>
-   *       <style>:host { display: block; }</style>
+   *       <style>
+   *       :host {
+   *         display: inline-block;
+   *       }
+   *       </style>
    *       <a id="inner">
    *         <slot></slot>
    *       </a>

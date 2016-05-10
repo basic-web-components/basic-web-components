@@ -276,7 +276,7 @@ function ensureSelection(element) {
     } else {
       // No items for us to select, but we can at least signal that there's no
       // longer a selection.
-      this.selectedItem = null;
+      element.selectedItem = null;
     }
   }
 }
