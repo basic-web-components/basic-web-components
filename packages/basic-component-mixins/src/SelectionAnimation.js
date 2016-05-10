@@ -15,7 +15,7 @@ const selectionAnimationKeyframesSymbol = createSymbol('selectionAnimationKeyfra
 export default function mixin(base) {
 
   /**
-   * Mixin which plays animations between selection states.
+   * Mixin which uses animation to show transitions between selection states.
    *
    * This mixin can be used by components that want to provide visible
    * animations when changing the selection. For example, a carousel component

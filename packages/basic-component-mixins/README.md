@@ -293,6 +293,8 @@ common web component feature:
   (direct children, or nodes distributed to slots).
 * [OpenClose](docs/OpenClose.md).
   Adds open/close semantics.
+* [SelectionAnimation](docs/SelectionAnimation.md).
+  Uses animation to show transitions between selection states.
 * [SelectionAriaActive](docs/SelectionAriaActive.md).
   Treat the selected item in a list as the active item in ARIA accessibility
   terms.

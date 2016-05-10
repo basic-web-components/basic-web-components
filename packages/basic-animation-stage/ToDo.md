@@ -10,12 +10,6 @@
 * More on slideshow.
 
 
-Scenarios
-1. Initial positioning (or repositioning after changing animation).
-2. Animate on selectedIndex change. Complete any animation/swipe in progress.
-3. Swipe/drag. (Complete any animation in progress?)
-4. Swipe/drag that doesn't change selection, and just restores position=0.
-
 
 
 Current question: Should totalSteps be forced to an integer?
