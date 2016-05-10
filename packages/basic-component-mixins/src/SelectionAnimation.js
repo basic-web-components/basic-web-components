@@ -397,6 +397,17 @@ function keepIndexWithinBounds(length, index) {
  * This can be used to re-render a previous selection state (if the
  * selectedIndex param is omitted), render the selection instantly at a given
  * whole or fractional selection index, or animate to a given selection index.
+ *
+ * There are several distinct scenarios we need to cover:
+ *
+ * 1. Initial positioning, or repositioning after changing a property like
+ *    selectionAnimationKeyframes that affects rendering.
+ * 2. Animate on selectedIndex change. This should override any animation/swipe
+ *    already in progress.
+ * 3. Instantly render the current position of a drag operation in progress.
+ * 4. Complete a drag operation. If the drag wasn't far enough to affect
+ *    selection, we'll just be restoring the selectionFraction to 0.
+ *
  */
 function renderSelection(element, selectedIndex=element.selectedIndex, selectionFraction=element.position) {
   if (selectedIndex < 0) {
@@ -404,10 +415,13 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selection
     return;
   }
   selectedIndex += selectionFraction;
-  if (element[showTransitionSymbol] && element[previousSelectionIndexSymbol] != null &&
-      element[previousSelectionIndexSymbol] !== selectedIndex) {
-    animateSelection(element, element[previousSelectionIndexSymbol], selectedIndex);
+  let previousSelectionIndex = element[previousSelectionIndexSymbol];
+  if (element[showTransitionSymbol] && previousSelectionIndex != null &&
+      previousSelectionIndex !== selectedIndex) {
+    // Animate selection from previous state to new state.
+    animateSelection(element, previousSelectionIndex, selectedIndex);
   } else {
+    // Render current selection state instantly.
     if (selectionFraction === 0 && element[animatingSelectionSymbol]) {
       // Already in process of animating to fraction 0. During that process,
       // ignore subsequent attempts to renderSelection to fraction 0.
