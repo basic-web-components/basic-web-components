@@ -1,6 +1,4 @@
 * Full page demo
-* Once dust settles, need an edit pass to give functions better names, refactor
-  if necessary, and add comments.
 * Reconsider TargetSelection and updatePossibleNavigations/selectionWraps.
   Should be able to toggle ArrowSelection.selectionWraps and see buttons update
 * Rename position -> selectionFraction. Push this change into SwipeDirection,

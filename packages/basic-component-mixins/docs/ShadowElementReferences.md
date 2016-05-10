@@ -1,5 +1,6 @@
 # API Documentation
 <a name="ShadowElementReferences"></a>
+
 ## ShadowElementReferences
 Mixin to create references to elements in a component's Shadow DOM subtree.
 
@@ -23,6 +24,7 @@ feature.
 
   **Kind**: global class
 <a name="$"></a>
+
 ## $ : <code>object</code>
 The collection of references to the elements with IDs in a component's
 Shadow DOM subtree.

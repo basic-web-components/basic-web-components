@@ -1,5 +1,6 @@
 # API Documentation
 <a name="SlidingViewport"></a>
+
 ## SlidingViewport ⇐ <code>ElementBase</code>
 Presents list items in a viewport such that only a single item is visible at
 a time.
@@ -15,6 +16,7 @@ This component currently requires that you explicitly apply a size to it.
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
 <a name="SlidingViewport+position"></a>
+
 ### slidingViewport.position : <code>number</code>
 The fractional position of the element's moving surface while it is being
 moved (dragged/scrolled/etc.).

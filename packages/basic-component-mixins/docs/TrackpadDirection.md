@@ -1,5 +1,6 @@
 # API Documentation
 <a name="TrackpadDirection"></a>
+
 ## TrackpadDirection
 Mixin which maps a horizontal trackpad swipe gestures (or horizontal mouse
 wheel actions) to direction semantics.
@@ -32,18 +33,21 @@ same degree of trackpad responsiveness possible with native applications.
     * [.position](#TrackpadDirection+position) : <code>number</code>
 
 <a name="TrackpadDirection+goLeft"></a>
+
 ### trackpadDirection.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[TrackpadDirection](#TrackpadDirection)</code>
 <a name="TrackpadDirection+goRight"></a>
+
 ### trackpadDirection.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[TrackpadDirection](#TrackpadDirection)</code>
 <a name="TrackpadDirection+position"></a>
+
 ### trackpadDirection.position : <code>number</code>
 The distance the user has moved the first touchpoint since the beginning
 of a trackpad/wheel operation, expressed as a fraction of the element's

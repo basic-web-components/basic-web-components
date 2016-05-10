@@ -1,5 +1,6 @@
 # API Documentation
 <a name="SelectionInView"></a>
+
 ## SelectionInView
 Mixin which scrolls a container to ensure that a newly-selected item is
 visible to the user.
@@ -19,6 +20,7 @@ changes. You can supply that yourself, or use the
     * [.scrollTarget](#SelectionInView+scrollTarget) : <code>HTMLElement</code>
 
 <a name="SelectionInView+scrollItemIntoView"></a>
+
 ### selectionInView.scrollItemIntoView(item)
 Scroll the given element completely into view, minimizing the degree of
 scrolling performed.
@@ -34,6 +36,7 @@ up scrolling more than is absolutely necessary.
 | item | <code>HTMLElement</code> | the item to scroll into view. |
 
 <a name="SelectionInView+scrollTarget"></a>
+
 ### selectionInView.scrollTarget : <code>HTMLElement</code>
 The element that should be scrolled to bring an item into view.
 

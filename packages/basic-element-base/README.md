@@ -1,5 +1,6 @@
 # API Documentation
 <a name="ElementBase"></a>
+
 ## ElementBase
 A sample general-purpose base class for defining custom elements that mixes
 in some common features: template stamping into a shadow root, shadow element
@@ -29,6 +30,7 @@ the browser, and hence cannot be independently instantiated.
     * [.distributedTextContent](#DistributedChildren+distributedTextContent) : <code>string</code>
 
 <a name="Composable.compose"></a>
+
 ### ElementBase.compose(...mixins)
 Apply a set of mixin functions or mixin objects to the present class and
 return the new class.
@@ -62,24 +64,28 @@ define a class in ES5, which lacks ES6's `class` keyword.
 | ...mixins | <code>mixins</code> | A set of mixin functions or objects to apply. |
 
 <a name="DistributedChildren+distributedChildNodes"></a>
+
 ### elementBase.distributedChildNodes : <code>Array.&lt;Node&gt;</code>
 An in-order collection of child nodes, expanding any slot elements. Like
 the standard childNodes property, this includes text nodes.
 
   **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code> mixin.
 <a name="DistributedChildren+distributedChildren"></a>
+
 ### elementBase.distributedChildren : <code>Array.&lt;HTMLElement&gt;</code>
 An in-order collection of children, expanding any slot elements. Like the
 standard children property, this skips text nodes.
 
   **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code> mixin.
 <a name="DistributedChildren+distributedTextContent"></a>
+
 ### elementBase.distributedTextContent : <code>string</code>
 The concatenated text content of all child nodes, expanding any slot
 elements.
 
   **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code> mixin.
 <a name="$"></a>
+
 ## $ : <code>object</code>
 The collection of references to the elements with IDs in a component's
 Shadow DOM subtree.

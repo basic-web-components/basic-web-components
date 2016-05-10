@@ -1,5 +1,6 @@
 # API Documentation
 <a name="renderArrayAsElements"></a>
+
 ## renderArrayAsElements(items, container, renderItem)
 Helper function for rendering an array of items as elements.
 

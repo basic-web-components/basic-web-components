@@ -29,7 +29,7 @@
  * The use of the underscore is meant to reduce (not eliminate) the potential
  * for name conflicts, and discourage (not prevent) external access to this
  * data. In modern browsers, the above code will eliminate the potential of
- * naming conflicts, and better the data behind a real Symbol.
+ * naming conflicts, and better hide the data behind a real Symbol.
  *
  * @function createSymbol
  * @param {string} description - A string to identify the symbol when debugging

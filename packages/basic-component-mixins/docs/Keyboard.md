@@ -1,5 +1,6 @@
 # API Documentation
 <a name="Keyboard"></a>
+
 ## Keyboard
 Mixin which manages the keydown handling for a component.
 
@@ -41,6 +42,7 @@ Collective class for details.
 
   **Kind**: global class
 <a name="Keyboard+keydown"></a>
+
 ### keyboard.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
 
