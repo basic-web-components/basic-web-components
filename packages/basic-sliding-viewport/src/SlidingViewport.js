@@ -1,6 +1,7 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
+import * as fractionalSelection from '../../basic-component-mixins/src/fractionalSelection';
 
 
 let base = ElementBase;
@@ -67,8 +68,10 @@ class SlidingViewport extends base {
 
   get selectedIndex() {
     let items = this.items;
-    let index = items && items.indexOf(this.selectedItem);
-    return index || -1;
+    let selectedItem = this.selectedItem;
+    return items && selectedItem ?
+      items.indexOf(selectedItem) :
+      -1;
   }
   set selectedIndex(index) {
     if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
@@ -128,61 +131,16 @@ class SlidingViewport extends base {
 
 
 function renderSelection() {
-
-  let count = this.items && this.items.length;
-  if (!count) {
-    // Null or zero means we don't have items to render yet.
+  if (!this.selectedItem) {
     return;
   }
-
-  let index = this.selectedIndex;
-  if (index < 0) {
-    // No selection
-    // return;
-    index = 0;
-  }
-
-  let selectionFraction = this.selectionFraction || 0;
-  let dampedFraction;
-  if (index === 0 && selectionFraction < 0) {
-    // Apply tension from the left edge.
-    dampedFraction = -damping(-selectionFraction);
-  } else if (index === count - 1 && selectionFraction > 0) {
-    // Apply tension from the right edge.
-    dampedFraction = damping(selectionFraction);
-  } else {
-    // No damping required.
-    dampedFraction = selectionFraction;
-  }
-  let fractionalIndex = index + dampedFraction;
+  let selection = fractionalSelection.getDampedSelection(this);
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
-  let left = -fractionalIndex * 100;
-  // let left = -(fractionalIndex / count) * 100;
+  let left = -selection * 100;
   let transform = 'translateX(' + left + '%)';
   this.$.slidingContainer.style.webkitTransform = transform;
   this.$.slidingContainer.style.transform = transform;
-}
-
-
-/*
- * Calculate damping as a function of the distance past the minimum/maximum
- * values.
- *
- * We want to asymptotically approach an absolute minimum of 1 unit
- * below/above the actual minimum/maximum. This requires calculating a
- * hyperbolic function.
- *
- * See http://www.wolframalpha.com/input/?i=y+%3D+-1%2F%28x%2B1%29+%2B+1
- * for the one we use. The only portion of that function we care about is when
- * x is zero or greater. An important consideration is that the curve be
- * tangent to the diagonal line x=y at (0, 0). This ensures smooth continuity
- * with the normal drag behavior, in which the visible sliding is linear with
- * the distance the touchpoint has been dragged.
- */
-function damping(x) {
-  let y = (-1 / (x + 1)) + 1;
-  return y;
 }
 
 

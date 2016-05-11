@@ -150,6 +150,14 @@ class Carousel extends base {
     this.selectionRequired = true;
   }
 
+  get selectedIndex() {
+    return super.selectedIndex;
+  }
+  set selectedIndex(value) {
+    if ('selectedIndex' in base.prototype) { super.selectedIndex = value; }
+    this.$.viewport.selectedIndex = value;
+  }
+
   get selectedItem() {
     return super.selectedItem;
   }

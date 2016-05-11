@@ -1,7 +1,5 @@
 * Reconsider TargetSelection and updatePossibleNavigations/selectionWraps.
   Should be able to toggle ArrowSelection.selectionWraps and see buttons update
-* Rename position -> selectionFraction. Push this change into SwipeDirection,
-  TrackpadDirection, SlidingViewport, PageDots.
 * Edge/IE
 * Damping. Push this into SwipeDirection? Or factor into its own module.
 * Make showTransition a getter/setter property.
