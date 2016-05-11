@@ -223,7 +223,9 @@ mixin.helpers = {
     let direction = totalSteps >= 0 ? 'normal': 'reverse';
     let fill = 'both';
     let totalDuration = element.selectionAnimationDuration;
-    let stepDuration = totalDuration * 2 / Math.ceil(Math.abs(totalSteps));
+    let stepDuration = totalSteps !== 0 ?
+      totalDuration * 2 / Math.ceil(Math.abs(totalSteps)) :
+      0;  // No steps required, animation will be instantenous.
 
     let timings = items.map((item, itemIndex) => {
       let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toSelection);
