@@ -47,13 +47,12 @@ class SlidingViewport extends base {
   }
 
   /**
-   * The fractional position of the element's moving surface while it is being
-   * moved (dragged/scrolled/etc.).
+   * A fractional value indicating how far the user has currently advanced to
+   * the next/previous item. E.g., a `selectionFraction` of 3.5 indicates the
+   * user is halfway between items 3 and 4.
    *
-   * This is expressed as a fraction of the element's width. If the value is
-   * positive, the surface is being moved to the left; if negative, the surface
-   * is being moved to the right. E.g., a value of 0.5 indicates the surface has
-   * moved half the element's width to the left.
+   * For more details, see the [fractionalSelection](fractionalSelection.md)
+   * helper functions.
    *
    * @type {number}
    */
@@ -130,14 +129,17 @@ class SlidingViewport extends base {
 }
 
 
+// Note: In this routine, "this" is bound to an element instance.
 function renderSelection() {
   if (!this.selectedItem) {
     return;
   }
-  let selection = fractionalSelection.dampedElementSelection(this);
+  let selection = fractionalSelection.elementSelection(this);
+  let itemCount = this.items ? this.items.length : 0;
+  let damped = fractionalSelection.dampedSelection(selection, itemCount);
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
-  let left = -selection * 100;
+  let left = -damped * 100;
   let transform = 'translateX(' + left + '%)';
   this.$.slidingContainer.style.webkitTransform = transform;
   this.$.slidingContainer.style.transform = transform;

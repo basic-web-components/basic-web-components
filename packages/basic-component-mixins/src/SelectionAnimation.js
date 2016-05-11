@@ -113,6 +113,16 @@ export default function mixin(base) {
       renderSelection(this);
     }
 
+    /**
+     * A fractional value indicating how far the user has currently advanced to
+     * the next/previous item. E.g., a `selectionFraction` of 3.5 indicates the
+     * user is halfway between items 3 and 4.
+     *
+     * For more details, see the [fractionalSelection](fractionalSelection.md)
+     * helper functions.
+     *
+     * @type {number}
+     */
     get selectionFraction() {
       return super.selectionFraction;
     }

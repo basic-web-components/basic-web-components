@@ -84,7 +84,7 @@
 
   window.addEventListener('load', function() {
     stage = document.querySelector('#stage');
-    let checkboxSelectionWraps = document.querySelector('#checkboxSelectionWraps');
+    var checkboxSelectionWraps = document.querySelector('#checkboxSelectionWraps');
     checkboxSelectionWraps.addEventListener('change', function() {
       stage.selectionWraps = checkboxSelectionWraps.checked;
     })
@@ -147,7 +147,7 @@
         </select>
       </p>
       <p>
-        <label><input type="checkbox" id="checkboxSelectionWraps"> Wrap items</label>
+        <label><input type="checkbox" id="checkboxSelectionWraps"> Wrap around at ends of list</label>
       </p>
     </div>
   </div>
