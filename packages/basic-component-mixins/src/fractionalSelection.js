@@ -41,7 +41,7 @@ export function dampedSelection(selection, itemCount) {
 /**
  * Return the current fractional selection value for the given element.
  *
- * This simply adds the element's `selectedIndex` and `selectionFraction`
+ * This simply adds the element's `selectedIndex` and `selectedFraction`
  * properties.
  */
 export function elementSelection(element) {
@@ -50,8 +50,8 @@ export function elementSelection(element) {
     // No selection
     return;
   }
-  let selectionFraction = element.selectionFraction || 0;
-  return selectedIndex + selectionFraction;
+  let selectedFraction = element.selectedFraction || 0;
+  return selectedIndex + selectedFraction;
 }
 
 

@@ -52,6 +52,24 @@ export default function mixin(base) {
       renderSelection(this);
     }
 
+    /**
+     * A fractional value indicating how far the user has currently advanced to
+     * the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+     * user is halfway between items 3 and 4.
+     *
+     * For more details, see the [fractionalSelection](fractionalSelection.md)
+     * helper functions.
+     *
+     * @type {number}
+     */
+    get selectedFraction() {
+      return super.selectedFraction;
+    }
+    set selectedFraction(value) {
+      if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
+      renderSelection(this, this.selectedIndex, value);
+    }
+
     get selectedItem() {
       return super.selectedItem;
     }
@@ -111,24 +129,6 @@ export default function mixin(base) {
       this[selectionAnimationKeyframesSymbol] = value;
       resetAnimations(this);
       renderSelection(this);
-    }
-
-    /**
-     * A fractional value indicating how far the user has currently advanced to
-     * the next/previous item. E.g., a `selectionFraction` of 3.5 indicates the
-     * user is halfway between items 3 and 4.
-     *
-     * For more details, see the [fractionalSelection](fractionalSelection.md)
-     * helper functions.
-     *
-     * @type {number}
-     */
-    get selectionFraction() {
-      return super.selectionFraction;
-    }
-    set selectionFraction(value) {
-      if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
-      renderSelection(this, this.selectedIndex, value);
     }
 
     get selectionWraps() {
@@ -412,17 +412,17 @@ function isItemIndexInBounds(element, index) {
  *    already in progress.
  * 3. Instantly render the current position of a drag operation in progress.
  * 4. Complete a drag operation. If the drag wasn't far enough to affect
- *    selection, we'll just be restoring the selectionFraction to 0.
+ *    selection, we'll just be restoring the selectedFraction to 0.
  *
  * If the list does not wrap, any selection position outside the list's bounds
  * will be damped to produce a visual effect of tension.
  */
-function renderSelection(element, selectedIndex=element.selectedIndex, selectionFraction=element.selectionFraction) {
+function renderSelection(element, selectedIndex=element.selectedIndex, selectedFraction=element.selectedFraction) {
   if (selectedIndex < 0) {
     // TODO: Handle no selection.
     return;
   }
-  let selection = selectedIndex + selectionFraction;
+  let selection = selectedIndex + selectedFraction;
   if (!element.selectionWraps) {
     // Apply damping if necessary.
     let itemCount = element.items ? element.items.length : 0;
@@ -433,7 +433,7 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selection
       previousSelection !== selection) {
     // Animate selection from previous state to new state.
     animateSelection(element, previousSelection, selection);
-  } else if (selectionFraction === 0 && element[animatingSelectionSymbol]) {
+  } else if (selectedFraction === 0 && element[animatingSelectionSymbol]) {
     // Already in process of animating to fraction 0. During that process,
     // ignore subsequent attempts to renderSelection to fraction 0.
     return;

@@ -150,6 +150,16 @@ class Carousel extends base {
     this.selectionRequired = true;
   }
 
+  get selectedFraction() {
+    return this.$.viewport.selectedFraction;
+  }
+  set selectedFraction(value) {
+    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
+    this.$.viewport.selectedFraction = value;
+    let event = new CustomEvent('selection-fraction-changed');
+    this.dispatchEvent(event);
+  }
+
   get selectedIndex() {
     return super.selectedIndex;
   }
@@ -164,16 +174,6 @@ class Carousel extends base {
   set selectedItem(item) {
     if ('selectedItem' in base.prototype) { super.selectedItem = item; }
     this.$.viewport.selectedItem = item;
-  }
-
-  get selectionFraction() {
-    return this.$.viewport.selectionFraction;
-  }
-  set selectionFraction(value) {
-    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
-    this.$.viewport.selectionFraction = value;
-    let event = new CustomEvent('selection-fraction-changed');
-    this.dispatchEvent(event);
   }
 
   showTransition(show) {

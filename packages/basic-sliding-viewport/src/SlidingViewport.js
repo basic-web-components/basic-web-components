@@ -30,7 +30,7 @@ class SlidingViewport extends base {
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.classList.add('showTransition');
-    this.selectionFraction = 0;
+    this.selectedFraction = 0;
   }
 
   get content() {
@@ -48,7 +48,7 @@ class SlidingViewport extends base {
 
   /**
    * A fractional value indicating how far the user has currently advanced to
-   * the next/previous item. E.g., a `selectionFraction` of 3.5 indicates the
+   * the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
    * user is halfway between items 3 and 4.
    *
    * For more details, see the [fractionalSelection](fractionalSelection.md)
@@ -56,12 +56,12 @@ class SlidingViewport extends base {
    *
    * @type {number}
    */
-  get selectionFraction() {
-    return this._selectionFraction;
+  get selectedFraction() {
+    return this._selectedFraction;
   }
-  set selectionFraction(value) {
-    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
-    this._selectionFraction = value;
+  set selectedFraction(value) {
+    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
+    this._selectedFraction = value;
     this.render();
   }
 

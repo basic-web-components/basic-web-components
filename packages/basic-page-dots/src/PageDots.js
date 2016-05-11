@@ -105,6 +105,25 @@ class PageDots extends base {
     this.selectedItemChanged();  // In case position of selected item moved.
   }
 
+  /**
+   * The distance the user has moved the first touchpoint since the beginning
+   * of a drag, expressed as a fraction of the element's width.
+   *
+   * @type number
+   */
+  get selectedFraction() {
+    return this.target && this.target.selectedFraction;
+  }
+  set selectedFraction(value) {
+    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
+    if (this.target && this.target.selectedFraction !== value) {
+      this.target.selectedFraction = value;
+    } else {
+      renderTransition(this, this.selectedIndex, value);
+    }
+    this.dispatchEvent(new CustomEvent('selection-fraction-changed'));
+  }
+
   selectedItemChanged() {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
     let selectedIndex = this.selectedIndex;
@@ -113,35 +132,16 @@ class PageDots extends base {
     });
   }
 
-  /**
-   * The distance the user has moved the first touchpoint since the beginning
-   * of a drag, expressed as a fraction of the element's width.
-   *
-   * @type number
-   */
-  get selectionFraction() {
-    return this.target && this.target.selectionFraction;
-  }
-  set selectionFraction(value) {
-    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
-    if (this.target && this.target.selectionFraction !== value) {
-      this.target.selectionFraction = value;
-    } else {
-      renderTransition(this, this.selectedIndex, value);
-    }
-    this.dispatchEvent(new CustomEvent('selection-fraction-changed'));
-  }
-
   get target() {
     return super.target;
   }
   set target(element) {
     if ('target' in base.prototype) { super.target = element; }
-    if (this._selectionFractionChangedListener) {
-      this.removeEventListener('selection-fraction-changed', this._selectionFractionChangedListener);
+    if (this._selectedFractionChangedListener) {
+      this.removeEventListener('selection-fraction-changed', this._selectedFractionChangedListener);
     }
-    this._selectionFractionChangedListener = element.addEventListener('selection-fraction-changed', event => {
-      this.selectionFraction = element.selectionFraction;
+    this._selectedFractionChangedListener = element.addEventListener('selection-fraction-changed', event => {
+      this.selectedFraction = element.selectedFraction;
     });
   }
 
@@ -222,7 +222,7 @@ function keepIndexWithinBounds(length, index) {
   return ((index % length) + length) % length;
 }
 
-function renderTransition(element, selectedIndex, position) {
+function renderTransition(element, selectedIndex, selectedFraction) {
   let dots = element.dots;
   if (!dots || dots.length === 0) {
     return;
@@ -231,21 +231,21 @@ function renderTransition(element, selectedIndex, position) {
   let opacityMinimum = 0.4;
   let opacityMaximum = 0.95;
   let opacityRange = opacityMaximum - opacityMinimum;
-  let fractionalIndex = selectedIndex + position;
+  let fractionalIndex = selectedIndex + selectedFraction;
   let leftIndex = Math.floor(fractionalIndex);
   let rightIndex = Math.ceil(fractionalIndex);
   let selectionWraps = element.selectionWraps;
-  let awayIndex = position >= 0 ? leftIndex : rightIndex;
-  let towardIndex = position >= 0 ? rightIndex : leftIndex;
+  let awayIndex = selectedFraction >= 0 ? leftIndex : rightIndex;
+  let towardIndex = selectedFraction >= 0 ? rightIndex : leftIndex;
   if (selectionWraps) {
     awayIndex = keepIndexWithinBounds(dotCount, awayIndex);
     towardIndex = keepIndexWithinBounds(dotCount, towardIndex);
   }
-  let progress = position - Math.trunc(position);
+  let progress = selectedFraction - Math.trunc(selectedFraction);
   let opacityProgressThroughRange = Math.abs(progress) * opacityRange;
   dots.forEach((dot, index) => {
     let dotOpacity;
-    if (position === 0) {
+    if (selectedFraction === 0) {
       // Remove explicit opacity and rely on styling.
       dotOpacity = '';
     } else if (index === awayIndex) {

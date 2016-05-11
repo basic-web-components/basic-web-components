@@ -42,12 +42,12 @@ class AnimationStage extends base {
     this.selectionRequired = true;
   }
 
-  get selectionFraction() {
-    return this._selectionFraction;
+  get selectedFraction() {
+    return this._selectedFraction;
   }
-  set selectionFraction(value) {
-    if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
-    this._selectionFraction = value;
+  set selectedFraction(value) {
+    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
+    this._selectedFraction = value;
     let event = new CustomEvent('selection-fraction-changed');
     this.dispatchEvent(event);
   }

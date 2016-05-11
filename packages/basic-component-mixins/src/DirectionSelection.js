@@ -43,16 +43,16 @@ export default (base) => {
     }
 
     // Default implementation. This will typically be handled by other mixins.
-    selectFirst() {
-      if (super.selectFirst) { return super.selectFirst(); }
+    get selectedFraction() {
+      return super.selectedFraction;
+    }
+    set selectedFraction(value) {
+      if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
     }
 
     // Default implementation. This will typically be handled by other mixins.
-    get selectionFraction() {
-      return super.selectionFraction;
-    }
-    set selectionFraction(value) {
-      if ('selectionFraction' in base.prototype) { super.selectionFraction = value; }
+    selectFirst() {
+      if (super.selectFirst) { return super.selectFirst(); }
     }
 
     // Default implementation. This will typically be handled by other mixins.
@@ -76,7 +76,7 @@ export default (base) => {
     }
     set travelFraction(value) {
       if ('travelFraction' in base.prototype) { super.travelFraction = value; }
-      this.selectionFraction = value;
+      this.selectedFraction = value;
     }
 
   }
