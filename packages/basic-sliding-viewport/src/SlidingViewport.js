@@ -134,7 +134,7 @@ function renderSelection() {
   if (!this.selectedItem) {
     return;
   }
-  let selection = fractionalSelection.getDampedSelection(this);
+  let selection = fractionalSelection.dampedElementSelection(this);
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
   let left = -selection * 100;

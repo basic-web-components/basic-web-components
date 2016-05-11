@@ -1,11 +1,12 @@
 import createSymbol from './createSymbol';
+import * as fractionalSelection from './fractionalSelection';
 
 
 // Symbols for hanging data off an element.
 const animatingSelectionSymbol = createSymbol('animatingSelection');
 const animationSymbol = createSymbol('animations');
 const lastAnimationSymbol = createSymbol('lastAnimation');
-const previousSelectionIndexSymbol = createSymbol('previousSelectionIndex');
+const previousSelectionSymbol = createSymbol('previousSelection');
 const showTransitionSymbol = createSymbol('showTransition');
 const selectionAnimationDurationSymbol = createSymbol('selectionAnimationDuration');
 const selectionAnimationKeyframesSymbol = createSymbol('selectionAnimationKeyframes');
@@ -147,7 +148,7 @@ mixin.helpers = {
 
   /*
    * Calculate the animation fractions for an element's items at the given
-   * selection index. This is used when rendering the element's selection state
+   * selection point. This is used when rendering the element's selection state
    * instantaneously.
    *
    * This function considers the selectedIndex parameter, which can be a whole
@@ -159,26 +160,31 @@ mixin.helpers = {
    * animation fraction at position N corresponds to how item N should be shown.
    */
   // TODO: Handle case where there are fewer than 3 items.
-  animationFractionsAtSelectionIndex(element, selectionIndex) {
+  animationFractionsForSelection(element, selection) {
     let items = element.items;
     if (!items) {
       return;
     }
     let itemCount = items.length;
+
+    // We calculate item positions as if the list wraps, even if it doesn't.
+    // In a non-wrapped list, this lets us position the first/last item when
+    // the user is trying to go before/after it.
+    let { index, fraction } = fractionalSelection.wrappedSelectionParts(selection, itemCount, true);
+
     let selectionWraps = element.selectionWraps;
-    let { whole: wholeIndex, fraction: indexFraction } = getNumericParts(itemCount, selectionIndex);
     return items.map((item, itemIndex) => {
-      let steps = stepsToIndex(itemCount, true, wholeIndex, itemIndex);
-      let oneStepOrLessAway = Math.abs(steps - Math.round(indexFraction)) <= 1;
+      let steps = stepsToIndex(itemCount, true, index, itemIndex);
+      let oneStepOrLessAway = Math.abs(steps - Math.round(fraction)) <= 1;
       if (oneStepOrLessAway &&
-          (selectionWraps || isItemIndexInBounds(element, selectionIndex + steps))) {
+          (selectionWraps || isItemIndexInBounds(element, selection + steps))) {
         // We want:
         // steps      animation fraction
         // -1         1     (stage right)
         //  0         0.5   (center stage)
         //  1         0     (stage left)
-        // We also want to factor in the selection fraction.
-        let animationFraction = (1 - steps + indexFraction) / 2;
+        // We also factor in the selection fraction.
+        let animationFraction = (1 - steps + fraction) / 2;
         return animationFraction;
       } else {
         return null;
@@ -194,23 +200,23 @@ mixin.helpers = {
    * used to animate item N. If an item's timing is null, then that item should
    * not take place in the animation, and should be hidden instead.
    */
-  effectTimingsForSelectionAnimation(element, fromIndex, toIndex) {
+  effectTimingsForSelectionAnimation(element, fromSelection, toSelection) {
 
     let items = element.items;
     if (!items) {
       return;
     }
     let itemCount = items.length;
-    let wholeTo = getNumericParts(itemCount, toIndex).whole;
     let selectionWraps = element.selectionWraps;
-    let totalSteps = stepsToIndex(itemCount, selectionWraps, fromIndex, toIndex);
+    let toIndex = fractionalSelection.wrappedSelectionParts(toSelection, itemCount, selectionWraps).index;
+    let totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
     let direction = totalSteps >= 0 ? 'normal': 'reverse';
     let fill = 'both';
     let totalDuration = element.selectionAnimationDuration;
     let stepDuration = totalDuration * 2 / Math.ceil(Math.abs(totalSteps));
 
     let timings = items.map((item, itemIndex) => {
-      let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toIndex);
+      let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toSelection);
       // If we include this item in the staggered sequence of animations we're
       // creating, where would the item appear in the sequence?
       let positionInSequence = totalSteps - steps;
@@ -222,7 +228,7 @@ mixin.helpers = {
         // Note that delay for first item will be negative. That will cause
         // the animation to start halfway through, which is what we want.
         let delay = stepDuration * (positionInSequence - 1)/2;
-        let endDelay = itemIndex === wholeTo ?
+        let endDelay = itemIndex === toIndex ?
           -stepDuration/2 :   // Stop halfway through.
           0;              // Play animation until end.
         return { duration: stepDuration, direction, fill, delay, endDelay };
@@ -289,7 +295,7 @@ mixin.standardEffectKeyframes = {
  * to complete a touch drag, and the selection will snap to the closest whole
  * index.
  */
-function animateSelection(element, fromIndex, toIndex) {
+function animateSelection(element, fromSelection, toSelection) {
 
   resetAnimations(element);
 
@@ -303,7 +309,7 @@ function animateSelection(element, fromIndex, toIndex) {
   let items = element.items;
   let keyframes = element.selectionAnimationKeyframes;
   element[animatingSelectionSymbol] = true;
-  let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromIndex, toIndex);
+  let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromSelection, toSelection);
   let lastAnimationDetails;
 
   // Play the animations using those timings.
@@ -326,7 +332,7 @@ function animateSelection(element, fromIndex, toIndex) {
   });
 
   if (lastAnimationDetails) {
-    displayNextItemWhenAnimationCompletes(element, lastAnimationDetails, toIndex);
+    displayNextItemWhenAnimationCompletes(element, lastAnimationDetails, toSelection);
   } else {
     // Shouldn't happen -- we should always have at least one animation.
     element[animatingSelectionSymbol] = false;
@@ -338,14 +344,17 @@ function animateSelection(element, fromIndex, toIndex) {
  * going. This waiting is a hack to avoid having static items higher in the
  * natural z-order obscure items during animation.
  */
-function displayNextItemWhenAnimationCompletes(element, animationDetails, toIndex) {
+function displayNextItemWhenAnimationCompletes(element, animationDetails, toSelection) {
   let forward = animationDetails.timing.direction === 'normal';
   let items = element.items;
-  let nextUpIndex = getNumericParts(items.length, toIndex).whole + (forward ? 1 : - 1);
+  let itemCount = items.length;
+  let selectionWraps = element.selectionWraps;
+  let selectionParts = fractionalSelection.selectionParts(toSelection, itemCount, selectionWraps);
+  let nextUpIndex = selectionParts.index + (forward ? 1 : - 1);
   element[lastAnimationSymbol] = animationDetails.animation;
   element[lastAnimationSymbol].onfinish = event => {
-    if (isItemIndexInBounds(element, nextUpIndex) || element.selectionWraps) {
-      nextUpIndex = keepIndexWithinBounds(items.length, nextUpIndex);
+    if (isItemIndexInBounds(element, nextUpIndex) || selectionWraps) {
+      nextUpIndex = fractionalSelection.wrappedSelection(nextUpIndex, itemCount);
       let nextUpItem = items[nextUpIndex];
       let animationFraction = forward ? 0 : 1;
       setAnimationFraction(element, nextUpIndex, animationFraction);
@@ -354,13 +363,6 @@ function displayNextItemWhenAnimationCompletes(element, animationDetails, toInde
     element[animatingSelectionSymbol] = false;
     element[lastAnimationSymbol] = null;
   };
-}
-
-function getNumericParts(bound, n) {
-  n = keepIndexWithinBounds(bound, n);
-  let whole = Math.trunc(n);
-  let fraction = n - whole;
-  return { whole, fraction };
 }
 
 function getAnimationForItemIndex(element, index) {
@@ -385,15 +387,9 @@ function isItemIndexInBounds(element, index) {
   return index >= 0 && element.items && index < element.items.length;
 }
 
-// Return the index, ensuring it stays between 0 and the given length.
-function keepIndexWithinBounds(length, index) {
-  // Handle possibility of negative mod.
-  // See http://stackoverflow.com/a/18618250/76472
-  return ((index % length) + length) % length;
-}
-
 /*
  * Render the selection state of the element.
+ *
  * This can be used to re-render a previous selection state (if the
  * selectedIndex param is omitted), render the selection instantly at a given
  * whole or fractional selection index, or animate to a given selection index.
@@ -408,36 +404,42 @@ function keepIndexWithinBounds(length, index) {
  * 4. Complete a drag operation. If the drag wasn't far enough to affect
  *    selection, we'll just be restoring the selectionFraction to 0.
  *
+ * If the list does not wrap, any selection position outside the list's bounds
+ * will be damped to produce a visual effect of tension.
  */
 function renderSelection(element, selectedIndex=element.selectedIndex, selectionFraction=element.selectionFraction) {
   if (selectedIndex < 0) {
     // TODO: Handle no selection.
     return;
   }
-  selectedIndex += selectionFraction;
-  let previousSelectionIndex = element[previousSelectionIndexSymbol];
-  if (element[showTransitionSymbol] && previousSelectionIndex != null &&
-      previousSelectionIndex !== selectedIndex) {
+  let selection = selectedIndex + selectionFraction;
+  if (!element.selectionWraps) {
+    // Apply damping if necessary.
+    let itemCount = element.items ? element.items.length : 0;
+    selection = fractionalSelection.dampedSelection(selection, itemCount);
+  }
+  let previousSelection = element[previousSelectionSymbol];
+  if (element[showTransitionSymbol] && previousSelection != null &&
+      previousSelection !== selection) {
     // Animate selection from previous state to new state.
-    animateSelection(element, previousSelectionIndex, selectedIndex);
+    animateSelection(element, previousSelection, selection);
+  } else if (selectionFraction === 0 && element[animatingSelectionSymbol]) {
+    // Already in process of animating to fraction 0. During that process,
+    // ignore subsequent attempts to renderSelection to fraction 0.
+    return;
   } else {
     // Render current selection state instantly.
-    if (selectionFraction === 0 && element[animatingSelectionSymbol]) {
-      // Already in process of animating to fraction 0. During that process,
-      // ignore subsequent attempts to renderSelection to fraction 0.
-      return;
-    }
-    renderSelectionInstantly(element, selectedIndex);
+    renderSelectionInstantly(element, selection);
   }
-  element[previousSelectionIndexSymbol] = selectedIndex;
+  element[previousSelectionSymbol] = selection;
 }
 
 /*
  * Instantly render (don't animate) the element's items at the given whole or
  * fractional selection index.
  */
-function renderSelectionInstantly(element, toIndex) {
-  let animationFractions = mixin.helpers.animationFractionsAtSelectionIndex(element, toIndex);
+function renderSelectionInstantly(element, toSelection) {
+  let animationFractions = mixin.helpers.animationFractionsForSelection(element, toSelection);
   animationFractions.map((animationFraction, index) => {
     let item = element.items[index];
     if (animationFraction != null) {
@@ -470,15 +472,15 @@ function showItem(item, flag) {
 }
 
 /*
- * Figure out how many steps it will take to go from fromIndex to toIndex. To go
- * from item 3 to item 4 is one step.
+ * Figure out how many steps it will take to go from fromSelection to
+ * toSelection. To go from item 3 to item 4 is one step.
  *
  * If wrapping is allowed, then going from the last item to the first will take
  * one step (forward), and going from the first item to the last will take one
  * step (backward).
  */
-function stepsToIndex(length, allowWrap, fromIndex, toIndex) {
-  let steps = toIndex - fromIndex;
+function stepsToIndex(length, allowWrap, fromSelection, toSelection) {
+  let steps = toSelection - fromSelection;
   if (allowWrap) {
     let wrapSteps = length - Math.abs(steps);
     if (wrapSteps <= 1) {

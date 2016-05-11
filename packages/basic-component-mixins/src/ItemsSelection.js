@@ -236,7 +236,7 @@ export default (base) => {
     }
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
-      this._selectionWraps = value;
+      this._selectionWraps = String(value) === 'true';
       updatePossibleNavigations(this);
     }
 

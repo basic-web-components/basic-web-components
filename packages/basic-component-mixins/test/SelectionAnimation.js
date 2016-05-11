@@ -37,7 +37,7 @@ describe("SelectionAnimation mixin", () => {
     test.selectionWraps = false;
     // At selection index 0, item 0 should be center stage (0.5), item 1 should
     // be stage right (0), and the other items should be hidden (null).
-    let fractions = index => helpers.animationFractionsAtSelectionIndex(test, index);
+    let fractions = selection => helpers.animationFractionsForSelection(test, selection);
     assert.deepEqual(fractions( 0  ), [ 0.5 ,  0   ,  null,  null,  null]);
     assert.deepEqual(fractions( 0.5), [ 0.75,  0.25, -0.25,  null,  null]);
     assert.deepEqual(fractions( 1  ), [ 1   ,  0.5 ,  0   ,  null,  null]);
