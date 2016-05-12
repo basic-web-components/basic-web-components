@@ -64,7 +64,9 @@ export function elementSelection(element) {
  * selection's fractional component.
  */
 export function selectionParts(selection) {
-  let index = Math.trunc(selection);
+  // Stupid IE doesn't have Math.trunc.
+  // let index = Math.trunc(selection);
+  let index = selection < 0 ? Math.ceil(selection) : Math.floor(selection);
   let fraction = selection - index;
   return { index, fraction };
 }

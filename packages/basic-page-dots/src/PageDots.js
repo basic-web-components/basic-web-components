@@ -241,7 +241,10 @@ function renderTransition(element, selectedIndex, selectedFraction) {
     awayIndex = keepIndexWithinBounds(dotCount, awayIndex);
     towardIndex = keepIndexWithinBounds(dotCount, towardIndex);
   }
-  let progress = selectedFraction - Math.trunc(selectedFraction);
+  // Stupid IE doesn't have Math.trunc.
+  // let truncatedSelectedFraction = Math.trunc(selectedFraction);
+  let truncatedSelectedFraction = selectedFraction < 0 ? Math.ceil(selectedFraction) : Math.floor(selectedFraction);
+  let progress = selectedFraction - truncatedSelectedFraction;
   let opacityProgressThroughRange = Math.abs(progress) * opacityRange;
   dots.forEach((dot, index) => {
     let dotOpacity;
