@@ -38,6 +38,11 @@ export default function mixin(base) {
    * [ContentAsItems](ContentAsItems.md) mixin. This mixin also expects
    * `selectedIndex` and `selectedItem` properties, which can be provided via
    * the [ItemsSelection](ItemsSelection.md) mixin.
+   *
+   * This mixin supports a `selectionWraps` property. When true, the user can
+   * navigate forward from the last item in the list and wrap around to the
+   * first item, or navigate backward from the first item and wrap around to the
+   * last item.
    */
   class SelectionAnimation extends base {
 
@@ -169,36 +174,28 @@ mixin.helpers = {
    * selection index. These fractions are returned as an array, where the
    * animation fraction at position N corresponds to how item N should be shown.
    */
-  // TODO: Handle case where there are fewer than 3 items.
   animationFractionsForSelection(element, selection) {
+
     let items = element.items;
     if (!items) {
       return;
     }
+
     let itemCount = items.length;
-
-    // We calculate item positions as if the list wraps, even if it doesn't.
-    // In a non-wrapped list, this lets us position the first/last item when
-    // the user is trying to go before/after it.
-    let { index, fraction } = fractionalSelection.wrappedSelectionParts(selection, itemCount, true);
-
     let selectionWraps = element.selectionWraps;
+
     return items.map((item, itemIndex) => {
-      let steps = stepsToIndex(itemCount, true, index, itemIndex);
-      let oneStepOrLessAway = Math.abs(steps - Math.round(fraction)) <= 1;
-      if (oneStepOrLessAway &&
-          (selectionWraps || isItemIndexInBounds(element, selection + steps))) {
-        // We want:
-        // steps      animation fraction
-        // -1         1     (stage right)
-        //  0         0.5   (center stage)
-        //  1         0     (stage left)
-        // We also factor in the selection fraction.
-        let animationFraction = (1 - steps + fraction) / 2;
-        return animationFraction;
-      } else {
-        return null;
-      }
+      // How many steps from the selection point to this item?
+      let steps = stepsToIndex(itemCount, selectionWraps, selection, itemIndex);
+      // To convert steps to animation fraction:
+      // steps      animation fraction
+      //  1         0     (stage right)
+      //  0         0.5   (center stage)
+      // -1         1     (stage left)
+      let animationFraction = (1 - steps) / 2;
+      return (animationFraction >= 0 && animationFraction <= 1) ?
+        animationFraction :
+        null; // Outside animation range
     });
   },
 
@@ -493,7 +490,8 @@ function showItem(item, flag) {
  */
 function stepsToIndex(length, allowWrap, fromSelection, toSelection) {
   let steps = toSelection - fromSelection;
-  if (allowWrap) {
+  // Wrapping only kicks in when list has more than 1 item.
+  if (allowWrap && length > 1) {
     let wrapSteps = length - Math.abs(steps);
     if (wrapSteps <= 1) {
       // Special case
