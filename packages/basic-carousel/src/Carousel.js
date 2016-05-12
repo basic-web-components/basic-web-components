@@ -138,16 +138,16 @@ let base = ElementBase.compose(
  */
 class Carousel extends base {
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    this.navigationAxis = 'horizontal';
-  }
-
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
     // HACK
     this.itemsChanged();
     this.selectionRequired = true;
+  }
+
+  createdCallback() {
+    if (super.createdCallback) { super.createdCallback(); }
+    this.navigationAxis = 'horizontal';
   }
 
   get selectedFraction() {

@@ -63,7 +63,6 @@ class SpreadItems extends ElementBase.compose(
       #spreadContainer ::content > * {
         object-fit: contain;
         object-fit: var(--basic-item-object-fit, contain);
-        touch-action: none;
         height: 100%;
         -webkit-user-drag: none;
         -webkit-user-select: none;

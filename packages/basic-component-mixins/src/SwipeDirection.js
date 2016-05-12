@@ -15,6 +15,14 @@ export default (base) => {
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
 
+      // For the component to receive PointerEvents in IE/Edge, we need to set
+      // touch-action: none. Only make this change if touch-action is currently
+      // the default value ("auto"), in case the developer knows better than we
+      // do what they want in their particular context.
+      if (getComputedStyle(this).touchAction === 'auto') {
+        this.style.touchAction = 'none';
+      }
+
       this.travelFraction = 0;
 
       // TODO: Touch events could be factored out into its own mixin.
@@ -178,15 +186,12 @@ function touchEnd(element, clientX, clientY) {
   element.showTransition(true);
   if (element._deltaX >= 20) {
     // Finished going right at high speed.
-    // console.log("flick right " + element._deltaX);
     element.goLeft();
   } else if (element._deltaX <= -20) {
     // Finished going left at high speed.
-    // console.log("flick left " + element._deltaX);
     element.goRight();
   } else {
     // Finished at low speed.
-    // console.log("slow drag " + element._deltaX);
     trackTo(element, clientX);
     let travelFraction = element.travelFraction;
     if (travelFraction >= 0.5) {
