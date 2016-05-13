@@ -11,7 +11,9 @@ let base = ElementBase;
  * a time.
  *
  * Navigating between items will be represented with a horizontal visual
- * sliding effect.
+ * sliding effect. For more complex visual effects, see
+ * [basic-animation-stage](../basic-animation-stage), which takes advantage of
+ * the Web Animations API.
  *
  * This component handles the rendering responsibilities for the basic-carousel
  * component.

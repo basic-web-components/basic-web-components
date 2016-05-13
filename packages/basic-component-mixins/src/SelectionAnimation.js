@@ -43,6 +43,10 @@ export default function mixin(base) {
    * navigate forward from the last item in the list and wrap around to the
    * first item, or navigate backward from the first item and wrap around to the
    * last item.
+   *
+   * This mixin uses the Web Animations API. For use on browsers which
+   * do not support that API natively, you will need to load the
+   * [Web Animations polyfill](https://github.com/web-animations/web-animations-js).
    */
   class SelectionAnimation extends base {
 

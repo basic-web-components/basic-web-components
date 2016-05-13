@@ -43,6 +43,8 @@ export function dampedSelection(selection, itemCount) {
  *
  * This simply adds the element's `selectedIndex` and `selectedFraction`
  * properties.
+ *
+ * @param {HTMLElement} element - An element that supports selection
  */
 export function elementSelection(element) {
   let selectedIndex = element.selectedIndex;
@@ -57,6 +59,8 @@ export function elementSelection(element) {
 
 /**
  * Breaks a fractional selection into its integer and fractional parts.
+ *
+ * Example: if passed 3.5, this returns { index: 3, fraction: 5 }.
  *
  * @param {number} selection – A real number representing a selection point
  * @returns {object} - An object with an `index` property holding the

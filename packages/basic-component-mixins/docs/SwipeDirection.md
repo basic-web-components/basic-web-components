@@ -15,8 +15,7 @@ map the direction to a change in selection, use the
 * [SwipeDirection](#SwipeDirection)
     * [.goLeft()](#SwipeDirection+goLeft)
     * [.goRight()](#SwipeDirection+goRight)
-    * [.position](#SwipeDirection+position) : <code>number</code>
-    * [.showTransition(value)](#SwipeDirection+showTransition)
+    * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
 
 <a name="SwipeDirection+goLeft"></a>
 
@@ -32,29 +31,10 @@ Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
-<a name="SwipeDirection+position"></a>
+<a name="SwipeDirection+travelFraction"></a>
 
-### swipeDirection.position : <code>number</code>
-The distance the user has moved the first touchpoint since the beginning
-of a drag, expressed as a fraction of the element's width.
+### swipeDirection.travelFraction : <code>number</code>
+The distance the first touchpoint has traveled since the beginning of a
+drag, expressed as a fraction of the element's width.
 
   **Kind**: instance property of <code>[SwipeDirection](#SwipeDirection)</code>
-<a name="SwipeDirection+showTransition"></a>
-
-### swipeDirection.showTransition(value)
-Determine whether a transition should be shown during a swipe.
-
-Components like carousels often define animated CSS transitions for
-sliding effects. Such a transition should usually *not* be applied while
-the user is dragging, because a CSS animation will introduce a lag that
-makes the swipe feel sluggish. Instead, as long as the user is dragging
-with their finger down, the transition should be suppressed. When the
-user releases their finger, the transition can be restored, allowing the
-animation to show the carousel sliding into its final position.
-
-  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>boolean</code> | true if a component-provided transition should be shown, false if not. |
-

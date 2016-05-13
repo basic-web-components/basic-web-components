@@ -17,6 +17,7 @@ or use the [ContentAsItems](ContentAsItems.md) and
     * [.pause()](#TimerSelection+pause)
     * [.play()](#TimerSelection+play)
     * [.playing](#TimerSelection+playing) : <code>boolean</code>
+    * [.selectionTimerDuration](#TimerSelection+selectionTimerDuration) : <code>number</code>
 
 <a name="TimerSelection+pause"></a>
 
@@ -36,3 +37,11 @@ Begin automatic progression of the selection.
 True if the selection is being automatically advanced.
 
   **Kind**: instance property of <code>[TimerSelection](#TimerSelection)</code>
+<a name="TimerSelection+selectionTimerDuration"></a>
+
+### timerSelection.selectionTimerDuration : <code>number</code>
+The time in milliseconds that will elapse after the selection changes
+before the selection will be advanced to the next item in the list.
+
+  **Kind**: instance property of <code>[TimerSelection](#TimerSelection)</code>
+**Default**: <code>5000 (5 seconds)</code>  

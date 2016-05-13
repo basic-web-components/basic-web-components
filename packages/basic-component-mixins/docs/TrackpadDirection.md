@@ -30,7 +30,7 @@ same degree of trackpad responsiveness possible with native applications.
 * [TrackpadDirection](#TrackpadDirection)
     * [.goLeft()](#TrackpadDirection+goLeft)
     * [.goRight()](#TrackpadDirection+goRight)
-    * [.position](#TrackpadDirection+position) : <code>number</code>
+    * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
 
 <a name="TrackpadDirection+goLeft"></a>
 
@@ -46,9 +46,9 @@ Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[TrackpadDirection](#TrackpadDirection)</code>
-<a name="TrackpadDirection+position"></a>
+<a name="TrackpadDirection+travelFraction"></a>
 
-### trackpadDirection.position : <code>number</code>
+### trackpadDirection.travelFraction : <code>number</code>
 The distance the user has moved the first touchpoint since the beginning
 of a trackpad/wheel operation, expressed as a fraction of the element's
 width.

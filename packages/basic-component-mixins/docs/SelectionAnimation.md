@@ -25,12 +25,34 @@ in the list, which can be provided via the
 `selectedIndex` and `selectedItem` properties, which can be provided via
 the [ItemsSelection](ItemsSelection.md) mixin.
 
+This mixin supports a `selectionWraps` property. When true, the user can
+navigate forward from the last item in the list and wrap around to the
+first item, or navigate backward from the first item and wrap around to the
+last item.
+
+This mixin uses the Web Animations API. For use on browsers which
+do not support that API natively, you will need to load the
+[Web Animations polyfill](https://github.com/web-animations/web-animations-js).
+
   **Kind**: global class
 
 * [SelectionAnimation](#SelectionAnimation)
+    * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
     * [.selectionAnimationDuration](#SelectionAnimation+selectionAnimationDuration) : <code>integer</code>
     * [.selectionAnimationKeyframes](#SelectionAnimation+selectionAnimationKeyframes) : <code>Array.&lt;cssRules&gt;</code>
+    * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
 
+<a name="SelectionAnimation+selectedFraction"></a>
+
+### selectionAnimation.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
+
+For more details, see the [fractionalSelection](fractionalSelection.md)
+helper functions.
+
+  **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 <a name="SelectionAnimation+selectionAnimationDuration"></a>
 
 ### selectionAnimation.selectionAnimationDuration : <code>integer</code>
@@ -65,5 +87,23 @@ The default forward animation is a smooth slide at full size from right to
 left.
 
 When moving the selection backward, this animation is played in reverse.
+
+  **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
+<a name="SelectionAnimation+showTransition"></a>
+
+### selectionAnimation.showTransition : <code>boolean</code>
+Determine whether a transition should be shown during selection.
+
+Components like carousels often define animated CSS transitions for
+sliding effects. Such a transition should usually *not* be applied while
+the user is dragging, because a CSS animation will introduce a lag that
+makes the swipe feel sluggish. Instead, as long as the user is dragging
+with their finger down, the transition should be suppressed. When the
+user releases their finger, the transition can be restored, allowing the
+animation to show the carousel sliding into its final position.
+
+Note: This property is only intended to let a component cooperate with
+mixins that may be applied to it, and is not intended to let someone
+using component permanently enable or disable transition effects.
 
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>

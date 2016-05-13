@@ -23,7 +23,24 @@ let base = ElementBase.compose(
 );
 
 /**
- * Shows animated transitions entering and leaving the viewport.
+ * Presents a single item as selected, providing animated transitions when the
+ * selection changes. The same animation can be shown at an arbitrary point,
+ * generally used to reflet a user-controlled touch or trackpad drag operation
+ * in progress.
+ *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-animation-stage/)
+ *
+ * This component is intended to be used as the rendering surface for components
+ * like [basic-carousel](../basic-carousel), slideshows, etc., which want to
+ * show transitional effects.
+ *
+ * The component uses the [SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)
+ * mixin, which in turn uses the Web Animations API. For use on browsers which
+ * do not support that API natively, you will need to load the
+ * [Web Animations polyfill](https://github.com/web-animations/web-animations-js).
+ *
+ * For a simpler component that exhibits only a sliding effect, but does not
+ * require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-viewport).
  *
  * @extends ElementBase
  * @mixes ContentAsItems
@@ -34,6 +51,7 @@ let base = ElementBase.compose(
  * @mixes SelectionAnimation
  * @mixes SelectionAriaActive
  * @mixes SwipeDirection
+ * @mixes TrackpadDirection
  */
 class AnimationStage extends base {
 
