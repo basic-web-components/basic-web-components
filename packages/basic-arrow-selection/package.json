@@ -1,6 +1,6 @@
 {
   "name": "basic-arrow-selection",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Mixin used to add prominent left and right arrow buttons to a wrapped child. Clicking the left/right buttons selects the previous/next item.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -13,8 +13,8 @@
   ],
   "main": "src/ArrowSelection.js",
   "dependencies": {
-    "basic-element-base": "^0.7.5",
-    "basic-component-mixins": "^0.7.5"
+    "basic-element-base": "^0.7.6",
+    "basic-component-mixins": "^0.7.6"
   },
   "browserify": {
     "transform": [
