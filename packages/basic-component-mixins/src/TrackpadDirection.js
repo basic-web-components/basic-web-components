@@ -54,9 +54,12 @@ export default (base) => {
       if (super.goRight) { return super.goRight(); }
     }
 
-    // Default implementation
-    showTransition(value) {
-      if (super.showTransition) { super.showTransition(value); }
+    // Default implementation.
+    get showTransition() {
+      return super.showTransition;
+    }
+    set showTransition(value) {
+      if ('showTransition' in base.prototype) { super.showTransition = value; }
     }
 
     /**
@@ -186,7 +189,7 @@ function wheel(element, event) {
   let travelFraction = width > 0 ?
     element._wheelDistance / width :
     0;
-  element.showTransition(false);
+  element.showTransition = false;
   travelFraction = sign(travelFraction) * Math.min(Math.abs(travelFraction), 1);
   element.travelFraction = travelFraction;
 
@@ -194,12 +197,12 @@ function wheel(element, event) {
   // complete a navigation to that item.
   if (travelFraction === 1) {
     // console.log("goRight");
-    element.showTransition(true);
+    element.showTransition = true;
     element.goRight();
     postNavigate(element);
   } else if (travelFraction === -1) {
     // console.log("goLeft");
-    element.showTransition(true);
+    element.showTransition = true;
     element.goLeft();
     postNavigate(element);
   }
@@ -213,7 +216,7 @@ function wheelTimedOut(element) {
   // console.log("timeout");
 
   // Snap to the closest item.
-  element.showTransition(true);
+  element.showTransition = true;
   let travelFraction = element.travelFraction;
   if (travelFraction >= 0.5) {
     // console.log("snap right");

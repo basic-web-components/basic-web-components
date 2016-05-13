@@ -105,23 +105,12 @@ export default (base) => {
       if (super.goRight) { return super.goRight(); }
     }
 
-    /**
-     * Determine whether a transition should be shown during a swipe.
-     *
-     * Components like carousels often define animated CSS transitions for
-     * sliding effects. Such a transition should usually *not* be applied while
-     * the user is dragging, because a CSS animation will introduce a lag that
-     * makes the swipe feel sluggish. Instead, as long as the user is dragging
-     * with their finger down, the transition should be suppressed. When the
-     * user releases their finger, the transition can be restored, allowing the
-     * animation to show the carousel sliding into its final position.
-     *
-     * @param {boolean} value - true if a component-provided transition should
-     * be shown, false if not.
-     */
-    // TODO: Rename (and flip meaning) to something like dragging()?
-    showTransition(value) {
-      if (super.showTransition) { super.showTransition(value); }
+    // Default implementation.
+    get showTransition() {
+      return super.showTransition;
+    }
+    set showTransition(value) {
+      if ('showTransition' in base.prototype) { super.showTransition = value; }
     }
 
     /**
@@ -152,7 +141,7 @@ function isEventForPenOrPrimaryTouch(event) {
 
 
 function touchStart(element, clientX, clientY) {
-  element.showTransition(false);
+  element.showTransition = false;
   element._startX = clientX;
   element._previousX = clientX;
   element._previousY = clientY;
@@ -183,7 +172,7 @@ function touchMove(element, clientX, clientY) {
 }
 
 function touchEnd(element, clientX, clientY) {
-  element.showTransition(true);
+  element.showTransition = true;
   if (element._deltaX >= 20) {
     // Finished going right at high speed.
     element.goLeft();

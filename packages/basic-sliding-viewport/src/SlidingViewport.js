@@ -29,8 +29,8 @@ class SlidingViewport extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
-    this.classList.add('showTransition');
     this.selectedFraction = 0;
+    this.showTransition = true;
   }
 
   get content() {
@@ -89,9 +89,12 @@ class SlidingViewport extends base {
     this.render();
   }
 
-  showTransition(show) {
-    if (super.showTransition) { super.showTransition(show); }
-    toggleClass(this, 'showTransition', show);
+  get showTransition() {
+    return super.showTransition || this.classList.contains('showTransition');
+  }
+  set showTransition(value) {
+    if ('showTransition' in base.prototype) { super.showTransition = value; }
+    toggleClass(this, 'showTransition', value);
   }
 
   get template() {

@@ -176,9 +176,30 @@ class Carousel extends base {
     this.$.viewport.selectedItem = item;
   }
 
-  showTransition(show) {
-    if (super.showTransition) { super.showTransition(); }
-    return this.$.viewport.showTransition(show);
+  /**
+   * Determine whether a transition should be shown during selection.
+   *
+   * Components like carousels often define animated CSS transitions for
+   * sliding effects. Such a transition should usually *not* be applied while
+   * the user is dragging, because a CSS animation will introduce a lag that
+   * makes the swipe feel sluggish. Instead, as long as the user is dragging
+   * with their finger down, the transition should be suppressed. When the
+   * user releases their finger, the transition can be restored, allowing the
+   * animation to show the carousel sliding into its final position.
+   *
+   * Note: This property is only intended to let a component cooperate with
+   * mixins that may be applied to it, and is not intended to let someone
+   * using component permanently enable or disable transition effects.
+   *
+   * @type {boolean} true if a component-provided transition should be shown,
+   * false if not.
+   */
+  get showTransition() {
+    return super.showTransition || this.$.viewport.showTransition;
+  }
+  set showTransition(value) {
+    if ('showTransition' in base.prototype) { super.showTransition = value; }
+    this.$.viewport.showTransition = value;
   }
 
   get template() {
