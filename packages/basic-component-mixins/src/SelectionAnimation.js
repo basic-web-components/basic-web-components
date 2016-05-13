@@ -92,7 +92,7 @@ export default function mixin(base) {
      * @type {number}
      */
     get selectedFraction() {
-      return super.selectedFraction;
+      return super.selectedFraction || 0;
     }
     set selectedFraction(value) {
       if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
