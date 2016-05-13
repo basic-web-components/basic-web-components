@@ -125,6 +125,8 @@ The current release of Basic Web Components includes the following:
 
 ## Top-level components
 
+* [basic-animation-stage](packages/basic-animation-stage).
+  A panel that shows animated transitions between selection states.
 * [basic-autosize-textarea](packages/basic-autosize-textarea).
   A text area that expands to contain its text.
 * [basic-carousel](packages/basic-carousel).

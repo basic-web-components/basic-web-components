@@ -273,6 +273,9 @@ common web component feature:
 * [DistributedChildrenAsContent](docs/DistributedChildrenAsContent.md).
   Defines a component's content as its (flattened, distributed) children.
   Typically used in conjunction with the DistributedChildren mixin.
+* [fractionalSelection](docs/fractionalSelection.md)
+  Helpers for components that support gradual transitions between selection
+  states.
 * [Generic](docs/Generic.md).
   Lets a component easily disable standard, optional styling.
 * [ItemsSelection](docs/ItemsSelection.md).
