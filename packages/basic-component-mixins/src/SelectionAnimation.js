@@ -321,6 +321,19 @@ function animateSelection(element, fromSelection, toSelection) {
   let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromSelection, toSelection);
   let lastAnimationDetails;
 
+  // Figure out which item will be the one *after* the one we're selecting.
+  let itemCount = items.length;
+  let selectionWraps = element.selectionWraps;
+  let selectionIndex = fractionalSelection.selectionParts(toSelection, itemCount, selectionWraps).index;
+  let totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
+  let forward = totalSteps >= 0;
+  let nextUpIndex = selectionIndex + (forward ? 1 : - 1);
+  if (selectionWraps) {
+    nextUpIndex = fractionalSelection.wrappedSelection(nextUpIndex, itemCount);
+  } else if (!isItemIndexInBounds(element, nextUpIndex)) {
+    nextUpIndex = null; // At start/end of list; don't have a next item to show.
+  }
+
   // Play the animations using those timings.
   timings.forEach((timing, index) => {
     let item = items[index];
@@ -334,14 +347,20 @@ function animateSelection(element, fromSelection, toSelection) {
       if (lastAnimationDetails == null || endTime > lastAnimationDetails.endTime) {
         lastAnimationDetails = { animation, endTime, timing };
       }
+
+      if (index === nextUpIndex) {
+        // This item will be animated, so will already be in the desired state
+        // after the animation completes.
+        nextUpIndex = null;
+      }
     } else {
       // This item doesn't participate in the animation.
       showItem(item, false);
     }
   });
 
-  if (lastAnimationDetails) {
-    displayNextItemWhenAnimationCompletes(element, lastAnimationDetails, toSelection);
+  if (lastAnimationDetails && nextUpIndex != null) {
+    displayNextItemWhenAnimationCompletes(element, lastAnimationDetails.animation, nextUpIndex, forward);
   } else {
     // Shouldn't happen -- we should always have at least one animation.
     element[animatingSelectionSymbol] = false;
@@ -353,25 +372,16 @@ function animateSelection(element, fromSelection, toSelection) {
  * going. This waiting is a hack to avoid having static items higher in the
  * natural z-order obscure items during animation.
  */
-function displayNextItemWhenAnimationCompletes(element, animationDetails, toSelection) {
-  let forward = animationDetails.timing.direction === 'normal';
-  let items = element.items;
-  let itemCount = items.length;
-  let selectionWraps = element.selectionWraps;
-  let selectionParts = fractionalSelection.selectionParts(toSelection, itemCount, selectionWraps);
-  let nextUpIndex = selectionParts.index + (forward ? 1 : - 1);
-  element[lastAnimationSymbol] = animationDetails.animation;
-  element[lastAnimationSymbol].onfinish = event => {
-    if (isItemIndexInBounds(element, nextUpIndex) || selectionWraps) {
-      nextUpIndex = fractionalSelection.wrappedSelection(nextUpIndex, itemCount);
-      let nextUpItem = items[nextUpIndex];
-      let animationFraction = forward ? 0 : 1;
-      setAnimationFraction(element, nextUpIndex, animationFraction);
-      showItem(nextUpItem, true);
-    }
+function displayNextItemWhenAnimationCompletes(element, animation, nextUpIndex, forward) {
+  animation.onfinish = event => {
+    let nextUpItem = element.items[nextUpIndex];
+    let animationFraction = forward ? 0 : 1;
+    setAnimationFraction(element, nextUpIndex, animationFraction);
+    showItem(nextUpItem, true);
     element[animatingSelectionSymbol] = false;
     element[lastAnimationSymbol] = null;
   };
+  element[lastAnimationSymbol] = animation;
 }
 
 function getAnimationForItemIndex(element, index) {
