@@ -1,3 +1,8 @@
+import createSymbol from './createSymbol';
+
+const selectionTimerDurationSymbol = createSymbol('selectionTimerDuration');
+
+
 /* Exported function extends a base class with TimerSelection. */
 export default (base) => {
 
@@ -54,12 +59,12 @@ export default (base) => {
     }
 
     /*
-     * When the selected item changes (because of something this mixin did,
-     * or was changed by an outside agent like the user), we wait a bit before
-     * advancing to the next item. By triggering the next item this way,
-     * we implicitly get a desirable behavior: if the user changes the selection
-     * (e.g., in a carousel), we let them see that selection state for a while
-     * before advancing the selection ourselves.
+     * When the selected item changes (because of something this mixin did, or
+     * was changed by an outside agent like the user), we wait before advancing
+     * to the next item. By triggering the next item this way, we implicitly get
+     * a desirable behavior: if the user changes the selection (e.g., in a
+     * carousel), we let them see that selection state for a while before
+     * advancing the selection ourselves.
      */
     get selectedItem() {
       return super.selectedItem;
@@ -70,6 +75,21 @@ export default (base) => {
       if (this.playing) {
         setTimer(this);
       }
+    }
+
+    /**
+     * The time in milliseconds that will elapse after the selection changes
+     * before the selection will be advanced to the next item in the list.
+     *
+     * @type {number} - Time in milliseconds
+     * @default 5000 (5 seconds)
+     */
+    get selectionTimerDuration() {
+      return super.selectionTimerDuration || this[selectionTimerDurationSymbol] || 5000;
+    }
+    set selectionTimerDuration(value) {
+      if ('selectionTimerDuration' in base.prototype) { super.selectionTimerDuration = value; }
+      this[selectionTimerDurationSymbol] = value;
     }
 
   }
@@ -88,7 +108,7 @@ function clearTimer(element) {
 function setTimer(element) {
   element._timeout = setTimeout(() => {
     selectNextWithWrap(element);
-  }, 5000);
+  }, element.selectionTimerDuration);
 }
 
 // Select the next item, wrapping to first item if necessary.
