@@ -51,6 +51,30 @@ export default function mixin(base) {
       this[showTransitionSymbol] = true;
     }
 
+    itemAdded(item) {
+      // We mark new items in the list as explicitly visible to ARIA. Otherwise,
+      // when an item isn't visible on the screen, ARIA will assume the item is
+      // of no interest to the user, and leave it out of the accessibility tree.
+      // If the list contains 10 items, but only 3 are visible, a screen reader
+      // might then announce the list only has 3 items. To ensure that screen
+      // readers and other assistive technologies announce the correct total
+      // number of items, we explicitly mark all items as not hidden. This will
+      // expose them all in the accessibility tree, even the items which are
+      // currently not rendered.
+      //
+      // TODO: Generally speaking, this entire mixin assumes that the user can
+      // navigate through all items in a list. But an app could style an item as
+      // display:none or visibility:hidden because the user is not allowed to
+      // interact with that item at the moment. Support for this scenario should
+      // be added. This would entail changing all locations where a mixin
+      // function is counting items, iterating over the (visible) items, and
+      // showing or hiding items. Among other things, the code below to make
+      // items visible to ARIA would need to discriminate between items which
+      // are invisible because of animation state, or invisible because the user
+      // shouldn't interact with them.
+      item.setAttribute('aria-hidden', false);
+    }
+
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
       resetAnimations(this);
@@ -487,7 +511,7 @@ function setAnimationFraction(element, itemIndex, fraction) {
 }
 
 function showItem(item, flag) {
-  item.style.display = flag ? '' : 'none';
+  item.style.visibility = flag ? 'visible' : 'hidden';
 }
 
 /*
