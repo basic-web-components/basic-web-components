@@ -1,6 +1,8 @@
 import createSymbol from './createSymbol';
 
+const playingSymbol = createSymbol('playing');
 const selectionTimerDurationSymbol = createSymbol('selectionTimerDuration');
+const timerTimeoutSymbol = createSymbol('timerTimeout');
 
 
 /* Exported function extends a base class with TimerSelection. */
@@ -20,7 +22,7 @@ export default (base) => {
 
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
-      this.play();
+      restartTimer(this);
     }
 
     /**
@@ -28,8 +30,8 @@ export default (base) => {
      */
     play() {
       if (super.play) { super.play(); }
-      this._playing = true;
-      setTimer(this);
+      startTimer(this);
+      this[playingSymbol] = true;
     }
 
     /**
@@ -38,7 +40,7 @@ export default (base) => {
     pause() {
       if (super.pause) { super.pause(); }
       clearTimer(this);
-      this._playing = false;
+      this[playingSymbol] = false;
     }
 
     /**
@@ -47,13 +49,13 @@ export default (base) => {
      * @type {boolean}
      */
     get playing() {
-      return this._playing;
+      return this[playingSymbol] || true;
     }
     set playing(playing) {
       if ('playing' in base.prototype) { super.playing = playing; }
-      if (playing && !this._playing) {
+      if (playing && !this[playingSymbol]) {
         this.play();
-      } else if (!playing && this._playing) {
+      } else if (!playing && this[playingSymbol]) {
         this.pause();
       }
     }
@@ -71,10 +73,7 @@ export default (base) => {
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      clearTimer(this);
-      if (this.playing) {
-        setTimer(this);
-      }
+      restartTimer(this);
     }
 
     /**
@@ -99,14 +98,21 @@ export default (base) => {
 
 
 function clearTimer(element) {
-  if (element._timeout) {
-    clearTimeout(element._timeout);
-    element._timeout = null;
+  if (element[timerTimeoutSymbol]) {
+    clearTimeout(element[timerTimeoutSymbol]);
+    element[timerTimeoutSymbol] = null;
   }
 }
 
-function setTimer(element) {
-  element._timeout = setTimeout(() => {
+function restartTimer(element) {
+  clearTimer(element);
+  if (element.playing) {
+    startTimer(element);
+  }
+}
+
+function startTimer(element) {
+  element[timerTimeoutSymbol] = setTimeout(() => {
     selectNextWithWrap(element);
   }, element.selectionTimerDuration);
 }
