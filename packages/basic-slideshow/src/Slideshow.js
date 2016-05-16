@@ -7,8 +7,6 @@ import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimat
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
 
-// import createSymbol from '../../basic-component-mixins/src/createSymbol';
-
 
 let base = ElementBase.compose(
   ContentAsItems,
@@ -23,6 +21,10 @@ let base = ElementBase.compose(
 /**
  * Slideshow with animated transitions.
  *
+ * By default the slideshow advances every 3000 ms (3 seconds). You can adjust
+ * this time by setting `selectionTimerDuration` to the desired time in
+ * milliseconds.
+ *
  * @extends ElementBase
  */
 class Slideshow extends base {
@@ -32,36 +34,9 @@ class Slideshow extends base {
     this.selectionAnimationDuration = 500;
     this.selectionAnimationKeyframes = SelectionAnimation.standardEffectKeyframes.fade;
     this.selectionRequired = true;
+    this.selectionTimerDuration = 3000;
     this.selectionWraps = true;
   }
-
-  // get selectionAnimationDuration() {
-  //   return super.selectionAnimationDuration || 500;
-  // }
-  // set selectionAnimationDuration(value) {
-  //   if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
-  // }
-  //
-  // get selectionAnimationKeyframes() {
-  //   return super.selectionAnimationKeyframes || SelectionAnimation.standardEffectKeyframes.fade;
-  // }
-  // set selectionAnimationKeyframes(value) {
-  //   if ('selectionAnimationKeyframes' in super.prototype) { super.selectionAnimationKeyframes = value; }
-  // }
-  //
-  // get selectionRequired() {
-  //   return super.selectionRequired || true;
-  // }
-  // set selectionRequired(value) {
-  //   if ('selectionRequired' in base.prototype) { super.selectionRequired = value; }
-  // }
-  //
-  // get selectionWraps() {
-  //   return super.selectionWraps || true;
-  // }
-  // set selectionWraps(value) {
-  //   if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
-  // }
 
   get template() {
     return `

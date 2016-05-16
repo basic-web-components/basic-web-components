@@ -82,10 +82,10 @@ export default (base) => {
      * before the selection will be advanced to the next item in the list.
      *
      * @type {number} - Time in milliseconds
-     * @default 5000 (5 seconds)
+     * @default 1000 (1 second)
      */
     get selectionTimerDuration() {
-      return super.selectionTimerDuration || this[selectionTimerDurationSymbol] || 5000;
+      return super.selectionTimerDuration || this[selectionTimerDurationSymbol] || 1000;
     }
     set selectionTimerDuration(value) {
       if ('selectionTimerDuration' in base.prototype) { super.selectionTimerDuration = value; }
