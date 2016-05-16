@@ -20,6 +20,11 @@ export default (base) => {
    */
   class TimerSelection extends base {
 
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
+      this[playingSymbol] = true;
+    }
+
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
       restartTimer(this);
@@ -49,7 +54,7 @@ export default (base) => {
      * @type {boolean}
      */
     get playing() {
-      return this[playingSymbol] || true;
+      return this[playingSymbol];
     }
     set playing(playing) {
       if ('playing' in base.prototype) { super.playing = playing; }
