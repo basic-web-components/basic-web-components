@@ -117,6 +117,8 @@ function restartTimer(element) {
 }
 
 function startTimer(element) {
+  // If play() is called more than once, cancel any existing timer.
+  clearTimer(element);
   element[timerTimeoutSymbol] = setTimeout(() => {
     selectNextWithWrap(element);
   }, element.selectionTimerDuration);

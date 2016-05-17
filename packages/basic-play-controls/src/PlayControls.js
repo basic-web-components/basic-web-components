@@ -53,6 +53,32 @@ class PlayControls extends base {
     toggleClass(this, 'playing', this.playing);
   }
 
+  keydown(event) {
+    let handled;
+
+    switch (event.keyCode) {
+      case 32: /* Space */
+        this.playing = !this.playing;
+        handled = true;
+        break;
+    }
+
+    // Prefer mixin result if it's defined, otherwise use base result.
+    return handled || (super.keydown && super.keydown(event));
+  }
+
+  pause() {
+    if (this.target) {
+      this.target.pause();
+    }
+  }
+
+  play() {
+    if (this.target) {
+      this.target.play();
+    }
+  }
+
   get playing() {
     return this.target && this.target.playing;
   }
