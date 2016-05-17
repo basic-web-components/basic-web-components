@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>basic-sliding-carousel with arrows and dots</title>
+
+  <script src="../demos/lib/webcomponents.js"></script>
+  <script src="../basic-arrow-selection/dist/basic-arrow-selection.js"></script>
+  <script src="../basic-page-dots/dist/basic-page-dots.js"></script>
+  <script src="./dist/basic-sliding-carousel.js"></script>
+  <link rel="stylesheet" href="../demos/demos.css">
+
+  <style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    background: black;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  basic-arrow-selection {
+    margin: 5px;
+  }
+
+  basic-arrow-selection,
+  basic-page-dots,
+  basic-sliding-carousel {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }  </style>
+
+</head>
+
+<body>
+  <basic-arrow-selection class="overlay">
+    <basic-page-dots>
+      <basic-sliding-carousel aria-label="Nature scenes">
+        <img src="../demos/resources/images/image1.jpg" alt="Lake">
+        <img src="../demos/resources/images/image2.jpg" alt="Horses">
+        <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+        <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+        <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+      </basic-sliding-carousel>
+    </basic-page-dots>
+  </basic-arrow-selection>
+</body>
+
+</html>
