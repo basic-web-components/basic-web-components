@@ -481,9 +481,12 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selectedF
     return;
   }
   let selection = selectedIndex + selectedFraction;
-  if (!element.selectionWraps) {
+  let itemCount = element.items ? element.items.length : 0;
+  if (element.selectionWraps) {
+    // Apply wrapping to ensure consistent representation of selection.
+    selection = FractionalSelection.helpers.wrappedSelection(selection, itemCount);
+  } else {
     // Apply damping if necessary.
-    let itemCount = element.items ? element.items.length : 0;
     selection = FractionalSelection.helpers.dampedSelection(selection, itemCount);
   }
   let previousSelection = element[previousSelectionSymbol];

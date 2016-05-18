@@ -1,6 +1,5 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 
-import AnimationStage from '../../basic-animation-stage/src/AnimationStage'; // jshint ignore:line
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
