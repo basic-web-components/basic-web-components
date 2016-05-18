@@ -70,6 +70,18 @@ class AnimationStage extends base {
     this.dispatchEvent(event);
   }
 
+  get template() {
+    return `
+      <style>
+      :host {
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+      <slot></slot>
+    `;
+  }
+
 }
 
 
