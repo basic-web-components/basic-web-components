@@ -161,6 +161,14 @@ class Carousel extends base {
         overflow: hidden;
         position: relative;
       }
+
+      ::content > * {
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        width: 100%;
+        will-change: transform;
+      }
       </style>
       <slot></slot>
     `;
