@@ -23,13 +23,18 @@ let base = ElementBase.compose(
 /**
  * Slideshow with animated transitions.
  *
- * By default the slideshow advances every 3000 ms (3 seconds). You can adjust
- * this time by setting `selectionTimerDuration` to the desired time in
- * milliseconds.
+ * By default the slideshow will immediately begin playing when it is connected
+ * to the document, advance every 3000 ms (3 seconds), and use a simple
+ * crossfade effect.
  *
  * @extends ElementBase
  */
 class Slideshow extends base {
+
+  attachedCallback() {
+    if (super.attachedCallback) { super.attachedCallback(); }
+    this.play();
+  }
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }

@@ -22,7 +22,7 @@ export default (base) => {
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-      this[playingSymbol] = true;
+      this[playingSymbol] = false;
     }
 
     contentChanged() {
@@ -52,6 +52,7 @@ export default (base) => {
      * True if the selection is being automatically advanced.
      *
      * @type {boolean}
+     * @default false
      */
     get playing() {
       return this[playingSymbol];
