@@ -29,12 +29,19 @@
     flex: 1;
     margin: 5px;
   }
+
+  img {
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    width: 100%;
+  }
   </style>
 
 </head>
 
 <body>
-  <basic-carousel aria-label="Nature scenes">
+  <basic-carousel aria-label="Nature scenes" selection-wraps="true">
     <img src="../demos/resources/images/image1.jpg" alt="Lake">
     <img src="../demos/resources/images/image2.jpg" alt="Horses">
     <img src="../demos/resources/images/image6.jpg" alt="Wheat">

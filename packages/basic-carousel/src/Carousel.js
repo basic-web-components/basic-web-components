@@ -11,9 +11,9 @@ import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
+import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
 const targetSymbol = createSymbol('target');
@@ -28,10 +28,10 @@ let base = ElementBase.compose(
   Keyboard,
   KeyboardDirection,
   ObserveContentChanges,
+  SelectionAnimation,
   SelectionAriaActive,
   SwipeDirection,
   TargetInCollective,
-  TargetSelection,
   TrackpadDirection
 );
 
@@ -148,98 +148,36 @@ class Carousel extends base {
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
-    // HACK
-    this.itemsChanged();
     this.selectionRequired = true;
   }
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.navigationAxis = 'horizontal';
-    this.target = this.$.stage;
   }
 
-  get target() {
-    return this[targetSymbol];
+  get selectedFraction() {
+    return this._selectedFraction;
   }
-  set target(value) {
-    if ('target' in base.prototype) { super.target = value; }
-    this[targetSymbol] = value;
+  set selectedFraction(value) {
+    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
+    this._selectedFraction = value;
+    let event = new CustomEvent('selection-fraction-changed');
+    this.dispatchEvent(event);
   }
-
-  // get selectedFraction() {
-  //   return this.$.stage.selectedFraction;
-  // }
-  // set selectedFraction(value) {
-  //   if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-  //   this.$.stage.selectedFraction = value;
-  //   let event = new CustomEvent('selection-fraction-changed');
-  //   this.dispatchEvent(event);
-  // }
-  //
-  // get selectedIndex() {
-  //   return super.selectedIndex;
-  // }
-  // set selectedIndex(value) {
-  //   if ('selectedIndex' in base.prototype) { super.selectedIndex = value; }
-  //   this.$.stage.selectedIndex = value;
-  // }
-  //
-  // get selectedItem() {
-  //   return super.selectedItem;
-  // }
-  // set selectedItem(item) {
-  //   if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-  //   this.$.stage.selectedItem = item;
-  // }
-  //
-  // /**
-  //  * Determine whether a transition should be shown during selection.
-  //  *
-  //  * Components like carousels often define animated CSS transitions for
-  //  * sliding effects. Such a transition should usually *not* be applied while
-  //  * the user is dragging, because a CSS animation will introduce a lag that
-  //  * makes the swipe feel sluggish. Instead, as long as the user is dragging
-  //  * with their finger down, the transition should be suppressed. When the
-  //  * user releases their finger, the transition can be restored, allowing the
-  //  * animation to show the carousel sliding into its final position.
-  //  *
-  //  * Note: This property is only intended to let a component cooperate with
-  //  * mixins that may be applied to it, and is not intended to let someone
-  //  * using component permanently enable or disable transition effects.
-  //  *
-  //  * @type {boolean} true if a component-provided transition should be shown,
-  //  * false if not.
-  //  */
-  // get showTransition() {
-  //   return super.showTransition || this.$.stage.showTransition;
-  // }
-  // set showTransition(value) {
-  //   if ('showTransition' in base.prototype) { super.showTransition = value; }
-  //   this.$.stage.showTransition = value;
-  // }
 
   get template() {
     return `
       <style>
       :host {
-        display: -webkit-flex;
-        display: flex;
-      }
-
-      basic-animation-stage {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex: 1;
-        flex: 1;
+        overflow: hidden;
+        position: relative;
       }
       </style>
-
-      <basic-animation-stage id="stage">
-        <slot></slot>
-      </basic-animation-stage>
+      <slot></slot>
     `;
   }
+
 }
 
 
