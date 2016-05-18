@@ -50,21 +50,15 @@ export default (base) => {
       this.dispatchEvent(new CustomEvent('items-changed'));
     }
 
-    /**
-     * The index of the item which is currently selected, or -1 if there is no
-     * selection.
-     *
-     * @type {number}
-     */
-    get selectedIndex() {
+    get selectedFraction() {
       let target = this.target;
-      return target && target.selectedIndex;
+      return target && target.selectedFraction;
     }
-    set selectedIndex(index) {
-      if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
+    set selectedFraction(fraction) {
+      if ('selectedFraction' in base.prototype) { super.selectedFraction = fraction; }
       let target = this.target;
-      if (target && target.selectedIndex !== index) {
-        target.selectedIndex = index;
+      if (target && target.selectedFraction !== fraction) {
+        target.selectedFraction = fraction;
       }
     }
 

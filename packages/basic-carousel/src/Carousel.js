@@ -1,5 +1,8 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
+
+import AnimationStage from '../../basic-animation-stage/src/AnimationStage'; // jshint ignore:line
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
@@ -8,10 +11,13 @@ import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
+import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
+
+const targetSymbol = createSymbol('target');
+
 
 let base = ElementBase.compose(
   ContentAsItems,
@@ -25,6 +31,7 @@ let base = ElementBase.compose(
   SelectionAriaActive,
   SwipeDirection,
   TargetInCollective,
+  TargetSelection,
   TrackpadDirection
 );
 
@@ -134,6 +141,7 @@ let base = ElementBase.compose(
  * @mixes SelectionAriaActive
  * @mixes SwipeDirection
  * @mixes TargetInCollective
+ * @mixes TargetSelection
  * @mixes TrackpadDirection
  */
 class Carousel extends base {
@@ -148,59 +156,68 @@ class Carousel extends base {
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.navigationAxis = 'horizontal';
+    this.target = this.$.stage;
   }
 
-  get selectedFraction() {
-    return this.$.viewport.selectedFraction;
+  get target() {
+    return this[targetSymbol];
   }
-  set selectedFraction(value) {
-    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-    this.$.viewport.selectedFraction = value;
-    let event = new CustomEvent('selection-fraction-changed');
-    this.dispatchEvent(event);
+  set target(value) {
+    if ('target' in base.prototype) { super.target = value; }
+    this[targetSymbol] = value;
   }
 
-  get selectedIndex() {
-    return super.selectedIndex;
-  }
-  set selectedIndex(value) {
-    if ('selectedIndex' in base.prototype) { super.selectedIndex = value; }
-    this.$.viewport.selectedIndex = value;
-  }
-
-  get selectedItem() {
-    return super.selectedItem;
-  }
-  set selectedItem(item) {
-    if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-    this.$.viewport.selectedItem = item;
-  }
-
-  /**
-   * Determine whether a transition should be shown during selection.
-   *
-   * Components like carousels often define animated CSS transitions for
-   * sliding effects. Such a transition should usually *not* be applied while
-   * the user is dragging, because a CSS animation will introduce a lag that
-   * makes the swipe feel sluggish. Instead, as long as the user is dragging
-   * with their finger down, the transition should be suppressed. When the
-   * user releases their finger, the transition can be restored, allowing the
-   * animation to show the carousel sliding into its final position.
-   *
-   * Note: This property is only intended to let a component cooperate with
-   * mixins that may be applied to it, and is not intended to let someone
-   * using component permanently enable or disable transition effects.
-   *
-   * @type {boolean} true if a component-provided transition should be shown,
-   * false if not.
-   */
-  get showTransition() {
-    return super.showTransition || this.$.viewport.showTransition;
-  }
-  set showTransition(value) {
-    if ('showTransition' in base.prototype) { super.showTransition = value; }
-    this.$.viewport.showTransition = value;
-  }
+  // get selectedFraction() {
+  //   return this.$.stage.selectedFraction;
+  // }
+  // set selectedFraction(value) {
+  //   if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
+  //   this.$.stage.selectedFraction = value;
+  //   let event = new CustomEvent('selection-fraction-changed');
+  //   this.dispatchEvent(event);
+  // }
+  //
+  // get selectedIndex() {
+  //   return super.selectedIndex;
+  // }
+  // set selectedIndex(value) {
+  //   if ('selectedIndex' in base.prototype) { super.selectedIndex = value; }
+  //   this.$.stage.selectedIndex = value;
+  // }
+  //
+  // get selectedItem() {
+  //   return super.selectedItem;
+  // }
+  // set selectedItem(item) {
+  //   if ('selectedItem' in base.prototype) { super.selectedItem = item; }
+  //   this.$.stage.selectedItem = item;
+  // }
+  //
+  // /**
+  //  * Determine whether a transition should be shown during selection.
+  //  *
+  //  * Components like carousels often define animated CSS transitions for
+  //  * sliding effects. Such a transition should usually *not* be applied while
+  //  * the user is dragging, because a CSS animation will introduce a lag that
+  //  * makes the swipe feel sluggish. Instead, as long as the user is dragging
+  //  * with their finger down, the transition should be suppressed. When the
+  //  * user releases their finger, the transition can be restored, allowing the
+  //  * animation to show the carousel sliding into its final position.
+  //  *
+  //  * Note: This property is only intended to let a component cooperate with
+  //  * mixins that may be applied to it, and is not intended to let someone
+  //  * using component permanently enable or disable transition effects.
+  //  *
+  //  * @type {boolean} true if a component-provided transition should be shown,
+  //  * false if not.
+  //  */
+  // get showTransition() {
+  //   return super.showTransition || this.$.stage.showTransition;
+  // }
+  // set showTransition(value) {
+  //   if ('showTransition' in base.prototype) { super.showTransition = value; }
+  //   this.$.stage.showTransition = value;
+  // }
 
   get template() {
     return `
@@ -210,7 +227,7 @@ class Carousel extends base {
         display: flex;
       }
 
-      basic-sliding-viewport {
+      basic-animation-stage {
         display: -webkit-flex;
         display: flex;
         -webkit-flex: 1;
@@ -218,9 +235,9 @@ class Carousel extends base {
       }
       </style>
 
-      <basic-sliding-viewport id="viewport">
+      <basic-animation-stage id="stage">
         <slot></slot>
-      </basic-sliding-viewport>
+      </basic-animation-stage>
     `;
   }
 }

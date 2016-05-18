@@ -52,7 +52,6 @@ let base = ElementBase.compose(
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes TargetInCollective
- * @mixes TargetInCollective
  * @mixes TargetSelection
  */
 class ArrowSelection extends base {
