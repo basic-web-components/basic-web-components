@@ -1,13 +1,12 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
+import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
 
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
-import * as fractionalSelection from '../../basic-component-mixins/src/fractionalSelection';
 
 
 let base = ElementBase.compose(
-  FractionalSelectionMixin
+  FractionalSelection
 );
 
 
@@ -133,9 +132,9 @@ function renderSelection() {
   if (!this.selectedItem) {
     return;
   }
-  let selection = fractionalSelection.elementSelection(this);
+  let selection = FractionalSelection.helpers.elementSelection(this);
   let itemCount = this.items ? this.items.length : 0;
-  let damped = fractionalSelection.dampedSelection(selection, itemCount);
+  let damped = FractionalSelection.helpers.dampedSelection(selection, itemCount);
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
   let left = -damped * 100;

@@ -1,5 +1,5 @@
 import createSymbol from './createSymbol';
-import * as fractionalSelection from './fractionalSelection';
+import FractionalSelection from './FractionalSelection';
 
 
 // Symbols for hanging data off an element.
@@ -90,7 +90,7 @@ export default function mixin(base) {
      * the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
      * user is halfway between items 3 and 4.
      *
-     * For more details, see the [fractionalSelection](fractionalSelection.md)
+     * For more details, see the [FractionalSelection](FractionalSelection.md)
      * helper functions.
      *
      * @type {number}
@@ -264,7 +264,7 @@ mixin.helpers = {
     }
     let itemCount = items.length;
     let selectionWraps = element.selectionWraps;
-    let toIndex = fractionalSelection.wrappedSelectionParts(toSelection, itemCount, selectionWraps).index;
+    let toIndex = FractionalSelection.helpers.wrappedSelectionParts(toSelection, itemCount, selectionWraps).index;
     let totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
     let direction = totalSteps >= 0 ? 'normal': 'reverse';
     let fill = 'both';
@@ -373,12 +373,12 @@ function animateSelection(element, fromSelection, toSelection) {
   // Figure out which item will be the one *after* the one we're selecting.
   let itemCount = items.length;
   let selectionWraps = element.selectionWraps;
-  let selectionIndex = fractionalSelection.selectionParts(toSelection, itemCount, selectionWraps).index;
+  let selectionIndex = FractionalSelection.helpers.selectionParts(toSelection, itemCount, selectionWraps).index;
   let totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
   let forward = totalSteps >= 0;
   let nextUpIndex = selectionIndex + (forward ? 1 : - 1);
   if (selectionWraps) {
-    nextUpIndex = fractionalSelection.wrappedSelection(nextUpIndex, itemCount);
+    nextUpIndex = FractionalSelection.helpers.wrappedSelection(nextUpIndex, itemCount);
   } else if (!isItemIndexInBounds(element, nextUpIndex)) {
     nextUpIndex = null; // At start/end of list; don't have a next item to show.
   }
@@ -484,7 +484,7 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selectedF
   if (!element.selectionWraps) {
     // Apply damping if necessary.
     let itemCount = element.items ? element.items.length : 0;
-    selection = fractionalSelection.dampedSelection(selection, itemCount);
+    selection = FractionalSelection.helpers.dampedSelection(selection, itemCount);
   }
   let previousSelection = element[previousSelectionSymbol];
   if (element[showTransitionSymbol] && previousSelection != null &&
