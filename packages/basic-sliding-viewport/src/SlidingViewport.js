@@ -1,10 +1,15 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
+
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
 import * as fractionalSelection from '../../basic-component-mixins/src/fractionalSelection';
 
 
-let base = ElementBase;
+let base = ElementBase.compose(
+  FractionalSelectionMixin
+);
+
 
 /**
  * Presents list items in a viewport such that only a single item is visible at
@@ -48,22 +53,11 @@ class SlidingViewport extends base {
     requestAnimationFrame(renderSelection.bind(this));
   }
 
-  /**
-   * A fractional value indicating how far the user has currently advanced to
-   * the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
-   * user is halfway between items 3 and 4.
-   *
-   * For more details, see the [fractionalSelection](fractionalSelection.md)
-   * helper functions.
-   *
-   * @type {number}
-   */
   get selectedFraction() {
-    return this._selectedFraction;
+    return super.selectedFraction;
   }
   set selectedFraction(value) {
     if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-    this._selectedFraction = value;
     this.render();
   }
 

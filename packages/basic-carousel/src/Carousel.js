@@ -2,9 +2,9 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 
 import AnimationStage from '../../basic-animation-stage/src/AnimationStage'; // jshint ignore:line
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
@@ -16,13 +16,12 @@ import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
-const targetSymbol = createSymbol('target');
-
 
 let base = ElementBase.compose(
   ContentAsItems,
   DirectionSelection,
   DistributedChildrenAsContent,
+  FractionalSelectionMixin,
   Generic,
   ItemsSelection,
   Keyboard,
@@ -154,16 +153,6 @@ class Carousel extends base {
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.navigationAxis = 'horizontal';
-  }
-
-  get selectedFraction() {
-    return this._selectedFraction;
-  }
-  set selectedFraction(value) {
-    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-    this._selectedFraction = value;
-    let event = new CustomEvent('selection-fraction-changed');
-    this.dispatchEvent(event);
   }
 
   get template() {

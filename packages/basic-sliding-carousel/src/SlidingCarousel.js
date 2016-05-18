@@ -2,6 +2,7 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
@@ -17,6 +18,7 @@ let base = ElementBase.compose(
   ContentAsItems,
   DirectionSelection,
   DistributedChildrenAsContent,
+  FractionalSelectionMixin,
   Generic,
   ItemsSelection,
   Keyboard,

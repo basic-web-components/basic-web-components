@@ -1,6 +1,7 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
@@ -10,6 +11,7 @@ import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaA
 let base = ElementBase.compose(
   ContentAsItems,
   DistributedChildrenAsContent,
+  FractionalSelectionMixin,
   ItemsSelection,
   ObserveContentChanges,
   SelectionAnimation,
@@ -48,16 +50,6 @@ class AnimationStage extends base {
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
     this.selectionRequired = true;
-  }
-
-  get selectedFraction() {
-    return this._selectedFraction;
-  }
-  set selectedFraction(value) {
-    if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-    this._selectedFraction = value;
-    let event = new CustomEvent('selection-fraction-changed');
-    this.dispatchEvent(event);
   }
 
   get template() {
