@@ -131,11 +131,13 @@ let base = ElementBase.compose(
  * @mixes ContentAsItems
  * @mixes DirectionSelection
  * @mixes DistributedChildrenAsContent
+ * @mixes FractionalSelection
  * @mixes Generic
  * @mixes ItemsSelection
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes ObserveContentChanges
+ * @mixes SelectionAnimation
  * @mixes SelectionAriaActive
  * @mixes SwipeDirection
  * @mixes TargetInCollective
@@ -151,6 +153,7 @@ class Carousel extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
+    this.selectionAnimationKeyframes = SelectionAnimation.standardEffectKeyframes.slideWithGap;
     this.navigationAxis = 'horizontal';
   }
 
@@ -170,7 +173,7 @@ class Carousel extends base {
         will-change: transform;
       }
       </style>
-      
+
       <div id="container">
         <slot></slot>
       </div>
