@@ -162,7 +162,7 @@ class Carousel extends base {
         position: relative;
       }
 
-      ::content > * {
+      #container ::content > * {
         height: 100%;
         object-fit: contain;
         position: absolute;
@@ -170,7 +170,10 @@ class Carousel extends base {
         will-change: transform;
       }
       </style>
-      <slot></slot>
+      
+      <div id="container">
+        <slot></slot>
+      </div>
     `;
   }
 
