@@ -9,6 +9,7 @@ const lastAnimationSymbol = createSymbol('lastAnimation');
 const previousSelectionSymbol = createSymbol('previousSelection');
 const showTransitionSymbol = createSymbol('showTransition');
 const selectionAnimationDurationSymbol = createSymbol('selectionAnimationDuration');
+const selectionAnimationEffectSymbol = createSymbol('selectionAnimationEffect');
 const selectionAnimationKeyframesSymbol = createSymbol('selectionAnimationKeyframes');
 
 
@@ -52,7 +53,16 @@ export default function mixin(base) {
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-      this[showTransitionSymbol] = true;
+
+      // Set defaults.
+      if (this.selectionAnimationDuration == null) {
+        this.selectionAnimationDuration = 250;
+      }
+      if (this.selectionAnimationEffect == null) {
+        this.selectionAnimationEffect = 'slide';
+      }
+
+      this.showTransition = true;
     }
 
     itemAdded(item) {
@@ -120,15 +130,40 @@ export default function mixin(base) {
      *
      * The default value is 250 milliseconds (a quarter a second).
      *
-     * @type {integer}
+     * @type {number}
      * @default 250
      */
     get selectionAnimationDuration() {
-      return this[selectionAnimationDurationSymbol] || 250;
+      return this[selectionAnimationDurationSymbol];
     }
     set selectionAnimationDuration(value) {
       if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
       this[selectionAnimationDurationSymbol] = value;
+    }
+
+    /**
+     * The name of a standard selection animation effect.
+     *
+     * This is a shorthand for setting the `selectionAnimationKeyframes`
+     * property to standard keyframes. Supported string values:
+     *
+     * * "crossfade"
+     * * "reveal"
+     * * "revealWithFade"
+     * * "showAdjacent"
+     * * "slide"
+     * * "slideWithGap"
+     *
+     * @type {string}
+     * @default "slide"
+     */
+    get selectionAnimationEffect() {
+      return this[selectionAnimationEffectSymbol];
+    }
+    set selectionAnimationEffect(value) {
+      if ('selectionAnimationEffect' in base.prototype) { super.selectionAnimationEffect = value; }
+      this[selectionAnimationEffectSymbol] = value;
+      this.selectionAnimationKeyframes = mixin.standardEffectKeyframes[value];
     }
 
     /**
@@ -155,7 +190,7 @@ export default function mixin(base) {
      */
     get selectionAnimationKeyframes() {
       // Standard animation slides left/right, keeps adjacent items out of view.
-      return this[selectionAnimationKeyframesSymbol] || mixin.standardEffectKeyframes.slide;
+      return this[selectionAnimationKeyframesSymbol];
     }
     set selectionAnimationKeyframes(value) {
       if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
@@ -305,7 +340,7 @@ mixin.helpers = {
 mixin.standardEffectKeyframes = {
 
   // Simple crossfade
-  fade: [
+  crossfade: [
     { opacity: 0 },
     { opacity: 1 },
     { opacity: 0 }

@@ -38,8 +38,9 @@ class Slideshow extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
+
     this.selectionAnimationDuration = 500;
-    this.selectionAnimationKeyframes = SelectionAnimation.standardEffectKeyframes.fade;
+    this.selectionAnimationKeyframes = SelectionAnimation.standardEffectKeyframes.crossfade;
     this.selectionRequired = true;
     this.selectionTimerDuration = 3000;
     this.selectionWraps = true;

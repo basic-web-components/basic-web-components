@@ -153,7 +153,12 @@ class Carousel extends base {
 
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
-    this.selectionAnimationKeyframes = SelectionAnimation.standardEffectKeyframes.slideWithGap;
+
+    // Set defaults.
+    if (this.selectionAnimationEffect == null) {
+      this.selectionAnimationKeyframes = 'slideWithGap';
+    }
+
     this.navigationAxis = 'horizontal';
   }
 
