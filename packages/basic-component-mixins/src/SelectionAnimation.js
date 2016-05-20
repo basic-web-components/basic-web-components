@@ -511,12 +511,16 @@ function isItemIndexInBounds(element, index) {
  * will be damped to produce a visual effect of tension.
  */
 function renderSelection(element, selectedIndex=element.selectedIndex, selectedFraction=element.selectedFraction) {
+  let itemCount = element.items ? element.items.length : 0;
+  if (itemCount === 0) {
+    // Nothing to render.
+    return;
+  }
   if (selectedIndex < 0) {
     // TODO: Handle no selection.
     return;
   }
   let selection = selectedIndex + selectedFraction;
-  let itemCount = element.items ? element.items.length : 0;
   if (element.selectionWraps) {
     // Apply wrapping to ensure consistent representation of selection.
     selection = FractionalSelection.helpers.wrappedSelection(selection, itemCount);
@@ -558,7 +562,8 @@ function renderSelectionInstantly(element, toSelection) {
 }
 
 function resetAnimations(element) {
-  element[animationSymbol] = new Array(element.items.length);
+  let itemCount = element.items ? element.items.length : 0;
+  element[animationSymbol] = new Array(itemCount);
 }
 
 /*
