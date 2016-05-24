@@ -52,7 +52,11 @@ class SlideshowTimer extends base {
 
   attachedCallback() {
     if (super.attachedCallback) { super.attachedCallback(); }
-    this.play();
+
+    // Unless told not to start playing, play by default.
+    if (this.playing == null) {
+      this.play();
+    }
   }
 
   createdCallback() {

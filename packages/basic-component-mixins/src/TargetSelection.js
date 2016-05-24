@@ -79,6 +79,12 @@ export default (base) => {
       }
     }
 
+    // This method exists so wrapping components can handle a change in the
+    // selection without potentially re-invoking the selectedItem setter. This
+    // is kind of unsatisfying, though. It'd be nicer to let such components
+    // just implement the getter/setter for selectedItem, but have a way to
+    // know whether they need to also that property getter/setter for the target
+    // component.
     selectedItemChanged() {
       if (super.selectedItemChanged) { super.selectedItemChanged(); }
       this.dispatchEvent(new CustomEvent('selected-item-changed'));
@@ -123,9 +129,12 @@ export default (base) => {
         this.itemsChanged();
       });
       this._selectedItemChangedListener = element.addEventListener('selected-item-changed', event => {
-        // Let the component know the target's selection changed, but without
-        // re-invoking the selectIndex/selectedItem setter.
-        this.selectedItemChanged();
+        // Don't handle events of this type that we raise ourselves.
+        if (event.target !== this) {          
+          // Let the component know the target's selection changed, but without
+          // re-invoking the selectIndex/selectedItem setter.
+          this.selectedItemChanged();
+        }
       });
       // Force initial refresh.
       this.itemsChanged();
