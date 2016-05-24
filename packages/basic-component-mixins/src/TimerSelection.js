@@ -20,14 +20,14 @@ export default (base) => {
    */
   class TimerSelection extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-      this[playingSymbol] = false;
-    }
-
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
       restartTimer(this);
+    }
+
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
+      this[playingSymbol] = false;
     }
 
     /**
@@ -122,7 +122,7 @@ function clearTimer(element) {
 function restartTimer(element) {
   console.log(`restartTimer`);
   clearTimer(element);
-  if (element.playing) {
+  if (element.playing && element.items && element.items.length > 0) {
     startTimer(element);
   }
 }
@@ -138,7 +138,7 @@ function startTimer(element) {
 // Select the next item, wrapping to first item if necessary.
 function selectNextWithWrap(element) {
   let items = element.items;
-  if (items) {
+  if (items && items.length > 0) {
     if (element.selectedIndex == null || element.selectedIndex === items.length - 1) {
       element.selectFirst();
     } else {

@@ -129,8 +129,16 @@ export default (base) => {
         this.itemsChanged();
       });
       this._selectedItemChangedListener = element.addEventListener('selected-item-changed', event => {
-        // Don't handle events of this type that we raise ourselves.
-        if (event.target !== this) {          
+        // REVIEW: Components applying TargetSelection both listen to this
+        // event (on the target), and raise it themselves. In theory, they're
+        // expected to *not* catch the events they raise themselves, but Chrome
+        // (at least) appears to violate that expectation. That is, it's
+        // possible to have event.target === this. More confusingly, the guard
+        // below, which is intended to avoid recursive calls to
+        // selectedItemChanged, doesn't work as expected. Even if the debugger
+        // shows event.target === this, the contents of the "if" statement will
+        // be executed.
+        if (event.target !== this) {
           // Let the component know the target's selection changed, but without
           // re-invoking the selectIndex/selectedItem setter.
           this.selectedItemChanged();
