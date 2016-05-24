@@ -51,14 +51,14 @@ class Tabs extends ElementBase.compose(
    * @type {string}
    */
   get tabPosition() {
-    return this.$.tabStrip.tabPosition;
+    return this.$ && this.$.tabStrip.tabPosition;
   }
   set tabPosition(position) {
     this.$.tabStrip.tabPosition = position;
   }
 
   get target() {
-    return this.$.modes;
+    return this.$ && this.$.modes;
   }
 
   get template() {

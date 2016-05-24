@@ -152,12 +152,12 @@ class Carousel extends base {
   }
 
   createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-
-    // Set defaults.
+    // Set defaults, taking precedence over defaults provided by super/mixins.
     if (this.selectionAnimationEffect == null) {
-      this.selectionAnimationKeyframes = 'slideWithGap';
+      this.selectionAnimationEffect = 'slideWithGap';
     }
+
+    if (super.createdCallback) { super.createdCallback(); }
 
     this.navigationAxis = 'horizontal';
   }

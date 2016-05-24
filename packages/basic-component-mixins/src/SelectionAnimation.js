@@ -52,15 +52,15 @@ export default function mixin(base) {
   class SelectionAnimation extends base {
 
     createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-
-      // Set defaults.
+      // Set defaults, taking precedence over defaults provided by super/mixins.
       if (this.selectionAnimationDuration == null) {
         this.selectionAnimationDuration = 250;
       }
-      if (this.selectionAnimationEffect == null) {
+      if (this.selectionAnimationEffect == null && this.selectionAnimationKeyframes == null) {
         this.selectionAnimationEffect = 'slide';
       }
+
+      if (super.createdCallback) { super.createdCallback(); }
 
       this.showTransition = true;
     }

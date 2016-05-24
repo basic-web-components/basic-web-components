@@ -41,13 +41,24 @@ class Slideshow extends base {
   }
 
   createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
+    // Set defaults, taking precedence over defaults provided by super/mixins.
+    if (this.selectionAnimationDuration == null) {
+      this.selectionAnimationDuration = 500;
+    }
+    if (this.selectionAnimationEffect == null && this.selectionAnimationKeyframes == null) {
+      this.selectionAnimationEffect = 'crossfade';
+    }
+    if (this.selectionRequired == null) {
+      this.selectionRequired = true;
+    }
+    if (this.selectionTimerDuration == null) {
+      this.selectionTimerDuration = 3000;
+    }
+    if (this.selectionWraps == null) {
+      this.selectionWraps = true;
+    }
 
-    this.selectionAnimationDuration = 500;
-    this.selectionAnimationKeyframes = SelectionAnimation.standardEffectKeyframes.crossfade;
-    this.selectionRequired = true;
-    this.selectionTimerDuration = 3000;
-    this.selectionWraps = true;
+    if (super.createdCallback) { super.createdCallback(); }
   }
 
   get template() {

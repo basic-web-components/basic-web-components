@@ -60,9 +60,7 @@ class SlideshowTimer extends base {
   }
 
   createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-
-    // Set defaults.
+    // Set defaults, taking precedence over defaults provided by super/mixins.
     if (this.selectionAnimationDuration == null) {
       this.selectionAnimationDuration = 500;
     }
@@ -72,6 +70,8 @@ class SlideshowTimer extends base {
     if (this.selectionTimerDuration == null) {
       this.selectionTimerDuration = 3000;
     }
+
+    if (super.createdCallback) { super.createdCallback(); }
   }
 
   get template() {

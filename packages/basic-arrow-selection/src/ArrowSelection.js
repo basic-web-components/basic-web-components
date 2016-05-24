@@ -61,7 +61,9 @@ class ArrowSelection extends base {
   }
   set canSelectNext(canSelectNext) {
     if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
-    this.$.buttonRight.disabled = !canSelectNext;
+    if (this.$) {
+      this.$.buttonRight.disabled = !canSelectNext;
+    }
   }
 
   get canSelectPrevious() {
@@ -69,7 +71,9 @@ class ArrowSelection extends base {
   }
   set canSelectPrevious(canSelectPrevious) {
     if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
-    this.$.buttonLeft.disabled = !canSelectPrevious;
+    if (this.$) {
+      this.$.buttonLeft.disabled = !canSelectPrevious;
+    }
   }
 
   createdCallback() {

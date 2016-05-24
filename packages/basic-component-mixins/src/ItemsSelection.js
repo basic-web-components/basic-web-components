@@ -67,6 +67,15 @@ export default (base) => {
       this._canSelectPrevious = canSelectPrevious;
     }
 
+    createdCallback() {
+      // Set defaults, taking precedence over defaults provided by super/mixins.
+      if (this.selectionWraps == null) {
+        this.selectionWraps = false;
+      }
+
+      if (super.createdCallback) { super.createdCallback(); }
+    }
+
     /**
      * Handle a new item being added to the list.
      *
@@ -232,7 +241,7 @@ export default (base) => {
      * @default {false}
      */
     get selectionWraps() {
-      return this._selectionWraps || false;
+      return this._selectionWraps;
     }
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
