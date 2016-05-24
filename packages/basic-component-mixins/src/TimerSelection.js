@@ -27,7 +27,7 @@ export default (base) => {
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-      this[playingSymbol] = false;
+      // this[playingSymbol] = false;
     }
 
     /**
@@ -60,10 +60,12 @@ export default (base) => {
     set playing(playing) {
       if ('playing' in base.prototype) { super.playing = playing; }
       playing = String(playing) === 'true'; // Cast to boolean
-      if (playing && !this[playingSymbol]) {
-        this.play();
-      } else if (!playing && this[playingSymbol]) {
-        this.pause();
+      if (playing !== this[playingSymbol]) {
+        if (playing) {
+          this.play();
+        } else {
+          this.pause();
+        }
       }
     }
 
@@ -79,7 +81,6 @@ export default (base) => {
       return super.selectedItem;
     }
     set selectedItem(item) {
-      console.log(`set selectedItem`);
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       restartTimer(this);
     }
@@ -87,7 +88,6 @@ export default (base) => {
     // In case this mixin is being used with TargetSelection.
     selectedItemChanged() {
       if (super.selectedItemChanged) { super.selectedItemChanged(); }
-      console.log(`selectedItemChanged`);
       restartTimer(this);
     }
 
@@ -120,7 +120,6 @@ function clearTimer(element) {
 }
 
 function restartTimer(element) {
-  console.log(`restartTimer`);
   clearTimer(element);
   if (element.playing && element.items && element.items.length > 0) {
     startTimer(element);
