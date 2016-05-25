@@ -152,14 +152,15 @@ class Carousel extends base {
   }
 
   createdCallback() {
-    // Set defaults, taking precedence over defaults provided by super/mixins.
-    if (this.selectionAnimationEffect == null) {
-      this.selectionAnimationEffect = 'slideWithGap';
-    }
-
     if (super.createdCallback) { super.createdCallback(); }
-
+    
     this.navigationAxis = 'horizontal';
+  }
+
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.selectionAnimationEffect = 'slideWithGap';
+    return defaults;
   }
 
   get template() {

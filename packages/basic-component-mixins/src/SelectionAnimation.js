@@ -52,17 +52,24 @@ export default function mixin(base) {
   class SelectionAnimation extends base {
 
     createdCallback() {
-      // Set defaults, taking precedence over defaults provided by super/mixins.
-      if (this.selectionAnimationDuration == null) {
-        this.selectionAnimationDuration = 250;
-      }
-      if (this.selectionAnimationEffect == null && this.selectionAnimationKeyframes == null) {
-        this.selectionAnimationEffect = 'slide';
-      }
-
       if (super.createdCallback) { super.createdCallback(); }
 
+      // Set defaults.
+      if (this.selectionAnimationDuration == null) {
+        this.selectionAnimationDuration = this.defaults.selectionAnimationDuration;
+      }
+      if (this.selectionAnimationEffect == null && this.selectionAnimationKeyframes == null) {
+        this.selectionAnimationEffect = this.defaults.selectionAnimationEffect;
+      }
+
       this.showTransition = true;
+    }
+
+    get defaults() {
+      let defaults = super.defaults || {};
+      defaults.selectionAnimationDuration = 250;
+      defaults.selectionAnimationEffect = 'slide';
+      return defaults;
     }
 
     itemAdded(item) {

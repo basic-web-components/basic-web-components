@@ -26,12 +26,22 @@ export default (base) => {
     }
 
     createdCallback() {
-      // Set defaults, taking precedence over defaults provided by super/mixins.
-      if (this.selectionTimerDuration == null) {
-        this.selectionTimerDuration = 1000;
-      }
-
       if (super.createdCallback) { super.createdCallback(); }
+
+      // Set defaults.
+      if (this.playing == null) {
+        this.playing = this.defaults.playing;
+      }
+      if (this.selectionTimerDuration == null) {
+        this.selectionTimerDuration = this.defaults.selectionTimerDuration;
+      }
+    }
+
+    get defaults() {
+      let defaults = super.defaults || {};
+      defaults.playing = false;
+      defaults.selectionTimerDuration = 1000;
+      return defaults;
     }
 
     /**
@@ -103,11 +113,11 @@ export default (base) => {
      * @default 1000 (1 second)
      */
     get selectionTimerDuration() {
-      return super.selectionTimerDuration || this[selectionTimerDurationSymbol];
+      return this[selectionTimerDurationSymbol];
     }
     set selectionTimerDuration(value) {
       if ('selectionTimerDuration' in base.prototype) { super.selectionTimerDuration = value; }
-      this[selectionTimerDurationSymbol] = value;
+      this[selectionTimerDurationSymbol] = parseInt(value);
     }
 
   }

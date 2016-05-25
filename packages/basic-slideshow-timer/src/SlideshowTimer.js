@@ -50,28 +50,13 @@ let base = ElementBase.compose(
  */
 class SlideshowTimer extends base {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
-
-    // Unless told not to start playing, play by default.
-    if (this.playing == null) {
-      this.play();
-    }
-  }
-
-  createdCallback() {
-    // Set defaults, taking precedence over defaults provided by super/mixins.
-    if (this.selectionAnimationDuration == null) {
-      this.selectionAnimationDuration = 500;
-    }
-    if (this.selectionRequired == null) {
-      this.selectionRequired = true;
-    }
-    if (this.selectionTimerDuration == null) {
-      this.selectionTimerDuration = 3000;
-    }
-
-    if (super.createdCallback) { super.createdCallback(); }
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.playing = true;
+    defaults.selectionAnimationDuration = 500;
+    defaults.selectionRequired = true;
+    defaults.selectionTimerDuration = 3000;
+    return defaults;
   }
 
   get template() {

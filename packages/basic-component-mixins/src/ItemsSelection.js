@@ -68,12 +68,22 @@ export default (base) => {
     }
 
     createdCallback() {
-      // Set defaults, taking precedence over defaults provided by super/mixins.
-      if (this.selectionWraps == null) {
-        this.selectionWraps = false;
-      }
-
       if (super.createdCallback) { super.createdCallback(); }
+
+      // Set defaults.
+      if (this.selectionRequired == null) {
+        this.selectionRequired = this.defaults.selectionRequired;
+      }
+      if (this.selectionWraps == null) {
+        this.selectionWraps = this.defaults.selectionWraps;
+      }
+    }
+
+    get defaults() {
+      let defaults = super.defaults || {};
+      defaults.selectionRequired = false;
+      defaults.selectionWraps = false;
+      return defaults;
     }
 
     /**
@@ -198,6 +208,7 @@ export default (base) => {
      * True if the list should always have a selection (if it has items).
      *
      * @type {boolean}
+     * @default false
      */
     get selectionRequired() {
       return this._selectionRequired;
@@ -238,7 +249,7 @@ export default (base) => {
      * True if selection navigations wrap from last to first, and vice versa.
      *
      * @type {boolean}
-     * @default {false}
+     * @default false
      */
     get selectionWraps() {
       return this._selectionWraps;
