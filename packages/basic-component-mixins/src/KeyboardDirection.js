@@ -90,7 +90,7 @@ export default (base) => {
      * @type {string}
      */
     get navigationAxis() {
-      return this._navigationAxis || 'both';
+      return this._navigationAxis;
     }
     set navigationAxis(value) {
       this._navigationAxis = value;
