@@ -1,4 +1,9 @@
+import createSymbol from './createSymbol';
 import microtask from './microtask';
+
+// Symbols for private data members on an element.
+const contentChangeObserverSymbol = createSymbol('contentChangeObserver');
+
 
 // TODO: Should this be renamed to something like DistributedChildrenChanged?
 
@@ -72,10 +77,10 @@ export default (base) => {
 // TODO: Decide whether we want an option to track changes to children
 // attributes.
 function observeContentChanges(element) {
-  element._contentChangeObserver = new MutationObserver(() =>
+  element[contentChangeObserverSymbol] = new MutationObserver(() =>
     element.contentChanged()
   );
-  element._contentChangeObserver.observe(element, {
+  element[contentChangeObserverSymbol].observe(element, {
     // attributes: true,
     characterData: true,
     childList: true,

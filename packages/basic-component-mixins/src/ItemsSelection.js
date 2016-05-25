@@ -1,4 +1,14 @@
+import createSymbol from './createSymbol';
 import microtask from './microtask';
+
+
+// Symbols for private data members on an element.
+const canSelectNextSymbol = createSymbol('canSelectNext');
+const canSelectPreviousSymbol = createSymbol('canSelectPrevious');
+const selectedItemSymbol = createSymbol('selectedItem');
+const selectionRequiredSymbol = createSymbol('selectionRequired');
+const selectionWrapsSymbol = createSymbol('selectionWraps');
+
 
 /* Exported function extends a base class with ItemsSelection. */
 export default (base) => {
@@ -46,11 +56,11 @@ export default (base) => {
      * @type {boolean}
      */
     get canSelectNext() {
-      return this._canSelectNext;
+      return this[canSelectNextSymbol];
     }
     set canSelectNext(canSelectNext) {
       if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
-      this._canSelectNext = canSelectNext;
+      this[canSelectNextSymbol] = canSelectNext;
     }
 
     /**
@@ -60,11 +70,11 @@ export default (base) => {
      * @type {boolean}
      */
     get canSelectPrevious() {
-      return this._canSelectPrevious;
+      return this[canSelectPreviousSymbol];
     }
     set canSelectPrevious(canSelectPrevious) {
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
-      this._canSelectPrevious = canSelectPrevious;
+      this[canSelectPreviousSymbol] = canSelectPrevious;
     }
 
     createdCallback() {
@@ -162,11 +172,11 @@ export default (base) => {
      * @type {object}
      */
     get selectedItem() {
-      return this._selectedItem || null;
+      return this[selectedItemSymbol] || null;
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      let previousItem = this._selectedItem;
+      let previousItem = this[selectedItemSymbol];
       if (previousItem) {
         if (item === previousItem) {
           // The indicated item is already the selected item.
@@ -177,7 +187,7 @@ export default (base) => {
       }
 
       // TODO: Confirm item is actually in the list before selecting.
-      this._selectedItem = item;
+      this[selectedItemSymbol] = item;
       if (item) {
         this.applySelection(item, true);
       }
@@ -211,11 +221,11 @@ export default (base) => {
      * @default false
      */
     get selectionRequired() {
-      return this._selectionRequired;
+      return this[selectionRequiredSymbol];
     }
     set selectionRequired(selectionRequired) {
       if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
-      this._selectionRequired = selectionRequired;
+      this[selectionRequiredSymbol] = selectionRequired;
       if (selectionRequired) {
         ensureSelection(this);
       }
@@ -252,11 +262,11 @@ export default (base) => {
      * @default false
      */
     get selectionWraps() {
-      return this._selectionWraps;
+      return this[selectionWrapsSymbol];
     }
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
-      this._selectionWraps = String(value) === 'true';
+      this[selectionWrapsSymbol] = String(value) === 'true';
       updatePossibleNavigations(this);
     }
 

@@ -2,7 +2,7 @@ import createSymbol from './createSymbol';
 import FractionalSelection from './FractionalSelection';
 
 
-// Symbols for hanging data off an element.
+// Symbols for private data members on an element.
 const animatingSelectionSymbol = createSymbol('animatingSelection');
 const animationSymbol = createSymbol('animations');
 const lastAnimationSymbol = createSymbol('lastAnimation');

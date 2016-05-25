@@ -1,5 +1,10 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
+
+
+// Symbols for private data members on an element.
+const areaLinkSymbol = createSymbol('areaLink');
 
 
 /**
@@ -34,11 +39,11 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
    * @type {boolean}
    */
   get areaLink() {
-    return this._areaLink;
+    return this[areaLinkSymbol];
   }
   set areaLink(value) {
     // Cast boolean or string values to boolean.
-    this._areaLink = (String(value) === 'true');
+    this[areaLinkSymbol] = (String(value) === 'true');
     refresh(this);
   }
 

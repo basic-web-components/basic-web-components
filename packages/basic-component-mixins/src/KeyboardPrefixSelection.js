@@ -1,5 +1,11 @@
-// TODO: If the selection is changed by some other means (e.g., arrow keys)
-// other than prefix typing, then that act should reset the prefix.
+import createSymbol from './createSymbol';
+
+
+// Symbols for private data members on an element.
+const itemTextContentsSymbol = createSymbol('itemTextContents');
+const typedPrefixSymbol = createSymbol('typedPrefix');
+const prefixTimeoutSymbol = createSymbol('prefixTimeout');
+
 
 /* Exported function extends a base class with KeyboardPrefixSelection. */
 export default (base) => {
@@ -44,9 +50,12 @@ export default (base) => {
 
     // TODO: If the set of items is changed, reset the prefix.
     // itemsChanged() {
-    //   this._itemTextContents = null;
+    //   this[itemTextContentsSymbol] = null;
     //   resetTypedPrefix(this);
     // }
+
+    // TODO: If the selection is changed by some other means (e.g., arrow keys)
+    // other than prefix typing, then that act should reset the prefix.
 
     keydown(event) {
       let handled;
@@ -120,47 +129,47 @@ function getIndexOfItemWithTextPrefix(element, prefix) {
 // Return an array of the text content (in lowercase) of all items.
 // Cache these results.
 function getItemTextContents(element) {
-  if (!element._itemTextContents) {
+  if (!element[itemTextContentsSymbol]) {
     let items = element.items;
-    element._itemTextContents = items.map(child => {
+    element[itemTextContentsSymbol] = items.map(child => {
       let text = child.textContent || child.alt;
       return text.toLowerCase();
     });
   }
-  return element._itemTextContents;
+  return element[itemTextContentsSymbol];
 }
 
 function handleBackspace(element) {
-  let length = element._typedPrefix ? element._typedPrefix.length : 0;
+  let length = element[typedPrefixSymbol] ? element[typedPrefixSymbol].length : 0;
   if (length > 0) {
-    element._typedPrefix = element._typedPrefix.substr(0, length - 1);
+    element[typedPrefixSymbol] = element[typedPrefixSymbol].substr(0, length - 1);
   }
-  element.selectItemWithTextPrefix(element._typedPrefix);
-  element._setPrefixTimeout();
+  element.selectItemWithTextPrefix(element[typedPrefixSymbol]);
+  setPrefixTimeout(element);
 }
 
 function handlePlainCharacter(element, char) {
-  let prefix = element._typedPrefix || '';
-  element._typedPrefix = prefix + char.toLowerCase();
-  element.selectItemWithTextPrefix(element._typedPrefix);
+  let prefix = element[typedPrefixSymbol] || '';
+  element[typedPrefixSymbol] = prefix + char.toLowerCase();
+  element.selectItemWithTextPrefix(element[typedPrefixSymbol]);
   setPrefixTimeout(element);
 }
 
 function resetPrefixTimeout(element) {
-  if (element._prefixTimeout) {
-    clearTimeout(element._prefixTimeout);
-    element._prefixTimeout = false;
+  if (element[prefixTimeoutSymbol]) {
+    clearTimeout(element[prefixTimeoutSymbol]);
+    element[prefixTimeoutSymbol] = false;
   }
 }
 
 function resetTypedPrefix(element) {
-  element._typedPrefix = '';
+  element[typedPrefixSymbol] = '';
   resetPrefixTimeout(element);
 }
 
 function setPrefixTimeout(element) {
   resetPrefixTimeout(element);
-  element._prefixTimeout = setTimeout(() => {
+  element[prefixTimeoutSymbol] = setTimeout(() => {
     resetTypedPrefix(element);
   }, PREFIX_TIMEOUT_DURATION);
 }

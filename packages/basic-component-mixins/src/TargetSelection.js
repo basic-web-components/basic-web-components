@@ -1,3 +1,11 @@
+import createSymbol from './createSymbol';
+
+
+// Symbols for private data members on an element.
+const itemsChangedListenerSymbol = createSymbol('itemsChangedListener');
+const selectedItemChangedListenerSymbol = createSymbol('selectedItemChangedListener');
+
+
 /* Exported function extends a base class with TargetSelection. */
 export default (base) => {
 
@@ -119,16 +127,16 @@ export default (base) => {
     }
     set target(element) {
       if ('target' in base.prototype) { super.target = element; }
-      if (this._itemsChangedListener) {
-        this.removeEventListener('items-changed', this._itemsChangedListener);
+      if (this[itemsChangedListenerSymbol]) {
+        this.removeEventListener('items-changed', this[itemsChangedListenerSymbol]);
       }
-      if (this._selectedItemChangedListener) {
-        this.removeEventListener('selected-item-changed', this._selectedItemChangedListener);
+      if (this[selectedItemChangedListenerSymbol]) {
+        this.removeEventListener('selected-item-changed', this[selectedItemChangedListenerSymbol]);
       }
-      this._itemsChangedListener = element.addEventListener('items-changed', event => {
+      this[itemsChangedListenerSymbol] = element.addEventListener('items-changed', event => {
         this.itemsChanged();
       });
-      this._selectedItemChangedListener = element.addEventListener('selected-item-changed', event => {
+      this[selectedItemChangedListenerSymbol] = element.addEventListener('selected-item-changed', event => {
         // REVIEW: Components applying TargetSelection both listen to this
         // event (on the target), and raise it themselves. In theory, they're
         // expected to *not* catch the events they raise themselves, but Chrome

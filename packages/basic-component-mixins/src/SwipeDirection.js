@@ -1,3 +1,16 @@
+import createSymbol from './createSymbol';
+
+
+// Symbols for private data members on an element.
+const deltaXSymbol = createSymbol('deltaX');
+const deltaYSymbol = createSymbol('deltaY');
+const multiTouchSymbol = createSymbol('multiTouch');
+const previousXSymbol = createSymbol('previousX');
+const previousYSymbol = createSymbol('previousY');
+const startXSymbol = createSymbol('startX');
+const travelFractionSymbol = createSymbol('travelFraction');
+
+
 /* Exported function extends a base class with SwipeDirection. */
 export default (base) => {
 
@@ -54,18 +67,18 @@ export default (base) => {
       } else {
         // Pointer events not supported -- listen to older touch events.
         this.addEventListener('touchstart', event => {
-          if (this._multiTouch) {
+          if (this[multiTouchSymbol]) {
             return;
           } else if (event.touches.length === 1) {
             let clientX = event.changedTouches[0].clientX;
             let clientY = event.changedTouches[0].clientY;
             touchStart(this, clientX, clientY);
           } else {
-            this._multiTouch = true;
+            this[multiTouchSymbol] = true;
           }
         });
         this.addEventListener('touchmove', event => {
-          if (!this._multiTouch && event.touches.length === 1) {
+          if (!this[multiTouchSymbol] && event.touches.length === 1) {
             let clientX = event.changedTouches[0].clientX;
             let clientY = event.changedTouches[0].clientY;
             let handled = touchMove(this, clientX, clientY);
@@ -77,13 +90,13 @@ export default (base) => {
         this.addEventListener('touchend', event => {
           if (event.touches.length === 0) {
             // All touches removed; gesture is complete.
-            if (!this._multiTouch) {
+            if (!this[multiTouchSymbol]) {
               // Single-touch swipe has finished.
               let clientX = event.changedTouches[0].clientX;
               let clientY = event.changedTouches[0].clientY;
               touchEnd(this, clientX, clientY);
             }
-            this._multiTouch = false;
+            this[multiTouchSymbol] = false;
           }
         });
       }
@@ -120,11 +133,11 @@ export default (base) => {
      * @type number
      */
     get travelFraction() {
-      return this._travelFraction;
+      return this[travelFractionSymbol];
     }
     set travelFraction(value) {
       if ('travelFraction' in base.prototype) { super.travelFraction = value; }
-      this._travelFraction = value;
+      this[travelFractionSymbol] = value;
     }
 
   }
@@ -142,19 +155,19 @@ function isEventForPenOrPrimaryTouch(event) {
 
 function touchStart(element, clientX, clientY) {
   element.showTransition = false;
-  element._startX = clientX;
-  element._previousX = clientX;
-  element._previousY = clientY;
-  element._deltaX = 0;
-  element._deltaY = 0;
+  element[startXSymbol] = clientX;
+  element[previousXSymbol] = clientX;
+  element[previousYSymbol] = clientY;
+  element[deltaXSymbol] = 0;
+  element[deltaYSymbol] = 0;
 }
 
 function touchMove(element, clientX, clientY) {
-  element._deltaX = clientX - element._previousX;
-  element._deltaY = clientY - element._previousY;
-  element._previousX = clientX;
-  element._previousY = clientY;
-  if (Math.abs(element._deltaX) > Math.abs(element._deltaY)) {
+  element[deltaXSymbol] = clientX - element[previousXSymbol];
+  element[deltaYSymbol] = clientY - element[previousYSymbol];
+  element[previousXSymbol] = clientX;
+  element[previousYSymbol] = clientY;
+  if (Math.abs(element[deltaXSymbol]) > Math.abs(element[deltaYSymbol])) {
     // Move was mostly horizontal.
     trackTo(element, clientX);
     // Indicate that the event was handled. It'd be nicer if we didn't have
@@ -173,10 +186,10 @@ function touchMove(element, clientX, clientY) {
 
 function touchEnd(element, clientX, clientY) {
   element.showTransition = true;
-  if (element._deltaX >= 20) {
+  if (element[deltaXSymbol] >= 20) {
     // Finished going right at high speed.
     element.goLeft();
-  } else if (element._deltaX <= -20) {
+  } else if (element[deltaXSymbol] <= -20) {
     // Finished going left at high speed.
     element.goRight();
   } else {
@@ -190,13 +203,13 @@ function touchEnd(element, clientX, clientY) {
     }
   }
   element.travelFraction = 0;
-  element._deltaX = null;
-  element._deltaY = null;
+  element[deltaXSymbol] = null;
+  element[deltaYSymbol] = null;
 }
 
 function trackTo(element, x) {
   let width = element.offsetWidth;
-  let dragDistance = element._startX - x;
+  let dragDistance = element[startXSymbol] - x;
   let fraction = width > 0 ?
     dragDistance / width :
     0;

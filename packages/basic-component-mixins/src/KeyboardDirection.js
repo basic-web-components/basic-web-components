@@ -1,3 +1,10 @@
+import createSymbol from './createSymbol';
+
+
+// Symbols for private data members on an element.
+const navigationAxisSymbol = createSymbol('navigationAxis');
+
+
 /* Exported function extends a base class with KeyboardDirection. */
 export default (base) => {
 
@@ -90,10 +97,10 @@ export default (base) => {
      * @type {string}
      */
     get navigationAxis() {
-      return this._navigationAxis;
+      return this[navigationAxisSymbol];
     }
     set navigationAxis(value) {
-      this._navigationAxis = value;
+      this[navigationAxisSymbol] = value;
     }
 
     keydown(event) {

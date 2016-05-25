@@ -1,3 +1,10 @@
+import createSymbol from './createSymbol';
+
+
+// Symbols for private data members on an element.
+const genericSymbol = createSymbol('generic');
+
+
 /* Exported function extends a base class with Generic. */
 export default (base) => {
 
@@ -53,7 +60,7 @@ export default (base) => {
      * @default true
      */
     get generic() {
-      return this._generic;
+      return this[genericSymbol];
     }
     set generic(value) {
       if ('generic' in base.prototype) { super.generic = value; }
@@ -62,7 +69,7 @@ export default (base) => {
       if (typeof value === 'string') {
         value = (value !== 'false');
       }
-      this._generic = value;
+      this[genericSymbol] = value;
       if (value === false) {
         // Explicitly use false string.
         this.setAttribute('generic', 'false');

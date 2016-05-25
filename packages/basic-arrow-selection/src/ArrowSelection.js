@@ -1,3 +1,4 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
@@ -8,6 +9,13 @@ import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirectio
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
+
+
+// Symbols for private data members on an element.
+const mousedownListenerSymbol = createSymbol('mousedownListener');
+const mousemoveListenerSymbol = createSymbol('mousemoveListener');
+const lastMouseDownPageXSymbol = createSymbol('lastMouseDownPageX');
+const lastMouseDownPageYSymbol = createSymbol('lastMouseDownPageY');
 
 
 let base = ElementBase.compose(
@@ -261,25 +269,25 @@ function deviceSupportsTouch() {
 // mousedown.
 function listenForMouse(element) {
 
-  element._mousedownListener = event => {
+  element[mousedownListenerSymbol] = event => {
     // console.log("mousedown");
-    element._lastMouseDownPageX = event.pageX;
-    element._lastMouseDownPageY = event.pageY;
+    element[lastMouseDownPageXSymbol] = event.pageX;
+    element[lastMouseDownPageYSymbol] = event.pageY;
   };
-  window.addEventListener('mousedown', element._mousedownListener);
+  window.addEventListener('mousedown', element[mousedownListenerSymbol]);
 
-  element._mousemoveListener = event => {
+  element[mousemoveListenerSymbol] = event => {
     // console.log("mousemove");
     setTimeout(() => {
-      if (event.pageX !== element._lastMouseDownPageX ||
-          event.pageY !== element._lastMouseDownPageY) {
+      if (event.pageX !== element[lastMouseDownPageXSymbol] ||
+          event.pageY !== element[lastMouseDownPageYSymbol]) {
         // mousemove event was at a location other than the last mousedown,
         // and hence most likely a real mousemove event.
         mouseDetected(element);
       }
     });
   };
-  window.addEventListener('mousemove', element._mousemoveListener);
+  window.addEventListener('mousemove', element[mousemoveListenerSymbol]);
 }
 
 
@@ -288,10 +296,10 @@ function mouseDetected(element) {
   showArrows(element);
 
   // We can stop listening for mouse events now.
-  window.removeEventListener('mousedown', element._mousedownListener);
-  window.removeEventListener('mousemove', element._mousemoveListener);
-  element._mousedownListener = null;
-  element._mousemoveListener = null;
+  window.removeEventListener('mousedown', element[mousedownListenerSymbol]);
+  window.removeEventListener('mousemove', element[mousemoveListenerSymbol]);
+  element[mousedownListenerSymbol] = null;
+  element[mousemoveListenerSymbol] = null;
 }
 
 

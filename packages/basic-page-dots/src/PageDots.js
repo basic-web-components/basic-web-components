@@ -1,3 +1,4 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
@@ -10,6 +11,10 @@ import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayA
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
+
+
+// Symbols for private data members on an element.
+const selectedFractionChangedListenerSymbol = createSymbol('selectedFractionChangedListener');
 
 
 let base = ElementBase.compose(
@@ -141,10 +146,10 @@ class PageDots extends base {
   }
   set target(element) {
     if ('target' in base.prototype) { super.target = element; }
-    if (this._selectedFractionChangedListener) {
-      this.removeEventListener('selection-fraction-changed', this._selectedFractionChangedListener);
+    if (this[selectedFractionChangedListenerSymbol]) {
+      this.removeEventListener('selection-fraction-changed', this[selectedFractionChangedListenerSymbol]);
     }
-    this._selectedFractionChangedListener = element.addEventListener('selection-fraction-changed', event => {
+    this[selectedFractionChangedListenerSymbol] = element.addEventListener('selection-fraction-changed', event => {
       this.selectedFraction = element.selectedFraction;
     });
   }

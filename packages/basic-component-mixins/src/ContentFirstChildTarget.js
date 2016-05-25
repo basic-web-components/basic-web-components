@@ -1,3 +1,10 @@
+import createSymbol from './createSymbol';
+
+
+// Symbols for private data members on an element.
+const targetSymbol = createSymbol('target');
+
+
 /* Exported function extends a base class with ContentFirstChildTarget. */
 export default (base) => {
 
@@ -46,11 +53,11 @@ export default (base) => {
      * @type {HTMLElement}
      */
     get target() {
-      return this._target;
+      return this[targetSymbol];
     }
     set target(element) {
       if ('target' in base.prototype) { super.target = element; }
-      this._target = element;
+      this[targetSymbol] = element;
     }
 
   }

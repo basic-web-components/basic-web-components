@@ -1,7 +1,15 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
 import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
+
+
+// Symbols for private data members on an element.
+const lineHeightSymbol = createSymbol('lineHeight');
+const minimumRowsSymbol = createSymbol('minimumRows');
+const valueTracksContentSymbol = createSymbol('valueTracksContent');
+
 
 
 /**
@@ -68,7 +76,7 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
 
   contentChanged() {
     if (super.contentChanged) { super.contentChanged(); }
-    if (this._valueTracksContent) {
+    if (this[valueTracksContentSymbol]) {
       let text = getTextContent(this);
       this.inner.value = unescapeHtml(text);
       valueChanged(this);
@@ -85,11 +93,22 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
       keypress(this, event);
     });
 
+    // Set defaults.
+    if (this.minimumRows == null) {
+      this.minimumRows = this.defaults.minimumRows;
+    }
+
     // A standard textarea has its value track its textContent by default.
     // That is, changes to textContent update the value. However, if an attempt
     // is made to change the value directly, this breaks the automatic tracking.
     // From that point on, changes to textContent do *not* update the value.
-    this._valueTracksContent = true;
+    this[valueTracksContentSymbol] = true;
+  }
+
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.minimumRows = 1;
+    return defaults;
   }
 
   /**
@@ -115,11 +134,11 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
    * @default 1
    */
   get minimumRows() {
-    return this._minimumRows || 1;
+    return this[minimumRowsSymbol];
   }
   set minimumRows(value) {
-    this._minimumRows = parseInt(value);
-    if (this._lineHeight) {
+    this[minimumRowsSymbol] = parseInt(value);
+    if (this[lineHeightSymbol]) {
       setMinimumHeight(this);
     }
   }
@@ -212,7 +231,7 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
   }
   set value(text) {
     // Explicitly setting value breaks automatic update of value from content.
-    this._valueTracksContent = false;
+    this[valueTracksContentSymbol] = false;
     this.inner.value = text;
     valueChanged(this);
   }
@@ -280,7 +299,7 @@ function initializeWhenRendered(element) {
   // text. We can't use lineHeight, because that can be reported as "normal",
   // and we want to know the actual pixel height.
   element.$.extraLine.style.display = 'inherit';
-  element._lineHeight = element.$.extraLine.clientHeight;
+  element[lineHeightSymbol] = element.$.extraLine.clientHeight;
 
   // Now that we know the line height, we can hide the extra line.
   element.$.extraLine.style.display = 'none';
@@ -319,7 +338,7 @@ function setMinimumHeight(element) {
   let paddingBottom = parseFloat(style.paddingBottom);
   let innerHeight = copyContainer.clientHeight - paddingTop - paddingBottom;
   let bordersPlusPadding = outerHeight - innerHeight;
-  let minHeight = (element.minimumRows * element._lineHeight) + bordersPlusPadding;
+  let minHeight = (element.minimumRows * element[lineHeightSymbol]) + bordersPlusPadding;
   minHeight = Math.ceil(minHeight);
   copyContainer.style.minHeight = minHeight + 'px';
 }

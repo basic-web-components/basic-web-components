@@ -1,4 +1,9 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
+
+
+// Symbols for private data members on an element.
+const fadeColorSymbol = createSymbol('fadeColor');
 
 
 /**
@@ -40,10 +45,10 @@ class FadeOverflow extends ElementBase {
    * @default white
    */
   get fadeColor() {
-    return this._fadeColor;
+    return this[fadeColorSymbol];
   }
   set fadeColor(value) {
-    this._fadeColor = value;
+    this[fadeColorSymbol] = value;
     if (value) {
       let rgb = extractRgbValues(value);
       if (rgb) {

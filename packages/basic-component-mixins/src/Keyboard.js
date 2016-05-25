@@ -1,3 +1,10 @@
+import createSymbol from './createSymbol';
+
+
+// Symbols for private data members on an element.
+const keydownListenerSymbol = createSymbol('keydownListener');
+
+
 // TODO: Provide baseline behavior for this mixin when used outside of a
 // collective.
 
@@ -142,13 +149,13 @@ function getCollectiveAriaLabel(collective) {
 
 
 function isListeningToKeydown(element) {
-  return element._keydownListener != null;
+  return element[keydownListenerSymbol] != null;
 }
 
 
 function startListeningToKeydown(element) {
-  element._keydownListener = keydown.bind(element);
-  element.addEventListener('keydown', element._keydownListener);
+  element[keydownListenerSymbol] = keydown.bind(element);
+  element.addEventListener('keydown', element[keydownListenerSymbol]);
   // Set a default tab index of 0 (document order) if no tab index exists.
   // MS Edge requires we explicitly check for presence of tabindex attribute.
   if (element.getAttribute('tabindex') == null || element.tabIndex < 0) {
@@ -158,7 +165,7 @@ function startListeningToKeydown(element) {
 
 
 function stopListeningToKeydown(element) {
-  element.removeEventListener('keydown', element._keydownListener);
-  element._keydownListener = null;
+  element.removeEventListener('keydown', element[keydownListenerSymbol]);
+  element[keydownListenerSymbol] = null;
   element.removeAttribute('tabindex');
 }

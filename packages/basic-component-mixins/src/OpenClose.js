@@ -1,4 +1,9 @@
-import toggleClass from '../../basic-component-mixins/src/toggleClass';
+import createSymbol from './createSymbol';
+import toggleClass from './toggleClass';
+
+
+// Symbols for private data members on an element.
+const closedSymbol = createSymbol('closed');
 
 
 /* Exported function extends a base class with OpenClose. */
@@ -44,12 +49,12 @@ export default (base) => {
      * @default false
      */
     get closed() {
-      return this._closed;
+      return this[closedSymbol];
     }
     set closed(value) {
       if ('closed' in base.prototype) { super.closed = value; }
-      if (this._closed !== value) {
-        this._closed = value;
+      if (this[closedSymbol] !== value) {
+        this[closedSymbol] = value;
         this.render(value);
 
         let event = new CustomEvent('closed-changed');

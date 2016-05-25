@@ -1,8 +1,12 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
-
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
+
+
+// Symbols for private data members on an element.
+const selectedItemSymbol = createSymbol('selectedItem');
 
 
 let base = ElementBase.compose(
@@ -76,11 +80,11 @@ class SlidingViewport extends base {
   }
 
   get selectedItem() {
-    return this._selectedItem;
+    return this[selectedItemSymbol];
   }
   set selectedItem(item) {
     if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-    this._selectedItem = item;
+    this[selectedItemSymbol] = item;
     this.render();
   }
 

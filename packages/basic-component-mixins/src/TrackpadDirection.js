@@ -1,3 +1,14 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
+
+
+// Symbols for private data members on an element.
+const absorbDecelerationSymbol = createSymbol('absorbDeceleration');
+const lastDeltaXSymbol = createSymbol('lastDeltaX');
+const lastWheelTimeoutSymbol = createSymbol('lastWheelTimeout');
+const postNavigateDelayCompleteSymbol = createSymbol('postNavigateDelayComplete');
+const wheelDistanceSymbol = createSymbol('wheelDistance');
+
+
 /* Exported function extends a base class with TrackpadDirection. */
 export default (base) => {
 
@@ -93,24 +104,24 @@ const WHEEL_TIME = 100;
 // Following a navigation, partially reset our wheel tracking.
 function postNavigate(element) {
   element.travelFraction = 0;
-  element._wheelDistance = 0;
-  element._postNavigateDelayComplete = true;
-  element._absorbDeceleration = true;
+  element[wheelDistanceSymbol] = 0;
+  element[postNavigateDelayCompleteSymbol] = true;
+  element[absorbDecelerationSymbol] = true;
   setTimeout(() => {
-    element._postNavigateDelayComplete = false;
+    element[postNavigateDelayCompleteSymbol] = false;
   }, POST_NAVIGATE_TIME);
 }
 
 // Reset all state related to the tracking of the wheel.
 function resetWheelTracking(element) {
   element.travelFraction = 0;
-  element._wheelDistance = 0;
-  element._lastDeltaX = 0;
-  element._absorbDeceleration = false;
-  element._postNavigateDelayComplete = false;
-  if (element._lastWheelTimeout) {
-    clearTimeout(element._lastWheelTimeout);
-    element._lastWheelTimeout = null;
+  element[wheelDistanceSymbol] = 0;
+  element[lastDeltaXSymbol] = 0;
+  element[absorbDecelerationSymbol] = false;
+  element[postNavigateDelayCompleteSymbol] = false;
+  if (element[lastWheelTimeoutSymbol]) {
+    clearTimeout(element[lastWheelTimeoutSymbol]);
+    element[lastWheelTimeoutSymbol] = null;
   }
 }
 
@@ -146,10 +157,10 @@ function wheel(element, event) {
 
   // Since we have a new wheel event, reset our timer waiting for the last
   // wheel event to pass.
-  if (element._lastWheelTimeout) {
-    clearTimeout(element._lastWheelTimeout);
+  if (element[lastWheelTimeoutSymbol]) {
+    clearTimeout(element[lastWheelTimeoutSymbol]);
   }
-  element._lastWheelTimeout = setTimeout(() => {
+  element[lastWheelTimeoutSymbol] = setTimeout(() => {
     wheelTimedOut(element);
   }, WHEEL_TIME);
 
@@ -157,9 +168,9 @@ function wheel(element, event) {
   let deltaY = event.deltaY;
 
   // See if element event represents acceleration or deceleration.
-  let acceleration = sign(deltaX) * (deltaX - element._lastDeltaX);
-  element._lastDeltaX = deltaX;
-  // console.log(deltaX + " " + acceleration + " " + element._absorbDeceleration + " " + element._postNavigateDelayComplete);
+  let acceleration = sign(deltaX) * (deltaX - element[lastDeltaXSymbol]);
+  element[lastDeltaXSymbol] = deltaX;
+  // console.log(deltaX + " " + acceleration + " " + element[absorbDecelerationSymbol] + " " + element[postNavigateDelayCompleteSymbol]);
 
   if (Math.abs(deltaX) < Math.abs(deltaY)) {
     // Move was mostly vertical. The user may be trying scroll with the
@@ -167,7 +178,7 @@ function wheel(element, event) {
     return false;
   }
 
-  if (element._postNavigateDelayComplete) {
+  if (element[postNavigateDelayCompleteSymbol]) {
     // It's too soon after a navigation; ignore the event.
     return true;
   }
@@ -176,18 +187,18 @@ function wheel(element, event) {
   if (acceleration > 0) {
     // The events are not (or are no longer) decelerating, so we can start
     // paying attention to them again.
-    element._absorbDeceleration = false;
-  } else if (element._absorbDeceleration) {
+    element[absorbDecelerationSymbol] = false;
+  } else if (element[absorbDecelerationSymbol]) {
     // The wheel event was likely faked to simulate deceleration; ignore it.
     return true;
   }
 
-  element._wheelDistance += deltaX;
+  element[wheelDistanceSymbol] += deltaX;
 
   // Update the travel fraction of the element being navigated.
   let width = element.offsetWidth;
   let travelFraction = width > 0 ?
-    element._wheelDistance / width :
+    element[wheelDistanceSymbol] / width :
     0;
   element.showTransition = false;
   travelFraction = sign(travelFraction) * Math.min(Math.abs(travelFraction), 1);

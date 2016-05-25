@@ -1,4 +1,10 @@
-import toggleClass from '../../basic-component-mixins/src/toggleClass';
+import createSymbol from './createSymbol';
+import toggleClass from './toggleClass';
+
+
+// Symbols for private data members on an element.
+const itemsSymbol = createSymbol('items');
+const itemInitializedSymbol = createSymbol('itemInitialized');
 
 
 /* Exported function extends a base class with ContentAsItems. */
@@ -58,7 +64,7 @@ export default (base) => {
       // the set of items changes later. We turn on memoization of the items
       // property by setting our internal property to null (instead of
       // undefined).
-      this._items = null;
+      this[itemsSymbol] = null;
 
       this.itemsChanged();
     }
@@ -83,16 +89,16 @@ export default (base) => {
      */
     get items() {
       let items;
-      if (this._items == null) {
+      if (this[itemsSymbol] == null) {
         items = filterAuxiliaryElements(this.content);
         // Note: test for *equality* with null; don't treat undefined as a match.
-        if (this._items === null) {
+        if (this[itemsSymbol] === null) {
           // Memoize the set of items.
-          this._items = items;
+          this[itemsSymbol] = items;
         }
       } else {
         // Return the memoized items.
-        items = this._items;
+        items = this[itemsSymbol];
       }
       return items;
     }
@@ -107,9 +113,9 @@ export default (base) => {
 
       // Perform per-item initialization.
       this.items.forEach(item => {
-        if (!item._itemInitialized) {
+        if (!item[itemInitializedSymbol]) {
           this.itemAdded(item);
-          item._itemInitialized = true;
+          item[itemInitializedSymbol] = true;
         }
       });
 

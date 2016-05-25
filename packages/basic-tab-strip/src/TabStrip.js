@@ -1,3 +1,4 @@
+import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
@@ -9,6 +10,10 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
+
+
+// Symbols for private data members on an element.
+const tabPositionSymbol = createSymbol('tabPosition');
 
 
 // Used to assign unique IDs to tabs for ARIA purposes.
@@ -201,10 +206,10 @@ class TabStrip extends base {
    * @type {string}
    */
   get tabPosition() {
-    return this._tabPosition;
+    return this[tabPositionSymbol];
   }
   set tabPosition(position) {
-    this._tabPosition = position;
+    this[tabPositionSymbol] = position;
 
     if (this.getAttribute('tab-position') !== position) {
       this.setAttribute('tab-position', position);
