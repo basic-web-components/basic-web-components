@@ -61,9 +61,8 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
       refresh(this);
     });
 
-    if (typeof this._areaLink === 'undefined') {
-      // areaLink is false by default.
-      this._areaLink = false;
+    if (this.areaLink == null) {
+      this.areaLink = this.defaults.areaLink;
     }
   }
 
@@ -80,6 +79,12 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
   set current(value) {
     toggleClass(this, 'current', value);
     this.dispatchEvent(new CustomEvent('current-changed'));
+  }
+
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.areaLink = false;
+    return defaults;
   }
 
   // Augment href implementation so that changing href checks the active status.

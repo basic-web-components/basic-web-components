@@ -29,7 +29,17 @@ export default (base) => {
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-      this.generic = this.getAttribute('generic') || true;
+
+      // Set defaults.
+      if (this.generic == null) {
+        this.generic = this.defaults.generic;
+      }
+    }
+
+    get defaults() {
+      let defaults = super.defaults || {};
+      defaults.generic = true;
+      return defaults;
     }
 
     /**

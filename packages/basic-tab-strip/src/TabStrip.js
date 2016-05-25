@@ -121,9 +121,16 @@ class TabStrip extends base {
       this.setAttribute('role', 'tablist');
     }
 
-    if (!this.tabPosition) {
-      this.tabPosition = 'top';
+    // Set defaults.
+    if (this.tabPosition == null) {
+      this.tabPosition = this.defaults.tabPosition;
     }
+  }
+
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.tabPosition = 'top';
+    return defaults;
   }
 
   get tabs() {

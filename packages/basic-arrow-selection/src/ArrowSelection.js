@@ -77,7 +77,8 @@ class ArrowSelection extends base {
   }
 
   createdCallback() {
-    super.createdCallback();
+    if (super.createdCallback) { super.createdCallback(); }
+
     this.$.buttonLeft.addEventListener('click', event => {
       this.selectPrevious();
       event.stopPropagation();
@@ -100,8 +101,12 @@ class ArrowSelection extends base {
         showArrows(this);
       }
     }
+  }
 
-    this.navigationAxis = 'horizontal';
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.navigationAxis = 'horizontal';
+    return defaults;
   }
 
   selectedItemChanged() {

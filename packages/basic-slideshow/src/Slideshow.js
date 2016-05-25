@@ -31,17 +31,9 @@ let base = ElementBase.compose(
  */
 class Slideshow extends base {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
-
-    // Unless told not to start playing, play by default.
-    if (this.playing == null) {
-      this.play();
-    }
-  }
-
   get defaults() {
     let defaults = super.defaults || {};
+    defaults.playing = true;
     defaults.selectionAnimationDuration = 500;
     defaults.selectionAnimationEffect = 'crossfade';
     defaults.selectionRequired = true;

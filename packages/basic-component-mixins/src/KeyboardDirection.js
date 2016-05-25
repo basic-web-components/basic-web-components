@@ -16,6 +16,21 @@ export default (base) => {
    */
   class KeyboardDirection extends base {
 
+    createdCallback() {
+      if (super.createdCallback) { super.createdCallback(); }
+
+      // Set defaults.
+      if (this.navigationAxis == null) {
+        this.navigationAxis = this.defaults.navigationAxis;
+      }
+    }
+
+    get defaults() {
+      let defaults = super.defaults || {};
+      defaults.navigationAxis = 'both';
+      return defaults;
+    }
+
     /**
      * Invoked when the user wants to go/navigate down.
      * The default implementation of this method does nothing.

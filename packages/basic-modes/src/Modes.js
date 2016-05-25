@@ -40,8 +40,10 @@ class Modes extends base {
     item.setAttribute('aria-hidden', !selected);
   }
 
-  attachedCallback() {
-    this.selectionRequired = true;
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.selectionRequired = true;
+    return defaults;
   }
 
 }

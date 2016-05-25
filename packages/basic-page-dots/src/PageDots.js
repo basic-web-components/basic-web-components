@@ -81,8 +81,12 @@ class PageDots extends base {
         this.selectedIndex = dotIndex;
       }
     });
+  }
 
-    this.navigationAxis = 'horizontal';
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.navigationAxis = 'horizontal';
+    return defaults;
   }
 
   get dots() {

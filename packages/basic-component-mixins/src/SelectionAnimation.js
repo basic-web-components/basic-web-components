@@ -581,7 +581,9 @@ function setAnimationFraction(element, itemIndex, fraction) {
   let animation = getAnimationForItemIndex(element, itemIndex);
   if (animation) {
     let duration = element.selectionAnimationDuration;
-    animation.currentTime = fraction * duration;
+    if (duration) {
+      animation.currentTime = fraction * duration;
+    }
   }
 }
 

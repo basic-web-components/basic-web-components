@@ -89,9 +89,10 @@ class ListBox extends ElementBase.compose(
   TargetInCollective
 ) {
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    this.navigationAxis = 'vertical';
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.navigationAxis = 'vertical';
+    return defaults;
   }
 
   get scrollTarget() {

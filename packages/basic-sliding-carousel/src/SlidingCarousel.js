@@ -74,12 +74,13 @@ class SlidingCarousel extends base {
     if (super.attachedCallback) { super.attachedCallback(); }
     // HACK
     this.itemsChanged();
-    this.selectionRequired = true;
   }
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    this.navigationAxis = 'horizontal';
+  get defaults() {
+    let defaults = super.defaults || {};
+    defaults.navigationAxis = 'horizontal';
+    defaults.selectionRequired = true;
+    return defaults;
   }
 
   get selectedFraction() {

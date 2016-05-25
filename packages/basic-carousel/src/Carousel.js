@@ -146,20 +146,11 @@ let base = ElementBase.compose(
  */
 class Carousel extends base {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
-    this.selectionRequired = true;
-  }
-
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-    
-    this.navigationAxis = 'horizontal';
-  }
-
   get defaults() {
     let defaults = super.defaults || {};
+    defaults.navigationAxis = 'horizontal';
     defaults.selectionAnimationEffect = 'slideWithGap';
+    defaults.selectionRequired = true;
     return defaults;
   }
 

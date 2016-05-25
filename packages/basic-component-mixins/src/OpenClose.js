@@ -21,7 +21,11 @@ export default (base) => {
 
     createdCallback() {
       if (super.createdCallback) { super.createdCallback(); }
-      this._closed = false;
+
+      // Set defaults.
+      if (this.closed == null) {
+        this.closed = this.defaults.closed;
+      }
     }
 
     /**
@@ -51,6 +55,12 @@ export default (base) => {
         let event = new CustomEvent('closed-changed');
         this.dispatchEvent(event);
       }
+    }
+
+    get defaults() {
+      let defaults = super.defaults || {};
+      defaults.closed = false;
+      return defaults;
     }
 
     /**
