@@ -141,8 +141,8 @@ class TabStrip extends base {
     if (super.itemsChanged) { super.itemsChanged(); }
 
     let baseId = this.id ?
-    "_" + this.id + "Panel" :
-    "_panel";
+      "_" + this.id + "Panel" :
+      "_panel";
 
     // Confirm that items have at least a default role and ID for ARIA purposes.
     this.items.forEach(item => {

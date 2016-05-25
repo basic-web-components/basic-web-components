@@ -104,11 +104,18 @@ function expandContentElements(nodes, includeTextNodes) {
     // that class won't exist if the browser that doesn't support native
     // Shadow DOM and if the Shadow DOM polyfill hasn't been loaded. Instead,
     // we do a simplistic check to see if the tag name is "slot" or "content".
-    if (node.localName && (node.localName === "slot" || node.localName === "content")) {
-      // content element; use its distributed nodes instead.
-      let distributedNodes = node.getDistributedNodes();
-      return distributedNodes ?
-        expandContentElements(distributedNodes, includeTextNodes) :
+    if (node.localName === "slot" || node.localName === "content") {
+      // Use the nodes assigned to this node instead.
+      let assignedNodes;
+      if (node.assignedNodes) {
+        // slot element
+        assignedNodes = node.assignedNodes({ flatten: true });
+      } else if (node.getDistributedNodes) {
+        // content element
+        assignedNodes = node.getDistributedNodes();
+      }
+      return assignedNodes ?
+        expandContentElements(assignedNodes, includeTextNodes) :
         [];
     } else if (node instanceof HTMLElement) {
       // Plain element; use as is.

@@ -7,10 +7,6 @@ export default (base) => {
   /**
    * Mixin which maps content semantics (elements) to list item semantics.
    *
-   * This mixin expects a component to provide a `content` property returning a
-   * raw set of elements. You can provide that yourself, or use the
-   * [DistributedChildrenAsContent](DistributedChildrenAsContent.md) mixin.
-   *
    * Items differ from element contents in several ways:
    *
    * * They are often referenced via index.
@@ -21,6 +17,22 @@ export default (base) => {
    *   items. Auxiliary elements include link, script, style, and template
    *   elements. This filtering ensures that those auxiliary elements can be
    *   used in markup inside of a list without being treated as list items.
+   *
+   * This mixin expects a component to provide a `content` property returning a
+   * raw set of elements. You can provide that yourself, or use the
+   * [DistributedChildrenAsContent](DistributedChildrenAsContent.md) mixin.
+   *
+   * The most commonly referenced property defined by this mixin is the `items`
+   * property. To avoid having to do work each time that property is requested,
+   * this mixin supports an optimized mode. If you invoke the `contentChanged`
+   * method when the set of items changes, the mixin concludes that you'll take
+   * care of notifying it of future changes, and turns on the optimization. With
+   * that on, the mixin saves a reference to the computed set of items, and will
+   * return that immediately on subsequent calls to the `items` property. If you
+   * use this mixin in conjunction with the
+   * [ObserveContentChanges](ObserveContentChanges.md) mixin, the
+   * `contentChanged` method will be invoked for you when the element's children
+   * change, turning on the optimization automatically.
    */
   class ContentAsItems extends base {
 
@@ -41,7 +53,13 @@ export default (base) => {
 
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
+
+      // Since we got the contentChanged call, we'll assume we'll be notified if
+      // the set of items changes later. We turn on memoization of the items
+      // property by setting our internal property to null (instead of
+      // undefined).
       this._items = null;
+
       this.itemsChanged();
     }
 
@@ -64,10 +82,19 @@ export default (base) => {
      * @type {HTMLElement[]}
      */
     get items() {
+      let items;
       if (this._items == null) {
-        this._items = filterAuxiliaryElements(this.content);
+        items = filterAuxiliaryElements(this.content);
+        // Note: test for *equality* with null; don't treat undefined as a match.
+        if (this._items === null) {
+          // Memoize the set of items.
+          this._items = items;
+        }
+      } else {
+        // Return the memoized items.
+        items = this._items;
       }
-      return this._items;
+      return items;
     }
 
     /**
