@@ -1,8 +1,28 @@
-This folder used by the Basic Web Components project itself as a template for
-creating new components in the project. The files in this folder are not
-intended to be used directly. If you are creating a new component for this
-project:
+# API Documentation
+<a name="SlideshowTimer"></a>
 
-* Copy this folder.
-* Replace instances of CLASS NAME GOES HERE and ELEMENT NAME GOES HERE with a
-  class name (e.g., FooBar) and element name (basic-foo-bar) respectively.
+## SlideshowTimer ⇐ <code>ElementBase</code>
+Auxiliary component to advance a selection with a timer.
+
+This component is generally used to wrap a component like
+[basic-carousel](../basic-carousel) or the simpler
+[basic-sliding-carousel](../basic-sliding-carousel) to add slideshow
+behavior.
+
+Example:
+
+    <basic-slideshow-timer>
+      <basic-carousel>
+        ... images or other elements ...
+      </basic-carousel>
+    </basic-slideshow-timer>
+
+The basic-slideshow-timer component provides no visible user interface
+elements, and exists chiefly as a convenience for use in scenarios like the
+one above. If you're developing a component that will always want to provide
+slideshow semantics, consider directly applying the
+[TimerSelection](../basic-component-mixins/docs/TimerSelection.md) mixin
+to your component.
+
+  **Kind**: global class
+**Extends:** <code>ElementBase</code>  

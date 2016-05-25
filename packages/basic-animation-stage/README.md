@@ -9,9 +9,8 @@ in progress.
 
 [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-animation-stage/)
 
-This component is intended to be used as the rendering surface for components
-like [basic-carousel](../basic-carousel), slideshows, etc., which want to
-show transitional effects.
+This component is intended to be used as a programmatic rendering surface for
+components which want to show transitional effects.
 
 The component uses the [SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)
 mixin, which in turn uses the Web Animations API. For use on browsers which
@@ -24,14 +23,11 @@ require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-vi
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
 **Mixes**: <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code>
-  , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
   , <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code>
   , <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code>
   , <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code>
   , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
-  , <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code>
-  , <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code>
   
 
 * [AnimationStage](#AnimationStage) ⇐ <code>ElementBase</code>
@@ -42,10 +38,6 @@ require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-vi
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#ObserveContentChanges.event_content-changed)
     * [.contentChanged()](#ObserveContentChanges+contentChanged)
-    * [.goLeft()](#TrackpadDirection+goLeft)
-    * [.goLeft()](#SwipeDirection+goLeft)
-    * [.goRight()](#SwipeDirection+goRight)
-    * [.goRight()](#TrackpadDirection+goRight)
     * [.itemAdded(item)](#ItemsSelection+itemAdded)
     * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -57,7 +49,8 @@ require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-vi
     * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectionAnimationDuration](#SelectionAnimation+selectionAnimationDuration) : <code>integer</code>
+    * [.selectionAnimationDuration](#SelectionAnimation+selectionAnimationDuration) : <code>number</code>
+    * [.selectionAnimationEffect](#SelectionAnimation+selectionAnimationEffect) : <code>string</code>
     * [.selectionAnimationKeyframes](#SelectionAnimation+selectionAnimationKeyframes) : <code>Array.&lt;cssRules&gt;</code>
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
     * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
@@ -65,8 +58,6 @@ require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-vi
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
-    * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
-    * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
 
 <a name="ContentAsItems+applySelection"></a>
 
@@ -138,34 +129,6 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
-<a name="TrackpadDirection+goLeft"></a>
-
-### animationStage.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
-<a name="SwipeDirection+goLeft"></a>
-
-### animationStage.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-<a name="SwipeDirection+goRight"></a>
-
-### animationStage.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-<a name="TrackpadDirection+goRight"></a>
-
-### animationStage.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="ItemsSelection+itemAdded"></a>
 
 ### animationStage.itemAdded(item)
@@ -245,7 +208,7 @@ A fractional value indicating how far the user has currently advanced to
 the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
 user is halfway between items 3 and 4.
 
-For more details, see the [fractionalSelection](fractionalSelection.md)
+For more details, see the [FractionalSelection](FractionalSelection.md)
 helper functions.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
@@ -275,7 +238,7 @@ Select the first item in the list.
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="SelectionAnimation+selectionAnimationDuration"></a>
 
-### animationStage.selectionAnimationDuration : <code>integer</code>
+### animationStage.selectionAnimationDuration : <code>number</code>
 The duration of a selection animation in milliseconds.
 
 This measures the amount of time required for a selection animation to
@@ -286,6 +249,23 @@ The default value is 250 milliseconds (a quarter a second).
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
 **Default**: <code>250</code>  
+<a name="SelectionAnimation+selectionAnimationEffect"></a>
+
+### animationStage.selectionAnimationEffect : <code>string</code>
+The name of a standard selection animation effect.
+
+This is a shorthand for setting the `selectionAnimationKeyframes`
+property to standard keyframes. Supported string values:
+
+* "crossfade"
+* "reveal"
+* "revealWithFade"
+* "showAdjacent"
+* "slide"
+* "slideWithGap"
+
+  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
+**Default**: <code>&quot;\&quot;slide\&quot;&quot;</code>  
 <a name="SelectionAnimation+selectionAnimationKeyframes"></a>
 
 ### animationStage.selectionAnimationKeyframes : <code>Array.&lt;cssRules&gt;</code>
@@ -358,18 +338,3 @@ mixins that may be applied to it, and is not intended to let someone
 using component permanently enable or disable transition effects.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
-<a name="SwipeDirection+travelFraction"></a>
-
-### animationStage.travelFraction : <code>number</code>
-The distance the first touchpoint has traveled since the beginning of a
-drag, expressed as a fraction of the element's width.
-
-  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-<a name="TrackpadDirection+travelFraction"></a>
-
-### animationStage.travelFraction : <code>number</code>
-The distance the user has moved the first touchpoint since the beginning
-of a trackpad/wheel operation, expressed as a fraction of the element's
-width.
-
-  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.

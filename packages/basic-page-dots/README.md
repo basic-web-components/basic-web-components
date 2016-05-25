@@ -56,7 +56,6 @@ will select the corresponding list item.
     * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
     * [.selectedFraction](#PageDots+selectedFraction) : <code>number</code>
     * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
@@ -260,13 +259,6 @@ In that case, setting the index to -1 will deselect any
 currently-selected item.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="TargetSelection+selectedIndex"></a>
-
-### pageDots.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TargetSelection+selectedItem"></a>
 
 ### pageDots.selectedItem : <code>HTMLElement</code>

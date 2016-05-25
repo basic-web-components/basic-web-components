@@ -32,7 +32,6 @@ basic-arrow-selection (above) does.
 * [TargetSelection](#TargetSelection)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
-    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
@@ -51,13 +50,6 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[TargetSelection](#TargetSelection)</code>
-<a name="TargetSelection+selectedIndex"></a>
-
-### targetSelection.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-  **Kind**: instance property of <code>[TargetSelection](#TargetSelection)</code>
 <a name="TargetSelection+selectedItem"></a>
 
 ### targetSelection.selectedItem : <code>HTMLElement</code>
