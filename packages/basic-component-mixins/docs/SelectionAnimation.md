@@ -38,7 +38,8 @@ do not support that API natively, you will need to load the
 
 * [SelectionAnimation](#SelectionAnimation)
     * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
-    * [.selectionAnimationDuration](#SelectionAnimation+selectionAnimationDuration) : <code>integer</code>
+    * [.selectionAnimationDuration](#SelectionAnimation+selectionAnimationDuration) : <code>number</code>
+    * [.selectionAnimationEffect](#SelectionAnimation+selectionAnimationEffect) : <code>string</code>
     * [.selectionAnimationKeyframes](#SelectionAnimation+selectionAnimationKeyframes) : <code>Array.&lt;cssRules&gt;</code>
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
 
@@ -49,13 +50,13 @@ A fractional value indicating how far the user has currently advanced to
 the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
 user is halfway between items 3 and 4.
 
-For more details, see the [fractionalSelection](fractionalSelection.md)
+For more details, see the [FractionalSelection](FractionalSelection.md)
 helper functions.
 
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 <a name="SelectionAnimation+selectionAnimationDuration"></a>
 
-### selectionAnimation.selectionAnimationDuration : <code>integer</code>
+### selectionAnimation.selectionAnimationDuration : <code>number</code>
 The duration of a selection animation in milliseconds.
 
 This measures the amount of time required for a selection animation to
@@ -66,6 +67,23 @@ The default value is 250 milliseconds (a quarter a second).
 
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 **Default**: <code>250</code>  
+<a name="SelectionAnimation+selectionAnimationEffect"></a>
+
+### selectionAnimation.selectionAnimationEffect : <code>string</code>
+The name of a standard selection animation effect.
+
+This is a shorthand for setting the `selectionAnimationKeyframes`
+property to standard keyframes. Supported string values:
+
+* "crossfade"
+* "reveal"
+* "revealWithFade"
+* "showAdjacent"
+* "slide"
+* "slideWithGap"
+
+  **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
+**Default**: <code>&quot;\&quot;slide\&quot;&quot;</code>  
 <a name="SelectionAnimation+selectionAnimationKeyframes"></a>
 
 ### selectionAnimation.selectionAnimationKeyframes : <code>Array.&lt;cssRules&gt;</code>

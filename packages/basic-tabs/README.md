@@ -34,7 +34,6 @@ Example:
     * [.itemsChanged()](#TargetSelection+itemsChanged)
     * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
     * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
-    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
@@ -128,13 +127,6 @@ Fires when the selectedItem property changes.
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
-<a name="TargetSelection+selectedIndex"></a>
-
-### tabs.selectedIndex : <code>number</code>
-The index of the item which is currently selected, or -1 if there is no
-selection.
-
-  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedIndex"></a>
 
 ### tabs.selectedIndex : <code>number</code>
