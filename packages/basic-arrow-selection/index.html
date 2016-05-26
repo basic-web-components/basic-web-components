@@ -4,9 +4,11 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>basic-arrow-selection</title>
+  <title>basic-carousel with arrows</title>
 
+  <script src="../demos/lib/web-animations.min.js"></script>
   <script src="../demos/lib/webcomponents.js"></script>
+  <script src="../basic-carousel/dist/basic-carousel.js"></script>
   <script src="./dist/basic-arrow-selection.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
 
@@ -16,6 +18,7 @@
   }
 
   body {
+    background: black;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -23,7 +26,10 @@
     display: flex;
   }
 
-  basic-arrow-selection {
+  basic-arrow-selection,
+  basic-carousel {
+    display: -webkit-flex;
+    display: flex;
     -webkit-flex: 1;
     flex: 1;
   }
@@ -32,7 +38,15 @@
 </head>
 
 <body>
-  <basic-arrow-selection></basic-arrow-selection>
+  <basic-arrow-selection class="overlay">
+    <basic-carousel aria-label="Nature scenes">
+      <img src="../demos/resources/images/image1.jpg" alt="Lake">
+      <img src="../demos/resources/images/image2.jpg" alt="Horses">
+      <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+      <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+      <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+    </basic-carousel>
+  </basic-arrow-selection>
 </body>
 
 </html>

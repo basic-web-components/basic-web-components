@@ -209,7 +209,7 @@ the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
 user is halfway between items 3 and 4.
 
 For more details, see the [FractionalSelection](FractionalSelection.md)
-helper functions.
+mixin.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
 <a name="ItemsSelection+selectedIndex"></a>
@@ -295,13 +295,14 @@ When moving the selection backward, this animation is played in reverse.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>false</code>  
 <a name="ItemsSelection+selectionWraps"></a>
 
 ### animationStage.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-**Default**: <code>{false}</code>  
+**Default**: <code>false</code>  
 <a name="ItemsSelection+selectLast"></a>
 
 ### animationStage.selectLast()

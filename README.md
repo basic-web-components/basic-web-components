@@ -139,6 +139,10 @@ The current release of Basic Web Components includes the following:
 * [basic-list-box](packages/basic-list-box).
   A single-selection list box that supports selection highlighting (using the
   system highlight color) and keyboard navigation.
+* [basic-sliding-carousel](packages/basic-sliding-carousel).
+  A simpler version of basic-carousel (above) with lower requirements.
+* [basic-slideshow](packages/basic-slideshow).
+  Slideshow with animated transitions.
 * [basic-tabs](packages/basic-tabs).
   A set of pages with a tab strip governing which page is shown.
 
@@ -155,9 +159,13 @@ other components.
   Fades out content that overflows so the user knows there's more.
 * [basic-page-dots](packages/basic-page-dots).
   Adds a row of small dots to the bottom of a carousel.
+* [basic-play-controls](packages/basic-play-controls).
+  Buttons for navigating a slideshow or other playable sequence.
 * [basic-sliding-viewport](packages/basic-sliding-viewport).
   Presents list items in a viewport such that only a single item is visible at a
   time.
+* [basic-slideshow-timer](packages/basic-slideshow-timer).
+  Advances the selection on a timer.
 * [basic-spread-items](packages/basic-spread-items).
   Spreads out a set of items horizontally so they take equal space.
 * [basic-tab-strip](packages/basic-tab-strip).
@@ -211,8 +219,6 @@ repository for reference, and it is our intent to upgrade these when we can:
 * [basic-seamless-iframe](old/basic-seamless-iframe).
   Allows communication with a framed page. Can automatically size to the framed
   content.
-* [basic-spread](old/basic-spread).
-  Spreads out a set of items horizontally so they take equal space.
 * [basic-stack](old/basic-stack).
   Stacks its child elements on top of each other, taking on the maximum height
   and width of the child elements.

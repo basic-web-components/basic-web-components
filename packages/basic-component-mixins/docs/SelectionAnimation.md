@@ -51,7 +51,7 @@ the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
 user is halfway between items 3 and 4.
 
 For more details, see the [FractionalSelection](FractionalSelection.md)
-helper functions.
+mixin.
 
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 <a name="SelectionAnimation+selectionAnimationDuration"></a>

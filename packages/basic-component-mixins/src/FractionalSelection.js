@@ -1,13 +1,32 @@
-// TODO: Drop use of "Mixin" in name.
-
 import createSymbol from './createSymbol';
 
+
+// Symbols for private data members on an element.
 const selectedFractionSymbol = createSymbol('selectedFraction');
 
 
 /* Exported function extends a base class with FractionalSelection. */
 export default function mixin(base) {
 
+  /**
+   * Adds support for fractional selection: treating a selection as a real
+   * number that combines an integer portion (an index into a list), and a
+   * fraction (indicating how far of the way we are to the next or previous
+   * item).
+   *
+   * This is useful in components that support incremental operations during
+   * dragging and swiping. Example: a carousel component has several items, and the
+   * currently selected item is item 3. The user begins swiping to the left,
+   * moving towards selecting item 4. Halfway through this operation, the
+   * fractional selection value is 3.5.
+   *
+   * This value permits communication between mixins like
+   * [SwipeDirection](./SwipeDirection.md) and
+   * [TrackpadDirection](./TrackpadDirection.md), which generate fractional
+   * selection values, and mixins like
+   * [SelectionAnimation](./SelectionAnimation.md), which can render selection
+   * at a fractional value.
+   */
   class FractionalSelection extends base {
 
     attachedCallback() {
@@ -38,11 +57,6 @@ export default function mixin(base) {
 }
 
 
-/*
- * Helper functions for working with a selection as a real number that combines
- * an integer index into a list, and a fraction indicating how far of the way we
- * are to the next or previous item.
- */
 mixin.helpers = {
 
   /**

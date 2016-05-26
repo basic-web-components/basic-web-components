@@ -108,7 +108,7 @@ export default function mixin(base) {
      * user is halfway between items 3 and 4.
      *
      * For more details, see the [FractionalSelection](FractionalSelection.md)
-     * helper functions.
+     * mixin.
      *
      * @type {number}
      */

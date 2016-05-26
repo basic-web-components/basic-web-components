@@ -264,6 +264,9 @@ common web component feature:
 * [ContentFirstChildTarget](docs/ContentFirstChildTarget.md).
   Allows a component to take its first child as a target it wants to augment in
   some way.
+* [createSymbol](docs/createSymbol.md)
+  Helper to creates a symbol that can be used for associating private data with
+  an element.
 * [DirectionToSelection](docs/DirectionSelection.md).
   Translates direction (up/down, left/right) semantics into selection semantics
   (select previous/next).
@@ -273,9 +276,10 @@ common web component feature:
 * [DistributedChildrenAsContent](docs/DistributedChildrenAsContent.md).
   Defines a component's content as its (flattened, distributed) children.
   Typically used in conjunction with the DistributedChildren mixin.
-* [fractionalSelection](docs/fractionalSelection.md)
-  Helpers for components that support gradual transitions between selection
-  states.
+* [FractionalSelection](docs/FractionalSelection.md)
+  Adds support for fractional selection: treating a selection as a real number
+  that combines an integer portion (an index into a list), and a fraction
+  (indicating how far of the way we are to the next or previous item).
 * [Generic](docs/Generic.md).
   Lets a component easily disable standard, optional styling.
 * [ItemsSelection](docs/ItemsSelection.md).

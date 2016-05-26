@@ -29,7 +29,8 @@ let base = ElementBase.compose(
  * This component is generally used to wrap a component like
  * [basic-carousel](../basic-carousel) or the simpler
  * [basic-sliding-carousel](../basic-sliding-carousel) to add slideshow
- * behavior.
+ * behavior. For a standalone slideshow component, see
+ * [basic-slideshow](../basic-slideshow).
  *
  * Example:
  *

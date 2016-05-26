@@ -136,13 +136,14 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
+**Default**: <code>false</code>  
 <a name="ItemsSelection+selectionWraps"></a>
 
 ### itemsSelection.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[ItemsSelection](#ItemsSelection)</code>
-**Default**: <code>{false}</code>  
+**Default**: <code>false</code>  
 <a name="ItemsSelection+selectLast"></a>
 
 ### itemsSelection.selectLast()

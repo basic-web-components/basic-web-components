@@ -285,13 +285,14 @@ Select the first item in the list.
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>false</code>  
 <a name="ItemsSelection+selectionWraps"></a>
 
 ### pageDots.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-**Default**: <code>{false}</code>  
+**Default**: <code>false</code>  
 <a name="TargetSelection+selectionWraps"></a>
 
 ### pageDots.selectionWraps : <code>boolean</code>
