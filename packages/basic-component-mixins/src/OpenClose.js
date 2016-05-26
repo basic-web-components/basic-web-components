@@ -28,7 +28,7 @@ export default (base) => {
       if (super.createdCallback) { super.createdCallback(); }
 
       // Set defaults.
-      if (typepof this.closed === 'undefined') {
+      if (typeof this.closed === 'undefined') {
         this.closed = this.defaults.closed;
       }
     }
