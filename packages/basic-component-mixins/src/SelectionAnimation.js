@@ -55,10 +55,10 @@ export default function mixin(base) {
       if (super.createdCallback) { super.createdCallback(); }
 
       // Set defaults.
-      if (this.selectionAnimationDuration == null) {
+      if (typeof this.selectionAnimationDuration === 'undefined') {
         this.selectionAnimationDuration = this.defaults.selectionAnimationDuration;
       }
-      if (this.selectionAnimationEffect == null && this.selectionAnimationKeyframes == null) {
+      if (typeof this.selectionAnimationEffect === 'undefined' && this.selectionAnimationKeyframes == null) {
         this.selectionAnimationEffect = this.defaults.selectionAnimationEffect;
       }
 

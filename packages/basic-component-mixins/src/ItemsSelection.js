@@ -81,10 +81,10 @@ export default (base) => {
       if (super.createdCallback) { super.createdCallback(); }
 
       // Set defaults.
-      if (this.selectionRequired == null) {
+      if (typeof this.selectionRequired === 'undefined') {
         this.selectionRequired = this.defaults.selectionRequired;
       }
-      if (this.selectionWraps == null) {
+      if (typeof this.selectionWraps === 'undefined') {
         this.selectionWraps = this.defaults.selectionWraps;
       }
     }

@@ -38,7 +38,7 @@ export default (base) => {
       if (super.createdCallback) { super.createdCallback(); }
 
       // Set defaults.
-      if (this.generic == null) {
+      if (typeof this.generic === 'undefined') {
         this.generic = this.defaults.generic;
       }
     }

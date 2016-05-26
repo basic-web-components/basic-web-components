@@ -66,7 +66,8 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
       refresh(this);
     });
 
-    if (this.areaLink == null) {
+    // Set defaults.
+    if (typeof this.areaLink === 'undefined') {
       this.areaLink = this.defaults.areaLink;
     }
   }

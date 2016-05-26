@@ -29,10 +29,10 @@ export default (base) => {
       if (super.createdCallback) { super.createdCallback(); }
 
       // Set defaults.
-      if (this.playing == null) {
+      if (typeof this.playing === 'undefined') {
         this.playing = this.defaults.playing;
       }
-      if (this.selectionTimerDuration == null) {
+      if (typeof this.selectionTimerDuration === 'undefined') {
         this.selectionTimerDuration = this.defaults.selectionTimerDuration;
       }
     }

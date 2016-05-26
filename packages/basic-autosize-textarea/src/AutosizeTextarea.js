@@ -94,7 +94,7 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
     });
 
     // Set defaults.
-    if (this.minimumRows == null) {
+    if (typeof this.minimumRows === 'undefined') {
       this.minimumRows = this.defaults.minimumRows;
     }
 

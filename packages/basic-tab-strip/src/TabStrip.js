@@ -127,7 +127,7 @@ class TabStrip extends base {
     }
 
     // Set defaults.
-    if (this.tabPosition == null) {
+    if (typeof this.tabPosition === 'undefined') {
       this.tabPosition = this.defaults.tabPosition;
     }
   }

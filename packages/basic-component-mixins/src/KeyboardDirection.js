@@ -27,7 +27,7 @@ export default (base) => {
       if (super.createdCallback) { super.createdCallback(); }
 
       // Set defaults.
-      if (this.navigationAxis == null) {
+      if (typeof this.navigationAxis === 'undefined') {
         this.navigationAxis = this.defaults.navigationAxis;
       }
     }
