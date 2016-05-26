@@ -14,8 +14,9 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 // Symbols for private data members on an element.
 const mousedownListenerSymbol = createSymbol('mousedownListener');
 const mousemoveListenerSymbol = createSymbol('mousemoveListener');
-const lastMouseDownPageXSymbol = createSymbol('lastMouseDownPageX');
-const lastMouseDownPageYSymbol = createSymbol('lastMouseDownPageY');
+const lastMouseXSymbol = createSymbol('lastMouseX');
+const lastMouseYSymbol = createSymbol('lastMouseY');
+const mouseTimeoutSymbol = createSymbol('mouseTimeout');
 
 
 let base = ElementBase.compose(
@@ -264,38 +265,51 @@ function deviceSupportsTouch() {
 // which are *not* the result of a mousedown. On a touch device, a tap on the
 // page will generate a fake mousemove, followed by a mousedown. We don't want
 // to respond to those fake mousemove events. To discriminate between fake and
-// real mousemove events, when we get a mousemove event, we wait for a tick to
+// real mousemove events, when we get a mousemove event, we wait for a bit to
 // see if the same location is reported as the location of a subsequent
 // mousedown.
 function listenForMouse(element) {
 
   element[mousedownListenerSymbol] = event => {
-    // console.log("mousedown");
-    element[lastMouseDownPageXSymbol] = event.pageX;
-    element[lastMouseDownPageYSymbol] = event.pageY;
+    // console.log(`mousedown ${event.pageX}, ${event.pageY}`);
+    if (element[mouseTimeoutSymbol]) {
+      clearTimeout(element[mouseTimeoutSymbol]);
+    }
+    element[lastMouseXSymbol] = event.pageX;
+    element[lastMouseYSymbol] = event.pageY;
   };
   window.addEventListener('mousedown', element[mousedownListenerSymbol]);
 
   element[mousemoveListenerSymbol] = event => {
-    // console.log("mousemove");
-    setTimeout(() => {
-      if (event.pageX !== element[lastMouseDownPageXSymbol] ||
-          event.pageY !== element[lastMouseDownPageYSymbol]) {
+    // console.log(`setting timeout`);
+    // Postpone checking the mousemove location to give the mousedown event a
+    // chance to fire. The 250 ms delay is just guesswork; a shorter delay
+    // doesn't seem to work.
+    element[mouseTimeoutSymbol] = setTimeout(() => {
+      // console.log(`postponed mousemove ${event.pageX}, ${event.pageY}`);
+      if (element[lastMouseXSymbol] != null && event.pageX !== element[lastMouseXSymbol] ||
+          element[lastMouseYSymbol] != null && event.pageY !== element[lastMouseYSymbol]) {
         // mousemove event was at a location other than the last mousedown,
         // and hence most likely a real mousemove event.
         mouseDetected(element);
+      } else {
+        element[lastMouseXSymbol] = event.pageX;
+        element[lastMouseYSymbol] = event.pageY;
       }
-    });
+    }, 250);
   };
   window.addEventListener('mousemove', element[mousemoveListenerSymbol]);
 }
 
 
 function mouseDetected(element) {
-  // console.log("mouse detected");
+  // console.log(`mouse detected`);
   showArrows(element);
 
   // We can stop listening for mouse events now.
+  if (element[mouseTimeoutSymbol]) {
+    clearTimeout(element[mouseTimeoutSymbol]);
+  }
   window.removeEventListener('mousedown', element[mousedownListenerSymbol]);
   window.removeEventListener('mousemove', element[mousemoveListenerSymbol]);
   element[mousedownListenerSymbol] = null;
