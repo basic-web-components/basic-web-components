@@ -400,7 +400,7 @@ function animateSelection(element, fromSelection, toSelection) {
   resetAnimations(element);
 
   if (element[lastAnimationSymbol]) {
-    // Cancel the effects of the last selection animation.
+    // Cancel the effects of the last selection animation in progress.
     element[lastAnimationSymbol].onfinish = null;
     element[lastAnimationSymbol] = null;
   }
@@ -449,7 +449,7 @@ function animateSelection(element, fromSelection, toSelection) {
       if (timing.endDelay !== 0) {
         // This is the animation for the item that will be left selected.
         // We want to do work when this animation completes.
-        lastAnimationDetails = { animation, timing, forward };
+        lastAnimationDetails = { animation, index, timing, forward };
       }
     } else {
       // This item doesn't participate in the animation.
@@ -474,7 +474,7 @@ function animateSelection(element, fromSelection, toSelection) {
 function animationFinished(element, details) {
   details.animation.onfinish = event => {
     details.animation.pause();
-    details.animation.currentTime = details.timing.duration + details.timing.endDelay - 0.001;
+    setAnimationFraction(element, details.index, 0.5);
     if (details.nextUpIndex != null) {
       let nextUpItem = element.items[details.nextUpIndex];
       let animationFraction = details.forward ? 0 : 1;
