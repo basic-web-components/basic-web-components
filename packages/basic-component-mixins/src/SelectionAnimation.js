@@ -3,14 +3,14 @@ import FractionalSelection from './FractionalSelection';
 
 
 // Symbols for private data members on an element.
-const animatingSelectionSymbol = createSymbol('animatingSelection');
 const animationSymbol = createSymbol('animations');
 const lastAnimationSymbol = createSymbol('lastAnimation');
+const playingAnimationSymbol = createSymbol('animatingSelection');
 const previousSelectionSymbol = createSymbol('previousSelection');
-const showTransitionSymbol = createSymbol('showTransition');
 const selectionAnimationDurationSymbol = createSymbol('selectionAnimationDuration');
 const selectionAnimationEffectSymbol = createSymbol('selectionAnimationEffect');
 const selectionAnimationKeyframesSymbol = createSymbol('selectionAnimationKeyframes');
+const showTransitionSymbol = createSymbol('showTransition');
 
 
 /* Exported function extends a base class with SelectionAnimation. */
@@ -408,9 +408,9 @@ function animateSelection(element, fromSelection, toSelection) {
   // Calculate the animation timings.
   let items = element.items;
   let keyframes = element.selectionAnimationKeyframes;
-  element[animatingSelectionSymbol] = true;
+  element[playingAnimationSymbol] = true;
   let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromSelection, toSelection);
-  let lastAnimationDetails;
+  // let lastAnimationDetails;
 
   // Figure out which item will be the one *after* the one we're selecting.
   let itemCount = items.length;
@@ -426,6 +426,7 @@ function animateSelection(element, fromSelection, toSelection) {
   }
 
   // Play the animations using those timings.
+  let lastAnimationDetails;
   timings.forEach((timing, index) => {
     let item = items[index];
     if (timing) {
@@ -434,15 +435,21 @@ function animateSelection(element, fromSelection, toSelection) {
 
       // Figure out whether this animation will be the last one to end
       // (possibly concurrent with another animation).
-      let endTime = timing.delay + timing.duration + timing.endDelay;
-      if (lastAnimationDetails == null || endTime > lastAnimationDetails.endTime) {
-        lastAnimationDetails = { animation, endTime, timing };
-      }
+      // let endTime = timing.delay + timing.duration + timing.endDelay;
+      // if (lastAnimationDetails == null || endTime > lastAnimationDetails.endTime) {
+      //   lastAnimationDetails = { animation, endTime, timing };
+      // }
 
       if (index === nextUpIndex) {
         // This item will be animated, so will already be in the desired state
         // after the animation completes.
         nextUpIndex = null;
+      }
+
+      if (timing.endDelay !== 0) {
+        // This is the animation for the item that will be left selected.
+        // We want to do work when this animation completes.
+        lastAnimationDetails = { animation, timing, forward };
       }
     } else {
       // This item doesn't participate in the animation.
@@ -450,11 +457,12 @@ function animateSelection(element, fromSelection, toSelection) {
     }
   });
 
-  if (lastAnimationDetails && nextUpIndex != null) {
-    displayNextItemWhenAnimationCompletes(element, lastAnimationDetails.animation, nextUpIndex, forward);
+  if (lastAnimationDetails != null) {
+    lastAnimationDetails.nextUpIndex = nextUpIndex;
+    animationFinished(element, lastAnimationDetails);
   } else {
     // Shouldn't happen -- we should always have at least one animation.
-    element[animatingSelectionSymbol] = false;
+    element[playingAnimationSymbol] = false;
   }
 }
 
@@ -463,16 +471,20 @@ function animateSelection(element, fromSelection, toSelection) {
  * going. This waiting is a hack to avoid having static items higher in the
  * natural z-order obscure items during animation.
  */
-function displayNextItemWhenAnimationCompletes(element, animation, nextUpIndex, forward) {
-  animation.onfinish = event => {
-    let nextUpItem = element.items[nextUpIndex];
-    let animationFraction = forward ? 0 : 1;
-    setAnimationFraction(element, nextUpIndex, animationFraction);
-    showItem(nextUpItem, true);
-    element[animatingSelectionSymbol] = false;
+function animationFinished(element, details) {
+  details.animation.onfinish = event => {
+    details.animation.pause();
+    details.animation.currentTime = details.timing.duration + details.timing.endDelay - 0.001;
+    if (details.nextUpIndex != null) {
+      let nextUpItem = element.items[details.nextUpIndex];
+      let animationFraction = details.forward ? 0 : 1;
+      setAnimationFraction(element, details.nextUpIndex, animationFraction);
+      showItem(nextUpItem, true);
+    }
+    element[playingAnimationSymbol] = false;
     element[lastAnimationSymbol] = null;
   };
-  element[lastAnimationSymbol] = animation;
+  element[lastAnimationSymbol] = details.animation;
 }
 
 function getAnimationForItemIndex(element, index) {
@@ -540,7 +552,7 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selectedF
       previousSelection !== selection) {
     // Animate selection from previous state to new state.
     animateSelection(element, previousSelection, selection);
-  } else if (selectedFraction === 0 && element[animatingSelectionSymbol]) {
+  } else if (selectedFraction === 0 && element[playingAnimationSymbol]) {
     // Already in process of animating to fraction 0. During that process,
     // ignore subsequent attempts to renderSelection to fraction 0.
     return;
