@@ -432,23 +432,14 @@ function animateSelection(element, fromSelection, toSelection) {
     if (timing) {
       showItem(item, true);
       let animation = item.animate(keyframes, timing);
-
-      // Figure out whether this animation will be the last one to end
-      // (possibly concurrent with another animation).
-      // let endTime = timing.delay + timing.duration + timing.endDelay;
-      // if (lastAnimationDetails == null || endTime > lastAnimationDetails.endTime) {
-      //   lastAnimationDetails = { animation, endTime, timing };
-      // }
-
       if (index === nextUpIndex) {
         // This item will be animated, so will already be in the desired state
         // after the animation completes.
         nextUpIndex = null;
       }
-
       if (timing.endDelay !== 0) {
         // This is the animation for the item that will be left selected.
-        // We want to do work when this animation completes.
+        // We want to clean up when this animation completes.
         lastAnimationDetails = { animation, index, timing, forward };
       }
     } else {
@@ -458,34 +449,16 @@ function animateSelection(element, fromSelection, toSelection) {
   });
 
   if (lastAnimationDetails != null) {
+    // Arrange for clean-up work to be performed.
     lastAnimationDetails.nextUpIndex = nextUpIndex;
-    animationFinished(element, lastAnimationDetails);
+    lastAnimationDetails.animation.onfinish = event => selectionAnimationFinished(element, lastAnimationDetails);
+    element[lastAnimationSymbol] = lastAnimationDetails.animation;
   } else {
     // Shouldn't happen -- we should always have at least one animation.
     element[playingAnimationSymbol] = false;
   }
 }
 
-/*
- * When the last animation completes, show the next item in the direction we're
- * going. This waiting is a hack to avoid having static items higher in the
- * natural z-order obscure items during animation.
- */
-function animationFinished(element, details) {
-  details.animation.onfinish = event => {
-    details.animation.pause();
-    setAnimationFraction(element, details.index, 0.5);
-    if (details.nextUpIndex != null) {
-      let nextUpItem = element.items[details.nextUpIndex];
-      let animationFraction = details.forward ? 0 : 1;
-      setAnimationFraction(element, details.nextUpIndex, animationFraction);
-      showItem(nextUpItem, true);
-    }
-    element[playingAnimationSymbol] = false;
-    element[lastAnimationSymbol] = null;
-  };
-  element[lastAnimationSymbol] = details.animation;
-}
 
 function getAnimationForItemIndex(element, index) {
   if (element[animationSymbol] == null) {
@@ -583,6 +556,33 @@ function renderSelectionInstantly(element, toSelection) {
 function resetAnimations(element) {
   let itemCount = element.items ? element.items.length : 0;
   element[animationSymbol] = new Array(itemCount);
+}
+
+/*
+ * The last animation in our selection animation has completed. Clean up.
+ */
+function selectionAnimationFinished(element, details) {
+
+  // Force the animation to the midpoint. We used to just depend on setting
+  // a negative endDelay and fill: 'both', but a change in Chrome
+  // (https://bugs.chromium.org/p/chromium/issues/detail?id=600248) causes
+  // an animation to jump to its final value after the endDelay is hit. Since we
+  // want to leave the animation paused halfway through, we force that.
+  details.animation.pause();
+  setAnimationFraction(element, details.index, 0.5);
+
+  // When the last animation completes, show the next item in the direction
+  // we're going. This waiting is a hack to avoid having static items higher in
+  // the natural z-order obscure items during animation.
+  if (details.nextUpIndex != null) {
+    let nextUpItem = element.items[details.nextUpIndex];
+    let animationFraction = details.forward ? 0 : 1;
+    setAnimationFraction(element, details.nextUpIndex, animationFraction);
+    showItem(nextUpItem, true);
+  }
+
+  element[playingAnimationSymbol] = false;
+  element[lastAnimationSymbol] = null;
 }
 
 /*
