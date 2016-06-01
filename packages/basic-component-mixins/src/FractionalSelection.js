@@ -59,7 +59,7 @@ export default function mixin(base) {
 
 mixin.helpers = {
 
-  /**
+  /*
    * Dampen a selection that goes past the beginning or end of a list. This is
    * generally used to produce a visual effect of tension as the user tries to
    * go further in a direction that has no more items.
@@ -111,7 +111,7 @@ mixin.helpers = {
     return y;
   },
 
-  /**
+  /*
    * Return the current fractional selection value for the given element.
    *
    * This simply adds the element's `selectedIndex` and `selectedFraction`
@@ -129,7 +129,7 @@ mixin.helpers = {
     return selectedIndex + selectedFraction;
   },
 
-  /**
+  /*
    * Breaks a fractional selection into its integer and fractional parts.
    *
    * Example: if passed 3.5, this returns { index: 3, fraction: 5 }.
@@ -147,7 +147,7 @@ mixin.helpers = {
     return { index, fraction };
   },
 
-  /**
+  /*
    * Returns a fractional selection point after accounting for wrapping, ensuring
    * that the integer portion of the selection stays between 0 and `itemCount`-1.
    * That is, the integer portion will always be a valid index into the list.
@@ -166,7 +166,7 @@ mixin.helpers = {
     return ((selection % itemCount) + itemCount) % itemCount;
   },
 
-  /**
+  /*
    * Return the parts of a selection, first wrapping if necessary.
    *
    * @param {number} selection – A real number representing a selection point

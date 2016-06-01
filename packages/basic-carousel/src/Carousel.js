@@ -48,7 +48,8 @@ let base = ElementBase.compose(
  * The above demo adds the optional
  * [basic-arrow-selection](../basic-arrow-selection) and
  * [basic-page-dots](../basic-page-dots) components. You can also view a
- * [plain demo](plain.html) demo.
+ * [plain demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/plain.html)
+ * demo.
  *
  * basic-carousel uses its children as the elements the user will navigate
  * through. In a typical use, a basic-carousel can be used to navigate between a

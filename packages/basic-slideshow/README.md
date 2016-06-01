@@ -33,10 +33,8 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#ObserveContentChanges.event_content-changed)
     * [.contentChanged()](#ObserveContentChanges+contentChanged)
-    * [.dampedSelection(selection, itemCount)](#mixin.helpers.dampedSelection) ⇒ <code>number</code>
-    * [.elementSelection(element)](#mixin.helpers.elementSelection)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
     * [.itemAdded(item)](#ContentAsItems+itemAdded)
+    * [.itemAdded(item)](#ItemsSelection+itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
@@ -45,15 +43,14 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.playing](#TimerSelection+playing) : <code>boolean</code>
     * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
     * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
-    * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
     * [.selectedFraction](#FractionalSelection+selectedFraction) : <code>number</code>
+    * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
     * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionAnimationDuration](#SelectionAnimation+selectionAnimationDuration) : <code>number</code>
     * [.selectionAnimationEffect](#SelectionAnimation+selectionAnimationEffect) : <code>string</code>
     * [.selectionAnimationKeyframes](#SelectionAnimation+selectionAnimationKeyframes) : <code>Array.&lt;cssRules&gt;</code>
-    * [.selectionParts(selection)](#mixin.helpers.selectionParts) ⇒ <code>object</code>
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
     * [.selectionTimerDuration](#TimerSelection+selectionTimerDuration) : <code>number</code>
     * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
@@ -61,8 +58,6 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
-    * [.wrappedSelection(selection, itemCount)](#mixin.helpers.wrappedSelection) ⇒ <code>number</code>
-    * [.wrappedSelectionParts(selection, itemCount, wrap)](#mixin.helpers.wrappedSelectionParts) ⇒ <code>object</code>
 
 <a name="ItemsSelection+applySelection"></a>
 ### slideshow.applySelection(item, selected)
@@ -127,39 +122,18 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
-<a name="mixin.helpers.dampedSelection"></a>
-### Slideshow.dampedSelection(selection, itemCount) ⇒ <code>number</code>
-Dampen a selection that goes past the beginning or end of a list. This is
-generally used to produce a visual effect of tension as the user tries to
-go further in a direction that has no more items.
+<a name="ContentAsItems+itemAdded"></a>
+### slideshow.itemAdded(item)
+This method is invoked whenever a new item is added to the list.
 
-Example: suppose `itemCount` is 5, indicating a list of 5 items. The index of
-the last item is 4. If the `selection` parameter is 4.5, the user is trying
-to go past this last item. When a damping function is applied, the resulting
-value will be less than 4.5 (the actual value will be 4.25). When this
-selection state is rendered, the user will see that, each unit distance the
-drag travels has less and less visible effect. This is perceived as tension.
+The default implementation of this method does nothing. You can override
+this to perform per-item initialization.
 
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[mixin.helpers](../basic-component-mixins/docs/mixin.helpers.md)</code> mixin.
-**Returns**: <code>number</code> - A real number representing the damped selection value.  
+  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| selection | <code>number</code> | A real number indicating a selection position |
-| itemCount | <code>number</code> | An integer for the number of items in the list |
-
-<a name="mixin.helpers.elementSelection"></a>
-### Slideshow.elementSelection(element)
-Return the current fractional selection value for the given element.
-
-This simply adds the element's `selectedIndex` and `selectedFraction`
-properties.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[mixin.helpers](../basic-component-mixins/docs/mixin.helpers.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| element | <code>HTMLElement</code> | An element that supports selection |
+| item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ItemsSelection+itemAdded"></a>
 ### slideshow.itemAdded(item)
@@ -173,19 +147,6 @@ selection state to false.
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being added |
-
-<a name="ContentAsItems+itemAdded"></a>
-### slideshow.itemAdded(item)
-This method is invoked whenever a new item is added to the list.
-
-The default implementation of this method does nothing. You can override
-this to perform per-item initialization.
-
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ContentAsItems+items"></a>
 ### slideshow.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -242,6 +203,13 @@ Fires when the selectedItem property changes.
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
+<a name="FractionalSelection+selectedFraction"></a>
+### slideshow.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
+
+  **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="SelectionAnimation+selectedFraction"></a>
 ### slideshow.selectedFraction : <code>number</code>
 A fractional value indicating how far the user has currently advanced to
@@ -252,13 +220,6 @@ For more details, see the [FractionalSelection](FractionalSelection.md)
 mixin.
 
   **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
-<a name="FractionalSelection+selectedFraction"></a>
-### slideshow.selectedFraction : <code>number</code>
-A fractional value indicating how far the user has currently advanced to
-the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
-user is halfway between items 3 and 4.
-
-  **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedIndex"></a>
 ### slideshow.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
@@ -330,21 +291,6 @@ left.
 When moving the selection backward, this animation is played in reverse.
 
   **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
-<a name="mixin.helpers.selectionParts"></a>
-### Slideshow.selectionParts(selection) ⇒ <code>object</code>
-Breaks a fractional selection into its integer and fractional parts.
-
-Example: if passed 3.5, this returns { index: 3, fraction: 5 }.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[mixin.helpers](../basic-component-mixins/docs/mixin.helpers.md)</code> mixin.
-**Returns**: <code>object</code> - - An object with an `index` property holding the
-selection's integer component, and a `fraction` property holding the
-selection's fractional component.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| selection | <code>number</code> | – A real number representing a selection point |
-
 <a name="ItemsSelection+selectionRequired"></a>
 ### slideshow.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
@@ -396,35 +342,3 @@ mixins that may be applied to it, and is not intended to let someone
 using component permanently enable or disable transition effects.
 
   **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
-<a name="mixin.helpers.wrappedSelection"></a>
-### Slideshow.wrappedSelection(selection, itemCount) ⇒ <code>number</code>
-Returns a fractional selection point after accounting for wrapping, ensuring
-that the integer portion of the selection stays between 0 and `itemCount`-1.
-That is, the integer portion will always be a valid index into the list.
-
-Example of wrapping past the end of the list: if `selection` is 5.5 and
-`itemCount` is 5, this returns 0.5. Example of wrapping past the beginning of
-the list: if `selection` is 0.5 and `itemCount` is 5, this returns 4.5.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[mixin.helpers](../basic-component-mixins/docs/mixin.helpers.md)</code> mixin.
-**Returns**: <code>number</code> - - The result of wrapping the selection point  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| selection | <code>number</code> | A real number representing a selection point |
-| itemCount | <code>number</code> | The number of items in the list |
-
-<a name="mixin.helpers.wrappedSelectionParts"></a>
-### Slideshow.wrappedSelectionParts(selection, itemCount, wrap) ⇒ <code>object</code>
-Return the parts of a selection, first wrapping if necessary.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[mixin.helpers](../basic-component-mixins/docs/mixin.helpers.md)</code> mixin.
-**Returns**: <code>object</code> - – The parts of the selection, using the same format as
-`selectionParts`.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| selection | <code>number</code> | – A real number representing a selection point |
-| itemCount | <code>number</code> | The number of items in the list |
-| wrap | <code>boolean</code> | – True if the selection should wrap to stay within the list |
-
