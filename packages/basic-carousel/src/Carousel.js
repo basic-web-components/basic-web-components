@@ -45,10 +45,10 @@ let base = ElementBase.compose(
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/)
  *
- * You can also view demos with optional
- * [arrows](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithArrows.html),
- * [dots](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithDots.html),
- * or both [arrows and dots](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/carouselWithArrowsAndDots.html).
+ * The above demo adds the optional
+ * [basic-arrow-selection](../basic-arrow-selection) and
+ * [basic-page-dots](../basic-page-dots) components. You can also view a
+ * [plain demo](plain.html) demo.
  *
  * basic-carousel uses its children as the elements the user will navigate
  * through. In a typical use, a basic-carousel can be used to navigate between a
@@ -105,11 +105,15 @@ let base = ElementBase.compose(
  * elements such as arrow buttons on the side or dots along the bottom. Those
  * elements can be added by wrapping a basic-carousel in optional accessories:
  *
- * * [basic-arrow-selection](http://github.com/basic-web-components/basic-web-components/packages/basic-arrow-selection).
+ * * [basic-arrow-selection](../basic-arrow-selection).
  *   This adds prominent left and right arrow buttons on the side of the carousel.
- * * [basic-page-dots](http://github.com/basic-web-components/basic-web-components/packages/basic-page-dots).
+ * * [basic-page-dots](../basic-page-dots).
  *   This adds a series of small dots below the carousel to indicate the user's
  *   current position in the sequence.
+ * * [basic-slideshow-timer](../basic-slideshow-timer).
+ *   Advances to the next item on a timer.
+ * * [basic-tab-strip](../basic-tab-strip).
+ *   Adds a strip of traditional tab buttons.
  *
  * See those components for more details, but in general you can construct a
  * common carousel with both arrow buttons and dots like so:

@@ -1,6 +1,5 @@
 # API Documentation
 <a name="KeyboardPrefixSelection"></a>
-
 ## KeyboardPrefixSelection
 Mixin that handles list box-style prefix typing, in which the user can type
 a string to select the first item that begins with that string.
@@ -39,7 +38,6 @@ This mixin also expects the component to provide an `items` property. The
 
   **Kind**: global class
 <a name="KeyboardPrefixSelection+selectItemWithTextPrefix"></a>
-
 ### keyboardPrefixSelection.selectItemWithTextPrefix(prefix)
 Select the first item whose text content begins with the given prefix.
 

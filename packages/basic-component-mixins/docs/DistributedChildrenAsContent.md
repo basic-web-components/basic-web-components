@@ -1,6 +1,5 @@
 # API Documentation
 <a name="DistributedChildrenAsContent"></a>
-
 ## DistributedChildrenAsContent
 Mixin which defines a component's content as its children, expanding any
 nodes distributed to the component's slots.
@@ -14,7 +13,6 @@ component's distributed children. That in turn lets mixins like
 
   **Kind**: global class
 <a name="DistributedChildrenAsContent+content"></a>
-
 ### distributedChildrenAsContent.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.

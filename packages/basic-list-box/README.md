@@ -1,6 +1,5 @@
 # API Documentation
 <a name="ListBox"></a>
-
 ## ListBox ⇐ <code>ElementBase</code>
 A single-selection list box that supports selection highlighting (using the
 system highlight color) and keyboard navigation.
@@ -101,7 +100,6 @@ The user can also select an item by typing the beginning of an item's text.
     * ["value-changed"](#ListBox.event_value-changed)
 
 <a name="ContentAsItems+applySelection"></a>
-
 ### listBox.applySelection(item, selected)
 Apply the selection state to a single item.
 
@@ -117,7 +115,6 @@ is selected, and removed it if not selected.
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
 
 <a name="ItemsSelection+applySelection"></a>
-
 ### listBox.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
@@ -132,35 +129,30 @@ effects will typically be handled by other mixins.
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ItemsSelection+canSelectNext"></a>
-
 ### listBox.canSelectNext : <code>boolean</code>
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+canSelectPrevious"></a>
-
 ### listBox.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="DistributedChildrenAsContent+content"></a>
-
 ### listBox.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="ObserveContentChanges.event_content-changed"></a>
-
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
   **Kind**: event emitted by <code>[ListBox](#ListBox)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="ObserveContentChanges+contentChanged"></a>
-
 ### listBox.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.
@@ -171,7 +163,6 @@ component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="Generic+generic"></a>
-
 ### listBox.generic : <code>Boolean</code>
 True if the component would like to receive generic styling.
 
@@ -182,49 +173,42 @@ have to explicitly override styling you don't want.
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[Generic](../basic-component-mixins/docs/Generic.md)</code> mixin.
 **Default**: <code>true</code>  
 <a name="KeyboardDirection+goDown"></a>
-
 ### listBox.goDown()
 Invoked when the user wants to go/navigate down.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardDirection+goEnd"></a>
-
 ### listBox.goEnd()
 Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardDirection+goLeft"></a>
-
 ### listBox.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardDirection+goRight"></a>
-
 ### listBox.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardDirection+goStart"></a>
-
 ### listBox.goStart()
 Invoked when the user wants to go/navigate to the start (e.g., of a
 list). The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardDirection+goUp"></a>
-
 ### listBox.goUp()
 Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="ItemsSelection+itemAdded"></a>
-
 ### listBox.itemAdded(item)
 Handle a new item being added to the list.
 
@@ -238,7 +222,6 @@ selection state to false.
 | item | <code>HTMLElement</code> | the item being added |
 
 <a name="ContentAsItems+itemAdded"></a>
-
 ### listBox.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
 
@@ -252,20 +235,17 @@ this to perform per-item initialization.
 | item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ContentAsItems+items"></a>
-
 ### listBox.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list. See the top-level documentation for
 mixin for a description of how items differ from plain content.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="ContentAsItems.event_items-changed"></a>
-
 ### "items-changed"
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="ContentAsItems+itemsChanged"></a>
-
 ### listBox.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
@@ -273,7 +253,6 @@ being nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="Keyboard+keydown"></a>
-
 ### listBox.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
 
@@ -288,7 +267,6 @@ typically be handled by other mixins.
 | event | <code>KeyboardEvent</code> | the keyboard event |
 
 <a name="KeyboardDirection+navigationAxis"></a>
-
 ### listBox.navigationAxis : <code>string</code>
 Indicates the direction of permitted navigation with the keyboard.
 
@@ -299,19 +277,16 @@ Arrow keys will be ignored.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardPagedSelection+pageDown"></a>
-
 ### listBox.pageDown()
 Scroll down one page.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardPagedSelection](../basic-component-mixins/docs/KeyboardPagedSelection.md)</code> mixin.
 <a name="KeyboardPagedSelection+pageUp"></a>
-
 ### listBox.pageUp()
 Scroll up one page.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardPagedSelection](../basic-component-mixins/docs/KeyboardPagedSelection.md)</code> mixin.
 <a name="SelectionInView+scrollItemIntoView"></a>
-
 ### listBox.scrollItemIntoView(item)
 Scroll the given element completely into view, minimizing the degree of
 scrolling performed.
@@ -327,7 +302,6 @@ up scrolling more than is absolutely necessary.
 | item | <code>HTMLElement</code> | the item to scroll into view. |
 
 <a name="SelectionInView+scrollTarget"></a>
-
 ### listBox.scrollTarget : <code>HTMLElement</code>
 The element that should be scrolled to bring an item into view.
 
@@ -335,14 +309,12 @@ The default value of this property is the element itself.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[SelectionInView](../basic-component-mixins/docs/SelectionInView.md)</code> mixin.
 <a name="KeyboardPagedSelection+scrollTarget"></a>
-
 ### listBox.scrollTarget : <code>HTMLElement</code>
 The element that should be scrolled with the Page Up/Down keys.
 Default is the current element.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardPagedSelection](../basic-component-mixins/docs/KeyboardPagedSelection.md)</code> mixin.
 <a name="ItemsSelection.event_selected-index-changed"></a>
-
 ### "selected-index-changed"
 Fires when the selectedIndex property changes.
 
@@ -353,7 +325,6 @@ Fires when the selectedIndex property changes.
 | detail.selectedIndex | <code>number</code> | The new selected index. |
 
 <a name="ItemsSelection.event_selected-item-changed"></a>
-
 ### "selected-item-changed"
 Fires when the selectedItem property changes.
 
@@ -365,7 +336,6 @@ Fires when the selectedItem property changes.
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
 <a name="ItemsSelection+selectedIndex"></a>
-
 ### listBox.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
 
@@ -375,7 +345,6 @@ currently-selected item.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedItem"></a>
-
 ### listBox.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
 
@@ -383,27 +352,23 @@ Setting this property to null deselects any currently-selected item.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectFirst"></a>
-
 ### listBox.selectFirst()
 Select the first item in the list.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectionRequired"></a>
-
 ### listBox.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="ItemsSelection+selectionWraps"></a>
-
 ### listBox.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="KeyboardPrefixSelection+selectItemWithTextPrefix"></a>
-
 ### listBox.selectItemWithTextPrefix(prefix)
 Select the first item whose text content begins with the given prefix.
 
@@ -414,25 +379,21 @@ Select the first item whose text content begins with the given prefix.
 | prefix | [String] The prefix string to search for |
 
 <a name="ItemsSelection+selectLast"></a>
-
 ### listBox.selectLast()
 Select the last item in the list.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectNext"></a>
-
 ### listBox.selectNext()
 Select the next item in the list.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectPrevious"></a>
-
 ### listBox.selectPrevious()
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
-
 ### listBox.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
 
@@ -446,7 +407,6 @@ component's first child.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
 <a name="ListBox+value"></a>
-
 ### listBox.value : <code>string</code>
 The text content of the selected item.
 
@@ -456,7 +416,6 @@ any list item will result in no selection.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>
 <a name="ListBox.event_value-changed"></a>
-
 ### "value-changed"
 Fires when the list's value property changes.
 

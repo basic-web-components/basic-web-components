@@ -1,6 +1,5 @@
 # API Documentation
 <a name="SlidingViewport"></a>
-
 ## SlidingViewport ⇐ <code>ElementBase</code>
 Presents list items in a viewport such that only a single item is visible at
 a time.

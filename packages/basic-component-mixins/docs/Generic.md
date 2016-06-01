@@ -1,6 +1,5 @@
 # API Documentation
 <a name="Generic"></a>
-
 ## Generic
 Mixin which allows a component to support a "generic" style: a minimalist
 style that can easily be removed to reset its visual appearance to a
@@ -27,7 +26,6 @@ attribute to false, and all default styling will be removed.
 
   **Kind**: global class
 <a name="Generic+generic"></a>
-
 ### generic.generic : <code>Boolean</code>
 True if the component would like to receive generic styling.
 

@@ -1,6 +1,5 @@
 # API Documentation
 <a name="ContentAsItems"></a>
-
 ## ContentAsItems
 Mixin which maps content semantics (elements) to list item semantics.
 
@@ -41,7 +40,6 @@ change, turning on the optimization automatically.
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
 
 <a name="ContentAsItems+applySelection"></a>
-
 ### contentAsItems.applySelection(item, selected)
 Apply the selection state to a single item.
 
@@ -57,7 +55,6 @@ is selected, and removed it if not selected.
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
 
 <a name="ContentAsItems+itemAdded"></a>
-
 ### contentAsItems.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
 
@@ -71,20 +68,17 @@ this to perform per-item initialization.
 | item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ContentAsItems+items"></a>
-
 ### contentAsItems.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list. See the top-level documentation for
 mixin for a description of how items differ from plain content.
 
   **Kind**: instance property of <code>[ContentAsItems](#ContentAsItems)</code>
 <a name="ContentAsItems.event_items-changed"></a>
-
 ### "items-changed"
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[ContentAsItems](#ContentAsItems)</code>
 <a name="ContentAsItems+itemsChanged"></a>
-
 ### contentAsItems.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from

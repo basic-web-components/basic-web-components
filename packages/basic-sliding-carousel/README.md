@@ -1,6 +1,5 @@
 # API Documentation
 <a name="SlidingCarousel"></a>
-
 ## SlidingCarousel ⇐ <code>ElementBase</code>
 Lets the user navigate laterally through a sequence of child elements.
 
@@ -82,7 +81,6 @@ See that component for more details on use.
     * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
 
 <a name="ContentAsItems+applySelection"></a>
-
 ### slidingCarousel.applySelection(item, selected)
 Apply the selection state to a single item.
 
@@ -98,7 +96,6 @@ is selected, and removed it if not selected.
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
 
 <a name="ItemsSelection+applySelection"></a>
-
 ### slidingCarousel.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
@@ -113,35 +110,30 @@ effects will typically be handled by other mixins.
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ItemsSelection+canSelectNext"></a>
-
 ### slidingCarousel.canSelectNext : <code>boolean</code>
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+canSelectPrevious"></a>
-
 ### slidingCarousel.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="DistributedChildrenAsContent+content"></a>
-
 ### slidingCarousel.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="ObserveContentChanges.event_content-changed"></a>
-
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
   **Kind**: event emitted by <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="ObserveContentChanges+contentChanged"></a>
-
 ### slidingCarousel.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.
@@ -152,7 +144,6 @@ component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
 <a name="Generic+generic"></a>
-
 ### slidingCarousel.generic : <code>Boolean</code>
 True if the component would like to receive generic styling.
 
@@ -163,77 +154,66 @@ have to explicitly override styling you don't want.
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[Generic](../basic-component-mixins/docs/Generic.md)</code> mixin.
 **Default**: <code>true</code>  
 <a name="KeyboardDirection+goDown"></a>
-
 ### slidingCarousel.goDown()
 Invoked when the user wants to go/navigate down.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardDirection+goEnd"></a>
-
 ### slidingCarousel.goEnd()
 Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="TrackpadDirection+goLeft"></a>
-
 ### slidingCarousel.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="KeyboardDirection+goLeft"></a>
-
 ### slidingCarousel.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="SwipeDirection+goLeft"></a>
-
 ### slidingCarousel.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
 <a name="TrackpadDirection+goRight"></a>
-
 ### slidingCarousel.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="KeyboardDirection+goRight"></a>
-
 ### slidingCarousel.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="SwipeDirection+goRight"></a>
-
 ### slidingCarousel.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
 <a name="KeyboardDirection+goStart"></a>
-
 ### slidingCarousel.goStart()
 Invoked when the user wants to go/navigate to the start (e.g., of a
 list). The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="KeyboardDirection+goUp"></a>
-
 ### slidingCarousel.goUp()
 Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="ContentAsItems+itemAdded"></a>
-
 ### slidingCarousel.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
 
@@ -247,7 +227,6 @@ this to perform per-item initialization.
 | item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ItemsSelection+itemAdded"></a>
-
 ### slidingCarousel.itemAdded(item)
 Handle a new item being added to the list.
 
@@ -261,20 +240,17 @@ selection state to false.
 | item | <code>HTMLElement</code> | the item being added |
 
 <a name="ContentAsItems+items"></a>
-
 ### slidingCarousel.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list. See the top-level documentation for
 mixin for a description of how items differ from plain content.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="ContentAsItems.event_items-changed"></a>
-
 ### "items-changed"
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="ContentAsItems+itemsChanged"></a>
-
 ### slidingCarousel.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
@@ -282,7 +258,6 @@ being nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="Keyboard+keydown"></a>
-
 ### slidingCarousel.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
 
@@ -297,7 +272,6 @@ typically be handled by other mixins.
 | event | <code>KeyboardEvent</code> | the keyboard event |
 
 <a name="KeyboardDirection+navigationAxis"></a>
-
 ### slidingCarousel.navigationAxis : <code>string</code>
 Indicates the direction of permitted navigation with the keyboard.
 
@@ -308,7 +282,6 @@ Arrow keys will be ignored.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="ItemsSelection.event_selected-index-changed"></a>
-
 ### "selected-index-changed"
 Fires when the selectedIndex property changes.
 
@@ -319,7 +292,6 @@ Fires when the selectedIndex property changes.
 | detail.selectedIndex | <code>number</code> | The new selected index. |
 
 <a name="ItemsSelection.event_selected-item-changed"></a>
-
 ### "selected-item-changed"
 Fires when the selectedItem property changes.
 
@@ -331,7 +303,6 @@ Fires when the selectedItem property changes.
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
 <a name="ItemsSelection+selectedIndex"></a>
-
 ### slidingCarousel.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
 
@@ -341,7 +312,6 @@ currently-selected item.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectedItem"></a>
-
 ### slidingCarousel.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
 
@@ -349,45 +319,38 @@ Setting this property to null deselects any currently-selected item.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectFirst"></a>
-
 ### slidingCarousel.selectFirst()
 Select the first item in the list.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectionRequired"></a>
-
 ### slidingCarousel.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="ItemsSelection+selectionWraps"></a>
-
 ### slidingCarousel.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="ItemsSelection+selectLast"></a>
-
 ### slidingCarousel.selectLast()
 Select the last item in the list.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectNext"></a>
-
 ### slidingCarousel.selectNext()
 Select the next item in the list.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="ItemsSelection+selectPrevious"></a>
-
 ### slidingCarousel.selectPrevious()
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 <a name="SlidingCarousel+showTransition"></a>
-
 ### slidingCarousel.showTransition : <code>boolean</code>
 Determine whether a transition should be shown during selection.
 
@@ -405,7 +368,6 @@ using component permanently enable or disable transition effects.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>
 <a name="TargetInCollective+target"></a>
-
 ### slidingCarousel.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
 
@@ -419,14 +381,12 @@ component's first child.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
 <a name="SwipeDirection+travelFraction"></a>
-
 ### slidingCarousel.travelFraction : <code>number</code>
 The distance the first touchpoint has traveled since the beginning of a
 drag, expressed as a fraction of the element's width.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
 <a name="TrackpadDirection+travelFraction"></a>
-
 ### slidingCarousel.travelFraction : <code>number</code>
 The distance the user has moved the first touchpoint since the beginning
 of a trackpad/wheel operation, expressed as a fraction of the element's

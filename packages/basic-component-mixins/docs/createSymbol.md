@@ -1,6 +1,5 @@
 # API Documentation
 <a name="createSymbol"></a>
-
 ## createSymbol(description)
 Helper function to create a symbol that can be used for associating private
 data with an element.

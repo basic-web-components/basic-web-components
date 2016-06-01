@@ -1,6 +1,5 @@
 # API Documentation
 <a name="FadeOverflow"></a>
-
 ## FadeOverflow ⇐ <code>ElementBase</code>
 Fades out content that overflows so the user knows there's more.
 
@@ -22,7 +21,6 @@ content is short enough to fit completely in view.
     * [.showFade](#FadeOverflow+showFade) : <code>boolean</code>
 
 <a name="FadeOverflow+fadeColor"></a>
-
 ### fadeOverflow.fadeColor
 The color of the fade.
 
@@ -35,7 +33,6 @@ This should be a solid color.
 **Default**: <code>white</code>  
 **Attribute**: fadeColor  
 <a name="FadeOverflow+refresh"></a>
-
 ### fadeOverflow.refresh()
 Infer the fade color from background color. If you have programmatically
 changed the color behind the component, you can invoke this method to have
@@ -43,7 +40,6 @@ the component try to pick up the new background color.
 
   **Kind**: instance method of <code>[FadeOverflow](#FadeOverflow)</code>
 <a name="FadeOverflow+showFade"></a>
-
 ### fadeOverflow.showFade : <code>boolean</code>
 True if the component should show the fade to the background color.
 

@@ -1,6 +1,5 @@
 # API Documentation
 <a name="ClickSelection"></a>
-
 ## ClickSelection
 Mixin which maps a click (actually, a mousedown) to a selection.
 

@@ -17,10 +17,13 @@ let base = ElementBase.compose(
 
 
 /**
- * Shows exactly one child element at a time.
+ * Shows exactly one child element at a time. This can be useful, for example,
+ * if a given UI element has multiple modes that present substantially different
+ * elements.
  *
- * This can be useful, for example, if a given UI element has multiple modes
- * that present substantially different elements.
+ * The transition between child elements is instantenous. If you'd like the
+ * transition to be accompanied by visible animated effects, see
+ * [basic-animation-stage](../basic-animation-stage).
  *
  * This component doesn't provide any UI for changing which mode is shown.
  *

@@ -1,6 +1,5 @@
 # API Documentation
 <a name="WrappedStandardElement"></a>
-
 ## WrappedStandardElement ⇐ <code>ElementBase</code>
 Wraps a standard HTML element so that the standard behavior can then be
 extended.
@@ -66,7 +65,6 @@ and still achieve their standard behavior.
     * [.wrap(extendsTag)](#WrappedStandardElement.wrap)
 
 <a name="WrappedStandardElement+ariaLabel"></a>
-
 ### wrappedStandardElement.ariaLabel : <code>string</code>
 A description for the user of the element's purpose on the page. Setting
 this applies the label to the inner element, ensuring that screen readers
@@ -75,13 +73,11 @@ the user.
 
   **Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>
 <a name="WrappedStandardElement+inner"></a>
-
 ### wrappedStandardElement.inner : <code>HTMLElement</code>
 Returns a reference to the inner standard HTML element.
 
   **Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>
 <a name="WrappedStandardElement+template"></a>
-
 ### wrappedStandardElement.template : <code>string</code> &#124; <code>HTMLTemplateElement</code>
 The template copied into the shadow tree of new instances of this element.
 
@@ -112,7 +108,6 @@ element should be "inner".
 
   **Kind**: instance property of <code>[WrappedStandardElement](#WrappedStandardElement)</code>
 <a name="WrappedStandardElement.wrap"></a>
-
 ### WrappedStandardElement.wrap(extendsTag)
 Creates a class that wraps a standard HTML element.
 

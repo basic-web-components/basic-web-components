@@ -1,6 +1,5 @@
 # API Documentation
 <a name="composeTemplates"></a>
-
 ## composeTemplates(baseTemplate, subTemplate)
 Given two templates, this "folds" one inside the other. This is
 is useful for defining a component that wants to fill in slots in the

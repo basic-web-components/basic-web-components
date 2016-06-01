@@ -1,6 +1,5 @@
 # API Documentation
 <a name="ObserveContentChanges"></a>
-
 ## ObserveContentChanges
 Mixin which wires up mutation observers to report any changes in a
 component's content (direct children, or nodes distributed to slots).
@@ -30,14 +29,12 @@ becomes available.
     * [.contentChanged()](#ObserveContentChanges+contentChanged)
 
 <a name="ObserveContentChanges.event_content-changed"></a>
-
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
   **Kind**: event emitted by <code>[ObserveContentChanges](#ObserveContentChanges)</code>
 <a name="ObserveContentChanges+contentChanged"></a>
-
 ### observeContentChanges.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.

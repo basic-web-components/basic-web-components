@@ -27,7 +27,21 @@ let base = ElementBase.compose(
  * to the document, advance every 3000 ms (3 seconds), and use a simple
  * crossfade effect.
  *
+ * This component can be used on its own. To incorporate slideshow behavior into
+ * a component of your own, apply the
+ * [TimerSelection](../basic-component-mixins/docs/TimerSelection.md) mixin. To
+ * add slideshow functionality to a component such as a carousel, wrap it with
+ * the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
+ *
  * @extends ElementBase
+ * @mixes ContentAsItems
+ * @mixes DistributedChildrenAsContent
+ * @mixes FractionalSelection
+ * @mixes ItemsSelection
+ * @mixes ObserveContentChanges
+ * @mixes SelectionAnimation
+ * @mixes SelectionAriaActive
+ * @mixes TimerSelection
  */
 class Slideshow extends base {
 

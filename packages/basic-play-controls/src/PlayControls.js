@@ -24,7 +24,16 @@ let base = ElementBase.compose(
 );
 
 /**
- * Controls for managing playback of a slideshow, audio playlist, etc.
+ * Auxiliary component for managing playback of a slideshow, audio playlist, etc.
+ *
+ * This component can be used to wrap a component like
+ * [basic-slideshow](../basic-slideshow). Example:
+ *
+ *     <basic-play-controls>
+ *       <basic-slideshow>
+ *         ... images, etc. ...
+ *       </basic-slideshow>
+ *     </basic-play-controls>
  *
  * @extends ElementBase
  * @mixes ContentFirstChildTarget

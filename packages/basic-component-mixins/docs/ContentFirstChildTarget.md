@@ -1,6 +1,5 @@
 # API Documentation
 <a name="ContentFirstChildTarget"></a>
-
 ## ContentFirstChildTarget
 Mixin that defines the target of a component — the element the component is
 managing or somehow responsible for — as its first child.
@@ -29,7 +28,6 @@ participate in collective keyboard handling.
 
   **Kind**: global class
 <a name="ContentFirstChildTarget+target"></a>
-
 ### contentFirstChildTarget.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
 
