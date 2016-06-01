@@ -3,7 +3,7 @@ import FractionalSelection from './FractionalSelection';
 
 
 // Symbols for private data members on an element.
-const animationSymbol = createSymbol('animations');
+const animationSymbol = createSymbol('animation');
 const lastAnimationSymbol = createSymbol('lastAnimation');
 const playingAnimationSymbol = createSymbol('animatingSelection');
 const previousSelectionSymbol = createSymbol('previousSelection');
