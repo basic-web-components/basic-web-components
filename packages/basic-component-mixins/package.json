@@ -1,6 +1,6 @@
 {
   "name": "basic-component-mixins",
-  "version": "0.7.6",
+  "version": "0.8.0",
   "description": "Mixins for creating web components in plain JavaScript.",
   "homepage": "https://component.kitchen",
   "license": "MIT",

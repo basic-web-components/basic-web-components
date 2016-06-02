@@ -1,6 +1,6 @@
 {
   "name": "basic-current-anchor",
-  "version": "0.7.6",
+  "version": "0.8.0",
   "description": "An anchor (link) that highlights itself when its destination matches the current location.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -13,7 +13,7 @@
   ],
   "main": "src/CurrentAnchor.js",
   "dependencies": {
-    "basic-wrapped-standard-element": "^0.7.6"
+    "basic-wrapped-standard-element": "^0.8.0"
   },
   "browserify": {
     "transform": [
