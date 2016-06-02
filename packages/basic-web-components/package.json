@@ -1,0 +1,19 @@
+{
+  "name": "basic-web-components",
+  "version": "0.7.5",
+  "description": "Combines all components and mixins in Basic Web Components project",
+  "homepage": "https://component.kitchen",
+  "license": "MIT",
+  "repository": "https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-web-components",
+  "keywords": [
+    "basic-web-components",
+    "es6",
+    "web-components"
+  ],
+  "main": "src/all.js",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}
