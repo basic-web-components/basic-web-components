@@ -100,6 +100,7 @@ module.exports = function(grunt) {
 
   //
   // Browsers to use for testing via SauceLabs
+  //
   const browsers = [
     {
       browserName: 'chrome',
@@ -120,6 +121,11 @@ module.exports = function(grunt) {
       browserName: 'MicrosoftEdge',
       platform: 'Windows 10',
       version: '20.10240'
+    },
+    {
+      browserName: 'safari',
+      platform: 'OS X 10.11',
+      version: '9.0'
     }
   ];
 
