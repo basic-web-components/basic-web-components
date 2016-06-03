@@ -103,8 +103,8 @@ class PlayControls extends base {
     return `
       <style>
       :host {
-        display: -webkit-inline-flex;
-        display: inline-flex;
+        display: -webkit-flex;
+        display: flex;
         position: relative;
       }
 
@@ -150,6 +150,18 @@ class PlayControls extends base {
       :host(:not(.playing)) .playingControl {
         display: none;
       }
+
+      #container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex: 1;
+        flex: 1;
+      }
+
+      #container ::content > * {
+        -webkit-flex: 1;
+        flex: 1;
+      }
       </style>
 
       <div id="buttons">
@@ -181,7 +193,9 @@ class PlayControls extends base {
         </button>
       </div>
 
-      <slot></slot>
+      <div id="container">
+        <slot></slot>
+      </div>
     `;
   }
 

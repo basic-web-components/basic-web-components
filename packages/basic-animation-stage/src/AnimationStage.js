@@ -21,7 +21,7 @@ let base = ElementBase.compose(
 /**
  * Presents a single item as selected, providing animated transitions when the
  * selection changes. The same animation can be shown at an arbitrary point,
- * generally used to reflet a user-controlled touch or trackpad drag operation
+ * generally used to reflect a user-controlled touch or trackpad drag operation
  * in progress.
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-animation-stage/)

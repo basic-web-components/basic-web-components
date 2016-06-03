@@ -158,8 +158,8 @@ class PageDots extends base {
     return `
       <style>
       :host {
-        display: -webkit-inline-flex;
-        display: inline-flex;
+        display: -webkit-flex;
+        display: flex;
         position: relative;
       }
 
@@ -181,6 +181,11 @@ class PageDots extends base {
         flex: 1;
         position: relative;
         z-index: 0;
+      }
+
+      #container ::content > * {
+        -webkit-flex: 1;
+        flex: 1;
       }
 
       .dot {

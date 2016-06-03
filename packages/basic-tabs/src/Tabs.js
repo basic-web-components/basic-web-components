@@ -65,13 +65,18 @@ class Tabs extends ElementBase.compose(
     return `
       <style>
       :host {
-        display: -webkit-inline-flex;
-        display: inline-flex;
+        display: -webkit-flex;
+        display: flex;
         -webkit-flex-direction: column;
         flex-direction: column;
       }
 
       #tabStrip {
+        -webkit-flex: 1;
+        flex: 1;
+      }
+
+      #modes ::content > * {
         -webkit-flex: 1;
         flex: 1;
       }

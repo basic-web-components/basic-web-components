@@ -163,6 +163,8 @@ class Carousel extends base {
     return `
       <style>
       :host {
+        display: -webkit-flex;
+        display: flex;
         overflow: hidden;
         position: relative;
       }

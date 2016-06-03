@@ -49,7 +49,7 @@ let base = ElementBase.compose(
  *     </basic-arrow-selection>
  *
  * By default, the arrow buttons are shown on devices with a mouse or mouse-like
- * point device. They are not shown on a touch-capable device unless mouse
+ * pointing device. They are not shown on a touch-capable device unless mouse
  * movement is detected. To cause the buttons to always appear, apply the
  * 'showArrows' CSS class.
  *
@@ -132,13 +132,18 @@ class ArrowSelection extends base {
     return `
       <style>
       :host {
-        display: -webkit-inline-flex;
-        display: inline-flex;
+        display: -webkit-flex;
+        display: flex;
       }
 
-      #arrowNavigationContainer {
-        display: -webkit-inline-flex;
-        display: inline-flex;
+      #container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex: 1;
+        flex: 1;
+      }
+
+      #container ::content > * {
         -webkit-flex: 1;
         flex: 1;
       }
@@ -221,7 +226,7 @@ class ArrowSelection extends base {
           </g>
         </svg>
       </button>
-      <div id="arrowNavigationContainer">
+      <div id="container">
         <slot></slot>
       </div>
       <button id="buttonRight" class="navigationButton" disabled tabindex="-1" aria-hidden="true">

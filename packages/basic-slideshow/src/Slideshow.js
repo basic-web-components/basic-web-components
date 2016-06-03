@@ -60,10 +60,24 @@ class Slideshow extends base {
     return `
       <style>
       :host {
+        display: -webkit-flex;
+        display: flex;
+        overflow: hidden;
         position: relative;
       }
+
+      #container ::content > * {
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        width: 100%;
+        will-change: transform;
+      }
       </style>
-      <slot></slot>
+
+      <div id="container">
+        <slot></slot>
+      </div>
     `;
   }
 
