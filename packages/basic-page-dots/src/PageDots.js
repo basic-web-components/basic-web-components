@@ -108,6 +108,7 @@ class PageDots extends base {
         element.classList.add('dot');
         element.classList.add('style-scope');
         element.classList.add('basic-page-dots');
+        element.setAttribute('role', 'none');
         return element;
       }
     });
