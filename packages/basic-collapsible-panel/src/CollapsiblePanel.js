@@ -71,8 +71,8 @@ class CollapsiblePanel extends OpenClose(ElementBase) {
       }
       </style>
 
-      <div id="overflow">
-        <div id="container">
+      <div id="overflow" role="none">
+        <div id="container" role="none">
           <slot></slot>
         </div>
       </div>

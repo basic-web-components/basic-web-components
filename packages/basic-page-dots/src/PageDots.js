@@ -220,7 +220,7 @@ class PageDots extends base {
       </style>
 
       <div id="dots"></div>
-      <div id="container">
+      <div id="container" role="none">
         <slot></slot>
       </div>
     `;

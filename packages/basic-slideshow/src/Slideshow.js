@@ -75,7 +75,7 @@ class Slideshow extends base {
       }
       </style>
 
-      <div id="container">
+      <div id="container" role="none">
         <slot></slot>
       </div>
     `;

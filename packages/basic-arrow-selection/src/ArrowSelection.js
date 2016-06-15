@@ -226,7 +226,7 @@ class ArrowSelection extends base {
           </g>
         </svg>
       </button>
-      <div id="container">
+      <div id="container" role="none">
         <slot></slot>
       </div>
       <button id="buttonRight" class="navigationButton" disabled tabindex="-1" aria-hidden="true">

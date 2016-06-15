@@ -4,7 +4,6 @@ import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
@@ -21,7 +20,6 @@ let base = ElementBase.compose(
   DirectionSelection,
   DistributedChildrenAsContent,
   FractionalSelection,
-  Generic,
   ItemsSelection,
   Keyboard,
   KeyboardDirection,
@@ -178,7 +176,7 @@ class Carousel extends base {
       }
       </style>
 
-      <div id="container">
+      <div id="container" role="none">
         <slot></slot>
       </div>
     `;

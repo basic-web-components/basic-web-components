@@ -252,7 +252,7 @@ The /src folder includes the complete set of mixins, each of which address some
 common web component feature:
 
 * [AttributeMarshalling](docs/AttributeMarshalling.md).
-  Marshall element attributes to component properties (and eventually vice
+  Marshalls element attributes to component properties (and eventually vice
   versa). This includes mapping hyphenated `foo-bar` attribute references to
   camelCase `fooBar` property names.
 * [ClickSelection](docs/ClickSelection.md).
@@ -283,7 +283,7 @@ common web component feature:
 * [Generic](docs/Generic.md).
   Lets a component easily disable standard, optional styling.
 * [ItemsSelection](docs/ItemsSelection.md).
-  Allows a set of items in a list to be selectable.
+  Tracks the selection of a single item in a list.
 * [Keyboard](docs/Keyboard.md).
   Lets a component handle keyboard events. Includes support for collective
   keyboard handling.

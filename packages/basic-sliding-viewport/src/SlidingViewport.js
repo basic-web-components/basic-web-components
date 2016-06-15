@@ -122,7 +122,7 @@ class SlidingViewport extends base {
       }
       </style>
 
-      <basic-spread-items id="slidingContainer">
+      <basic-spread-items id="slidingContainer" role="none">
         <slot></slot>
       </basic-spread-items>
     `;

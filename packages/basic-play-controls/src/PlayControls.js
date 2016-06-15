@@ -193,7 +193,7 @@ class PlayControls extends base {
         </button>
       </div>
 
-      <div id="container">
+      <div id="container" role="none">
         <slot></slot>
       </div>
     `;
