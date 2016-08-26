@@ -168,25 +168,8 @@ const blockElements = [
  */
 class WrappedStandardElement extends ElementBase {
 
-  /**
-   * A description for the user of the element's purpose on the page. Setting
-   * this applies the label to the inner element, ensuring that screen readers
-   * and other assistive technologies will provide a meaningful description to
-   * the user.
-   *
-   * @type {string}
-   */
-  get ariaLabel() {
-    return this.inner.getAttribute('aria-label');
-  }
-  set ariaLabel(label) {
-    // Propagate the ARIA label to the inner textarea.
-    this.inner.setAttribute('aria-label', label);
-  }
-
-
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
+  constructor() {
+    super();
 
     // Listen for any events raised by the inner element which will not
     // automatically be retargetted across the Shadow DOM boundary, and re-raise
@@ -206,6 +189,21 @@ class WrappedStandardElement extends ElementBase {
     });
   }
 
+  /**
+   * A description for the user of the element's purpose on the page. Setting
+   * this applies the label to the inner element, ensuring that screen readers
+   * and other assistive technologies will provide a meaningful description to
+   * the user.
+   *
+   * @type {string}
+   */
+  get ariaLabel() {
+    return this.inner.getAttribute('aria-label');
+  }
+  set ariaLabel(label) {
+    // Propagate the ARIA label to the inner textarea.
+    this.inner.setAttribute('aria-label', label);
+  }
 
   /**
    * Returns a reference to the inner standard HTML element.

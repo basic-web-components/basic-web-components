@@ -62,6 +62,18 @@ let base = ElementBase.compose(
  */
 class PageDots extends base {
 
+  constructor() {
+    super();
+
+    this.$.dots.addEventListener('click', event => {
+      let dot = event.target;
+      let dotIndex = this.dots.indexOf(dot);
+      if (dotIndex >= 0) {
+        this.selectedIndex = dotIndex;
+      }
+    });
+  }
+
   applySelection(item, selected) {
     if (super.applySelection) { super.applySelection(item, selected); }
     let index = this.items.indexOf(item);
@@ -74,18 +86,6 @@ class PageDots extends base {
         toggleClass(dot, 'selected', selected);
       }
     }
-  }
-
-  createdCallback() {
-    super.createdCallback();
-
-    this.$.dots.addEventListener('click', event => {
-      let dot = event.target;
-      let dotIndex = this.dots.indexOf(dot);
-      if (dotIndex >= 0) {
-        this.selectedIndex = dotIndex;
-      }
-    });
   }
 
   get defaults() {

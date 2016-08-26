@@ -29,26 +29,8 @@ const areaLinkSymbol = createSymbol('areaLink');
  */
 class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 
-  /**
-   * True if the link points to an area within a site, not just a single page.
-   *
-   * If true, the matching rule to determine whether the link is current changes:
-   * an area link is considered to be current if the link's destination forms a
-   * prefix of the current location (instead of matching the complete URL).
-   *
-   * @type {boolean}
-   */
-  get areaLink() {
-    return this[areaLinkSymbol];
-  }
-  set areaLink(value) {
-    // Cast boolean or string values to boolean.
-    this[areaLinkSymbol] = (String(value) === 'true');
-    refresh(this);
-  }
-
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
+  constructor() {
+    super();
 
     window.addEventListener('popstate', event => {
       refresh(this);
@@ -65,6 +47,24 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     if (typeof this.areaLink === 'undefined') {
       this.areaLink = this.defaults.areaLink;
     }
+  }
+
+  /**
+   * True if the link points to an area within a site, not just a single page.
+   *
+   * If true, the matching rule to determine whether the link is current changes:
+   * an area link is considered to be current if the link's destination forms a
+   * prefix of the current location (instead of matching the complete URL).
+   *
+   * @type {boolean}
+   */
+  get areaLink() {
+    return this[areaLinkSymbol];
+  }
+  set areaLink(value) {
+    // Cast boolean or string values to boolean.
+    this[areaLinkSymbol] = (String(value) === 'true');
+    refresh(this);
   }
 
   connectedCallback() {

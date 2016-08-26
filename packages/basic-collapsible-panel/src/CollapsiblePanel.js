@@ -17,8 +17,8 @@ import OpenClose from '../../basic-component-mixins/src/OpenClose';
  */
 class CollapsiblePanel extends OpenClose(ElementBase) {
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
+  constructor() {
+    super();
     this.$.overflow.addEventListener('transitionend', () => {
       if (!this.closed) {
         // Remove the hard-coded height we applied for the transition so that

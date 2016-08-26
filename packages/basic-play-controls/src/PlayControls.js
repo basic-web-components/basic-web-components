@@ -48,8 +48,8 @@ let base = ElementBase.compose(
  */
 class PlayControls extends base {
 
-  createdCallback() {
-    super.createdCallback();
+  constructor() {
+    super();
     this.$.previousButton.addEventListener('click', event => {
       this.selectPrevious();
     });

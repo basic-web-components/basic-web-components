@@ -65,28 +65,8 @@ let base = ElementBase.compose(
  */
 class ArrowSelection extends base {
 
-  get canSelectNext() {
-    return super.canSelectNext;
-  }
-  set canSelectNext(canSelectNext) {
-    if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
-    if (this.$) {
-      this.$.buttonRight.disabled = !canSelectNext;
-    }
-  }
-
-  get canSelectPrevious() {
-    return super.canSelectPrevious;
-  }
-  set canSelectPrevious(canSelectPrevious) {
-    if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
-    if (this.$) {
-      this.$.buttonLeft.disabled = !canSelectPrevious;
-    }
-  }
-
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
+  constructor() {
+    super();
 
     this.$.buttonLeft.addEventListener('click', event => {
       this.selectPrevious();
@@ -109,6 +89,26 @@ class ArrowSelection extends base {
         // The device doesn't support touch, so assume it has a mouse.
         showArrows(this);
       }
+    }
+  }
+
+  get canSelectNext() {
+    return super.canSelectNext;
+  }
+  set canSelectNext(canSelectNext) {
+    if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
+    if (this.$) {
+      this.$.buttonRight.disabled = !canSelectNext;
+    }
+  }
+
+  get canSelectPrevious() {
+    return super.canSelectPrevious;
+  }
+  set canSelectPrevious(canSelectPrevious) {
+    if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
+    if (this.$) {
+      this.$.buttonLeft.disabled = !canSelectPrevious;
     }
   }
 

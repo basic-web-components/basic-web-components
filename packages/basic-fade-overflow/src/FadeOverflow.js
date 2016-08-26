@@ -22,10 +22,6 @@ const fadeColorSymbol = createSymbol('fadeColor');
  */
 class FadeOverflow extends ElementBase {
 
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-  }
-
   connectedCallback() {
     if (super.connectedCallback) { super.connectedCallback(); }
     if (this.fadeColor == null) {

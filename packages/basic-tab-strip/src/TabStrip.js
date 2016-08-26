@@ -87,22 +87,8 @@ let base = ElementBase.compose(
  */
 class TabStrip extends base {
 
-  applySelection(item, selected) {
-    if (super.applySelection) { super.applySelection(item, selected); }
-    let index = this.items.indexOf(item);
-    // See if the corresponding tab has already been created.
-    // If not, the correct tab will be selected when it gets created.
-    let tabs = this.tabs;
-    if (tabs && tabs.length > index) {
-      let tab = this.tabs[index];
-      if (tab) {
-        applySelectionToTab(tab, selected);
-      }
-    }
-  }
-
-  createdCallback() {
-    super.createdCallback();
+  constructor() {
+    super();
 
     this.$.tabs.addEventListener('click', event => {
       let tab = event.target;
@@ -129,6 +115,20 @@ class TabStrip extends base {
     // Set defaults.
     if (typeof this.tabPosition === 'undefined') {
       this.tabPosition = this.defaults.tabPosition;
+    }
+  }
+
+  applySelection(item, selected) {
+    if (super.applySelection) { super.applySelection(item, selected); }
+    let index = this.items.indexOf(item);
+    // See if the corresponding tab has already been created.
+    // If not, the correct tab will be selected when it gets created.
+    let tabs = this.tabs;
+    if (tabs && tabs.length > index) {
+      let tab = this.tabs[index];
+      if (tab) {
+        applySelectionToTab(tab, selected);
+      }
     }
   }
 
