@@ -29,8 +29,8 @@ export default function mixin(base) {
    */
   class FractionalSelection extends base {
 
-    attachedCallback() {
-      if (super.attachedCallback) { super.attachedCallback(); }
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
       this.selectedFraction = 0;
     }
 

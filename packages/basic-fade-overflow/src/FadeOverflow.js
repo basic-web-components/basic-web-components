@@ -22,15 +22,15 @@ const fadeColorSymbol = createSymbol('fadeColor');
  */
 class FadeOverflow extends ElementBase {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
+  createdCallback() {
+    if (super.createdCallback) { super.createdCallback(); }
+  }
+
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
     if (this.fadeColor == null) {
       this.refresh();
     }
-  }
-
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
   }
 
   /**

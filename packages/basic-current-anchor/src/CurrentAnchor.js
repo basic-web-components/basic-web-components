@@ -47,11 +47,6 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     refresh(this);
   }
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
-    refresh(this);
-  }
-
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
 
@@ -70,6 +65,11 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     if (typeof this.areaLink === 'undefined') {
       this.areaLink = this.defaults.areaLink;
     }
+  }
+
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
+    refresh(this);
   }
 
   /**

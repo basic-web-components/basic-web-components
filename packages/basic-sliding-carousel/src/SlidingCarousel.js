@@ -68,8 +68,8 @@ let base = ElementBase.compose(
  */
 class SlidingCarousel extends base {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
     // HACK
     this.itemsChanged();
   }

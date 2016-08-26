@@ -6,7 +6,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>basic-autosize-textarea</title>
 
-  <script src="../demos/lib/webcomponents.js"></script>
+  <!-- <script src="../demos/lib/webcomponents.js"></script> -->
+  <script>
+  window.WebComponents = window.WebComponents || {
+    flags: {
+      ce: 'v1',
+      register: true
+    }
+  };
+  </script>
+  <script src="../../../webcomponentsjs/src/CustomElements/v1/CustomElements.js"></script>
+
   <script src="./dist/basic-autosize-textarea.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
 

@@ -10,7 +10,11 @@ const lineHeightSymbol = createSymbol('lineHeight');
 const minimumRowsSymbol = createSymbol('minimumRows');
 const valueTracksContentSymbol = createSymbol('valueTracksContent');
 
-
+let base = WrappedStandardElement.wrap('textarea').compose(
+  DistributedChildrenAsContent,
+  Generic,
+  ObserveContentChanges
+);
 
 /**
  * A text area that makes itself big enough to show its content.
@@ -32,28 +36,28 @@ const valueTracksContentSymbol = createSymbol('valueTracksContent');
  * @mixes DistributedChildrenAsContent
  * @mixes ObserveContentChanges
  */
-class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
-  DistributedChildrenAsContent,
-  Generic,
-  ObserveContentChanges
-) {
+class AutosizeTextarea extends base {
 
-  // Normally the value of the element is set and read through its value
-  // attribute. As a convenience, and to mirror standard textarea behavior, it
-  // is possible to set the content of the textarea by including text between
-  // the opening and closing tag. This works only in one direction: setting the
-  // tag content updates the textarea, but user edits in the textarea are not
-  // reflected in the tag content. We capture the value of the initial text
-  // content in order to set the value property during the create event.
-  // TODO: Normalize indentation in the text content. Users will often want to
-  // indent the markup so that it looks pretty. We should detect the indentation
-  // level and remove any indentation whitespace
-  // TODO: Consider using content innerHTML rather than plain text. The native
-  // textarea element will include HTML, not just the stripped text, as initial
-  // value property text.
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
-    initializeWhenRendered(this);
+  constructor() {
+    super();
+
+    this.inner.addEventListener('input', event => {
+      valueChanged(this);
+    });
+    this.inner.addEventListener('keypress', event => {
+      keypress(this, event);
+    });
+
+    // Set defaults.
+    if (typeof this.minimumRows === 'undefined') {
+      this.minimumRows = this.defaults.minimumRows;
+    }
+
+    // A standard textarea has its value track its textContent by default.
+    // That is, changes to textContent update the value. However, if an attempt
+    // is made to change the value directly, this breaks the automatic tracking.
+    // From that point on, changes to textContent do *not* update the value.
+    this[valueTracksContentSymbol] = true;
   }
 
   /**
@@ -74,6 +78,24 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
     this.$.textCopy.textContent = this.value;
   }
 
+  // Normally the value of the element is set and read through its value
+  // attribute. As a convenience, and to mirror standard textarea behavior, it
+  // is possible to set the content of the textarea by including text between
+  // the opening and closing tag. This works only in one direction: setting the
+  // tag content updates the textarea, but user edits in the textarea are not
+  // reflected in the tag content. We capture the value of the initial text
+  // content in order to set the value property during the create event.
+  // TODO: Normalize indentation in the text content. Users will often want to
+  // indent the markup so that it looks pretty. We should detect the indentation
+  // level and remove any indentation whitespace
+  // TODO: Consider using content innerHTML rather than plain text. The native
+  // textarea element will include HTML, not just the stripped text, as initial
+  // value property text.
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
+    initializeWhenRendered(this);
+  }
+
   contentChanged() {
     if (super.contentChanged) { super.contentChanged(); }
     if (this[valueTracksContentSymbol]) {
@@ -81,28 +103,6 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
       this.inner.value = unescapeHtml(text);
       valueChanged(this);
     }
-  }
-
-  createdCallback() {
-    if (super.createdCallback) { super.createdCallback(); }
-
-    this.inner.addEventListener('input', event => {
-      valueChanged(this);
-    });
-    this.inner.addEventListener('keypress', event => {
-      keypress(this, event);
-    });
-
-    // Set defaults.
-    if (typeof this.minimumRows === 'undefined') {
-      this.minimumRows = this.defaults.minimumRows;
-    }
-
-    // A standard textarea has its value track its textContent by default.
-    // That is, changes to textContent update the value. However, if an attempt
-    // is made to change the value directly, this breaks the automatic tracking.
-    // From that point on, changes to textContent do *not* update the value.
-    this[valueTracksContentSymbol] = true;
   }
 
   get defaults() {
@@ -141,6 +141,11 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
     if (this[lineHeightSymbol]) {
       setMinimumHeight(this);
     }
+  }
+
+  static get observedAttributes() {
+    let attributes = base.observedAttributes || [];
+    return attributes.concat(['minimum-rows', 'value']);
   }
 
   get template() {

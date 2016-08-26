@@ -32,15 +32,15 @@ let base = ElementBase.compose(
  */
 class SlidingViewport extends base {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
-    this.render();
-  }
-
   createdCallback() {
     if (super.createdCallback) { super.createdCallback(); }
     this.selectedFraction = 0;
     this.showTransition = true;
+  }
+
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
+    this.render();
   }
 
   get content() {

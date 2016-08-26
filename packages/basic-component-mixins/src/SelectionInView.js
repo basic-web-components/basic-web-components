@@ -15,8 +15,8 @@ export default (base) => {
    */
   class SelectionInView extends base {
 
-    attachedCallback() {
-      if (super.attachedCallback) { super.attachedCallback(); }
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
       let selectedItem = this.selectedItem;
       if (selectedItem) {
         this.scrollItemIntoView(selectedItem);

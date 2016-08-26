@@ -27,8 +27,8 @@ export default (base) => {
       }
     }
 
-    attachedCallback() {
-      if (super.attachedCallback) { super.attachedCallback(); }
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
       this.render(this.closed);
     }
 

@@ -47,8 +47,8 @@ let base = ElementBase.compose(
  */
 class AnimationStage extends base {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
     this.selectionRequired = true;
   }
 

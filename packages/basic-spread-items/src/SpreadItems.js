@@ -23,8 +23,8 @@ class SpreadItems extends ElementBase.compose(
   ObserveContentChanges
 ) {
 
-  attachedCallback() {
-    if (super.attachedCallback) { super.attachedCallback(); }
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
     // HACK
     this.itemsChanged();
   }
@@ -34,7 +34,7 @@ class SpreadItems extends ElementBase.compose(
   }
 
   // TODO: Should also handle contentChanged(), but need to rationalize with
-  // invocation of itemsChanged in attachedCallback.
+  // invocation of itemsChanged in connectedCallback.
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
     let items = this.items;
