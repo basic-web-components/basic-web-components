@@ -23,9 +23,8 @@ export default (base) => {
    */
   class KeyboardDirection extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-
+    constructor() {
+      super();
       // Set defaults.
       if (typeof this.navigationAxis === 'undefined') {
         this.navigationAxis = this.defaults.navigationAxis;

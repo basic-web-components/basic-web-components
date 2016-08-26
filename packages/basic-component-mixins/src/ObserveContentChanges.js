@@ -34,8 +34,9 @@ export default (base) => {
    */
   class ObserveContentChanges extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
+      // REVIEW: Move to connectedCallback?
       observeContentChanges(this);
 
       // Make an initial call to contentChanged() so that the component can do

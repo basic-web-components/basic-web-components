@@ -18,8 +18,8 @@ export default (base) => {
    */
   class TargetInCollective extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
       this.collective = new Collective(this);
     }
 

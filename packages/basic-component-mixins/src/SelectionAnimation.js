@@ -51,8 +51,8 @@ export default function mixin(base) {
    */
   class SelectionAnimation extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
 
       // Set defaults.
       if (typeof this.selectionAnimationDuration === 'undefined') {

@@ -38,8 +38,8 @@ export default (base) => {
    */
   class TrackpadDirection extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
       this.addEventListener('wheel', event => {
         let handled = wheel(this, event);
         if (handled) {

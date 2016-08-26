@@ -15,8 +15,8 @@ export default (base) => {
    */
   class ClickSelection extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
       /*
        * REVIEW: Which event should we listen to here?
        *

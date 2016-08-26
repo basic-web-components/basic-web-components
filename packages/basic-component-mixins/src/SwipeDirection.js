@@ -25,8 +25,8 @@ export default (base) => {
    */
   class SwipeDirection extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
 
       // For the component to receive PointerEvents in IE/Edge, we need to set
       // touch-action: none. Only make this change if touch-action is currently

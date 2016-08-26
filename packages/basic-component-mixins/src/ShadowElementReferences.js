@@ -24,8 +24,8 @@ export default (base) => {
    */
   class ShadowElementReferences extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
       if (this.shadowRoot) {
         // Look for elements in the shadow subtree that have id attributes.
         // An alternatively implementation of this mixin would be to just define

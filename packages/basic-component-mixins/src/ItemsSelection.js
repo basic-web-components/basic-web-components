@@ -36,6 +36,17 @@ export default (base) => {
    */
   class ItemsSelection extends base {
 
+    constructor() {
+      super();
+      // Set defaults.
+      if (typeof this.selectionRequired === 'undefined') {
+        this.selectionRequired = this.defaults.selectionRequired;
+      }
+      if (typeof this.selectionWraps === 'undefined') {
+        this.selectionWraps = this.defaults.selectionWraps;
+      }
+    }
+
     /**
      * Apply the indicate selection state to the item.
      *
@@ -75,18 +86,6 @@ export default (base) => {
     set canSelectPrevious(canSelectPrevious) {
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
       this[canSelectPreviousSymbol] = canSelectPrevious;
-    }
-
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-
-      // Set defaults.
-      if (typeof this.selectionRequired === 'undefined') {
-        this.selectionRequired = this.defaults.selectionRequired;
-      }
-      if (typeof this.selectionWraps === 'undefined') {
-        this.selectionWraps = this.defaults.selectionWraps;
-      }
     }
 
     get defaults() {

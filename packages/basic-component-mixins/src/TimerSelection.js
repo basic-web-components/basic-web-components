@@ -20,14 +20,8 @@ export default (base) => {
    */
   class TimerSelection extends base {
 
-    contentChanged() {
-      if (super.contentChanged) { super.contentChanged(); }
-      restartTimer(this);
-    }
-
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-
+    constructor() {
+      super();
       // Set defaults.
       if (typeof this.playing === 'undefined') {
         this.playing = this.defaults.playing;
@@ -35,6 +29,11 @@ export default (base) => {
       if (typeof this.selectionTimerDuration === 'undefined') {
         this.selectionTimerDuration = this.defaults.selectionTimerDuration;
       }
+    }
+
+    contentChanged() {
+      if (super.contentChanged) { super.contentChanged(); }
+      restartTimer(this);
     }
 
     get defaults() {
