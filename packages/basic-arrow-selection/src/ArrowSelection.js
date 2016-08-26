@@ -143,7 +143,7 @@ class ArrowSelection extends base {
         flex: 1;
       }
 
-      #container ::content > * {
+      #container ::slotted(*) {
         -webkit-flex: 1;
         flex: 1;
       }

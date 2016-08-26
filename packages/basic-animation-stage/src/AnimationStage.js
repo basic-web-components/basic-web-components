@@ -60,7 +60,7 @@ class AnimationStage extends base {
         position: relative;
       }
 
-      ::content > * {
+      ::slotted(*) {
         height: 100%;
         object-fit: contain;
         position: absolute;

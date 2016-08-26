@@ -60,7 +60,7 @@ class SpreadItems extends ElementBase.compose(
         position: relative;
       }
 
-      #spreadContainer ::content > * {
+      #spreadContainer ::slotted(*) {
         object-fit: contain;
         object-fit: var(--basic-item-object-fit, contain);
         height: 100%;

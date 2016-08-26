@@ -277,7 +277,7 @@ class TabStrip extends base {
         flex-direction: column;
       }
 
-      #pages ::content > * {
+      #pages ::slotted(*) {
         display: -webkit-flex;
         display: flex;
         -webkit-flex: 1;

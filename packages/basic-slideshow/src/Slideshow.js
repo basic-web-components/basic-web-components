@@ -66,7 +66,7 @@ class Slideshow extends base {
         position: relative;
       }
 
-      #container ::content > * {
+      #container ::slotted(*) {
         height: 100%;
         object-fit: contain;
         position: absolute;

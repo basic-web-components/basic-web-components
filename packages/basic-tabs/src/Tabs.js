@@ -76,7 +76,7 @@ class Tabs extends ElementBase.compose(
         flex: 1;
       }
 
-      #modes ::content > * {
+      #modes ::slotted(*) {
         -webkit-flex: 1;
         flex: 1;
       }

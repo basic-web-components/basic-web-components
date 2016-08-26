@@ -184,7 +184,7 @@ class PageDots extends base {
         z-index: 0;
       }
 
-      #container ::content > * {
+      #container ::slotted(*) {
         -webkit-flex: 1;
         flex: 1;
       }

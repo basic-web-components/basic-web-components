@@ -129,7 +129,7 @@ class ListBox extends ElementBase.compose(
         cursor: default;
       }
 
-      :host([generic=""]) #itemsContainer ::content > * {
+      :host([generic=""]) #itemsContainer ::slotted(*) {
         cursor: default;
         padding: 0.25em;
         -webkit-user-select: none;
