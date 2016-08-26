@@ -278,5 +278,5 @@ function renderTransition(element, selectedIndex, selectedFraction) {
 }
 
 
-document.registerElement('basic-page-dots', PageDots);
+customElements.define('basic-page-dots', PageDots);
 export default PageDots;

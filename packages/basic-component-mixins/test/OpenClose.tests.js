@@ -3,7 +3,7 @@ import OpenClose from '../src/OpenClose';
 
 
 class OpenCloseTest extends OpenClose(HTMLElement) {}
-document.registerElement('open-close-test', OpenCloseTest);
+customElements.define('open-close-test', OpenCloseTest);
 
 
 describe("OpenClose mixin", () => {

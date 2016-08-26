@@ -363,5 +363,5 @@ function valueChanged(element) {
 }
 
 
-document.registerElement('basic-autosize-textarea', AutosizeTextarea);
+customElements.define('basic-autosize-textarea', AutosizeTextarea);
 export default AutosizeTextarea;

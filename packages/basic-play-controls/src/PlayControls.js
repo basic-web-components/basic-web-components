@@ -202,4 +202,4 @@ class PlayControls extends base {
 }
 
 
-document.registerElement('basic-play-controls', PlayControls);
+customElements.define('basic-play-controls', PlayControls);

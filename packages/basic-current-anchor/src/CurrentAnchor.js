@@ -144,4 +144,4 @@ function refresh(element) {
 }
 
 
-document.registerElement('basic-current-anchor', CurrentAnchor);
+customElements.define('basic-current-anchor', CurrentAnchor);

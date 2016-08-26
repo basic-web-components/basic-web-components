@@ -93,4 +93,4 @@ class Tabs extends ElementBase.compose(
 }
 
 
-document.registerElement('basic-tabs', Tabs);
+customElements.define('basic-tabs', Tabs);

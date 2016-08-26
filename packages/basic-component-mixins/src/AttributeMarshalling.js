@@ -27,7 +27,7 @@ export default (base) => {
    *       get fooBar() { return this._fooBar; }
    *       set fooBar(value) { this._fooBar = value; }
    *     }
-   *     document.registerElement('my-element', MyElement);
+   *     customElements.define('my-element', MyElement);
    *
    * If someone then instantiates your component in HTML:
    *
@@ -58,21 +58,6 @@ export default (base) => {
       if (propertyName in this && !(propertyName in HTMLElement.prototype)) {
         this[propertyName] = newValue;
       }
-    }
-
-    /*
-     * Generate an initial call to attributeChangedCallback for each attribute
-     * on the element.
-     *
-     * TODO: The plan for Custom Elements v1 is for the browser to handle this.
-     * Once that's handled (including in polyfills), this call can go away.
-     */
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-      let attributes = [].slice.call(this.attributes); // To array for IE
-      attributes.forEach(attribute => {
-        this.attributeChangedCallback(attribute.name, undefined, attribute.value);
-      });
     }
 
   }

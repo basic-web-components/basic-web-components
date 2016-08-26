@@ -74,4 +74,4 @@ class SlideshowTimer extends base {
 }
 
 
-document.registerElement('basic-slideshow-timer', SlideshowTimer);
+customElements.define('basic-slideshow-timer', SlideshowTimer);

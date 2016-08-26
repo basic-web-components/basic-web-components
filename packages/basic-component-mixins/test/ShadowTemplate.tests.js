@@ -2,13 +2,20 @@ import { assert } from 'chai';
 import ShadowTemplate from '../src/ShadowTemplate';
 
 
+window.MyElement = class MyElement extends HTMLElement {
+  greet() {
+    return `Hello!`;
+  }
+};
+customElements.define('my-element', MyElement);
+
 /* Element with a simple template */
 class ElementWithStringTemplate extends ShadowTemplate(HTMLElement) {
   get template() {
     return "Hello";
   }
 }
-document.registerElement('element-with-string-template', ElementWithStringTemplate);
+customElements.define('element-with-string-template', ElementWithStringTemplate);
 
 
 /* Element with a real template */
@@ -19,7 +26,7 @@ class ElementWithRealTemplate extends ShadowTemplate(HTMLElement) {
     return template;
   }
 }
-document.registerElement('element-with-real-template', ElementWithRealTemplate);
+customElements.define('element-with-real-template', ElementWithRealTemplate);
 
 
 describe("ShadowTemplate mixin", () => {

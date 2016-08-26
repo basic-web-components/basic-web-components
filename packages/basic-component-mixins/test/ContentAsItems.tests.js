@@ -7,7 +7,7 @@ import ContentAsItems from '../src/ContentAsItems';
 class ContentAsItemsTest extends ContentAsItems(DistributedChildrenAsContent(
   DistributedChildren(HTMLElement)
 )) {}
-document.registerElement('content-items-test', ContentAsItemsTest);
+customElements.define('content-items-test', ContentAsItemsTest);
 
 
 describe("ContentAsItems mixin", () => {

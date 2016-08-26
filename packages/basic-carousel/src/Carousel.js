@@ -185,5 +185,5 @@ class Carousel extends base {
 }
 
 
-document.registerElement('basic-carousel', Carousel);
+customElements.define('basic-carousel', Carousel);
 export default Carousel;

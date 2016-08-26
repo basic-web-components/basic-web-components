@@ -4,14 +4,20 @@ import AttributeMarshalling from '../src/AttributeMarshalling';
 
 /* Element with camelCase property name */
 class ElementWithCamelCaseProperty extends AttributeMarshalling(HTMLElement) {
+
+  static get observedAttributes() {
+    return ['custom-property'];
+  }
+
   get customProperty() {
     return this._customProperty;
   }
   set customProperty(value) {
     this._customProperty = value;
   }
+
 }
-document.registerElement('element-with-camel-case-property', ElementWithCamelCaseProperty);
+customElements.define('element-with-camel-case-property', ElementWithCamelCaseProperty);
 
 
 describe("AttributeMarshalling mixin", () => {

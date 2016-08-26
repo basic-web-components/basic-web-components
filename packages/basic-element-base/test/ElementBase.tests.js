@@ -12,7 +12,7 @@ class SimpleElementBaseSubclass extends ElementBase {
     return "Hello";
   }
 }
-document.registerElement('simple-element-base-subclass', SimpleElementBaseSubclass);
+customElements.define('simple-element-base-subclass', SimpleElementBaseSubclass);
 
 
 describe("ElementBase component", () => {

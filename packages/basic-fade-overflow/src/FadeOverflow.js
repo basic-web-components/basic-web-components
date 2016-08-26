@@ -143,5 +143,5 @@ function extractRgbValues(rgbString) {
 }
 
 
-document.registerElement('basic-fade-overflow', FadeOverflow);
+customElements.define('basic-fade-overflow', FadeOverflow);
 export default FadeOverflow;

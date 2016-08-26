@@ -26,7 +26,7 @@ class ObserveTest extends ObserveContentChanges(
   }
 
 }
-document.registerElement('observe-test', ObserveTest);
+customElements.define('observe-test', ObserveTest);
 
 
 /*
@@ -37,7 +37,7 @@ class ObserveReprojectTest extends ObserveContentChanges(ShadowTemplate(HTMLElem
     return `<observe-test><content></content></observe-test>`;
   }
 }
-document.registerElement('observe-reproject-test', ObserveReprojectTest);
+customElements.define('observe-reproject-test', ObserveReprojectTest);
 
 
 describe("ObserveContentChanges mixin", () => {

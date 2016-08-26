@@ -130,7 +130,7 @@ const blockElements = [
  *     class WrappedA extends WrappedStandardElement.wrap('a') {
  *       customMethod() { ... }
  *     }
- *     document.registerElement('wrapped-a', WrappedA);
+ *     customElements.define('wrapped-a', WrappedA);
  *
  * An instance of the resulting class will look to the user like an instance of
  * the standard element class it wraps. The resulting class will *not* be an

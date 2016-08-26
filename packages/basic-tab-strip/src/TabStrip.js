@@ -402,5 +402,5 @@ function applySelectionToTab(tab, selected) {
 }
 
 
-document.registerElement('basic-tab-strip', TabStrip);
+customElements.define('basic-tab-strip', TabStrip);
 export default TabStrip;

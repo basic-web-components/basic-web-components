@@ -1,7 +1,3 @@
-// Feature detection for old Shadow DOM v0.
-const USING_SHADOW_DOM_V0 = (typeof HTMLElement.prototype.createShadowRoot !== 'undefined');
-
-
 /* Exported function extends a base class with ShadowTemplate. */
 export default (base) => {
 
@@ -33,8 +29,8 @@ export default (base) => {
      * If the component defines a template, a shadow root will be created on the
      * component instance, and the template stamped into it.
      */
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
+    constructor() {
+      super();
       let template = this.template;
       // TODO: Save the processed template with the component's class prototype
       // so it doesn't need to be processed with every instantiation.
@@ -45,18 +41,11 @@ export default (base) => {
           template = createTemplateWithInnerHTML(template);
         }
 
-        if (USING_SHADOW_DOM_V0) {
-          polyfillSlotWithContent(template);
-        }
-
         if (window.ShadowDOMPolyfill) {
           shimTemplateStyles(template, this.localName);
         }
 
-        // this.log("cloning template into shadow root");
-        let root = USING_SHADOW_DOM_V0 ?
-          this.createShadowRoot() :             // Shadow DOM v0
-          this.attachShadow({ mode: 'open' });  // Shadow DOM v1
+        let root = this.attachShadow({ mode: 'open' });
         let clone = document.importNode(template.content, true);
         root.appendChild(clone);
       }
@@ -80,15 +69,6 @@ function createTemplateWithInnerHTML(innerHTML) {
     template.content.appendChild(div.childNodes[0]);
   }
   return template;
-}
-
-// Replace occurences of v1 slot elements with v0 content elements.
-// This does not yet map named slots to content select clauses.
-function polyfillSlotWithContent(template) {
-  [].forEach.call(template.content.querySelectorAll('slot'), slotElement => {
-    let contentElement = document.createElement('content');
-    slotElement.parentNode.replaceChild(contentElement, slotElement);
-  });
 }
 
 // Invoke basic style shimming with ShadowCSS.

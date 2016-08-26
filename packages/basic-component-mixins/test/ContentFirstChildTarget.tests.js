@@ -11,7 +11,7 @@ class ContentFirstChildTargetTest extends ObserveContentChanges(
     DistributedChildren(HTMLElement)
   )))
 ) {}
-document.registerElement('content-first-child-target-test', ContentFirstChildTargetTest);
+customElements.define('content-first-child-target-test', ContentFirstChildTargetTest);
 
 
 describe("ContentFirstChildTarget mixin", () => {

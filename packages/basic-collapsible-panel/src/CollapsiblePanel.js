@@ -82,5 +82,5 @@ class CollapsiblePanel extends OpenClose(ElementBase) {
 }
 
 
-document.registerElement('basic-collapsible-panel', CollapsiblePanel);
+customElements.define('basic-collapsible-panel', CollapsiblePanel);
 export default CollapsiblePanel;

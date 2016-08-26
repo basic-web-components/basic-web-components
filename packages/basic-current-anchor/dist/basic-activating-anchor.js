@@ -155,7 +155,7 @@ function refresh(element) {
   element.active = match;
 }
 
-document.registerElement('basic-current-anchor', ActivatingAnchor);
+customElements.define('basic-current-anchor', ActivatingAnchor);
 
 },{"../../basic-wrapped-standard-element/src/WrappedStandardElement":8}],2:[function(require,module,exports){
 "use strict";
@@ -200,7 +200,7 @@ exports.default = function (base) {
    *       get fooBar() { return this._fooBar; }
    *       set fooBar(value) { this._fooBar = value; }
    *     }
-   *     document.registerElement('my-element', MyElement);
+   *     customElements.define('my-element', MyElement);
    *
    * If someone then instantiates your component in HTML:
    *
@@ -920,7 +920,7 @@ var USING_SHADOW_DOM_V0 = typeof HTMLElement.prototype.createShadowRoot !== 'und
  *     class WrappedA extends WrappedStandardElement.wrap('a') {
  *       customMethod() { ... }
  *     }
- *     document.registerElement('wrapped-a', WrappedA);
+ *     customElements.define('wrapped-a', WrappedA);
  *
  * An instance of the resulting class will look to the user like an instance of
  * the standard element class it wraps. The resulting class will *not* be an

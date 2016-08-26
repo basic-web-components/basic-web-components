@@ -75,4 +75,4 @@ class AnimationStage extends base {
 }
 
 
-document.registerElement('basic-animation-stage', AnimationStage);
+customElements.define('basic-animation-stage', AnimationStage);

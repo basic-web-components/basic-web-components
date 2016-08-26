@@ -10,4 +10,4 @@ class ClassNameGoesHere extends ElementBase {
 }
 
 
-document.registerElement('ELEMENT NAME GOES HERE', ClassNameGoesHere);
+customElements.define('ELEMENT NAME GOES HERE', ClassNameGoesHere);

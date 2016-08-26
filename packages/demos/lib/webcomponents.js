@@ -4195,8 +4195,8 @@ if (WebComponents.flags.shadow) {
       }
       return new TreeWalkerWrapper(originalCreateTreeWalker.call(unwrap(this), unwrap(root), whatToShow, newFilter, expandEntityReferences));
     };
-    if (document.registerElement) {
-      var originalRegisterElement = document.registerElement;
+    if (customElements.define) {
+      var originalRegisterElement = customElements.define;
       Document.prototype.registerElement = function(tagName, object) {
         var prototype, extendsOption;
         if (object !== undefined) {
@@ -6593,7 +6593,7 @@ window.CustomElements = window.CustomElements || {
   };
   scope.addModule = addModule;
   scope.initializeModules = initializeModules;
-  scope.hasNative = Boolean(document.registerElement);
+  scope.hasNative = Boolean(customElements.define);
   scope.isIE = /Trident/.test(navigator.userAgent);
   scope.useNative = !flags.register && scope.hasNative && !window.ShadowDOMPolyfill && (!window.HTMLImports || window.HTMLImports.useNative);
 })(window.CustomElements);
@@ -6918,10 +6918,10 @@ window.CustomElements.addModule(function(scope) {
   function register(name, options) {
     var definition = options || {};
     if (!name) {
-      throw new Error("document.registerElement: first argument `name` must not be empty");
+      throw new Error("customElements.define: first argument `name` must not be empty");
     }
     if (name.indexOf("-") < 0) {
-      throw new Error("document.registerElement: first argument ('name') must contain a dash ('-'). Argument provided was '" + String(name) + "'.");
+      throw new Error("customElements.define: first argument ('name') must contain a dash ('-'). Argument provided was '" + String(name) + "'.");
     }
     if (isReservedTag(name)) {
       throw new Error("Failed to execute 'registerElement' on 'Document': Registration failed for type '" + String(name) + "'. The type name is invalid.");
@@ -7120,14 +7120,14 @@ window.CustomElements.addModule(function(scope) {
       };
     })();
   }
-  document.registerElement = register;
+  customElements.define = register;
   document.createElement = createElement;
   document.createElementNS = createElementNS;
   scope.registry = registry;
   scope.instanceof = isInstance;
   scope.reservedTagList = reservedTagList;
   scope.getRegisteredDefinition = getRegisteredDefinition;
-  document.register = document.registerElement;
+  document.register = customElements.define;
 });
 
 (function(scope) {

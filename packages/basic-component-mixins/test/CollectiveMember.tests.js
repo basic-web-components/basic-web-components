@@ -3,7 +3,7 @@ import TargetInCollective from '../src/TargetInCollective';
 
 
 class TargetInCollectiveTest extends TargetInCollective(HTMLElement) {}
-document.registerElement('collective-member-test', TargetInCollectiveTest);
+customElements.define('collective-member-test', TargetInCollectiveTest);
 
 
 describe("TargetInCollective mixin", () => {

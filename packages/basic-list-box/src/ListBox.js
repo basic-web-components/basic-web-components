@@ -190,5 +190,5 @@ class ListBox extends ElementBase.compose(
 }
 
 
-document.registerElement('basic-list-box', ListBox);
+customElements.define('basic-list-box', ListBox);
 export default ListBox;

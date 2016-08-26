@@ -327,5 +327,5 @@ function showArrows(element) {
 }
 
 
-document.registerElement('basic-arrow-selection', ArrowSelection);
+customElements.define('basic-arrow-selection', ArrowSelection);
 export default ArrowSelection;

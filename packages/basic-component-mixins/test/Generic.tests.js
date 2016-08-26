@@ -21,7 +21,7 @@ class GenericTest extends Generic(ShadowTemplate(HTMLElement)) {
     `;
   }
 }
-document.registerElement('generic-test', GenericTest);
+customElements.define('generic-test', GenericTest);
 
 
 describe("Generic mixin", function() {

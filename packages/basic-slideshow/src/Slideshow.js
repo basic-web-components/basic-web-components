@@ -84,4 +84,4 @@ class Slideshow extends base {
 }
 
 
-document.registerElement('basic-slideshow', Slideshow);
+customElements.define('basic-slideshow', Slideshow);

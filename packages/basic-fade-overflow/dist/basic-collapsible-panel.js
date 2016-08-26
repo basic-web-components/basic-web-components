@@ -99,7 +99,7 @@ var CollapsiblePanel = function (_Collapsible) {
 
 exports.default = CollapsiblePanel;
 
-document.registerElement('basic-collapsible-panel', CollapsiblePanel);
+customElements.define('basic-collapsible-panel', CollapsiblePanel);
 
 },{"../../basic-component-mixins/src/Collapsible":3,"../../basic-element-base/src/ElementBase":8}],2:[function(require,module,exports){
 "use strict";
@@ -144,7 +144,7 @@ exports.default = function (base) {
    *       get fooBar() { return this._fooBar; }
    *       set fooBar(value) { this._fooBar = value; }
    *     }
-   *     document.registerElement('my-element', MyElement);
+   *     customElements.define('my-element', MyElement);
    *
    * If someone then instantiates your component in HTML:
    *

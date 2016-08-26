@@ -52,5 +52,5 @@ class Modes extends base {
 }
 
 
-document.registerElement('basic-modes', Modes);
+customElements.define('basic-modes', Modes);
 export default Modes;

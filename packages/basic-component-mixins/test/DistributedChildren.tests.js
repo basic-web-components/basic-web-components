@@ -23,7 +23,7 @@ class ChildrenTest extends DistributedChildren(ShadowTemplate(HTMLElement)) {
   }
 
 }
-document.registerElement('children-test', ChildrenTest);
+customElements.define('children-test', ChildrenTest);
 
 
 /*
@@ -34,7 +34,7 @@ class ReprojectTest extends DistributedChildren(ShadowTemplate(HTMLElement)) {
     return `<children-test><content></content></children-test>`;
   }
 }
-document.registerElement('reproject-test', ReprojectTest);
+customElements.define('reproject-test', ReprojectTest);
 
 
 describe("DistributedChildren mixin", () => {

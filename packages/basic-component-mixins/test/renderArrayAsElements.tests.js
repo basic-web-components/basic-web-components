@@ -19,7 +19,7 @@ class ArrayAsElementsTest extends HTMLElement {
   }
 
 }
-document.registerElement('array-as-elements-test', ArrayAsElementsTest);
+customElements.define('array-as-elements-test', ArrayAsElementsTest);
 
 
 describe("renderArrayAsElements", () => {

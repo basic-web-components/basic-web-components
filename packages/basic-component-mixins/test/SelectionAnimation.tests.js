@@ -24,7 +24,7 @@ class SelectionAnimationTest extends SelectionAnimation(HTMLElement) {
   }
 
 }
-document.registerElement('selection-animation-test', SelectionAnimationTest);
+customElements.define('selection-animation-test', SelectionAnimationTest);
 
 
 describe("SelectionAnimation mixin", () => {

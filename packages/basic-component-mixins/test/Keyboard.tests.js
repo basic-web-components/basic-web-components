@@ -10,7 +10,7 @@ class KeyboardTest extends Keyboard(HTMLElement) {
     }
   }
 }
-document.registerElement('keyboard-test', KeyboardTest);
+customElements.define('keyboard-test', KeyboardTest);
 
 
 describe("Keyboard mixin", () => {

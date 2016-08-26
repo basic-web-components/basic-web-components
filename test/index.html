@@ -9,7 +9,16 @@
   <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
 
   <script src="../node_modules/mocha/mocha.js" type="text/javascript"></script>
-  <script src="../node_modules/webcomponents.js/webcomponents.js"></script>
+  <!-- <script src="../node_modules/webcomponents.js/webcomponents.js"></script> -->
+  <script>
+  window.WebComponents = window.WebComponents || {
+    flags: {
+      ce: 'v1',
+      register: true
+    }
+  };
+  </script>
+  <script src="../../webcomponentsjs/src/CustomElements/v1/CustomElements.js"></script>
 
   <script>
   mocha.setup('bdd');

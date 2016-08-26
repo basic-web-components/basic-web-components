@@ -81,5 +81,5 @@ class SpreadItems extends ElementBase.compose(
 }
 
 
-document.registerElement('basic-spread-items', SpreadItems);
+customElements.define('basic-spread-items', SpreadItems);
 export default SpreadItems;

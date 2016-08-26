@@ -148,5 +148,5 @@ function renderSelection() {
 }
 
 
-document.registerElement('basic-sliding-viewport', SlidingViewport);
+customElements.define('basic-sliding-viewport', SlidingViewport);
 export default SlidingViewport;

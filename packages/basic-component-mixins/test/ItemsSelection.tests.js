@@ -12,7 +12,7 @@ class ItemsSelectionTest extends ItemsSelection(AttributeMarshalling(HTMLElement
     return Array.prototype.slice.call(this.children);
   }
 }
-document.registerElement('items-selection-test', ItemsSelectionTest);
+customElements.define('items-selection-test', ItemsSelectionTest);
 
 
 describe("ItemsSelection mixin", () => {

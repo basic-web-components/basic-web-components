@@ -3,13 +3,13 @@ import WrappedStandardElement from '../src/WrappedStandardElement';
 
 
 let WrappedA = WrappedStandardElement.wrap('a');
-document.registerElement('wrapped-a', WrappedA);
+customElements.define('wrapped-a', WrappedA);
 
 let WrappedIframe = WrappedStandardElement.wrap('iframe');
-document.registerElement('wrapped-iframe', WrappedIframe);
+customElements.define('wrapped-iframe', WrappedIframe);
 
 let WrappedDiv = WrappedStandardElement.wrap('div');
-document.registerElement('wrapped-div', WrappedDiv);
+customElements.define('wrapped-div', WrappedDiv);
 
 
 describe("WrappedStandardElement", () => {

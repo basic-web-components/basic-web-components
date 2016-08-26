@@ -12,7 +12,7 @@ let Es5Class = Composable(HTMLElement).compose({
   },
   value: 'value'
 });
-document.registerElement('es5-class', Es5Class);
+customElements.define('es5-class', Es5Class);
 
 
 describe("Composable mixin", () => {

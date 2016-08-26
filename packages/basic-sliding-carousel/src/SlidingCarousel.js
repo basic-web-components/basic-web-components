@@ -157,5 +157,5 @@ class SlidingCarousel extends base {
 }
 
 
-document.registerElement('basic-sliding-carousel', SlidingCarousel);
+customElements.define('basic-sliding-carousel', SlidingCarousel);
 export default SlidingCarousel;

@@ -9,7 +9,7 @@ class SelectionAriaActiveTest extends SelectionAriaActive(ItemsSelection(HTMLEle
     return Array.prototype.slice.call(this.children);
   }
 }
-document.registerElement('selection-aria-active-test', SelectionAriaActiveTest);
+customElements.define('selection-aria-active-test', SelectionAriaActiveTest);
 
 
 describe("SelectionAriaActive mixin", () => {
