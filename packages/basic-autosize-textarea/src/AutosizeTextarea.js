@@ -66,7 +66,7 @@ class AutosizeTextarea extends WrappedStandardElement.wrap('textarea').compose(
     this.$.extraLine.style.display = 'none';
 
     // We resize by copying the textarea contents to the element itself; the
-    // text will then appear (via <content>) inside the invisible div. If
+    // text will then appear (via <slot>) inside the invisible div. If
     // we've set things up correctly, this new content should take up the same
     // amount of room as the same text in the textarea. Updating the element's
     // content adjusts the element's size, which in turn will make the textarea

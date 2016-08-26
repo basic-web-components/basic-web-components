@@ -1042,7 +1042,7 @@ var WrappedStandardElement = function (_ElementBase) {
     key: 'template',
     get: function get() {
       // TODO: Use slot instead of content.
-      return '<' + this.extends + ' id="inner"><content></content></' + this.extends;
+      return '<' + this.extends + ' id="inner"><slot></slot></' + this.extends;
     }
 
     /**

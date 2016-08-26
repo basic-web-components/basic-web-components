@@ -9,6 +9,7 @@
     "console": false,
     "customElements": false,
     "describe": false,
+    "HTMLSlotElement": false,
     "it": false
   },
   "undef": true,

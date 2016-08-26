@@ -21,7 +21,7 @@ class ObserveTest extends ObserveContentChanges(
   get template() {
     return `
       <div id="static">This is static content</div>
-      <content></content>
+      <slot></slot>
     `;
   }
 
@@ -34,7 +34,7 @@ customElements.define('observe-test', ObserveTest);
  */
 class ObserveReprojectTest extends ObserveContentChanges(ShadowTemplate(HTMLElement)) {
   get template() {
-    return `<observe-test><content></content></observe-test>`;
+    return `<observe-test><slot></slot></observe-test>`;
   }
 }
 customElements.define('observe-reproject-test', ObserveReprojectTest);

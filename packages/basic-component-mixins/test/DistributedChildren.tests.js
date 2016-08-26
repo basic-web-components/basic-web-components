@@ -18,7 +18,7 @@ class ChildrenTest extends DistributedChildren(ShadowTemplate(HTMLElement)) {
   get template() {
     return `
       <div id="static">This is static content</div>
-      <content></content>
+      <slot></slot>
     `;
   }
 
@@ -31,7 +31,7 @@ customElements.define('children-test', ChildrenTest);
  */
 class ReprojectTest extends DistributedChildren(ShadowTemplate(HTMLElement)) {
   get template() {
-    return `<children-test><content></content></children-test>`;
+    return `<children-test><slot></slot></children-test>`;
   }
 }
 customElements.define('reproject-test', ReprojectTest);

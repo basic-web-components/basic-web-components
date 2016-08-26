@@ -16,7 +16,7 @@ class GenericTest extends Generic(ShadowTemplate(HTMLElement)) {
       }
       </style>
       <template>
-        <content></content>
+        <slot></slot>
       </template>
     `;
   }

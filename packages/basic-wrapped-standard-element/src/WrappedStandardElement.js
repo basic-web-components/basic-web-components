@@ -251,7 +251,7 @@ class WrappedStandardElement extends ElementBase {
       'block' :
       'inline-block';
     // TODO: Use slot instead of content.
-    return `<style>:host { display: ${display}}</style><${this.extends} id="inner"><content></content></${this.extends}`;
+    return `<style>:host { display: ${display}}</style><${this.extends} id="inner"><slot></slot></${this.extends}`;
   }
 
   /**
