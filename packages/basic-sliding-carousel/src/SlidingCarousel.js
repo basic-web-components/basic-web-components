@@ -87,7 +87,7 @@ class SlidingCarousel extends base {
   set selectedFraction(value) {
     if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
     this.$.viewport.selectedFraction = value;
-    let event = new CustomEvent('selection-fraction-changed');
+    let event = new CustomEvent('selected-fraction-changed');
     this.dispatchEvent(event);
   }
 

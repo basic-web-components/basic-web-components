@@ -131,7 +131,7 @@ class PageDots extends base {
     } else {
       renderTransition(this, this.selectedIndex, value);
     }
-    this.dispatchEvent(new CustomEvent('selection-fraction-changed'));
+    this.dispatchEvent(new CustomEvent('selected-fraction-changed'));
   }
 
   selectedItemChanged() {
@@ -148,9 +148,9 @@ class PageDots extends base {
   set target(element) {
     if ('target' in base.prototype) { super.target = element; }
     if (this[selectedFractionChangedListenerSymbol]) {
-      this.removeEventListener('selection-fraction-changed', this[selectedFractionChangedListenerSymbol]);
+      this.removeEventListener('selected-fraction-changed', this[selectedFractionChangedListenerSymbol]);
     }
-    this[selectedFractionChangedListenerSymbol] = element.addEventListener('selection-fraction-changed', event => {
+    this[selectedFractionChangedListenerSymbol] = element.addEventListener('selected-fraction-changed', event => {
       this.selectedFraction = element.selectedFraction;
     });
   }

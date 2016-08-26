@@ -19,18 +19,17 @@ export default (base) => {
    */
   class OpenClose extends base {
 
-    attachedCallback() {
-      if (super.attachedCallback) { super.attachedCallback(); }
-      this.render(this.closed);
-    }
-
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-
+    constructor() {
+      super();
       // Set defaults.
       if (typeof this.closed === 'undefined') {
         this.closed = this.defaults.closed;
       }
+    }
+
+    attachedCallback() {
+      if (super.attachedCallback) { super.attachedCallback(); }
+      this.render(this.closed);
     }
 
     /**
@@ -66,6 +65,11 @@ export default (base) => {
       let defaults = super.defaults || {};
       defaults.closed = false;
       return defaults;
+    }
+
+    static get observedAttributes() {
+      let attributes = base.observedAttributes || [];
+      return attributes.concat(['closed']);
     }
 
     /**

@@ -34,6 +34,11 @@ export default function mixin(base) {
       this.selectedFraction = 0;
     }
 
+    static get observedAttributes() {
+      let attributes = base.observedAttributes || [];
+      return attributes.concat(['selected-fraction']);
+    }
+
     /**
      * A fractional value indicating how far the user has currently advanced to
      * the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
@@ -47,7 +52,7 @@ export default function mixin(base) {
     set selectedFraction(value) {
       if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
       this[selectedFractionSymbol] = value;
-      let event = new CustomEvent('selection-fraction-changed');
+      let event = new CustomEvent('selected-fraction-changed');
       this.dispatchEvent(event);
     }
 
