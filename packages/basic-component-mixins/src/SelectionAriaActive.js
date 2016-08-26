@@ -37,6 +37,14 @@ export default (base) => {
    */
   class SelectionAriaActive extends base {
 
+    constructor() {
+      super();
+      // Set defaults.
+      if (!this.getAttribute('role')) {
+        this.setAttribute('role', 'listbox');
+      }
+    }
+
     applySelection(item, selected) {
       if (super.applySelection) { super.applySelection(item, selected); }
       item.setAttribute('aria-selected', selected);
@@ -76,13 +84,6 @@ export default (base) => {
           element.setAttribute('role', 'none');
         }
       });
-    }
-
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-      if (!this.getAttribute('role')) {
-        this.setAttribute('role', 'listbox');
-      }
     }
 
     itemAdded(item) {
