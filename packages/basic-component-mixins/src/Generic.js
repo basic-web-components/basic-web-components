@@ -34,13 +34,20 @@ export default (base) => {
    */
   class Generic extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-
+    constructor() {
+      super();
       // Set defaults.
       if (typeof this.generic === 'undefined') {
         this.generic = this.defaults.generic;
       }
+    }
+
+    // This mixin doesn't actually respond to attribute changes, but relies
+    // on separately-defined behavior (e.g., in AttributeMarshalling) for that.
+    // Still, we need define a baseline attributeChangedCallback that does
+    // nothing, in case this mixin gets used on its own.
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (super.attributeChangedCallback) { super.attributeChangedCallback(name, oldValue, newValue); }
     }
 
     get defaults() {
@@ -80,6 +87,11 @@ export default (base) => {
         // Use the empty string to get attribute to appear with no value.
         this.setAttribute('generic', '');
       }
+    }
+
+    static get observedAttributes() {
+      let attributes = base.observedAttributes || [];
+      return attributes.concat('generic');
     }
 
   }
