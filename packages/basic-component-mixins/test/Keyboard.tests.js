@@ -51,7 +51,7 @@ describe("Keyboard mixin", () => {
       );
     }
     // HACK: Polyfill fails to wrap the event on its own.
-    event = window.wrap(event);
+    // event = window.wrap(event);
     Object.defineProperties(event, {
       key: { value: 'Enter' },
       keyCode: { value: 13 },

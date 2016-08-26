@@ -52,24 +52,11 @@ export default (base) => {
    */
   class Keyboard extends base {
 
-    createdCallback() {
-      if (super.createdCallback) { super.createdCallback(); }
-
+    constructor() {
+      super();
       // Assume this component is going to handle the keyboard on its own.
+      // REVIEW: Move to connectedCallback?
       startListeningToKeydown(this);
-    }
-
-    /**
-     * Handle the indicated keyboard event.
-     *
-     * The default implementation of this method does nothing. This will
-     * typically be handled by other mixins.
-     *
-     * @param {KeyboardEvent} event - the keyboard event
-     * @return {boolean} true if the event was handled
-     */
-    keydown(event) {
-      if (super.keydown) { return super.keydown(event); }
     }
 
     /*
@@ -100,6 +87,19 @@ export default (base) => {
       if (!isListeningToKeydown(this)) {
         startListeningToKeydown(this);
       }
+    }
+
+    /**
+     * Handle the indicated keyboard event.
+     *
+     * The default implementation of this method does nothing. This will
+     * typically be handled by other mixins.
+     *
+     * @param {KeyboardEvent} event - the keyboard event
+     * @return {boolean} true if the event was handled
+     */
+    keydown(event) {
+      if (super.keydown) { return super.keydown(event); }
     }
 
   }
