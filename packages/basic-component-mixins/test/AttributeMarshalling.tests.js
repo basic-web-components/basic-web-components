@@ -5,10 +5,6 @@ import AttributeMarshalling from '../src/AttributeMarshalling';
 /* Element with camelCase property name */
 class ElementWithCamelCaseProperty extends AttributeMarshalling(HTMLElement) {
 
-  static get observedAttributes() {
-    return ['custom-property'];
-  }
-
   get customProperty() {
     return this._customProperty;
   }
@@ -21,6 +17,11 @@ customElements.define('element-with-camel-case-property', ElementWithCamelCasePr
 
 
 describe("AttributeMarshalling mixin", () => {
+  
+  it("defines observedAttributes for all custom property setters", () => {
+    let observedAttributes = ElementWithCamelCaseProperty.observedAttributes;
+    assert.deepEqual(['custom-property'], observedAttributes);
+  });
 
   it("marshals hyphenated attribute to corresponding camelCase property", () => {
     let element = document.createElement('element-with-camel-case-property');

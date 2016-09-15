@@ -59,6 +59,10 @@ export default (base) => {
         this[propertyName] = newValue;
       }
     }
+    
+    static get observedAttributes() {
+      return attributesForClass(this);
+    }
 
   }
 
@@ -70,4 +74,27 @@ export default (base) => {
 function attributeToPropertyName(attributeName) {
   let propertyName = attributeName.replace(/-([a-z])/g, m => m[1].toUpperCase());
   return propertyName;
+}
+
+function attributesForClass(classFn) {
+  
+  // Get attributes for parent class.
+  let parentAttributes = classFn === HTMLElement || classFn === Object ?
+    [] :
+    attributesForClass(Object.getProtoypeOf(classFn).constructor);
+
+  // Get attributes for this class.
+  let propertyNames = Object.getOwnPropertyNames(classFn.prototype);
+  let setterNames = propertyNames.filter(propertyName => 
+    typeof Object.getOwnPropertyDescriptor(classFn.prototype, propertyName).set === Function);
+  let attributes = setterNames.map(setterName -> propertyNameToAttribute(setterName));
+  
+  // Merge.
+  let diff = attributes.filter(attribute -> !parentAttributes.contains(attribute));
+  
+  return parentAttributes.concat(diff);
+}
+
+function propertyNameToAttribute(propertyName) {
+  
 }
