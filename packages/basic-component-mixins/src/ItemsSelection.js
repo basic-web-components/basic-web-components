@@ -123,11 +123,6 @@ export default (base) => {
       updatePossibleNavigations(this);
     }
 
-    static get observedAttributes() {
-      let attributes = base.observedAttributes || [];
-      return attributes.concat(['selected-index']);
-    }
-
     /**
      * The index of the item which is currently selected.
      *

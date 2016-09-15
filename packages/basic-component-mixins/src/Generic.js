@@ -89,11 +89,6 @@ export default (base) => {
       }
     }
 
-    static get observedAttributes() {
-      let attributes = base.observedAttributes || [];
-      return attributes.concat('generic');
-    }
-
   }
 
   return Generic;

@@ -143,11 +143,6 @@ class AutosizeTextarea extends base {
     }
   }
 
-  static get observedAttributes() {
-    let attributes = base.observedAttributes || [];
-    return attributes.concat(['minimum-rows', 'value']);
-  }
-
   get template() {
     return `
       <style>

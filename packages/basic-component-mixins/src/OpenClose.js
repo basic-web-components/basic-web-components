@@ -67,11 +67,6 @@ export default (base) => {
       return defaults;
     }
 
-    static get observedAttributes() {
-      let attributes = base.observedAttributes || [];
-      return attributes.concat(['closed']);
-    }
-
     /**
      * Open the component.
      *
