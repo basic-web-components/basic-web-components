@@ -17,10 +17,10 @@ customElements.define('element-with-camel-case-property', ElementWithCamelCasePr
 
 
 describe("AttributeMarshalling mixin", () => {
-  
+
   it("defines observedAttributes for all custom property setters", () => {
     let observedAttributes = ElementWithCamelCaseProperty.observedAttributes;
-    assert.deepEqual(['custom-property'], observedAttributes);
+    assert.deepEqual(observedAttributes, ['custom-property']);
   });
 
   it("marshals hyphenated attribute to corresponding camelCase property", () => {

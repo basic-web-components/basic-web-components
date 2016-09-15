@@ -1,5 +1,6 @@
-// Memoized map of attribute to property names.
+// Memoized maps of attribute to property names and vice versa.
 const attributeToPropertyNames = {};
+const propertyNamesToAttributes = {};
 
 
 /* Exported function extends a base class with AttributeMarshalling. */
@@ -47,19 +48,14 @@ export default (base) => {
      */
     attributeChangedCallback(attributeName, oldValue, newValue) {
       if (super.attributeChangedCallback) { super.attributeChangedCallback(); }
-      let propertyName = attributeToPropertyNames[attributeName];
-      if (!propertyName) {
-        // Convert and memoize.
-        propertyName = attributeToPropertyName(attributeName);
-        attributeToPropertyNames[attributeName] = propertyName;
-      }
+      let propertyName = attributeToPropertyName(attributeName);
       // If the attribute name corresponds to a property name, set the property.
       // Ignore standard HTMLElement properties handled by the DOM.
       if (propertyName in this && !(propertyName in HTMLElement.prototype)) {
         this[propertyName] = newValue;
       }
     }
-    
+
     static get observedAttributes() {
       return attributesForClass(this);
     }
@@ -70,31 +66,52 @@ export default (base) => {
 };
 
 
-// Convert camel case fooBar name to hyphenated foo-bar.
+// Convert hyphenated foo-bar attribute name to camel case fooBar property name.
 function attributeToPropertyName(attributeName) {
-  let propertyName = attributeName.replace(/-([a-z])/g, m => m[1].toUpperCase());
+  let propertyName = attributeToPropertyNames[attributeName];
+  if (!propertyName) {
+    // Convert and memoize.
+    let hypenRegEx = /-([a-z])/g;
+    propertyName = attributeName.replace(hypenRegEx,
+        match => match[1].toUpperCase());
+    attributeToPropertyNames[attributeName] = propertyName;
+  }
   return propertyName;
 }
 
 function attributesForClass(classFn) {
-  
+
+  // We treat the element base classes as if they have no attributes, since we
+  // don't want to receive attributeChangedCallback for them.
+  if (classFn === HTMLElement || classFn === Object) {
+    return [];
+  }
+
   // Get attributes for parent class.
-  let parentAttributes = classFn === HTMLElement || classFn === Object ?
-    [] :
-    attributesForClass(Object.getProtoypeOf(classFn).constructor);
+  let baseClass = Object.getPrototypeOf(classFn.prototype).constructor
+  let baseAttributes = attributesForClass(baseClass);
 
   // Get attributes for this class.
   let propertyNames = Object.getOwnPropertyNames(classFn.prototype);
-  let setterNames = propertyNames.filter(propertyName => 
-    typeof Object.getOwnPropertyDescriptor(classFn.prototype, propertyName).set === Function);
-  let attributes = setterNames.map(setterName -> propertyNameToAttribute(setterName));
-  
+  let setterNames = propertyNames.filter(propertyName =>
+    typeof Object.getOwnPropertyDescriptor(classFn.prototype, propertyName).set
+        === 'function');
+  let attributes = setterNames.map(setterName =>
+      propertyNameToAttribute(setterName));
+
   // Merge.
-  let diff = attributes.filter(attribute -> !parentAttributes.contains(attribute));
-  
-  return parentAttributes.concat(diff);
+  let diff = attributes.filter(attribute =>
+      baseAttributes.indexOf(attribute) < 0);
+  return baseAttributes.concat(diff);
 }
 
+// Convert a camel case fooBar property name to a hyphenated foo-bar attribute.
 function propertyNameToAttribute(propertyName) {
-  
+  let attribute = propertyNamesToAttributes[propertyName];
+  if (!attribute) {
+    // Convert and memoize.
+    let uppercaseRegEx = /([A-Z])/g;
+    attribute = propertyName.replace(uppercaseRegEx, '-$1').toLowerCase();
+  }
+  return attribute;
 }
