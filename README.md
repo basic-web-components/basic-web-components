@@ -4,6 +4,12 @@ The Basic Web Components project seeks to provide a comprehensive set of solid,
 well-designed web components that implement very common user interface patterns.
 Each component can be used as is, or as the foundation for new components.
 
+_[Note: The master branch of this project targets Shadow DOM v0 and Custom
+Elements v0. Support for Shadow DOM v1 and Custom Elements v1 is in progress on
+the
+[web-components-v1](https://github.com/basic-web-components/basic-web-components/tree/web-components-v1)
+branch.]_
+
 
 # Introduction
 
