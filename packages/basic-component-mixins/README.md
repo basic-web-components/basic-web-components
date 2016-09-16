@@ -186,7 +186,7 @@ subtree to the component, then copy the template into the shadow subtree.
     }
 
     // Register the custom element with the browser.
-    document.registerElement('greet-element', GreetElement);
+    customElements.define('greet-element', GreetElement);
 
 Compile this source with your favorite ES6 processor (e.g.,
 [Babel](https://babeljs.org)), then load the result into a page.
@@ -216,7 +216,7 @@ You can create your custom element class by hand:
     var GreetElement = Basic.ShadowTemplate(HTMLElement);
     GreetElement.prototype.template = 'Hello, <slot></slot>.';
 
-    document.registerElement('greet-element', GreetElement);
+    customElements.define('greet-element', GreetElement);
 
 You can also use Composable mixin to create the class:
 
@@ -229,7 +229,7 @@ You can also use Composable mixin to create the class:
       }
     );
 
-    document.registerElement('greet-element', GreetElement);
+    customElements.define('greet-element', GreetElement);
 
 Then load the script defining the element into your page:
 

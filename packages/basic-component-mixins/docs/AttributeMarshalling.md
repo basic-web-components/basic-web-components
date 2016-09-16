@@ -22,7 +22,7 @@ Example: You define a component using this mixin:
       get fooBar() { return this._fooBar; }
       set fooBar(value) { this._fooBar = value; }
     }
-    document.registerElement('my-element', MyElement);
+    customElements.define('my-element', MyElement);
 
 If someone then instantiates your component in HTML:
 
