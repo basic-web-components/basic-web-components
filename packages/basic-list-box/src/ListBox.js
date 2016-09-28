@@ -13,7 +13,6 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
 import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 
 
 /**
@@ -69,7 +68,6 @@ import TargetInCollective from '../../basic-component-mixins/src/TargetInCollect
  * @mixes SelectionAriaActive
  * @mixes SelectionHighlight
  * @mixes SelectionInView
- * @mixes TargetInCollective
  */
 class ListBox extends ElementBase.compose(
   ClickSelection,
@@ -85,8 +83,7 @@ class ListBox extends ElementBase.compose(
   ObserveContentChanges,
   SelectionAriaActive,
   SelectionHighlight,
-  SelectionInView,
-  TargetInCollective
+  SelectionInView
 ) {
 
   get defaults() {

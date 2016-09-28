@@ -5,9 +5,6 @@ import createSymbol from './createSymbol';
 const keydownListenerSymbol = createSymbol('keydownListener');
 
 
-// TODO: Provide baseline behavior for this mixin when used outside of a
-// collective.
-
 /* Exported function extends a base class with Keyboard. */
 export default (base) => {
 
