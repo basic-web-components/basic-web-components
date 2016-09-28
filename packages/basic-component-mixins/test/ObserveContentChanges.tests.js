@@ -30,14 +30,15 @@ customElements.define('observe-test', ObserveTest);
 
 
 /*
- * Element containing an instance of the above, so we can test reprojection.
+ * Element wrapping an instance of the above, so we can test detection of
+ * changes in final distribution (not just direct slot assignments).
  */
-class ObserveReprojectTest extends ObserveContentChanges(ShadowTemplate(HTMLElement)) {
+class WrappedObserveTest extends ShadowTemplate(HTMLElement) {
   get template() {
     return `<observe-test><slot></slot></observe-test>`;
   }
 }
-customElements.define('observe-reproject-test', ObserveReprojectTest);
+customElements.define('wrapped-observe-reproject', WrappedObserveTest);
 
 
 describe("ObserveContentChanges mixin", () => {
@@ -93,20 +94,17 @@ describe("ObserveContentChanges mixin", () => {
     });
   });
 
-  // TODO: Restore support for tracking changes in component host.
-  it.skip("calls contentChanged when redistributed content changes", done => {
-    let fixture = document.createElement('observe-reproject-test');
-    let contentTest = fixture.shadowRoot.querySelector('observe-test');
-    container.appendChild(fixture);
+  it("calls contentChanged when redistributed content changes", done => {
+    let wrapper = document.createElement('wrapped-observe-reproject');
+    let fixture = wrapper.shadowRoot.querySelector('observe-test');
+    container.appendChild(wrapper);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
-      fixture.contentChangedHook = function(element) {
-        if (element === contentTest) {
-          assert.equal(element.textContent, 'echidna');
-          done();
-        }
+      fixture.contentChangedHook = function() {
+        assert.equal(wrapper.textContent, 'echidna');
+        done();
       };
-      fixture.textContent = 'echidna';
+      wrapper.textContent = 'echidna';
     });
   });
 
@@ -157,7 +155,7 @@ describe("ObserveContentChanges mixin", () => {
     });
   });
 
-  it("*does* call contentChangend if node is removed from light DOM", done => {
+  it("*does* call contentChanged if node is removed from light DOM", done => {
     let fixture = document.createElement('observe-test');
     let div = document.createElement('div');
     div.textContent = 'div';

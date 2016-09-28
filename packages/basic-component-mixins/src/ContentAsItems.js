@@ -109,6 +109,7 @@ export default (base) => {
      * being nothing.
      */
     itemsChanged() {
+      console.log('itemsChanged');
       if (super.itemsChanged) { super.itemsChanged(); }
 
       // Perform per-item initialization.
