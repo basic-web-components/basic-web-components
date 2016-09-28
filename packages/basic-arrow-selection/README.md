@@ -18,7 +18,7 @@ Typical usage:
     </basic-arrow-selection>
 
 By default, the arrow buttons are shown on devices with a mouse or mouse-like
-point device. They are not shown on a touch-capable device unless mouse
+pointing device. They are not shown on a touch-capable device unless mouse
 movement is detected. To cause the buttons to always appear, apply the
 'showArrows' CSS class.
 
@@ -39,6 +39,8 @@ movement is detected. To cause the buttons to always appear, apply the
     * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
     * [.goLeft()](#KeyboardDirection+goLeft)
@@ -63,8 +65,8 @@ movement is detected. To cause the buttons to always appear, apply the
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
-    * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
+    * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
 
 <a name="ItemsSelection+applySelection"></a>
 ### arrowSelection.applySelection(item, selected)
@@ -98,6 +100,22 @@ The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+<a name="DistributedChildrenAsContent.event_content-changed"></a>
+### "content-changed"
+This event is raised when the component's contents (including distributed
+children) have changed.
+
+  **Kind**: event emitted by <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+<a name="DistributedChildrenAsContent+contentChanged"></a>
+### arrowSelection.contentChanged()
+Invoked when the contents of the component (including distributed
+children) have changed.
+
+This method is also invoked when a component is first instantiated; the
+contents have essentially "changed" from being nothing. This allows the
+component to perform initial processing of its children.
+
+  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="KeyboardDirection+goDown"></a>
 ### arrowSelection.goDown()
 Invoked when the user wants to go/navigate down.
@@ -276,14 +294,14 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
-<a name="ContentFirstChildTarget+target"></a>
-### arrowSelection.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
 <a name="TargetSelection+target"></a>
 ### arrowSelection.target : <code>HTMLElement</code>
 Gets/sets the target element to which this component will delegate
 selection actions.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="ContentFirstChildTarget+target"></a>
+### arrowSelection.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.

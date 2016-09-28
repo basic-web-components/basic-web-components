@@ -28,7 +28,6 @@ will select the corresponding list item.
   , <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
-  , <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
   
@@ -38,8 +37,8 @@ will select the corresponding list item.
     * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#ObserveContentChanges.event_content-changed)
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
     * [.goLeft()](#KeyboardDirection+goLeft)
@@ -64,8 +63,8 @@ will select the corresponding list item.
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
+    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
 
 <a name="ItemsSelection+applySelection"></a>
@@ -100,13 +99,13 @@ The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="ObserveContentChanges.event_content-changed"></a>
+<a name="DistributedChildrenAsContent.event_content-changed"></a>
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[PageDots](#PageDots)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
-<a name="ObserveContentChanges+contentChanged"></a>
+  **Kind**: event emitted by <code>[PageDots](#PageDots)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+<a name="DistributedChildrenAsContent+contentChanged"></a>
 ### pageDots.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.
@@ -115,7 +114,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="KeyboardDirection+goDown"></a>
 ### pageDots.goDown()
 Invoked when the user wants to go/navigate down.
@@ -287,6 +286,11 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+<a name="ContentFirstChildTarget+target"></a>
+### pageDots.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 ### pageDots.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
@@ -300,11 +304,6 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
-<a name="ContentFirstChildTarget+target"></a>
-### pageDots.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
 <a name="TargetSelection+target"></a>
 ### pageDots.target : <code>HTMLElement</code>
 Gets/sets the target element to which this component will delegate

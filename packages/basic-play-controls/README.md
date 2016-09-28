@@ -20,7 +20,6 @@ This component can be used to wrap a component like
   , <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
-  , <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
   
@@ -30,8 +29,8 @@ This component can be used to wrap a component like
     * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#ObserveContentChanges.event_content-changed)
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
     * [.goLeft()](#KeyboardDirection+goLeft)
@@ -50,8 +49,8 @@ This component can be used to wrap a component like
     * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#ItemsSelection+selectFirst)
     * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
     * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
@@ -91,13 +90,13 @@ The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[PlayControls](#PlayControls)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="ObserveContentChanges.event_content-changed"></a>
+<a name="DistributedChildrenAsContent.event_content-changed"></a>
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[PlayControls](#PlayControls)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
-<a name="ObserveContentChanges+contentChanged"></a>
+  **Kind**: event emitted by <code>[PlayControls](#PlayControls)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+<a name="DistributedChildrenAsContent+contentChanged"></a>
 ### playControls.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.
@@ -106,7 +105,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[PlayControls](#PlayControls)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
+  **Kind**: instance method of <code>[PlayControls](#PlayControls)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="KeyboardDirection+goDown"></a>
 ### playControls.goDown()
 Invoked when the user wants to go/navigate down.
@@ -245,18 +244,18 @@ True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[PlayControls](#PlayControls)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="ItemsSelection+selectionWraps"></a>
-### playControls.selectionWraps : <code>boolean</code>
-True if selection navigations wrap from last to first, and vice versa.
-
-  **Kind**: instance property of <code>[PlayControls](#PlayControls)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-**Default**: <code>false</code>  
 <a name="TargetSelection+selectionWraps"></a>
 ### playControls.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[PlayControls](#PlayControls)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 **Default**: <code>{false}</code>  
+<a name="ItemsSelection+selectionWraps"></a>
+### playControls.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[PlayControls](#PlayControls)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+**Default**: <code>false</code>  
 <a name="ItemsSelection+selectLast"></a>
 ### playControls.selectLast()
 Select the last item in the list.

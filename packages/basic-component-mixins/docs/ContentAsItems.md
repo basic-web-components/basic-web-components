@@ -26,7 +26,7 @@ care of notifying it of future changes, and turns on the optimization. With
 that on, the mixin saves a reference to the computed set of items, and will
 return that immediately on subsequent calls to the `items` property. If you
 use this mixin in conjunction with the
-[ObserveContentChanges](ObserveContentChanges.md) mixin, the
+[DistributedChildrenAsContent](DistributedChildrenAsContent.md) mixin, the
 `contentChanged` method will be invoked for you when the element's children
 change, turning on the optimization automatically.
 

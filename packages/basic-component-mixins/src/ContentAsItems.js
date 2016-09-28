@@ -36,7 +36,7 @@ export default (base) => {
    * that on, the mixin saves a reference to the computed set of items, and will
    * return that immediately on subsequent calls to the `items` property. If you
    * use this mixin in conjunction with the
-   * [ObserveContentChanges](ObserveContentChanges.md) mixin, the
+   * [DistributedChildrenAsContent](DistributedChildrenAsContent.md) mixin, the
    * `contentChanged` method will be invoked for you when the element's children
    * change, turning on the optimization automatically.
    */
@@ -109,7 +109,6 @@ export default (base) => {
      * being nothing.
      */
     itemsChanged() {
-      console.log('itemsChanged');
       if (super.itemsChanged) { super.itemsChanged(); }
 
       // Perform per-item initialization.

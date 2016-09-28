@@ -9,7 +9,6 @@ import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
 import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPrefixSelection';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
 import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
@@ -64,7 +63,6 @@ import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
  * @mixes KeyboardDirection
  * @mixes KeyboardPagedSelection
  * @mixes KeyboardPrefixSelection
- * @mixes ObserveContentChanges
  * @mixes SelectionAriaActive
  * @mixes SelectionHighlight
  * @mixes SelectionInView
@@ -80,7 +78,6 @@ class ListBox extends ElementBase.compose(
   KeyboardDirection,
   KeyboardPagedSelection,
   KeyboardPrefixSelection,
-  ObserveContentChanges,
   SelectionAriaActive,
   SelectionHighlight,
   SelectionInView

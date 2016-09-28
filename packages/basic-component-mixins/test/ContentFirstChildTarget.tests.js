@@ -3,13 +3,12 @@ import DistributedChildren from '../src/DistributedChildren';
 import DistributedChildrenAsContent from '../src/DistributedChildrenAsContent';
 import TargetInCollective from '../src/TargetInCollective';
 import ContentFirstChildTarget from '../src/ContentFirstChildTarget';
-import ObserveContentChanges from '../src/ObserveContentChanges';
 
 
-class ContentFirstChildTargetTest extends ObserveContentChanges(
-  ContentFirstChildTarget(TargetInCollective(DistributedChildrenAsContent(
+class ContentFirstChildTargetTest extends ContentFirstChildTarget(
+  TargetInCollective(DistributedChildrenAsContent(
     DistributedChildren(HTMLElement)
-  )))
+  ))
 ) {}
 customElements.define('content-first-child-target-test', ContentFirstChildTargetTest);
 

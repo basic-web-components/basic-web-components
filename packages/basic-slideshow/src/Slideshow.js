@@ -3,7 +3,6 @@ import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
@@ -14,7 +13,6 @@ let base = ElementBase.compose(
   DistributedChildrenAsContent,
   FractionalSelection,
   ItemsSelection,
-  ObserveContentChanges,
   SelectionAnimation,
   SelectionAriaActive,
   TimerSelection
@@ -38,7 +36,6 @@ let base = ElementBase.compose(
  * @mixes DistributedChildrenAsContent
  * @mixes FractionalSelection
  * @mixes ItemsSelection
- * @mixes ObserveContentChanges
  * @mixes SelectionAnimation
  * @mixes SelectionAriaActive
  * @mixes TimerSelection

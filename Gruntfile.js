@@ -62,8 +62,12 @@ const buildList = buildBuildList();
 // Build the global docsList array for use in building the package's README.md documentation
 //
 function buildDocsList() {
+  let packagesWithoutBuiltDocs = [
+    'basic-component-mixins',
+    'basic-web-components'
+  ];
   let ary = allPackages.filter(item => {
-    return item != 'basic-component-mixins';
+    return packagesWithoutBuiltDocs.indexOf(item) < 0;
   }).map(item => {
     return {src: 'packages/' + item + '/src/*.js', dest: 'packages/' + item + '/README.md'};
   });

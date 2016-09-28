@@ -6,7 +6,6 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import Generic from '../../basic-component-mixins/src/Generic';
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
@@ -27,7 +26,6 @@ let base = ElementBase.compose(
   Generic,
   ItemsSelection,
   KeyboardDirection,
-  ObserveContentChanges,
   TargetSelection
 );
 
@@ -82,7 +80,6 @@ let base = ElementBase.compose(
  * @mixes Generic
  * @mixes ItemsSelection
  * @mixes KeyboardDirection
- * @mixes ObserveContentChanges
  * @mixes TargetSelection
  */
 class TabStrip extends base {

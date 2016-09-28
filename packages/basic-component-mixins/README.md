@@ -295,9 +295,6 @@ common web component feature:
 * [KeyboardPrefixSelection](docs/KeyboardPrefixSelection.md).
   Translates prefix typing into selection semantics. This allows, e.g., a list
   box to allow selection by typing the start of the desired list item.
-* [ObserveContentChanges](docs/ObserveContentChanges.md).
-  Wires up mutation observers to report any changes in a component's content
-  (direct children, or nodes distributed to slots).
 * [OpenClose](docs/OpenClose.md).
   Adds open/close semantics.
 * [SelectionAnimation](docs/SelectionAnimation.md).

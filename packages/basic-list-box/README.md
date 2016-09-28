@@ -50,21 +50,19 @@ The user can also select an item by typing the beginning of an item's text.
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
   , <code>[KeyboardPagedSelection](../basic-component-mixins/docs/KeyboardPagedSelection.md)</code>
   , <code>[KeyboardPrefixSelection](../basic-component-mixins/docs/KeyboardPrefixSelection.md)</code>
-  , <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code>
   , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
   , <code>[SelectionHighlight](../basic-component-mixins/docs/SelectionHighlight.md)</code>
   , <code>[SelectionInView](../basic-component-mixins/docs/SelectionInView.md)</code>
-  , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   
 
 * [ListBox](#ListBox) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
     * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
     * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#ObserveContentChanges.event_content-changed)
-    * [.contentChanged()](#ObserveContentChanges+contentChanged)
+    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
@@ -72,8 +70,8 @@ The user can also select an item by typing the beginning of an item's text.
     * [.goRight()](#KeyboardDirection+goRight)
     * [.goStart()](#KeyboardDirection+goStart)
     * [.goUp()](#KeyboardDirection+goUp)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
     * [.itemAdded(item)](#ContentAsItems+itemAdded)
+    * [.itemAdded(item)](#ItemsSelection+itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
@@ -95,9 +93,22 @@ The user can also select an item by typing the beginning of an item's text.
     * [.selectLast()](#ItemsSelection+selectLast)
     * [.selectNext()](#ItemsSelection+selectNext)
     * [.selectPrevious()](#ItemsSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.value](#ListBox+value) : <code>string</code>
     * ["value-changed"](#ListBox.event_value-changed)
+
+<a name="ItemsSelection+applySelection"></a>
+### listBox.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ContentAsItems+applySelection"></a>
 ### listBox.applySelection(item, selected)
@@ -113,20 +124,6 @@ is selected, and removed it if not selected.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
-
-<a name="ItemsSelection+applySelection"></a>
-### listBox.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ItemsSelection+canSelectNext"></a>
 ### listBox.canSelectNext : <code>boolean</code>
@@ -146,13 +143,13 @@ The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="ObserveContentChanges.event_content-changed"></a>
+<a name="DistributedChildrenAsContent.event_content-changed"></a>
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[ListBox](#ListBox)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
-<a name="ObserveContentChanges+contentChanged"></a>
+  **Kind**: event emitted by <code>[ListBox](#ListBox)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+<a name="DistributedChildrenAsContent+contentChanged"></a>
 ### listBox.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.
@@ -161,7 +158,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ObserveContentChanges](../basic-component-mixins/docs/ObserveContentChanges.md)</code> mixin.
+  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="Generic+generic"></a>
 ### listBox.generic : <code>Boolean</code>
 True if the component would like to receive generic styling.
@@ -208,19 +205,6 @@ Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="ItemsSelection+itemAdded"></a>
-### listBox.itemAdded(item)
-Handle a new item being added to the list.
-
-The default implementation of this method simply sets the item's
-selection state to false.
-
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being added |
-
 <a name="ContentAsItems+itemAdded"></a>
 ### listBox.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
@@ -233,6 +217,19 @@ this to perform per-item initialization.
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item that was added. |
+
+<a name="ItemsSelection+itemAdded"></a>
+### listBox.itemAdded(item)
+Handle a new item being added to the list.
+
+The default implementation of this method simply sets the item's
+selection state to false.
+
+  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being added |
 
 <a name="ContentAsItems+items"></a>
 ### listBox.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -393,19 +390,6 @@ Select the next item in the list.
 Select the previous item in the list.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="TargetInCollective+target"></a>
-### listBox.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-Set this to point to another element. That target element will be
-implicitly added to the component's collective. That is, the component
-and its target will share responsibility for handling keyboard events.
-
-You can set this property yourself, or you can use the
-ContentFirstChildTarget mixin to automatically set the target to the
-component's first child.
-
-  **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
 <a name="ListBox+value"></a>
 ### listBox.value : <code>string</code>
 The text content of the selected item.

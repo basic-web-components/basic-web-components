@@ -2,7 +2,6 @@ import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 
 
 // Symbols for private data members on an element.
@@ -12,8 +11,7 @@ const valueTracksContentSymbol = createSymbol('valueTracksContent');
 
 let base = WrappedStandardElement.wrap('textarea').compose(
   DistributedChildrenAsContent,
-  Generic,
-  ObserveContentChanges
+  Generic
 );
 
 /**
@@ -34,7 +32,6 @@ let base = WrappedStandardElement.wrap('textarea').compose(
  *
  * @mixes Generic
  * @mixes DistributedChildrenAsContent
- * @mixes ObserveContentChanges
  */
 class AutosizeTextarea extends base {
 

@@ -1,14 +1,17 @@
 import { assert } from 'chai';
 import microtask from '../src/microtask';
-import ObserveContentChanges from '../src/ObserveContentChanges';
+import DistributedChildren from '../src/DistributedChildren';
+import DistributedChildrenAsContent from '../src/DistributedChildrenAsContent';
 import ShadowTemplate from '../src/ShadowTemplate';
 
 
 /*
- * Simple element using the ObserveContentChanges mixin.
+ * Simple element using the DistributedChildrenAsContent mixin.
  */
-class ObserveTest extends ObserveContentChanges(
-  ShadowTemplate(HTMLElement)
+class ContentTest extends DistributedChildrenAsContent(
+  DistributedChildren(
+    ShadowTemplate(HTMLElement)
+  )
 ) {
 
   contentChanged() {
@@ -26,22 +29,22 @@ class ObserveTest extends ObserveContentChanges(
   }
 
 }
-customElements.define('observe-test', ObserveTest);
+customElements.define('content-test', ContentTest);
 
 
 /*
  * Element wrapping an instance of the above, so we can test detection of
  * changes in final distribution (not just direct slot assignments).
  */
-class WrappedObserveTest extends ShadowTemplate(HTMLElement) {
+class WrappedContentTest extends ShadowTemplate(HTMLElement) {
   get template() {
-    return `<observe-test><slot></slot></observe-test>`;
+    return `<content-test><slot></slot></content-test>`;
   }
 }
-customElements.define('wrapped-observe-reproject', WrappedObserveTest);
+customElements.define('wrapped-content-test', WrappedContentTest);
 
 
-describe("ObserveContentChanges mixin", () => {
+describe("DistributedChildrenAsContent mixin", () => {
 
   let container;
 
@@ -53,9 +56,30 @@ describe("ObserveContentChanges mixin", () => {
     container.innerHTML = '';
   });
 
+  it("returns direct assigned nodes as content", () => {
+    let fixture = document.createElement('content-test');
+    fixture.innerHTML = `
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    `;
+    assert.equal(fixture.content.length, 3);
+  });
+
+  it("returns distributed nodes as content", () => {
+    let wrapper = document.createElement('wrapped-content-test');
+    wrapper.innerHTML = `
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    `;
+    let fixture = wrapper.shadowRoot.querySelector('content-test');
+    assert.equal(fixture.content.length, 3);
+  });
+
   it("makes initial call to contentChanged when component is created", done => {
-    container.innerHTML = `<observe-test>beaver</observe-test>`;
-    let fixture = container.querySelector('observe-test');
+    container.innerHTML = `<content-test>beaver</content-test>`;
+    let fixture = container.querySelector('content-test');
     // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
       // Yet another timeout because Edge seems to need two cycles to upgrade.
@@ -67,7 +91,7 @@ describe("ObserveContentChanges mixin", () => {
   });
 
   it("calls contentChanged when textContent changes", done => {
-    let fixture = document.createElement('observe-test');
+    let fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -80,7 +104,7 @@ describe("ObserveContentChanges mixin", () => {
   });
 
   it("calls contentChanged when children change", done => {
-    let fixture = document.createElement('observe-test');
+    let fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -95,8 +119,8 @@ describe("ObserveContentChanges mixin", () => {
   });
 
   it("calls contentChanged when redistributed content changes", done => {
-    let wrapper = document.createElement('wrapped-observe-reproject');
-    let fixture = wrapper.shadowRoot.querySelector('observe-test');
+    let wrapper = document.createElement('wrapped-content-test');
+    let fixture = wrapper.shadowRoot.querySelector('content-test');
     container.appendChild(wrapper);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -109,7 +133,7 @@ describe("ObserveContentChanges mixin", () => {
   });
 
   it("doesn't call contentChanged for changes in the component's shadow tree", done => {
-    let fixture = document.createElement('observe-test');
+    let fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -134,7 +158,7 @@ describe("ObserveContentChanges mixin", () => {
   });
 
   it("doesn't call contentChanged when node is removed from shadow DOM", done => {
-    let fixture = document.createElement('observe-test');
+    let fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -156,7 +180,7 @@ describe("ObserveContentChanges mixin", () => {
   });
 
   it("*does* call contentChanged if node is removed from light DOM", done => {
-    let fixture = document.createElement('observe-test');
+    let fixture = document.createElement('content-test');
     let div = document.createElement('div');
     div.textContent = 'div';
     fixture.appendChild(div);
@@ -175,7 +199,7 @@ describe("ObserveContentChanges mixin", () => {
   // TODO: Restore ability to treat changes in shadow element attributes (but
   // not component's own attributes) as content changes.
   it.skip("calls contentChanged when shadow element attributes change", done => {
-    let fixture = document.createElement('observe-test');
+    let fixture = document.createElement('content-test');
     let button = document.createElement('button');
     fixture.appendChild(button);
     container.appendChild(fixture);
@@ -187,7 +211,7 @@ describe("ObserveContentChanges mixin", () => {
   });
 
   it("doesn't call contentChanged when element's own attributes change", done => {
-    let fixture = document.createElement('observe-test');
+    let fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {

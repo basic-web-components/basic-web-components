@@ -1,6 +1,5 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 
 
 /**
@@ -16,11 +15,9 @@ import ObserveContentChanges from '../../basic-component-mixins/src/ObserveConte
  *
  * @extends ElementBase
  * @mixes DistributedChildrenAsContent
- * @mixes ObserveContentChanges
  */
 class SpreadItems extends ElementBase.compose(
-  DistributedChildrenAsContent,
-  ObserveContentChanges
+  DistributedChildrenAsContent
 ) {
 
   connectedCallback() {

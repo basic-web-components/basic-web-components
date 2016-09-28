@@ -7,7 +7,6 @@ import FractionalSelection from '../../basic-component-mixins/src/FractionalSele
 import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
-import ObserveContentChanges from '../../basic-component-mixins/src/ObserveContentChanges';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
@@ -23,7 +22,6 @@ let base = ElementBase.compose(
   ItemsSelection,
   Keyboard,
   KeyboardDirection,
-  ObserveContentChanges,
   SelectionAnimation,
   SelectionAriaActive,
   SwipeDirection,
@@ -139,7 +137,6 @@ let base = ElementBase.compose(
  * @mixes ItemsSelection
  * @mixes Keyboard
  * @mixes KeyboardDirection
- * @mixes ObserveContentChanges
  * @mixes SelectionAnimation
  * @mixes SelectionAriaActive
  * @mixes SwipeDirection
