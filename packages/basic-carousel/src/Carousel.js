@@ -4,7 +4,7 @@ import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
@@ -19,7 +19,7 @@ let base = ElementBase.compose(
   DirectionSelection,
   DistributedChildrenAsContent,
   FractionalSelection,
-  ItemsSelection,
+  SingleSelection,
   Keyboard,
   KeyboardDirection,
   SelectionAnimation,
@@ -134,7 +134,7 @@ let base = ElementBase.compose(
  * @mixes DistributedChildrenAsContent
  * @mixes FractionalSelection
  * @mixes Generic
- * @mixes ItemsSelection
+ * @mixes SingleSelection
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes SelectionAnimation

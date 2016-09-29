@@ -4,7 +4,7 @@ import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import Generic from '../../basic-component-mixins/src/Generic';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
@@ -58,7 +58,7 @@ import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
  * @mixes DirectionSelection
  * @mixes DistributedChildrenAsContent
  * @mixes Generic
- * @mixes ItemsSelection
+ * @mixes SingleSelection
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes KeyboardPagedSelection
@@ -73,7 +73,7 @@ class ListBox extends ElementBase.compose(
   DirectionSelection,
   DistributedChildrenAsContent,
   Generic,
-  ItemsSelection,
+  SingleSelection,
   Keyboard,
   KeyboardDirection,
   KeyboardPagedSelection,

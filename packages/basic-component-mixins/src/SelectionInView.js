@@ -11,7 +11,7 @@ export default (base) => {
    *
    * This mixin expects a `selectedItem` property to be set when the selection
    * changes. You can supply that yourself, or use the
-   * [ItemsSelection](ItemsSelection.md) mixin.
+   * [SingleSelection](SingleSelection.md) mixin.
    */
   class SelectionInView extends base {
 

@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 import SelectionAriaActive from '../src/SelectionAriaActive';
-import ItemsSelection from '../src/ItemsSelection';
+import SingleSelection from '../src/SingleSelection';
 
 
-class SelectionAriaActiveTest extends SelectionAriaActive(ItemsSelection(HTMLElement)) {
+class SelectionAriaActiveTest extends SelectionAriaActive(SingleSelection(HTMLElement)) {
   get items() {
     // Convert children to array in a way IE 11 can handle.
     return Array.prototype.slice.call(this.children);

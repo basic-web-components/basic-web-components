@@ -1,7 +1,7 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
@@ -12,7 +12,7 @@ import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
 let base = ElementBase.compose(
   ContentFirstChildTarget,
   DistributedChildrenAsContent,
-  ItemsSelection,
+  SingleSelection,
   Keyboard,
   KeyboardDirection,
   TargetInCollective,

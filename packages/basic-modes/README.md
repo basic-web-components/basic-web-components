@@ -15,44 +15,44 @@ This component doesn't provide any UI for changing which mode is shown.
 **Extends:** <code>ElementBase</code>  
 **Mixes**: <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   
 
 * [Modes](#Modes) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+applySelection)
     * [.applySelection(item, selected)](#ContentAsItems+applySelection)
-    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+    * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
+    * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
+    * [.itemAdded(item)](#SingleSelection+itemAdded)
     * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
-    * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
-    * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
-    * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
-    * [.selectLast()](#ItemsSelection+selectLast)
-    * [.selectNext()](#ItemsSelection+selectNext)
-    * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
+    * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
+    * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
+    * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
+    * [.selectFirst()](#SingleSelection+selectFirst)
+    * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
+    * [.selectLast()](#SingleSelection+selectLast)
+    * [.selectNext()](#SingleSelection+selectNext)
+    * [.selectPrevious()](#SingleSelection+selectPrevious)
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
 
-<a name="ItemsSelection+applySelection"></a>
+<a name="SingleSelection+applySelection"></a>
 ### modes.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -74,18 +74,18 @@ is selected, and removed it if not selected.
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
 
-<a name="ItemsSelection+canSelectNext"></a>
+<a name="SingleSelection+canSelectNext"></a>
 ### modes.canSelectNext : <code>boolean</code>
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
-  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+canSelectPrevious"></a>
+  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+canSelectPrevious"></a>
 ### modes.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
-  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="DistributedChildrenAsContent+content"></a>
 ### modes.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
@@ -108,14 +108,14 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="ItemsSelection+itemAdded"></a>
+<a name="SingleSelection+itemAdded"></a>
 ### modes.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -152,28 +152,28 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-<a name="ItemsSelection.event_selected-index-changed"></a>
+<a name="SingleSelection.event_selected-index-changed"></a>
 ### "selected-index-changed"
 Fires when the selectedIndex property changes.
 
-  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | detail.selectedIndex | <code>number</code> | The new selected index. |
 
-<a name="ItemsSelection.event_selected-item-changed"></a>
+<a name="SingleSelection.event_selected-item-changed"></a>
 ### "selected-item-changed"
 Fires when the selectedItem property changes.
 
-  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
-<a name="ItemsSelection+selectedIndex"></a>
+<a name="SingleSelection+selectedIndex"></a>
 ### modes.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
 
@@ -181,46 +181,46 @@ If `selectionWraps` is false, the index is -1 if there is no selection.
 In that case, setting the index to -1 will deselect any
 currently-selected item.
 
-  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectedItem"></a>
+  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectedItem"></a>
 ### modes.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
 
 Setting this property to null deselects any currently-selected item.
 
-  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectFirst"></a>
+  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectFirst"></a>
 ### modes.selectFirst()
 Select the first item in the list.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectionRequired"></a>
+  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectionRequired"></a>
 ### modes.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
-  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="ItemsSelection+selectionWraps"></a>
+<a name="SingleSelection+selectionWraps"></a>
 ### modes.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
-  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="ItemsSelection+selectLast"></a>
+<a name="SingleSelection+selectLast"></a>
 ### modes.selectLast()
 Select the last item in the list.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectNext"></a>
+  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectNext"></a>
 ### modes.selectNext()
 Select the next item in the list.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectPrevious"></a>
+  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectPrevious"></a>
 ### modes.selectPrevious()
 Select the previous item in the list.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 ### modes.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.

@@ -10,7 +10,7 @@ const selectionRequiredSymbol = createSymbol('selectionRequired');
 const selectionWrapsSymbol = createSymbol('selectionWraps');
 
 
-/* Exported function extends a base class with ItemsSelection. */
+/* Exported function extends a base class with SingleSelection. */
 export default (base) => {
 
   /**
@@ -34,7 +34,7 @@ export default (base) => {
    * [SelectionInView](SelectionInView.md), modify the selected item in common
    * ways to let the user know a given item is selected or not selected.
    */
-  class ItemsSelection extends base {
+  class SingleSelection extends base {
 
     constructor() {
       super();
@@ -272,7 +272,7 @@ export default (base) => {
     /**
      * Fires when the selectedItem property changes.
      *
-     * @memberof ItemsSelection
+     * @memberof SingleSelection
      * @event selected-item-changed
      * @param {HTMLElement} detail.selectedItem The new selected item.
      * @param {HTMLElement} detail.previousItem The previously selected item.
@@ -281,14 +281,14 @@ export default (base) => {
     /**
      * Fires when the selectedIndex property changes.
      *
-     * @memberof ItemsSelection
+     * @memberof SingleSelection
      * @event selected-index-changed
      * @param {number} detail.selectedIndex The new selected index.
      */
 
   }
 
-  return ItemsSelection;
+  return SingleSelection;
 };
 
 

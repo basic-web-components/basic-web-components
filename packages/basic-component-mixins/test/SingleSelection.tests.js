@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 import AttributeMarshalling from '../src/AttributeMarshalling';
-import ItemsSelection from '../src/ItemsSelection';
+import SingleSelection from '../src/SingleSelection';
 
 
-class ItemsSelectionTest extends ItemsSelection(AttributeMarshalling(HTMLElement)) {
+class SingleSelectionTest extends SingleSelection(AttributeMarshalling(HTMLElement)) {
   indexOfItem(item) {
     return this.items.indexOf(item);
   }
@@ -12,10 +12,10 @@ class ItemsSelectionTest extends ItemsSelection(AttributeMarshalling(HTMLElement
     return Array.prototype.slice.call(this.children);
   }
 }
-customElements.define('items-selection-test', ItemsSelectionTest);
+customElements.define('items-selection-test', SingleSelectionTest);
 
 
-describe("ItemsSelection mixin", () => {
+describe("SingleSelection mixin", () => {
 
   let container;
 

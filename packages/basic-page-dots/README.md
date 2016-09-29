@@ -25,7 +25,7 @@ will select the corresponding list item.
 **Mixes**: <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code>
   , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
@@ -33,9 +33,9 @@ will select the corresponding list item.
   
 
 * [PageDots](#PageDots) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ItemsSelection+applySelection)
-    * [.canSelectNext](#ItemsSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#ItemsSelection+canSelectPrevious) : <code>boolean</code>
+    * [.applySelection(item, selected)](#SingleSelection+applySelection)
+    * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
+    * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
@@ -45,54 +45,54 @@ will select the corresponding list item.
     * [.goRight()](#KeyboardDirection+goRight)
     * [.goStart()](#KeyboardDirection+goStart)
     * [.goUp()](#KeyboardDirection+goUp)
-    * [.itemAdded(item)](#ItemsSelection+itemAdded)
+    * [.itemAdded(item)](#SingleSelection+itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
     * [.keydown(event)](#Keyboard+keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
-    * ["selected-index-changed"](#ItemsSelection.event_selected-index-changed)
-    * ["selected-item-changed"](#ItemsSelection.event_selected-item-changed)
+    * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
+    * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedFraction](#PageDots+selectedFraction) : <code>number</code>
-    * [.selectedIndex](#ItemsSelection+selectedIndex) : <code>number</code>
+    * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
-    * [.selectedItem](#ItemsSelection+selectedItem) : <code>object</code>
-    * [.selectFirst()](#ItemsSelection+selectFirst)
-    * [.selectionRequired](#ItemsSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#ItemsSelection+selectionWraps) : <code>boolean</code>
+    * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
+    * [.selectFirst()](#SingleSelection+selectFirst)
+    * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
+    * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
     * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
-    * [.selectLast()](#ItemsSelection+selectLast)
-    * [.selectNext()](#ItemsSelection+selectNext)
-    * [.selectPrevious()](#ItemsSelection+selectPrevious)
+    * [.selectLast()](#SingleSelection+selectLast)
+    * [.selectNext()](#SingleSelection+selectNext)
+    * [.selectPrevious()](#SingleSelection+selectPrevious)
     * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
 
-<a name="ItemsSelection+applySelection"></a>
+<a name="SingleSelection+applySelection"></a>
 ### pageDots.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being selected/deselected |
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
-<a name="ItemsSelection+canSelectNext"></a>
+<a name="SingleSelection+canSelectNext"></a>
 ### pageDots.canSelectNext : <code>boolean</code>
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+canSelectPrevious"></a>
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+canSelectPrevious"></a>
 ### pageDots.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="DistributedChildrenAsContent+content"></a>
 ### pageDots.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
@@ -151,14 +151,14 @@ Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="ItemsSelection+itemAdded"></a>
+<a name="SingleSelection+itemAdded"></a>
 ### pageDots.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -200,21 +200,21 @@ be ignored. Conversely, if this is "vertical", the Left Arrow and Right
 Arrow keys will be ignored.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="ItemsSelection.event_selected-index-changed"></a>
+<a name="SingleSelection.event_selected-index-changed"></a>
 ### "selected-index-changed"
 Fires when the selectedIndex property changes.
 
-  **Kind**: event emitted by <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: event emitted by <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | detail.selectedIndex | <code>number</code> | The new selected index. |
 
-<a name="ItemsSelection.event_selected-item-changed"></a>
+<a name="SingleSelection.event_selected-item-changed"></a>
 ### "selected-item-changed"
 Fires when the selectedItem property changes.
 
-  **Kind**: event emitted by <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: event emitted by <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -227,7 +227,7 @@ The distance the user has moved the first touchpoint since the beginning
 of a drag, expressed as a fraction of the element's width.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>
-<a name="ItemsSelection+selectedIndex"></a>
+<a name="SingleSelection+selectedIndex"></a>
 ### pageDots.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
 
@@ -235,35 +235,35 @@ If `selectionWraps` is false, the index is -1 if there is no selection.
 In that case, setting the index to -1 will deselect any
 currently-selected item.
 
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="TargetSelection+selectedItem"></a>
 ### pageDots.selectedItem : <code>HTMLElement</code>
 The currently selected item, or null if there is no selection.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="ItemsSelection+selectedItem"></a>
+<a name="SingleSelection+selectedItem"></a>
 ### pageDots.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
 
 Setting this property to null deselects any currently-selected item.
 
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectFirst"></a>
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectFirst"></a>
 ### pageDots.selectFirst()
 Select the first item in the list.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectionRequired"></a>
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectionRequired"></a>
 ### pageDots.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="ItemsSelection+selectionWraps"></a>
+<a name="SingleSelection+selectionWraps"></a>
 ### pageDots.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="TargetSelection+selectionWraps"></a>
 ### pageDots.selectionWraps : <code>boolean</code>
@@ -271,21 +271,21 @@ True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 **Default**: <code>{false}</code>  
-<a name="ItemsSelection+selectLast"></a>
+<a name="SingleSelection+selectLast"></a>
 ### pageDots.selectLast()
 Select the last item in the list.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectNext"></a>
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectNext"></a>
 ### pageDots.selectNext()
 Select the next item in the list.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
-<a name="ItemsSelection+selectPrevious"></a>
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="SingleSelection+selectPrevious"></a>
 ### pageDots.selectPrevious()
 Select the previous item in the list.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[ItemsSelection](../basic-component-mixins/docs/ItemsSelection.md)</code> mixin.
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="ContentFirstChildTarget+target"></a>
 ### pageDots.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.

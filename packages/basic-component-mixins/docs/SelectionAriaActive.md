@@ -28,6 +28,6 @@ to any list item that does not already have a role specified.
 
 This mixin expects a set of members that manage the state of the selection:
 `applySelection`, `itemAdded`, and `selectedIndex`. You can supply these
-yourself, or do so via the [ItemsSelection](ItemsSelection.md) mixin.
+yourself, or do so via the [SingleSelection](SingleSelection.md) mixin.
 
   **Kind**: global class

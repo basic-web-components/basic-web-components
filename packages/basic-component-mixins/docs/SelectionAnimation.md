@@ -22,7 +22,7 @@ This mixin expects a component to provide an `items` array of all elements
 in the list, which can be provided via the
 [ContentAsItems](ContentAsItems.md) mixin. This mixin also expects
 `selectedIndex` and `selectedItem` properties, which can be provided via
-the [ItemsSelection](ItemsSelection.md) mixin.
+the [SingleSelection](SingleSelection.md) mixin.
 
 This mixin supports a `selectionWraps` property. When true, the user can
 navigate forward from the last item in the list and wrap around to the

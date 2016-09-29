@@ -3,7 +3,7 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
@@ -20,7 +20,7 @@ let base = ElementBase.compose(
   ContentFirstChildTarget,
   DirectionSelection,
   DistributedChildrenAsContent,
-  ItemsSelection,
+  SingleSelection,
   Keyboard,
   KeyboardDirection,
   TargetInCollective,
@@ -51,7 +51,7 @@ let base = ElementBase.compose(
  * @mixes ContentFirstChildTarget
  * @mixes DirectionSelection
  * @mixes DistributedChildrenAsContent
- * @mixes ItemsSelection
+ * @mixes SingleSelection
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes TargetInCollective

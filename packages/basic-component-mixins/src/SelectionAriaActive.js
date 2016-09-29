@@ -33,7 +33,7 @@ export default (base) => {
    *
    * This mixin expects a set of members that manage the state of the selection:
    * `applySelection`, `itemAdded`, and `selectedIndex`. You can supply these
-   * yourself, or do so via the [ItemsSelection](ItemsSelection.md) mixin.
+   * yourself, or do so via the [SingleSelection](SingleSelection.md) mixin.
    */
   class SelectionAriaActive extends base {
 

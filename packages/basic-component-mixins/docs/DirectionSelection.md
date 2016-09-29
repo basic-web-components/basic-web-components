@@ -7,6 +7,6 @@ semantics (selectPrevious, selectNext, etc.).
 This mixin can be used in conjunction with the
 [KeyboardDirection](KeyboardDirection.md) mixin (which maps keyboard events
 to directions) and a mixin that handles selection like
-[ItemsSelection](ItemsSelection.md).
+[SingleSelection](SingleSelection.md).
 
   **Kind**: global class

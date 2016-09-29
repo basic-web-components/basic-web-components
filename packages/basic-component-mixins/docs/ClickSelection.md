@@ -10,6 +10,6 @@ This mixin expects the component to provide an `items` property. You can
 provide that property yourself, or use the
 [ContentAsItems](ContentAsItems.md) mixin. This mixin also expects the
 component to define a `selectedIndex` property. You can provide that
-yourself, or use the [ItemsSelection](ItemsSelection.md) mixin.
+yourself, or use the [SingleSelection](SingleSelection.md) mixin.
 
   **Kind**: global class

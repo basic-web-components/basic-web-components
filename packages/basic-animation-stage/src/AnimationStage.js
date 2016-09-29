@@ -2,7 +2,7 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 
@@ -11,7 +11,7 @@ let base = ElementBase.compose(
   ContentAsItems,
   DistributedChildrenAsContent,
   FractionalSelection,
-  ItemsSelection,
+  SingleSelection,
   SelectionAnimation,
   SelectionAriaActive
 );
@@ -38,7 +38,7 @@ let base = ElementBase.compose(
  * @extends ElementBase
  * @mixes ContentAsItems
  * @mixes DistributedChildrenAsContent
- * @mixes ItemsSelection
+ * @mixes SingleSelection
  * @mixes SelectionAnimation
  * @mixes SelectionAriaActive
  */

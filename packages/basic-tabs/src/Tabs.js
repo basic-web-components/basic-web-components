@@ -1,6 +1,6 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import Generic from '../../basic-component-mixins/src/Generic';
-import ItemsSelection from '../../basic-component-mixins/src/ItemsSelection';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Modes from '../../basic-modes/src/Modes'; // jshint ignore:line
 import TabStrip from '../../basic-tab-strip/src/TabStrip'; // jshint ignore:line
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
@@ -25,12 +25,12 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
  *     </basic-tabs>
  *
  * @extends ElementBase
- * @mixes ItemsSelection
+ * @mixes SingleSelection
  * @mixes TargetSelection
  */
 class Tabs extends ElementBase.compose(
   Generic,
-  ItemsSelection,
+  SingleSelection,
   TargetSelection
 ) {
 
