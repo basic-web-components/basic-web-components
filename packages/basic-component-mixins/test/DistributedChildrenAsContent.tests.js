@@ -196,32 +196,4 @@ describe("DistributedChildrenAsContent mixin", () => {
     });
   });
 
-  // TODO: Restore ability to treat changes in shadow element attributes (but
-  // not component's own attributes) as content changes.
-  it.skip("calls contentChanged when shadow element attributes change", done => {
-    let fixture = document.createElement('content-test');
-    let button = document.createElement('button');
-    fixture.appendChild(button);
-    container.appendChild(fixture);
-    fixture.contentChangedHook = function() {
-      assert.isTrue(button.disabled);
-      done();
-    };
-    button.setAttribute('disabled', '');
-  });
-
-  it("doesn't call contentChanged when element's own attributes change", done => {
-    let fixture = document.createElement('content-test');
-    container.appendChild(fixture);
-    // Wait for initial contentChanged call to complete.
-    microtask(() => {
-      fixture.contentChangedHook = function() {
-        // Shouldn't get invoked.
-        done(new Error("The contentChanged handler was invoked, but shouldn't have been."));
-      };
-      fixture.sampleAttribute = 'hedgehog';
-      microtask(() => done());
-    });
-  });
-
 });
