@@ -4,7 +4,31 @@
 Mixin which defines a component's content as its children, expanding any
 nodes distributed to the component's slots.
 
-This also provides notification of changes to a component's content.
+This also provides notification of changes to a component's content. It
+will invoke a `contentChanged` method when the component is first
+instantiated, and whenever its distributed children change. This is an
+easy way to satisfy the Gold Standard checklist item for monitoring
+[Content Changes](https://github.com/webcomponents/gold-standard/wiki/Content-Changes).
+
+Example:
+
+```
+let base = DistributedChildrenAsContent(DistributedChildren(HTMLElement));
+class CountingElement extends base {
+
+  constructor() {
+    super();
+    let root = this.attachShadow({ mode: 'open' });
+    root.innerHTML = `<slot></slot>`;
+  }
+
+  contentChanged() {
+    // Count the component's children, both initially and when changed.
+    this.count = this.content.length;
+  }
+
+}
+```
 
 This mixin is intended for use with the
 [DistributedChildren](DistributedChildren.md) mixin. See that mixin for a
