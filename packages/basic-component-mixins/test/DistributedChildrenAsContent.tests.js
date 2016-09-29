@@ -122,11 +122,20 @@ describe("DistributedChildrenAsContent mixin", () => {
     let wrapper = document.createElement('wrapped-content-test');
     let fixture = wrapper.shadowRoot.querySelector('content-test');
     container.appendChild(wrapper);
+
+    let count = 0; // See below.
+
     // Wait for initial contentChanged call to complete.
     microtask(() => {
       fixture.contentChangedHook = function() {
-        assert.equal(wrapper.textContent, 'echidna');
-        done();
+        // NOTE: Blink currently lets `slotchange` bubble, which causes
+        // contentChanged to fire twice, when we only expect it once.
+        // See https://github.com/w3c/webcomponents/issues/571.
+        // For now, only process the first event.
+        if (++count === 1) {
+          assert.equal(wrapper.textContent, 'echidna');
+          done();
+        }
       };
       wrapper.textContent = 'echidna';
     });
