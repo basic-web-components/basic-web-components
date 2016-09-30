@@ -81,6 +81,15 @@ describe("SingleSelection mixin", () => {
     assert.equal(element.selectedIndex, 2);
   });
 
+  it("can move the selection to the previous item", () => {
+    let element = createSampleElement();
+    assert.equal(element.selectedIndex, -1);
+    element.selectPrevious();
+    assert.equal(element.selectedIndex, 2); // last item
+    element.selectPrevious();
+    assert.equal(element.selectedIndex, 1);
+  });
+
   it("can wrap the selection from the last to the first item", () => {
     let element = createSampleElement();
     element.selectionWraps = true;

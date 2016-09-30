@@ -248,10 +248,17 @@ export default (base) => {
 
     /**
      * Select the previous item in the list.
+     *
+     * If the list has no selection, the last item will be selected.
      */
     selectPrevious() {
       if (super.selectPrevious) { super.selectPrevious(); }
-      return selectIndex(this, this.selectedIndex - 1);
+      let newIndex = this.selectedIndex - 1;
+      if (newIndex < 0) {
+        // No selection yet; select last item.
+        newIndex = this.items.length - 1;
+      }
+      return selectIndex(this, newIndex);
     }
 
     /**
