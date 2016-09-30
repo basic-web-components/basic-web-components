@@ -2,18 +2,18 @@ import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 
 
 let base = ElementBase.compose(
   ContentAsItems,
   DistributedChildrenAsContent,
   FractionalSelection,
-  SingleSelection,
   SelectionAnimation,
-  SelectionAriaActive
+  SelectionAriaActive,
+  SingleSelection
 );
 
 /**
@@ -38,9 +38,9 @@ let base = ElementBase.compose(
  * @extends ElementBase
  * @mixes ContentAsItems
  * @mixes DistributedChildrenAsContent
- * @mixes SingleSelection
  * @mixes SelectionAnimation
  * @mixes SelectionAriaActive
+ * @mixes SingleSelection
  */
 class AnimationStage extends base {
 

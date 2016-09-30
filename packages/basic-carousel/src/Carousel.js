@@ -4,11 +4,11 @@ import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
+import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
@@ -19,11 +19,11 @@ let base = ElementBase.compose(
   DirectionSelection,
   DistributedChildrenAsContent,
   FractionalSelection,
-  SingleSelection,
   Keyboard,
   KeyboardDirection,
   SelectionAnimation,
   SelectionAriaActive,
+  SingleSelection,
   SwipeDirection,
   TargetInCollective,
   TrackpadDirection
@@ -134,11 +134,11 @@ let base = ElementBase.compose(
  * @mixes DistributedChildrenAsContent
  * @mixes FractionalSelection
  * @mixes Generic
- * @mixes SingleSelection
  * @mixes Keyboard
  * @mixes KeyboardDirection
  * @mixes SelectionAnimation
  * @mixes SelectionAriaActive
+ * @mixes SingleSelection
  * @mixes SwipeDirection
  * @mixes TargetInCollective
  * @mixes TargetSelection
