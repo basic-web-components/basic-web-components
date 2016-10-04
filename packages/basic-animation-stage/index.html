@@ -99,9 +99,7 @@
 
   function setAnimationEffect(effectName) {
     resetStylesOnItems(stage);
-    var defaultKeyframes = Object.getPrototypeOf(stage).selectionAnimationKeyframes;
-    var standardEffectKeyframes = Basic.SelectionAnimation.standardEffectKeyframes;
-    stage.selectionAnimationKeyframes = standardEffectKeyframes[effectName] || defaultKeyframes;
+    stage.selectionAnimationEffect = effectName;
   }
 
   // Clear any animated properties left on child elements by previous effects.
@@ -140,7 +138,7 @@
     <div>
       <p>
         Effect: <select id="effectSelector">
-          <option value="fade">Fade</option>
+          <option value="crossfade">Crossfade</option>
           <option value="reveal">Reveal</option>
           <option value="revealWithFade" selected>Reveal with fade</option>
           <option value="showAdjacent">Show bit of adjacent items</option>
