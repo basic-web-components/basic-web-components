@@ -255,11 +255,9 @@ export default (base) => {
      */
     selectPrevious() {
       if (super.selectPrevious) { super.selectPrevious(); }
-      let newIndex = this.selectedIndex - 1;
-      if (newIndex < 0) {
-        // No selection yet; select last item.
-        newIndex = this.items.length - 1;
-      }
+      let newIndex = this.selectedIndex < 0 ?
+        this.items.length - 1 :     // No selection yet; select last item.
+        this.selectedIndex - 1;
       return selectIndex(this, newIndex);
     }
 
