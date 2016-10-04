@@ -45,8 +45,8 @@ export default function mixin(base) {
       return this[selectedFractionSymbol];
     }
     set selectedFraction(value) {
-      if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
       this[selectedFractionSymbol] = value;
+      if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
       let event = new CustomEvent('selected-fraction-changed');
       this.dispatchEvent(event);
     }

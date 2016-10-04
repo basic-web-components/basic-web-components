@@ -51,9 +51,10 @@ export default (base) => {
       return this[closedSymbol];
     }
     set closed(value) {
+      let previousClosed = this[closedSymbol];
+      this[closedSymbol] = value;
       if ('closed' in base.prototype) { super.closed = value; }
-      if (this[closedSymbol] !== value) {
-        this[closedSymbol] = value;
+      if (value !== previousClosed) {
         this.render(value);
 
         let event = new CustomEvent('closed-changed');

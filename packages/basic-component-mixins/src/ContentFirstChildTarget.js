@@ -56,8 +56,8 @@ export default (base) => {
       return this[targetSymbol];
     }
     set target(element) {
-      if ('target' in base.prototype) { super.target = element; }
       this[targetSymbol] = element;
+      if ('target' in base.prototype) { super.target = element; }
     }
 
   }

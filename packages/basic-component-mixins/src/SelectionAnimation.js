@@ -144,8 +144,8 @@ export default function mixin(base) {
       return this[selectionAnimationDurationSymbol];
     }
     set selectionAnimationDuration(value) {
-      if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
       this[selectionAnimationDurationSymbol] = value;
+      if ('selectionAnimationDuration' in base.prototype) { super.selectionAnimationDuration = value; }
     }
 
     /**
@@ -168,8 +168,8 @@ export default function mixin(base) {
       return this[selectionAnimationEffectSymbol];
     }
     set selectionAnimationEffect(value) {
-      if ('selectionAnimationEffect' in base.prototype) { super.selectionAnimationEffect = value; }
       this[selectionAnimationEffectSymbol] = value;
+      if ('selectionAnimationEffect' in base.prototype) { super.selectionAnimationEffect = value; }
       this.selectionAnimationKeyframes = mixin.standardEffectKeyframes[value];
     }
 
@@ -200,8 +200,8 @@ export default function mixin(base) {
       return this[selectionAnimationKeyframesSymbol];
     }
     set selectionAnimationKeyframes(value) {
-      if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
       this[selectionAnimationKeyframesSymbol] = value;
+      if ('selectionAnimationKeyframes' in base.prototype) { super.selectionAnimationKeyframes = value; }
       resetAnimations(this);
       renderSelection(this);
     }
@@ -238,8 +238,8 @@ export default function mixin(base) {
       return super.showTransition || this[showTransitionSymbol];
     }
     set showTransition(value) {
-      if ('showTransition' in base.prototype) { super.showTransition = value; }
       this[showTransitionSymbol] = value;
+      if ('showTransition' in base.prototype) { super.showTransition = value; }
     }
   }
 

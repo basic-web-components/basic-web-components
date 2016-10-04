@@ -100,6 +100,7 @@ export default (base) => {
     }
     set navigationAxis(value) {
       this[navigationAxisSymbol] = value;
+      if ('navigationAxis' in base.prototype) { super.navigationAxis = value; }
     }
 
     keydown(event) {

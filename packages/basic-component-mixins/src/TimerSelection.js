@@ -71,9 +71,10 @@ export default (base) => {
       return this[playingSymbol];
     }
     set playing(playing) {
+      let previousPlaying = this[playingSymbol];
+      let parsed = String(playing) === 'true'; // Cast to boolean
       if ('playing' in base.prototype) { super.playing = playing; }
-      playing = String(playing) === 'true'; // Cast to boolean
-      if (playing !== this[playingSymbol]) {
+      if (parsed !== previousPlaying) {
         if (playing) {
           this.play();
         } else {
@@ -115,8 +116,8 @@ export default (base) => {
       return this[selectionTimerDurationSymbol];
     }
     set selectionTimerDuration(value) {
-      if ('selectionTimerDuration' in base.prototype) { super.selectionTimerDuration = value; }
       this[selectionTimerDurationSymbol] = parseInt(value);
+      if ('selectionTimerDuration' in base.prototype) { super.selectionTimerDuration = value; }
     }
 
   }

@@ -136,8 +136,8 @@ export default (base) => {
       return this[travelFractionSymbol];
     }
     set travelFraction(value) {
-      if ('travelFraction' in base.prototype) { super.travelFraction = value; }
       this[travelFractionSymbol] = value;
+      if ('travelFraction' in base.prototype) { super.travelFraction = value; }
     }
 
   }

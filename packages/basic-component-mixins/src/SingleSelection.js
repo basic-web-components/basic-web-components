@@ -70,8 +70,8 @@ export default (base) => {
       return this[canSelectNextSymbol];
     }
     set canSelectNext(canSelectNext) {
-      if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
       this[canSelectNextSymbol] = canSelectNext;
+      if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
     }
 
     /**
@@ -84,8 +84,8 @@ export default (base) => {
       return this[canSelectPreviousSymbol];
     }
     set canSelectPrevious(canSelectPrevious) {
-      if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
       this[canSelectPreviousSymbol] = canSelectPrevious;
+      if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
     }
 
     get defaults() {
@@ -144,6 +144,7 @@ export default (base) => {
         -1;
     }
     set selectedIndex(index) {
+      // TODO: Pull setting of selectedItem above super() call. */
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
       let items = this.items;
       let item;
@@ -174,8 +175,11 @@ export default (base) => {
       return this[selectedItemSymbol] || null;
     }
     set selectedItem(item) {
-      if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       let previousItem = this[selectedItemSymbol];
+      // TODO: Confirm item is actually in the list before selecting.
+      this[selectedItemSymbol] = item;
+
+      if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       if (previousItem) {
         if (item === previousItem) {
           // The indicated item is already the selected item.
@@ -185,8 +189,6 @@ export default (base) => {
         this.applySelection(previousItem, false);
       }
 
-      // TODO: Confirm item is actually in the list before selecting.
-      this[selectedItemSymbol] = item;
       if (item) {
         this.applySelection(item, true);
       }
@@ -223,8 +225,8 @@ export default (base) => {
       return this[selectionRequiredSymbol];
     }
     set selectionRequired(selectionRequired) {
-      if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
       this[selectionRequiredSymbol] = selectionRequired;
+      if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
       if (selectionRequired) {
         ensureSelection(this);
       }
@@ -271,8 +273,8 @@ export default (base) => {
       return this[selectionWrapsSymbol];
     }
     set selectionWraps(value) {
-      if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
       this[selectionWrapsSymbol] = String(value) === 'true';
+      if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
       updatePossibleNavigations(this);
     }
 

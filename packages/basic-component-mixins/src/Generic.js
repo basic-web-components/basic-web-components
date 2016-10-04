@@ -70,17 +70,17 @@ export default (base) => {
       return this[genericSymbol];
     }
     set generic(value) {
-      if ('generic' in base.prototype) { super.generic = value; }
+      let parsed = typeof value === 'string' ?
+        String(value) !== 'false' :
+        value;
+      this[genericSymbol] = parsed;
       // We roll our own attribute setting so that an explicitly false value
       // shows up as generic="false".
-      if (typeof value === 'string') {
-        value = (value !== 'false');
-      }
-      this[genericSymbol] = value;
-      if (value === false) {
+      if ('generic' in base.prototype) { super.generic = value; }
+      if (parsed === false) {
         // Explicitly use false string.
         this.setAttribute('generic', 'false');
-      } else if (value == null) {
+      } else if (parsed == null) {
         // Explicitly remove attribute.
         this.removeAttribute('generic');
       } else {
