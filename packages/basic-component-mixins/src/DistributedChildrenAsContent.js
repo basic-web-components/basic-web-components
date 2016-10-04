@@ -88,6 +88,8 @@ export default (base) => {
     }
     set content(value) {
       if ('content' in base.prototype) { super.content = value; }
+      // TODO: Set the children to the given value (which should be an array of
+      // elements)?
     }
 
     /**
