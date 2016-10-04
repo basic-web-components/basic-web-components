@@ -53,7 +53,9 @@ export default (base) => {
         let outermost = this.collective ?
           this.collective.outermostElement :
           this;
-        outermost.setAttribute('aria-activedescendant', itemId);
+        if (selected) {  
+          outermost.setAttribute('aria-activedescendant', itemId);
+        }
       }
     }
 
