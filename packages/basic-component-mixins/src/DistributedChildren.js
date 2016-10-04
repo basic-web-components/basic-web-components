@@ -1,7 +1,3 @@
-// TODO: Rationalize with new Custom Elements API.
-// TODO: Consider renaming to match Custom Elements API.
-
-
 /* Exported function extends a base class with DistributedChildren. */
 export default (base) => {
 
