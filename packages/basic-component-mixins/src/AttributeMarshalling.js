@@ -88,14 +88,14 @@ function attributesForClass(classFn) {
   }
 
   // Get attributes for parent class.
-  let baseClass = Object.getPrototypeOf(classFn.prototype).constructor
+  let baseClass = Object.getPrototypeOf(classFn.prototype).constructor;
   let baseAttributes = attributesForClass(baseClass);
 
   // Get attributes for this class.
   let propertyNames = Object.getOwnPropertyNames(classFn.prototype);
   let setterNames = propertyNames.filter(propertyName =>
-    typeof Object.getOwnPropertyDescriptor(classFn.prototype, propertyName).set
-        === 'function');
+    typeof Object.getOwnPropertyDescriptor(
+        classFn.prototype, propertyName).set === 'function');
   let attributes = setterNames.map(setterName =>
       propertyNameToAttribute(setterName));
 
