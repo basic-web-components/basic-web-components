@@ -399,18 +399,11 @@ function animateSelection(element, fromSelection, toSelection) {
 
   resetAnimations(element);
 
-  if (element[lastAnimationSymbol]) {
-    // Cancel the effects of the last selection animation in progress.
-    element[lastAnimationSymbol].onfinish = null;
-    element[lastAnimationSymbol] = null;
-  }
-
   // Calculate the animation timings.
   let items = element.items;
   let keyframes = element.selectionAnimationKeyframes;
   element[playingAnimationSymbol] = true;
   let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromSelection, toSelection);
-  // let lastAnimationDetails;
 
   // Figure out which item will be the one *after* the one we're selecting.
   let itemCount = items.length;
@@ -432,6 +425,7 @@ function animateSelection(element, fromSelection, toSelection) {
     if (timing) {
       showItem(item, true);
       let animation = item.animate(keyframes, timing);
+      element[animationSymbol][index] = animation;
       if (index === nextUpIndex) {
         // This item will be animated, so will already be in the desired state
         // after the animation completes.
@@ -553,9 +547,35 @@ function renderSelectionInstantly(element, toSelection) {
   });
 }
 
+/*
+ * We maintain an array containing an animation per item. This is used for two
+ * reasons:
+ *
+ * * During a drag operation, we want to be able to reuse animations between
+ *   drag updates.
+ * * When a selection animation completes, we need to be able to leave the
+ *   visibile items in a paused state. Later, we'll want to be able to clean up
+ *   those animations.
+ *
+ * Note that this array is sparse: it will only hold up from 0–3 animations at
+ * any given point.
+ */
 function resetAnimations(element) {
+  let animations = element[animationSymbol];
+  if (animations) {
+    // Cancel existing animations to remove the effects they're applying.
+    animations.forEach((animation, index) => {
+      if (animation) {
+        animation.cancel();
+        animations[index] = null;
+      }
+    });
+  }
   let itemCount = element.items ? element.items.length : 0;
-  element[animationSymbol] = new Array(itemCount);
+  if (!animations || animations.length !== itemCount) {
+    // Haven't animated before with this number of items; (re)create array.
+    element[animationSymbol] = new Array(itemCount);
+  }
 }
 
 /*
@@ -563,26 +583,24 @@ function resetAnimations(element) {
  */
 function selectionAnimationFinished(element, details) {
 
-  // Force the animation to the midpoint. We used to just depend on setting
-  // a negative endDelay and fill: 'both', but a change in Chrome
-  // (https://bugs.chromium.org/p/chromium/issues/detail?id=600248) causes
-  // an animation to jump to its final value after the endDelay is hit. Since we
-  // want to leave the animation paused halfway through, we force that.
-  details.animation.pause();
-  setAnimationFraction(element, details.index, 0.5);
-
   // When the last animation completes, show the next item in the direction
-  // we're going. This waiting is a hack to avoid having static items higher in
-  // the natural z-order obscure items during animation.
-  if (details.nextUpIndex != null) {
-    let nextUpItem = element.items[details.nextUpIndex];
+  // we're going. Waiting to that until this point is a bit of a hack to avoid
+  // having a next item that's higher in the natural z-order obscure other items
+  // during animation.
+  let nextUpIndex = details.nextUpIndex;
+  if (nextUpIndex != null) {
+    if (element[animationSymbol][nextUpIndex]) {
+      // Cancel existing selection animation so we can construct a new one.
+      element[animationSymbol][nextUpIndex].cancel();
+      element[animationSymbol][nextUpIndex] = null;
+    }
     let animationFraction = details.forward ? 0 : 1;
-    setAnimationFraction(element, details.nextUpIndex, animationFraction);
-    showItem(nextUpItem, true);
+    setAnimationFraction(element, nextUpIndex, animationFraction);
+    showItem(element.items[nextUpIndex], true);
   }
 
+  element[lastAnimationSymbol].onfinish = null;
   element[playingAnimationSymbol] = false;
-  element[lastAnimationSymbol] = null;
 }
 
 /*

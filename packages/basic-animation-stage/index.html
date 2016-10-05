@@ -92,34 +92,10 @@
     })
     effectSelector = document.querySelector('#effectSelector');
     effectSelector.addEventListener('change', function() {
-      setAnimationEffect(effectSelector.value);
+      stage.selectionAnimationEffect = effectSelector.value;
     });
-    setAnimationEffect(effectSelector.value);
+    stage.selectionAnimationEffect = effectSelector.value;
   });
-
-  function setAnimationEffect(effectName) {
-    resetStylesOnItems(stage);
-    stage.selectionAnimationEffect = effectName;
-  }
-
-  // Clear any animated properties left on child elements by previous effects.
-  function resetStylesOnItems(element) {
-    var resetState = {
-      opacity: 1,
-      transform: 'translateX(0%)',
-      zIndex: 0
-    };
-    [].forEach.call(element.children, function(child) {
-      var style = getComputedStyle(child);
-      var currentState = {
-        opacity: style.opacity,
-        transform: style.transform,
-        zIndex: style.zIndex
-      };
-      var animation = [currentState, resetState];
-      child.animate(animation, { duration: 0, fill: 'both' });
-    });
-  }
   </script>
 
 </head>
