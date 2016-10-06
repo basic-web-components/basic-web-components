@@ -50,6 +50,11 @@ export default (base) => {
       if (super.attributeChangedCallback) { super.attributeChangedCallback(name, oldValue, newValue); }
     }
 
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
+      reflectAttribute(this);
+    }
+
     get defaults() {
       let defaults = super.defaults || {};
       defaults.generic = true;
@@ -77,19 +82,28 @@ export default (base) => {
       // We roll our own attribute setting so that an explicitly false value
       // shows up as generic="false".
       if ('generic' in base.prototype) { super.generic = value; }
-      if (parsed === false) {
-        // Explicitly use false string.
-        this.setAttribute('generic', 'false');
-      } else if (parsed == null) {
-        // Explicitly remove attribute.
-        this.removeAttribute('generic');
-      } else {
-        // Use the empty string to get attribute to appear with no value.
-        this.setAttribute('generic', '');
-      }
+      reflectAttribute(this);
     }
 
   }
 
   return Generic;
 };
+
+
+function reflectAttribute(element) {
+  if (!element.parentNode) {
+    return;
+  }
+  let generic = element.generic;
+  if (generic === false) {
+    // Explicitly use false string.
+    element.setAttribute('generic', 'false');
+  } else if (generic == null) {
+    // Explicitly remove attribute.
+    element.removeAttribute('generic');
+  } else {
+    // Use the empty string to get attribute to appear with no value.
+    element.setAttribute('generic', '');
+  }
+}
