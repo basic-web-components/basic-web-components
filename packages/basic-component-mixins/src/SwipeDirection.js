@@ -28,14 +28,6 @@ export default (base) => {
     constructor() {
       super();
 
-      // For the component to receive PointerEvents in IE/Edge, we need to set
-      // touch-action: none. Only make this change if touch-action is currently
-      // the default value ("auto"), in case the developer knows better than we
-      // do what they want in their particular context.
-      if (getComputedStyle(this).touchAction === 'auto') {
-        this.style.touchAction = 'none';
-      }
-
       this.travelFraction = 0;
 
       // TODO: Touch events could be factored out into its own mixin.
@@ -99,6 +91,18 @@ export default (base) => {
             this[multiTouchSymbol] = false;
           }
         });
+      }
+    }
+
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
+
+      // For the component to receive PointerEvents in IE/Edge, we need to set
+      // touch-action: none. Only make this change if touch-action is currently
+      // the default value ("auto"), in case the developer knows better than we
+      // do what they want in their particular context.
+      if (getComputedStyle(this).touchAction === 'auto') {
+        this.style.touchAction = 'none';
       }
     }
 
