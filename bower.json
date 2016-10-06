@@ -1,0 +1,7 @@
+{
+  "name": "basic-web-components",
+  "version": "0.8.0",
+  "dependencies": {
+    "webcomponents.js": "webcomponents/webcomponentsjs#v1"
+  }
+}
