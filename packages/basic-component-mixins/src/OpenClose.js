@@ -27,11 +27,6 @@ export default (base) => {
       }
     }
 
-    connectedCallback() {
-      if (super.connectedCallback) { super.connectedCallback(); }
-      this.render(this.closed);
-    }
-
     /**
      * Close the component.
      *
@@ -62,6 +57,11 @@ export default (base) => {
       }
     }
 
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
+      this.render(this.closed);
+    }
+
     get defaults() {
       let defaults = super.defaults || {};
       defaults.closed = false;
@@ -88,6 +88,10 @@ export default (base) => {
      *        false if it's being opened.
      */
     render(closing) {
+      if (super.render) { super.render(); }
+      if (!this.parentNode) {
+        return;
+      }
       toggleClass(this, 'basic-closed', closing);
       toggleClass(this, 'basic-opened', !closing);
       this.setAttribute('aria-expanded', !closing);
