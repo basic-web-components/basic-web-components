@@ -86,6 +86,15 @@ export default (base) => {
       }
     }
 
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
+      // Set a default tab index of 0 (document order) if no tab index exists.
+      // MS Edge requires we explicitly check for presence of tabindex attribute.
+      if (this.getAttribute('tabindex') == null || this.tabIndex < 0) {
+        this.setAttribute('tabindex', '0');
+      }
+    }
+
     /**
      * Handle the indicated keyboard event.
      *
@@ -153,11 +162,6 @@ function isListeningToKeydown(element) {
 function startListeningToKeydown(element) {
   element[keydownListenerSymbol] = keydown.bind(element);
   element.addEventListener('keydown', element[keydownListenerSymbol]);
-  // Set a default tab index of 0 (document order) if no tab index exists.
-  // MS Edge requires we explicitly check for presence of tabindex attribute.
-  if (element.getAttribute('tabindex') == null || element.tabIndex < 0) {
-    element.setAttribute('tabindex', '0');
-  }
 }
 
 
