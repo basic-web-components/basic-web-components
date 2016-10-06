@@ -42,50 +42,20 @@ export default (base) => {
       item.setAttribute('aria-selected', selected);
       let itemId = item.id;
       if (itemId) {
-        let outermost = this.collective ?
-          this.collective.outermostElement :
-          this;
         if (selected) {
-          outermost.setAttribute('aria-activedescendant', itemId);
+          outermostElement(this).setAttribute('aria-activedescendant', itemId);
         }
       }
     }
 
     collectiveChanged() {
       if (super.collectiveChanged) { super.collectiveChanged(); }
-
-      // Ensure the outermost aspect has an ARIA role.
-      let outermostElement = this.collective.outermostElement;
-      if (!outermostElement.getAttribute('role')) {
-        // Try to promote an ARIA role from an inner element. If none is found,
-        // use a default role.
-        let role = getCollectiveAriaRole(this.collective) || 'listbox';
-        outermostElement.setAttribute('role', role);
-      }
-      if (!outermostElement.getAttribute('aria-activedescendant')) {
-        // Try to promote an ARIA activedescendant value from an inner element.
-        let descendant = getCollectiveAriaActiveDescendant(this.collective);
-        if (descendant) {
-          outermostElement.setAttribute('aria-activedescendant', descendant);
-        }
-      }
-
-      // Remove the ARIA role and activedescendant values from the collective's
-      // inner elements.
-      this.collective.elements.forEach(element => {
-        if (element !== outermostElement) {
-          element.removeAttribute('aria-activedescendant');
-          element.setAttribute('role', 'none');
-        }
-      });
+      setAriaAttributes(this);
     }
-    
+
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
-      // Set defaults.
-      if (!this.getAttribute('role')) {
-        this.setAttribute('role', 'listbox');
-      }
+      setAriaAttributes(this);
     }
 
     itemAdded(item) {
@@ -121,10 +91,7 @@ export default (base) => {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       // Catch the case where the selection is removed.
       if (item == null) {
-        let outermost = this.collective ?
-          this.collective.outermostElement :
-          this;
-        outermost.removeAttribute('aria-activedescendant');
+        outermostElement(this).removeAttribute('aria-activedescendant');
       }
     }
 
@@ -147,4 +114,51 @@ function getCollectiveAriaRole(collective) {
   let roles = collective.elements.map(element => element.getAttribute('role'));
   let nonNullRoles = roles.filter(role => role !== null);
   return nonNullRoles[0];
+}
+
+function outermostElement(element) {
+  return element.collective ?
+    element.collective.outermostElement :
+    element;
+}
+
+function setAriaAttributes(element) {
+
+  if (!element.parentNode) {
+    return; // Not in document yet
+  }
+  if (element.collective && element !== element.collective.outermostElement) {
+    // Not the outermost element, do nothing and let the outermost element
+    // handle things.
+    return;
+  }
+
+  // Ensure the element has an ARIA role.
+  if (!element.getAttribute('role')) {
+    // Try to promote an ARIA role from an inner element. If none is found,
+    // use a default role.
+    let role = element.collective && getCollectiveAriaRole(element.collective);
+    role = role || 'listbox';
+    element.setAttribute('role', role);
+  }
+
+  if (!element.getAttribute('aria-activedescendant') && element.collective) {
+    // Try to promote an ARIA activedescendant value from an inner element.
+    let descendant = getCollectiveAriaActiveDescendant(element.collective);
+    if (descendant) {
+      element.setAttribute('aria-activedescendant', descendant);
+    }
+  }
+
+  if (element.collective) {
+    // Remove the ARIA role and activedescendant values from the collective's
+    // inner elements.
+    element.collective.elements.forEach(member => {
+      if (member !== element) {
+        member.removeAttribute('aria-activedescendant');
+        member.setAttribute('role', 'none');
+      }
+    });
+  }
+
 }
