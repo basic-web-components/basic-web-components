@@ -65,21 +65,25 @@ describe("DistributedChildren mixin", () => {
     assert.equal(fixture.distributedChildNodes[2], div2);
   });
 
-  it("provides helpers to access reprojected children", () => {
+  it("provides helpers to access reprojected children", done => {
     let fixture = document.createElement('reproject-test');
     let div = document.createElement('div');
     div.textContent = 'aardvark';
     fixture.appendChild(div);
-    assert.equal(fixture.distributedTextContent, 'aardvark');
-    assert.equal(fixture.distributedChildren.length, 1);
-    assert.equal(fixture.distributedChildNodes.length, 1);
-    assert.equal(fixture.distributedChildNodes[0], div);
-    // Inner element should report same results.
-    let inner = fixture.shadowRoot.querySelector('children-test');
-    assert.equal(inner.distributedTextContent, 'aardvark');
-    assert.equal(inner.distributedChildren.length, 1);
-    assert.equal(inner.distributedChildNodes.length, 1);
-    assert.equal(inner.distributedChildNodes[0], div);
+    // Wait for polyfill.
+    setTimeout(() => {
+      assert.equal(fixture.distributedTextContent, 'aardvark');
+      assert.equal(fixture.distributedChildren.length, 1);
+      assert.equal(fixture.distributedChildNodes.length, 1);
+      assert.equal(fixture.distributedChildNodes[0], div);
+      // Inner element should report same results.
+      let inner = fixture.shadowRoot.querySelector('children-test');
+      assert.equal(inner.distributedTextContent, 'aardvark');
+      assert.equal(inner.distributedChildren.length, 1);
+      assert.equal(inner.distributedChildNodes.length, 1);
+      assert.equal(inner.distributedChildNodes[0], div);
+      done();
+    });
   });
 
 });
