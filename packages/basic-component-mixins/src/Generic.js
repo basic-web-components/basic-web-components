@@ -79,9 +79,8 @@ export default (base) => {
         String(value) !== 'false' :
         value;
       this[genericSymbol] = parsed;
-      // We roll our own attribute setting so that an explicitly false value
-      // shows up as generic="false".
       if ('generic' in base.prototype) { super.generic = value; }
+    
       reflectAttribute(this);
     }
 
@@ -91,6 +90,8 @@ export default (base) => {
 };
 
 
+// We roll our own attribute setting so that an explicitly false value
+// shows up as generic="false".
 function reflectAttribute(element) {
   if (!element.parentNode) {
     return;

@@ -14,6 +14,16 @@ customElements.define('selection-aria-active-test', SelectionAriaActiveTest);
 
 describe("SelectionAriaActive mixin", () => {
 
+  let container;
+
+  before(() => {
+    container = document.getElementById('container');
+  });
+
+  afterEach(() => {
+    container.innerHTML = '';
+  });
+
   it("assigns default roles to list and items, and default IDs to items without IDs", () => {
     let list = document.createElement('selection-aria-active-test');
     list.id = 'test'; // Will be used as basis for assigned item IDs.
@@ -26,6 +36,7 @@ describe("SelectionAriaActive mixin", () => {
     // Initialize items
     list.itemAdded(item1);
     list.itemAdded(item2);
+    container.append(list);
     assert.equal(list.getAttribute('role'), 'listbox'); // default role
     assert.equal(item1.id, 'explicitID'); // unchanged
     assert.equal(item1.getAttribute('role'), 'option'); // default role

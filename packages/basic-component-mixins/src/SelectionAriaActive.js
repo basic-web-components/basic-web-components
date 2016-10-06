@@ -37,14 +37,6 @@ export default (base) => {
    */
   class SelectionAriaActive extends base {
 
-    constructor() {
-      super();
-      // Set defaults.
-      if (!this.getAttribute('role')) {
-        this.setAttribute('role', 'listbox');
-      }
-    }
-
     applySelection(item, selected) {
       if (super.applySelection) { super.applySelection(item, selected); }
       item.setAttribute('aria-selected', selected);
@@ -53,7 +45,7 @@ export default (base) => {
         let outermost = this.collective ?
           this.collective.outermostElement :
           this;
-        if (selected) {  
+        if (selected) {
           outermost.setAttribute('aria-activedescendant', itemId);
         }
       }
@@ -86,6 +78,14 @@ export default (base) => {
           element.setAttribute('role', 'none');
         }
       });
+    }
+    
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
+      // Set defaults.
+      if (!this.getAttribute('role')) {
+        this.setAttribute('role', 'listbox');
+      }
     }
 
     itemAdded(item) {
