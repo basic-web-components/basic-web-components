@@ -15,7 +15,6 @@ class ElementWithCamelCaseProperty extends AttributeMarshalling(HTMLElement) {
 }
 customElements.define('element-with-camel-case-property', ElementWithCamelCaseProperty);
 
-
 describe("AttributeMarshalling mixin", () => {
 
   it("defines observedAttributes for all custom property setters", () => {

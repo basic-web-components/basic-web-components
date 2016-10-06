@@ -100,7 +100,10 @@ function expandContentElements(nodes, includeTextNodes) {
     // that class won't exist if the browser that doesn't support native
     // Shadow DOM and if the Shadow DOM polyfill hasn't been loaded. Instead,
     // we do a simplistic check to see if the tag name is "slot".
-    if (node instanceof HTMLSlotElement) {
+    let isSlot = typeof HTMLSlotElement !== 'undefined' ?
+      node instanceof HTMLSlotElement :
+      node.localName === 'slot';
+    if (isSlot) {
       // Use the nodes assigned to this node instead.
       let assignedNodes = node.assignedNodes({ flatten: true });
       return assignedNodes ?
