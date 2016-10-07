@@ -146,4 +146,6 @@ Select the next item in the list.
 ### singleSelection.selectPrevious()
 Select the previous item in the list.
 
+If the list has no selection, the last item will be selected.
+
   **Kind**: instance method of <code>[SingleSelection](#SingleSelection)</code>

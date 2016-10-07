@@ -105,11 +105,11 @@ using assistive technologies.
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
   , <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code>
   , <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
   , <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code>
   , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
@@ -117,8 +117,8 @@ using assistive technologies.
   
 
 * [Carousel](#Carousel) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
     * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -127,27 +127,27 @@ using assistive technologies.
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
-    * [.goLeft()](#TrackpadDirection+goLeft)
     * [.goLeft()](#KeyboardDirection+goLeft)
+    * [.goLeft()](#TrackpadDirection+goLeft)
     * [.goLeft()](#SwipeDirection+goLeft)
-    * [.goRight()](#SwipeDirection+goRight)
-    * [.goRight()](#KeyboardDirection+goRight)
     * [.goRight()](#TrackpadDirection+goRight)
+    * [.goRight()](#KeyboardDirection+goRight)
+    * [.goRight()](#SwipeDirection+goRight)
     * [.goStart()](#KeyboardDirection+goStart)
     * [.goUp()](#KeyboardDirection+goUp)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.itemAdded(item)](#SingleSelection+itemAdded)
+    * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
-    * [.itemsChanged()](#TargetSelection+itemsChanged)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
+    * [.itemsChanged()](#TargetSelection+itemsChanged)
     * [.keydown(event)](#Keyboard+keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
-    * [.selectedFraction](#FractionalSelection+selectedFraction) : <code>number</code>
     * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
+    * [.selectedFraction](#FractionalSelection+selectedFraction) : <code>number</code>
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
@@ -156,30 +156,16 @@ using assistive technologies.
     * [.selectionAnimationEffect](#SelectionAnimation+selectionAnimationEffect) : <code>string</code>
     * [.selectionAnimationKeyframes](#SelectionAnimation+selectionAnimationKeyframes) : <code>Array.&lt;cssRules&gt;</code>
     * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
-    * [.target](#TargetSelection+target) : <code>HTMLElement</code>
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
+    * [.target](#TargetSelection+target) : <code>HTMLElement</code>
     * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
     * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
-
-<a name="SingleSelection+applySelection"></a>
-### carousel.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ContentAsItems+applySelection"></a>
 ### carousel.applySelection(item, selected)
@@ -195,6 +181,20 @@ is selected, and removed it if not selected.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
+
+<a name="SingleSelection+applySelection"></a>
+### carousel.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 ### carousel.canSelectNext : <code>boolean</code>
@@ -252,42 +252,42 @@ Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="TrackpadDirection+goLeft"></a>
-### carousel.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="KeyboardDirection+goLeft"></a>
 ### carousel.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
+<a name="TrackpadDirection+goLeft"></a>
+### carousel.goLeft()
+Invoked when the user wants to go/navigate left.
+The default implementation of this method does nothing.
+
+  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="SwipeDirection+goLeft"></a>
 ### carousel.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-<a name="SwipeDirection+goRight"></a>
-### carousel.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-<a name="KeyboardDirection+goRight"></a>
-### carousel.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
 <a name="TrackpadDirection+goRight"></a>
 ### carousel.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
+<a name="KeyboardDirection+goRight"></a>
+### carousel.goRight()
+Invoked when the user wants to go/navigate right.
+The default implementation of this method does nothing.
+
+  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
+<a name="SwipeDirection+goRight"></a>
+### carousel.goRight()
+Invoked when the user wants to go/navigate right.
+The default implementation of this method does nothing.
+
+  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
 <a name="KeyboardDirection+goStart"></a>
 ### carousel.goStart()
 Invoked when the user wants to go/navigate to the start (e.g., of a
@@ -300,19 +300,6 @@ Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="ContentAsItems+itemAdded"></a>
-### carousel.itemAdded(item)
-This method is invoked whenever a new item is added to the list.
-
-The default implementation of this method does nothing. You can override
-this to perform per-item initialization.
-
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item that was added. |
-
 <a name="SingleSelection+itemAdded"></a>
 ### carousel.itemAdded(item)
 Handle a new item being added to the list.
@@ -325,6 +312,19 @@ selection state to false.
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being added |
+
+<a name="ContentAsItems+itemAdded"></a>
+### carousel.itemAdded(item)
+This method is invoked whenever a new item is added to the list.
+
+The default implementation of this method does nothing. You can override
+this to perform per-item initialization.
+
+  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="TargetSelection+items"></a>
 ### carousel.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -342,13 +342,6 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-<a name="TargetSelection+itemsChanged"></a>
-### carousel.itemsChanged()
-This method is invoked when the underlying contents change. It is also
-invoked on component initialization – since the items have "changed" from
-being nothing.
-
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="ContentAsItems+itemsChanged"></a>
 ### carousel.itemsChanged()
 This method is invoked when the underlying contents change. It is also
@@ -356,6 +349,13 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+<a name="TargetSelection+itemsChanged"></a>
+### carousel.itemsChanged()
+This method is invoked when the underlying contents change. It is also
+invoked on component initialization – since the items have "changed" from
+being nothing.
+
+  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="Keyboard+keydown"></a>
 ### carousel.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
@@ -401,13 +401,6 @@ Fires when the selectedItem property changes.
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
-<a name="FractionalSelection+selectedFraction"></a>
-### carousel.selectedFraction : <code>number</code>
-A fractional value indicating how far the user has currently advanced to
-the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
-user is halfway between items 3 and 4.
-
-  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="SelectionAnimation+selectedFraction"></a>
 ### carousel.selectedFraction : <code>number</code>
 A fractional value indicating how far the user has currently advanced to
@@ -418,6 +411,13 @@ For more details, see the [FractionalSelection](FractionalSelection.md)
 mixin.
 
   **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
+<a name="FractionalSelection+selectedFraction"></a>
+### carousel.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
+
+  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="SingleSelection+selectedIndex"></a>
 ### carousel.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
@@ -500,18 +500,18 @@ True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="TargetSelection+selectionWraps"></a>
-### carousel.selectionWraps : <code>boolean</code>
-True if selection navigations wrap from last to first, and vice versa.
-
-  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectionWraps"></a>
 ### carousel.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
+<a name="TargetSelection+selectionWraps"></a>
+### carousel.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectLast"></a>
 ### carousel.selectLast()
 Select the last item in the list.
@@ -525,6 +525,8 @@ Select the next item in the list.
 <a name="SingleSelection+selectPrevious"></a>
 ### carousel.selectPrevious()
 Select the previous item in the list.
+
+If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SelectionAnimation+showTransition"></a>
@@ -544,12 +546,6 @@ mixins that may be applied to it, and is not intended to let someone
 using component permanently enable or disable transition effects.
 
   **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
-<a name="TargetSelection+target"></a>
-### carousel.target : <code>HTMLElement</code>
-Gets/sets the target element to which this component will delegate
-selection actions.
-
-  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 ### carousel.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
@@ -563,6 +559,12 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
+<a name="TargetSelection+target"></a>
+### carousel.target : <code>HTMLElement</code>
+Gets/sets the target element to which this component will delegate
+selection actions.
+
+  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="SwipeDirection+travelFraction"></a>
 ### carousel.travelFraction : <code>number</code>
 The distance the first touchpoint has traveled since the beginning of a

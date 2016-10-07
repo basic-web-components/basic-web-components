@@ -27,9 +27,9 @@ movement is detected. To cause the buttons to always appear, apply the
 **Mixes**: <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code>
   , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
   
@@ -55,12 +55,12 @@ movement is detected. To cause the buttons to always appear, apply the
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
+    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectFirst()](#SingleSelection+selectFirst)
     * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
@@ -231,11 +231,6 @@ In that case, setting the index to -1 will deselect any
 currently-selected item.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="TargetSelection+selectedItem"></a>
-### arrowSelection.selectedItem : <code>HTMLElement</code>
-The currently selected item, or null if there is no selection.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="SingleSelection+selectedItem"></a>
 ### arrowSelection.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
@@ -243,6 +238,11 @@ The currently selected item, or null if there is no selection.
 Setting this property to null deselects any currently-selected item.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="TargetSelection+selectedItem"></a>
+### arrowSelection.selectedItem : <code>HTMLElement</code>
+The currently selected item, or null if there is no selection.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="SingleSelection+selectFirst"></a>
 ### arrowSelection.selectFirst()
 Select the first item in the list.
@@ -254,18 +254,18 @@ True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="TargetSelection+selectionWraps"></a>
-### arrowSelection.selectionWraps : <code>boolean</code>
-True if selection navigations wrap from last to first, and vice versa.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectionWraps"></a>
 ### arrowSelection.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
+<a name="TargetSelection+selectionWraps"></a>
+### arrowSelection.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectLast"></a>
 ### arrowSelection.selectLast()
 Select the last item in the list.
@@ -279,6 +279,8 @@ Select the next item in the list.
 <a name="SingleSelection+selectPrevious"></a>
 ### arrowSelection.selectPrevious()
 Select the previous item in the list.
+
+If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="TargetInCollective+target"></a>

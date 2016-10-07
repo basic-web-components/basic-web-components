@@ -25,9 +25,9 @@ will select the corresponding list item.
 **Mixes**: <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code>
   , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
   
@@ -63,8 +63,8 @@ will select the corresponding list item.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
+    * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
 
 <a name="SingleSelection+applySelection"></a>
@@ -285,12 +285,9 @@ Select the next item in the list.
 ### pageDots.selectPrevious()
 Select the previous item in the list.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="ContentFirstChildTarget+target"></a>
-### pageDots.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
+If the list has no selection, the last item will be selected.
 
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
+  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 ### pageDots.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
@@ -304,6 +301,11 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
+<a name="ContentFirstChildTarget+target"></a>
+### pageDots.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
 <a name="TargetSelection+target"></a>
 ### pageDots.target : <code>HTMLElement</code>
 Gets/sets the target element to which this component will delegate

@@ -29,10 +29,10 @@ See that component for more details on use.
   , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
   , <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
   , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code>
   , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
   , <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code>
@@ -49,8 +49,8 @@ See that component for more details on use.
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+goDown)
     * [.goEnd()](#KeyboardDirection+goEnd)
-    * [.goLeft()](#TrackpadDirection+goLeft)
     * [.goLeft()](#KeyboardDirection+goLeft)
+    * [.goLeft()](#TrackpadDirection+goLeft)
     * [.goLeft()](#SwipeDirection+goLeft)
     * [.goRight()](#TrackpadDirection+goRight)
     * [.goRight()](#KeyboardDirection+goRight)
@@ -164,18 +164,18 @@ Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="TrackpadDirection+goLeft"></a>
-### slidingCarousel.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="KeyboardDirection+goLeft"></a>
 ### slidingCarousel.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
+<a name="TrackpadDirection+goLeft"></a>
+### slidingCarousel.goLeft()
+Invoked when the user wants to go/navigate left.
+The default implementation of this method does nothing.
+
+  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
 <a name="SwipeDirection+goLeft"></a>
 ### slidingCarousel.goLeft()
 Invoked when the user wants to go/navigate left.
@@ -347,6 +347,8 @@ Select the next item in the list.
 <a name="SingleSelection+selectPrevious"></a>
 ### slidingCarousel.selectPrevious()
 Select the previous item in the list.
+
+If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SlidingCarousel+showTransition"></a>

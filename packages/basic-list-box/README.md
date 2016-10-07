@@ -45,7 +45,6 @@ The user can also select an item by typing the beginning of an item's text.
   , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
   , <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
   , <code>[KeyboardPagedSelection](../basic-component-mixins/docs/KeyboardPagedSelection.md)</code>
@@ -53,6 +52,7 @@ The user can also select an item by typing the beginning of an item's text.
   , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
   , <code>[SelectionHighlight](../basic-component-mixins/docs/SelectionHighlight.md)</code>
   , <code>[SelectionInView](../basic-component-mixins/docs/SelectionInView.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   
 
 * [ListBox](#ListBox) ⇐ <code>ElementBase</code>
@@ -80,8 +80,8 @@ The user can also select an item by typing the beginning of an item's text.
     * [.pageDown()](#KeyboardPagedSelection+pageDown)
     * [.pageUp()](#KeyboardPagedSelection+pageUp)
     * [.scrollItemIntoView(item)](#SelectionInView+scrollItemIntoView)
-    * [.scrollTarget](#SelectionInView+scrollTarget) : <code>HTMLElement</code>
     * [.scrollTarget](#KeyboardPagedSelection+scrollTarget) : <code>HTMLElement</code>
+    * [.scrollTarget](#SelectionInView+scrollTarget) : <code>HTMLElement</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
@@ -298,6 +298,12 @@ up scrolling more than is absolutely necessary.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item to scroll into view. |
 
+<a name="KeyboardPagedSelection+scrollTarget"></a>
+### listBox.scrollTarget : <code>HTMLElement</code>
+The element that should be scrolled with the Page Up/Down keys.
+Default is the current element.
+
+  **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardPagedSelection](../basic-component-mixins/docs/KeyboardPagedSelection.md)</code> mixin.
 <a name="SelectionInView+scrollTarget"></a>
 ### listBox.scrollTarget : <code>HTMLElement</code>
 The element that should be scrolled to bring an item into view.
@@ -305,12 +311,6 @@ The element that should be scrolled to bring an item into view.
 The default value of this property is the element itself.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[SelectionInView](../basic-component-mixins/docs/SelectionInView.md)</code> mixin.
-<a name="KeyboardPagedSelection+scrollTarget"></a>
-### listBox.scrollTarget : <code>HTMLElement</code>
-The element that should be scrolled with the Page Up/Down keys.
-Default is the current element.
-
-  **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardPagedSelection](../basic-component-mixins/docs/KeyboardPagedSelection.md)</code> mixin.
 <a name="SingleSelection.event_selected-index-changed"></a>
 ### "selected-index-changed"
 Fires when the selectedIndex property changes.
@@ -388,6 +388,8 @@ Select the next item in the list.
 <a name="SingleSelection+selectPrevious"></a>
 ### listBox.selectPrevious()
 Select the previous item in the list.
+
+If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="ListBox+value"></a>

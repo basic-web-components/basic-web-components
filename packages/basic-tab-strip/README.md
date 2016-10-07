@@ -49,8 +49,8 @@ styling by setting the `generic` property/attribute to false.
   , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
   , <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
   
 
@@ -79,8 +79,8 @@ styling by setting the `generic` property/attribute to false.
     * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#SingleSelection+selectFirst)
     * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
@@ -270,18 +270,18 @@ True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="TargetSelection+selectionWraps"></a>
-### tabStrip.selectionWraps : <code>boolean</code>
-True if selection navigations wrap from last to first, and vice versa.
-
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectionWraps"></a>
 ### tabStrip.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
+<a name="TargetSelection+selectionWraps"></a>
+### tabStrip.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectLast"></a>
 ### tabStrip.selectLast()
 Select the last item in the list.
@@ -295,6 +295,8 @@ Select the next item in the list.
 <a name="SingleSelection+selectPrevious"></a>
 ### tabStrip.selectPrevious()
 Select the previous item in the list.
+
+If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="TabStrip+tabPosition"></a>

@@ -47,8 +47,8 @@ export default (base) => {
   class DistributedChildren extends base {
 
     /**
-     * An in-order collection of children, expanding any slot elements. Like the
-     * standard children property, this skips text nodes.
+     * An in-order collection of distributed children, expanding any slot
+     * elements. Like the standard children property, this skips text nodes.
      *
      * @type {HTMLElement[]}
      */
@@ -57,8 +57,9 @@ export default (base) => {
     }
 
     /**
-     * An in-order collection of child nodes, expanding any slot elements. Like
-     * the standard childNodes property, this includes text nodes.
+     * An in-order collection of distributed child nodes, expanding any slot
+     * elements. Like the standard childNodes property, this includes text
+     * nodes.
      *
      * @type {Node[]}
      */
@@ -67,8 +68,8 @@ export default (base) => {
     }
 
     /**
-     * The concatenated text content of all child nodes, expanding any slot
-     * elements.
+     * The concatenated text content of all distributed child nodes, expanding
+     * any slot elements.
      *
      * @type {string}
      */

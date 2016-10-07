@@ -24,7 +24,7 @@ class CountingElement extends base {
 
   contentChanged() {
     // Count the component's children, both initially and when changed.
-    this.count = this.content.length;
+    this.count = this.distributedChildren.length;
   }
 
 }

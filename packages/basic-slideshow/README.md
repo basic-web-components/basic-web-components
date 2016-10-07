@@ -18,22 +18,22 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
 **Mixes**: <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code>
   , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
   , <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code>
   , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[TimerSelection](../basic-component-mixins/docs/TimerSelection.md)</code>
   
 
 * [Slideshow](#Slideshow) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
     * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.itemAdded(item)](#SingleSelection+itemAdded)
+    * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
@@ -58,20 +58,6 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.selectPrevious()](#SingleSelection+selectPrevious)
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
 
-<a name="SingleSelection+applySelection"></a>
-### slideshow.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
-
 <a name="ContentAsItems+applySelection"></a>
 ### slideshow.applySelection(item, selected)
 Apply the selection state to a single item.
@@ -86,6 +72,20 @@ is selected, and removed it if not selected.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
+
+<a name="SingleSelection+applySelection"></a>
+### slideshow.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 ### slideshow.canSelectNext : <code>boolean</code>
@@ -121,19 +121,6 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="ContentAsItems+itemAdded"></a>
-### slideshow.itemAdded(item)
-This method is invoked whenever a new item is added to the list.
-
-The default implementation of this method does nothing. You can override
-this to perform per-item initialization.
-
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item that was added. |
-
 <a name="SingleSelection+itemAdded"></a>
 ### slideshow.itemAdded(item)
 Handle a new item being added to the list.
@@ -146,6 +133,19 @@ selection state to false.
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being added |
+
+<a name="ContentAsItems+itemAdded"></a>
+### slideshow.itemAdded(item)
+This method is invoked whenever a new item is added to the list.
+
+The default implementation of this method does nothing. You can override
+this to perform per-item initialization.
+
+  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ContentAsItems+items"></a>
 ### slideshow.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -322,6 +322,8 @@ Select the next item in the list.
 <a name="SingleSelection+selectPrevious"></a>
 ### slideshow.selectPrevious()
 Select the previous item in the list.
+
+If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SelectionAnimation+showTransition"></a>

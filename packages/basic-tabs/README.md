@@ -20,7 +20,8 @@ Example:
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
-**Mixes**: <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
+**Mixes**: <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
+  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
   , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
   
 
@@ -28,6 +29,7 @@ Example:
     * [.applySelection(item, selected)](#SingleSelection+applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
+    * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.itemAdded(item)](#SingleSelection+itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
@@ -72,6 +74,16 @@ True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="Generic+generic"></a>
+### tabs.generic : <code>Boolean</code>
+True if the component would like to receive generic styling.
+
+This property is true by default — set it to false to turn off all
+generic styles. This makes it easier to apply custom styling; you won't
+have to explicitly override styling you don't want.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[Generic](../basic-component-mixins/docs/Generic.md)</code> mixin.
+**Default**: <code>true</code>  
 <a name="SingleSelection+itemAdded"></a>
 ### tabs.itemAdded(item)
 Handle a new item being added to the list.
@@ -175,6 +187,8 @@ Select the next item in the list.
 <a name="SingleSelection+selectPrevious"></a>
 ### tabs.selectPrevious()
 Select the previous item in the list.
+
+If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="Tabs+tabPosition"></a>
