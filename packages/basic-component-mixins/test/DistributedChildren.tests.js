@@ -7,21 +7,12 @@ import ShadowTemplate from '../src/ShadowTemplate';
  * Simple element using the DistributedChildren mixin.
  */
 class ChildrenTest extends DistributedChildren(ShadowTemplate(HTMLElement)) {
-
-  contentChanged() {
-    this._saveTextContent = this.textContent;
-    if (this.contentChangedHook) {
-      this.contentChangedHook();
-    }
-  }
-
   get template() {
     return `
       <div id="static">This is static content</div>
       <slot></slot>
     `;
   }
-
 }
 customElements.define('children-test', ChildrenTest);
 
