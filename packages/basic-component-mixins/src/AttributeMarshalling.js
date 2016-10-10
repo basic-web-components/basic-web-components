@@ -1,13 +1,21 @@
+import createSymbol from './createSymbol';
+import microtask from '../src/microtask';
+
+
 // Memoized maps of attribute to property names and vice versa.
 const attributeToPropertyNames = {};
 const propertyNamesToAttributes = {};
+
+
+// Symbols for private data members on an element.
+const safeToSetAttributesSymbol = createSymbol('constructed');
 
 
 /* Exported function extends a base class with AttributeMarshalling. */
 export default (base) => {
 
   /**
-   * Mixin which marshalls attributes to properties (and eventually vice versa).
+   * Mixin which marshalls attributes to properties and vice versa.
    *
    * If your component exposes a setter for a property, it's generally a good
    * idea to let devs using your component be able to set that property in HTML
@@ -43,6 +51,13 @@ export default (base) => {
    */
   class AttributeMarshalling extends base {
 
+    constructor() {
+      super();
+      microtask(() => {
+        this[safeToSetAttributesSymbol] = true;
+      });
+    }
+
     /*
      * Handle a change to the attribute with the given name.
      */
@@ -56,8 +71,35 @@ export default (base) => {
       }
     }
 
+    connectedCallback() {
+      if (super.connectedCallback) { super.connectedCallback(); }
+      this[safeToSetAttributesSymbol] = true;
+    }
+
     static get observedAttributes() {
       return attributesForClass(this);
+    }
+
+    /**
+     * Set/unset the attribute with the indicated name.
+     *
+     * This method exists primarily to handle the case where an element wants to
+     * set a default property value that should be reflected as an attribute. An
+     * important limitation of custom element consturctors is that they cannot
+     * set attributes. A call to `reflectAttribute` during the constructor will
+     * be safely deferred until after the constructor has completed.
+     *
+     * @param {string} attributeName - The name of the *attribute* (not property) to set.
+     * @param {object} value - The value to set. If null, the attribute will be removed.
+     */
+    reflectAttribute(attributeName, value) {
+      if (this[safeToSetAttributesSymbol]) {
+        // Safe to set attributes immediately.
+        reflectAttributeToElement(this, attributeName, value);
+      } else {
+        // Defer setting attributes.
+        microtask(() => reflectAttributeToElement(this, attributeName, value));
+      }
     }
 
   }
@@ -114,4 +156,14 @@ function propertyNameToAttribute(propertyName) {
     attribute = propertyName.replace(uppercaseRegEx, '-$1').toLowerCase();
   }
   return attribute;
+}
+
+// Reflect the attribute with the given element.
+// If the attribute is null, remove the attribute.
+function reflectAttributeToElement(element, attributeName, value) {
+  if (value === null || typeof value === 'undefined') {
+    element.removeAttribute(attributeName);
+  } else {
+    element.setAttribute(attributeName, value);
+  }
 }
