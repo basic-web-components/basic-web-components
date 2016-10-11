@@ -1,7 +1,7 @@
 # API Documentation
 <a name="AttributeMarshalling"></a>
 ## AttributeMarshalling
-Mixin which marshalls attributes to properties (and eventually vice versa).
+Mixin which marshalls attributes to properties and vice versa.
 
 If your component exposes a setter for a property, it's generally a good
 idea to let devs using your component be able to set that property in HTML
@@ -36,3 +36,20 @@ If you'd like to convert string attributes to other types (numbers,
 booleans), you need to implement `attributeChangedCallback` yourself.
 
   **Kind**: global class
+<a name="AttributeMarshalling+reflectAttribute"></a>
+### attributeMarshalling.reflectAttribute(attributeName, value)
+Set/unset the attribute with the indicated name.
+
+This method exists primarily to handle the case where an element wants to
+set a default property value that should be reflected as an attribute. An
+important limitation of custom element consturctors is that they cannot
+set attributes. A call to `reflectAttribute` during the constructor will
+be safely deferred until after the constructor has completed.
+
+  **Kind**: instance method of <code>[AttributeMarshalling](#AttributeMarshalling)</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| attributeName | <code>string</code> | The name of the *attribute* (not property) to set. |
+| value | <code>object</code> | The value to set. If null, the attribute will be removed. |
+
