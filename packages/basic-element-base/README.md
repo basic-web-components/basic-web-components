@@ -27,6 +27,7 @@ the browser, and hence cannot be independently instantiated.
     * [.distributedChildNodes](#DistributedChildren+distributedChildNodes) : <code>Array.&lt;Node&gt;</code>
     * [.distributedChildren](#DistributedChildren+distributedChildren) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.distributedTextContent](#DistributedChildren+distributedTextContent) : <code>string</code>
+    * [.reflectAttribute(attributeName, value)](#AttributeMarshalling+reflectAttribute)
 
 <a name="Composable.compose"></a>
 ### ElementBase.compose(...mixins)
@@ -80,6 +81,23 @@ The concatenated text content of all distributed child nodes, expanding
 any slot elements.
 
   **Kind**: instance property of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code> mixin.
+<a name="AttributeMarshalling+reflectAttribute"></a>
+### elementBase.reflectAttribute(attributeName, value)
+Set/unset the attribute with the indicated name.
+
+This method exists primarily to handle the case where an element wants to
+set a default property value that should be reflected as an attribute. An
+important limitation of custom element consturctors is that they cannot
+set attributes. A call to `reflectAttribute` during the constructor will
+be safely deferred until after the constructor has completed.
+
+  **Kind**: instance method of <code>[ElementBase](#ElementBase)</code>. Defined by <code>[AttributeMarshalling](../basic-component-mixins/docs/AttributeMarshalling.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| attributeName | <code>string</code> | The name of the *attribute* (not property) to set. |
+| value | <code>object</code> | The value to set. If null, the attribute will be removed. |
+
 <a name="$"></a>
 ## $ : <code>object</code>
 The collection of references to the elements with IDs in a component's

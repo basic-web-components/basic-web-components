@@ -8,8 +8,7 @@ using the CSS `highlight` and `highlighttext` color values. These values
 respect operating system defaults and user preferences, and hence are good
 default values for highlight colors.
 
-This mixin expects an `applySelection` method to be called on an item when
-its selected state changes. You can use the
-[SingleSelection](SingleSelection.md) mixin for that purpose.
+This mixin expects a `selected` class to be applied to selected items. You
+can use the [ContentAsItems](ContentAsItems.md) mixin for that purpose.
 
   **Kind**: global class
