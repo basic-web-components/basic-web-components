@@ -4,11 +4,17 @@ The Basic Web Components project seeks to provide a comprehensive set of solid,
 well-designed web components that implement very common user interface patterns.
 Each component can be used as is, or as the foundation for new components.
 
-_[Note: The master branch of this project targets Shadow DOM v0 and Custom
-Elements v0. Support for Shadow DOM v1 and Custom Elements v1 is in progress on
-the
-[web-components-v1](https://github.com/basic-web-components/basic-web-components/tree/web-components-v1)
-branch.]_
+_Note: The master branch of this project targets **Shadow DOM version 1** and
+**Custom Elements version 1**. Currently, the only browser that supports those
+specifications well enough is Chrome Canary. That is currently the only browser
+in which all unit tests pass and all demos work properly. We will be adding
+support for Safari Technology Preview and the version 1 polyfills as those
+stabilize._
+
+_In the meantime, for production use, you can continue to use the latest stable
+release, [Basic Web Components
+0.8.0](https://github.com/basic-web-components/basic-web-components/tree/v0.8.0),
+with the Shadow DOM and Custom Elements version 0 polyfills._
 
 
 # Introduction
