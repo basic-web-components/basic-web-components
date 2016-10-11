@@ -2,11 +2,11 @@ import { assert } from 'chai';
 import ShadowTemplate from '../src/ShadowTemplate';
 
 
-window.MyElement = class MyElement extends HTMLElement {
+class MyElement extends HTMLElement {
   greet() {
     return `Hello!`;
   }
-};
+}
 customElements.define('my-element', MyElement);
 
 /* Element with a simple template */
