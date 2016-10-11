@@ -9,16 +9,23 @@ export default (base) => {
    * respect operating system defaults and user preferences, and hence are good
    * default values for highlight colors.
    *
-   * This mixin expects an `applySelection` method to be called on an item when
-   * its selected state changes. You can use the
-   * [SingleSelection](SingleSelection.md) mixin for that purpose.
+   * This mixin expects a `selected` class to be applied to selected items. You
+   * can use the [ContentAsItems](ContentAsItems.md) mixin for that purpose.
    */
   class SelectionHighlight extends base {
 
-    applySelection(item, selected) {
-      if (super.applySelection) { super.applySelection(item, selected); }
-      item.style.backgroundColor = selected ? 'highlight' : '';
-      item.style.color = selected ? 'highlighttext' : '';
+    constructor() {
+      super();
+      if (this.shadowRoot) {
+        let style = document.createElement('style');
+        style.innerHTML = `
+          ::slotted(.selected) {
+            background-color: highlight;
+            color: highlighttext;
+          }
+        `;
+        this.shadowRoot.appendChild(style);
+      }
     }
 
   }
