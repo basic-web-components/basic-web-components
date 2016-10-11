@@ -1,6 +1,6 @@
 {
   "name": "basic-wrapped-standard-element",
-  "version": "0.8.0",
+  "version": "0.9.0-pre",
   "description": "Wraps a standard HTML element so that the standard behavior can then be extended.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
@@ -13,7 +13,7 @@
   ],
   "main": "src/WrappedStandardElement.js",
   "dependencies": {
-    "basic-element-base": "^0.8.0"
+    "basic-element-base": "^0.9.0-pre"
   },
   "browserify": {
     "transform": [
