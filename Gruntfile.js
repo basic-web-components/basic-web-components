@@ -173,8 +173,9 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'packages/**/*.js',
-        '!packages/**/dist/*',
-        '!packages/**/lib/*',
+        '!packages/**/dist/**',
+        '!packages/**/lib/**',
+        '!packages/**/bower_components/**',
         'test/**/*.js'
       ],
       options: {
