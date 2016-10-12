@@ -1,4 +1,5 @@
 import createSymbol from './createSymbol';
+import toggleClass from './toggleClass';
 
 
 // Memoized maps of attribute to property names and vice versa.
@@ -212,9 +213,9 @@ function reflectAttributeToElement(element, attributeName, value) {
 // Reflect the class to the given element.
 // If the value is null, remove the class.
 function reflectClass(element, className, value) {
-  if (value === null || typeof value === 'undefined') {
+  if (value === null) {
     element.classList.remove(className);
   } else {
-    element.classList.toggle(className, value);
+    toggleClass(element, className, value);
   }
 }
