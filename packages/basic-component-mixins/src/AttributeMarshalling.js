@@ -8,7 +8,8 @@ const propertyNamesToAttributes = {};
 
 
 // Symbols for private data members on an element.
-const safeToSetAttributesSymbol = createSymbol('constructed');
+const safeToSetAttributesSymbol = createSymbol('safeToSetAttributes');
+const pendingAttributesSymbol = createSymbol('pendingAttributes');
 
 
 /* Exported function extends a base class with AttributeMarshalling. */
@@ -51,13 +52,6 @@ export default (base) => {
    */
   class AttributeMarshalling extends base {
 
-    constructor() {
-      super();
-      microtask(() => {
-        this[safeToSetAttributesSymbol] = true;
-      });
-    }
-
     /*
      * Handle a change to the attribute with the given name.
      */
@@ -73,7 +67,17 @@ export default (base) => {
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
+
       this[safeToSetAttributesSymbol] = true;
+
+      // Set any pending attributes.
+      if (this[pendingAttributesSymbol]) {
+        for (let attribute in this[pendingAttributesSymbol]) {
+          let value = this[pendingAttributesSymbol][attribute];
+          reflectAttributeToElement(this, attribute, value);
+        }
+        this[pendingAttributesSymbol] = null;
+      }
     }
 
     static get observedAttributes() {
@@ -87,18 +91,21 @@ export default (base) => {
      * set a default property value that should be reflected as an attribute. An
      * important limitation of custom element consturctors is that they cannot
      * set attributes. A call to `reflectAttribute` during the constructor will
-     * be safely deferred until after the constructor has completed.
+     * be deferred until the element is connected to the document.
      *
-     * @param {string} attributeName - The name of the *attribute* (not property) to set.
+     * @param {string} attribute - The name of the *attribute* (not property) to set.
      * @param {object} value - The value to set. If null, the attribute will be removed.
      */
-    reflectAttribute(attributeName, value) {
+    reflectAttribute(attribute, value) {
       if (this[safeToSetAttributesSymbol]) {
         // Safe to set attributes immediately.
-        reflectAttributeToElement(this, attributeName, value);
+        reflectAttributeToElement(this, attribute, value);
       } else {
-        // Defer setting attributes.
-        microtask(() => reflectAttributeToElement(this, attributeName, value));
+        // Defer setting attributes until the first time we're connected.
+        if (!this[pendingAttributesSymbol]) {
+          this[pendingAttributesSymbol] = {};
+        }
+        this[pendingAttributesSymbol][attribute] = value;
       }
     }
 

@@ -60,14 +60,12 @@ describe("AttributeMarshalling mixin", () => {
     assert.equal(element.getAttribute('custom-property'), 'true');
   });
 
-  it("defers reflection of attribute during constructor", done => {
+  it("defers reflection of attribute during constructor until connected to document", () => {
     defaultPropertyValue = true;
     let element = document.createElement('element-with-custom-property');
     assert.isNull(element.getAttribute('custom-property'));
-    microtask(() => {
-      assert.equal(element.getAttribute('custom-property'), 'true');
-      done();
-    });
+    container.appendChild(element);
+    assert.equal(element.getAttribute('custom-property'), 'true');
   });
 
 });
