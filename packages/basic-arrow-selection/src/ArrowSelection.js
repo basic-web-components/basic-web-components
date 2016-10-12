@@ -76,18 +76,6 @@ class ArrowSelection extends base {
     });
     assumeButtonFocus(this, this.$.buttonLeft);
     assumeButtonFocus(this, this.$.buttonRight);
-
-    if (!this.classList.contains('showArrows')) {
-      // Determine whether we should show arrow buttons or not.
-      if (deviceSupportsTouch()) {
-        // A touch device might also support a mouse, but we can't know whether
-        // there's actually a mouse until we hear from it.
-        listenForMouse(this);
-      } else {
-        // The device doesn't support touch, so assume it has a mouse.
-        showArrows(this);
-      }
-    }
   }
 
   get canSelectNext() {
@@ -107,6 +95,22 @@ class ArrowSelection extends base {
     if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
     if (this.$) {
       this.$.buttonLeft.disabled = !canSelectPrevious;
+    }
+  }
+
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
+
+    if (!this.classList.contains('showArrows')) {
+      // Determine whether we should show arrow buttons or not.
+      if (deviceSupportsTouch()) {
+        // A touch device might also support a mouse, but we can't know whether
+        // there's actually a mouse until we hear from it.
+        listenForMouse(this);
+      } else {
+        // The device doesn't support touch, so assume it has a mouse.
+        showArrows(this);
+      }
     }
   }
 
