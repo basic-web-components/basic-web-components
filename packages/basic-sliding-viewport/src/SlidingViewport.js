@@ -2,7 +2,6 @@ import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
-import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 // Symbols for private data members on an element.
@@ -93,7 +92,7 @@ class SlidingViewport extends base {
   }
   set showTransition(value) {
     if ('showTransition' in base.prototype) { super.showTransition = value; }
-    toggleClass(this, 'showTransition', value);
+    this.reflectClass('showTransition', value);
   }
 
   get template() {
