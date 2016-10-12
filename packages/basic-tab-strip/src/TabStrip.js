@@ -104,11 +104,6 @@ class TabStrip extends base {
       }
     });
 
-    if (!this.getAttribute('role')) {
-      // Assign a default ARIA role.
-      this.setAttribute('role', 'tablist');
-    }
-
     // Set defaults.
     if (typeof this.tabPosition === 'undefined') {
       this.tabPosition = this.defaults.tabPosition;
@@ -126,6 +121,14 @@ class TabStrip extends base {
       if (tab) {
         applySelectionToTab(tab, selected);
       }
+    }
+  }
+
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
+    if (!this.getAttribute('role')) {
+      // Assign a default ARIA role.
+      this.setAttribute('role', 'tablist');
     }
   }
 
@@ -164,7 +167,6 @@ class TabStrip extends base {
         element.classList.add('style-scope');
         element.classList.add('basic-tab-strip');
         element.setAttribute('role', 'tab');
-        return element;
       }
       element.id = item.id + '_tab';
       element.textContent = item.getAttribute('aria-label');
@@ -172,6 +174,8 @@ class TabStrip extends base {
       // Point tab and panel at each other.
       element.setAttribute('aria-controls', item.id);
       item.setAttribute('aria-labelledby', element.id);
+      
+      return element;
     });
 
     this.selectedItemChanged();  // In case position of selected item moved.
@@ -208,10 +212,7 @@ class TabStrip extends base {
   set tabPosition(position) {
     this[tabPositionSymbol] = position;
 
-    if (this.getAttribute('tab-position') !== position) {
-      this.setAttribute('tab-position', position);
-      return;
-    }
+    this.reflectAttribute('tab-position', position);
 
     // Physically reorder the tabs and pages to reflect the desired arrangement.
     // We could change the visual appearance by reversing the order of the flex
