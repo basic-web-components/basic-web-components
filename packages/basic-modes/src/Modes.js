@@ -46,6 +46,10 @@ class Modes extends base {
     return defaults;
   }
 
+  get template() {
+    return `<slot></slot>`;
+  }
+
 }
 
 

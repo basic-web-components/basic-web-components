@@ -34,6 +34,9 @@ export default (base) => {
    * }
    * ```
    *
+   * Note that content change detection depends upon the element having at least
+   * one `slot` element in its shadow subtree.
+   *
    * This mixin is intended for use with the
    * [DistributedChildren](DistributedChildren.md) mixin. See that mixin for a
    * discussion of how that works. This DistributedChildrenAsContent mixin
