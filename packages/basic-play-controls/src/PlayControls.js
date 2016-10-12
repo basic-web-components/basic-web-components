@@ -56,6 +56,10 @@ class PlayControls extends base {
     this.$.nextButton.addEventListener('click', event => {
       this.selectNext();
     });
+  }
+
+  connectedCallback() {
+    if (super.connectedCallback) { super.connectedCallback(); }
     toggleClass(this, 'playing', this.playing);
   }
 
@@ -93,7 +97,9 @@ class PlayControls extends base {
     if (this.target) {
       this.target.playing = value;
     }
-    toggleClass(this, 'playing', value);
+    if (this.parentNode) {
+      toggleClass(this, 'playing', value);
+    }
   }
 
   get template() {
@@ -120,6 +126,7 @@ class PlayControls extends base {
         border: none;
         fill: rgba(255, 255, 255, 0.5);
         padding: 0;
+        transition: fill 0.5s;
         vertical-align: middle;
       }
       :host(:hover) button {
