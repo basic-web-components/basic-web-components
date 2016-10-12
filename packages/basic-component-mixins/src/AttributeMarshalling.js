@@ -1,5 +1,4 @@
 import createSymbol from './createSymbol';
-import microtask from '../src/microtask';
 
 
 // Memoized maps of attribute to property names and vice versa.
@@ -10,6 +9,7 @@ const propertyNamesToAttributes = {};
 // Symbols for private data members on an element.
 const safeToSetAttributesSymbol = createSymbol('safeToSetAttributes');
 const pendingAttributesSymbol = createSymbol('pendingAttributes');
+const pendingClassesSymbol = createSymbol('pendingClasses');
 
 
 /* Exported function extends a base class with AttributeMarshalling. */
@@ -78,6 +78,14 @@ export default (base) => {
         }
         this[pendingAttributesSymbol] = null;
       }
+
+      // Set any pending classes.
+      if (this[pendingClassesSymbol]) {
+        for (let className in this[pendingClassesSymbol]) {
+          let value = this[pendingClassesSymbol][className];
+          reflectClass(this, className, value);
+        }
+      }
     }
 
     static get observedAttributes() {
@@ -106,6 +114,32 @@ export default (base) => {
           this[pendingAttributesSymbol] = {};
         }
         this[pendingAttributesSymbol][attribute] = value;
+      }
+    }
+
+    /**
+     * Set/unset the class with the indicated name.
+     *
+     * This method exists primarily to handle the case where an element wants to
+     * set a default property value that should be reflected as as class. An
+     * important limitation of custom element consturctors is that they cannot
+     * set attributes, including the `class` attribute. A call to
+     * `reflectClass` during the constructor will be deferred until the element
+     * is connected to the document.
+     *
+     * @param {string} className - The name of the class to set.
+     * @param {object} value - The value to set. If null, the class will be removed.
+     */
+    reflectClass(className, value) {
+      if (this[safeToSetAttributesSymbol]) {
+        // Safe to set class immediately.
+        reflectClass(this, className, value);
+      } else {
+        // Defer setting class until the first time we're connected.
+        if (!this[pendingClassesSymbol]) {
+          this[pendingClassesSymbol] = {};
+        }
+        this[pendingClassesSymbol][className] = value;
       }
     }
 
@@ -165,12 +199,22 @@ function propertyNameToAttribute(propertyName) {
   return attribute;
 }
 
-// Reflect the attribute with the given element.
-// If the attribute is null, remove the attribute.
+// Reflect the attribute to the given element.
+// If the value is null, remove the attribute.
 function reflectAttributeToElement(element, attributeName, value) {
   if (value === null || typeof value === 'undefined') {
     element.removeAttribute(attributeName);
   } else {
     element.setAttribute(attributeName, value);
+  }
+}
+
+// Reflect the class to the given element.
+// If the value is null, remove the class.
+function reflectClass(element, className, value) {
+  if (value === null || typeof value === 'undefined') {
+    element.classList.remove(className);
+  } else {
+    element.classList.toggle(className, value);
   }
 }

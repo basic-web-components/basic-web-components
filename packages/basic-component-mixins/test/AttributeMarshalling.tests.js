@@ -1,9 +1,9 @@
 import { assert } from 'chai';
-import microtask from '../src/microtask';
 import AttributeMarshalling from '../src/AttributeMarshalling';
 
 
 let defaultPropertyValue;
+let defaultClass;
 
 
 /* Element with camelCase property name */
@@ -27,6 +27,19 @@ class ElementWithCustomProperty extends AttributeMarshalling(HTMLElement) {
 }
 customElements.define('element-with-custom-property', ElementWithCustomProperty);
 
+
+/* Element that adds a class to itself */
+class ElementWithClass extends AttributeMarshalling(HTMLElement) {
+  constructor() {
+    super();
+    if (typeof defaultClass !== 'undefined') {
+      this.reflectClass(defaultClass, true);
+    }
+  }
+}
+customElements.define('element-with-class', ElementWithClass);
+
+
 describe("AttributeMarshalling mixin", () => {
 
   let container;
@@ -34,6 +47,7 @@ describe("AttributeMarshalling mixin", () => {
   before(() => {
     container = document.getElementById('container');
     defaultPropertyValue = undefined;
+    defaultClass = undefined;
   });
 
   afterEach(() => {
@@ -66,6 +80,24 @@ describe("AttributeMarshalling mixin", () => {
     assert.isNull(element.getAttribute('custom-property'));
     container.appendChild(element);
     assert.equal(element.getAttribute('custom-property'), 'true');
+  });
+
+  it("reflects class immediately if connected to document", () => {
+    let element = document.createElement('element-with-class');
+    assert.equal(element.classList.length, 0);
+    container.appendChild(element);
+    element.reflectClass('custom', true);
+    assert.equal(element.classList.length, 1);
+    assert.equal(element.classList[0], ['custom']);
+  });
+
+  it("defers reflection of class during constructor until connected to document", () => {
+    defaultClass = 'custom';
+    let element = document.createElement('element-with-class');
+    assert.equal(element.classList.length, 0);
+    container.appendChild(element);
+    assert.equal(element.classList.length, 1);
+    assert.equal(element.classList[0], ['custom']);
   });
 
 });
