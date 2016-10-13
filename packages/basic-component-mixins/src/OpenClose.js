@@ -90,9 +90,6 @@ export default (base) => {
      */
     render(closing) {
       if (super.render) { super.render(); }
-      if (!this.parentNode) {
-        return;
-      }
       safeAttributes.toggleClass(this, 'basic-closed', closing);
       safeAttributes.toggleClass(this, 'basic-opened', !closing);
       safeAttributes.setAttribute(this, 'aria-expanded', !closing);

@@ -124,8 +124,8 @@ function outermostElement(element) {
 
 function setAriaAttributes(element) {
 
-  if (!element.parentNode) {
-    return; // Not in document yet
+  if (!element.isConnected) {
+    return;
   }
   if (element.collective && element !== element.collective.outermostElement) {
     // Not the outermost element, do nothing and let the outermost element

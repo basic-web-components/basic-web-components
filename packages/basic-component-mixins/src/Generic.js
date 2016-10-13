@@ -1,4 +1,5 @@
 import createSymbol from './createSymbol';
+import safeAttributes from './safeAttributes';
 
 
 // Symbols for private data members on an element.
@@ -52,7 +53,7 @@ export default (base) => {
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
-      reflectAttribute(this);
+      safeAttributes.connected(this);
     }
 
     get defaults() {
@@ -79,9 +80,21 @@ export default (base) => {
         String(value) !== 'false' :
         value;
       this[genericSymbol] = parsed;
+
       if ('generic' in base.prototype) { super.generic = value; }
-    
-      reflectAttribute(this);
+
+      // We roll our own attribute setting so that an explicitly false value
+      // shows up as generic="false".
+      if (parsed === false) {
+        // Explicitly use false string.
+        safeAttributes.setAttribute(this, 'generic', 'false');
+      } else if (parsed == null) {
+        // Explicitly remove attribute. (Always safe to do this.)
+        this.removeAttribute('generic');
+      } else {
+        // Use the empty string to get attribute to appear with no value.
+        safeAttributes.setAttribute(this, 'generic', '');
+      }
     }
 
   }
@@ -90,21 +103,3 @@ export default (base) => {
 };
 
 
-// We roll our own attribute setting so that an explicitly false value
-// shows up as generic="false".
-function reflectAttribute(element) {
-  if (!element.parentNode) {
-    return;
-  }
-  let generic = element.generic;
-  if (generic === false) {
-    // Explicitly use false string.
-    element.setAttribute('generic', 'false');
-  } else if (generic == null) {
-    // Explicitly remove attribute.
-    element.removeAttribute('generic');
-  } else {
-    // Use the empty string to get attribute to appear with no value.
-    element.setAttribute('generic', '');
-  }
-}
