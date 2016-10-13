@@ -1,4 +1,5 @@
 import createSymbol from './createSymbol';
+import safeAttributes from './safeAttributes';
 
 
 // Symbols for private data members on an element.
@@ -77,7 +78,7 @@ export default (base) => {
         // label from an inner element of the collective.
         let label = getCollectiveAriaLabel(this.collective);
         if (label) {
-          this.setAttribute('aria-label', label);
+          safeAttributes.setAttribute(this, 'aria-label', label);
         }
       }
 
@@ -88,6 +89,7 @@ export default (base) => {
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
+      safeAttributes.connected(this);
       // Set a default tab index of 0 (document order) if no tab index exists.
       // MS Edge requires we explicitly check for presence of tabindex attribute.
       if (this.getAttribute('tabindex') == null || this.tabIndex < 0) {

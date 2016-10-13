@@ -1,5 +1,5 @@
 import createSymbol from './createSymbol';
-import toggleClass from './toggleClass';
+import safeAttributes from './safeAttributes';
 
 
 // Symbols for private data members on an element.
@@ -59,6 +59,7 @@ export default (base) => {
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
+      safeAttributes.connected(this);
       this.render(this.closed);
     }
 
@@ -92,9 +93,9 @@ export default (base) => {
       if (!this.parentNode) {
         return;
       }
-      toggleClass(this, 'basic-closed', closing);
-      toggleClass(this, 'basic-opened', !closing);
-      this.setAttribute('aria-expanded', !closing);
+      safeAttributes.toggleClass(this, 'basic-closed', closing);
+      safeAttributes.toggleClass(this, 'basic-opened', !closing);
+      safeAttributes.setAttribute(this, 'aria-expanded', !closing);
     }
 
     /**

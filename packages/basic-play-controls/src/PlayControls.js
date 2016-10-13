@@ -4,10 +4,10 @@ import DirectionSelection from '../../basic-component-mixins/src/DirectionSelect
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import safeAttributes from '../../basic-component-mixins/src/safeAttributes';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
-import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 let base = ElementBase.compose(
@@ -60,7 +60,7 @@ class PlayControls extends base {
 
   connectedCallback() {
     if (super.connectedCallback) { super.connectedCallback(); }
-    toggleClass(this, 'playing', this.playing);
+    safeAttributes.connected(this);
   }
 
   keydown(event) {
@@ -97,9 +97,7 @@ class PlayControls extends base {
     if (this.target) {
       this.target.playing = value;
     }
-    if (this.parentNode) {
-      toggleClass(this, 'playing', value);
-    }
+    safeAttributes.toggleClass(this, 'playing', value);
   }
 
   get template() {

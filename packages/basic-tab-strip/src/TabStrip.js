@@ -6,6 +6,7 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import Generic from '../../basic-component-mixins/src/Generic';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
+import safeAttributes from '../../basic-component-mixins/src/safeAttributes';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
@@ -174,7 +175,7 @@ class TabStrip extends base {
       // Point tab and panel at each other.
       element.setAttribute('aria-controls', item.id);
       item.setAttribute('aria-labelledby', element.id);
-      
+
       return element;
     });
 

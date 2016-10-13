@@ -1,6 +1,6 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
+import safeAttributes from '../../basic-component-mixins/src/safeAttributes';
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
-import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 // Symbols for private data members on an element.
@@ -69,6 +69,7 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 
   connectedCallback() {
     if (super.connectedCallback) { super.connectedCallback(); }
+    safeAttributes.connected(this);
     refresh(this);
   }
 
@@ -83,7 +84,7 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     return this.classList.contains('current');
   }
   set current(value) {
-    toggleClass(this, 'current', value);
+    safeAttributes.toggleClass(this, 'current', value);
     this.dispatchEvent(new CustomEvent('current-changed'));
   }
 
