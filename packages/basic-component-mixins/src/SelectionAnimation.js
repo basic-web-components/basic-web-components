@@ -11,6 +11,7 @@ const selectionAnimationDurationSymbol = createSymbol('selectionAnimationDuratio
 const selectionAnimationEffectSymbol = createSymbol('selectionAnimationEffect');
 const selectionAnimationKeyframesSymbol = createSymbol('selectionAnimationKeyframes');
 const showTransitionSymbol = createSymbol('showTransition');
+const resetAnimationsOnNextRenderSymbol = createSymbol('resetAnimationsOnNextRender');
 
 
 /* Exported function extends a base class with SelectionAnimation. */
@@ -100,6 +101,10 @@ export default function mixin(base) {
       if (super.itemsChanged) { super.itemsChanged(); }
       resetAnimations(this);
       renderSelection(this);
+    }
+
+    resetAnimations() {
+      resetAnimations(this);
     }
 
     /**
@@ -240,6 +245,13 @@ export default function mixin(base) {
     set showTransition(value) {
       this[showTransitionSymbol] = value;
       if ('showTransition' in base.prototype) { super.showTransition = value; }
+    }
+
+    touchStart() {
+      if (super.touchStart) { super.touchStart(); }
+      // The animations currently applied to the items won't be valid for the
+      // new drag operation.
+      this[resetAnimationsOnNextRenderSymbol] = true;
     }
   }
 
@@ -535,6 +547,10 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selectedF
  * fractional selection index.
  */
 function renderSelectionInstantly(element, toSelection) {
+  if (element[resetAnimationsOnNextRenderSymbol]) {
+    resetAnimations(element);
+    element[resetAnimationsOnNextRenderSymbol] = false;
+  }
   let animationFractions = mixin.helpers.animationFractionsForSelection(element, toSelection);
   animationFractions.map((animationFraction, index) => {
     let item = element.items[index];
