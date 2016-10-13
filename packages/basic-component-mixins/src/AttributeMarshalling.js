@@ -1,16 +1,9 @@
-import createSymbol from './createSymbol';
-import toggleClass from './toggleClass';
+import safeAttributes from './safeAttributes';
 
 
 // Memoized maps of attribute to property names and vice versa.
 const attributeToPropertyNames = {};
 const propertyNamesToAttributes = {};
-
-
-// Symbols for private data members on an element.
-const safeToSetAttributesSymbol = createSymbol('safeToSetAttributes');
-const pendingAttributesSymbol = createSymbol('pendingAttributes');
-const pendingClassesSymbol = createSymbol('pendingClasses');
 
 
 /* Exported function extends a base class with AttributeMarshalling. */
@@ -68,25 +61,7 @@ export default (base) => {
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
-
-      this[safeToSetAttributesSymbol] = true;
-
-      // Set any pending attributes.
-      if (this[pendingAttributesSymbol]) {
-        for (let attribute in this[pendingAttributesSymbol]) {
-          let value = this[pendingAttributesSymbol][attribute];
-          reflectAttributeToElement(this, attribute, value);
-        }
-        this[pendingAttributesSymbol] = null;
-      }
-
-      // Set any pending classes.
-      if (this[pendingClassesSymbol]) {
-        for (let className in this[pendingClassesSymbol]) {
-          let value = this[pendingClassesSymbol][className];
-          reflectClass(this, className, value);
-        }
-      }
+      safeAttributes.connected(this);
     }
 
     static get observedAttributes() {
@@ -106,16 +81,7 @@ export default (base) => {
      * @param {object} value - The value to set. If null, the attribute will be removed.
      */
     reflectAttribute(attribute, value) {
-      if (this[safeToSetAttributesSymbol]) {
-        // Safe to set attributes immediately.
-        reflectAttributeToElement(this, attribute, value);
-      } else {
-        // Defer setting attributes until the first time we're connected.
-        if (!this[pendingAttributesSymbol]) {
-          this[pendingAttributesSymbol] = {};
-        }
-        this[pendingAttributesSymbol][attribute] = value;
-      }
+      return safeAttributes.setAttribute(this, attribute, value);
     }
 
     /**
@@ -129,19 +95,10 @@ export default (base) => {
      * is connected to the document.
      *
      * @param {string} className - The name of the class to set.
-     * @param {object} value - The value to set. If null, the class will be removed.
+     * @param {object} value - True to set the class, false to remove it.
      */
     reflectClass(className, value) {
-      if (this[safeToSetAttributesSymbol]) {
-        // Safe to set class immediately.
-        reflectClass(this, className, value);
-      } else {
-        // Defer setting class until the first time we're connected.
-        if (!this[pendingClassesSymbol]) {
-          this[pendingClassesSymbol] = {};
-        }
-        this[pendingClassesSymbol][className] = value;
-      }
+      return safeAttributes.toggleClass(this, className, value);
     }
 
   }
@@ -198,24 +155,4 @@ function propertyNameToAttribute(propertyName) {
     attribute = propertyName.replace(uppercaseRegEx, '-$1').toLowerCase();
   }
   return attribute;
-}
-
-// Reflect the attribute to the given element.
-// If the value is null, remove the attribute.
-function reflectAttributeToElement(element, attributeName, value) {
-  if (value === null || typeof value === 'undefined') {
-    element.removeAttribute(attributeName);
-  } else {
-    element.setAttribute(attributeName, value);
-  }
-}
-
-// Reflect the class to the given element.
-// If the value is null, remove the class.
-function reflectClass(element, className, value) {
-  if (value === null) {
-    element.classList.remove(className);
-  } else {
-    toggleClass(element, className, value);
-  }
 }
