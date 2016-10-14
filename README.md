@@ -6,8 +6,8 @@ Each component can be used as is, or as the foundation for new components.
 
 _Note: The master branch of this project targets **Shadow DOM version 1** and
 **Custom Elements version 1**. Currently, the only browser that supports those
-specifications well enough is Chrome Canary. That is currently the only browser
-in which all unit tests pass and all demos work properly. We will be adding
+specifications well enough is Google Chrome. That is currently the only browser
+in which all unit tests pass and all components work properly. We will be adding
 support for Safari Technology Preview and the version 1 polyfills as those
 stabilize._
 
