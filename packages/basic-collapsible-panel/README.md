@@ -4,6 +4,8 @@
 ## CollapsiblePanel ⇐ <code>ElementBase</code>
 A panel which can be expanded/collapsed with an animated transition.
 
+[Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-collapsible-panel/)
+
 This component combines the OpenClose mixin and a simple CSS height
 animation.
 

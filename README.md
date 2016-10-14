@@ -151,6 +151,8 @@ The current release of Basic Web Components includes the following:
 * [basic-list-box](packages/basic-list-box).
   A single-selection list box that supports selection highlighting (using the
   system highlight color) and keyboard navigation.
+* [basic-modes](packages/basic-modes).
+  Shows one child element at a time.
 * [basic-sliding-carousel](packages/basic-sliding-carousel).
   A simpler version of basic-carousel (above) with lower requirements.
 * [basic-slideshow](packages/basic-slideshow).
