@@ -1,5 +1,6 @@
 # API Documentation
 <a name="TargetInCollective"></a>
+
 ## TargetInCollective
 Mixin which allows a component to provide aggregate behavior with other
 elements, e.g., for keyboard handling.
@@ -14,6 +15,7 @@ the component's collective extended to its first child.
 
   **Kind**: global class
 <a name="TargetInCollective+target"></a>
+
 ### targetInCollective.target : <code>HTMLElement</code>
 Gets/sets the current target of the component.
 

@@ -1,5 +1,6 @@
 # API Documentation
 <a name="toggleClass"></a>
+
 ## toggleClass(element, className, [force])
 Helper function for standard classList.toggle() behavior on old browsers,
 namely IE 11.

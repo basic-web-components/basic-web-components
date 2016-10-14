@@ -1,5 +1,6 @@
 # API Documentation
 <a name="microtask"></a>
+
 ## microtask(callback)
 Add a callback to the microtask queue.
 

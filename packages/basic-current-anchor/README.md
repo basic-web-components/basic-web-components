@@ -1,5 +1,6 @@
 # API Documentation
 <a name="CurrentAnchor"></a>
+
 ## CurrentAnchor
 An anchor (link) that highlights itself when its destination matches the
 current location.
@@ -27,6 +28,7 @@ application's visual style and brand.
     * [.current](#CurrentAnchor+current) : <code>boolean</code>
 
 <a name="CurrentAnchor+areaLink"></a>
+
 ### currentAnchor.areaLink : <code>boolean</code>
 True if the link points to an area within a site, not just a single page.
 
@@ -36,6 +38,7 @@ prefix of the current location (instead of matching the complete URL).
 
   **Kind**: instance property of <code>[CurrentAnchor](#CurrentAnchor)</code>
 <a name="CurrentAnchor+current"></a>
+
 ### currentAnchor.current : <code>boolean</code>
 True if the link's destination matches the current page location.
 

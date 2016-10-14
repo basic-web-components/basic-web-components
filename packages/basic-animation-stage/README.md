@@ -1,5 +1,6 @@
 # API Documentation
 <a name="AnimationStage"></a>
+
 ## AnimationStage ⇐ <code>ElementBase</code>
 Presents a single item as selected, providing animated transitions when the
 selection changes. The same animation can be shown at an arbitrary point,
@@ -58,6 +59,7 @@ require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-vi
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
 
 <a name="ContentAsItems+applySelection"></a>
+
 ### animationStage.applySelection(item, selected)
 Apply the selection state to a single item.
 
@@ -73,6 +75,7 @@ is selected, and removed it if not selected.
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
 
 <a name="SingleSelection+applySelection"></a>
+
 ### animationStage.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
@@ -87,30 +90,35 @@ effects will typically be handled by other mixins.
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
+
 ### animationStage.canSelectNext : <code>boolean</code>
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+canSelectPrevious"></a>
+
 ### animationStage.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="DistributedChildrenAsContent+content"></a>
+
 ### animationStage.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="DistributedChildrenAsContent.event_content-changed"></a>
+
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
   **Kind**: event emitted by <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="DistributedChildrenAsContent+contentChanged"></a>
+
 ### animationStage.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.
@@ -121,6 +129,7 @@ component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="SingleSelection+itemAdded"></a>
+
 ### animationStage.itemAdded(item)
 Handle a new item being added to the list.
 
@@ -134,6 +143,7 @@ selection state to false.
 | item | <code>HTMLElement</code> | the item being added |
 
 <a name="ContentAsItems+itemAdded"></a>
+
 ### animationStage.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
 
@@ -147,17 +157,20 @@ this to perform per-item initialization.
 | item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ContentAsItems+items"></a>
+
 ### animationStage.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list. See the top-level documentation for
 mixin for a description of how items differ from plain content.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="ContentAsItems.event_items-changed"></a>
+
 ### "items-changed"
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="ContentAsItems+itemsChanged"></a>
+
 ### animationStage.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
@@ -165,6 +178,7 @@ being nothing.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
 <a name="SingleSelection.event_selected-index-changed"></a>
+
 ### "selected-index-changed"
 Fires when the selectedIndex property changes.
 
@@ -175,6 +189,7 @@ Fires when the selectedIndex property changes.
 | detail.selectedIndex | <code>number</code> | The new selected index. |
 
 <a name="SingleSelection.event_selected-item-changed"></a>
+
 ### "selected-item-changed"
 Fires when the selectedItem property changes.
 
@@ -186,6 +201,7 @@ Fires when the selectedItem property changes.
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
 <a name="SelectionAnimation+selectedFraction"></a>
+
 ### animationStage.selectedFraction : <code>number</code>
 A fractional value indicating how far the user has currently advanced to
 the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
@@ -196,6 +212,7 @@ mixin.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
 <a name="SingleSelection+selectedIndex"></a>
+
 ### animationStage.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
 
@@ -205,6 +222,7 @@ currently-selected item.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectedItem"></a>
+
 ### animationStage.selectedItem : <code>object</code>
 The currently selected item, or null if there is no selection.
 
@@ -212,11 +230,13 @@ Setting this property to null deselects any currently-selected item.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectFirst"></a>
+
 ### animationStage.selectFirst()
 Select the first item in the list.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SelectionAnimation+selectionAnimationDuration"></a>
+
 ### animationStage.selectionAnimationDuration : <code>number</code>
 The duration of a selection animation in milliseconds.
 
@@ -229,6 +249,7 @@ The default value is 250 milliseconds (a quarter a second).
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
 **Default**: <code>250</code>  
 <a name="SelectionAnimation+selectionAnimationEffect"></a>
+
 ### animationStage.selectionAnimationEffect : <code>string</code>
 The name of a standard selection animation effect.
 
@@ -245,6 +266,7 @@ property to standard keyframes. Supported string values:
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
 **Default**: <code>&quot;\&quot;slide\&quot;&quot;</code>  
 <a name="SelectionAnimation+selectionAnimationKeyframes"></a>
+
 ### animationStage.selectionAnimationKeyframes : <code>Array.&lt;cssRules&gt;</code>
 The keyframes that define an animation that plays for an item when moving
 forward in the sequence.
@@ -267,28 +289,33 @@ When moving the selection backward, this animation is played in reverse.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
 <a name="SingleSelection+selectionRequired"></a>
+
 ### animationStage.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="SingleSelection+selectionWraps"></a>
+
 ### animationStage.selectionWraps : <code>boolean</code>
 True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="SingleSelection+selectLast"></a>
+
 ### animationStage.selectLast()
 Select the last item in the list.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectNext"></a>
+
 ### animationStage.selectNext()
 Select the next item in the list.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectPrevious"></a>
+
 ### animationStage.selectPrevious()
 Select the previous item in the list.
 
@@ -296,6 +323,7 @@ If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SelectionAnimation+showTransition"></a>
+
 ### animationStage.showTransition : <code>boolean</code>
 Determine whether a transition should be shown during selection.
 

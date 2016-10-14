@@ -1,5 +1,6 @@
 # API Documentation
 <a name="Collective"></a>
+
 ## Collective
 A group of elements that have been associated for the purpose of
 accomplishing some collective behavior, e.g., keyboard handling.
@@ -43,12 +44,13 @@ You can put elements into collectives yourself, or you can use the
 
 * [Collective](#Collective)
     * [.assimilate(target)](#Collective+assimilate)
-    * [new Collective([elements])](#new_Collective_new)
+    * [new Collective([...elements])](#new_Collective_new)
     * [.elements](#Collective+elements) : <code>Array.&lt;HTMLElement&gt;</code>
-    * [.invokeMethod(method, [args])](#Collective+invokeMethod)
+    * [.invokeMethod(method, [...args])](#Collective+invokeMethod)
     * [.outermostElement](#Collective+outermostElement)
 
 <a name="Collective+assimilate"></a>
+
 ### collective.assimilate(target)
 Add the indicated target to the collective.
 
@@ -67,21 +69,24 @@ the collective's elements to respond to changes in the collective.
 | target | <code>HTMLElement</code> &#124; <code>[Collective](#Collective)</code> | The element or collective to add. |
 
 <a name="new_Collective_new"></a>
-### new Collective([elements])
+
+### new Collective([...elements])
 Create a collective.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [elements] | <code>Array.&lt;HTMLELement&gt;</code> | Initial elements to add. |
+| [...elements] | <code>Array.&lt;HTMLELement&gt;</code> | Initial elements to add. |
 
 <a name="Collective+elements"></a>
+
 ### collective.elements : <code>Array.&lt;HTMLElement&gt;</code>
 The elements in the collective.
 
   **Kind**: instance property of <code>[Collective](#Collective)</code>
 <a name="Collective+invokeMethod"></a>
-### collective.invokeMethod(method, [args])
+
+### collective.invokeMethod(method, [...args])
 Invoke a method on all elements in the collective.
 
   **Kind**: instance method of <code>[Collective](#Collective)</code>
@@ -89,9 +94,10 @@ Invoke a method on all elements in the collective.
 | Param | Type | Description |
 | --- | --- | --- |
 | method | <code>string</code> | The name of the method to invoke on all elements. |
-| [args] | <code>Array.&lt;object&gt;</code> | The arguments to the method |
+| [...args] | <code>Array.&lt;object&gt;</code> | The arguments to the method |
 
 <a name="Collective+outermostElement"></a>
+
 ### collective.outermostElement
 The outermost element in the collective.
 By convention, this is the first element in the `elements` array.

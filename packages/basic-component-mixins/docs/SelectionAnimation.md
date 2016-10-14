@@ -1,5 +1,6 @@
 # API Documentation
 <a name="SelectionAnimation"></a>
+
 ## SelectionAnimation
 Mixin which uses animation to show transitions between selection states.
 
@@ -43,6 +44,7 @@ do not support that API natively, you will need to load the
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
 
 <a name="SelectionAnimation+selectedFraction"></a>
+
 ### selectionAnimation.selectedFraction : <code>number</code>
 A fractional value indicating how far the user has currently advanced to
 the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
@@ -53,6 +55,7 @@ mixin.
 
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 <a name="SelectionAnimation+selectionAnimationDuration"></a>
+
 ### selectionAnimation.selectionAnimationDuration : <code>number</code>
 The duration of a selection animation in milliseconds.
 
@@ -65,6 +68,7 @@ The default value is 250 milliseconds (a quarter a second).
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 **Default**: <code>250</code>  
 <a name="SelectionAnimation+selectionAnimationEffect"></a>
+
 ### selectionAnimation.selectionAnimationEffect : <code>string</code>
 The name of a standard selection animation effect.
 
@@ -81,6 +85,7 @@ property to standard keyframes. Supported string values:
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 **Default**: <code>&quot;\&quot;slide\&quot;&quot;</code>  
 <a name="SelectionAnimation+selectionAnimationKeyframes"></a>
+
 ### selectionAnimation.selectionAnimationKeyframes : <code>Array.&lt;cssRules&gt;</code>
 The keyframes that define an animation that plays for an item when moving
 forward in the sequence.
@@ -103,6 +108,7 @@ When moving the selection backward, this animation is played in reverse.
 
   **Kind**: instance property of <code>[SelectionAnimation](#SelectionAnimation)</code>
 <a name="SelectionAnimation+showTransition"></a>
+
 ### selectionAnimation.showTransition : <code>boolean</code>
 Determine whether a transition should be shown during selection.
 

@@ -1,5 +1,6 @@
 # API Documentation
 <a name="Composable"></a>
+
 ## Composable
 Mixin to make a class more easily composable with other mixins.
 
@@ -9,6 +10,7 @@ application of many mixins at once easier to read.
 
   **Kind**: global class
 <a name="Composable.compose"></a>
+
 ### Composable.compose(...mixins)
 Apply a set of mixin functions or mixin objects to the present class and
 return the new class.

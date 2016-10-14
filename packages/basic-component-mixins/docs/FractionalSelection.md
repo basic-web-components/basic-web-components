@@ -1,5 +1,6 @@
 # API Documentation
 <a name="FractionalSelection"></a>
+
 ## FractionalSelection
 Adds support for fractional selection: treating a selection as a real
 number that combines an integer portion (an index into a list), and a
@@ -21,6 +22,7 @@ at a fractional value.
 
   **Kind**: global class
 <a name="FractionalSelection+selectedFraction"></a>
+
 ### fractionalSelection.selectedFraction : <code>number</code>
 A fractional value indicating how far the user has currently advanced to
 the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the

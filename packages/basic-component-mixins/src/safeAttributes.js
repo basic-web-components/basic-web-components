@@ -8,6 +8,9 @@ const pendingAttributesSymbol = createSymbol('pendingAttributes');
 const pendingClassesSymbol = createSymbol('pendingClasses');
 
 
+/**
+ * Helper functions for updating attributes, including the `class` attribute.
+ */
 export default {
 
   /**

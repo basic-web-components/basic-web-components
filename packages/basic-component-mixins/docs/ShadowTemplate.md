@@ -1,5 +1,6 @@
 # API Documentation
 <a name="ShadowTemplate"></a>
+
 ## ShadowTemplate
 Mixin for stamping a template into a Shadow DOM subtree upon component
 instantiation.

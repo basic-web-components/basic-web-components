@@ -1,5 +1,6 @@
 # API Documentation
 <a name="AutosizeTextarea"></a>
+
 ## AutosizeTextarea
 A text area that makes itself big enough to show its content.
 
@@ -32,29 +33,34 @@ standard HTML `<textarea>`.
     * [.value](#AutosizeTextarea+value) : <code>string</code>
 
 <a name="AutosizeTextarea+autoSize"></a>
+
 ### autosizeTextarea.autoSize()
 Resize the element such that the textarea can exactly contain its content.
 By default, this method is invoked whenever the text content changes.
 
   **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>
 <a name="AutosizeTextarea.event_change"></a>
+
 ### "change"
 Fires when the user types in the textarea.
 
   **Kind**: event emitted by <code>[AutosizeTextarea](#AutosizeTextarea)</code>
 <a name="DistributedChildrenAsContent+content"></a>
+
 ### autosizeTextarea.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
   **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="DistributedChildrenAsContent.event_content-changed"></a>
+
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
   **Kind**: event emitted by <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="DistributedChildrenAsContent+contentChanged"></a>
+
 ### autosizeTextarea.contentChanged()
 Invoked when the contents of the component (including distributed
 children) have changed.
@@ -65,6 +71,7 @@ component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
 <a name="Generic+generic"></a>
+
 ### autosizeTextarea.generic : <code>Boolean</code>
 True if the component would like to receive generic styling.
 
@@ -75,6 +82,7 @@ have to explicitly override styling you don't want.
   **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[Generic](../basic-component-mixins/docs/Generic.md)</code> mixin.
 **Default**: <code>true</code>  
 <a name="AutosizeTextarea+minimumRows"></a>
+
 ### autosizeTextarea.minimumRows : <code>number</code>
 Determines the minimum number of rows shown. This is similar to the rows
 attribute on a standard textarea, but because this element can grow, is
@@ -97,6 +105,7 @@ text.
   **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>
 **Default**: <code>1</code>  
 <a name="AutosizeTextarea+value"></a>
+
 ### autosizeTextarea.value : <code>string</code>
 The text currently shown in the textarea.
 

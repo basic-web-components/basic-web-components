@@ -1,5 +1,6 @@
 # API Documentation
 <a name="DistributedChildren"></a>
+
 ## DistributedChildren
 Mixin which defines helpers for accessing a component's distributed
 children as a flattened array or string.
@@ -51,6 +52,7 @@ this problem at the API level.
     * [.distributedTextContent](#DistributedChildren+distributedTextContent) : <code>string</code>
 
 <a name="DistributedChildren+distributedChildNodes"></a>
+
 ### distributedChildren.distributedChildNodes : <code>Array.&lt;Node&gt;</code>
 An in-order collection of distributed child nodes, expanding any slot
 elements. Like the standard childNodes property, this includes text
@@ -58,12 +60,14 @@ nodes.
 
   **Kind**: instance property of <code>[DistributedChildren](#DistributedChildren)</code>
 <a name="DistributedChildren+distributedChildren"></a>
+
 ### distributedChildren.distributedChildren : <code>Array.&lt;HTMLElement&gt;</code>
 An in-order collection of distributed children, expanding any slot
 elements. Like the standard children property, this skips text nodes.
 
   **Kind**: instance property of <code>[DistributedChildren](#DistributedChildren)</code>
 <a name="DistributedChildren+distributedTextContent"></a>
+
 ### distributedChildren.distributedTextContent : <code>string</code>
 The concatenated text content of all distributed child nodes, expanding
 any slot elements.

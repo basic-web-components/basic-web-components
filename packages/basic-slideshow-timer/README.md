@@ -1,5 +1,6 @@
 # API Documentation
 <a name="SlideshowTimer"></a>
+
 ## SlideshowTimer ⇐ <code>ElementBase</code>
 Auxiliary component to advance a selection with a timer.
 
