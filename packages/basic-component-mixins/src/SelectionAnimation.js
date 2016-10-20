@@ -1,5 +1,6 @@
 import createSymbol from './createSymbol';
 import FractionalSelection from './FractionalSelection';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -57,23 +58,23 @@ export default function mixin(base) {
 
       // Set defaults.
       if (typeof this.selectionAnimationDuration === 'undefined') {
-        this.selectionAnimationDuration = this.defaults.selectionAnimationDuration;
+        this.selectionAnimationDuration = this[symbols.defaults].selectionAnimationDuration;
       }
       if (typeof this.selectionAnimationEffect === 'undefined' && this.selectionAnimationKeyframes == null) {
-        this.selectionAnimationEffect = this.defaults.selectionAnimationEffect;
+        this.selectionAnimationEffect = this[symbols.defaults].selectionAnimationEffect;
       }
 
       this.showTransition = true;
     }
 
-    get defaults() {
-      let defaults = super.defaults || {};
+    get [symbols.defaults]() {
+      let defaults = super[symbols.defaults] || {};
       defaults.selectionAnimationDuration = 250;
       defaults.selectionAnimationEffect = 'slide';
       return defaults;
     }
 
-    itemAdded(item) {
+    [symbols.itemAdded](item) {
       // We mark new items in the list as explicitly visible to ARIA. Otherwise,
       // when an item isn't visible on the screen, ARIA will assume the item is
       // of no interest to the user, and leave it out of the accessibility tree.

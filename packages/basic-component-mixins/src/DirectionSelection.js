@@ -1,3 +1,6 @@
+import symbols from './symbols';
+
+
 /* Exported function extends a base class with DirectionSelection. */
 export default (base) => {
 
@@ -12,33 +15,33 @@ export default (base) => {
    */
   class DirectionSelection extends base {
 
-    goDown() {
-      if (super.goDown) { super.goDown(); }
+    [symbols.goDown]() {
+      if (super[symbols.goDown]) { super[symbols.goDown](); }
       return this.selectNext();
     }
 
-    goEnd() {
-      if (super.goEnd) { super.goEnd(); }
+    [symbols.goEnd]() {
+      if (super[symbols.goEnd]) { super[symbols.goEnd](); }
       return this.selectLast();
     }
 
-    goLeft() {
-      if (super.goLeft) { super.goLeft(); }
+    [symbols.goLeft]() {
+      if (super[symbols.goLeft]) { super[symbols.goLeft](); }
       return this.selectPrevious();
     }
 
-    goRight() {
-      if (super.goRight) { super.goRight(); }
+    [symbols.goRight]() {
+      if (super[symbols.goRight]) { super[symbols.goRight](); }
       return this.selectNext();
     }
 
-    goStart() {
-      if (super.goStart) { super.goStart(); }
+    [symbols.goStart]() {
+      if (super[symbols.goStart]) { super[symbols.goStart](); }
       return this.selectFirst();
     }
 
-    goUp() {
-      if (super.goUp) { super.goUp(); }
+    [symbols.goUp]() {
+      if (super[symbols.goUp]) { super[symbols.goUp](); }
       return this.selectPrevious();
     }
 

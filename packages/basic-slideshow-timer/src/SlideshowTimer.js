@@ -4,6 +4,7 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
@@ -49,8 +50,8 @@ let base = ElementBase.compose(
  */
 class SlideshowTimer extends base {
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.playing = true;
     defaults.selectionAnimationDuration = 500;
     defaults.selectionRequired = true;

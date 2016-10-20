@@ -1,4 +1,6 @@
 import createSymbol from './createSymbol';
+import symbols from './symbols';
+
 
 const playingSymbol = createSymbol('playing');
 const selectionTimerDurationSymbol = createSymbol('selectionTimerDuration');
@@ -24,10 +26,10 @@ export default (base) => {
       super();
       // Set defaults.
       if (typeof this.playing === 'undefined') {
-        this.playing = this.defaults.playing;
+        this.playing = this[symbols.defaults].playing;
       }
       if (typeof this.selectionTimerDuration === 'undefined') {
-        this.selectionTimerDuration = this.defaults.selectionTimerDuration;
+        this.selectionTimerDuration = this[symbols.defaults].selectionTimerDuration;
       }
     }
 
@@ -36,8 +38,8 @@ export default (base) => {
       restartTimer(this);
     }
 
-    get defaults() {
-      let defaults = super.defaults || {};
+    get [symbols.defaults]() {
+      let defaults = super[symbols.defaults] || {};
       defaults.playing = false;
       defaults.selectionTimerDuration = 1000;
       return defaults;

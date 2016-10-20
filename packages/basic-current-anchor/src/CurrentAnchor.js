@@ -1,5 +1,6 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import safeAttributes from '../../basic-component-mixins/src/safeAttributes';
+import symbols from '../../basic-component-mixins/src/symbols';
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
 
 
@@ -45,7 +46,7 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 
     // Set defaults.
     if (typeof this.areaLink === 'undefined') {
-      this.areaLink = this.defaults.areaLink;
+      this.areaLink = this[symbols.defaults].areaLink;
     }
   }
 
@@ -88,8 +89,8 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     this.dispatchEvent(new CustomEvent('current-changed'));
   }
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.areaLink = false;
     return defaults;
   }

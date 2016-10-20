@@ -1,4 +1,5 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -53,16 +54,16 @@ export default (base) => {
      * Invoked when the user wants to go/navigate left.
      * The default implementation of this method does nothing.
      */
-    goLeft() {
-      if (super.goLeft) { return super.goLeft(); }
+    [symbols.goLeft]() {
+      if (super[symbols.goLeft]) { return super[symbols.goLeft](); }
     }
 
     /**
      * Invoked when the user wants to go/navigate right.
      * The default implementation of this method does nothing.
      */
-    goRight() {
-      if (super.goRight) { return super.goRight(); }
+    [symbols.goRight]() {
+      if (super[symbols.goRight]) { return super[symbols.goRight](); }
     }
 
     // Default implementation.
@@ -209,12 +210,12 @@ function wheel(element, event) {
   if (travelFraction === 1) {
     // console.log("goRight");
     element.showTransition = true;
-    element.goRight();
+    element[symbols.goRight]();
     postNavigate(element);
   } else if (travelFraction === -1) {
     // console.log("goLeft");
     element.showTransition = true;
-    element.goLeft();
+    element[symbols.goLeft]();
     postNavigate(element);
   }
 
@@ -231,10 +232,10 @@ function wheelTimedOut(element) {
   let travelFraction = element.travelFraction;
   if (travelFraction >= 0.5) {
     // console.log("snap right");
-    element.goRight();
+    element[symbols.goRight]();
   } else if (travelFraction <= -0.5) {
     // console.log("snap left");
-    element.goLeft();
+    element[symbols.goLeft]();
   }
 
   // TODO: Listen for the transition to complete, and then restore

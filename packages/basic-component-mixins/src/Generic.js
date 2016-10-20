@@ -1,5 +1,6 @@
 import createSymbol from './createSymbol';
 import safeAttributes from './safeAttributes';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -39,7 +40,7 @@ export default (base) => {
       super();
       // Set defaults.
       if (typeof this.generic === 'undefined') {
-        this.generic = this.defaults.generic;
+        this.generic = this[symbols.defaults].generic;
       }
     }
 
@@ -56,8 +57,8 @@ export default (base) => {
       safeAttributes.connected(this);
     }
 
-    get defaults() {
-      let defaults = super.defaults || {};
+    get [symbols.defaults]() {
+      let defaults = super[symbols.defaults] || {};
       defaults.generic = true;
       return defaults;
     }

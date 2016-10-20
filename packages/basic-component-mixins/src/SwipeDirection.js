@@ -1,4 +1,5 @@
 import createSymbol from './createSymbol';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -109,16 +110,16 @@ export default (base) => {
      * Invoked when the user wants to go/navigate left.
      * The default implementation of this method does nothing.
      */
-    goLeft() {
-      if (super.goLeft) { return super.goLeft(); }
+    [symbols.goLeft]() {
+      if (super[symbols.goLeft]) { return super[symbols.goLeft](); }
     }
 
     /**
      * Invoked when the user wants to go/navigate right.
      * The default implementation of this method does nothing.
      */
-    goRight() {
-      if (super.goRight) { return super.goRight(); }
+    [symbols.goRight]() {
+      if (super[symbols.goRight]) { return super[symbols.goRight](); }
     }
 
     // Default implementation.
@@ -140,18 +141,18 @@ export default (base) => {
       this.showTransition = true;
       if (this[deltaXSymbol] >= 20) {
         // Finished going right at high speed.
-        this.goLeft();
+        this[symbols.goLeft]();
       } else if (this[deltaXSymbol] <= -20) {
         // Finished going left at high speed.
-        this.goRight();
+        this[symbols.goRight]();
       } else {
         // Finished at low speed.
         trackTo(this, clientX);
         let travelFraction = this.travelFraction;
         if (travelFraction >= 0.5) {
-          this.goRight();
+          this[symbols.goRight]();
         } else if (travelFraction <= -0.5) {
-          this.goLeft();
+          this[symbols.goLeft]();
         }
       }
       this.travelFraction = 0;

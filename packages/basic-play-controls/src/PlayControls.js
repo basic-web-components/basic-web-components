@@ -6,6 +6,7 @@ import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import safeAttributes from '../../basic-component-mixins/src/safeAttributes';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
@@ -63,7 +64,7 @@ class PlayControls extends base {
     safeAttributes.connected(this);
   }
 
-  keydown(event) {
+  [symbols.keydown](event) {
     let handled;
 
     switch (event.keyCode) {
@@ -74,7 +75,7 @@ class PlayControls extends base {
     }
 
     // Prefer mixin result if it's defined, otherwise use base result.
-    return handled || (super.keydown && super.keydown(event));
+    return handled || (super[symbols.keydown] && super[symbols.keydown](event));
   }
 
   pause() {

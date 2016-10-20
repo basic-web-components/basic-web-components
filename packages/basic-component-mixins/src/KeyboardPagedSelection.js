@@ -1,3 +1,6 @@
+import symbols from './symbols';
+
+
 /* Exported function extends a base class with KeyboardPagedSelection. */
 export default (base) => {
 
@@ -26,7 +29,7 @@ export default (base) => {
    */
   class KeyboardPagedSelection extends base {
 
-    keydown(event) {
+    [symbols.keydown](event) {
       let handled;
       switch (event.keyCode) {
         case 33: // Page Up
@@ -37,7 +40,7 @@ export default (base) => {
           break;
       }
       // Prefer mixin result if it's defined, otherwise use base result.
-      return handled || (super.keydown && super.keydown(event));
+      return handled || (super[symbols.keydown] && super[symbols.keydown](event));
     }
 
     /**

@@ -1,9 +1,10 @@
 import { assert } from 'chai';
 import Keyboard from '../src/Keyboard';
+import symbols from '../src/symbols';
 
 
 class KeyboardTest extends Keyboard(HTMLElement) {
-  keydown(event) {
+  [symbols.keydown](event) {
     if (super.keydown) { super.keydown(event); }
     if (this.keydownHook) {
       this.keydownHook(event);

@@ -12,6 +12,7 @@ import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaA
 import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
 import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 /**
@@ -83,8 +84,8 @@ class ListBox extends ElementBase.compose(
   SingleSelection
 ) {
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'vertical';
     return defaults;
   }

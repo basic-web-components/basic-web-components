@@ -6,6 +6,7 @@ import DirectionSelection from '../../basic-component-mixins/src/DirectionSelect
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
@@ -114,8 +115,8 @@ class ArrowSelection extends base {
     }
   }
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     return defaults;
   }

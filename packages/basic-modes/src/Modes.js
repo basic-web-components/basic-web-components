@@ -3,6 +3,7 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 
 let base = ElementBase.compose(
@@ -34,14 +35,14 @@ let base = ElementBase.compose(
  */
 class Modes extends base {
 
-  applySelection(item, selected) {
-    if (super.applySelection) { super.applySelection(item, selected); }
+  [symbols.applySelection](item, selected) {
+    if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
     item.style.display = selected ? '' : 'none';
     item.setAttribute('aria-hidden', !selected);
   }
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.selectionRequired = true;
     return defaults;
   }

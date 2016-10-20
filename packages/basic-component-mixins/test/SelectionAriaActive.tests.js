@@ -1,6 +1,7 @@
 import { assert } from 'chai';
 import SelectionAriaActive from '../src/SelectionAriaActive';
 import SingleSelection from '../src/SingleSelection';
+import symbols from '../src/symbols';
 
 
 class SelectionAriaActiveTest extends SelectionAriaActive(SingleSelection(HTMLElement)) {
@@ -33,9 +34,9 @@ describe("SelectionAriaActive mixin", () => {
     let item2 = document.createElement('div');
     // Leave item2 without an ID.
     list.appendChild(item2);
-    // Initialize items
-    list.itemAdded(item1);
-    list.itemAdded(item2);
+    // Initialize items using private API.
+    list[symbols.itemAdded](item1);
+    list[symbols.itemAdded](item2);
     container.append(list);
     assert.equal(list.getAttribute('role'), 'listbox'); // default role
     assert.equal(item1.id, 'explicitID'); // unchanged
@@ -50,9 +51,9 @@ describe("SelectionAriaActive mixin", () => {
     list.appendChild(item1);
     let item2 = document.createElement('div');
     list.appendChild(item2);
-    // Initialize items
-    list.itemAdded(item1);
-    list.itemAdded(item2);
+    // Initialize items using private API.
+    list[symbols.itemAdded](item1);
+    list[symbols.itemAdded](item2);
     list.selectedItem = item1;
     assert.equal(list.getAttribute('aria-activedescendant'), item1.id);
     assert.equal(item1.getAttribute('aria-selected'), 'true');

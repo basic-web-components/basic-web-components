@@ -6,8 +6,8 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import Generic from '../../basic-component-mixins/src/Generic';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
-import safeAttributes from '../../basic-component-mixins/src/safeAttributes';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
@@ -98,7 +98,7 @@ class TabStrip extends base {
 
     // Listen to keydown events on the tabs, not on pages.
     this.$.tabs.addEventListener('keydown', event => {
-      let handled = this.keydown(event);
+      let handled = this[symbols.keydown](event);
       if (handled) {
         event.preventDefault();
         event.stopPropagation();
@@ -107,12 +107,12 @@ class TabStrip extends base {
 
     // Set defaults.
     if (typeof this.tabPosition === 'undefined') {
-      this.tabPosition = this.defaults.tabPosition;
+      this.tabPosition = this[symbols.defaults].tabPosition;
     }
   }
 
-  applySelection(item, selected) {
-    if (super.applySelection) { super.applySelection(item, selected); }
+  [symbols.applySelection](item, selected) {
+    if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
     let index = this.items.indexOf(item);
     // See if the corresponding tab has already been created.
     // If not, the correct tab will be selected when it gets created.
@@ -133,8 +133,8 @@ class TabStrip extends base {
     }
   }
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.tabPosition = 'top';
     return defaults;
   }
@@ -182,8 +182,8 @@ class TabStrip extends base {
     this.selectedItemChanged();  // In case position of selected item moved.
   }
 
-  keydown(event) {
-    let handled = super.keydown(event);
+  [symbols.keydown](event) {
+    let handled = super[symbols.keydown](event);
     if (handled) {
       // If the event resulted in a change of selection, move the focus to the
       // newly-selected tab.

@@ -1,4 +1,5 @@
 import createSymbol from './createSymbol';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -27,12 +28,12 @@ export default (base) => {
       super();
       // Set defaults.
       if (typeof this.navigationAxis === 'undefined') {
-        this.navigationAxis = this.defaults.navigationAxis;
+        this.navigationAxis = this[symbols.defaults].navigationAxis;
       }
     }
 
-    get defaults() {
-      let defaults = super.defaults || {};
+    get [symbols.defaults]() {
+      let defaults = super[symbols.defaults] || {};
       defaults.navigationAxis = 'both';
       return defaults;
     }
@@ -41,48 +42,48 @@ export default (base) => {
      * Invoked when the user wants to go/navigate down.
      * The default implementation of this method does nothing.
      */
-    goDown() {
-      if (super.goDown) { return super.goDown(); }
+    [symbols.goDown]() {
+      if (super[symbols.goDown]) { return super[symbols.goDown](); }
     }
 
     /**
      * Invoked when the user wants to go/navigate to the end (e.g., of a list).
      * The default implementation of this method does nothing.
      */
-    goEnd() {
-      if (super.goEnd) { return super.goEnd(); }
+    [symbols.goEnd]() {
+      if (super[symbols.goEnd]) { return super[symbols.goEnd](); }
     }
 
     /**
      * Invoked when the user wants to go/navigate left.
      * The default implementation of this method does nothing.
      */
-    goLeft() {
-      if (super.goLeft) { return super.goLeft(); }
+    [symbols.goLeft]() {
+      if (super[symbols.goLeft]) { return super[symbols.goLeft](); }
     }
 
     /**
      * Invoked when the user wants to go/navigate right.
      * The default implementation of this method does nothing.
      */
-    goRight() {
-      if (super.goRight) { return super.goRight(); }
+    [symbols.goRight]() {
+      if (super[symbols.goRight]) { return super[symbols.goRight](); }
     }
 
     /**
      * Invoked when the user wants to go/navigate to the start (e.g., of a
      * list). The default implementation of this method does nothing.
      */
-    goStart() {
-      if (super.goStart) { return super.goStart(); }
+    [symbols.goStart]() {
+      if (super[symbols.goStart]) { return super[symbols.goStart](); }
     }
 
     /**
      * Invoked when the user wants to go/navigate up.
      * The default implementation of this method does nothing.
      */
-    goUp() {
-      if (super.goUp) { return super.goUp(); }
+    [symbols.goUp]() {
+      if (super[symbols.goUp]) { return super[symbols.goUp](); }
     }
 
     /**
@@ -103,7 +104,7 @@ export default (base) => {
       if ('navigationAxis' in base.prototype) { super.navigationAxis = value; }
     }
 
-    keydown(event) {
+    [symbols.keydown](event) {
       let handled;
 
       let axis = this.navigationAxis;
@@ -114,34 +115,34 @@ export default (base) => {
       // as the user may be trying to navigate back or forward in the browser.
       switch (event.keyCode) {
         case 35: // End
-          handled = this.goEnd();
+          handled = this[symbols.goEnd]();
           break;
         case 36: // Home
-          handled = this.goStart();
+          handled = this[symbols.goStart]();
           break;
         case 37: // Left
           if (horizontal && !event.metaKey && !event.altKey) {
-            handled = this.goLeft();
+            handled = this[symbols.goLeft]();
           }
           break;
         case 38: // Up
           if (vertical) {
-            handled = event.altKey ? this.goStart() : this.goUp();
+            handled = event.altKey ? this[symbols.goStart]() : this[symbols.goUp]();
           }
           break;
         case 39: // Right
           if (horizontal && !event.metaKey && !event.altKey) {
-            handled = this.goRight();
+            handled = this[symbols.goRight]();
           }
           break;
         case 40: // Down
           if (vertical) {
-            handled = event.altKey ? this.goEnd() : this.goDown();
+            handled = event.altKey ? this[symbols.goEnd]() : this[symbols.goDown]();
           }
           break;
       }
       // Prefer mixin result if it's defined, otherwise use base result.
-      return handled || (super.keydown && super.keydown(event));
+      return handled || (super[symbols.keydown] && super[symbols.keydown](event));
     }
 
   }

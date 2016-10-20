@@ -10,6 +10,7 @@ import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaA
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
@@ -146,8 +147,8 @@ let base = ElementBase.compose(
  */
 class Carousel extends base {
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     defaults.selectionAnimationEffect = 'slideWithGap';
     defaults.selectionRequired = true;

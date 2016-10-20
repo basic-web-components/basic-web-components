@@ -1,5 +1,6 @@
 import createSymbol from './createSymbol';
 import microtask from './microtask';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -40,10 +41,10 @@ export default (base) => {
       super();
       // Set defaults.
       if (typeof this.selectionRequired === 'undefined') {
-        this.selectionRequired = this.defaults.selectionRequired;
+        this.selectionRequired = this[symbols.defaults].selectionRequired;
       }
       if (typeof this.selectionWraps === 'undefined') {
-        this.selectionWraps = this.defaults.selectionWraps;
+        this.selectionWraps = this[symbols.defaults].selectionWraps;
       }
     }
 
@@ -56,8 +57,8 @@ export default (base) => {
      * @param {HTMLElement} item - the item being selected/deselected
      * @param {boolean} selected - true if the item is selected, false if not
      */
-    applySelection(item, selected) {
-      if (super.applySelection) { super.applySelection(item, selected); }
+    [symbols.applySelection](item, selected) {
+      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
     }
 
     /**
@@ -88,8 +89,8 @@ export default (base) => {
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
     }
 
-    get defaults() {
-      let defaults = super.defaults || {};
+    get [symbols.defaults]() {
+      let defaults = super[symbols.defaults] || {};
       defaults.selectionRequired = false;
       defaults.selectionWraps = false;
       return defaults;
@@ -103,9 +104,9 @@ export default (base) => {
      *
      * @param {HTMLElement} item - the item being added
      */
-    itemAdded(item) {
-      if (super.itemAdded) { super.itemAdded(item); }
-      this.applySelection(item, item === this.selectedItem);
+    [symbols.itemAdded](item) {
+      if (super[symbols.itemAdded]) { super[symbols.itemAdded](item); }
+      this[symbols.applySelection](item, item === this.selectedItem);
     }
 
     itemsChanged() {
@@ -186,11 +187,11 @@ export default (base) => {
           return;
         }
         // Remove previous selection.
-        this.applySelection(previousItem, false);
+        this[symbols.applySelection](previousItem, false);
       }
 
       if (item) {
-        this.applySelection(item, true);
+        this[symbols.applySelection](item, true);
       }
 
       // TODO: Rationalize with selectedIndex so we're not recalculating item

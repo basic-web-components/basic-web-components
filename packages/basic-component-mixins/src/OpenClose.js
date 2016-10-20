@@ -1,5 +1,6 @@
 import createSymbol from './createSymbol';
 import safeAttributes from './safeAttributes';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -23,7 +24,7 @@ export default (base) => {
       super();
       // Set defaults.
       if (typeof this.closed === 'undefined') {
-        this.closed = this.defaults.closed;
+        this.closed = this[symbols.defaults].closed;
       }
     }
 
@@ -63,8 +64,8 @@ export default (base) => {
       this.render(this.closed);
     }
 
-    get defaults() {
-      let defaults = super.defaults || {};
+    get [symbols.defaults]() {
+      let defaults = super[symbols.defaults] || {};
       defaults.closed = false;
       return defaults;
     }

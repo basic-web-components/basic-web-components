@@ -2,6 +2,7 @@ import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
 import Generic from '../../basic-component-mixins/src/Generic';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 // Symbols for private data members on an element.
@@ -47,7 +48,7 @@ class AutosizeTextarea extends base {
 
     // Set defaults.
     if (typeof this.minimumRows === 'undefined') {
-      this.minimumRows = this.defaults.minimumRows;
+      this.minimumRows = this[symbols.defaults].minimumRows;
     }
 
     // A standard textarea has its value track its textContent by default.
@@ -102,8 +103,8 @@ class AutosizeTextarea extends base {
     }
   }
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.minimumRows = 1;
     return defaults;
   }

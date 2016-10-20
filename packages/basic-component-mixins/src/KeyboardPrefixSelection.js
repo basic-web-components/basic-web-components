@@ -1,4 +1,5 @@
 import createSymbol from './createSymbol';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -57,7 +58,7 @@ export default (base) => {
     // TODO: If the selection is changed by some other means (e.g., arrow keys)
     // other than prefix typing, then that act should reset the prefix.
 
-    keydown(event) {
+    [symbols.keydown](event) {
       let handled;
       let resetPrefix = true;
 
@@ -83,7 +84,7 @@ export default (base) => {
       }
 
       // Prefer mixin result if it's defined, otherwise use base result.
-      return handled || (super.keydown && super.keydown(event));
+      return handled || (super[symbols.keydown] && super[symbols.keydown](event));
     }
 
     /**

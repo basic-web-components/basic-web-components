@@ -9,6 +9,7 @@ import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaA
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
 import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
@@ -71,8 +72,8 @@ class SlidingCarousel extends base {
     this.itemsChanged();
   }
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     defaults.selectionRequired = true;
     return defaults;

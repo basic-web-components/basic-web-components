@@ -1,5 +1,6 @@
 import createSymbol from './createSymbol';
 import safeAttributes from './safeAttributes';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -29,13 +30,13 @@ export default (base) => {
    *
    * Example:
    *
-   *     keydown(event) {
+   *     [symbols.keydown](event) {
    *       let handled;
    *       switch (event.keyCode) {
    *         // Handle the keys you want, setting handled = true if appropriate.
    *       }
    *       // Prefer mixin result if it's defined, otherwise use base result.
-   *       return handled || (super.keydown && super.keydown(event));
+   *       return handled || (super[symbols.keydown] && super[symbols.keydown](event));
    *     }
    *
    * A second feature provided by this mixin is that it implicitly makes the
@@ -106,8 +107,8 @@ export default (base) => {
      * @param {KeyboardEvent} event - the keyboard event
      * @return {boolean} true if the event was handled
      */
-    keydown(event) {
-      if (super.keydown) { return super.keydown(event); }
+    [symbols.keydown](event) {
+      if (super[symbols.keydown]) { return super[symbols.keydown](event); }
     }
 
   }
@@ -130,14 +131,14 @@ function keydown(event) {
     let elements = this.collective.elements;
     for (let i = elements.length - 1; i >= 0; i--) {
       let element = elements[i];
-      handled = element.keydown && element.keydown(event);
+      handled = element[symbols.keydown] && element[symbols.keydown](event);
       if (handled) {
         break;
       }
     }
   } else {
     // Component is handling the keyboard on its own.
-    handled = this.keydown(event);
+    handled = this[symbols.keydown](event);
   }
 
   if (handled) {

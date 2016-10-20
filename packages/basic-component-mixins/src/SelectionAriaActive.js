@@ -1,3 +1,6 @@
+import symbols from './symbols';
+
+
 // Used to assign unique IDs to item elements without IDs.
 let idCount = 0;
 
@@ -32,13 +35,13 @@ export default (base) => {
    * to any list item that does not already have a role specified.
    *
    * This mixin expects a set of members that manage the state of the selection:
-   * `applySelection`, `itemAdded`, and `selectedIndex`. You can supply these
+   * `[symbols.applySelection]`, `itemAdded`, and `selectedIndex`. You can supply these
    * yourself, or do so via the [SingleSelection](SingleSelection.md) mixin.
    */
   class SelectionAriaActive extends base {
 
-    applySelection(item, selected) {
-      if (super.applySelection) { super.applySelection(item, selected); }
+    [symbols.applySelection](item, selected) {
+      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
       item.setAttribute('aria-selected', selected);
       let itemId = item.id;
       if (itemId) {
@@ -58,8 +61,8 @@ export default (base) => {
       setAriaAttributes(this);
     }
 
-    itemAdded(item) {
-      if (super.itemAdded) { super.itemAdded(item); }
+    [symbols.itemAdded](item) {
+      if (super[symbols.itemAdded]) { super[symbols.itemAdded](item); }
 
       if (!item.getAttribute('role')) {
         // Assign a default ARIA role.

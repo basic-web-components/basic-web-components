@@ -5,6 +5,7 @@ import FractionalSelection from '../../basic-component-mixins/src/FractionalSele
 import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
 
 
@@ -42,8 +43,8 @@ let base = ElementBase.compose(
  */
 class Slideshow extends base {
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.playing = true;
     defaults.selectionAnimationDuration = 500;
     defaults.selectionAnimationEffect = 'crossfade';

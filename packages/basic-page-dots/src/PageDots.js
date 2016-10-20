@@ -7,6 +7,7 @@ import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
@@ -71,8 +72,8 @@ class PageDots extends base {
     });
   }
 
-  applySelection(item, selected) {
-    if (super.applySelection) { super.applySelection(item, selected); }
+  [symbols.applySelection](item, selected) {
+    if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
     let index = this.items.indexOf(item);
     // See if the corresponding dot has already been created.
     // If not, the correct dot will be selected when it gets created.
@@ -85,8 +86,8 @@ class PageDots extends base {
     }
   }
 
-  get defaults() {
-    let defaults = super.defaults || {};
+  get [symbols.defaults]() {
+    let defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     return defaults;
   }

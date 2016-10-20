@@ -1,5 +1,6 @@
 import createSymbol from './createSymbol';
 import toggleClass from './toggleClass';
+import symbols from './symbols';
 
 
 // Symbols for private data members on an element.
@@ -52,8 +53,8 @@ export default (base) => {
      * @param {HTMLElement} item - The item whose selection state has changed.
      * @param {boolean} selected - True if the item is selected, false if not.
      */
-    applySelection(item, selected) {
-      if (super.applySelection) { super.applySelection(item, selected); }
+    [symbols.applySelection](item, selected) {
+      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
       toggleClass(item, 'selected', selected);
     }
 
@@ -77,8 +78,8 @@ export default (base) => {
      *
      * @param {HTMLElement} item - The item that was added.
      */
-    itemAdded(item) {
-      if (super.itemAdded) { super.itemAdded(item); }
+    [symbols.itemAdded](item) {
+      if (super[symbols.itemAdded]) { super[symbols.itemAdded](item); }
     }
 
     /**
@@ -114,7 +115,7 @@ export default (base) => {
       // Perform per-item initialization.
       this.items.forEach(item => {
         if (!item[itemInitializedSymbol]) {
-          this.itemAdded(item);
+          this[symbols.itemAdded](item);
           item[itemInitializedSymbol] = true;
         }
       });
