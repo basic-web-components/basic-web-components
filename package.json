@@ -24,7 +24,7 @@
     "grunt-saucelabs": "^8.6.2",
     "grunt-shell": "^1.1.2",
     "web-animations-js": "^2.2.1",
-    "webcomponents.js": "^0.7.22"
+    "webcomponents.js": "webcomponents/webcomponentsjs#e6a0d18cd338424467eab9622ab064f0d8cb1f54"
   },
   "browserify": {
     "transform": [
