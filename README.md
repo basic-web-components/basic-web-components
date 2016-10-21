@@ -135,6 +135,7 @@ but those packages were deprecated in the transition to using npm.
 
 The current release of Basic Web Components includes the following:
 
+
 ## Top-level components
 
 * [basic-animation-stage](packages/basic-animation-stage).
@@ -159,6 +160,7 @@ The current release of Basic Web Components includes the following:
   Slideshow with animated transitions.
 * [basic-tabs](packages/basic-tabs).
   A set of pages with a tab strip governing which page is shown.
+
 
 ## Helper components
 
@@ -188,57 +190,13 @@ other components.
   Wraps a standard HTML element so that the standard behavior can then be
   extended.
 
+
 ## Mixins
 
 Mixins are a core part of the Basic Web Components approach to creating
 functionally sophisticated components. The [basic-component-mixins](packages/basic-component-mixins)
 library includes a variety of mixins you can use in your own components.
 
-## Older components
-
-The earlier 0.6 release of Basic Web Components included more components which
-have not yet been rewritten in ES6. These components are still present in this
-repository for reference, and it is our intent to upgrade these when we can:
-
-* [basic-button](old/basic-button)
-  A button with a simple generic style.
-* [basic-calendar-day](old/basic-calendar-day).
-  Shows a single day in a calendar.
-* [basic-calendar-month-days](old/basic-calendar-month-days).
-  Shows a single month's worth of days as a seven-column table. No headings.
-* [basic-calendar-month](old/basic-calendar-month).
-  Shows a single month from a calendar as a standard seven-column table, taking
-  care to reflect a given culture’s preference for the first day of the week.
-  Includes headings for month name, year, and days of week.
-* [basic-calendar-week](old/basic-calendar-week).
-  Shows a single week from a calendar as seven days in a row, taking care to
-  reflect a given culture’s preference for the first day of the week.
-* [basic-carousel-fit](old/basic-carousel-fit).
-  Lets the user navigate through a sequence of child elements, without requiring
-  that an explicit height and width be applied to the carousel.
-* [basic-culture-selector](old/basic-culture-selector).
-  Lets the user select a preferred language/culture from a list of supported
-  languages/cultures. Can also be used behind the scenes to load
-  language/culture settings.
-* [basic-days-of-week](old/basic-days-of-week).
-  Shows the names of the seven days of the week using a given culture’s day
-  names in short/abbreviated/full format.
-* [basic-framed-content](old/basic-framed-content).
-  Allows communication outside of a framed page.
-* [basic-month-and-year](old/basic-month-and-year).
-  Shows the month and year of a given date in a format appropriate for a given
-  culture.
-* [basic-month-name](old/basic-month-name).
-  Shows a given culture’s name for the month of a given date.
-* [basic-seamless-iframe](old/basic-seamless-iframe).
-  Allows communication with a framed page. Can automatically size to the framed
-  content.
-* [basic-stack](old/basic-stack).
-  Stacks its child elements on top of each other, taking on the maximum height
-  and width of the child elements.
-* [basic-text-extractor](old/basic-text-extractor).
-  Extracts the text of its content elements and exposes this as an attribute
-  which can be bound to.
 
 ## Desired components
 
