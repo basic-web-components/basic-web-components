@@ -22,15 +22,15 @@ This component doesn't provide any UI for changing which mode is shown.
   
 
 * [Modes](#Modes) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
+    * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
-    * [.itemAdded(item)](#SingleSelection+itemAdded)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
+    * [.itemAdded(item)](#ContentAsItems+symbols.itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
@@ -46,31 +46,31 @@ This component doesn't provide any UI for changing which mode is shown.
     * [.selectPrevious()](#SingleSelection+selectPrevious)
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
 
-<a name="SingleSelection+applySelection"></a>
+<a name="SingleSelection+symbols.applySelection"></a>
 
-### modes.applySelection(item, selected)
+### Modes.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being selected/deselected |
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
-<a name="ContentAsItems+applySelection"></a>
+<a name="ContentAsItems+symbols.applySelection"></a>
 
-### modes.applySelection(item, selected)
+### Modes.applySelection(item, selected)
 Apply the selection state to a single item.
 
 Invoke this method to signal that the selected state of the indicated item
 has changed. By default, this applies a `selected` CSS class if the item
 is selected, and removed it if not selected.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: static method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -116,29 +116,29 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="SingleSelection+itemAdded"></a>
+<a name="SingleSelection+symbols.itemAdded"></a>
 
-### modes.itemAdded(item)
+### Modes.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being added |
 
-<a name="ContentAsItems+itemAdded"></a>
+<a name="ContentAsItems+symbols.itemAdded"></a>
 
-### modes.itemAdded(item)
+### Modes.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
 
 The default implementation of this method does nothing. You can override
 this to perform per-item initialization.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: static method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |

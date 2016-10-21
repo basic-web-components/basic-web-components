@@ -13,27 +13,11 @@ map the direction to a change in selection, use the
   **Kind**: global class
 
 * [SwipeDirection](#SwipeDirection)
-    * [.goLeft()](#SwipeDirection+goLeft)
-    * [.goRight()](#SwipeDirection+goRight)
     * [.touchEnd(clientX, clientY)](#SwipeDirection+touchEnd)
     * [.touchMove(clientX, clientY)](#SwipeDirection+touchMove)
     * [.touchStart(clientX, clientY)](#SwipeDirection+touchStart)
     * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
 
-<a name="SwipeDirection+goLeft"></a>
-
-### swipeDirection.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
-<a name="SwipeDirection+goRight"></a>
-
-### swipeDirection.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
 <a name="SwipeDirection+touchEnd"></a>
 
 ### swipeDirection.touchEnd(clientX, clientY)

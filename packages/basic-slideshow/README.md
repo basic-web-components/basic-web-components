@@ -26,15 +26,15 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
   
 
 * [Slideshow](#Slideshow) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
+    * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
-    * [.itemAdded(item)](#SingleSelection+itemAdded)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
+    * [.itemAdded(item)](#ContentAsItems+symbols.itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
@@ -43,8 +43,8 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.playing](#TimerSelection+playing) : <code>boolean</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
-    * [.selectedFraction](#FractionalSelection+selectedFraction) : <code>number</code>
     * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
+    * [.selectedFraction](#FractionalSelection+selectedFraction) : <code>number</code>
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#SingleSelection+selectFirst)
@@ -59,36 +59,36 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.selectPrevious()](#SingleSelection+selectPrevious)
     * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
 
-<a name="ContentAsItems+applySelection"></a>
+<a name="SingleSelection+symbols.applySelection"></a>
 
-### slideshow.applySelection(item, selected)
+### Slideshow.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
+
+<a name="ContentAsItems+symbols.applySelection"></a>
+
+### Slideshow.applySelection(item, selected)
 Apply the selection state to a single item.
 
 Invoke this method to signal that the selected state of the indicated item
 has changed. By default, this applies a `selected` CSS class if the item
 is selected, and removed it if not selected.
 
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
-
-<a name="SingleSelection+applySelection"></a>
-
-### slideshow.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 
@@ -129,29 +129,29 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="SingleSelection+itemAdded"></a>
+<a name="SingleSelection+symbols.itemAdded"></a>
 
-### slideshow.itemAdded(item)
+### Slideshow.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being added |
 
-<a name="ContentAsItems+itemAdded"></a>
+<a name="ContentAsItems+symbols.itemAdded"></a>
 
-### slideshow.itemAdded(item)
+### Slideshow.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
 
 The default implementation of this method does nothing. You can override
 this to perform per-item initialization.
 
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -220,14 +220,6 @@ Fires when the selectedItem property changes.
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
-<a name="FractionalSelection+selectedFraction"></a>
-
-### slideshow.selectedFraction : <code>number</code>
-A fractional value indicating how far the user has currently advanced to
-the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
-user is halfway between items 3 and 4.
-
-  **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="SelectionAnimation+selectedFraction"></a>
 
 ### slideshow.selectedFraction : <code>number</code>
@@ -239,6 +231,14 @@ For more details, see the [FractionalSelection](FractionalSelection.md)
 mixin.
 
   **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
+<a name="FractionalSelection+selectedFraction"></a>
+
+### slideshow.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
+
+  **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="SingleSelection+selectedIndex"></a>
 
 ### slideshow.selectedIndex : <code>number</code>

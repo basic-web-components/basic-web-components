@@ -25,10 +25,8 @@ ways to let the user know a given item is selected or not selected.
   **Kind**: global class
 
 * [SingleSelection](#SingleSelection)
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
-    * [.itemAdded(item)](#SingleSelection+itemAdded)
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
@@ -39,21 +37,6 @@ ways to let the user know a given item is selected or not selected.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-
-<a name="SingleSelection+applySelection"></a>
-
-### singleSelection.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: instance method of <code>[SingleSelection](#SingleSelection)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 
@@ -69,20 +52,6 @@ True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
   **Kind**: instance property of <code>[SingleSelection](#SingleSelection)</code>
-<a name="SingleSelection+itemAdded"></a>
-
-### singleSelection.itemAdded(item)
-Handle a new item being added to the list.
-
-The default implementation of this method simply sets the item's
-selection state to false.
-
-  **Kind**: instance method of <code>[SingleSelection](#SingleSelection)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being added |
-
 <a name="SingleSelection.event_selected-index-changed"></a>
 
 ### "selected-index-changed"

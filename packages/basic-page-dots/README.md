@@ -34,29 +34,29 @@ will select the corresponding list item.
   
 
 * [PageDots](#PageDots) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
-    * [.goDown()](#KeyboardDirection+goDown)
-    * [.goEnd()](#KeyboardDirection+goEnd)
-    * [.goLeft()](#KeyboardDirection+goLeft)
-    * [.goRight()](#KeyboardDirection+goRight)
-    * [.goStart()](#KeyboardDirection+goStart)
-    * [.goUp()](#KeyboardDirection+goUp)
-    * [.itemAdded(item)](#SingleSelection+itemAdded)
+    * [.goDown()](#KeyboardDirection+symbols.goDown)
+    * [.goEnd()](#KeyboardDirection+symbols.goEnd)
+    * [.goLeft()](#KeyboardDirection+symbols.goLeft)
+    * [.goRight()](#KeyboardDirection+symbols.goRight)
+    * [.goStart()](#KeyboardDirection+symbols.goStart)
+    * [.goUp()](#KeyboardDirection+symbols.goUp)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
-    * [.keydown(event)](#Keyboard+keydown) ⇒ <code>boolean</code>
+    * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedFraction](#PageDots+selectedFraction) : <code>number</code>
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
+    * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
     * [.selectFirst()](#SingleSelection+selectFirst)
     * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
     * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
@@ -64,19 +64,19 @@ will select the corresponding list item.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
+    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
 
-<a name="SingleSelection+applySelection"></a>
+<a name="SingleSelection+symbols.applySelection"></a>
 
-### pageDots.applySelection(item, selected)
+### PageDots.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -122,57 +122,57 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="KeyboardDirection+goDown"></a>
+<a name="KeyboardDirection+symbols.goDown"></a>
 
-### pageDots.goDown()
+### PageDots.goDown()
 Invoked when the user wants to go/navigate down.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goEnd"></a>
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goEnd"></a>
 
-### pageDots.goEnd()
+### PageDots.goEnd()
 Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goLeft"></a>
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goLeft"></a>
 
-### pageDots.goLeft()
+### PageDots.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goRight"></a>
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goRight"></a>
 
-### pageDots.goRight()
+### PageDots.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goStart"></a>
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goStart"></a>
 
-### pageDots.goStart()
+### PageDots.goStart()
 Invoked when the user wants to go/navigate to the start (e.g., of a
 list). The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goUp"></a>
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goUp"></a>
 
-### pageDots.goUp()
+### PageDots.goUp()
 Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="SingleSelection+itemAdded"></a>
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="SingleSelection+symbols.itemAdded"></a>
 
-### pageDots.itemAdded(item)
+### PageDots.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -192,15 +192,15 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="Keyboard+keydown"></a>
+<a name="Keyboard+symbols.keydown"></a>
 
-### pageDots.keydown(event) ⇒ <code>boolean</code>
+### PageDots.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
 
 The default implementation of this method does nothing. This will
 typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code> mixin.
+  **Kind**: static method of <code>[PageDots](#PageDots)</code>. Defined by <code>[Keyboard#symbols](../basic-component-mixins/docs/Keyboard#symbols.md)</code> mixin.
 **Returns**: <code>boolean</code> - true if the event was handled  
 
 | Param | Type | Description |
@@ -258,12 +258,6 @@ In that case, setting the index to -1 will deselect any
 currently-selected item.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="TargetSelection+selectedItem"></a>
-
-### pageDots.selectedItem : <code>HTMLElement</code>
-The currently selected item, or null if there is no selection.
-
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="SingleSelection+selectedItem"></a>
 
 ### pageDots.selectedItem : <code>object</code>
@@ -272,6 +266,12 @@ The currently selected item, or null if there is no selection.
 Setting this property to null deselects any currently-selected item.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="TargetSelection+selectedItem"></a>
+
+### pageDots.selectedItem : <code>HTMLElement</code>
+The currently selected item, or null if there is no selection.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="SingleSelection+selectFirst"></a>
 
 ### pageDots.selectFirst()
@@ -319,6 +319,19 @@ Select the previous item in the list.
 If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[PageDots](#PageDots)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="ContentFirstChildTarget+target"></a>
+
+### pageDots.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
+<a name="TargetSelection+target"></a>
+
+### pageDots.target : <code>HTMLElement</code>
+Gets/sets the target element to which this component will delegate
+selection actions.
+
+  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TargetInCollective+target"></a>
 
 ### pageDots.target : <code>HTMLElement</code>
@@ -333,16 +346,3 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
-<a name="ContentFirstChildTarget+target"></a>
-
-### pageDots.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
-<a name="TargetSelection+target"></a>
-
-### pageDots.target : <code>HTMLElement</code>
-Gets/sets the target element to which this component will delegate
-selection actions.
-
-  **Kind**: instance property of <code>[PageDots](#PageDots)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.

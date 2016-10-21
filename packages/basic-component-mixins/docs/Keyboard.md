@@ -21,13 +21,13 @@ keyboard event.
 
 Example:
 
-    keydown(event) {
+    [symbols.keydown](event) {
       let handled;
       switch (event.keyCode) {
         // Handle the keys you want, setting handled = true if appropriate.
       }
       // Prefer mixin result if it's defined, otherwise use base result.
-      return handled || (super.keydown && super.keydown(event));
+      return handled || (super[symbols.keydown] && super[symbols.keydown](event));
     }
 
 A second feature provided by this mixin is that it implicitly makes the
@@ -41,18 +41,3 @@ component instances to cooperatively handle the keyboard. See the
 Collective class for details.
 
   **Kind**: global class
-<a name="Keyboard+keydown"></a>
-
-### keyboard.keydown(event) ⇒ <code>boolean</code>
-Handle the indicated keyboard event.
-
-The default implementation of this method does nothing. This will
-typically be handled by other mixins.
-
-  **Kind**: instance method of <code>[Keyboard](#Keyboard)</code>
-**Returns**: <code>boolean</code> - true if the event was handled  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>KeyboardEvent</code> | the keyboard event |
-

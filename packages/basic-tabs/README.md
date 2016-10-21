@@ -27,37 +27,37 @@ Example:
   
 
 * [Tabs](#Tabs) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.generic](#Generic+generic) : <code>Boolean</code>
-    * [.itemAdded(item)](#SingleSelection+itemAdded)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
+    * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#SingleSelection+selectFirst)
     * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
+    * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
     * [.tabPosition](#Tabs+tabPosition) : <code>string</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
 
-<a name="SingleSelection+applySelection"></a>
+<a name="SingleSelection+symbols.applySelection"></a>
 
-### tabs.applySelection(item, selected)
+### Tabs.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -89,15 +89,15 @@ have to explicitly override styling you don't want.
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[Generic](../basic-component-mixins/docs/Generic.md)</code> mixin.
 **Default**: <code>true</code>  
-<a name="SingleSelection+itemAdded"></a>
+<a name="SingleSelection+symbols.itemAdded"></a>
 
-### tabs.itemAdded(item)
+### Tabs.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -150,6 +150,12 @@ In that case, setting the index to -1 will deselect any
 currently-selected item.
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+<a name="TargetSelection+selectedItem"></a>
+
+### tabs.selectedItem : <code>HTMLElement</code>
+The currently selected item, or null if there is no selection.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="SingleSelection+selectedItem"></a>
 
 ### tabs.selectedItem : <code>object</code>
@@ -158,12 +164,6 @@ The currently selected item, or null if there is no selection.
 Setting this property to null deselects any currently-selected item.
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="TargetSelection+selectedItem"></a>
-
-### tabs.selectedItem : <code>HTMLElement</code>
-The currently selected item, or null if there is no selection.
-
-  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="SingleSelection+selectFirst"></a>
 
 ### tabs.selectFirst()
@@ -177,13 +177,6 @@ True if the list should always have a selection (if it has items).
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
-<a name="TargetSelection+selectionWraps"></a>
-
-### tabs.selectionWraps : <code>boolean</code>
-True if selection navigations wrap from last to first, and vice versa.
-
-  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectionWraps"></a>
 
 ### tabs.selectionWraps : <code>boolean</code>
@@ -191,6 +184,13 @@ True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 **Default**: <code>false</code>  
+<a name="TargetSelection+selectionWraps"></a>
+
+### tabs.selectionWraps : <code>boolean</code>
+True if selection navigations wrap from last to first, and vice versa.
+
+  **Kind**: instance property of <code>[Tabs](#Tabs)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+**Default**: <code>{false}</code>  
 <a name="SingleSelection+selectLast"></a>
 
 ### tabs.selectLast()

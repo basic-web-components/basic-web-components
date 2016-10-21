@@ -327,18 +327,23 @@ common web component feature:
 
 ## Standard property and method semantics
 
-The above mixins effectively cooperate through property and method names that have been assigned consistent semantics. The mixins define properties and methods with these names as indicated below.
+The above mixins effectively cooperate through property and methods that have been assigned consistent semantics. The mixins define properties and methods with these names as indicated below.
 
 These are effectively reserved words for components and mixins that want to participate in this ecosystem. To some degree, these names close off possibilities for property names you might want to use yourself, but in exchange, they permit a very easy form of intergration between component mixins.
 
-### Standard properties
+### Standard properties and methods identified by Symbols
 
-Each property can be "backed" by a mixin that can store and retrieve the latest value of that property. If no backing mixin is indicated, your component must provide storage of the property yourself. (And even if a backing mixin is listed, you're not under any obligation to use it.)
+Standard properties and methods that are generally meant only for internal communication between mixins and a component are identified with unique Symbols. See the [symbols](docs/symbols.md) module for a description of these.
+
+### Standard string-named properties
+
+These standard properties have string names, and are exposed directly on components so that they are available to authors.
+
+Each of these properties can be "backed" by a mixin that can store and retrieve the latest value of that property. If no backing mixin is indicated, your component must provide storage of the property yourself. (And even if a backing mixin is listed, you're not under any obligation to use it.)
 
 * `canSelectNext`: True if the selection can move to the next item. Backed by [SingleSelection](docs/SingleSelection.md).
 * `canSelectPrevious`: True if the selection can move to the previous item. Backed by [SingleSelection](docs/SingleSelection.md).
 * `closed`: True if the component is curently closed. Backed by [OpenClose](docs/OpenClose.md).
-* `defaults`: The collection of default property values that will be applied in the component constructor.
 * `distributedChildNodes`: An in-order collection of distributed children, exluding text nodes. Backed by [DistributedChildren](docs/DistributedChildren.md).
 * `distributedChildren`: An in-order collection of distributed children, including text nodes. Backed by [DistributedChildren](docs/DistributedChildren.md).
 * `distributedTextContent`: The concatenated text content of all distributed child nodes. Backed by [DistributedChildren](docs/DistributedChildren.md).

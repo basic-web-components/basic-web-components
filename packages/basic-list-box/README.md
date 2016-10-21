@@ -57,26 +57,26 @@ The user can also select an item by typing the beginning of an item's text.
   
 
 * [ListBox](#ListBox) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
+    * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
     * [.generic](#Generic+generic) : <code>Boolean</code>
-    * [.goDown()](#KeyboardDirection+goDown)
-    * [.goEnd()](#KeyboardDirection+goEnd)
-    * [.goLeft()](#KeyboardDirection+goLeft)
-    * [.goRight()](#KeyboardDirection+goRight)
-    * [.goStart()](#KeyboardDirection+goStart)
-    * [.goUp()](#KeyboardDirection+goUp)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
-    * [.itemAdded(item)](#SingleSelection+itemAdded)
+    * [.goDown()](#KeyboardDirection+symbols.goDown)
+    * [.goEnd()](#KeyboardDirection+symbols.goEnd)
+    * [.goLeft()](#KeyboardDirection+symbols.goLeft)
+    * [.goRight()](#KeyboardDirection+symbols.goRight)
+    * [.goStart()](#KeyboardDirection+symbols.goStart)
+    * [.goUp()](#KeyboardDirection+symbols.goUp)
+    * [.itemAdded(item)](#ContentAsItems+symbols.itemAdded)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
-    * [.keydown(event)](#Keyboard+keydown) ⇒ <code>boolean</code>
+    * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * [.pageDown()](#KeyboardPagedSelection+pageDown)
     * [.pageUp()](#KeyboardPagedSelection+pageUp)
@@ -97,31 +97,31 @@ The user can also select an item by typing the beginning of an item's text.
     * [.value](#ListBox+value) : <code>string</code>
     * ["value-changed"](#ListBox.event_value-changed)
 
-<a name="SingleSelection+applySelection"></a>
+<a name="SingleSelection+symbols.applySelection"></a>
 
-### listBox.applySelection(item, selected)
+### ListBox.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being selected/deselected |
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
-<a name="ContentAsItems+applySelection"></a>
+<a name="ContentAsItems+symbols.applySelection"></a>
 
-### listBox.applySelection(item, selected)
+### ListBox.applySelection(item, selected)
 Apply the selection state to a single item.
 
 Invoke this method to signal that the selected state of the indicated item
 has changed. By default, this applies a `selected` CSS class if the item
 is selected, and removed it if not selected.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -178,71 +178,71 @@ have to explicitly override styling you don't want.
 
   **Kind**: instance property of <code>[ListBox](#ListBox)</code>. Defined by <code>[Generic](../basic-component-mixins/docs/Generic.md)</code> mixin.
 **Default**: <code>true</code>  
-<a name="KeyboardDirection+goDown"></a>
+<a name="KeyboardDirection+symbols.goDown"></a>
 
-### listBox.goDown()
+### ListBox.goDown()
 Invoked when the user wants to go/navigate down.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goEnd"></a>
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goEnd"></a>
 
-### listBox.goEnd()
+### ListBox.goEnd()
 Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goLeft"></a>
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goLeft"></a>
 
-### listBox.goLeft()
+### ListBox.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goRight"></a>
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goRight"></a>
 
-### listBox.goRight()
+### ListBox.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goStart"></a>
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goStart"></a>
 
-### listBox.goStart()
+### ListBox.goStart()
 Invoked when the user wants to go/navigate to the start (e.g., of a
 list). The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goUp"></a>
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goUp"></a>
 
-### listBox.goUp()
+### ListBox.goUp()
 Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="ContentAsItems+itemAdded"></a>
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="ContentAsItems+symbols.itemAdded"></a>
 
-### listBox.itemAdded(item)
+### ListBox.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
 
 The default implementation of this method does nothing. You can override
 this to perform per-item initialization.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item that was added. |
 
-<a name="SingleSelection+itemAdded"></a>
+<a name="SingleSelection+symbols.itemAdded"></a>
 
-### listBox.itemAdded(item)
+### ListBox.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -269,15 +269,15 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-<a name="Keyboard+keydown"></a>
+<a name="Keyboard+symbols.keydown"></a>
 
-### listBox.keydown(event) ⇒ <code>boolean</code>
+### ListBox.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
 
 The default implementation of this method does nothing. This will
 typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code> mixin.
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[Keyboard#symbols](../basic-component-mixins/docs/Keyboard#symbols.md)</code> mixin.
 **Returns**: <code>boolean</code> - true if the event was handled  
 
 | Param | Type | Description |

@@ -36,22 +36,22 @@ movement is detected. To cause the buttons to always appear, apply the
   
 
 * [ArrowSelection](#ArrowSelection) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
-    * [.goDown()](#KeyboardDirection+goDown)
-    * [.goEnd()](#KeyboardDirection+goEnd)
-    * [.goLeft()](#KeyboardDirection+goLeft)
-    * [.goRight()](#KeyboardDirection+goRight)
-    * [.goStart()](#KeyboardDirection+goStart)
-    * [.goUp()](#KeyboardDirection+goUp)
-    * [.itemAdded(item)](#SingleSelection+itemAdded)
+    * [.goDown()](#KeyboardDirection+symbols.goDown)
+    * [.goEnd()](#KeyboardDirection+symbols.goEnd)
+    * [.goLeft()](#KeyboardDirection+symbols.goLeft)
+    * [.goRight()](#KeyboardDirection+symbols.goRight)
+    * [.goStart()](#KeyboardDirection+symbols.goStart)
+    * [.goUp()](#KeyboardDirection+symbols.goUp)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
-    * [.keydown(event)](#Keyboard+keydown) ⇒ <code>boolean</code>
+    * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
@@ -69,15 +69,15 @@ movement is detected. To cause the buttons to always appear, apply the
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
     * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
 
-<a name="SingleSelection+applySelection"></a>
+<a name="SingleSelection+symbols.applySelection"></a>
 
-### arrowSelection.applySelection(item, selected)
+### ArrowSelection.applySelection(item, selected)
 Apply the indicate selection state to the item.
 
 The default implementation of this method does nothing. User-visible
 effects will typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -123,57 +123,57 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="KeyboardDirection+goDown"></a>
+<a name="KeyboardDirection+symbols.goDown"></a>
 
-### arrowSelection.goDown()
+### ArrowSelection.goDown()
 Invoked when the user wants to go/navigate down.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goEnd"></a>
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goEnd"></a>
 
-### arrowSelection.goEnd()
+### ArrowSelection.goEnd()
 Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goLeft"></a>
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goLeft"></a>
 
-### arrowSelection.goLeft()
+### ArrowSelection.goLeft()
 Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goRight"></a>
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goRight"></a>
 
-### arrowSelection.goRight()
+### ArrowSelection.goRight()
 Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goStart"></a>
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goStart"></a>
 
-### arrowSelection.goStart()
+### ArrowSelection.goStart()
 Invoked when the user wants to go/navigate to the start (e.g., of a
 list). The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="KeyboardDirection+goUp"></a>
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goUp"></a>
 
-### arrowSelection.goUp()
+### ArrowSelection.goUp()
 Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="SingleSelection+itemAdded"></a>
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="SingleSelection+symbols.itemAdded"></a>
 
-### arrowSelection.itemAdded(item)
+### ArrowSelection.itemAdded(item)
 Handle a new item being added to the list.
 
 The default implementation of this method simply sets the item's
 selection state to false.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -193,15 +193,15 @@ invoked on component initialization – since the items have "changed" from
 being nothing.
 
   **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="Keyboard+keydown"></a>
+<a name="Keyboard+symbols.keydown"></a>
 
-### arrowSelection.keydown(event) ⇒ <code>boolean</code>
+### ArrowSelection.keydown(event) ⇒ <code>boolean</code>
 Handle the indicated keyboard event.
 
 The default implementation of this method does nothing. This will
 typically be handled by other mixins.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code> mixin.
+  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[Keyboard#symbols](../basic-component-mixins/docs/Keyboard#symbols.md)</code> mixin.
 **Returns**: <code>boolean</code> - true if the event was handled  
 
 | Param | Type | Description |

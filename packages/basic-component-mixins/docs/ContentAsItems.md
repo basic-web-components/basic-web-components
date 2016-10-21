@@ -34,41 +34,9 @@ change, turning on the optimization automatically.
   **Kind**: global class
 
 * [ContentAsItems](#ContentAsItems)
-    * [.applySelection(item, selected)](#ContentAsItems+applySelection)
-    * [.itemAdded(item)](#ContentAsItems+itemAdded)
     * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentAsItems.event_items-changed)
     * [.itemsChanged()](#ContentAsItems+itemsChanged)
-
-<a name="ContentAsItems+applySelection"></a>
-
-### contentAsItems.applySelection(item, selected)
-Apply the selection state to a single item.
-
-Invoke this method to signal that the selected state of the indicated item
-has changed. By default, this applies a `selected` CSS class if the item
-is selected, and removed it if not selected.
-
-  **Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item whose selection state has changed. |
-| selected | <code>boolean</code> | True if the item is selected, false if not. |
-
-<a name="ContentAsItems+itemAdded"></a>
-
-### contentAsItems.itemAdded(item)
-This method is invoked whenever a new item is added to the list.
-
-The default implementation of this method does nothing. You can override
-this to perform per-item initialization.
-
-  **Kind**: instance method of <code>[ContentAsItems](#ContentAsItems)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item that was added. |
 
 <a name="ContentAsItems+items"></a>
 

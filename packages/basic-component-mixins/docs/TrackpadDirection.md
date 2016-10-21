@@ -26,26 +26,6 @@ complex nature of the problem make it extremely difficult to achieve the
 same degree of trackpad responsiveness possible with native applications.
 
   **Kind**: global class
-
-* [TrackpadDirection](#TrackpadDirection)
-    * [.goLeft()](#TrackpadDirection+goLeft)
-    * [.goRight()](#TrackpadDirection+goRight)
-    * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
-
-<a name="TrackpadDirection+goLeft"></a>
-
-### trackpadDirection.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[TrackpadDirection](#TrackpadDirection)</code>
-<a name="TrackpadDirection+goRight"></a>
-
-### trackpadDirection.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: instance method of <code>[TrackpadDirection](#TrackpadDirection)</code>
 <a name="TrackpadDirection+travelFraction"></a>
 
 ### trackpadDirection.travelFraction : <code>number</code>
