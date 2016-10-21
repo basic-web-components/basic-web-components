@@ -95,10 +95,20 @@ class PlayControls extends base {
   }
   set playing(value) {
     if ('playing' in base.prototype) { super.playing = value; }
-    if (this.target) {
+    if (this.target && this.target.playing !== value) {
       this.target.playing = value;
     }
     safeAttributes.toggleClass(this, 'playing', value);
+  }
+
+  get target() {
+    return super.target;
+  }
+  set target(element) {
+    if ('target' in base.prototype) { super.target = element; }
+    if (element) {
+      this.playing = element.playing;
+    }
   }
 
   get template() {
