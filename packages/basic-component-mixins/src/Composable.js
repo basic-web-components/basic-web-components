@@ -82,7 +82,7 @@ function composeClass(base, mixin) {
 function copyOwnProperties(source, target, ignorePropertyNames = []) {
   Object.getOwnPropertyNames(source).forEach(name => {
     if (ignorePropertyNames.indexOf(name) < 0) {
-      let descriptor = Object.getOwnPropertyDescriptor(source, name);
+      const descriptor = Object.getOwnPropertyDescriptor(source, name);
       Object.defineProperty(target, name, descriptor);
     }
   });

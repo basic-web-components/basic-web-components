@@ -90,7 +90,7 @@ export default (base) => {
     }
 
     get [symbols.defaults]() {
-      let defaults = super[symbols.defaults] || {};
+      const defaults = super[symbols.defaults] || {};
       defaults.selectionRequired = false;
       defaults.selectionWraps = false;
       return defaults;
@@ -134,7 +134,7 @@ export default (base) => {
      * @type {number}
      */
     get selectedIndex() {
-      let selectedItem = this.selectedItem;
+      const selectedItem = this.selectedItem;
 
       // TODO: If selection wasn't found, most likely cause is that the DOM was
       // manipulated from underneath us. Once we track content changes, turn
@@ -147,16 +147,13 @@ export default (base) => {
     set selectedIndex(index) {
       // TODO: Pull setting of selectedItem above super() call. */
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
-      let items = this.items;
-      let item;
-      if (index < 0 || items.length === 0) {
-        item = null;
-      } else {
-        item = items[index];
-      }
+      const items = this.items;
+      const item = (index < 0 || items.length === 0) ?
+        null :
+        items[index];
       this.selectedItem = item;
 
-      let event = new CustomEvent('selected-index-changed', {
+      const event = new CustomEvent('selected-index-changed', {
         detail: {
           selectedIndex: index,
           value: index // for Polymer binding
@@ -176,7 +173,7 @@ export default (base) => {
       return this[selectedItemSymbol] || null;
     }
     set selectedItem(item) {
-      let previousItem = this[selectedItemSymbol];
+      const previousItem = this[selectedItemSymbol];
       // TODO: Confirm item is actually in the list before selecting.
       this[selectedItemSymbol] = item;
 
@@ -198,7 +195,7 @@ export default (base) => {
       // or index in each setter.
       updatePossibleNavigations(this);
 
-      let event = new CustomEvent('selected-item-changed', {
+      const event = new CustomEvent('selected-item-changed', {
         detail: {
           selectedItem: item,
           previousItem: previousItem,
@@ -256,7 +253,7 @@ export default (base) => {
      */
     selectPrevious() {
       if (super.selectPrevious) { super.selectPrevious(); }
-      let newIndex = this.selectedIndex < 0 ?
+      const newIndex = this.selectedIndex < 0 ?
         this.items.length - 1 :     // No selection yet; select last item.
         this.selectedIndex - 1;
       return selectIndex(this, newIndex);
@@ -302,7 +299,7 @@ export default (base) => {
 
 // If no item is selected, select a default item.
 function ensureSelection(element) {
-  let index = element.selectedIndex;
+  const index = element.selectedIndex;
   if (index < 0) {
     // Selected item is no longer in the current set of items.
     if (element.items && element.items.length > 0) {
@@ -321,17 +318,17 @@ function ensureSelection(element) {
 // Ensure the given index is within bounds, and select it if it's not already
 // selected.
 function selectIndex(element, index) {
-  let count = element.items.length;
-  let boundedIndex;
-  if (element.selectionWraps) {
+  const count = element.items.length;
+
+  const boundedIndex = (element.selectionWraps) ?
     // JavaScript mod doesn't handle negative numbers the way we want to wrap.
     // See http://stackoverflow.com/a/18618250/76472
-    boundedIndex = ((index % count) + count) % count;
-  } else {
+    ((index % count) + count) % count :
+
     // Keep index within bounds of array.
-    boundedIndex = Math.max(Math.min(index, count - 1), 0);
-  }
-  let previousIndex = element.selectedIndex;
+    Math.max(Math.min(index, count - 1), 0);
+
+  const previousIndex = element.selectedIndex;
   if (previousIndex !== boundedIndex) {
     element.selectedIndex = boundedIndex;
     return true;
@@ -345,7 +342,7 @@ function selectIndex(element, index) {
 function updatePossibleNavigations(element) {
   let canSelectNext;
   let canSelectPrevious;
-  let items = element.items;
+  const items = element.items;
   if (items == null || items.length === 0) {
     // No items to select.
     canSelectNext = false;
@@ -355,7 +352,7 @@ function updatePossibleNavigations(element) {
     canSelectNext = true;
     canSelectPrevious = true;
   } else {
-    let index = element.selectedIndex;
+    const index = element.selectedIndex;
     if (index < 0 && items.length > 0) {
       // Special case. If there are items but no selection, declare that it's
       // always possible to go next/previous to create a selection.

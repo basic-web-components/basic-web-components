@@ -43,7 +43,7 @@ export default (base) => {
     [symbols.applySelection](item, selected) {
       if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
       item.setAttribute('aria-selected', selected);
-      let itemId = item.id;
+      const itemId = item.id;
       if (itemId) {
         if (selected) {
           outermostElement(this).setAttribute('aria-activedescendant', itemId);
@@ -80,7 +80,7 @@ export default (base) => {
       // them from manually-assigned IDs, and to minimize the potential for ID
       // conflicts.
       if (!item.id) {
-        let baseId = this.id ?
+        const baseId = this.id ?
             "_" + this.id + "Option" :
             "_option";
         item.id = baseId + idCount++;
@@ -106,16 +106,16 @@ export default (base) => {
 
 // Return the first ARIA activedescendant defined by the collective.
 function getCollectiveAriaActiveDescendant(collective) {
-  let descendants = collective.elements.map(element => element.getAttribute('aria-activedescendant'));
-  let nonNullDescendants = descendants.filter(descendant => descendant !== null);
+  const descendants = collective.elements.map(element => element.getAttribute('aria-activedescendant'));
+  const nonNullDescendants = descendants.filter(descendant => descendant !== null);
   return nonNullDescendants[0];
 }
 
 
 // Return the first ARIA label defined by the collective.
 function getCollectiveAriaRole(collective) {
-  let roles = collective.elements.map(element => element.getAttribute('role'));
-  let nonNullRoles = roles.filter(role => role !== null);
+  const roles = collective.elements.map(element => element.getAttribute('role'));
+  const nonNullRoles = roles.filter(role => role !== null);
   return nonNullRoles[0];
 }
 
@@ -147,7 +147,7 @@ function setAriaAttributes(element) {
 
   if (!element.getAttribute('aria-activedescendant') && element.collective) {
     // Try to promote an ARIA activedescendant value from an inner element.
-    let descendant = getCollectiveAriaActiveDescendant(element.collective);
+    const descendant = getCollectiveAriaActiveDescendant(element.collective);
     if (descendant) {
       element.setAttribute('aria-activedescendant', descendant);
     }

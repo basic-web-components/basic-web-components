@@ -38,8 +38,8 @@ export default (base) => {
 
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
-      let content = this.content;
-      let target = content && content[0];
+      const content = this.content;
+      const target = content && content[0];
       // A component using a target will likely do a bunch of work when the
       // target changes, so only set the target if it's actually changed.
       if (target && target !== this.target) {

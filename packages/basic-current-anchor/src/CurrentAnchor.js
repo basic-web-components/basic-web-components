@@ -90,7 +90,7 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
   }
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.areaLink = false;
     return defaults;
   }
@@ -127,7 +127,7 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 
 // Update the current status of the element based on the current location.
 function refresh(element) {
-  let url = window.location.href;
+  const url = window.location.href;
   let match;
   if (element.areaLink) {
     // Match prefix

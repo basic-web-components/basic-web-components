@@ -43,7 +43,7 @@ const symbols = {
    * as follows:
    *
    *     get [symbols.defaults]() {
-   *       let defaults = super[symbols.defaults] || {};
+   *       const defaults = super[symbols.defaults] || {};
    *       // Set or override default values here
    *       defaults.customProperty = false;
    *       return defaults;

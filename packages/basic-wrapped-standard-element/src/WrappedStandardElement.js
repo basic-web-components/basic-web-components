@@ -178,10 +178,10 @@ class WrappedStandardElement extends ElementBase {
     // Note: It's unclear why we need to do this in the Shadow DOM polyfill.
     // In theory, events in the light DOM should bubble as normal. But this
     // code appears to be required in the polyfill case as well.
-    let eventNames = reraiseEvents[this.extends] || [];
+    const eventNames = reraiseEvents[this.extends] || [];
     eventNames.forEach(eventName => {
       this.inner.addEventListener(eventName, realEvent => {
-        let event = new Event(eventName, {
+        const event = new Event(eventName, {
           bubbles: eventBubbles[eventName] || false
         });
         this.dispatchEvent(event);
@@ -245,10 +245,9 @@ class WrappedStandardElement extends ElementBase {
    * @type {(string|HTMLTemplateElement)}
    */
   get template() {
-    let display = blockElements.indexOf(this.extends) >= 0 ?
+    const display = blockElements.indexOf(this.extends) >= 0 ?
       'block' :
       'inline-block';
-    // TODO: Use slot instead of content.
     return `<style>:host { display: ${display}}</style><${this.extends} id="inner"><slot></slot></${this.extends}`;
   }
 
@@ -272,12 +271,12 @@ class WrappedStandardElement extends ElementBase {
     Wrapped.prototype.extends = extendsTag;
 
     // Create getter/setters that delegate to the wrapped element.
-    let element = document.createElement(extendsTag);
-    let extendsPrototype = element.constructor.prototype;
-    let names = Object.getOwnPropertyNames(extendsPrototype);
+    const element = document.createElement(extendsTag);
+    const extendsPrototype = element.constructor.prototype;
+    const names = Object.getOwnPropertyNames(extendsPrototype);
     names.forEach(name => {
-        let descriptor = Object.getOwnPropertyDescriptor(extendsPrototype, name);
-        let delegate = createPropertyDelegate(name, descriptor);
+        const descriptor = Object.getOwnPropertyDescriptor(extendsPrototype, name);
+        const delegate = createPropertyDelegate(name, descriptor);
         Object.defineProperty(Wrapped.prototype, name, delegate);
     });
 
@@ -288,7 +287,7 @@ class WrappedStandardElement extends ElementBase {
 
 
 function createPropertyDelegate(name, descriptor) {
-  let delegate = {
+  const delegate = {
     configurable: descriptor.configurable,
     enumerable: descriptor.enumerable,
   };

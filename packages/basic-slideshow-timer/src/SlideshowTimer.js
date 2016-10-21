@@ -10,7 +10,7 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentFirstChildTarget,
   DistributedChildrenAsContent,
   SingleSelection,
@@ -51,7 +51,7 @@ let base = ElementBase.compose(
 class SlideshowTimer extends base {
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.playing = true;
     defaults.selectionAnimationDuration = 500;
     defaults.selectionRequired = true;

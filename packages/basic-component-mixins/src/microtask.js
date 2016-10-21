@@ -14,10 +14,10 @@
 
 
 // The queue of pending callbacks to be executed as microtasks.
-let callbacks = [];
+const callbacks = [];
 
 // Create an element that we will modify to force observable mutations.
-let element = document.createTextNode('');
+const element = document.createTextNode('');
 
 // A monotonically-increasing value.
 let counter = 0;
@@ -44,14 +44,14 @@ export default function microtask(callback) {
 // Execute any pending callbacks.
 function executeCallbacks() {
   while (callbacks.length > 0) {
-    let callback = callbacks.shift();
+    const callback = callbacks.shift();
     callback();
   }
 }
 
 
 // Create the observer.
-let observer = new MutationObserver(executeCallbacks);
+const observer = new MutationObserver(executeCallbacks);
 observer.observe(element, {
   characterData: true
 });

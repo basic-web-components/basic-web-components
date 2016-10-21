@@ -68,7 +68,7 @@ export default function mixin(base) {
     }
 
     get [symbols.defaults]() {
-      let defaults = super[symbols.defaults] || {};
+      const defaults = super[symbols.defaults] || {};
       defaults.selectionAnimationDuration = 250;
       defaults.selectionAnimationEffect = 'slide';
       return defaults;
@@ -280,23 +280,23 @@ mixin.helpers = {
    */
   animationFractionsForSelection(element, selection) {
 
-    let items = element.items;
+    const items = element.items;
     if (!items) {
       return;
     }
 
-    let itemCount = items.length;
-    let selectionWraps = element.selectionWraps;
+    const itemCount = items.length;
+    const selectionWraps = element.selectionWraps;
 
     return items.map((item, itemIndex) => {
       // How many steps from the selection point to this item?
-      let steps = stepsToIndex(itemCount, selectionWraps, selection, itemIndex);
+      const steps = stepsToIndex(itemCount, selectionWraps, selection, itemIndex);
       // To convert steps to animation fraction:
       // steps      animation fraction
       //  1         0     (stage right)
       //  0         0.5   (center stage)
       // -1         1     (stage left)
-      let animationFraction = (1 - steps) / 2;
+      const animationFraction = (1 - steps) / 2;
       return (animationFraction >= 0 && animationFraction <= 1) ?
         animationFraction :
         null; // Outside animation range
@@ -313,23 +313,23 @@ mixin.helpers = {
    */
   effectTimingsForSelectionAnimation(element, fromSelection, toSelection) {
 
-    let items = element.items;
+    const items = element.items;
     if (!items) {
       return;
     }
-    let itemCount = items.length;
-    let selectionWraps = element.selectionWraps;
-    let toIndex = FractionalSelection.helpers.wrappedSelectionParts(toSelection, itemCount, selectionWraps).index;
-    let totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
-    let direction = totalSteps >= 0 ? 'normal': 'reverse';
-    let fill = 'both';
-    let totalDuration = element.selectionAnimationDuration;
-    let stepDuration = totalSteps !== 0 ?
+    const itemCount = items.length;
+    const selectionWraps = element.selectionWraps;
+    const toIndex = FractionalSelection.helpers.wrappedSelectionParts(toSelection, itemCount, selectionWraps).index;
+    const totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
+    const direction = totalSteps >= 0 ? 'normal': 'reverse';
+    const fill = 'both';
+    const totalDuration = element.selectionAnimationDuration;
+    const stepDuration = totalSteps !== 0 ?
       totalDuration * 2 / Math.ceil(Math.abs(totalSteps)) :
       0;  // No steps required, animation will be instantenous.
 
-    let timings = items.map((item, itemIndex) => {
-      let steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toSelection);
+    const timings = items.map((item, itemIndex) => {
+      const steps = stepsToIndex(itemCount, selectionWraps, itemIndex, toSelection);
       // If we include this item in the staggered sequence of animations we're
       // creating, where would the item appear in the sequence?
       let positionInSequence = totalSteps - steps;
@@ -340,8 +340,8 @@ mixin.helpers = {
       if (Math.ceil(positionInSequence) >= 0 && positionInSequence <= Math.abs(totalSteps)) {
         // Note that delay for first item will be negative. That will cause
         // the animation to start halfway through, which is what we want.
-        let delay = stepDuration * (positionInSequence - 1)/2;
-        let endDelay = itemIndex === toIndex ?
+        const delay = stepDuration * (positionInSequence - 1)/2;
+        const endDelay = itemIndex === toIndex ?
           -stepDuration/2 :   // Stop halfway through.
           0;              // Play animation until end.
         return { duration: stepDuration, direction, fill, delay, endDelay };
@@ -413,17 +413,17 @@ function animateSelection(element, fromSelection, toSelection) {
   resetAnimations(element);
 
   // Calculate the animation timings.
-  let items = element.items;
-  let keyframes = element.selectionAnimationKeyframes;
+  const items = element.items;
+  const keyframes = element.selectionAnimationKeyframes;
   element[playingAnimationSymbol] = true;
-  let timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromSelection, toSelection);
+  const timings = mixin.helpers.effectTimingsForSelectionAnimation(element, fromSelection, toSelection);
 
   // Figure out which item will be the one *after* the one we're selecting.
-  let itemCount = items.length;
-  let selectionWraps = element.selectionWraps;
-  let selectionIndex = FractionalSelection.helpers.selectionParts(toSelection, itemCount, selectionWraps).index;
-  let totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
-  let forward = totalSteps >= 0;
+  const itemCount = items.length;
+  const selectionWraps = element.selectionWraps;
+  const selectionIndex = FractionalSelection.helpers.selectionParts(toSelection, itemCount, selectionWraps).index;
+  const totalSteps = stepsToIndex(itemCount, selectionWraps, fromSelection, toSelection);
+  const forward = totalSteps >= 0;
   let nextUpIndex = selectionIndex + (forward ? 1 : - 1);
   if (selectionWraps) {
     nextUpIndex = FractionalSelection.helpers.wrappedSelection(nextUpIndex, itemCount);
@@ -434,10 +434,10 @@ function animateSelection(element, fromSelection, toSelection) {
   // Play the animations using those timings.
   let lastAnimationDetails;
   timings.forEach((timing, index) => {
-    let item = items[index];
+    const item = items[index];
     if (timing) {
       showItem(item, true);
-      let animation = item.animate(keyframes, timing);
+      const animation = item.animate(keyframes, timing);
       element[animationSymbol][index] = animation;
       if (index === nextUpIndex) {
         // This item will be animated, so will already be in the desired state
@@ -474,7 +474,7 @@ function getAnimationForItemIndex(element, index) {
   }
   let animation = element[animationSymbol][index];
   if (!animation) {
-    let item = element.items[index];
+    const item = element.items[index];
     animation = item.animate(element.selectionAnimationKeyframes, {
       duration: element.selectionAnimationDuration,
       fill: 'both'
@@ -510,7 +510,7 @@ function isItemIndexInBounds(element, index) {
  * will be damped to produce a visual effect of tension.
  */
 function renderSelection(element, selectedIndex=element.selectedIndex, selectedFraction=element.selectedFraction) {
-  let itemCount = element.items ? element.items.length : 0;
+  const itemCount = element.items ? element.items.length : 0;
   if (itemCount === 0) {
     // Nothing to render.
     return;
@@ -527,7 +527,7 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selectedF
     // Apply damping if necessary.
     selection = FractionalSelection.helpers.dampedSelection(selection, itemCount);
   }
-  let previousSelection = element[previousSelectionSymbol];
+  const previousSelection = element[previousSelectionSymbol];
   if (element[showTransitionSymbol] && previousSelection != null &&
       previousSelection !== selection) {
     // Animate selection from previous state to new state.
@@ -552,9 +552,9 @@ function renderSelectionInstantly(element, toSelection) {
     resetAnimations(element);
     element[resetAnimationsOnNextRenderSymbol] = false;
   }
-  let animationFractions = mixin.helpers.animationFractionsForSelection(element, toSelection);
+  const animationFractions = mixin.helpers.animationFractionsForSelection(element, toSelection);
   animationFractions.map((animationFraction, index) => {
-    let item = element.items[index];
+    const item = element.items[index];
     if (animationFraction != null) {
       showItem(item, true);
       setAnimationFraction(element, index, animationFraction);
@@ -578,7 +578,7 @@ function renderSelectionInstantly(element, toSelection) {
  * any given point.
  */
 function resetAnimations(element) {
-  let animations = element[animationSymbol];
+  const animations = element[animationSymbol];
   if (animations) {
     // Cancel existing animations to remove the effects they're applying.
     animations.forEach((animation, index) => {
@@ -588,7 +588,7 @@ function resetAnimations(element) {
       }
     });
   }
-  let itemCount = element.items ? element.items.length : 0;
+  const itemCount = element.items ? element.items.length : 0;
   if (!animations || animations.length !== itemCount) {
     // Haven't animated before with this number of items; (re)create array.
     element[animationSymbol] = new Array(itemCount);
@@ -604,14 +604,14 @@ function selectionAnimationFinished(element, details) {
   // we're going. Waiting to that until this point is a bit of a hack to avoid
   // having a next item that's higher in the natural z-order obscure other items
   // during animation.
-  let nextUpIndex = details.nextUpIndex;
+  const nextUpIndex = details.nextUpIndex;
   if (nextUpIndex != null) {
     if (element[animationSymbol][nextUpIndex]) {
       // Cancel existing selection animation so we can construct a new one.
       element[animationSymbol][nextUpIndex].cancel();
       element[animationSymbol][nextUpIndex] = null;
     }
-    let animationFraction = details.forward ? 0 : 1;
+    const animationFraction = details.forward ? 0 : 1;
     setAnimationFraction(element, nextUpIndex, animationFraction);
     showItem(element.items[nextUpIndex], true);
   }
@@ -625,9 +625,9 @@ function selectionAnimationFinished(element, details) {
  * fraction (between 0 and 1) of the way through the animation.
  */
 function setAnimationFraction(element, itemIndex, fraction) {
-  let animation = getAnimationForItemIndex(element, itemIndex);
+  const animation = getAnimationForItemIndex(element, itemIndex);
   if (animation) {
-    let duration = element.selectionAnimationDuration;
+    const duration = element.selectionAnimationDuration;
     if (duration) {
       animation.currentTime = fraction * duration;
     }
@@ -650,7 +650,7 @@ function stepsToIndex(length, allowWrap, fromSelection, toSelection) {
   let steps = toSelection - fromSelection;
   // Wrapping only kicks in when list has more than 1 item.
   if (allowWrap && length > 1) {
-    let wrapSteps = length - Math.abs(steps);
+    const wrapSteps = length - Math.abs(steps);
     if (wrapSteps <= 1) {
       // Special case
       steps = steps < 0 ?

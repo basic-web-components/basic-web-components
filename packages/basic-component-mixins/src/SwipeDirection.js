@@ -45,7 +45,7 @@ export default (base) => {
         });
         this.addEventListener('pointermove', event => {
           if (isEventForPenOrPrimaryTouch(event)) {
-            let handled = this.touchMove(event.clientX, event.clientY);
+            const handled = this.touchMove(event.clientX, event.clientY);
             if (handled) {
               event.preventDefault();
             }
@@ -62,8 +62,8 @@ export default (base) => {
           if (this[multiTouchSymbol]) {
             return;
           } else if (event.touches.length === 1) {
-            let clientX = event.changedTouches[0].clientX;
-            let clientY = event.changedTouches[0].clientY;
+            const clientX = event.changedTouches[0].clientX;
+            const clientY = event.changedTouches[0].clientY;
             this.touchStart(clientX, clientY);
           } else {
             this[multiTouchSymbol] = true;
@@ -71,9 +71,9 @@ export default (base) => {
         });
         this.addEventListener('touchmove', event => {
           if (!this[multiTouchSymbol] && event.touches.length === 1) {
-            let clientX = event.changedTouches[0].clientX;
-            let clientY = event.changedTouches[0].clientY;
-            let handled = this.touchMove(clientX, clientY);
+            const clientX = event.changedTouches[0].clientX;
+            const clientY = event.changedTouches[0].clientY;
+            const handled = this.touchMove(clientX, clientY);
             if (handled) {
               event.preventDefault();
             }
@@ -84,8 +84,8 @@ export default (base) => {
             // All touches removed; gesture is complete.
             if (!this[multiTouchSymbol]) {
               // Single-touch swipe has finished.
-              let clientX = event.changedTouches[0].clientX;
-              let clientY = event.changedTouches[0].clientY;
+              const clientX = event.changedTouches[0].clientX;
+              const clientY = event.changedTouches[0].clientY;
               this.touchEnd(clientX, clientY);
             }
             this[multiTouchSymbol] = false;
@@ -148,7 +148,7 @@ export default (base) => {
       } else {
         // Finished at low speed.
         trackTo(this, clientX);
-        let travelFraction = this.travelFraction;
+        const travelFraction = this.travelFraction;
         if (travelFraction >= 0.5) {
           this[symbols.goRight]();
         } else if (travelFraction <= -0.5) {
@@ -233,9 +233,9 @@ function isEventForPenOrPrimaryTouch(event) {
 }
 
 function trackTo(element, x) {
-  let width = element.offsetWidth;
-  let dragDistance = element[startXSymbol] - x;
-  let fraction = width > 0 ?
+  const width = element.offsetWidth;
+  const dragDistance = element[startXSymbol] - x;
+  const fraction = width > 0 ?
     dragDistance / width :
     0;
   element.travelFraction = fraction;

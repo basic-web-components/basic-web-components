@@ -32,7 +32,7 @@ export default {
     // Set any pending attributes.
     if (element[pendingAttributesSymbol]) {
       for (let attribute in element[pendingAttributesSymbol]) {
-        let value = element[pendingAttributesSymbol][attribute];
+        const value = element[pendingAttributesSymbol][attribute];
         setAttributeToElement(element, attribute, value);
       }
       element[pendingAttributesSymbol] = null;
@@ -41,7 +41,7 @@ export default {
     // Set any pending classes.
     if (element[pendingClassesSymbol]) {
       for (let className in element[pendingClassesSymbol]) {
-        let value = element[pendingClassesSymbol][className];
+        const value = element[pendingClassesSymbol][className];
         toggleClass(element, className, value);
       }
       element[pendingClassesSymbol] = null;

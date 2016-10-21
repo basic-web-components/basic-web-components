@@ -85,12 +85,12 @@ export default (base) => {
 // found at the given y position; if downward is false, move up the list of
 // items to find the last item at that position.
 function getIndexOfItemAtY(element, y, downward) {
-  let items = element.items;
-  let start = downward ? 0 : items.length - 1;
-  let end = downward ? items.length : 0;
-  let step = downward ? 1 : -1;
-  let scrollTarget = element.scrollTarget;
-  let topOfClientArea = scrollTarget.offsetTop + scrollTarget.clientTop;
+  const items = element.items;
+  const start = downward ? 0 : items.length - 1;
+  const end = downward ? items.length : 0;
+  const step = downward ? 1 : -1;
+  const scrollTarget = element.scrollTarget;
+  const topOfClientArea = scrollTarget.offsetTop + scrollTarget.clientTop;
 
   // Find the item spanning the indicated y coordinate.
   let item;
@@ -100,7 +100,7 @@ function getIndexOfItemAtY(element, y, downward) {
   while (itemIndex !== end) {
     item = items[itemIndex];
     itemTop = item.offsetTop - topOfClientArea;
-    let itemBottom = itemTop + item.offsetHeight;
+    const itemBottom = itemTop + item.offsetHeight;
     if (itemTop <= y && itemBottom >= y) {
       // Item spans the indicated y coordinate.
       found = true;
@@ -117,11 +117,11 @@ function getIndexOfItemAtY(element, y, downward) {
   // but whose content is actually above/below that point.
   // TODO: If the item has a border, then padding should be included in
   // considering a hit.
-  let itemStyle = getComputedStyle(item);
-  let itemPaddingTop = parseFloat(itemStyle.paddingTop);
-  let itemPaddingBottom = parseFloat(itemStyle.paddingBottom);
-  let contentTop = itemTop + item.clientTop + itemPaddingTop;
-  let contentBottom = contentTop + item.clientHeight - itemPaddingTop - itemPaddingBottom;
+  const itemStyle = getComputedStyle(item);
+  const itemPaddingTop = parseFloat(itemStyle.paddingTop);
+  const itemPaddingBottom = parseFloat(itemStyle.paddingBottom);
+  const contentTop = itemTop + item.clientTop + itemPaddingTop;
+  const contentBottom = contentTop + item.clientHeight - itemPaddingTop - itemPaddingBottom;
   if (downward && contentTop <= y || !downward && contentBottom >= y) {
     // The indicated coordinate hits the actual item content.
     return itemIndex;
@@ -140,16 +140,16 @@ function scrollOnePage(element, downward) {
 
   // Determine the item visible just at the edge of direction we're heading.
   // We'll select that item if it's not already selected.
-  let scrollTarget = element.scrollTarget;
-  let edge = scrollTarget.scrollTop + (downward ? scrollTarget.clientHeight : 0);
-  let indexOfItemAtEdge = getIndexOfItemAtY(element, edge, downward);
+  const scrollTarget = element.scrollTarget;
+  const edge = scrollTarget.scrollTop + (downward ? scrollTarget.clientHeight : 0);
+  const indexOfItemAtEdge = getIndexOfItemAtY(element, edge, downward);
 
-  let selectedIndex = element.selectedIndex;
+  const selectedIndex = element.selectedIndex;
   let newIndex;
   if (indexOfItemAtEdge && selectedIndex === indexOfItemAtEdge) {
     // The item at the edge was already selected, so scroll in the indicated
     // direction by one page. Leave the new item at that edge selected.
-    let delta = (downward ? 1 : -1) * scrollTarget.clientHeight;
+    const delta = (downward ? 1 : -1) * scrollTarget.clientHeight;
     newIndex = getIndexOfItemAtY(element, edge + delta, downward);
   }
   else {

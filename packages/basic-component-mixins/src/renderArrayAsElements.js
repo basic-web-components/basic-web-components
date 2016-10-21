@@ -43,8 +43,8 @@
 function renderArrayAsElements(items, container, renderItem) {
   // Create a new set of elements for the current items.
   items.forEach((item, index) => {
-    let oldElement = container.childNodes[index];
-    let newElement = renderItem(item, oldElement);
+    const oldElement = container.childNodes[index];
+    const newElement = renderItem(item, oldElement);
     if (newElement) {
       if (!oldElement) {
         container.appendChild(newElement);

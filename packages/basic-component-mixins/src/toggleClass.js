@@ -21,8 +21,8 @@
  *                            (if false)
  */
 export default function toggleClass(element, className, force) {
-  let classList = element.classList;
-  let addClass = (typeof force === 'undefined') ?
+  const classList = element.classList;
+  const addClass = (typeof force === 'undefined') ?
     !classList.contains(className) :
     force;
   if (addClass) {

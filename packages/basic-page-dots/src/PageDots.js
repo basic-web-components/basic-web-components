@@ -17,7 +17,7 @@ import toggleClass from '../../basic-component-mixins/src/toggleClass';
 const selectedFractionChangedListenerSymbol = createSymbol('selectedFractionChangedListener');
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentFirstChildTarget,
   DirectionSelection,
   DistributedChildrenAsContent,
@@ -64,8 +64,8 @@ class PageDots extends base {
     super();
 
     this.$.dots.addEventListener('click', event => {
-      let dot = event.target;
-      let dotIndex = this.dots.indexOf(dot);
+      const dot = event.target;
+      const dotIndex = this.dots.indexOf(dot);
       if (dotIndex >= 0) {
         this.selectedIndex = dotIndex;
       }
@@ -74,12 +74,12 @@ class PageDots extends base {
 
   [symbols.applySelection](item, selected) {
     if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-    let index = this.items.indexOf(item);
+    const index = this.items.indexOf(item);
     // See if the corresponding dot has already been created.
     // If not, the correct dot will be selected when it gets created.
-    let dots = this.dots;
+    const dots = this.dots;
     if (dots && dots.length > index) {
-      let dot = this.dots[index];
+      const dot = this.dots[index];
       if (dot) {
         toggleClass(dot, 'selected', selected);
       }
@@ -87,7 +87,7 @@ class PageDots extends base {
   }
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     return defaults;
   }
@@ -134,7 +134,7 @@ class PageDots extends base {
 
   selectedItemChanged() {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
-    let selectedIndex = this.selectedIndex;
+    const selectedIndex = this.selectedIndex;
     this.dots.forEach((dot, i) => {
       toggleClass(dot, 'selected', i === selectedIndex);
     });
@@ -236,18 +236,18 @@ function keepIndexWithinBounds(length, index) {
 }
 
 function renderTransition(element, selectedIndex, selectedFraction) {
-  let dots = element.dots;
+  const dots = element.dots;
   if (!dots || dots.length === 0) {
     return;
   }
-  let dotCount = dots.length;
-  let opacityMinimum = 0.4;
-  let opacityMaximum = 0.95;
-  let opacityRange = opacityMaximum - opacityMinimum;
-  let fractionalIndex = selectedIndex + selectedFraction;
-  let leftIndex = Math.floor(fractionalIndex);
-  let rightIndex = Math.ceil(fractionalIndex);
-  let selectionWraps = element.selectionWraps;
+  const dotCount = dots.length;
+  const opacityMinimum = 0.4;
+  const opacityMaximum = 0.95;
+  const opacityRange = opacityMaximum - opacityMinimum;
+  const fractionalIndex = selectedIndex + selectedFraction;
+  const leftIndex = Math.floor(fractionalIndex);
+  const rightIndex = Math.ceil(fractionalIndex);
+  const selectionWraps = element.selectionWraps;
   let awayIndex = selectedFraction >= 0 ? leftIndex : rightIndex;
   let towardIndex = selectedFraction >= 0 ? rightIndex : leftIndex;
   if (selectionWraps) {
@@ -255,10 +255,10 @@ function renderTransition(element, selectedIndex, selectedFraction) {
     towardIndex = keepIndexWithinBounds(dotCount, towardIndex);
   }
   // Stupid IE doesn't have Math.trunc.
-  // let truncatedSelectedFraction = Math.trunc(selectedFraction);
-  let truncatedSelectedFraction = selectedFraction < 0 ? Math.ceil(selectedFraction) : Math.floor(selectedFraction);
-  let progress = selectedFraction - truncatedSelectedFraction;
-  let opacityProgressThroughRange = Math.abs(progress) * opacityRange;
+  // const truncatedSelectedFraction = Math.trunc(selectedFraction);
+  const truncatedSelectedFraction = selectedFraction < 0 ? Math.ceil(selectedFraction) : Math.floor(selectedFraction);
+  const progress = selectedFraction - truncatedSelectedFraction;
+  const opacityProgressThroughRange = Math.abs(progress) * opacityRange;
   dots.forEach((dot, index) => {
     let dotOpacity;
     if (selectedFraction === 0) {

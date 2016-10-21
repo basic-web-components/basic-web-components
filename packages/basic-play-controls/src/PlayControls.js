@@ -11,7 +11,7 @@ import TargetInCollective from '../../basic-component-mixins/src/TargetInCollect
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentFirstChildTarget,
   DirectionSelection,
   DistributedChildrenAsContent,

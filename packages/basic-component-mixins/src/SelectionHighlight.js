@@ -17,7 +17,7 @@ export default (base) => {
     constructor() {
       super();
       if (this.shadowRoot) {
-        let style = document.createElement('style');
+        const style = document.createElement('style');
         style.innerHTML = `
           ::slotted(.selected) {
             background-color: highlight;

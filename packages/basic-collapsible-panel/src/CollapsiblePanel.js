@@ -38,7 +38,7 @@ class CollapsiblePanel extends OpenClose(ElementBase) {
   render(closing) {
     super.render(closing);
 
-    let naturalHeight = this.$.container.getBoundingClientRect().height;
+    const naturalHeight = this.$.container.getBoundingClientRect().height;
     if (naturalHeight === 0) {
       // Most likely haven't had a chance to render yet.
       this.$.overflow.style.height = closing ? 0 : '';
@@ -47,7 +47,7 @@ class CollapsiblePanel extends OpenClose(ElementBase) {
 
     // Without animating, set starting height of transition.
     this.classList.remove('showTransition');
-    let oldHeight = closing ? naturalHeight : 0;
+    const oldHeight = closing ? naturalHeight : 0;
     this.$.overflow.style.height = oldHeight + 'px';
 
     // Force a relayout so that the starting height is applied.
@@ -56,7 +56,7 @@ class CollapsiblePanel extends OpenClose(ElementBase) {
 
     // Turn animation on, and ending height of transition.
     this.classList.add('showTransition');
-    let newHeight = closing ? 0 : naturalHeight;
+    const newHeight = closing ? 0 : naturalHeight;
     this.$.overflow.style.height = newHeight + 'px';
   }
 

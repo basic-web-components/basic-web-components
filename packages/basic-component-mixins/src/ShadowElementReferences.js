@@ -34,9 +34,9 @@ export default (base) => {
         // the tree changed after it was first populated, the result of
         // searching for a node might be somewhat unpredictable.
         this.$ = {};
-        let nodesWithIds = this.shadowRoot.querySelectorAll('[id]');
+        const nodesWithIds = this.shadowRoot.querySelectorAll('[id]');
         [].forEach.call(nodesWithIds, node => {
-          let id = node.getAttribute('id');
+          const id = node.getAttribute('id');
           this.$[id] = node;
         });
       }

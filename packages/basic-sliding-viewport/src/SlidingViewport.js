@@ -8,7 +8,7 @@ import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ig
 const selectedItemSymbol = createSymbol('selectedItem');
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   FractionalSelection
 );
 
@@ -64,15 +64,15 @@ class SlidingViewport extends base {
   }
 
   get selectedIndex() {
-    let items = this.items;
-    let selectedItem = this.selectedItem;
+    const items = this.items;
+    const selectedItem = this.selectedItem;
     return items && selectedItem ?
       items.indexOf(selectedItem) :
       -1;
   }
   set selectedIndex(index) {
     if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
-    let item = this.items && this.items[index];
+    const item = this.items && this.items[index];
     if (item) {
       this.selectedItem = item;
     }
@@ -135,13 +135,13 @@ function renderSelection() {
   if (!this.selectedItem) {
     return;
   }
-  let selection = FractionalSelection.helpers.elementSelection(this);
-  let itemCount = this.items ? this.items.length : 0;
-  let damped = FractionalSelection.helpers.dampedSelection(selection, itemCount);
+  const selection = FractionalSelection.helpers.elementSelection(this);
+  const itemCount = this.items ? this.items.length : 0;
+  const damped = FractionalSelection.helpers.dampedSelection(selection, itemCount);
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
-  let left = -damped * 100;
-  let transform = 'translateX(' + left + '%)';
+  const left = -damped * 100;
+  const transform = 'translateX(' + left + '%)';
   this.$.slidingContainer.style.webkitTransform = transform;
   this.$.slidingContainer.style.transform = transform;
 }

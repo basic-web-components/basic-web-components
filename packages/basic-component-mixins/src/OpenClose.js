@@ -47,13 +47,13 @@ export default (base) => {
       return this[closedSymbol];
     }
     set closed(value) {
-      let previousClosed = this[closedSymbol];
+      const previousClosed = this[closedSymbol];
       this[closedSymbol] = value;
       if ('closed' in base.prototype) { super.closed = value; }
       if (value !== previousClosed) {
         this.render(value);
 
-        let event = new CustomEvent('closed-changed');
+        const event = new CustomEvent('closed-changed');
         this.dispatchEvent(event);
       }
     }
@@ -65,7 +65,7 @@ export default (base) => {
     }
 
     get [symbols.defaults]() {
-      let defaults = super[symbols.defaults] || {};
+      const defaults = super[symbols.defaults] || {};
       defaults.closed = false;
       return defaults;
     }

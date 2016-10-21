@@ -43,8 +43,8 @@ export default (base) => {
      * @type {HTMLElement[]}
      */
     get items() {
-      let target = this.target;
-      let items = target && target.items;
+      const target = this.target;
+      const items = target && target.items;
       return items || [];
     }
 
@@ -59,12 +59,12 @@ export default (base) => {
     }
 
     get selectedFraction() {
-      let target = this.target;
+      const target = this.target;
       return target && target.selectedFraction;
     }
     set selectedFraction(fraction) {
       if ('selectedFraction' in base.prototype) { super.selectedFraction = fraction; }
-      let target = this.target;
+      const target = this.target;
       if (target && target.selectedFraction !== fraction) {
         target.selectedFraction = fraction;
       }
@@ -76,12 +76,12 @@ export default (base) => {
      * @type {HTMLElement}
      */
     get selectedItem() {
-      let target = this.target;
+      const target = this.target;
       return target && target.selectedItem;
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      let target = this.target;
+      const target = this.target;
       if (target) {
         target.selectedItem = item;
       }
@@ -105,12 +105,12 @@ export default (base) => {
      * @default {false}
      */
     get selectionWraps() {
-      let target = this.target;
+      const target = this.target;
       return target && target.selectionWraps;
     }
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
-      let target = this.target;
+      const target = this.target;
       if( target) {
         target.selectionWraps = value;
       }

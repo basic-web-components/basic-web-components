@@ -45,8 +45,8 @@ export default (base) => {
           shimTemplateStyles(template, this.localName);
         }
 
-        let root = this.attachShadow({ mode: 'open' });
-        let clone = document.importNode(template.content, true);
+        const root = this.attachShadow({ mode: 'open' });
+        const clone = document.importNode(template.content, true);
         root.appendChild(clone);
       }
     }
@@ -59,11 +59,11 @@ export default (base) => {
 
 // Convert a plain string of HTML into a real template element.
 function createTemplateWithInnerHTML(innerHTML) {
-  let template = document.createElement('template');
+  const template = document.createElement('template');
   // REVIEW: Is there an easier way to do this?
   // We'd like to just set innerHTML on the template content, but since it's
   // a DocumentFragment, that doesn't work.
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.innerHTML = innerHTML;
   while (div.childNodes.length > 0) {
     template.content.appendChild(div.childNodes[0]);

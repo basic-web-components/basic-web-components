@@ -77,7 +77,7 @@ export default (base) => {
       if (!this.getAttribute('aria-label')) {
         // Since we're going to handle the keyboard, see if we can adopt an ARIA
         // label from an inner element of the collective.
-        let label = getCollectiveAriaLabel(this.collective);
+        const label = getCollectiveAriaLabel(this.collective);
         if (label) {
           safeAttributes.setAttribute(this, 'aria-label', label);
         }
@@ -128,9 +128,9 @@ function keydown(event) {
   if (this.collective) {
     // Give collective elements a shot at the event, working from innermost to
     // outermost (this element).
-    let elements = this.collective.elements;
+    const elements = this.collective.elements;
     for (let i = elements.length - 1; i >= 0; i--) {
-      let element = elements[i];
+      const element = elements[i];
       handled = element[symbols.keydown] && element[symbols.keydown](event);
       if (handled) {
         break;
@@ -150,9 +150,9 @@ function keydown(event) {
 
 // Return the first ARIA label defined by the collective.
 function getCollectiveAriaLabel(collective) {
-  let labels = collective.elements.map(element => element.getAttribute('aria-label'));
+  const labels = collective.elements.map(element => element.getAttribute('aria-label'));
   // Would prefer to use Array.prototype.find here, but IE 11 doesn't have it.
-  let nonNullLabels = labels.filter(label => label != null);
+  const nonNullLabels = labels.filter(label => label != null);
   return nonNullLabels[0];
 }
 

@@ -46,10 +46,10 @@ class FadeOverflow extends ElementBase {
   set fadeColor(value) {
     this[fadeColorSymbol] = value;
     if (value) {
-      let rgb = extractRgbValues(value);
+      const rgb = extractRgbValues(value);
       if (rgb) {
-        let fadeColorTransparent = `rgba(${rgb.r},${rgb.g},${rgb.b},0)`;
-        let gradient = `linear-gradient(${fadeColorTransparent} 0%, ${value} 100%)`;
+        const fadeColorTransparent = `rgba(${rgb.r},${rgb.g},${rgb.b},0)`;
+        const gradient = `linear-gradient(${fadeColorTransparent} 0%, ${value} 100%)`;
         this.$.fade.style.backgroundImage = gradient;
       }
     }
@@ -114,7 +114,7 @@ function findBackgroundColor(element) {
     // This element has no background, assume white.
     return 'rgb(255,255,255)';
   }
-  let backgroundColor = getComputedStyle(element).backgroundColor;
+  const backgroundColor = getComputedStyle(element).backgroundColor;
   if (backgroundColor === 'transparent' || backgroundColor === 'rgba(0, 0, 0, 0)') {
     return findBackgroundColor(element.parentNode);
   } else {
@@ -125,8 +125,8 @@ function findBackgroundColor(element) {
 
 // Return the individual RGB values from a CSS color string.
 function extractRgbValues(rgbString) {
-  let rgbRegex = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*[\d\.]+\s*)?\)/;
-  let match = rgbRegex.exec(rgbString);
+  const rgbRegex = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*[\d\.]+\s*)?\)/;
+  const match = rgbRegex.exec(rgbString);
   if (match) {
     return {
       r: parseInt(match[1]),

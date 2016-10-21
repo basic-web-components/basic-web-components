@@ -74,7 +74,7 @@ export default (base) => {
      * @type {string}
      */
     get distributedTextContent() {
-      let strings = this.distributedChildNodes.map(function(child) {
+      const strings = this.distributedChildNodes.map(function(child) {
         return child.textContent;
       });
       return strings.join('');
@@ -96,17 +96,17 @@ export default (base) => {
  * standard children property.
  */
 function expandContentElements(nodes, includeTextNodes) {
-  let expanded = Array.prototype.map.call(nodes, node => {
+  const expanded = Array.prototype.map.call(nodes, node => {
     // We want to see if the node is an instanceof HTMLSlotELement, but
     // that class won't exist if the browser that doesn't support native
     // Shadow DOM and if the Shadow DOM polyfill hasn't been loaded. Instead,
     // we do a simplistic check to see if the tag name is "slot".
-    let isSlot = typeof HTMLSlotElement !== 'undefined' ?
+    const isSlot = typeof HTMLSlotElement !== 'undefined' ?
       node instanceof HTMLSlotElement :
       node.localName === 'slot';
     if (isSlot) {
       // Use the nodes assigned to this node instead.
-      let assignedNodes = node.assignedNodes({ flatten: true });
+      const assignedNodes = node.assignedNodes({ flatten: true });
       return assignedNodes ?
         expandContentElements(assignedNodes, includeTextNodes) :
         [];
@@ -121,6 +121,6 @@ function expandContentElements(nodes, includeTextNodes) {
       return [];
     }
   });
-  let flattened = [].concat(...expanded);
+  const flattened = [].concat(...expanded);
   return flattened;
 }

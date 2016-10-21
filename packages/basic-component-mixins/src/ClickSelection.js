@@ -52,7 +52,7 @@ export default (base) => {
 // in which case the element that was tapped isn't an item (and should be
 // ignored).
 function selectTarget(element, target) {
-  let index = element.items && element.items.indexOf(target);
+  const index = element.items && element.items.indexOf(target);
   if (index >= 0) {
     element.selectedIndex = index;
   }

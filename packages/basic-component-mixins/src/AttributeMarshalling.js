@@ -51,7 +51,7 @@ export default (base) => {
      */
     attributeChangedCallback(attributeName, oldValue, newValue) {
       if (super.attributeChangedCallback) { super.attributeChangedCallback(); }
-      let propertyName = attributeToPropertyName(attributeName);
+      const propertyName = attributeToPropertyName(attributeName);
       // If the attribute name corresponds to a property name, set the property.
       // Ignore standard HTMLElement properties handled by the DOM.
       if (propertyName in this && !(propertyName in HTMLElement.prototype)) {
@@ -112,7 +112,7 @@ function attributeToPropertyName(attributeName) {
   let propertyName = attributeToPropertyNames[attributeName];
   if (!propertyName) {
     // Convert and memoize.
-    let hypenRegEx = /-([a-z])/g;
+    const hypenRegEx = /-([a-z])/g;
     propertyName = attributeName.replace(hypenRegEx,
         match => match[1].toUpperCase());
     attributeToPropertyNames[attributeName] = propertyName;
@@ -129,19 +129,19 @@ function attributesForClass(classFn) {
   }
 
   // Get attributes for parent class.
-  let baseClass = Object.getPrototypeOf(classFn.prototype).constructor;
-  let baseAttributes = attributesForClass(baseClass);
+  const baseClass = Object.getPrototypeOf(classFn.prototype).constructor;
+  const baseAttributes = attributesForClass(baseClass);
 
   // Get attributes for this class.
-  let propertyNames = Object.getOwnPropertyNames(classFn.prototype);
-  let setterNames = propertyNames.filter(propertyName =>
+  const propertyNames = Object.getOwnPropertyNames(classFn.prototype);
+  const setterNames = propertyNames.filter(propertyName =>
     typeof Object.getOwnPropertyDescriptor(
         classFn.prototype, propertyName).set === 'function');
-  let attributes = setterNames.map(setterName =>
+  const attributes = setterNames.map(setterName =>
       propertyNameToAttribute(setterName));
 
   // Merge.
-  let diff = attributes.filter(attribute =>
+  const diff = attributes.filter(attribute =>
       baseAttributes.indexOf(attribute) < 0);
   return baseAttributes.concat(diff);
 }
@@ -151,7 +151,7 @@ function propertyNameToAttribute(propertyName) {
   let attribute = propertyNamesToAttributes[propertyName];
   if (!attribute) {
     // Convert and memoize.
-    let uppercaseRegEx = /([A-Z])/g;
+    const uppercaseRegEx = /([A-Z])/g;
     attribute = propertyName.replace(uppercaseRegEx, '-$1').toLowerCase();
   }
   return attribute;

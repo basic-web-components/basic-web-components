@@ -33,7 +33,7 @@ export default (base) => {
     }
 
     get [symbols.defaults]() {
-      let defaults = super[symbols.defaults] || {};
+      const defaults = super[symbols.defaults] || {};
       defaults.navigationAxis = 'both';
       return defaults;
     }
@@ -107,9 +107,9 @@ export default (base) => {
     [symbols.keydown](event) {
       let handled;
 
-      let axis = this.navigationAxis;
-      let horizontal = (axis === 'horizontal' || axis === 'both');
-      let vertical = (axis === 'vertical' || axis === 'both');
+      const axis = this.navigationAxis;
+      const horizontal = (axis === 'horizontal' || axis === 'both');
+      const vertical = (axis === 'vertical' || axis === 'both');
 
       // Ignore Left/Right keys when metaKey or altKey modifier is also pressed,
       // as the user may be trying to navigate back or forward in the browser.

@@ -42,7 +42,7 @@ export default (base) => {
     constructor() {
       super();
       this.addEventListener('wheel', event => {
-        let handled = wheel(this, event);
+        const handled = wheel(this, event);
         if (handled) {
           event.preventDefault();
         }
@@ -165,11 +165,11 @@ function wheel(element, event) {
     wheelTimedOut(element);
   }, WHEEL_TIME);
 
-  let deltaX = event.deltaX;
-  let deltaY = event.deltaY;
+  const deltaX = event.deltaX;
+  const deltaY = event.deltaY;
 
   // See if element event represents acceleration or deceleration.
-  let acceleration = sign(deltaX) * (deltaX - element[lastDeltaXSymbol]);
+  const acceleration = sign(deltaX) * (deltaX - element[lastDeltaXSymbol]);
   element[lastDeltaXSymbol] = deltaX;
   // console.log(deltaX + " " + acceleration + " " + element[absorbDecelerationSymbol] + " " + element[postNavigateDelayCompleteSymbol]);
 
@@ -197,7 +197,7 @@ function wheel(element, event) {
   element[wheelDistanceSymbol] += deltaX;
 
   // Update the travel fraction of the element being navigated.
-  let width = element.offsetWidth;
+  const width = element.offsetWidth;
   let travelFraction = width > 0 ?
     element[wheelDistanceSymbol] / width :
     0;
@@ -229,7 +229,7 @@ function wheelTimedOut(element) {
 
   // Snap to the closest item.
   element.showTransition = true;
-  let travelFraction = element.travelFraction;
+  const travelFraction = element.travelFraction;
   if (travelFraction >= 0.5) {
     // console.log("snap right");
     element[symbols.goRight]();

@@ -58,7 +58,7 @@ export default (base) => {
     }
 
     get [symbols.defaults]() {
-      let defaults = super[symbols.defaults] || {};
+      const defaults = super[symbols.defaults] || {};
       defaults.generic = true;
       return defaults;
     }
@@ -77,7 +77,7 @@ export default (base) => {
       return this[genericSymbol];
     }
     set generic(value) {
-      let parsed = typeof value === 'string' ?
+      const parsed = typeof value === 'string' ?
         String(value) !== 'false' :
         value;
       this[genericSymbol] = parsed;

@@ -6,7 +6,7 @@ import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentAsItems,
   DistributedChildrenAsContent,
   SelectionAriaActive,
@@ -42,7 +42,7 @@ class Modes extends base {
   }
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.selectionRequired = true;
     return defaults;
   }

@@ -17,7 +17,7 @@ export default (base) => {
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
-      let selectedItem = this.selectedItem;
+      const selectedItem = this.selectedItem;
       if (selectedItem) {
         this.scrollItemIntoView(selectedItem);
       }
@@ -50,11 +50,11 @@ export default (base) => {
       // list's scrollable canvas. An item at the top of the list will have a
       // elementTop of 0.
 
-      let scrollTarget = this.scrollTarget;
-      let elementTop = item.offsetTop - scrollTarget.offsetTop - scrollTarget.clientTop;
-      let elementBottom = elementTop + item.offsetHeight;
+      const scrollTarget = this.scrollTarget;
+      const elementTop = item.offsetTop - scrollTarget.offsetTop - scrollTarget.clientTop;
+      const elementBottom = elementTop + item.offsetHeight;
       // Determine the bottom of the scrollable canvas.
-      let scrollBottom = scrollTarget.scrollTop + scrollTarget.clientHeight;
+      const scrollBottom = scrollTarget.scrollTop + scrollTarget.clientHeight;
       if (elementBottom > scrollBottom) {
         // Scroll up until item is entirely visible.
         scrollTarget.scrollTop += elementBottom - scrollBottom;

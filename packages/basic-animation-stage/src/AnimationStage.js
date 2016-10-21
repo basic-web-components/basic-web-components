@@ -7,7 +7,7 @@ import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaA
 import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentAsItems,
   DistributedChildrenAsContent,
   FractionalSelection,

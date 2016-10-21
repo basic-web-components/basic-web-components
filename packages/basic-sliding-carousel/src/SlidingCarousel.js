@@ -13,7 +13,7 @@ import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentAsItems,
   DirectionSelection,
   DistributedChildrenAsContent,
@@ -73,7 +73,7 @@ class SlidingCarousel extends base {
   }
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     defaults.selectionRequired = true;
     return defaults;
@@ -85,7 +85,7 @@ class SlidingCarousel extends base {
   set selectedFraction(value) {
     if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
     this.$.viewport.selectedFraction = value;
-    let event = new CustomEvent('selected-fraction-changed');
+    const event = new CustomEvent('selected-fraction-changed');
     this.dispatchEvent(event);
   }
 

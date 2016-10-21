@@ -10,7 +10,7 @@ const lineHeightSymbol = createSymbol('lineHeight');
 const minimumRowsSymbol = createSymbol('minimumRows');
 const valueTracksContentSymbol = createSymbol('valueTracksContent');
 
-let base = WrappedStandardElement.wrap('textarea').compose(
+const base = WrappedStandardElement.wrap('textarea').compose(
   DistributedChildrenAsContent,
   Generic
 );
@@ -97,14 +97,14 @@ class AutosizeTextarea extends base {
   contentChanged() {
     if (super.contentChanged) { super.contentChanged(); }
     if (this[valueTracksContentSymbol]) {
-      let text = getTextContent(this);
+      const text = getTextContent(this);
       this.inner.value = unescapeHtml(text);
       valueChanged(this);
     }
   }
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.minimumRows = 1;
     return defaults;
   }
@@ -278,8 +278,8 @@ function initializeWhenRendered(element) {
   // padding, and other relevant characteristics as the original text area.
   // Since those aspects are affected by CSS, we have to wait until the
   // element is in the document before we can update the text copy.
-  let textBoxStyle = getComputedStyle(element.inner);
-  let copyContainerStyle = element.$.copyContainer.style;
+  const textBoxStyle = getComputedStyle(element.inner);
+  const copyContainerStyle = element.$.copyContainer.style;
   copyContainerStyle.borderBottomStyle  = textBoxStyle.borderBottomStyle;
   copyContainerStyle.borderBottomWidth  = textBoxStyle.borderBottomWidth;
   copyContainerStyle.borderLeftStyle    = textBoxStyle.borderLeftStyle;
@@ -329,13 +329,13 @@ function keypress(element, event) {
 // Setting the minimumRows attribute translates into setting the minimum
 // height on the text copy container.
 function setMinimumHeight(element) {
-  let copyContainer = element.$.copyContainer;
-  let outerHeight = copyContainer.getBoundingClientRect().height;
-  let style = getComputedStyle(copyContainer);
-  let paddingTop = parseFloat(style.paddingTop);
-  let paddingBottom = parseFloat(style.paddingBottom);
-  let innerHeight = copyContainer.clientHeight - paddingTop - paddingBottom;
-  let bordersPlusPadding = outerHeight - innerHeight;
+  const copyContainer = element.$.copyContainer;
+  const outerHeight = copyContainer.getBoundingClientRect().height;
+  const style = getComputedStyle(copyContainer);
+  const paddingTop = parseFloat(style.paddingTop);
+  const paddingBottom = parseFloat(style.paddingBottom);
+  const innerHeight = copyContainer.clientHeight - paddingTop - paddingBottom;
+  const bordersPlusPadding = outerHeight - innerHeight;
   let minHeight = (element.minimumRows * element[lineHeightSymbol]) + bordersPlusPadding;
   minHeight = Math.ceil(minHeight);
   copyContainer.style.minHeight = minHeight + 'px';

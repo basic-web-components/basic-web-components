@@ -39,7 +39,7 @@ export default (base) => {
     }
 
     get [symbols.defaults]() {
-      let defaults = super[symbols.defaults] || {};
+      const defaults = super[symbols.defaults] || {};
       defaults.playing = false;
       defaults.selectionTimerDuration = 1000;
       return defaults;
@@ -73,8 +73,8 @@ export default (base) => {
       return this[playingSymbol];
     }
     set playing(playing) {
-      let previousPlaying = this[playingSymbol];
-      let parsed = String(playing) === 'true'; // Cast to boolean
+      const previousPlaying = this[playingSymbol];
+      const parsed = String(playing) === 'true'; // Cast to boolean
       if ('playing' in base.prototype) { super.playing = playing; }
       if (parsed !== previousPlaying) {
         if (playing) {
@@ -152,7 +152,7 @@ function startTimer(element) {
 
 // Select the next item, wrapping to first item if necessary.
 function selectNextWithWrap(element) {
-  let items = element.items;
+  const items = element.items;
   if (items && items.length > 0) {
     if (element.selectedIndex == null || element.selectedIndex === items.length - 1) {
       element.selectFirst();

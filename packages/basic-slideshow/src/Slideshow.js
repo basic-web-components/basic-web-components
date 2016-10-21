@@ -9,7 +9,7 @@ import symbols from '../../basic-component-mixins/src/symbols';
 import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentAsItems,
   DistributedChildrenAsContent,
   FractionalSelection,
@@ -44,7 +44,7 @@ let base = ElementBase.compose(
 class Slideshow extends base {
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.playing = true;
     defaults.selectionAnimationDuration = 500;
     defaults.selectionAnimationEffect = 'crossfade';

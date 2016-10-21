@@ -137,7 +137,7 @@ export default (base) => {
 // Return the given elements, filtering out auxiliary elements that aren't
 // typically visible. Items which are not elements are returned as is.
 function filterAuxiliaryElements(items) {
-  let auxiliaryTags = [
+  const auxiliaryTags = [
     'link',
     'script',
     'style',

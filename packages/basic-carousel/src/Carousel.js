@@ -15,7 +15,7 @@ import TargetInCollective from '../../basic-component-mixins/src/TargetInCollect
 import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentAsItems,
   DirectionSelection,
   DistributedChildrenAsContent,
@@ -148,7 +148,7 @@ let base = ElementBase.compose(
 class Carousel extends base {
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     defaults.selectionAnimationEffect = 'slideWithGap';
     defaults.selectionRequired = true;

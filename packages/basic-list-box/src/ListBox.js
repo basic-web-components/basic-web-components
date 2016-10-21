@@ -85,7 +85,7 @@ class ListBox extends ElementBase.compose(
 ) {
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'vertical';
     return defaults;
   }
@@ -156,11 +156,11 @@ class ListBox extends ElementBase.compose(
   }
   set value(text) {
 
-    let currentIndex = this.selectedIndex;
+    const currentIndex = this.selectedIndex;
     let newIndex = -1; // Assume we won't find the text.
 
     // Find the item with the indicated text.
-    let items = this.items;
+    const items = this.items;
     for (let i = 0, length = items.length; i < length; i++) {
       if (items[i].textContent === text) {
         newIndex = i;
@@ -170,7 +170,7 @@ class ListBox extends ElementBase.compose(
 
     if (newIndex !== currentIndex) {
       this.selectedIndex = newIndex;
-      let event = new CustomEvent('value-changed');
+      const event = new CustomEvent('value-changed');
       this.dispatchEvent(event);
     }
   }

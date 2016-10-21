@@ -47,7 +47,7 @@ export default function mixin(base) {
     set selectedFraction(value) {
       this[selectedFractionSymbol] = value;
       if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-      let event = new CustomEvent('selected-fraction-changed');
+      const event = new CustomEvent('selected-fraction-changed');
       this.dispatchEvent(event);
     }
 
@@ -76,8 +76,8 @@ mixin.helpers = {
    * @returns {number} A real number representing the damped selection value.
    */
   dampedSelection(selection, itemCount) {
+    const bound = itemCount - 1;
     let damped;
-    let bound = itemCount - 1;
     if (selection < 0) {
       // Trying to go past beginning of list. Apply tension from the left edge.
       damped = -mixin.helpers.damping(-selection);
@@ -107,7 +107,7 @@ mixin.helpers = {
    * the distance the touchpoint has been dragged.
    */
   damping(x) {
-    let y = (-1 / (x + 1)) + 1;
+    const y = (-1 / (x + 1)) + 1;
     return y;
   },
 
@@ -120,12 +120,12 @@ mixin.helpers = {
    * @param {HTMLElement} element - An element that supports selection
    */
   elementSelection(element) {
-    let selectedIndex = element.selectedIndex;
+    const selectedIndex = element.selectedIndex;
     if (selectedIndex < 0) {
       // No selection
       return;
     }
-    let selectedFraction = element.selectedFraction || 0;
+    const selectedFraction = element.selectedFraction || 0;
     return selectedIndex + selectedFraction;
   },
 
@@ -141,9 +141,9 @@ mixin.helpers = {
    */
   selectionParts(selection) {
     // Stupid IE doesn't have Math.trunc.
-    // let index = Math.trunc(selection);
-    let index = selection < 0 ? Math.ceil(selection) : Math.floor(selection);
-    let fraction = selection - index;
+    // const index = Math.trunc(selection);
+    const index = selection < 0 ? Math.ceil(selection) : Math.floor(selection);
+    const fraction = selection - index;
     return { index, fraction };
   },
 

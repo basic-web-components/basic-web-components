@@ -19,7 +19,7 @@ const lastMouseYSymbol = createSymbol('lastMouseY');
 const mouseTimeoutSymbol = createSymbol('mouseTimeout');
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentFirstChildTarget,
   DirectionSelection,
   DistributedChildrenAsContent,
@@ -116,7 +116,7 @@ class ArrowSelection extends base {
   }
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     return defaults;
   }
@@ -253,7 +253,7 @@ class ArrowSelection extends base {
 function assumeButtonFocus(element, button) {
   button.addEventListener('mousedown', event => {
     // Given the outer element focus if it doesn't already have it.
-    let outermost = element.collective.outermostElement;
+    const outermost = element.collective.outermostElement;
     if (outermost) {
       outermost.focus();
     }

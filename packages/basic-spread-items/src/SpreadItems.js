@@ -34,10 +34,10 @@ class SpreadItems extends ElementBase.compose(
   // invocation of itemsChanged in connectedCallback.
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
-    let items = this.items;
-    let count = items.length;
+    const items = this.items;
+    const count = items.length;
     this.$.spreadContainer.style.width = (count * 100) + '%';
-    let itemWidth = (100 / count) + "%";
+    const itemWidth = (100 / count) + "%";
     [].forEach.call(items, item => {
       item.style.width = itemWidth;
     });

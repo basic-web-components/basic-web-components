@@ -51,7 +51,7 @@ export default (base) => {
 
       if (this.shadowRoot) {
         // Listen to changes on all slots.
-        let slots = this.shadowRoot.querySelectorAll('slot');
+        const slots = this.shadowRoot.querySelectorAll('slot');
         slots.forEach(slot => slot.addEventListener('slotchange', event => {
           this.contentChanged();
         }));
@@ -76,7 +76,7 @@ export default (base) => {
      */
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
-      let event = new CustomEvent('content-changed');
+      const event = new CustomEvent('content-changed');
       this.dispatchEvent(event);
     }
 

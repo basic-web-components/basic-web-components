@@ -97,7 +97,7 @@ export default (base) => {
       if (prefix == null || prefix.length === 0) {
         return;
       }
-      let index = getIndexOfItemWithTextPrefix(this, prefix);
+      const index = getIndexOfItemWithTextPrefix(this, prefix);
       if (index >= 0) {
         this.selectedIndex = index;
       }
@@ -116,10 +116,10 @@ const PREFIX_TIMEOUT_DURATION = 1000;
 
 // Return the index of the first item with the given prefix, else -1.
 function getIndexOfItemWithTextPrefix(element, prefix) {
-  let itemTextContents = getItemTextContents(element);
-  let prefixLength = prefix.length;
+  const itemTextContents = getItemTextContents(element);
+  const prefixLength = prefix.length;
   for (let i = 0; i < itemTextContents.length; i++) {
-    let itemTextContent = itemTextContents[i];
+    const itemTextContent = itemTextContents[i];
     if (itemTextContent.substr(0, prefixLength) === prefix) {
       return i;
     }
@@ -131,9 +131,9 @@ function getIndexOfItemWithTextPrefix(element, prefix) {
 // Cache these results.
 function getItemTextContents(element) {
   if (!element[itemTextContentsSymbol]) {
-    let items = element.items;
+    const items = element.items;
     element[itemTextContentsSymbol] = items.map(child => {
-      let text = child.textContent || child.alt;
+      const text = child.textContent || child.alt;
       return text.toLowerCase();
     });
   }
@@ -141,7 +141,7 @@ function getItemTextContents(element) {
 }
 
 function handleBackspace(element) {
-  let length = element[typedPrefixSymbol] ? element[typedPrefixSymbol].length : 0;
+  const length = element[typedPrefixSymbol] ? element[typedPrefixSymbol].length : 0;
   if (length > 0) {
     element[typedPrefixSymbol] = element[typedPrefixSymbol].substr(0, length - 1);
   }
@@ -150,7 +150,7 @@ function handleBackspace(element) {
 }
 
 function handlePlainCharacter(element, char) {
-  let prefix = element[typedPrefixSymbol] || '';
+  const prefix = element[typedPrefixSymbol] || '';
   element[typedPrefixSymbol] = prefix + char.toLowerCase();
   element.selectItemWithTextPrefix(element[typedPrefixSymbol]);
   setPrefixTimeout(element);

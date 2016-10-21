@@ -20,7 +20,7 @@ const tabPositionSymbol = createSymbol('tabPosition');
 let idCount = 0;
 
 
-let base = ElementBase.compose(
+const base = ElementBase.compose(
   ContentFirstChildTarget,
   DirectionSelection,
   DistributedChildrenAsContent,
@@ -89,8 +89,8 @@ class TabStrip extends base {
     super();
 
     this.$.tabs.addEventListener('click', event => {
-      let tab = event.target;
-      let tabIndex = this.tabs.indexOf(tab);
+      const tab = event.target;
+      const tabIndex = this.tabs.indexOf(tab);
       if (tabIndex >= 0) {
         this.selectedIndex = tabIndex;
       }
@@ -98,7 +98,7 @@ class TabStrip extends base {
 
     // Listen to keydown events on the tabs, not on pages.
     this.$.tabs.addEventListener('keydown', event => {
-      let handled = this[symbols.keydown](event);
+      const handled = this[symbols.keydown](event);
       if (handled) {
         event.preventDefault();
         event.stopPropagation();
@@ -113,12 +113,12 @@ class TabStrip extends base {
 
   [symbols.applySelection](item, selected) {
     if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-    let index = this.items.indexOf(item);
+    const index = this.items.indexOf(item);
     // See if the corresponding tab has already been created.
     // If not, the correct tab will be selected when it gets created.
-    let tabs = this.tabs;
+    const tabs = this.tabs;
     if (tabs && tabs.length > index) {
-      let tab = this.tabs[index];
+      const tab = this.tabs[index];
       if (tab) {
         applySelectionToTab(tab, selected);
       }
@@ -134,7 +134,7 @@ class TabStrip extends base {
   }
 
   get [symbols.defaults]() {
-    let defaults = super[symbols.defaults] || {};
+    const defaults = super[symbols.defaults] || {};
     defaults.tabPosition = 'top';
     return defaults;
   }
@@ -146,7 +146,7 @@ class TabStrip extends base {
   itemsChanged() {
     if (super.itemsChanged) { super.itemsChanged(); }
 
-    let baseId = this.id ?
+    const baseId = this.id ?
       "_" + this.id + "Panel" :
       "_panel";
 
@@ -183,7 +183,7 @@ class TabStrip extends base {
   }
 
   [symbols.keydown](event) {
-    let handled = super[symbols.keydown](event);
+    const handled = super[symbols.keydown](event);
     if (handled) {
       // If the event resulted in a change of selection, move the focus to the
       // newly-selected tab.
@@ -194,7 +194,7 @@ class TabStrip extends base {
 
   selectedItemChanged() {
     if (super.selectedItemChanged) { super.selectedItemChanged(); }
-    let selectedIndex = this.selectedIndex;
+    const selectedIndex = this.selectedIndex;
     this.tabs.forEach((tab, i) => {
       applySelectionToTab(tab, i === selectedIndex);
     });
@@ -220,10 +220,10 @@ class TabStrip extends base {
     // box, but then the visual order wouldn't reflect the document order, which
     // determines focus order. That would surprise a user trying to tab through
     // the controls.
-    let firstElement = (position === 'top' || position === 'left') ?
+    const firstElement = (position === 'top' || position === 'left') ?
       this.$.tabs :
       this.$.pages;
-    let lastElement = (position === 'top' || position === 'left') ?
+    const lastElement = (position === 'top' || position === 'left') ?
       this.$.pages :
       this.$.tabs;
     if (firstElement.nextSibling !== lastElement) {

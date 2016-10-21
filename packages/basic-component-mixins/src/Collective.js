@@ -92,9 +92,9 @@ class Collective {
    */
   invokeMethod(method, ...args) {
     // Invoke from innermost to outermost.
-    let elements = this.elements;
+    const elements = this.elements;
     for (let i = elements.length - 1; i >= 0; i--) {
-      let element = elements[i];
+      const element = elements[i];
       if (element[method]) {
         element[method].apply(element, args);
       }
@@ -119,7 +119,7 @@ function assimilateCollective(collective1, collective2) {
     return false;
   }
 
-  let elements = collective2.elements;
+  const elements = collective2.elements;
 
   // Old collective will no longer have any elements of its own.
   collective2.elements = [];
