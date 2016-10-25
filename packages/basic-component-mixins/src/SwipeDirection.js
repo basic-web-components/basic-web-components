@@ -197,7 +197,7 @@ export default (base) => {
      * @param {number} clientY - The vertical component of the first touch point
      */
     touchStart(clientX, clientY) {
-      if (super.touchStart) { super.touchStart(); }
+      if (super.touchStart) { super.touchStart(clientX, clientY); }
       this.showTransition = false;
       this[startXSymbol] = clientX;
       this[previousXSymbol] = clientX;

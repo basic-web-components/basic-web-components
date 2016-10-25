@@ -75,6 +75,17 @@ export default (base) => {
     }
 
     /**
+     * Invoked when the user has begun a touch operation.
+     *
+     * @param {number} clientX - The horizontal component of the first touch point
+     * @param {number} clientY - The vertical component of the first touch point
+     */
+    touchStart(clientX, clientY) {
+      if (super.touchStart) { super.touchStart(clientX, clientY); }
+      this.showTransition = false;
+    }
+
+    /**
      * The distance the user has moved the first touchpoint since the beginning
      * of a trackpad/wheel operation, expressed as a fraction of the element's
      * width.
@@ -184,7 +195,6 @@ function wheel(element, event) {
     return true;
   }
 
-
   if (acceleration > 0) {
     // The events are not (or are no longer) decelerating, so we can start
     // paying attention to them again.
@@ -201,7 +211,7 @@ function wheel(element, event) {
   let travelFraction = width > 0 ?
     element[wheelDistanceSymbol] / width :
     0;
-  element.showTransition = false;
+  element.touchStart(0, 0);
   travelFraction = sign(travelFraction) * Math.min(Math.abs(travelFraction), 1);
   element.travelFraction = travelFraction;
 
