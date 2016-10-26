@@ -40,12 +40,12 @@ export default (base) => {
         // Prefer listening to standard pointer events.
         this.addEventListener('pointerdown', event => {
           if (isEventForPenOrPrimaryTouch(event)) {
-            this.touchStart(event.clientX, event.clientY);
+            touchStart(this, event.clientX, event.clientY);
           }
         });
         this.addEventListener('pointermove', event => {
           if (isEventForPenOrPrimaryTouch(event)) {
-            const handled = this.touchMove(event.clientX, event.clientY);
+            const handled = touchMove(this, event.clientX, event.clientY);
             if (handled) {
               event.preventDefault();
             }
@@ -53,7 +53,7 @@ export default (base) => {
         });
         this.addEventListener('pointerup', event => {
           if (isEventForPenOrPrimaryTouch(event)) {
-            this.touchEnd(event.clientX, event.clientY);
+            touchEnd(this, event.clientX, event.clientY);
           }
         });
       } else {
@@ -64,7 +64,7 @@ export default (base) => {
           } else if (event.touches.length === 1) {
             const clientX = event.changedTouches[0].clientX;
             const clientY = event.changedTouches[0].clientY;
-            this.touchStart(clientX, clientY);
+            touchStart(this, clientX, clientY);
           } else {
             this[multiTouchSymbol] = true;
           }
@@ -73,7 +73,7 @@ export default (base) => {
           if (!this[multiTouchSymbol] && event.touches.length === 1) {
             const clientX = event.changedTouches[0].clientX;
             const clientY = event.changedTouches[0].clientY;
-            const handled = this.touchMove(clientX, clientY);
+            const handled = touchMove(this, clientX, clientY);
             if (handled) {
               event.preventDefault();
             }
@@ -86,7 +86,7 @@ export default (base) => {
               // Single-touch swipe has finished.
               const clientX = event.changedTouches[0].clientX;
               const clientY = event.changedTouches[0].clientY;
-              this.touchEnd(clientX, clientY);
+              touchEnd(this, clientX, clientY);
             }
             this[multiTouchSymbol] = false;
           }
@@ -131,82 +131,6 @@ export default (base) => {
     }
 
     /**
-     * Invoked when the user has finished a touch operation.
-     *
-     * @param {number} clientX - The horizontal component of the first touch point
-     * @param {number} clientY - The vertical component of the first touch point
-     */
-    touchEnd(clientX, clientY) {
-      if (super.touchEnd) { super.touchEnd(); }
-      this[symbols.dragging] = false;
-      if (this[deltaXSymbol] >= 20) {
-        // Finished going right at high speed.
-        this[symbols.goLeft]();
-      } else if (this[deltaXSymbol] <= -20) {
-        // Finished going left at high speed.
-        this[symbols.goRight]();
-      } else {
-        // Finished at low speed.
-        trackTo(this, clientX);
-        const travelFraction = this.travelFraction;
-        if (travelFraction >= 0.5) {
-          this[symbols.goRight]();
-        } else if (travelFraction <= -0.5) {
-          this[symbols.goLeft]();
-        }
-      }
-      this.travelFraction = 0;
-      this[deltaXSymbol] = null;
-      this[deltaYSymbol] = null;
-    }
-
-    /**
-     * Invoked when the user has moved during a touch operation.
-     *
-     * @param {number} clientX - The horizontal component of the first touch point
-     * @param {number} clientY - The vertical component of the first touch point
-     */
-    touchMove(clientX, clientY) {
-      if (super.touchMove) { super.touchMove(); }
-
-      this[deltaXSymbol] = clientX - this[previousXSymbol];
-      this[deltaYSymbol] = clientY - this[previousYSymbol];
-      this[previousXSymbol] = clientX;
-      this[previousYSymbol] = clientY;
-      if (Math.abs(this[deltaXSymbol]) > Math.abs(this[deltaYSymbol])) {
-        // Move was mostly horizontal.
-        trackTo(this, clientX);
-        // Indicate that the event was handled. It'd be nicer if we didn't have
-        // to do this so that, e.g., a user could be swiping left and right
-        // while simultaneously scrolling up and down. (Native touch apps can do
-        // that.) However, Mobile Safari wants to handle swipe events near the
-        // page and interpret them as navigations. To avoid having a horiziontal
-        // swipe misintepreted as a navigation, we indicate that we've handled
-        // the event, and prevent default behavior.
-        return true;
-      } else {
-        // Move was mostly vertical.
-        return false; // Not handled
-      }
-    }
-
-    /**
-     * Invoked when the user has begun a touch operation.
-     *
-     * @param {number} clientX - The horizontal component of the first touch point
-     * @param {number} clientY - The vertical component of the first touch point
-     */
-    touchStart(clientX, clientY) {
-      if (super.touchStart) { super.touchStart(clientX, clientY); }
-      this[symbols.dragging] = true;
-      this[startXSymbol] = clientX;
-      this[previousXSymbol] = clientX;
-      this[previousYSymbol] = clientY;
-      this[deltaXSymbol] = 0;
-      this[deltaYSymbol] = 0;
-    }
-
-    /**
      * The distance the first touchpoint has traveled since the beginning of a
      * drag, expressed as a fraction of the element's width.
      *
@@ -230,6 +154,70 @@ export default (base) => {
 function isEventForPenOrPrimaryTouch(event) {
   return event.pointerType === 'pen' ||
       (event.pointerType === 'touch' && event.isPrimary);
+}
+
+/*
+ * Invoked when the user has finished a touch operation.
+ */
+function touchEnd(element, clientX, clientY) {
+  element[symbols.dragging] = false;
+  if (element[deltaXSymbol] >= 20) {
+    // Finished going right at high speed.
+    element[symbols.goLeft]();
+  } else if (element[deltaXSymbol] <= -20) {
+    // Finished going left at high speed.
+    element[symbols.goRight]();
+  } else {
+    // Finished at low speed.
+    trackTo(element, clientX);
+    const travelFraction = element.travelFraction;
+    if (travelFraction >= 0.5) {
+      element[symbols.goRight]();
+    } else if (travelFraction <= -0.5) {
+      element[symbols.goLeft]();
+    }
+  }
+  element.travelFraction = 0;
+  element[deltaXSymbol] = null;
+  element[deltaYSymbol] = null;
+}
+
+/*
+ * Invoked when the user has moved during a touch operation.
+ */
+function touchMove(element, clientX, clientY) {
+
+  element[deltaXSymbol] = clientX - element[previousXSymbol];
+  element[deltaYSymbol] = clientY - element[previousYSymbol];
+  element[previousXSymbol] = clientX;
+  element[previousYSymbol] = clientY;
+  if (Math.abs(element[deltaXSymbol]) > Math.abs(element[deltaYSymbol])) {
+    // Move was mostly horizontal.
+    trackTo(element, clientX);
+    // Indicate that the event was handled. It'd be nicer if we didn't have
+    // to do this so that, e.g., a user could be swiping left and right
+    // while simultaneously scrolling up and down. (Native touch apps can do
+    // that.) However, Mobile Safari wants to handle swipe events near the
+    // page and interpret them as navigations. To avoid having a horiziontal
+    // swipe misintepreted as a navigation, we indicate that we've handled
+    // the event, and prevent default behavior.
+    return true;
+  } else {
+    // Move was mostly vertical.
+    return false; // Not handled
+  }
+}
+
+/*
+ * Invoked when the user has begun a touch operation.
+ */
+function touchStart(element, clientX, clientY) {
+  element[symbols.dragging] = true;
+  element[startXSymbol] = clientX;
+  element[previousXSymbol] = clientX;
+  element[previousYSymbol] = clientY;
+  element[deltaXSymbol] = 0;
+  element[deltaYSymbol] = 0;
 }
 
 function trackTo(element, x) {
