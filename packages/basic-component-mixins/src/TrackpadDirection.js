@@ -171,7 +171,6 @@ function wheel(element, event) {
   // See if element event represents acceleration or deceleration.
   const acceleration = sign(deltaX) * (deltaX - element[lastDeltaXSymbol]);
   element[lastDeltaXSymbol] = deltaX;
-  // console.log(deltaX + " " + acceleration + " " + element[absorbDecelerationSymbol] + " " + element[postNavigateDelayCompleteSymbol]);
 
   if (Math.abs(deltaX) < Math.abs(deltaY)) {
     // Move was mostly vertical. The user may be trying scroll with the
@@ -207,12 +206,10 @@ function wheel(element, event) {
   // If the user has dragged enough to reach the previous/next item, then
   // complete a navigation to that item.
   if (travelFraction === 1) {
-    // console.log("goRight");
     element[symbols.dragging] = false;
     element[symbols.goRight]();
     postNavigate(element);
   } else if (travelFraction === -1) {
-    // console.log("goLeft");
     element[symbols.dragging] = false;
     element[symbols.goLeft]();
     postNavigate(element);
@@ -224,16 +221,13 @@ function wheel(element, event) {
 // A sufficiently long period of time has passed since the last wheel event.
 // We snap the selection to the closest item, then reset our state.
 function wheelTimedOut(element) {
-  // console.log("timeout");
 
   // Snap to the closest item.
   element[symbols.dragging] = false;
   const travelFraction = element.travelFraction;
   if (travelFraction >= 0.5) {
-    // console.log("snap right");
     element[symbols.goRight]();
   } else if (travelFraction <= -0.5) {
-    // console.log("snap left");
     element[symbols.goLeft]();
   }
 

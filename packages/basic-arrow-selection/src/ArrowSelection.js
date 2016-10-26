@@ -279,7 +279,6 @@ function deviceSupportsTouch() {
 function listenForMouse(element) {
 
   element[mousedownListenerSymbol] = event => {
-    // console.log(`mousedown ${event.pageX}, ${event.pageY}`);
     if (element[mouseTimeoutSymbol]) {
       clearTimeout(element[mouseTimeoutSymbol]);
     }
@@ -289,12 +288,10 @@ function listenForMouse(element) {
   window.addEventListener('mousedown', element[mousedownListenerSymbol]);
 
   element[mousemoveListenerSymbol] = event => {
-    // console.log(`setting timeout`);
     // Postpone checking the mousemove location to give the mousedown event a
     // chance to fire. The 250 ms delay is just guesswork; a shorter delay
     // doesn't seem to work.
     element[mouseTimeoutSymbol] = setTimeout(() => {
-      // console.log(`postponed mousemove ${event.pageX}, ${event.pageY}`);
       if (element[lastMouseXSymbol] != null && event.pageX !== element[lastMouseXSymbol] ||
           element[lastMouseYSymbol] != null && event.pageY !== element[lastMouseYSymbol]) {
         // mousemove event was at a location other than the last mousedown,
@@ -311,7 +308,6 @@ function listenForMouse(element) {
 
 
 function mouseDetected(element) {
-  // console.log(`mouse detected`);
   showArrows(element);
 
   // We can stop listening for mouse events now.

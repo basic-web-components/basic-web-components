@@ -82,7 +82,6 @@ export default function mixin(base) {
       return this[draggingSymbol];
     }
     set [symbols.dragging](value) {
-      console.log(value);
       const previousValue = this[symbols.dragging];
       this[draggingSymbol] = value;
       if (symbols.dragging in base.prototype) { super[symbols.dragging] = value; }
