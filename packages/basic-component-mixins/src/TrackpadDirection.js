@@ -50,6 +50,14 @@ export default (base) => {
       resetWheelTracking(this);
     }
 
+    // Default implementation.
+    get [symbols.dragging]() {
+      return super[symbols.dragging];
+    }
+    set [symbols.dragging](value) {
+      if (symbols.dragging in base.prototype) { super[symbols.dragging] = value; }
+    }
+
     /**
      * Invoked when the user wants to go/navigate left.
      * The default implementation of this method does nothing.
@@ -64,25 +72,6 @@ export default (base) => {
      */
     [symbols.goRight]() {
       if (super[symbols.goRight]) { return super[symbols.goRight](); }
-    }
-
-    // Default implementation.
-    get showTransition() {
-      return super.showTransition;
-    }
-    set showTransition(value) {
-      if ('showTransition' in base.prototype) { super.showTransition = value; }
-    }
-
-    /**
-     * Invoked when the user has begun a touch operation.
-     *
-     * @param {number} clientX - The horizontal component of the first touch point
-     * @param {number} clientY - The vertical component of the first touch point
-     */
-    touchStart(clientX, clientY) {
-      if (super.touchStart) { super.touchStart(clientX, clientY); }
-      this.showTransition = false;
     }
 
     /**
@@ -211,7 +200,7 @@ function wheel(element, event) {
   let travelFraction = width > 0 ?
     element[wheelDistanceSymbol] / width :
     0;
-  element.touchStart(0, 0);
+  element[symbols.dragging] = true;
   travelFraction = sign(travelFraction) * Math.min(Math.abs(travelFraction), 1);
   element.travelFraction = travelFraction;
 
@@ -219,12 +208,12 @@ function wheel(element, event) {
   // complete a navigation to that item.
   if (travelFraction === 1) {
     // console.log("goRight");
-    element.showTransition = true;
+    element[symbols.dragging] = false;
     element[symbols.goRight]();
     postNavigate(element);
   } else if (travelFraction === -1) {
     // console.log("goLeft");
-    element.showTransition = true;
+    element[symbols.dragging] = false;
     element[symbols.goLeft]();
     postNavigate(element);
   }
@@ -238,7 +227,7 @@ function wheelTimedOut(element) {
   // console.log("timeout");
 
   // Snap to the closest item.
-  element.showTransition = true;
+  element[symbols.dragging] = false;
   const travelFraction = element.travelFraction;
   if (travelFraction >= 0.5) {
     // console.log("snap right");
@@ -249,7 +238,7 @@ function wheelTimedOut(element) {
   }
 
   // TODO: Listen for the transition to complete, and then restore
-  // showTransition to false (or the previous value).
+  // dragging to false (or the previous value).
 
   resetWheelTracking(element);
 }

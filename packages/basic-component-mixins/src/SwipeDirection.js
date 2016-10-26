@@ -106,6 +106,14 @@ export default (base) => {
       }
     }
 
+    // Default implementation.
+    get [symbols.dragging]() {
+      return super[symbols.dragging];
+    }
+    set [symbols.dragging](value) {
+      if (symbols.dragging in base.prototype) { super[symbols.dragging] = value; }
+    }
+
     /**
      * Invoked when the user wants to go/navigate left.
      * The default implementation of this method does nothing.
@@ -122,14 +130,6 @@ export default (base) => {
       if (super[symbols.goRight]) { return super[symbols.goRight](); }
     }
 
-    // Default implementation.
-    get showTransition() {
-      return super.showTransition;
-    }
-    set showTransition(value) {
-      if ('showTransition' in base.prototype) { super.showTransition = value; }
-    }
-
     /**
      * Invoked when the user has finished a touch operation.
      *
@@ -138,7 +138,7 @@ export default (base) => {
      */
     touchEnd(clientX, clientY) {
       if (super.touchEnd) { super.touchEnd(); }
-      this.showTransition = true;
+      this[symbols.dragging] = false;
       if (this[deltaXSymbol] >= 20) {
         // Finished going right at high speed.
         this[symbols.goLeft]();
@@ -198,7 +198,7 @@ export default (base) => {
      */
     touchStart(clientX, clientY) {
       if (super.touchStart) { super.touchStart(clientX, clientY); }
-      this.showTransition = false;
+      this[symbols.dragging] = true;
       this[startXSymbol] = clientX;
       this[previousXSymbol] = clientX;
       this[previousYSymbol] = clientY;

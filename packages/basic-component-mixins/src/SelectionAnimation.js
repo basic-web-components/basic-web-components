@@ -5,13 +5,13 @@ import symbols from './symbols';
 
 // Symbols for private data members on an element.
 const animationSymbol = createSymbol('animation');
+const draggingSymbol = createSymbol('dragging');
 const lastAnimationSymbol = createSymbol('lastAnimation');
 const playingAnimationSymbol = createSymbol('animatingSelection');
 const previousSelectionSymbol = createSymbol('previousSelection');
 const selectionAnimationDurationSymbol = createSymbol('selectionAnimationDuration');
 const selectionAnimationEffectSymbol = createSymbol('selectionAnimationEffect');
 const selectionAnimationKeyframesSymbol = createSymbol('selectionAnimationKeyframes');
-const showTransitionSymbol = createSymbol('showTransition');
 const resetAnimationsOnNextRenderSymbol = createSymbol('resetAnimationsOnNextRender');
 
 
@@ -64,7 +64,7 @@ export default function mixin(base) {
         this.selectionAnimationEffect = this[symbols.defaults].selectionAnimationEffect;
       }
 
-      this.showTransition = true;
+      this[symbols.dragging] = false;
     }
 
     get [symbols.defaults]() {
@@ -72,6 +72,24 @@ export default function mixin(base) {
       defaults.selectionAnimationDuration = 250;
       defaults.selectionAnimationEffect = 'slide';
       return defaults;
+    }
+
+    /*
+     * Provide backing for the dragging property.
+     * Also, when a drag begins, reset the animations.
+     */
+    get [symbols.dragging]() {
+      return this[draggingSymbol];
+    }
+    set [symbols.dragging](value) {
+      console.log(value);
+      const previousValue = this[symbols.dragging];
+      this[draggingSymbol] = value;
+      if (symbols.dragging in base.prototype) { super[symbols.dragging] = value; }
+      if (value && !previousValue) {
+        // Have begun a drag.
+        this[resetAnimationsOnNextRenderSymbol] = true;
+      }
     }
 
     [symbols.itemAdded](item) {
@@ -219,40 +237,6 @@ export default function mixin(base) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
       resetAnimations(this);
       renderSelection(this);
-    }
-
-    /**
-     * Determine whether a transition should be shown during selection.
-     *
-     * Components like carousels often define animated CSS transitions for
-     * sliding effects. Such a transition should usually *not* be applied while
-     * the user is dragging, because a CSS animation will introduce a lag that
-     * makes the swipe feel sluggish. Instead, as long as the user is dragging
-     * with their finger down, the transition should be suppressed. When the
-     * user releases their finger, the transition can be restored, allowing the
-     * animation to show the carousel sliding into its final position.
-     *
-     * Note: This property is only intended to let a component cooperate with
-     * mixins that may be applied to it, and is not intended to let someone
-     * using component permanently enable or disable transition effects.
-     *
-     * @type {boolean} true if a component-provided transition should be shown,
-     * false if not.
-     */
-    // TODO: Rename (and flip meaning) to something like dragging()?
-    get showTransition() {
-      return super.showTransition || this[showTransitionSymbol];
-    }
-    set showTransition(value) {
-      this[showTransitionSymbol] = value;
-      if ('showTransition' in base.prototype) { super.showTransition = value; }
-    }
-
-    touchStart() {
-      if (super.touchStart) { super.touchStart(); }
-      // The animations currently applied to the items won't be valid for the
-      // new drag operation.
-      this[resetAnimationsOnNextRenderSymbol] = true;
     }
   }
 
@@ -528,7 +512,7 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selectedF
     selection = FractionalSelection.helpers.dampedSelection(selection, itemCount);
   }
   const previousSelection = element[previousSelectionSymbol];
-  if (element[showTransitionSymbol] && previousSelection != null &&
+  if (!element[symbols.dragging] && previousSelection != null &&
       previousSelection !== selection) {
     // Animate selection from previous state to new state.
     animateSelection(element, previousSelection, selection);

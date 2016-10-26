@@ -54,6 +54,21 @@ const symbols = {
   defaults: createSymbol('defaults'),
 
   /**
+   * Symbol for the `dragging` property.
+   *
+   * Components like carousels often define animated CSS transitions for
+   * sliding effects. Such a transition should usually *not* be applied while
+   * the user is dragging, because a CSS animation will introduce a lag that
+   * makes the swipe feel sluggish. Instead, as long as the user is dragging
+   * with their finger down, the transition should be suppressed. When the
+   * user releases their finger, the transition can be restored, allowing the
+   * animation to show the carousel sliding into its final position.
+   *
+   * @type {boolean} true if a drag is in progress, false if not.
+   */
+  dragging: createSymbol('dragging'),
+
+  /**
    * Symbol for the `goDown` method.
    *
    * This method is invoked when the user wants to go/navigate down.
