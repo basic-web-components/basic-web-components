@@ -127,3 +127,28 @@ should use the same technique above to see whether it should invoke super.
         // Do your mixin work here.
       }
     };
+
+
+# Property with a getter and setter that "backs" a value
+
+A common case of the above rule is a mixin that will store the value of
+property for the benefit of other mixins and classes. Such a mixin is said to
+"back" the property.
+
+In this situation, the recommendation is to have the setter record the new value
+of the property *before* invoking `super`. This ensures that, if the superclass
+immediately inspects the property's value, the latest value will be returned.
+Other work of the mixin should be done *after* invoking `super`, as usual.
+
+    let propertySymbol = Symbol();
+
+    let Mixin = (base) => class Mixin extends base {
+      get property() {
+        return this[propertySymbol];
+      }
+      set property(value) {
+        this[propertySymbol] = value;
+        if ('property' in base.prototype) { super.property = value; }
+        // Do any other mixin work here.
+      }
+    };
