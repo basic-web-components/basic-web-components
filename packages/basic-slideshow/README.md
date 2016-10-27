@@ -26,8 +26,8 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
   
 
 * [Slideshow](#Slideshow) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
     * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
+    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -43,8 +43,8 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.playing](#TimerSelection+playing) : <code>boolean</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
-    * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
     * [.selectedFraction](#FractionalSelection+selectedFraction) : <code>number</code>
+    * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
     * [.selectFirst()](#SingleSelection+selectFirst)
@@ -57,22 +57,6 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
-
-<a name="SingleSelection+symbols.applySelection"></a>
-
-### Slideshow.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ContentAsItems+symbols.applySelection"></a>
 
@@ -89,6 +73,21 @@ is selected, and removed it if not selected.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
+
+<a name="SingleSelection+symbols.applySelection"></a>
+
+### Slideshow.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 
@@ -220,6 +219,14 @@ Fires when the selectedItem property changes.
 | detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
 | detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
 
+<a name="FractionalSelection+selectedFraction"></a>
+
+### slideshow.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
+
+  **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="SelectionAnimation+selectedFraction"></a>
 
 ### slideshow.selectedFraction : <code>number</code>
@@ -231,14 +238,6 @@ For more details, see the [FractionalSelection](FractionalSelection.md)
 mixin.
 
   **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
-<a name="FractionalSelection+selectedFraction"></a>
-
-### slideshow.selectedFraction : <code>number</code>
-A fractional value indicating how far the user has currently advanced to
-the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
-user is halfway between items 3 and 4.
-
-  **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.
 <a name="SingleSelection+selectedIndex"></a>
 
 ### slideshow.selectedIndex : <code>number</code>
@@ -358,21 +357,3 @@ Select the previous item in the list.
 If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SelectionAnimation+showTransition"></a>
-
-### slideshow.showTransition : <code>boolean</code>
-Determine whether a transition should be shown during selection.
-
-Components like carousels often define animated CSS transitions for
-sliding effects. Such a transition should usually *not* be applied while
-the user is dragging, because a CSS animation will introduce a lag that
-makes the swipe feel sluggish. Instead, as long as the user is dragging
-with their finger down, the transition should be suppressed. When the
-user releases their finger, the transition can be restored, allowing the
-animation to show the carousel sliding into its final position.
-
-Note: This property is only intended to let a component cooperate with
-mixins that may be applied to it, and is not intended to let someone
-using component permanently enable or disable transition effects.
-
-  **Kind**: instance property of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.

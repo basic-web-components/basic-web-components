@@ -32,7 +32,7 @@ const symbols = {
    * @param {HTMLElement} item - the item being selected/deselected
    * @param {boolean} selected - true if the item is selected, false if not
    */
-  applySelection: createSymbol('[symbols.applySelection]'),
+  applySelection: createSymbol('applySelection'),
 
   /**
    * Symbol for the `defaults` property.

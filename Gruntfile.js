@@ -33,24 +33,13 @@ let updatedPublishList = [];
 // Build the global buildList object for use in browserify:components
 //
 function buildBuildList() {
-
-  let srcFiles = allPackages.map(pkg => {
-    return 'packages/' + pkg + '/src/*.js';
-  });
-  let testFiles = allPackages.map(pkg => {
-    return 'packages/' + pkg + '/test/*.js';
-  });
-
-  let obj = {
-    'build/basic-web-components.js': srcFiles,
-    'build/tests.js': testFiles
+  let buildList = {
+    'build/tests.js': allPackages.map(pkg => `packages/${pkg}/test/*.js`)
   };
-
   allPackages.forEach(pkg => {
-    obj['packages/' + pkg + '/dist/' + pkg + '.js'] = ['packages/' + pkg + '/globals.js'];
+    buildList[`packages/${pkg}/dist/${pkg}.js`] = [`packages/${pkg}/globals.js`];
   });
-
-  return obj;
+  return buildList;
 }
 const buildList = buildBuildList();
 
@@ -65,7 +54,9 @@ function buildDocsList() {
   let ary = allPackages.filter(item => {
     return packagesWithoutBuiltDocs.indexOf(item) < 0;
   }).map(item => {
-    return {src: 'packages/' + item + '/src/*.js', dest: 'packages/' + item + '/README.md'};
+    return {
+      src: `packages/${item}/src/*.js`,
+      dest: `packages/${item}/README.md`};
   });
 
   return ary.concat(buildMixinsDocsList());
@@ -82,8 +73,8 @@ function buildMixinsDocsList() {
   }).map(file => {
     let fileRoot = file.replace('.js', '');
     return {
-      src: 'packages/basic-component-mixins/src/' + file,
-      dest: 'packages/basic-component-mixins/docs/' + fileRoot + '.md' };
+      src: `packages/basic-component-mixins/src/${file}`,
+      dest: `packages/basic-component-mixins/docs/${fileRoot}.md` };
   });
 }
 

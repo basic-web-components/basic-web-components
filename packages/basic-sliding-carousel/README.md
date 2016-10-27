@@ -40,8 +40,8 @@ See that component for more details on use.
   
 
 * [SlidingCarousel](#SlidingCarousel) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
     * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
+    * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -50,12 +50,12 @@ See that component for more details on use.
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+symbols.goDown)
     * [.goEnd()](#KeyboardDirection+symbols.goEnd)
+    * [.goLeft()](#KeyboardDirection+symbols.goLeft)
     * [.goLeft()](#TrackpadDirection+symbols.goLeft)
     * [.goLeft()](#SwipeDirection+symbols.goLeft)
-    * [.goLeft()](#KeyboardDirection+symbols.goLeft)
-    * [.goRight()](#TrackpadDirection+symbols.goRight)
-    * [.goRight()](#SwipeDirection+symbols.goRight)
     * [.goRight()](#KeyboardDirection+symbols.goRight)
+    * [.goRight()](#SwipeDirection+symbols.goRight)
+    * [.goRight()](#TrackpadDirection+symbols.goRight)
     * [.goStart()](#KeyboardDirection+symbols.goStart)
     * [.goUp()](#KeyboardDirection+symbols.goUp)
     * [.itemAdded(item)](#ContentAsItems+symbols.itemAdded)
@@ -75,13 +75,24 @@ See that component for more details on use.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.showTransition](#SlidingCarousel+showTransition) : <code>boolean</code>
     * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
-    * [.touchEnd(clientX, clientY)](#SwipeDirection+touchEnd)
-    * [.touchMove(clientX, clientY)](#SwipeDirection+touchMove)
-    * [.touchStart(clientX, clientY)](#SwipeDirection+touchStart)
-    * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
     * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
+    * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
+
+<a name="SingleSelection+symbols.applySelection"></a>
+
+### SlidingCarousel.applySelection(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="ContentAsItems+symbols.applySelection"></a>
 
@@ -98,21 +109,6 @@ is selected, and removed it if not selected.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item whose selection state has changed. |
 | selected | <code>boolean</code> | True if the item is selected, false if not. |
-
-<a name="SingleSelection+symbols.applySelection"></a>
-
-### SlidingCarousel.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 
@@ -178,6 +174,13 @@ Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goLeft"></a>
+
+### SlidingCarousel.goLeft()
+Invoked when the user wants to go/navigate left.
+The default implementation of this method does nothing.
+
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
 <a name="TrackpadDirection+symbols.goLeft"></a>
 
 ### SlidingCarousel.goLeft()
@@ -192,27 +195,6 @@ Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection#symbols](../basic-component-mixins/docs/SwipeDirection#symbols.md)</code> mixin.
-<a name="KeyboardDirection+symbols.goLeft"></a>
-
-### SlidingCarousel.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
-<a name="TrackpadDirection+symbols.goRight"></a>
-
-### SlidingCarousel.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection#symbols](../basic-component-mixins/docs/TrackpadDirection#symbols.md)</code> mixin.
-<a name="SwipeDirection+symbols.goRight"></a>
-
-### SlidingCarousel.goRight()
-Invoked when the user wants to go/navigate right.
-The default implementation of this method does nothing.
-
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection#symbols](../basic-component-mixins/docs/SwipeDirection#symbols.md)</code> mixin.
 <a name="KeyboardDirection+symbols.goRight"></a>
 
 ### SlidingCarousel.goRight()
@@ -220,6 +202,20 @@ Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
+<a name="SwipeDirection+symbols.goRight"></a>
+
+### SlidingCarousel.goRight()
+Invoked when the user wants to go/navigate right.
+The default implementation of this method does nothing.
+
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection#symbols](../basic-component-mixins/docs/SwipeDirection#symbols.md)</code> mixin.
+<a name="TrackpadDirection+symbols.goRight"></a>
+
+### SlidingCarousel.goRight()
+Invoked when the user wants to go/navigate right.
+The default implementation of this method does nothing.
+
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection#symbols](../basic-component-mixins/docs/TrackpadDirection#symbols.md)</code> mixin.
 <a name="KeyboardDirection+symbols.goStart"></a>
 
 ### SlidingCarousel.goStart()
@@ -390,24 +386,6 @@ Select the previous item in the list.
 If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SlidingCarousel+showTransition"></a>
-
-### slidingCarousel.showTransition : <code>boolean</code>
-Determine whether a transition should be shown during selection.
-
-Components like carousels often define animated CSS transitions for
-sliding effects. Such a transition should usually *not* be applied while
-the user is dragging, because a CSS animation will introduce a lag that
-makes the swipe feel sluggish. Instead, as long as the user is dragging
-with their finger down, the transition should be suppressed. When the
-user releases their finger, the transition can be restored, allowing the
-animation to show the carousel sliding into its final position.
-
-Note: This property is only intended to let a component cooperate with
-mixins that may be applied to it, and is not intended to let someone
-using component permanently enable or disable transition effects.
-
-  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>
 <a name="TargetInCollective+target"></a>
 
 ### slidingCarousel.target : <code>HTMLElement</code>
@@ -422,42 +400,13 @@ ContentFirstChildTarget mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
-<a name="SwipeDirection+touchEnd"></a>
+<a name="SwipeDirection+travelFraction"></a>
 
-### slidingCarousel.touchEnd(clientX, clientY)
-Invoked when the user has finished a touch operation.
+### slidingCarousel.travelFraction : <code>number</code>
+The distance the first touchpoint has traveled since the beginning of a
+drag, expressed as a fraction of the element's width.
 
-  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| clientX | <code>number</code> | The horizontal component of the first touch point |
-| clientY | <code>number</code> | The vertical component of the first touch point |
-
-<a name="SwipeDirection+touchMove"></a>
-
-### slidingCarousel.touchMove(clientX, clientY)
-Invoked when the user has moved during a touch operation.
-
-  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| clientX | <code>number</code> | The horizontal component of the first touch point |
-| clientY | <code>number</code> | The vertical component of the first touch point |
-
-<a name="SwipeDirection+touchStart"></a>
-
-### slidingCarousel.touchStart(clientX, clientY)
-Invoked when the user has begun a touch operation.
-
-  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| clientX | <code>number</code> | The horizontal component of the first touch point |
-| clientY | <code>number</code> | The vertical component of the first touch point |
-
+  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.
 <a name="TrackpadDirection+travelFraction"></a>
 
 ### slidingCarousel.travelFraction : <code>number</code>
@@ -466,10 +415,3 @@ of a trackpad/wheel operation, expressed as a fraction of the element's
 width.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code> mixin.
-<a name="SwipeDirection+travelFraction"></a>
-
-### slidingCarousel.travelFraction : <code>number</code>
-The distance the first touchpoint has traveled since the beginning of a
-drag, expressed as a fraction of the element's width.
-
-  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code> mixin.

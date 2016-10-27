@@ -56,7 +56,6 @@ require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-vi
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.showTransition](#SelectionAnimation+showTransition) : <code>boolean</code>
 
 <a name="SingleSelection+symbols.applySelection"></a>
 
@@ -322,21 +321,3 @@ Select the previous item in the list.
 If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SelectionAnimation+showTransition"></a>
-
-### animationStage.showTransition : <code>boolean</code>
-Determine whether a transition should be shown during selection.
-
-Components like carousels often define animated CSS transitions for
-sliding effects. Such a transition should usually *not* be applied while
-the user is dragging, because a CSS animation will introduce a lag that
-makes the swipe feel sluggish. Instead, as long as the user is dragging
-with their finger down, the transition should be suppressed. When the
-user releases their finger, the transition can be restored, allowing the
-animation to show the carousel sliding into its final position.
-
-Note: This property is only intended to let a component cooperate with
-mixins that may be applied to it, and is not intended to let someone
-using component permanently enable or disable transition effects.
-
-  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.

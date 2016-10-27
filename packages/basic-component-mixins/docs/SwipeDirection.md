@@ -11,49 +11,6 @@ map the direction to a change in selection, use the
 [DirectionSelection](DirectionSelection.md) mixin.
 
   **Kind**: global class
-
-* [SwipeDirection](#SwipeDirection)
-    * [.touchEnd(clientX, clientY)](#SwipeDirection+touchEnd)
-    * [.touchMove(clientX, clientY)](#SwipeDirection+touchMove)
-    * [.touchStart(clientX, clientY)](#SwipeDirection+touchStart)
-    * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
-
-<a name="SwipeDirection+touchEnd"></a>
-
-### swipeDirection.touchEnd(clientX, clientY)
-Invoked when the user has finished a touch operation.
-
-  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| clientX | <code>number</code> | The horizontal component of the first touch point |
-| clientY | <code>number</code> | The vertical component of the first touch point |
-
-<a name="SwipeDirection+touchMove"></a>
-
-### swipeDirection.touchMove(clientX, clientY)
-Invoked when the user has moved during a touch operation.
-
-  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| clientX | <code>number</code> | The horizontal component of the first touch point |
-| clientY | <code>number</code> | The vertical component of the first touch point |
-
-<a name="SwipeDirection+touchStart"></a>
-
-### swipeDirection.touchStart(clientX, clientY)
-Invoked when the user has begun a touch operation.
-
-  **Kind**: instance method of <code>[SwipeDirection](#SwipeDirection)</code>
-
-| Param | Type | Description |
-| --- | --- | --- |
-| clientX | <code>number</code> | The horizontal component of the first touch point |
-| clientY | <code>number</code> | The vertical component of the first touch point |
-
 <a name="SwipeDirection+travelFraction"></a>
 
 ### swipeDirection.travelFraction : <code>number</code>
