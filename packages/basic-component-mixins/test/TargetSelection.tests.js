@@ -55,4 +55,11 @@ describe("TargetSelection mixin", () => {
     assert.equal(outer.selectedItem, items[0]);
   });
 
+  it("can set target selection", () => {
+    outer.selectedIndex = 0;
+    assert.equal(inner.selectedIndex, 0);
+    outer.selectedItem = items[1];
+    assert.equal(inner.selectedItem, items[1]);
+  });
+
 });
