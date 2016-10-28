@@ -64,4 +64,17 @@ describe("SelectionAriaActive mixin", () => {
     assert.equal(item2.getAttribute('aria-selected'), 'true');
   });
 
+  it("assigns a default role of 'listbox'", () => {
+    let noRole = document.createElement('selection-aria-active-test');
+    container.appendChild(noRole);
+    assert.equal(noRole.getAttribute('role'), 'listbox');
+  });
+
+  it("doesn't overwrite an explicit role", () => {
+    let hasRole = document.createElement('selection-aria-active-test');
+    hasRole.setAttribute('role', 'tabs');
+    container.appendChild(hasRole);
+    assert.equal(hasRole.getAttribute('role'), 'tabs');
+  });
+
 });

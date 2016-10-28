@@ -1,3 +1,4 @@
+import Collective from './Collective';
 import createSymbol from './createSymbol';
 import safeAttributes from './safeAttributes';
 import symbols from './symbols';
@@ -54,7 +55,6 @@ export default (base) => {
     constructor() {
       super();
       // Assume this component is going to handle the keyboard on its own.
-      // REVIEW: Move to connectedCallback?
       startListeningToKeydown(this);
     }
 
@@ -74,23 +74,13 @@ export default (base) => {
         return;
       }
 
-      if (!this.getAttribute('aria-label')) {
-        // Since we're going to handle the keyboard, see if we can adopt an ARIA
-        // label from an inner element of the collective.
-        const label = getCollectiveAriaLabel(this.collective);
-        if (label) {
-          safeAttributes.setAttribute(this, 'aria-label', label);
-          // Remove any labels from inner elements.
-          this.collective.elements.forEach(element => {
-            if (element !== this) {
-              element.removeAttribute('aria-label');
-            }
-          });
-        }
-      }
-
       if (!isListeningToKeydown(this)) {
         startListeningToKeydown(this);
+      }
+
+      if (this.isConnected) {
+        Collective.promoteAttribute(this, 'tabindex', '0');
+        Collective.promoteAttribute(this, 'aria-label');
       }
     }
 
@@ -98,10 +88,8 @@ export default (base) => {
       if (super.connectedCallback) { super.connectedCallback(); }
       safeAttributes.connected(this);
       // Set a default tab index of 0 (document order) if no tab index exists.
-      // MS Edge requires we explicitly check for presence of tabindex attribute.
-      if (this.getAttribute('tabindex') == null || this.tabIndex < 0) {
-        this.setAttribute('tabindex', '0');
-      }
+      Collective.promoteAttribute(this, 'tabindex', '0');
+      Collective.promoteAttribute(this, 'aria-label');
     }
 
     /**
@@ -154,15 +142,6 @@ function keydown(event) {
 }
 
 
-// Return the first ARIA label defined by the collective.
-function getCollectiveAriaLabel(collective) {
-  const labels = collective.elements.map(element => element.getAttribute('aria-label'));
-  // Would prefer to use Array.prototype.find here, but IE 11 doesn't have it.
-  const nonNullLabels = labels.filter(label => label != null);
-  return nonNullLabels[0];
-}
-
-
 function isListeningToKeydown(element) {
   return element[keydownListenerSymbol] != null;
 }
@@ -177,5 +156,4 @@ function startListeningToKeydown(element) {
 function stopListeningToKeydown(element) {
   element.removeEventListener('keydown', element[keydownListenerSymbol]);
   element[keydownListenerSymbol] = null;
-  element.removeAttribute('tabindex');
 }

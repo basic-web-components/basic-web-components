@@ -51,7 +51,7 @@ class Collective {
      * @type {HTMLElement[]}
      */
     this.elements = [];
-    elements.forEach(element => this.assimilate(element));
+    this.assimilate(elements);
   }
 
   /**
@@ -70,7 +70,14 @@ class Collective {
   assimilate(target) {
     let collectiveChanged;
     if (target instanceof Collective) {
+      // Assimlate another collective.
       collectiveChanged = assimilateCollective(this, target);
+    } else if (target instanceof Array) {
+      // Assimilate an array of elements.
+      target.forEach(element => {
+        const elementAdded = assimilateElement(this, element);
+        collectiveChanged = collectiveChanged || elementAdded;
+      });
     } else if (target.collective) {
       // Target is already part of a collective, assimilate it.
       collectiveChanged = assimilateCollective(this, target.collective);
@@ -107,6 +114,54 @@ class Collective {
    */
   get outermostElement() {
     return this.elements[0];
+  }
+
+  /**
+   * Set a default attribute on an element that may be in a collective.
+   *
+   * If it's not in a collective, and the element doesn't have the given
+   * attribute, set the attribute on the element to the default value.
+   *
+   * If the element *is* in a collective, scan the collective's inner members
+   * to see if any of them have the attribute. If so, remote the attribute from
+   * the inner member(s), and promote that value to the outermost element.
+   *
+   * @param {HTMLElement} element - An element that may or may not be in a collective.
+   * @param {string} attributeName - The name of the attribute.
+   * @param {string} [defaultValue] - The default value for the attribute.
+   */
+  static promoteAttribute(element, attributeName, defaultValue) {
+    let outermost;
+    let attributeValue = defaultValue;
+    if (!element.collective) {
+      // Element isn't part of a collective; treat it as outermost.
+      outermost = element;
+    } else if (element !== element.collective.outermostElement) {
+      // Let the outermost element handle this.
+      return;
+    } else {
+      // Scan inner elements, working from inside (end) toward out (start).
+      // Pick up any attribute value they have and remove it.
+      let elements = element.collective.elements;
+      outermost = elements[0];
+      for (let i = elements.length - 1; i > 0; i--) {
+        const innerElement = elements[i];
+        const innerAttributeValue = innerElement.getAttribute(attributeName);
+        if (innerAttributeValue) {
+          attributeValue = innerAttributeValue;
+          innerElement.removeAttribute(attributeName);
+        }
+      }
+    }
+    if (attributeValue) {
+      // Set attribute on outermost element if it doesn't already have it, or
+      // if the existing attribute value is the default.
+      const existingAttributeValue = outermost.getAttribute(attributeName);
+      if (!existingAttributeValue ||
+          (existingAttributeValue === defaultValue && attributeValue !== defaultValue)) {
+        outermost.setAttribute(attributeName, attributeValue);
+      }
+    }
   }
 
 }
