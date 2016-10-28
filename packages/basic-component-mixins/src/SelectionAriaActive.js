@@ -46,7 +46,7 @@ export default (base) => {
       const itemId = item.id;
       if (itemId) {
         if (selected) {
-          outermostElement(this).setAttribute('aria-activedescendant', itemId);
+          getOutermostElement(this).setAttribute('aria-activedescendant', itemId);
         }
       }
     }
@@ -94,7 +94,7 @@ export default (base) => {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       // Catch the case where the selection is removed.
       if (item == null) {
-        outermostElement(this).removeAttribute('aria-activedescendant');
+        getOutermostElement(this).removeAttribute('aria-activedescendant');
       }
     }
 
@@ -119,7 +119,7 @@ function getCollectiveAriaRole(collective) {
   return nonNullRoles[0];
 }
 
-function outermostElement(element) {
+function getOutermostElement(element) {
   return element.collective ?
     element.collective.outermostElement :
     element;
@@ -130,34 +130,33 @@ function setAriaAttributes(element) {
   if (!element.isConnected) {
     return;
   }
-  if (element.collective && element !== element.collective.outermostElement) {
-    // Not the outermost element, do nothing and let the outermost element
-    // handle things.
-    return;
-  }
 
-  // Ensure the element has an ARIA role.
-  if (!element.getAttribute('role')) {
-    // Try to promote an ARIA role from an inner element. If none is found,
-    // use a default role.
+  const outermostElement = getOutermostElement(element);
+  const collective = element.collective;
+
+  // Ensure the outermost element has an ARIA role.
+  if (!outermostElement.getAttribute('role')) {
+    // Try to promote an ARIA role from an inner element.
     let role = element.collective && getCollectiveAriaRole(element.collective);
+    // If no role is found, use a default role.
     role = role || 'listbox';
-    element.setAttribute('role', role);
+    outermostElement.setAttribute('role', role);
   }
 
-  if (!element.getAttribute('aria-activedescendant') && element.collective) {
-    // Try to promote an ARIA activedescendant value from an inner element.
-    const descendant = getCollectiveAriaActiveDescendant(element.collective);
-    if (descendant) {
-      element.setAttribute('aria-activedescendant', descendant);
+  if (collective) {
+
+    if (!outermostElement.getAttribute('aria-activedescendant')) {
+      // Try to promote an ARIA activedescendant value from an inner element.
+      const descendant = getCollectiveAriaActiveDescendant(collective);
+      if (descendant) {
+        element.setAttribute('aria-activedescendant', descendant);
+      }
     }
-  }
 
-  if (element.collective) {
     // Remove the ARIA role and activedescendant values from the collective's
     // inner elements.
-    element.collective.elements.forEach(member => {
-      if (member !== element) {
+    collective.elements.forEach(member => {
+      if (member !== outermostElement) {
         member.removeAttribute('aria-activedescendant');
         member.setAttribute('role', 'none');
       }

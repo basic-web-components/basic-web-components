@@ -80,6 +80,12 @@ export default (base) => {
         const label = getCollectiveAriaLabel(this.collective);
         if (label) {
           safeAttributes.setAttribute(this, 'aria-label', label);
+          // Remove any labels from inner elements.
+          this.collective.elements.forEach(element => {
+            if (element !== this) {
+              element.removeAttribute('aria-label');
+            }
+          });
         }
       }
 
