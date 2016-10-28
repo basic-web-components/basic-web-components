@@ -2,6 +2,10 @@ import { assert } from 'chai';
 import Collective from '../src/Collective';
 
 
+class CollectiveTest extends HTMLElement {}
+customElements.define('collective-test', CollectiveTest);
+
+
 describe("Collective", () => {
 
   let container;
@@ -98,11 +102,41 @@ describe("Collective", () => {
     assert.equal(count, 2);
   });
 
-  it("can promote an attribute on an element not in a collective", () => {
+  it("can set an attribute on an element not in a collective", () => {
     const fixture = document.createElement('selection-aria-active-test');
     container.appendChild(fixture);
     Collective.promoteAttribute(fixture, 'tabindex', '0');
     assert.equal(fixture.getAttribute('tabindex'), '0');
+  });
+
+  it("won't replace an explicit attribute with a default", () => {
+    const fixture = document.createElement('selection-aria-active-test');
+    fixture.setAttribute('tabindex', '1');
+    container.appendChild(fixture);
+    Collective.promoteAttribute(fixture, 'tabindex', '0');
+    assert.equal(fixture.getAttribute('tabindex'), '1');
+  });
+
+  it("promotes an attribute from an inner collective member to the outermost member", () => {
+    const outer = document.createElement('collective-test');
+    const inner = document.createElement('collective-test');
+    outer.appendChild(inner);
+    new Collective(outer, inner);
+    inner.setAttribute('tabindex', '0');
+    Collective.promoteAttribute(outer, 'tabindex', '0');
+    assert.equal(outer.getAttribute('tabindex'), '0');
+    assert.equal(inner.getAttribute('tabindex'), null);
+  });
+
+  it("promotes a collective attribute and leave a residual attribute on inner members", () => {
+    const outer = document.createElement('collective-test');
+    const inner = document.createElement('collective-test');
+    outer.appendChild(inner);
+    new Collective(outer, inner);
+    inner.setAttribute('role', 'listbox');
+    Collective.promoteAttribute(outer, 'role', null, 'none');
+    assert.equal(outer.getAttribute('role'), 'listbox');
+    assert.equal(inner.getAttribute('role'), 'none');
   });
 
 });
