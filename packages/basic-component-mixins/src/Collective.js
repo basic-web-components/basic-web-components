@@ -130,15 +130,23 @@ class Collective {
    * @param {string} attributeName - The name of the attribute.
    * @param {string} [defaultValue] - The default value for the attribute.
    */
-  static promoteAttribute(element, attributeName, defaultValue) {
+  static promoteAttribute(element, attributeName, defaultValue, residualValue) {
     let outermost;
     let attributeValue = defaultValue;
     if (!element.collective) {
       // Element isn't part of a collective; treat it as outermost.
       outermost = element;
-    } else if (element !== element.collective.outermostElement) {
-      // Let the outermost element handle this.
-      return;
+
+    // REVIEW: Uncommenting these lines makes collectives more efficient, as
+    // only the outermost element in the collective will do the attribute work.
+    // However, that requires that all members of a collective implement the
+    // same mixins (e.g., SelectionAriaActive), which feels limiting. Leaving
+    // this in here as a comment until this can be considered further.
+
+    // } else if (element !== element.collective.outermostElement) {
+    //   // Let the outermost element handle this.
+    //   return;
+
     } else {
       // Scan inner elements, working from inside (end) toward out (start).
       // Pick up any attribute value they have and remove it.
@@ -147,9 +155,15 @@ class Collective {
       for (let i = elements.length - 1; i > 0; i--) {
         const innerElement = elements[i];
         const innerAttributeValue = innerElement.getAttribute(attributeName);
-        if (innerAttributeValue) {
+        if (innerAttributeValue && innerAttributeValue !== residualValue) {
           attributeValue = innerAttributeValue;
-          innerElement.removeAttribute(attributeName);
+          if (residualValue) {
+            innerElement.setAttribute(attributeName, residualValue);
+          } else {
+            innerElement.removeAttribute(attributeName);
+          }
+        } else if (!innerAttributeValue && residualValue) {
+          innerElement.setAttribute(attributeName, residualValue);
         }
       }
     }

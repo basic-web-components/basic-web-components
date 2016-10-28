@@ -1,3 +1,4 @@
+import Collective from './Collective';
 import symbols from './symbols';
 
 
@@ -92,8 +93,8 @@ export default (base) => {
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      // Catch the case where the selection is removed.
       if (item == null) {
+        // Selection was removed.
         getOutermostElement(this).removeAttribute('aria-activedescendant');
       }
     }
@@ -104,21 +105,6 @@ export default (base) => {
 };
 
 
-// Return the first ARIA activedescendant defined by the collective.
-function getCollectiveAriaActiveDescendant(collective) {
-  const descendants = collective.elements.map(element => element.getAttribute('aria-activedescendant'));
-  const nonNullDescendants = descendants.filter(descendant => descendant !== null);
-  return nonNullDescendants[0];
-}
-
-
-// Return the first ARIA label defined by the collective.
-function getCollectiveAriaRole(collective) {
-  const roles = collective.elements.map(element => element.getAttribute('role'));
-  const nonNullRoles = roles.filter(role => role !== null);
-  return nonNullRoles[0];
-}
-
 function getOutermostElement(element) {
   return element.collective ?
     element.collective.outermostElement :
@@ -126,41 +112,9 @@ function getOutermostElement(element) {
 }
 
 function setAriaAttributes(element) {
-
   if (!element.isConnected) {
     return;
   }
-
-  const outermostElement = getOutermostElement(element);
-  const collective = element.collective;
-
-  // Ensure the outermost element has an ARIA role.
-  if (!outermostElement.getAttribute('role')) {
-    // Try to promote an ARIA role from an inner element.
-    let role = element.collective && getCollectiveAriaRole(element.collective);
-    // If no role is found, use a default role.
-    role = role || 'listbox';
-    outermostElement.setAttribute('role', role);
-  }
-
-  if (collective) {
-
-    if (!outermostElement.getAttribute('aria-activedescendant')) {
-      // Try to promote an ARIA activedescendant value from an inner element.
-      const descendant = getCollectiveAriaActiveDescendant(collective);
-      if (descendant) {
-        element.setAttribute('aria-activedescendant', descendant);
-      }
-    }
-
-    // Remove the ARIA role and activedescendant values from the collective's
-    // inner elements.
-    collective.elements.forEach(member => {
-      if (member !== outermostElement) {
-        member.removeAttribute('aria-activedescendant');
-        member.setAttribute('role', 'none');
-      }
-    });
-  }
-
+  Collective.promoteAttribute(element, 'aria-activedescendant');
+  Collective.promoteAttribute(element, 'role', 'listbox', 'none');
 }
