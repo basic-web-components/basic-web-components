@@ -57,7 +57,7 @@ describe("DistributedChildrenAsContent mixin", () => {
   });
 
   it("returns direct assigned nodes as content", () => {
-    let fixture = document.createElement('content-test');
+    const fixture = document.createElement('content-test');
     fixture.innerHTML = `
       <div>One</div>
       <div>Two</div>
@@ -67,19 +67,19 @@ describe("DistributedChildrenAsContent mixin", () => {
   });
 
   it("returns distributed nodes as content", () => {
-    let wrapper = document.createElement('wrapped-content-test');
+    const wrapper = document.createElement('wrapped-content-test');
     wrapper.innerHTML = `
       <div>One</div>
       <div>Two</div>
       <div>Three</div>
     `;
-    let fixture = wrapper.shadowRoot.querySelector('content-test');
+    const fixture = wrapper.shadowRoot.querySelector('content-test');
     assert.equal(fixture.content.length, 3);
   });
 
   it("makes initial call to contentChanged when component is created", done => {
     container.innerHTML = `<content-test>beaver</content-test>`;
-    let fixture = container.querySelector('content-test');
+    const fixture = container.querySelector('content-test');
     // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
       // Yet another timeout because Edge seems to need two cycles to upgrade.
@@ -91,7 +91,7 @@ describe("DistributedChildrenAsContent mixin", () => {
   });
 
   it("calls contentChanged when textContent changes", done => {
-    let fixture = document.createElement('content-test');
+    const fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -104,7 +104,7 @@ describe("DistributedChildrenAsContent mixin", () => {
   });
 
   it("calls contentChanged when children change", done => {
-    let fixture = document.createElement('content-test');
+    const fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -112,15 +112,15 @@ describe("DistributedChildrenAsContent mixin", () => {
         assert.equal(fixture.textContent, 'dingo');
         done();
       };
-      let div = document.createElement('div');
+      const div = document.createElement('div');
       div.textContent = 'dingo';
       fixture.appendChild(div);
     });
   });
 
   it("calls contentChanged when redistributed content changes", done => {
-    let wrapper = document.createElement('wrapped-content-test');
-    let fixture = wrapper.shadowRoot.querySelector('content-test');
+    const wrapper = document.createElement('wrapped-content-test');
+    const fixture = wrapper.shadowRoot.querySelector('content-test');
     container.appendChild(wrapper);
 
     let count = 0; // See below.
@@ -142,7 +142,7 @@ describe("DistributedChildrenAsContent mixin", () => {
   });
 
   it("doesn't call contentChanged for changes in the component's shadow tree", done => {
-    let fixture = document.createElement('content-test');
+    const fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -156,7 +156,7 @@ describe("DistributedChildrenAsContent mixin", () => {
       // DOM content, this is not an issue on Shadow DOM. But under the polyfill,
       // the mutation handler will need to filter out mutations that occur in
       // Shady DOM elements.
-      let shadowElement = fixture.shadowRoot.querySelector('#static');
+      const shadowElement = fixture.shadowRoot.querySelector('#static');
       shadowElement.textContent = "This should be ignored";
 
       // Now add an element to the light DOM, which we *do* expect to trigger
@@ -167,7 +167,7 @@ describe("DistributedChildrenAsContent mixin", () => {
   });
 
   it("doesn't call contentChanged when node is removed from shadow DOM", done => {
-    let fixture = document.createElement('content-test');
+    const fixture = document.createElement('content-test');
     container.appendChild(fixture);
     // Wait for initial contentChanged call to complete.
     microtask(() => {
@@ -178,7 +178,7 @@ describe("DistributedChildrenAsContent mixin", () => {
       };
 
       // Remove an element from the shadow, which shouldn't trigger contentChanged.
-      let shadowElement = fixture.shadowRoot.querySelector('#static');
+      const shadowElement = fixture.shadowRoot.querySelector('#static');
       shadowElement.remove();
 
       // Now add an element to the light DOM, which we do expect to trigger
@@ -189,8 +189,8 @@ describe("DistributedChildrenAsContent mixin", () => {
   });
 
   it("*does* call contentChanged if node is removed from light DOM", done => {
-    let fixture = document.createElement('content-test');
-    let div = document.createElement('div');
+    const fixture = document.createElement('content-test');
+    const div = document.createElement('div');
     div.textContent = 'div';
     fixture.appendChild(div);
     container.appendChild(fixture);

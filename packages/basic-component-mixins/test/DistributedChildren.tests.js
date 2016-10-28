@@ -41,10 +41,10 @@ describe("DistributedChildren mixin", () => {
   });
 
   it("provides helpers to access direct children", () => {
-    let fixture = document.createElement('children-test');
-    let div1 = document.createElement('div');
-    let text = document.createTextNode(' ');
-    let div2 = document.createElement('div');
+    const fixture = document.createElement('children-test');
+    const div1 = document.createElement('div');
+    const text = document.createTextNode(' ');
+    const div2 = document.createElement('div');
     div1.textContent = 'Hello';
     div2.textContent = 'World';
     fixture.appendChild(div1);
@@ -57,8 +57,8 @@ describe("DistributedChildren mixin", () => {
   });
 
   it("provides helpers to access reprojected children", done => {
-    let fixture = document.createElement('reproject-test');
-    let div = document.createElement('div');
+    const fixture = document.createElement('reproject-test');
+    const div = document.createElement('div');
     div.textContent = 'aardvark';
     fixture.appendChild(div);
     // Wait for polyfill.
@@ -68,7 +68,7 @@ describe("DistributedChildren mixin", () => {
       assert.equal(fixture.distributedChildNodes.length, 1);
       assert.equal(fixture.distributedChildNodes[0], div);
       // Inner element should report same results.
-      let inner = fixture.shadowRoot.querySelector('children-test');
+      const inner = fixture.shadowRoot.querySelector('children-test');
       assert.equal(inner.distributedTextContent, 'aardvark');
       assert.equal(inner.distributedChildren.length, 1);
       assert.equal(inner.distributedChildNodes.length, 1);

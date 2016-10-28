@@ -35,9 +35,9 @@ describe("ContentFirstChildTarget mixin", () => {
     setTimeout(() => {
       // Yet another timeout because Edge seems to need two cycles to upgrade.
       setTimeout(() => {
-        let fixture = container.querySelector('content-first-child-target-test');
-        let div = fixture.children[0];
-        let collective = fixture.collective;
+        const fixture = container.querySelector('content-first-child-target-test');
+        const div = fixture.children[0];
+        const collective = fixture.collective;
         assert.equal(collective.elements.length, 2);
         assert.equal(collective.elements[0], fixture);
         assert.equal(collective.elements[1], div);

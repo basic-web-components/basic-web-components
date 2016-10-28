@@ -16,14 +16,14 @@ describe("AutosizeTextarea", () => {
   });
 
   it("can be instantiated", () => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
     assert(fixture);
   });
 
   it("sets initial value from initial innerHTML", done => {
     container.innerHTML = '<basic-autosize-textarea>aardvark</basic-autosize-textarea>';
-    let fixture = container.querySelector('basic-autosize-textarea');
+    const fixture = container.querySelector('basic-autosize-textarea');
     // Timeout gives time for: 1) polyfill to upgrade element, 2) contentChanged
     // to be fired.
     setTimeout(() => {
@@ -36,13 +36,13 @@ describe("AutosizeTextarea", () => {
   });
 
   it("applies its value to the inner textarea", () => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     fixture.value = 'beaver';
     assert(fixture.inner.value, 'beaver');
   });
 
   it("updates value when innerHTML changes", done => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
     fixture.innerHTML = 'chihuahua';
     // Use microtask to wait for mutation observer to pick up change.
@@ -53,7 +53,7 @@ describe("AutosizeTextarea", () => {
   });
 
   it("sets minimumRows to 1 by default", () => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     assert.equal(fixture.minimumRows, 1);
   });
 
@@ -61,14 +61,14 @@ describe("AutosizeTextarea", () => {
     container.innerHTML = '<basic-autosize-textarea minimum-rows="10"></basic-autosize-textarea>';
     // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
-      let fixture = container.querySelector('basic-autosize-textarea');
+      const fixture = container.querySelector('basic-autosize-textarea');
       assert.equal(fixture.minimumRows, 10);
       done();
     });
   });
 
   it("raises a value-changed event when its value changes", done => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
     fixture.addEventListener('value-changed', event => {
       assert.equal(fixture.value, 'fox');
@@ -78,12 +78,12 @@ describe("AutosizeTextarea", () => {
   });
 
   it("autosizes to fit its contents", done => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
     // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
       // Original height should be sufficient to hold single line of text.
-      let originalHeight = fixture.clientHeight;
+      const originalHeight = fixture.clientHeight;
       fixture.value = 'One\nTwo\nThree';
       // Height with three lines of text should be over twice as big.
       assert(fixture.clientHeight > originalHeight * 2);
@@ -92,12 +92,12 @@ describe("AutosizeTextarea", () => {
   });
 
   it("applies minimumRows when text isn't tall enough", done => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
     // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
       // Original height should be sufficient to hold single line of text.
-      let originalHeight = fixture.clientHeight;
+      const originalHeight = fixture.clientHeight;
       fixture.minimumRows = 3;
       // Timeout gives time to apply styling.
       setTimeout(() => {
@@ -109,33 +109,33 @@ describe("AutosizeTextarea", () => {
   });
 
   it("autosizes works when its text content is HTML", () => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     container.appendChild(fixture);
-    let originalHeight = fixture.clientHeight;
+    const originalHeight = fixture.clientHeight;
     fixture.value = `<html>\n<body>\n<p>\nThis is a test\n</p>\n<div>\nSome more tests\n</div>\n</body>\n</html>`;
     assert(fixture.clientHeight > originalHeight * 2);
   });
 
   it("autosizes works with text wrapping", () => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     fixture.style.width = '400px';
     container.appendChild(fixture);
-    let originalHeight = fixture.clientHeight;
+    const originalHeight = fixture.clientHeight;
     fixture.value = "Lots of words to force wrapping. Lots of words to force wrapping. Lots of words to force wrapping. Lots of words to force wrapping. Lots of words to force wrapping. Lots of words to force wrapping. Lots of words to force wrapping. Lots of words to force wrapping. Lots of words to force wrapping.";
     assert(fixture.clientHeight > originalHeight * 2);
   });
 
   it("autosizes works with long string with no whitespace", () => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     fixture.style.width = '400px';
     container.appendChild(fixture);
-    let originalHeight = fixture.clientHeight;
+    const originalHeight = fixture.clientHeight;
     fixture.value = "abcdefghijklmnopqrstuvwxyz.,;:+-abcdefghijklmnopqrstuvwxyz.,;:+-abcdefghijklmnopqrstuvwxyz.,;:+-abcdefghijklmnopqrstuvwxyz.,;:+-abcdefghijklmnopqrstuvwxyz.,;:+-abcdefghijklmnopqrstuvwxyz.,;:+-abcdefghijklmnopqrstuvwxyz.,;:+-abcdefghijklmnopqrstuvwxyz.,;:+-";
     assert(fixture.clientHeight > originalHeight * 2);
   });
 
   it("applies its placeholder property to the inner textarea", () => {
-    let fixture = document.createElement('basic-autosize-textarea');
+    const fixture = document.createElement('basic-autosize-textarea');
     fixture.placeholder = 'Placeholder';
     assert.equal(fixture.inner.placeholder, 'Placeholder');
     assert.notEqual(fixture.value, 'Placeholder');

@@ -25,26 +25,20 @@ customElements.define('target-selection-target', TargetSelectionTarget);
 
 describe("TargetSelection mixin", () => {
 
-  // let container;
   let outer;
   let inner;
   let items;
 
   before(() => {
-    // container = document.getElementById('container');
     outer = document.createElement('target-selection-test');
     inner = document.createElement('target-selection-target');
     items = ['Zero', 'One', 'Two'].map(text => {
-      let item = document.createElement('div');
+      const item = document.createElement('div');
       item.textContent = text;
       return item;
     });
     items.forEach(item => inner.appendChild(item));
     outer.target = inner;
-  });
-
-  afterEach(() => {
-    // container.innerHTML = '';
   });
 
   it("exposes the selection of the target", () => {

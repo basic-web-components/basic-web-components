@@ -25,14 +25,14 @@ customElements.define('array-as-elements-test', ArrayAsElementsTest);
 describe("renderArrayAsElements", () => {
 
   it("creates elements for each item in the items array", () => {
-    let element = document.createElement('array-as-elements-test');
-    let items = [
+    const element = document.createElement('array-as-elements-test');
+    const items = [
       'One',
       'Two',
       'Three'
     ];
     element.items = items;
-    let childNodes = element.childNodes;
+    const childNodes = element.childNodes;
     assert.equal(childNodes.length, 3);
     [].slice.call(childNodes).forEach((element, index) => {
       assert.equal(element.localName, 'div');
@@ -41,16 +41,16 @@ describe("renderArrayAsElements", () => {
   });
 
   it("reuses existing elements when adding", () => {
-    let element = document.createElement('array-as-elements-test');
-    let items = [
+    const element = document.createElement('array-as-elements-test');
+    const items = [
       'One',
       'Two'
     ];
     element.items = items;
     let childNodes = element.childNodes;
     assert.equal(childNodes.length, 2);
-    let child0 = childNodes[0];
-    let child1 = childNodes[1];
+    const child0 = childNodes[0];
+    const child1 = childNodes[1];
     assert.equal(child0.textContent, 'One');
     assert.equal(child1.textContent, 'Two');
     items.push('Three');
@@ -63,8 +63,8 @@ describe("renderArrayAsElements", () => {
   });
 
   it("removes extra elements when array shrinks", () => {
-    let element = document.createElement('array-as-elements-test');
-    let items = [
+    const element = document.createElement('array-as-elements-test');
+    const items = [
       'One',
       'Two',
       'Three'

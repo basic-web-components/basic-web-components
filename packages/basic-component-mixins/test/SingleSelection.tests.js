@@ -28,19 +28,19 @@ describe("SingleSelection mixin", () => {
   });
 
   it("has selectedItem initially null", () => {
-    let element = document.createElement('items-selection-test');
+    const element = document.createElement('items-selection-test');
     assert.isNull(element.selectedItem);
     assert.equal(element.selectedIndex, -1);
   });
 
   it("updates selectingIndex when selectedItem changes", () => {
-    let element = createSampleElement();
+    const element = createSampleElement();
     element.selectedIndex = 2;
     assert.equal(element.selectedItem, element.children[2]);
   });
 
   it("updates selectedItem when selectedIndex changes", () => {
-    let element = createSampleElement();
+    const element = createSampleElement();
     element.selectedItem = element.children[2];
     assert.equal(element.selectedIndex, 2);
   });
@@ -53,15 +53,15 @@ describe("SingleSelection mixin", () => {
     `;
     // Timeout gives polyfill time to upgrade element.
     setTimeout(() => {
-      let list = container.querySelector('items-selection-test');
-      let item = list.children[0];
+      const list = container.querySelector('items-selection-test');
+      const item = list.children[0];
       assert.equal(list.selectedItem, item);
       done();
     });
   });
 
   it("changing selection raises the selected-item-changed event", done => {
-    let element = createSampleElement();
+    const element = createSampleElement();
     element.addEventListener('selected-item-changed', () => {
       done();
     });
@@ -70,7 +70,7 @@ describe("SingleSelection mixin", () => {
   });
 
   it("can advance the selection to the next item", () => {
-    let element = createSampleElement();
+    const element = createSampleElement();
     assert.equal(element.selectedIndex, -1);
     element.selectNext();
     assert.equal(element.selectedIndex, 0);
@@ -82,7 +82,7 @@ describe("SingleSelection mixin", () => {
   });
 
   it("can move the selection to the previous item", () => {
-    let element = createSampleElement();
+    const element = createSampleElement();
     assert.equal(element.selectedIndex, -1);
     element.selectPrevious();
     assert.equal(element.selectedIndex, 2); // last item
@@ -91,7 +91,7 @@ describe("SingleSelection mixin", () => {
   });
 
   it("can wrap the selection from the last to the first item", () => {
-    let element = createSampleElement();
+    const element = createSampleElement();
     element.selectionWraps = true;
     element.selectedIndex = 2;
     element.selectNext();
@@ -101,9 +101,9 @@ describe("SingleSelection mixin", () => {
 });
 
 function createSampleElement() {
-  let element = document.createElement('items-selection-test');
+  const element = document.createElement('items-selection-test');
   ['Zero', 'One', 'Two'].forEach(text => {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.textContent = text;
     element.appendChild(div);
   });

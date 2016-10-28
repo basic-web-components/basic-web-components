@@ -55,19 +55,19 @@ describe("AttributeMarshalling mixin", () => {
   });
 
   it("defines observedAttributes for all custom property setters", () => {
-    let observedAttributes = ElementWithCustomProperty.observedAttributes;
+    const observedAttributes = ElementWithCustomProperty.observedAttributes;
     assert.deepEqual(observedAttributes, ['custom-property']);
   });
 
   it("marshals hyphenated attribute to corresponding camelCase property", () => {
-    let element = document.createElement('element-with-custom-property');
+    const element = document.createElement('element-with-custom-property');
     assert.isUndefined(element.customProperty);
     element.setAttribute('custom-property', "Hello");
     assert.equal(element.customProperty, "Hello");
   });
 
   it("reflects property to attribute immediately if connected to document", () => {
-    let element = document.createElement('element-with-custom-property');
+    const element = document.createElement('element-with-custom-property');
     assert.isNull(element.getAttribute('custom-property'));
     container.appendChild(element);
     element.customProperty = true;
@@ -76,14 +76,14 @@ describe("AttributeMarshalling mixin", () => {
 
   it("defers reflection of attribute during constructor until connected to document", () => {
     defaultPropertyValue = true;
-    let element = document.createElement('element-with-custom-property');
+    const element = document.createElement('element-with-custom-property');
     assert.isNull(element.getAttribute('custom-property'));
     container.appendChild(element);
     assert.equal(element.getAttribute('custom-property'), 'true');
   });
 
   it("reflects class immediately if connected to document", () => {
-    let element = document.createElement('element-with-class');
+    const element = document.createElement('element-with-class');
     assert.equal(element.classList.length, 0);
     container.appendChild(element);
     element.reflectClass('custom', true);
@@ -93,7 +93,7 @@ describe("AttributeMarshalling mixin", () => {
 
   it("defers reflection of class during constructor until connected to document", () => {
     defaultClass = 'custom';
-    let element = document.createElement('element-with-class');
+    const element = document.createElement('element-with-class');
     assert.equal(element.classList.length, 0);
     container.appendChild(element);
     assert.equal(element.classList.length, 1);

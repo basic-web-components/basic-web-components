@@ -2,8 +2,8 @@ import { assert } from 'chai';
 import SelectionAnimation from '../src/SelectionAnimation';
 
 // These are the functions we'll test.
-let fractions = SelectionAnimation.helpers.animationFractionsForSelection;
-let timings = SelectionAnimation.helpers.effectTimingsForSelectionAnimation;
+const fractions = SelectionAnimation.helpers.animationFractionsForSelection;
+const timings = SelectionAnimation.helpers.effectTimingsForSelectionAnimation;
 
 
 class SelectionAnimationTest extends SelectionAnimation(HTMLElement) {
@@ -30,14 +30,14 @@ customElements.define('selection-animation-test', SelectionAnimationTest);
 describe("SelectionAnimation mixin", () => {
 
   it("animation fractions for a list with no items", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     test.items = [];
     assert.deepEqual(fractions(test, 0), []);
   });
 
   it("animation fractions for a list of 1 item", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     test.items = [0]; // Don't need real items, just an array of desired length.
     assert.deepEqual(fractions(test,  0  ), [ 0.5 ]);
@@ -46,7 +46,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("animation fractions for a list of multiple items", () => {
-    let test = createTestElement();
+    const test = createTestElement();
 
     test.selectionWraps = false;
     // At selection index 0, item 0 should be center stage (0.5), item 1 should
@@ -67,7 +67,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selectNext from 0 to 1", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, 0, 1), [
       { duration: 500, direction: 'normal', fill: 'both', delay: -250, endDelay: 0 },
@@ -79,7 +79,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selection forward after releasing drag from 0.5 to 1", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, 0.5, 1), [
       { duration: 500, direction: 'normal', fill: 'both', delay: -375, endDelay: 0 },
@@ -91,7 +91,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selection forward after releasing drag from 0.5 to 0", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, 0.5, 0), [
       { duration: 500, direction: 'reverse', fill: 'both', delay: -125, endDelay: -250 },
@@ -103,7 +103,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selection forward after releasing drag from 4.5 to 4", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, 4.5, 4), [
       null,
@@ -115,7 +115,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate direct forward jump of selection from 0 to 2", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, 0, 2), [
       { duration: 250, direction: 'normal', fill: 'both', delay: -125, endDelay: 0 },
@@ -127,7 +127,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selectPrevious from 1 to 0", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, 1, 0), [
       { duration: 500, direction: 'reverse', fill: 'both', delay: 0, endDelay: -250 },
@@ -139,7 +139,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate direct backward jump of selection from 2 to 0", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, 2, 0), [
       { duration: 250, direction: 'reverse', fill: 'both', delay: 125, endDelay: -125 },
@@ -151,7 +151,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selection forward after releasing drag from -0.5 to 0", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = false;
     assert.deepEqual(timings(test, -0.5, 0), [
       { duration: 500, direction: 'normal', fill: 'both', delay: -125, endDelay: -250 },
@@ -163,7 +163,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selectNext from 4 to 0 (with wrap)", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = true;
     assert.deepEqual(timings(test, 4, 0), [
       { duration: 500, direction: 'normal', fill: 'both', delay: 0, endDelay: -250 },
@@ -175,7 +175,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selectPrevious from 0 to 4 (with wrap)", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = true;
     assert.deepEqual(timings(test, 0, 4), [
       { duration: 500, direction: 'reverse', fill: 'both', delay: -250, endDelay: 0 },
@@ -187,7 +187,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selection forward after releasing drag from 4.5 to 0 (with wrap)", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = true;
     assert.deepEqual(timings(test, 4.5, 0), [
       { duration: 500, direction: 'normal', fill: 'both', delay: -125, endDelay: -250 },
@@ -199,7 +199,7 @@ describe("SelectionAnimation mixin", () => {
   });
 
   it("timings to animate selection forward after releasing drag from -0.5 to 0 (with wrap)", () => {
-    let test = createTestElement();
+    const test = createTestElement();
     test.selectionWraps = true;
     assert.deepEqual(timings(test, -0.5, 0), [
       { duration: 500, direction: 'normal', fill: 'both', delay: -125, endDelay: -250 },
@@ -215,7 +215,7 @@ describe("SelectionAnimation mixin", () => {
 
 function createTestElement() {
   // Sample element with the mixin.
-  let test = document.createElement('selection-animation-test');
+  const test = document.createElement('selection-animation-test');
   // Don't need real items, just an array of the desired length.
   test.items = [0, 0, 0, 0, 0];
   return test;

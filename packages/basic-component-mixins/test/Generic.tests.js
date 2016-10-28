@@ -37,16 +37,16 @@ describe("Generic mixin", function() {
   });
 
   it("turns on generic style by default", () => {
-    let fixture = document.createElement('generic-test');
+    const fixture = document.createElement('generic-test');
     container.appendChild(fixture);
     assert(fixture.generic);
     assert.equal(fixture.getAttribute('generic'), '');
-    let display = getComputedStyle(fixture).display;
+    const display = getComputedStyle(fixture).display;
     assert.equal(display, 'block');
   });
 
   it("exposes generic property to turn generic styling on/off", () => {
-    let fixture = document.createElement('generic-test');
+    const fixture = document.createElement('generic-test');
     container.appendChild(fixture);
     fixture.generic = false;
     assert.equal(fixture.getAttribute('generic'), 'false');

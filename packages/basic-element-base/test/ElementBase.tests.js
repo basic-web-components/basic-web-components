@@ -22,7 +22,7 @@ customElements.define('simple-element-base-subclass', SimpleElementBaseSubclass)
 describe("ElementBase component", () => {
 
   it("supports template", () => {
-    let element = document.createElement('simple-element-base-subclass');
+    const element = document.createElement('simple-element-base-subclass');
     assert(element.customCreatedCallbackInvoked);
     assert.equal(element.shadowRoot.textContent.trim(), "Hello");
   });

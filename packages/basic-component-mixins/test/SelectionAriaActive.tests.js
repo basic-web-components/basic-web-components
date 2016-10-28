@@ -27,12 +27,12 @@ describe("SelectionAriaActive mixin", () => {
   });
 
   it("assigns default roles to list and items, and default IDs to items without IDs", () => {
-    let list = document.createElement('selection-aria-active-test');
+    const list = document.createElement('selection-aria-active-test');
     list.id = 'test'; // Will be used as basis for assigned item IDs.
-    let item1 = document.createElement('div');
+    const item1 = document.createElement('div');
     item1.id = 'explicitID';
     list.appendChild(item1);
-    let item2 = document.createElement('div');
+    const item2 = document.createElement('div');
     // Leave item2 without an ID.
     list.appendChild(item2);
     // Initialize items using private API.
@@ -47,10 +47,10 @@ describe("SelectionAriaActive mixin", () => {
   });
 
   it("indicates the selection state on both the list and the item", () => {
-    let list = document.createElement('selection-aria-active-test');
-    let item1 = document.createElement('div');
+    const list = document.createElement('selection-aria-active-test');
+    const item1 = document.createElement('div');
     list.appendChild(item1);
-    let item2 = document.createElement('div');
+    const item2 = document.createElement('div');
     list.appendChild(item2);
     // Initialize items using private API.
     list[symbols.itemAdded](item1);
@@ -66,13 +66,13 @@ describe("SelectionAriaActive mixin", () => {
   });
 
   it("assigns a default role of 'listbox'", () => {
-    let noRole = document.createElement('selection-aria-active-test');
+    const noRole = document.createElement('selection-aria-active-test');
     container.appendChild(noRole);
     assert.equal(noRole.getAttribute('role'), 'listbox');
   });
 
   it("doesn't overwrite an explicit role", () => {
-    let hasRole = document.createElement('selection-aria-active-test');
+    const hasRole = document.createElement('selection-aria-active-test');
     hasRole.setAttribute('role', 'tabs');
     container.appendChild(hasRole);
     assert.equal(hasRole.getAttribute('role'), 'tabs');

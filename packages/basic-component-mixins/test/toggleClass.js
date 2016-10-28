@@ -5,7 +5,7 @@ import toggleClass from '../src/toggleClass';
 describe("toggleClass helper", () => {
 
   it("behaves like the standard classList.toggle() function", () => {
-    let element = document.createElement('div');
+    const element = document.createElement('div');
     assert(!element.classList.contains('foo'));
     // With no boolean parameter.
     toggleClass(element, 'foo');

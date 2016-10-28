@@ -15,7 +15,7 @@ describe("CurrentAnchor", () => {
   });
 
   it("makes the link current if its destination is the current location", () => {
-    let element = document.createElement('basic-current-anchor');
+    const element = document.createElement('basic-current-anchor');
     assert(!element.active);
     container.appendChild(element);
     assert(!element.classList.contains('current'));
@@ -25,7 +25,7 @@ describe("CurrentAnchor", () => {
   });
 
   it("makes an area link current if its destination is a prefix of the current location", () => {
-    let element = document.createElement('basic-current-anchor');
+    const element = document.createElement('basic-current-anchor');
     element.href = window.location.origin;
     assert(!element.current);
     container.appendChild(element);

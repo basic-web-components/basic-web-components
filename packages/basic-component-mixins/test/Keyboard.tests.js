@@ -67,7 +67,7 @@ describe("Keyboard mixin", () => {
   });
 
   it("listens to keydown and fires the keydown() method", done => {
-    let fixture = document.createElement('keyboard-test');
+    const fixture = document.createElement('keyboard-test');
     fixture.keydownHook = (event) => {
       assert.equal(event.keyCode, 13);
       done();

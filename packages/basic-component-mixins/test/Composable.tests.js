@@ -3,7 +3,7 @@ import Composable from '../src/Composable';
 
 
 /* Element created via ES5-compatible .compose() */
-let Es5Class = Composable(HTMLElement).compose({
+const Es5Class = Composable(HTMLElement).compose({
   get customProperty() {
     return 'property';
   },
@@ -18,7 +18,7 @@ customElements.define('es5-class', Es5Class);
 describe("Composable mixin", () => {
 
   it("can create component class with ES5-compatible .compose()", () => {
-    let element = document.createElement('es5-class');
+    const element = document.createElement('es5-class');
     assert.equal(element.customProperty, 'property');
     assert.equal(element.method(), 'method');
     assert.equal(element.value, 'value');

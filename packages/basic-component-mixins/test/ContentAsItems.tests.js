@@ -13,16 +13,16 @@ customElements.define('content-items-test', ContentAsItemsTest);
 describe("ContentAsItems mixin", () => {
 
   it("returns contents as items", function() {
-    let element = document.createElement('content-items-test');
+    const element = document.createElement('content-items-test');
     element.innerHTML = `<div>1</div><div>2</div>`;
-    let items = element.items;
+    const items = element.items;
     assert.equal(items.length, 2);
     assert.equal(items[0].textContent, '1');
     assert.equal(items[1].textContent, '2');
   });
 
   it("filters auxiliary elements from items", function() {
-    let element = document.createElement('content-items-test');
+    const element = document.createElement('content-items-test');
     element.innerHTML = `
       <div>1</div>
       <link>
@@ -31,7 +31,7 @@ describe("ContentAsItems mixin", () => {
       <template></template>
       <div>2</div>
     `;
-    let items = element.items;
+    const items = element.items;
     assert.equal(items.length, 2);
     assert.equal(items[0].textContent, '1');
     assert.equal(items[1].textContent, '2');

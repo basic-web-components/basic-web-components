@@ -9,11 +9,11 @@
 /*jslint node: true */
 'use strict';
 
-let fs = require('fs');
-let path = require('path');
-let jsDocParse = require('jsdoc-parse');
-let dmd = require('dmd');
-let Readable = require('stream').Readable;
+const fs = require('fs');
+const path = require('path');
+const jsDocParse = require('jsdoc-parse');
+const dmd = require('dmd');
+const Readable = require('stream').Readable;
 
 //
 // allPackages is the global array of npm-publishable packages in this monorepo.
@@ -21,8 +21,8 @@ let Readable = require('stream').Readable;
 // "basic-".
 const PACKAGE_FOLDER = 'packages';
 const allPackages = fs.readdirSync(PACKAGE_FOLDER).filter(fileName => {
-  let filePath = path.join(PACKAGE_FOLDER, fileName);
-  let stat = fs.statSync(filePath);
+  const filePath = path.join(PACKAGE_FOLDER, fileName);
+  const stat = fs.statSync(filePath);
   return stat && stat.isDirectory() && fileName.startsWith('basic-');
 });
 
@@ -33,7 +33,7 @@ let updatedPublishList = [];
 // Build the global buildList object for use in browserify:components
 //
 function buildBuildList() {
-  let buildList = {
+  const buildList = {
     'build/tests.js': allPackages.map(pkg => `packages/${pkg}/test/*.js`)
   };
   allPackages.forEach(pkg => {
@@ -47,11 +47,11 @@ const buildList = buildBuildList();
 // Build the global docsList array for use in building the package's README.md documentation
 //
 function buildDocsList() {
-  let packagesWithoutBuiltDocs = [
+  const packagesWithoutBuiltDocs = [
     'basic-component-mixins',
     'basic-web-components'
   ];
-  let ary = allPackages.filter(item => {
+  const ary = allPackages.filter(item => {
     return packagesWithoutBuiltDocs.indexOf(item) < 0;
   }).map(item => {
     return {
@@ -71,7 +71,7 @@ function buildMixinsDocsList() {
   return fs.readdirSync('packages/basic-component-mixins/src').filter(file => {
     return file.indexOf('.js') == file.length - 3;
   }).map(file => {
-    let fileRoot = file.replace('.js', '');
+    const fileRoot = file.replace('.js', '');
     return {
       src: `packages/basic-component-mixins/src/${file}`,
       dest: `packages/basic-component-mixins/docs/${fileRoot}.md` };
@@ -228,7 +228,7 @@ module.exports = function(grunt) {
                 grunt.log.error('Package not published for unexpected reasons: ' + err);
             }
             else if (stdout && stdout.length > 0) {
-              let output = stdout.trim();
+              const output = stdout.trim();
               grunt.log.writeln(output);
               updatedPublishList.push(output);
             }
@@ -254,7 +254,7 @@ module.exports = function(grunt) {
               grunt.log.error('Package owner not updated for unexpected reasons: ' + err);
             }
             else if (stdout && stdout.length > 0) {
-              let output = stdout.trim();
+              const output = stdout.trim();
               grunt.log.writeln(output);
             }
             if (cb) {
@@ -309,7 +309,7 @@ module.exports = function(grunt) {
   // This task makes use of the docsList global array.
   //
   grunt.registerTask('docs', function() {
-    let done = this.async();
+    const done = this.async();
     return mapAndChain(docsList, doc => buildMarkdownDoc(doc, grunt))
     .then(() =>
       done()
@@ -441,14 +441,14 @@ module.exports = function(grunt) {
     }
 
     for (let i = 0; i < allPackages.length; i++) {
-      let filePath = './packages/' + allPackages[i] + '/package.json';
+      const filePath = './packages/' + allPackages[i] + '/package.json';
       let packageJSON = require(filePath);
       packageJSON = updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString);
       fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
     }
 
-    let filePath = './package.json';
-    let packageJSON = require(filePath);
+    const filePath = './package.json';
+    const packageJSON = require(filePath);
     packageJSON.version = versionString;
     fs.writeFileSync(filePath, JSON.stringify(packageJSON, null, 2), 'utf-8');
   });
@@ -496,7 +496,7 @@ function parseScriptToJSDocJSON(src) {
   return new Promise((resolve, reject) => {
     // Start by parsing the jsdoc into a stream which will contain
     // the jsdoc represented in JSON
-    let stream = jsDocParse({src: src});
+    const stream = jsDocParse({src: src});
 
     // Convert the stream to jsdoc JSON
     let string = '';
@@ -505,7 +505,7 @@ function parseScriptToJSDocJSON(src) {
       string += chunk;
     })
     .on('end', () => {
-      let json = JSON.parse(string);
+      const json = JSON.parse(string);
       resolve(json);
     })
     .on('error', err => {
@@ -518,7 +518,7 @@ function parseJSONToMarkdown(json, grunt) {
   return new Promise(function(resolve, reject) {
     // Create a new readable stream, holding the stringified JSON
     let string = '';
-    let s = new Readable();
+    const s = new Readable();
     s._read = function noop() {};
     s.push(JSON.stringify(json));
     s.push(null);
@@ -530,7 +530,7 @@ function parseJSONToMarkdown(json, grunt) {
       './grunt/templates/scope.hbs',
       './grunt/templates/mixes.hbs',
       './grunt/templates/mixin-linked-type-list.hbs'];
-    let dmdStream = dmd({partial: partials, 'global-index-format': 'none', 'group-by': ['none']});
+    const dmdStream = dmd({partial: partials, 'global-index-format': 'none', 'group-by': ['none']});
     s.pipe(dmdStream);
     dmdStream.setEncoding('utf8');
     dmdStream.on('data', data => {
@@ -551,11 +551,11 @@ function mergeMixinDocs(componentJson, grunt) {
     return componentJson;
   }
 
-  let mixins = componentJson[0].mixes.map(mixin => {
+  const mixins = componentJson[0].mixes.map(mixin => {
     return 'packages/basic-component-mixins/src/' + mixin + '.js';
   });
 
-  let hostId = componentJson[0].id;
+  const hostId = componentJson[0].id;
   return mapAndChain(mixins, mixin => mergeMixinIntoBag(mixin, componentJson, hostId))
   .then(() =>
     componentJson
@@ -576,10 +576,10 @@ function mergeMixinIntoBag(mixinPath, componentJson, hostId) {
 }
 
 function updatePackageJSONVersionAndDependencies(allPackages, packageJSON, versionString) {
-  let json = packageJSON;
+  const json = packageJSON;
   json.version = versionString;
 
-  let dependencies = packageJSON.dependencies;
+  const dependencies = packageJSON.dependencies;
   for (let packageName in dependencies) {
     if (dependencies.hasOwnProperty(packageName) && (allPackages.indexOf(packageName) >= 0)) {
       dependencies[packageName] = '^' + versionString;

@@ -6,7 +6,7 @@ import microtask from '../../basic-component-mixins/src/microtask';
 describe("ListBox", () => {
 
   it("defines a value property equivalent to text of selectedItem", done => {
-    let listBox = createSampleListBox();
+    const listBox = createSampleListBox();
     microtask(() => {
       assert.equal(listBox.value, '');
       listBox.selectedIndex = 2;
@@ -20,9 +20,9 @@ describe("ListBox", () => {
 });
 
 function createSampleListBox() {
-  let element = document.createElement('basic-list-box');
+  const element = document.createElement('basic-list-box');
   ['Zero', 'One', 'Two'].forEach(text => {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.textContent = text;
     element.appendChild(div);
   });

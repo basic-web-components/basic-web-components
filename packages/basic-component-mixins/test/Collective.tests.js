@@ -15,14 +15,14 @@ describe("Collective", () => {
   });
 
   it("initiallly has no members", function() {
-    let collective = new Collective();
+    const collective = new Collective();
     assert.equal(collective.elements.length, 0);
   });
 
   it("has a constructor that accepts a set of elements to assimilate", function() {
-    let element1 = {};
-    let element2 = {};
-    let collective = new Collective(element1, element2);
+    const element1 = {};
+    const element2 = {};
+    const collective = new Collective(element1, element2);
     assert.equal(collective.elements.length, 2);
     assert.equal(collective.elements[0], element1);
     assert.equal(collective.elements[1], element2);
@@ -31,8 +31,8 @@ describe("Collective", () => {
   });
 
   it("can assimilate an element that doesn't yet belong to a collective", function() {
-    let collective = new Collective();
-    let element = {};
+    const collective = new Collective();
+    const element = {};
     collective.assimilate(element);
 
     // Collective should contain just this element.
@@ -44,10 +44,10 @@ describe("Collective", () => {
   });
 
   it("can assimilate an element that already belongs to a collective", function() {
-    let element1 = {};
-    let collective1 = new Collective(element1);
-    let element2 = {};
-    let collective2 = new Collective(element2);
+    const element1 = {};
+    const collective1 = new Collective(element1);
+    const element2 = {};
+    const collective2 = new Collective(element2);
     collective1.assimilate(element2);
     assert.equal(collective1.elements.length, 2);
     assert.equal(collective1.elements[0], element1);
@@ -58,26 +58,26 @@ describe("Collective", () => {
   });
 
   it("has no effect assimilating an element that's already in it", function() {
-    let element = {};
-    let collective = new Collective(element);
+    const element = {};
+    const collective = new Collective(element);
     assert.equal(collective.elements.length, 1);
     collective.assimilate(element);
     assert.equal(collective.elements.length, 1);
   });
 
   it("can invoke collective method on its members", function() {
-    let results = [];
-    let element1 = {
+    const results = [];
+    const element1 = {
       method(arg) {
         results.push(arg + '1');
       }
     };
-    let element2 = {
+    const element2 = {
       method(arg) {
         results.push(arg + '2');
       }
     };
-    let collective = new Collective(element1, element2);
+    const collective = new Collective(element1, element2);
     collective.invokeMethod('method', ['foo']);
     assert.equal(results.length, 2);
     assert.equal(results[0], 'foo2');
@@ -86,14 +86,14 @@ describe("Collective", () => {
 
   it("invokes the collectiveChanged method on elements when their collective", function() {
     let count = 0;
-    let element = {
+    const element = {
       collectiveChanged() {
         count++;
       }
     };
-    let collective1 = new Collective(element);
+    const collective1 = new Collective(element);
     assert.equal(count, 1);
-    let collective2 = new Collective();
+    const collective2 = new Collective();
     collective2.assimilate(collective1);
     assert.equal(count, 2);
   });
