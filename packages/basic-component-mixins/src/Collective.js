@@ -117,14 +117,19 @@ class Collective {
   }
 
   /**
-   * Set a default attribute on an element that may be in a collective.
+   * Set a default attribute on an element that may be in a collective. This
+   * function is designed to help collectives work with browser features like
+   * keyboard support and ARIA, where only the outermost member of a collective
+   * should expose, e.g., tabindex or ARIA attributes.
    *
-   * If it's not in a collective, and the element doesn't have the given
-   * attribute, set the attribute on the element to the default value.
+   * If the element is not in a collective, and the element doesn't have the
+   * given attribute, set the attribute on the element to the default value.
    *
    * If the element *is* in a collective, scan the collective's inner members
-   * to see if any of them have the attribute. If so, remote the attribute from
-   * the inner member(s), and promote that value to the outermost element.
+   * to see if any of them have the attribute. If so, promote that value to the
+   * outermost element. If a `residualValue` is supplied, set the inner members'
+   * attribute to that value; otherwise, remove the attribute from the inner
+   * member.
    *
    * @param {HTMLElement} element - An element that may or may not be in a collective.
    * @param {string} attributeName - The name of the attribute.

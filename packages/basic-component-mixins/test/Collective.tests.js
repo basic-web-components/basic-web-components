@@ -4,6 +4,16 @@ import Collective from '../src/Collective';
 
 describe("Collective", () => {
 
+  let container;
+
+  before(() => {
+    container = document.getElementById('container');
+  });
+
+  afterEach(() => {
+    container.innerHTML = '';
+  });
+
   it("initiallly has no members", function() {
     let collective = new Collective();
     assert.equal(collective.elements.length, 0);
@@ -86,6 +96,13 @@ describe("Collective", () => {
     let collective2 = new Collective();
     collective2.assimilate(collective1);
     assert.equal(count, 2);
+  });
+
+  it("can promote an attribute on an element not in a collective", () => {
+    const fixture = document.createElement('selection-aria-active-test');
+    container.appendChild(fixture);
+    Collective.promoteAttribute(fixture, 'tabindex', '0');
+    assert.equal(fixture.getAttribute('tabindex'), '0');
   });
 
 });
