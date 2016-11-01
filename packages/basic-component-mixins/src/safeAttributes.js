@@ -108,6 +108,10 @@ function setAttributeToElement(element, attributeName, value) {
   if (value === null || typeof value === 'undefined') {
     element.removeAttribute(attributeName);
   } else {
-    element.setAttribute(attributeName, value);
+    const text = String(value);
+    // Avoid recursive attributeChangedCallback calls.
+    if (element.getAttribute(attributeName) !== text) {
+      element.setAttribute(attributeName, value);
+    }
   }
 }

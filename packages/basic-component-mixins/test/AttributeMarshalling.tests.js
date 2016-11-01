@@ -71,18 +71,18 @@ describe("AttributeMarshalling mixin", () => {
     const element = document.createElement('element-with-custom-property');
     assert.isNull(element.getAttribute('custom-property'));
     container.appendChild(element);
-    element.customProperty = true;
+    element.customProperty = 'foo';
     flush();
-    assert.equal(element.getAttribute('custom-property'), 'true');
+    assert.equal(element.getAttribute('custom-property'), 'foo');
   });
 
   it("defers reflection of attribute during constructor until connected to document", () => {
-    defaultPropertyValue = true;
+    defaultPropertyValue = 'foo';
     const element = document.createElement('element-with-custom-property');
     assert.isNull(element.getAttribute('custom-property'));
     container.appendChild(element);
     flush();
-    assert.equal(element.getAttribute('custom-property'), 'true');
+    assert.equal(element.getAttribute('custom-property'), 'foo');
   });
 
   it("reflects class immediately if connected to document", () => {
