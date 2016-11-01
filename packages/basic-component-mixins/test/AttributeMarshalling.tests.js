@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import AttributeMarshalling from '../src/AttributeMarshalling';
+import flush from './flush';
 
 
 let defaultPropertyValue;
@@ -71,6 +72,7 @@ describe("AttributeMarshalling mixin", () => {
     assert.isNull(element.getAttribute('custom-property'));
     container.appendChild(element);
     element.customProperty = true;
+    flush();
     assert.equal(element.getAttribute('custom-property'), 'true');
   });
 
@@ -79,6 +81,7 @@ describe("AttributeMarshalling mixin", () => {
     const element = document.createElement('element-with-custom-property');
     assert.isNull(element.getAttribute('custom-property'));
     container.appendChild(element);
+    flush();
     assert.equal(element.getAttribute('custom-property'), 'true');
   });
 
@@ -87,6 +90,7 @@ describe("AttributeMarshalling mixin", () => {
     assert.equal(element.classList.length, 0);
     container.appendChild(element);
     element.reflectClass('custom', true);
+    flush();
     assert.equal(element.classList.length, 1);
     assert.equal(element.classList[0], ['custom']);
   });
@@ -96,6 +100,7 @@ describe("AttributeMarshalling mixin", () => {
     const element = document.createElement('element-with-class');
     assert.equal(element.classList.length, 0);
     container.appendChild(element);
+    flush();
     assert.equal(element.classList.length, 1);
     assert.equal(element.classList[0], ['custom']);
   });

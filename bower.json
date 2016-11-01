@@ -2,6 +2,7 @@
   "name": "basic-web-components",
   "version": "0.9.0-pre",
   "dependencies": {
-    "webcomponents.js": "webcomponents/webcomponentsjs#v1"
+    "custom-elements": "webcomponents/custom-elements#master",
+    "shadydom": "webcomponents/shadydom#master"
   }
 }

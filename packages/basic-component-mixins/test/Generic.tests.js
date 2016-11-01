@@ -1,6 +1,7 @@
 import { assert } from 'chai';
-import ShadowTemplate from '../src/ShadowTemplate';
+import flush from './flush';
 import Generic from '../src/Generic';
+import ShadowTemplate from '../src/ShadowTemplate';
 
 
 class GenericTest extends Generic(ShadowTemplate(HTMLElement)) {
@@ -36,19 +37,22 @@ describe("Generic mixin", function() {
     container.innerHTML = '';
   });
 
-  it("turns on generic style by default", () => {
+  it("turns on generic style by default", done => {
     const fixture = document.createElement('generic-test');
     container.appendChild(fixture);
+    flush();
     assert(fixture.generic);
     assert.equal(fixture.getAttribute('generic'), '');
     const display = getComputedStyle(fixture).display;
     assert.equal(display, 'block');
+    done();
   });
 
   it("exposes generic property to turn generic styling on/off", () => {
     const fixture = document.createElement('generic-test');
     container.appendChild(fixture);
     fixture.generic = false;
+    flush();
     assert.equal(fixture.getAttribute('generic'), 'false');
     assert.equal(getComputedStyle(fixture).display, 'inline-block');
     fixture.generic = true;

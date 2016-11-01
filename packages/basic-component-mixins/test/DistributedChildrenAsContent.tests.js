@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import flush from './flush';
 import microtask from '../src/microtask';
 import DistributedChildren from '../src/DistributedChildren';
 import DistributedChildrenAsContent from '../src/DistributedChildrenAsContent';
@@ -73,6 +74,7 @@ describe("DistributedChildrenAsContent mixin", () => {
       <div>Two</div>
       <div>Three</div>
     `;
+    flush();
     const fixture = wrapper.shadowRoot.querySelector('content-test');
     assert.equal(fixture.content.length, 3);
   });
@@ -194,6 +196,7 @@ describe("DistributedChildrenAsContent mixin", () => {
     div.textContent = 'div';
     fixture.appendChild(div);
     container.appendChild(fixture);
+    flush();
     // Wait for initial contentChanged call to complete.
     microtask(() => {
       fixture.contentChangedHook = function() {
