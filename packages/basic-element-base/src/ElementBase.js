@@ -1,8 +1,8 @@
-import Composable from '../../basic-component-mixins/src/Composable';
-import ShadowTemplate from '../../basic-component-mixins/src/ShadowTemplate';
-import ShadowElementReferences from '../../basic-component-mixins/src/ShadowElementReferences';
 import AttributeMarshalling from '../../basic-component-mixins/src/AttributeMarshalling';
+import Composable from '../../basic-component-mixins/src/Composable';
 import DistributedChildren from '../../basic-component-mixins/src/DistributedChildren';
+import ShadowElementReferences from '../../basic-component-mixins/src/ShadowElementReferences';
+import ShadowTemplate from '../../basic-component-mixins/src/ShadowTemplate';
 
 
 /**
@@ -19,7 +19,7 @@ import DistributedChildren from '../../basic-component-mixins/src/DistributedChi
  * The ElementBase base class does not register itself as a custom element with
  * the browser, and hence cannot be independently instantiated.
  *
- * @mixes AttributeMarshalling 
+ * @mixes AttributeMarshalling
  * @mixes Composable
  * @mixes DistributedChildren
  * @mixes ShadowElementReferences
@@ -30,16 +30,6 @@ class ElementBase extends Composable(HTMLElement).compose(
   ShadowElementReferences, // before marshalling, so properties can use refs
   AttributeMarshalling,
   DistributedChildren
-) {
-
-  /*
-   * Debugging utility: logs a message, prefixed by the component's tag.
-   */
-  log(text) {
-    if (super.log) { super.log(text); }
-    console.log(`${this.localName}: ${text}`);
-  }
-
-}
+) {}
 
 export default ElementBase;
