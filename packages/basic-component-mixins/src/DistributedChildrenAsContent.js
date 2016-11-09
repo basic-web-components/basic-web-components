@@ -87,7 +87,11 @@ export default (base) => {
      * @type {HTMLElement[]}
      */
     get content() {
-      return this.distributedChildren;
+      const distributedChildren = this.distributedChildren;
+      if (typeof distributedChildren === 'undefined') {
+        console.warn(`DistributedChildrenAsContent expects the component to define a "distributedChildren" property.`);
+      }
+      return distributedChildren;
     }
     set content(value) {
       if ('content' in base.prototype) { super.content = value; }
