@@ -8,6 +8,7 @@ import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
 import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPrefixSelection';
+import SelectedItemTextAsValue from '../../basic-component-mixins/src/SelectedItemTextAsValue';
 import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
 import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
 import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
@@ -63,6 +64,7 @@ import symbols from '../../basic-component-mixins/src/symbols';
  * @mixes KeyboardDirection
  * @mixes KeyboardPagedSelection
  * @mixes KeyboardPrefixSelection
+ * @mixis SelectedItemTextAsValue
  * @mixes SelectionAriaActive
  * @mixes SelectionHighlight
  * @mixes SelectionInView
@@ -78,6 +80,7 @@ class ListBox extends ElementBase.compose(
   KeyboardDirection,
   KeyboardPagedSelection,
   KeyboardPrefixSelection,
+  SelectedItemTextAsValue,
   SelectionAriaActive,
   SelectionHighlight,
   SelectionInView,
@@ -139,42 +142,6 @@ class ListBox extends ElementBase.compose(
       </div>
     `;
   }
-
-  /**
-   * The text content of the selected item.
-   *
-   * Setting this value to a string will attempt to select the first list item
-   * whose text content match that string. Setting this to a string not matching
-   * any list item will result in no selection.
-   *
-   * @type {string}
-   */
-  get value() {
-    return this.selectedItem == null || this.selectedItem.textContent == null ?
-      '' :
-      this.selectedItem.textContent;
-  }
-  set value(text) {
-
-    const currentIndex = this.selectedIndex;
-    let newIndex = -1; // Assume we won't find the text.
-
-    // Find the item with the indicated text.
-    const items = this.items;
-    for (let i = 0, length = items.length; i < length; i++) {
-      if (items[i].textContent === text) {
-        newIndex = i;
-        break;
-      }
-    }
-
-    if (newIndex !== currentIndex) {
-      this.selectedIndex = newIndex;
-      const event = new CustomEvent('value-changed');
-      this.dispatchEvent(event);
-    }
-  }
-
 
   /**
    * Fires when the list's value property changes.

@@ -295,6 +295,8 @@ common web component feature:
   box to allow selection by typing the start of the desired list item.
 * [OpenClose](docs/OpenClose.md).
   Adds open/close semantics.
+* [SelectedItemTextAsValue](docs/SelectedItemTextAsValue.md).
+  Defines the value of a component as the text content of its selected item.
 * [SelectionAnimation](docs/SelectionAnimation.md).
   Uses animation to show transitions between selection states.
 * [SelectionAriaActive](docs/SelectionAriaActive.md).
