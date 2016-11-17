@@ -123,6 +123,14 @@ export default (base) => {
       const target = this.target;
       if (target && target.selectedIndex !== index) {
         target.selectedIndex = index;
+      } else {
+        const event = new CustomEvent('selected-index-changed', {
+          detail: {
+            selectedIndex: index,
+            value: index // for Polymer binding
+          }
+        });
+        this.dispatchEvent(event);
       }
     }
 
@@ -143,10 +151,15 @@ export default (base) => {
         // Update possible navigations.
         this.canSelectNext = target.canSelectNext;
         this.canSelectPrevious = target.canSelectPrevious;
+      } else {
+        const event = new CustomEvent('selected-item-changed', {
+          detail: {
+            selectedItem: item,
+            value: item // for Polymer binding
+          }
+        });
+        this.dispatchEvent(event);
       }
-
-      // TODO: Rationalize events
-      this.dispatchEvent(new CustomEvent('selected-item-changed'));
     }
 
     /**
