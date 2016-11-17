@@ -118,10 +118,20 @@ class ArrowSelection extends base {
     return defaults;
   }
 
-  selectedItemChanged() {
-    if (super.selectedItemChanged) { super.selectedItemChanged(); }
-    // HACK: Force an update of the set of possible navigations.
-    this.itemsChanged();
+  get selectedItem() {
+    return super.selectedItem;
+  }
+  set selectedItem(item) {
+    if ('selectedItem' in base.prototype) { super.selectedItem = item; }
+    updatePossibleNavigations(this);
+  }
+
+  get selectionWraps() {
+    return super.selectionWraps;
+  }
+  set selectionWraps(selectionWraps) {
+    if ('selectionWraps' in base.prototype) { super.selectionWraps = selectionWraps; }
+    updatePossibleNavigations(this);
   }
 
   /*
@@ -259,12 +269,10 @@ function assumeButtonFocus(element, button) {
   });
 }
 
-
 function deviceSupportsTouch() {
   return 'ontouchstart' in window ||
       (window.DocumentTouch && document instanceof window.DocumentTouch);
 }
-
 
 // We try to detect the presence of a mouse by listening for mousemove events
 // which are *not* the result of a mousedown. On a touch device, a tap on the
@@ -303,7 +311,6 @@ function listenForMouse(element) {
   window.addEventListener('mousemove', element[mousemoveListenerSymbol]);
 }
 
-
 function mouseDetected(element) {
   showArrows(element);
 
@@ -317,9 +324,16 @@ function mouseDetected(element) {
   element[mousemoveListenerSymbol] = null;
 }
 
-
 function showArrows(element) {
   element.classList.add('showArrows');
+}
+
+function updatePossibleNavigations(element) {
+  const target = element.target;
+  if (target) {
+    element.canSelectNext = target.canSelectNext;
+    element.canSelectPrevious = target.canSelectPrevious;
+  }
 }
 
 

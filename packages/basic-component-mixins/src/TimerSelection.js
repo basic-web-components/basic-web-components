@@ -101,12 +101,6 @@ export default (base) => {
       restartTimer(this);
     }
 
-    // In case this mixin is being used with TargetSelection.
-    selectedItemChanged() {
-      if (super.selectedItemChanged) { super.selectedItemChanged(); }
-      restartTimer(this);
-    }
-
     /**
      * The time in milliseconds that will elapse after the selection changes
      * before the selection will be advanced to the next item in the list.

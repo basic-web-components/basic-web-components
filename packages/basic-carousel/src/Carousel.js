@@ -142,7 +142,6 @@ const base = ElementBase.compose(
  * @mixes SingleSelection
  * @mixes SwipeDirection
  * @mixes TargetInCollective
- * @mixes TargetSelection
  * @mixes TrackpadDirection
  */
 class Carousel extends base {

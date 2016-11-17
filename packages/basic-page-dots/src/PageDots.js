@@ -107,7 +107,7 @@ class PageDots extends base {
         return element;
       }
     });
-    this.selectedItemChanged();  // In case position of selected item moved.
+    refreshDots(this);
   }
 
   /**
@@ -129,12 +129,12 @@ class PageDots extends base {
     this.dispatchEvent(new CustomEvent('selected-fraction-changed'));
   }
 
-  selectedItemChanged() {
-    if (super.selectedItemChanged) { super.selectedItemChanged(); }
-    const selectedIndex = this.selectedIndex;
-    this.dots.forEach((dot, i) => {
-      toggleClass(dot, 'selected', i === selectedIndex);
-    });
+  get selectedItem() {
+    return super.selectedItem;
+  }
+  set selectedItem(item) {
+    if ('selectedItem' in base.prototype) { super.selectedItem = item; }
+    refreshDots(this);
   }
 
   get target() {
@@ -271,6 +271,14 @@ function renderTransition(element, selectedIndex, selectedFraction) {
     dot.style.opacity = dotOpacity;
   });
 }
+
+function refreshDots(element) {
+  const selectedIndex = element.selectedIndex;
+  element.dots.forEach((dot, i) => {
+    toggleClass(dot, 'selected', i === selectedIndex);
+  });
+}
+
 
 
 customElements.define('basic-page-dots', PageDots);

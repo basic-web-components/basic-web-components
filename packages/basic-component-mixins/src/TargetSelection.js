@@ -3,6 +3,7 @@ import createSymbol from './createSymbol';
 
 // Symbols for private data members on an element.
 const itemsChangedListenerSymbol = createSymbol('itemsChangedListener');
+const selectedIndexChangedListenerSymbol = createSymbol('selectedIndexChangedListener');
 const selectedItemChangedListenerSymbol = createSymbol('selectedItemChangedListener');
 
 
@@ -49,7 +50,7 @@ export default (base) => {
     set canSelectNext(canSelectNext) {
       if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
       const target = this.target;
-      if (target) {
+      if (target && target.canSelectNext !== canSelectNext) {
         target.canSelectNext = canSelectNext;
       }
     }
@@ -66,7 +67,7 @@ export default (base) => {
     set canSelectPrevious(canSelectPrevious) {
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
       const target = this.target;
-      if (target) {
+      if (target && target.canSelectPrevious !== canSelectPrevious) {
         target.canSelectPrevious = canSelectPrevious;
       }
     }
@@ -91,6 +92,13 @@ export default (base) => {
       this.dispatchEvent(new CustomEvent('items-changed'));
     }
 
+    /**
+     * A fractional value indicating how far the user has currently advanced to
+     * the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+     * user is halfway between items 3 and 4.
+     *
+     * @type {number}
+     */
     get selectedFraction() {
       return this.target && this.target.selectedFraction;
     }
@@ -113,7 +121,7 @@ export default (base) => {
     set selectedIndex(index) {
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
       const target = this.target;
-      if (target) {
+      if (target && target.selectedIndex !== index) {
         target.selectedIndex = index;
       }
     }
@@ -129,19 +137,15 @@ export default (base) => {
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       const target = this.target;
-      if (target) {
+      if (target && target.selectedItem !== item) {
         target.selectedItem = item;
-      }
-    }
 
-    // This method exists so wrapping components can handle a change in the
-    // selection without potentially re-invoking the selectedItem setter. This
-    // is kind of unsatisfying, though. It'd be nicer to let such components
-    // just implement the getter/setter for selectedItem, but have a way to
-    // know whether they need to also invoke the property getter/setter for the
-    // target component.
-    selectedItemChanged() {
-      if (super.selectedItemChanged) { super.selectedItemChanged(); }
+        // Update possible navigations.
+        this.canSelectNext = target.canSelectNext;
+        this.canSelectPrevious = target.canSelectPrevious;
+      }
+
+      // TODO: Rationalize events
       this.dispatchEvent(new CustomEvent('selected-item-changed'));
     }
 
@@ -165,7 +169,7 @@ export default (base) => {
     set selectionRequired(selectionRequired) {
       if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
       const target = this.target;
-      if (target) {
+      if (target && target.selectionRequired !== selectionRequired) {
         target.selectionRequired = selectionRequired;
       }
     }
@@ -179,11 +183,11 @@ export default (base) => {
     get selectionWraps() {
       return this.target && this.target.selectionWraps;
     }
-    set selectionWraps(value) {
-      if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
+    set selectionWraps(selectionWraps) {
+      if ('selectionWraps' in base.prototype) { super.selectionWraps = selectionWraps; }
       const target = this.target;
-      if (target) {
-        target.selectionWraps = value;
+      if (target && target.selectionWraps !== selectionWraps) {
+        target.selectionWraps = selectionWraps;
       }
     }
 
@@ -222,18 +226,31 @@ export default (base) => {
     get target() {
       return super.target;
     }
-    set target(element) {
-      if ('target' in base.prototype) { super.target = element; }
+    set target(target) {
+      if ('target' in base.prototype) { super.target = target; }
+
+      // Remove any listeners on an old target.
       if (this[itemsChangedListenerSymbol]) {
         this.removeEventListener('items-changed', this[itemsChangedListenerSymbol]);
+      }
+      if (this[selectedIndexChangedListenerSymbol]) {
+        this.removeEventListener('selected-index-changed', this[selectedIndexChangedListenerSymbol]);
       }
       if (this[selectedItemChangedListenerSymbol]) {
         this.removeEventListener('selected-item-changed', this[selectedItemChangedListenerSymbol]);
       }
-      this[itemsChangedListenerSymbol] = element.addEventListener('items-changed', event => {
+
+      // Listen to changes on the new target.
+      this[itemsChangedListenerSymbol] = target.addEventListener('items-changed', event => {
         this.itemsChanged();
       });
-      this[selectedItemChangedListenerSymbol] = element.addEventListener('selected-item-changed', event => {
+      this[selectedIndexChangedListenerSymbol] = target.addEventListener('selected-index-changed', event => {
+        // See note below.
+        if (event.target !== this) {
+          this.selectedIndex = this.target.selectedIndex;
+        }
+      });
+      this[selectedItemChangedListenerSymbol] = target.addEventListener('selected-item-changed', event => {
         // REVIEW: Components applying TargetSelection both listen to this
         // event (on the target), and raise it themselves. In theory, they're
         // expected to *not* catch the events they raise themselves, but Chrome
@@ -244,11 +261,10 @@ export default (base) => {
         // shows event.target === this, the contents of the "if" statement will
         // be executed.
         if (event.target !== this) {
-          // Let the component know the target's selection changed, but without
-          // re-invoking the selectIndex/selectedItem setter.
-          this.selectedItemChanged();
+          this.selectedItem = this.target.selectedItem;
         }
       });
+
       // Force initial refresh.
       this.itemsChanged();
     }

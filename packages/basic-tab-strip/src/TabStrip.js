@@ -6,7 +6,6 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import Generic from '../../basic-component-mixins/src/Generic';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import symbols from '../../basic-component-mixins/src/symbols';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
@@ -26,7 +25,6 @@ const base = ElementBase.compose(
   DistributedChildrenAsContent,
   Generic,
   KeyboardDirection,
-  SingleSelection,
   TargetSelection
 );
 
@@ -80,7 +78,6 @@ const base = ElementBase.compose(
  * @mixes DistributedChildrenAsContent
  * @mixes Generic
  * @mixes KeyboardDirection
- * @mixes SingleSelection
  * @mixes TargetSelection
  */
 class TabStrip extends base {
@@ -161,6 +158,7 @@ class TabStrip extends base {
     });
 
     // Create tabs.
+    const selectedItem = this.selectedItem;
     renderArrayAsElements(this.items, this.$.tabs, (item, element) => {
       if (!element) {
         element = document.createElement('button');
@@ -176,10 +174,10 @@ class TabStrip extends base {
       element.setAttribute('aria-controls', item.id);
       item.setAttribute('aria-labelledby', element.id);
 
+      applySelectionToTab(element, item === selectedItem);
+
       return element;
     });
-
-    this.selectedItemChanged();  // In case position of selected item moved.
   }
 
   [symbols.keydown](event) {
@@ -190,14 +188,6 @@ class TabStrip extends base {
       this.tabs[this.selectedIndex].focus();
     }
     return handled;
-  }
-
-  selectedItemChanged() {
-    if (super.selectedItemChanged) { super.selectedItemChanged(); }
-    const selectedIndex = this.selectedIndex;
-    this.tabs.forEach((tab, i) => {
-      applySelectionToTab(tab, i === selectedIndex);
-    });
   }
 
   /**
