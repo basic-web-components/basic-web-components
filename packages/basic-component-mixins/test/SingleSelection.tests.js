@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import AttributeMarshalling from '../src/AttributeMarshalling';
+import microtask from '../src/microtask';
 import SingleSelection from '../src/SingleSelection';
 
 
@@ -96,6 +97,41 @@ describe("SingleSelection mixin", () => {
     element.selectedIndex = 2;
     element.selectNext();
     assert.equal(element.selectedIndex, 0);
+  });
+
+  it("ensures selection of first item when no item is selected", () => {
+    const element = createSampleElement();
+    assert.equal(element.selectedIndex, -1);
+    element.selectionRequired = true;
+    assert.equal(element.selectedIndex, 0);
+  });
+
+  it("ensures selection when an item (not last place) is removed", done => {
+    const element = createSampleElement();
+    element.selectionRequired = true;
+    const originalItem1 = element.children[1];
+    element.selectedIndex = 0;
+    element.children[0].remove();
+    element.itemsChanged();
+    microtask(() => {
+      assert.equal(element.selectedIndex, 0);
+      assert.equal(element.selectedItem, originalItem1);
+      done();
+    });
+  });
+
+  it("ensures selection when item in last place is removed", done => {
+    const element = createSampleElement();
+    element.selectionRequired = true;
+    const originalItem1 = element.children[1];
+    element.selectedIndex = 2;
+    element.children[2].remove();
+    element.itemsChanged();
+    microtask(() => {
+      assert.equal(element.selectedIndex, 1);
+      assert.equal(element.selectedItem, originalItem1);
+      done();
+    });
   });
 
 });
