@@ -1,7 +1,6 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
 import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import symbols from '../../basic-component-mixins/src/symbols';
@@ -13,7 +12,6 @@ import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
 const base = ElementBase.compose(
   ContentFirstChildTarget,
   DistributedChildrenAsContent,
-  SingleSelection,
   Keyboard,
   KeyboardDirection,
   TargetInCollective,
@@ -47,6 +45,13 @@ const base = ElementBase.compose(
  * to your component.
  *
  * @extends ElementBase
+ * @mixes ContentFirstChildTarget
+ * @mixes DistributedChildrenAsContent
+ * @mixes Keyboard
+ * @mixes KeyboardDirection
+ * @mixes TargetInCollective
+ * @mixes TargetSelection
+ * @mixes TimerSelection
  */
 class SlideshowTimer extends base {
 

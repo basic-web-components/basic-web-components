@@ -6,7 +6,6 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
 import Keyboard from '../../basic-component-mixins/src/Keyboard';
 import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
 import symbols from '../../basic-component-mixins/src/symbols';
 import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
 import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
@@ -23,7 +22,6 @@ const base = ElementBase.compose(
   DistributedChildrenAsContent,
   Keyboard,
   KeyboardDirection,
-  SingleSelection,
   TargetInCollective,
   TargetSelection
 );
@@ -54,7 +52,6 @@ const base = ElementBase.compose(
  * @mixes DistributedChildrenAsContent
  * @mixes Keyboard
  * @mixes KeyboardDirection
- * @mixes SingleSelection
  * @mixes TargetInCollective
  * @mixes TargetSelection
  */

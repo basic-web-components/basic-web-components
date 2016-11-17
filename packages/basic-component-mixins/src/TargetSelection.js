@@ -38,13 +38,46 @@ export default (base) => {
   class TargetSelection extends base {
 
     /**
+     * True if the selection can be moved to the next item, false if not (the
+     * selected item is the last item in the list).
+     *
+     * @type {boolean}
+     */
+    get canSelectNext() {
+      return this.target && this.target.canSelectNext;
+    }
+    set canSelectNext(canSelectNext) {
+      if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
+      const target = this.target;
+      if (target) {
+        target.canSelectNext = canSelectNext;
+      }
+    }
+
+    /**
+     * True if the selection can be moved to the previous item, false if not
+     * (the selected item is the first one in the list).
+     *
+     * @type {boolean}
+     */
+    get canSelectPrevious() {
+      return this.target && this.target.canSelectPrevious;
+    }
+    set canSelectPrevious(canSelectPrevious) {
+      if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
+      const target = this.target;
+      if (target) {
+        target.canSelectPrevious = canSelectPrevious;
+      }
+    }
+
+    /**
      * The current set of items in the list.
      *
      * @type {HTMLElement[]}
      */
     get items() {
-      const target = this.target;
-      const items = target && target.items;
+      const items = this.target && this.target.items;
       return items || [];
     }
 
@@ -59,8 +92,7 @@ export default (base) => {
     }
 
     get selectedFraction() {
-      const target = this.target;
-      return target && target.selectedFraction;
+      return this.target && this.target.selectedFraction;
     }
     set selectedFraction(fraction) {
       if ('selectedFraction' in base.prototype) { super.selectedFraction = fraction; }
@@ -71,13 +103,28 @@ export default (base) => {
     }
 
     /**
+     * Index of the currently selected item, or -1 if there is no selection.
+     *
+     * @type {number}
+     */
+    get selectedIndex() {
+      return this.target && this.target.selectedIndex;
+    }
+    set selectedIndex(index) {
+      if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
+      const target = this.target;
+      if (target) {
+        target.selectedIndex = index;
+      }
+    }
+
+    /**
      * The currently selected item, or null if there is no selection.
      *
      * @type {HTMLElement}
      */
     get selectedItem() {
-      const target = this.target;
-      return target && target.selectedItem;
+      return this.target && this.target.selectedItem;
     }
     set selectedItem(item) {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
@@ -91,11 +138,36 @@ export default (base) => {
     // selection without potentially re-invoking the selectedItem setter. This
     // is kind of unsatisfying, though. It'd be nicer to let such components
     // just implement the getter/setter for selectedItem, but have a way to
-    // know whether they need to also that property getter/setter for the target
-    // component.
+    // know whether they need to also invoke the property getter/setter for the
+    // target component.
     selectedItemChanged() {
       if (super.selectedItemChanged) { super.selectedItemChanged(); }
       this.dispatchEvent(new CustomEvent('selected-item-changed'));
+    }
+
+    /**
+     * Select the first item in the list.
+     */
+    selectFirst() {
+      if (super.selectFirst) { super.selectFirst(); }
+      return this.target && this.target.selectFirst();
+    }
+
+    /**
+     * True if the list should always have a selection (if it has items).
+     *
+     * @type {boolean}
+     * @default false
+     */
+    get selectionRequired() {
+      return this.target && this.target.selectionRequired;
+    }
+    set selectionRequired(selectionRequired) {
+      if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
+      const target = this.target;
+      if (target) {
+        target.selectionRequired = selectionRequired;
+      }
     }
 
     /**
@@ -105,8 +177,7 @@ export default (base) => {
      * @default {false}
      */
     get selectionWraps() {
-      const target = this.target;
-      return target && target.selectionWraps;
+      return this.target && this.target.selectionWraps;
     }
     set selectionWraps(value) {
       if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
@@ -114,6 +185,32 @@ export default (base) => {
       if (target) {
         target.selectionWraps = value;
       }
+    }
+
+    /**
+     * Select the last item in the list.
+     */
+    selectLast() {
+      if (super.selectLast) { super.selectLast(); }
+      return this.target && this.target.selectLast();
+    }
+
+    /**
+     * Select the next item in the list.
+     */
+    selectNext() {
+      if (super.selectNext) { super.selectNext(); }
+      return this.target && this.target.selectNext();
+    }
+
+    /**
+     * Select the previous item in the list.
+     *
+     * If the list has no selection, the last item will be selected.
+     */
+    selectPrevious() {
+      if (super.selectPrevious) { super.selectPrevious(); }
+      return this.target && this.target.selectPrevious();
     }
 
     /**

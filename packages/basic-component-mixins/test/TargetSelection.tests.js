@@ -3,7 +3,7 @@ import SingleSelection from '../src/SingleSelection';
 import TargetSelection from '../src/TargetSelection';
 
 
-const base = TargetSelection(SingleSelection(HTMLElement));
+const base = TargetSelection(HTMLElement);
 class TargetSelectionTest extends base {
   get target() {
     return this._target;
@@ -41,7 +41,7 @@ describe("TargetSelection mixin", () => {
     outer.target = inner;
   });
 
-  it("exposes the selection of the target", () => {
+  it("setting target selection updates own selection", () => {
     assert.equal(outer.selectedIndex, -1);
     assert.equal(outer.selectedItem, null);
     inner.selectedIndex = 0;
@@ -49,7 +49,7 @@ describe("TargetSelection mixin", () => {
     assert.equal(outer.selectedItem, items[0]);
   });
 
-  it("can set target selection", () => {
+  it("setting own selection updates target selection", () => {
     outer.selectedIndex = 0;
     assert.equal(inner.selectedIndex, 0);
     outer.selectedItem = items[1];

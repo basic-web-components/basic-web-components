@@ -142,6 +142,7 @@ export default (base) => {
         -1;
     }
     set selectedIndex(index) {
+      // Store index and corresponding item.
       const previousSelectedIndex = this[previousSelectedIndexSymbol];
       const items = this.items;
       const hasItems = items && items.length > 0;
@@ -153,6 +154,7 @@ export default (base) => {
         null;
       this[selectedItemSymbol] = item;
 
+      // Now let super do any work.
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
 
       if (index === previousSelectedIndex) {
@@ -166,7 +168,7 @@ export default (base) => {
       const event = new CustomEvent('selected-index-changed', {
         detail: {
           selectedIndex: index,
-          value: index // for Polymer binding
+          value: index // for Polymer binding. TODO: Verify still necessary
         }
       });
       this.dispatchEvent(event);
@@ -192,6 +194,7 @@ export default (base) => {
       return this[selectedItemSymbol] || null;
     }
     set selectedItem(item) {
+      // Store index and corresponding item.
       const previousSelectedItem = this[previousSelectedItemSymbol];
       const items = this.items;
       const hasItems = items && items.length > 0;
@@ -199,6 +202,7 @@ export default (base) => {
       this[selectedIndexSymbol] = index;
       this[selectedItemSymbol] = index >= 0 ? item : null;
 
+      // Now let super do any work.
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
 
       if (item === previousSelectedItem) {
@@ -261,6 +265,21 @@ export default (base) => {
     }
 
     /**
+     * True if selection navigations wrap from last to first, and vice versa.
+     *
+     * @type {boolean}
+     * @default false
+     */
+    get selectionWraps() {
+      return this[selectionWrapsSymbol];
+    }
+    set selectionWraps(value) {
+      this[selectionWrapsSymbol] = String(value) === 'true';
+      if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
+      updatePossibleNavigations(this);
+    }
+
+    /**
      * Select the last item in the list.
      */
     selectLast() {
@@ -287,21 +306,6 @@ export default (base) => {
         this.items.length - 1 :     // No selection yet; select last item.
         this.selectedIndex - 1;
       return selectIndex(this, newIndex);
-    }
-
-    /**
-     * True if selection navigations wrap from last to first, and vice versa.
-     *
-     * @type {boolean}
-     * @default false
-     */
-    get selectionWraps() {
-      return this[selectionWrapsSymbol];
-    }
-    set selectionWraps(value) {
-      this[selectionWrapsSymbol] = String(value) === 'true';
-      if ('selectionWraps' in base.prototype) { super.selectionWraps = value; }
-      updatePossibleNavigations(this);
     }
 
     /**
