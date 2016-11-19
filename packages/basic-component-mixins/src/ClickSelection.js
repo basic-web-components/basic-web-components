@@ -25,11 +25,14 @@ export default (base) => {
        * or click/mouseup.
        */
       this.addEventListener('mousedown', event => {
-        selectTarget(this, event.target);
-        // Note: We don't call preventDefault here. The default behavior for
-        // mousedown includes setting keyboard focus if the element doesn't
-        // already have the focus, and we want to preserve that behavior.
-        event.stopPropagation();
+        const index = indexOfContainingItem(this, event.target);
+        if (index >= 0) {
+          this.selectedIndex = index;
+          // Note: We don't call preventDefault here. The default behavior for
+          // mousedown includes setting keyboard focus if the element doesn't
+          // already have the focus, and we want to preserve that behavior.
+          event.stopPropagation();
+        }
       });
     }
 
@@ -47,13 +50,18 @@ export default (base) => {
 };
 
 
-// TODO: Handle the case where a list item has subelements. Walk up the DOM
-// hierarchy until we find an item in the list, or come back to this element,
-// in which case the element that was tapped isn't an item (and should be
-// ignored).
-function selectTarget(element, target) {
-  const index = element.items && element.items.indexOf(target);
-  if (index >= 0) {
-    element.selectedIndex = index;
+/*
+ * Return index of the element items that either is or contains the indicated
+ * target. Return -1 if not found.
+ */
+function indexOfContainingItem(element, target) {
+  const items = element.items;
+  const itemCount = items ? items.length : 0;
+  for (let i = 0; i < itemCount; i++) {
+    let item = items[i];
+    if (item === target || item.contains(target)) {
+      return i;
+    }
   }
+  return -1;
 }
