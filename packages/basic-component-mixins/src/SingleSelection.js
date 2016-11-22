@@ -6,10 +6,10 @@ import symbols from './symbols';
 // Symbols for private data members on an element.
 const canSelectNextSymbol = createSymbol('canSelectNext');
 const canSelectPreviousSymbol = createSymbol('canSelectPrevious');
-const previousSelectedIndexSymbol = createSymbol('previousSelectedIndex');
-const previousSelectedItemSymbol = createSymbol('previousSelectedItem');
-const selectedIndexSymbol = createSymbol('selectedIndex');
-const selectedItemSymbol = createSymbol('selectedItem');
+const externalSelectedIndexSymbol = createSymbol('externalSelectedIndex');
+const externalSelectedItemSymbol = createSymbol('externalSelectedItem');
+const internalSelectedIndexSymbol = createSymbol('internalSelectedIndex');
+const internalSelectedItemSymbol = createSymbol('internalSelectedItem');
 const selectionRequiredSymbol = createSymbol('selectionRequired');
 const selectionWrapsSymbol = createSymbol('selectionWraps');
 
@@ -137,22 +137,27 @@ export default (base) => {
      * @type {number}
      */
     get selectedIndex() {
-      return this[selectedIndexSymbol] != null ?
-        this[selectedIndexSymbol] :
+      return this[externalSelectedIndexSymbol] != null ?
+        this[externalSelectedIndexSymbol] :
         -1;
     }
     set selectedIndex(index) {
-      // Store index and corresponding item.
-      const previousSelectedIndex = this[previousSelectedIndexSymbol];
-      const items = this.items;
-      const hasItems = items && items.length > 0;
-      this[selectedIndexSymbol] = hasItems && index >= 0 && index < items.length ?
-        index :
-        -1;
-      const item = hasItems && index >= 0 ?
-        items[index] :
-        null;
-      this[selectedItemSymbol] = item;
+      const previousSelectedIndex = this[internalSelectedIndexSymbol];
+      let item;
+      if (index !== this[externalSelectedIndexSymbol]) {
+        // Store new index and corresponding item.
+        const items = this.items;
+        const hasItems = items && items.length > 0;
+        this[externalSelectedIndexSymbol] = hasItems && index >= 0 && index < items.length ?
+          index :
+          -1;
+        item = hasItems && index >= 0 ?
+          items[index] :
+          null;
+        this[externalSelectedItemSymbol] = item;
+      } else {
+        item = this[externalSelectedItemSymbol];
+      }
 
       // Now let super do any work.
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
@@ -161,9 +166,9 @@ export default (base) => {
         // The indicated index was already the selected index.
         return;
       }
-      // The index changed.
 
-      this[previousSelectedIndexSymbol] = index;
+      // The index changed.
+      this[internalSelectedIndexSymbol] = index;
 
       const event = new CustomEvent('selected-index-changed', {
         detail: {
@@ -173,7 +178,7 @@ export default (base) => {
       });
       this.dispatchEvent(event);
 
-      if (this[previousSelectedItemSymbol] !== item) {
+      if (this[internalSelectedItemSymbol] !== item) {
         // Update selectedItem property so it can have its own effects.
         this.selectedItem = item;
       }
@@ -191,16 +196,21 @@ export default (base) => {
      * @type {object}
      */
     get selectedItem() {
-      return this[selectedItemSymbol] || null;
+      return this[externalSelectedItemSymbol] || null;
     }
     set selectedItem(item) {
-      // Store index and corresponding item.
-      const previousSelectedItem = this[previousSelectedItemSymbol];
-      const items = this.items;
-      const hasItems = items && items.length > 0;
-      const index = hasItems ? items.indexOf(item) : -1;
-      this[selectedIndexSymbol] = index;
-      this[selectedItemSymbol] = index >= 0 ? item : null;
+      const previousSelectedItem = this[internalSelectedItemSymbol];
+      let index;
+      if (item !== this[externalSelectedItemSymbol]) {
+        // Store item and look up corresponding index.
+        const items = this.items;
+        const hasItems = items && items.length > 0;
+        index = hasItems ? items.indexOf(item) : -1;
+        this[externalSelectedIndexSymbol] = index;
+        this[externalSelectedItemSymbol] = index >= 0 ? item : null;
+      } else {
+        index = this[externalSelectedIndexSymbol];
+      }
 
       // Now let super do any work.
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
@@ -209,9 +219,10 @@ export default (base) => {
         // The indicated item was already the selected item.
         return;
       }
-      // The selected item changed.
 
-      this[previousSelectedItemSymbol] = item;
+      // The selected item changed.
+      this[internalSelectedItemSymbol] = item;
+
       if (previousSelectedItem) {
         // Update selection state of old item.
         this[symbols.applySelection](previousSelectedItem, false);
@@ -221,8 +232,6 @@ export default (base) => {
         this[symbols.applySelection](item, true);
       }
 
-      // TODO: Rationalize with selectedIndex so we're not recalculating item
-      // or index in each setter.
       updatePossibleNavigations(this);
 
       const event = new CustomEvent('selected-item-changed', {
@@ -233,7 +242,7 @@ export default (base) => {
       });
       this.dispatchEvent(event);
 
-      if (this[previousSelectedIndexSymbol] !== index) {
+      if (this[internalSelectedIndexSymbol] !== index) {
         // Update selectedIndex property so it can have its own effects.
         this.selectedIndex = index;
       }
@@ -335,18 +344,20 @@ export default (base) => {
 function ensureSelection(element) {
   const items = element.items;
   const itemCount = items ? items.length : 0;
-  const previouslySelectedItem = element[selectedItemSymbol];
-  if (previouslySelectedItem) {
+  const previousSelectedItem = element.selectedItem;
+  if (previousSelectedItem) {
     if (itemCount === 0) {
     // No items for us to select, but at least signal that there's no longer a
     // selection.
       element.selectedItem = null;
-    } else if (previouslySelectedItem && items.indexOf(previouslySelectedItem) < 0) {
+    } else if (previousSelectedItem && items.indexOf(previousSelectedItem) < 0) {
       // Previously selected item is no longer in the current set of items.
       // Select the item at the same index (if it exists) or as close as possible.
-      const previousSelectedIndex = element[selectedIndexSymbol];
+      const previousSelectedIndex = element.selectedIndex;
       const newIndex = Math.min(previousSelectedIndex, itemCount - 1);
       element.selectedItem = items[newIndex];
+
+      // TODO: Handle case where item moves: still there, but index has changed.
     }
   } else if (itemCount > 0) {
     // Select the first item by default.
