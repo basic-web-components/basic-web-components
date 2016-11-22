@@ -224,7 +224,7 @@ export default (base) => {
         // Store item and look up corresponding index.
         const items = this.items;
         const hasItems = items && items.length > 0;
-        index = hasItems ? items.indexOf(item) : -1;
+        index = hasItems ? Array.prototype.indexOf.call(items, item) : -1;
         this[externalSelectedIndexSymbol] = index;
         if (index < 0) {
           item = null; // The indicated item isn't actually in `items`.
@@ -372,16 +372,19 @@ function ensureSelection(element) {
     // No items for us to select, but at least signal that there's no longer a
     // selection.
       element.selectedItem = null;
-    } else if (previousSelectedItem && items.indexOf(previousSelectedItem) < 0) {
-      // Previously selected item is no longer in the current set of items.
-      // Select the item at the same index (if it exists) or as close as possible.
-      const previousSelectedIndex = element.selectedIndex;
-      const newIndex = Math.min(previousSelectedIndex, itemCount - 1);
-      element.selectedItem = items[newIndex];
-
+    } else if (previousSelectedItem) {
+      const indexInCurrentItems = Array.prototype.indexOf.call(items, previousSelectedItem);
+      if (indexInCurrentItems < 0) {
+        // Previously selected item is no longer in the current set of items.
+        // Select the item at the same index (if it exists) or as close as possible.
+        const previousSelectedIndex = element.selectedIndex;
+        const newIndex = Math.min(previousSelectedIndex, itemCount - 1);
+        element.selectedItem = items[newIndex];
+      }
       // TODO: Handle case where item moves: still there, but index has changed.
     }
   } else if (itemCount > 0) {
+    // No previous selection.
     // Select the first item by default.
     element.selectedIndex = 0;
   }
