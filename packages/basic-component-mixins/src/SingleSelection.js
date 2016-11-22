@@ -1,5 +1,4 @@
 import createSymbol from './createSymbol';
-import microtask from './microtask';
 import symbols from './symbols';
 
 
@@ -133,24 +132,18 @@ export default (base) => {
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
 
-      if (this.selectionRequired) {
-        // Ensure selection, but only after giving other mixins a chance to
-        // finish their own itemsChanged work.
-        microtask(() => {
-          ensureSelection(this);
-        });
-      }
+      // In case selected item changed position or was removed.
+      trackSelectedItem(this);
 
-      // The change in items may have affected which navigations are possible.
+      // In case the change in items affected which navigations are possible.
       updatePossibleNavigations(this);
     }
 
     /**
      * The index of the item which is currently selected.
      *
-     * If `selectionWraps` is false, the index is -1 if there is no selection.
-     * In that case, setting the index to -1 will deselect any
-     * currently-selected item.
+     * A `selectedIndex` of -1 indicates there is no selection. Setting this
+     * property to -1 will remove any existing selection.
      *
      * @type {number}
      */
@@ -290,9 +283,7 @@ export default (base) => {
     set selectionRequired(selectionRequired) {
       this[selectionRequiredSymbol] = selectionRequired;
       if ('selectionRequired' in base.prototype) { super.selectionRequired = selectionRequired; }
-      if (selectionRequired) {
-        ensureSelection(this);
-      }
+      trackSelectedItem(this);
     }
 
     /**
@@ -362,31 +353,40 @@ export default (base) => {
 };
 
 
-// If no item is selected, select a default item.
-function ensureSelection(element) {
+// Following a change in the set of items, or in the value of the
+// `selectionRequired` property, reacquire the selected item. If it's moved,
+// update `selectedIndex`. If it's been removed, and a selection is required,
+// try to select another item.
+function trackSelectedItem(element) {
+
   const items = element.items;
   const itemCount = items ? items.length : 0;
+
   const previousSelectedItem = element.selectedItem;
-  if (previousSelectedItem) {
-    if (itemCount === 0) {
-    // No items for us to select, but at least signal that there's no longer a
-    // selection.
-      element.selectedItem = null;
-    } else if (previousSelectedItem) {
-      const indexInCurrentItems = Array.prototype.indexOf.call(items, previousSelectedItem);
-      if (indexInCurrentItems < 0) {
-        // Previously selected item is no longer in the current set of items.
-        // Select the item at the same index (if it exists) or as close as possible.
-        const previousSelectedIndex = element.selectedIndex;
-        const newIndex = Math.min(previousSelectedIndex, itemCount - 1);
-        element.selectedItem = items[newIndex];
-      }
-      // TODO: Handle case where item moves: still there, but index has changed.
+  if (!previousSelectedItem) {
+    // No item was previously selected.
+    if (element.selectionRequired) {
+      // Select the first item by default.
+      element.selectedIndex = 0;
     }
-  } else if (itemCount > 0) {
-    // No previous selection.
-    // Select the first item by default.
-    element.selectedIndex = 0;
+  } else if (itemCount === 0) {
+    // We've lost the selection, and there's nothing left to select.
+    element.selectedItem = null;
+  } else {
+    // Try to find the previously-selected item in the current set of items.
+    const indexInCurrentItems = Array.prototype.indexOf.call(items, previousSelectedItem);
+    const previousSelectedIndex = element.selectedIndex;
+    if (indexInCurrentItems < 0) {
+      // Previously-selected item was removed from the items.
+      // Select the item at the same index (if it exists) or as close as possible.
+      const newSelectedIndex = Math.min(previousSelectedIndex, itemCount - 1);
+      // Select by item, since index may be the same, and we want to raise the
+      // selected-item-changed event.
+      element.selectedItem = items[newSelectedIndex];
+    } else if (indexInCurrentItems !== previousSelectedIndex) {
+      // Previously-selected item still there, but changed position.
+      element.selectedIndex = indexInCurrentItems;
+    }
   }
 }
 

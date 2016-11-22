@@ -1,6 +1,5 @@
 import { assert } from 'chai';
 import AttributeMarshalling from '../src/AttributeMarshalling';
-import microtask from '../src/microtask';
 import SingleSelection from '../src/SingleSelection';
 
 
@@ -8,6 +7,8 @@ class SingleSelectionTest extends SingleSelection(AttributeMarshalling(HTMLEleme
   indexOfItem(item) {
     return this.items.indexOf(item);
   }
+  // This simplistic `items` implementation doesn't track changes, so tests
+  // will need to invoke `itemsChanged()` manually.
   get items() {
     // Convert children to array in a way IE 11 can handle.
     return Array.prototype.slice.call(this.children);
@@ -43,6 +44,17 @@ describe("SingleSelection mixin", () => {
   it("updates selectedItem when selectedIndex changes", () => {
     const element = createSampleElement();
     element.selectedItem = element.children[2];
+    assert.equal(element.selectedIndex, 2);
+  });
+
+  it("updates selectedIndex if selectedItem changes position", () => {
+    const element = createSampleElement();
+    const item = element.children[0];
+    element.selectedItem = item;
+    assert.equal(element.selectedIndex, 0);
+    element.appendChild(item); // Move to end.
+    element.itemsChanged();
+    assert.equal(element.selectedItem, item);
     assert.equal(element.selectedIndex, 2);
   });
 
@@ -106,32 +118,38 @@ describe("SingleSelection mixin", () => {
     assert.equal(element.selectedIndex, 0);
   });
 
-  it("ensures selection when an item (not last place) is removed", done => {
+  it("ensures selection when an item (not last place) is removed", () => {
     const element = createSampleElement();
     element.selectionRequired = true;
     const originalItem1 = element.children[1];
     element.selectedIndex = 0;
     element.children[0].remove();
     element.itemsChanged();
-    microtask(() => {
-      assert.equal(element.selectedIndex, 0);
-      assert.equal(element.selectedItem, originalItem1);
-      done();
-    });
+    assert.equal(element.selectedIndex, 0);
+    assert.equal(element.selectedItem, originalItem1);
   });
 
-  it("ensures selection when item in last place is removed", done => {
+  it("ensures selection when item in last place is removed", () => {
     const element = createSampleElement();
     element.selectionRequired = true;
     const originalItem1 = element.children[1];
     element.selectedIndex = 2;
     element.children[2].remove();
     element.itemsChanged();
-    microtask(() => {
-      assert.equal(element.selectedIndex, 1);
-      assert.equal(element.selectedItem, originalItem1);
-      done();
-    });
+    assert.equal(element.selectedIndex, 1);
+    assert.equal(element.selectedItem, originalItem1);
+  });
+
+  it("drop selection when the last item is removed", () => {
+    const element = createSampleElement();
+    element.selectionRequired = true;
+    element.selectedIndex = 0;
+    element.children[0].remove();
+    element.children[0].remove();
+    element.children[0].remove();
+    element.itemsChanged();
+    assert.equal(element.selectedIndex, -1);
+    assert.equal(element.selectedItem, null);
   });
 
 });
