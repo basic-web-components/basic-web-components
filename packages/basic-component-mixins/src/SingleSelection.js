@@ -6,12 +6,30 @@ import symbols from './symbols';
 // Symbols for private data members on an element.
 const canSelectNextSymbol = createSymbol('canSelectNext');
 const canSelectPreviousSymbol = createSymbol('canSelectPrevious');
+const selectionRequiredSymbol = createSymbol('selectionRequired');
+const selectionWrapsSymbol = createSymbol('selectionWraps');
+
+// We want to expose both selectedIndex and selectedItem as independent
+// properties but keep them in sync. This allows a component user to reference
+// the selection by whatever means is most natural for their situation.
+//
+// To efficiently keep these properties in sync, we track "external" and
+// "internal" references for each property:
+//
+// The external index or item is the one we report to the outside world when
+// asked for selection.  When handling a change to index or item, we update the
+// external reference as soon as possible, so that if anyone immediately asks
+// for the current selection, they will receive a stable answer.
+//
+// The internal index or item tracks whichever index or item last received the
+// full set of processing. Processing includes raising a change event for the
+// new value. Once we've begun that processing, we store the new value as the
+// internal value to indicate we've handled it.
+//
 const externalSelectedIndexSymbol = createSymbol('externalSelectedIndex');
 const externalSelectedItemSymbol = createSymbol('externalSelectedItem');
 const internalSelectedIndexSymbol = createSymbol('internalSelectedIndex');
 const internalSelectedItemSymbol = createSymbol('internalSelectedItem');
-const selectionRequiredSymbol = createSymbol('selectionRequired');
-const selectionWrapsSymbol = createSymbol('selectionWraps');
 
 
 /* Exported function extends a base class with SingleSelection. */
@@ -142,18 +160,18 @@ export default (base) => {
         -1;
     }
     set selectedIndex(index) {
+      // See notes at top about internal vs. external copies of this property.
       const previousSelectedIndex = this[internalSelectedIndexSymbol];
       let item;
       if (index !== this[externalSelectedIndexSymbol]) {
-        // Store new index and corresponding item.
+        // Store the new index and the corresponding item.
         const items = this.items;
         const hasItems = items && items.length > 0;
-        this[externalSelectedIndexSymbol] = hasItems && index >= 0 && index < items.length ?
-          index :
-          -1;
-        item = hasItems && index >= 0 ?
-          items[index] :
-          null;
+        if (!(hasItems && index >= 0 && index < items.length)) {
+          index = -1; // No item at that index.
+        }
+        this[externalSelectedIndexSymbol] = index;
+        item = hasItems && index >= 0 ? items[index] : null;
         this[externalSelectedItemSymbol] = item;
       } else {
         item = this[externalSelectedItemSymbol];
@@ -199,6 +217,7 @@ export default (base) => {
       return this[externalSelectedItemSymbol] || null;
     }
     set selectedItem(item) {
+      // See notes at top about internal vs. external copies of this property.
       const previousSelectedItem = this[internalSelectedItemSymbol];
       let index;
       if (item !== this[externalSelectedItemSymbol]) {
@@ -207,7 +226,10 @@ export default (base) => {
         const hasItems = items && items.length > 0;
         index = hasItems ? items.indexOf(item) : -1;
         this[externalSelectedIndexSymbol] = index;
-        this[externalSelectedItemSymbol] = index >= 0 ? item : null;
+        if (index < 0) {
+          item = null; // The indicated item isn't actually in `items`.
+        }
+        this[externalSelectedItemSymbol] = item;
       } else {
         index = this[externalSelectedIndexSymbol];
       }
