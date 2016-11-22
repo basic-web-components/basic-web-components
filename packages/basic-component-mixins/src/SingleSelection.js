@@ -173,21 +173,18 @@ export default (base) => {
       // Now let super do any work.
       if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
 
-      if (index === previousSelectedIndex) {
-        // The indicated index was already the selected index.
-        return;
+      if (index !== previousSelectedIndex) {
+        // The selected index changed.
+        this[internalSelectedIndexSymbol] = index;
+
+        const event = new CustomEvent('selected-index-changed', {
+          detail: {
+            selectedIndex: index,
+            value: index // for Polymer binding. TODO: Verify still necessary
+          }
+        });
+        this.dispatchEvent(event);
       }
-
-      // The index changed.
-      this[internalSelectedIndexSymbol] = index;
-
-      const event = new CustomEvent('selected-index-changed', {
-        detail: {
-          selectedIndex: index,
-          value: index // for Polymer binding. TODO: Verify still necessary
-        }
-      });
-      this.dispatchEvent(event);
 
       if (this[internalSelectedItemSymbol] !== item) {
         // Update selectedItem property so it can have its own effects.
@@ -230,32 +227,29 @@ export default (base) => {
       // Now let super do any work.
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
 
-      if (item === previousSelectedItem) {
-        // The indicated item was already the selected item.
-        return;
-      }
+      if (item !== previousSelectedItem) {
+        // The selected item changed.
+        this[internalSelectedItemSymbol] = item;
 
-      // The selected item changed.
-      this[internalSelectedItemSymbol] = item;
-
-      if (previousSelectedItem) {
-        // Update selection state of old item.
-        this[symbols.applySelection](previousSelectedItem, false);
-      }
-      if (item) {
-        // Update selection state to new item.
-        this[symbols.applySelection](item, true);
-      }
-
-      updatePossibleNavigations(this);
-
-      const event = new CustomEvent('selected-item-changed', {
-        detail: {
-          selectedItem: item,
-          value: item // for Polymer binding
+        if (previousSelectedItem) {
+          // Update selection state of old item.
+          this[symbols.applySelection](previousSelectedItem, false);
         }
-      });
-      this.dispatchEvent(event);
+        if (item) {
+          // Update selection state to new item.
+          this[symbols.applySelection](item, true);
+        }
+
+        updatePossibleNavigations(this);
+
+        const event = new CustomEvent('selected-item-changed', {
+          detail: {
+            selectedItem: item,
+            value: item // for Polymer binding
+          }
+        });
+        this.dispatchEvent(event);
+      }
 
       if (this[internalSelectedIndexSymbol] !== index) {
         // Update selectedIndex property so it can have its own effects.
