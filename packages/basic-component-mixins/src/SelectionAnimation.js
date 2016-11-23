@@ -143,12 +143,12 @@ export default function mixin(base) {
       renderSelection(this, this.selectedIndex, value);
     }
 
-    get selectedItem() {
-      return super.selectedItem;
+    get selectedIndex() {
+      return super.selectedIndex;
     }
-    set selectedItem(item) {
-      if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-      renderSelection(this, this.selectedIndex, 0);
+    set selectedIndex(index) {
+      if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
+      renderSelection(this, index, 0);
     }
 
     /**

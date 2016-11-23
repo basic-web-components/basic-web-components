@@ -14,6 +14,7 @@ import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 // Symbols for private data members on an element.
 const selectedFractionChangedListenerSymbol = createSymbol('selectedFractionChangedListener');
+const previousHandledIndexSymbol = createSymbol('previousHandledIndex');
 
 
 const base = ElementBase.compose(
@@ -129,12 +130,15 @@ class PageDots extends base {
     this.dispatchEvent(new CustomEvent('selected-fraction-changed'));
   }
 
-  get selectedItem() {
-    return super.selectedItem;
+  get selectedIndex() {
+    return super.selectedIndex;
   }
-  set selectedItem(item) {
-    if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-    refreshDots(this);
+  set selectedIndex(index) {
+    if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
+    if (index !== this[previousHandledIndexSymbol]) {
+      this[previousHandledIndexSymbol] = index;
+      refreshDots(this);
+    }
   }
 
   get target() {

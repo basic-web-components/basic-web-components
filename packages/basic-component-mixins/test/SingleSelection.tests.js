@@ -102,14 +102,14 @@ describe("SingleSelection mixin", () => {
     assert.equal(element.selectedIndex, 0);
   });
 
-  it("ensures selection of first item when no item is selected", () => {
+  it("tracks selection of first item when no item is selected", () => {
     const element = createSampleElement();
     assert.equal(element.selectedIndex, -1);
     element.selectionRequired = true;
     assert.equal(element.selectedIndex, 0);
   });
 
-  it("ensures selection when an item (not last place) is removed", () => {
+  it("tracks selection when current item (not last place) is removed", () => {
     const element = createSampleElement();
     element.selectionRequired = true;
     const originalItem1 = element.children[1];
@@ -120,7 +120,7 @@ describe("SingleSelection mixin", () => {
     assert.equal(element.selectedItem, originalItem1);
   });
 
-  it("ensures selection when item in last place is removed", () => {
+  it("tracks selection when current item in last place is removed", () => {
     const element = createSampleElement();
     element.selectionRequired = true;
     const originalItem1 = element.children[1];
@@ -128,6 +128,17 @@ describe("SingleSelection mixin", () => {
     element.children[2].remove();
     element.itemsChanged();
     assert.equal(element.selectedIndex, 1);
+    assert.equal(element.selectedItem, originalItem1);
+  });
+
+  it("tracks selection when item other than current item is removed", () => {
+    const element = createSampleElement();
+    element.selectionRequired = true;
+    const originalItem1 = element.children[1];
+    element.selectedIndex = 1;
+    element.children[0].remove();
+    element.itemsChanged();
+    assert.equal(element.selectedIndex, 0);
     assert.equal(element.selectedItem, originalItem1);
   });
 
