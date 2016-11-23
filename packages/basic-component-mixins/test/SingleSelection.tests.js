@@ -73,15 +73,6 @@ describe("SingleSelection mixin", () => {
     });
   });
 
-  it("changing selection raises the selected-item-changed event", done => {
-    const element = createSampleElement();
-    element.addEventListener('selected-item-changed', () => {
-      done();
-    });
-    container.appendChild(element);
-    element.selectedIndex = 1;
-  });
-
   it("can advance the selection to the next item", () => {
     const element = createSampleElement();
     assert.equal(element.selectedIndex, -1);
@@ -140,7 +131,7 @@ describe("SingleSelection mixin", () => {
     assert.equal(element.selectedItem, originalItem1);
   });
 
-  it("drop selection when the last item is removed", () => {
+  it("drops selection when the last item is removed", () => {
     const element = createSampleElement();
     element.selectionRequired = true;
     element.selectedIndex = 0;
@@ -152,6 +143,79 @@ describe("SingleSelection mixin", () => {
     assert.equal(element.selectedItem, null);
   });
 
+  it("sets canSelectNext/canSelectPrevious with no wrapping", () => {
+    const element = createSampleElement();
+    assert(!element.selectionWraps);
+
+    // No selection yet
+    assert.equal(element.selectedIndex, -1);
+    assert(element.canSelectNext);
+    assert(element.canSelectPrevious);
+
+    // Start of list
+    element.selectFirst();
+    assert(element.canSelectNext);
+    assert(!element.canSelectPrevious);
+
+    // Middle of list
+    element.selectNext();
+    assert(element.canSelectNext);
+    assert(element.canSelectPrevious);
+
+    // End of list
+    element.selectLast();
+    assert(!element.canSelectNext);
+    assert(element.canSelectPrevious);
+  });
+
+  it("sets canSelectNext/canSelectPrevious with wrapping", () => {
+    const element = createSampleElement();
+    element.selectionWraps = true;
+
+    // Start of list
+    element.selectFirst();
+    assert(element.canSelectNext);
+    assert(element.canSelectPrevious);
+
+    // End of list
+    element.selectLast();
+    assert(element.canSelectNext);
+    assert(element.canSelectPrevious);
+  });
+
+  it("changing selection raises the selected-item-changed event", done => {
+    const element = createSampleElement();
+    element.addEventListener('selected-item-changed', () => {
+      done();
+    });
+    container.appendChild(element);
+    element.selectedIndex = 1;
+  });
+
+  it("raises can-select-previous-changed event", done => {
+    const element = createSampleElement();
+    element.addEventListener('can-select-previous-changed', () => {
+      assert.equal(element.selectedIndex, 0);
+      assert(!element.canSelectPrevious);
+      done();
+    });
+    container.appendChild(element);
+    assert(element.canSelectPrevious);
+    element.selectFirst();
+  });
+
+  it("raises can-select-next-changed event", done => {
+    const element = createSampleElement();
+    element.addEventListener('can-select-next-changed', () => {
+      assert.equal(element.selectedIndex, 2);
+      assert(!element.canSelectNext);
+      done();
+    });
+    container.appendChild(element);
+    assert(element.canSelectNext);
+    element.selectLast();
+  });
+
 });
 
 function createSampleElement() {
@@ -161,5 +225,6 @@ function createSampleElement() {
     div.textContent = text;
     element.appendChild(div);
   });
+  element.itemsChanged();
   return element;
 }

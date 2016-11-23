@@ -37,8 +37,8 @@ export default (base) => {
   /**
    * Mixin which manages single-selection semantics for items in a list.
    *
-   * This mixin expects a component to provide an `items` array of all elements
-   * in the list. A standard way to do that with is the
+   * This mixin expects a component to provide an `items` Array or NodeList of
+   * all elements in the list. A standard way to do that with is the
    * [ContentAsItems](ContentAsItems.md) mixin, which takes a component's
    * content (typically its distributed children) as the set of list items; see
    * that mixin for details.
@@ -91,8 +91,12 @@ export default (base) => {
       return this[canSelectNextSymbol];
     }
     set canSelectNext(canSelectNext) {
+      const previousCanSelectNext = this[canSelectNextSymbol];
       this[canSelectNextSymbol] = canSelectNext;
       if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
+      if (canSelectNext !== previousCanSelectNext) {
+        this.dispatchEvent(new CustomEvent('can-select-next-changed'));
+      }
     }
 
     /**
@@ -105,8 +109,12 @@ export default (base) => {
       return this[canSelectPreviousSymbol];
     }
     set canSelectPrevious(canSelectPrevious) {
+      const previousCanSelectPrevious = this[canSelectPreviousSymbol];
       this[canSelectPreviousSymbol] = canSelectPrevious;
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
+      if (canSelectPrevious !== previousCanSelectPrevious) {
+        this.dispatchEvent(new CustomEvent('can-select-previous-changed'));
+      }
     }
 
     get [symbols.defaults]() {
@@ -347,6 +355,28 @@ export default (base) => {
 };
 
 
+// Ensure the given index is within bounds, and select it if it's not already
+// selected.
+function selectIndex(element, index) {
+  const count = element.items.length;
+
+  const boundedIndex = (element.selectionWraps) ?
+    // JavaScript mod doesn't handle negative numbers the way we want to wrap.
+    // See http://stackoverflow.com/a/18618250/76472
+    ((index % count) + count) % count :
+
+    // Keep index within bounds of array.
+    Math.max(Math.min(index, count - 1), 0);
+
+  const previousIndex = element.selectedIndex;
+  if (previousIndex !== boundedIndex) {
+    element.selectedIndex = boundedIndex;
+    return true;
+  } else {
+    return false;
+  }
+}
+
 // Following a change in the set of items, or in the value of the
 // `selectionRequired` property, reacquire the selected item. If it's moved,
 // update `selectedIndex`. If it's been removed, and a selection is required,
@@ -384,28 +414,6 @@ function trackSelectedItem(element) {
   }
 }
 
-// Ensure the given index is within bounds, and select it if it's not already
-// selected.
-function selectIndex(element, index) {
-  const count = element.items.length;
-
-  const boundedIndex = (element.selectionWraps) ?
-    // JavaScript mod doesn't handle negative numbers the way we want to wrap.
-    // See http://stackoverflow.com/a/18618250/76472
-    ((index % count) + count) % count :
-
-    // Keep index within bounds of array.
-    Math.max(Math.min(index, count - 1), 0);
-
-  const previousIndex = element.selectedIndex;
-  if (previousIndex !== boundedIndex) {
-    element.selectedIndex = boundedIndex;
-    return true;
-  } else {
-    return false;
-  }
-}
-
 // Following a change in selection, report whether it's now possible to
 // go next/previous from the given index.
 function updatePossibleNavigations(element) {
@@ -433,6 +441,10 @@ function updatePossibleNavigations(element) {
       canSelectNext = (index < items.length - 1);
     }
   }
-  element.canSelectNext = canSelectNext;
-  element.canSelectPrevious = canSelectPrevious;
+  if (element.canSelectNext !== canSelectNext) {
+    element.canSelectNext = canSelectNext;
+  }
+  if (element.canSelectPrevious !== canSelectPrevious) {
+    element.canSelectPrevious = canSelectPrevious;
+  }
 }
