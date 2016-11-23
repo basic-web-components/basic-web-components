@@ -2,6 +2,10 @@ import createSymbol from './createSymbol';
 
 
 // Symbols for private data members on an element.
+const canSelectNextSymbol = createSymbol('canSelectNext');
+const canSelectPreviousSymbol = createSymbol('canSelectPrevious');
+const canSelectNextListenerSymbol = createSymbol('canSelectNextListener');
+const canSelectPreviousListenerSymbol = createSymbol('canSelectPreviousListener');
 const itemsChangedListenerSymbol = createSymbol('itemsChangedListener');
 const selectedIndexChangedListenerSymbol = createSymbol('selectedIndexChangedListener');
 const selectedItemChangedListenerSymbol = createSymbol('selectedItemChangedListener');
@@ -48,10 +52,15 @@ export default (base) => {
       return this.target && this.target.canSelectNext;
     }
     set canSelectNext(canSelectNext) {
+      const previousCanSelectNext = this[canSelectNextSymbol];
       if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
-      const target = this.target;
-      if (target && target.canSelectNext !== canSelectNext) {
-        target.canSelectNext = canSelectNext;
+      if (canSelectNext !== previousCanSelectNext) {
+        this[canSelectNextSymbol] = canSelectNext;
+        const target = this.target;
+        if (target && target.canSelectNext !== canSelectNext) {
+          target.canSelectNext = canSelectNext;
+        }
+        this.dispatchEvent(new CustomEvent('can-select-next-changed'));
       }
     }
 
@@ -65,10 +74,15 @@ export default (base) => {
       return this.target && this.target.canSelectPrevious;
     }
     set canSelectPrevious(canSelectPrevious) {
+      const previousCanSelectPrevious = this[canSelectPrevious];
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
-      const target = this.target;
-      if (target && target.canSelectPrevious !== canSelectPrevious) {
-        target.canSelectPrevious = canSelectPrevious;
+      if (canSelectPrevious !== previousCanSelectPrevious) {
+        this[canSelectPreviousSymbol] = canSelectPrevious;
+        const target = this.target;
+        if (target && target.canSelectPrevious !== canSelectPrevious) {
+          target.canSelectPrevious = canSelectPrevious;
+        }
+        this.dispatchEvent(new CustomEvent('can-select-previous-changed'));
       }
     }
 
@@ -243,6 +257,12 @@ export default (base) => {
       if ('target' in base.prototype) { super.target = target; }
 
       // Remove any listeners on an old target.
+      if (this[canSelectNextListenerSymbol]) {
+        this.removeEventListener('can-select-next-previous', this[canSelectNextListenerSymbol]);
+      }
+      if (this[canSelectPreviousListenerSymbol]) {
+        this.removeEventListener('can-select-previous-changed', this[canSelectPreviousListenerSymbol]);
+      }
       if (this[itemsChangedListenerSymbol]) {
         this.removeEventListener('items-changed', this[itemsChangedListenerSymbol]);
       }
@@ -254,25 +274,35 @@ export default (base) => {
       }
 
       // Listen to changes on the new target.
+      // REVIEW: Components applying TargetSelection both listen to this event
+      // (on the target), and raise it themselves. In theory, they're expected
+      // to *not* catch the events they raise themselves, but Chrome (at least)
+      // appears to violate that expectation. That is, it's possible to have
+      // event.target === this. More confusingly, the guard below, which is
+      // intended to avoid recursive calls to selectedItemChanged, doesn't work
+      // as expected. Even if the debugger shows event.target === this, the
+      // contents of the "if" statement will be executed.
+      this[canSelectNextListenerSymbol] = target.addEventListener('can-select-next-changed', event => {
+        if (event.target !== this) {
+          this.canSelectNext = this.target.canSelectNext;
+        }
+      });
+      this[canSelectPreviousListenerSymbol] = target.addEventListener('can-select-previous-changed', event => {
+        if (event.target !== this) {
+          this.canSelectPrevious = this.target.canSelectPrevious;
+        }
+      });
       this[itemsChangedListenerSymbol] = target.addEventListener('items-changed', event => {
-        this.itemsChanged();
+        if (event.target !== this) {
+          this.itemsChanged();
+        }
       });
       this[selectedIndexChangedListenerSymbol] = target.addEventListener('selected-index-changed', event => {
-        // See note below.
         if (event.target !== this) {
           this.selectedIndex = this.target.selectedIndex;
         }
       });
       this[selectedItemChangedListenerSymbol] = target.addEventListener('selected-item-changed', event => {
-        // REVIEW: Components applying TargetSelection both listen to this
-        // event (on the target), and raise it themselves. In theory, they're
-        // expected to *not* catch the events they raise themselves, but Chrome
-        // (at least) appears to violate that expectation. That is, it's
-        // possible to have event.target === this. More confusingly, the guard
-        // below, which is intended to avoid recursive calls to
-        // selectedItemChanged, doesn't work as expected. Even if the debugger
-        // shows event.target === this, the contents of the "if" statement will
-        // be executed.
         if (event.target !== this) {
           this.selectedItem = this.target.selectedItem;
         }
