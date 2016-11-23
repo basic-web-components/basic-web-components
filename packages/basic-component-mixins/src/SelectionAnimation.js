@@ -117,7 +117,13 @@ export default function mixin(base) {
 
     itemsChanged() {
       if (super.itemsChanged) { super.itemsChanged(); }
+
       resetAnimations(this);
+
+      // TODO: Also reset our notion of the last rendered selection? This comes
+      // up when a DOM removal causes the selected item to change position.
+      // this[previousSelectionSymbol] = null;
+
       renderSelection(this);
     }
 
@@ -511,6 +517,8 @@ function renderSelection(element, selectedIndex=element.selectedIndex, selectedF
     selection = FractionalSelection.helpers.dampedSelection(selection, itemCount);
   }
   const previousSelection = element[previousSelectionSymbol];
+  // TODO: If an item changes position in the DOM, we end up animating from
+  // its old index to its new index, but we really don't want to animate at all.
   if (!element[symbols.dragging] && previousSelection != null &&
       previousSelection !== selection) {
     // Animate selection from previous state to new state.
