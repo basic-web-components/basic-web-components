@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <script>
+    const Constructed = base => class Constructed extends base {
+      constructor() {
+        console.log(`mixin constructor`);
+        super();
+        if (this.constructor === Constructed) {
+          console.log(`Constructed invoking constructed`);
+          this.constructed(new.target);
+        }
+      }
+    }
+
+    class TestElement extends HTMLElement {
+      constructed() {
+        console.log(`constructed`);
+        if (super.constructed) { super.constructed(); }
+      }
+    }
+    customElements.define('test-element', Constructed(TestElement));
+  </script>
+
+</head>
+
+<body>
+  <test-element></test-element>
+</body>
+
+</html>
