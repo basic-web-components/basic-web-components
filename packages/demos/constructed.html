@@ -10,26 +10,36 @@
       constructor() {
         console.log(`mixin constructor`);
         super();
-        if (this.constructor === Constructed) {
-          console.log(`Constructed invoking constructed`);
-          this.constructed(new.target);
-        }
+        Promise.resolve().then(() => this.constructed());
       }
     }
 
-    class TestElement extends HTMLElement {
+    class TestElement extends Constructed(HTMLElement) {
+
+      connectedCallback() {
+        if (super.connectedCallback) { super.connectedCallback(); }
+        console.log(`connectedCallback`);
+      }
+
       constructed() {
         console.log(`constructed`);
         if (super.constructed) { super.constructed(); }
       }
+
     }
-    customElements.define('test-element', Constructed(TestElement));
+    customElements.define('test-element', TestElement);
+
+    window.addEventListener('load', () => {
+      const element = new TestElement();
+      document.body.appendChild(element);
+      console.log(`here`);
+    });
   </script>
 
 </head>
 
 <body>
-  <test-element></test-element>
+  <!-- <test-element></test-element> -->
 </body>
 
 </html>
