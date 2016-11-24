@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 25px;
+    }
+
+    test-element {
+      cursor: default;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    test-element > * {
+      align-items: center;
+      border: 1px solid lightgray;
+      display: inline-flex;
+      height: 50px;
+      justify-content: center;
+      padding: 0.25em;
+      width: 50px;
+    }
+
+    test-element > .selected {
+      background-color: highlight;
+      color: highlighttext;
+    }
+  </style>
+
+  <script>
+    // This sample demonstrates how component behavior may be factored into
+    // separate mixins. In this sample, three separate mixins handle input,
+    // abstract semantics, and output, respectively. The three can be combined
+    // to produce give a custom element very rudimentary selection support.
+    // These particular are overly simplistic in order to focus just on the way
+    // the mixins communicate.
+
+    // Simplistic mixin mapping click input to selection semantics.
+    const ClickSelection = base => class ClickSelection extends base {
+      constructor() {
+        super();
+        this.addEventListener('click', event => {
+          this.selectedItem = event.target;
+          event.stopPropagation();
+        });
+      }
+    }
+
+    // Simplistic mixin backing a `selectedItem` property.
+    // This maps the selection state for a component to the on/off selection
+    // states for its individual children.
+    const selectedItemSymbol = Symbol();
+    const SingleSelection = base => class SingleSelection extends base {
+      get selectedItem() {
+        return this[selectedItemSymbol];
+      }
+      set selectedItem(item) {
+        const previousSelectedItem = this[selectedItemSymbol];
+        this[selectedItemSymbol] = item;
+        if ('selectedItem' in base.prototype) { super.selectedItem = item; }
+        if (previousSelectedItem !== item) {
+          if (previousSelectedItem) {
+            this.applySelection(previousSelectedItem, false);
+          }
+          this.applySelection(item, true);
+        }
+      }
+
+    }
+
+    // Simplistic mixin mapping selection to a `selected` CSS class.
+    const SelectionClass = base => class SelectionClass extends base {
+      applySelection(item, selected) {
+        if (super.applySelection) { super.applySelection(item, selected); }
+        item.classList.toggle('selected', selected);
+      }
+    }
+
+    // Define a custom element using the above mixins.
+    // The order of mixin application doesn't matter.
+    class TestElement extends ClickSelection(SelectionClass(SingleSelection(HTMLElement))) {}
+    customElements.define('test-element', TestElement);
+  </script>
+
+</head>
+
+<body>
+  <p>
+    Click an item to select it:
+  </p>
+  <test-element>
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+    <div>Five</div>
+  </test-element>
+</body>
+
+</html>

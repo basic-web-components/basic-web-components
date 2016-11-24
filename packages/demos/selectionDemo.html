@@ -4,72 +4,83 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>SingleSelection demo</title>
 
   <script src="bower_components/custom-elements/src/native-shim.js"></script>
   <script src="bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
   <script src="../basic-component-mixins/dist/basic-component-mixins.js"></script>
-  <link rel="stylesheet" href="demos.css">
 
   <style>
-  test-element > * {
-    align-items: center;
-    border: 1px solid lightgray;
-    cursor: default;
-    display: inline-flex;
-    height: 50px;
-    justify-content: center;
-    padding: 0.25em;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    width: 50px;
-  }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 25px;
+    }
 
-  .selected {
-    background-color: highlight;
-    color: highlighttext;
-  }
+    test-element {
+      cursor: default;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    test-element > * {
+      align-items: center;
+      border: 1px solid lightgray;
+      display: inline-flex;
+      height: 50px;
+      justify-content: center;
+      padding: 0.25em;
+      width: 50px;
+    }
+
+    test-element > .selected {
+      background-color: highlight;
+      color: highlighttext;
+    }
   </style>
 
   <script>
-  /*
-   * A very simple demonstration of the SingleSelection mixin.
-   */
-  class TestElement extends Basic.SingleSelection(HTMLElement) {
+    /*
+     * A very simple demonstration of the SingleSelection mixin.
+     */
+    class TestElement extends Basic.SingleSelection(HTMLElement) {
 
-    constructor() {
-      super();
-      this.addEventListener('click', event => {
-        // Select whatever child is clicked on.
-        const index = Array.prototype.indexOf.call(this.items, event.target);
-        if (index >= 0) {
-          this.selectedIndex = index;
-          event.stopPropagation();
-        }
-      });
+      constructor() {
+        super();
+        this.addEventListener('click', event => {
+          // Select whatever child is clicked on.
+          const index = Array.prototype.indexOf.call(this.items, event.target);
+          if (index >= 0) {
+            this.selectedIndex = index;
+            event.stopPropagation();
+          }
+        });
+      }
+
+      [Basic.symbols.applySelection](item, selected) {
+        if (super[Basic.symbols.applySelection]) { super[Basic.symbols.applySelection](item, selected); }
+        // Apply a `selected` class to a selected item, otherwise remove.
+        item.classList.toggle('selected', selected);
+      }
+
+      get items() {
+        // The items that can be selected are the component's direct children.
+        return this.children;
+      }
+
     }
 
-    [Basic.symbols.applySelection](item, selected) {
-      if (super[Basic.symbols.applySelection]) { super[Basic.symbols.applySelection](item, selected); }
-      // Apply a `selected` class to a selected item, otherwise remove.
-      item.classList.toggle('selected', selected);
-    }
-
-    get items() {
-      // The items that can be selected are the component's direct children.
-      return this.children;
-    }
-
-  }
-
-  customElements.define('test-element', TestElement);
+    customElements.define('test-element', TestElement);
   </script>
 
 </head>
 
 <body>
+  <p>
+    Click an item to select it:
+  </p>
   <test-element>
     <div>One</div>
     <div>Two</div>
