@@ -67,15 +67,16 @@
       set selectedItem(item) {
         const previousSelectedItem = this[selectedItemSymbol];
         this[selectedItemSymbol] = item;
+        // Invoke super in case other mixins implement this property.
         if ('selectedItem' in base.prototype) { super.selectedItem = item; }
         if (previousSelectedItem !== item) {
+          // The selected item changed.
           if (previousSelectedItem) {
             this.applySelection(previousSelectedItem, false);
           }
           this.applySelection(item, true);
         }
       }
-
     }
 
     // Simplistic mixin mapping selection to a `selected` CSS class.
