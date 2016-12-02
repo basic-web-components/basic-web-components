@@ -1,5 +1,5 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
 
 
 /**
@@ -14,10 +14,10 @@ import DistributedChildrenAsContent from '../../basic-component-mixins/src/Distr
  * This component currently requires an explicit size by applied to it.
  *
  * @extends ElementBase
- * @mixes DistributedChildrenAsContent
+ * @mixes DistributedChildrenContentMixin
  */
 class SpreadItems extends ElementBase.compose(
-  DistributedChildrenAsContent
+  DistributedChildrenContentMixin
 ) {
 
   connectedCallback() {

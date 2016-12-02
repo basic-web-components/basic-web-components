@@ -1,8 +1,8 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import Generic from '../../basic-component-mixins/src/Generic';
+import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
 import Modes from '../../basic-modes/src/Modes'; // jshint ignore:line
 import TabStrip from '../../basic-tab-strip/src/TabStrip'; // jshint ignore:line
-import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
+import TargetSelectionMixin from '../../basic-component-mixins/src/TargetSelectionMixin';
 
 
 /**
@@ -24,12 +24,12 @@ import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
  *     </basic-tabs>
  *
  * @extends ElementBase
- * @mixes Generic
- * @mixes TargetSelection
+ * @mixes GenericMixin
+ * @mixes TargetSelectionMixin
  */
 class Tabs extends ElementBase.compose(
-  Generic,
-  TargetSelection
+  GenericMixin,
+  TargetSelectionMixin
 ) {
 
   get generic() {
@@ -37,7 +37,7 @@ class Tabs extends ElementBase.compose(
   }
   set generic(value) {
     super.generic = value;
-    // Forward the generic value to the tab strip.
+    // Forward the GenericMixin value to the tab strip.
     this.$.tabStrip.generic = value;
   }
 

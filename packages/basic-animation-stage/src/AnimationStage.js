@@ -1,19 +1,19 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
-import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
+import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionAnimationMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 
 
 const base = ElementBase.compose(
-  ContentAsItems,
-  DistributedChildrenAsContent,
-  FractionalSelection,
-  SelectionAnimation,
-  SelectionAriaActive,
-  SingleSelection
+  ContentItemsMixin,
+  DistributedChildrenContentMixin,
+  FractionalSelectionMixin,
+  SelectionAnimationMixin,
+  SelectionAriaActiveMixin,
+  SingleSelectionMixin
 );
 
 /**
@@ -27,7 +27,7 @@ const base = ElementBase.compose(
  * This component is intended to be used as a programmatic rendering surface for
  * components which want to show transitional effects.
  *
- * The component uses the [SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)
+ * The component uses [SelectionAnimationMixin](../basic-component-mixins/docs/SelectionAnimationMixin.md)
  * mixin, which in turn uses the Web Animations API. For use on browsers which
  * do not support that API natively, you will need to load the
  * [Web Animations polyfill](https://github.com/web-animations/web-animations-js).
@@ -36,11 +36,11 @@ const base = ElementBase.compose(
  * require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-viewport).
  *
  * @extends ElementBase
- * @mixes ContentAsItems
- * @mixes DistributedChildrenAsContent
- * @mixes SelectionAnimation
- * @mixes SelectionAriaActive
- * @mixes SingleSelection
+ * @mixes ContentItemsMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes SelectionAnimationMixin
+ * @mixes SelectionAriaActiveMixin
+ * @mixes SingleSelectionMixin
  */
 class AnimationStage extends base {
 

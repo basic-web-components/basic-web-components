@@ -26,27 +26,27 @@ See that component for more details on use.
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
-**Mixes**: <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code>
-  , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
-  , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
-  , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
-  , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
-  , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
-  , <code>[SwipeDirection](../basic-component-mixins/docs/SwipeDirection.md)</code>
-  , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
-  , <code>[TrackpadDirection](../basic-component-mixins/docs/TrackpadDirection.md)</code>
+**Mixes**: <code>[ContentItemsMixin](../basic-component-mixins/docs/ContentItemsMixin.md)</code>
+  , <code>[DirectionSelectionMixin](../basic-component-mixins/docs/DirectionSelectionMixin.md)</code>
+  , <code>[DistributedChildrenContentMixin](../basic-component-mixins/docs/DistributedChildrenContentMixin.md)</code>
+  , <code>[GenericMixin](../basic-component-mixins/docs/GenericMixin.md)</code>
+  , <code>[KeyboardMixin](../basic-component-mixins/docs/KeyboardMixin.md)</code>
+  , <code>[KeyboardDirectionMixin](../basic-component-mixins/docs/KeyboardDirectionMixin.md)</code>
+  , <code>[SelectionAriaActiveMixin](../basic-component-mixins/docs/SelectionAriaActiveMixin.md)</code>
+  , <code>[SingleSelectionMixin](../basic-component-mixins/docs/SingleSelectionMixin.md)</code>
+  , <code>[SwipeDirectionMixin](../basic-component-mixins/docs/SwipeDirectionMixin.md)</code>
+  , <code>[TargetInCollectiveMixin](../basic-component-mixins/docs/TargetInCollectiveMixin.md)</code>
+  , <code>[TrackpadDirectionMixin](../basic-component-mixins/docs/TrackpadDirectionMixin.md)</code>
   
 
 * [SlidingCarousel](#SlidingCarousel) ⇐ <code>ElementBase</code>
     * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
-    * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
+    * [.applySelection(item, selected)](#ContentItems+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
-    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
+    * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["content-changed"](#DistributedChildrenContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenContent+contentChanged)
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+symbols.goDown)
     * [.goEnd()](#KeyboardDirection+symbols.goEnd)
@@ -58,11 +58,11 @@ See that component for more details on use.
     * [.goRight()](#TrackpadDirection+symbols.goRight)
     * [.goStart()](#KeyboardDirection+symbols.goStart)
     * [.goUp()](#KeyboardDirection+symbols.goUp)
-    * [.itemAdded(item)](#ContentAsItems+symbols.itemAdded)
+    * [.itemAdded(item)](#ContentItems+symbols.itemAdded)
     * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
-    * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["items-changed"](#ContentAsItems.event_items-changed)
-    * [.itemsChanged()](#ContentAsItems+itemsChanged)
+    * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["items-changed"](#ContentItems.event_items-changed)
+    * [.itemsChanged()](#ContentItems+itemsChanged)
     * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
@@ -94,7 +94,7 @@ effects will typically be handled by other mixins.
 | item | <code>HTMLElement</code> | the item being selected/deselected |
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
-<a name="ContentAsItems+symbols.applySelection"></a>
+<a name="ContentItems+symbols.applySelection"></a>
 
 ### SlidingCarousel.applySelection(item, selected)
 Apply the selection state to a single item.
@@ -103,7 +103,7 @@ Invoke this method to signal that the selected state of the indicated item
 has changed. By default, this applies a `selected` CSS class if the item
 is selected, and removed it if not selected.
 
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -124,21 +124,21 @@ True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="DistributedChildrenAsContent+content"></a>
+<a name="DistributedChildrenContent+content"></a>
 
 ### slidingCarousel.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
-  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent.event_content-changed"></a>
+  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent.event_content-changed"></a>
 
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent+contentChanged"></a>
+  **Kind**: event emitted by <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent+contentChanged"></a>
 
 ### slidingCarousel.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -148,7 +148,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
 <a name="Generic+generic"></a>
 
 ### slidingCarousel.generic : <code>Boolean</code>
@@ -230,7 +230,7 @@ Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
-<a name="ContentAsItems+symbols.itemAdded"></a>
+<a name="ContentItems+symbols.itemAdded"></a>
 
 ### SlidingCarousel.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
@@ -238,7 +238,7 @@ This method is invoked whenever a new item is added to the list.
 The default implementation of this method does nothing. You can override
 this to perform per-item initialization.
 
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -258,27 +258,27 @@ selection state to false.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being added |
 
-<a name="ContentAsItems+items"></a>
+<a name="ContentItems+items"></a>
 
 ### slidingCarousel.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list. See the top-level documentation for
 mixin for a description of how items differ from plain content.
 
-  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-<a name="ContentAsItems.event_items-changed"></a>
+  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+<a name="ContentItems.event_items-changed"></a>
 
 ### "items-changed"
 Fires when the items in the list change.
 
-  **Kind**: event emitted by <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-<a name="ContentAsItems+itemsChanged"></a>
+  **Kind**: event emitted by <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+<a name="ContentItems+itemsChanged"></a>
 
 ### slidingCarousel.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
 <a name="Keyboard+symbols.keydown"></a>
 
 ### SlidingCarousel.keydown(event) ⇒ <code>boolean</code>
@@ -333,9 +333,8 @@ Fires when the selectedItem property changes.
 ### slidingCarousel.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
 
-If `selectionWraps` is false, the index is -1 if there is no selection.
-In that case, setting the index to -1 will deselect any
-currently-selected item.
+A `selectedIndex` of -1 indicates there is no selection. Setting this
+property to -1 will remove any existing selection.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectedItem"></a>
@@ -344,6 +343,10 @@ currently-selected item.
 The currently selected item, or null if there is no selection.
 
 Setting this property to null deselects any currently-selected item.
+Setting this property to an object that is not in the list has no effect.
+
+TODO: Even if selectionRequired, can still explicitly set selectedItem to null.
+TODO: If selectionRequired, leave selection alone?
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectFirst"></a>
@@ -396,7 +399,7 @@ implicitly added to the component's collective. That is, the component
 and its target will share responsibility for handling keyboard events.
 
 You can set this property yourself, or you can use the
-ContentFirstChildTarget mixin to automatically set the target to the
+ContentFirstChildTargetMixin mixin to automatically set the target to the
 component's first child.
 
   **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.

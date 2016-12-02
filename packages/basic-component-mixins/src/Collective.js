@@ -20,22 +20,22 @@
  * In this configuration, the three components will all have a `this.collective`
  * reference that refers to a shared instance of the `Collective` class.
  *
- * The [Keyboard](Keyboard.md) mixin they use is sensitive to the presence of
+ * The [KeyboardMixin](KeyboardMixin.md) they use is sensitive to the presence of
  * the collective. Among other things, it will ensure that only the outermost
  * element above — the basic-arrow-selection — will be a tab stop that can
  * receive the keyboard focus. This lets the user perceive the component
- * arrangement above as a single unit. The Keyboard mixin will also give each
+ * arrangement above as a single unit. The KeyboardMixin mixin will also give each
  * element in the collective a chance to process any keyboard events. So, even
  * though the basic-arrow-selection element will have the focus, the standard
  * keyboard navigation provided by basic-carousel will continue to work.
  *
- * The [SelectionAriaActive](SelectionAriaActive.md) mixin also respects
+ * The [SelectionAriaActiveMixin](SelectionAriaActiveMixin.md) also respects
  * collectives when using the `aria-activedescendant` and `role` attributes.
  * Those will be applied to the outermost element (basic-arrow-selection, above)
  * so that ARIA can correctly understand the arrangement of the elements.
  *
  * You can put elements into collectives yourself, or you can use the
- * [TargetInCollective](TargetInCollective.md) mixin.
+ * [TargetInCollectiveMixin](TargetInCollectiveMixin.md).
  */
 class Collective {
 
@@ -145,7 +145,7 @@ class Collective {
     // REVIEW: Uncommenting these lines makes collectives more efficient, as
     // only the outermost element in the collective will do the attribute work.
     // However, that requires that all members of a collective implement the
-    // same mixins (e.g., SelectionAriaActive), which feels limiting. Leaving
+    // same mixins (e.g., SelectionAriaActiveMixin), which feels limiting. Leaving
     // this in here as a comment until this can be considered further.
 
     // } else if (element !== element.collective.outermostElement) {

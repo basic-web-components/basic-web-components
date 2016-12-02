@@ -1,6 +1,6 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
 
 
@@ -9,7 +9,7 @@ const selectedItemSymbol = createSymbol('selectedItem');
 
 
 const base = ElementBase.compose(
-  FractionalSelection
+  FractionalSelectionMixin
 );
 
 
@@ -135,9 +135,9 @@ function renderSelection() {
   if (!this.selectedItem) {
     return;
   }
-  const selection = FractionalSelection.helpers.elementSelection(this);
+  const selection = FractionalSelectionMixin.helpers.elementSelection(this);
   const itemCount = this.items ? this.items.length : 0;
-  const damped = FractionalSelection.helpers.dampedSelection(selection, itemCount);
+  const damped = FractionalSelectionMixin.helpers.dampedSelection(selection, itemCount);
   // Use a percentage so the transform will still work if screen size changes
   // (e.g., if device orientation changes).
   const left = -damped * 100;

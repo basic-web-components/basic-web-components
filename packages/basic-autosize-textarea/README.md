@@ -18,16 +18,16 @@ This component generally exposes all the same attributes/properties as a
 standard HTML `<textarea>`.
 
   **Kind**: global class
-**Mixes**: <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
-  , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
+**Mixes**: <code>[GenericMixin](../basic-component-mixins/docs/GenericMixin.md)</code>
+  , <code>[DistributedChildrenContentMixin](../basic-component-mixins/docs/DistributedChildrenContentMixin.md)</code>
   
 
 * [AutosizeTextarea](#AutosizeTextarea)
     * [.autoSize()](#AutosizeTextarea+autoSize)
     * ["change"](#AutosizeTextarea.event_change)
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
-    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
+    * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["content-changed"](#DistributedChildrenContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenContent+contentChanged)
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.minimumRows](#AutosizeTextarea+minimumRows) : <code>number</code>
     * [.value](#AutosizeTextarea+value) : <code>string</code>
@@ -45,21 +45,21 @@ By default, this method is invoked whenever the text content changes.
 Fires when the user types in the textarea.
 
   **Kind**: event emitted by <code>[AutosizeTextarea](#AutosizeTextarea)</code>
-<a name="DistributedChildrenAsContent+content"></a>
+<a name="DistributedChildrenContent+content"></a>
 
 ### autosizeTextarea.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
-  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent.event_content-changed"></a>
+  **Kind**: instance property of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent.event_content-changed"></a>
 
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent+contentChanged"></a>
+  **Kind**: event emitted by <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent+contentChanged"></a>
 
 ### autosizeTextarea.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -69,7 +69,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+  **Kind**: instance method of <code>[AutosizeTextarea](#AutosizeTextarea)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
 <a name="Generic+generic"></a>
 
 ### autosizeTextarea.generic : <code>Boolean</code>

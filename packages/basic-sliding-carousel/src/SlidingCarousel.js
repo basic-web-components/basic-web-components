@@ -1,30 +1,30 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
-import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
+import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
+import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import SlidingViewport from '../../basic-sliding-viewport/src/SlidingViewport'; // jshint ignore:line
-import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
+import SwipeDirectionMixin from '../../basic-component-mixins/src/SwipeDirectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
+import TargetInCollectiveMixin from '../../basic-component-mixins/src/TargetInCollectiveMixin';
+import TrackpadDirectionMixin from '../../basic-component-mixins/src/TrackpadDirectionMixin';
 
 const base = ElementBase.compose(
-  ContentAsItems,
-  DirectionSelection,
-  DistributedChildrenAsContent,
-  FractionalSelection,
-  Keyboard,
-  KeyboardDirection,
-  SelectionAriaActive,
-  SingleSelection,
-  SwipeDirection,
-  TargetInCollective,
-  TrackpadDirection
+  ContentItemsMixin,
+  DirectionSelectionMixin,
+  DistributedChildrenContentMixin,
+  FractionalSelectionMixin,
+  KeyboardMixin,
+  KeyboardDirectionMixin,
+  SelectionAriaActiveMixin,
+  SingleSelectionMixin,
+  SwipeDirectionMixin,
+  TargetInCollectiveMixin,
+  TrackpadDirectionMixin
 );
 
 
@@ -52,17 +52,17 @@ const base = ElementBase.compose(
  * See that component for more details on use.
  *
  * @extends ElementBase
- * @mixes ContentAsItems
- * @mixes DirectionSelection
- * @mixes DistributedChildrenAsContent
- * @mixes Generic
- * @mixes Keyboard
- * @mixes KeyboardDirection
- * @mixes SelectionAriaActive
- * @mixes SingleSelection
- * @mixes SwipeDirection
- * @mixes TargetInCollective
- * @mixes TrackpadDirection
+ * @mixes ContentItemsMixin
+ * @mixes DirectionSelectionMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes GenericMixin
+ * @mixes KeyboardMixin
+ * @mixes KeyboardDirectionMixin
+ * @mixes SelectionAriaActiveMixin
+ * @mixes SingleSelectionMixin
+ * @mixes SwipeDirectionMixin
+ * @mixes TargetInCollectiveMixin
+ * @mixes TrackpadDirectionMixin
  */
 class SlidingCarousel extends base {
 

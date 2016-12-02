@@ -10,10 +10,10 @@ import createSymbol from './createSymbol';
  * To use these Symbol objects in your own component, include this module and
  * then create a property or method whose key is the desired Symbol.
  *
- *     import 'SingleSelection' from 'basic-component-mixins/src/SingleSelection';
+ *     import 'SingleSelectionMixin' from 'basic-component-mixins/src/SingleSelectionMixin';
  *     import 'symbols' from 'basic-component-mixins/src/symbols';
  *
- *     class MyElement extends SingleSelection(HTMLElement) {
+ *     class MyElement extends SingleSelectionMixin(HTMLElement) {
  *       [symbols.applySelection](item, selected) {
  *         // This will be invoked whenever an item is selected/deselected.
  *       }

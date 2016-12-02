@@ -1,14 +1,14 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
-import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import ContentFirstChildTargetMixin from '../../basic-component-mixins/src/ContentFirstChildTargetMixin';
+import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
+import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
+import TargetInCollectiveMixin from '../../basic-component-mixins/src/TargetInCollectiveMixin';
+import TargetSelectionMixin from '../../basic-component-mixins/src/TargetSelectionMixin';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
@@ -18,13 +18,13 @@ const previousHandledIndexSymbol = createSymbol('previousHandledIndex');
 
 
 const base = ElementBase.compose(
-  ContentFirstChildTarget,
-  DirectionSelection,
-  DistributedChildrenAsContent,
-  Keyboard,
-  KeyboardDirection,
-  TargetInCollective,
-  TargetSelection
+  ContentFirstChildTargetMixin,
+  DirectionSelectionMixin,
+  DistributedChildrenContentMixin,
+  KeyboardMixin,
+  KeyboardDirectionMixin,
+  TargetInCollectiveMixin,
+  TargetSelectionMixin
 );
 
 /**
@@ -48,13 +48,13 @@ const base = ElementBase.compose(
  * will select the corresponding list item.
  *
  * @extends ElementBase
- * @mixes ContentFirstChildTarget
- * @mixes DirectionSelection
- * @mixes DistributedChildrenAsContent
- * @mixes Keyboard
- * @mixes KeyboardDirection
- * @mixes TargetInCollective
- * @mixes TargetSelection
+ * @mixes ContentFirstChildTargetMixin
+ * @mixes DirectionSelectionMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes KeyboardMixin
+ * @mixes KeyboardDirectionMixin
+ * @mixes TargetInCollectiveMixin
+ * @mixes TargetSelectionMixin
  */
 class PageDots extends base {
 

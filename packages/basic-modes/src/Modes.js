@@ -1,17 +1,17 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
+import TargetInCollectiveMixin from '../../basic-component-mixins/src/TargetInCollectiveMixin';
 
 const base = ElementBase.compose(
-  ContentAsItems,
-  DistributedChildrenAsContent,
-  SelectionAriaActive,
-  SingleSelection,
-  TargetInCollective
+  ContentItemsMixin,
+  DistributedChildrenContentMixin,
+  SelectionAriaActiveMixin,
+  SingleSelectionMixin,
+  TargetInCollectiveMixin
 );
 
 
@@ -27,11 +27,11 @@ const base = ElementBase.compose(
  * This component doesn't provide any UI for changing which mode is shown.
  *
  * @extends ElementBase
- * @mixes ContentAsItems
- * @mixes DistributedChildrenAsContent
- * @mixes SelectionAriaActive
- * @mixes SingleSelection
- * @mixes TargetInCollective
+ * @mixes ContentItemsMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes SelectionAriaActiveMixin
+ * @mixes SingleSelectionMixin
+ * @mixes TargetInCollectiveMixin
  */
 class Modes extends base {
 

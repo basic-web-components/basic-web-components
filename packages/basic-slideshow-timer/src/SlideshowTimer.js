@@ -1,22 +1,22 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import ContentFirstChildTargetMixin from '../../basic-component-mixins/src/ContentFirstChildTargetMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
+import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
-import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
+import TargetInCollectiveMixin from '../../basic-component-mixins/src/TargetInCollectiveMixin';
+import TargetSelectionMixin from '../../basic-component-mixins/src/TargetSelectionMixin';
+import TimerSelectionMixin from '../../basic-component-mixins/src/TimerSelectionMixin';
 
 
 const base = ElementBase.compose(
-  ContentFirstChildTarget,
-  DistributedChildrenAsContent,
-  Keyboard,
-  KeyboardDirection,
-  TargetInCollective,
-  TargetSelection,
-  TimerSelection
+  ContentFirstChildTargetMixin,
+  DistributedChildrenContentMixin,
+  KeyboardMixin,
+  KeyboardDirectionMixin,
+  TargetInCollectiveMixin,
+  TargetSelectionMixin,
+  TimerSelectionMixin
 );
 
 
@@ -41,17 +41,17 @@ const base = ElementBase.compose(
  * elements, and exists chiefly as a convenience for use in scenarios like the
  * one above. If you're developing a component that will always want to provide
  * slideshow semantics, consider directly applying the
- * [TimerSelection](../basic-component-mixins/docs/TimerSelection.md) mixin
+ * [TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md)
  * to your component.
  *
  * @extends ElementBase
- * @mixes ContentFirstChildTarget
- * @mixes DistributedChildrenAsContent
- * @mixes Keyboard
- * @mixes KeyboardDirection
- * @mixes TargetInCollective
- * @mixes TargetSelection
- * @mixes TimerSelection
+ * @mixes ContentFirstChildTargetMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes KeyboardMixin
+ * @mixes KeyboardDirectionMixin
+ * @mixes TargetInCollectiveMixin
+ * @mixes TargetSelectionMixin
+ * @mixes TimerSelectionMixin
  */
 class SlideshowTimer extends base {
 

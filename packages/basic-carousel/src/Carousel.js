@@ -1,33 +1,33 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 
-import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
-import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
-import SwipeDirection from '../../basic-component-mixins/src/SwipeDirection';
+import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
+import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
+import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionAnimationMixin';
+import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
+import SwipeDirectionMixin from '../../basic-component-mixins/src/SwipeDirectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetInCollective from '../../basic-component-mixins/src/TargetInCollective';
-import TrackpadDirection from '../../basic-component-mixins/src/TrackpadDirection';
+import TargetInCollectiveMixin from '../../basic-component-mixins/src/TargetInCollectiveMixin';
+import TrackpadDirectionMixin from '../../basic-component-mixins/src/TrackpadDirectionMixin';
 
 
 const base = ElementBase.compose(
-  ContentAsItems,
-  DirectionSelection,
-  DistributedChildrenAsContent,
-  FractionalSelection,
-  Keyboard,
-  KeyboardDirection,
-  SelectionAnimation,
-  SelectionAriaActive,
-  SingleSelection,
-  SwipeDirection,
-  TargetInCollective,
-  TrackpadDirection
+  ContentItemsMixin,
+  DirectionSelectionMixin,
+  DistributedChildrenContentMixin,
+  FractionalSelectionMixin,
+  KeyboardMixin,
+  KeyboardDirectionMixin,
+  SelectionAnimationMixin,
+  SelectionAriaActiveMixin,
+  SingleSelectionMixin,
+  SwipeDirectionMixin,
+  TargetInCollectiveMixin,
+  TrackpadDirectionMixin
 );
 
 
@@ -92,7 +92,7 @@ const base = ElementBase.compose(
  * The standard basic-carousel component supports navigation via the following
  * input methods:
  *
- * * Keyboard. When the carousel has focus, the user can press Left, Right,
+ * * KeyboardMixin. When the carousel has focus, the user can press Left, Right,
  *   Home, or End. These navigate to the expected element.
  * * Touch. On mobile and other touch-enabled devices, the user can drag left or
  *   right.
@@ -130,19 +130,19 @@ const base = ElementBase.compose(
  * using assistive technologies.
  *
  * @extends ElementBase
- * @mixes ContentAsItems
- * @mixes DirectionSelection
- * @mixes DistributedChildrenAsContent
- * @mixes FractionalSelection
- * @mixes Generic
- * @mixes Keyboard
- * @mixes KeyboardDirection
- * @mixes SelectionAnimation
- * @mixes SelectionAriaActive
- * @mixes SingleSelection
- * @mixes SwipeDirection
- * @mixes TargetInCollective
- * @mixes TrackpadDirection
+ * @mixes ContentItemsMixin
+ * @mixes DirectionSelectionMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes FractionalSelectionMixin
+ * @mixes GenericMixin
+ * @mixes KeyboardMixin
+ * @mixes KeyboardDirectionMixin
+ * @mixes SelectionAnimationMixin
+ * @mixes SelectionAriaActiveMixin
+ * @mixes SingleSelectionMixin
+ * @mixes SwipeDirectionMixin
+ * @mixes TargetInCollectiveMixin
+ * @mixes TrackpadDirectionMixin
  */
 class Carousel extends base {
 

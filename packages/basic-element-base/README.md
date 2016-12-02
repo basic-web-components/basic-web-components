@@ -16,11 +16,11 @@ The ElementBase base class does not register itself as a custom element with
 the browser, and hence cannot be independently instantiated.
 
   **Kind**: global class
-**Mixes**: <code>[AttributeMarshalling](../basic-component-mixins/docs/AttributeMarshalling.md)</code>
-  , <code>[Composable](../basic-component-mixins/docs/Composable.md)</code>
-  , <code>[DistributedChildren](../basic-component-mixins/docs/DistributedChildren.md)</code>
-  , <code>[ShadowElementReferences](../basic-component-mixins/docs/ShadowElementReferences.md)</code>
-  , <code>[ShadowTemplate](../basic-component-mixins/docs/ShadowTemplate.md)</code>
+**Mixes**: <code>[AttributeMarshallingMixin](../basic-component-mixins/docs/AttributeMarshallingMixin.md)</code>
+  , <code>[ComposableMixin](../basic-component-mixins/docs/ComposableMixin.md)</code>
+  , <code>[DistributedChildrenMixin](../basic-component-mixins/docs/DistributedChildrenMixin.md)</code>
+  , <code>[ShadowElementReferencesMixin](../basic-component-mixins/docs/ShadowElementReferencesMixin.md)</code>
+  , <code>[ShadowTemplateMixin](../basic-component-mixins/docs/ShadowTemplateMixin.md)</code>
   
 
 * [ElementBase](#ElementBase)
@@ -43,7 +43,7 @@ Instead of writing:
 
 You can write:
 
-    let MyClass = Composable(BaseClass).compose(
+    let MyClass = ComposableMixin(BaseClass).compose(
       Mixin1,
       Mixin2,
       Mixin3,

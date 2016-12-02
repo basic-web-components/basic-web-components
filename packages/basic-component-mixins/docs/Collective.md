@@ -23,22 +23,22 @@ these components are nested together, they form an implicit unit called a
 In this configuration, the three components will all have a `this.collective`
 reference that refers to a shared instance of the `Collective` class.
 
-The [Keyboard](Keyboard.md) mixin they use is sensitive to the presence of
+The [KeyboardMixin](KeyboardMixin.md) they use is sensitive to the presence of
 the collective. Among other things, it will ensure that only the outermost
 element above — the basic-arrow-selection — will be a tab stop that can
 receive the keyboard focus. This lets the user perceive the component
-arrangement above as a single unit. The Keyboard mixin will also give each
+arrangement above as a single unit. The KeyboardMixin mixin will also give each
 element in the collective a chance to process any keyboard events. So, even
 though the basic-arrow-selection element will have the focus, the standard
 keyboard navigation provided by basic-carousel will continue to work.
 
-The [SelectionAriaActive](SelectionAriaActive.md) mixin also respects
+The [SelectionAriaActiveMixin](SelectionAriaActiveMixin.md) also respects
 collectives when using the `aria-activedescendant` and `role` attributes.
 Those will be applied to the outermost element (basic-arrow-selection, above)
 so that ARIA can correctly understand the arrangement of the elements.
 
 You can put elements into collectives yourself, or you can use the
-[TargetInCollective](TargetInCollective.md) mixin.
+[TargetInCollectiveMixin](TargetInCollectiveMixin.md).
 
   **Kind**: global class
 
@@ -48,6 +48,7 @@ You can put elements into collectives yourself, or you can use the
     * [.elements](#Collective+elements) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.invokeMethod(method, [...args])](#Collective+invokeMethod)
     * [.outermostElement](#Collective+outermostElement)
+    * [.promoteAttribute(element, attributeName, [defaultValue])](#Collective.promoteAttribute)
 
 <a name="Collective+assimilate"></a>
 
@@ -103,3 +104,28 @@ The outermost element in the collective.
 By convention, this is the first element in the `elements` array.
 
   **Kind**: instance property of <code>[Collective](#Collective)</code>
+<a name="Collective.promoteAttribute"></a>
+
+### Collective.promoteAttribute(element, attributeName, [defaultValue])
+Set a default attribute on an element that may be in a collective. This
+function is designed to help collectives work with browser features like
+keyboard support and ARIA, where only the outermost member of a collective
+should expose, e.g., tabindex or ARIA attributes.
+
+If the element is not in a collective, and the element doesn't have the
+given attribute, set the attribute on the element to the default value.
+
+If the element *is* in a collective, scan the collective's inner members
+to see if any of them have the attribute. If so, promote that value to the
+outermost element. If a `residualValue` is supplied, set the inner members'
+attribute to that value; otherwise, remove the attribute from the inner
+member.
+
+  **Kind**: static method of <code>[Collective](#Collective)</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| element | <code>HTMLElement</code> | An element that may or may not be in a collective. |
+| attributeName | <code>string</code> | The name of the attribute. |
+| [defaultValue] | <code>string</code> | The default value for the attribute. |
+

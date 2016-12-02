@@ -1,7 +1,7 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import WrappedStandardElement from '../../basic-wrapped-standard-element/src/WrappedStandardElement';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import Generic from '../../basic-component-mixins/src/Generic';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
 
 
@@ -11,8 +11,8 @@ const minimumRowsSymbol = createSymbol('minimumRows');
 const valueTracksContentSymbol = createSymbol('valueTracksContent');
 
 const base = WrappedStandardElement.wrap('textarea').compose(
-  DistributedChildrenAsContent,
-  Generic
+  DistributedChildrenContentMixin,
+  GenericMixin
 );
 
 /**
@@ -31,8 +31,8 @@ const base = WrappedStandardElement.wrap('textarea').compose(
  * This component generally exposes all the same attributes/properties as a
  * standard HTML `<textarea>`.
  *
- * @mixes Generic
- * @mixes DistributedChildrenAsContent
+ * @mixes GenericMixin
+ * @mixes DistributedChildrenContentMixin
  */
 class AutosizeTextarea extends base {
 

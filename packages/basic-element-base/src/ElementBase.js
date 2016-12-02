@@ -1,8 +1,8 @@
-import AttributeMarshalling from '../../basic-component-mixins/src/AttributeMarshalling';
-import Composable from '../../basic-component-mixins/src/Composable';
-import DistributedChildren from '../../basic-component-mixins/src/DistributedChildren';
-import ShadowElementReferences from '../../basic-component-mixins/src/ShadowElementReferences';
-import ShadowTemplate from '../../basic-component-mixins/src/ShadowTemplate';
+import AttributeMarshallingMixin from '../../basic-component-mixins/src/AttributeMarshallingMixin';
+import ComposableMixin from '../../basic-component-mixins/src/ComposableMixin';
+import DistributedChildrenMixin from '../../basic-component-mixins/src/DistributedChildrenMixin';
+import ShadowElementReferencesMixin from '../../basic-component-mixins/src/ShadowElementReferencesMixin';
+import ShadowTemplateMixin from '../../basic-component-mixins/src/ShadowTemplateMixin';
 
 
 /**
@@ -19,17 +19,17 @@ import ShadowTemplate from '../../basic-component-mixins/src/ShadowTemplate';
  * The ElementBase base class does not register itself as a custom element with
  * the browser, and hence cannot be independently instantiated.
  *
- * @mixes AttributeMarshalling
- * @mixes Composable
- * @mixes DistributedChildren
- * @mixes ShadowElementReferences
- * @mixes ShadowTemplate
+ * @mixes AttributeMarshallingMixin
+ * @mixes ComposableMixin
+ * @mixes DistributedChildrenMixin
+ * @mixes ShadowElementReferencesMixin
+ * @mixes ShadowTemplateMixin
  */
-class ElementBase extends Composable(HTMLElement).compose(
-  ShadowTemplate,          // before node finding, so shadow root is populated
-  ShadowElementReferences, // before marshalling, so properties can use refs
-  AttributeMarshalling,
-  DistributedChildren
+class ElementBase extends ComposableMixin(HTMLElement).compose(
+  ShadowTemplateMixin,          // before node finding, so shadow root is populated
+  ShadowElementReferencesMixin, // before marshalling, so properties can use refs
+  AttributeMarshallingMixin,
+  DistributedChildrenMixin
 ) {}
 
 export default ElementBase;

@@ -1,13 +1,13 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentFirstChildTarget from '../../basic-component-mixins/src/ContentFirstChildTarget';
-import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import Generic from '../../basic-component-mixins/src/Generic';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
+import ContentFirstChildTargetMixin from '../../basic-component-mixins/src/ContentFirstChildTargetMixin';
+import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
+import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetSelection from '../../basic-component-mixins/src/TargetSelection';
+import TargetSelectionMixin from '../../basic-component-mixins/src/TargetSelectionMixin';
 import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
@@ -20,12 +20,12 @@ let idCount = 0;
 
 
 const base = ElementBase.compose(
-  ContentFirstChildTarget,
-  DirectionSelection,
-  DistributedChildrenAsContent,
-  Generic,
-  KeyboardDirection,
-  TargetSelection
+  ContentFirstChildTargetMixin,
+  DirectionSelectionMixin,
+  DistributedChildrenContentMixin,
+  GenericMixin,
+  KeyboardDirectionMixin,
+  TargetSelectionMixin
 );
 
 
@@ -68,17 +68,17 @@ const base = ElementBase.compose(
  * basic-tab-strip element for a variant appearance in which the available width
  * of the element is divided up equally among tabs.
  *
- * The generic default styling of the tab strip will present the classic
+ * The GenericMixin default styling of the tab strip will present the classic
  * skeumorphic look of rounded tabs attached to a surface. You can remove this
- * styling by setting the `generic` property/attribute to false.
+ * styling by setting the `GenericMixin` property/attribute to false.
  *
  * @extends ElementBase
- * @mixes ContentFirstChildTarget
- * @mixes DirectionSelection
- * @mixes DistributedChildrenAsContent
- * @mixes Generic
- * @mixes KeyboardDirection
- * @mixes TargetSelection
+ * @mixes ContentFirstChildTargetMixin
+ * @mixes DirectionSelectionMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes GenericMixin
+ * @mixes KeyboardDirectionMixin
+ * @mixes TargetSelectionMixin
  */
 class TabStrip extends base {
 
@@ -302,7 +302,7 @@ class TabStrip extends base {
         flex: 1;
       }
 
-      /* Generic style */
+      /* GenericMixin style */
       :host([generic=""]) #pages {
         background: white;
         border: 1px solid #ccc;
@@ -326,13 +326,13 @@ class TabStrip extends base {
         background-color: #eee;
       }
 
-      /* Generic, top/bottom positions */
+      /* GenericMixin, top/bottom positions */
       :host([generic=""][tab-position="top"]) .tab:not(:last-child),
       :host([generic=""][tab-position="bottom"]) .tab:not(:last-child) {
         margin-right: 0.2em;
       }
 
-      /* Generic, top position */
+      /* GenericMixin, top position */
       :host([generic=""][tab-position="top"]) .tab {
         border-radius: 0.25em 0.25em 0 0;
         margin-bottom: -1px;
@@ -341,7 +341,7 @@ class TabStrip extends base {
         border-bottom-color: transparent;
       }
 
-      /* Generic, bottom position */
+      /* GenericMixin, bottom position */
       :host([generic=""][tab-position="bottom"]) .tab {
         border-radius: 0 0 0.25em 0.25em;
         margin-top: -1px;
@@ -350,13 +350,13 @@ class TabStrip extends base {
         border-top-color: transparent;
       }
 
-      /* Generic, left/right positions */
+      /* GenericMixin, left/right positions */
       :host([generic=""][tab-position="left"]) .tab:not(:last-child),
       :host([generic=""][tab-position="right"]) .tab:not(:last-child) {
         margin-bottom: 0.2em;
       }
 
-      /* Generic, left position */
+      /* GenericMixin, left position */
       :host([generic=""][tab-position="left"]) .tab {
         border-radius: 0.25em 0 0 0.25em;
         margin-right: -1px;
@@ -365,7 +365,7 @@ class TabStrip extends base {
         border-right-color: transparent;
       }
 
-      /* Generic, right position */
+      /* GenericMixin, right position */
       :host([generic=""][tab-position="right"]) .tab {
         border-radius: 0 0.25em 0.25em 0;
         margin-left: -1px;

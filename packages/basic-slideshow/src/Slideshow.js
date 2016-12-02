@@ -1,22 +1,22 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import FractionalSelection from '../../basic-component-mixins/src/FractionalSelection';
-import SelectionAnimation from '../../basic-component-mixins/src/SelectionAnimation';
-import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
+import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionAnimationMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TimerSelection from '../../basic-component-mixins/src/TimerSelection';
+import TimerSelectionMixin from '../../basic-component-mixins/src/TimerSelectionMixin';
 
 
 const base = ElementBase.compose(
-  ContentAsItems,
-  DistributedChildrenAsContent,
-  FractionalSelection,
-  SelectionAnimation,
-  SelectionAriaActive,
-  SingleSelection,
-  TimerSelection
+  ContentItemsMixin,
+  DistributedChildrenContentMixin,
+  FractionalSelectionMixin,
+  SelectionAnimationMixin,
+  SelectionAriaActiveMixin,
+  SingleSelectionMixin,
+  TimerSelectionMixin
 );
 
 /**
@@ -28,18 +28,18 @@ const base = ElementBase.compose(
  *
  * This component can be used on its own. To incorporate slideshow behavior into
  * a component of your own, apply the
- * [TimerSelection](../basic-component-mixins/docs/TimerSelection.md) mixin. To
+ * [TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md). To
  * add slideshow functionality to a component such as a carousel, wrap it with
  * the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
  *
  * @extends ElementBase
- * @mixes ContentAsItems
- * @mixes DistributedChildrenAsContent
- * @mixes FractionalSelection
- * @mixes SelectionAnimation
- * @mixes SelectionAriaActive
- * @mixes SingleSelection
- * @mixes TimerSelection
+ * @mixes ContentItemsMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes FractionalSelectionMixin
+ * @mixes SelectionAnimationMixin
+ * @mixes SelectionAriaActiveMixin
+ * @mixes SingleSelectionMixin
+ * @mixes TimerSelectionMixin
  */
 class Slideshow extends base {
 

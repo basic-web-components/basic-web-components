@@ -40,28 +40,26 @@ as big as necessary. You can apply the `spread` CSS class to a
 basic-tab-strip element for a variant appearance in which the available width
 of the element is divided up equally among tabs.
 
-The generic default styling of the tab strip will present the classic
+The GenericMixin default styling of the tab strip will present the classic
 skeumorphic look of rounded tabs attached to a surface. You can remove this
-styling by setting the `generic` property/attribute to false.
+styling by setting the `GenericMixin` property/attribute to false.
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
-**Mixes**: <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code>
-  , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
-  , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[Generic](../basic-component-mixins/docs/Generic.md)</code>
-  , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
-  , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
+**Mixes**: <code>[ContentFirstChildTargetMixin](../basic-component-mixins/docs/ContentFirstChildTargetMixin.md)</code>
+  , <code>[DirectionSelectionMixin](../basic-component-mixins/docs/DirectionSelectionMixin.md)</code>
+  , <code>[DistributedChildrenContentMixin](../basic-component-mixins/docs/DistributedChildrenContentMixin.md)</code>
+  , <code>[GenericMixin](../basic-component-mixins/docs/GenericMixin.md)</code>
+  , <code>[KeyboardDirectionMixin](../basic-component-mixins/docs/KeyboardDirectionMixin.md)</code>
+  , <code>[TargetSelectionMixin](../basic-component-mixins/docs/TargetSelectionMixin.md)</code>
   
 
 * [TabStrip](#TabStrip) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
-    * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
-    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
+    * [.canSelectNext](#TargetSelection+canSelectNext) : <code>boolean</code>
+    * [.canSelectPrevious](#TargetSelection+canSelectPrevious) : <code>boolean</code>
+    * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["content-changed"](#DistributedChildrenContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenContent+contentChanged)
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+symbols.goDown)
     * [.goEnd()](#KeyboardDirection+symbols.goEnd)
@@ -69,70 +67,51 @@ styling by setting the `generic` property/attribute to false.
     * [.goRight()](#KeyboardDirection+symbols.goRight)
     * [.goStart()](#KeyboardDirection+symbols.goStart)
     * [.goUp()](#KeyboardDirection+symbols.goUp)
-    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
-    * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
-    * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
-    * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
+    * [.selectedFraction](#TargetSelection+selectedFraction) : <code>number</code>
+    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
-    * [.selectFirst()](#SingleSelection+selectFirst)
-    * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
+    * [.selectFirst()](#TargetSelection+selectFirst)
+    * [.selectionRequired](#TargetSelection+selectionRequired) : <code>boolean</code>
     * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
-    * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
-    * [.selectLast()](#SingleSelection+selectLast)
-    * [.selectNext()](#SingleSelection+selectNext)
-    * [.selectPrevious()](#SingleSelection+selectPrevious)
+    * [.selectLast()](#TargetSelection+selectLast)
+    * [.selectNext()](#TargetSelection+selectNext)
+    * [.selectPrevious()](#TargetSelection+selectPrevious)
     * [.tabPosition](#TabStrip+tabPosition) : <code>string</code>
-    * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
+    * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
 
-<a name="SingleSelection+symbols.applySelection"></a>
-
-### TabStrip.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: static method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
-
-<a name="SingleSelection+canSelectNext"></a>
+<a name="TargetSelection+canSelectNext"></a>
 
 ### tabStrip.canSelectNext : <code>boolean</code>
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+canSelectPrevious"></a>
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+canSelectPrevious"></a>
 
 ### tabStrip.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="DistributedChildrenAsContent+content"></a>
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="DistributedChildrenContent+content"></a>
 
 ### tabStrip.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent.event_content-changed"></a>
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent.event_content-changed"></a>
 
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[TabStrip](#TabStrip)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent+contentChanged"></a>
+  **Kind**: event emitted by <code>[TabStrip](#TabStrip)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent+contentChanged"></a>
 
 ### tabStrip.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -142,7 +121,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
 <a name="Generic+generic"></a>
 
 ### tabStrip.generic : <code>Boolean</code>
@@ -196,20 +175,6 @@ Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
-<a name="SingleSelection+symbols.itemAdded"></a>
-
-### TabStrip.itemAdded(item)
-Handle a new item being added to the list.
-
-The default implementation of this method simply sets the item's
-selection state to false.
-
-  **Kind**: static method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being added |
-
 <a name="TargetSelection+items"></a>
 
 ### tabStrip.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -235,65 +200,38 @@ be ignored. Conversely, if this is "vertical", the Left Arrow and Right
 Arrow keys will be ignored.
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="SingleSelection.event_selected-index-changed"></a>
+<a name="TargetSelection+selectedFraction"></a>
 
-### "selected-index-changed"
-Fires when the selectedIndex property changes.
+### tabStrip.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
 
-  **Kind**: event emitted by <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedIndex | <code>number</code> | The new selected index. |
-
-<a name="SingleSelection.event_selected-item-changed"></a>
-
-### "selected-item-changed"
-Fires when the selectedItem property changes.
-
-  **Kind**: event emitted by <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
-| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
-
-<a name="SingleSelection+selectedIndex"></a>
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectedIndex"></a>
 
 ### tabStrip.selectedIndex : <code>number</code>
-The index of the item which is currently selected.
+Index of the currently selected item, or -1 if there is no selection.
 
-If `selectionWraps` is false, the index is -1 if there is no selection.
-In that case, setting the index to -1 will deselect any
-currently-selected item.
-
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectedItem"></a>
-
-### tabStrip.selectedItem : <code>object</code>
-The currently selected item, or null if there is no selection.
-
-Setting this property to null deselects any currently-selected item.
-
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TargetSelection+selectedItem"></a>
 
 ### tabStrip.selectedItem : <code>HTMLElement</code>
 The currently selected item, or null if there is no selection.
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="SingleSelection+selectFirst"></a>
+<a name="TargetSelection+selectFirst"></a>
 
 ### tabStrip.selectFirst()
 Select the first item in the list.
 
-  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectionRequired"></a>
+  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectionRequired"></a>
 
 ### tabStrip.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="TargetSelection+selectionWraps"></a>
 
@@ -302,33 +240,26 @@ True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 **Default**: <code>{false}</code>  
-<a name="SingleSelection+selectionWraps"></a>
-
-### tabStrip.selectionWraps : <code>boolean</code>
-True if selection navigations wrap from last to first, and vice versa.
-
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-**Default**: <code>false</code>  
-<a name="SingleSelection+selectLast"></a>
+<a name="TargetSelection+selectLast"></a>
 
 ### tabStrip.selectLast()
 Select the last item in the list.
 
-  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectNext"></a>
+  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectNext"></a>
 
 ### tabStrip.selectNext()
 Select the next item in the list.
 
-  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectPrevious"></a>
+  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectPrevious"></a>
 
 ### tabStrip.selectPrevious()
 Select the previous item in the list.
 
 If the list has no selection, the last item will be selected.
 
-  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: instance method of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TabStrip+tabPosition"></a>
 
 ### tabStrip.tabPosition : <code>string</code>
@@ -337,12 +268,6 @@ values are "top", "left", "right", and "bottom".
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>
 **Default**: <code>&quot;\&quot;top\&quot;&quot;</code>  
-<a name="ContentFirstChildTarget+target"></a>
-
-### tabStrip.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
 <a name="TargetSelection+target"></a>
 
 ### tabStrip.target : <code>HTMLElement</code>
@@ -350,3 +275,9 @@ Gets/sets the target element to which this component will delegate
 selection actions.
 
   **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="ContentFirstChildTarget+target"></a>
+
+### tabStrip.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+  **Kind**: instance property of <code>[TabStrip](#TabStrip)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.

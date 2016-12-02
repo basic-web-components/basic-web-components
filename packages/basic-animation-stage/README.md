@@ -12,7 +12,7 @@ in progress.
 This component is intended to be used as a programmatic rendering surface for
 components which want to show transitional effects.
 
-The component uses the [SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)
+The component uses [SelectionAnimationMixin](../basic-component-mixins/docs/SelectionAnimationMixin.md)
 mixin, which in turn uses the Web Animations API. For use on browsers which
 do not support that API natively, you will need to load the
 [Web Animations polyfill](https://github.com/web-animations/web-animations-js).
@@ -22,26 +22,26 @@ require the Web Animations API, see [basic-sliding-viewport](../basic-sliding-vi
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
-**Mixes**: <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code>
-  , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code>
-  , <code>[SelectionAriaActive](../basic-component-mixins/docs/SelectionAriaActive.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
+**Mixes**: <code>[ContentItemsMixin](../basic-component-mixins/docs/ContentItemsMixin.md)</code>
+  , <code>[DistributedChildrenContentMixin](../basic-component-mixins/docs/DistributedChildrenContentMixin.md)</code>
+  , <code>[SelectionAnimationMixin](../basic-component-mixins/docs/SelectionAnimationMixin.md)</code>
+  , <code>[SelectionAriaActiveMixin](../basic-component-mixins/docs/SelectionAriaActiveMixin.md)</code>
+  , <code>[SingleSelectionMixin](../basic-component-mixins/docs/SingleSelectionMixin.md)</code>
   
 
 * [AnimationStage](#AnimationStage) ⇐ <code>ElementBase</code>
     * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
-    * [.applySelection(item, selected)](#ContentAsItems+symbols.applySelection)
+    * [.applySelection(item, selected)](#ContentItems+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
-    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
-    * [.itemAdded(item)](#ContentAsItems+symbols.itemAdded)
+    * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["content-changed"](#DistributedChildrenContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenContent+contentChanged)
+    * [.itemAdded(item)](#ContentItems+symbols.itemAdded)
     * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
-    * [.items](#ContentAsItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["items-changed"](#ContentAsItems.event_items-changed)
-    * [.itemsChanged()](#ContentAsItems+itemsChanged)
+    * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["items-changed"](#ContentItems.event_items-changed)
+    * [.itemsChanged()](#ContentItems+itemsChanged)
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedFraction](#SelectionAnimation+selectedFraction) : <code>number</code>
@@ -72,7 +72,7 @@ effects will typically be handled by other mixins.
 | item | <code>HTMLElement</code> | the item being selected/deselected |
 | selected | <code>boolean</code> | true if the item is selected, false if not |
 
-<a name="ContentAsItems+symbols.applySelection"></a>
+<a name="ContentItems+symbols.applySelection"></a>
 
 ### AnimationStage.applySelection(item, selected)
 Apply the selection state to a single item.
@@ -81,7 +81,7 @@ Invoke this method to signal that the selected state of the indicated item
 has changed. By default, this applies a `selected` CSS class if the item
 is selected, and removed it if not selected.
 
-  **Kind**: static method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
+  **Kind**: static method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -102,21 +102,21 @@ True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="DistributedChildrenAsContent+content"></a>
+<a name="DistributedChildrenContent+content"></a>
 
 ### animationStage.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
-  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent.event_content-changed"></a>
+  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent.event_content-changed"></a>
 
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent+contentChanged"></a>
+  **Kind**: event emitted by <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent+contentChanged"></a>
 
 ### animationStage.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -126,8 +126,8 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="ContentAsItems+symbols.itemAdded"></a>
+  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="ContentItems+symbols.itemAdded"></a>
 
 ### AnimationStage.itemAdded(item)
 This method is invoked whenever a new item is added to the list.
@@ -135,7 +135,7 @@ This method is invoked whenever a new item is added to the list.
 The default implementation of this method does nothing. You can override
 this to perform per-item initialization.
 
-  **Kind**: static method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems#symbols](../basic-component-mixins/docs/ContentAsItems#symbols.md)</code> mixin.
+  **Kind**: static method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -155,27 +155,27 @@ selection state to false.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | the item being added |
 
-<a name="ContentAsItems+items"></a>
+<a name="ContentItems+items"></a>
 
 ### animationStage.items : <code>Array.&lt;HTMLElement&gt;</code>
 The current set of items in the list. See the top-level documentation for
 mixin for a description of how items differ from plain content.
 
-  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-<a name="ContentAsItems.event_items-changed"></a>
+  **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+<a name="ContentItems.event_items-changed"></a>
 
 ### "items-changed"
 Fires when the items in the list change.
 
-  **Kind**: event emitted by <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
-<a name="ContentAsItems+itemsChanged"></a>
+  **Kind**: event emitted by <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+<a name="ContentItems+itemsChanged"></a>
 
 ### animationStage.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentAsItems](../basic-component-mixins/docs/ContentAsItems.md)</code> mixin.
+  **Kind**: instance method of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
 <a name="SingleSelection.event_selected-index-changed"></a>
 
 ### "selected-index-changed"
@@ -206,7 +206,7 @@ A fractional value indicating how far the user has currently advanced to
 the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
 user is halfway between items 3 and 4.
 
-For more details, see the [FractionalSelection](FractionalSelection.md)
+For more details, see [FractionalSelectionMixin](FractionalSelectionMixin.md)
 mixin.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SelectionAnimation](../basic-component-mixins/docs/SelectionAnimation.md)</code> mixin.
@@ -215,9 +215,8 @@ mixin.
 ### animationStage.selectedIndex : <code>number</code>
 The index of the item which is currently selected.
 
-If `selectionWraps` is false, the index is -1 if there is no selection.
-In that case, setting the index to -1 will deselect any
-currently-selected item.
+A `selectedIndex` of -1 indicates there is no selection. Setting this
+property to -1 will remove any existing selection.
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectedItem"></a>
@@ -226,6 +225,10 @@ currently-selected item.
 The currently selected item, or null if there is no selection.
 
 Setting this property to null deselects any currently-selected item.
+Setting this property to an object that is not in the list has no effect.
+
+TODO: Even if selectionRequired, can still explicitly set selectedItem to null.
+TODO: If selectionRequired, leave selection alone?
 
   **Kind**: instance property of <code>[AnimationStage](#AnimationStage)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
 <a name="SingleSelection+selectFirst"></a>

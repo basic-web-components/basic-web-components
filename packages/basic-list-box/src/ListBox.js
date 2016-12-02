@@ -1,18 +1,18 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import DistributedChildrenAsContent from '../../basic-component-mixins/src/DistributedChildrenAsContent';
-import ClickSelection from '../../basic-component-mixins/src/ClickSelection';
-import ContentAsItems from '../../basic-component-mixins/src/ContentAsItems';
-import DirectionSelection from '../../basic-component-mixins/src/DirectionSelection';
-import Generic from '../../basic-component-mixins/src/Generic';
-import Keyboard from '../../basic-component-mixins/src/Keyboard';
-import KeyboardDirection from '../../basic-component-mixins/src/KeyboardDirection';
-import KeyboardPagedSelection from '../../basic-component-mixins/src/KeyboardPagedSelection';
-import KeyboardPrefixSelection from '../../basic-component-mixins/src/KeyboardPrefixSelection';
-import SelectedItemTextAsValue from '../../basic-component-mixins/src/SelectedItemTextAsValue';
-import SelectionAriaActive from '../../basic-component-mixins/src/SelectionAriaActive';
-import SelectionHighlight from '../../basic-component-mixins/src/SelectionHighlight';
-import SelectionInView from '../../basic-component-mixins/src/SelectionInView';
-import SingleSelection from '../../basic-component-mixins/src/SingleSelection';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import ClickSelectionMixin from '../../basic-component-mixins/src/ClickSelectionMixin';
+import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
+import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
+import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
+import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
+import KeyboardPagedSelectionMixin from '../../basic-component-mixins/src/KeyboardPagedSelectionMixin';
+import KeyboardPrefixSelectionMixin from '../../basic-component-mixins/src/KeyboardPrefixSelectionMixin';
+import SelectedItemTextValueMixin from '../../basic-component-mixins/src/SelectedItemTextValueMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import SelectionHighlightMixin from '../../basic-component-mixins/src/SelectionHighlightMixin';
+import SelectionInViewMixin from '../../basic-component-mixins/src/SelectionInViewMixin';
+import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
 
 
@@ -55,36 +55,36 @@ import symbols from '../../basic-component-mixins/src/symbols';
  * The user can also select an item by typing the beginning of an item's text.
  *
  * @extends ElementBase
- * @mixes ClickSelection
- * @mixes ContentAsItems
- * @mixes DirectionSelection
- * @mixes DistributedChildrenAsContent
- * @mixes Generic
- * @mixes Keyboard
- * @mixes KeyboardDirection
- * @mixes KeyboardPagedSelection
- * @mixes KeyboardPrefixSelection
- * @mixis SelectedItemTextAsValue
- * @mixes SelectionAriaActive
- * @mixes SelectionHighlight
- * @mixes SelectionInView
- * @mixes SingleSelection
+ * @mixes ClickSelectionMixin
+ * @mixes ContentItemsMixin
+ * @mixes DirectionSelectionMixin
+ * @mixes DistributedChildrenContentMixin
+ * @mixes GenericMixin
+ * @mixes KeyboardMixin
+ * @mixes KeyboardDirectionMixin
+ * @mixes KeyboardPagedSelectionMixin
+ * @mixes KeyboardPrefixSelectionMixin
+ * @mixis SelectedItemTextValueMixin
+ * @mixes SelectionAriaActiveMixin
+ * @mixes SelectionHighlightMixin
+ * @mixes SelectionInViewMixin
+ * @mixes SingleSelectionMixin
  */
 class ListBox extends ElementBase.compose(
-  ClickSelection,
-  ContentAsItems,
-  DirectionSelection,
-  DistributedChildrenAsContent,
-  Generic,
-  Keyboard,
-  KeyboardDirection,
-  KeyboardPagedSelection,
-  KeyboardPrefixSelection,
-  SelectedItemTextAsValue,
-  SelectionAriaActive,
-  SelectionHighlight,
-  SelectionInView,
-  SingleSelection
+  ClickSelectionMixin,
+  ContentItemsMixin,
+  DirectionSelectionMixin,
+  DistributedChildrenContentMixin,
+  GenericMixin,
+  KeyboardMixin,
+  KeyboardDirectionMixin,
+  KeyboardPagedSelectionMixin,
+  KeyboardPrefixSelectionMixin,
+  SelectedItemTextValueMixin,
+  SelectionAriaActiveMixin,
+  SelectionHighlightMixin,
+  SelectionInViewMixin,
+  SingleSelectionMixin
 ) {
 
   get [symbols.defaults]() {
@@ -120,7 +120,7 @@ class ListBox extends ElementBase.compose(
         overflow-y: scroll; /* for momentum scrolling */
       }
 
-      /* Generic appearance */
+      /* GenericMixin appearance */
       :host([generic=""]) {
         border: 1px solid gray;
         box-sizing: border-box;

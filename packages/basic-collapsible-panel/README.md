@@ -6,7 +6,7 @@ A panel which can be expanded/collapsed with an animated transition.
 
 [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-collapsible-panel/)
 
-This component combines the OpenClose mixin and a simple CSS height
+This component combines the OpenCloseMixin mixin and a simple CSS height
 animation.
 
 This component handles only the duties of collapsing and expanding. It does
@@ -15,7 +15,7 @@ you must provide that user interface yourself.
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
-**Mixes**: <code>[OpenClose](../basic-component-mixins/docs/OpenClose.md)</code>
+**Mixes**: <code>[OpenCloseMixin](../basic-component-mixins/docs/OpenCloseMixin.md)</code>
   
 
 * [CollapsiblePanel](#CollapsiblePanel) ⇐ <code>ElementBase</code>

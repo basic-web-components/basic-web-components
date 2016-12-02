@@ -25,94 +25,73 @@ movement is detected. To cause the buttons to always appear, apply the
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
-**Mixes**: <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code>
-  , <code>[DirectionSelection](../basic-component-mixins/docs/DirectionSelection.md)</code>
-  , <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code>
-  , <code>[Keyboard](../basic-component-mixins/docs/Keyboard.md)</code>
-  , <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code>
-  , <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code>
-  , <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code>
-  , <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code>
+**Mixes**: <code>[ContentFirstChildTargetMixin](../basic-component-mixins/docs/ContentFirstChildTargetMixin.md)</code>
+  , <code>[DirectionSelectionMixin](../basic-component-mixins/docs/DirectionSelectionMixin.md)</code>
+  , <code>[DistributedChildrenContentMixin](../basic-component-mixins/docs/DistributedChildrenContentMixin.md)</code>
+  , <code>[KeyboardMixin](../basic-component-mixins/docs/KeyboardMixin.md)</code>
+  , <code>[KeyboardDirectionMixin](../basic-component-mixins/docs/KeyboardDirectionMixin.md)</code>
+  , <code>[TargetInCollectiveMixin](../basic-component-mixins/docs/TargetInCollectiveMixin.md)</code>
+  , <code>[TargetSelectionMixin](../basic-component-mixins/docs/TargetSelectionMixin.md)</code>
   
 
 * [ArrowSelection](#ArrowSelection) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
-    * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
-    * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
-    * [.content](#DistributedChildrenAsContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
-    * ["content-changed"](#DistributedChildrenAsContent.event_content-changed)
-    * [.contentChanged()](#DistributedChildrenAsContent+contentChanged)
+    * [.canSelectNext](#TargetSelection+canSelectNext) : <code>boolean</code>
+    * [.canSelectPrevious](#TargetSelection+canSelectPrevious) : <code>boolean</code>
+    * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
+    * ["content-changed"](#DistributedChildrenContent.event_content-changed)
+    * [.contentChanged()](#DistributedChildrenContent+contentChanged)
     * [.goDown()](#KeyboardDirection+symbols.goDown)
     * [.goEnd()](#KeyboardDirection+symbols.goEnd)
     * [.goLeft()](#KeyboardDirection+symbols.goLeft)
     * [.goRight()](#KeyboardDirection+symbols.goRight)
     * [.goStart()](#KeyboardDirection+symbols.goStart)
     * [.goUp()](#KeyboardDirection+symbols.goUp)
-    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#TargetSelection+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * [.itemsChanged()](#TargetSelection+itemsChanged)
     * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
-    * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
-    * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
-    * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
-    * [.selectedItem](#SingleSelection+selectedItem) : <code>object</code>
+    * [.selectedFraction](#TargetSelection+selectedFraction) : <code>number</code>
+    * [.selectedIndex](#TargetSelection+selectedIndex) : <code>number</code>
     * [.selectedItem](#TargetSelection+selectedItem) : <code>HTMLElement</code>
-    * [.selectFirst()](#SingleSelection+selectFirst)
-    * [.selectionRequired](#SingleSelection+selectionRequired) : <code>boolean</code>
-    * [.selectionWraps](#SingleSelection+selectionWraps) : <code>boolean</code>
+    * [.selectFirst()](#TargetSelection+selectFirst)
+    * [.selectionRequired](#TargetSelection+selectionRequired) : <code>boolean</code>
     * [.selectionWraps](#TargetSelection+selectionWraps) : <code>boolean</code>
-    * [.selectLast()](#SingleSelection+selectLast)
-    * [.selectNext()](#SingleSelection+selectNext)
-    * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
+    * [.selectLast()](#TargetSelection+selectLast)
+    * [.selectNext()](#TargetSelection+selectNext)
+    * [.selectPrevious()](#TargetSelection+selectPrevious)
     * [.target](#TargetSelection+target) : <code>HTMLElement</code>
     * [.target](#ContentFirstChildTarget+target) : <code>HTMLElement</code>
+    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
 
-<a name="SingleSelection+symbols.applySelection"></a>
-
-### ArrowSelection.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
-
-<a name="SingleSelection+canSelectNext"></a>
+<a name="TargetSelection+canSelectNext"></a>
 
 ### arrowSelection.canSelectNext : <code>boolean</code>
 True if the selection can be moved to the next item, false if not (the
 selected item is the last item in the list).
 
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+canSelectPrevious"></a>
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+canSelectPrevious"></a>
 
 ### arrowSelection.canSelectPrevious : <code>boolean</code>
 True if the selection can be moved to the previous item, false if not
 (the selected item is the first one in the list).
 
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="DistributedChildrenAsContent+content"></a>
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="DistributedChildrenContent+content"></a>
 
 ### arrowSelection.content : <code>Array.&lt;HTMLElement&gt;</code>
 The content of this component, defined to be the flattened array of
 children distributed to the component.
 
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent.event_content-changed"></a>
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent.event_content-changed"></a>
 
 ### "content-changed"
 This event is raised when the component's contents (including distributed
 children) have changed.
 
-  **Kind**: event emitted by <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
-<a name="DistributedChildrenAsContent+contentChanged"></a>
+  **Kind**: event emitted by <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
+<a name="DistributedChildrenContent+contentChanged"></a>
 
 ### arrowSelection.contentChanged()
 Invoked when the contents of the component (including distributed
@@ -122,7 +101,7 @@ This method is also invoked when a component is first instantiated; the
 contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenAsContent](../basic-component-mixins/docs/DistributedChildrenAsContent.md)</code> mixin.
+  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
 <a name="KeyboardDirection+symbols.goDown"></a>
 
 ### ArrowSelection.goDown()
@@ -165,20 +144,6 @@ Invoked when the user wants to go/navigate up.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
-<a name="SingleSelection+symbols.itemAdded"></a>
-
-### ArrowSelection.itemAdded(item)
-Handle a new item being added to the list.
-
-The default implementation of this method simply sets the item's
-selection state to false.
-
-  **Kind**: static method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being added |
-
 <a name="TargetSelection+items"></a>
 
 ### arrowSelection.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -219,72 +184,38 @@ be ignored. Conversely, if this is "vertical", the Left Arrow and Right
 Arrow keys will be ignored.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[KeyboardDirection](../basic-component-mixins/docs/KeyboardDirection.md)</code> mixin.
-<a name="SingleSelection.event_selected-index-changed"></a>
+<a name="TargetSelection+selectedFraction"></a>
 
-### "selected-index-changed"
-Fires when the selectedIndex property changes.
+### arrowSelection.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
 
-  **Kind**: event emitted by <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedIndex | <code>number</code> | The new selected index. |
-
-<a name="SingleSelection.event_selected-item-changed"></a>
-
-### "selected-item-changed"
-Fires when the selectedItem property changes.
-
-  **Kind**: event emitted by <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| detail.selectedItem | <code>HTMLElement</code> | The new selected item. |
-| detail.previousItem | <code>HTMLElement</code> | The previously selected item. |
-
-<a name="SingleSelection+selectedIndex"></a>
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectedIndex"></a>
 
 ### arrowSelection.selectedIndex : <code>number</code>
-The index of the item which is currently selected.
+Index of the currently selected item, or -1 if there is no selection.
 
-If `selectionWraps` is false, the index is -1 if there is no selection.
-In that case, setting the index to -1 will deselect any
-currently-selected item.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectedItem"></a>
-
-### arrowSelection.selectedItem : <code>object</code>
-The currently selected item, or null if there is no selection.
-
-Setting this property to null deselects any currently-selected item.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TargetSelection+selectedItem"></a>
 
 ### arrowSelection.selectedItem : <code>HTMLElement</code>
 The currently selected item, or null if there is no selection.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
-<a name="SingleSelection+selectFirst"></a>
+<a name="TargetSelection+selectFirst"></a>
 
 ### arrowSelection.selectFirst()
 Select the first item in the list.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectionRequired"></a>
+  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectionRequired"></a>
 
 ### arrowSelection.selectionRequired : <code>boolean</code>
 True if the list should always have a selection (if it has items).
 
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-**Default**: <code>false</code>  
-<a name="SingleSelection+selectionWraps"></a>
-
-### arrowSelection.selectionWraps : <code>boolean</code>
-True if selection navigations wrap from last to first, and vice versa.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 **Default**: <code>false</code>  
 <a name="TargetSelection+selectionWraps"></a>
 
@@ -293,40 +224,26 @@ True if selection navigations wrap from last to first, and vice versa.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 **Default**: <code>{false}</code>  
-<a name="SingleSelection+selectLast"></a>
+<a name="TargetSelection+selectLast"></a>
 
 ### arrowSelection.selectLast()
 Select the last item in the list.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectNext"></a>
+  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectNext"></a>
 
 ### arrowSelection.selectNext()
 Select the next item in the list.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="SingleSelection+selectPrevious"></a>
+  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
+<a name="TargetSelection+selectPrevious"></a>
 
 ### arrowSelection.selectPrevious()
 Select the previous item in the list.
 
 If the list has no selection, the last item will be selected.
 
-  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="TargetInCollective+target"></a>
-
-### arrowSelection.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-Set this to point to another element. That target element will be
-implicitly added to the component's collective. That is, the component
-and its target will share responsibility for handling keyboard events.
-
-You can set this property yourself, or you can use the
-ContentFirstChildTarget mixin to automatically set the target to the
-component's first child.
-
-  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
+  **Kind**: instance method of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetSelection](../basic-component-mixins/docs/TargetSelection.md)</code> mixin.
 <a name="TargetSelection+target"></a>
 
 ### arrowSelection.target : <code>HTMLElement</code>
@@ -340,3 +257,17 @@ selection actions.
 Gets/sets the current target of the component.
 
   **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[ContentFirstChildTarget](../basic-component-mixins/docs/ContentFirstChildTarget.md)</code> mixin.
+<a name="TargetInCollective+target"></a>
+
+### arrowSelection.target : <code>HTMLElement</code>
+Gets/sets the current target of the component.
+
+Set this to point to another element. That target element will be
+implicitly added to the component's collective. That is, the component
+and its target will share responsibility for handling keyboard events.
+
+You can set this property yourself, or you can use the
+ContentFirstChildTargetMixin mixin to automatically set the target to the
+component's first child.
+
+  **Kind**: instance property of <code>[ArrowSelection](#ArrowSelection)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.

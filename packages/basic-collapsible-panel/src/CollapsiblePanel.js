@@ -1,5 +1,5 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
-import OpenClose from '../../basic-component-mixins/src/OpenClose';
+import OpenCloseMixin from '../../basic-component-mixins/src/OpenCloseMixin';
 
 
 /**
@@ -7,7 +7,7 @@ import OpenClose from '../../basic-component-mixins/src/OpenClose';
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-collapsible-panel/)
  *
- * This component combines the OpenClose mixin and a simple CSS height
+ * This component combines the OpenCloseMixin mixin and a simple CSS height
  * animation.
  *
  * This component handles only the duties of collapsing and expanding. It does
@@ -15,9 +15,9 @@ import OpenClose from '../../basic-component-mixins/src/OpenClose';
  * you must provide that user interface yourself.
  *
  * @extends ElementBase
- * @mixes OpenClose
+ * @mixes OpenCloseMixin
  */
-class CollapsiblePanel extends OpenClose(ElementBase) {
+class CollapsiblePanel extends OpenCloseMixin(ElementBase) {
 
   constructor() {
     super();
