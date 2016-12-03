@@ -98,6 +98,7 @@ class ListBox extends ElementBase.compose(
   }
 
   get template() {
+    const baseTemplate = super.template || '';
     return `
       <style>
       :host {
@@ -140,6 +141,7 @@ class ListBox extends ElementBase.compose(
       <div id="itemsContainer" role="none">
         <slot></slot>
       </div>
+      ${baseTemplate}
     `;
   }
 

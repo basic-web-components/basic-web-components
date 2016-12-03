@@ -2,7 +2,7 @@
 export default (base) => {
 
   /**
-   * Mixin which applies standard highlight colors to a selected item.
+   * Template mixin which applies standard highlight colors to a selected item.
    *
    * This mixin highlights textual items (e.g., in a list) in a standard way by
    * using the CSS `highlight` and `highlighttext` color values. These values
@@ -14,18 +14,17 @@ export default (base) => {
    */
   class SelectionHighlight extends base {
 
-    constructor() {
-      super();
-      if (this.shadowRoot) {
-        const style = document.createElement('style');
-        style.innerHTML = `
-          ::slotted(.selected) {
+    get template() {
+      const baseTemplate = super.template || '';
+      return `
+        <style>
+          :host([generic=""]) ::slotted(.selected) {
             background-color: highlight;
             color: highlighttext;
           }
-        `;
-        this.shadowRoot.appendChild(style);
-      }
+        </style>
+        ${baseTemplate}
+      `;
     }
 
   }
