@@ -6,6 +6,10 @@
  */
 
 import PageDots from './src/PageDots';
+import PageDotsMixin from './src/PageDotsMixin';
+import CarouselWithDots from './src/CarouselWithDots';
 
 window.Basic = window.Basic || {};
 window.Basic.PageDots = PageDots;
+window.Basic.PageDotsMixin = PageDotsMixin;
+window.Basic.CarouselWithDots = CarouselWithDots;
