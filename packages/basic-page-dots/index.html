@@ -8,7 +8,6 @@
 
   <script src="../demos/lib/web-animations.min.js"></script>
   <!-- TODO: Use npm distribution of v1 polyfills when available. -->
-  <script src="../demos/bower_components/webcomponents.js/webcomponents-lite.js"></script>
   <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
   <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
   <script src="../basic-carousel/dist/basic-carousel.js"></script>
@@ -29,8 +28,7 @@
     display: flex;
   }
 
-  basic-page-dots,
-  basic-carousel {
+  carousel-with-dots {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
@@ -38,18 +36,21 @@
   }
   </style>
 
+  <script>
+    class CarouselWithDots extends Basic.PageDotsMixin(Basic.Carousel) {}
+    customElements.define('carousel-with-dots', CarouselWithDots);
+  </script>
+
 </head>
 
 <body>
-  <basic-page-dots>
-    <basic-carousel aria-label="Nature scenes">
-      <img src="../demos/resources/images/image1.jpg" alt="Lake">
-      <img src="../demos/resources/images/image2.jpg" alt="Horses">
-      <img src="../demos/resources/images/image6.jpg" alt="Wheat">
-      <img src="../demos/resources/images/image3.jpg" alt="Mountain">
-      <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
-    </basic-carousel>
-  </basic-page-dots>
+  <carousel-with-dots aria-label="Nature scenes">
+    <img src="../demos/resources/images/image1.jpg" alt="Lake">
+    <img src="../demos/resources/images/image2.jpg" alt="Horses">
+    <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+    <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+    <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+  </carousel-with-dots>
 </body>
 
 </html>

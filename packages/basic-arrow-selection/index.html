@@ -29,8 +29,7 @@
     display: flex;
   }
 
-  basic-arrow-selection,
-  basic-carousel {
+  carousel-with-arrows {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
@@ -38,18 +37,21 @@
   }
   </style>
 
+  <script>
+    class CarouselWithArrows extends Basic.ArrowSelectionMixin(Basic.Carousel) {}
+    customElements.define('carousel-with-arrows', CarouselWithArrows);
+  </script>
+
 </head>
 
 <body>
-  <basic-arrow-selection class="overlay">
-    <basic-carousel aria-label="Nature scenes">
-      <img src="../demos/resources/images/image1.jpg" alt="Lake">
-      <img src="../demos/resources/images/image2.jpg" alt="Horses">
-      <img src="../demos/resources/images/image6.jpg" alt="Wheat">
-      <img src="../demos/resources/images/image3.jpg" alt="Mountain">
-      <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
-    </basic-carousel>
-  </basic-arrow-selection>
+  <carousel-with-arrows class="overlayArrows" aria-label="Nature scenes">
+    <img src="../demos/resources/images/image1.jpg" alt="Lake">
+    <img src="../demos/resources/images/image2.jpg" alt="Horses">
+    <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+    <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+    <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+  </carousel-with-arrows>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
  * the source file(s) you want from the src folder.
  */
 
-import ArrowSelection from './src/ArrowSelection';
+import ArrowSelectionMixin from './src/ArrowSelectionMixin';
 
 window.Basic = window.Basic || {};
-window.Basic.ArrowSelection = ArrowSelection;
+window.Basic.ArrowSelectionMixin = ArrowSelectionMixin;
