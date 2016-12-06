@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>basic-carousel with arrows and dots</title>
+
+  <script src="../demos/lib/web-animations.min.js"></script>
+  <!-- TODO: Use npm distribution of v1 polyfills when available. -->
+  <!-- <script src="../demos/bower_components/shadydom/shadydom.min.js"></script> -->
+  <!-- <script src="../demos/bower_components/custom-elements/custom-elements.min.js"></script> -->
+  <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
+  <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
+  <script src="../basic-component-mixins/dist/basic-component-mixins.js"></script>
+  <script src="../basic-page-dots/dist/basic-page-dots.js"></script>
+  <script src="./dist/basic-carousel.js"></script>
+  <link rel="stylesheet" href="../demos/demos.css">
+
+  <style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    background: black;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  carousel-with-dots-and-timer {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+  </style>
+
+  <script>
+    class CarouselWithDotsAndTimer extends Basic.Carousel.compose(
+      Basic.PageDotsMixin,
+      Basic.TimerSelectionMixin
+    ) {}
+    customElements.define('carousel-with-dots-and-timer', CarouselWithDotsAndTimer);
+  </script>
+
+</head>
+
+<body>
+  <carousel-with-dots-and-timer
+    aria-label="Nature scenes"
+    class="overlayArrows"
+    playing="true"
+    selection-animation-effect="crossfade"
+    selection-timer-duration="3000"
+    selection-wraps="true">
+    <img src="../demos/resources/images/image1.jpg" alt="Lake">
+    <img src="../demos/resources/images/image2.jpg" alt="Horses">
+    <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+    <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+    <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+  </carousel-with-dots-and-timer>
+</body>
+
+</html>

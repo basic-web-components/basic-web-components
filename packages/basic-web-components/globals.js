@@ -23,7 +23,6 @@ import * as modes from '../basic-modes/globals';
 import * as pageDots from '../basic-page-dots/globals';
 import * as playControls from '../basic-play-controls/globals';
 import * as slideshow from '../basic-slideshow/globals';
-import * as slideshowTimer from '../basic-slideshow-timer/globals';
 import * as slidingCarousel from '../basic-sliding-carousel/globals';
 import * as slidingViewport from '../basic-sliding-viewport/globals';
 import * as spreadItems from '../basic-spread-items/globals';

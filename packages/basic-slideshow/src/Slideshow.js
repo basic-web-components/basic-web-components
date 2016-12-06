@@ -28,9 +28,7 @@ const base = ElementBase.compose(
  *
  * This component can be used on its own. To incorporate slideshow behavior into
  * a component of your own, apply the
- * [TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md). To
- * add slideshow functionality to a component such as a carousel, wrap it with
- * the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
+ * [TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md).
  *
  * @extends ElementBase
  * @mixes ContentItemsMixin
