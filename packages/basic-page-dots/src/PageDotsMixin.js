@@ -95,7 +95,7 @@ export default (base) => class PageDots extends base {
         z-index: 1;
       }
 
-      #container {
+      #dotNavigationContainer {
         display: -webkit-flex;
         display: flex;
         -webkit-flex: 1;
@@ -141,7 +141,7 @@ export default (base) => class PageDots extends base {
       </style>
 
       <div id="dots" role="none"></div>
-      <div id="container" role="none">
+      <div id="dotNavigationContainer" role="none">
         ${baseTemplate}
       </div>
     `;

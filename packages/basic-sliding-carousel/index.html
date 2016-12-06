@@ -33,30 +33,32 @@
     margin: 5px;
   }
 
-  basic-arrow-selection,
-  basic-page-dots,
-  basic-sliding-carousel {
+  sliding-carousel-with-arrows-and-dots {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
     flex: 1;
-  } 
+  }
   </style>
+
+  <script>
+    class CarouselWithArrowsAndDots extends Basic.SlidingCarousel.compose(
+      Basic.ArrowSelectionMixin,
+      Basic.PageDotsMixin
+    ) {}
+    customElements.define('sliding-carousel-with-arrows-and-dots', CarouselWithArrowsAndDots);
+  </script>
 
 </head>
 
 <body>
-  <basic-arrow-selection class="overlay">
-    <basic-page-dots>
-      <basic-sliding-carousel aria-label="Nature scenes">
-        <img src="../demos/resources/images/image1.jpg" alt="Lake">
-        <img src="../demos/resources/images/image2.jpg" alt="Horses">
-        <img src="../demos/resources/images/image6.jpg" alt="Wheat">
-        <img src="../demos/resources/images/image3.jpg" alt="Mountain">
-        <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
-      </basic-sliding-carousel>
-    </basic-page-dots>
-  </basic-arrow-selection>
+  <sliding-carousel-with-arrows-and-dots class="overlayArrows" aria-label="Nature scenes">
+    <img src="../demos/resources/images/image1.jpg" alt="Lake">
+    <img src="../demos/resources/images/image2.jpg" alt="Horses">
+    <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+    <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+    <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+  </sliding-carousel-with-arrows-and-dots>
 </body>
 
 </html>

@@ -112,20 +112,22 @@ export default (base) => {
       return `
         <style>
         :host {
-          display: -webkit-flex;
-          display: flex;
-        }
-
-        #container {
+          -webkit-align-items: stretch;
+          align-items: stretch;
           display: -webkit-flex;
           display: flex;
           -webkit-flex: 1;
           flex: 1;
+          -webkit-justify-content: center;
+          justify-content: center;
         }
 
-        #container ::slotted(*) {
+        #arrowNavigationContainer {
+          display: -webkit-flex;
+          display: flex;
           -webkit-flex: 1;
           flex: 1;
+          position: relative;
         }
 
         .navigationButton {
@@ -206,7 +208,7 @@ export default (base) => {
             </g>
           </svg>
         </button>
-        <div id="container" role="none">
+        <div id="arrowNavigationContainer" role="none">
           ${baseTemplate}
         </div>
         <button id="buttonRight" class="navigationButton" disabled tabindex="-1" aria-hidden="true">

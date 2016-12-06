@@ -16,26 +16,26 @@
   <link rel="stylesheet" href="../demos/demos.css">
 
   <style>
-  basic-arrow-selection {
-    box-sizing: border-box;
-    display: -webkit-flex;
-    display: flex;
+  modes-with-arrows {
     height: 300px;
     max-width: 100%;
     width: 400px;
   }
 
-  basic-modes {
-    -webkit-align-items: center;
-    align-items: center;
+  .panel {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex: 1;
-    flex: 1;
-    -webkit-justify-content: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
     justify-content: center;
   }
   </style>
+
+  <script>
+    class ModesWithArrows extends Basic.ArrowSelectionMixin(Basic.Modes) {}
+    customElements.define('modes-with-arrows', ModesWithArrows);
+  </script>
 
 </head>
 
@@ -46,13 +46,11 @@
     with a basic-arrow-selection component to provide lateral navigation with
     buttons and the keyboard.
   </p>
-  <basic-arrow-selection class="showArrows">
-    <basic-modes aria-label="Panels">
-      <div>One</div>
-      <div>Two</div>
-      <div>Three</div>
-    </basic-modes>
-  </basic-arrow-selection>
+  <modes-with-arrows class="showArrows" aria-label="Panels">
+    <div class="panel">One</div>
+    <div class="panel">Two</div>
+    <div class="panel">Three</div>
+  </modes-with-arrows>
 </body>
 
 </html>
