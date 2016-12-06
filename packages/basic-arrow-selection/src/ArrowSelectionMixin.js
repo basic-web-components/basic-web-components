@@ -218,11 +218,8 @@ export default (base) => {
  */
 function assumeButtonFocus(element, button) {
   button.addEventListener('mousedown', event => {
-    // Given the outer element focus if it doesn't already have it.
-    const outermost = element.collective.outermostElement;
-    if (outermost) {
-      outermost.focus();
-    }
+    // Given the main element the focus if it doesn't already have it.
+    element.focus();
     // Prevent the default focus-on-mousedown behavior.
     event.preventDefault();
   });

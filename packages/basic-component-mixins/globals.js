@@ -7,11 +7,8 @@
 
 import AttributeMarshallingMixin from './src/AttributeMarshallingMixin';
 import ClickSelectionMixin from './src/ClickSelectionMixin';
-import Collective from './src/Collective';
 import ComposableMixin from './src/ComposableMixin';
-import composeTemplates from './src/composeTemplates';
 import ContentItemsMixin from './src/ContentItemsMixin';
-import ContentFirstChildTargetMixin from './src/ContentFirstChildTargetMixin';
 import createSymbol from './src/createSymbol';
 import DirectionSelectionMixin from './src/DirectionSelectionMixin';
 import DistributedChildrenMixin from './src/DistributedChildrenMixin';
@@ -32,8 +29,6 @@ import ShadowTemplateMixin from './src/ShadowTemplateMixin';
 import SingleSelectionMixin from './src/SingleSelectionMixin';
 import SwipeDirectionMixin from './src/SwipeDirectionMixin';
 import symbols from './src/symbols';
-import TargetInCollectiveMixin from './src/TargetInCollectiveMixin';
-import TargetSelectionMixin from './src/TargetSelectionMixin';
 import TimerSelectionMixin from './src/TimerSelectionMixin';
 import TrackpadDirectionMixin from './src/TrackpadDirectionMixin';
 
@@ -41,11 +36,8 @@ window.Basic = window.Basic || {};
 
 window.Basic.AttributeMarshallingMixin = AttributeMarshallingMixin;
 window.Basic.ClickSelectionMixin = ClickSelectionMixin;
-window.Basic.Collective = Collective;
 window.Basic.ComposableMixin = ComposableMixin;
-window.Basic.composeTemplates = composeTemplates;
 window.Basic.ContentItemsMixin = ContentItemsMixin;
-window.Basic.ContentFirstChildTargetMixin = ContentFirstChildTargetMixin;
 window.Basic.createSymbol = createSymbol;
 window.Basic.DirectionSelectionMixin = DirectionSelectionMixin;
 window.Basic.DistributedChildrenMixin = DistributedChildrenMixin;
@@ -66,7 +58,5 @@ window.Basic.ShadowTemplateMixin = ShadowTemplateMixin;
 window.Basic.SingleSelectionMixin = SingleSelectionMixin;
 window.Basic.SwipeDirectionMixin = SwipeDirectionMixin;
 window.Basic.symbols = symbols;
-window.Basic.TargetInCollectiveMixin = TargetInCollectiveMixin;
-window.Basic.TargetSelectionMixin = TargetSelectionMixin;
 window.Basic.TimerSelectionMixin = TimerSelectionMixin;
 window.Basic.TrackpadDirectionMixin = TrackpadDirectionMixin;

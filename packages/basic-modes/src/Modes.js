@@ -4,14 +4,12 @@ import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixi
 import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
 import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetInCollectiveMixin from '../../basic-component-mixins/src/TargetInCollectiveMixin';
 
 const base = ElementBase.compose(
   ContentItemsMixin,
   DistributedChildrenContentMixin,
   SelectionAriaActiveMixin,
-  SingleSelectionMixin,
-  TargetInCollectiveMixin
+  SingleSelectionMixin
 );
 
 
@@ -31,7 +29,6 @@ const base = ElementBase.compose(
  * @mixes DistributedChildrenContentMixin
  * @mixes SelectionAriaActiveMixin
  * @mixes SingleSelectionMixin
- * @mixes TargetInCollectiveMixin
  */
 class Modes extends base {
 

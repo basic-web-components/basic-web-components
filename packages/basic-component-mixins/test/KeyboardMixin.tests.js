@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import Collective from '../src/Collective';
 import KeyboardMixin from '../src/KeyboardMixin';
 import symbols from '../src/symbols';
 
@@ -38,32 +37,6 @@ describe("KeyboardMixin", () => {
     fixture.setAttribute('tabindex', '1');
     container.appendChild(fixture);
     assert.equal(fixture.getAttribute('tabindex'), '1');
-  });
-
-  it("promotes the tabindex of collective created with elements in document", () => {
-    const outer = document.createElement('keyboard-test');
-    const inner = document.createElement('keyboard-test');
-    outer.setAttribute('id', 'outer');
-    inner.setAttribute('id', 'inner');
-    inner.setAttribute('tabindex', '1');
-    outer.appendChild(inner);
-    container.appendChild(outer); // Add to document first.
-    new Collective(outer, inner);
-    assert.equal(outer.getAttribute('tabindex'), '1');
-    assert.equal(inner.getAttribute('tabindex'), null);
-  });
-
-  it("promotes the tabindex of collective created and then added to document", () => {
-    const outer = document.createElement('keyboard-test');
-    const inner = document.createElement('keyboard-test');
-    outer.setAttribute('id', 'outer');
-    inner.setAttribute('id', 'inner');
-    inner.setAttribute('tabindex', '1');
-    outer.appendChild(inner);
-    new Collective(outer, inner); // Create collective first.
-    container.appendChild(outer);
-    assert.equal(outer.getAttribute('tabindex'), '1');
-    assert.equal(inner.getAttribute('tabindex'), null);
   });
 
   it("listens to keydown and fires the keydown() method", done => {

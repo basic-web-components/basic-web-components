@@ -11,7 +11,6 @@ import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionA
 import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import SwipeDirectionMixin from '../../basic-component-mixins/src/SwipeDirectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import TargetInCollectiveMixin from '../../basic-component-mixins/src/TargetInCollectiveMixin';
 import TrackpadDirectionMixin from '../../basic-component-mixins/src/TrackpadDirectionMixin';
 
 
@@ -26,7 +25,6 @@ const base = ElementBase.compose(
   SelectionAriaActiveMixin,
   SingleSelectionMixin,
   SwipeDirectionMixin,
-  TargetInCollectiveMixin,
   TrackpadDirectionMixin
 );
 
@@ -141,7 +139,6 @@ const base = ElementBase.compose(
  * @mixes SelectionAriaActiveMixin
  * @mixes SingleSelectionMixin
  * @mixes SwipeDirectionMixin
- * @mixes TargetInCollectiveMixin
  * @mixes TrackpadDirectionMixin
  */
 class Carousel extends base {

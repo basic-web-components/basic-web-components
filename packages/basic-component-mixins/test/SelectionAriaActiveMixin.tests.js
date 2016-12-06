@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import Collective from '../src/Collective';
 import SelectionAriaActiveMixin from '../src/SelectionAriaActiveMixin';
 import SingleSelectionMixin from '../src/SingleSelectionMixin';
 import symbols from '../src/symbols';
@@ -76,19 +75,6 @@ describe("SelectionAriaActiveMixin", () => {
     hasRole.setAttribute('role', 'tabs');
     container.appendChild(hasRole);
     assert.equal(hasRole.getAttribute('role'), 'tabs');
-  });
-
-  it("promotes the role of a collective and sets inner roles to 'none'", () => {
-    const outer = document.createElement('selection-aria-active-test');
-    const inner = document.createElement('selection-aria-active-test');
-    outer.setAttribute('id', 'outer');
-    inner.setAttribute('id', 'inner');
-    inner.setAttribute('role', 'tabs');
-    outer.appendChild(inner);
-    container.appendChild(outer); // Add to document first.
-    new Collective(outer, inner);
-    assert.equal(outer.getAttribute('role'), 'tabs');
-    assert.equal(inner.getAttribute('role'), 'none');
   });
 
 });

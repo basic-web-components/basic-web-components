@@ -1,11 +1,4 @@
-import Collective from './Collective';
-import createSymbol from './createSymbol';
-import safeAttributes from './safeAttributes';
 import symbols from './symbols';
-
-
-// Symbols for private data members on an element.
-const keydownListenerSymbol = createSymbol('keydownListener');
 
 
 /* Exported function extends a base class with Keyboard. */
@@ -43,53 +36,32 @@ export default (base) => {
    * A second feature provided by this mixin is that it implicitly makes the
    * component a tab stop if it isn't already, by setting `tabIndex` to 0. This
    * has the effect of adding the component to the tab order in document order.
-   *
-   * Finally, this mixin is designed to work with the optional
-   * [Collective](Collective.md) class via a mixin like
-   * [TargetInCollectiveMixin](TargetInCollectiveMixin.md). This allows a set of
-   * related component instances to cooperatively handle the keyboard. See the
-   * Collective class for details.
    */
   class Keyboard extends base {
 
     constructor() {
       super();
-      // Assume this component is going to handle the keyboard on its own.
-      startListeningToKeydown(this);
-    }
-
-    /*
-     * If we're now the outermost element of the collective, set up to receive
-     * keyboard events. If we're no longer the outermost element, stop
-     * listening.
-     */
-    collectiveChanged() {
-      if (super.collectiveChanged) { super.collectiveChanged(); }
-
-      if (this.collective.outermostElement !== this) {
-        // We're no longer the outermost element; stop listening.
-        if (isListeningToKeydown(this)) {
-          stopListeningToKeydown(this);
+      this.addEventListener('keydown', event => {
+        const handled = this[symbols.keydown](event);
+        if (handled) {
+          event.preventDefault();
+          event.stopPropagation();
         }
-        return;
-      }
-
-      if (!isListeningToKeydown(this)) {
-        startListeningToKeydown(this);
-      }
-
-      if (this.isConnected) {
-        Collective.promoteAttribute(this, 'tabindex', '0');
-        Collective.promoteAttribute(this, 'aria-label');
-      }
+      });
     }
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
-      safeAttributes.connected(this);
-      // Set a default tab index of 0 (document order) if no tab index exists.
-      Collective.promoteAttribute(this, 'tabindex', '0');
-      Collective.promoteAttribute(this, 'aria-label');
+      if (this.getAttribute('tabindex') == null) {
+        this.setAttribute('tabindex', this[symbols.defaults].tabindex);
+      }
+    }
+
+    get [symbols.defaults]() {
+      const defaults = super[symbols.defaults] || {};
+      // The default tab index is 0 (document order).
+      defaults.tabindex = 0;
+      return defaults;
     }
 
     /**
@@ -109,51 +81,3 @@ export default (base) => {
 
   return Keyboard;
 };
-
-
-// Fire the keydown() method on the element or (if it belongs to a collective)
-// all elements in the collective.
-//
-// Note: the value of 'this' is bound to the element which received the event.
-function keydown(event) {
-
-  let handled = false;
-
-  if (this.collective) {
-    // Give collective elements a shot at the event, working from innermost to
-    // outermost (this element).
-    const elements = this.collective.elements;
-    for (let i = elements.length - 1; i >= 0; i--) {
-      const element = elements[i];
-      handled = element[symbols.keydown] && element[symbols.keydown](event);
-      if (handled) {
-        break;
-      }
-    }
-  } else {
-    // Component is handling the keyboard on its own.
-    handled = this[symbols.keydown](event);
-  }
-
-  if (handled) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
-}
-
-
-function isListeningToKeydown(element) {
-  return element[keydownListenerSymbol] != null;
-}
-
-
-function startListeningToKeydown(element) {
-  element[keydownListenerSymbol] = keydown.bind(element);
-  element.addEventListener('keydown', element[keydownListenerSymbol]);
-}
-
-
-function stopListeningToKeydown(element) {
-  element.removeEventListener('keydown', element[keydownListenerSymbol]);
-  element[keydownListenerSymbol] = null;
-}

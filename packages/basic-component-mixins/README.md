@@ -257,13 +257,8 @@ common web component feature:
   camelCase `fooBar` property names.
 * [ClickSelection](docs/ClickSelection.md).
   Translates a click on a child element into a selection.
-* [Composable](docs/Composable.md).
-  Facilitates the application of a set of mixins.
 * [ContentAsItems](docs/ContentAsItems.md).
   Lets a component treat its content as items in a list.
-* [ContentFirstChildTarget](docs/ContentFirstChildTarget.md).
-  Allows a component to take its first child as a target it wants to augment in
-  some way.
 * [createSymbol](docs/createSymbol.md)
   Helper to creates a symbol that can be used for associating private data with
   an element.
@@ -315,12 +310,6 @@ common web component feature:
   Tracks the selection of a single item in a list.
 * [SwipeToDirection](docs/SwipeDirection.md).
   Translates left/right touch swipe gestures into selection semantics.
-* [TargetInCollective](docs/TargetInCollective.md).
-  Adds a component's target element (e.g., the component's first child) to
-  the set of elements collectively handling the keyboard.
-* [TargetSelection](docs/TargetSelection.md).
-  Allows a component to track and manage selection for a separate target
-  element.
 * [TimerSelection](docs/TimerSelection.md).
   Allows the selection to be updated on a timer.
 * [TrackpadDirection](docs/TrackpadDirection.md).
@@ -364,7 +353,6 @@ Each of these properties can be "backed" by a mixin that can store and retrieve 
 * `selectionTimerDuration`: Time in milliseconds that will elapse before the selection will automatically advance. Backed by [TimerSelection](docs/TimerSelection.md).
 * `selectionWraps`: True if selection navigations wrap from last/first. Backed by [SingleSelection](docs/SingleSelection.md).
 * `showTransition`: True if a transition effect should be shown. Backed by [SelectionAnimation](docs/SelectionAnimation.md).
-* `target`: Another element whose behavior is managed in some way. Backed by [ContentFirstChildTarget](docs/ContentFirstChildTarget.md).
 * `travelFraction`: The distance the first touchpoint has traveled since the beginning of a drag. Backed by [SwipeDirection](docs/SwipeDirection.md).
 
 
@@ -373,12 +361,6 @@ Each of these properties can be "backed" by a mixin that can store and retrieve 
 The /src folder also defines a handful of helper classes and functions that can
 be useful in defining web components.
 
-* [Collective](docs/Collective.md).
-  A class is used by the CollectiveMember mixin to track the components that
-  should be treated as a unit for keyboard purposes.
-* [composeTemplates](docs/composeTemplates.md).
-  Not a mixin, but a helper function for letting a component insert its template
-  inside a template defined by a base class.
 * [microtask](docs/microtask.md).
   Permits creation of microtasks in IE 11.
 * [renderArrayAsElements](docs/renderArrayAsElements.md).

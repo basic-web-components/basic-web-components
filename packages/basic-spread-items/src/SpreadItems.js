@@ -69,7 +69,7 @@ class SpreadItems extends ElementBase.compose(
       }
       </style>
 
-      <div id="spreadContainer">
+      <div id="spreadContainer" role="none">
         <slot></slot>
       </div>
     `;

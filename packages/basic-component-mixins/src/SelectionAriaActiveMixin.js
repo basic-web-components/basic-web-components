@@ -1,4 +1,3 @@
-import Collective from './Collective';
 import symbols from './symbols';
 
 
@@ -46,21 +45,23 @@ export default (base) => {
       if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
       item.setAttribute('aria-selected', selected);
       const itemId = item.id;
-      if (itemId) {
-        if (selected) {
-          getOutermostElement(this).setAttribute('aria-activedescendant', itemId);
-        }
+      if (itemId && selected) {
+        this.setAttribute('aria-activedescendant', itemId);
       }
-    }
-
-    collectiveChanged() {
-      if (super.collectiveChanged) { super.collectiveChanged(); }
-      setAriaAttributes(this);
     }
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
-      setAriaAttributes(this);
+      // Set default ARIA role.
+      if (this.getAttribute('role') == null) {
+        this.setAttribute('role', this[symbols.defaults].role);
+      }
+    }
+
+    get [symbols.defaults]() {
+      const defaults = super[symbols.defaults] || {};
+      defaults.role = 'listbox';
+      return defaults;
     }
 
     [symbols.itemAdded](item) {
@@ -96,7 +97,7 @@ export default (base) => {
       if ('selectedItem' in base.prototype) { super.selectedItem = item; }
       if (item == null) {
         // Selection was removed.
-        getOutermostElement(this).removeAttribute('aria-activedescendant');
+        this.removeAttribute('aria-activedescendant');
       }
     }
 
@@ -104,18 +105,3 @@ export default (base) => {
 
   return SelectionAriaActive;
 };
-
-
-function getOutermostElement(element) {
-  return element.collective ?
-    element.collective.outermostElement :
-    element;
-}
-
-function setAriaAttributes(element) {
-  if (!element.isConnected) {
-    return;
-  }
-  Collective.promoteAttribute(element, 'aria-activedescendant');
-  Collective.promoteAttribute(element, 'role', 'listbox', 'none');
-}
