@@ -19,6 +19,7 @@ const base = ElementBase.compose(
   TimerSelectionMixin
 );
 
+
 /**
  * Slideshow with animated transitions.
  *
@@ -81,3 +82,4 @@ class Slideshow extends base {
 
 
 customElements.define('basic-slideshow', Slideshow);
+export default Slideshow;

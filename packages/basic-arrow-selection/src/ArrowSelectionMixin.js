@@ -54,9 +54,7 @@ export default (base) => {
     }
     set canSelectNext(canSelectNext) {
       if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
-      if (this.$) {
-        this.$.buttonRight.disabled = !canSelectNext;
-      }
+      this.$.buttonRight.disabled = !canSelectNext;
     }
 
     get canSelectPrevious() {
@@ -64,9 +62,7 @@ export default (base) => {
     }
     set canSelectPrevious(canSelectPrevious) {
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
-      if (this.$) {
-        this.$.buttonLeft.disabled = !canSelectPrevious;
-      }
+      this.$.buttonLeft.disabled = !canSelectPrevious;
     }
 
     connectedCallback() {

@@ -11,8 +11,8 @@
   <script src="../demos/bower_components/webcomponents.js/webcomponents-lite.js"></script>
   <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
   <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
-  <script src="./dist/basic-play-controls.js"></script>
   <script src="../basic-slideshow/dist/basic-slideshow.js"></script>
+  <script src="./dist/basic-play-controls.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
 
   <style>
@@ -29,15 +29,14 @@
     display: flex;
   }
 
-  basic-play-controls,
-  basic-slideshow {
+  slideshow-with-controls {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
     flex: 1;
   }
 
-  basic-slideshow > * {
+  slideshow-with-controls > * {
     -webkit-align-items: center;
     align-items: center;
     display: -webkit-flex;
@@ -51,18 +50,21 @@
   }
   </style>
 
+  <script>
+    class SlideshowWithControls extends Basic.PlayControlsMixin(Basic.Slideshow) {}
+    customElements.define('slideshow-with-controls', SlideshowWithControls);
+  </script>
+
 </head>
 
 <body>
-  <basic-play-controls>
-    <basic-slideshow aria-label="Nature scenes">
-      <img src="../demos/resources/images/image1.jpg" alt="Lake">
-      <img src="../demos/resources/images/image2.jpg" alt="Horses">
-      <img src="../demos/resources/images/image6.jpg" alt="Wheat">
-      <img src="../demos/resources/images/image3.jpg" alt="Mountain">
-      <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
-    </basic-slideshow>
-  </basic-play-controls>
+  <slideshow-with-controls aria-label="Nature scenes">
+    <img src="../demos/resources/images/image1.jpg" alt="Lake">
+    <img src="../demos/resources/images/image2.jpg" alt="Horses">
+    <img src="../demos/resources/images/image6.jpg" alt="Wheat">
+    <img src="../demos/resources/images/image3.jpg" alt="Mountain">
+    <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
+  </slideshow-with-controls>
 </body>
 
 </html>

@@ -7,7 +7,8 @@ import toggleClass from '../../basic-component-mixins/src/toggleClass';
 export default (base) => {
 
   /**
-   * Template mixin which adds small dots to show item count and select an item.
+   * Template mixin which adds small dots to show the number of items and let
+   * the user select a specific item.
    *
    * You can see a [live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-page-dots.html)
    * of this component applied to a carousel.

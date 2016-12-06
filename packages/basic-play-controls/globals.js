@@ -5,7 +5,7 @@
  * the source file(s) you want from the src folder.
  */
 
-import PlayControls from './src/PlayControls';
+import PlayControlsMixin from './src/PlayControlsMixin';
 
 window.Basic = window.Basic || {};
-window.Basic.PlayControls = PlayControls;
+window.Basic.PlayControlsMixin = PlayControlsMixin;
