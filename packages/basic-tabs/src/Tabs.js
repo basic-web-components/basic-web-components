@@ -1,21 +1,18 @@
-import ElementBase from '../../basic-element-base/src/ElementBase';
 import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
 import Modes from '../../basic-modes/src/Modes'; // jshint ignore:line
-import TabStrip from '../../basic-tab-strip/src/TabStrip'; // jshint ignore:line
-import TargetSelectionMixin from '../../basic-component-mixins/src/TargetSelectionMixin';
+import TabStripMixin from '../../basic-tab-strip/src/TabStripMixin';
 
 
 /**
  * A set of pages with a tab strip governing which page is shown.
  *
- * This stock combination puts together a [basic-tab-strip](../basic-tab-strip/)
- * and a [basic-modes](../basic-modes/) element. If you'd like to create
- * something more complex than this arrangement, you can use either of those
- * elements on its own.
+ * This stock combination applies the [TabStripMixin](../basic-tab-strip/) to a
+ * [basic-modes](../basic-modes/) element. If you'd like to create something
+ * more complex than this arrangement, you can use either of those elements on
+ * its own.
  *
- * Since this component uses basic-tab-strip internally, it obtains the names of
- * the individual tabs the same way: from a child's `aria-label` property.
- * Example:
+ * Since this component uses `TabStripMixin`, it obtains the names of the
+ * individual tabs from a child's `aria-label` property. Example:
  *
  *     <basic-tabs>
  *       <div aria-label="One">Page one</div>
@@ -25,70 +22,11 @@ import TargetSelectionMixin from '../../basic-component-mixins/src/TargetSelecti
  *
  * @extends ElementBase
  * @mixes GenericMixin
- * @mixes TargetSelectionMixin
+ * @mixes TabStripMixin
  */
-class Tabs extends ElementBase.compose(
+class Tabs extends Modes.compose(
   GenericMixin,
-  TargetSelectionMixin
-) {
-
-  get generic() {
-    return super.generic;
-  }
-  set generic(value) {
-    super.generic = value;
-    // Forward the GenericMixin value to the tab strip.
-    this.$.tabStrip.generic = value;
-  }
-
-  /**
-   * The position of the tab strip relative to the element's children. Valid
-   * values are "top", "left", "right", and "bottom".
-   *
-   * @default "top"
-   * @type {string}
-   */
-  get tabPosition() {
-    return this.$ && this.$.tabStrip.tabPosition;
-  }
-  set tabPosition(position) {
-    this.$.tabStrip.tabPosition = position;
-  }
-
-  get target() {
-    return this.$ && this.$.modes;
-  }
-
-  get template() {
-    return `
-      <style>
-      :host {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-      }
-
-      #tabStrip {
-        -webkit-flex: 1;
-        flex: 1;
-      }
-
-      #modes ::slotted(*) {
-        -webkit-flex: 1;
-        flex: 1;
-      }
-      </style>
-
-      <basic-tab-strip id="tabStrip">
-        <basic-modes id="modes">
-          <slot></slot>
-        </basic-modes>
-      </basic-tab-strip>
-    `;
-  }
-
-}
-
+  TabStripMixin
+) {}
 
 customElements.define('basic-tabs', Tabs);

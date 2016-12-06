@@ -6,73 +6,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>basic-tab-strip</title>
 
-  <!-- TODO: Use npm distribution of v1 polyfills when available. -->
-  <script src="../demos/bower_components/webcomponents.js/webcomponents-lite.js"></script>
-  <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
-  <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
-  <script src="./dist/basic-tab-strip.js"></script>
-  <script src="../basic-modes/dist/basic-modes.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
-
-  <style>
-  basic-tab-strip {
-    display: -webkit-flex;
-    display: flex;
-    height: 300px;
-    max-width: 100%;
-    width: 400px;
-  }
-
-  basic-modes > div {
-    -webkit-align-items: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex: 1;
-    flex: 1;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-  </style>
-
-  <script>
-  function spreadChange() {
-    document.querySelector('basic-tab-strip').classList.toggle('spread');
-  }
-
-  function tabPositionChange(event) {
-    document.querySelector('basic-tab-strip').tabPosition = event.target.value;
-  }
-  </script>
 
 </head>
 
 <body>
   <p>
-    The basic-tab-strip component provides a row (or column) of tabs that can
-    select a page to view from a set of pages. Below a basic-tab-strip is
-    combined with a <a href="../basic-modes/">basic-modes</a> element, which
-    ensures that just the selected page is visible. The related
-    <a href="../basic-tabs/">basic-tabs</a> provides this common combination
-    in a single component.
-  </p>
-  <basic-tab-strip>
-    <basic-modes aria-label="Panels">
-      <div aria-label="One">Page one</div>
-      <div aria-label="Two">Page two</div>
-      <div aria-label="Three">Page three</div>
-    </basic-modes>
-  </basic-tab-strip>
-  <p>
-    <label><input id="spreadCheckbox" type="checkbox" onchange="spreadChange()">Spread tabs out</label>
-  </p>
-  <p>
-    Show tabs on: <select id="tabPosition" onchange="tabPositionChange(event)" value="top">
-      <option value="top">Top</option>
-      <option value="left">Left</option>
-      <option value="right">Right</option>
-      <option value="bottom">Bottom</option>
-    </select>
+    See <a href="../basic-tabs/">basic-tabs</a> for an example.
   </p>
 </body>
 
