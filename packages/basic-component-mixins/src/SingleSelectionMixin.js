@@ -138,8 +138,8 @@ export default (base) => {
       this[symbols.applySelection](item, item === this.selectedItem);
     }
 
-    itemsChanged() {
-      if (super.itemsChanged) { super.itemsChanged(); }
+    [symbols.itemsChanged]() {
+      if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
 
       // In case selected item changed position or was removed.
       trackSelectedItem(this);

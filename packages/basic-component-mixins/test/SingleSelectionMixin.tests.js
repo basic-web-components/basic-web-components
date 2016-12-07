@@ -1,6 +1,7 @@
 import { assert } from 'chai';
 import AttributeMarshallingMixin from '../src/AttributeMarshallingMixin';
 import SingleSelectionMixin from '../src/SingleSelectionMixin';
+import symbols from '../src/symbols';
 
 
 class SingleSelectionTest extends SingleSelectionMixin(AttributeMarshallingMixin(HTMLElement)) {
@@ -8,7 +9,7 @@ class SingleSelectionTest extends SingleSelectionMixin(AttributeMarshallingMixin
     return this.items.indexOf(item);
   }
   // This simplistic `items` implementation doesn't track changes, so tests
-  // will need to invoke `itemsChanged()` manually.
+  // will need to invoke `itemsChanged` manually.
   get items() {
     // Convert children to array in a way IE 11 can handle.
     return Array.prototype.slice.call(this.children);
@@ -53,7 +54,7 @@ describe("SingleSelectionMixin", () => {
     element.selectedItem = item;
     assert.equal(element.selectedIndex, 0);
     element.appendChild(item); // Move to end.
-    element.itemsChanged();
+    element[symbols.itemsChanged]();
     assert.equal(element.selectedItem, item);
     assert.equal(element.selectedIndex, 2);
   });
@@ -115,7 +116,7 @@ describe("SingleSelectionMixin", () => {
     const originalItem1 = element.children[1];
     element.selectedIndex = 0;
     element.children[0].remove();
-    element.itemsChanged();
+    element[symbols.itemsChanged]();
     assert.equal(element.selectedIndex, 0);
     assert.equal(element.selectedItem, originalItem1);
   });
@@ -126,7 +127,7 @@ describe("SingleSelectionMixin", () => {
     const originalItem1 = element.children[1];
     element.selectedIndex = 2;
     element.children[2].remove();
-    element.itemsChanged();
+    element[symbols.itemsChanged]();
     assert.equal(element.selectedIndex, 1);
     assert.equal(element.selectedItem, originalItem1);
   });
@@ -137,7 +138,7 @@ describe("SingleSelectionMixin", () => {
     const originalItem1 = element.children[1];
     element.selectedIndex = 1;
     element.children[0].remove();
-    element.itemsChanged();
+    element[symbols.itemsChanged]();
     assert.equal(element.selectedIndex, 0);
     assert.equal(element.selectedItem, originalItem1);
   });
@@ -149,7 +150,7 @@ describe("SingleSelectionMixin", () => {
     element.children[0].remove();
     element.children[0].remove();
     element.children[0].remove();
-    element.itemsChanged();
+    element[symbols.itemsChanged]();
     assert.equal(element.selectedIndex, -1);
     assert.equal(element.selectedItem, null);
   });
@@ -236,6 +237,6 @@ function createSampleElement() {
     div.textContent = text;
     element.appendChild(div);
   });
-  element.itemsChanged();
+  element[symbols.itemsChanged]();
   return element;
 }

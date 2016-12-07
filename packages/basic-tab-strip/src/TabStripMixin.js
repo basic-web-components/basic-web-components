@@ -111,8 +111,8 @@ export default (base) => {
       return [].slice.call(this.$.tabs.querySelectorAll('.tab'));
     }
 
-    itemsChanged() {
-      if (super.itemsChanged) { super.itemsChanged(); }
+    [symbols.itemsChanged]() {
+      if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
 
       const baseId = this.id ?
         "_" + this.id + "Panel" :

@@ -115,8 +115,8 @@ export default function mixin(base) {
       item.setAttribute('aria-hidden', false);
     }
 
-    itemsChanged() {
-      if (super.itemsChanged) { super.itemsChanged(); }
+    [symbols.itemsChanged]() {
+      if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
 
       resetAnimations(this);
 

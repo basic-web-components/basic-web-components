@@ -1,5 +1,6 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 /**
@@ -23,7 +24,7 @@ class SpreadItems extends ElementBase.compose(
   connectedCallback() {
     if (super.connectedCallback) { super.connectedCallback(); }
     // HACK
-    this.itemsChanged();
+    this[symbols.itemsChanged]();
   }
 
   get items() {
@@ -31,9 +32,9 @@ class SpreadItems extends ElementBase.compose(
   }
 
   // TODO: Should also handle contentChanged(), but need to rationalize with
-  // invocation of itemsChanged in connectedCallback.
-  itemsChanged() {
-    if (super.itemsChanged) { super.itemsChanged(); }
+  // invocation of [symbols.itemsChanged] in connectedCallback.
+  [symbols.itemsChanged]() {
+    if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
     const items = this.items;
     const count = items.length;
     this.$.spreadContainer.style.width = (count * 100) + '%';

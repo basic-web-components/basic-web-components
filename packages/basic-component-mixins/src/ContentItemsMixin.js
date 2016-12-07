@@ -67,7 +67,7 @@ export default (base) => {
       // undefined).
       this[itemsSymbol] = null;
 
-      this.itemsChanged();
+      this[symbols.itemsChanged]();
     }
 
     /**
@@ -109,8 +109,8 @@ export default (base) => {
      * invoked on component initialization – since the items have "changed" from
      * being nothing.
      */
-    itemsChanged() {
-      if (super.itemsChanged) { super.itemsChanged(); }
+    [symbols.itemsChanged]() {
+      if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
 
       // Perform per-item initialization.
       this.items.forEach(item => {

@@ -56,8 +56,8 @@ export default (base) => {
       return [].slice.call(this.$.dots.querySelectorAll('.dot'));
     }
 
-    itemsChanged() {
-      if (super.itemsChanged) { super.itemsChanged(); }
+    [symbols.itemsChanged]() {
+      if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
       renderArrayAsElements(this.items, this.$.dots, (item, element) => {
         // We don't use the item parameter, because any item will produce an
         // identical corresponding dot.

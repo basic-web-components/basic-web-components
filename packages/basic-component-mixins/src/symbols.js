@@ -134,6 +134,16 @@ const symbols = {
    */
   itemAdded: createSymbol('itemAdded'),
 
+
+  /**
+   * Symbol for the `[symbols.itemsChanged]` method.
+   *
+   * This method is invoked when the underlying contents change. It is also
+   * invoked on component initialization – since the items have "changed" from
+   * being nothing.
+   */
+  itemsChanged: createSymbol('itemsChanged'),
+
   /**
    * Symbol for the `keydown` method.
    *

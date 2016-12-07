@@ -50,7 +50,7 @@ export default (base) => {
   class KeyboardPrefixSelection extends base {
 
     // TODO: If the set of items is changed, reset the prefix.
-    // itemsChanged() {
+    // [symbols.itemsChanged]() {
     //   this[itemTextContentsSymbol] = null;
     //   resetTypedPrefix(this);
     // }

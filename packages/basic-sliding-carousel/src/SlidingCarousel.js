@@ -66,7 +66,7 @@ class SlidingCarousel extends base {
   connectedCallback() {
     if (super.connectedCallback) { super.connectedCallback(); }
     // HACK
-    this.itemsChanged();
+    this[symbols.itemsChanged]();
   }
 
   get [symbols.defaults]() {
