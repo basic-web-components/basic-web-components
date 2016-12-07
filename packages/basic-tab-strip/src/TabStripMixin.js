@@ -1,11 +1,4 @@
-import createSymbol from '../../basic-component-mixins/src/createSymbol';
-import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import symbols from '../../basic-component-mixins/src/symbols';
-import toggleClass from '../../basic-component-mixins/src/toggleClass';
-
-
-// Symbols for private data members on an element.
-const tabPositionSymbol = createSymbol('tabPosition');
 
 
 // Used to assign unique IDs to tabs for ARIA purposes.
@@ -63,31 +56,27 @@ export default (base) => {
 
     constructor() {
       super();
-
-      // Set defaults.
-      if (typeof this.tabPosition === 'undefined') {
-        this.tabPosition = this[symbols.defaults].tabPosition;
-      }
+      this.$.tabStrip.addEventListener('selected-item-changed', () => {
+        console.log(this.selectedItem);
+      });
     }
 
-    [symbols.applySelection](item, selected) {
-      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-      const index = this.items.indexOf(item);
-      // See if the corresponding tab has already been created.
-      // If not, the correct tab will be selected when it gets created.
-      const tabs = this.tabs;
-      if (tabs && tabs.length > index) {
-        const tab = this.tabs[index];
-        if (tab) {
-          applySelectionToTab(tab, selected);
-        }
-      }
-    }
+    // [symbols.applySelection](item, selected) {
+    //   if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
+    //   const index = this.items.indexOf(item);
+    //   // See if the corresponding tab has already been created.
+    //   // If not, the correct tab will be selected when it gets created.
+    //   const tabs = this.tabs;
+    //   if (tabs && tabs.length > index) {
+    //     const tab = this.tabs[index];
+    //     if (tab) {
+    //       applySelectionToTab(tab, selected);
+    //     }
+    //   }
+    // }
 
     get [symbols.defaults]() {
       const defaults = super[symbols.defaults] || {};
-      // The #tabs container will have the role, not the outer component.
-      defaults.role = null;
       defaults.tabPosition = 'top';
       return defaults;
     }
@@ -112,41 +101,6 @@ export default (base) => {
           item.id = baseId + idCount++;
         }
       });
-    }
-
-    /**
-     * The position of the tab strip relative to the element's children. Valid
-     * values are "top", "left", "right", and "bottom".
-     *
-     * @default "top"
-     * @type {string}
-     */
-    get tabPosition() {
-      return this[tabPositionSymbol];
-    }
-    set tabPosition(position) {
-      this[tabPositionSymbol] = position;
-
-      this.reflectAttribute('tab-position', position);
-
-      // Physically reorder the tabs and pages to reflect the desired arrangement.
-      // We could change the visual appearance by reversing the order of the flex
-      // box, but then the visual order wouldn't reflect the document order, which
-      // determines focus order. That would surprise a user trying to tab through
-      // the controls.
-      const firstElement = (position === 'top' || position === 'left') ?
-        this.$.tabs :
-        this.$.pages;
-      const lastElement = (position === 'top' || position === 'left') ?
-        this.$.pages :
-        this.$.tabs;
-      if (firstElement.nextSibling !== lastElement) {
-        this.shadowRoot.insertBefore(firstElement, lastElement);
-      }
-
-      this.navigationAxis = (position === 'top' || position === 'bottom') ?
-        'horizontal' :
-        'vertical';
     }
 
     get template() {

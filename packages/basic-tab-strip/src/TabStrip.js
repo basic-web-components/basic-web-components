@@ -10,11 +10,11 @@ import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
-import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 // Symbols for private data members on an element.
 const panelsSymbol = createSymbol('panels');
+const tabPositionSymbol = createSymbol('tabPosition');
 
 
 /**
@@ -56,9 +56,23 @@ class TabStrip extends ElementBase.compose(
   SingleSelectionMixin
 ) {
 
+  constructor() {
+    super();
+    // Set defaults.
+    if (typeof this.tabPosition === 'undefined') {
+      this.tabPosition = this[symbols.defaults].tabPosition;
+    }
+  }
+
+  [symbols.applySelection](item, selected) {
+    if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
+    applySelectionToTab(item, selected);
+  }
+
   get [symbols.defaults]() {
     const defaults = super[symbols.defaults] || {};
     defaults.tabindex = null;
+    defaults.tabPosition = 'top';
     return defaults;
   }
 
@@ -105,6 +119,41 @@ class TabStrip extends ElementBase.compose(
 
   get items() {
     return this.$.tabs.children;
+  }
+
+  /**
+   * The position of the tab strip relative to the element's children. Valid
+   * values are "top", "left", "right", and "bottom".
+   *
+   * @default "top"
+   * @type {string}
+   */
+  get tabPosition() {
+    return this[tabPositionSymbol];
+  }
+  set tabPosition(position) {
+    this[tabPositionSymbol] = position;
+
+    this.reflectAttribute('tab-position', position);
+
+    // Physically reorder the tabs and pages to reflect the desired arrangement.
+    // We could change the visual appearance by reversing the order of the flex
+    // box, but then the visual order wouldn't reflect the document order, which
+    // determines focus order. That would surprise a user trying to tab through
+    // the controls.
+    const firstElement = (position === 'top' || position === 'left') ?
+      this.$.tabs :
+      this.$.pages;
+    const lastElement = (position === 'top' || position === 'left') ?
+      this.$.pages :
+      this.$.tabs;
+    if (firstElement.nextSibling !== lastElement) {
+      this.shadowRoot.insertBefore(firstElement, lastElement);
+    }
+
+    this.navigationAxis = (position === 'top' || position === 'bottom') ?
+      'horizontal' :
+      'vertical';
   }
 
   get template() {
@@ -199,7 +248,6 @@ class TabStrip extends ElementBase.compose(
 
 
 function applySelectionToTab(tab, selected) {
-  toggleClass(tab, 'selected', selected);
   tab.setAttribute('aria-selected', selected);
 }
 
