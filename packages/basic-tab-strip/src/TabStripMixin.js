@@ -72,14 +72,14 @@ export default (base) => {
         }
       });
 
-      // // Listen to keydown events on the tabs, not on pages.
-      // this.$.tabs.addEventListener('keydown', event => {
-      //   const handled = this[symbols.keydown](event);
-      //   if (handled) {
-      //     event.preventDefault();
-      //     event.stopPropagation();
-      //   }
-      // });
+      // Listen to keydown events on the tabs, not on pages.
+      this.$.tabs.addEventListener('keydown', event => {
+        const handled = this[symbols.keydown](event);
+        if (handled) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
 
       // Set defaults.
       if (typeof this.tabPosition === 'undefined') {
@@ -98,14 +98,6 @@ export default (base) => {
         if (tab) {
           applySelectionToTab(tab, selected);
         }
-      }
-    }
-
-    connectedCallback() {
-      if (super.connectedCallback) { super.connectedCallback(); }
-      if (!this.getAttribute('role')) {
-        // Assign a default ARIA role.
-        this.setAttribute('role', 'tablist');
       }
     }
 
@@ -160,7 +152,7 @@ export default (base) => {
     }
 
     [symbols.keydown](event) {
-      const handled = super[symbols.keydown](event);
+      const handled = super[symbols.keydown] && super[symbols.keydown](event);
       if (handled) {
         // If the event resulted in a change of selection, move the focus to the
         // newly-selected tab.
@@ -355,7 +347,7 @@ export default (base) => {
         }
         </style>
 
-        <div id="tabs"></div>
+        <div id="tabs" role="tablist"></div>
         <div id="pages">
           ${baseTemplate}
         </div>

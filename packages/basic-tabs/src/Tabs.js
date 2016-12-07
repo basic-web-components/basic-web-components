@@ -1,4 +1,6 @@
+import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
 import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
+import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
 import Modes from '../../basic-modes/src/Modes'; // jshint ignore:line
 import TabStripMixin from '../../basic-tab-strip/src/TabStripMixin';
 
@@ -25,7 +27,9 @@ import TabStripMixin from '../../basic-tab-strip/src/TabStripMixin';
  * @mixes TabStripMixin
  */
 class Tabs extends Modes.compose(
+  DirectionSelectionMixin,
   GenericMixin,
+  KeyboardDirectionMixin,
   TabStripMixin
 ) {}
 
