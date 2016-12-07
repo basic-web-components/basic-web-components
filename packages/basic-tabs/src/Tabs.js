@@ -1,8 +1,12 @@
-import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
 import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
-import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
 import Modes from '../../basic-modes/src/Modes'; // jshint ignore:line
 import TabStripMixin from '../../basic-tab-strip/src/TabStripMixin';
+
+
+const base = Modes.compose(
+  GenericMixin,
+  TabStripMixin
+);
 
 
 /**
@@ -22,15 +26,20 @@ import TabStripMixin from '../../basic-tab-strip/src/TabStripMixin';
  *       <div aria-label="Three">Page three</div>
  *     </basic-tabs>
  *
- * @extends ElementBase
+ * @extends Modes
  * @mixes GenericMixin
  * @mixes TabStripMixin
  */
-class Tabs extends Modes.compose(
-  DirectionSelectionMixin,
-  GenericMixin,
-  KeyboardDirectionMixin,
-  TabStripMixin
-) {}
+class Tabs extends base {
+
+  get generic() {
+    return super.generic;
+  }
+  set generic(value) {
+    if ('generic' in base.prototype) { super.generic = value; }
+    this.$.tabs.generic = value;
+  }
+
+}
 
 customElements.define('basic-tabs', Tabs);

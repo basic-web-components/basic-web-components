@@ -22,8 +22,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 import * as utils from './utils'
 import {ShadyRoot, flush, enqueue} from './shady'
 import * as patch from './patch'
-import {getRootNode, filterMutations, observeChildren, unobserveChildren}
-  from './element-mixin'
+import {getRootNode, filterMutations, observeChildren, unobserveChildren,
+  setAttribute, getComposedInnerHTML, getComposedChildNodes} from './element-mixin'
 import * as events from './event-mixin'
 import {tree, getNativeProperty} from './tree'
 
@@ -34,7 +34,10 @@ if (utils.settings.inUse) {
     getNativeProperty: getNativeProperty,
     patch: patch.patchNode,
     isPatched: patch.isNodePatched,
+    getComposedInnerHTML: getComposedInnerHTML,
+    getComposedChildNodes: getComposedChildNodes,
     unpatch: patch.unpatchNode,
+    canUnpatch: patch.canUnpatchNode,
     isShadyRoot: utils.isShadyRoot,
     enqueue: enqueue,
     flush: flush,
@@ -101,11 +104,33 @@ if (utils.settings.inUse) {
     configurable: true
   });
 
-  // TODO(sorvell): super experimental auto patching of document fragment
-  // via appendChild. This either needs to be expanded or contracted.
-  // DocumentFragment.prototype.appendChild = function(node) {
-  //   patchNode(this);
-  //   return this.appendChild(node);
-  // }
+  let nativeSetAttribute = Element.prototype.setAttribute;
+  Element.prototype.setAttribute = setAttribute;
+  // NOTE: expose native setAttribute to allow hooking native method
+  // (e.g. this is done in ShadyCSS)
+  Element.prototype.__nativeSetAttribute = nativeSetAttribute;
 
+  let classNameDescriptor = {
+    get() {
+      return this.getAttribute('class');
+    },
+    set(value) {
+      this.setAttribute('class', value);
+    },
+    configurable: true
+  };
+
+  // Safari 9 `className` is not configurable
+  let cn = Object.getOwnPropertyDescriptor(Element.prototype, 'className');
+  if (cn && cn.configurable) {
+    Object.defineProperty(Element.prototype, 'className', classNameDescriptor);
+  } else {
+    // on IE `className` is on Element
+    let h = window.customElements && window.customElements.nativeHTMLElement ||
+      HTMLElement;
+    cn = Object.getOwnPropertyDescriptor(h.prototype, 'className');
+    if (cn && cn.configurable) {
+      Object.defineProperty(h.prototype, 'className', classNameDescriptor);
+    }
+  }
 }

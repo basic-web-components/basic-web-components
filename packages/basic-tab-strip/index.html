@@ -4,16 +4,31 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>basic-tab-strip</title>
+  <title>basic-tabstrip</title>
 
+  <!-- TODO: Use npm distribution of v1 polyfills when available. -->
+  <script src="../demos/bower_components/webcomponents.js/webcomponents-lite.js"></script>
+  <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
+  <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
+  <script src="./dist/basic-tab-strip.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
+
+  <script>
+  window.addEventListener('load', () => {
+    const tabStrip = document.querySelector('basic-tab-strip');
+    tabStrip.panels = document.querySelectorAll('#panels > *');
+  });
+  </script>
 
 </head>
 
 <body>
-  <p>
-    See <a href="../basic-tabs/">basic-tabs</a> for an example.
-  </p>
+  <basic-tab-strip></basic-tab-strip>
+  <div id="panels" style="display: none;">
+    <div aria-label="One">Page one</div>
+    <div aria-label="Two">Page two</div>
+    <div aria-label="Three">Page three</div>
+  </div>
 </body>
 
 </html>

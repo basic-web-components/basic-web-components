@@ -113,7 +113,7 @@ export default (base) => {
       if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
 
       // Perform per-item initialization.
-      this.items.forEach(item => {
+      Array.prototype.forEach.call(this.items, item => {
         if (!item[itemInitializedSymbol]) {
           this[symbols.itemAdded](item);
           item[itemInitializedSymbol] = true;

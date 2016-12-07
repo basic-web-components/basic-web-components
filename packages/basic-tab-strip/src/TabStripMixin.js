@@ -64,23 +64,6 @@ export default (base) => {
     constructor() {
       super();
 
-      this.$.tabs.addEventListener('click', event => {
-        const tab = event.target;
-        const tabIndex = this.tabs.indexOf(tab);
-        if (tabIndex >= 0) {
-          this.selectedIndex = tabIndex;
-        }
-      });
-
-      // Listen to keydown events on the tabs, not on pages.
-      this.$.tabs.addEventListener('keydown', event => {
-        const handled = this[symbols.keydown](event);
-        if (handled) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-      });
-
       // Set defaults.
       if (typeof this.tabPosition === 'undefined') {
         this.tabPosition = this[symbols.defaults].tabPosition;
@@ -103,6 +86,8 @@ export default (base) => {
 
     get [symbols.defaults]() {
       const defaults = super[symbols.defaults] || {};
+      // The #tabs container will have the role, not the outer component.
+      defaults.role = null;
       defaults.tabPosition = 'top';
       return defaults;
     }
@@ -120,45 +105,13 @@ export default (base) => {
 
       // Confirm that items have at least a default role and ID for ARIA purposes.
       this.items.forEach(item => {
-        if (!item.getAttribute('role')) {
+        // if (!item.getAttribute('role')) {
           item.setAttribute('role', 'tabpanel');
-        }
+        // }
         if (!item.id) {
           item.id = baseId + idCount++;
         }
       });
-
-      // Create tabs.
-      const selectedItem = this.selectedItem;
-      renderArrayAsElements(this.items, this.$.tabs, (item, element) => {
-        if (!element) {
-          element = document.createElement('button');
-          element.classList.add('tab');
-          element.classList.add('style-scope');
-          element.classList.add('basic-tab-strip');
-          element.setAttribute('role', 'tab');
-        }
-        element.id = item.id + '_tab';
-        element.textContent = item.getAttribute('aria-label');
-
-        // Point tab and panel at each other.
-        element.setAttribute('aria-controls', item.id);
-        item.setAttribute('aria-labelledby', element.id);
-
-        applySelectionToTab(element, item === selectedItem);
-
-        return element;
-      });
-    }
-
-    [symbols.keydown](event) {
-      const handled = super[symbols.keydown] && super[symbols.keydown](event);
-      if (handled) {
-        // If the event resulted in a change of selection, move the focus to the
-        // newly-selected tab.
-        this.tabs[this.selectedIndex].focus();
-      }
-      return handled;
     }
 
     /**
@@ -245,14 +198,6 @@ export default (base) => {
           flex: 1;
         }
 
-        .tab {
-          cursor: pointer;
-          display: inline-block;
-          font-family: inherit;
-          font-size: inherit;
-          position: relative;
-        }
-
         /* Left/right positions */
         :host([tab-position="left"]),
         :host([tab-position="right"]) {
@@ -265,89 +210,15 @@ export default (base) => {
           flex-direction: column;
         }
 
-        /* Spread variant */
-        :host(.spread) #tabs {
-          -webkit-align-items: stretch;
-          align-items: stretch;
-        }
-        :host(.spread) .tab {
-          flex: 1;
-        }
-
         /* Generic style */
         :host([generic=""]) #pages {
           background: white;
           border: 1px solid #ccc;
           box-sizing: border-box;
         }
-
-        :host([generic=""]) .tab {
-          background: white;
-          border: 1px solid #ccc;
-          margin: 0;
-          padding: 0.5em 0.75em;
-          transition: border-color 0.25s;
-        }
-
-        :host([generic=""]) .tab.selected {
-          border-color: #ccc;
-          opacity: 1;
-        }
-
-        :host([generic=""]) .tab:hover {
-          background-color: #eee;
-        }
-
-        /* GenericMixin, top/bottom positions */
-        :host([generic=""][tab-position="top"]) .tab:not(:last-child),
-        :host([generic=""][tab-position="bottom"]) .tab:not(:last-child) {
-          margin-right: 0.2em;
-        }
-
-        /* GenericMixin, top position */
-        :host([generic=""][tab-position="top"]) .tab {
-          border-radius: 0.25em 0.25em 0 0;
-          margin-bottom: -1px;
-        }
-        :host([generic=""][tab-position="top"]) .tab.selected {
-          border-bottom-color: transparent;
-        }
-
-        /* GenericMixin, bottom position */
-        :host([generic=""][tab-position="bottom"]) .tab {
-          border-radius: 0 0 0.25em 0.25em;
-          margin-top: -1px;
-        }
-        :host([generic=""][tab-position="bottom"]) .tab.selected {
-          border-top-color: transparent;
-        }
-
-        /* GenericMixin, left/right positions */
-        :host([generic=""][tab-position="left"]) .tab:not(:last-child),
-        :host([generic=""][tab-position="right"]) .tab:not(:last-child) {
-          margin-bottom: 0.2em;
-        }
-
-        /* GenericMixin, left position */
-        :host([generic=""][tab-position="left"]) .tab {
-          border-radius: 0.25em 0 0 0.25em;
-          margin-right: -1px;
-        }
-        :host([generic=""][tab-position="left"]) .tab.selected {
-          border-right-color: transparent;
-        }
-
-        /* GenericMixin, right position */
-        :host([generic=""][tab-position="right"]) .tab {
-          border-radius: 0 0.25em 0.25em 0;
-          margin-left: -1px;
-        }
-        :host([generic=""][tab-position="right"]) .tab.selected {
-          border-left-color: transparent;
-        }
         </style>
 
-        <div id="tabs" role="tablist"></div>
+        <basic-tab-strip id="tabStrip" role="tablist"></basic-tab-strip>
         <div id="pages">
           ${baseTemplate}
         </div>
@@ -358,9 +229,3 @@ export default (base) => {
 
   return TabStrip;
 };
-
-
-function applySelectionToTab(tab, selected) {
-  toggleClass(tab, 'selected', selected);
-  tab.setAttribute('aria-selected', selected);
-}

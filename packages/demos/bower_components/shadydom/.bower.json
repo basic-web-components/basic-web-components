@@ -19,15 +19,15 @@
   ],
   "devDependencies": {
     "web-component-tester": "^4.3.5",
-    "custom-elements": "webcomponents/custom-elements#master"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#v1"
   },
-  "_release": "e4a8be7b4d",
+  "_release": "d88a9ae7a7",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "e4a8be7b4dceb94b79de10ee450848a339ad1a58"
+    "commit": "d88a9ae7a782057315690a5d958d250820db5a8c"
   },
-  "_source": "git://github.com/webcomponents/shadydom.git",
+  "_source": "https://github.com/webcomponents/shadydom.git",
   "_target": "master",
   "_originalSource": "webcomponents/shadydom"
 }

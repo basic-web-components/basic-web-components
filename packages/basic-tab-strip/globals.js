@@ -5,7 +5,9 @@
  * the source file(s) you want from the src folder.
  */
 
+import TabStrip from './src/TabStrip';
 import TabStripMixin from './src/TabStripMixin';
 
 window.Basic = window.Basic || {};
+window.Basic.TabStrip = TabStrip;
 window.Basic.TabStripMixin = TabStripMixin;

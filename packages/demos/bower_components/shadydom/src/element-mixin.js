@@ -22,7 +22,7 @@ let mixinImpl = {
     let ownerRoot = this.ownerShadyRootForNode(container);
     if (ownerRoot) {
       // optimization: special insertion point tracking
-      if (node.__noInsertionPoint) {
+      if (node.__noInsertionPoint && ownerRoot._clean) {
         ownerRoot._skipUpdateInsertionPoints = true;
       }
       // note: we always need to see if an insertion point is added
@@ -33,7 +33,6 @@ let mixinImpl = {
       if (ipAdded) {
         ownerRoot._skipUpdateInsertionPoints = false;
       }
-      this._addedNode(node, ownerRoot);
     }
     if (tree.Logical.hasChildNodes(container)) {
       tree.Logical.recordInsertBefore(node, container, ref_node);
@@ -66,9 +65,6 @@ let mixinImpl = {
       }
     }
     this._removeOwnerShadyRoot(node);
-    if (ownerRoot) {
-      this._removedNode(node, ownerRoot);
-    }
     return distributed;
   },
 
@@ -200,23 +196,6 @@ let mixinImpl = {
       node.shadyRoot.hasInsertionPoint();
   },
 
-  // TODO(sorvell): needed for style scoping, use MO?
-  _addedNode() {},
-  _removedNode() {},
-  /*
-  _addedNode(node, root) {
-    // if (ShadyDOM.addedNode) {
-    //   ShadyDOM.addedNode(node, root);
-    // }
-  },
-
-  _removedNode(node, root) {
-    if (ShadyDOM.removedNode) {
-      ShadyDOM.removedNode(node, root);
-    }
-  },
-  */
-
   _removeDistributedChildren(root, container) {
     let hostNeedsDist;
     let ip$ = root._insertionPoints;
@@ -286,10 +265,11 @@ let mixinImpl = {
   },
 
   maybeDistributeAttributeChange(node, name) {
-    let distribute = (node.localName === 'slot' && name === 'name');
-    if (distribute) {
-      let root = this.getRootNode(node);
-      if (root.update) {
+    if (name === 'slot') {
+      this.maybeDistributeParent(node);
+    } else if (node.localName === 'slot' && name === 'name') {
+      let root = this.ownerShadyRootForNode(node);
+      if (root) {
         root.update();
       }
     }
@@ -370,6 +350,15 @@ let nativeCloneNode = Element.prototype.cloneNode;
 let nativeImportNode = Document.prototype.importNode;
 let nativeSetAttribute = Element.prototype.setAttribute;
 let nativeRemoveAttribute = Element.prototype.removeAttribute;
+
+export let setAttribute = function(attr, value) {
+  // avoid scoping elements in non-main document to avoid template documents
+  if (window.ShadyCSS && attr === 'class' && this.ownerDocument === document) {
+    window.ShadyCSS.setElementClass(this, value);
+  } else {
+    nativeSetAttribute.call(this, attr, value);
+  }
+}
 
 let NodeMixin = {};
 
@@ -656,17 +645,13 @@ let ElementMixin = {
 
 
   setAttribute(name, value) {
-    nativeSetAttribute.call(this, name, value);
-    if (!mixinImpl.maybeDistributeParent(this)) {
-      mixinImpl.maybeDistributeAttributeChange(this, name);
-    }
+    setAttribute.call(this, name, value);
+    mixinImpl.maybeDistributeAttributeChange(this, name);
   },
 
   removeAttribute(name) {
     nativeRemoveAttribute.call(this, name);
-    if (!mixinImpl.maybeDistributeParent(this)) {
-      mixinImpl.maybeDistributeAttributeChange(this, name);
-    }
+    mixinImpl.maybeDistributeAttributeChange(this, name);
   }
 
 };
@@ -728,20 +713,24 @@ export let getRootNode = function(node) {
 
 export function filterMutations(mutations, target) {
   const targetRootNode = getRootNode(target);
-  return mutations.filter(function(mutation) {
+  return mutations.map(function(mutation) {
     const mutationInScope = (targetRootNode === getRootNode(mutation.target));
     if (mutationInScope && mutation.addedNodes) {
       let nodes = Array.from(mutation.addedNodes).filter(function(n) {
         return (targetRootNode === getRootNode(n));
       });
-      Object.defineProperty(mutation, 'addedNodes', {
-        value: nodes,
-        configurable: true
-      });
+      if (nodes.length) {
+        mutation = Object.create(mutation);
+        Object.defineProperty(mutation, 'addedNodes', {
+          value: nodes,
+          configurable: true
+        });
+        return mutation;
+      }
+    } else if (mutationInScope) {
+      return mutation;
     }
-    return mutationInScope &&
-      (!mutation.addedNodes || mutation.addedNodes.length);
-  });
+  }).filter(function(m) { return m});
 }
 
 // const promise = Promise.resolve();
@@ -789,6 +778,22 @@ class AsyncObserver {
     return [];
   }
 
+}
+
+export let getComposedInnerHTML = function(node) {
+  if (utils.common.isNodePatched(node)) {
+    return getInnerHTML(node, function(n) {
+      return tree.Composed.getChildNodes(n);
+    })
+  } else {
+    return node.innerHTML;
+  }
+}
+
+export let getComposedChildNodes = function(node) {
+  return utils.common.isNodePatched(node) ?
+    tree.Composed.getChildNodes(node) :
+    node.childNodes;
 }
 
 // TODO(sorvell): consider instead polyfilling MutationObserver
