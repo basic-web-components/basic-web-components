@@ -25,7 +25,13 @@ export default (base) => {
        * or click/mouseup.
        */
       this.addEventListener('mousedown', event => {
-        const index = indexOfContainingItem(this, event.target);
+        // HACK: If the item is a button, the event seems to be raised in
+        // phase 2 (AT_TARGET), but the target is the component, not item.
+        // Need to invesigate.
+        const target = event.target === this ?
+          event.path[0] :
+          event.target;
+        const index = indexOfContainingItem(this, target);
         if (index >= 0) {
           this.selectedIndex = index;
           // Note: We don't call preventDefault here. The default behavior for
