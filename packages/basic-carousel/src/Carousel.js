@@ -1,13 +1,12 @@
-import ElementBase from '../../basic-element-base/src/ElementBase';
-
 import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
 import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
 import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
+import ElementBase from '../../basic-element-base/src/ElementBase';
 import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
-import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
 import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
-import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
 import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionAnimationMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
 import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import SwipeDirectionMixin from '../../basic-component-mixins/src/SwipeDirectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
@@ -151,7 +150,7 @@ class Carousel extends base {
     return defaults;
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

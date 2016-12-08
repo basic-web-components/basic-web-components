@@ -1,3 +1,6 @@
+import symbols from '../src/symbols';
+
+
 /* Exported function extends a base class with SelectionHighlight. */
 export default (base) => {
 
@@ -14,8 +17,8 @@ export default (base) => {
    */
   class SelectionHighlight extends base {
 
-    get template() {
-      const baseTemplate = super.template || '';
+    get [symbols.template]() {
+      const baseTemplate = super[symbols.template] || '';
       return `
         <style>
           :host([generic=""]) ::slotted(.selected) {

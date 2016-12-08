@@ -142,8 +142,8 @@ export default (base) => {
 
     }
 
-    get template() {
-      const baseTemplate = super.template || '';
+    get [symbols.template]() {
+      const baseTemplate = super[symbols.template] || '';
       return `
         <style>
         :host {

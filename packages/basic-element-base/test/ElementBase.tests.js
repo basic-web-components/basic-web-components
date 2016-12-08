@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import ElementBase from '../src/ElementBase.js';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 /* Simple base element with template and custom createdCallback. */
@@ -11,7 +12,7 @@ class SimpleElementBaseSubclass extends ElementBase {
     this.customCreatedCallbackInvoked = true;
   }
 
-  get template() {
+  get [symbols.template]() {
     return "Hello";
   }
 

@@ -53,7 +53,7 @@ class Slideshow extends base {
     return defaults;
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

@@ -9,7 +9,7 @@ To use this mixin, define a `template` property as a string or HTML
 `<template>` element:
 
     class MyElement extends ShadowTemplateMixin(HTMLElement) {
-      get template() {
+      get [symbols.template]() {
         return `Hello, <em>world</em>.`;
       }
     }

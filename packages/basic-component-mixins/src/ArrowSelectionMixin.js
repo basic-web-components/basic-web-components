@@ -91,8 +91,8 @@ export default (base) => {
      * The template uses the chevron-left and chevron-right SVG icons from
      * https://github.com/PolymerElements/iron-icons/blob/master/iron-icons.html.
      */
-    get template() {
-      const baseTemplate = super.template || '';
+    get [symbols.template]() {
+      const baseTemplate = super[symbols.template] || '';
       return `
         <style>
         :host {

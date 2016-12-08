@@ -1,13 +1,14 @@
 import { assert } from 'chai';
 import DistributedChildrenMixin from '../src/DistributedChildrenMixin';
 import ShadowTemplateMixin from '../src/ShadowTemplateMixin';
+import symbols from '../src/symbols';
 
 
 /*
  * Simple element using the DistributedChildrenMixin mixin.
  */
 class ChildrenTest extends DistributedChildrenMixin(ShadowTemplateMixin(HTMLElement)) {
-  get template() {
+  get [symbols.template]() {
     return `
       <div id="static">This is static content</div>
       <slot></slot>
@@ -21,7 +22,7 @@ customElements.define('children-test', ChildrenTest);
  * Element containing an instance of the above, so we can test reprojection.
  */
 class ReprojectTest extends DistributedChildrenMixin(ShadowTemplateMixin(HTMLElement)) {
-  get template() {
+  get [symbols.template]() {
     return `<children-test><slot></slot></children-test>`;
   }
 }

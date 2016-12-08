@@ -57,8 +57,8 @@ export default (base) => {
       safeAttributes.toggleClass(this, 'playing', value);
     }
 
-    get template() {
-      const baseTemplate = super.template || '';
+    get [symbols.template]() {
+      const baseTemplate = super[symbols.template] || '';
       return `
         <style>
         :host {

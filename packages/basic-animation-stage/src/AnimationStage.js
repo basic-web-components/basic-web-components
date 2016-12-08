@@ -49,7 +49,7 @@ class AnimationStage extends base {
     this.selectionRequired = true;
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

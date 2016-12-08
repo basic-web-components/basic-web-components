@@ -136,7 +136,7 @@ const symbols = {
 
 
   /**
-   * Symbol for the `[symbols.itemsChanged]` method.
+   * Symbol for the `itemsChanged` method.
    *
    * This method is invoked when the underlying contents change. It is also
    * invoked on component initialization – since the items have "changed" from
@@ -152,7 +152,16 @@ const symbols = {
    * @function keydown
    * @param {KeyboardEvent} event - the event being processed
    */
-  keydown: createSymbol('keydown')
+  keydown: createSymbol('keydown'),
+
+  /**
+   * Symbol for the `template` property.
+   *
+   * This property returns a component's template.
+   *
+   * @type {string|HTMLElement}
+   */
+  template: createSymbol('template')
 };
 
 export default symbols;

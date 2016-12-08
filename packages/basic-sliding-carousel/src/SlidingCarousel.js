@@ -113,7 +113,7 @@ class SlidingCarousel extends base {
     this.$.viewport.selectedItem = item;
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

@@ -141,7 +141,7 @@ class AutosizeTextarea extends base {
     }
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

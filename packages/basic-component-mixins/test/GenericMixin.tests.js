@@ -2,10 +2,11 @@ import { assert } from 'chai';
 import flush from './flush';
 import GenericMixin from '../src/GenericMixin';
 import ShadowTemplateMixin from '../src/ShadowTemplateMixin';
+import symbols from '../src/symbols';
 
 
 class GenericTest extends GenericMixin(ShadowTemplateMixin(HTMLElement)) {
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

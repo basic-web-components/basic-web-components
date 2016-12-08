@@ -97,8 +97,8 @@ class ListBox extends ElementBase.compose(
     return this.$.itemsContainer;
   }
 
-  get template() {
-    const baseTemplate = super.template || '';
+  get [symbols.template]() {
+    const baseTemplate = super[symbols.template] || '';
     return `
       <style>
       :host {

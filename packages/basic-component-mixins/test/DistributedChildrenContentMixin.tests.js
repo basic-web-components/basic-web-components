@@ -4,6 +4,7 @@ import microtask from '../src/microtask';
 import DistributedChildrenMixin from '../src/DistributedChildrenMixin';
 import DistributedChildrenContentMixin from '../src/DistributedChildrenContentMixin';
 import ShadowTemplateMixin from '../src/ShadowTemplateMixin';
+import symbols from '../src/symbols';
 
 
 /*
@@ -22,7 +23,7 @@ class ContentTest extends DistributedChildrenContentMixin(
     }
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <div id="static">This is static content</div>
       <slot></slot>
@@ -38,7 +39,7 @@ customElements.define('content-test', ContentTest);
  * changes in final distribution (not just direct slot assignments).
  */
 class WrappedContentTest extends ShadowTemplateMixin(HTMLElement) {
-  get template() {
+  get [symbols.template]() {
     return `<content-test><slot></slot></content-test>`;
   }
 }

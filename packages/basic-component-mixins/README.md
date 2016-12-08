@@ -178,7 +178,7 @@ subtree to the component, then copy the template into the shadow subtree.
 
     // Create a simple custom element that supports a template.
     class GreetElement extends ShadowTemplate(HTMLElement) {
-      get template() {
+      get [symbols.template]() {
         return `
           Hello, <slot></slot>.
         `;

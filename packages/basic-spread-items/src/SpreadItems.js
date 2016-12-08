@@ -44,7 +44,7 @@ class SpreadItems extends ElementBase.compose(
     });
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

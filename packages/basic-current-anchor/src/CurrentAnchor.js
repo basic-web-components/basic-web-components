@@ -104,7 +104,7 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
     refresh(this);
   }
 
-  get template() {
+  get [symbols.template]() {
     // Reset styles so that color can be specified from the outside without
     // having to define a CSS variable.
     return `

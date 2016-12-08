@@ -95,7 +95,7 @@ class SlidingViewport extends base {
     this.reflectClass('showTransition', value);
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

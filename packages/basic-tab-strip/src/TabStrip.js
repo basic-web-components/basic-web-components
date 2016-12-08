@@ -166,7 +166,7 @@ class TabStrip extends ElementBase.compose(
       'vertical';
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
         :host {

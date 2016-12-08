@@ -1,3 +1,6 @@
+import symbols from '../src/symbols';
+
+
 /* Exported function extends a base class with ShadowTemplate. */
 export default (base) => {
 
@@ -9,7 +12,7 @@ export default (base) => {
    * `<template>` element:
    *
    *     class MyElement extends ShadowTemplateMixin(HTMLElement) {
-   *       get template() {
+   *       get [symbols.template]() {
    *         return `Hello, <em>world</em>.`;
    *       }
    *     }
@@ -31,7 +34,7 @@ export default (base) => {
      */
     constructor() {
       super();
-      let template = this.template;
+      let template = this[symbols.template];
       // TODO: Save the processed template with the component's class prototype
       // so it doesn't need to be processed with every instantiation.
       if (template) {

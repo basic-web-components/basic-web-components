@@ -41,7 +41,7 @@ class Modes extends base {
     return defaults;
   }
 
-  get template() {
+  get [symbols.template]() {
     return `<slot></slot>`;
   }
 

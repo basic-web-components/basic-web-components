@@ -1,4 +1,5 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 /*
@@ -244,7 +245,7 @@ class WrappedStandardElement extends ElementBase {
    *
    * @type {(string|HTMLTemplateElement)}
    */
-  get template() {
+  get [symbols.template]() {
     const display = blockElements.indexOf(this.extends) >= 0 ?
       'block' :
       'inline-block';

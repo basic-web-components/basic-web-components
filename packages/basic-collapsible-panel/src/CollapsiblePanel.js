@@ -60,7 +60,7 @@ class CollapsiblePanel extends OpenCloseMixin(ElementBase) {
     this.$.overflow.style.height = newHeight + 'px';
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

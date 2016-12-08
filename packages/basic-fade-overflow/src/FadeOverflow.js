@@ -78,7 +78,7 @@ class FadeOverflow extends ElementBase {
     this.$.fade.style.display = value ? '' : 'none';
   }
 
-  get template() {
+  get [symbols.template]() {
     return `
       <style>
       :host {

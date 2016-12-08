@@ -95,8 +95,8 @@ export default (base) => {
       refreshDots(this);
     }
 
-    get template() {
-      const baseTemplate = super.template || '';
+    get [symbols.template]() {
+      const baseTemplate = super[symbols.template] || '';
       return `
         <style>
         :host {

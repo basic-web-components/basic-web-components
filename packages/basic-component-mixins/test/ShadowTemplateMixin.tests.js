@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import symbols from '../src/symbols';
 import ShadowTemplateMixin from '../src/ShadowTemplateMixin';
 
 
@@ -11,7 +12,7 @@ customElements.define('my-element', MyElement);
 
 /* Element with a simple template */
 class ElementWithStringTemplate extends ShadowTemplateMixin(HTMLElement) {
-  get template() {
+  get [symbols.template]() {
     return "Hello";
   }
 }
@@ -22,7 +23,7 @@ customElements.define('element-with-string-template', ElementWithStringTemplate)
 const template = document.createElement('template');
 template.content.textContent = "Hello";
 class ElementWithRealTemplate extends ShadowTemplateMixin(HTMLElement) {
-  get template() {
+  get [symbols.template]() {
     return template;
   }
 }
