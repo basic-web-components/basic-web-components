@@ -65,20 +65,6 @@ export default (base) => {
       });
     }
 
-    // [symbols.applySelection](item, selected) {
-    //   if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-    //   const index = this.items.indexOf(item);
-    //   // See if the corresponding tab has already been created.
-    //   // If not, the correct tab will be selected when it gets created.
-    //   const tabs = this.tabs;
-    //   if (tabs && tabs.length > index) {
-    //     const tab = this.tabs[index];
-    //     if (tab) {
-    //       applySelectionToTab(tab, selected);
-    //     }
-    //   }
-    // }
-
     get [symbols.defaults]() {
       const defaults = super[symbols.defaults] || {};
       defaults.tabPosition = 'top';

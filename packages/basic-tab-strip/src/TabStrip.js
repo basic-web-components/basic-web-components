@@ -46,7 +46,7 @@ const tabPositionSymbol = createSymbol('tabPosition');
  * @mixes TabStripMixin
  */
 class TabStrip extends ElementBase.compose(
-  ClickSelectionMixin,
+  // ClickSelectionMixin,
   DirectionSelectionMixin,
   GenericMixin,
   KeyboardMixin,
@@ -58,6 +58,21 @@ class TabStrip extends ElementBase.compose(
 
   constructor() {
     super();
+
+    // Handle clicks/Enter on tab buttons.
+    // TODO: Rationalize with ClickSelection?
+    this.addEventListener('click', event => {
+      const tab = event.path[0];
+      const index = Array.prototype.indexOf.call(this.items, tab);
+      if (index >= 0 && this.selectedIndex !== index) {
+        this.selectedIndex = index;
+        // Note: We don't call preventDefault here. The default behavior for
+        // mousedown includes setting keyboard focus if the element doesn't
+        // already have the focus, and we want to preserve that behavior.
+        event.stopPropagation();
+      }
+    });
+
     // Set defaults.
     if (typeof this.tabPosition === 'undefined') {
       this.tabPosition = this[symbols.defaults].tabPosition;
