@@ -35,8 +35,8 @@
   </style>
 
   <script>
-  function spreadChange() {
-    document.querySelector('basic-tabs').classList.toggle('spread');
+  function spreadChange(event) {
+    document.querySelector('basic-tabs').spreadTabs = event.target.checked;
   }
 
   function tabPositionChange(event) {
@@ -48,8 +48,8 @@
 
 <body>
   <p>
-    The basic-tabs component provides a stock combination of a
-    <a href="../basic-tab-strip/">basic-tab-strip</a> element and a
+    The basic-tabs component applies a stock combination of a
+    <a href="../basic-tab-strip/">basic-tab-strip</a> and a
     <a href="../basic-modes/">basic-modes</a> element.
   </p>
   <basic-tabs>
@@ -58,7 +58,7 @@
     <div class="panel" aria-label="Three">Page three</div>
   </basic-tabs>
   <p>
-    <label><input id="spreadCheckbox" type="checkbox" onchange="spreadChange()">Spread tabs out</label>
+    <label><input id="spreadCheckbox" type="checkbox" onchange="spreadChange(event)">Spread tabs out</label>
   </p>
   <p>
     Show tabs on: <select id="tabPosition" onchange="tabPositionChange(event)" value="top">

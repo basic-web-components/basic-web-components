@@ -10,10 +10,12 @@ import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
 import renderArrayAsElements from '../../basic-component-mixins/src/renderArrayAsElements';
 import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
+import toggleClass from '../../basic-component-mixins/src/toggleClass';
 
 
 // Symbols for private data members on an element.
 const panelsSymbol = createSymbol('panels');
+const spreadTabsSymbol = createSymbol('spreadTabs');
 const tabPositionSymbol = createSymbol('tabPosition');
 
 
@@ -91,6 +93,10 @@ class TabStrip extends ElementBase.compose(
     return defaults;
   }
 
+  get items() {
+    return this.$.tabs.children;
+  }
+
   [symbols.keydown](event) {
     const handled = super[symbols.keydown] && super[symbols.keydown](event);
     if (handled && this.selectedItem) {
@@ -134,8 +140,12 @@ class TabStrip extends ElementBase.compose(
     this[symbols.itemsChanged]();
   }
 
-  get items() {
-    return this.$.tabs.children;
+  get spreadTabs() {
+    return this[spreadTabsSymbol];
+  }
+  set spreadTabs(value) {
+    this[spreadTabsSymbol] = value;
+    toggleClass(this, 'spread', value);
   }
 
   /**
@@ -150,24 +160,7 @@ class TabStrip extends ElementBase.compose(
   }
   set tabPosition(position) {
     this[tabPositionSymbol] = position;
-
     this.reflectAttribute('tab-position', position);
-
-    // Physically reorder the tabs and pages to reflect the desired arrangement.
-    // We could change the visual appearance by reversing the order of the flex
-    // box, but then the visual order wouldn't reflect the document order, which
-    // determines focus order. That would surprise a user trying to tab through
-    // the controls.
-    const firstElement = (position === 'top' || position === 'left') ?
-      this.$.tabs :
-      this.$.pages;
-    const lastElement = (position === 'top' || position === 'left') ?
-      this.$.pages :
-      this.$.tabs;
-    if (firstElement.nextSibling !== lastElement) {
-      this.shadowRoot.insertBefore(firstElement, lastElement);
-    }
-
     this.navigationAxis = (position === 'top' || position === 'bottom') ?
       'horizontal' :
       'vertical';
@@ -176,6 +169,36 @@ class TabStrip extends ElementBase.compose(
   get template() {
     return `
       <style>
+        :host {
+          display: -webkit-flex;
+          display: flex;
+        }
+
+        /*
+         * Avoid having tab container stretch across. User won't be able to see
+         * it, but since it handles the keyboard, in Mobile Safari a tap on the
+         * container background will cause the region to flash. Aligning the
+         * region collapses it down to hold its contents.
+         */
+        #tabs {
+          /* For IE bug (clicking tab produces gap between tab and page). */
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-direction: row;
+          flex-direction: row;
+          -webkit-flex: 1;
+          flex: 1;
+          /*
+           * Try to obtain fast-tap behavior on all tabs.
+           * See https://webkit.org/blog/5610/more-responsive-tapping-on-ios/.
+           */
+          touch-action: manipulation;
+        }
+        :host(:not(.spread)) #tabs {
+          -webkit-align-self: flex-start;
+          align-self: flex-start;
+        }
+
         .tab {
           cursor: pointer;
           display: inline-block;
@@ -201,12 +224,20 @@ class TabStrip extends ElementBase.compose(
           background-color: #eee;
         }
 
+        /* Left/right positions */
+        :host([tab-position="left"]) #tabs,
+        :host([tab-position="right"]) #tabs {
+          -webkit-flex-direction: column;
+          flex-direction: column;
+        }
+
         /* Spread variant */
         :host(.spread) #tabs {
           -webkit-align-items: stretch;
           align-items: stretch;
         }
         :host(.spread) .tab {
+          -webkit-flex: 1;
           flex: 1;
         }
 

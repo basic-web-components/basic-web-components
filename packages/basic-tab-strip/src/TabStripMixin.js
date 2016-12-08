@@ -79,10 +79,6 @@ export default (base) => {
       this.$.tabStrip.generic = value;
     }
 
-    get tabs() {
-      return [].slice.call(this.$.tabs.querySelectorAll('.tab'));
-    }
-
     [symbols.itemsChanged]() {
       if (super[symbols.itemsChanged]) { super[symbols.itemsChanged](); }
 
@@ -115,6 +111,37 @@ export default (base) => {
       }
     }
 
+    get spreadTabs() {
+      return this.$.tabStrip.spreadTabs;
+    }
+    set spreadTabs(value) {
+      this.$.tabStrip.spreadTabs = value;
+    }
+
+    get tabPosition() {
+      return this.$.tabStrip.tabPosition;
+    }
+    set tabPosition(position) {
+      this.$.tabStrip.tabPosition = position;
+      this.reflectAttribute('tab-position', position);
+
+      // Physically reorder the tabs and pages to reflect the desired arrangement.
+      // We could change the visual appearance by reversing the order of the flex
+      // box, but then the visual order wouldn't reflect the document order, which
+      // determines focus order. That would surprise a user trying to tab through
+      // the controls.
+      const firstElement = (position === 'top' || position === 'left') ?
+        this.$.tabStrip :
+        this.$.pages;
+      const lastElement = (position === 'top' || position === 'left') ?
+        this.$.pages :
+        this.$.tabStrip;
+      if (firstElement.nextSibling !== lastElement) {
+        this.shadowRoot.insertBefore(firstElement, lastElement);
+      }
+
+    }
+
     get template() {
       const baseTemplate = super.template || '';
       return `
@@ -125,27 +152,6 @@ export default (base) => {
           -webkit-flex-direction: column;
           flex-direction: column;
           position: relative;
-        }
-
-        /*
-         * Avoid having tab container stretch across. User won't be able to see
-         * it, but since it handles the keyboard, in Mobile Safari a tap on the
-         * container background will cause the region to flash. Aligning the
-         * region collapses it down to hold its contents.
-         */
-        #tabs {
-          /* For IE bug (clicking tab produces gap between tab and page). */
-          display: -webkit-flex;
-          display: flex;
-          /*
-           * Try to obtain fast-tap behavior on all tabs.
-           * See https://webkit.org/blog/5610/more-responsive-tapping-on-ios/.
-           */
-          touch-action: manipulation;
-        }
-        :host(:not(.spread)) #tabs {
-          -webkit-align-self: flex-start;
-          align-self: flex-start;
         }
 
         #pages {
@@ -169,11 +175,6 @@ export default (base) => {
         :host([tab-position="right"]) {
           -webkit-flex-direction: row;
           flex-direction: row;
-        }
-        :host([tab-position="left"]) #tabs,
-        :host([tab-position="right"]) #tabs {
-          -webkit-flex-direction: column;
-          flex-direction: column;
         }
 
         /* Generic style */
