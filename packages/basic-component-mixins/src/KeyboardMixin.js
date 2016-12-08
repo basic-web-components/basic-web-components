@@ -52,7 +52,7 @@ export default (base) => {
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
-      if (this.getAttribute('tabindex') == null && this[symbols.defaults].tabindex) {
+      if (this.getAttribute('tabindex') == null && this[symbols.defaults].tabindex !== null) {
         this.setAttribute('tabindex', this[symbols.defaults].tabindex);
       }
     }
