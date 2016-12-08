@@ -39,6 +39,7 @@ function buildBuildList() {
   allPackages.forEach(pkg => {
     buildList[`packages/${pkg}/dist/${pkg}.js`] = [`packages/${pkg}/globals.js`];
   });
+  buildList['packages/demos/dist/demos.js'] = ['packages/demos/src/*.js'];
   return buildList;
 }
 const buildList = buildBuildList();

@@ -4,16 +4,15 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>basic-carousel</title>
+  <title>carousel-with-arrows-and-dots</title>
 
-  <script src="../demos/lib/web-animations.min.js"></script>
+  <script src="lib/web-animations.min.js"></script>
   <!-- TODO: Use npm distribution of v1 polyfills when available. -->
-  <!-- <script src="../demos/bower_components/shadydom/shadydom.min.js"></script> -->
-  <!-- <script src="../demos/bower_components/custom-elements/custom-elements.min.js"></script> -->
-  <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
-  <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
-  <script src="./dist/basic-carousel.js"></script>
-  <link rel="stylesheet" href="../demos/demos.css">
+  <script src="bower_components/webcomponents.js/webcomponents-lite.js"></script>
+  <script src="bower_components/custom-elements/src/native-shim.js"></script>
+  <script src="bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
+  <script src="dist/demos.js"></script>
+  <link rel="stylesheet" href="demos.css">
 
   <style>
   html {
@@ -29,7 +28,9 @@
     display: flex;
   }
 
-  basic-carousel {
+  carousel-with-arrows-and-dots {
+    display: -webkit-flex;
+    display: flex;
     -webkit-flex: 1;
     flex: 1;
   }
@@ -38,13 +39,13 @@
 </head>
 
 <body>
-  <basic-carousel aria-label="Nature scenes" selection-wraps="true">
+  <carousel-with-arrows-and-dots class="overlayArrows" aria-label="Nature scenes">
     <img src="../demos/resources/images/image1.jpg" alt="Lake">
     <img src="../demos/resources/images/image2.jpg" alt="Horses">
     <img src="../demos/resources/images/image6.jpg" alt="Wheat">
     <img src="../demos/resources/images/image3.jpg" alt="Mountain">
     <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
-  </basic-carousel>
+  </carousel-with-arrows-and-dots>
 </body>
 
 </html>

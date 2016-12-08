@@ -5,6 +5,7 @@
  * the source file(s) you want from the src folder.
  */
 
+import ArrowSelectionMixin from './src/ArrowSelectionMixin';
 import AttributeMarshallingMixin from './src/AttributeMarshallingMixin';
 import ClickSelectionMixin from './src/ClickSelectionMixin';
 import ComposableMixin from './src/ComposableMixin';
@@ -19,6 +20,8 @@ import KeyboardDirectionMixin from './src/KeyboardDirectionMixin';
 import KeyboardPagedSelectionMixin from './src/KeyboardPagedSelectionMixin';
 import KeyboardPrefixSelectionMixin from './src/KeyboardPrefixSelectionMixin';
 import microtask from './src/microtask';
+import PageDotsMixin from './src/PageDotsMixin';
+import PlayControlsMixin from './src/PlayControlsMixin';
 import safeAttributes from './src/safeAttributes';
 import SelectionAnimationMixin from './src/SelectionAnimationMixin';
 import SelectionAriaActiveMixin from './src/SelectionAriaActiveMixin';
@@ -34,6 +37,7 @@ import TrackpadDirectionMixin from './src/TrackpadDirectionMixin';
 
 window.Basic = window.Basic || {};
 
+window.Basic.ArrowSelectionMixin = ArrowSelectionMixin;
 window.Basic.AttributeMarshallingMixin = AttributeMarshallingMixin;
 window.Basic.ClickSelectionMixin = ClickSelectionMixin;
 window.Basic.ComposableMixin = ComposableMixin;
@@ -48,6 +52,8 @@ window.Basic.KeyboardDirectionMixin = KeyboardDirectionMixin;
 window.Basic.KeyboardPagedSelectionMixin = KeyboardPagedSelectionMixin;
 window.Basic.KeyboardPrefixSelectionMixin = KeyboardPrefixSelectionMixin;
 window.Basic.microtask = microtask;
+window.Basic.PageDotsMixin = PageDotsMixin;
+window.Basic.PlayControlsMixin = PlayControlsMixin;
 window.Basic.safeAttributes = safeAttributes;
 window.Basic.SelectionAnimationMixin = SelectionAnimationMixin;
 window.Basic.SelectionAriaActiveMixin = SelectionAriaActiveMixin;

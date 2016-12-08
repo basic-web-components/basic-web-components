@@ -10,7 +10,6 @@
 /* jshint ignore:start */
 
 import * as animationStage from '../basic-animation-stage/globals';
-import * as arrowSelection from '../basic-arrow-selection/globals';
 import * as autosizeTextarea from '../basic-autosize-textarea/globals';
 import * as carousel from '../basic-carousel/globals';
 import * as collapsiblePanel from '../basic-collapsible-panel/globals';
@@ -20,9 +19,8 @@ import * as elementBase from '../basic-element-base/globals';
 import * as fadeOverflow from '../basic-fade-overflow/globals';
 import * as listBox from '../basic-list-box/globals';
 import * as modes from '../basic-modes/globals';
-import * as pageDots from '../basic-page-dots/globals';
-import * as playControls from '../basic-play-controls/globals';
 import * as slideshow from '../basic-slideshow/globals';
+import * as slideshowWithControls from '../basic-slideshow-with-controls/globals';
 import * as slidingCarousel from '../basic-sliding-carousel/globals';
 import * as slidingViewport from '../basic-sliding-viewport/globals';
 import * as spreadItems from '../basic-spread-items/globals';
