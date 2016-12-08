@@ -1,5 +1,5 @@
 import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
-import Modes from '../../basic-modes/src/Modes'; // jshint ignore:line
+import Modes from '../../basic-modes/src/Modes';
 import TabStripMixin from '../../basic-tab-strip/src/TabStripMixin';
 
 
@@ -30,16 +30,7 @@ const base = Modes.compose(
  * @mixes GenericMixin
  * @mixes TabStripMixin
  */
-class Tabs extends base {
-
-  get generic() {
-    return super.generic;
-  }
-  set generic(value) {
-    if ('generic' in base.prototype) { super.generic = value; }
-    this.$.tabs.generic = value;
-  }
-
-}
+class Tabs extends base {}
 
 customElements.define('basic-tabs', Tabs);
+export default Tabs;

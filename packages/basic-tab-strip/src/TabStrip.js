@@ -115,6 +115,8 @@ class TabStrip extends ElementBase.compose(
 
       return tab;
     });
+
+    this[symbols.itemsChanged]();
   }
 
   get items() {
@@ -253,3 +255,4 @@ function applySelectionToTab(tab, selected) {
 
 
 customElements.define('basic-tab-strip', TabStrip);
+export default TabStrip;

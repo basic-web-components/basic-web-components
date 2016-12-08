@@ -1,3 +1,4 @@
+import TabStrip from './TabStrip'; // jshint line:ignore
 import symbols from '../../basic-component-mixins/src/symbols';
 
 
@@ -56,8 +57,11 @@ export default (base) => {
 
     constructor() {
       super();
-      this.$.tabStrip.addEventListener('selected-item-changed', () => {
-        console.log(this.selectedItem);
+      this.$.tabStrip.addEventListener('selected-item-changed', event => {
+        const selectedIndex = event.target.selectedIndex;
+        if (this.selectedIndex !== selectedIndex) {
+          this.selectedIndex = selectedIndex;
+        }
       });
     }
 
@@ -81,6 +85,14 @@ export default (base) => {
       return defaults;
     }
 
+    get generic() {
+      return super.generic;
+    }
+    set generic(value) {
+      if ('generic' in base.prototype) { super.generic = value; }
+      this.$.tabStrip.generic = value;
+    }
+
     get tabs() {
       return [].slice.call(this.$.tabs.querySelectorAll('.tab'));
     }
@@ -101,6 +113,20 @@ export default (base) => {
           item.id = baseId + idCount++;
         }
       });
+
+      // Point the tab strip at the panels.
+      this.$.tabStrip.panels = this.items;
+      this.$.tabStrip.selectedIndex = this.selectedIndex;
+    }
+
+    get selectedIndex() {
+      return super.selectedIndex;
+    }
+    set selectedIndex(value) {
+      if ('selectedIndex' in base.prototype) { super.selectedIndex = value; }
+      if (this.$.tabStrip.selectedIndex !== value) {
+        this.$.tabStrip.selectedIndex = value;
+      }
     }
 
     get template() {
