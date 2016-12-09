@@ -4,17 +4,15 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>basic-animation-stage</title>
+  <title>animation-stage with dots</title>
 
   <script src="../demos/lib/web-animations.min.js"></script>
   <!-- TODO: Use npm distribution of v1 polyfills when available. -->
   <script src="../demos/bower_components/webcomponents.js/webcomponents-lite.js"></script>
   <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
   <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
-  <script src="../basic-page-dots/dist/basic-page-dots.js"></script>
-  <script src="../basic-component-mixins/dist/basic-component-mixins.js"></script>
-  <script src="./dist/basic-animation-stage.js"></script>
-  <link rel="stylesheet" href="../demos/demos.css">
+  <script src="dist/demos.js"></script>
+  <link rel="stylesheet" href="demos.css">
 
   <style>
   html {
@@ -37,7 +35,7 @@
     display: block; /* Stupid IE */
   }
 
-  basic-animation-stage {
+  animation-stage-with-dots {
     height: 100vmin;
     width: 100vmin;
   }
@@ -104,15 +102,13 @@
 </head>
 
 <body>
-  <basic-page-dots>
-    <basic-animation-stage id="stage" selection-wraps="false" aria-label="Pages">
-      <div class="box lightText" style="background: #53777a;"><div>One</div></div>
-      <div class="box" style="background: #d95b43"><div>Two</div></div>
-      <div class="box" style="background: #c02942"><div>Three</div></div>
-      <div class="box" style="background: #ecd078"><div>Four</div></div>
-      <div class="box lightText" style="background: #542437;"><div>Five</div></div>
-    </basic-animation-stage>
-  </basic-page-dots>
+  <animation-stage-with-dots id="stage" selection-wraps="false" aria-label="Pages">
+    <div class="box lightText" style="background: #53777a;"><div>One</div></div>
+    <div class="box" style="background: #d95b43"><div>Two</div></div>
+    <div class="box" style="background: #c02942"><div>Three</div></div>
+    <div class="box" style="background: #ecd078"><div>Four</div></div>
+    <div class="box lightText" style="background: #542437;"><div>Five</div></div>
+  </animation-stage-with-dots>
   <div id="options">
     <div>
       <p>

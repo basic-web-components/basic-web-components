@@ -5,6 +5,7 @@ import FractionalSelectionMixin from '../../basic-component-mixins/src/Fractiona
 import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionAnimationMixin';
 import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
 import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 const base = ElementBase.compose(
@@ -44,9 +45,10 @@ const base = ElementBase.compose(
  */
 class AnimationStage extends base {
 
-  connectedCallback() {
-    if (super.connectedCallback) { super.connectedCallback(); }
-    this.selectionRequired = true;
+  get [symbols.defaults]() {
+    const defaults = super[symbols.defaults] || {};
+    defaults.selectionRequired = true;
+    return defaults;
   }
 
   get [symbols.template]() {
@@ -57,7 +59,7 @@ class AnimationStage extends base {
         position: relative;
       }
 
-      ::slotted(*) {
+      #container ::slotted(*) {
         height: 100%;
         object-fit: contain;
         position: absolute;
@@ -65,7 +67,10 @@ class AnimationStage extends base {
         will-change: transform;
       }
       </style>
-      <slot></slot>
+
+      <div id="container" role="none">
+        <slot></slot>
+      </div>
     `;
   }
 
@@ -73,3 +78,4 @@ class AnimationStage extends base {
 
 
 customElements.define('basic-animation-stage', AnimationStage);
+export default AnimationStage;

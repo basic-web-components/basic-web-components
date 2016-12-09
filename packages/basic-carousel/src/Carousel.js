@@ -1,28 +1,16 @@
-import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import AnimationStage from '../../basic-animation-stage/src/AnimationStage';
 import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
-import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
 import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
 import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
-import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionAnimationMixin';
-import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
-import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import SwipeDirectionMixin from '../../basic-component-mixins/src/SwipeDirectionMixin';
 import symbols from '../../basic-component-mixins/src/symbols';
 import TrackpadDirectionMixin from '../../basic-component-mixins/src/TrackpadDirectionMixin';
 
 
-const base = ElementBase.compose(
-  ContentItemsMixin,
+const base = AnimationStage.compose(
   DirectionSelectionMixin,
-  DistributedChildrenContentMixin,
-  FractionalSelectionMixin,
   KeyboardMixin,
   KeyboardDirectionMixin,
-  SelectionAnimationMixin,
-  SelectionAriaActiveMixin,
-  SingleSelectionMixin,
   SwipeDirectionMixin,
   TrackpadDirectionMixin
 );
@@ -126,17 +114,10 @@ const base = ElementBase.compose(
  * elements. This helps users navigate the sequence of elements in the carousel
  * using assistive technologies.
  *
- * @extends ElementBase
- * @mixes ContentItemsMixin
  * @mixes DirectionSelectionMixin
- * @mixes DistributedChildrenContentMixin
- * @mixes FractionalSelectionMixin
  * @mixes GenericMixin
  * @mixes KeyboardMixin
  * @mixes KeyboardDirectionMixin
- * @mixes SelectionAnimationMixin
- * @mixes SelectionAriaActiveMixin
- * @mixes SingleSelectionMixin
  * @mixes SwipeDirectionMixin
  * @mixes TrackpadDirectionMixin
  */
@@ -146,33 +127,8 @@ class Carousel extends base {
     const defaults = super[symbols.defaults] || {};
     defaults.navigationAxis = 'horizontal';
     defaults.selectionAnimationEffect = 'slideWithGap';
-    defaults.selectionRequired = true;
+    // defaults.selectionRequired = true;
     return defaults;
-  }
-
-  get [symbols.template]() {
-    return `
-      <style>
-      :host {
-        display: -webkit-flex;
-        display: flex;
-        overflow: hidden;
-        position: relative;
-      }
-
-      #container ::slotted(*) {
-        height: 100%;
-        object-fit: contain;
-        position: absolute;
-        width: 100%;
-        will-change: transform;
-      }
-      </style>
-
-      <div id="container" role="none">
-        <slot></slot>
-      </div>
-    `;
   }
 
 }
