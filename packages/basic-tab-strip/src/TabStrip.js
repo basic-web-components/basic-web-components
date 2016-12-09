@@ -81,11 +81,6 @@ class TabStrip extends ElementBase.compose(
     }
   }
 
-  [symbols.applySelection](item, selected) {
-    if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-    applySelectionToTab(item, selected);
-  }
-
   get [symbols.defaults]() {
     const defaults = super[symbols.defaults] || {};
     defaults.tabindex = null;
@@ -95,6 +90,11 @@ class TabStrip extends ElementBase.compose(
 
   get items() {
     return this.$.tabs.children;
+  }
+
+  [symbols.itemSelected](item, selected) {
+    if (super[symbols.itemSelected]) { super[symbols.itemSelected](item, selected); }
+    applySelectionToTab(item, selected);
   }
 
   [symbols.keydown](event) {

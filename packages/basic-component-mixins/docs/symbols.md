@@ -15,7 +15,7 @@ then create a property or method whose key is the desired Symbol.
     import 'symbols' from 'basic-component-mixins/src/symbols';
 
     class MyElement extends SingleSelectionMixin(HTMLElement) {
-      [symbols.applySelection](item, selected) {
+      [symbols.itemSelected](item, selected) {
         // This will be invoked whenever an item is selected/deselected.
       }
     }

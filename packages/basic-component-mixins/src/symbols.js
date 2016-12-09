@@ -14,7 +14,7 @@ import createSymbol from './createSymbol';
  *     import 'symbols' from 'basic-component-mixins/src/symbols';
  *
  *     class MyElement extends SingleSelectionMixin(HTMLElement) {
- *       [symbols.applySelection](item, selected) {
+ *       [symbols.itemSelected](item, selected) {
  *         // This will be invoked whenever an item is selected/deselected.
  *       }
  *     }
@@ -22,17 +22,6 @@ import createSymbol from './createSymbol';
  * @module symbols
  */
 const symbols = {
-
-  /**
-   * Symbol for the `applySelection` method.
-   *
-   * This method applies the indicated selection state to an item.
-   *
-   * @function applySelection
-   * @param {HTMLElement} item - the item being selected/deselected
-   * @param {boolean} selected - true if the item is selected, false if not
-   */
-  applySelection: createSymbol('applySelection'),
 
   /**
    * Symbol for the `defaults` property.
@@ -143,6 +132,17 @@ const symbols = {
    * being nothing.
    */
   itemsChanged: createSymbol('itemsChanged'),
+
+  /**
+   * Symbol for the `itemSelected` method.
+   *
+   * This method is invoked when an item becomes selected or deselected.
+   *
+   * @function itemSelected
+   * @param {HTMLElement} item - the item being selected/deselected
+   * @param {boolean} selected - true if the item is selected, false if not
+   */
+  itemSelected: createSymbol('itemSelected'),
 
   /**
    * Symbol for the `keydown` method.

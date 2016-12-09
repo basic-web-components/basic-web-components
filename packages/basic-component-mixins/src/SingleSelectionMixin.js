@@ -70,19 +70,6 @@ export default (base) => {
     }
 
     /**
-     * Apply the indicate selection state to the item.
-     *
-     * The default implementation of this method does nothing. User-visible
-     * effects will typically be handled by other mixins.
-     *
-     * @param {HTMLElement} item - the item being selected/deselected
-     * @param {boolean} selected - true if the item is selected, false if not
-     */
-    [symbols.applySelection](item, selected) {
-      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-    }
-
-    /**
      * True if the selection can be moved to the next item, false if not (the
      * selected item is the last item in the list).
      *
@@ -135,7 +122,7 @@ export default (base) => {
      */
     [symbols.itemAdded](item) {
       if (super[symbols.itemAdded]) { super[symbols.itemAdded](item); }
-      this[symbols.applySelection](item, item === this.selectedItem);
+      this[symbols.itemSelected](item, item === this.selectedItem);
     }
 
     [symbols.itemsChanged]() {
@@ -146,6 +133,19 @@ export default (base) => {
 
       // In case the change in items affected which navigations are possible.
       updatePossibleNavigations(this);
+    }
+
+    /**
+     * Apply the indicate selection state to the item.
+     *
+     * The default implementation of this method does nothing. User-visible
+     * effects will typically be handled by other mixins.
+     *
+     * @param {HTMLElement} item - the item being selected/deselected
+     * @param {boolean} selected - true if the item is selected, false if not
+     */
+    [symbols.itemSelected](item, selected) {
+      if (super[symbols.itemSelected]) { super[symbols.itemSelected](item, selected); }
     }
 
     /**
@@ -242,11 +242,11 @@ export default (base) => {
 
         if (previousSelectedItem) {
           // Update selection state of old item.
-          this[symbols.applySelection](previousSelectedItem, false);
+          this[symbols.itemSelected](previousSelectedItem, false);
         }
         if (item) {
           // Update selection state to new item.
-          this[symbols.applySelection](item, true);
+          this[symbols.itemSelected](item, true);
         }
 
         updatePossibleNavigations(this);

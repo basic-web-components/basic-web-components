@@ -35,20 +35,11 @@ export default (base) => {
    * to any list item that does not already have a role specified.
    *
    * This mixin expects a set of members that manage the state of the selection:
-   * `[symbols.applySelection]`, `itemAdded`, and `selectedIndex`. You can
+   * `[symbols.itemSelected]`, `itemAdded`, and `selectedIndex`. You can
    * supply these yourself, or do so via
    * [SingleSelectionMixin](SingleSelectionMixin.md).
    */
   class SelectionAriaActive extends base {
-
-    [symbols.applySelection](item, selected) {
-      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-      item.setAttribute('aria-selected', selected);
-      const itemId = item.id;
-      if (itemId && selected) {
-        this.setAttribute('aria-activedescendant', itemId);
-      }
-    }
 
     connectedCallback() {
       if (super.connectedCallback) { super.connectedCallback(); }
@@ -87,6 +78,15 @@ export default (base) => {
             "_" + this.id + "Option" :
             "_option";
         item.id = baseId + idCount++;
+      }
+    }
+
+    [symbols.itemSelected](item, selected) {
+      if (super[symbols.itemSelected]) { super[symbols.itemSelected](item, selected); }
+      item.setAttribute('aria-selected', selected);
+      const itemId = item.id;
+      if (itemId && selected) {
+        this.setAttribute('aria-activedescendant', itemId);
       }
     }
 

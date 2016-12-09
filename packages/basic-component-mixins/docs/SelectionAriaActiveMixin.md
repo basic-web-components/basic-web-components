@@ -28,7 +28,7 @@ explicit role. Similarly, this mixin will apply a default role of "option"
 to any list item that does not already have a role specified.
 
 This mixin expects a set of members that manage the state of the selection:
-`[symbols.applySelection]`, `itemAdded`, and `selectedIndex`. You can
+`[symbols.itemSelected]`, `itemAdded`, and `selectedIndex`. You can
 supply these yourself, or do so via
 [SingleSelectionMixin](SingleSelectionMixin.md).
 

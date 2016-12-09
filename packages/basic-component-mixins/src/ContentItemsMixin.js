@@ -43,21 +43,6 @@ export default (base) => {
    */
   class ContentItems extends base {
 
-    /**
-     * Apply the selection state to a single item.
-     *
-     * Invoke this method to signal that the selected state of the indicated item
-     * has changed. By default, this applies a `selected` CSS class if the item
-     * is selected, and removed it if not selected.
-     *
-     * @param {HTMLElement} item - The item whose selection state has changed.
-     * @param {boolean} selected - True if the item is selected, false if not.
-     */
-    [symbols.applySelection](item, selected) {
-      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-      toggleClass(item, 'selected', selected);
-    }
-
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
 
@@ -80,6 +65,21 @@ export default (base) => {
      */
     [symbols.itemAdded](item) {
       if (super[symbols.itemAdded]) { super[symbols.itemAdded](item); }
+    }
+
+    /**
+     * The selection state for a single item has changed.
+     *
+     * Invoke this method to signal that the selected state of the indicated item
+     * has changed. By default, this applies a `selected` CSS class if the item
+     * is selected, and removed it if not selected.
+     *
+     * @param {HTMLElement} item - The item whose selection state has changed.
+     * @param {boolean} selected - True if the item is selected, false if not.
+     */
+    [symbols.itemSelected](item, selected) {
+      if (super[symbols.itemSelected]) { super[symbols.itemSelected](item, selected); }
+      toggleClass(item, 'selected', selected);
     }
 
     /**

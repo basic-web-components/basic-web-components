@@ -29,16 +29,16 @@ const base = ElementBase.compose(
  */
 class Modes extends base {
 
-  [symbols.applySelection](item, selected) {
-    if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-    item.style.display = selected ? '' : 'none';
-    item.setAttribute('aria-hidden', !selected);
-  }
-
   get [symbols.defaults]() {
     const defaults = super[symbols.defaults] || {};
     defaults.selectionRequired = true;
     return defaults;
+  }
+
+  [symbols.itemSelected](item, selected) {
+    if (super[symbols.itemSelected]) { super[symbols.itemSelected](item, selected); }
+    item.style.display = selected ? '' : 'none';
+    item.setAttribute('aria-hidden', !selected);
   }
 
   get [symbols.template]() {

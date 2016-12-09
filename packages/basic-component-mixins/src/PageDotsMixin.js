@@ -38,20 +38,6 @@ export default (base) => {
       });
     }
 
-    [symbols.applySelection](item, selected) {
-      if (super[symbols.applySelection]) { super[symbols.applySelection](item, selected); }
-      const index = this.items.indexOf(item);
-      // See if the corresponding dot has already been created.
-      // If not, the correct dot will be selected when it gets created.
-      const dots = this.dots;
-      if (dots && dots.length > index) {
-        const dot = this.dots[index];
-        if (dot) {
-          toggleClass(dot, 'selected', selected);
-        }
-      }
-    }
-
     get dots() {
       return [].slice.call(this.$.dots.querySelectorAll('.dot'));
     }
@@ -71,6 +57,20 @@ export default (base) => {
         }
       });
       refreshDots(this);
+    }
+
+    [symbols.itemSelected](item, selected) {
+      if (super[symbols.itemSelected]) { super[symbols.itemSelected](item, selected); }
+      const index = this.items.indexOf(item);
+      // See if the corresponding dot has already been created.
+      // If not, the correct dot will be selected when it gets created.
+      const dots = this.dots;
+      if (dots && dots.length > index) {
+        const dot = this.dots[index];
+        if (dot) {
+          toggleClass(dot, 'selected', selected);
+        }
+      }
     }
 
     /**
