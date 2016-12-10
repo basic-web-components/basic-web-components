@@ -33,6 +33,7 @@ import SingleSelectionMixin from './src/SingleSelectionMixin';
 import SwipeDirectionMixin from './src/SwipeDirectionMixin';
 import symbols from './src/symbols';
 import TimerSelectionMixin from './src/TimerSelectionMixin';
+import TabStripMixin from './src/TabStripMixin';
 import TrackpadDirectionMixin from './src/TrackpadDirectionMixin';
 
 window.Basic = window.Basic || {};
@@ -64,5 +65,6 @@ window.Basic.ShadowTemplateMixin = ShadowTemplateMixin;
 window.Basic.SingleSelectionMixin = SingleSelectionMixin;
 window.Basic.SwipeDirectionMixin = SwipeDirectionMixin;
 window.Basic.symbols = symbols;
+window.Basic.TabStripMixin = TabStripMixin;
 window.Basic.TimerSelectionMixin = TimerSelectionMixin;
 window.Basic.TrackpadDirectionMixin = TrackpadDirectionMixin;
