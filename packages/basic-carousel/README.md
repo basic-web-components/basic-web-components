@@ -112,7 +112,6 @@ using assistive technologies.
   , <code>[SelectionAriaActiveMixin](../basic-component-mixins/docs/SelectionAriaActiveMixin.md)</code>
   , <code>[SingleSelectionMixin](../basic-component-mixins/docs/SingleSelectionMixin.md)</code>
   , <code>[SwipeDirectionMixin](../basic-component-mixins/docs/SwipeDirectionMixin.md)</code>
-  , <code>[TargetInCollectiveMixin](../basic-component-mixins/docs/TargetInCollectiveMixin.md)</code>
   , <code>[TrackpadDirectionMixin](../basic-component-mixins/docs/TrackpadDirectionMixin.md)</code>
   
 
@@ -139,7 +138,7 @@ using assistive technologies.
     * [.itemAdded(item)](#ContentItems+symbols.itemAdded)
     * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentItems.event_items-changed)
-    * [.itemsChanged()](#ContentItems+itemsChanged)
+    * [.itemsChanged()](#ContentItems+symbols.itemsChanged)
     * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
@@ -157,7 +156,6 @@ using assistive technologies.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
     * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
 
@@ -353,14 +351,14 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
-<a name="ContentItems+itemsChanged"></a>
+<a name="ContentItems+symbols.itemsChanged"></a>
 
-### carousel.itemsChanged()
+### Carousel.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+  **Kind**: static method of <code>[Carousel](#Carousel)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
 <a name="Keyboard+symbols.keydown"></a>
 
 ### Carousel.keydown(event) ⇒ <code>boolean</code>
@@ -543,20 +541,6 @@ Select the previous item in the list.
 If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[Carousel](#Carousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="TargetInCollective+target"></a>
-
-### carousel.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-Set this to point to another element. That target element will be
-implicitly added to the component's collective. That is, the component
-and its target will share responsibility for handling keyboard events.
-
-You can set this property yourself, or you can use the
-ContentFirstChildTargetMixin mixin to automatically set the target to the
-component's first child.
-
-  **Kind**: instance property of <code>[Carousel](#Carousel)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
 <a name="SwipeDirection+travelFraction"></a>
 
 ### carousel.travelFraction : <code>number</code>

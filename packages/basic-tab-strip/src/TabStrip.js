@@ -45,7 +45,6 @@ const tabPositionSymbol = createSymbol('tabPosition');
  * @mixes KeyboardMixin
  * @mixes KeyboardDirectionMixin
  * @mixes SingleSelectionMixin
- * @mixes TabStripMixin
  */
 class TabStrip extends ElementBase.compose(
   // ClickSelectionMixin,

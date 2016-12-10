@@ -1,4 +1,4 @@
-import TabStrip from './TabStrip'; // jshint line:ignore
+import TabStrip from '../TabStrip/src/TabStrip'; // jshint line:ignore
 import symbols from '../../basic-component-mixins/src/symbols';
 
 

@@ -76,7 +76,7 @@ The user can also select an item by typing the beginning of an item's text.
     * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentItems.event_items-changed)
-    * [.itemsChanged()](#ContentItems+itemsChanged)
+    * [.itemsChanged()](#ContentItems+symbols.itemsChanged)
     * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * [.pageDown()](#KeyboardPagedSelection+pageDown)
@@ -261,14 +261,14 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
-<a name="ContentItems+itemsChanged"></a>
+<a name="ContentItems+symbols.itemsChanged"></a>
 
-### listBox.itemsChanged()
+### ListBox.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
 <a name="Keyboard+symbols.keydown"></a>
 
 ### ListBox.keydown(event) ⇒ <code>boolean</code>

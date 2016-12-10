@@ -16,9 +16,7 @@ This component doesn't provide any UI for changing which mode is shown.
 **Extends:** <code>ElementBase</code>  
 **Mixes**: <code>[ContentItemsMixin](../basic-component-mixins/docs/ContentItemsMixin.md)</code>
   , <code>[DistributedChildrenContentMixin](../basic-component-mixins/docs/DistributedChildrenContentMixin.md)</code>
-  , <code>[SelectionAriaActiveMixin](../basic-component-mixins/docs/SelectionAriaActiveMixin.md)</code>
   , <code>[SingleSelectionMixin](../basic-component-mixins/docs/SingleSelectionMixin.md)</code>
-  , <code>[TargetInCollectiveMixin](../basic-component-mixins/docs/TargetInCollectiveMixin.md)</code>
   
 
 * [Modes](#Modes) ⇐ <code>ElementBase</code>
@@ -29,11 +27,11 @@ This component doesn't provide any UI for changing which mode is shown.
     * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenContent+contentChanged)
-    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.itemAdded(item)](#ContentItems+symbols.itemAdded)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentItems.event_items-changed)
-    * [.itemsChanged()](#ContentItems+itemsChanged)
+    * [.itemsChanged()](#ContentItems+symbols.itemsChanged)
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
     * ["selected-item-changed"](#SingleSelection.event_selected-item-changed)
     * [.selectedIndex](#SingleSelection+selectedIndex) : <code>number</code>
@@ -44,7 +42,6 @@ This component doesn't provide any UI for changing which mode is shown.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
 
 <a name="SingleSelection+symbols.applySelection"></a>
 
@@ -116,20 +113,6 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
-<a name="SingleSelection+symbols.itemAdded"></a>
-
-### Modes.itemAdded(item)
-Handle a new item being added to the list.
-
-The default implementation of this method simply sets the item's
-selection state to false.
-
-  **Kind**: static method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being added |
-
 <a name="ContentItems+symbols.itemAdded"></a>
 
 ### Modes.itemAdded(item)
@@ -144,6 +127,20 @@ this to perform per-item initialization.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item that was added. |
 
+<a name="SingleSelection+symbols.itemAdded"></a>
+
+### Modes.itemAdded(item)
+Handle a new item being added to the list.
+
+The default implementation of this method simply sets the item's
+selection state to false.
+
+  **Kind**: static method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being added |
+
 <a name="ContentItems+items"></a>
 
 ### modes.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -157,14 +154,14 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[Modes](#Modes)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
-<a name="ContentItems+itemsChanged"></a>
+<a name="ContentItems+symbols.itemsChanged"></a>
 
-### modes.itemsChanged()
+### Modes.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+  **Kind**: static method of <code>[Modes](#Modes)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
 <a name="SingleSelection.event_selected-index-changed"></a>
 
 ### "selected-index-changed"
@@ -249,17 +246,3 @@ Select the previous item in the list.
 If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[Modes](#Modes)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="TargetInCollective+target"></a>
-
-### modes.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-Set this to point to another element. That target element will be
-implicitly added to the component's collective. That is, the component
-and its target will share responsibility for handling keyboard events.
-
-You can set this property yourself, or you can use the
-ContentFirstChildTargetMixin mixin to automatically set the target to the
-component's first child.
-
-  **Kind**: instance property of <code>[Modes](#Modes)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.

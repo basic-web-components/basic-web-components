@@ -28,7 +28,6 @@ const base = Modes.compose(
  *
  * @extends Modes
  * @mixes GenericMixin
- * @mixes TabStripMixin
  */
 class Tabs extends base {}
 
