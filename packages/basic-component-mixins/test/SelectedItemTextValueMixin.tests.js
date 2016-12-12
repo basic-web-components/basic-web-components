@@ -1,7 +1,6 @@
 import { assert } from 'chai';
 import SingleSelectionMixin from '../src/SingleSelectionMixin';
 import SelectedItemTextValueMixin from '../src/SelectedItemTextValueMixin';
-import flush from './flush';
 
 
 /* Element that exposes a value property */

@@ -1,5 +1,6 @@
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 // Symbols for private data members on an element.

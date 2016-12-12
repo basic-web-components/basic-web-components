@@ -1,5 +1,6 @@
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import OpenCloseMixin from '../../basic-component-mixins/src/OpenCloseMixin';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 /**

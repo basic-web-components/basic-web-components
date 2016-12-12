@@ -2,6 +2,7 @@ import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 // Symbols for private data members on an element.
