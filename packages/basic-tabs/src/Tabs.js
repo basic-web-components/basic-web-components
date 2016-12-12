@@ -1,6 +1,6 @@
 import GenericMixin from '../../basic-component-mixins/src/GenericMixin';
 import Modes from '../../basic-modes/src/Modes';
-import TabStripMixin from '../../basic-component-mixins/src/TabStripMixin';
+import TabStripMixin from '../../basic-tab-strip/src/TabStripMixin';
 
 
 const base = Modes.compose(

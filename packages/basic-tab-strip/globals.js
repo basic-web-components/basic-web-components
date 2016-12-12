@@ -6,6 +6,8 @@
  */
 
 import TabStrip from './src/TabStrip';
+import TabStripMixin from './src/TabStripMixin';
 
 window.Basic = window.Basic || {};
 window.Basic.TabStrip = TabStrip;
+window.Basic.TabStripMixin = TabStripMixin;
