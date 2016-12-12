@@ -35,13 +35,10 @@ See that component for more details on use.
   , <code>[SelectionAriaActiveMixin](../basic-component-mixins/docs/SelectionAriaActiveMixin.md)</code>
   , <code>[SingleSelectionMixin](../basic-component-mixins/docs/SingleSelectionMixin.md)</code>
   , <code>[SwipeDirectionMixin](../basic-component-mixins/docs/SwipeDirectionMixin.md)</code>
-  , <code>[TargetInCollectiveMixin](../basic-component-mixins/docs/TargetInCollectiveMixin.md)</code>
   , <code>[TrackpadDirectionMixin](../basic-component-mixins/docs/TrackpadDirectionMixin.md)</code>
   
 
 * [SlidingCarousel](#SlidingCarousel) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
-    * [.applySelection(item, selected)](#ContentItems+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -50,19 +47,21 @@ See that component for more details on use.
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+symbols.goDown)
     * [.goEnd()](#KeyboardDirection+symbols.goEnd)
-    * [.goLeft()](#KeyboardDirection+symbols.goLeft)
     * [.goLeft()](#TrackpadDirection+symbols.goLeft)
     * [.goLeft()](#SwipeDirection+symbols.goLeft)
-    * [.goRight()](#KeyboardDirection+symbols.goRight)
+    * [.goLeft()](#KeyboardDirection+symbols.goLeft)
     * [.goRight()](#SwipeDirection+symbols.goRight)
     * [.goRight()](#TrackpadDirection+symbols.goRight)
+    * [.goRight()](#KeyboardDirection+symbols.goRight)
     * [.goStart()](#KeyboardDirection+symbols.goStart)
     * [.goUp()](#KeyboardDirection+symbols.goUp)
     * [.itemAdded(item)](#ContentItems+symbols.itemAdded)
     * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentItems.event_items-changed)
-    * [.itemsChanged()](#ContentItems+itemsChanged)
+    * [.itemsChanged()](#ContentItems+symbols.itemsChanged)
+    * [.itemSelected(item, selected)](#SingleSelection+symbols.itemSelected)
+    * [.itemSelected(item, selected)](#ContentItems+symbols.itemSelected)
     * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * ["selected-index-changed"](#SingleSelection.event_selected-index-changed)
@@ -75,40 +74,8 @@ See that component for more details on use.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-    * [.target](#TargetInCollective+target) : <code>HTMLElement</code>
     * [.travelFraction](#SwipeDirection+travelFraction) : <code>number</code>
     * [.travelFraction](#TrackpadDirection+travelFraction) : <code>number</code>
-
-<a name="SingleSelection+symbols.applySelection"></a>
-
-### SlidingCarousel.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
-
-<a name="ContentItems+symbols.applySelection"></a>
-
-### SlidingCarousel.applySelection(item, selected)
-Apply the selection state to a single item.
-
-Invoke this method to signal that the selected state of the indicated item
-has changed. By default, this applies a `selected` CSS class if the item
-is selected, and removed it if not selected.
-
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item whose selection state has changed. |
-| selected | <code>boolean</code> | True if the item is selected, false if not. |
 
 <a name="SingleSelection+canSelectNext"></a>
 
@@ -174,13 +141,6 @@ Invoked when the user wants to go/navigate to the end (e.g., of a list).
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
-<a name="KeyboardDirection+symbols.goLeft"></a>
-
-### SlidingCarousel.goLeft()
-Invoked when the user wants to go/navigate left.
-The default implementation of this method does nothing.
-
-  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
 <a name="TrackpadDirection+symbols.goLeft"></a>
 
 ### SlidingCarousel.goLeft()
@@ -195,10 +155,10 @@ Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SwipeDirection#symbols](../basic-component-mixins/docs/SwipeDirection#symbols.md)</code> mixin.
-<a name="KeyboardDirection+symbols.goRight"></a>
+<a name="KeyboardDirection+symbols.goLeft"></a>
 
-### SlidingCarousel.goRight()
-Invoked when the user wants to go/navigate right.
+### SlidingCarousel.goLeft()
+Invoked when the user wants to go/navigate left.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
@@ -216,6 +176,13 @@ Invoked when the user wants to go/navigate right.
 The default implementation of this method does nothing.
 
   **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TrackpadDirection#symbols](../basic-component-mixins/docs/TrackpadDirection#symbols.md)</code> mixin.
+<a name="KeyboardDirection+symbols.goRight"></a>
+
+### SlidingCarousel.goRight()
+Invoked when the user wants to go/navigate right.
+The default implementation of this method does nothing.
+
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[KeyboardDirection#symbols](../basic-component-mixins/docs/KeyboardDirection#symbols.md)</code> mixin.
 <a name="KeyboardDirection+symbols.goStart"></a>
 
 ### SlidingCarousel.goStart()
@@ -271,14 +238,45 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
-<a name="ContentItems+itemsChanged"></a>
+<a name="ContentItems+symbols.itemsChanged"></a>
 
-### slidingCarousel.itemsChanged()
+### SlidingCarousel.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
+<a name="SingleSelection+symbols.itemSelected"></a>
+
+### SlidingCarousel.itemSelected(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
+
+<a name="ContentItems+symbols.itemSelected"></a>
+
+### SlidingCarousel.itemSelected(item, selected)
+The selection state for a single item has changed.
+
+Invoke this method to signal that the selected state of the indicated item
+has changed. By default, this applies a `selected` CSS class if the item
+is selected, and removed it if not selected.
+
+  **Kind**: static method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | The item whose selection state has changed. |
+| selected | <code>boolean</code> | True if the item is selected, false if not. |
+
 <a name="Keyboard+symbols.keydown"></a>
 
 ### SlidingCarousel.keydown(event) ⇒ <code>boolean</code>
@@ -389,20 +387,6 @@ Select the previous item in the list.
 If the list has no selection, the last item will be selected.
 
   **Kind**: instance method of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[SingleSelection](../basic-component-mixins/docs/SingleSelection.md)</code> mixin.
-<a name="TargetInCollective+target"></a>
-
-### slidingCarousel.target : <code>HTMLElement</code>
-Gets/sets the current target of the component.
-
-Set this to point to another element. That target element will be
-implicitly added to the component's collective. That is, the component
-and its target will share responsibility for handling keyboard events.
-
-You can set this property yourself, or you can use the
-ContentFirstChildTargetMixin mixin to automatically set the target to the
-component's first child.
-
-  **Kind**: instance property of <code>[SlidingCarousel](#SlidingCarousel)</code>. Defined by <code>[TargetInCollective](../basic-component-mixins/docs/TargetInCollective.md)</code> mixin.
 <a name="SwipeDirection+travelFraction"></a>
 
 ### slidingCarousel.travelFraction : <code>number</code>

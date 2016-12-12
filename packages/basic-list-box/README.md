@@ -58,8 +58,6 @@ The user can also select an item by typing the beginning of an item's text.
 **Mixis**: SelectedItemTextValueMixin  
 
 * [ListBox](#ListBox) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ContentItems+symbols.applySelection)
-    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
@@ -76,7 +74,9 @@ The user can also select an item by typing the beginning of an item's text.
     * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentItems.event_items-changed)
-    * [.itemsChanged()](#ContentItems+itemsChanged)
+    * [.itemsChanged()](#ContentItems+symbols.itemsChanged)
+    * [.itemSelected(item, selected)](#SingleSelection+symbols.itemSelected)
+    * [.itemSelected(item, selected)](#ContentItems+symbols.itemSelected)
     * [.keydown(event)](#Keyboard+symbols.keydown) ⇒ <code>boolean</code>
     * [.navigationAxis](#KeyboardDirection+navigationAxis) : <code>string</code>
     * [.pageDown()](#KeyboardPagedSelection+pageDown)
@@ -96,37 +96,6 @@ The user can also select an item by typing the beginning of an item's text.
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
     * ["value-changed"](#ListBox.event_value-changed)
-
-<a name="ContentItems+symbols.applySelection"></a>
-
-### ListBox.applySelection(item, selected)
-Apply the selection state to a single item.
-
-Invoke this method to signal that the selected state of the indicated item
-has changed. By default, this applies a `selected` CSS class if the item
-is selected, and removed it if not selected.
-
-  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item whose selection state has changed. |
-| selected | <code>boolean</code> | True if the item is selected, false if not. |
-
-<a name="SingleSelection+symbols.applySelection"></a>
-
-### ListBox.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 
@@ -261,14 +230,45 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
-<a name="ContentItems+itemsChanged"></a>
+<a name="ContentItems+symbols.itemsChanged"></a>
 
-### listBox.itemsChanged()
+### ListBox.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
+<a name="SingleSelection+symbols.itemSelected"></a>
+
+### ListBox.itemSelected(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
+
+<a name="ContentItems+symbols.itemSelected"></a>
+
+### ListBox.itemSelected(item, selected)
+The selection state for a single item has changed.
+
+Invoke this method to signal that the selected state of the indicated item
+has changed. By default, this applies a `selected` CSS class if the item
+is selected, and removed it if not selected.
+
+  **Kind**: static method of <code>[ListBox](#ListBox)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | The item whose selection state has changed. |
+| selected | <code>boolean</code> | True if the item is selected, false if not. |
+
 <a name="Keyboard+symbols.keydown"></a>
 
 ### ListBox.keydown(event) ⇒ <code>boolean</code>

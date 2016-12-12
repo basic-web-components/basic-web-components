@@ -36,7 +36,6 @@ change, turning on the optimization automatically.
 * [ContentItems](#ContentItems)
     * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentItems.event_items-changed)
-    * [.itemsChanged()](#ContentItems+itemsChanged)
 
 <a name="ContentItems+items"></a>
 
@@ -51,11 +50,3 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[ContentItems](#ContentItems)</code>
-<a name="ContentItems+itemsChanged"></a>
-
-### contentItems.itemsChanged()
-This method is invoked when the underlying contents change. It is also
-invoked on component initialization – since the items have "changed" from
-being nothing.
-
-  **Kind**: instance method of <code>[ContentItems](#ContentItems)</code>

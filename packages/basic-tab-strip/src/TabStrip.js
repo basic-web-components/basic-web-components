@@ -1,4 +1,4 @@
-import ClickSelectionMixin from '../../basic-component-mixins/src/ClickSelectionMixin';
+// import ClickSelectionMixin from '../../basic-component-mixins/src/ClickSelectionMixin';
 import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
 import createSymbol from '../../basic-component-mixins/src/createSymbol';
 import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
@@ -45,7 +45,6 @@ const tabPositionSymbol = createSymbol('tabPosition');
  * @mixes KeyboardMixin
  * @mixes KeyboardDirectionMixin
  * @mixes SingleSelectionMixin
- * @mixes TabStripMixin
  */
 class TabStrip extends ElementBase.compose(
   // ClickSelectionMixin,

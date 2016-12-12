@@ -10,9 +10,7 @@ crossfade effect.
 
 This component can be used on its own. To incorporate slideshow behavior into
 a component of your own, apply the
-[TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md). To
-add slideshow functionality to a component such as a carousel, wrap it with
-the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
+[TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md).
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
@@ -26,18 +24,18 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
   
 
 * [Slideshow](#Slideshow) ⇐ <code>ElementBase</code>
-    * [.applySelection(item, selected)](#ContentItems+symbols.applySelection)
-    * [.applySelection(item, selected)](#SingleSelection+symbols.applySelection)
     * [.canSelectNext](#SingleSelection+canSelectNext) : <code>boolean</code>
     * [.canSelectPrevious](#SingleSelection+canSelectPrevious) : <code>boolean</code>
     * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["content-changed"](#DistributedChildrenContent.event_content-changed)
     * [.contentChanged()](#DistributedChildrenContent+contentChanged)
-    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.itemAdded(item)](#ContentItems+symbols.itemAdded)
+    * [.itemAdded(item)](#SingleSelection+symbols.itemAdded)
     * [.items](#ContentItems+items) : <code>Array.&lt;HTMLElement&gt;</code>
     * ["items-changed"](#ContentItems.event_items-changed)
-    * [.itemsChanged()](#ContentItems+itemsChanged)
+    * [.itemsChanged()](#ContentItems+symbols.itemsChanged)
+    * [.itemSelected(item, selected)](#SingleSelection+symbols.itemSelected)
+    * [.itemSelected(item, selected)](#ContentItems+symbols.itemSelected)
     * [.pause()](#TimerSelection+pause)
     * [.play()](#TimerSelection+play)
     * [.playing](#TimerSelection+playing) : <code>boolean</code>
@@ -57,37 +55,6 @@ the auxiliary [basic-slideshow-timer](../basic-slideshow-timer) component.
     * [.selectLast()](#SingleSelection+selectLast)
     * [.selectNext()](#SingleSelection+selectNext)
     * [.selectPrevious()](#SingleSelection+selectPrevious)
-
-<a name="ContentItems+symbols.applySelection"></a>
-
-### Slideshow.applySelection(item, selected)
-Apply the selection state to a single item.
-
-Invoke this method to signal that the selected state of the indicated item
-has changed. By default, this applies a `selected` CSS class if the item
-is selected, and removed it if not selected.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | The item whose selection state has changed. |
-| selected | <code>boolean</code> | True if the item is selected, false if not. |
-
-<a name="SingleSelection+symbols.applySelection"></a>
-
-### Slideshow.applySelection(item, selected)
-Apply the indicate selection state to the item.
-
-The default implementation of this method does nothing. User-visible
-effects will typically be handled by other mixins.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being selected/deselected |
-| selected | <code>boolean</code> | true if the item is selected, false if not |
 
 <a name="SingleSelection+canSelectNext"></a>
 
@@ -128,20 +95,6 @@ contents have essentially "changed" from being nothing. This allows the
 component to perform initial processing of its children.
 
   **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[DistributedChildrenContent](../basic-component-mixins/docs/DistributedChildrenContent.md)</code> mixin.
-<a name="SingleSelection+symbols.itemAdded"></a>
-
-### Slideshow.itemAdded(item)
-Handle a new item being added to the list.
-
-The default implementation of this method simply sets the item's
-selection state to false.
-
-  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>HTMLElement</code> | the item being added |
-
 <a name="ContentItems+symbols.itemAdded"></a>
 
 ### Slideshow.itemAdded(item)
@@ -156,6 +109,20 @@ this to perform per-item initialization.
 | --- | --- | --- |
 | item | <code>HTMLElement</code> | The item that was added. |
 
+<a name="SingleSelection+symbols.itemAdded"></a>
+
+### Slideshow.itemAdded(item)
+Handle a new item being added to the list.
+
+The default implementation of this method simply sets the item's
+selection state to false.
+
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being added |
+
 <a name="ContentItems+items"></a>
 
 ### slideshow.items : <code>Array.&lt;HTMLElement&gt;</code>
@@ -169,14 +136,45 @@ mixin for a description of how items differ from plain content.
 Fires when the items in the list change.
 
   **Kind**: event emitted by <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
-<a name="ContentItems+itemsChanged"></a>
+<a name="ContentItems+symbols.itemsChanged"></a>
 
-### slideshow.itemsChanged()
+### Slideshow.itemsChanged()
 This method is invoked when the underlying contents change. It is also
 invoked on component initialization – since the items have "changed" from
 being nothing.
 
-  **Kind**: instance method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentItems](../basic-component-mixins/docs/ContentItems.md)</code> mixin.
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
+<a name="SingleSelection+symbols.itemSelected"></a>
+
+### Slideshow.itemSelected(item, selected)
+Apply the indicate selection state to the item.
+
+The default implementation of this method does nothing. User-visible
+effects will typically be handled by other mixins.
+
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[SingleSelection#symbols](../basic-component-mixins/docs/SingleSelection#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | the item being selected/deselected |
+| selected | <code>boolean</code> | true if the item is selected, false if not |
+
+<a name="ContentItems+symbols.itemSelected"></a>
+
+### Slideshow.itemSelected(item, selected)
+The selection state for a single item has changed.
+
+Invoke this method to signal that the selected state of the indicated item
+has changed. By default, this applies a `selected` CSS class if the item
+is selected, and removed it if not selected.
+
+  **Kind**: static method of <code>[Slideshow](#Slideshow)</code>. Defined by <code>[ContentItems#symbols](../basic-component-mixins/docs/ContentItems#symbols.md)</code> mixin.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>HTMLElement</code> | The item whose selection state has changed. |
+| selected | <code>boolean</code> | True if the item is selected, false if not. |
+
 <a name="TimerSelection+pause"></a>
 
 ### slideshow.pause()
