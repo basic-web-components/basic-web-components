@@ -23,9 +23,12 @@ const base = ElementBase.compose(
 /**
  * Slideshow with animated transitions.
  *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-slideshow/)
+ *
  * By default the slideshow will immediately begin playing when it is connected
  * to the document, advance every 3000 ms (3 seconds), and use a simple
- * crossfade effect.
+ * crossfade effect. For a variation with play controls, see
+ * [basic-slideshow-with-controls](../basic-slideshow-with-controls).
  *
  * This component can be used on its own. To incorporate slideshow behavior into
  * a component of your own, apply the

@@ -14,8 +14,8 @@ export default (base) => {
    * Mixin which provides for automatic timed changes in selection.
    *
    * This mixin is useful for creating slideshow-like elements such as
-   * [basic-slideshow](../packages/basic-slideshow) and
-   * [basic-slideshow-with-controls](../packages/basic-slideshow-with-controls).
+   * [basic-slideshow](../../basic-slideshow) and
+   * [basic-slideshow-with-controls](../../basic-slideshow-with-controls).
    *
    * Typical usage:
    *
