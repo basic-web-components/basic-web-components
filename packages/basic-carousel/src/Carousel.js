@@ -27,11 +27,14 @@ const base = AnimationStage.compose(
  *
  * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/)
  *
- * The above demo adds the optional
- * [basic-arrow-selection](../basic-arrow-selection) and
- * [basic-page-dots](../basic-page-dots) components. You can also view a
- * [plain demo](http://basicwebcomponents.org/basic-web-components/packages/basic-carousel/plain.html)
- * demo.
+ * The above demo is a plain carousel. It's often combined, however, with
+ * mixins like
+ * [ArrowSelectionMixin](../basic-component-mixins/docs/ArrowSelectionMixin.md),
+ * [PageDotsMixin](../basic-component-mixins/docs/PageDotsMixin.md),
+ * [TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md).
+ * For example, you can view a
+ * [demo with arrows and page dots](http://basicwebcomponents.org/basic-web-components/packages/demos/carousel-with-arrows-and-dots.html).
+ * See the specific mixins for other carousel demos.
  *
  * basic-carousel uses its children as the elements the user will navigate
  * through. In a typical use, a basic-carousel can be used to navigate between a

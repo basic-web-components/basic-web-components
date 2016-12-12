@@ -10,8 +10,9 @@ export default (base) => {
    * Template mixin which adds small dots to show the number of items and let
    * the user select a specific item.
    *
-   * You can see a [live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-page-dots.html)
-   * of this component applied to a carousel.
+   * You can see a
+   * [live demo](http://basicwebcomponents.org/basic-web-components/packages/demos/carousel-with-dots.html)
+   * of this mixin applied to a carousel.
    *
    * There will be one dot for each item, and the dot for the currently selected
    * item will be shown selected.

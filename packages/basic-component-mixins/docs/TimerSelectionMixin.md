@@ -4,7 +4,14 @@
 ## TimerSelection
 Mixin which provides for automatic timed changes in selection.
 
-This mixin is useful for creating slideshow-like elements.
+This mixin is useful for creating slideshow-like elements such as
+[basic-slideshow](../packages/basic-slideshow) and
+[basic-slideshow-with-controls](../packages/basic-slideshow-with-controls).
+
+Typical usage:
+
+    class CarouselWithTimer extends TimerSelectionMixin(Carousel) {}
+    customElements.define('carousel-with-arrows', CarouselWithTimer);
 
 This mixin expects the component to define an `items` property, as well as
 `selectFirst` and `selectNext` methods. You can implement those yourself,
