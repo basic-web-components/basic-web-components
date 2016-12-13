@@ -18,11 +18,11 @@
     "web-component-tester": "^4.0.1",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.22"
   },
-  "_release": "1cdecca64f",
+  "_release": "ccc48dd428",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "1cdecca64fac61fd85987fe601d7328a4bfa4369"
+    "commit": "ccc48dd42851da24eef37a670f8ef5aa05d43767"
   },
   "_source": "https://github.com/webcomponents/custom-elements.git",
   "_target": "master",
