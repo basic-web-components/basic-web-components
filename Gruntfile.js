@@ -272,6 +272,8 @@ module.exports = function(grunt) {
   // Default task - prints to the console the tasks that are available to be run from the command line
   //
   grunt.registerTask('default', function() {
+    grunt.log.writeln('The Basic Web Components project now uses gulp rather than grunt.');
+    /*
     grunt.log.writeln('grunt commands this project supports:\n');
     grunt.log.writeln('  grunt build (builds consolidated basic-web-components.js, all package distributions, all documentation, and all tests)');
     grunt.log.writeln('  grunt devbuild (same as build minus building the documentation)');
@@ -281,6 +283,7 @@ module.exports = function(grunt) {
     grunt.log.writeln('  grunt set-version:version (updates package.json version values and dependencies. Ex: grunt set-version:1.0.30)');
     grunt.log.writeln('  grunt saucelabs (Runs SauceLabs tests. You must set environment variables SAUCE_USERNAME and SAUCE_ACCESS_KEY.)');
     grunt.log.writeln('  grunt watch (builds and watches changes to project files)');
+    */
   });
 
   //
@@ -294,14 +297,14 @@ module.exports = function(grunt) {
   //
   // This task makes use of the buildList global array.
   //
-  grunt.registerTask('build', ['browserify:buildFiles', 'docs', 'jshint']);
+  // grunt.registerTask('build', ['browserify:buildFiles', 'docs', 'jshint']);
 
   //
   // The devbuild task is callable from the command line and is similar to the build task but doesn't
   // build the documentation files. This is meant as a quicker task for developers actively working
   // on code.
   //
-  grunt.registerTask('devbuild', ['browserify:buildFiles', 'jshint']);
+  // grunt.registerTask('devbuild', ['browserify:buildFiles', 'jshint']);
 
   //
   // The docs task is callable from the command line. This task builds each package's
@@ -309,6 +312,7 @@ module.exports = function(grunt) {
   //
   // This task makes use of the docsList global array.
   //
+  /*
   grunt.registerTask('docs', function() {
     const done = this.async();
     return mapAndChain(docsList, doc => buildMarkdownDoc(doc, grunt))
@@ -319,30 +323,31 @@ module.exports = function(grunt) {
       grunt.log.error(err)
     );
   });
+  */
 
   //
   // The lint task is callable from the command line and executes the jshint task defined
   // in the Grunt config. This task looks for JavaScript warnings/errors.
   //
-  grunt.registerTask('lint', ['jshint']);
+  // grunt.registerTask('lint', ['jshint']);
 
   //
   // The saucelabs task is callable from the command line and executes unit tests on SauceLabs
   //
-  grunt.registerTask('saucelabs', ['connect', 'saucelabs-mocha']);
+  // grunt.registerTask('saucelabs', ['connect', 'saucelabs-mocha']);
 
   //
   // The test task is callable from the command line and executes the mocha task defined
   // in the Grunt config. This task executes the monorepo's test suite.
   //
-  grunt.registerTask('test', ['mocha']);
+  // grunt.registerTask('test', ['mocha']);
 
   //
   // The watch task is callable from the command line and executes the browserify:watch task
   // defined in the Grunt config. This task performs a build and then watches for changes
   // for instant update during development.
   //
-  grunt.registerTask('watch', ['browserify:watch']);
+  // grunt.registerTask('watch', ['browserify:watch']);
 
   //
   // The npm-publish task is callable from the command line and performs a publish operation
