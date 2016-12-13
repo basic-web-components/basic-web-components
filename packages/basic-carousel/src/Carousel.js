@@ -80,7 +80,7 @@ const base = AnimationStage.compose(
  * The standard basic-carousel component supports navigation via the following
  * input methods:
  *
- * * KeyboardMixin. When the carousel has focus, the user can press Left, Right,
+ * * Keyboard. When the carousel has focus, the user can press Left, Right,
  *   Home, or End. These navigate to the expected element.
  * * Touch. On mobile and other touch-enabled devices, the user can drag left or
  *   right.
@@ -89,28 +89,24 @@ const base = AnimationStage.compose(
  * Because carousels are used in a wide variety of circumstances, by default
  * basic-carousel provides a minimal appearance and no separately interactive
  * elements such as arrow buttons on the side or dots along the bottom. Those
- * elements can be added by wrapping a basic-carousel in optional accessories:
+ * elements can be added by wrapping a Carousel in optional mixins:
  *
- * * [basic-arrow-selection](../basic-arrow-selection).
- *   This adds prominent left and right arrow buttons on the side of the carousel.
- * * [basic-page-dots](../basic-page-dots).
- *   This adds a series of small dots below the carousel to indicate the user's
+ * * [ArrowSelectionMixin](../basic-component-mixins/docs/ArrowSelectionMixin.md).
+ *   Adds prominent left and right arrow buttons on the side of the carousel.
+ * * [PageDotsMixin](../basic-component-mixins/docs/PageDotsMixin.md).
+ *   Adds a series of small dots below the carousel to indicate the user's
  *   current position in the sequence.
- * * [basic-slideshow-timer](../basic-slideshow-timer).
+ * * [TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md).
  *   Advances to the next item on a timer.
- * * [basic-tab-strip](../basic-tab-strip).
+ * * [TabStripMixin](../basic-tab-strip).
  *   Adds a strip of traditional tab buttons.
  *
  * See those components for more details, but in general you can construct a
  * common carousel with both arrow buttons and dots like so:
  *
- *     <basic-arrow-selection>
- *       <basic-page-dots>
- *         <basic-carousel>
- *           ... images, etc. ...
- *         </basic-carousel>
- *       </basic-page-dots>
- *     </basic-arrow-selection>
+ *     class MyCarousel extends
+ *         ArrowSelectionMixin(PageDotsMixin(Carousel)) {}
+ *     customElements.define('my-carousel', MyCarousel);
  *
  * For universal access, basic-carousel automatically adds a variety of
  * [ARIA](http://www.w3.org/WAI/intro/aria) properties to itself and to child
