@@ -1,0 +1,17 @@
+.c9/
+.git/
+.idea/
+grunt/
+gulp/
+node_modules/
+package/
+test/
+.babelrc
+.bowerrc
+.gitignore
+.jshintrc
+.npmignore
+bower.json
+Gruntfile.js
+gulpfile.js
+yarn.lock
