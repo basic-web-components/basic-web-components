@@ -17,3 +17,13 @@ This component currently requires that you explicitly apply a size to it.
 
   **Kind**: global class
 **Extends:** <code>ElementBase</code>  
+**Mixes**: <code>[FractionalSelectionMixin](../basic-component-mixins/docs/FractionalSelectionMixin.md)</code>
+  
+<a name="FractionalSelection+selectedFraction"></a>
+
+### slidingViewport.selectedFraction : <code>number</code>
+A fractional value indicating how far the user has currently advanced to
+the next/previous item. E.g., a `selectedFraction` of 3.5 indicates the
+user is halfway between items 3 and 4.
+
+  **Kind**: instance property of <code>[SlidingViewport](#SlidingViewport)</code>. Defined by <code>[FractionalSelection](../basic-component-mixins/docs/FractionalSelection.md)</code> mixin.

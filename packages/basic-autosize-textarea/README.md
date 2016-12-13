@@ -1,7 +1,7 @@
 # API Documentation
 <a name="AutosizeTextarea"></a>
 
-## AutosizeTextarea
+## AutosizeTextarea ⇐ <code>WrappedStandardElement</code>
 A text area that makes itself big enough to show its content.
 
 [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-autosize-textarea/)
@@ -18,11 +18,12 @@ This component generally exposes all the same attributes/properties as a
 standard HTML `<textarea>`.
 
   **Kind**: global class
+**Extends:** <code>WrappedStandardElement</code>  
 **Mixes**: <code>[GenericMixin](../basic-component-mixins/docs/GenericMixin.md)</code>
   , <code>[DistributedChildrenContentMixin](../basic-component-mixins/docs/DistributedChildrenContentMixin.md)</code>
   
 
-* [AutosizeTextarea](#AutosizeTextarea)
+* [AutosizeTextarea](#AutosizeTextarea) ⇐ <code>WrappedStandardElement</code>
     * [.autoSize()](#AutosizeTextarea+autoSize)
     * ["change"](#AutosizeTextarea.event_change)
     * [.content](#DistributedChildrenContent+content) : <code>Array.&lt;HTMLElement&gt;</code>

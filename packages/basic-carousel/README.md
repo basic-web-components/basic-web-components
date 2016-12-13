@@ -1,7 +1,7 @@
 # API Documentation
 <a name="Carousel"></a>
 
-## Carousel
+## Carousel ⇐ <code>AnimationStage</code>
 Lets the user navigate laterally through a sequence of child elements.
 
 basic-carousel is an implementation of the carousel user interface pattern,
@@ -103,6 +103,7 @@ elements. This helps users navigate the sequence of elements in the carousel
 using assistive technologies.
 
   **Kind**: global class
+**Extends:** <code>AnimationStage</code>  
 **Mixes**: <code>[DirectionSelectionMixin](../basic-component-mixins/docs/DirectionSelectionMixin.md)</code>
   , <code>[GenericMixin](../basic-component-mixins/docs/GenericMixin.md)</code>
   , <code>[KeyboardMixin](../basic-component-mixins/docs/KeyboardMixin.md)</code>
@@ -111,7 +112,7 @@ using assistive technologies.
   , <code>[TrackpadDirectionMixin](../basic-component-mixins/docs/TrackpadDirectionMixin.md)</code>
   
 
-* [Carousel](#Carousel)
+* [Carousel](#Carousel) ⇐ <code>AnimationStage</code>
     * [.generic](#Generic+generic) : <code>Boolean</code>
     * [.goDown()](#KeyboardDirection+symbols.goDown)
     * [.goEnd()](#KeyboardDirection+symbols.goEnd)

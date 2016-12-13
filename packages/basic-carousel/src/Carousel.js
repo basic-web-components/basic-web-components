@@ -117,6 +117,7 @@ const base = AnimationStage.compose(
  * elements. This helps users navigate the sequence of elements in the carousel
  * using assistive technologies.
  *
+ * @extends AnimationStage
  * @mixes DirectionSelectionMixin
  * @mixes GenericMixin
  * @mixes KeyboardMixin

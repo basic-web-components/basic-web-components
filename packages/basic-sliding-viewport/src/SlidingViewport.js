@@ -29,6 +29,7 @@ const base = ElementBase.compose(
  * This component currently requires that you explicitly apply a size to it.
  *
  * @extends ElementBase
+ * @mixes FractionalSelectionMixin
  */
 class SlidingViewport extends base {
 

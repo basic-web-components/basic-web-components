@@ -31,6 +31,7 @@ const base = WrappedStandardElement.wrap('textarea').compose(
  * This component generally exposes all the same attributes/properties as a
  * standard HTML `<textarea>`.
  *
+ * @extends WrappedStandardElement
  * @mixes GenericMixin
  * @mixes DistributedChildrenContentMixin
  */

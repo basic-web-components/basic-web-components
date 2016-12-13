@@ -27,6 +27,8 @@ const areaLinkSymbol = createSymbol('areaLink');
  * (underline). However, in navigation elements like toolbars, you often will
  * want to explicitly specific link colors anyway, e.g., to reflect your
  * application's visual style and brand.
+ *
+ * @extends WrappedStandardElement
  */
 class CurrentAnchor extends WrappedStandardElement.wrap('a') {
 

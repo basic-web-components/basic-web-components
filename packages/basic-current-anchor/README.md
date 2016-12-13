@@ -1,7 +1,7 @@
 # API Documentation
 <a name="CurrentAnchor"></a>
 
-## CurrentAnchor
+## CurrentAnchor ⇐ <code>WrappedStandardElement</code>
 An anchor (link) that highlights itself when its destination matches the
 current location.
 
@@ -22,8 +22,9 @@ want to explicitly specific link colors anyway, e.g., to reflect your
 application's visual style and brand.
 
   **Kind**: global class
+**Extends:** <code>WrappedStandardElement</code>  
 
-* [CurrentAnchor](#CurrentAnchor)
+* [CurrentAnchor](#CurrentAnchor) ⇐ <code>WrappedStandardElement</code>
     * [.areaLink](#CurrentAnchor+areaLink) : <code>boolean</code>
     * [.current](#CurrentAnchor+current) : <code>boolean</code>
 
