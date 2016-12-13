@@ -1,19 +1,5 @@
 import AnimationStage from '../../basic-animation-stage/src/AnimationStage';
-import DirectionSelectionMixin from '../../basic-component-mixins/src/DirectionSelectionMixin';
-import KeyboardDirectionMixin from '../../basic-component-mixins/src/KeyboardDirectionMixin';
-import KeyboardMixin from '../../basic-component-mixins/src/KeyboardMixin';
-import SwipeDirectionMixin from '../../basic-component-mixins/src/SwipeDirectionMixin';
-import symbols from '../../basic-component-mixins/src/symbols';
-import TrackpadDirectionMixin from '../../basic-component-mixins/src/TrackpadDirectionMixin';
-
-
-const base = AnimationStage.compose(
-  DirectionSelectionMixin,
-  KeyboardMixin,
-  KeyboardDirectionMixin,
-  SwipeDirectionMixin,
-  TrackpadDirectionMixin
-);
+import HorizontalNavigationMixin from '../../basic-component-mixins/src/HorizontalNavigationMixin';
 
 
 /**
@@ -114,25 +100,11 @@ const base = AnimationStage.compose(
  * using assistive technologies.
  *
  * @extends AnimationStage
- * @mixes DirectionSelectionMixin
- * @mixes GenericMixin
- * @mixes KeyboardMixin
- * @mixes KeyboardDirectionMixin
- * @mixes SwipeDirectionMixin
- * @mixes TrackpadDirectionMixin
+ * @mixes HorizontalNavigationMixin
  */
-class Carousel extends base {
-
-  get [symbols.defaults]() {
-    const defaults = super[symbols.defaults] || {};
-    defaults.navigationAxis = 'horizontal';
-    defaults.selectionAnimationEffect = 'slideWithGap';
-    // defaults.selectionRequired = true;
-    return defaults;
-  }
-
-}
-
+class Carousel extends AnimationStage.compose(
+  HorizontalNavigationMixin
+) {}
 
 customElements.define('basic-carousel', Carousel);
 export default Carousel;
