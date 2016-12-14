@@ -1,21 +1,9 @@
-import ElementBase from '../../basic-element-base/src/ElementBase';
-import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
-import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
-import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
-import SelectionAnimationMixin from '../../basic-component-mixins/src/SelectionAnimationMixin';
-import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
-import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
+import AnimationStage from '../../basic-animation-stage/src/AnimationStage';
 import symbols from '../../basic-component-mixins/src/symbols';
 import TimerSelectionMixin from '../../basic-component-mixins/src/TimerSelectionMixin';
 
 
-const base = ElementBase.compose(
-  ContentItemsMixin,
-  DistributedChildrenContentMixin,
-  FractionalSelectionMixin,
-  SelectionAnimationMixin,
-  SelectionAriaActiveMixin,
-  SingleSelectionMixin,
+const base = AnimationStage.compose(
   TimerSelectionMixin
 );
 
@@ -34,13 +22,7 @@ const base = ElementBase.compose(
  * a component of your own, apply the
  * [TimerSelectionMixin](../basic-component-mixins/docs/TimerSelectionMixin.md).
  *
- * @extends ElementBase
- * @mixes ContentItemsMixin
- * @mixes DistributedChildrenContentMixin
- * @mixes FractionalSelectionMixin
- * @mixes SelectionAnimationMixin
- * @mixes SelectionAriaActiveMixin
- * @mixes SingleSelectionMixin
+ * @extends AnimationStage
  * @mixes TimerSelectionMixin
  */
 class Slideshow extends base {
@@ -54,31 +36,6 @@ class Slideshow extends base {
     defaults.selectionTimerDuration = 3000;
     defaults.selectionWraps = true;
     return defaults;
-  }
-
-  get [symbols.template]() {
-    return `
-      <style>
-      :host {
-        display: -webkit-flex;
-        display: flex;
-        overflow: hidden;
-        position: relative;
-      }
-
-      #container ::slotted(*) {
-        height: 100%;
-        object-fit: contain;
-        position: absolute;
-        width: 100%;
-        will-change: transform;
-      }
-      </style>
-
-      <div id="container" role="none">
-        <slot></slot>
-      </div>
-    `;
   }
 
 }
