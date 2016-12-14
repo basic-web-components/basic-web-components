@@ -1,16 +1,19 @@
-import createSymbol from '../../basic-component-mixins/src/createSymbol';
+import ContentItemsMixin from '../../basic-component-mixins/src/ContentItemsMixin';
+import DistributedChildrenContentMixin from '../../basic-component-mixins/src/DistributedChildrenContentMixin';
 import ElementBase from '../../basic-element-base/src/ElementBase';
 import FractionalSelectionMixin from '../../basic-component-mixins/src/FractionalSelectionMixin';
+import SelectionAriaActiveMixin from '../../basic-component-mixins/src/SelectionAriaActiveMixin';
+import SingleSelectionMixin from '../../basic-component-mixins/src/SingleSelectionMixin';
 import SpreadItems from '../../basic-spread-items/src/SpreadItems'; // jshint ignore:line
 import symbols from '../../basic-component-mixins/src/symbols';
 
 
-// Symbols for private data members on an element.
-const selectedItemSymbol = createSymbol('selectedItem');
-
-
 const base = ElementBase.compose(
-  FractionalSelectionMixin
+  ContentItemsMixin,
+  DistributedChildrenContentMixin,
+  FractionalSelectionMixin,
+  SelectionAriaActiveMixin,
+  SingleSelectionMixin
 );
 
 
@@ -29,32 +32,34 @@ const base = ElementBase.compose(
  * This component currently requires that you explicitly apply a size to it.
  *
  * @extends ElementBase
+ * @mixes ContentItemsMixin
+ * @mixes DistributedChildrenContentMixin
  * @mixes FractionalSelectionMixin
+ * @mixes SelectionAriaActiveMixin
+ * @mixes SingleSelectionMixin
  */
 class SlidingViewport extends base {
 
   constructor() {
     super();
-    this.selectedFraction = 0;
-    this.showTransition = true;
+    this[symbols.dragging] = false;
   }
 
-  connectedCallback() {
-    if (super.connectedCallback) { super.connectedCallback(); }
-    this.render();
+  get [symbols.defaults]() {
+    const defaults = super[symbols.defaults] || {};
+    defaults.selectionRequired = true;
+    return defaults;
   }
 
-  get content() {
-    return this.$.slidingContainer.content;
+  /*
+   * During drags, don't show CSS transitions.
+   */
+  get [symbols.dragging]() {
+    return !this.showTransition;
   }
-
-  get items() {
-    return this.$.slidingContainer.items;
-  }
-
-  render() {
-    if (super.render) { super.render(); }
-    requestAnimationFrame(renderSelection.bind(this));
+  set [symbols.dragging](value) {
+    if (symbols.dragging in base.prototype) { super[symbols.dragging] = value; }
+    this.reflectClass('showTransition', !value);
   }
 
   get selectedFraction() {
@@ -62,39 +67,15 @@ class SlidingViewport extends base {
   }
   set selectedFraction(value) {
     if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-    this.render();
-  }
-
-  get selectedIndex() {
-    const items = this.items;
-    const selectedItem = this.selectedItem;
-    return items && selectedItem ?
-      items.indexOf(selectedItem) :
-      -1;
-  }
-  set selectedIndex(index) {
-    if ('selectedIndex' in base.prototype) { super.selectedIndex = index; }
-    const item = this.items && this.items[index];
-    if (item) {
-      this.selectedItem = item;
-    }
+    render(this);
   }
 
   get selectedItem() {
-    return this[selectedItemSymbol];
+    return super.selectedItem;
   }
   set selectedItem(item) {
     if ('selectedItem' in base.prototype) { super.selectedItem = item; }
-    this[selectedItemSymbol] = item;
-    this.render();
-  }
-
-  get showTransition() {
-    return super.showTransition || this.classList.contains('showTransition');
-  }
-  set showTransition(value) {
-    if ('showTransition' in base.prototype) { super.showTransition = value; }
-    this.reflectClass('showTransition', value);
+    render(this);
   }
 
   get [symbols.template]() {
@@ -131,6 +112,11 @@ class SlidingViewport extends base {
 
 }
 
+
+
+function render(element) {
+  requestAnimationFrame(renderSelection.bind(element));
+}
 
 // Note: In this routine, "this" is bound to an element instance.
 function renderSelection() {

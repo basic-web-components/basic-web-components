@@ -10,7 +10,7 @@
   <script src="../demos/bower_components/webcomponents.js/webcomponents-lite.js"></script>
   <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
   <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
-  <script src="./dist/basic-sliding-carousel.js"></script>
+  <script src="./dist/demos.js"></script>
   <link rel="stylesheet" href="../demos/demos.css">
 
   <style>
@@ -27,7 +27,11 @@
     display: flex;
   }
 
-  basic-sliding-carousel {
+  basic-arrow-selection {
+    margin: 5px;
+  }
+
+  sliding-carousel-with-arrows-and-dots {
     display: -webkit-flex;
     display: flex;
     -webkit-flex: 1;
@@ -35,16 +39,19 @@
   }
   </style>
 
+  <script>
+  </script>
+
 </head>
 
 <body>
-  <basic-sliding-carousel aria-label="Nature scenes">
+  <sliding-carousel-with-arrows-and-dots class="overlayArrows" aria-label="Nature scenes">
     <img src="../demos/resources/images/image1.jpg" alt="Lake">
     <img src="../demos/resources/images/image2.jpg" alt="Horses">
     <img src="../demos/resources/images/image6.jpg" alt="Wheat">
     <img src="../demos/resources/images/image3.jpg" alt="Mountain">
     <img src="../demos/resources/images/image7.jpg" alt="Palm tree">
-  </basic-sliding-carousel>
+  </sliding-carousel-with-arrows-and-dots>
 </body>
 
 </html>
