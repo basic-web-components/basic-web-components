@@ -4,16 +4,14 @@
   "description": "Spreads out a set of items horizontally so they take equal space.",
   "homepage": "https://component.kitchen",
   "license": "MIT",
-  "repository": "https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-spread-items",
+  "repository": "https://github.com/basic-web-components/basic-web-components/tree/master/packages/basic-spread-items/package",
   "keywords": [
     "basic-web-components",
     "es6",
     "web-components"
   ],
-  "main": "src/SpreadItems.js",
   "dependencies": {
-    "basic-element-base": "^0.9.0-pre",
-    "basic-component-mixins": "^0.9.0-pre"
+    "basic-web-components": "git://github.com:basic-web-components/basic-web-components.git#master"
   },
   "browserify": {
     "transform": [
