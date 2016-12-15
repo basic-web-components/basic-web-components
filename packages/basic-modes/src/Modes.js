@@ -16,6 +16,8 @@ const base = ElementBase.compose(
  * if a given UI element has multiple modes that present substantially different
  * elements.
  *
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/demos/modes-with-arrows-and-keyboard.html)
+ *
  * The transition between child elements is instantenous. If you'd like the
  * transition to be accompanied by visible animated effects, see
  * [basic-animation-stage](../basic-animation-stage).
@@ -35,10 +37,21 @@ class Modes extends base {
     return defaults;
   }
 
+  [symbols.itemAdded](item) {
+    if (super[symbols.itemAdded]) { super[symbols.itemAdded](item); }
+    // TODO: See node about aria-hidden below.
+    item.setAttribute('aria-hidden', 'false');
+  }
+
   [symbols.itemSelected](item, selected) {
     if (super[symbols.itemSelected]) { super[symbols.itemSelected](item, selected); }
     item.style.display = selected ? '' : 'none';
-    item.setAttribute('aria-hidden', !selected);
+    // TODO: Should the modes which are not visible be exposed to ARIA?
+    // Sometimes this will be desirable, as when an inactive mode should be
+    // both physically invisible and invisible to ARIA. In other cases, it
+    // might be desirable to let the user navigate the modes with the keyboard,
+    // in which case ARIA should be able to see the inactive modes.
+    // item.setAttribute('aria-hidden', !selected);
   }
 
   get [symbols.template]() {

@@ -11,13 +11,12 @@
   <script src="../demos/bower_components/custom-elements/custom-elements.min.js"></script>
   <script src="../demos/bower_components/custom-elements/src/native-shim.js"></script>
   <script src="../demos/bower_components/custom-elements/src/htmlelement-instanceof.js"></script>
-  <script src="../basic-arrow-selection/dist/basic-arrow-selection.js"></script>
-  <script src="./dist/basic-modes.js"></script>
+  <script src="./dist/demos.js"></script>
 
   <link rel="stylesheet" href="../demos/demos.css">
 
   <style>
-  modes-with-arrows {
+  modes-with-arrows-and-keyboard {
     height: 300px;
     max-width: 100%;
     width: 400px;
@@ -33,25 +32,19 @@
   }
   </style>
 
-  <script>
-    class ModesWithArrows extends Basic.ArrowSelectionMixin(Basic.Modes) {}
-    customElements.define('modes-with-arrows', ModesWithArrows);
-  </script>
-
 </head>
 
 <body>
   <p>
     The basic-modes component below shows a single selected page out of a set of
     pages. It provides no user interface of its own. Below, it's been combined
-    with a basic-arrow-selection component to provide lateral navigation with
-    buttons and the keyboard.
+    with mixins that provide lateral navigation with buttons and the keyboard.
   </p>
-  <modes-with-arrows class="showArrows" aria-label="Panels">
+  <modes-with-arrows-and-keyboard class="showArrows" aria-label="Panels">
     <div class="panel">One</div>
     <div class="panel">Two</div>
     <div class="panel">Three</div>
-  </modes-with-arrows>
+  </modes-with-arrows-and-keyboard>
 </body>
 
 </html>
