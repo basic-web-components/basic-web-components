@@ -23,7 +23,7 @@ const base = ElementBase.compose(
  * generally used to reflect a user-controlled touch or trackpad drag operation
  * in progress.
  *
- * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/basic-animation-stage/)
+ * [Live demo](http://basicwebcomponents.org/basic-web-components/packages/demos/animation-stage-with-dots.html)
  *
  * This component is intended to be used as a programmatic rendering surface for
  * components which want to show transitional effects.
