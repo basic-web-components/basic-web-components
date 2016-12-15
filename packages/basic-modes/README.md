@@ -6,6 +6,8 @@ Shows exactly one child element at a time. This can be useful, for example,
 if a given UI element has multiple modes that present substantially different
 elements.
 
+[Live demo](http://basicwebcomponents.org/basic-web-components/packages/demos/modes-with-arrows-and-keyboard.html)
+
 The transition between child elements is instantenous. If you'd like the
 transition to be accompanied by visible animated effects, see
 [basic-animation-stage](../basic-animation-stage).
