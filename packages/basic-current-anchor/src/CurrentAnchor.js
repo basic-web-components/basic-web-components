@@ -88,7 +88,9 @@ class CurrentAnchor extends WrappedStandardElement.wrap('a') {
   }
   set current(value) {
     safeAttributes.toggleClass(this, 'current', value);
-    this.dispatchEvent(new CustomEvent('current-changed'));
+    if (this[symbols.handlingUserInteraction]) {
+      this.dispatchEvent(new CustomEvent('current-changed'));  
+    }
   }
 
   get [symbols.defaults]() {

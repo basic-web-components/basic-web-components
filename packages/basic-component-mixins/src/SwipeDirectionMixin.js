@@ -39,26 +39,33 @@ export default (base) => {
       if (window.PointerEvent) {
         // Prefer listening to standard pointer events.
         this.addEventListener('pointerdown', event => {
+          this[symbols.handlingUserInteraction] = true;
           if (isEventForPenOrPrimaryTouch(event)) {
             touchStart(this, event.clientX, event.clientY);
           }
+          this[symbols.handlingUserInteraction] = false;
         });
         this.addEventListener('pointermove', event => {
+          this[symbols.handlingUserInteraction] = true;
           if (isEventForPenOrPrimaryTouch(event)) {
             const handled = touchMove(this, event.clientX, event.clientY);
             if (handled) {
               event.preventDefault();
             }
           }
+          this[symbols.handlingUserInteraction] = false;
         });
         this.addEventListener('pointerup', event => {
+          this[symbols.handlingUserInteraction] = true;
           if (isEventForPenOrPrimaryTouch(event)) {
             touchEnd(this, event.clientX, event.clientY);
           }
+          this[symbols.handlingUserInteraction] = false;
         });
       } else {
         // Pointer events not supported -- listen to older touch events.
         this.addEventListener('touchstart', event => {
+          this[symbols.handlingUserInteraction] = true;
           if (this[multiTouchSymbol]) {
             return;
           } else if (event.touches.length === 1) {
@@ -68,8 +75,10 @@ export default (base) => {
           } else {
             this[multiTouchSymbol] = true;
           }
+          this[symbols.handlingUserInteraction] = false;
         });
         this.addEventListener('touchmove', event => {
+          this[symbols.handlingUserInteraction] = true;
           if (!this[multiTouchSymbol] && event.touches.length === 1) {
             const clientX = event.changedTouches[0].clientX;
             const clientY = event.changedTouches[0].clientY;
@@ -78,8 +87,10 @@ export default (base) => {
               event.preventDefault();
             }
           }
+          this[symbols.handlingUserInteraction] = false;
         });
         this.addEventListener('touchend', event => {
+          this[symbols.handlingUserInteraction] = true;
           if (event.touches.length === 0) {
             // All touches removed; gesture is complete.
             if (!this[multiTouchSymbol]) {
@@ -90,6 +101,7 @@ export default (base) => {
             }
             this[multiTouchSymbol] = false;
           }
+          this[symbols.handlingUserInteraction] = false;
         });
       }
     }

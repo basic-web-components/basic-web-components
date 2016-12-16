@@ -114,6 +114,42 @@ const symbols = {
   goUp: createSymbol('goUp'),
 
   /**
+   * Symbol for the `handlingUserInteraction` property.
+   *
+   * This property is used by mixins to determine whether they should raise
+   * property change events. The standard HTML pattern is to only raise such
+   * events in response to direct user interactions. This property can be used
+   * to manage events as follows.
+   *
+   * First, UI event listeners should set this property to `true` at the start
+   * of the event handler, then `false` at the end:
+   *
+   *     this.addEventListener('click', event => {
+   *       this[symbols.handlingUserInteraction] = true;
+   *       // Do work here, possibly setting properties, like:
+   *       this.foo = 'Hello';
+   *       this[symbols.handlingUserInteraction] = false;
+   *     });
+   *
+   * Elsewhere, property setters that raise change events should only do so it
+   * this property is `true`:
+   *
+   *     set foo(value) {
+   *       // Save foo value here, do any other work.
+   *       if (this[symbols.handlingUserInteraction]) {
+   *         const event = new CustomEvent('foo-changed');
+   *         this.dispatchEvent(event);
+   *       }
+   *     }
+   *
+   * In this way, programmatic attempts to set the `foo` property will not
+   * trigger the `foo-changed` event, but UI interactions that update that
+   * property will cause those events to be raised.
+   *
+   */
+  handlingUserInteraction: createSymbol('handlingUserInteraction'),
+
+  /**
    * Symbol for the `itemAdded` method.
    *
    * This method is invoked when a new item is added to a list.

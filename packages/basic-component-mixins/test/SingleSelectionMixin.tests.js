@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import AttributeMarshallingMixin from '../src/AttributeMarshallingMixin';
+import microtask from '../src/microtask';
 import SingleSelectionMixin from '../src/SingleSelectionMixin';
 import symbols from '../src/symbols';
 
@@ -195,13 +196,27 @@ describe("SingleSelectionMixin", () => {
     assert(element.canSelectPrevious);
   });
 
-  it("changing selection raises the selected-item-changed event", done => {
+  it("changing selection through (simulated) user interaction raises the selected-item-changed event", done => {
     const element = createSampleElement();
     element.addEventListener('selected-item-changed', () => {
       done();
     });
     container.appendChild(element);
+
+    element[symbols.handlingUserInteraction] = true; // Simulate user interaction
     element.selectedIndex = 1;
+    element[symbols.handlingUserInteraction] = false;
+  });
+
+  it("changing selection programmatically does not raise the selected-item-changed event", done => {
+    const element = createSampleElement();
+    element.addEventListener('selected-item-changed', () => {
+      assert.fail(null, null, 'selected-item-changed event should not have been raised in response to programmatic property change');
+    });
+    container.appendChild(element);
+    element.selectedIndex = 1; // This should not trigger events.
+    // Give event handler a chance to run (but it shouldn't).
+    microtask(done);
   });
 
   it("raises can-select-previous-changed event", done => {
@@ -213,7 +228,10 @@ describe("SingleSelectionMixin", () => {
     });
     container.appendChild(element);
     assert(element.canSelectPrevious);
+
+    element[symbols.handlingUserInteraction] = true; // Simulate user interaction
     element.selectFirst();
+    element[symbols.handlingUserInteraction] = false;
   });
 
   it("raises can-select-next-changed event", done => {
@@ -225,7 +243,10 @@ describe("SingleSelectionMixin", () => {
     });
     container.appendChild(element);
     assert(element.canSelectNext);
+
+    element[symbols.handlingUserInteraction] = true; // Simulate user interaction
     element.selectLast();
+    element[symbols.handlingUserInteraction] = false;
   });
 
 });

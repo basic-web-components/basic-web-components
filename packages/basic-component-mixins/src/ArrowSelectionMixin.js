@@ -39,12 +39,16 @@ export default (base) => {
       super();
 
       this.$.buttonLeft.addEventListener('click', event => {
+        this[symbols.handlingUserInteraction] = true;
         this.selectPrevious();
         event.stopPropagation();
+        this[symbols.handlingUserInteraction] = false;
       });
       this.$.buttonRight.addEventListener('click', event => {
+        this[symbols.handlingUserInteraction] = true;
         this.selectNext();
         event.stopPropagation();
+        this[symbols.handlingUserInteraction] = false;
       });
       assumeButtonFocus(this, this.$.buttonLeft);
       assumeButtonFocus(this, this.$.buttonRight);

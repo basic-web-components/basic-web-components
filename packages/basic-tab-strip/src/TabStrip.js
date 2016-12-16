@@ -63,6 +63,7 @@ class TabStrip extends ElementBase.compose(
     // Handle clicks/Enter on tab buttons.
     // TODO: Rationalize with ClickSelection?
     this.addEventListener('click', event => {
+      this[symbols.handlingUserInteraction] = true;
       const tab = event.path[0];
       const index = Array.prototype.indexOf.call(this.items, tab);
       if (index >= 0 && this.selectedIndex !== index) {
@@ -72,6 +73,7 @@ class TabStrip extends ElementBase.compose(
         // already have the focus, and we want to preserve that behavior.
         event.stopPropagation();
       }
+      this[symbols.handlingUserInteraction] = false;
     });
 
     // Set defaults.

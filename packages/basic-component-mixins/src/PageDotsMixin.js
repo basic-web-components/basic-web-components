@@ -31,11 +31,13 @@ export default (base) => {
       super();
 
       this.$.dots.addEventListener('click', event => {
+        this[symbols.handlingUserInteraction] = true;
         const dot = event.target;
         const dotIndex = this.dots.indexOf(dot);
         if (dotIndex >= 0) {
           this.selectedIndex = dotIndex;
         }
+        this[symbols.handlingUserInteraction] = false;
       });
     }
 

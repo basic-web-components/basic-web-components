@@ -1,4 +1,5 @@
 import microtask from './microtask';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 /* Exported function extends a base class with DistributedChildrenContent. */
@@ -77,8 +78,10 @@ export default (base) => {
      */
     contentChanged() {
       if (super.contentChanged) { super.contentChanged(); }
-      const event = new CustomEvent('content-changed');
-      this.dispatchEvent(event);
+      if (this[symbols.handlingUserInteraction]) {
+        const event = new CustomEvent('content-changed');
+        this.dispatchEvent(event);
+      }
     }
 
     /**

@@ -1,3 +1,6 @@
+import symbols from './symbols';
+
+
 /* Exported function extends a base class with ClickSelection. */
 export default (base) => {
 
@@ -25,6 +28,7 @@ export default (base) => {
        * or click/mouseup.
        */
       this.addEventListener('mousedown', event => {
+        this[symbols.handlingUserInteraction] = true;
         // HACK: If the item is a button, the event seems to be raised in
         // phase 2 (AT_TARGET), but the target is the component, not item.
         // Need to invesigate.
@@ -39,6 +43,7 @@ export default (base) => {
           // already have the focus, and we want to preserve that behavior.
           event.stopPropagation();
         }
+        this[symbols.handlingUserInteraction] = false;
       });
     }
 

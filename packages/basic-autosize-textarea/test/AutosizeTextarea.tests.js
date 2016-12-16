@@ -2,6 +2,7 @@ import { assert } from 'chai';
 import AutosizeTextarea from '../src/AutosizeTextarea'; // jshint ignore:line
 import flush from '../../basic-component-mixins/test/flush';
 import microtask from '../../basic-component-mixins/src/microtask';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 describe("AutosizeTextarea", () => {
@@ -70,7 +71,9 @@ describe("AutosizeTextarea", () => {
       assert.equal(fixture.value, 'fox');
       done();
     });
+    fixture[symbols.handlingUserInteraction] = true; // Simulate user interaction
     fixture.value = 'fox';
+    fixture[symbols.handlingUserInteraction] = false;
   });
 
   it("autosizes to fit its contents", () => {

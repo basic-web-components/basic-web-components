@@ -42,11 +42,13 @@ export default (base) => {
     constructor() {
       super();
       this.addEventListener('keydown', event => {
+        this[symbols.handlingUserInteraction] = true;
         const handled = this[symbols.keydown](event);
         if (handled) {
           event.preventDefault();
           event.stopPropagation();
         }
+        this[symbols.handlingUserInteraction] = false;
       });
     }
 

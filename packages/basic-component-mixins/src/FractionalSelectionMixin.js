@@ -1,4 +1,5 @@
 import createSymbol from './createSymbol';
+import symbols from '../../basic-component-mixins/src/symbols';
 
 
 // Symbols for private data members on an element.
@@ -47,8 +48,10 @@ export default function mixin(base) {
     set selectedFraction(value) {
       this[selectedFractionSymbol] = value;
       if ('selectedFraction' in base.prototype) { super.selectedFraction = value; }
-      const event = new CustomEvent('selected-fraction-changed');
-      this.dispatchEvent(event);
+      if (this[symbols.handlingUserInteraction]) {
+        const event = new CustomEvent('selected-fraction-changed');
+        this.dispatchEvent(event);
+      }
     }
 
   }

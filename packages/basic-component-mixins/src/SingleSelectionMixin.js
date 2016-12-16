@@ -82,7 +82,7 @@ export default (base) => {
       const previousCanSelectNext = this[canSelectNextSymbol];
       this[canSelectNextSymbol] = canSelectNext;
       if ('canSelectNext' in base.prototype) { super.canSelectNext = canSelectNext; }
-      if (canSelectNext !== previousCanSelectNext) {
+      if (canSelectNext !== previousCanSelectNext && this[symbols.handlingUserInteraction]) {
         this.dispatchEvent(new CustomEvent('can-select-next-changed'));
       }
     }
@@ -100,7 +100,7 @@ export default (base) => {
       const previousCanSelectPrevious = this[canSelectPreviousSymbol];
       this[canSelectPreviousSymbol] = canSelectPrevious;
       if ('canSelectPrevious' in base.prototype) { super.canSelectPrevious = canSelectPrevious; }
-      if (canSelectPrevious !== previousCanSelectPrevious) {
+      if (canSelectPrevious !== previousCanSelectPrevious && this[symbols.handlingUserInteraction]) {
         this.dispatchEvent(new CustomEvent('can-select-previous-changed'));
       }
     }
@@ -186,13 +186,15 @@ export default (base) => {
         // The selected index changed.
         this[internalSelectedIndexSymbol] = index;
 
-        const event = new CustomEvent('selected-index-changed', {
-          detail: {
-            selectedIndex: index,
-            value: index // for Polymer binding. TODO: Verify still necessary
-          }
-        });
-        this.dispatchEvent(event);
+        if (this[symbols.handlingUserInteraction]) {
+          const event = new CustomEvent('selected-index-changed', {
+            detail: {
+              selectedIndex: index,
+              value: index // for Polymer binding. TODO: Verify still necessary
+            }
+          });
+          this.dispatchEvent(event);
+        }
       }
 
       if (this[internalSelectedItemSymbol] !== item) {
@@ -251,13 +253,15 @@ export default (base) => {
 
         updatePossibleNavigations(this);
 
-        const event = new CustomEvent('selected-item-changed', {
-          detail: {
-            selectedItem: item,
-            value: item // for Polymer binding
-          }
-        });
-        this.dispatchEvent(event);
+        if (this[symbols.handlingUserInteraction]) {
+          const event = new CustomEvent('selected-item-changed', {
+            detail: {
+              selectedItem: item,
+              value: item // for Polymer binding
+            }
+          });
+          this.dispatchEvent(event);
+        }
       }
 
       if (this[internalSelectedIndexSymbol] !== index) {

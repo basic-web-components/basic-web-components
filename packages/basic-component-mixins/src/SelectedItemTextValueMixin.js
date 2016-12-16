@@ -1,3 +1,6 @@
+import symbols from '../../basic-component-mixins/src/symbols';
+
+
 /* Exported function extends a base class with SelectedItemTextValue. */
 export default (base) => {
 
@@ -46,8 +49,10 @@ export default (base) => {
 
       if (newIndex !== currentIndex) {
         this.selectedIndex = newIndex;
-        const event = new CustomEvent('value-changed');
-        this.dispatchEvent(event);
+        if (this[symbols.handlingUserInteraction]) {
+          const event = new CustomEvent('value-changed');
+          this.dispatchEvent(event);
+        }
       }
     }
   }

@@ -53,8 +53,10 @@ export default (base) => {
       if (value !== previousClosed) {
         this.render(value);
 
-        const event = new CustomEvent('closed-changed');
-        this.dispatchEvent(event);
+        if (this[symbols.handlingUserInteraction]) {
+          const event = new CustomEvent('closed-changed');
+          this.dispatchEvent(event);
+        }
       }
     }
 

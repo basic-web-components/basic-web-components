@@ -41,10 +41,14 @@ class AutosizeTextarea extends base {
     super();
 
     this.inner.addEventListener('input', event => {
+      this[symbols.handlingUserInteraction] = true;
       valueChanged(this);
+      this[symbols.handlingUserInteraction] = false;
     });
     this.inner.addEventListener('keypress', event => {
+      this[symbols.handlingUserInteraction] = true;
       keypress(this, event);
+      this[symbols.handlingUserInteraction] = false;
     });
 
     // Set defaults.
@@ -358,7 +362,9 @@ function unescapeHtml(html) {
  */
 function valueChanged(element) {
   element.autoSize();
-  element.dispatchEvent(new CustomEvent('value-changed'));
+  if (element[symbols.handlingUserInteraction]) {
+    element.dispatchEvent(new CustomEvent('value-changed'));
+  }
 }
 
 

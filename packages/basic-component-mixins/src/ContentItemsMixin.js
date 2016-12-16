@@ -120,7 +120,9 @@ export default (base) => {
         }
       });
 
-      this.dispatchEvent(new CustomEvent('items-changed'));
+      if (this[symbols.handlingUserInteraction]) {
+        this.dispatchEvent(new CustomEvent('items-changed'));
+      }
     }
 
     /**

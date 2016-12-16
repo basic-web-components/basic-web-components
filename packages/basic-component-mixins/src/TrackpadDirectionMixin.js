@@ -42,10 +42,12 @@ export default (base) => {
     constructor() {
       super();
       this.addEventListener('wheel', event => {
+        this[symbols.handlingUserInteraction] = true;
         const handled = wheel(this, event);
         if (handled) {
           event.preventDefault();
         }
+        this[symbols.handlingUserInteraction] = false;
       });
       resetWheelTracking(this);
     }
@@ -222,6 +224,11 @@ function wheel(element, event) {
 // We snap the selection to the closest item, then reset our state.
 function wheelTimedOut(element) {
 
+  // We treat this timeout as if it were a user interaction for purposes of
+  // deciding whether we should raise property change events. In this case,
+  // the user interaction was the user stopping trackpad movement.
+  element[symbols.handlingUserInteraction] = true;
+
   // Snap to the closest item.
   element[symbols.dragging] = false;
   const travelFraction = element.travelFraction;
@@ -235,4 +242,5 @@ function wheelTimedOut(element) {
   // dragging to false (or the previous value).
 
   resetWheelTracking(element);
+  element[symbols.handlingUserInteraction] = false;
 }

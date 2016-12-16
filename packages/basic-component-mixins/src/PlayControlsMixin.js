@@ -20,13 +20,19 @@ export default (base) => {
     constructor() {
       super();
       this.$.previousButton.addEventListener('click', event => {
+        this[symbols.handlingUserInteraction] = true;
         this.selectPrevious();
+        this[symbols.handlingUserInteraction] = false;
       });
       this.$.playButton.addEventListener('click', event => {
+        this[symbols.handlingUserInteraction] = true;
         this.playing = !this.playing;
+        this[symbols.handlingUserInteraction] = false;
       });
       this.$.nextButton.addEventListener('click', event => {
+        this[symbols.handlingUserInteraction] = true;
         this.selectNext();
+        this[symbols.handlingUserInteraction] = false;
       });
     }
 
