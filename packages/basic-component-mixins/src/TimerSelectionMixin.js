@@ -147,7 +147,11 @@ function startTimer(element) {
   // If play() is called more than once, cancel any existing timer.
   clearTimer(element);
   element[timerTimeoutSymbol] = setTimeout(() => {
+    // A timeout counts as an internal event, so we need to let outside
+    // listeners know about property changes that happen while handling it.
+    element[symbols.handlingUserInteraction] = true;
     selectNextWithWrap(element);
+    element[symbols.handlingUserInteraction] = false;
   }, element.selectionTimerDuration);
 }
 

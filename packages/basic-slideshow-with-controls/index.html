@@ -50,6 +50,14 @@
   }
   </style>
 
+  <script>
+  window.addEventListener('load', () => {
+    document.querySelector('basic-slideshow-with-controls').addEventListener('selected-index-changed', event => {
+      console.log(event);
+    });
+  });
+  </script>
+
 </head>
 
 <body>
