@@ -46,7 +46,7 @@ const webpackHelperTask = function(watch, done) {
       if (processedCount >= packOptionsCount) {
         if (watch) {
           // Do not call task completion callback in the watch case
-          gutil.log('Now watching for changes...')
+          gutil.log('Now watching for changes...');
         }
         else {
           done();
@@ -75,7 +75,11 @@ const webpackHelperTask = function(watch, done) {
       module: {
         loaders: [
           {
-            loader: 'babel-loader'
+            test: /\.js$/,
+            loader: 'babel-loader',
+            query: {
+              presets: ['es2015']
+            }        
           }
         ]
       }
