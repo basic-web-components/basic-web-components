@@ -15,12 +15,12 @@ const allPackages = require('../lib/allPackages');
 //
 function buildBuildList() {
   const buildList = {
-    'build/tests.js': allPackages.map(pkg => `packages/${pkg}/test/*.js`)
+    './build/tests.js': allPackages.map(pkg => `./packages/${pkg}/test/*.js`)
   };
   allPackages.forEach(pkg => {
-    buildList[`packages/${pkg}/dist/${pkg}.js`] = [`packages/${pkg}/globals.js`];
+    buildList[`./packages/${pkg}/dist/${pkg}.js`] = [`./packages/${pkg}/globals.js`];
   });
-  buildList['packages/demos/dist/demos.js'] = ['packages/demos/src/*.js'];
+  buildList['./packages/demos/dist/demos.js'] = ['./packages/demos/src/*.js'];
   return buildList;
 }
 const buildList = buildBuildList();
@@ -44,8 +44,8 @@ const webpackHelperTask = function(watch, done) {
         throw new gutil.PluginError('webpack', err);
       }
       
-      gutil.log(`Processed ${packOptions.entries} and wrote ${packOptions.output.path}${packOptions.output.filename}`);
-      gutil.log('[webpack]', stats.toString({}));
+      gutil.log(`Processed ${packOptions.entry} and wrote ${packOptions.output.path}${packOptions.output.filename}`);
+      //gutil.log('[webpack]', stats.toString({}));
       processedCount++;
       if (processedCount >= packOptionsCount) {
         if (watch) {
