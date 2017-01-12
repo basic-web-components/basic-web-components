@@ -1,13 +1,9 @@
 /*jslint node: true */
 'use strict';
 
-const gulp = require('gulp');
 const gutil = require('gulp-util');
 const webpack = require('webpack');
 const glob = require('glob');
-const babelify = require('babelify')
-const buffer = require('vinyl-buffer');
-const vinylStream = require('vinyl-source-stream');
 const allPackages = require('../lib/allPackages');
 
 //
