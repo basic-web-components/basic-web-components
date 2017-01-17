@@ -65,13 +65,15 @@ const webpackHelperTask = function(watch, done) {
       Array.prototype.push.apply(entries, a);
     });
 
+    let filename = key.split('/').pop();
     let packOptions = {
       entry: entries,
       output: {
         path: key.substring(0, key.lastIndexOf('/') + 1),
-        filename: key.split('/').pop()
+        filename: filename,
+        sourceMapFilename: filename + '.map'
       },
-      devtool: 'inline-source-map',
+      devtool: 'source-map',
       module: {
         loaders: [
           {
@@ -82,7 +84,14 @@ const webpackHelperTask = function(watch, done) {
             }        
           }
         ]
-      }
+      },
+      plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            warnings: false // https://github.com/webpack/webpack/issues/1496
+          }
+        })
+      ]
     };
     
     packOptionsArray.push(packOptions);
