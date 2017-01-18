@@ -4,6 +4,7 @@
 const gulp = require('gulp');
 
 const webpackTask = require('./gulp/tasks/webpack').webpackTask;
+const testWebpackTask = require('./gulp/tasks/webpack').testWebpackTask;
 const watchifyTask = require('./gulp/tasks/webpack').watchifyTask;
 const browserifyTask = require('./gulp/tasks/browserify').browserifyTask;
 //const watchifyTask = require('./gulp/tasks/browserify').watchifyTask;
@@ -24,6 +25,7 @@ const lintTask = require('./gulp/tasks/lint');
 
 // Private
 gulp.task('webpack', [], webpackTask);
+gulp.task('testWebpack', [], testWebpackTask);
 gulp.task('browserify', [], browserifyTask);
 gulp.task('docs-browserify', ['browserify'], docsTask);
 gulp.task('docs-webpack', ['webpack'], docsTask);
@@ -32,12 +34,13 @@ gulp.task('lint-docs-browserify', ['docs-browserify'], lintTask);
 gulp.task('lint-docs-webpack', ['docs-webpack'], lintTask);
 gulp.task('lint-browserify', ['browserify'], lintTask);
 gulp.task('lint-webpack', ['webpack'], lintTask);
+gulp.task('lint-testWebpack', ['testWebpack'], lintTask);
 
 // Public
 //gulp.task('build', ['browserify', 'docs-browserify', 'lint-docs-browserify']);
 //gulp.task('devbuild', ['browserify', 'lint-browserify']);
 gulp.task('build', ['webpack', 'docs-webpack', 'lint-docs-webpack']);
-gulp.task('devbuild', ['webpack', 'lint-webpack']);
+gulp.task('devbuild', ['testWebpack', 'lint-testWebpack']);
 gulp.task('default', ['help']);
 gulp.task('docs', [], docsTask);
 gulp.task('lint', [], lintTask);

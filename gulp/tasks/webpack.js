@@ -22,14 +22,18 @@ function buildBuildList() {
 const buildList = buildBuildList();
 
 const watchifyTask = function(done) {
-  webpackHelperTask(true, done);
+  webpackHelperTask({minify: false, watch: true}, done);
 };
 
 const webpackTask = function(done) {
-  webpackHelperTask(false, done);
+  webpackHelperTask({minify: true, watch: false}, done);
 };
 
-const webpackHelperTask = function(watch, done) {
+const testWebpackTask = function(done) {
+  webpackHelperTask({minify: false, watch: false}, done);
+}
+
+const webpackHelperTask = function(options, done) {
   let packOptionsArray = [];
   let processedCount = 0;
   let packOptionsCount = 0;
@@ -44,7 +48,7 @@ const webpackHelperTask = function(watch, done) {
       //gutil.log('[webpack]', stats.toString({}));
       processedCount++;
       if (processedCount >= packOptionsCount) {
-        if (watch) {
+        if (options.watch) {
           // Do not call task completion callback in the watch case
           gutil.log('Now watching for changes...');
         }
@@ -66,8 +70,17 @@ const webpackHelperTask = function(watch, done) {
     });
 
     let filename = key.split('/').pop();
+    if (options.minify) {
+      let a = filename.split('.');
+      let ext = a.pop();
+      filename = '';
+      for (let i = 0; i < a.length; i++) {
+        filename += a[i];
+      }
+      filename += '.min.' + ext;
+    }
     let packOptions = {
-      watch: watch,
+      watch: options.watch,
       entry: entries,
       output: {
         path: key.substring(0, key.lastIndexOf('/') + 1),
@@ -87,13 +100,14 @@ const webpackHelperTask = function(watch, done) {
           }
         ]
       },
-      plugins: [
+      plugins: options.minify ? [
         new webpack.optimize.UglifyJsPlugin({
           compress: {
             warnings: false // https://github.com/webpack/webpack/issues/1496
           }
         })
-      ]
+      ] :
+      []
     };
     
     packOptionsArray.push(packOptions);
@@ -106,4 +120,4 @@ const webpackHelperTask = function(watch, done) {
   });
 };
 
-module.exports = {webpackTask: webpackTask, watchifyTask: watchifyTask};
+module.exports = {webpackTask: webpackTask, testWebpackTask: testWebpackTask, watchifyTask: watchifyTask};
