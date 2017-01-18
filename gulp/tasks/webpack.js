@@ -67,6 +67,7 @@ const webpackHelperTask = function(watch, done) {
 
     let filename = key.split('/').pop();
     let packOptions = {
+      watch: watch,
       entry: entries,
       output: {
         path: key.substring(0, key.lastIndexOf('/') + 1),

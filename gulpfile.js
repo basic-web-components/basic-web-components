@@ -4,8 +4,9 @@
 const gulp = require('gulp');
 
 const webpackTask = require('./gulp/tasks/webpack').webpackTask;
+const watchifyTask = require('./gulp/tasks/webpack').watchifyTask;
 const browserifyTask = require('./gulp/tasks/browserify').browserifyTask;
-const watchifyTask = require('./gulp/tasks/browserify').watchifyTask;
+//const watchifyTask = require('./gulp/tasks/browserify').watchifyTask;
 const docsTask = require('./gulp/tasks/docs');
 const helpTask = require('./gulp/tasks/help');
 const lintTask = require('./gulp/tasks/lint');
