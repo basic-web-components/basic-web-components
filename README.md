@@ -1,11 +1,21 @@
+**NOTE** (2017 May 24): This project has been subsumed by the
+[Elix](https://github.com/elix/elix) web components library. Elix has the
+same core principles, but has an expanded, more open governance model which we
+hope will help Elix find broad adoption. Elix uses the same mixin architecture
+as Basic Web Components, and many of the components and mixins from Basic Web
+Components are being migrated to Elix. We have stopped active development on
+Basic Web Components so that we can concentrate on Elix. Thank you for your
+support and interest in Basic Web Components, and apologies for any
+inconvenience caused by this change.
+
 # basic-web-components
 
 The Basic Web Components project seeks to provide a comprehensive set of solid,
 well-designed web components that implement very common user interface patterns.
 Each component can be used as is, or as the foundation for new components.
 
-_Note: The master branch of this project targets **Shadow DOM version 1** and
-**Custom Elements version 1**. Currently, the only browser that supports those
+_The master branch of this project targets Shadow DOM version 1 and
+Custom Elements version 1. Currently, the only browser that supports those
 specifications well enough is Google Chrome. That is currently the only browser
 in which all unit tests pass and all components work properly. We will be adding
 support for Safari Technology Preview and the version 1 polyfills as those
